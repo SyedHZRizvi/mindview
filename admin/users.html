@@ -82,6 +82,48 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
                 <tbody id="users-tbody"></tbody>
             </table>
         </div>
+
+        <!-- Role reference — quick guide for whoever is creating users -->
+        <div style="margin-top:36px;">
+            <h2 style="font-size:18px;font-weight:800;margin-bottom:4px;color:#1e293b;">Role reference</h2>
+            <p class="sub" style="font-size:13px;margin-bottom:14px;">What each role can do and who is allowed to manage them.</p>
+            <div class="card" style="overflow:hidden;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:140px;">Role</th>
+                            <th>What they can do</th>
+                            <th style="width:220px;">Who can manage them</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="role-pill superuser">Super User</span></td>
+                            <td>Full access. Manage <strong>all</strong> users — including other Super Users and Administrators. View the Admin Dashboard. Browse all courses, lessons, and assessments.</td>
+                            <td>Super User only</td>
+                        </tr>
+                        <tr>
+                            <td><span class="role-pill admin">Administrator</span></td>
+                            <td>Manage <strong>Teachers and Students only</strong> — cannot create, edit, or delete Administrators or Super Users. View the Admin Dashboard. Browse all courses, lessons, and assessments.</td>
+                            <td>Super User</td>
+                        </tr>
+                        <tr>
+                            <td><span class="role-pill teacher">Teacher</span></td>
+                            <td>Browse <strong>all</strong> course content, lessons, and assessments. No user-management privileges.</td>
+                            <td>Super User, Administrator</td>
+                        </tr>
+                        <tr>
+                            <td><span class="role-pill student">Student</span></td>
+                            <td>Browse course materials, video lessons, and assessments. No user-management privileges.</td>
+                            <td>Super User, Administrator</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="muted" style="margin-top:10px;font-size:12px;">
+                Note: every user can change their own name and password through their <strong>Edit</strong> button on this page, but cannot change their own role (to prevent accidental lock-out).
+            </p>
+        </div>
     </div>
 </div>
 
