@@ -19,6 +19,8 @@ import { readSessionFromRequest } from './lib/session.js';
 // Note: trailing slashes are normalized away before matching.
 const PUBLIC_EXACT = new Set([
   '/login',
+  '/admin/login',       // Cloudflare Pages strips .html — destination of the /login rewrite
+  '/admin/login.html',  // direct hit (if anyone links to it explicitly)
   '/api/login',
   '/api/logout',
   '/api/bootstrap',
