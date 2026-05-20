@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manage Users — MindView Admin</title>
-<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
@@ -58,7 +57,7 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
     <div class="user-chip">
         <span id="user-name"></span>
         <span id="user-role" class="role"></span>
-        <a href="#" onclick="netlifyIdentity.logout(); return false;" style="color:#94a3b8;">Logout</a>
+        <a href="/cdn-cgi/access/logout" style="color:#94a3b8;">Logout</a>
     </div>
 </div>
 
@@ -112,14 +111,9 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
 
 <script>
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
-const ROLE_RANK = {student:0, teacher:1, admin:2, superuser:3};
 let currentUser = null;
 let actorRole = null;
 
-function highestRole(roles) {
-    if (!roles || roles.length === 0) return 'student';
-    return roles.reduce((b, r) => (ROLE_RANK[r] ?? -1) > (ROLE_RANK[b] ?? -1) ? r : b, 'student');
-}
 function canManageRole(actor, target) {
     if (actor === 'superuser') return true;
     if (actor === 'admin') return target === 'teacher' || target === 'student';
@@ -129,20 +123,24 @@ function showAlert(target, msg, kind) {
     document.getElementById(target).innerHTML = `<div class="alert ${kind}">${msg}</div>`;
 }
 
-netlifyIdentity.on('init', user => {
-    if (!user) { location.href = '/login?next=/admin/users.html'; return; }
-    currentUser = user;
-    actorRole = highestRole(user.app_metadata && user.app_metadata.roles);
+(async function() {
+    const r = await fetch('/api/me');
+    const data = r.ok ? await r.json() : null;
+    if (!data || !data.authenticated) {
+        location.href = '/cdn-cgi/access/login' + location.pathname;
+        return;
+    }
+    currentUser = data.user;
+    actorRole = currentUser.role;
     if (actorRole !== 'admin' && actorRole !== 'superuser') {
         document.body.innerHTML = '<div style="padding:60px;text-align:center;font-family:sans-serif;"><h1>🚫 Access Denied</h1><p style="color:#64748b;">Your role does not permit user management.</p><a href="/" style="color:#2563eb;">Back to courses →</a></div>';
         return;
     }
-    init(user);
-});
-netlifyIdentity.on('logout', () => location.href = '/login');
+    init();
+})();
 
-async function init(user) {
-    const fullName = (user.user_metadata && user.user_metadata.full_name) || user.email;
+async function init() {
+    const fullName = currentUser.full_name || currentUser.email;
     document.getElementById('topbar').style.display = 'flex';
     document.getElementById('user-name').textContent = fullName;
     const re = document.getElementById('user-role');
@@ -159,8 +157,7 @@ async function init(user) {
 
 async function loadUsers() {
     try {
-        const token = await currentUser.jwt(true);
-        const r = await fetch('/api/users', { headers: { Authorization: `Bearer ${token}` }});
+        const r = await fetch('/api/users');
         if (!r.ok) {
             const e = await r.json();
             showAlert('alert', e.error || 'Failed to load users', 'error');
@@ -176,7 +173,7 @@ async function loadUsers() {
 function renderUsers(users) {
     const tbody = document.getElementById('users-tbody');
     tbody.innerHTML = users.map(u => {
-        const isMe = u.id === currentUser.id;
+        const isMe = u.email === currentUser.email;
         const canManage = !isMe && canManageRole(actorRole, u.role);
         const lastSignIn = u.last_sign_in_at ? new Date(u.last_sign_in_at).toLocaleString() : '—';
         return `
@@ -243,11 +240,10 @@ document.getElementById('userForm').addEventListener('submit', async e => {
     if (!id) body.email = document.getElementById('email').value.trim();
 
     try {
-        const token = await currentUser.jwt(true);
         const url = id ? `/api/users?id=${encodeURIComponent(id)}` : '/api/users';
         const r = await fetch(url, {
             method: id ? 'PUT' : 'POST',
-            headers: {'Content-Type':'application/json', Authorization: `Bearer ${token}`},
+            headers: {'Content-Type':'application/json'},
             body: JSON.stringify(body)
         });
         const data = await r.json();
@@ -262,10 +258,8 @@ document.getElementById('userForm').addEventListener('submit', async e => {
 async function deleteUser(id, email) {
     if (!confirm(`Delete user "${email}"? This cannot be undone.`)) return;
     try {
-        const token = await currentUser.jwt(true);
         const r = await fetch(`/api/users?id=${encodeURIComponent(id)}`, {
-            method: 'DELETE',
-            headers: { Authorization: `Bearer ${token}` }
+            method: 'DELETE'
         });
         const data = await r.json();
         if (!r.ok) { showAlert('alert', data.error || 'Error', 'error'); return; }

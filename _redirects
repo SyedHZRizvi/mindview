@@ -1,2 +1,7 @@
+# Block sensitive local-dev files from ever being served
+/app.py        /404   404
+/users.db      /404   404
+/.secret_key   /404   404
+
+# Pretty admin URL
 /admin   /admin/dashboard.html   200
-/login   /admin/login.html       200

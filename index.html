@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MindView — Virtual Classroom</title>
 <link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-top: 32px; }
 .course-card { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; transition: all 0.2s; color: #1e293b; text-decoration: none; }
@@ -36,22 +35,15 @@
             <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
                 <span id="user-name" style="font-weight:700;"></span>
                 <span id="user-role" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;"></span>
-                <a href="#" onclick="netlifyIdentity.logout(); return false;" style="color:#94a3b8;font-size:13px;">Logout</a>
+                <a href="/cdn-cgi/access/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
             </span>
-            <a href="#" onclick="netlifyIdentity.open('login'); return false;" id="nav-login" style="display:none;background:#2563eb;color:#fff;padding:6px 14px;border-radius:6px;">Sign In</a>
         </div>
     </div>
 </nav>
 <script>
-// Role-based UI driven by Netlify Identity (deployed) with /api/me fallback (local dev)
+// Role-based UI driven by Cloudflare Access via /api/me
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
-const ROLE_RANK = {student:0, teacher:1, admin:2, superuser:3};
 const ROLE_COLORS = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', student:'#2563eb'};
-
-function highestRole(roles) {
-    if (!roles || roles.length === 0) return 'student';
-    return roles.reduce((b, r) => (ROLE_RANK[r] ?? -1) > (ROLE_RANK[b] ?? -1) ? r : b, 'student');
-}
 
 function renderUser(fullName, role) {
     document.getElementById('user-name').textContent = fullName;
@@ -59,7 +51,6 @@ function renderUser(fullName, role) {
     roleEl.textContent = ROLE_LABELS[role] || role;
     roleEl.style.background = ROLE_COLORS[role] || '#64748b';
     document.getElementById('user-chip').style.display = 'inline-flex';
-    document.getElementById('nav-login').style.display = 'none';
     if (role === 'admin' || role === 'superuser') {
         document.getElementById('nav-manage-users').style.display = 'inline-block';
         document.getElementById('nav-admin').style.display = 'inline-block';
@@ -68,40 +59,12 @@ function renderUser(fullName, role) {
     }
 }
 
-function showLoggedOut() {
-    document.getElementById('nav-login').style.display = 'inline-block';
-}
-
-// Try Netlify Identity first (production)
-if (window.netlifyIdentity) {
-    netlifyIdentity.on('init', user => {
-        if (user) {
-            const role = highestRole(user.app_metadata && user.app_metadata.roles);
-            const fullName = (user.user_metadata && user.user_metadata.full_name) || user.email;
-            renderUser(fullName, role);
-        } else {
-            // No NI session — try local Flask /api/me as a fallback for dev
-            fetch('/api/me').then(r => r.ok ? r.json() : null).then(data => {
-                if (data && data.authenticated) {
-                    renderUser(data.user.full_name, data.user.role);
-                } else {
-                    showLoggedOut();
-                }
-            }).catch(() => showLoggedOut());
-        }
-    });
-    netlifyIdentity.on('login', () => location.reload());
-    netlifyIdentity.on('logout', () => location.reload());
-} else {
-    // Fallback: Netlify Identity widget unavailable, try local Flask
-    fetch('/api/me').then(r => r.ok ? r.json() : null).then(data => {
-        if (data && data.authenticated) {
-            renderUser(data.user.full_name, data.user.role);
-        } else {
-            showLoggedOut();
-        }
-    }).catch(() => showLoggedOut());
-}
+fetch('/api/me')
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+        if (data && data.authenticated) renderUser(data.user.full_name, data.user.role);
+    })
+    .catch(() => {});
 </script>
 
 <header class="hero">

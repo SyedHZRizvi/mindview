@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard — MindView</title>
-<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
@@ -45,7 +44,7 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
     <div class="user-chip">
         <span id="user-name"></span>
         <span id="user-role" class="role"></span>
-        <a href="#" onclick="netlifyIdentity.logout(); return false;" style="color:#94a3b8;">Logout</a>
+        <a href="/cdn-cgi/access/logout" style="color:#94a3b8;">Logout</a>
     </div>
 </div>
 
@@ -81,26 +80,21 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
 
 <script>
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
-const ROLE_RANK = {student:0, teacher:1, admin:2, superuser:3};
 
-function highestRole(roles) {
-    if (!roles || roles.length === 0) return 'student';
-    return roles.reduce((b, r) => (ROLE_RANK[r] ?? -1) > (ROLE_RANK[b] ?? -1) ? r : b, 'student');
-}
-
-netlifyIdentity.on('init', user => {
-    if (!user) {
-        location.href = '/login?next=/admin';
+(async function() {
+    const r = await fetch('/api/me');
+    const data = r.ok ? await r.json() : null;
+    if (!data || !data.authenticated) {
+        // Cloudflare Access should have gated this already; if not, force its login.
+        location.href = '/cdn-cgi/access/login' + location.pathname;
         return;
     }
-    render(user);
-});
+    render(data.user);
+})();
 
-netlifyIdentity.on('logout', () => location.href = '/login');
-
-async function render(user) {
-    const role = highestRole(user.app_metadata && user.app_metadata.roles);
-    const fullName = (user.user_metadata && user.user_metadata.full_name) || user.email;
+function render(user) {
+    const role = user.role;
+    const fullName = user.full_name || user.email;
 
     document.getElementById('topbar').style.display = 'flex';
     document.getElementById('user-name').textContent = fullName;
@@ -118,7 +112,7 @@ async function render(user) {
 
     if (role === 'admin' || role === 'superuser') {
         document.getElementById('admin-only').style.display = 'block';
-        loadStats(user);
+        loadStats();
     } else {
         document.getElementById('nav-users').style.display = 'none';
         document.getElementById('user-only').style.display = 'block';
@@ -129,10 +123,9 @@ async function render(user) {
     }
 }
 
-async function loadStats(user) {
+async function loadStats() {
     try {
-        const token = await user.jwt(true);
-        const r = await fetch('/api/users', { headers: { Authorization: `Bearer ${token}` }});
+        const r = await fetch('/api/users');
         if (!r.ok) return;
         const data = await r.json();
         const users = data.users || [];
