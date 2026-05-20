@@ -35,10 +35,13 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
 .modal-bg.show{display:flex;}
 .modal{background:#fff;border-radius:12px;padding:28px;width:100%;max-width:460px;}
 .modal h2{font-size:20px;margin-bottom:18px;}
-.field{margin-bottom:14px;}
-.field label{display:block;font-size:13px;font-weight:600;margin-bottom:5px;color:#475569;}
-.field input, .field select{width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:14px;font-family:inherit;}
-.field input:focus, .field select:focus{outline:none;border-color:#2563eb;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#1e293b;}
+.field input, .field select{width:100%;padding:11px 14px;border:1.5px solid #94a3b8;background:#f8fafc;border-radius:8px;font-size:15px;font-family:inherit;color:#0f172a;transition:border-color .15s, box-shadow .15s, background .15s;}
+.field input::placeholder{color:#94a3b8;}
+.field input:hover, .field select:hover{border-color:#64748b;}
+.field input:focus, .field select:focus{outline:none;border-color:#2563eb;background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.18);}
+.field input:disabled, .field select:disabled{background:#e2e8f0;color:#64748b;cursor:not-allowed;}
 .row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
 .alert{padding:12px;border-radius:6px;margin-bottom:14px;font-size:13px;}
 .alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
