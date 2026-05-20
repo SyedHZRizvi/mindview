@@ -56,7 +56,6 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
     </nav>
     <div class="user-chip">
         <span id="user-name"></span>
-        <span id="user-role" class="role"></span>
         <a href="/api/logout" style="color:#94a3b8;">Logout</a>
     </div>
 </div>
@@ -143,9 +142,6 @@ async function init() {
     const fullName = currentUser.full_name || currentUser.email;
     document.getElementById('topbar').style.display = 'flex';
     document.getElementById('user-name').textContent = fullName;
-    const re = document.getElementById('user-role');
-    re.textContent = ROLE_LABELS[actorRole];
-    re.classList.add(actorRole);
 
     if (actorRole === 'admin') {
         document.getElementById('scope-note').textContent = 'Manage teachers and students';
@@ -174,8 +170,13 @@ function renderUsers(users) {
     const tbody = document.getElementById('users-tbody');
     tbody.innerHTML = users.map(u => {
         const isMe = u.email === currentUser.email;
-        const canManage = !isMe && canManageRole(actorRole, u.role);
+        // Self: can edit (to change own password/name) but NOT delete and NOT
+        // change role (the edit modal disables those fields when isMe).
+        // Others: edit + delete only if our role can manage their role.
+        const canEdit = isMe || canManageRole(actorRole, u.role);
+        const canDelete = !isMe && canManageRole(actorRole, u.role);
         const lastSignIn = u.last_sign_in_at ? new Date(u.last_sign_in_at).toLocaleString() : '—';
+        const editAttr = JSON.stringify(u).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
         return `
             <tr>
                 <td><strong>${escapeHtml(u.full_name || '—')}</strong>${isMe ? ' <span class="muted">(you)</span>' : ''}</td>
@@ -184,10 +185,13 @@ function renderUsers(users) {
                 <td>${u.confirmed ? '✓ Confirmed' : '<span class="muted">Pending</span>'}</td>
                 <td class="muted">${lastSignIn}</td>
                 <td style="text-align:right;">
-                    ${canManage
-                        ? `<button class="btn ghost" onclick='editUser(${JSON.stringify(u)})'>Edit</button>
-                           <button class="btn danger" onclick="deleteUser('${u.id}', ${JSON.stringify(u.email).replace(/"/g, '&quot;')})">Delete</button>`
-                        : '<span class="muted">—</span>'}
+                    ${canEdit
+                        ? `<button class="btn ghost" onclick='editUser(${JSON.stringify(u)})'>Edit</button>`
+                        : ''}
+                    ${canDelete
+                        ? `<button class="btn danger" onclick="deleteUser('${u.id}', ${JSON.stringify(u.email).replace(/"/g, '&quot;')})">Delete</button>`
+                        : ''}
+                    ${!canEdit && !canDelete ? '<span class="muted">—</span>' : ''}
                 </td>
             </tr>`;
     }).join('');
@@ -203,6 +207,7 @@ function openCreate() {
     document.getElementById('userForm').reset();
     document.getElementById('userId').value = '';
     document.getElementById('email').disabled = false;
+    document.getElementById('role').disabled = false;
     document.getElementById('modalTitle').textContent = 'Create User';
     document.getElementById('pwHint').textContent = '(min 8 chars, required)';
     document.getElementById('password').required = true;
@@ -217,7 +222,12 @@ function editUser(u) {
     document.getElementById('email').value = u.email;
     document.getElementById('email').disabled = true;
     document.getElementById('role').value = u.role;
-    document.getElementById('modalTitle').textContent = 'Edit User';
+    // When editing yourself, role cannot be changed (would lock you out of
+    // admin tools). Keep the field visible but disabled so the value is
+    // preserved on submit.
+    const isMe = u.email === currentUser.email;
+    document.getElementById('role').disabled = isMe;
+    document.getElementById('modalTitle').textContent = isMe ? 'Edit your account' : 'Edit user';
     document.getElementById('pwHint').textContent = '(leave blank to keep current)';
     document.getElementById('password').required = false;
     document.getElementById('modalAlert').innerHTML = '';

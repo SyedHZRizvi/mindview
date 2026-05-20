@@ -43,7 +43,6 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
     </nav>
     <div class="user-chip">
         <span id="user-name"></span>
-        <span id="user-role" class="role"></span>
         <a href="/api/logout" style="color:#94a3b8;">Logout</a>
     </div>
 </div>
@@ -100,9 +99,6 @@ function render(user) {
 
     document.getElementById('topbar').style.display = 'flex';
     document.getElementById('user-name').textContent = fullName;
-    const roleEl = document.getElementById('user-role');
-    roleEl.textContent = ROLE_LABELS[role];
-    roleEl.classList.add(role);
 
     document.getElementById('welcome').textContent = `Welcome, ${fullName}`;
     const pill = document.getElementById('role-pill');

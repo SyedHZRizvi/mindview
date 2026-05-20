@@ -34,7 +34,6 @@
             <a href="/admin" id="nav-admin" style="display:none;">⚙️ Admin</a>
             <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
                 <span id="user-name" style="font-weight:700;"></span>
-                <span id="user-role" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;"></span>
                 <a href="/api/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
             </span>
         </div>
@@ -49,9 +48,6 @@ const ROLE_COLORS = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', st
 
 function renderUser(fullName, role) {
     document.getElementById('user-name').textContent = fullName;
-    const roleEl = document.getElementById('user-role');
-    roleEl.textContent = ROLE_LABELS[role] || role;
-    roleEl.style.background = ROLE_COLORS[role] || '#64748b';
     document.getElementById('user-chip').style.display = 'inline-flex';
     if (role === 'admin' || role === 'superuser') {
         document.getElementById('nav-manage-users').style.display = 'inline-block';
