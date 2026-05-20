@@ -142,6 +142,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
         </div>
 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Before we tackle limits and tangent slopes, we need an algebraic toolkit that lets us rewrite expressions whose direct substitution gives an indeterminate form. The key technique introduced in 1.1 is <strong>rationalizing</strong> — multiplying numerator and denominator by a carefully chosen <em>conjugate</em> so that the troublesome radical disappears from the denominator (or, more usefully later, from the numerator). The conjugate of \(\sqrt{a}-\sqrt{b}\) is \(\sqrt{a}+\sqrt{b}\), and their product \((\sqrt{a}-\sqrt{b})(\sqrt{a}+\sqrt{b}) = a-b\) is rational.</p>
+                    <p>This matters in calculus because difference quotients of the form \(\frac{\sqrt{x+h}-\sqrt{x}}{h}\) cannot be evaluated at \(h=0\) until the \(h\) is removed from the denominator. Rationalizing the numerator by multiplying by \(\frac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}}\) converts the numerator to \((x+h)-x = h\), which then cancels with the \(h\) in the denominator. The resulting expression has a well-defined limit as \(h \to 0\).</p>
+                    <p>You will also encounter expressions with sums of three radicals or with cube roots, where the conjugate is built from the difference-of-cubes identity \(a^3-b^3 = (a-b)(a^2+ab+b^2)\) instead. The strategy generalizes: identify the algebraic identity that converts an irrational factor to a rational one, then multiply by its other factor over itself.</p>
+                    <ul>
+                      <li><strong>Radical expression</strong> — an algebraic expression containing a root, e.g., \(\sqrt{x}, \sqrt[3]{x+1}\).</li>
+                      <li><strong>Conjugate</strong> — for \(\sqrt{a}-\sqrt{b}\), the conjugate is \(\sqrt{a}+\sqrt{b}\) (same terms, opposite middle sign).</li>
+                      <li><strong>Rationalizing</strong> — multiplying numerator and denominator by a conjugate (or other factor) to eliminate radicals from the desired location.</li>
+                      <li><strong>Difference of squares</strong> — \((a-b)(a+b) = a^2-b^2\); the engine behind rationalizing square-root conjugates.</li>
+                      <li><strong>Indeterminate form</strong> — a substitution that yields \(\tfrac{0}{0}\), requiring algebraic manipulation before the limit is evaluable.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Rationalize the numerator of \(\dfrac{\sqrt{x+9}-3}{x}\) and evaluate the limit as \(x\to 0\).</p>
+                      <p>Multiply top and bottom by the conjugate of the numerator: \[\frac{\sqrt{x+9}-3}{x} \cdot \frac{\sqrt{x+9}+3}{\sqrt{x+9}+3} = \frac{(x+9)-9}{x(\sqrt{x+9}+3)} = \frac{x}{x(\sqrt{x+9}+3)}.\]</p>
+                      <p>Cancel the common \(x\): \(\dfrac{1}{\sqrt{x+9}+3}\). Now substitute \(x=0\): \(\dfrac{1}{\sqrt{9}+3} = \dfrac{1}{6}\).</p>
+                    </div>
+                    <ul>
+                      <li>Multiplying only the numerator (or only the denominator) by the conjugate — you must multiply BOTH or you change the value of the expression.</li>
+                      <li>Forgetting to use the correct sign change: the conjugate of \(\sqrt{a}+\sqrt{b}\) is \(\sqrt{a}-\sqrt{b}\), not \(-\sqrt{a}-\sqrt{b}\).</li>
+                      <li>Squaring instead of using the conjugate: \((\sqrt{a}-\sqrt{b})^2 \ne a-b\); it equals \(a - 2\sqrt{ab} + b\), which is worse.</li>
+                      <li>Cancelling factors that aren't common — only cancel \(x\) after rationalizing has produced a matching factor on top.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "describe examples of real-world applications of rates of change, represented in a variety of ways" and the prerequisite algebra needed to "simplify radical expressions [with] rationalizing denominators" so that limits of the form \(\lim_{h\to 0}\frac{\sqrt{a+h}-\sqrt{a}}{h}\) become evaluable.</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v1')">
                         <span class="vid-icon">📖</span>
@@ -154,6 +182,35 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=Yh-5B9VIHOY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The slope of a tangent line is the central geometric idea that motivates the derivative. A <strong>secant</strong> line through two points \((a, f(a))\) and \((a+h, f(a+h))\) on the graph of \(f\) has slope \(\frac{f(a+h)-f(a)}{h}\) — the average rate of change. As the second point slides toward the first (i.e., \(h\to 0\)), the secant rotates and approaches the <strong>tangent</strong> line at \((a, f(a))\). Its slope, \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\), is what we mean by the <em>instantaneous</em> slope of the curve at that point.</p>
+                    <p>This limiting process is the defining moment of differential calculus: every later formula — the power rule, product rule, chain rule — is a shortcut for this limit. Geometrically, the tangent at \((a, f(a))\) is the unique non-vertical line that "best fits" the curve locally; algebraically, it has equation \(y - f(a) = m(x - a)\) where \(m\) is the limit above.</p>
+                    <p>Not every curve has a tangent at every point. If the difference quotient does not approach a single finite value, the tangent fails to exist — at sharp corners, cusps, or vertical-tangent points. This is the first hint that differentiability is a stronger condition than continuity.</p>
+                    <ul>
+                      <li><strong>Secant line</strong> — a line through two distinct points of a curve; its slope is the average rate of change.</li>
+                      <li><strong>Tangent line</strong> — the limiting position of secant lines as the two intersection points merge.</li>
+                      <li><strong>Slope of tangent at \(x=a\)</strong> — \(m_{tan}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\), provided the limit exists.</li>
+                      <li><strong>Difference quotient</strong> — \(\frac{f(a+h)-f(a)}{h}\); the discrete version that becomes the derivative in the limit.</li>
+                      <li><strong>Tangent equation</strong> — \(y - f(a) = m_{tan}(x - a)\), point-slope form using the computed slope.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the equation of the tangent to \(f(x) = x^2 + 1\) at \(x = 2\).</p>
+                      <p>Set up the difference quotient: \[m_{tan} = \lim_{h\to 0}\frac{f(2+h)-f(2)}{h} = \lim_{h\to 0}\frac{(2+h)^2+1 - (4+1)}{h}.\]</p>
+                      <p>Expand: \((2+h)^2+1 = 4+4h+h^2+1 = 5+4h+h^2\). The numerator becomes \(5+4h+h^2 - 5 = 4h+h^2 = h(4+h)\).</p>
+                      <p>Cancel \(h\): \(\lim_{h\to 0}(4+h) = 4\). So the slope is \(4\) and the tangent equation through \((2,5)\) is \(y - 5 = 4(x-2)\), i.e., \(y = 4x - 3\).</p>
+                    </div>
+                    <ul>
+                      <li>Confusing average rate of change (secant slope, two points) with instantaneous rate of change (tangent slope, one point obtained by a limit).</li>
+                      <li>Substituting \(h=0\) directly into the difference quotient before simplifying — this gives \(\tfrac{0}{0}\), not the slope.</li>
+                      <li>Forgetting to cancel the \(h\) before taking the limit, then concluding the limit doesn't exist.</li>
+                      <li>Using \(f(a)\) in the tangent equation as a slope instead of the computed \(m_{tan}\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "determine, through investigation, the equation of the line tangent to the graph of a polynomial function at a given point, by determining the slope of the line by using a limit, in the form \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v2')">
@@ -168,6 +225,35 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 1.3 promotes the slope idea from pure geometry into the language of <em>rates</em>. The <strong>average rate of change</strong> of a quantity \(y = f(x)\) on \([a, a+h]\) is \(\frac{\Delta y}{\Delta x} = \frac{f(a+h)-f(a)}{h}\) — exactly the secant slope from 1.2, but interpreted in problem units (m/s, dollars per item, °C per minute, etc.). The <strong>instantaneous rate of change</strong> at \(x=a\) is the limit \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\), which is the tangent slope reinterpreted as a rate.</p>
+                    <p>This dual identity — slope and rate — is what makes calculus so universally applicable. A position-time graph \(s(t)\) has secant slopes equal to <em>average velocity</em> and tangent slopes equal to <em>instantaneous velocity</em>. A cost-quantity graph has secants equal to average cost per unit and tangents equal to <em>marginal</em> cost. Even when no graph is drawn, the same algebraic limit governs the underlying rate.</p>
+                    <p>A useful approximation technique: when the limit is hard to evaluate algebraically, use a table of difference quotients with progressively smaller \(h\) (e.g., \(0.1, 0.01, 0.001\)) and look for the value they approach. This <em>numerical</em> estimate of the instantaneous rate is often enough to motivate a conjecture about the exact value.</p>
+                    <ul>
+                      <li><strong>Average rate of change</strong> on \([a,b]\) — \(\frac{f(b)-f(a)}{b-a}\); the slope of the secant.</li>
+                      <li><strong>Instantaneous rate of change</strong> at \(x=a\) — \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\); the slope of the tangent.</li>
+                      <li><strong>Average velocity</strong> — \(\frac{\Delta s}{\Delta t}\); change in displacement over change in time.</li>
+                      <li><strong>Instantaneous velocity</strong> — the limit of average velocities as \(\Delta t \to 0\); equals \(s'(t)\).</li>
+                      <li><strong>Units</strong> — always (output units)/(input units); a rate has dimensions, so keep them attached.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A ball's height in metres is \(h(t) = -5t^2 + 20t\). Find the average velocity on \([1,3]\) and the instantaneous velocity at \(t=1\).</p>
+                      <p>Average velocity: \(\frac{h(3)-h(1)}{3-1} = \frac{(-45+60)-(-5+20)}{2} = \frac{15-15}{2} = 0\) m/s. (The ball is at the same height at \(t=1\) and \(t=3\).)</p>
+                      <p>Instantaneous velocity at \(t=1\): \[\lim_{h\to 0}\frac{-5(1+h)^2+20(1+h) - 15}{h} = \lim_{h\to 0}\frac{-5(1+2h+h^2)+20+20h - 15}{h}.\]</p>
+                      <p>Simplify the numerator: \(-5 -10h -5h^2 + 20+20h -15 = 10h - 5h^2 = 5h(2-h)\). Divide by \(h\): \(5(2-h)\). The limit as \(h\to 0\) is \(10\) m/s.</p>
+                    </div>
+                    <ul>
+                      <li>Reporting an average rate without units, or attaching the wrong units (e.g., m instead of m/s).</li>
+                      <li>Confusing \(h(3) - h(1)\) (a difference of heights) with the average rate (which requires dividing by \(3-1\)).</li>
+                      <li>Plugging \(h=0\) into \(\frac{h(t+h)-h(t)}{h}\) directly — get \(\tfrac{0}{0}\), an indeterminate form requiring simplification.</li>
+                      <li>Sign errors when the displacement is decreasing — instantaneous velocity can be negative, and that information matters physically.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "describe connections between the average rate of change of a function that is smooth (i.e., continuous with no corners) over an interval and the slope of the corresponding secant, and between the instantaneous rate of change of a smooth function at a point and the slope of the tangent at that point."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v3')">
                         <span class="vid-icon">📖</span>
@@ -180,6 +266,40 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=6yp6eRcXoeQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 1.4 introduces the formal idea of a <strong>limit</strong>. We write \(\lim_{x\to a} f(x) = L\) to mean: as \(x\) approaches \(a\) (from either side, but not equal to \(a\)), \(f(x)\) approaches the single value \(L\). The crucial subtlety is that the limit cares about the behaviour of \(f\) <em>near</em> \(a\), not the value of \(f\) <em>at</em> \(a\) — those can disagree, or \(f(a)\) may even be undefined while the limit exists.</p>
+                    <p>One-sided limits sharpen the picture: \(\lim_{x\to a^-} f(x)\) considers only \(x < a\), and \(\lim_{x\to a^+} f(x)\) only \(x > a\). The two-sided limit \(\lim_{x\to a} f(x)\) exists if and only if both one-sided limits exist <em>and</em> agree. When they disagree — typical at jump discontinuities — the two-sided limit does not exist.</p>
+                    <p>Numerical, graphical, and algebraic approaches all play a role: build a table of \(f(x)\) values for \(x\) very close to \(a\); read the limit off a graph by tracing toward \(a\) from each side; or manipulate the algebra (factor, rationalize, common denominator) until direct substitution becomes valid.</p>
+                    <ul>
+                      <li><strong>Limit</strong> — \(\lim_{x\to a} f(x) = L\) if \(f(x)\) can be made arbitrarily close to \(L\) by choosing \(x\) sufficiently close to (but not equal to) \(a\).</li>
+                      <li><strong>Left-hand limit</strong> — \(\lim_{x\to a^-} f(x)\); approach from values less than \(a\).</li>
+                      <li><strong>Right-hand limit</strong> — \(\lim_{x\to a^+} f(x)\); approach from values greater than \(a\).</li>
+                      <li><strong>Two-sided limit existence</strong> — requires \(\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x)\).</li>
+                      <li><strong>Hole/removable discontinuity</strong> — limit exists but \(f(a)\) is undefined or different.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Evaluate \(\lim_{x\to 2} \frac{x^2-4}{x-2}\).</p>
+                      <p>Direct substitution gives \(\tfrac{0}{0}\), an indeterminate form. Factor the numerator: \(x^2-4 = (x-2)(x+2)\).</p>
+                      <p>Cancel the common factor (valid because \(x \ne 2\) in the limit): \(\frac{(x-2)(x+2)}{x-2} = x+2\).</p>
+                      <p>Now substitute: \(\lim_{x\to 2}(x+2) = 4\). The original function has a hole at \(x=2\), but the limit is still well-defined.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Decide whether \(\lim_{x\to 0}\frac{|x|}{x}\) exists.</p>
+                      <p>For \(x>0\), \(|x| = x\) so \(\frac{|x|}{x} = 1\); thus \(\lim_{x\to 0^+}\frac{|x|}{x} = 1\). For \(x<0\), \(|x| = -x\) so \(\frac{|x|}{x} = -1\); thus \(\lim_{x\to 0^-}\frac{|x|}{x} = -1\).</p>
+                      <p>The one-sided limits disagree (\(1 \ne -1\)), so the two-sided limit does not exist.</p>
+                    </div>
+                    <ul>
+                      <li>Concluding the limit equals \(f(a)\) without checking that \(f\) is continuous at \(a\) — for limits of indeterminate forms this is wrong.</li>
+                      <li>Stopping when you see \(\tfrac{0}{0}\) and declaring "does not exist" — \(\tfrac{0}{0}\) means "try harder algebraically", not "no limit".</li>
+                      <li>Forgetting to check both one-sided limits when the function is defined piecewise around \(a\).</li>
+                      <li>Cancelling factors without noting the implicit \(x \ne a\) — the cancellation is legitimate inside a limit because the limit excludes the point itself.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "make connections, with or without graphing technology, between an approximate value of the limit of a function, obtained using a table of values of \(f(x)\) for \(x\) near a given value, and the behaviour of the function near that value."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v4')">
@@ -194,6 +314,39 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 1.5 develops the algebraic <strong>limit laws</strong> that let you compute limits without resorting to tables every time. If \(\lim_{x\to a} f(x)=L\) and \(\lim_{x\to a} g(x)=M\), then the limit of a sum is the sum of limits, product is product of limits, quotient is the quotient (provided \(M\ne 0\)), and constant multiple is the constant times the limit. Polynomial functions, in particular, are continuous everywhere, so for any polynomial \(p\), \(\lim_{x\to a} p(x) = p(a)\).</p>
+                    <p>The harder cases produce the <strong>indeterminate form \(\tfrac{0}{0}\)</strong>, where direct substitution fails. The standard repair toolkit: <em>factor</em> the numerator and denominator and cancel a common factor; <em>rationalize</em> when there are radicals; <em>combine fractions</em> over a common denominator; or apply a <em>change of variable</em> (\(u\)-substitution) so a hidden structure becomes visible.</p>
+                    <p>For example, in \(\lim_{x\to 1}\frac{\sqrt{x}-1}{x-1}\), let \(u=\sqrt{x}\), so \(x=u^2\) and \(x-1 = u^2-1 = (u-1)(u+1)\). The limit becomes \(\lim_{u\to 1}\frac{u-1}{(u-1)(u+1)} = \lim_{u\to 1}\frac{1}{u+1} = \tfrac{1}{2}\). The substitution converted an obscure problem into a routine cancellation.</p>
+                    <ul>
+                      <li><strong>Limit laws</strong> — sum, difference, product, quotient (\(M\ne 0\)), constant multiple, power, and root.</li>
+                      <li><strong>Direct substitution property</strong> — if \(f\) is continuous at \(a\), then \(\lim_{x\to a}f(x)=f(a)\).</li>
+                      <li><strong>Indeterminate form</strong> — \(\tfrac{0}{0}\), \(\tfrac{\infty}{\infty}\), \(\infty-\infty\), \(0\cdot\infty\): direct substitution is uninformative.</li>
+                      <li><strong>Factoring</strong> — common-factor cancellation; the cornerstone repair for \(\tfrac{0}{0}\).</li>
+                      <li><strong>u-substitution</strong> — let \(u\) represent a sub-expression to convert the limit into a simpler one in \(u\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Evaluate \(\lim_{x\to 3}\frac{x^2-9}{x^2-x-6}\).</p>
+                      <p>Substitution gives \(\tfrac{0}{0}\). Factor both: \(x^2-9 = (x-3)(x+3)\); \(x^2-x-6 = (x-3)(x+2)\).</p>
+                      <p>Cancel \((x-3)\): \(\frac{x+3}{x+2}\). Substitute \(x=3\): \(\frac{6}{5}\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Evaluate \(\lim_{x\to 0}\frac{(x+1)^3 - 1}{x}\).</p>
+                      <p>Expand the numerator: \((x+1)^3 = x^3 + 3x^2 + 3x + 1\), so the numerator is \(x^3 + 3x^2 + 3x\).</p>
+                      <p>Factor out \(x\): \(\frac{x(x^2+3x+3)}{x} = x^2+3x+3\). Substitute \(x=0\): \(3\).</p>
+                    </div>
+                    <ul>
+                      <li>Applying the quotient law when the denominator's limit is \(0\) — the law requires \(M\ne 0\) and a separate analysis is needed when it fails.</li>
+                      <li>Forgetting to factor completely; partially factored expressions hide the common factor that would cancel.</li>
+                      <li>Cancelling \(x\) from \(\tfrac{\sin x}{x}\) — these are not algebraic factors; the famous limit equals \(1\), not the result of an illegitimate cancel.</li>
+                      <li>After u-substitution, forgetting to translate the limit endpoint to the new variable (e.g., if \(u=\sqrt{x}\) and \(x\to 4\), then \(u\to 2\)).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.5 — "make connections between the limit of a function as the variable approaches a value … and the value of the function, with attention to the cases when the function is and is not continuous at that value."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v5')">
                         <span class="vid-icon">📖</span>
@@ -206,6 +359,39 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=VIuewVMPuGE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A function \(f\) is <strong>continuous at \(x=a\)</strong> when three conditions all hold: (1) \(f(a)\) is defined, (2) \(\lim_{x\to a} f(x)\) exists, and (3) \(\lim_{x\to a} f(x) = f(a)\). Informally, you can draw the graph through \(x=a\) without lifting your pencil. Any continuous function on its domain is determined by its values at every nearby point.</p>
+                    <p>Three classic ways continuity can fail: a <strong>removable discontinuity</strong> (a "hole" — the limit exists but doesn't match \(f(a)\), or \(f(a)\) is undefined); a <strong>jump discontinuity</strong> (the left- and right-hand limits exist but disagree); and an <strong>infinite discontinuity</strong> (the function blows up to \(\pm\infty\) at \(a\)). Each appears in graphs of rational and piecewise functions, and each requires a different diagnostic.</p>
+                    <p>Continuity matters because powerful theorems (Intermediate Value Theorem, Extreme Value Theorem, the existence of definite integrals later in calculus) all assume continuity on a closed interval. It also matters for differentiation: differentiability implies continuity, so if you can show \(f\) is discontinuous at \(a\), you immediately know \(f'(a)\) doesn't exist.</p>
+                    <ul>
+                      <li><strong>Continuous at \(a\)</strong> — \(\lim_{x\to a} f(x) = f(a)\), with both sides defined.</li>
+                      <li><strong>Continuous on an interval</strong> — continuous at every point of the interval.</li>
+                      <li><strong>Removable discontinuity</strong> — \(\lim_{x\to a}f(x)\) exists but \(f(a)\) is missing or different.</li>
+                      <li><strong>Jump discontinuity</strong> — \(\lim_{x\to a^-}f(x) \ne \lim_{x\to a^+}f(x)\); both finite.</li>
+                      <li><strong>Infinite discontinuity</strong> — vertical asymptote at \(a\); one or both one-sided limits are \(\pm\infty\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Is \(f(x)=\begin{cases}x^2 & x<1\\ 3-x & x\ge 1\end{cases}\) continuous at \(x=1\)?</p>
+                      <p>Check \(f(1)\): the second branch applies, so \(f(1) = 3-1 = 2\). Defined.</p>
+                      <p>Compute one-sided limits. From the left: \(\lim_{x\to 1^-} x^2 = 1\). From the right: \(\lim_{x\to 1^+}(3-x) = 2\).</p>
+                      <p>The one-sided limits disagree (\(1 \ne 2\)), so \(\lim_{x\to 1}f(x)\) does not exist. Therefore \(f\) is not continuous at \(x=1\); it has a jump discontinuity.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: For what value of \(k\) is \(f(x)=\begin{cases}\frac{x^2-4}{x-2} & x\ne 2\\ k & x=2\end{cases}\) continuous at \(x=2\)?</p>
+                      <p>Compute the limit: \(\lim_{x\to 2}\frac{x^2-4}{x-2} = \lim_{x\to 2}(x+2) = 4\). For continuity, we need \(f(2)=k=4\). So \(k=4\) removes the discontinuity.</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting to check all three conditions — a function might satisfy two of them and still be discontinuous.</li>
+                      <li>Assuming a rational function is continuous everywhere — it has discontinuities wherever the denominator vanishes.</li>
+                      <li>Confusing "limit exists" with "continuous": holes give limits but break continuity.</li>
+                      <li>Believing every continuous function is differentiable — \(f(x)=|x|\) is continuous at \(0\) but not differentiable there.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.6 — "compare, through investigation, the calculation of instantaneous rates of change at a point \((a, f(a))\) for polynomial functions \(\big(\)e.g., \(f(x)=x^2, f(x)=x^3\big)\), with and without simplifying the expression \(\frac{f(a+h)-f(a)}{h}\) before substituting values of \(h\) that approach zero," with the prerequisite that \(f\) be continuous at \(a\).</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v6')">
@@ -279,6 +465,35 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
         </div>
 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Sketching the derivative function \(f'\) from a graph of \(f\) — without computing any algebra — is a powerful diagnostic of conceptual understanding. The graph of \(f'\) records the <em>slope</em> of \(f\) at each \(x\)-value as a height. Where \(f\) is rising, \(f'\) is positive (above the \(x\)-axis); where \(f\) is falling, \(f'\) is negative; where \(f\) has a horizontal tangent (local max, local min, or horizontal inflection), \(f'\) crosses the \(x\)-axis.</p>
+                    <p>Steepness translates to magnitude: a steep portion of \(f\) corresponds to a \(y\)-value of \(f'\) that is far from zero, while a nearly-flat portion corresponds to \(f'\) close to zero. A linear segment of \(f\) gives a horizontal segment in \(f'\) (constant slope). A cusp or corner in \(f\) — where the slope jumps or becomes undefined — produces a discontinuity in \(f'\).</p>
+                    <p>Reverse engineering is just as useful: given \(f'\), what does \(f\) look like? Wherever \(f' > 0\), \(f\) ascends; wherever \(f' < 0\), \(f\) descends; the zeros of \(f'\) are the critical points of \(f\). The vertical position of \(f\) is one degree of freedom we cannot recover (an arbitrary constant), but the shape is determined.</p>
+                    <ul>
+                      <li><strong>Slope-to-height correspondence</strong> — slope of \(f\) at \(x=a\) equals height of \(f'\) at \(x=a\).</li>
+                      <li><strong>Critical \(x\)-value</strong> — where \(f'(x)=0\) or is undefined; appears as an \(x\)-intercept or hole in the graph of \(f'\).</li>
+                      <li><strong>Sign chart</strong> — divide the \(x\)-axis at critical points; on each region record the sign of \(f'\); use to predict where \(f\) rises or falls.</li>
+                      <li><strong>Cusp/corner</strong> — sharp change of direction in \(f\); the derivative has a jump discontinuity or one-sided limits that disagree.</li>
+                      <li><strong>Antidifference</strong> — informally, "reading backward" from \(f'\) to \(f\) is the reverse of differentiation.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: \(f\) is a parabola opening up with vertex at \((2,-3)\). Sketch \(f'\).</p>
+                      <p>At \(x=2\), \(f\) has a horizontal tangent, so \(f'(2)=0\); the graph of \(f'\) crosses the \(x\)-axis at \(x=2\).</p>
+                      <p>For \(x<2\), \(f\) is decreasing — \(f'\) is negative there. For \(x>2\), \(f\) is increasing — \(f'\) is positive.</p>
+                      <p>The further from \(x=2\) we go, the steeper \(f\) becomes (in either direction), so \(|f'|\) grows linearly. The result: \(f'\) is a straight line through \((2,0)\) with positive slope — consistent with the fact that \(f(x) = a(x-2)^2 - 3\) gives \(f'(x) = 2a(x-2)\), a linear function.</p>
+                    </div>
+                    <ul>
+                      <li>Plotting \(f'\) as a shifted copy of \(f\) — the relationship is between slope and height, not between heights.</li>
+                      <li>Forgetting that \(f'=0\) appears at MAX, MIN, AND horizontal inflection points; you can't tell which from \(f'\) alone without checking sign changes.</li>
+                      <li>Drawing a continuous \(f'\) through a corner of \(f\) — corners make \(f'\) discontinuous.</li>
+                      <li>Reading "above the axis" as "function is positive" — the graph being plotted is \(f'\), so above the axis means \(f' > 0\), i.e., \(f\) is increasing.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.4 — "sketch the graph of the derivative function, given the graph of the function, and vice versa, by recognizing connections between the slope of the tangent line at a point and the value of the derivative."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v7')">
                         <span class="vid-icon">📖</span>
@@ -291,6 +506,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=cW8FviXyP9I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>derivative function</strong> \(f'\) is built point-by-point from the limit definition: \(f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\). Rather than computing a slope at a specific number \(x=a\), we treat \(x\) as a variable and produce a new function whose value at any \(x\) is the slope of \(f\) at that location. This is the <em>function</em> version of the tangent-slope idea.</p>
+                    <p>Computing derivatives from <em>first principles</em> means executing this limit explicitly, without invoking the power rule or other shortcuts. The procedure is mechanical but fragile: (1) write the difference quotient \(\frac{f(x+h)-f(x)}{h}\); (2) expand and simplify the numerator until \(h\) factors out; (3) cancel the \(h\); (4) take the limit by substituting \(h=0\). Algebra errors at step (2) are the usual failure mode.</p>
+                    <p>Why bother when the power rule gives the answer in one line? Because first principles is the only proof that the power rule works, and because some functions (with absolute values, piecewise definitions, or non-standard bases) yield to first principles before any shortcut applies. The technique is also the bridge to the formal definition of the derivative used in university analysis.</p>
+                    <ul>
+                      <li><strong>Derivative function</strong> — \(f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\); domain consists of \(x\) where this limit exists.</li>
+                      <li><strong>First principles</strong> — computing \(f'\) directly from the limit, not via shortcut rules.</li>
+                      <li><strong>Difference quotient</strong> — \(\frac{f(x+h)-f(x)}{h}\); the algebraic object on which the limit is taken.</li>
+                      <li><strong>Differentiable at \(a\)</strong> — \(f'(a)\) exists as a finite real number.</li>
+                      <li><strong>Leibniz notation</strong> — \(\frac{dy}{dx}\) as an alternative to \(f'(x)\), emphasizing the variable of differentiation.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Compute \(f'(x)\) from first principles for \(f(x) = 3x^2 - 2x\).</p>
+                      <p>Difference quotient: \(\frac{f(x+h)-f(x)}{h} = \frac{3(x+h)^2 - 2(x+h) - (3x^2 - 2x)}{h}\).</p>
+                      <p>Expand: \(3(x+h)^2 = 3x^2 + 6xh + 3h^2\), so the numerator is \(3x^2 + 6xh + 3h^2 - 2x - 2h - 3x^2 + 2x = 6xh + 3h^2 - 2h\).</p>
+                      <p>Factor \(h\): \(\frac{h(6x + 3h - 2)}{h} = 6x + 3h - 2\).</p>
+                      <p>Take the limit as \(h\to 0\): \(f'(x) = 6x - 2\). (Confirm with the power rule: \(f'(x) = 6x - 2\). Agreement.)</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Compute \(f'(x)\) from first principles for \(f(x) = \sqrt{x}\).</p>
+                      <p>Difference quotient: \(\frac{\sqrt{x+h} - \sqrt{x}}{h}\). Multiply top and bottom by the conjugate \(\sqrt{x+h}+\sqrt{x}\): \[\frac{(x+h)-x}{h(\sqrt{x+h}+\sqrt{x})} = \frac{h}{h(\sqrt{x+h}+\sqrt{x})} = \frac{1}{\sqrt{x+h}+\sqrt{x}}.\]</p>
+                      <p>Limit as \(h\to 0\): \(f'(x) = \frac{1}{2\sqrt{x}}\) — confirming the power rule for \(n=\tfrac{1}{2}\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting to include the \(-f(x)\) (with both terms!) in the numerator; many students lose a minus sign here.</li>
+                      <li>Treating \(h\) as a constant after substitution: it isn't — it is the variable of the limit.</li>
+                      <li>Cancelling \(h\) before factoring it out — the cancellation requires it to be a common factor.</li>
+                      <li>Forgetting that the result is a function of \(x\), not a number — students sometimes substitute the original \(x\) value before taking the limit, defeating the purpose.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "definition of the derivative function of a function \(f\) at \(x\), denoted \(f'(x)\) … and the connection to instantaneous rates of change; determine, through investigation, … \(f'(x)\) from first principles, using the formal definition."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v8')">
@@ -305,6 +555,39 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 2.2 promotes the power rule from a single-term shortcut to a tool for differentiating any polynomial. Three building blocks combine: the <strong>power rule</strong> \(\frac{d}{dx}[x^n] = n x^{n-1}\) for any real \(n\); the <strong>constant multiple rule</strong> \(\frac{d}{dx}[c\cdot f(x)] = c\cdot f'(x)\); and the <strong>sum/difference rule</strong> \(\frac{d}{dx}[f(x)\pm g(x)] = f'(x)\pm g'(x)\). Together they allow term-by-term differentiation: differentiate each monomial separately, attach its coefficient, then sum.</p>
+                    <p>The derivative of a constant is zero — \(\frac{d}{dx}[c] = 0\) — because the graph of a constant is a horizontal line with slope zero. Equivalently, the power rule applied to \(c = c\cdot x^0\) gives \(0\cdot c\cdot x^{-1} = 0\). Knowing this saves time: any constant term in a polynomial vanishes under differentiation.</p>
+                    <p>The power rule also handles fractional and negative exponents, which is essential once we rewrite radicals (\(\sqrt{x} = x^{1/2}\)) and reciprocals (\(\tfrac{1}{x^2} = x^{-2}\)) in exponent form. So before differentiating, simplify each term to a single power of \(x\) — this prevents the temptation to apply the quotient rule when it isn't needed.</p>
+                    <ul>
+                      <li><strong>Power rule</strong> — \(\frac{d}{dx}[x^n] = n x^{n-1}\), valid for any real \(n\).</li>
+                      <li><strong>Constant multiple rule</strong> — \(\frac{d}{dx}[c f(x)] = c f'(x)\).</li>
+                      <li><strong>Sum/difference rule</strong> — derivative of a sum is the sum of derivatives.</li>
+                      <li><strong>Derivative of a constant</strong> — \(\frac{d}{dx}[c] = 0\).</li>
+                      <li><strong>Term-by-term differentiation</strong> — combine the three rules to differentiate any polynomial.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(p(x) = 4x^5 - 7x^3 + \tfrac{2}{x} - 6\sqrt{x} + 11\).</p>
+                      <p>Rewrite \(\tfrac{2}{x} = 2x^{-1}\) and \(6\sqrt{x} = 6 x^{1/2}\). The polynomial becomes \(4x^5 - 7x^3 + 2x^{-1} - 6x^{1/2} + 11\).</p>
+                      <p>Apply the power rule term-by-term: \[p'(x) = 20x^4 - 21x^2 - 2x^{-2} - 3x^{-1/2} + 0.\]</p>
+                      <p>Rewrite in original form if desired: \(p'(x) = 20x^4 - 21x^2 - \tfrac{2}{x^2} - \tfrac{3}{\sqrt{x}}\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the slope of \(y = x^4 - 3x^2 + 1\) at \(x=-1\).</p>
+                      <p>Differentiate: \(y' = 4x^3 - 6x\). Substitute \(x=-1\): \(y'(-1) = 4(-1)^3 - 6(-1) = -4 + 6 = 2\). The tangent slope at \(x=-1\) is \(2\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting to reduce the exponent by one: \(\frac{d}{dx}[x^5] = 5x^4\), not \(5x^5\).</li>
+                      <li>Mishandling \(\tfrac{1}{x}\): it is \(x^{-1}\), so its derivative is \(-x^{-2} = -\tfrac{1}{x^2}\), not \(\ln x\) or anything else.</li>
+                      <li>Forgetting that the derivative of a constant is zero — students sometimes carry the constant unchanged.</li>
+                      <li>Multiplying instead of subtracting the exponent's coefficient: from \(7x^3\) the derivative is \(21x^2\), not \(7\cdot 3 \cdot x^3\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.4 — "verify, through investigation, the constant, constant multiple, sum, and difference rules graphically and numerically (e.g., using technology), and read and interpret proofs involving \(\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\) of the constant, constant multiple, sum, and difference rules."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v9')">
                         <span class="vid-icon">📖</span>
@@ -317,6 +600,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=0aZxSwwzN-o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>When a function is a product \(y = f(x)g(x)\), the temptation is to differentiate each factor and multiply, but this is incorrect. The correct formula, the <strong>product rule</strong>, is \[(fg)' = f'g + fg'.\] Both factors are changing simultaneously, and the total instantaneous change picks up contributions from each — \(f'g\) (the rate at which \(f\) changes weighted by current \(g\)) plus \(fg'\) (rate of \(g\) weighted by current \(f\)). The derivation from first principles \(\lim_{h\to 0}\frac{f(x+h)g(x+h) - f(x)g(x)}{h}\) requires a clever "add-and-subtract" trick \(f(x+h)g(x+h) - f(x+h)g(x) + f(x+h)g(x) - f(x)g(x)\), which factors into the two product-rule terms.</p>
+                    <p>The product rule applies whenever you can identify two non-trivially-variable factors. If one factor is a constant, the constant-multiple rule already handles it. If a factor is itself a composition, you'll need to layer the chain rule on top.</p>
+                    <p>A common strategic question: should you expand first, then differentiate, or apply the product rule directly? For small polynomial products either approach works; expanding is sometimes faster. For factors that don't expand cleanly (radicals, transcendentals later in Unit 5, or compositions), the product rule is essential.</p>
+                    <ul>
+                      <li><strong>Product rule</strong> — \((fg)' = f'g + fg'\); symmetric in \(f\) and \(g\).</li>
+                      <li><strong>Identify factors</strong> — choose \(f\) and \(g\) such that each is easy to differentiate.</li>
+                      <li><strong>Both terms required</strong> — \((fg)' \ne f' g'\); leaving out the second cross term is the canonical error.</li>
+                      <li><strong>Generalizes to three factors</strong> — \((fgh)' = f'gh + fg'h + fgh'\); each factor takes its turn being differentiated.</li>
+                      <li><strong>Strategic expansion</strong> — sometimes faster to multiply out, then use the power rule.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = (x^2 + 3)(2x - 5)\) using the product rule.</p>
+                      <p>Let \(f = x^2 + 3\), \(g = 2x - 5\). Then \(f' = 2x\) and \(g' = 2\).</p>
+                      <p>Apply the rule: \(y' = f'g + fg' = (2x)(2x-5) + (x^2+3)(2)\).</p>
+                      <p>Expand: \((2x)(2x-5) = 4x^2 - 10x\); \((x^2+3)(2) = 2x^2 + 6\). Sum: \(6x^2 - 10x + 6\).</p>
+                      <p>Cross-check by expanding first: \(y = (x^2+3)(2x-5) = 2x^3 - 5x^2 + 6x - 15\). Differentiate: \(y' = 6x^2 - 10x + 6\). Agreement.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x^2\sqrt{x+1}\).</p>
+                      <p>Let \(f = x^2\), \(g = (x+1)^{1/2}\). Then \(f' = 2x\), and (using chain rule on \(g\)) \(g' = \tfrac{1}{2}(x+1)^{-1/2} \cdot 1 = \tfrac{1}{2\sqrt{x+1}}\).</p>
+                      <p>Product rule: \(y' = 2x\sqrt{x+1} + x^2 \cdot \tfrac{1}{2\sqrt{x+1}} = \tfrac{4x(x+1) + x^2}{2\sqrt{x+1}} = \tfrac{5x^2 + 4x}{2\sqrt{x+1}}\).</p>
+                    </div>
+                    <ul>
+                      <li>Writing \((fg)' = f'g'\) — this is the most common error in this unit.</li>
+                      <li>Forgetting one of the two terms; the rule is symmetric and you need both.</li>
+                      <li>Computing \(f'\) and then carrying \(g\) untouched into the second term too — re-read the formula.</li>
+                      <li>Forgetting the chain rule on factors that are compositions (e.g., \((x+1)^{1/2}\)).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.5 — "verify, through investigation, using technology, the chain rule and the product rule (e.g., compare … the graph of \(f(x)=g(x)h(x)\) and the graph of the derivative \(f'(x)\), where \(f(x)\) is determined by applying the product rule … to the graphs of \(g(x)\) and \(h(x)\))."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v10')">
@@ -331,6 +649,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>quotient rule</strong> handles derivatives of fractions: \[\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}, \qquad g(x) \ne 0.\] The sign and order matter: it is \(f' g\) minus \(f g'\), not the other way around. A standard mnemonic — "low d-high minus high d-low, over the square of what's below" — encodes the formula in a memorable rhythm.</p>
+                    <p>The quotient rule is a consequence of the product rule plus the chain rule. Writing \(\tfrac{f}{g} = f \cdot g^{-1}\) and applying the product rule gives \(f' g^{-1} + f \cdot (-g^{-2}) g'\), which simplifies to \(\tfrac{f' g - f g'}{g^2}\). Knowing this derivation explains why the \(g^2\) appears in the denominator and locks in the sign convention.</p>
+                    <p>When should you use it? Only when the denominator genuinely involves \(x\). If the denominator is a constant, factor it out and use the constant-multiple rule. If the numerator is a constant, rewrite as \(c\cdot g(x)^{-1}\) and use the chain rule. The quotient rule is reserved for honest \(x\)-in-both-places fractions.</p>
+                    <ul>
+                      <li><strong>Quotient rule</strong> — \(\left(\tfrac{f}{g}\right)' = \tfrac{f'g - fg'}{g^2}\), \(g\ne 0\).</li>
+                      <li><strong>Sign convention</strong> — \(f'g\) is positive, \(fg'\) is subtracted; the order matters and reversing it is a common mistake.</li>
+                      <li><strong>Square the denominator</strong> — the \(g^2\) is required; forgetting it produces the wrong rate.</li>
+                      <li><strong>Equivalent product form</strong> — \(\tfrac{f}{g} = f g^{-1}\); useful when chain rule is more familiar.</li>
+                      <li><strong>Domain restriction</strong> — \(g(x)=0\) is excluded; the rule fails (and so does the function) there.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \dfrac{2x+1}{x^2-3}\).</p>
+                      <p>Let \(f = 2x+1\), \(g = x^2-3\). Then \(f' = 2\), \(g' = 2x\).</p>
+                      <p>Apply the rule: \(y' = \dfrac{f'g - fg'}{g^2} = \dfrac{2(x^2-3) - (2x+1)(2x)}{(x^2-3)^2}\).</p>
+                      <p>Expand the numerator: \(2x^2 - 6 - (4x^2 + 2x) = 2x^2 - 6 - 4x^2 - 2x = -2x^2 - 2x - 6\).</p>
+                      <p>So \(y' = \dfrac{-2x^2 - 2x - 6}{(x^2-3)^2} = \dfrac{-2(x^2 + x + 3)}{(x^2-3)^2}\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the slope of \(y = \dfrac{x^2}{x+1}\) at \(x=2\).</p>
+                      <p>Let \(f = x^2, g = x+1\). Then \(f' = 2x, g' = 1\). The derivative is \(y' = \dfrac{2x(x+1) - x^2 \cdot 1}{(x+1)^2} = \dfrac{2x^2 + 2x - x^2}{(x+1)^2} = \dfrac{x^2 + 2x}{(x+1)^2}\).</p>
+                      <p>At \(x=2\): \(y'(2) = \dfrac{4 + 4}{9} = \dfrac{8}{9}\).</p>
+                    </div>
+                    <ul>
+                      <li>Reversing the numerator sign: \(\tfrac{fg' - f'g}{g^2}\) gives the negative of the correct derivative.</li>
+                      <li>Forgetting to square the denominator — writing \(g\) instead of \(g^2\) at the bottom.</li>
+                      <li>Applying the rule when the denominator is a constant (e.g., \(\tfrac{x^2}{5}\)) — use the constant-multiple rule instead.</li>
+                      <li>Skipping simplification of the numerator, then misreading the final expression as zero when it isn't.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.6 — "determine algebraically the derivatives of polynomial functions, and use these derivatives to determine the instantaneous rate of change at a point, and to determine point(s) at which a given rate of change occurs," extended in the textbook treatment to rational functions via the quotient rule.</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v11')">
                         <span class="vid-icon">📖</span>
@@ -343,6 +696,38 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=_HRT0AouBZw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 2.5 introduces the <strong>chain rule</strong>, the most important differentiation rule in calculus. If \(y\) is a function of \(u\) and \(u\) is a function of \(x\), then \[\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}.\] Equivalently, for the composition \(h(x) = f(g(x))\), \(h'(x) = f'(g(x))\cdot g'(x)\) — differentiate the outer function (leaving the inner alone), then multiply by the derivative of the inner.</p>
+                    <p>The intuition is that rates compose: if \(y\) changes 3 units for every unit of \(u\), and \(u\) changes 5 units for every unit of \(x\), then \(y\) changes \(3\cdot 5 = 15\) units per unit of \(x\). The chain rule formalizes this cascade. Almost every function in the wild is a composition once you strip away simple polynomials, so practising chain rule patterns is essential for the rest of the course.</p>
+                    <p>Layer the chain rule with itself for deeper nesting: \(\frac{d}{dx}f(g(h(x))) = f'(g(h(x)))\cdot g'(h(x))\cdot h'(x)\). The pattern is "differentiate from outside in, multiplying by each inner derivative as you peel off a layer."</p>
+                    <ul>
+                      <li><strong>Composition</strong> — \(h(x) = f(g(x))\) means apply \(g\) first, then \(f\); \(g\) is "inner", \(f\) is "outer".</li>
+                      <li><strong>Chain rule</strong> — \(\frac{d}{dx}f(g(x)) = f'(g(x))\cdot g'(x)\).</li>
+                      <li><strong>Leibniz form</strong> — \(\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}\); helpful when the layers have natural names.</li>
+                      <li><strong>Inner derivative</strong> — never forget the \(g'(x)\) factor; missing it is the single biggest chain-rule error.</li>
+                      <li><strong>General power rule</strong> — \(\frac{d}{dx}[g(x)]^n = n[g(x)]^{n-1}\cdot g'(x)\); the most-used special case of the chain rule.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = (3x^2 - 7)^5\).</p>
+                      <p>Outer: \(u^5\), so \(\frac{dy}{du} = 5u^4\). Inner: \(u = 3x^2 - 7\), so \(\frac{du}{dx} = 6x\).</p>
+                      <p>Chain rule: \(\frac{dy}{dx} = 5u^4 \cdot 6x = 30x(3x^2 - 7)^4\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \sqrt{1 + x^2}\) (a triple-layer composition once we write \(\sqrt{u} = u^{1/2}\)).</p>
+                      <p>Rewrite: \(y = (1+x^2)^{1/2}\). Apply the general power rule: \(y' = \tfrac{1}{2}(1+x^2)^{-1/2}\cdot 2x = \dfrac{x}{\sqrt{1+x^2}}\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the inner derivative — writing \((3x^2-7)^5\)' as \(5(3x^2-7)^4\) without the \(6x\) factor.</li>
+                      <li>Differentiating both the inner and the outer at the same time (e.g., trying to "expand" \(u^5\) into \(x\) immediately).</li>
+                      <li>Mis-identifying outer and inner for square roots: \(\sqrt{f(x)}\) has outer \(\sqrt{u}\) and inner \(f(x)\); the derivative is \(\tfrac{f'(x)}{2\sqrt{f(x)}}\).</li>
+                      <li>Stopping after one layer for a triple composition — keep multiplying derivatives as you unwrap.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.5 — "verify, through investigation, using technology, the chain rule and the product rule (e.g., compare … the graph of \(f(x)=g(h(x))\) and the graph of the derivative \(f'(x)\) determined by applying the chain rule)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v12')">
@@ -357,6 +742,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p><strong>Implicit differentiation</strong> is the technique for finding \(\frac{dy}{dx}\) when \(y\) is defined implicitly by an equation in \(x\) and \(y\) — for example \(x^2 + y^2 = 25\) or \(x^3 + y^3 = 6xy\) — rather than as an explicit function \(y = f(x)\). The procedure: differentiate both sides of the equation with respect to \(x\), treating \(y\) as a differentiable function of \(x\) and applying the chain rule every time \(y\) is differentiated; then solve algebraically for \(\frac{dy}{dx}\).</p>
+                    <p>The key mechanical move is that \(\frac{d}{dx}[y^n] = n y^{n-1} \cdot \frac{dy}{dx}\), not just \(n y^{n-1}\). The extra \(\frac{dy}{dx}\) factor is the chain rule contribution: \(y\) is itself changing as \(x\) changes, and that change rate must be carried along. The same applies to \(\frac{d}{dx}[\sin y] = \cos y \cdot \frac{dy}{dx}\), \(\frac{d}{dx}[xy] = y + x\frac{dy}{dx}\) (product rule!), and so on.</p>
+                    <p>Why bother? Some curves — circles, ellipses, the folium of Descartes \(x^3 + y^3 = 6xy\) — cannot be expressed as a single function \(y = f(x)\), yet they have well-defined tangent slopes at most points. Implicit differentiation gives those slopes without solving for \(y\). It also dramatically simplifies derivatives that, when written explicitly, would be lengthy.</p>
+                    <ul>
+                      <li><strong>Implicit equation</strong> — an equation relating \(x\) and \(y\) that may define multiple branches of \(y\).</li>
+                      <li><strong>Implicit differentiation</strong> — apply \(\frac{d}{dx}\) to both sides; treat \(y\) as \(y(x)\); attach \(\frac{dy}{dx}\) whenever \(y\) is differentiated.</li>
+                      <li><strong>Chain rule on \(y\)-terms</strong> — \(\frac{d}{dx}[y^n] = n y^{n-1} y'\); the most common application.</li>
+                      <li><strong>Product rule on \(xy\)-terms</strong> — \(\frac{d}{dx}[xy] = y + x y'\), not just \(y'\).</li>
+                      <li><strong>Solve for \(y'\)</strong> — collect all \(y'\) terms on one side; factor; divide.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find \(\frac{dy}{dx}\) for \(x^2 + y^2 = 25\), then the slope at \((3,4)\).</p>
+                      <p>Differentiate both sides: \(2x + 2y\frac{dy}{dx} = 0\).</p>
+                      <p>Solve for \(\frac{dy}{dx}\): \(2y\frac{dy}{dx} = -2x \Rightarrow \frac{dy}{dx} = -\frac{x}{y}\).</p>
+                      <p>At \((3,4)\): \(\frac{dy}{dx} = -\tfrac{3}{4}\). The tangent to the circle at \((3,4)\) has slope \(-\tfrac{3}{4}\), as expected from elementary geometry (perpendicular to the radius).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find \(\frac{dy}{dx}\) for \(x^2 y + xy^2 = 6\).</p>
+                      <p>Differentiate term by term (each is a product, so use product rule and chain rule): \(\frac{d}{dx}[x^2 y] = 2xy + x^2 y'\); \(\frac{d}{dx}[xy^2] = y^2 + x\cdot 2y y' = y^2 + 2xy y'\).</p>
+                      <p>So \(2xy + x^2 y' + y^2 + 2xy y' = 0\). Group \(y'\) terms: \((x^2 + 2xy)y' = -(2xy + y^2)\).</p>
+                      <p>Solve: \(y' = -\frac{2xy + y^2}{x^2 + 2xy} = -\frac{y(2x + y)}{x(x + 2y)}\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the \(\frac{dy}{dx}\) factor when differentiating a \(y\)-term — by far the most common mistake.</li>
+                      <li>Treating \(xy\) as a single variable rather than a product; \(\frac{d}{dx}[xy] = y + xy'\).</li>
+                      <li>Failing to solve algebraically for \(\frac{dy}{dx}\) at the end — the answer should be in terms of both \(x\) and \(y\).</li>
+                      <li>Plugging a point in too early; differentiate first, then substitute.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.5 (extension) — application of the chain rule to relations defined implicitly, supporting tangent-line problems on curves that cannot be expressed as \(y=f(x)\).</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('yt5')">
                         <span class="vid-icon">📖</span>
@@ -369,6 +789,40 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://www.youtube.com/watch?v=LGY-DjFsALc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p><strong>Higher-order derivatives</strong> are derivatives of derivatives. If \(f'(x)\) is the first derivative, then \(f''(x)\) (read "f double-prime") is the derivative of \(f'(x)\) — the second derivative. Continuing, \(f'''(x), f^{(4)}(x), \ldots, f^{(n)}(x)\) record successive instantaneous rates of change. Each takes the previous derivative as input and differentiates again with the usual rules.</p>
+                    <p>Physical meaning: if \(s(t)\) is position, then \(s'(t) = v(t)\) is velocity, \(s''(t) = a(t)\) is acceleration, and \(s'''(t)\) is "jerk" (the rate of change of acceleration). Knowing one of these tells you about the others — for example, an object's velocity is constant iff its acceleration is zero, and its acceleration is positive iff its velocity is increasing.</p>
+                    <p>In curve sketching (Unit 4), \(f''(x)\) determines concavity: where \(f''>0\), the graph of \(f\) is concave up (smiling); where \(f''<0\), concave down (frowning); where \(f''\) changes sign, the graph has an inflection point. So higher-order derivatives are not just abstract: they encode geometric and physical information the first derivative alone cannot.</p>
+                    <ul>
+                      <li><strong>Second derivative</strong> — \(f''(x) = \frac{d}{dx}[f'(x)]\); also \(\frac{d^2 y}{dx^2}\).</li>
+                      <li><strong>Higher-order derivative</strong> — \(f^{(n)}(x)\), iterated differentiation \(n\) times.</li>
+                      <li><strong>Position/velocity/acceleration</strong> — \(s(t), s'(t)=v(t), s''(t)=a(t)\).</li>
+                      <li><strong>Concavity sign</strong> — \(f''>0\) means concave up; \(f''<0\) means concave down.</li>
+                      <li><strong>Inflection point</strong> — where \(f''\) changes sign; concavity reverses.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: For \(f(x) = x^4 - 6x^2 + 5\), find \(f'(x), f''(x), f'''(x)\).</p>
+                      <p>\(f'(x) = 4x^3 - 12x\).</p>
+                      <p>\(f''(x) = 12x^2 - 12\).</p>
+                      <p>\(f'''(x) = 24x\). (And \(f^{(4)}(x) = 24\), \(f^{(5)}(x) = 0\) — eventually a polynomial's derivatives become zero.)</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A particle has position \(s(t) = t^3 - 6t^2 + 9t\) (in metres, \(t\) in seconds). Find velocity and acceleration at \(t=2\).</p>
+                      <p>Velocity: \(v(t) = s'(t) = 3t^2 - 12t + 9\). At \(t=2\): \(v(2) = 12 - 24 + 9 = -3\) m/s (moving backward).</p>
+                      <p>Acceleration: \(a(t) = s''(t) = 6t - 12\). At \(t=2\): \(a(2) = 0\) m/s². (Velocity is at its minimum and about to start increasing.)</p>
+                    </div>
+                    <ul>
+                      <li>Confusing \(f''(x)\) with \([f'(x)]^2\) — they are different; \(f''\) is a second derivative, \([f']^2\) is a square.</li>
+                      <li>Forgetting to differentiate each time before substituting numerical values.</li>
+                      <li>Stopping after one differentiation when asked for the second derivative.</li>
+                      <li>Mistakenly thinking acceleration is the second derivative of velocity — it is the first derivative of velocity, equivalently the second derivative of position.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.5 — "verify that the second derivative provides information about concavity and points of inflection," and B1.4 — "describe key features of a polynomial function … and use the connections to make connections between … position, velocity, and acceleration functions in real-world problems."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('yt6')">
@@ -445,6 +899,39 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
         </div>
 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 3.1 applies derivatives to <strong>rectilinear motion</strong> — motion along a straight line. If \(s(t)\) gives an object's <em>position</em> (signed displacement from a fixed origin) at time \(t\), then \(v(t) = s'(t)\) is the instantaneous <strong>velocity</strong> and \(a(t) = v'(t) = s''(t)\) is the instantaneous <strong>acceleration</strong>. The signs of these functions carry physical meaning: \(v > 0\) means motion in the positive direction, \(v < 0\) means motion in the negative direction, and \(v = 0\) marks an instant when the object is momentarily at rest (possibly reversing direction).</p>
+                    <p>Speed and velocity are not the same in calculus: <em>speed</em> is \(|v(t)|\), always non-negative, while <em>velocity</em> is the signed quantity \(v(t)\). An object's speed is increasing when \(v\) and \(a\) have the <em>same</em> sign — the engine pushes it in the direction it's already moving. Its speed is decreasing when they have opposite signs — the brake works against motion.</p>
+                    <p>Free-fall and projectile problems give clean examples. For a ball thrown upward, the position function is typically \(s(t) = -\tfrac{1}{2}gt^2 + v_0 t + s_0\). Differentiation gives \(v(t) = -gt + v_0\), and the ball reaches maximum height when \(v(t)=0\), i.e., \(t = v_0/g\). The acceleration is constant: \(a(t) = -g\).</p>
+                    <ul>
+                      <li><strong>Position function</strong> — \(s(t)\); signed displacement from a reference origin.</li>
+                      <li><strong>Velocity</strong> — \(v(t) = s'(t)\); rate of change of position; can be positive or negative.</li>
+                      <li><strong>Acceleration</strong> — \(a(t) = v'(t) = s''(t)\); rate of change of velocity.</li>
+                      <li><strong>Speed</strong> — \(|v(t)|\); always non-negative; magnitude of velocity.</li>
+                      <li><strong>At rest</strong> — \(v(t) = 0\); the object is momentarily stationary, often a turning point.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A particle moves along a line with \(s(t) = t^3 - 9t^2 + 15t + 5\) (metres, seconds). When is the particle at rest? What is its acceleration then?</p>
+                      <p>Velocity: \(v(t) = 3t^2 - 18t + 15 = 3(t^2 - 6t + 5) = 3(t-1)(t-5)\). At rest when \(v(t)=0\): \(t=1\) or \(t=5\).</p>
+                      <p>Acceleration: \(a(t) = 6t - 18\). At \(t=1\): \(a=-12\) m/s² (deceleration; direction change ahead). At \(t=5\): \(a=12\) m/s² (turning back into positive motion).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A ball is thrown upward with initial velocity 20 m/s from a height of 5 m. Using \(g=10\) m/s², find the maximum height.</p>
+                      <p>Position: \(s(t) = -5t^2 + 20t + 5\). Velocity: \(v(t) = -10t + 20\). Max height when \(v(t)=0\): \(t = 2\) s.</p>
+                      <p>\(s(2) = -20 + 40 + 5 = 25\) m. The ball reaches a maximum height of 25 m.</p>
+                    </div>
+                    <ul>
+                      <li>Confusing speed with velocity — a problem asking for "when speed is decreasing" requires comparing signs of \(v\) and \(a\), not just looking at \(v\).</li>
+                      <li>Assuming the object stops permanently at \(v=0\) — usually it reverses direction.</li>
+                      <li>Forgetting to differentiate twice when asked for acceleration; \(a(t) = s''(t)\), not \(s'(t)\).</li>
+                      <li>Ignoring direction sign — \(v(t)=-5\) m/s means moving backward at 5 m/s, not "negative speed".</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.4 — "solve problems, using the derivative, that involve instantaneous rates of change, including problems arising from real-world applications (e.g., population growth, radioactive decay, temperature changes, hours of daylight, heights of tides), given the equation of a function (a polynomial, rational, sinusoidal, exponential, logarithmic, etc. function)" — applied here to displacement-velocity-acceleration.</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v13')">
                         <span class="vid-icon">📖</span>
@@ -471,6 +958,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>Extreme Value Theorem</strong> guarantees that any function continuous on a closed interval \([a,b]\) attains an absolute maximum and an absolute minimum somewhere on that interval. The strategy to find them is the <strong>closed-interval method</strong>: (1) compute \(f'(x)\); (2) find <em>critical numbers</em> in \((a,b)\) — values where \(f'(x)=0\) or \(f'(x)\) is undefined; (3) evaluate \(f\) at every critical number and at both endpoints; (4) the largest value is the absolute max, the smallest is the absolute min.</p>
+                    <p>The reason this finite-list method works: an absolute extremum can occur only at a point where the tangent is horizontal (\(f'=0\)), where the derivative fails to exist (corners, cusps), or at the boundary of the interval. The critical numbers cover the first two cases; the endpoints cover the last. Test all candidates and compare.</p>
+                    <p>This differs from <em>local</em> extrema (covered in Unit 4), which require sign-change tests. For absolute extrema on a closed interval, simply comparing function values at the finite list is enough. If the interval is open or unbounded, the EVT doesn't apply and you need additional arguments (asymptotics, monotonicity) to guarantee existence.</p>
+                    <ul>
+                      <li><strong>Absolute (global) maximum</strong> on \([a,b]\) — the largest \(f(x)\) value over all \(x\) in \([a,b]\).</li>
+                      <li><strong>Absolute (global) minimum</strong> on \([a,b]\) — the smallest \(f(x)\) value over all \(x\) in \([a,b]\).</li>
+                      <li><strong>Critical number</strong> — \(x = c\) in \((a,b)\) where \(f'(c) = 0\) or \(f'(c)\) is undefined.</li>
+                      <li><strong>Extreme Value Theorem</strong> — continuous \(f\) on closed \([a,b]\) attains absolute max and min.</li>
+                      <li><strong>Closed-interval method</strong> — compare \(f\) values at critical numbers and at endpoints.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the absolute extrema of \(f(x) = x^3 - 3x + 1\) on \([-2, 3]\).</p>
+                      <p>Derivative: \(f'(x) = 3x^2 - 3 = 3(x-1)(x+1)\). Critical numbers: \(x=1\) and \(x=-1\), both in the interval.</p>
+                      <p>Evaluate: \(f(-2) = -8 + 6 + 1 = -1\); \(f(-1) = -1 + 3 + 1 = 3\); \(f(1) = 1 - 3 + 1 = -1\); \(f(3) = 27 - 9 + 1 = 19\).</p>
+                      <p>Absolute max: \(19\) at \(x=3\). Absolute min: \(-1\) at \(x=-2\) and at \(x=1\) (tied).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the absolute extrema of \(f(x) = x + \tfrac{4}{x}\) on \([1, 4]\).</p>
+                      <p>Derivative: \(f'(x) = 1 - \tfrac{4}{x^2}\). Set equal to zero: \(x^2 = 4\), so \(x = 2\) (positive value in the interval).</p>
+                      <p>Evaluate: \(f(1) = 1 + 4 = 5\); \(f(2) = 2 + 2 = 4\); \(f(4) = 4 + 1 = 5\).</p>
+                      <p>Absolute max: \(5\) at both endpoints. Absolute min: \(4\) at \(x=2\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting to check the endpoints — they are critical candidates even when \(f'\ne 0\) there.</li>
+                      <li>Including critical numbers outside the interval — only \(c \in (a,b)\) count.</li>
+                      <li>Reporting only the \(x\)-value; the absolute max is the \(y\)-value (a function value), and the \(x\) is "where" it occurs.</li>
+                      <li>Forgetting to check points where \(f'\) is undefined (cusps, vertical tangents within the domain).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "make connections between the sign of the first derivative on either side of a critical number and the existence of a local extremum at that critical number," and B2.4 — "solve problems involving the absolute maximum and absolute minimum values of a function on an interval."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v15')">
                         <span class="vid-icon">📖</span>
@@ -483,6 +1005,42 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=zn_ZBGv8YBQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Optimization problems take a real-world scenario (maximize area, minimize cost, fastest route) and convert it into a single-variable extremum problem. The general procedure: (1) read the problem carefully and identify what to maximize or minimize; (2) draw a diagram and label variables; (3) write the <strong>objective function</strong> in terms of two or more variables; (4) use any <strong>constraint</strong> equation to eliminate variables until the objective depends on just one; (5) determine its domain; (6) find critical numbers and apply the closed-interval or first-derivative test; (7) <em>interpret</em> the answer in original problem units.</p>
+                    <p>Step 4 is usually where calculus students stumble: you must reduce the objective to one variable before differentiating. If you have area \(A = xy\) plus a perimeter constraint \(2x + 2y = 40\), solve for \(y = 20 - x\) and substitute to get \(A(x) = x(20-x) = 20x - x^2\). Now \(A\) depends only on \(x\), and \(A'(x) = 20 - 2x = 0\) gives \(x = 10\).</p>
+                    <p>Step 7 is where rigor is rewarded: justify that the critical number you found really is the optimum (not a minimum disguised as a maximum, or a boundary value). Use the second-derivative test or check the sign of \(f'\) around the critical number; or note that \(f\to 0\) at the domain endpoints in fencing problems, so an interior critical max must be the absolute max.</p>
+                    <ul>
+                      <li><strong>Objective function</strong> — the quantity to be maximized or minimized.</li>
+                      <li><strong>Constraint</strong> — an equation relating the variables; used to reduce the objective to one variable.</li>
+                      <li><strong>Domain of optimization</strong> — the set of physically/realistically valid inputs (e.g., positive lengths).</li>
+                      <li><strong>Justification</strong> — second-derivative test, first-derivative sign chart, or boundary comparison.</li>
+                      <li><strong>Interpretation</strong> — state the answer with units and identify which variable achieves the optimum.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A rectangular pen with one side along a river (so no fencing needed there) is to be built with 60 m of fencing. What dimensions maximize the area?</p>
+                      <p>Let the side perpendicular to the river be \(x\) (two such sides), and the side parallel to the river be \(y\) (one such side). Constraint: \(2x + y = 60\), so \(y = 60 - 2x\).</p>
+                      <p>Area: \(A(x) = xy = x(60 - 2x) = 60x - 2x^2\). Domain: \(0 < x < 30\).</p>
+                      <p>\(A'(x) = 60 - 4x = 0 \Rightarrow x = 15\). \(A''(x) = -4 < 0\), so this is a maximum.</p>
+                      <p>Then \(y = 60 - 30 = 30\). Maximum area = \(15 \cdot 30 = 450\) m². Pen dimensions: 15 m by 30 m.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: An open-top box is made from a 12 cm × 12 cm sheet by cutting equal squares of side \(x\) from each corner and folding. Find the value of \(x\) that maximizes volume.</p>
+                      <p>Volume: \(V(x) = x(12 - 2x)^2\). Domain: \(0 < x < 6\).</p>
+                      <p>\(V'(x) = (12-2x)^2 + x\cdot 2(12-2x)(-2) = (12-2x)[(12-2x) - 4x] = (12-2x)(12-6x)\).</p>
+                      <p>Critical numbers: \(x=6\) (boundary) and \(x=2\). Test \(x=2\): \(V''<0\) (or sign chart confirms max). So \(x=2\), \(V = 2 \cdot 8^2 = 128\) cm³.</p>
+                    </div>
+                    <ul>
+                      <li>Trying to optimize a two-variable expression directly without using the constraint to eliminate a variable.</li>
+                      <li>Forgetting to specify the domain; some critical numbers fall outside realistic ranges.</li>
+                      <li>Skipping the second-derivative or sign test; assuming the critical number is automatically the answer.</li>
+                      <li>Stopping at \(x = \) some value without reporting the actual maximum/minimum value and units.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v16')">
@@ -536,6 +1094,40 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 3.4 applies the optimization machinery to economics and science contexts. In economics, the central new vocabulary is the <strong>marginal</strong> family of functions: <em>marginal cost</em> \(MC(x) = C'(x)\) is the instantaneous rate at which total cost \(C(x)\) changes per additional unit produced; <em>marginal revenue</em> \(MR(x) = R'(x)\); and <em>marginal profit</em> \(MP(x) = P'(x)\) where \(P(x) = R(x) - C(x)\). Maximum profit occurs at a critical number of \(P(x)\), i.e., where \(MR(x) = MC(x)\).</p>
+                    <p>In economics problems the constraints often come implicitly through a <em>demand equation</em>: if selling at price \(p\) yields demand \(x = x(p)\) units, then revenue is \(R = p\cdot x(p)\) — a product that requires the product rule when you differentiate. Average cost \(\bar{C}(x) = C(x)/x\) is minimized when \(\bar{C}'(x) = 0\), which simplifies to \(\bar{C}(x) = C'(x)\) — the famous result that minimum average cost occurs where marginal cost equals average cost.</p>
+                    <p>In science contexts the same machinery applies to chemical reaction rates, population growth, drug concentration in the bloodstream, and so on. The objective function might be a rational or exponential expression, and the constraint domain may be open or unbounded — additional care is needed to confirm the critical number is a true extremum.</p>
+                    <ul>
+                      <li><strong>Cost function</strong> \(C(x)\), <strong>revenue function</strong> \(R(x)\), <strong>profit function</strong> \(P(x) = R(x) - C(x)\).</li>
+                      <li><strong>Marginal cost</strong> \(C'(x)\), <strong>marginal revenue</strong> \(R'(x)\), <strong>marginal profit</strong> \(P'(x)\).</li>
+                      <li><strong>Average cost</strong> \(\bar{C}(x) = C(x)/x\); minimized where \(\bar{C}'(x) = 0\), equivalently where \(C'(x) = \bar{C}(x)\).</li>
+                      <li><strong>Demand equation</strong> — relates price \(p\) and quantity demanded \(x\); used to write revenue in one variable.</li>
+                      <li><strong>Equilibrium principle</strong> — maximum profit at \(MR = MC\), provided this is a true maximum.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A company's cost (in dollars) is \(C(x) = 0.01x^2 + 5x + 1000\) and revenue is \(R(x) = 25x - 0.02x^2\). Find the production level that maximizes profit.</p>
+                      <p>Profit: \(P(x) = R(x) - C(x) = (25x - 0.02x^2) - (0.01x^2 + 5x + 1000) = -0.03x^2 + 20x - 1000\).</p>
+                      <p>\(P'(x) = -0.06x + 20 = 0 \Rightarrow x = \tfrac{20}{0.06} \approx 333.3\).</p>
+                      <p>\(P''(x) = -0.06 < 0\), so this is a maximum. Producing about 333 units maximizes profit. \(P(333) \approx -0.03(110889) + 20(333) - 1000 \approx 2333\) dollars.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A drug's concentration in the bloodstream is modeled by \(C(t) = \frac{5t}{t^2 + 4}\) (mg/L, \(t\) hours after dose). When is concentration maximal?</p>
+                      <p>By the quotient rule: \(C'(t) = \frac{5(t^2+4) - 5t(2t)}{(t^2+4)^2} = \frac{5(4 - t^2)}{(t^2+4)^2}\).</p>
+                      <p>Critical numbers: \(t^2 = 4\), so \(t = 2\) (positive). \(C(2) = \tfrac{10}{8} = 1.25\) mg/L. Maximum concentration: 1.25 mg/L at \(t=2\) h.</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting that maximum revenue is not the same as maximum profit — they differ by the cost function.</li>
+                      <li>Treating "marginal cost" as the total cost — it's the derivative, with units of dollars per unit.</li>
+                      <li>Ignoring units (units sold, dollars per item, mg per litre); the answer needs context to be meaningful.</li>
+                      <li>Optimizing average cost by setting \(C(x)/x = 0\) — that doesn't optimize; differentiating \(\bar{C}\) does.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations," with emphasis on economic and scientific contexts.</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v20')">
                         <span class="vid-icon">📖</span>
@@ -574,6 +1166,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=PJ4H_4kdFRc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p><strong>Related rates</strong> problems ask: given that two quantities are connected by an equation, and one is changing at a known rate, how fast is the other changing? The technique relies on <em>implicit differentiation with respect to time</em>. Each variable in the relating equation is viewed as a function of \(t\); differentiating both sides yields an equation in derivatives like \(\frac{dx}{dt}, \frac{dy}{dt}\) — the rates — and you solve for the unknown one.</p>
+                    <p>The standard recipe: (1) draw a labelled diagram; (2) write an equation that relates the variables (Pythagoras, area formula, similar triangles, volume formula, etc.); (3) differentiate both sides with respect to \(t\); (4) substitute the <em>instantaneous</em> numerical values and the known rate; (5) solve for the unknown rate and report with units. The crucial discipline: do not substitute values until <em>after</em> differentiating — otherwise the relationships between variables vanish.</p>
+                    <p>Common geometric setups: a sliding ladder (Pythagorean relation), a filling cone (volume formula, often with similar triangles to express one variable in terms of another), a moving shadow (similar triangles), or expanding circles/spheres (\(A = \pi r^2\) or \(V = \tfrac{4}{3}\pi r^3\)).</p>
+                    <ul>
+                      <li><strong>Related rates</strong> — multiple time-dependent quantities tied by an equation; differentiating gives a relation among their rates.</li>
+                      <li><strong>Implicit time differentiation</strong> — \(\frac{d}{dt}\) applied to each side; chain rule attaches \(\frac{dx}{dt}\), \(\frac{dy}{dt}\), etc.</li>
+                      <li><strong>Constraint equation</strong> — the geometric or physical relation (Pythagoras, similar triangles, volume formula).</li>
+                      <li><strong>Substitute last</strong> — plug in numerical values only after differentiation; otherwise the relationship is destroyed.</li>
+                      <li><strong>Sign convention</strong> — negative rates indicate decreasing quantities (water draining, ladder slipping).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A 5 m ladder leans against a wall. The bottom slides outward at 0.3 m/s. How fast is the top sliding down when the bottom is 3 m from the wall?</p>
+                      <p>Let \(x\) = horizontal distance from wall, \(y\) = height on wall. Pythagoras: \(x^2 + y^2 = 25\).</p>
+                      <p>Differentiate with respect to \(t\): \(2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0 \Rightarrow \frac{dy}{dt} = -\frac{x}{y}\cdot\frac{dx}{dt}\).</p>
+                      <p>When \(x=3\), \(y = \sqrt{25-9} = 4\). With \(\frac{dx}{dt} = 0.3\): \(\frac{dy}{dt} = -\tfrac{3}{4}(0.3) = -0.225\) m/s. The top slides DOWN at 0.225 m/s.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Water pours into a conical tank (point down) at 2 m³/min. The tank has height 10 m and top radius 5 m. How fast is the water level rising when the water is 6 m deep?</p>
+                      <p>By similar triangles, \(\frac{r}{h} = \frac{5}{10} = \tfrac{1}{2}\), so \(r = h/2\). Volume: \(V = \tfrac{1}{3}\pi r^2 h = \tfrac{1}{3}\pi (h/2)^2 h = \tfrac{\pi h^3}{12}\).</p>
+                      <p>Differentiate: \(\frac{dV}{dt} = \tfrac{\pi h^2}{4}\frac{dh}{dt}\). Solve: \(\frac{dh}{dt} = \frac{4}{\pi h^2}\frac{dV}{dt}\).</p>
+                      <p>At \(h=6\): \(\frac{dh}{dt} = \frac{4 \cdot 2}{\pi \cdot 36} = \frac{2}{9\pi} \approx 0.0707\) m/min.</p>
+                    </div>
+                    <ul>
+                      <li>Substituting numbers before differentiating, eliminating the variables that the chain rule needs.</li>
+                      <li>Forgetting the sign convention — the "ladder slipping down" rate is negative.</li>
+                      <li>Not using similar triangles to express two related geometric quantities in one variable when the constraint demands it.</li>
+                      <li>Reporting the rate without units (m/min, m/s, etc.); the units encode the physical meaning.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.5 — "solve problems arising from real-world applications by applying a mathematical model and the concepts and procedures associated with the derivative to determine mathematical results, and interpret and communicate the results" — emphasized through related-rates contexts.</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('yt7')">
@@ -649,6 +1276,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
         </div>
 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.1 formalizes how the first derivative tells us where a function is rising or falling. A function \(f\) is <strong>increasing</strong> on an interval \(I\) if \(x_1 < x_2 \Rightarrow f(x_1) < f(x_2)\) for all \(x_1, x_2 \in I\); it is <strong>decreasing</strong> if \(x_1 < x_2 \Rightarrow f(x_1) > f(x_2)\). The first-derivative connection: if \(f'(x) > 0\) throughout \(I\), then \(f\) is increasing on \(I\); if \(f'(x) < 0\), then decreasing. This is a consequence of the Mean Value Theorem.</p>
+                    <p>The practical procedure is a <strong>sign chart for \(f'\)</strong>: (1) compute \(f'(x)\); (2) find critical numbers, where \(f'\) is zero or undefined; (3) determine the sign of \(f'\) on each interval between critical numbers and at the domain boundary, by testing a representative \(x\)-value or factoring; (4) state the intervals of increase (\(f'>0\)) and decrease (\(f'<0\)).</p>
+                    <p>Domain matters: include all numbers where \(f'\) is undefined but \(f\) is defined (cusps, vertical tangents), and exclude any number not in the domain of \(f\) (like the asymptote of a rational function). Critical numbers where \(f\) is undefined are NOT part of the function's intervals; they break the number line into separate analysis regions.</p>
+                    <ul>
+                      <li><strong>Increasing on \(I\)</strong> — \(f'(x) > 0\) for all \(x \in I\) (strict version).</li>
+                      <li><strong>Decreasing on \(I\)</strong> — \(f'(x) < 0\) for all \(x \in I\).</li>
+                      <li><strong>Critical number</strong> — value where \(f'(x) = 0\) or \(f'(x)\) is undefined (but \(f(x)\) is defined).</li>
+                      <li><strong>Sign chart</strong> — a number-line diagram showing signs of \(f'\) on each subinterval.</li>
+                      <li><strong>Mean Value Theorem</strong> — between any two values of \(x\) where \(f'>0\) throughout, \(f\) increases (the underlying theorem).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the intervals on which \(f(x) = x^3 - 6x^2 + 9x + 2\) is increasing and decreasing.</p>
+                      <p>\(f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3)\). Critical numbers: \(x = 1, 3\).</p>
+                      <p>Sign chart: for \(x<1\), \(f'>0\) (test \(x=0\): \(3(-1)(-3) = 9 > 0\)). For \(1 < x < 3\), \(f'<0\) (test \(x=2\): \(3(1)(-1) = -3 < 0\)). For \(x>3\), \(f'>0\) (test \(x=4\): \(3(3)(1) = 9 > 0\)).</p>
+                      <p>Increasing on \((-\infty, 1) \cup (3, \infty)\); decreasing on \((1, 3)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: For \(g(x) = \frac{x}{x^2 + 1}\), find the intervals of increase/decrease.</p>
+                      <p>\(g'(x) = \frac{(x^2+1) - x(2x)}{(x^2+1)^2} = \frac{1 - x^2}{(x^2+1)^2}\). Denominator always positive; sign of \(g'\) matches \(1 - x^2 = (1-x)(1+x)\).</p>
+                      <p>Critical numbers: \(x = \pm 1\). Sign: \(g'<0\) for \(x<-1\); \(g'>0\) for \(-1<x<1\); \(g'<0\) for \(x>1\).</p>
+                      <p>Decreasing on \((-\infty, -1) \cup (1, \infty)\); increasing on \((-1, 1)\).</p>
+                    </div>
+                    <ul>
+                      <li>Reporting "increasing where \(f > 0\)" — that's about the function's sign, not its slope; you want \(f' > 0\).</li>
+                      <li>Forgetting to factor \(f'\) before sign-charting; partially factored expressions hide critical numbers.</li>
+                      <li>Including critical numbers in BOTH the increasing and decreasing intervals — convention is to use open intervals at critical numbers.</li>
+                      <li>Forgetting to remove points outside the domain (e.g., vertical asymptotes of a rational function).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "sketch the graph of a derivative function, given the graph of a function that is continuous over an interval, and recognize points of inflection of the given function," with B2.1 — "make connections between the sign of the first derivative on either side of a critical number and the existence of a local extremum at that critical number."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v23')">
                         <span class="vid-icon">📖</span>
@@ -688,6 +1350,41 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.2 classifies critical points as <strong>local maxima</strong>, <strong>local minima</strong>, or <strong>neither</strong> using the <strong>first derivative test</strong>. At a critical number \(x=c\) (where \(f'(c)=0\) or \(f'\) is undefined), examine the sign of \(f'\) immediately to the left and right: if \(f'\) goes from \(+\) to \(-\), then \(c\) is a local max; from \(-\) to \(+\), local min; same sign on both sides (e.g., \(+/+\) or \(-/-\)), neither — typically a horizontal point of inflection.</p>
+                    <p>Local extrema are a <em>local</em> property: \(f(c)\) is larger (or smaller) than nearby \(f\) values, but not necessarily than all values on the function's domain. This contrasts with the absolute extrema on a closed interval (Topic 3.2). A function on an unbounded or open domain may have local extrema without absolute ones, or vice versa.</p>
+                    <p>The first-derivative test is a sign-change test, which makes it robust: it works even when \(f''\) is hard to compute, when \(f''(c) = 0\) (the second-derivative test becomes inconclusive), and when \(f'\) is undefined at \(c\) (e.g., a cusp like in \(f(x) = x^{2/3}\), where \(c=0\) is a local minimum despite \(f'(0)\) being undefined).</p>
+                    <ul>
+                      <li><strong>Local maximum</strong> at \(c\) — \(f(c) \ge f(x)\) for all \(x\) near \(c\).</li>
+                      <li><strong>Local minimum</strong> at \(c\) — \(f(c) \le f(x)\) for all \(x\) near \(c\).</li>
+                      <li><strong>Critical point</strong> — the point \((c, f(c))\) where \(c\) is a critical number.</li>
+                      <li><strong>First derivative test</strong> — sign change of \(f'\) at \(c\): \(+/-\) → max; \(-/+\) → min; same sign → neither.</li>
+                      <li><strong>Local vs. absolute</strong> — local extrema concern small neighbourhoods; absolute extrema concern the whole domain or interval.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Locate and classify the local extrema of \(f(x) = 2x^3 - 9x^2 + 12x - 1\).</p>
+                      <p>\(f'(x) = 6x^2 - 18x + 12 = 6(x^2 - 3x + 2) = 6(x-1)(x-2)\). Critical numbers: \(x=1, x=2\).</p>
+                      <p>Sign of \(f'\): at \(x=0\), \(f'(0) = 12 > 0\); at \(x = 1.5\), \(f'(1.5) = 6(0.5)(-0.5) = -1.5 < 0\); at \(x=3\), \(f'(3) = 6(2)(1) = 12 > 0\).</p>
+                      <p>So \(f'\) goes \(+,-,+\). At \(x=1\) (\(+\to -\)): local maximum, \(f(1) = 2 - 9 + 12 - 1 = 4\). At \(x=2\) (\(-\to +\)): local minimum, \(f(2) = 16 - 36 + 24 - 1 = 3\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Classify the critical point at \(x=0\) for \(f(x) = x^3\).</p>
+                      <p>\(f'(x) = 3x^2\). \(f'(0) = 0\), so \(x=0\) is a critical number.</p>
+                      <p>Sign of \(f'\): for \(x<0\), \(3x^2 > 0\); for \(x>0\), \(3x^2 > 0\). No sign change.</p>
+                      <p>Therefore \(x=0\) is neither a local max nor a local min; it's a horizontal point of inflection.</p>
+                    </div>
+                    <ul>
+                      <li>Concluding \(x=0\) is a local extremum for \(f(x)=x^3\) just because \(f'(0)=0\) — sign of \(f'\) doesn't change, so it isn't an extremum.</li>
+                      <li>Reporting only \(x\)-values without the corresponding \(f(c)\) value; the "extremum" is the function value.</li>
+                      <li>Forgetting critical numbers where \(f'\) is undefined (cusps).</li>
+                      <li>Confusing local max (\(+\to -\)) with local min (\(-\to +\)) — the direction matters.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "make connections between the sign of the first derivative on either side of a critical number and the existence of a local extremum at that critical number."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v26')">
                         <span class="vid-icon">📋</span>
@@ -700,6 +1397,39 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=CPMllZfuuSQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Asymptotes describe how a curve behaves at infinity or near a vertical line of indefinition. A <strong>vertical asymptote</strong> at \(x=a\) occurs when \(\lim_{x\to a^\pm}f(x) = \pm\infty\). For a rational function \(\frac{P(x)}{Q(x)}\) in lowest terms, this happens precisely when \(Q(a)=0\) and \(P(a)\ne 0\) — the denominator vanishes faster than the numerator. If both vanish, factor and cancel: the cancellation produces a removable discontinuity (a hole) rather than a vertical asymptote.</p>
+                    <p>A <strong>horizontal asymptote</strong> is a horizontal line \(y=L\) such that \(\lim_{x\to\pm\infty} f(x) = L\). For rationals, compare the degrees of numerator (\(n\)) and denominator (\(d\)): if \(n<d\), the horizontal asymptote is \(y=0\); if \(n=d\), it is \(y = \frac{\text{leading coeff of }P}{\text{leading coeff of }Q}\); if \(n>d\), there is no horizontal asymptote — but an <strong>oblique (slant) asymptote</strong> exists when \(n = d+1\), obtained by polynomial long division.</p>
+                    <p>The slant asymptote is the polynomial quotient. For \(\frac{x^2+1}{x-1}\), long division gives \(x + 1 + \frac{2}{x-1}\); as \(x\to\pm\infty\), the remainder term \(\frac{2}{x-1}\to 0\), so \(y = x+1\) is the slant asymptote. The curve approaches this line as \(x\) grows large in either direction.</p>
+                    <ul>
+                      <li><strong>Vertical asymptote</strong> at \(x=a\) — \(\lim_{x\to a^\pm}f(x)=\pm\infty\); for rationals in lowest terms, \(Q(a)=0, P(a)\ne 0\).</li>
+                      <li><strong>Horizontal asymptote</strong> — \(\lim_{x\to\pm\infty}f(x)=L\); compare numerator and denominator degrees.</li>
+                      <li><strong>Oblique (slant) asymptote</strong> — exists for rationals when \(\deg P = \deg Q + 1\); obtained by polynomial division.</li>
+                      <li><strong>Removable discontinuity</strong> — common factor of \(P\) and \(Q\); a hole, not an asymptote.</li>
+                      <li><strong>Behaviour near asymptote</strong> — examine one-sided limits to determine \(+\infty\) vs. \(-\infty\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find all asymptotes of \(f(x) = \dfrac{2x^2 - 3}{x^2 - 4}\).</p>
+                      <p>Denominator \(x^2 - 4 = (x-2)(x+2) = 0\) at \(x=\pm 2\); numerator at those points: \(2(4)-3 = 5\) and \(2(4)-3=5\), both nonzero. Vertical asymptotes at \(x=-2\) and \(x=2\).</p>
+                      <p>Degrees: numerator 2, denominator 2; horizontal asymptote at \(y = \tfrac{2}{1} = 2\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the oblique asymptote of \(g(x) = \dfrac{x^2 + 2x + 5}{x + 1}\).</p>
+                      <p>Polynomial long division: \(x^2 + 2x + 5 \div (x+1)\). Divide \(x^2 \div x = x\); multiply back: \(x(x+1) = x^2 + x\); subtract: \(x + 5\). Then \(x \div x = 1\); multiply: \(x+1\); subtract: \(4\).</p>
+                      <p>So \(g(x) = x + 1 + \frac{4}{x+1}\). As \(x \to \pm\infty\), \(\frac{4}{x+1} \to 0\); the slant asymptote is \(y = x + 1\).</p>
+                    </div>
+                    <ul>
+                      <li>Mistaking a hole for a vertical asymptote — always check whether the numerator also vanishes at the suspect point.</li>
+                      <li>Reporting a horizontal asymptote when degrees are unequal in the wrong direction (\(n>d\)): there isn't one.</li>
+                      <li>Forgetting that horizontal and oblique asymptotes are <em>mutually exclusive</em> for rationals.</li>
+                      <li>Setting up the limit \(\lim_{x\to a}f(x)\) without distinguishing left- and right-hand approaches at a vertical asymptote.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe key features of a polynomial function \(\big(\)e.g., domain and range, intercepts, increasing/decreasing intervals, local maxima and minima, points of inflection, intervals of concavity)\(\big)\), and of a rational function \(\big(\)e.g., asymptotes\(\big)\)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v27')">
@@ -727,6 +1457,40 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.4 uses the second derivative to analyze a curve's <strong>concavity</strong> — the way it bends. A graph is <em>concave up</em> on an interval if the curve lies above its tangent lines (smiling, holds water); it is <em>concave down</em> if the curve lies below its tangent lines (frowning, sheds water). Algebraically, concavity is governed by the sign of \(f''\): \(f''(x) > 0\) means concave up, \(f''(x) < 0\) means concave down.</p>
+                    <p>A <strong>point of inflection</strong> is a point on the graph where concavity changes — from up to down or vice versa. To find them: (1) compute \(f''(x)\); (2) find where \(f''=0\) or \(f''\) is undefined; (3) verify that \(f''\) actually changes sign at each candidate (a zero of \(f''\) without sign change is not an inflection point — like \(x=0\) for \(f(x) = x^4\)).</p>
+                    <p>The <strong>second derivative test</strong> classifies critical points: at a critical number \(c\) with \(f'(c) = 0\), if \(f''(c) > 0\) the graph is concave up at \(c\) so \(c\) is a local min; if \(f''(c) < 0\), local max; if \(f''(c) = 0\), inconclusive — fall back to the first derivative test. The test is fast when \(f''\) is easy to compute, but it can fail at degenerate critical points.</p>
+                    <ul>
+                      <li><strong>Concave up</strong> — \(f''(x) > 0\); curve bends upward; tangent lies below the curve.</li>
+                      <li><strong>Concave down</strong> — \(f''(x) < 0\); curve bends downward; tangent lies above the curve.</li>
+                      <li><strong>Point of inflection</strong> — a point where concavity changes sign; \(f''\) must change sign there.</li>
+                      <li><strong>Second derivative test</strong> — at \(f'(c)=0\): \(f''(c)>0\) → local min; \(<0\) → local max; \(=0\) → inconclusive.</li>
+                      <li><strong>Sign chart for \(f''\)</strong> — analogous to the \(f'\) chart; intervals separated by zeros and discontinuities of \(f''\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the inflection points and intervals of concavity for \(f(x) = x^3 - 6x^2 + 5\).</p>
+                      <p>\(f'(x) = 3x^2 - 12x\); \(f''(x) = 6x - 12\). Set \(f''=0\): \(x=2\).</p>
+                      <p>Sign of \(f''\): for \(x<2\), \(f''<0\) (concave down); for \(x>2\), \(f''>0\) (concave up). Sign changes at \(x=2\), so \((2, f(2)) = (2, -11)\) is an inflection point.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Use the second derivative test on \(f(x) = x^4 - 4x^3\).</p>
+                      <p>\(f'(x) = 4x^3 - 12x^2 = 4x^2(x-3)\). Critical numbers: \(x=0\) and \(x=3\).</p>
+                      <p>\(f''(x) = 12x^2 - 24x\). \(f''(3) = 108 - 72 = 36 > 0\) → \(x=3\) is local min. \(f''(0) = 0\) → inconclusive.</p>
+                      <p>At \(x=0\), fall back to the first derivative test: \(f'(x) = 4x^2(x-3)\), and \(4x^2 \ge 0\) always. So \(f'\) has the same sign as \(x-3\); for \(x\) near 0 (and \(<3\)), \(f' < 0\) on both sides. No sign change — \(x=0\) is neither (a horizontal point of inflection at \((0,0)\)).</p>
+                    </div>
+                    <ul>
+                      <li>Concluding that \(f''(c)=0\) automatically means an inflection point — a sign change is required.</li>
+                      <li>Forgetting that the second derivative test is inconclusive when \(f''(c) = 0\).</li>
+                      <li>Confusing concave up with increasing — they describe different things (bending vs. rising).</li>
+                      <li>Reporting only the \(x\)-value of an inflection point; it's a point, so include \(f(x)\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.5 — "verify that the second derivative provides information about concavity and points of inflection, by … connecting the sign of the second derivative to the concavity of the graph of \(f\)."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v29')">
                         <span class="vid-icon">📋</span>
@@ -752,6 +1516,36 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=Gp5dzXalyVA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.5 integrates everything from Topics 4.1-4.4 into a single procedure: produce an accurate sketch of \(y = f(x)\) using calculus. The standard <strong>curve-sketching algorithm</strong> follows seven steps, each contributing a feature to the graph: (1) <em>Domain</em> — exclude points where \(f\) is undefined; (2) <em>Intercepts</em> — set \(y=0\) for \(x\)-intercepts (often hard, sometimes skipped) and evaluate \(f(0)\) for \(y\)-intercept; (3) <em>Symmetry</em> — check \(f(-x)\) against \(f(x)\) for even/odd parity; (4) <em>Asymptotes</em> — vertical (where denominator vanishes), horizontal (limits at \(\pm\infty\)), and oblique (polynomial long division if applicable).</p>
+                    <p>(5) <em>First derivative analysis</em> — compute \(f'(x)\), find critical numbers, build a sign chart, and identify intervals of increase/decrease plus local extrema; (6) <em>Second derivative analysis</em> — compute \(f''(x)\), find candidate inflection points, build a concavity chart; (7) <em>Sketch</em> — plot intercepts, asymptotes, extrema, and inflection points, then draw a smooth curve consistent with the sign charts. Label everything.</p>
+                    <p>The algorithm is rote, but the skill is in <em>interpreting</em> the algebra. A negative second derivative at a critical number tells you both "concave down here" AND "local maximum". A vertical asymptote near a critical number determines whether the curve runs to \(+\infty\) or \(-\infty\). Reading all signals together gives the global shape without plotting a hundred points.</p>
+                    <ul>
+                      <li><strong>Curve-sketching algorithm</strong> — domain, intercepts, symmetry, asymptotes, first-derivative analysis, second-derivative analysis, sketch.</li>
+                      <li><strong>Even function</strong> — \(f(-x) = f(x)\); symmetric about the \(y\)-axis.</li>
+                      <li><strong>Odd function</strong> — \(f(-x) = -f(x)\); symmetric about the origin.</li>
+                      <li><strong>Behaviour near asymptotes</strong> — examine one-sided limits to determine \(\pm\infty\).</li>
+                      <li><strong>Synthesis</strong> — first- and second-derivative charts together encode shape; intercepts and asymptotes pin down position.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Sketch \(f(x) = \dfrac{x^2}{x^2 - 4}\).</p>
+                      <p>Domain: \(x \ne \pm 2\). Y-intercept: \(f(0) = 0\). X-intercept: numerator = 0 at \(x=0\). Symmetry: \(f(-x) = f(x)\) — even.</p>
+                      <p>Vertical asymptotes at \(x = \pm 2\). Horizontal: \(\lim_{x\to\pm\infty}\frac{x^2}{x^2-4} = 1\), so \(y=1\).</p>
+                      <p>\(f'(x) = \frac{2x(x^2-4) - x^2(2x)}{(x^2-4)^2} = \frac{-8x}{(x^2-4)^2}\). Critical numbers: \(x=0\) (and \(\pm 2\) are not critical, they're excluded). \(f' > 0\) for \(x<0\) (except \(x=-2\)); \(f' < 0\) for \(x>0\) (except \(x=2\)). So \(x=0\) is a local max with \(f(0)=0\).</p>
+                      <p>The curve passes through \((0,0)\) as a local max, dives down to \(-\infty\) at the asymptotes, then climbs to \(+\infty\) on the outside of the asymptotes, leveling toward \(y=1\) at the far ends.</p>
+                    </div>
+                    <ul>
+                      <li>Skipping the domain step and ending up with extraneous features near excluded \(x\)-values.</li>
+                      <li>Forgetting to check symmetry — it cuts work in half for even or odd functions.</li>
+                      <li>Mixing up vertical vs. horizontal asymptote conditions; they require different limit setups.</li>
+                      <li>Drawing a sketch that contradicts the sign charts (e.g., a "concave up" piece where \(f''<0\)).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "determine, from the equation of a polynomial function or a simple rational function, the key features of the graph of the function (i.e., domain and range, intercepts, increasing/decreasing intervals, local maxima and minima, points of inflection, intervals of concavity, asymptotes), using the techniques of differential calculus, and sketch the graph by hand."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v31')">
@@ -838,6 +1632,38 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
         </div>
 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.1 introduces the most important non-polynomial derivative: \[\frac{d}{dx}[e^x] = e^x.\] The natural exponential function is its own derivative — a property that distinguishes it among all functions and makes it the fundamental "rate-equals-amount" model. The number \(e \approx 2.71828\) is chosen precisely so that the slope of \(y=b^x\) at \(x=0\) is exactly 1; this calibration produces \(\frac{d}{dx}[e^x]=e^x\) at every point.</p>
+                    <p>Combined with the chain rule, this generalizes: \(\frac{d}{dx}[e^{g(x)}] = e^{g(x)}\cdot g'(x)\). So \(\frac{d}{dx}[e^{3x}] = 3e^{3x}\) and \(\frac{d}{dx}[e^{x^2}] = 2x e^{x^2}\). Exponentials are stable under differentiation: derivatives of exponentials are still exponentials, multiplied by the rate at which the exponent is changing.</p>
+                    <p>This rule is the basis of all exponential growth and decay models. If a population satisfies \(P(t) = P_0 e^{kt}\), then \(P'(t) = kP_0 e^{kt} = kP(t)\) — the instantaneous rate of growth is proportional to the current population, with proportionality constant \(k\). The same model fits radioactive decay (\(k<0\)), continuously compounded interest, and Newton's law of cooling.</p>
+                    <ul>
+                      <li><strong>Natural exponential function</strong> — \(y = e^x\); the unique exponential whose slope at \(x=0\) is 1.</li>
+                      <li><strong>Self-derivative property</strong> — \(\frac{d}{dx}[e^x] = e^x\); every higher derivative is also \(e^x\).</li>
+                      <li><strong>Chain rule extension</strong> — \(\frac{d}{dx}[e^{g(x)}] = e^{g(x)}\cdot g'(x)\).</li>
+                      <li><strong>Euler's number</strong> — \(e = \lim_{n\to\infty}(1+\tfrac{1}{n})^n \approx 2.71828\).</li>
+                      <li><strong>Exponential model</strong> — \(y = A e^{kt}\); \(k>0\) growth, \(k<0\) decay.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x^2 e^{3x}\).</p>
+                      <p>Product rule with \(f = x^2\) and \(g = e^{3x}\). Then \(f' = 2x\) and (chain rule) \(g' = 3e^{3x}\).</p>
+                      <p>\(y' = f'g + fg' = 2x e^{3x} + x^2 \cdot 3e^{3x} = e^{3x}(2x + 3x^2) = x e^{3x}(2 + 3x)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A bacterial colony has population \(P(t) = 500 e^{0.4t}\) (\(t\) in hours). When is the population growing at 1000 bacteria/hour?</p>
+                      <p>\(P'(t) = 500 \cdot 0.4 \cdot e^{0.4t} = 200 e^{0.4t}\). Set \(P'(t) = 1000\): \(200 e^{0.4t} = 1000 \Rightarrow e^{0.4t} = 5 \Rightarrow 0.4t = \ln 5 \Rightarrow t = \tfrac{\ln 5}{0.4} \approx 4.02\) hours.</p>
+                    </div>
+                    <ul>
+                      <li>Treating \(e^x\) like a power function: \(\frac{d}{dx}[e^x] \ne x e^{x-1}\) — that's the power rule for \(x^n\), not for \(b^x\).</li>
+                      <li>Forgetting the inner derivative on \(e^{g(x)}\): \(\frac{d}{dx}[e^{3x}] = 3e^{3x}\), not \(e^{3x}\).</li>
+                      <li>Confusing \(e\) (constant) with \(e^x\) (function): \(\frac{d}{dx}[e] = 0\) but \(\frac{d}{dx}[e^x] = e^x\).</li>
+                      <li>Writing the answer with \(\ln\) of \(e\) — \(\ln e = 1\), so simplify.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.7 — "verify, through investigation, using technology, that the derivative of the exponential function \(f(x) = a^x\) is \(f'(x) = a^x \ln a\) for various values of \(a\) (e.g., compare graphs of \(f(x)\) and \(f'(x)\) using calculator/computer technology) and recognize \(e\) as the value of \(a\) for which \(f'(x) = f(x)\)."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v33')">
                         <span class="vid-icon">📖</span>
@@ -850,6 +1676,39 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=ZHW-2EqcrP8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.2 generalizes the derivative of \(e^x\) to arbitrary positive base \(b\). The result is \[\frac{d}{dx}[b^x] = b^x \ln b,\] which reduces to \(\frac{d}{dx}[e^x] = e^x\) when \(b = e\) (since \(\ln e = 1\)). The factor \(\ln b\) arises naturally: rewriting \(b^x = e^{x\ln b}\) and applying the chain rule gives \(e^{x\ln b}\cdot \ln b = b^x \ln b\).</p>
+                    <p>This formula highlights why \(e\) is the privileged base: it eliminates the awkward \(\ln b\) factor. For computational ease we sometimes convert \(2^x\) or \(10^x\) into \(e^{x\ln 2}\) or \(e^{x\ln 10}\) before differentiating, but the direct rule is just as quick. Combined with the chain rule: \(\frac{d}{dx}[b^{g(x)}] = b^{g(x)} \ln b \cdot g'(x)\).</p>
+                    <p>This rule is important in modeling because real-world quantities are often given in base-10 or base-2 form: doubling times of populations, half-lives of radioactive isotopes, and decibel scales. Knowing how to differentiate \(b^x\) directly avoids unnecessary base conversions and keeps the model in its native units.</p>
+                    <ul>
+                      <li><strong>General exponential derivative</strong> — \(\frac{d}{dx}[b^x] = b^x \ln b\) for \(b > 0\).</li>
+                      <li><strong>Change of base</strong> — \(b^x = e^{x\ln b}\); useful for converting to base \(e\).</li>
+                      <li><strong>Special case \(b=e\)</strong> — \(\ln e = 1\), so \(\frac{d}{dx}[e^x] = e^x\).</li>
+                      <li><strong>Chain rule extension</strong> — \(\frac{d}{dx}[b^{g(x)}] = b^{g(x)}\ln b \cdot g'(x)\).</li>
+                      <li><strong>Sign of \(\ln b\)</strong> — positive when \(b>1\) (growth), negative when \(0<b<1\) (decay).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = 5^x + x^5\).</p>
+                      <p>Two different rules apply: \(\frac{d}{dx}[5^x] = 5^x \ln 5\) (exponential), and \(\frac{d}{dx}[x^5] = 5x^4\) (power).</p>
+                      <p>\(y' = 5^x \ln 5 + 5x^4\). Notice \(5^x\) and \(x^5\) look similar but are completely different objects.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A radioactive sample decays so that the mass at time \(t\) (in years) is \(m(t) = 100\cdot 2^{-t/30}\) grams. Find the rate of change of mass at \(t = 60\).</p>
+                      <p>\(m'(t) = 100 \cdot 2^{-t/30} \cdot \ln 2 \cdot (-\tfrac{1}{30}) = -\tfrac{100 \ln 2}{30} \cdot 2^{-t/30}\).</p>
+                      <p>At \(t = 60\): \(2^{-60/30} = 2^{-2} = \tfrac{1}{4}\). So \(m'(60) = -\tfrac{100 \ln 2}{30}\cdot \tfrac{1}{4} = -\tfrac{25 \ln 2}{30} \approx -0.578\) g/year.</p>
+                    </div>
+                    <ul>
+                      <li>Confusing \(\frac{d}{dx}[b^x]\) (exponential rule) with \(\frac{d}{dx}[x^b]\) (power rule). The variable's position matters.</li>
+                      <li>Omitting the \(\ln b\) factor when the base is not \(e\): \(\frac{d}{dx}[2^x] \ne 2^x\), it's \(2^x \ln 2\).</li>
+                      <li>Treating \(\ln b\) as a function of \(x\) — it is a constant (when \(b\) is constant).</li>
+                      <li>Mishandling the negative sign in decay exponents — the chain rule picks up the sign correctly only if you write the exponent properly.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.7 — "verify, through investigation, using technology, that the derivative of the exponential function \(f(x) = a^x\) is \(f'(x) = a^x \ln a\) for various values of \(a\)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v34')">
@@ -864,6 +1723,38 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The derivative of the natural logarithm is one of the cleanest rules in calculus: \[\frac{d}{dx}[\ln x] = \frac{1}{x}, \qquad x > 0.\] This is derived by implicit differentiation: if \(y = \ln x\), then \(e^y = x\); differentiating both sides yields \(e^y\frac{dy}{dx} = 1\), and substituting \(e^y = x\) gives \(\frac{dy}{dx} = \frac{1}{x}\). The exponential and logarithmic derivatives are mirror images of each other (inverse functions).</p>
+                    <p>For a general base, the change-of-base identity \(\log_b x = \frac{\ln x}{\ln b}\) leads to \[\frac{d}{dx}[\log_b x] = \frac{1}{x \ln b}, \qquad x > 0, b > 0, b\ne 1.\] When \(b = e\), \(\ln b = 1\) and we recover \(\frac{1}{x}\). The chain-rule extensions are essential: \(\frac{d}{dx}[\ln g(x)] = \frac{g'(x)}{g(x)}\), and \(\frac{d}{dx}[\log_b g(x)] = \frac{g'(x)}{g(x)\ln b}\).</p>
+                    <p>The fact that \(\frac{d}{dx}[\ln x] = \frac{1}{x}\) means \(\ln\) "fills in" the missing antiderivative of \(\frac{1}{x}\) — the one case the power rule cannot handle (\(\int x^{-1}\,dx \ne \frac{x^0}{0}\)). It also explains why logarithms grow so slowly: their derivative drops to zero as \(x\to\infty\).</p>
+                    <ul>
+                      <li><strong>Natural log derivative</strong> — \(\frac{d}{dx}[\ln x] = \frac{1}{x}\), \(x > 0\).</li>
+                      <li><strong>General log derivative</strong> — \(\frac{d}{dx}[\log_b x] = \frac{1}{x\ln b}\).</li>
+                      <li><strong>Chain rule on logs</strong> — \(\frac{d}{dx}[\ln g(x)] = \frac{g'(x)}{g(x)}\); a quotient, not a product.</li>
+                      <li><strong>Domain restriction</strong> — \(\ln x\) is defined only for \(x>0\); the formula does not extend to negative \(x\) without an absolute value.</li>
+                      <li><strong>Logarithm of absolute value</strong> — \(\frac{d}{dx}[\ln|x|] = \frac{1}{x}\) for \(x\ne 0\) — extends the rule to all nonzero \(x\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \ln(x^2 + 1)\).</p>
+                      <p>Apply chain rule with \(g(x) = x^2 + 1\): \(g'(x) = 2x\). So \(y' = \frac{g'(x)}{g(x)} = \frac{2x}{x^2 + 1}\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x\ln x - x\).</p>
+                      <p>Product rule on \(x\ln x\): \((1)(\ln x) + (x)(\tfrac{1}{x}) = \ln x + 1\). Derivative of \(-x\) is \(-1\).</p>
+                      <p>\(y' = \ln x + 1 - 1 = \ln x\). (Side fact: this shows \(x\ln x - x\) is an antiderivative of \(\ln x\) — useful in later integral calculus.)</p>
+                    </div>
+                    <ul>
+                      <li>Writing \(\frac{d}{dx}[\ln(g(x))] = \ln(g'(x))\) — completely wrong; the derivative is \(\frac{g'(x)}{g(x)}\).</li>
+                      <li>Forgetting the \(\ln b\) factor for non-natural logs: \(\frac{d}{dx}[\log_{10} x] = \frac{1}{x \ln 10}\), not \(\frac{1}{x}\).</li>
+                      <li>Differentiating \(\ln x\) outside its domain (\(x \le 0\)) without using \(\ln|x|\).</li>
+                      <li>Confusing \(\ln(x^2)\) with \((\ln x)^2\) — they are different functions with different derivatives.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.7 — exponential and logarithmic derivative results: "verify, through investigation, using technology, that the derivative of the exponential function \(f(x) = a^x\) is \(f'(x) = a^x \ln a\)," paired with the inverse-function relationship between \(\ln x\) and \(e^x\) that yields \(\frac{d}{dx}[\ln x] = \frac{1}{x}\).</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('yt8')">
                         <span class="vid-icon">📖</span>
@@ -877,6 +1768,40 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.3 combines exponential calculus with optimization. Exponential models arise naturally in biology (population growth, drug elimination), finance (compound interest, present value), engineering (cooling, RC circuits), and economics. The optimization procedure is unchanged from Unit 3: identify the objective, eliminate variables via constraints, set the derivative to zero, and justify the extremum. The new wrinkle is that derivatives of exponentials and combinations like \(x e^{-x}\) or \(\frac{\ln x}{x}\) require the product, quotient, and chain rules from Unit 2 layered with the exponential and logarithmic rules from 5.1-5.2.</p>
+                    <p>Critical points of products like \(f(x) = x e^{-x}\) frequently arise. Differentiating: \(f'(x) = e^{-x} + x(-e^{-x}) = e^{-x}(1 - x)\). Since \(e^{-x}>0\) always, the sign of \(f'\) matches \(1-x\): positive for \(x<1\), negative for \(x>1\). So the function has a single critical maximum at \(x=1\), \(f(1) = e^{-1}\). This pattern — exponential decay times a polynomial — appears in countless models.</p>
+                    <p>Maximum profit from a continuous-decay product, minimum drug concentration after dosing, optimal harvest timing for a growing population — all fit this template. The exponential's monotone nature means there's typically a unique interior optimum, which simplifies justification: a single sign change in \(f'\) gives the absolute extremum on the relevant domain.</p>
+                    <ul>
+                      <li><strong>Exponential growth model</strong> — \(P(t) = P_0 e^{kt}\); \(P'(t) = kP(t)\); never has a critical point on its own.</li>
+                      <li><strong>Product with exponential</strong> — \(f(x) = g(x) e^{ax}\); apply the product rule to find critical numbers.</li>
+                      <li><strong>Logistic-style optima</strong> — many real models combine growth and resource limits, yielding a single interior optimum.</li>
+                      <li><strong>Sign of \(e^{ax}\)</strong> — always positive, so sign of \(f'\) is governed by the polynomial factor.</li>
+                      <li><strong>Justification</strong> — \(f''\) of products with exponentials, or first-derivative sign change.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the absolute maximum of \(f(x) = x e^{-x^2/2}\) for \(x \ge 0\).</p>
+                      <p>Product rule: \(f'(x) = e^{-x^2/2} + x \cdot e^{-x^2/2} \cdot (-x) = e^{-x^2/2}(1 - x^2)\).</p>
+                      <p>Critical numbers: \(1 - x^2 = 0\), so \(x = 1\) (only positive value). \(f''\) sign or quick check: \(f'\) goes from positive (when \(x<1\)) to negative (when \(x>1\)), so \(x=1\) is a maximum.</p>
+                      <p>\(f(1) = e^{-1/2} = \tfrac{1}{\sqrt{e}} \approx 0.607\). Boundary check: \(f(0) = 0\) and \(\lim_{x\to\infty}f(x)=0\); so \(x=1\) gives the absolute max.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A drug's blood concentration is \(C(t) = 5te^{-0.5t}\) (mg/L, \(t\) in hours). When does peak concentration occur, and what is it?</p>
+                      <p>\(C'(t) = 5e^{-0.5t} + 5t(-0.5)e^{-0.5t} = 5e^{-0.5t}(1 - 0.5t)\).</p>
+                      <p>\(C'(t) = 0\) when \(1 - 0.5t = 0\), i.e., \(t = 2\) hours. \(C(2) = 5(2)e^{-1} = \tfrac{10}{e} \approx 3.68\) mg/L. Peak concentration is about 3.68 mg/L at \(t=2\) h.</p>
+                    </div>
+                    <ul>
+                      <li>Setting \(e^{ax} = 0\) — exponentials are never zero; they cannot contribute to critical numbers.</li>
+                      <li>Forgetting the product rule when differentiating \(x e^{ax}\); both factors depend on \(x\).</li>
+                      <li>Reporting a critical \(x\)-value without the corresponding function value — for context the value is more informative.</li>
+                      <li>Ignoring the domain restriction (\(t \ge 0\), \(x \in [0, T]\)); some critical numbers may fall outside.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v35')">
                         <span class="vid-icon">📖</span>
@@ -889,6 +1814,38 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=U5yInkijKxY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.4 introduces the derivatives of the two foundational trigonometric functions: \[\frac{d}{dx}[\sin x] = \cos x, \qquad \frac{d}{dx}[\cos x] = -\sin x.\] These are proven from first principles using the limit identities \(\lim_{h\to 0}\frac{\sin h}{h} = 1\) and \(\lim_{h\to 0}\frac{\cos h - 1}{h} = 0\), combined with the angle-addition formulas for \(\sin(x+h)\) and \(\cos(x+h)\). Both proofs require \(x\) and \(h\) to be in <em>radians</em>; the formulas fail if \(x\) is in degrees (you'd need an extra \(\frac{\pi}{180}\) factor).</p>
+                    <p>With these two rules and the chain rule, you can differentiate composite trig expressions: \(\frac{d}{dx}[\sin(g(x))] = \cos(g(x))\cdot g'(x)\), and similarly for cosine. A common pattern is \(\sin(\omega x)\), whose derivative is \(\omega \cos(\omega x)\) — the frequency parameter \(\omega\) gets multiplied out by the chain rule.</p>
+                    <p>The sign asymmetry is striking: \(\sin\) differentiates to \(\cos\) (no sign change), but \(\cos\) differentiates to \(-\sin\). Iterating, the derivative pattern of \(\sin x\) cycles \(\sin x \to \cos x \to -\sin x \to -\cos x \to \sin x\), returning every four derivatives. This pattern is the algebraic shadow of the geometric fact that sine and cosine are circular functions: differentiation rotates by a quarter turn.</p>
+                    <ul>
+                      <li><strong>Sine derivative</strong> — \(\frac{d}{dx}[\sin x] = \cos x\) (radians).</li>
+                      <li><strong>Cosine derivative</strong> — \(\frac{d}{dx}[\cos x] = -\sin x\); note the minus sign.</li>
+                      <li><strong>Radians required</strong> — formulas fail in degree mode; convert if necessary.</li>
+                      <li><strong>Chain rule</strong> — \(\frac{d}{dx}[\sin(g(x))] = \cos(g(x))\cdot g'(x)\).</li>
+                      <li><strong>Higher derivatives cycle</strong> — \(\sin^{(n)}x\) follows a period-4 pattern.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \sin(3x^2)\).</p>
+                      <p>Chain rule with \(g(x) = 3x^2\): \(g'(x) = 6x\). Then \(y' = \cos(3x^2)\cdot 6x = 6x\cos(3x^2)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x^2 \cos x\) and find \(y'\) at \(x = \tfrac{\pi}{2}\).</p>
+                      <p>Product rule: \(y' = 2x\cos x + x^2(-\sin x) = 2x\cos x - x^2 \sin x\).</p>
+                      <p>At \(x = \pi/2\): \(\cos(\pi/2) = 0\), \(\sin(\pi/2) = 1\). So \(y'(\pi/2) = 2(\pi/2)(0) - (\pi/2)^2(1) = -\pi^2/4\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the minus sign in \(\frac{d}{dx}[\cos x] = -\sin x\) — this is the single most common error.</li>
+                      <li>Working in degrees instead of radians; the formulas hold only in radian mode.</li>
+                      <li>Missing the inner derivative in chain rule: \(\frac{d}{dx}[\sin(3x)] = 3\cos(3x)\), not \(\cos(3x)\).</li>
+                      <li>Confusing \(\sin^2 x = (\sin x)^2\) with \(\sin(x^2)\); their derivatives are completely different.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.8 — "verify, through investigation, using technology, the derivatives of sine and cosine functions \((y = \sin x, y = \cos x)\) by graphing the function and its derivative, recognizing that the derivative of \(\sin x\) is \(\cos x\) and the derivative of \(\cos x\) is \(-\sin x\)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v36')">
@@ -915,6 +1872,37 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=AKRIBnKcamw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.5 derives the remaining basic trig derivatives by rewriting them in terms of \(\sin\) and \(\cos\) and applying the quotient rule. Starting with \(\tan x = \frac{\sin x}{\cos x}\): \[\frac{d}{dx}[\tan x] = \frac{\cos x \cdot \cos x - \sin x \cdot (-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x.\] So \(\frac{d}{dx}[\tan x] = \sec^2 x\). Similarly, \(\cot x = \frac{\cos x}{\sin x}\) yields \(\frac{d}{dx}[\cot x] = -\csc^2 x\).</p>
+                    <p>By the same method, the secant and cosecant derivatives are \(\frac{d}{dx}[\sec x] = \sec x \tan x\) and \(\frac{d}{dx}[\csc x] = -\csc x \cot x\). The pattern is: <em>co</em>-functions (cosine, cotangent, cosecant) pick up a minus sign when differentiated. With the chain rule, all extend: \(\frac{d}{dx}[\tan(g(x))] = \sec^2(g(x))\cdot g'(x)\), and so on.</p>
+                    <p>Trigonometric derivatives behave well except at the points where the original function blows up (where \(\cos x = 0\) for tan/sec, or \(\sin x = 0\) for cot/csc). At those points the function and its derivative are both undefined. Knowing the domain restrictions is essential when finding critical numbers or testing for extrema in trig contexts.</p>
+                    <ul>
+                      <li><strong>Tangent derivative</strong> — \(\frac{d}{dx}[\tan x] = \sec^2 x\); always non-negative where defined.</li>
+                      <li><strong>Cotangent derivative</strong> — \(\frac{d}{dx}[\cot x] = -\csc^2 x\); always non-positive where defined.</li>
+                      <li><strong>Secant derivative</strong> — \(\frac{d}{dx}[\sec x] = \sec x \tan x\).</li>
+                      <li><strong>Cosecant derivative</strong> — \(\frac{d}{dx}[\csc x] = -\csc x \cot x\).</li>
+                      <li><strong>Domain caveats</strong> — \(\tan, \sec\) undefined at odd multiples of \(\pi/2\); \(\cot, \csc\) undefined at integer multiples of \(\pi\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \tan(x^3 + 2)\).</p>
+                      <p>Chain rule with \(g(x) = x^3 + 2\): \(g'(x) = 3x^2\). So \(y' = \sec^2(x^3+2)\cdot 3x^2 = 3x^2 \sec^2(x^3 + 2)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the slope of \(y = \sec x\) at \(x = \tfrac{\pi}{3}\).</p>
+                      <p>\(y' = \sec x \tan x\). At \(x = \pi/3\): \(\sec(\pi/3) = 2\) and \(\tan(\pi/3) = \sqrt{3}\). Slope = \(2\sqrt{3}\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the minus sign on co-functions: \(\frac{d}{dx}[\cot x] = -\csc^2 x\), not \(\csc^2 x\).</li>
+                      <li>Writing \(\frac{d}{dx}[\tan^2 x] = \sec^2 x\) — this confuses \(\tan^2 x = (\tan x)^2\) with \(\tan x\). The correct derivative uses the chain rule: \(2\tan x \sec^2 x\).</li>
+                      <li>Trying to evaluate \(\sec x\) or \(\tan x\) at \(x = \pi/2\) — both are undefined there.</li>
+                      <li>Confusing \(\sec x\) (\(1/\cos x\)) with \(\arccos x\) or \(\cos^{-1} x\) (inverse cosine); they are different functions.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.9 — "solve problems, using the product, quotient, and chain rules, involving the derivatives of polynomial, rational, exponential, logarithmic, and trigonometric functions, and use the derivatives to determine information (e.g., equations of tangent lines, instantaneous rates of change) about the related functions."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v38')">
@@ -972,7 +1960,7 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt3')">
                 <span class="vid-icon">📖</span>
-                <span class="vid-title">Sinusoidal Models — Daily Temperature Word Problem — Khan Academy</span>
+_TEMP_SINUSOIDAL_
                 <span class="vid-duration">5:42</span>
                 <span class="vid-toggle" id="toggle-yt3">▶</span>
             </div>
