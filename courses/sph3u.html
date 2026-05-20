@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPH3U — Physics (Grade 11) | MindView</title>
 <link rel="stylesheet" href="../css/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 <style>
 .unit-section { margin-bottom: 48px; }
 .unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
@@ -46,6 +53,17 @@
 .assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
 .assessment-card .a-body p { font-size: 12px; color: #64748b; }
 .assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
 </style>
 </head>
 <body>
@@ -103,6 +121,38 @@
         <div class="topic-block">
             <div class="topic-title">A.1 — Lab Safety, WHMIS &amp; Measurement</div>
             <div class="topic-desc">Hazard symbols, electrical/optical/sound safety, SI units, significant digits, uncertainty</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Every physics investigation begins with safe practice and trustworthy numbers. The Workplace Hazardous Materials Information System (WHMIS 2015) uses pictograms inside a red diamond — flame, exploding bomb, skull-and-crossbones, corrosion, gas cylinder, health hazard, exclamation mark, environment, and biohazard — to communicate the dangers of a chemical at a glance. In a Grade 11 physics lab the most common hazards are electrical (frayed cords, short circuits across batteries), optical (laser pointers and bright filament lamps), thermal (hot resistors, ring stands after Bunsen burner work) and mechanical (dropped masses on toes, springs released under load). You should always wear safety glasses, tie back hair, never look directly into a laser, and discharge capacitors before handling.</p>
+                <p>Measurement is the language of physics. The International System of Units (SI) uses seven base units — metre, kilogram, second, ampere, kelvin, mole, candela — and every other physical quantity is a combination of these. Because no instrument is perfect, every measurement carries an <em>uncertainty</em>. We communicate the precision of a result through <strong>significant digits</strong>: all certain digits plus one estimated digit. When you add or subtract, the answer keeps the same number of decimal places as the least precise term; when you multiply or divide, the answer keeps the same number of significant digits as the least precise factor.</p>
+                <p>Percent error compares a measured value to an accepted one: \( \%\text{error} = \left|\dfrac{x_\text{meas} - x_\text{true}}{x_\text{true}}\right| \times 100\% \). Reporting raw numbers without uncertainty or units is meaningless — "12.3" tells the reader nothing, but "12.3 ± 0.1 cm" does.</p>
+                <ul>
+                  <li><strong>Length</strong> — metre (m), scalar</li>
+                  <li><strong>Mass</strong> — kilogram (kg), scalar (do not confuse with weight)</li>
+                  <li><strong>Time</strong> — second (s), scalar</li>
+                  <li><strong>Electric current</strong> — ampere (A), scalar</li>
+                  <li><strong>Temperature</strong> — kelvin (K), scalar</li>
+                  <li><strong>Significant digits</strong> — the certain digits plus one estimated digit in a measurement</li>
+                  <li><strong>Absolute uncertainty</strong> — ± the smallest division (analog) or last digit (digital)</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Reporting a measurement with the correct sig figs</p>
+                  <p>A ruler with millimetre divisions reads a length of 14.27 cm (estimating the last digit between 14.2 and 14.3 cm). Convert to metres and state the absolute uncertainty.</p>
+                  <p><strong>Step 1.</strong> Identify the smallest scale division: 1 mm = 0.1 cm, so the absolute uncertainty is ± 0.05 cm (half the smallest division) or ± 0.1 cm if a conservative reading is required by the teacher.</p>
+                  <p><strong>Step 2.</strong> Convert: \( 14.27\ \text{cm} \times \dfrac{1\ \text{m}}{100\ \text{cm}} = 0.1427\ \text{m} \).</p>
+                  <p><strong>Step 3.</strong> Report with matching uncertainty: \( L = (0.1427 \pm 0.0005)\ \text{m} \). The result has four significant digits because all four are justified by the instrument's precision.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing precision with accuracy</strong> — a result can be precise (tight spread) but inaccurate (far from true value)</li>
+                  <li><strong>Writing answers with calculator-display digits</strong> — keep only the significant ones (e.g. 1.234567 m → 1.23 m if data has 3 sig figs)</li>
+                  <li><strong>Dropping units mid-calculation</strong> — carry units through every step to catch errors</li>
+                  <li><strong>Treating mass and weight as the same</strong> — mass is in kg, weight is a force in newtons (N)</li>
+                  <li><strong>Ignoring WHMIS pictograms</strong> — always check the supplemental label before opening a container</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.5 — "use appropriate numeric, symbolic, and graphic modes of representation, and appropriate units of measurement (e.g., SI and imperial units)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -135,6 +185,38 @@
         <div class="topic-block">
             <div class="topic-title">A.2 — Scientific Method &amp; Experimental Design</div>
             <div class="topic-desc">Hypotheses, variables (IV/DV/CV), controlled trials, sample size, replication</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The scientific method is the disciplined process by which physicists turn curiosity into knowledge. It begins with an <em>observation</em> of a phenomenon, leads to a <em>question</em>, and prompts a <em>hypothesis</em> — a testable statement of the form "If I change X, then Y will change because…". The hypothesis predicts a specific, measurable outcome rather than a vague opinion. From the hypothesis a researcher designs a <em>controlled experiment</em> that isolates one variable at a time, collects quantitative data, analyses it (often graphically) and accepts, modifies, or rejects the hypothesis. Crucially, science is iterative: a single experiment never "proves" a theory, but repeated successful tests build confidence.</p>
+                <p>In every experiment three categories of variables must be identified before any data is collected. The <strong>independent variable (IV)</strong> is what the experimenter deliberately changes — for example, the mass on the end of a pendulum. The <strong>dependent variable (DV)</strong> is what is measured in response — the period of the pendulum. The <strong>controlled variables (CVs)</strong> are everything else that must remain constant — string length, amplitude, location (so g is constant). If a CV drifts, the IV-DV relationship is contaminated.</p>
+                <p>Reliable science demands <em>replication</em>: a result that occurs only once may be a fluke. By taking multiple trials and averaging, random errors decrease and the standard deviation tells us how confident we can be in the mean. A large <em>sample size</em> n improves the statistical power. Systematic errors (a miscalibrated stopwatch) cannot be averaged away — only identified and corrected.</p>
+                <ul>
+                  <li><strong>Hypothesis</strong> — a testable "if…then…because…" statement</li>
+                  <li><strong>Independent variable (IV)</strong> — quantity deliberately varied (plotted on the x-axis)</li>
+                  <li><strong>Dependent variable (DV)</strong> — quantity measured in response (plotted on the y-axis)</li>
+                  <li><strong>Controlled variable (CV)</strong> — quantity held constant across trials</li>
+                  <li><strong>Trial</strong> — one execution of the procedure; usually n ≥ 3 trials per IV setting</li>
+                  <li><strong>Random vs systematic error</strong> — random scatter shrinks with averaging; systematic offsets do not</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Designing a pendulum-period investigation</p>
+                  <p>Question: How does the length L of a pendulum affect its period T?</p>
+                  <p><strong>Step 1.</strong> Hypothesis: "If the length increases, then the period will increase because a longer pendulum has farther to travel under the same restoring force, predicting \( T \propto \sqrt{L} \)."</p>
+                  <p><strong>Step 2.</strong> Identify variables. IV = length L (5 settings: 0.20, 0.40, 0.60, 0.80, 1.00 m). DV = period T (s). CVs = bob mass (50 g steel ball), amplitude (&lt; 10°), location (same lab — same g).</p>
+                  <p><strong>Step 3.</strong> Replication plan: for each L, time 20 oscillations, then divide by 20 to get T; repeat 3 trials and average. This reduces human-reaction-time random error by a factor of 20.</p>
+                  <p><strong>Step 4.</strong> Anticipated analysis: plot T vs L (curve), then T² vs L (straight line) to test the predicted square-root law and extract g from the slope using \( T = 2\pi\sqrt{L/g} \).</p>
+                </div>
+                <ul>
+                  <li><strong>Changing two variables at once</strong> — you cannot tell which caused the effect</li>
+                  <li><strong>Confusing a hypothesis with a guess</strong> — a hypothesis must be falsifiable and reasoned</li>
+                  <li><strong>Reporting only one trial</strong> — without replication you cannot assess random error</li>
+                  <li><strong>Calling random error "human error"</strong> — be specific (reaction time, parallax, etc.)</li>
+                  <li><strong>Plotting IV on the y-axis</strong> — convention is IV on x, DV on y</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "identify and locate print, electronic, and human sources … and select information from these sources that is relevant to a specific research focus."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -155,6 +237,38 @@
         <div class="topic-block">
             <div class="topic-title">A.3 — Data Analysis &amp; Graph Linearisation</div>
             <div class="topic-desc">Plotting, slope/intercept interpretation, linearising quadratics, percent error</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Numbers in a data table tell only part of the story; a <em>graph</em> reveals patterns the eye cannot see in a column of digits. A well-drawn physics graph has a descriptive title (DV vs IV), labelled axes with units, a sensible scale that uses most of the page, plotted data points with small uncertainty bars, and either a best-fit straight line drawn with a ruler or a smooth curve. Computers (Excel, Logger Pro, Desmos) automate this, but you must still choose linear versus nonlinear regression intelligently.</p>
+                <p>Physics is full of <em>linear relationships</em> of the form \( y = mx + b \). The slope m carries physical meaning: on a position–time graph the slope is velocity (m/s); on a velocity–time graph the slope is acceleration (m/s²); on a force–extension graph the slope is the spring constant k (N/m). The intercept b also has meaning — usually the initial value of the dependent variable.</p>
+                <p>When the relationship is <em>nonlinear</em> we use <strong>linearisation</strong>: we plot a transformed variable so the data falls on a straight line. For \( y = ax^2 \) plot y vs x² (slope = a). For \( y = a\sqrt{x} \) plot y vs √x. For \( y = a/x \) plot y vs 1/x. Linearisation lets us extract the constant a with a simple ruler-and-pencil slope, and it confirms whether the theoretical model matches the data — if the transformed plot is straight, the model is supported.</p>
+                <ul>
+                  <li><strong>Slope (m)</strong> — rise/run, units = units of y ÷ units of x</li>
+                  <li><strong>y-intercept (b)</strong> — value of y when x = 0</li>
+                  <li><strong>Best-fit line</strong> — the straight line that minimises the perpendicular distance to all data points (least squares)</li>
+                  <li><strong>Linearisation</strong> — transformation of one variable to produce a linear plot</li>
+                  <li><strong>Coefficient of determination R²</strong> — closeness of fit; 1.0 is perfect</li>
+                  <li><strong>Percent error</strong> — \( \%E = \left|\dfrac{x_\text{exp} - x_\text{theory}}{x_\text{theory}}\right|\times 100\% \)</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Linearising a free-fall data set</p>
+                  <p>A student drops a ball from various heights h and times the fall t. Theory predicts \( h = \tfrac{1}{2}gt^2 \). A plot of h vs t is a curve. Linearise to find g.</p>
+                  <p><strong>Step 1.</strong> Recognise the model: \( h = \tfrac{1}{2}g \cdot t^2 \). Compare with \( y = mx + b \): if we let y = h and x = t², then m = g/2 and b = 0.</p>
+                  <p><strong>Step 2.</strong> Compute t² for each trial: (e.g. t = 0.45 s → t² = 0.2025 s²). Plot h (m) on y-axis versus t² (s²) on x-axis.</p>
+                  <p><strong>Step 3.</strong> Draw the best-fit line. Suppose two well-spread points on the line are (0.10, 0.49) and (0.50, 2.45). Slope = (2.45 − 0.49)/(0.50 − 0.10) = 1.96/0.40 = 4.90 m/s².</p>
+                  <p><strong>Step 4.</strong> Solve: m = g/2, so \( g = 2 \times 4.90 = 9.80\ \text{m/s}^2 \). Compare to accepted 9.81 m/s²: percent error = |9.80 − 9.81|/9.81 × 100% = 0.10%. Excellent!</p>
+                </div>
+                <ul>
+                  <li><strong>Forcing a line through (0,0)</strong> — only do this if theory predicts zero intercept</li>
+                  <li><strong>Using two raw data points instead of points on the best-fit line</strong> — slope must come from the line</li>
+                  <li><strong>Forgetting units on the slope</strong> — slope = y-units / x-units</li>
+                  <li><strong>Confusing R² = 0.99 with "accurate"</strong> — R² measures fit, not accuracy vs theory</li>
+                  <li><strong>Plotting too few data points</strong> — at least 5 IV settings are needed to identify a trend</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.10 — "draw conclusions based on inquiry results and research findings, and justify their conclusions with reference to scientific knowledge."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -175,6 +289,39 @@
         <div class="topic-block">
             <div class="topic-title">A.4 — Lab Reports &amp; Scientific Communication</div>
             <div class="topic-desc">Structure (purpose, hypothesis, procedure, data, analysis, conclusion); citation</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Scientific knowledge is useless if it cannot be communicated to others, so every formal physics investigation ends with a <em>lab report</em>. A well-written report lets a stranger replicate your experiment exactly and judge whether your conclusions follow from your data. The standard sections in order are: Title, Purpose, Hypothesis, Materials, Procedure, Data (raw tables), Analysis (calculations and graphs), Discussion of Sources of Error, Conclusion, and References. Each serves a distinct rhetorical purpose.</p>
+                <p>The <strong>Purpose</strong> states the question being investigated in one sentence. The <strong>Hypothesis</strong> predicts the outcome with reasoning grounded in prior physics. The <strong>Procedure</strong> is numbered, written in past tense or imperative voice, and detailed enough for someone else to reproduce. The <strong>Data</strong> section contains tables with proper headings, units, and uncertainties — never bare numbers. The <strong>Analysis</strong> shows sample calculations with full units, presents graphs, and links the data back to the hypothesis. The <strong>Discussion</strong> evaluates random errors (scatter), systematic errors (calibration), and limitations of the method. The <strong>Conclusion</strong> is a single paragraph answering the purpose with a specific quantitative result and percent error.</p>
+                <p>Scientific writing is precise, impersonal and concise. Use SI units, italicise symbols (the variable F, not the unit N), and cite any reference values (e.g. "g = 9.81 m/s² (Halliday &amp; Resnick, 2014)"). Plagiarism — copying procedure, analysis, or wording without attribution — is academic misconduct.</p>
+                <ul>
+                  <li><strong>Purpose</strong> — the question your experiment answers</li>
+                  <li><strong>Hypothesis</strong> — predicted outcome with physics reasoning</li>
+                  <li><strong>Procedure</strong> — reproducible step-by-step instructions</li>
+                  <li><strong>Sample calculation</strong> — one fully worked example with units and sig figs</li>
+                  <li><strong>Sources of error</strong> — random (timing scatter) and systematic (zero offset)</li>
+                  <li><strong>Citation</strong> — APA-style reference to textbook or peer-reviewed source</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Writing a conclusion paragraph</p>
+                  <p>After a pendulum experiment to determine g, a student calculated \( g_\text{exp} = 9.67\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 1.</strong> Restate the purpose: "The purpose was to determine the acceleration due to gravity using a simple pendulum."</p>
+                  <p><strong>Step 2.</strong> State the result with uncertainty: "The experimental value was \( g = (9.67 \pm 0.10)\ \text{m/s}^2 \)."</p>
+                  <p><strong>Step 3.</strong> Compare to accepted: \( \%E = |9.67 - 9.81|/9.81 \times 100\% = 1.4\% \). "This represents a percent error of 1.4%, well within the 5% tolerance for a Grade 11 mechanics lab."</p>
+                  <p><strong>Step 4.</strong> Discuss errors: "Random error in stopwatch timing was reduced by measuring 20 oscillations per trial. The 1.4% deviation is likely systematic, caused by slight pivot-point friction not included in the ideal pendulum model."</p>
+                  <p><strong>Step 5.</strong> Address the hypothesis: "The data confirm the hypothesis that \( T \propto \sqrt{L} \), since the T² vs L graph was linear with R² = 0.998."</p>
+                </div>
+                <ul>
+                  <li><strong>Writing the procedure in first person ("I dropped the ball")</strong> — use passive or imperative voice</li>
+                  <li><strong>Reporting calculator-display sig figs</strong> — match precision of measured data</li>
+                  <li><strong>Listing "human error" as the only source of error</strong> — be specific (parallax, reaction time)</li>
+                  <li><strong>Omitting units in tables</strong> — every column needs a unit in the header</li>
+                  <li><strong>Concluding "it worked"</strong> — conclude with a quantitative result and a comparison</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.12 — "communicate ideas, plans, procedures, results, and conclusions … using appropriate language and a variety of formats (e.g., data tables, laboratory reports, presentations, debates, simulations, models)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -195,6 +342,38 @@
         <div class="topic-block">
             <div class="topic-title">A.5 — STSE &amp; Career Exploration in Physics</div>
             <div class="topic-desc">Engineering, skilled trades, medical imaging, audiology, energy industry, climate science</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Physics is the foundational science behind nearly every modern technology, and the STSE (Science, Technology, Society and Environment) lens asks students to think critically about how physics is applied, who benefits, who bears the risks, and what trade-offs society must negotiate. A wind turbine reduces greenhouse emissions but raises questions about avian impact and visual pollution. A medical CT scan saves lives by imaging internal organs, but each scan exposes the patient to ionising radiation. Engineers and policymakers use physics every day to weigh such trade-offs.</p>
+                <p>Grade 11 physics opens doors to many careers. <strong>Engineers</strong> (civil, mechanical, electrical, biomedical, aerospace) translate physics into infrastructure and devices. <strong>Skilled trades</strong> — electricians, HVAC technicians, machinists, millwrights, instrumentation technologists — apply physics every day to wire homes safely, repair equipment, and calibrate sensors. <strong>Medical imaging technologists</strong> operate MRI, CT, X-ray and ultrasound machines, all of which rest on the physics of waves and electromagnetism studied this year. <strong>Audiologists</strong> apply sound physics to diagnose hearing loss. The <strong>energy industry</strong> employs physicists in oil, gas, hydro, nuclear, solar, and wind sectors. <strong>Climate scientists</strong> use physics of radiation, fluid dynamics and thermodynamics to model Earth's atmosphere.</p>
+                <p>Most Ontario apprenticeship and college engineering-technology programs require Grade 11 Physics; most university engineering and science programs require Grade 12 Physics (SPH4U) as a prerequisite. Beyond credentials, the habits of mind taught in physics — quantitative reasoning, systematic problem-solving, scepticism toward claims — are valuable in any technical career.</p>
+                <ul>
+                  <li><strong>STSE</strong> — Science, Technology, Society and Environment framework</li>
+                  <li><strong>Engineering</strong> — applies physics to design devices and systems</li>
+                  <li><strong>Skilled trades</strong> — electrician, machinist, HVAC, instrumentation tech</li>
+                  <li><strong>Medical physics</strong> — MRI, CT, ultrasound, radiation oncology</li>
+                  <li><strong>Renewable energy</strong> — solar PV, wind, hydro, geothermal, tidal</li>
+                  <li><strong>Climate physics</strong> — radiation balance, fluid dynamics, thermodynamics</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — STSE analysis: comparing energy sources</p>
+                  <p>A municipality must decide between a 100 MW natural-gas plant and a 100 MW solar farm. Use physics quantities to compare them.</p>
+                  <p><strong>Step 1.</strong> Annual energy: assume the natural-gas plant runs at 85% capacity factor. \( E_\text{gas} = 100\ \text{MW} \times 0.85 \times 8760\ \text{h/yr} = 7.45 \times 10^5\ \text{MWh/yr} \).</p>
+                  <p><strong>Step 2.</strong> Solar capacity factor in Ontario ≈ 17%. \( E_\text{solar} = 100\ \text{MW} \times 0.17 \times 8760 = 1.49 \times 10^5\ \text{MWh/yr} \) — about 1/5 the gas plant output.</p>
+                  <p><strong>Step 3.</strong> CO₂: natural gas emits ≈ 0.4 t CO₂/MWh, so annual emissions ≈ 298 000 t. Solar emits ≈ 0.05 t CO₂/MWh (life-cycle), so ≈ 7500 t.</p>
+                  <p><strong>Step 4.</strong> Trade-offs: solar is intermittent (needs storage or backup), uses more land per MWh, and has lifecycle emissions during panel manufacture. Gas is dispatchable but locks in fossil fuel dependence. The STSE decision balances climate, cost, reliability, land use and jobs — no single "right" answer.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing power (MW) and energy (MWh)</strong> — power is rate, energy is total</li>
+                  <li><strong>Ignoring capacity factor</strong> — nameplate power is rarely the average output</li>
+                  <li><strong>Assuming "green" means zero-emission</strong> — every technology has a life-cycle footprint</li>
+                  <li><strong>One-sided STSE arguments</strong> — explore costs, benefits, risks for all stakeholders</li>
+                  <li><strong>Dismissing trades as "not real physics"</strong> — Red Seal technologists routinely apply physics</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "identify and describe a variety of careers related to the fields of science under study, and identify scientists, including Canadians, who have made contributions to those fields."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -229,6 +408,39 @@
         <div class="topic-block">
             <div class="topic-title">1.1 — Position, Displacement, Velocity, Acceleration</div>
             <div class="topic-desc">Scalars vs. vectors, instantaneous vs. average, sign conventions in 1-D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Kinematics is the geometry of motion — describing how objects move without yet asking why. To describe motion we need a <em>frame of reference</em>: an origin, a direction we call positive, and a clock. Once the frame is set, every kinematic quantity is well-defined. <strong>Position</strong> \( \vec{d} \) is the location of an object relative to the origin (a vector, in metres). <strong>Displacement</strong> \( \Delta\vec{d} = \vec{d}_f - \vec{d}_i \) is the straight-line change in position; it answers "where did you end up, and in what direction?" — fundamentally different from <em>distance</em>, which is the total path length and never decreases.</p>
+                <p><strong>Velocity</strong> \( \vec{v} \) is the rate of change of position and is therefore a vector. Average velocity is \( \vec{v}_\text{avg} = \Delta\vec{d}/\Delta t \). Instantaneous velocity is the limit as \( \Delta t \to 0 \) — the slope of the tangent on a position–time graph. <em>Speed</em>, in contrast, is a scalar equal to distance divided by time, and is always non-negative. <strong>Acceleration</strong> \( \vec{a} \) is the rate of change of velocity, \( \vec{a} = \Delta\vec{v}/\Delta t \), measured in m/s². Acceleration is a vector: a negative sign means it points in the negative direction, which may speed an object up or slow it down depending on its current velocity.</p>
+                <p>Sign conventions matter. If you choose "east is positive", then a car moving west has negative velocity. If the same car is speeding up while heading west, its acceleration is also negative. If it is heading west but braking, its acceleration is positive (it points east). Confusing the sign of velocity with the sign of acceleration is the single most common mistake in Grade 11 kinematics.</p>
+                <ul>
+                  <li><strong>Position</strong> \( \vec{d} \) — vector, m</li>
+                  <li><strong>Displacement</strong> \( \Delta\vec{d} \) — vector, m</li>
+                  <li><strong>Distance</strong> d — scalar (path length), m</li>
+                  <li><strong>Velocity</strong> \( \vec{v} \) — vector, m/s</li>
+                  <li><strong>Speed</strong> \( |\vec{v}| \) — scalar, m/s</li>
+                  <li><strong>Acceleration</strong> \( \vec{a} \) — vector, m/s²</li>
+                  <li><strong>Frame of reference</strong> — origin + positive direction + clock</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Average velocity vs average speed</p>
+                  <p>A jogger runs 400 m east in 80 s, then 300 m west in 60 s. Find average speed and average velocity. Choose east = +.</p>
+                  <p><strong>Step 1.</strong> Total distance = 400 + 300 = 700 m. Total time = 80 + 60 = 140 s.</p>
+                  <p><strong>Step 2.</strong> Average speed = 700/140 = 5.0 m/s (scalar — direction not relevant).</p>
+                  <p><strong>Step 3.</strong> Displacement = +400 − 300 = +100 m (east). Average velocity = +100/140 = +0.71 m/s east.</p>
+                  <p><strong>Step 4.</strong> Notice the dramatic difference: average speed (5.0 m/s) is seven times the magnitude of average velocity (0.71 m/s) because the jogger doubled back. This is why distinguishing scalars from vectors is essential.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing distance with displacement</strong> — distance ≥ |displacement|</li>
+                  <li><strong>Confusing speed with velocity</strong> — speed is the magnitude, velocity carries direction</li>
+                  <li><strong>Forgetting to set a positive direction</strong> — without it, signs are meaningless</li>
+                  <li><strong>Assuming negative acceleration = slowing down</strong> — only if velocity is positive</li>
+                  <li><strong>Dropping the vector arrow in equations</strong> — write \( \vec{v} \), not v, when direction matters</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe and explain different kinds of motion, and apply quantitatively the relationships among displacement, velocity, and acceleration in specific contexts."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -261,6 +473,39 @@
         <div class="topic-block">
             <div class="topic-title">1.2 — Motion Graphs &amp; Kinematic Equations</div>
             <div class="topic-desc">Slopes, areas, the five kinematic equations of uniformly accelerated motion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Motion graphs are the visual language of kinematics. On a <strong>position–time (d–t) graph</strong>, the slope of the line at any instant is the instantaneous velocity. A horizontal line means the object is at rest; a straight diagonal means constant velocity; a curve means the velocity is changing (acceleration). On a <strong>velocity–time (v–t) graph</strong>, the slope is the acceleration, and the <em>area</em> between the line and the time axis equals the displacement during that interval — this is one of the most powerful insights in Grade 11 physics. On an <strong>acceleration–time (a–t) graph</strong>, the area equals the change in velocity. Learning to translate fluently between d–t, v–t, and a–t graphs is essential.</p>
+                <p>For motion in a straight line with <em>constant acceleration</em>, the five kinematic equations (sometimes called the BIG 5) connect five quantities — \( \Delta d \), \( v_i \), \( v_f \), \( a \), \( t \). Each equation is missing one variable, so you pick the equation that excludes the variable you do not know and do not need. The equations are derived from the definitions of average velocity and acceleration; you should be able to derive them, not just memorise them.</p>
+                <p>The five equations: \( v_f = v_i + at \); \( \Delta d = v_i t + \tfrac{1}{2}at^2 \); \( \Delta d = v_f t - \tfrac{1}{2}at^2 \); \( \Delta d = \tfrac{1}{2}(v_i + v_f)t \); \( v_f^2 = v_i^2 + 2a\Delta d \). Each is valid only when \( a \) is constant.</p>
+                <ul>
+                  <li><strong>Slope of d–t graph</strong> — instantaneous velocity, m/s</li>
+                  <li><strong>Slope of v–t graph</strong> — instantaneous acceleration, m/s²</li>
+                  <li><strong>Area under v–t graph</strong> — displacement, m</li>
+                  <li><strong>Area under a–t graph</strong> — change in velocity, m/s</li>
+                  <li><strong>BIG 5</strong> — five kinematic equations for uniform acceleration</li>
+                  <li><strong>Uniform acceleration</strong> — \( a = \) constant; required for the BIG 5 to apply</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Selecting the right kinematic equation</p>
+                  <p>A drag racer accelerates uniformly from rest and covers 402 m (a quarter mile) in 9.50 s. Find the acceleration and the final velocity.</p>
+                  <p><strong>Step 1.</strong> List knowns: \( v_i = 0 \), \( \Delta d = 402\ \text{m} \), \( t = 9.50\ \text{s} \). Unknowns: a, \( v_f \). Choose direction of motion as positive.</p>
+                  <p><strong>Step 2.</strong> Choose the equation that excludes \( v_f \): \( \Delta d = v_i t + \tfrac{1}{2}at^2 \). With \( v_i = 0 \): \( 402 = \tfrac{1}{2}a(9.50)^2 \).</p>
+                  <p><strong>Step 3.</strong> Solve: \( a = 2(402)/(9.50)^2 = 804/90.25 = 8.91\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 4.</strong> Use \( v_f = v_i + at = 0 + (8.91)(9.50) = 84.6\ \text{m/s} \) (about 305 km/h — realistic for a top-fuel dragster).</p>
+                  <p><strong>Step 5.</strong> Check with a different equation: \( v_f^2 = 0 + 2(8.91)(402) = 7163 \), so \( v_f = 84.6\ \text{m/s}\ \checkmark \).</p>
+                </div>
+                <ul>
+                  <li><strong>Applying the BIG 5 when acceleration is not constant</strong> — they are invalid for variable a</li>
+                  <li><strong>Plugging in negative time</strong> — t is always ≥ 0 in our problems</li>
+                  <li><strong>Forgetting initial velocity</strong> — "from rest" means \( v_i = 0 \); otherwise read carefully</li>
+                  <li><strong>Mixing up \( v_i \) and \( v_f \)</strong> — they correspond to start and end of the chosen interval</li>
+                  <li><strong>Using \( v = d/t \) for non-uniform motion</strong> — that formula gives average, not instantaneous, velocity</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve problems involving displacement, velocity, and acceleration in one dimension, using the equations of motion (e.g., for uniformly accelerated motion)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -281,6 +526,37 @@
         <div class="topic-block">
             <div class="topic-title">1.3 — Free Fall &amp; Acceleration Due to Gravity</div>
             <div class="topic-desc">\( g = 9.8 \) m/s²; sign of \( g \); experimental determination using ticker timer or photogates</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Galileo's revolutionary insight was that, in the absence of air resistance, all objects near Earth's surface fall with the same constant downward acceleration regardless of mass. This acceleration is denoted \( g \), with magnitude approximately 9.81 m/s² (often rounded to 9.8 m/s² for Grade 11 work). A bowling ball and a feather, dropped in a vacuum chamber, hit the floor at the same instant — Apollo 15 astronaut Dave Scott demonstrated this dramatically on the Moon with a hammer and a feather. In our atmosphere a feather falls slowly because air drag, not weaker gravity, retards it.</p>
+                <p>"Free fall" describes any object on which gravity is the only force acting. This includes objects falling straight down, thrown straight up, and even thrown sideways (projectiles, see 1.5). At the top of an upward throw, the velocity is momentarily zero but the acceleration is still 9.8 m/s² downward — gravity does not "pause". The sign of g depends on your axis: if up is positive, then \( a = -9.8\ \text{m/s}^2 \); if down is positive, then \( a = +9.8\ \text{m/s}^2 \). The physics is the same; only the bookkeeping changes.</p>
+                <p>In the lab, g can be measured with a ticker-tape timer (60 dots per second from the AC line), a photogate connected to a smart timer, or modern motion sensors. The classical method drops a metal weight, photographs successive positions, computes velocities for each interval, and finds the slope of the v–t graph. Careful technique yields g within 2% of 9.81 m/s².</p>
+                <ul>
+                  <li><strong>Acceleration due to gravity</strong> g = 9.81 m/s² near Earth's surface (vector, downward)</li>
+                  <li><strong>Free fall</strong> — gravity is the only force acting</li>
+                  <li><strong>Terminal velocity</strong> — speed at which drag equals weight (not present in vacuum)</li>
+                  <li><strong>Up-positive convention</strong> — \( a = -g \), \( v_i \) positive for upward throws</li>
+                  <li><strong>Down-positive convention</strong> — \( a = +g \), useful for dropped-object problems</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Ball thrown vertically upward</p>
+                  <p>A ball is launched straight up from ground level at 19.6 m/s. Take up as positive, so \( a = -9.81\ \text{m/s}^2 \). Find (a) the time to reach maximum height, (b) the maximum height, (c) the total time of flight back to launch height.</p>
+                  <p><strong>Step 1.</strong> At maximum height \( v_f = 0 \). Use \( v_f = v_i + at \): \( 0 = 19.6 + (-9.81)t \), so \( t = 19.6/9.81 = 2.00\ \text{s} \).</p>
+                  <p><strong>Step 2.</strong> Maximum height using \( v_f^2 = v_i^2 + 2a\Delta d \): \( 0 = (19.6)^2 + 2(-9.81)\Delta d \), so \( \Delta d = 384.16/19.62 = 19.6\ \text{m} \).</p>
+                  <p><strong>Step 3.</strong> By symmetry, time to fall back from peak equals time to rise, so total flight time \( = 2 \times 2.00 = 4.00\ \text{s} \). At impact \( v_f = -19.6\ \text{m/s} \) — same speed, opposite direction.</p>
+                  <p><strong>Step 4.</strong> Sanity check: at any height during ascent the ball has the same speed it had at that height during descent (energy conservation, see 3.2).</p>
+                </div>
+                <ul>
+                  <li><strong>Saying "g = 9.8 N/kg"</strong> — that is the gravitational field strength (equal in magnitude but different concept)</li>
+                  <li><strong>Setting \( a = 0 \) at the top of the trajectory</strong> — only velocity is zero; acceleration remains g</li>
+                  <li><strong>Treating "g" as a vector with a sign</strong> — g is the positive magnitude; the sign comes from your axis choice</li>
+                  <li><strong>Forgetting that more-massive objects do not fall faster</strong> (in vacuum)</li>
+                  <li><strong>Including air resistance for a steel ball</strong> — usually negligible over short drops</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "analyse, in qualitative and quantitative terms, the linear motion of objects in horizontal, vertical, and inclined planes (e.g., the motion of an object falling freely under gravity)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -325,6 +601,39 @@
         <div class="topic-block">
             <div class="topic-title">1.4 — Vectors &amp; 2-D Motion</div>
             <div class="topic-desc">Vector addition (graphical, component method), trigonometry review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Most real motion is two-dimensional: a hockey puck slides at an angle, a plane crosses a wind, a ball rolls across a field. To handle 2-D motion we extend the idea of a vector. A <strong>vector</strong> has both magnitude and direction (e.g. 25 m/s at 30° north of east), while a <strong>scalar</strong> has only magnitude (e.g. 25 m/s). Vectors are drawn as arrows whose length represents magnitude and orientation represents direction. Two vectors are equal if they have the same magnitude and direction, regardless of starting position.</p>
+                <p>To add vectors graphically, place them tip-to-tail; the resultant is the arrow from the tail of the first to the tip of the last. The <strong>component method</strong> is more accurate: any 2-D vector can be decomposed into perpendicular components along the x- and y-axes using trigonometry. For a vector \( \vec{A} \) of magnitude A at angle θ measured counter-clockwise from the +x-axis: \( A_x = A\cos\theta \) and \( A_y = A\sin\theta \). To add several vectors, sum their x-components and y-components separately, then reconstruct the resultant: \( R = \sqrt{R_x^2 + R_y^2} \) and \( \theta_R = \tan^{-1}(R_y/R_x) \), being careful about which quadrant the resultant lies in.</p>
+                <p>In two-dimensional kinematics, displacement, velocity, and acceleration are all vector quantities. Crucially, motion in perpendicular directions is independent — the x-equations and y-equations are separate copies of the BIG 5 that share only the time variable. This independence is the key to solving projectile and relative-velocity problems.</p>
+                <ul>
+                  <li><strong>Vector</strong> — quantity with magnitude and direction</li>
+                  <li><strong>Scalar</strong> — quantity with magnitude only</li>
+                  <li><strong>Resultant</strong> — single vector equal to the sum of two or more vectors</li>
+                  <li><strong>Component</strong> — projection of a vector onto an axis; \( A_x = A\cos\theta \), \( A_y = A\sin\theta \)</li>
+                  <li><strong>Magnitude</strong> — \( |\vec{A}| = \sqrt{A_x^2 + A_y^2} \)</li>
+                  <li><strong>Direction angle</strong> — \( \theta = \tan^{-1}(A_y/A_x) \), check quadrant</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Adding two displacement vectors</p>
+                  <p>A hiker walks 4.0 km east, then 3.0 km at 60° north of east. Find the total displacement (magnitude and direction).</p>
+                  <p><strong>Step 1.</strong> Vector A = 4.0 km east. Components: \( A_x = 4.0\cos 0° = 4.0\ \text{km} \), \( A_y = 4.0\sin 0° = 0\ \text{km} \).</p>
+                  <p><strong>Step 2.</strong> Vector B = 3.0 km at 60° N of E. Components: \( B_x = 3.0\cos 60° = 1.50\ \text{km} \), \( B_y = 3.0\sin 60° = 2.60\ \text{km} \).</p>
+                  <p><strong>Step 3.</strong> Sum components: \( R_x = 4.0 + 1.50 = 5.50\ \text{km} \); \( R_y = 0 + 2.60 = 2.60\ \text{km} \).</p>
+                  <p><strong>Step 4.</strong> Magnitude: \( R = \sqrt{5.50^2 + 2.60^2} = \sqrt{30.25 + 6.76} = \sqrt{37.01} = 6.08\ \text{km} \).</p>
+                  <p><strong>Step 5.</strong> Direction: \( \theta = \tan^{-1}(2.60/5.50) = \tan^{-1}(0.473) = 25.3° \) north of east. Total displacement: 6.08 km at 25° N of E.</p>
+                </div>
+                <ul>
+                  <li><strong>Adding magnitudes directly</strong> — only valid if vectors are in the same direction</li>
+                  <li><strong>Mixing degrees and radians</strong> — set calculator mode to DEG for Grade 11 problems</li>
+                  <li><strong>Forgetting to check quadrant</strong> — \( \tan^{-1} \) returns angles in (−90°, 90°)</li>
+                  <li><strong>Using sin for x-component and cos for y</strong> — only if angle is measured from y-axis; check carefully</li>
+                  <li><strong>Mixing units</strong> — convert km/m and h/s before substituting</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "analyse and predict, in quantitative terms, and explain the linear motion of objects in horizontal, vertical, and inclined planes (e.g., a hockey puck on ice, a baseball thrown vertically into the air)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -345,6 +654,38 @@
         <div class="topic-block">
             <div class="topic-title">1.5 — Projectile Motion &amp; Relative Velocity</div>
             <div class="topic-desc">Independence of horizontal and vertical motion; range, time of flight, max height; river-crossing &amp; aircraft-in-wind problems</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>projectile</strong> is any object thrown or launched into the air on which only gravity acts (air resistance neglected). The single most important idea in projectile motion is the <em>independence of horizontal and vertical motion</em>. Horizontally, no force acts, so \( a_x = 0 \) and \( v_x = \) constant. Vertically, gravity acts, so \( a_y = -9.81\ \text{m/s}^2 \) (up positive). The two motions share only the time variable t. This is why a bullet fired horizontally and a bullet dropped from the same height hit the ground at the same instant — their vertical motions are identical.</p>
+                <p>To solve a projectile problem: (1) resolve the initial velocity into horizontal and vertical components, \( v_{ix} = v_i\cos\theta \), \( v_{iy} = v_i\sin\theta \); (2) write a separate BIG 5 for x and y; (3) use the shared time t to link them. For a projectile launched and landing at the same height, time of flight \( t = 2v_{iy}/g \), maximum height \( h = v_{iy}^2/(2g) \), and range \( R = v_i^2 \sin(2\theta)/g \) — yielding maximum range at θ = 45°.</p>
+                <p><strong>Relative velocity</strong> uses vector subtraction. The velocity of object A as measured by observer B is \( \vec{v}_\text{AB} = \vec{v}_\text{A,ground} - \vec{v}_\text{B,ground} \). A river-crossing problem treats the boat's velocity in still water as one vector and the river current as another; their sum gives the boat's velocity relative to the ground. An aircraft-in-wind problem is identical in structure: airspeed + wind = groundspeed.</p>
+                <ul>
+                  <li><strong>Projectile</strong> — object under gravity only (no air drag, no thrust)</li>
+                  <li><strong>Independence principle</strong> — horizontal and vertical motions are decoupled</li>
+                  <li><strong>Range</strong> R — horizontal displacement to landing</li>
+                  <li><strong>Time of flight</strong> t — total time in the air</li>
+                  <li><strong>Maximum range angle</strong> — 45° (level ground, no air drag)</li>
+                  <li><strong>Relative velocity</strong> — \( \vec{v}_\text{AB} = \vec{v}_A - \vec{v}_B \), all measured in the same ground frame</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Soccer kick</p>
+                  <p>A soccer ball is kicked at 18.0 m/s at 35° above the ground. Find time of flight, maximum height, and range. Use \( g = 9.81\ \text{m/s}^2 \), up positive, ignore air drag.</p>
+                  <p><strong>Step 1.</strong> Components: \( v_{ix} = 18.0\cos 35° = 14.74\ \text{m/s} \); \( v_{iy} = 18.0\sin 35° = 10.32\ \text{m/s} \).</p>
+                  <p><strong>Step 2.</strong> Time of flight (symmetric trajectory): use \( v_{fy} = -v_{iy} \) at landing. From \( v_{fy} = v_{iy} + a_y t \): \( -10.32 = 10.32 + (-9.81)t \), so \( t = 20.64/9.81 = 2.10\ \text{s} \).</p>
+                  <p><strong>Step 3.</strong> Maximum height: \( h = v_{iy}^2/(2g) = (10.32)^2/(2 \times 9.81) = 106.5/19.62 = 5.43\ \text{m} \).</p>
+                  <p><strong>Step 4.</strong> Range: \( R = v_{ix} \cdot t = 14.74 \times 2.10 = 30.95\ \text{m} \). The ball travels about 31 m, peaking at 5.4 m.</p>
+                </div>
+                <ul>
+                  <li><strong>Applying gravity horizontally</strong> — gravity has no horizontal component for projectiles</li>
+                  <li><strong>Forgetting to resolve the initial velocity</strong> — \( v_i \) must be split into x and y</li>
+                  <li><strong>Setting \( v_y = 0 \) at the top and assuming the ball stops</strong> — only vertical velocity is zero</li>
+                  <li><strong>Using \( R = v_i^2\sin(2\theta)/g \) when landing height ≠ launch height</strong> — derive from BIG 5 instead</li>
+                  <li><strong>Adding relative-velocity magnitudes instead of vectors</strong> — must use components</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "solve problems related to motion in a horizontal plane, in a vertical plane, and on an inclined plane, including problems involving frames of reference and relative motion."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -388,6 +729,38 @@
         <div class="topic-block">
             <div class="topic-title">2.1 — Forces &amp; Free-Body Diagrams</div>
             <div class="topic-desc">Identifying forces (gravity, normal, friction, tension, applied), drawing accurate FBDs</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>force</strong> is an interaction that can change an object's motion — a push or a pull. Force is a vector, measured in newtons (N): one newton is the force that gives a 1 kg mass an acceleration of 1 m/s². Forces come in two categories: <em>contact forces</em> (normal, friction, tension, applied, spring) require physical touch; <em>field forces</em> (gravitational, electric, magnetic) act at a distance. The most common forces in Grade 11 mechanics are gravity (weight \( F_g = mg \) acting downward), the normal force (perpendicular to a surface, balancing perpendicular components of other forces), friction (parallel to a surface, opposing sliding), tension (along a rope or cable, pulling the object toward the rope), and applied/pushing forces.</p>
+                <p>A <strong>free-body diagram (FBD)</strong> is a schematic showing every force acting <em>on</em> an object, drawn as arrows starting at the centre of mass. The FBD is the single most important problem-solving tool in mechanics: a correctly-drawn FBD makes Newton's second law almost mechanical, while an incorrect FBD guarantees a wrong answer. Steps: isolate the object, draw a dot or simple box, draw every force as an arrow with a label (\( F_g \), \( F_N \), \( F_f \), \( F_T \), \( F_a \)), and choose coordinate axes (usually aligned with the surface or the direction of motion).</p>
+                <p>The <strong>net force</strong> \( \vec{F}_\text{net} = \Sigma\vec{F} \) is the vector sum of all forces on the object. If \( \vec{F}_\text{net} = 0 \), the object is in <em>equilibrium</em> (at rest or moving at constant velocity). If \( \vec{F}_\text{net} \neq 0 \), the object accelerates in the direction of the net force.</p>
+                <ul>
+                  <li><strong>Force</strong> \( \vec{F} \) — vector, newton (N), 1 N = 1 kg·m/s²</li>
+                  <li><strong>Weight</strong> \( F_g = mg \) — force of gravity, always downward, N</li>
+                  <li><strong>Normal force</strong> \( F_N \) — perpendicular to contact surface</li>
+                  <li><strong>Friction</strong> \( F_f \) — parallel to surface, opposes relative motion</li>
+                  <li><strong>Tension</strong> \( F_T \) — pull along a rope, same magnitude throughout an ideal (massless) rope</li>
+                  <li><strong>Net force</strong> \( \vec{F}_\text{net} \) — vector sum of all forces on the object</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — FBD for a crate being pulled across a rough floor</p>
+                  <p>A 25 kg crate is pulled across a floor by a rope inclined 30° above horizontal, with tension 100 N. Kinetic friction acts. Draw an FBD and list each force.</p>
+                  <p><strong>Step 1.</strong> Isolate the crate; draw a small box. The crate touches the floor (normal force up) and the rope (tension along the rope).</p>
+                  <p><strong>Step 2.</strong> Forces acting on the crate: gravity \( F_g = mg = 25 \times 9.81 = 245.25\ \text{N} \) straight down; normal force \( F_N \) straight up from the floor; kinetic friction \( F_f \) horizontal, opposite to motion; tension \( F_T = 100\ \text{N} \) at 30° above horizontal.</p>
+                  <p><strong>Step 3.</strong> Resolve the tension: \( F_{Tx} = 100\cos 30° = 86.6\ \text{N} \) horizontal; \( F_{Ty} = 100\sin 30° = 50.0\ \text{N} \) upward.</p>
+                  <p><strong>Step 4.</strong> Apply equilibrium in y: \( F_N + F_{Ty} - F_g = 0 \), so \( F_N = 245.25 - 50.0 = 195.25\ \text{N} \). Note that the upward pull reduces the normal force — important for friction calculations.</p>
+                </div>
+                <ul>
+                  <li><strong>Including a "force of motion"</strong> — moving does not require a force (Newton's first law)</li>
+                  <li><strong>Drawing the normal force as the reaction to gravity</strong> — they are not a Newton's-third-law pair</li>
+                  <li><strong>Forgetting to label the object</strong> — an FBD always isolates one object</li>
+                  <li><strong>Drawing forces of the object on others</strong> — FBD shows only forces <em>on</em> the chosen object</li>
+                  <li><strong>Mixing weight (N) and mass (kg)</strong> — they differ by a factor of g</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "draw free-body diagrams (FBDs) and use them to analyse force situations, including those involving an object on a horizontal surface, an object on an inclined plane, and an object suspended by ropes."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -408,6 +781,39 @@
         <div class="topic-block">
             <div class="topic-title">2.2 — Newton's First &amp; Second Laws</div>
             <div class="topic-desc">Inertia, equilibrium, \( \Sigma F = ma \) in 1-D and 2-D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Newton's First Law (the Law of Inertia)</strong> states that an object will remain at rest, or continue moving in a straight line at constant velocity, unless acted upon by a net external force. This contradicts everyday Aristotelian intuition (a sliding book "wants" to stop), but the apparent slowing down is caused by friction — a force we often forget to include. Inertia is the resistance of matter to changes in its motion, and it is quantified by <em>mass</em> (kg). A larger mass has more inertia: a transport truck takes much longer to stop than a bicycle even when both feel similar braking forces, because the truck's larger mass resists the change.</p>
+                <p><strong>Newton's Second Law</strong> connects force and motion quantitatively: \( \vec{F}_\text{net} = m\vec{a} \), or equivalently \( \vec{a} = \vec{F}_\text{net}/m \). The acceleration of an object is directly proportional to the net force on it and inversely proportional to its mass, and the acceleration is in the direction of the net force. Note carefully: it is the <em>net</em> (vector sum) force, not individual forces, that determines acceleration. A car at constant velocity has zero net force even though the engine is producing thrust — friction and drag balance the thrust.</p>
+                <p>In two dimensions, Newton's second law splits into independent component equations: \( \Sigma F_x = m a_x \) and \( \Sigma F_y = m a_y \). Pick axes aligned with the motion (e.g. along an incline) to minimise the number of components you need to resolve.</p>
+                <ul>
+                  <li><strong>Inertia</strong> — tendency to maintain state of motion (measured by mass)</li>
+                  <li><strong>Mass</strong> m — kg, scalar, measure of inertia</li>
+                  <li><strong>Newton (N)</strong> — derived unit: 1 N = 1 kg·m/s²</li>
+                  <li><strong>Equilibrium</strong> — \( \vec{F}_\text{net} = 0 \), so \( \vec{a} = 0 \) (static or dynamic)</li>
+                  <li><strong>Newton's 2nd Law</strong> — \( \vec{F}_\text{net} = m\vec{a} \), vector equation</li>
+                  <li><strong>Component form</strong> — \( \Sigma F_x = ma_x \), \( \Sigma F_y = ma_y \)</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Two horizontal forces on a sled</p>
+                  <p>A 30 kg sled is pushed forward by a child with a force of 80 N. Friction supplies 25 N opposing motion. Find the sled's acceleration.</p>
+                  <p><strong>Step 1.</strong> Draw an FBD: gravity down (\( F_g = 30 \times 9.81 = 294\ \text{N} \)), normal up (294 N), push 80 N forward, friction 25 N backward.</p>
+                  <p><strong>Step 2.</strong> Vertical equilibrium: \( F_N = F_g \) so vertical net force is zero, \( a_y = 0 \).</p>
+                  <p><strong>Step 3.</strong> Horizontal: \( F_\text{net} = 80 - 25 = 55\ \text{N} \) forward.</p>
+                  <p><strong>Step 4.</strong> Newton's 2nd Law: \( a = F_\text{net}/m = 55/30 = 1.83\ \text{m/s}^2 \) forward. Check units: N/kg = kg·m/s²/kg = m/s². ✓</p>
+                  <p><strong>Step 5.</strong> Conceptual check: if the child stops pushing, friction (still 25 N if sliding) becomes the only horizontal force, decelerating the sled at \( a = 25/30 = 0.83\ \text{m/s}^2 \).</p>
+                </div>
+                <ul>
+                  <li><strong>Believing constant velocity requires a constant force</strong> — only constant <em>net</em> force matters, and that net is zero at constant v</li>
+                  <li><strong>Setting \( F = ma \) with a single force when others act</strong> — must use the net</li>
+                  <li><strong>Forgetting that weight is mg in the FBD, not m</strong></li>
+                  <li><strong>Confusing inertia with momentum</strong> — inertia is "resistance to change", momentum is mv</li>
+                  <li><strong>Treating force as a property of the object</strong> — force is an <em>interaction</em> between two objects</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "describe and explain qualitatively and quantitatively, using Newton's laws, the relationship between the acceleration of a body and the net force acting on it."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -428,6 +834,38 @@
         <div class="topic-block">
             <div class="topic-title">2.3 — Newton's Third Law</div>
             <div class="topic-desc">Action-reaction pairs, identifying paired forces, walking, recoil, rocket propulsion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Newton's Third Law</strong> states that for every action force, there is an equal and opposite reaction force. More precisely: when object A exerts a force on object B, object B simultaneously exerts an equal-magnitude, oppositely-directed force on object A. These two forces are called an <em>action–reaction pair</em> (or "third-law pair"), and three rules always apply: (1) they have the same magnitude; (2) they point in opposite directions; (3) they act on <em>different</em> objects. The last rule is the key to understanding the law: because the two forces act on different objects, they do not cancel out within a single FBD.</p>
+                <p>Common examples illustrate the law clearly. When you walk forward, you push backward on the ground (friction), and the ground simultaneously pushes you forward — the ground's push on you is what actually accelerates you forward. When a rocket ignites, hot exhaust gases are pushed downward by the engine; the gases push the engine (and rocket) upward with the same force. When a gun fires a bullet, the gun pushes the bullet forward; the bullet pushes the gun backward — the recoil. The two forces in each pair are equal in magnitude even though the resulting accelerations may be very different (a heavy gun barely moves, the light bullet flies away).</p>
+                <p>A common source of confusion: weight (Earth pulling on you) and the normal force (floor pushing up on you) are <em>not</em> a third-law pair. They act on the same object (you), and they are not always equal (e.g. in an accelerating elevator). The third-law partner of your weight is the gravitational pull <em>you</em> exert on Earth.</p>
+                <ul>
+                  <li><strong>Action–reaction pair</strong> — two forces, equal magnitude, opposite direction, on different objects</li>
+                  <li><strong>Newton's 3rd Law</strong> — \( \vec{F}_{A\to B} = -\vec{F}_{B\to A} \)</li>
+                  <li><strong>Internal forces</strong> — forces between parts of a system; cancel for system-level F = ma</li>
+                  <li><strong>External forces</strong> — forces from outside the system; the only kind that accelerates the system as a whole</li>
+                  <li><strong>Recoil</strong> — backward acceleration of a gun/cannon, third-law partner of bullet thrust</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Bullet and gun</p>
+                  <p>A 0.020 kg bullet leaves a 4.0 kg rifle at 350 m/s after a 5.0 ms barrel time. Find the average force on the bullet and the recoil velocity of the rifle.</p>
+                  <p><strong>Step 1.</strong> Find the bullet's acceleration: \( a_b = \Delta v/\Delta t = 350/0.005 = 70\,000\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 2.</strong> Force on bullet (gun → bullet): \( F_{g\to b} = m_b a_b = 0.020 \times 70\,000 = 1400\ \text{N} \) forward.</p>
+                  <p><strong>Step 3.</strong> Newton's third law: bullet → gun force is 1400 N backward.</p>
+                  <p><strong>Step 4.</strong> Acceleration of the rifle: \( a_g = F/m_g = 1400/4.0 = 350\ \text{m/s}^2 \) backward.</p>
+                  <p><strong>Step 5.</strong> Recoil velocity over 5.0 ms: \( v_g = a_g \times t = 350 \times 0.005 = 1.75\ \text{m/s} \) — much smaller than the bullet's 350 m/s, because the rifle is 200× more massive (consistent with conservation of momentum, a key SPH4U preview).</p>
+                </div>
+                <ul>
+                  <li><strong>Saying "the larger object exerts more force"</strong> — the forces are equal; only accelerations differ</li>
+                  <li><strong>Listing weight and normal force as a third-law pair</strong> — they act on the same object</li>
+                  <li><strong>Cancelling action–reaction pairs in an FBD</strong> — they act on different objects, so neither appears on the other's FBD</li>
+                  <li><strong>Thinking "for every action there is a delay"</strong> — third-law forces are simultaneous</li>
+                  <li><strong>Confusing third-law pair with equilibrium pair</strong> — equilibrium pairs act on the same object and cancel; third-law pairs act on different objects</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "conduct an inquiry to analyse, in qualitative and quantitative terms, the relationships between mass, applied force, friction, and acceleration in linear motion, using Newton's laws of motion."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -448,6 +886,39 @@
         <div class="topic-block">
             <div class="topic-title">2.4 — Friction (Static &amp; Kinetic)</div>
             <div class="topic-desc">\( f_s \le \mu_s N \), \( f_k = \mu_k N \), starting vs. sliding, rolling resistance</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Friction</strong> is the force that opposes relative sliding (or attempted sliding) between two surfaces in contact. Microscopically it arises from the interlocking of surface irregularities and from molecular adhesion. Friction is essential to everyday life — without it we could not walk, drive, write, or strike a match — yet it also wastes energy as heat and wears out machinery. Friction always acts <em>parallel</em> to the contact surface and <em>opposite</em> the direction of motion (or attempted motion).</p>
+                <p>Two regimes exist. <strong>Static friction</strong> \( F_s \) prevents an object from starting to slide. It is self-adjusting: it matches whatever applied force is pushing the object, up to a maximum value \( F_{s,\max} = \mu_s F_N \), where \( \mu_s \) is the coefficient of static friction (dimensionless) and \( F_N \) is the normal force. Once the applied force exceeds \( F_{s,\max} \), the object breaks loose and slides; <strong>kinetic friction</strong> \( F_k = \mu_k F_N \) then acts, with \( \mu_k &lt; \mu_s \) for most material pairs (this is why a stationary box "jerks" into motion when you finally push hard enough — the resistance suddenly drops).</p>
+                <p>Notice that friction does <em>not</em> depend on contact area or on sliding speed (in the simple model used in Grade 11). It depends only on the normal force and the coefficient. Rolling resistance is a different and much smaller force — a tire on pavement has rolling resistance perhaps 1% of its weight, vs sliding kinetic friction of about 70%. That is why wheels were a great invention!</p>
+                <ul>
+                  <li><strong>Static friction</strong> \( F_s \le \mu_s F_N \) — variable, prevents starting to slide</li>
+                  <li><strong>Kinetic friction</strong> \( F_k = \mu_k F_N \) — constant, opposes sliding</li>
+                  <li><strong>Coefficient of friction</strong> μ — dimensionless; depends on material pair</li>
+                  <li><strong>Normal force</strong> \( F_N \) — perpendicular contact force; not always equal to mg</li>
+                  <li><strong>\( \mu_s &gt; \mu_k \)</strong> for typical materials — why static is harder to break</li>
+                  <li><strong>Rolling friction</strong> — small force on rolling wheels; not the same as kinetic friction</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Will the crate slide?</p>
+                  <p>A 50 kg crate sits on a level floor. \( \mu_s = 0.40 \), \( \mu_k = 0.30 \). A worker pushes horizontally with 150 N. Does the crate move, and if so what is its acceleration?</p>
+                  <p><strong>Step 1.</strong> Find the normal force on level ground: \( F_N = mg = 50 \times 9.81 = 490.5\ \text{N} \).</p>
+                  <p><strong>Step 2.</strong> Maximum static friction: \( F_{s,\max} = \mu_s F_N = 0.40 \times 490.5 = 196.2\ \text{N} \).</p>
+                  <p><strong>Step 3.</strong> Compare applied force to \( F_{s,\max} \): 150 N &lt; 196.2 N. Static friction adjusts to 150 N, the crate stays at rest, \( a = 0 \).</p>
+                  <p><strong>Step 4.</strong> Now suppose the worker increases the push to 220 N. The crate breaks loose. Kinetic friction: \( F_k = \mu_k F_N = 0.30 \times 490.5 = 147.2\ \text{N} \).</p>
+                  <p><strong>Step 5.</strong> Net force = 220 − 147.2 = 72.8 N. Acceleration = 72.8/50 = 1.46 m/s². The crate slides forward at 1.46 m/s² as long as the worker keeps pushing.</p>
+                </div>
+                <ul>
+                  <li><strong>Always setting \( F_f = \mu F_N \)</strong> — that is only valid for kinetic, or for static at the threshold</li>
+                  <li><strong>Using \( F_N = mg \) on an incline</strong> — on a slope \( F_N = mg\cos\theta \)</li>
+                  <li><strong>Assuming μ has units</strong> — it is dimensionless (force/force)</li>
+                  <li><strong>Forgetting that an upward pull reduces \( F_N \)</strong> — and hence reduces friction</li>
+                  <li><strong>Mixing up \( \mu_s \) and \( \mu_k \)</strong> — use \( \mu_s \) only for the "does it start to move?" check</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "explain how forces (e.g., friction) act on objects … and analyse, in qualitative and quantitative terms, the effects of these forces on the motion of objects."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -468,6 +939,39 @@
         <div class="topic-block">
             <div class="topic-title">2.5 — Inclined Planes &amp; Connected Bodies (Atwood)</div>
             <div class="topic-desc">Resolving gravity into components, multi-body systems with pulleys</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>inclined plane</strong> (ramp) is the workhorse of mechanics problems because gravity, which is vertical, must be resolved into components parallel and perpendicular to the slope. The most powerful trick is to <em>tilt the coordinate axes</em> so that x points up the slope and y points perpendicular to it. With this choice, only gravity needs resolving; the normal force and motion are already along an axis. For an incline at angle θ above horizontal: \( F_{g,\parallel} = mg\sin\theta \) (down the slope) and \( F_{g,\perp} = mg\cos\theta \) (into the slope). The normal force balances the perpendicular component: \( F_N = mg\cos\theta \). The parallel component is what accelerates the object down the slope.</p>
+                <p>When there is no friction on the incline, the acceleration along the slope is simply \( a = g\sin\theta \) — independent of mass, an elegant result. When kinetic friction is present, \( F_f = \mu_k F_N = \mu_k mg\cos\theta \) opposes the motion, so \( a = g(\sin\theta - \mu_k\cos\theta) \) for an object sliding down. The object accelerates only if \( \tan\theta &gt; \mu_s \) (the static-friction threshold).</p>
+                <p><strong>Connected bodies</strong> linked by an ideal rope over a frictionless pulley (called an <em>Atwood machine</em>) share a common magnitude of acceleration because the rope is inextensible, and share a common tension because the rope is massless. The trick: write Newton's second law for each mass separately, choose consistent positive directions (the rope's path), and solve the system. For two masses \( m_1 \) and \( m_2 \) hanging vertically with \( m_2 &gt; m_1 \): \( a = (m_2 - m_1)g/(m_1 + m_2) \) and \( F_T = 2m_1 m_2 g/(m_1 + m_2) \).</p>
+                <ul>
+                  <li><strong>Parallel gravity component</strong> \( F_{g\parallel} = mg\sin\theta \)</li>
+                  <li><strong>Perpendicular gravity component</strong> \( F_{g\perp} = mg\cos\theta \)</li>
+                  <li><strong>Normal force on incline</strong> \( F_N = mg\cos\theta \) (no other perpendicular forces)</li>
+                  <li><strong>Tilted axes</strong> — align x with slope, y perpendicular</li>
+                  <li><strong>Atwood machine</strong> — two masses on a string over a pulley</li>
+                  <li><strong>Ideal rope</strong> — massless, inextensible, frictionless pulley → same a, same T</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Block on a frictionless ramp</p>
+                  <p>A 10 kg block slides down a frictionless 30° incline. Find its acceleration and the normal force.</p>
+                  <p><strong>Step 1.</strong> Tilt axes so x = down the slope (positive), y = away from surface.</p>
+                  <p><strong>Step 2.</strong> Forces in tilted frame: \( F_{g,x} = mg\sin 30° = 10 \times 9.81 \times 0.500 = 49.05\ \text{N} \) (down slope); \( F_{g,y} = -mg\cos 30° = -10 \times 9.81 \times 0.866 = -84.96\ \text{N} \); \( F_N = +84.96\ \text{N} \) (out of slope).</p>
+                  <p><strong>Step 3.</strong> Perpendicular equilibrium: \( F_N - mg\cos\theta = 0 \), so \( F_N = 84.96\ \text{N} \). ✓</p>
+                  <p><strong>Step 4.</strong> Parallel Newton's 2nd law: \( a = F_{g,x}/m = 49.05/10 = 4.91\ \text{m/s}^2 \). Equivalently \( a = g\sin\theta = 9.81 \times 0.500 = 4.91\ \text{m/s}^2 \) — mass cancels. ✓</p>
+                  <p><strong>Step 5.</strong> Sanity check: if θ = 0 (flat), \( a = 0 \); if θ = 90° (cliff), \( a = g \) (free fall). Both extremes match.</p>
+                </div>
+                <ul>
+                  <li><strong>Using \( F_N = mg \) on an incline</strong> — must use \( mg\cos\theta \)</li>
+                  <li><strong>Swapping sin and cos</strong> — sin scales with angle (steeper → more pull along slope)</li>
+                  <li><strong>Forgetting that tension on both sides of an ideal pulley is equal</strong></li>
+                  <li><strong>Picking different positive directions for the two masses in an Atwood problem</strong> — must follow the rope direction</li>
+                  <li><strong>Not resolving gravity</strong> — the perpendicular component must be balanced by the normal force</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.4 — "analyse, in qualitative and quantitative terms, accelerations experienced by objects in linear and projectile motion, and predict and explain motion using vector diagrams (e.g., for an object on an inclined plane)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -501,6 +1005,38 @@
             <div class="topic-title">2.6 — Circular Motion Introduction (SPH4U Bridge)</div>
             <div class="topic-desc">Centripetal acceleration \( a_c = v^2/r \), centripetal force, banked curves — preview of SPH4U dynamics</div>
             <div class="topic-note">🌉 Bridge content: Builds the conceptual foundation that SPH4U expands into orbits and gravitation.</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An object moving in a circle at constant speed is <em>not</em> in equilibrium. Its velocity vector continually changes direction even though its magnitude is constant, and any change in velocity requires acceleration. This acceleration always points <strong>toward the centre of the circle</strong> and is called <strong>centripetal acceleration</strong>: \( a_c = v^2/r \), where v is the speed and r is the radius of the circular path. Notice that doubling the speed quadruples the acceleration — a result that has profound consequences for highway design and roller-coaster engineering.</p>
+                <p>By Newton's second law, this acceleration requires a <strong>centripetal force</strong> \( F_c = mv^2/r \), also directed toward the centre. The word "centripetal" means "centre-seeking" — it describes the <em>direction</em> of an existing force, not a new kind of force. For a car rounding a flat curve, friction supplies the centripetal force; for a planet orbiting the Sun, gravity does; for a ball on a string twirled in a horizontal circle, the horizontal component of tension does. There is no "centrifugal force" pushing outward in an inertial frame — what passengers in a car feel as being "thrown outward" is just inertia (Newton's first law) trying to keep them moving in a straight line while the car turns.</p>
+                <p>For a banked curve with no friction, the horizontal component of the normal force provides the centripetal force: \( \tan\theta = v^2/(rg) \). Highway curves are banked at this ideal angle for the design speed so that drivers do not have to rely on friction alone. This topic is a bridge to SPH4U; the focus in SPH3U is conceptual understanding plus simple calculations.</p>
+                <ul>
+                  <li><strong>Centripetal acceleration</strong> \( a_c = v^2/r \) — directed toward centre, m/s²</li>
+                  <li><strong>Centripetal force</strong> \( F_c = mv^2/r \) — net inward force, newtons</li>
+                  <li><strong>Period</strong> T — time for one revolution, s</li>
+                  <li><strong>Frequency</strong> f = 1/T — revolutions per second, Hz</li>
+                  <li><strong>Speed</strong> v = 2πr/T — for circular motion</li>
+                  <li><strong>Uniform circular motion</strong> — constant speed but changing velocity direction</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Car rounding a curve</p>
+                  <p>A 1200 kg car rounds a flat curve of radius 50 m at 18 m/s (about 65 km/h). What centripetal force is needed, and what is the minimum coefficient of static friction with the road?</p>
+                  <p><strong>Step 1.</strong> Centripetal acceleration: \( a_c = v^2/r = (18)^2/50 = 324/50 = 6.48\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 2.</strong> Centripetal force needed: \( F_c = m a_c = 1200 \times 6.48 = 7776\ \text{N} \), directed toward the centre of the curve.</p>
+                  <p><strong>Step 3.</strong> On a flat curve, static friction supplies \( F_c \): \( F_s = \mu_s F_N = \mu_s mg \). Setting \( \mu_s mg = mv^2/r \): \( \mu_s = v^2/(rg) = 324/(50 \times 9.81) = 0.661 \).</p>
+                  <p><strong>Step 4.</strong> Interpretation: dry asphalt has \( \mu_s \approx 0.8\text{–}1.0 \), so the curve is safe in good weather. Wet pavement (\( \mu_s \approx 0.4 \)) cannot supply enough friction at 65 km/h; the car would skid outward — Newton's first law tendency, not a "centrifugal pull".</p>
+                </div>
+                <ul>
+                  <li><strong>Calling outward "centrifugal force" in an inertial frame</strong> — it is inertia, not a real force</li>
+                  <li><strong>Treating centripetal force as a new force in the FBD</strong> — it is the name for the net inward force, supplied by real forces (gravity, tension, friction, normal)</li>
+                  <li><strong>Confusing speed and velocity in circular motion</strong> — speed is constant, velocity is not</li>
+                  <li><strong>Using \( a = \Delta v/\Delta t \) with v and not Δv</strong> — Δv in circular motion is non-zero even at constant speed</li>
+                  <li><strong>Squaring v incorrectly</strong> — \( v^2/r \) doubles when v doubles? No, it quadruples!</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.5 — "analyse and predict, in quantitative terms, and explain the motion of objects in horizontal and vertical planes (e.g., the motion of an object in uniform circular motion)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -544,6 +1080,39 @@
         <div class="topic-block">
             <div class="topic-title">3.1 — Work, Power &amp; Kinetic Energy</div>
             <div class="topic-desc">\( W = Fd\cos\theta \), \( E_k = \tfrac{1}{2}mv^2 \), \( P = W/t \), the work-energy theorem</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In physics, <strong>work</strong> has a precise meaning: it is the transfer of energy when a force acts on an object and the object moves in the direction of the force. Mathematically, \( W = F d \cos\theta \), where F is the magnitude of the force, d is the magnitude of the displacement, and θ is the angle between them. Work is a scalar measured in joules (J): 1 J = 1 N·m = the work done lifting an apple about 10 cm. If the force is perpendicular to displacement (θ = 90°), no work is done — a key reason that gravitational force does no work on a satellite in circular orbit. If the force opposes motion (θ = 180°), work is negative (friction takes energy away).</p>
+                <p><strong>Kinetic energy</strong> \( E_k = \tfrac{1}{2}mv^2 \) is the energy an object possesses by virtue of its motion. The <em>work–energy theorem</em> ties work and kinetic energy together: the net work done on an object equals the change in its kinetic energy, \( W_\text{net} = \Delta E_k = \tfrac{1}{2}m v_f^2 - \tfrac{1}{2}m v_i^2 \). This theorem gives a powerful alternative to Newton's second law for many problems, especially when time is unknown but distance is known.</p>
+                <p><strong>Power</strong> is the rate at which work is done (or energy is transferred): \( P = W/t \), measured in watts (W) where 1 W = 1 J/s. For an object moving at constant velocity v under a force F, \( P = Fv \). One horsepower equals about 746 W. Power explains why two cars can have the same engine "energy" but very different acceleration: the more powerful car delivers that energy faster.</p>
+                <ul>
+                  <li><strong>Work</strong> W = Fd cos θ — scalar, joule (J)</li>
+                  <li><strong>Kinetic energy</strong> \( E_k = \tfrac{1}{2}mv^2 \) — scalar, joule (J)</li>
+                  <li><strong>Power</strong> P = W/t = Fv — scalar, watt (W); 1 W = 1 J/s</li>
+                  <li><strong>Work–energy theorem</strong> \( W_\text{net} = \Delta E_k \)</li>
+                  <li><strong>Joule</strong> — 1 J = 1 N·m = 1 kg·m²/s²</li>
+                  <li><strong>Horsepower</strong> — 1 hp ≈ 746 W</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Work–energy theorem applied to a braking car</p>
+                  <p>A 1500 kg car travelling at 20 m/s brakes uniformly to rest over 50 m. Find (a) the work done by the brakes and (b) the average braking force.</p>
+                  <p><strong>Step 1.</strong> Initial kinetic energy: \( E_{k,i} = \tfrac{1}{2}(1500)(20)^2 = 0.5 \times 1500 \times 400 = 300\,000\ \text{J} = 300\ \text{kJ} \).</p>
+                  <p><strong>Step 2.</strong> Final kinetic energy: \( E_{k,f} = 0 \) (car stops).</p>
+                  <p><strong>Step 3.</strong> Work done by net force (brakes): \( W_\text{net} = \Delta E_k = 0 - 300\,000 = -300\,000\ \text{J} \). Negative because the force opposes motion.</p>
+                  <p><strong>Step 4.</strong> Average braking force: \( W = Fd\cos 180° = -Fd \), so \( F = 300\,000/50 = 6000\ \text{N} \) backward.</p>
+                  <p><strong>Step 5.</strong> Power dissipated: braking time \( t = 2 \cdot d/(v_i + v_f) = 2(50)/20 = 5.0\ \text{s} \). Average power = 300 kJ / 5 s = 60 kW (about 80 hp). All that energy heats the brake discs!</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting cos θ</strong> — work is zero when force is perpendicular to motion</li>
+                  <li><strong>Including the wrong angle</strong> — θ is between \( \vec{F} \) and \( \vec{d} \), not necessarily the angle of inclination</li>
+                  <li><strong>Squaring only v, not multiplying by ½ in \( E_k \)</strong></li>
+                  <li><strong>Using \( E_k = \tfrac{1}{2}mv \) (no square)</strong> — common units error</li>
+                  <li><strong>Confusing energy (J) with power (W)</strong> — energy is total work, power is rate</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "solve problems involving the concepts of work, mechanical energy, thermal energy and its transfer (heat), and the law of conservation of energy."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -564,6 +1133,39 @@
         <div class="topic-block">
             <div class="topic-title">3.2 — Gravitational Potential Energy &amp; Conservation</div>
             <div class="topic-desc">\( E_g = mgh \), conservation of mechanical energy in systems with no friction</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Gravitational potential energy</strong> \( E_g \) is energy stored in an object because of its height above a reference level. Near Earth's surface, where g is essentially constant, \( E_g = mgh \), where m is mass in kg, g = 9.81 m/s², and h is height in metres above the chosen reference (often the ground or the lowest point of the motion). Because only <em>changes</em> in \( E_g \) have physical meaning, you may set the reference level wherever is convenient — at the bottom of a ramp, at table height, at sea level, etc.</p>
+                <p>The <strong>law of conservation of energy</strong> is one of the deepest principles in physics: energy is neither created nor destroyed, only transformed from one form to another or transferred from one object to another. For purely mechanical systems with no friction or air resistance, the sum of kinetic and gravitational potential energy — called the <em>total mechanical energy</em> — is conserved: \( E_{k,i} + E_{g,i} = E_{k,f} + E_{g,f} \). This lets us solve problems without ever finding the acceleration or the time, as long as we know the heights and speeds at two points.</p>
+                <p>When friction or air drag is present, mechanical energy is <em>not</em> conserved — energy leaks out as thermal energy. The total energy is still conserved, but you must include the heat: \( E_{k,i} + E_{g,i} = E_{k,f} + E_{g,f} + E_\text{thermal} \), where \( E_\text{thermal} = F_f \cdot d \) is the work done against friction over the path length d.</p>
+                <ul>
+                  <li><strong>Gravitational potential energy</strong> \( E_g = mgh \) — relative to a chosen reference, joule (J)</li>
+                  <li><strong>Reference level</strong> — point where h = 0, chosen for convenience</li>
+                  <li><strong>Mechanical energy</strong> \( E_\text{mech} = E_k + E_g \)</li>
+                  <li><strong>Conservation of mechanical energy</strong> — \( E_{\text{mech},i} = E_{\text{mech},f} \) (no friction)</li>
+                  <li><strong>Conservation of total energy</strong> — \( E_{k,i} + E_{g,i} = E_{k,f} + E_{g,f} + E_\text{thermal} + \ldots \)</li>
+                  <li><strong>Thermal energy from friction</strong> \( Q = F_f d \) (over path length)</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Roller coaster (frictionless)</p>
+                  <p>A 500 kg coaster car starts from rest at the top of a 30.0 m hill. Find its speed at the bottom of the hill and at the top of a smaller 12.0 m hill, assuming a frictionless track.</p>
+                  <p><strong>Step 1.</strong> Choose the bottom of the track (ground level) as h = 0.</p>
+                  <p><strong>Step 2.</strong> At the top of the 30 m hill: \( E_g = mgh = 500 \times 9.81 \times 30.0 = 147\,150\ \text{J} \); \( E_k = 0 \) (at rest). Total mechanical energy = 147 150 J.</p>
+                  <p><strong>Step 3.</strong> At the bottom (h = 0): all energy is kinetic. \( \tfrac{1}{2}m v^2 = 147\,150 \), so \( v^2 = 2 \times 147\,150/500 = 588.6 \), \( v = 24.3\ \text{m/s} \) (about 87 km/h).</p>
+                  <p><strong>Step 4.</strong> At the top of the 12 m hill: \( E_g = 500 \times 9.81 \times 12.0 = 58\,860\ \text{J} \). So \( E_k = 147\,150 - 58\,860 = 88\,290\ \text{J} \). Speed: \( v = \sqrt{2 \times 88\,290/500} = \sqrt{353.2} = 18.8\ \text{m/s} \).</p>
+                  <p><strong>Step 5.</strong> Note that the speeds depend only on height — not on the shape of the track between hills. The path is irrelevant for a conservative force.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting that h is height above the reference, not total altitude</strong></li>
+                  <li><strong>Assuming mechanical energy is conserved when friction is present</strong></li>
+                  <li><strong>Using a negative h without intending it</strong> — h is positive above the reference</li>
+                  <li><strong>Confusing mass m with weight mg in \( E_g \)</strong> — the formula already includes g</li>
+                  <li><strong>Solving with kinematics when conservation gives the answer in two lines</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.2 — "explain the law of conservation of energy, and apply the law in a variety of contexts."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -584,6 +1186,39 @@
         <div class="topic-block">
             <div class="topic-title">3.3 — Heat, Thermal Energy &amp; Calorimetry</div>
             <div class="topic-desc">\( Q = mc\Delta T \), specific heat capacity, principle of heat exchange, latent heat (qualitative)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Thermal energy</strong> is the total random kinetic energy of the particles (atoms and molecules) in a substance. <strong>Temperature</strong>, measured in kelvin (K) or degrees Celsius (°C), is a measure of the <em>average</em> kinetic energy per particle. <strong>Heat</strong> (symbol Q) is the energy transferred from a hotter object to a cooler one because of a temperature difference; it is not stored in objects, only transferred. The SI unit of heat is the joule (J), although historical units like the calorie (1 cal = 4.184 J) still appear in food labels.</p>
+                <p>The heat needed to change the temperature of a substance is \( Q = mc\Delta T \), where m is mass (kg), c is the <strong>specific heat capacity</strong> (J/(kg·K) or J/(kg·°C); a property of the material), and ΔT is the temperature change (\( T_f - T_i \)). Water has an unusually high specific heat capacity (\( c_\text{water} \approx 4186\ \text{J/(kg·K)} \)) — this is why oceans moderate climate, why your body sweats to cool down, and why the cooling system in a car uses water-based coolant.</p>
+                <p>The <strong>principle of heat exchange</strong> (a form of conservation of energy) states that in a thermally isolated system, the heat lost by hot objects equals the heat gained by cold objects: \( -Q_\text{hot} = Q_\text{cold} \) or \( \Sigma Q = 0 \). This is the basis of <em>calorimetry</em> — measuring heat capacities or chemical reactions by tracking temperature changes. <strong>Latent heat</strong> is the energy absorbed or released during a phase change (melting, boiling) <em>without</em> a temperature change; it is treated qualitatively at the Grade 11 level.</p>
+                <ul>
+                  <li><strong>Heat</strong> Q — energy transferred due to ΔT; joule (J)</li>
+                  <li><strong>Temperature</strong> T — average KE per particle; K or °C (size of degree is the same)</li>
+                  <li><strong>Specific heat capacity</strong> c — J/(kg·K); intrinsic to material</li>
+                  <li><strong>Heat capacity</strong> C = mc — J/K; depends on amount of substance</li>
+                  <li><strong>Principle of heat exchange</strong> — \( \Sigma Q = 0 \) in an isolated system</li>
+                  <li><strong>Latent heat</strong> — energy for phase change at constant T</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Mixing hot and cold water (calorimetry)</p>
+                  <p>200 g of water at 80 °C is mixed with 300 g of water at 20 °C in an insulated cup. Find the equilibrium temperature \( T_f \).</p>
+                  <p><strong>Step 1.</strong> Write \( \Sigma Q = 0 \): \( m_\text{hot} c (T_f - 80) + m_\text{cold} c (T_f - 20) = 0 \).</p>
+                  <p><strong>Step 2.</strong> Note c cancels (same substance): \( 0.200(T_f - 80) + 0.300(T_f - 20) = 0 \).</p>
+                  <p><strong>Step 3.</strong> Expand: \( 0.200 T_f - 16.0 + 0.300 T_f - 6.0 = 0 \), so \( 0.500 T_f = 22.0 \), giving \( T_f = 44\ \text{°C} \).</p>
+                  <p><strong>Step 4.</strong> Sanity check: \( T_f \) lies between 20 and 80 °C, closer to the cooler (more massive) sample. ✓</p>
+                  <p><strong>Step 5.</strong> Heat transferred: \( Q = m_\text{hot} c \Delta T = 0.200 \times 4186 \times (44 - 80) = -30\,140\ \text{J} \). The hot water lost 30 kJ; the cold water gained the same.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing heat (Q) with temperature (T)</strong> — heat is energy, temperature is intensity</li>
+                  <li><strong>Forgetting to use Kelvin sometimes</strong> — Δ°C = ΔK, so ΔT can use either, but absolute T should be in K for gas laws</li>
+                  <li><strong>Plugging mass in grams</strong> — c is in J/(kg·K), so convert g → kg</li>
+                  <li><strong>Including phase changes without using latent heat</strong> — \( Q = mc\Delta T \) does not apply across a phase change</li>
+                  <li><strong>Using sign of ΔT incorrectly</strong> — always \( T_f - T_i \)</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "describe and analyse the relationships among heat, work, and the various forms of energy involved in mechanical and thermal energy transfers."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -604,6 +1239,39 @@
         <div class="topic-block">
             <div class="topic-title">3.4 — Efficiency &amp; Energy Sources (STSE)</div>
             <div class="topic-desc">Energy efficiency \( \eta \); fossil, nuclear, hydro, wind, solar, geothermal; Ontario's energy mix</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>No energy transformation is perfect: some of the input energy always ends up as "waste" thermal energy. <strong>Efficiency</strong> \( \eta \) (Greek letter eta) is the ratio of useful output energy to total input energy, expressed as a percentage: \( \eta = (E_\text{useful}/E_\text{input}) \times 100\% \). A 60 W incandescent bulb that produces 3 W of light has efficiency 5%; the other 57 W heats the surroundings. A modern LED bulb of the same brightness consumes 8 W with about 40% efficiency. Efficiency is bounded above by 100%, but real machines fall well below this because of friction, heat loss, electrical resistance, and (for heat engines) the second law of thermodynamics.</p>
+                <p>Society's energy comes from several primary sources, each with physics-based advantages and disadvantages. <em>Fossil fuels</em> (coal, oil, natural gas) release energy stored in ancient biomass via chemical combustion; energy density is high, but combustion emits CO₂ and other pollutants. <em>Nuclear fission</em> releases energy from splitting uranium nuclei (\( E = mc^2 \), with very small Δm); high energy density, no CO₂ from operation, but produces long-lived radioactive waste. <em>Hydroelectric</em> converts the gravitational potential energy of stored water into electrical energy; renewable but disrupts ecosystems. <em>Wind</em> harvests kinetic energy of moving air. <em>Solar PV</em> converts photon energy directly to electricity via the photoelectric effect. <em>Geothermal</em> uses Earth's interior heat.</p>
+                <p>Ontario's electricity mix (2024) is roughly 50% nuclear (Bruce, Darlington, Pickering), 25% hydro, 8% wind, 8% natural gas, 7% solar/biomass, and small amounts from other sources. Per-kWh CO₂ emissions are among the lowest of any G7 jurisdiction. STSE analysis asks not just "which source is cheapest?" but "which trade-offs does society accept — climate risk, land use, intermittency, accident risk, waste?"</p>
+                <ul>
+                  <li><strong>Efficiency</strong> η = E_useful / E_input × 100% — dimensionless</li>
+                  <li><strong>Renewable</strong> — replenished on a human timescale (hydro, wind, solar, geothermal, biomass)</li>
+                  <li><strong>Non-renewable</strong> — finite supply (fossil fuels, uranium)</li>
+                  <li><strong>Energy density</strong> — energy per unit mass or volume; J/kg or J/m³</li>
+                  <li><strong>Capacity factor</strong> — average power output / nameplate power; dimensionless</li>
+                  <li><strong>Greenhouse gas</strong> — CO₂, CH₄, N₂O; traps infrared radiation, drives climate change</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Efficiency of a car engine</p>
+                  <p>A car burns 1.0 L of gasoline (energy content 34.8 MJ/L) and produces 8.2 MJ of useful mechanical work that drives it forward. Find the efficiency, and the thermal energy wasted.</p>
+                  <p><strong>Step 1.</strong> Energy input: \( E_\text{in} = 34.8\ \text{MJ} = 3.48 \times 10^7\ \text{J} \).</p>
+                  <p><strong>Step 2.</strong> Useful output: \( E_\text{useful} = 8.2\ \text{MJ} = 8.2 \times 10^6\ \text{J} \).</p>
+                  <p><strong>Step 3.</strong> Efficiency: \( \eta = (8.2/34.8) \times 100\% = 23.6\% \). Typical for a gasoline ICE — diesel engines reach ~40%, gas turbines ~60%.</p>
+                  <p><strong>Step 4.</strong> Wasted energy: \( E_\text{waste} = 34.8 - 8.2 = 26.6\ \text{MJ} \) lost as heat to the engine block, radiator, and exhaust.</p>
+                  <p><strong>Step 5.</strong> STSE: replacing the gasoline car with a 90%-efficient electric drivetrain (charged on Ontario's mostly carbon-free grid) reduces both energy use and CO₂ emissions dramatically.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing power output with energy output</strong> — efficiency uses energy (or steady-state power) totals</li>
+                  <li><strong>Allowing efficiency &gt; 100%</strong> — would violate conservation of energy</li>
+                  <li><strong>Calling all renewables "zero emission"</strong> — life-cycle emissions are non-zero</li>
+                  <li><strong>Ignoring capacity factor</strong> — solar at noon ≠ solar at midnight</li>
+                  <li><strong>Mixing units (kWh, MJ, BTU)</strong> — convert to a common SI unit</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.2 — "analyse the impact of various technological developments and innovations related to energy and society, and propose a course of action to make … energy use more sustainable."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -671,6 +1339,40 @@
         <div class="topic-block">
             <div class="topic-title">4.1 — Wave Properties &amp; the Wave Equation</div>
             <div class="topic-desc">Transverse vs. longitudinal, amplitude, wavelength, frequency, period, \( v = f\lambda \)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>wave</strong> is a disturbance that transfers energy through a medium (or, for electromagnetic waves, through empty space) without the medium being permanently displaced — water ripples carry energy across a lake but the water itself stays roughly in place. Two main types appear in nature. In a <em>transverse wave</em>, particles of the medium oscillate <em>perpendicular</em> to the direction of energy propagation (a wave on a string, light, all electromagnetic waves). In a <em>longitudinal wave</em>, particles oscillate <em>parallel</em> to the direction of energy propagation (sound in air, compressions on a Slinky). Surface water waves are a combination of both.</p>
+                <p>Every periodic wave is described by four key quantities. <strong>Amplitude</strong> A is the maximum displacement from equilibrium — related to the energy carried (energy ∝ A² for most waves). <strong>Wavelength</strong> λ is the distance between two consecutive identical points (crest to crest), measured in metres. <strong>Period</strong> T is the time for one full oscillation, in seconds. <strong>Frequency</strong> f = 1/T is the number of oscillations per second, in hertz (Hz). For periodic waves these are linked by the <strong>universal wave equation</strong> \( v = f\lambda \): wave speed = frequency × wavelength.</p>
+                <p>The wave speed depends on the <em>medium</em>, not on the source. A piano string and a violin string vibrating at the same 440 Hz produce different wavelengths because their wave speeds are different. Light in vacuum has \( c = 3.00 \times 10^8\ \text{m/s} \); in glass it slows to about \( 2 \times 10^8\ \text{m/s} \) — slower medium → shorter wavelength at the same frequency (the basis of refraction in Snell's law).</p>
+                <ul>
+                  <li><strong>Wave</strong> — disturbance carrying energy through space</li>
+                  <li><strong>Transverse</strong> — oscillation ⊥ to propagation (string, light)</li>
+                  <li><strong>Longitudinal</strong> — oscillation ∥ to propagation (sound)</li>
+                  <li><strong>Amplitude</strong> A — max displacement; units depend on wave (m for string, Pa for sound)</li>
+                  <li><strong>Wavelength</strong> λ — m, distance for one full cycle</li>
+                  <li><strong>Period</strong> T — s, time for one full cycle</li>
+                  <li><strong>Frequency</strong> f = 1/T — Hz; 1 Hz = 1 cycle/s</li>
+                  <li><strong>Wave speed</strong> v = fλ — m/s; depends only on medium</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Radio wave wavelength</p>
+                  <p>A CHUM 104.5 FM radio station broadcasts at 104.5 MHz. Find the wavelength of the radio wave (in air, v ≈ c = 3.00 × 10⁸ m/s).</p>
+                  <p><strong>Step 1.</strong> Convert frequency: \( f = 104.5\ \text{MHz} = 1.045 \times 10^8\ \text{Hz} \).</p>
+                  <p><strong>Step 2.</strong> Apply \( v = f\lambda \): \( \lambda = v/f = (3.00 \times 10^8)/(1.045 \times 10^8) = 2.87\ \text{m} \).</p>
+                  <p><strong>Step 3.</strong> Sanity check: FM antennas are typically a half- or quarter-wavelength, so about 1.4 m or 0.7 m — matches the size of a real car antenna.</p>
+                  <p><strong>Step 4.</strong> Compare to a 60 Hz AC power-line wave: \( \lambda = 3 \times 10^8/60 = 5 \times 10^6\ \text{m} = 5000\ \text{km} \) — vastly larger because frequency is much smaller. The product fλ is fixed by the medium.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing wave speed with particle speed</strong> — particles oscillate locally; the wave moves forward</li>
+                  <li><strong>Mixing wavelength and amplitude</strong> — wavelength is spatial period, amplitude is height</li>
+                  <li><strong>Assuming louder = faster sound</strong> — louder = larger amplitude, same speed</li>
+                  <li><strong>Forgetting units in v = fλ</strong> — Hz × m = 1/s × m = m/s ✓</li>
+                  <li><strong>Using v = fλ for a wave on a stretched string when v changes</strong> — must use the actual v in that string</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.2 — "analyse, in qualitative and quantitative terms, the properties of mechanical waves and sound (e.g., wavelength, frequency, period, amplitude, phase, speed), using the universal wave equation."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -691,6 +1393,40 @@
         <div class="topic-block">
             <div class="topic-title">4.2 — Sound Waves &amp; the Speed of Sound</div>
             <div class="topic-desc">\( v_\text{sound} = 331 + 0.6 T_C \) m/s, intensity, decibel scale, hearing range</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Sound</strong> is a longitudinal mechanical wave consisting of pressure variations propagating through a medium. In air, a vibrating source (vocal cords, loudspeaker cone, guitar string) alternately compresses and rarefies the surrounding gas, sending a chain of compressions and rarefactions outward at the speed of sound. Because sound is mechanical, it cannot travel through vacuum — astronauts on EVA communicate by radio, not by yelling. The speed of sound in air depends primarily on temperature; a useful empirical equation is \( v = 331 + 0.6\, T_C \) m/s, where \( T_C \) is the Celsius temperature. At 20 °C, sound travels at about 343 m/s.</p>
+                <p>Sound has the usual wave properties — wavelength, frequency, amplitude — plus a few unique attributes. The <strong>pitch</strong> of a sound corresponds to its frequency: higher frequency → higher pitch. Humans typically hear from about 20 Hz to 20 000 Hz (kHz); below 20 Hz is <em>infrasound</em>, above 20 kHz is <em>ultrasound</em>. Different animals hear different ranges: dogs to about 40 kHz, bats to 100 kHz (essential for echolocation). The <strong>loudness</strong> of a sound corresponds to its <em>intensity</em>, measured in W/m². Because our ears respond logarithmically, loudness is reported on the <strong>decibel scale</strong>: \( \beta = 10\log_{10}(I/I_0) \), where \( I_0 = 10^{-12}\ \text{W/m}^2 \) is the threshold of human hearing.</p>
+                <p>Sound speeds depend strongly on medium. In water sound travels at about 1500 m/s (4× air); in steel at 5100 m/s (15× air). This is why you can hear a train coming by putting your ear to the rail much earlier than through the air.</p>
+                <ul>
+                  <li><strong>Sound</strong> — longitudinal mechanical wave, pressure variation</li>
+                  <li><strong>Speed of sound in air</strong> v = 331 + 0.6 T_C (m/s)</li>
+                  <li><strong>Audible range</strong> — 20 Hz to 20 kHz for healthy young humans</li>
+                  <li><strong>Infrasound</strong> — &lt; 20 Hz (earthquakes, whale song)</li>
+                  <li><strong>Ultrasound</strong> — &gt; 20 kHz (medical imaging, bat sonar)</li>
+                  <li><strong>Intensity</strong> I — W/m²; \( I = P/(4\pi r^2) \) for a point source</li>
+                  <li><strong>Sound level</strong> β = 10 log(I/I₀) — dB; +10 dB ≈ 10× the intensity</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — How far away is the thunderstorm?</p>
+                  <p>You see a flash of lightning, then hear thunder 4.5 s later. Air temperature is 22 °C. Find your distance to the lightning strike.</p>
+                  <p><strong>Step 1.</strong> Speed of sound at 22 °C: \( v = 331 + 0.6(22) = 331 + 13.2 = 344.2\ \text{m/s} \).</p>
+                  <p><strong>Step 2.</strong> Light reaches you essentially instantly (\( c = 3 \times 10^8 \) m/s, so 1 km takes 3 μs).</p>
+                  <p><strong>Step 3.</strong> Distance from sound time: \( d = v \cdot t = 344.2 \times 4.5 = 1549\ \text{m} \approx 1.55\ \text{km} \).</p>
+                  <p><strong>Step 4.</strong> Rule of thumb: divide seconds by 3 for kilometres (or by 5 for miles) — 4.5/3 = 1.5 km. ✓</p>
+                  <p><strong>Step 5.</strong> Decibel sanity check: a thunderclap at 1.5 km is about 70 dB at your ear (loud conversation level); at 10 m it would be about 120 dB (painful).</p>
+                </div>
+                <ul>
+                  <li><strong>Treating sound as a transverse wave</strong> — sound in fluids is purely longitudinal</li>
+                  <li><strong>Using v = 343 m/s in a hot or cold environment</strong> — apply the temperature correction</li>
+                  <li><strong>Confusing intensity (W/m²) with sound level (dB)</strong> — sound level is logarithmic</li>
+                  <li><strong>Saying "louder sound travels faster"</strong> — speed depends on medium, not amplitude</li>
+                  <li><strong>Forgetting that sound cannot travel in vacuum</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "explain the components and characteristics of sound waves (e.g., compression, rarefaction, longitudinal motion of particles), including the relationship between intensity and amplitude."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -711,6 +1447,41 @@
         <div class="topic-block">
             <div class="topic-title">4.3 — Interference, Resonance &amp; Standing Waves</div>
             <div class="topic-desc">Constructive/destructive interference, harmonics on strings (\( f_n = nv/(2L) \)) and in pipes</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>When two waves overlap in the same medium, they superpose: the displacement at every point is the sum of the displacements each wave would produce alone. This is the <strong>principle of superposition</strong>. If two crests arrive at the same point at the same time, they add to make a bigger crest — <em>constructive interference</em>. If a crest meets a trough of equal amplitude, they cancel — <em>destructive interference</em>. After overlapping the two waves pass through each other unchanged; the interference is momentary.</p>
+                <p>A <strong>standing wave</strong> forms when a wave reflects from a boundary and interferes with itself. At specific frequencies (the <em>resonant</em> or <em>natural</em> frequencies), the interference produces a stationary pattern of <em>nodes</em> (points of zero displacement) and <em>antinodes</em> (points of maximum oscillation). On a string fixed at both ends (like a guitar string of length L), the fundamental wavelength is \( \lambda_1 = 2L \), giving fundamental frequency \( f_1 = v/(2L) \). The harmonics are integer multiples: \( f_n = nv/(2L) \) for n = 1, 2, 3, … The series f₁, 2f₁, 3f₁ … is what gives musical instruments their characteristic timbre.</p>
+                <p>For an air column open at both ends (a flute), the harmonic series is the same: \( f_n = nv/(2L) \). For an air column closed at one end (a clarinet, or a bottle), only odd harmonics exist: \( f_n = nv/(4L) \) with n = 1, 3, 5… <strong>Resonance</strong> occurs when an external driving force matches a natural frequency, producing dramatically large amplitude — the basis of musical instruments, but also of the Tacoma Narrows bridge collapse (1940).</p>
+                <ul>
+                  <li><strong>Principle of superposition</strong> — total displacement = sum of individual displacements</li>
+                  <li><strong>Constructive interference</strong> — in-phase waves; amplitudes add</li>
+                  <li><strong>Destructive interference</strong> — out-of-phase waves; amplitudes subtract</li>
+                  <li><strong>Standing wave</strong> — stationary pattern of nodes and antinodes</li>
+                  <li><strong>Node</strong> — fixed point of zero displacement</li>
+                  <li><strong>Antinode</strong> — point of maximum oscillation</li>
+                  <li><strong>Harmonic</strong> — integer multiple of the fundamental frequency</li>
+                  <li><strong>Resonance</strong> — large response when driven at a natural frequency</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Frequencies of a guitar string</p>
+                  <p>A guitar string of length L = 0.65 m has a wave speed of 286 m/s. Find the first three harmonic frequencies.</p>
+                  <p><strong>Step 1.</strong> Use the formula for a string fixed at both ends: \( f_n = nv/(2L) \).</p>
+                  <p><strong>Step 2.</strong> Fundamental (n = 1): \( f_1 = (1)(286)/(2 \times 0.65) = 286/1.30 = 220\ \text{Hz} \) — this is musical A3, the open A string.</p>
+                  <p><strong>Step 3.</strong> Second harmonic (n = 2): \( f_2 = 2 f_1 = 440\ \text{Hz} \) — concert pitch A4, one octave up.</p>
+                  <p><strong>Step 4.</strong> Third harmonic (n = 3): \( f_3 = 3 f_1 = 660\ \text{Hz} \) — about a perfect fifth above A4.</p>
+                  <p><strong>Step 5.</strong> Visualise: at n = 1 the string has one antinode in the middle; at n = 2 it has two antinodes and one node in the middle; at n = 3 it has three antinodes and two interior nodes. The mix of these harmonics gives a guitar its rich tone.</p>
+                </div>
+                <ul>
+                  <li><strong>Counting nodes as harmonics</strong> — n is the antinode count (string fixed both ends)</li>
+                  <li><strong>Using both-ends formula for a closed pipe</strong> — closed pipes use \( f_n = nv/(4L) \) with odd n only</li>
+                  <li><strong>Forgetting that resonance requires matching frequency, not amplitude</strong></li>
+                  <li><strong>Treating interference as a permanent change</strong> — waves emerge intact</li>
+                  <li><strong>Adding wave speeds when waves overlap</strong> — superposition adds displacements, not speeds</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.3 — "investigate, through laboratory inquiry or computer simulation, the properties of mechanical waves and sound, and use the universal wave equation to determine various characteristics of waves (e.g., the wavelength of standing waves)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -731,6 +1502,39 @@
         <div class="topic-block">
             <div class="topic-title">4.4 — The Doppler Effect &amp; Applications</div>
             <div class="topic-desc">Source/observer motion, ultrasound imaging, sonar, weather radar</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Doppler effect</strong> is the change in observed frequency of a wave when the source and the observer are moving relative to each other. Discovered by Christian Doppler in 1842, it explains why a passing ambulance siren drops in pitch as it goes by, why police radar can measure car speeds, and why astronomers can detect the expansion of the universe by red-shifted starlight. The fundamental cause is geometric: when the source approaches, successive wave fronts are emitted closer together (shorter wavelength → higher frequency); when it recedes, wave fronts are spread out (longer wavelength → lower frequency).</p>
+                <p>For sound waves with stationary observer and source moving toward the observer at speed \( v_s \): \( f_\text{obs} = f_\text{src}\,v/(v - v_s) \). When the source recedes, the denominator becomes \( v + v_s \). When the observer moves toward a stationary source at speed \( v_o \): \( f_\text{obs} = f_\text{src}(v + v_o)/v \). The general form is \( f_\text{obs} = f_\text{src}(v \pm v_o)/(v \mp v_s) \), with signs chosen so that motion <em>toward</em> increases the frequency. Note: the wave speed v depends only on the medium and is unchanged by source or observer motion.</p>
+                <p>Applications are everywhere. <em>Medical ultrasound Doppler</em> measures blood flow velocity by comparing emitted and reflected ultrasound frequencies. <em>Sonar</em> uses underwater Doppler to detect submarine motion. <em>Weather radar</em> uses Doppler to identify tornadoes by detecting rotating wind patterns. <em>Speed-trap radar</em> bounces microwaves off a car. In astronomy, <em>red-shift</em> of distant galaxies established that the universe is expanding — a discovery by Edwin Hubble in 1929 that revolutionised cosmology.</p>
+                <ul>
+                  <li><strong>Doppler effect</strong> — shift in observed frequency due to relative motion</li>
+                  <li><strong>Source velocity</strong> \( v_s \) — speed of source relative to medium</li>
+                  <li><strong>Observer velocity</strong> \( v_o \) — speed of observer relative to medium</li>
+                  <li><strong>Wave speed</strong> v — depends only on medium (343 m/s for sound in air at 20 °C)</li>
+                  <li><strong>Blue-shift / red-shift</strong> — light from approaching / receding objects</li>
+                  <li><strong>Sonic boom</strong> — shock wave when source exceeds wave speed</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Ambulance siren</p>
+                  <p>An ambulance siren emits a 920 Hz tone. The ambulance approaches you at 25 m/s through still air (T = 20 °C, v = 343 m/s). What frequency do you hear (a) as it approaches and (b) after it passes?</p>
+                  <p><strong>Step 1.</strong> Approaching: source moves toward observer, observer stationary. \( f_\text{obs} = f_\text{src}\,v/(v - v_s) = 920 \times 343/(343 - 25) = 920 \times 343/318 \).</p>
+                  <p><strong>Step 2.</strong> Compute: \( 343/318 = 1.0786 \), so \( f_\text{obs} = 920 \times 1.0786 = 992\ \text{Hz} \) — pitched up by about 72 Hz.</p>
+                  <p><strong>Step 3.</strong> Receding: \( f_\text{obs} = f_\text{src}\,v/(v + v_s) = 920 \times 343/(343 + 25) = 920 \times 343/368 \).</p>
+                  <p><strong>Step 4.</strong> Compute: \( 343/368 = 0.9321 \), so \( f_\text{obs} = 920 \times 0.9321 = 858\ \text{Hz} \) — pitched down by about 62 Hz.</p>
+                  <p><strong>Step 5.</strong> Total shift heard as the ambulance passes: 992 → 858 Hz, a drop of 134 Hz — easily detected by the ear (corresponds to about 2 semitones).</p>
+                </div>
+                <ul>
+                  <li><strong>Thinking the wave speed changes</strong> — it does not; only frequency and wavelength shift</li>
+                  <li><strong>Forgetting the medium matters</strong> — Doppler shift in air ≠ in water</li>
+                  <li><strong>Confusing the source and observer formulas</strong> — keep careful track of who is moving</li>
+                  <li><strong>Using sign convention inconsistently</strong> — "toward" always increases f</li>
+                  <li><strong>Assuming Doppler only applies to sound</strong> — it works for all waves, including light</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.5 — "analyse, in qualitative and quantitative terms, the conditions required for resonance and the Doppler effect in mechanical systems, and explain the conditions in terms of the properties of mechanical waves and sound."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -786,6 +1590,40 @@
         <div class="topic-block">
             <div class="topic-title">5.1 — Electric Charge &amp; Static Electricity</div>
             <div class="topic-desc">Coulomb (qualitative), conductors vs. insulators, charging by friction, induction, contact</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Electric charge</strong> is a fundamental property of matter, just as mass is. Charges come in two types — <em>positive</em> (held by protons in atomic nuclei) and <em>negative</em> (held by electrons orbiting the nucleus). Like charges repel; opposite charges attract. The unit of charge is the coulomb (C); the elementary charge carried by a proton or (oppositely) by an electron is \( e = 1.60 \times 10^{-19}\ \text{C} \). One coulomb is therefore the charge of about 6.24 × 10¹⁸ electrons — a very large amount, which is why typical static-electricity charges are microcoulombs.</p>
+                <p>Charge obeys a strict conservation law: the total electric charge in an isolated system is constant. Charging an object does not create new charge — it transfers electrons from one object to another. Three common processes transfer charge. <em>Friction</em> (e.g. rubbing a balloon on hair) strips electrons from one material onto the other, leaving them oppositely charged. <em>Conduction</em> (direct contact) shares charge between two objects until they reach the same potential. <em>Induction</em> uses a charged object to rearrange charges in a neutral one without touching it; if the neutral object is briefly grounded, electrons can flow off (or onto) it, leaving it net charged after the ground is removed.</p>
+                <p>Materials differ in how easily charges flow within them. <strong>Conductors</strong> (metals, salt water, plasma) have many free electrons and allow charge to redistribute almost instantly. <strong>Insulators</strong> (rubber, glass, dry wood, plastic) hold electrons tightly in place; charge stays where you put it. Semi-conductors (silicon, germanium) lie between the two extremes and form the basis of all modern electronics. Coulomb's law \( F = kq_1q_2/r^2 \) (treated qualitatively at the Grade 11 level) quantifies the force between point charges.</p>
+                <ul>
+                  <li><strong>Electric charge</strong> q — coulomb (C); scalar</li>
+                  <li><strong>Elementary charge</strong> e = 1.60 × 10⁻¹⁹ C</li>
+                  <li><strong>Conservation of charge</strong> — total q in isolated system is constant</li>
+                  <li><strong>Conductor</strong> — free electrons; metals, ionic solutions</li>
+                  <li><strong>Insulator</strong> — bound electrons; rubber, glass, dry air</li>
+                  <li><strong>Charging by friction</strong> — electron transfer via rubbing</li>
+                  <li><strong>Charging by induction</strong> — charge separation without contact</li>
+                  <li><strong>Grounding</strong> — connecting to Earth as an electron reservoir</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Balloon on the wall</p>
+                  <p>A student rubs a balloon on her hair, then holds it against a wall. The balloon sticks. Explain what happens in terms of charge transfer and induction.</p>
+                  <p><strong>Step 1.</strong> Charging by friction: rubbing removes electrons from hair onto the balloon (rubber holds electrons more tightly than human hair, which sits higher on the triboelectric series). The balloon becomes negatively charged; hair becomes positively charged.</p>
+                  <p><strong>Step 2.</strong> Bring the negative balloon near the neutral wall. Electrons in the wall's surface layer (free in the small dipoles of the insulating paint and plaster) are repelled away from the balloon, leaving the surface of the wall closest to the balloon with a small positive charge — this is <em>induced</em> polarisation.</p>
+                  <p><strong>Step 3.</strong> The (−) balloon attracts the (+) induced charge on the wall surface. Because attraction is between closer charges and repulsion is between farther charges, the net force is attractive.</p>
+                  <p><strong>Step 4.</strong> Estimate: if a typical balloon carries about \( 10^{-8}\ \text{C} \) of charge after rubbing (about 6 × 10¹⁰ excess electrons), Coulomb's law predicts attractive forces of millinewtons — easily enough to hold a few-gram balloon against gravity.</p>
+                </div>
+                <ul>
+                  <li><strong>Believing protons are transferred during friction</strong> — only electrons move (protons are locked in nuclei)</li>
+                  <li><strong>Saying "the balloon becomes positively charged" after rubbing on hair</strong> — depends on which material is higher on triboelectric series; for hair → balloon, balloon goes negative</li>
+                  <li><strong>Forgetting that induction does not transfer net charge</strong> unless followed by grounding</li>
+                  <li><strong>Confusing "static" with "stationary"</strong> — static charges can produce huge sparks (lightning)</li>
+                  <li><strong>Treating Coulomb force as 1/r instead of 1/r²</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.1 — "describe and explain the properties of electric charge, including the laws of electric charges (e.g., like charges repel, opposite charges attract)."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -818,6 +1656,41 @@
         <div class="topic-block">
             <div class="topic-title">5.2 — Current, Voltage, Resistance &amp; Ohm's Law</div>
             <div class="topic-desc">\( I = Q/t \), \( V = IR \), measuring with ammeter (series) and voltmeter (parallel)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>electric current</strong> is a flow of charge. Quantitatively, \( I = Q/t \), where Q is the charge (coulombs) passing a point in the circuit in time t (seconds). The unit is the ampere (A): 1 A = 1 C/s. By historical convention (Benjamin Franklin's guess) conventional current is the direction positive charges would flow — opposite to the actual electron motion in a metal wire. In Grade 11 we use conventional current in all circuit analysis. A 1 A current corresponds to about 6 × 10¹⁸ electrons passing per second — a huge number but a modest current; a typical LED bulb draws roughly 0.05 A, a kettle 12 A.</p>
+                <p><strong>Voltage</strong> (potential difference) V is the energy per unit charge supplied or used between two points: \( V = E/Q \), measured in volts (V) where 1 V = 1 J/C. A battery or cell does work against an internal electric field to "lift" each coulomb of charge to a higher potential; the charge then flows through the external circuit, delivering its energy to bulbs, motors, or heaters. Voltage is like a height difference; current is like the flow rate; resistance is like the narrowness of the pipe.</p>
+                <p><strong>Resistance</strong> R opposes the flow of current and converts electrical energy into thermal energy. <strong>Ohm's law</strong> states \( V = IR \) for an "ohmic" conductor (most metals at constant temperature). R is measured in ohms (Ω); 1 Ω = 1 V/A. To measure these quantities: an <em>ammeter</em> is connected <em>in series</em> with the component (so all the current flows through it; it has very low internal resistance). A <em>voltmeter</em> is connected <em>in parallel</em> with the component (so it does not divert current; it has very high internal resistance). Reversing this leads to short circuits or no reading.</p>
+                <ul>
+                  <li><strong>Current</strong> I = Q/t — ampere (A); scalar with direction (conventional = + charge flow)</li>
+                  <li><strong>Charge</strong> Q — coulomb (C); 1 A·s</li>
+                  <li><strong>Voltage</strong> V = E/Q — volt (V); 1 J/C</li>
+                  <li><strong>Resistance</strong> R = V/I — ohm (Ω); 1 V/A</li>
+                  <li><strong>Ohm's law</strong> — V = IR for an ohmic conductor</li>
+                  <li><strong>Ammeter</strong> — connected in series, low R</li>
+                  <li><strong>Voltmeter</strong> — connected in parallel, high R</li>
+                  <li><strong>Electrical power</strong> P = VI — watt (W); also P = I²R = V²/R</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Resistance of a light bulb</p>
+                  <p>A 60 W incandescent bulb is plugged into a 120 V outlet. Find the current it draws and its operating resistance.</p>
+                  <p><strong>Step 1.</strong> Use \( P = VI \): \( I = P/V = 60/120 = 0.50\ \text{A} \).</p>
+                  <p><strong>Step 2.</strong> Apply Ohm's law: \( R = V/I = 120/0.50 = 240\ \Omega \).</p>
+                  <p><strong>Step 3.</strong> Sanity check with \( P = V^2/R \): \( P = 120^2/240 = 14400/240 = 60\ \text{W} \). ✓</p>
+                  <p><strong>Step 4.</strong> Energy used in 1 hour: \( E = P \cdot t = 60\ \text{W} \times 3600\ \text{s} = 216\,000\ \text{J} = 0.060\ \text{kWh} \). At Ontario's average electricity price of 12 ¢/kWh, the bulb costs about 0.72 ¢ per hour.</p>
+                  <p><strong>Step 5.</strong> Replace with a 9 W LED bulb (same brightness): \( I = 0.075\ \text{A} \), saving 51 W and reducing CO₂ emissions accordingly.</p>
+                </div>
+                <ul>
+                  <li><strong>Connecting an ammeter in parallel</strong> — its low R creates a short circuit</li>
+                  <li><strong>Connecting a voltmeter in series</strong> — its high R blocks the current</li>
+                  <li><strong>Mixing up V and I in formulas</strong> — voltage = current × resistance, not the reverse</li>
+                  <li><strong>Forgetting Ohm's law fails when R changes</strong> — a filament's R increases with temperature</li>
+                  <li><strong>Confusing power (W) with energy (J or kWh)</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "solve problems involving current, charge, voltage, resistance, power, and energy in simple electric circuits."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -838,6 +1711,39 @@
         <div class="topic-block">
             <div class="topic-title">5.3 — Series &amp; Parallel Circuits</div>
             <div class="topic-desc">\( R_T \) for series and parallel; \( I, V \) splitting rules; mixed networks</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Circuits combine multiple resistors in two basic ways. In a <strong>series</strong> connection, components are joined end-to-end so that the same current passes through each in turn. There is only one path for the current. In a <strong>parallel</strong> connection, components are placed on separate branches that share common end-points; the current splits among the branches, but every branch experiences the same voltage. Most household wiring is parallel — that way each appliance gets the full 120 V regardless of what else is plugged in.</p>
+                <p>The rules for combining resistors follow from conservation of charge (Kirchhoff's current law) and conservation of energy (Kirchhoff's voltage law). For resistors in <em>series</em>: \( R_T = R_1 + R_2 + R_3 + \ldots \); the total resistance is always larger than any individual resistor. The current is the same everywhere: \( I_T = I_1 = I_2 \). Voltages add: \( V_T = V_1 + V_2 \). For resistors in <em>parallel</em>: \( 1/R_T = 1/R_1 + 1/R_2 + 1/R_3 + \ldots \); the total resistance is always smaller than the smallest branch resistance, because adding paths makes it easier for current to flow. The voltage is the same across each branch: \( V_T = V_1 = V_2 \). Currents add: \( I_T = I_1 + I_2 \).</p>
+                <p>Mixed (combination) circuits are solved by breaking them into series and parallel sub-networks, simplifying step by step until a single equivalent resistance remains. Then work back to find the current and voltage in each component. Real circuits in homes use parallel wiring with a circuit breaker (a current limiter) on each branch — if you plug in too many appliances, the total current in the supply wire exceeds the rating and the breaker opens to prevent fire.</p>
+                <ul>
+                  <li><strong>Series</strong> — single path; \( R_T = R_1 + R_2 + \ldots \); same I, voltages add</li>
+                  <li><strong>Parallel</strong> — multiple paths; \( 1/R_T = 1/R_1 + 1/R_2 + \ldots \); same V, currents add</li>
+                  <li><strong>Kirchhoff's current law (KCL)</strong> — \( \Sigma I_\text{in} = \Sigma I_\text{out} \) at any junction</li>
+                  <li><strong>Kirchhoff's voltage law (KVL)</strong> — sum of voltage rises = sum of drops around any loop</li>
+                  <li><strong>Voltage divider</strong> — series resistors split V in proportion to their R</li>
+                  <li><strong>Current divider</strong> — parallel resistors split I in inverse proportion to their R</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Series–parallel combination</p>
+                  <p>A 12 V battery is connected to a 6 Ω resistor in series with a parallel combination of a 4 Ω and a 12 Ω resistor. Find the total resistance, the current from the battery, and the current through each resistor.</p>
+                  <p><strong>Step 1.</strong> Simplify the parallel pair first: \( 1/R_\text{p} = 1/4 + 1/12 = 3/12 + 1/12 = 4/12 \), so \( R_\text{p} = 3.0\ \Omega \).</p>
+                  <p><strong>Step 2.</strong> Total resistance: \( R_T = 6 + 3 = 9.0\ \Omega \).</p>
+                  <p><strong>Step 3.</strong> Battery current: \( I_T = V/R_T = 12/9 = 1.33\ \text{A} \). All this current flows through the 6 Ω resistor.</p>
+                  <p><strong>Step 4.</strong> Voltage across the parallel pair: \( V_\text{p} = I_T R_\text{p} = 1.33 \times 3 = 4.0\ \text{V} \).</p>
+                  <p><strong>Step 5.</strong> Current through the 4 Ω: \( I_4 = 4/4 = 1.0\ \text{A} \); through the 12 Ω: \( I_{12} = 4/12 = 0.33\ \text{A} \). Check KCL: 1.0 + 0.33 = 1.33 A = battery current. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Adding parallel resistors directly</strong> — must use reciprocals or product/sum formula</li>
+                  <li><strong>Assuming current is the same in a parallel circuit</strong> — voltage is the same; current splits</li>
+                  <li><strong>Believing parallel R is the average</strong> — it is smaller than the smallest</li>
+                  <li><strong>Forgetting to convert milliamps to amps</strong> — 250 mA = 0.250 A</li>
+                  <li><strong>Mixing up series-rule and parallel-rule</strong> — sketch the circuit before applying formulas</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.5 — "investigate, through laboratory inquiry, the relationships among the variables involved in current, charge, time, voltage, energy, and electrical resistance in series and parallel circuits."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -858,6 +1764,40 @@
         <div class="topic-block">
             <div class="topic-title">5.4 — Magnetism &amp; Electromagnetism</div>
             <div class="topic-desc">Magnetic fields, right-hand rules, force on a current-carrying conductor</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>magnetic field</strong> \( \vec{B} \) is a region of space where magnetic forces are exerted on moving charges and on materials made of certain atoms (iron, cobalt, nickel — ferromagnetic). The unit of magnetic field strength is the tesla (T); Earth's surface field is only about 50 μT, while an MRI scanner runs at 1.5–3 T. Magnetic field lines run from the north pole of a magnet to the south pole outside the magnet, and from south to north inside. Like poles repel; unlike poles attract. Magnets always have two poles — there are no isolated magnetic monopoles, as far as anyone has observed.</p>
+                <p>Hans Christian Ørsted's accidental 1820 discovery — that a wire carrying current deflects a compass needle — revealed that <em>electricity and magnetism are aspects of one phenomenon: electromagnetism</em>. A current-carrying wire produces a magnetic field that loops around it; the direction is given by the <strong>first right-hand rule</strong>: point your right thumb in the direction of conventional current, and your fingers curl in the direction of \( \vec{B} \). For a long straight wire, \( B \) decreases with distance from the wire. For a coil (solenoid), the fields of every loop add to produce a uniform field along the axis, much like a bar magnet — this is how electromagnets are made.</p>
+                <p>A current in a magnetic field experiences a force: \( \vec{F} = I\vec{L}\times\vec{B} \), with magnitude \( F = BIL\sin\theta \), where θ is the angle between current and field. The direction of the force is given by the <strong>third right-hand rule</strong> (the "motor rule"): fingers point in the current direction, curl them toward \( \vec{B} \); the thumb gives the force direction. This is the working principle of every electric motor, every loudspeaker, every MRI gradient coil, and every Hall-effect sensor.</p>
+                <ul>
+                  <li><strong>Magnetic field</strong> \( \vec{B} \) — tesla (T); 1 T = 1 N/(A·m)</li>
+                  <li><strong>Magnetic field lines</strong> — closed loops; N→S outside, S→N inside</li>
+                  <li><strong>Right-hand rule #1</strong> — thumb = current, fingers curl = field around wire</li>
+                  <li><strong>Right-hand rule #2 (solenoid)</strong> — fingers curl with current, thumb = north pole</li>
+                  <li><strong>Right-hand rule #3 (motor)</strong> — current → field → force directions</li>
+                  <li><strong>Force on a wire</strong> F = BIL sin θ</li>
+                  <li><strong>Domains</strong> — microscopic regions in a ferromagnet that align in an external field</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Force on a current-carrying wire</p>
+                  <p>A horizontal wire 0.50 m long carries 4.0 A toward the east. It lies in a uniform magnetic field of 0.25 T pointing north. Find the magnitude and direction of the force on the wire.</p>
+                  <p><strong>Step 1.</strong> Angle between current (east) and field (north) is 90°, so \( \sin\theta = 1 \).</p>
+                  <p><strong>Step 2.</strong> Force magnitude: \( F = BIL\sin\theta = (0.25)(4.0)(0.50)(1) = 0.50\ \text{N} \).</p>
+                  <p><strong>Step 3.</strong> Direction by right-hand rule: point fingers east (current), curl them to point north (field). The thumb points up (out of the ground). So the force is vertically upward, 0.50 N.</p>
+                  <p><strong>Step 4.</strong> Physical interpretation: this is exactly how a railgun or maglev train works — current crossed with a strong field gives mechanical force. Reversing the current direction reverses the force direction (a key idea for DC motors).</p>
+                  <p><strong>Step 5.</strong> If the wire were aligned with the field (current also pointing north), θ = 0 and F = 0 — no force.</p>
+                </div>
+                <ul>
+                  <li><strong>Using the left hand</strong> — conventional current uses the right hand; left-hand rules apply only to electron flow</li>
+                  <li><strong>Forgetting sin θ</strong> — force is zero when current is parallel to field</li>
+                  <li><strong>Calling magnetic field lines "lines of force"</strong> — they show direction, not magnitude of force on charge</li>
+                  <li><strong>Believing magnets attract all metals</strong> — only ferromagnetic (Fe, Co, Ni and some alloys)</li>
+                  <li><strong>Treating B and F as the same direction</strong> — F is perpendicular to both I and B</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.4 — "describe and explain the magnetic field around a current-carrying conductor, and the electromagnetic force between a current-carrying conductor and an external magnetic field."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">
@@ -878,6 +1818,41 @@
         <div class="topic-block">
             <div class="topic-title">5.5 — Motors, Generators &amp; Electromagnetic Induction</div>
             <div class="topic-desc">Faraday's law (qualitative), simple DC motor, AC generator, transformers (intro)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The deep symmetry between electricity and magnetism is captured in two complementary devices. A <strong>motor</strong> uses an electric current in a magnetic field to produce mechanical motion: \( F = BIL \) on each side of a current-carrying loop produces a torque that rotates the loop. A simple DC motor adds a <em>commutator</em> (a split ring) that reverses the current direction every half-turn so the torque always rotates the loop the same way. Motors convert electrical energy into mechanical energy and are everywhere: electric cars, kitchen blenders, hard drives, drones, robots.</p>
+                <p>A <strong>generator</strong> does the reverse: it uses mechanical motion in a magnetic field to produce electric current. Discovered by Michael Faraday and Joseph Henry independently in 1831, this is the principle of <em>electromagnetic induction</em>: a changing magnetic flux through a coil <em>induces</em> a voltage (EMF) in the coil. <strong>Faraday's law</strong> (qualitative form at Grade 11): the induced EMF is proportional to the rate of change of magnetic flux. <strong>Lenz's law</strong> tells us the direction of the induced current: it always opposes the change in flux that caused it (a consequence of energy conservation). Rotating a coil in a fixed field generates an alternating current (AC); this is how the Niagara Falls hydro turbines, nuclear-plant steam turbines, and wind turbines all generate Ontario's electricity.</p>
+                <p>A <strong>transformer</strong> uses two coils wound on a shared iron core. AC in the primary creates a changing flux through the secondary, inducing an AC voltage there. The voltage ratio equals the turns ratio: \( V_2/V_1 = N_2/N_1 \). Step-up transformers raise the voltage for long-distance transmission (less current → less I²R loss in the lines), and step-down transformers lower it again for safe household use. Transformers only work with AC, which is one of the historical reasons the grid uses AC.</p>
+                <ul>
+                  <li><strong>Motor</strong> — electrical → mechanical energy via F = BIL on a current loop</li>
+                  <li><strong>Commutator</strong> — split ring that reverses current each half-turn (DC motor)</li>
+                  <li><strong>Generator</strong> — mechanical → electrical via EM induction</li>
+                  <li><strong>Faraday's law</strong> — EMF ∝ rate of change of magnetic flux</li>
+                  <li><strong>Lenz's law</strong> — induced current opposes the flux change that caused it</li>
+                  <li><strong>EMF</strong> ε — induced voltage; volts</li>
+                  <li><strong>Magnetic flux</strong> Φ = BA cos θ — weber (Wb); 1 Wb = 1 T·m²</li>
+                  <li><strong>Transformer</strong> — \( V_2/V_1 = N_2/N_1 \); AC only</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Step-down transformer for a phone charger</p>
+                  <p>A phone charger contains a transformer that steps 120 V AC down to 5.0 V to charge the battery. The primary coil has 1200 turns. (a) How many turns are needed in the secondary? (b) If the charger draws 0.10 A from the wall, what current does it deliver to the phone (assume ideal)?</p>
+                  <p><strong>Step 1.</strong> Turns ratio: \( N_2/N_1 = V_2/V_1 \), so \( N_2 = N_1 \cdot V_2/V_1 = 1200 \times 5.0/120 = 50 \) turns.</p>
+                  <p><strong>Step 2.</strong> Ideal transformers conserve power: \( P_\text{in} = P_\text{out} \), so \( V_1 I_1 = V_2 I_2 \), giving \( I_2 = V_1 I_1 / V_2 = 120 \times 0.10/5.0 = 2.4\ \text{A} \).</p>
+                  <p><strong>Step 3.</strong> Sanity check: voltage dropped by factor 24 (120/5), current rose by factor 24 (2.4/0.10). Product VI is unchanged (12 W in = 12 W out). ✓</p>
+                  <p><strong>Step 4.</strong> Real chargers are about 85% efficient because of core losses and resistance, so the actual current is somewhat less than 2.4 A and the rest becomes heat — which is why your charger feels warm.</p>
+                  <p><strong>Step 5.</strong> Without transformers, transmitting power from Niagara Falls to Toronto at 120 V would require currents of millions of amps with enormous I²R losses; high-voltage lines (e.g. 500 kV) move the same power at 1/4000 the current, slashing losses by a factor of 16 million.</p>
+                </div>
+                <ul>
+                  <li><strong>Using transformers on DC</strong> — DC creates no changing flux, so no induced EMF</li>
+                  <li><strong>Forgetting that induced EMF requires <em>change</em> in flux</strong> — a stationary magnet near a stationary coil produces no current</li>
+                  <li><strong>Mixing up motor and generator roles</strong> — motor consumes electrical energy, generator produces it</li>
+                  <li><strong>Treating EMF as power instead of voltage</strong> — EMF is V, work per coulomb</li>
+                  <li><strong>Believing transformers create energy</strong> — they trade V for I at constant P (minus losses)</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.6 — "investigate, through laboratory inquiry or computer simulation, the operation of an electric motor and an electric generator, and explain how each operates in terms of the forces and fields involved."</p>
+              </div>
+            </details>
             <div class="resource-group">
             <div class="resource-group-label">📹 Video Lessons</div>
             <div class="video-card">

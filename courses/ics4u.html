@@ -42,6 +42,20 @@
 .assessment-card .a-body p { font-size: 12px; color: #64748b; }
 .assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #6366f1; font-weight: 600; }
 
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
 </style>
 </head>
 <body>
@@ -111,6 +125,42 @@
 <span class="kw">record</span> = name + <span class="str">" ("</span> + str(age) + <span class="str">"): "</span> + str(gpa)
 <span class="kw">print</span>(record)  <span class="com"># Ada (17): 3.85</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Every value a program manipulates has a <strong>data type</strong>, and every type carries with it a set of legal operations. Choosing the right primitive type is the first decision a programmer makes because it controls memory layout, the range of representable values, and which operators are valid. Confusing types is the source of a surprising number of bugs: <code>"7" + "8"</code> produces the string <code>"78"</code> in Python and Java, but <code>7 + 8</code> produces the integer <code>15</code>. Grade 12 students must learn to reason about types before they reason about logic.</p>
+                <p>Python uses <em>dynamic typing</em>: a variable name is a label that can be rebound to any object. By contrast, Java uses <em>static typing</em>, where the compiler verifies the type at every assignment. In both languages, the value stored in memory has a fixed type at any given moment. Type conversion (also called <em>casting</em>) is the act of producing a new value of a different type — for example, <code>str(age)</code> creates a string version of the integer <code>age</code> without altering the original. Implicit conversion (<code>3 + 4.0</code> becoming <code>7.0</code>) is called <em>type coercion</em> and is the most common source of silent floating-point error.</p>
+                <p>Expressions are built from operators and operands, and the order in which they evaluate is governed by <strong>operator precedence</strong>. Multiplication binds tighter than addition; exponentiation in Python (<code>**</code>) binds tighter than unary minus on the left but not on the right; comparison binds looser than arithmetic. When in doubt, add parentheses — they cost nothing at runtime and prevent precedence bugs.</p>
+                <ul>
+                  <li><strong>Primitive type</strong> — a built-in type that is not a collection (int, float, bool, str).</li>
+                  <li><strong>Literal</strong> — a value written directly in source code, e.g. <code>17</code> or <code>"Ada"</code>.</li>
+                  <li><strong>Identifier</strong> — the name of a variable, function, or class.</li>
+                  <li><strong>Casting / type conversion</strong> — explicit conversion from one type to another, e.g. <code>int("12")</code>.</li>
+                  <li><strong>Operator precedence</strong> — rules that determine the order in which sub-expressions evaluate.</li>
+                  <li><strong>Floating-point error</strong> — the rounding caused by binary representation of decimal fractions.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — precedence and floating-point</p>
+<pre><code>&gt;&gt;&gt; 2 + 3 * 4 ** 2     # ** first → 16, then * → 48, then + → 50
+50
+&gt;&gt;&gt; (2 + 3) * 4 ** 2   # () forces 5 first, ** still binds tighter than *
+80
+&gt;&gt;&gt; 0.1 + 0.2          # binary cannot represent 0.1 exactly
+0.30000000000000004
+&gt;&gt;&gt; round(0.1 + 0.2, 2)
+0.3</code></pre>
+                  <p>The exponent <code>4 ** 2</code> evaluates first because <code>**</code> has the highest precedence among arithmetic operators. Floating-point arithmetic in IEEE-754 cannot represent <code>0.1</code> exactly, so equality comparisons on floats should use a tolerance (<code>abs(a - b) &lt; 1e-9</code>) rather than <code>==</code>. Each operation here is O(1), so the running time of the expression is constant regardless of operand magnitude.</p>
+                </div>
+                <ul>
+                  <li>Forgetting to convert <code>input()</code> from string to number: <code>input() + 1</code> raises <code>TypeError</code>.</li>
+                  <li>Comparing floats with <code>==</code> — always use a tolerance.</li>
+                  <li>Using <code>=</code> when you mean <code>==</code>, or vice versa.</li>
+                  <li>Assuming integer division: in Python 3, <code>5 / 2</code> is <code>2.5</code>, not <code>2</code>. Use <code>//</code> for floor division.</li>
+                  <li>Overwriting a built-in name like <code>list</code> or <code>str</code> with your own variable.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "demonstrate the use of different data types … in computer programs (e.g., integer, floating-point, character/string, Boolean)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt1')"><span class="vid-icon">📖</span><span class="vid-title">Python Variables — Programming with Mosh</span><span class="vid-duration">11:01</span><span class="vid-toggle" id="toggle-ics-yt1">▶</span></div><div class="video-player" id="player-ics-yt1"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cQT33yu9pY8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=cQT33yu9pY8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -123,6 +173,47 @@
 <span class="kw">area</span>   = length * width
 <span class="kw">print</span>(<span class="str">f"Area = {area:.2f} m²"</span>)
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A program that cannot communicate with the outside world is not very useful. Input and output (I/O) are the bridges between the program's internal state and the user or another system. In Python, <code>input()</code> always returns a <code>str</code>, regardless of what the user types — even <code>"42"</code> arrives as four characters, not a number. The programmer must explicitly parse it with <code>int()</code> or <code>float()</code> before performing arithmetic. Forgetting this conversion is the single most common bug in introductory programs.</p>
+                <p>Output formatting matters because raw values rarely look the way humans want to read them. A bank balance of <code>1234.5</code> should display as <code>$1,234.50</code> with two decimal places and a thousands separator. Python's <strong>f-strings</strong> (formatted string literals, introduced in Python 3.6) embed expressions directly inside string literals with a format specifier after a colon: <code>f"{value:,.2f}"</code> means "thousands separator, two decimal places, fixed-point notation". F-strings are faster, easier to read, and less error-prone than the older <code>%</code> operator or the <code>.format()</code> method.</p>
+                <p>Escape sequences let strings contain characters that would otherwise have special meaning. <code>\n</code> produces a newline, <code>\t</code> produces a tab, <code>\\</code> produces a literal backslash, and <code>\"</code> escapes a double-quote inside a double-quoted string. Raw strings, prefixed with <code>r</code>, disable escapes — they are handy for Windows file paths and regular expressions.</p>
+                <ul>
+                  <li><strong>Standard input (stdin)</strong> — the default source of input, usually the keyboard.</li>
+                  <li><strong>Standard output (stdout)</strong> — the default destination of output, usually the terminal.</li>
+                  <li><strong>f-string</strong> — an expression-embedded literal of the form <code>f"…{expr:spec}…"</code>.</li>
+                  <li><strong>Format specifier</strong> — the part after the colon (<code>.2f</code>, <code>&gt;10</code>, <code>05d</code>) that controls width, precision, alignment.</li>
+                  <li><strong>Escape sequence</strong> — a two-character code beginning with <code>\</code> that represents a non-printable character.</li>
+                  <li><strong>Concatenation</strong> — joining strings end-to-end with <code>+</code>.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — receipt formatting</p>
+<pre><code>item  = input("Item: ")          # str
+qty   = int(input("Qty: "))      # int — parse!
+price = float(input("Price: "))  # float — parse!
+
+subtotal = qty * price
+tax      = subtotal * 0.13       # Ontario HST
+total    = subtotal + tax
+
+print(f"{'Item':&lt;15}{'Qty':&gt;5}{'Price':&gt;10}")
+print(f"{item:&lt;15}{qty:&gt;5}{price:&gt;10.2f}")
+print(f"{'Subtotal':&lt;20}{subtotal:&gt;10.2f}")
+print(f"{'HST (13%)':&lt;20}{tax:&gt;10.2f}")
+print(f"{'TOTAL':&lt;20}{total:&gt;10.2f}")</code></pre>
+                  <p>The <code>&lt;15</code> specifier left-aligns to width 15; <code>&gt;10.2f</code> right-aligns a float in width 10 with two decimals. Each <code>print</code> is an O(1) I/O operation. The arithmetic itself is O(1); the runtime is dominated by I/O latency, not computation.</p>
+                </div>
+                <ul>
+                  <li>Forgetting to wrap <code>input()</code> with <code>int()</code> or <code>float()</code> — leads to <code>TypeError</code> when arithmetic is attempted.</li>
+                  <li>Calling <code>int("3.5")</code> — raises <code>ValueError</code>. Use <code>float()</code> first, then <code>int()</code> if truncation is wanted.</li>
+                  <li>Using <code>print(x, y)</code> (which auto-inserts a space) when concatenation was intended.</li>
+                  <li>Forgetting the <code>f</code> prefix: <code>"{x}"</code> is the literal string <code>{x}</code>, not the value of <code>x</code>.</li>
+                  <li>Mixing tabs and spaces in formatted output — terminals may render them differently.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "use methods to manage data input and output in programs (e.g., format output to be displayed; validate input)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt13')"><span class="vid-icon">📖</span><span class="vid-title">Python Quick Tip: F-Strings — Advanced String Formatting — Corey Schafer</span><span class="vid-duration">12:59</span><span class="vid-toggle" id="toggle-ics-yt13">▶</span></div><div class="video-player" id="player-ics-yt13"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/nghuHvKLhJA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=nghuHvKLhJA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -137,6 +228,45 @@
     <span class="kw">elif</span> percent &gt;= <span class="num">50</span>: <span class="kw">return</span> <span class="str">"Level 1"</span>
     <span class="kw">else</span>:                <span class="kw">return</span> <span class="str">"R"</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Selection — choosing which branch of code to run — is one of the three pillars of structured programming alongside sequence and iteration. The Boolean expression in an <code>if</code> evaluates to either <code>True</code> or <code>False</code>, and the interpreter takes the corresponding branch. Cascaded <code>if</code>/<code>elif</code>/<code>else</code> chains are mutually exclusive: at most one branch executes, and they are evaluated top-to-bottom. The order of conditions is therefore semantically meaningful, not just stylistic. Writing the most restrictive condition first is a frequent source of bugs (e.g., <code>if percent &gt;= 50</code> before <code>if percent &gt;= 80</code> would classify every passing grade as Level 1).</p>
+                <p>Boolean logic is built from the three connectives <code>and</code>, <code>or</code>, and <code>not</code>. A truth table enumerates all input combinations. Python (and Java) use <strong>short-circuit evaluation</strong>: in <code>A and B</code>, if <code>A</code> is false, <code>B</code> is never evaluated; in <code>A or B</code>, if <code>A</code> is true, <code>B</code> is never evaluated. This is more than an optimisation — it lets programmers write guards like <code>if x != 0 and 1/x &gt; 0.5</code> without raising a division-by-zero exception when <code>x</code> is zero.</p>
+                <p>De Morgan's laws are essential for refactoring conditionals: <code>not (A and B)</code> is equivalent to <code>(not A) or (not B)</code>, and <code>not (A or B)</code> is equivalent to <code>(not A) and (not B)</code>. Students should be able to apply these mechanically to simplify nested negations.</p>
+                <ul>
+                  <li><strong>Boolean expression</strong> — any expression that evaluates to <code>True</code> or <code>False</code>.</li>
+                  <li><strong>Comparison operator</strong> — <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>.</li>
+                  <li><strong>Logical operator</strong> — <code>and</code>, <code>or</code>, <code>not</code> (in Java: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>).</li>
+                  <li><strong>Short-circuit evaluation</strong> — second operand is skipped when the first determines the result.</li>
+                  <li><strong>Truthy / Falsy</strong> — non-Boolean values evaluated in a Boolean context (<code>0</code>, <code>""</code>, <code>[]</code>, <code>None</code> are falsy).</li>
+                  <li><strong>Dangling-else</strong> — ambiguity in nested <code>if</code>s without braces, resolved in Python by indentation.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — input validation with short-circuit logic</p>
+<pre><code>def safe_divide(a_str, b_str):
+    if not a_str.lstrip('-').isdigit() or not b_str.lstrip('-').isdigit():
+        return "Inputs must be integers"
+    a, b = int(a_str), int(b_str)
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+
+print(safe_divide("12", "3"))   # 4.0
+print(safe_divide("12", "0"))   # Cannot divide by zero
+print(safe_divide("12", "x"))   # Inputs must be integers</code></pre>
+                  <p>The <code>or</code> in the first check short-circuits: if <code>a_str</code> is non-numeric, <code>b_str</code> is never tested. This protects against the <code>ValueError</code> that would arise from <code>int("x")</code>. The whole function runs in O(n) where n is the length of the input string (because of <code>isdigit</code>); the arithmetic itself is O(1).</p>
+                </div>
+                <ul>
+                  <li>Writing <code>if x = 5</code> instead of <code>if x == 5</code> (a syntax error in Python, a logic bug in C/Java).</li>
+                  <li>Putting the most general condition first in an <code>if</code>/<code>elif</code> chain, making later branches unreachable.</li>
+                  <li>Chaining comparisons in Java the way Python allows: <code>1 &lt; x &lt; 10</code> works in Python; in Java write <code>1 &lt; x &amp;&amp; x &lt; 10</code>.</li>
+                  <li>Forgetting that <code>and</code>/<code>or</code> return one of the operands, not necessarily <code>True</code>/<code>False</code>: <code>0 or "hello"</code> returns <code>"hello"</code>.</li>
+                  <li>Negating a compound condition without De Morgan's laws — easy to invert the wrong operator.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "use control structures (i.e., sequence, selection, iteration) to write modular code".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt14')"><span class="vid-icon">📖</span><span class="vid-title">Python Conditionals and Booleans — If, Else, and Elif Statements — Corey Schafer</span><span class="vid-duration">17:18</span><span class="vid-toggle" id="toggle-ics-yt14">▶</span></div><div class="video-player" id="player-ics-yt14"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/DZwmZ8Usvnk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=DZwmZ8Usvnk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -152,12 +282,112 @@
 
 <span class="kw">print</span>(sum_to(<span class="num">100</span>))  <span class="com"># 5050  (Gauss)</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Iteration — repeating a block of code — is what makes a computer dramatically more powerful than a calculator. A <code>for</code> loop iterates over a known sequence (a list, a range, a string, a file), and the loop variable takes on each element in turn. A <code>while</code> loop continues as long as a Boolean condition holds, and is used when the number of iterations is not known in advance (e.g., reading until end-of-file, or polling for user input). Choosing between them is a design decision: <code>for</code> when you can describe what to iterate over; <code>while</code> when you need to describe when to stop.</p>
+                <p>The <strong>accumulator pattern</strong> initialises a result variable outside the loop, updates it inside the loop, and returns it after the loop. The accumulator can be a number (sum, product, count), a Boolean (any/all), a list (filter, map), or a dictionary (frequency count). Recognising this pattern lets students translate plain-English questions ("how many students passed?") into code mechanically.</p>
+                <p>The <strong>sentinel-controlled loop</strong> is a <code>while</code> idiom where a special "stop" value (like <code>"quit"</code>, <code>-1</code>, or empty string) ends the loop. The sentinel must be a value that could not appear as legitimate data; choosing it carelessly is a famous source of bugs.</p>
+                <ul>
+                  <li><strong>Loop body</strong> — the indented block that repeats.</li>
+                  <li><strong>Loop variable / index</strong> — the variable that changes each iteration.</li>
+                  <li><strong>Accumulator</strong> — a variable that builds up a result across iterations.</li>
+                  <li><strong>Sentinel</strong> — a special input value that signals the end of input.</li>
+                  <li><strong>Off-by-one error</strong> — looping one too few or one too many times, often from <code>range(n)</code> vs <code>range(n+1)</code>.</li>
+                  <li><strong>Infinite loop</strong> — a <code>while</code> whose condition never becomes false.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — tracing a nested loop</p>
+<pre><code>def count_pairs_summing_to(target, nums):
+    count = 0
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):  # j &gt; i avoids dupes
+            if nums[i] + nums[j] == target:
+                count += 1
+    return count
+
+print(count_pairs_summing_to(10, [1, 9, 4, 6, 5, 5]))  # 3</code></pre>
+                  <p>Pairs that sum to 10: (1,9), (4,6), (5,5). The outer loop runs n times; the inner loop runs n-i-1 times for iteration i. Total comparisons = n(n-1)/2, so the time complexity is <strong>O(n²)</strong>. Memory is O(1) — only a counter is stored. A faster O(n) algorithm uses a hash set to remember <code>target - nums[i]</code> values; this trade-off (time vs space) appears repeatedly in Unit 4.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — desk-checking a while loop</p>
+<pre><code>n = 12
+steps = 0
+while n &gt; 1:
+    if n % 2 == 0:
+        n = n // 2
+    else:
+        n = 3*n + 1
+    steps += 1
+print(steps)  # 9 — the Collatz sequence</code></pre>
+                  <p>Trace: 12 → 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1. Nine iterations. Whether this loop terminates for <em>every</em> positive n is the famous unsolved Collatz conjecture — a reminder that loop termination is not always trivial to prove.</p>
+                </div>
+                <ul>
+                  <li>Off-by-one: <code>range(1, n)</code> goes 1 to n-1, not 1 to n. Use <code>range(1, n+1)</code> to include n.</li>
+                  <li>Modifying a list while iterating over it — leads to skipped or duplicated elements.</li>
+                  <li>Infinite loops because the loop variable is never updated inside <code>while</code>.</li>
+                  <li>Initialising an accumulator inside the loop instead of outside — resets it every iteration.</li>
+                  <li>Using <code>break</code> in deeply nested loops without a clear exit strategy.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "use control structures (i.e., sequence, selection, iteration) to write modular code".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt15')"><span class="vid-icon">📖</span><span class="vid-title">Python Loops and Iterations — For/While Loops — Corey Schafer</span><span class="vid-duration">21:34</span><span class="vid-toggle" id="toggle-ics-yt15">▶</span></div><div class="video-player" id="player-ics-yt15"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6iF8Xb7Z3wQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6iF8Xb7Z3wQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">1.5 &mdash; Program Tracing and Desk Checks</div>
             <div class="topic-desc">Variable trace tables, dry runs, predicting output, the IPO (Input-Process-Output) chart</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Tracing — manually simulating the execution of a program with pen and paper — is one of the most important diagnostic skills a programmer develops. A <strong>trace table</strong> has one column per variable plus an "output" column, and one row per statement executed. By filling it in step-by-step, the student verifies that what the code actually does matches what they think it does. The technique is invaluable on tests, in code reviews, and during debugging, because it forces explicit reasoning about every state change.</p>
+                <p>The <strong>IPO chart</strong> (Input-Process-Output) is a higher-level planning tool used before coding. It lists what data enters the program, what transformations are applied, and what data leaves. IPO charts feed into <strong>structure charts</strong>, which decompose the "Process" box into a tree of sub-functions. Together they constitute the documentation a maintainer needs to understand a program's purpose without reading every line.</p>
+                <p>Tracing also reveals the difference between three classes of error: a <strong>syntax error</strong> prevents the program from running; a <strong>runtime error</strong> aborts the program mid-execution (e.g., divide-by-zero, index out of range); and a <strong>logic error</strong> lets the program complete but produces the wrong answer. Logic errors are the hardest to find precisely because the program "works" — tracing exposes them by comparing predicted output against actual output.</p>
+                <ul>
+                  <li><strong>Trace table</strong> — a table tracking variable values line-by-line through execution.</li>
+                  <li><strong>Dry run</strong> — executing a program on paper without a computer.</li>
+                  <li><strong>IPO chart</strong> — a 3-column diagram listing Input, Process, Output.</li>
+                  <li><strong>Structure chart</strong> — a hierarchical diagram showing how modules call one another.</li>
+                  <li><strong>Syntax error</strong> — code that violates language grammar; caught by the parser.</li>
+                  <li><strong>Runtime error</strong> — an exception raised during execution.</li>
+                  <li><strong>Logic error</strong> — the program runs but produces incorrect output.</li>
+                  <li><strong>Invariant</strong> — a condition that holds true at a specific point in every iteration.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — trace this loop</p>
+<pre><code>def mystery(n):
+    a, b = 0, 1
+    while a &lt; n:
+        a, b = b, a + b
+    return a
+
+print(mystery(20))</code></pre>
+                  <p>Trace table:</p>
+<pre><code>iter | a  | b  | a &lt; 20?
+-----+----+----+--------
+ 0   | 0  | 1  | True
+ 1   | 1  | 1  | True
+ 2   | 1  | 2  | True
+ 3   | 2  | 3  | True
+ 4   | 3  | 5  | True
+ 5   | 5  | 8  | True
+ 6   | 8  | 13 | True
+ 7   | 13 | 21 | True
+ 8   | 21 | 34 | False → exit
+return 21</code></pre>
+                  <p>The function returns the smallest Fibonacci number ≥ n. The loop invariant is "<code>a</code> and <code>b</code> are consecutive Fibonacci numbers". Time complexity is O(log φ · n) ≈ O(log n) because Fibonacci numbers grow exponentially. Memory is O(1).</p>
+                </div>
+                <ul>
+                  <li>Updating two variables sequentially when simultaneous update is required: <code>a = b; b = a + b</code> is <em>not</em> the same as <code>a, b = b, a + b</code>.</li>
+                  <li>Forgetting to record output rows in the trace table — leads to missed off-by-one errors.</li>
+                  <li>Tracing only a couple of iterations and assuming the pattern continues.</li>
+                  <li>Confusing pre-condition (checked before the loop body) with post-condition (after).</li>
+                  <li>Building an IPO chart with "process" steps that are vague verbs like "do the math" — every step should be testable.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A4.1 — "trace code, comments, and program output to identify the relationships among different sections of a program".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt16')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Debugging logic errors by hand-tracing your code</span><span class="vid-duration">11:31</span><span class="vid-toggle" id="toggle-ics-yt16">▶</span></div><div class="video-player" id="player-ics-yt16"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jq5ac_BNzHs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Jq5ac_BNzHs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt17')"><span class="vid-icon">📖</span><span class="vid-title">IPO Charts and Structure Charts with Python</span><span class="vid-duration">9:32</span><span class="vid-toggle" id="toggle-ics-yt17">▶</span></div><div class="video-player" id="player-ics-yt17"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qXtYSL8VEDY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=qXtYSL8VEDY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
@@ -194,6 +424,43 @@
 scores.append(<span class="num">95</span>)        <span class="com"># mutate in place</span>
 <span class="kw">avg</span> = sum(scores) / len(scores)
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A list (in many languages called an <strong>array</strong>) is the single most useful data structure in computing. It stores an ordered, zero-indexed collection of elements in contiguous (or logically contiguous) memory, supporting O(1) random access via an integer index. Python lists are mutable and heterogeneous (they may hold mixed types), unlike Java arrays which are fixed-size and homogeneous. Python's <code>list</code> is implemented as a dynamic array of object references — appending amortises to O(1), but inserting at the front (<code>insert(0, x)</code>) is O(n) because every element must shift right.</p>
+                <p>Indexing in Python starts at 0 and runs to <code>len(lst) - 1</code>; negative indices count from the end (<code>lst[-1]</code> is the last element). <strong>Slicing</strong> with <code>lst[start:stop:step]</code> returns a <em>new</em> list — a critical fact, because modifying the slice does not affect the original. The half-open interval convention (<code>start</code> inclusive, <code>stop</code> exclusive) means <code>lst[1:4]</code> contains exactly 3 elements, not 4. This eliminates many off-by-one bugs once you internalise it: the length of a slice is always <code>stop - start</code>.</p>
+                <p>Mutability has consequences. Assigning <code>b = a</code> creates an <em>alias</em>, not a copy — both names refer to the same underlying list. <code>b.append(7)</code> changes what <code>a</code> sees. To make a shallow copy, use <code>a[:]</code>, <code>list(a)</code>, or <code>a.copy()</code>. For nested lists, use <code>copy.deepcopy</code>.</p>
+                <ul>
+                  <li><strong>Index</strong> — a zero-based integer position into a list.</li>
+                  <li><strong>Slicing</strong> — extracting a sub-range with <code>lst[start:stop:step]</code>.</li>
+                  <li><strong>Mutable</strong> — can be changed in place after creation (lists, dicts, sets).</li>
+                  <li><strong>Immutable</strong> — cannot be changed in place (strings, tuples, ints, floats).</li>
+                  <li><strong>Aliasing</strong> — two names referring to the same object.</li>
+                  <li><strong>Shallow copy</strong> — copies the top-level list but shares nested objects.</li>
+                  <li><strong>Amortised complexity</strong> — average cost per operation over a sequence of operations.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — building a histogram</p>
+<pre><code>def histogram(scores, bin_size=10):
+    bins = [0] * (100 // bin_size + 1)   # 11 bins for 0-100
+    for s in scores:
+        bins[s // bin_size] += 1
+    return bins
+
+print(histogram([55, 62, 68, 71, 73, 84, 91, 91, 99]))
+# [0, 0, 0, 0, 0, 1, 2, 2, 1, 2, 1]</code></pre>
+                  <p>Constructing the bins list is O(k) where k is the number of bins; the loop runs through n scores doing O(1) work each, so the total complexity is <strong>O(n + k)</strong>. This is asymptotically optimal for counting because every score must be examined at least once. The space cost is O(k).</p>
+                </div>
+                <ul>
+                  <li>Index out of range: accessing <code>lst[len(lst)]</code> raises <code>IndexError</code>. Last valid index is <code>len(lst) - 1</code>.</li>
+                  <li>Aliasing bug: <code>b = a</code> then thinking <code>b</code> is a copy. Use <code>b = a[:]</code> or <code>b = list(a)</code>.</li>
+                  <li>Multiplying a list of lists: <code>[[0]*3]*3</code> creates three references to the <em>same</em> inner list. Use a list comprehension instead.</li>
+                  <li>Calling <code>lst.append</code> expecting a new list back — it returns <code>None</code>.</li>
+                  <li>Repeatedly inserting at the front when the desired order can be built by appending and reversing once at the end.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "demonstrate the ability to use one-dimensional arrays of compound data types … in computer programs".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt2')"><span class="vid-icon">📖</span><span class="vid-title">Python Lists, Tuples, and Sets — Corey Schafer</span><span class="vid-duration">23:43</span><span class="vid-toggle" id="toggle-ics-yt2">▶</span></div><div class="video-player" id="player-ics-yt2"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/W8KRzm-HUcc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=W8KRzm-HUcc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -212,6 +479,56 @@ scores.append(<span class="num">95</span>)        <span class="com"># mutate in 
         <span class="kw">print</span>(cell <span class="kw">if</span> cell <span class="kw">else</span> <span class="str">"."</span>, end=<span class="str">" "</span>)
     <span class="kw">print</span>()
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Two-dimensional data — grids, matrices, images, game boards, spreadsheets — show up everywhere in computing. In Python the natural representation is a <strong>list of lists</strong>: the outer list holds rows, each row is itself a list of cells. To address cell (r, c) we write <code>grid[r][c]</code>: the first index selects the row, the second selects the column. This convention (row-major) matches mathematical matrix notation and how C/Java store 2-D arrays in memory.</p>
+                <p>Traversing a 2-D structure almost always uses <strong>nested loops</strong>: the outer loop walks rows, the inner loop walks columns. The order matters for performance in compiled languages because of CPU cache lines, but at the Python level it changes only the order in which cells are visited. The total work for a full traversal of an r × c grid is <strong>O(r·c)</strong>, which is linear in the number of cells.</p>
+                <p>A frequent pitfall is creating an "empty" 2-D grid by multiplying a row: <code>[[0]*c]*r</code> looks reasonable but produces a list where every row is the <em>same object</em>. Writing to <code>grid[0][1]</code> also writes to <code>grid[1][1]</code>, <code>grid[2][1]</code>, and so on. The correct idiom is a nested list comprehension: <code>[[0]*c for _ in range(r)]</code>, which evaluates the inner expression independently for each row.</p>
+                <ul>
+                  <li><strong>2-D list / matrix</strong> — a list whose elements are themselves lists of equal length.</li>
+                  <li><strong>Row-major order</strong> — storing elements row-by-row in memory; the natural Python layout.</li>
+                  <li><strong>Nested loop</strong> — a loop inside another loop, giving multiplicative iteration counts.</li>
+                  <li><strong>Dimensions</strong> — the number of rows and columns, often written r × c.</li>
+                  <li><strong>Sparse vs dense</strong> — whether most cells hold meaningful data (dense) or default values (sparse).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — Conway's Life one-step update</p>
+<pre><code>def neighbour_count(grid, r, c):
+    rows, cols = len(grid), len(grid[0])
+    count = 0
+    for dr in (-1, 0, 1):
+        for dc in (-1, 0, 1):
+            if dr == 0 and dc == 0:
+                continue
+            nr, nc = r + dr, c + dc
+            if 0 &lt;= nr &lt; rows and 0 &lt;= nc &lt; cols:
+                count += grid[nr][nc]
+    return count
+
+def step(grid):
+    rows, cols = len(grid), len(grid[0])
+    new = [[0]*cols for _ in range(rows)]   # independent rows!
+    for r in range(rows):
+        for c in range(cols):
+            n = neighbour_count(grid, r, c)
+            if grid[r][c] == 1 and n in (2, 3):
+                new[r][c] = 1
+            elif grid[r][c] == 0 and n == 3:
+                new[r][c] = 1
+    return new</code></pre>
+                  <p>For each of the r·c cells we examine 8 neighbours, all O(1) work, so a single step costs <strong>O(r·c)</strong>. Bounds checking (<code>0 &lt;= nr &lt; rows</code>) handles edge cells without special cases. The <code>new</code> grid is built fresh to avoid reading half-updated state.</p>
+                </div>
+                <ul>
+                  <li>Initialising with <code>[[0]*c]*r</code> — every row aliases the same list. Use a comprehension.</li>
+                  <li>Swapping <code>r</code> and <code>c</code> in the index: <code>grid[c][r]</code> when you meant <code>grid[r][c]</code>.</li>
+                  <li>Updating the grid in place while reading it — neighbouring cells see the new state, not the old.</li>
+                  <li>Forgetting to bounds-check at edges, producing <code>IndexError</code> or wraparound from negative indices.</li>
+                  <li>Assuming all rows have the same length — they don't, unless you enforce it.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.4 — "use multi-dimensional arrays in computer programs (e.g., a two-dimensional array to represent a game board)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt18')"><span class="vid-icon">📖</span><span class="vid-title">Intro to Nested Lists (2D Lists) — Tech With Tim</span><span class="vid-duration">9:25</span><span class="vid-toggle" id="toggle-ics-yt18">▶</span></div><div class="video-player" id="player-ics-yt18"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rO5TMSMTs3o?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=rO5TMSMTs3o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -225,12 +542,104 @@ scores.append(<span class="num">95</span>)        <span class="com"># mutate in 
 }
 <span class="kw">print</span>(student[<span class="str">"grades"</span>][<span class="str">"ICS4U"</span>])  <span class="com"># 94</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>dictionary</strong> (also called a <em>map</em>, <em>hash table</em>, or <em>associative array</em>) maps <strong>keys</strong> to <strong>values</strong>. Where a list is indexed by integer position, a dictionary is indexed by arbitrary immutable values — most commonly strings. Internally, Python uses an open-addressed hash table, which gives <em>expected</em> O(1) lookup, insertion, and deletion. Compare this with a linear search through a list of n records (O(n)): on a roster of 10,000 students, a dictionary lookup is roughly 10,000× faster.</p>
+                <p>Keys must be <em>hashable</em>, which in practice means immutable: strings, numbers, and tuples-of-immutables work; lists and dicts do not. The hash function maps each key to a bucket; collisions are resolved by probing. When the table fills past a load factor (~⅔), it is resized — an amortised cost that does not affect the O(1) expected bound.</p>
+                <p>Dictionaries shine as <strong>records</strong>: bundling related fields under named keys (<code>student["name"]</code>, <code>student["gpa"]</code>) makes code self-documenting compared with parallel lists or magic tuple positions. They are also the workhorse for <strong>counting</strong> (frequency tables), <strong>grouping</strong> (bucketing by key), <strong>memoisation</strong> (caching computed results), and <strong>graph adjacency</strong> (mapping vertex → list of neighbours).</p>
+                <ul>
+                  <li><strong>Key-value pair</strong> — the unit of storage in a dict.</li>
+                  <li><strong>Hash function</strong> — maps a key to an integer bucket index.</li>
+                  <li><strong>Hashable</strong> — has a stable hash; in Python, immutable types are hashable.</li>
+                  <li><strong>Collision</strong> — two keys hash to the same bucket.</li>
+                  <li><strong>Load factor</strong> — ratio of stored entries to bucket count.</li>
+                  <li><strong>Memoisation</strong> — caching the result of an expensive function in a dict.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — word-frequency counter</p>
+<pre><code>def word_frequencies(text):
+    freq = {}
+    for word in text.lower().split():
+        word = word.strip(".,!?;:\"'")
+        if word:
+            freq[word] = freq.get(word, 0) + 1
+    return freq
+
+text = "To be, or not to be: that is the question."
+print(word_frequencies(text))
+# {'to': 2, 'be': 2, 'or': 1, 'not': 1, 'that': 1, 'is': 1, 'the': 1, 'question': 1}</code></pre>
+                  <p>The <code>.get(word, 0)</code> idiom returns 0 when the key is missing, avoiding a <code>KeyError</code>. The total cost is O(n) where n is the number of words: each iteration does O(1) hash work, and the final dict has at most n entries. For comparison, doing the same job with a list of <code>(word, count)</code> tuples and a linear search would be O(n²) — quadratically slower as the text grows.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — memoised Fibonacci</p>
+<pre><code>cache = {}
+def fib(n):
+    if n in cache:
+        return cache[n]
+    if n &lt; 2:
+        return n
+    cache[n] = fib(n-1) + fib(n-2)
+    return cache[n]
+
+print(fib(50))  # 12586269025 — instant with memoisation</code></pre>
+                  <p>Without the cache, naive recursive Fibonacci is O(φⁿ) ≈ O(1.618ⁿ); with memoisation each <code>n</code> is computed once and stored, dropping the cost to <strong>O(n)</strong> time and O(n) space. This is the same principle that powers dynamic programming.</p>
+                </div>
+                <ul>
+                  <li>Using a list as a dict key — raises <code>TypeError: unhashable type</code>. Convert to <code>tuple</code> first.</li>
+                  <li>Accessing a missing key with <code>d[k]</code> — raises <code>KeyError</code>. Use <code>d.get(k, default)</code> or <code>if k in d</code>.</li>
+                  <li>Iterating over <code>d</code> assuming it yields values — it yields keys. Use <code>d.values()</code> or <code>d.items()</code>.</li>
+                  <li>Mutating a dict while iterating over it — raises <code>RuntimeError</code>. Iterate over <code>list(d.keys())</code> instead.</li>
+                  <li>Assuming order: insertion order is preserved since Python 3.7, but never rely on sorted order.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "demonstrate the ability to use one-dimensional arrays of compound data types (e.g., records) in computer programs".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt3')"><span class="vid-icon">📖</span><span class="vid-title">Python Data Structures — Lists, Tuples, Sets &amp; Dictionaries</span><span class="vid-duration">28:18</span><span class="vid-toggle" id="toggle-ics-yt3">▶</span></div><div class="video-player" id="player-ics-yt3"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/R-HLU9Fl5ug?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=R-HLU9Fl5ug" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">2.4 &mdash; Strings as Sequences</div>
             <div class="topic-desc">Strings are immutable sequences; common methods (<code>.split</code>, <code>.join</code>, <code>.strip</code>, <code>.lower</code>, <code>.replace</code>, <code>.find</code>); slicing and reversal</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A string is an <strong>immutable sequence of characters</strong>. Many of the operations that work on lists — indexing, slicing, iteration, <code>len</code>, <code>in</code> — also work on strings. The crucial difference is mutability: you cannot write <code>s[0] = 'X'</code> because strings cannot be modified in place. Every method that "changes" a string actually returns a new string. For long-running text processing this matters: building a result by repeated concatenation (<code>result = result + char</code>) is O(n²) because each <code>+</code> copies the entire accumulated string. The idiomatic fix is to collect parts in a list and call <code>"".join(parts)</code> at the end, which is O(n).</p>
+                <p>Python strings are <strong>Unicode</strong> (UTF-8 internally on most platforms); each character is a code point, not a byte. This means <code>len("café")</code> is 4, not 5 — but writing it to a file in UTF-8 produces 5 bytes because <code>é</code> takes two bytes. Awareness of the text/bytes distinction prevents the classic "works on my machine until the input contains an accent" bug.</p>
+                <p>String <strong>methods</strong> form a small standard library every Grade 12 student should memorise: <code>.split(sep)</code> tokenises into a list, <code>sep.join(lst)</code> is its inverse, <code>.strip()</code> removes leading/trailing whitespace, <code>.lower()</code> and <code>.upper()</code> change case, <code>.replace(old, new)</code> substitutes, <code>.find(sub)</code> returns the first index or <code>-1</code>, <code>.startswith</code>/<code>.endswith</code> are useful for parsing.</p>
+                <ul>
+                  <li><strong>Immutable</strong> — value cannot be modified after creation.</li>
+                  <li><strong>Code point</strong> — a Unicode integer identifying one character.</li>
+                  <li><strong>Encoding</strong> — the byte sequence used to store a code point (UTF-8, UTF-16, ASCII).</li>
+                  <li><strong>Substring</strong> — a contiguous slice of a string.</li>
+                  <li><strong>Tokenisation</strong> — splitting a string into meaningful units (words, fields).</li>
+                  <li><strong>Palindrome</strong> — a string that reads the same forwards and backwards.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — palindrome check and CSV parse</p>
+<pre><code>def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]   # [::-1] reverses
+
+print(is_palindrome("A man, a plan, a canal: Panama"))  # True
+print(is_palindrome("ICS4U"))                            # False
+
+def parse_csv_row(row):
+    return [field.strip() for field in row.split(',')]
+
+print(parse_csv_row(" Ada , 17, 3.85 "))  # ['Ada', '17', '3.85']</code></pre>
+                  <p>The palindrome routine first filters out non-alphanumeric characters and lowercases each one — O(n). The slice <code>s[::-1]</code> creates a reversed copy in O(n), and the equality check is O(n). Total: <strong>O(n)</strong> time, O(n) space. The CSV parser uses <code>.split(',')</code> followed by <code>.strip()</code> on each field; this is also O(n) but ignores the subtleties of quoted fields — the <code>csv</code> module handles those properly.</p>
+                </div>
+                <ul>
+                  <li>Trying to assign to an index: <code>s[0] = 'X'</code> raises <code>TypeError</code>.</li>
+                  <li>Building a result with <code>+=</code> in a loop — O(n²). Use <code>"".join(list_of_parts)</code>.</li>
+                  <li>Confusing <code>.find</code> (returns -1 on miss) with <code>.index</code> (raises <code>ValueError</code>).</li>
+                  <li>Treating <code>str.split()</code> with no argument as the same as <code>.split(' ')</code> — they differ on runs of whitespace.</li>
+                  <li>Forgetting that <code>"7" &lt; "10"</code> is True (lexicographic), not False (numeric).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "demonstrate the use of different data types (e.g., integer, floating-point, character/string, Boolean) in computer programs".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt4')"><span class="vid-icon">📖</span><span class="vid-title">Python Strings: Working with Textual Data — Corey Schafer</span><span class="vid-duration">21:09</span><span class="vid-toggle" id="toggle-ics-yt4">▶</span></div><div class="video-player" id="player-ics-yt4"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/k9TUPpGqYTo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=k9TUPpGqYTo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -246,6 +655,48 @@ scores.append(<span class="num">95</span>)        <span class="com"># mutate in 
         count += <span class="num">1</span>
 <span class="kw">print</span>(<span class="str">f"Class average: {total/count:.1f}"</span>)
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Programs need <strong>persistence</strong> — the ability to save data between runs. Files are the simplest form of persistence: a named, byte-addressed region on disk. Python's <code>open(path, mode)</code> returns a file object; <code>mode</code> is <code>"r"</code> for read, <code>"w"</code> for write (truncates existing content), <code>"a"</code> for append, and <code>"b"</code> appended for binary. A file object is iterable in line-by-line fashion, which means <code>for line in f</code> reads one line at a time without loading the entire file into memory — essential for large data sets.</p>
+                <p>The <strong><code>with</code> statement</strong> is a <em>context manager</em> that guarantees the file is closed even if an exception is raised inside the block. Forgetting to close a file can leak operating-system handles and, on Windows, prevent other programs from accessing it. <code>with</code> is the modern, idiomatic way to handle files; bare <code>open</code> without <code>close</code> is a code-review red flag.</p>
+                <p>Text files store lines terminated by <code>\n</code> (Unix) or <code>\r\n</code> (Windows); Python's text-mode I/O normalises these to <code>\n</code> on read and the platform default on write. The <strong>CSV</strong> (comma-separated values) format is the simplest tabular interchange format: one row per line, fields separated by commas. The <code>csv</code> module in the standard library handles quoted fields, escaped commas, and varied dialects — students should prefer it over hand-rolled <code>.split(',')</code> once data gets messy.</p>
+                <ul>
+                  <li><strong>File handle</strong> — the OS-level reference returned by <code>open</code>.</li>
+                  <li><strong>Mode</strong> — <code>"r"</code>, <code>"w"</code>, <code>"a"</code>, optionally with <code>"b"</code> for binary or <code>"+"</code> for read/write.</li>
+                  <li><strong>Context manager</strong> — an object usable with <code>with</code> that defines setup/teardown.</li>
+                  <li><strong>Buffering</strong> — accumulating writes before flushing to disk for efficiency.</li>
+                  <li><strong>EOF (end-of-file)</strong> — signalled by an empty string from <code>read</code> or by the loop ending.</li>
+                  <li><strong>CSV</strong> — a plain-text tabular format.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — read, transform, write</p>
+<pre><code>import csv
+
+def upgrade_marks(in_path, out_path, bonus=5):
+    with open(in_path, newline='') as fin, \
+         open(out_path, 'w', newline='') as fout:
+        reader = csv.DictReader(fin)
+        writer = csv.DictWriter(fout, fieldnames=reader.fieldnames)
+        writer.writeheader()
+        for row in reader:
+            row['mark'] = min(100, int(row['mark']) + bonus)
+            writer.writerow(row)
+
+upgrade_marks('marks.csv', 'marks_curved.csv')</code></pre>
+                  <p>Two files are opened in a single <code>with</code>; both are guaranteed to close. The reader and writer stream line-by-line so memory use is O(1) regardless of file size. Total time is <strong>O(n)</strong> in the number of rows. The <code>min(100, …)</code> guard caps marks so a bonus never pushes a 98 to 103. Real Ontario reporting policies vary; this is just an illustration.</p>
+                </div>
+                <ul>
+                  <li>Opening a file in <code>"w"</code> mode "to check it exists" — it will be truncated to empty.</li>
+                  <li>Forgetting <code>with</code> and not calling <code>.close()</code>, leaking handles.</li>
+                  <li>Reading the whole file into memory with <code>f.read()</code> when streaming would suffice.</li>
+                  <li>Forgetting that <code>line</code> from iteration includes the trailing <code>\n</code>; use <code>line.rstrip("\n")</code>.</li>
+                  <li>Hand-parsing CSV with <code>split(',')</code> when fields may contain commas inside quotes.</li>
+                  <li>Hard-coding absolute paths that break on another machine — use relative paths or <code>pathlib</code>.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "use methods to manage data input and output in programs (e.g., to read from and write to a sequential file)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt19')"><span class="vid-icon">📖</span><span class="vid-title">Python File Objects — Reading and Writing to Files — Corey Schafer</span><span class="vid-duration">24:33</span><span class="vid-toggle" id="toggle-ics-yt19">▶</span></div><div class="video-player" id="player-ics-yt19"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Uh2ebFW8OYM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Uh2ebFW8OYM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -267,6 +718,61 @@ scores.append(<span class="num">95</span>)        <span class="com"># mutate in 
 s.promote()
 <span class="kw">print</span>(s)   <span class="com"># Turing (Grade 12)</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Object-oriented programming</strong> (OOP) bundles related data and the operations on that data into a single unit called a <strong>class</strong>. A class is a blueprint; an <strong>instance</strong> (or <em>object</em>) is a concrete realisation in memory. The instance's <strong>attributes</strong> hold its data, and its <strong>methods</strong> are functions that operate on that data. The <code>__init__</code> method (the <em>constructor</em>) runs automatically when a new instance is created, initialising attributes from the arguments passed.</p>
+                <p>OOP's main benefits are <strong>encapsulation</strong> (data and behaviour live together, so external code does not need to know representation details), <strong>abstraction</strong> (a clean interface hides complexity), and (once we add inheritance) <strong>reuse</strong>. A <code>Student</code> object knows its own name and grade and knows how to promote itself — calling code just writes <code>s.promote()</code> rather than manipulating fields directly. This makes the program easier to read, easier to change (the implementation can swap out without touching callers), and easier to test (each class can be unit-tested in isolation).</p>
+                <p>The <code>self</code> parameter is the explicit reference to the current instance. In Python you must list it; Java's <code>this</code> is implicit. The <code>__str__</code> "dunder" method (double-underscore on both sides) defines how the object is converted to a string for <code>print</code> or <code>str()</code>. Providing a meaningful <code>__str__</code> is a small effort that pays huge dividends during debugging.</p>
+                <ul>
+                  <li><strong>Class</strong> — a blueprint defining attributes and methods.</li>
+                  <li><strong>Instance / object</strong> — a concrete value created from a class.</li>
+                  <li><strong>Attribute</strong> — a piece of data stored on an instance (or class).</li>
+                  <li><strong>Method</strong> — a function defined inside a class.</li>
+                  <li><strong>Constructor</strong> — the <code>__init__</code> method that runs at creation.</li>
+                  <li><strong>Encapsulation</strong> — bundling state with the methods that change it.</li>
+                  <li><strong>Dunder method</strong> — a special method named with double underscores (e.g. <code>__str__</code>, <code>__eq__</code>).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a <code>BankAccount</code> class</p>
+<pre><code>class BankAccount:
+    def __init__(self, owner, opening_balance=0):
+        self.owner = owner
+        self._balance = opening_balance        # leading _ = "private"
+
+    def deposit(self, amount):
+        if amount &lt;= 0:
+            raise ValueError("amount must be positive")
+        self._balance += amount
+
+    def withdraw(self, amount):
+        if amount &gt; self._balance:
+            raise ValueError("insufficient funds")
+        self._balance -= amount
+
+    def balance(self):
+        return self._balance
+
+    def __str__(self):
+        return f"{self.owner}: ${self._balance:,.2f}"
+
+a = BankAccount("Ada", 100)
+a.deposit(50)
+a.withdraw(30)
+print(a)            # Ada: $120.00
+print(a.balance())  # 120</code></pre>
+                  <p>Each operation runs in O(1) and uses O(1) extra memory per account. The leading underscore on <code>_balance</code> is a convention signalling "do not access from outside the class" — Python does not enforce it but reviewers do. Encapsulation here prevents callers from corrupting the balance directly; the only legal mutations go through <code>deposit</code> and <code>withdraw</code>, which validate their arguments.</p>
+                </div>
+                <ul>
+                  <li>Forgetting <code>self</code> as the first parameter of every instance method — produces confusing <code>TypeError</code>s.</li>
+                  <li>Defining attributes outside <code>__init__</code> (as class variables) and then mutating them — they are shared across all instances.</li>
+                  <li>Using a mutable default argument: <code>def __init__(self, items=[])</code> — every instance shares the same list!</li>
+                  <li>Returning <code>self</code> from a setter and then assigning <code>obj = obj.set_x(5)</code> — works, but confuses students about mutation vs assignment.</li>
+                  <li>Comparing objects with <code>==</code> without overriding <code>__eq__</code> — falls back to identity comparison.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.4 — "describe the characteristics of object-oriented programming (e.g., classes, objects, methods, instance variables, encapsulation, inheritance)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt5')"><span class="vid-icon">📖</span><span class="vid-title">Python OOP — Classes and Instances — Corey Schafer</span><span class="vid-duration">15:24</span><span class="vid-toggle" id="toggle-ics-yt5">▶</span></div><div class="video-player" id="player-ics-yt5"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZDa-Z5JzLYM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=ZDa-Z5JzLYM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -303,12 +809,118 @@ s.promote()
     f = celsius_to_fahrenheit(c)
     <span class="kw">return</span> <span class="str">f"{c}°C = {f:.1f}°F"</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>function</strong> is a named, reusable unit of computation. It takes <strong>parameters</strong> (the names listed in the definition), receives <strong>arguments</strong> (the values supplied at the call site), and may produce a <strong>return value</strong>. The discipline of factoring code into small, well-named functions is the single largest contributor to program quality. Functions enable the <strong>DRY principle</strong> (Don't Repeat Yourself), allow unit testing in isolation, and make the overall logic readable as a sequence of intentions rather than a wall of statements.</p>
+                <p>Every function should have one clear job, named with a verb phrase. <code>celsius_to_fahrenheit</code> is good; <code>doStuff</code> is not. A function that returns a value (a <em>pure function</em>) is easier to reason about than one that prints or mutates external state, because its behaviour is determined entirely by its arguments. Whenever possible, prefer returning a value to printing one — the caller can decide what to do with it.</p>
+                <p><strong>Docstrings</strong> (triple-quoted strings immediately after the <code>def</code> line) are documentation that lives with the code. They are accessible at runtime via <code>help(func)</code> and are read by IDEs to provide tooltips. PEP 257 recommends one-line docstrings for trivial functions and structured "Args/Returns/Raises" sections for complex ones.</p>
+                <ul>
+                  <li><strong>Function definition</strong> — the <code>def name(params):</code> header and body.</li>
+                  <li><strong>Parameter</strong> — a name in the function header.</li>
+                  <li><strong>Argument</strong> — a value passed at a call site.</li>
+                  <li><strong>Return value</strong> — the value produced by the <code>return</code> statement.</li>
+                  <li><strong>Pure function</strong> — output depends only on inputs; no side effects.</li>
+                  <li><strong>Side effect</strong> — modification of external state (I/O, globals, mutating arguments).</li>
+                  <li><strong>DRY</strong> — Don't Repeat Yourself; share logic via functions.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — refactoring to functions</p>
+<pre><code># BEFORE — repetitive, hard to test
+m1, m2, m3 = 88, 76, 91
+avg1 = (m1 + m2 + m3) / 3
+print(f"Avg 1: {avg1:.1f}")
+m4, m5, m6 = 65, 72, 68
+avg2 = (m4 + m5 + m6) / 3
+print(f"Avg 2: {avg2:.1f}")
+
+# AFTER — one function, one responsibility
+def average(marks):
+    """Return the arithmetic mean of a non-empty list of numbers."""
+    if not marks:
+        raise ValueError("cannot average an empty list")
+    return sum(marks) / len(marks)
+
+def report(label, marks):
+    print(f"{label}: {average(marks):.1f}")
+
+report("Avg 1", [88, 76, 91])  # Avg 1: 85.0
+report("Avg 2", [65, 72, 68])  # Avg 2: 68.3</code></pre>
+                  <p><code>average</code> is now O(n) in the length of the list, pure (no I/O), and testable in isolation: a unit test can assert <code>average([1,2,3]) == 2.0</code> without capturing print output. <code>report</code> handles the side effect (printing) separately. Separating concerns this way is fundamental to modular design.</p>
+                </div>
+                <ul>
+                  <li>Forgetting <code>return</code> — Python silently returns <code>None</code>, often producing puzzling downstream errors.</li>
+                  <li>Defining a function inside a loop unnecessarily, paying the definition cost on every iteration.</li>
+                  <li>Naming a function the same as a built-in (<code>sum</code>, <code>list</code>, <code>id</code>) — shadows the built-in.</li>
+                  <li>Mixing concerns: a function that computes <em>and</em> prints <em>and</em> writes to a file is hard to test.</li>
+                  <li>Using global variables inside a function instead of accepting them as parameters.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "use sub-programs (e.g., procedures, functions, methods) within computer programs (e.g., to handle input and output, to perform calculations, to return values)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt20')"><span class="vid-icon">📖</span><span class="vid-title">Python Functions — Definitions, Arguments, and Return Values — Corey Schafer</span><span class="vid-duration">21:48</span><span class="vid-toggle" id="toggle-ics-yt20">▶</span></div><div class="video-player" id="player-ics-yt20"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9Os0o3wzS_I?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=9Os0o3wzS_I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">3.2 &mdash; Parameters: Positional, Keyword, Default, and *args</div>
             <div class="topic-desc">Default arguments, named arguments, variable-length argument lists, pass-by-object-reference behavior</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Python's parameter system is more flexible than the simple positional parameters found in many languages. <strong>Positional</strong> arguments are matched to parameters by their order in the call. <strong>Keyword</strong> arguments are matched by name and may appear in any order: <code>connect(host="hub.school.ca", port=22)</code> reads better than <code>connect("hub.school.ca", 22)</code>. <strong>Default</strong> values let parameters be omitted: <code>def greet(name, greeting="Hello")</code> may be called as <code>greet("Ada")</code>. <strong>Variable-length</strong> parameters (<code>*args</code>, <code>**kwargs</code>) collect any extra positional or keyword arguments into a tuple or dict.</p>
+                <p>Python uses <strong>pass-by-object-reference</strong> (sometimes called "pass-by-assignment"): the function parameter is bound to the same object the caller passed. For immutable types (int, float, str, tuple) this is observationally identical to pass-by-value — the function cannot affect the caller's variable. For mutable types (list, dict, set, custom objects) the function <em>can</em> mutate the object in place, and the caller sees the change. Reassigning the parameter (<code>x = something_new</code>) does not affect the caller because reassignment only rebinds the local name.</p>
+                <p>This distinction is the leading source of confusion for students who learned "pass-by-value vs pass-by-reference" in another course. The Python rule is simpler once internalised: <em>names are bindings to objects; arguments share the same binding</em>. Method calls and indexed assignment go through the object and are visible; rebinding the local name is not.</p>
+                <ul>
+                  <li><strong>Positional parameter</strong> — matched to argument by position.</li>
+                  <li><strong>Keyword parameter</strong> — matched by name.</li>
+                  <li><strong>Default value</strong> — used when no argument is supplied.</li>
+                  <li><strong>*args / **kwargs</strong> — collect surplus arguments.</li>
+                  <li><strong>Pass-by-object-reference</strong> — the parameter and argument refer to the same object.</li>
+                  <li><strong>Side effect</strong> — visible change to a mutable argument or external state.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — the mutable-default-argument trap</p>
+<pre><code># BUG — the default list is shared across calls
+def append_bad(item, lst=[]):
+    lst.append(item)
+    return lst
+
+print(append_bad(1))   # [1]
+print(append_bad(2))   # [1, 2]  ← surprise!
+print(append_bad(3))   # [1, 2, 3]
+
+# FIX — sentinel default, create a fresh list inside
+def append_ok(item, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(item)
+    return lst
+
+print(append_ok(1))    # [1]
+print(append_ok(2))    # [1]</code></pre>
+                  <p>The mutable default <code>[]</code> is evaluated <em>once</em> at function-definition time, not at every call. Every invocation that omits the argument therefore shares the same list. The <code>None</code> sentinel pattern is the canonical Python fix; this idiom appears constantly in production code.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — pass-by-object-reference</p>
+<pre><code>def add_one(lst):
+    lst.append(1)     # mutation — caller sees it
+    lst = [99]        # rebinding — caller does NOT see it
+
+data = [10, 20]
+add_one(data)
+print(data)           # [10, 20, 1]</code></pre>
+                  <p>The append modifies the object both names share. The reassignment changes only the local <code>lst</code>; the caller's <code>data</code> still points to the original (now mutated) list.</p>
+                </div>
+                <ul>
+                  <li>Mutable default arguments — single most famous Python trap.</li>
+                  <li>Putting positional parameters after defaulted ones — <code>SyntaxError</code>.</li>
+                  <li>Expecting reassignment of a parameter to affect the caller — it doesn't.</li>
+                  <li>Calling with positional args in the wrong order when keyword args would be clearer.</li>
+                  <li>Overusing <code>**kwargs</code> — opaque to readers and to the type checker.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "use parameter passing to control the scope of variables and the flow of data among sub-programs".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt21')"><span class="vid-icon">📖</span><span class="vid-title">Let's Learn Python — *Args and **Kwargs — Corey Schafer</span><span class="vid-duration">8:24</span><span class="vid-toggle" id="toggle-ics-yt21">▶</span></div><div class="video-player" id="player-ics-yt21"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WWm5DxTzLuk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=WWm5DxTzLuk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -328,6 +940,53 @@ s.promote()
 outer()
 <span class="kw">print</span>(x)           <span class="com"># 10</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>scope</strong> of a name is the region of source code in which the name is visible. Python uses the <strong>LEGB rule</strong> to resolve names: it searches <strong>L</strong>ocal (current function), then <strong>E</strong>nclosing (any surrounding functions), then <strong>G</strong>lobal (module-level), then <strong>B</strong>uilt-in (the always-available names like <code>print</code> and <code>len</code>). The first match wins, and the search stops there. Understanding LEGB explains both why a name resolves the way it does and why some name-related errors appear.</p>
+                <p>Assigning to a name inside a function makes that name <em>local</em> to the function, even if a global with the same name exists. The <code>global</code> keyword overrides this, telling Python "this name refers to the module-level variable, not a new local one". The <code>nonlocal</code> keyword does the analogous job for enclosing scopes (used in closures). Heavy use of <code>global</code> is considered a smell because it makes functions dependent on hidden state — pass values in as parameters and return results explicitly.</p>
+                <p>Scope rules also explain the <strong>UnboundLocalError</strong>: if any line in a function assigns to <code>x</code>, then <em>every</em> reference to <code>x</code> in that function is treated as local, even references that physically precede the assignment. Reading <code>x</code> before the assignment runs raises <code>UnboundLocalError</code> rather than falling back to the global.</p>
+                <ul>
+                  <li><strong>Scope</strong> — the region of code in which a name is visible.</li>
+                  <li><strong>Local scope</strong> — names defined inside the current function.</li>
+                  <li><strong>Enclosing scope</strong> — names in outer functions when nested.</li>
+                  <li><strong>Global scope</strong> — names at module level.</li>
+                  <li><strong>Built-in scope</strong> — names provided by Python itself.</li>
+                  <li><strong>LEGB rule</strong> — order of scope resolution.</li>
+                  <li><strong>Shadowing</strong> — a local name hiding an outer name with the same identifier.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — the UnboundLocalError trap</p>
+<pre><code>counter = 0          # global
+
+def bump_bad():
+    counter += 1     # UnboundLocalError!
+    print(counter)
+
+def bump_global():
+    global counter
+    counter += 1
+    print(counter)
+
+def bump_clean(c):   # preferred: pass it in
+    return c + 1
+
+bump_global()        # 1
+bump_global()        # 2
+counter = bump_clean(counter)
+print(counter)       # 3</code></pre>
+                  <p><code>bump_bad</code> contains an assignment to <code>counter</code>, which marks the name as local for the entire function — so the read on the right-hand side fails before the write happens. <code>bump_global</code> opts in explicitly. <code>bump_clean</code> is the preferred design: parameters in, return values out, no hidden coupling. Each pattern is O(1).</p>
+                </div>
+                <ul>
+                  <li>Assigning to a global name without declaring <code>global</code> — creates a local accidentally.</li>
+                  <li>Using <code>global</code> for everything — defeats the purpose of functions.</li>
+                  <li>Reusing a built-in name (<code>list</code>, <code>str</code>, <code>id</code>, <code>type</code>) as a variable, then being unable to use the built-in.</li>
+                  <li>Expecting a loop variable to remain accessible only inside the loop — in Python it persists after the loop ends.</li>
+                  <li>Confusing <code>nonlocal</code> (enclosing function scope) with <code>global</code> (module scope).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "use parameter passing to control the scope of variables and the flow of data among sub-programs".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt22')"><span class="vid-icon">📖</span><span class="vid-title">Python Variable Scope — LEGB Rule and global/nonlocal — Corey Schafer</span><span class="vid-duration">19:31</span><span class="vid-toggle" id="toggle-ics-yt22">▶</span></div><div class="video-player" id="player-ics-yt22"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/QVdf0LgmICw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=QVdf0LgmICw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -344,12 +1003,116 @@ outer()
         <span class="kw">return</span> n
     <span class="kw">return</span> fib(n-<span class="num">1</span>) + fib(n-<span class="num">2</span>)
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>recursive function</strong> is one that calls itself on a smaller version of the same problem, until it reaches a <strong>base case</strong> that can be answered directly. Every recursive solution has two essential parts: the base case (which must terminate the recursion) and the recursive case (which makes progress toward the base case). Forgetting either one is catastrophic — missing the base case produces infinite recursion until the interpreter raises <code>RecursionError: maximum recursion depth exceeded</code>; missing the progress step does the same.</p>
+                <p>Recursion is implemented via the <strong>call stack</strong>: each function call pushes a new <em>stack frame</em> holding the local variables and the return address; each return pops the top frame. A recursive call of depth d uses O(d) stack memory. Python's default recursion limit is 1000, which means deeply recursive solutions on big inputs can hit the wall even when the algorithm is correct. For problems that lend themselves to iteration (like factorial), the iterative form uses O(1) stack.</p>
+                <p>Recursion shines on problems that are themselves recursively structured: tree traversal, divide-and-conquer sorting, fractals, parsing nested expressions, the Towers of Hanoi, the Euclidean GCD algorithm. For "naturally linear" problems it is often a less efficient way to express what a loop does. Knowing when to choose recursion is a Grade 12 judgement call.</p>
+                <ul>
+                  <li><strong>Base case</strong> — the smallest case answered without further recursion.</li>
+                  <li><strong>Recursive case</strong> — the call(s) on a smaller sub-problem.</li>
+                  <li><strong>Call stack</strong> — the LIFO data structure holding active function calls.</li>
+                  <li><strong>Stack frame</strong> — one entry on the call stack.</li>
+                  <li><strong>Direct recursion</strong> — a function calls itself.</li>
+                  <li><strong>Indirect recursion</strong> — function A calls B which calls A.</li>
+                  <li><strong>Tail recursion</strong> — the recursive call is the very last action; some languages optimise it to a loop (Python does not).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — Euclidean GCD and exponentiation</p>
+<pre><code>def gcd(a, b):
+    if b == 0:               # base case
+        return a
+    return gcd(b, a % b)     # recursive case
+
+print(gcd(252, 105))         # 21
+
+def power(base, exp):
+    if exp == 0:
+        return 1
+    if exp % 2 == 0:
+        half = power(base, exp // 2)
+        return half * half
+    return base * power(base, exp - 1)
+
+print(power(2, 10))          # 1024</code></pre>
+                  <p><code>gcd</code> reduces the problem dramatically each call — by Lamé's theorem the depth is O(log(min(a, b))), so the algorithm runs in <strong>O(log n)</strong> time and O(log n) stack space. <code>power</code> uses fast exponentiation: by squaring on even exponents and decrementing on odd ones, it makes O(log exp) calls instead of the O(exp) of naive repeated multiplication. Both are textbook examples of how recursion captures the algorithm's structure cleanly.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — the naive Fibonacci performance trap</p>
+<pre><code>def fib(n):
+    if n &lt; 2: return n
+    return fib(n-1) + fib(n-2)
+
+# fib(40) takes ~1 second
+# fib(50) takes ~2 minutes
+# Why? T(n) = T(n-1) + T(n-2) + O(1)
+# This grows as O(φⁿ) ≈ O(1.618ⁿ)</code></pre>
+                  <p>The naive recurrence makes exponentially many calls because <code>fib(n-2)</code> is computed inside both branches. Memoisation (storing already-computed results in a dict) drops it to O(n). This is one of the cleanest demonstrations of why algorithm choice matters even when both versions are "correct".</p>
+                </div>
+                <ul>
+                  <li>Forgetting the base case — infinite recursion, <code>RecursionError</code>.</li>
+                  <li>Recursive case that does not make progress toward the base (e.g., calling <code>f(n)</code> instead of <code>f(n-1)</code>).</li>
+                  <li>Using recursion where iteration is simpler and uses O(1) stack.</li>
+                  <li>Naively recursing over overlapping sub-problems without memoisation — exponential blow-up.</li>
+                  <li>Returning the wrong value from the base case (e.g., returning <code>0</code> for empty-product when <code>1</code> is correct).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.3 — "use the technique of recursion in computer programs to solve problems involving repetition".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt6')"><span class="vid-icon">📖</span><span class="vid-title">Recursion for Python Beginners with Recursive Function Examples</span><span class="vid-duration">14:19</span><span class="vid-toggle" id="toggle-ics-yt6">▶</span></div><div class="video-player" id="player-ics-yt6"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/72uVUU1boKo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=72uVUU1boKo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">3.5 &mdash; Top-Down Design and Stepwise Refinement</div>
             <div class="topic-desc">Decompose a problem into modules; structure charts; bottom-up integration; library reuse</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Top-down design</strong> is a problem-solving strategy: start with the highest-level statement of what the program must do, and recursively decompose it into sub-tasks until each sub-task is small enough to code in a few lines. The output of this process is a <strong>structure chart</strong>, a tree diagram where each node represents one function and arrows show "calls". Top-down design tames complexity because the programmer reasons about one level at a time; when a sub-task is implemented, the level above can use it without re-examining its internals.</p>
+                <p>The companion technique is <strong>stepwise refinement</strong>: take a pseudocode line like "process all students" and refine it into "for each student, validate the record, compute the GPA, write to the report". Each refinement adds detail without changing the structure above. The final code mirrors the chart — small, named functions that compose into the whole.</p>
+                <p>A complementary strategy, <strong>bottom-up design</strong>, builds reusable utilities first and assembles them into a larger system. In practice, professional software engineers oscillate between the two: top-down to clarify what is needed, bottom-up to leverage what already exists in standard libraries or previous projects. <strong>Library reuse</strong> — using the standard library, well-maintained third-party packages, or in-house modules — is the most cost-effective form of bottom-up design, because someone has already paid the cost of writing and debugging the code.</p>
+                <ul>
+                  <li><strong>Top-down design</strong> — decomposing a problem into sub-problems.</li>
+                  <li><strong>Bottom-up design</strong> — building reusable components first, then composing them.</li>
+                  <li><strong>Stepwise refinement</strong> — iteratively replacing a vague step with a detailed sub-procedure.</li>
+                  <li><strong>Structure chart</strong> — tree diagram of functions and their callers.</li>
+                  <li><strong>Module / library</strong> — a file (or package) of related functions and classes.</li>
+                  <li><strong>Cohesion</strong> — how focused a module is on a single purpose (high is good).</li>
+                  <li><strong>Coupling</strong> — how dependent modules are on each other (low is good).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — designing a marks-report generator</p>
+<pre><code># Top-level intention
+def generate_report(input_csv, output_pdf):
+    students = load_students(input_csv)
+    stats    = compute_class_stats(students)
+    write_pdf(output_pdf, students, stats)
+
+# Refinement of each sub-problem
+def load_students(path):
+    """Read CSV → list[Student]."""
+    ...
+
+def compute_class_stats(students):
+    """Return dict with mean, median, mode, stdev."""
+    ...
+
+def write_pdf(path, students, stats):
+    """Use reportlab to render the report."""
+    ...</code></pre>
+                  <p>The top-level function reads almost like the problem statement. Each sub-function has a single responsibility and can be tested independently. If next year the input format changes from CSV to JSON, only <code>load_students</code> needs to change; <code>compute_class_stats</code> and <code>write_pdf</code> remain untouched. This is the payoff of high cohesion and low coupling. The complexity of each sub-task can be analysed separately — <code>load_students</code> is O(n), <code>compute_class_stats</code> is O(n) (or O(n log n) if it sorts), and <code>write_pdf</code> is O(n) for the body of the document.</p>
+                </div>
+                <ul>
+                  <li>Writing one giant <code>main</code> function with everything inline — impossible to test or reuse.</li>
+                  <li>Skipping the design step and "just coding" — leads to refactors that should have been avoided.</li>
+                  <li>Excessive layers (a function for every two lines) — over-engineered and harder to follow.</li>
+                  <li>High coupling: one module reaches into another's internals instead of using its public API.</li>
+                  <li>Reinventing standard-library functionality (don't write your own <code>sort</code> or <code>csv</code> parser unless that's the assignment).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "use top-down design (i.e., stepwise refinement) and bottom-up design (i.e., incremental implementation) to develop a modular design for a computational problem".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt23')"><span class="vid-icon">📖</span><span class="vid-title">Stepwise Refinement, Decomposition, Modules, Top-Down Design</span><span class="vid-duration">12:25</span><span class="vid-toggle" id="toggle-ics-yt23">▶</span></div><div class="video-player" id="player-ics-yt23"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mtd3kv6C-TI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=mtd3kv6C-TI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -390,6 +1153,49 @@ outer()
             hi = mid - <span class="num">1</span>
     <span class="kw">return</span> -<span class="num">1</span>     <span class="com"># not found</span>
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Searching</strong> — finding whether and where a target value lives in a collection — is one of the most-performed operations in computing. The two textbook algorithms illustrate a fundamental complexity gap. <strong>Linear search</strong> examines elements one at a time from the start; it works on any sequence and requires no preconditions. Its worst case is <strong>O(n)</strong> comparisons. <strong>Binary search</strong> exploits a sorted array by repeatedly halving the search interval; its worst case is <strong>O(log n)</strong> comparisons. The difference is dramatic: searching a million-element list takes up to one million comparisons linearly, but only twenty binarily.</p>
+                <p>Binary search carries a strict <strong>precondition</strong>: the input must be sorted in the comparison's order. Running binary search on an unsorted list returns nonsense. If the data will be searched many times, it is worth sorting once (O(n log n)) and then searching many times in O(log n) each. If the data will be searched only once, linear search wins because sorting first costs more than the search itself.</p>
+                <p>Binary search is notoriously easy to get subtly wrong. The classic bugs are off-by-one on the bounds (<code>hi = len(arr)</code> vs <code>hi = len(arr) - 1</code>), the wrong loop condition (<code>&lt;</code> vs <code>&lt;=</code>), and the wrong midpoint update (<code>mid</code> vs <code>mid + 1</code>). The version in the topic code uses the inclusive convention: <code>hi</code> is the last valid index, the loop runs while <code>lo &lt;= hi</code>, and after a miss the new bound is one past <code>mid</code>. Stick with one convention and apply it consistently.</p>
+                <ul>
+                  <li><strong>Linear (sequential) search</strong> — O(n), no preconditions.</li>
+                  <li><strong>Binary search</strong> — O(log n), requires sorted input.</li>
+                  <li><strong>Precondition</strong> — a property assumed true at the start of an algorithm.</li>
+                  <li><strong>Loop invariant</strong> — a property true at the start of each iteration.</li>
+                  <li><strong>Worst / best / average case</strong> — bounds on running time for the worst, best, and typical inputs.</li>
+                  <li><strong>Divide-and-conquer</strong> — split the problem into smaller sub-problems and combine.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — tracing binary search</p>
+<pre><code>arr = [3, 7, 12, 19, 24, 31, 42, 58, 66, 71]
+target = 31
+
+# lo=0  hi=9  mid=4  arr[4]=24 &lt; 31  → lo=5
+# lo=5  hi=9  mid=7  arr[7]=58 &gt; 31  → hi=6
+# lo=5  hi=6  mid=5  arr[5]=31 == 31 → return 5</code></pre>
+                  <p>Three comparisons locate the target in a 10-element list. In general the loop runs at most ⌊log₂ n⌋ + 1 times, because each iteration halves the size of the search window. The invariant is: if the target is in the array, it lies somewhere in <code>arr[lo..hi]</code>. When <code>lo &gt; hi</code> the invariant proves the target is absent and the function returns -1.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — when not to use binary search</p>
+<pre><code># Need to search a list 5 times
+data = read_unsorted_list()      # n items
+# Linear: 5 × O(n) = O(5n)
+# Sort + binary: O(n log n) + 5 × O(log n) = O(n log n)
+# Linear wins when 5n &lt; n log n, i.e. n &lt; 32</code></pre>
+                  <p>Algorithm selection is not just "binary is faster". For small n, or few queries, the constants of sorting dominate. Big-O describes asymptotic growth; pragmatic choice still depends on concrete sizes.</p>
+                </div>
+                <ul>
+                  <li>Running binary search on an unsorted list — silently wrong answers.</li>
+                  <li>Off-by-one on bounds: <code>hi = len(arr)</code> with loop <code>&lt;=</code> overruns by one.</li>
+                  <li>Forgetting to update <code>lo</code> or <code>hi</code> inside the loop → infinite loop.</li>
+                  <li>Computing <code>mid = (lo + hi) / 2</code> in languages where this overflows for large values (Python is safe; Java/C are not — use <code>lo + (hi - lo) // 2</code>).</li>
+                  <li>Returning the wrong "not found" sentinel — some APIs prefer <code>None</code> over <code>-1</code>.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 — "describe and use a variety of standard algorithms (e.g., sequential and binary searches, sorting algorithms)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt7')"><span class="vid-icon">📖</span><span class="vid-title">Linear &amp; Binary Search Code | Big O Notation</span><span class="vid-duration">11:35</span><span class="vid-toggle" id="toggle-ics-yt7">▶</span></div><div class="video-player" id="player-ics-yt7"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/5h_wcuRl7kE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=5h_wcuRl7kE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -406,6 +1212,49 @@ outer()
         a[j+<span class="num">1</span>] = key
     <span class="kw">return</span> a
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The three <strong>O(n²) sorts</strong> — bubble, insertion, selection — are studied not because anyone uses them on large data sets but because they illustrate algorithmic concepts cleanly. Each maintains a different <strong>loop invariant</strong>, and each makes different trade-offs in number of comparisons, number of swaps, and adaptability to already-sorted input. Understanding these baselines makes the O(n log n) sorts in the next topic genuinely impressive.</p>
+                <p><strong>Bubble sort</strong> repeatedly walks the array, swapping adjacent out-of-order pairs. After pass k, the k largest elements are in their final positions at the end. Worst case O(n²), best case O(n) on an already-sorted array if the implementation tracks "no swaps this pass". <strong>Selection sort</strong> finds the minimum of the unsorted portion and swaps it to the front; it always makes exactly n - 1 swaps regardless of input, with O(n²) comparisons. <strong>Insertion sort</strong> builds the sorted prefix one element at a time, shifting elements right to make room — best case O(n) on sorted input, worst case O(n²), and an excellent choice for small or nearly-sorted arrays.</p>
+                <p>A sort is <strong>stable</strong> if equal-keyed elements keep their original relative order. Bubble and insertion sort are stable; selection sort, naively implemented, is not. A sort is <strong>in-place</strong> if it uses O(1) extra memory; all three are. These properties matter when sorting records by one field while preserving order on another.</p>
+                <ul>
+                  <li><strong>Comparison sort</strong> — sorts by comparing pairs of elements; lower bound O(n log n).</li>
+                  <li><strong>Stable sort</strong> — equal keys preserve original order.</li>
+                  <li><strong>In-place sort</strong> — uses O(1) auxiliary memory.</li>
+                  <li><strong>Adaptive sort</strong> — runs faster on already-near-sorted input.</li>
+                  <li><strong>Inversion</strong> — a pair (i, j) with i &lt; j but a[i] &gt; a[j]; insertion sort runs in O(n + #inversions).</li>
+                  <li><strong>Pass</strong> — one complete sweep through the array.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — selection sort with trace</p>
+<pre><code>def selection_sort(a):
+    for i in range(len(a) - 1):
+        # invariant: a[0..i-1] is sorted and holds the i smallest
+        min_idx = i
+        for j in range(i + 1, len(a)):
+            if a[j] &lt; a[min_idx]:
+                min_idx = j
+        a[i], a[min_idx] = a[min_idx], a[i]
+    return a
+
+# Trace on [5, 2, 8, 1]
+# i=0: find min in [5,2,8,1] → 1 at idx 3 → swap → [1,2,8,5]
+# i=1: find min in [2,8,5]   → 2 at idx 1 → swap with self → [1,2,8,5]
+# i=2: find min in [8,5]     → 5 at idx 3 → swap → [1,2,5,8]
+# done</code></pre>
+                  <p>The outer loop runs n - 1 times; the inner loop runs n - i - 1 times. Total comparisons ≈ n(n-1)/2 = <strong>O(n²)</strong> regardless of input order. Only n - 1 swaps are performed, which is the minimum possible — useful when swaps are far more expensive than comparisons (e.g., swapping large records or values in slow storage).</p>
+                </div>
+                <ul>
+                  <li>Confusing the "current minimum index" pattern in selection sort with the "shift right" pattern in insertion sort.</li>
+                  <li>Bubble-sort implementations that always run n full passes, missing the early-exit optimisation that makes the best case O(n).</li>
+                  <li>Off-by-one in the inner loop bound — running past the end with <code>j+1</code>.</li>
+                  <li>Believing selection sort is stable — it is not without a special tie-break.</li>
+                  <li>Sorting a list by repeatedly calling Python's <code>sorted</code> inside a loop — turns an O(n log n) job into O(n² log n).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 — "describe and use a variety of standard algorithms (e.g., sequential and binary searches, sorting algorithms such as the insertion sort, selection sort, and bubble sort)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt8')"><span class="vid-icon">📖</span><span class="vid-title">Bubble Sort, Insertion Sort, Merge Sort &amp; Big O Notation</span><span class="vid-duration">22:14</span><span class="vid-toggle" id="toggle-ics-yt8">▶</span></div><div class="video-player" id="player-ics-yt8"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/gpuu7AoJHqg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=gpuu7AoJHqg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -428,6 +1277,53 @@ outer()
     out += left[i:] + right[j:]
     <span class="kw">return</span> out
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Merge sort</strong> and <strong>quicksort</strong> are the two flagship O(n log n) sorting algorithms, and both use the <strong>divide-and-conquer</strong> paradigm. Merge sort recursively splits the array in half, sorts each half, then merges the sorted halves; quicksort picks a <em>pivot</em>, partitions the array into "less than pivot" and "greater than pivot", and recurses on each part. The two have the same average complexity but very different practical behaviour, which is why both are still taught and still used.</p>
+                <p><strong>Merge sort</strong> guarantees O(n log n) in every case: best, average, and worst. The recursion tree has log₂ n levels and each level does O(n) work merging. It is also <strong>stable</strong>, which matters when sorting records on multiple keys. Its drawback is that it needs O(n) extra memory for the merge step, ruling it out for memory-constrained environments. <strong>Quicksort</strong> averages O(n log n) and runs slightly faster in practice because of cache-friendly access patterns and in-place partitioning. But its worst case is O(n²), which occurs when the pivot is consistently the smallest or largest element — for example on already-sorted input with naive "first element" pivoting. Real-world quicksort implementations choose the pivot carefully (random, median-of-three) and fall back to insertion sort or heapsort to guarantee worst-case behaviour (introsort).</p>
+                <p>Python's built-in <code>sorted</code> uses <strong>Timsort</strong>, a hybrid of merge sort and insertion sort that exploits naturally occurring "runs" in real-world data and is O(n) on already-sorted input. The lesson is that idealised textbook sorts are starting points; production sorts are engineered.</p>
+                <ul>
+                  <li><strong>Divide and conquer</strong> — split, solve recursively, combine.</li>
+                  <li><strong>Merge step</strong> — combining two sorted lists into one sorted list in O(n).</li>
+                  <li><strong>Pivot</strong> — the element around which quicksort partitions.</li>
+                  <li><strong>Partition</strong> — re-arranging so that left ≤ pivot ≤ right.</li>
+                  <li><strong>Stable / in-place</strong> — same definitions as in the O(n²) sorts.</li>
+                  <li><strong>Recurrence relation</strong> — T(n) = 2·T(n/2) + O(n) for merge sort, solving to O(n log n) by the Master Theorem.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — quicksort with Lomuto partition</p>
+<pre><code>def quicksort(a, lo=0, hi=None):
+    if hi is None: hi = len(a) - 1
+    if lo &lt; hi:
+        p = partition(a, lo, hi)
+        quicksort(a, lo, p - 1)
+        quicksort(a, p + 1, hi)
+    return a
+
+def partition(a, lo, hi):
+    pivot = a[hi]              # last element as pivot
+    i = lo - 1
+    for j in range(lo, hi):
+        if a[j] &lt;= pivot:
+            i += 1
+            a[i], a[j] = a[j], a[i]
+    a[i+1], a[hi] = a[hi], a[i+1]
+    return i + 1
+
+print(quicksort([5, 2, 8, 1, 9, 3]))  # [1, 2, 3, 5, 8, 9]</code></pre>
+                  <p>Average case: each partition splits roughly in half, giving log n levels of recursion with O(n) partition work per level → <strong>O(n log n)</strong>. Worst case (sorted input, last-element pivot): every partition produces a 0/n-1 split, giving n levels → <strong>O(n²)</strong>. Picking a <em>random</em> pivot or the <em>median-of-three</em> makes the worst case vanishingly unlikely in practice. The algorithm is in-place (O(log n) stack space on average) but not stable.</p>
+                </div>
+                <ul>
+                  <li>Using deterministic pivot on adversarial input — degrades to O(n²).</li>
+                  <li>Forgetting that the merge step in textbook merge sort uses O(n) extra memory.</li>
+                  <li>Naive quicksort recursing without tail-recursion elimination on huge arrays — stack overflow.</li>
+                  <li>Hand-implementing sorts in production code instead of using <code>sorted()</code> / <code>Arrays.sort()</code>.</li>
+                  <li>Forgetting that <code>sorted(lst)</code> returns a new list; <code>lst.sort()</code> mutates in place.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.2 — "describe and use a variety of approaches (e.g., divide-and-conquer, brute-force, heuristics) used in the design of algorithms".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt24')"><span class="vid-icon">📖</span><span class="vid-title">Learn Merge Sort in 13 minutes — Bro Code</span><span class="vid-duration">13:45</span><span class="vid-toggle" id="toggle-ics-yt24">▶</span></div><div class="video-player" id="player-ics-yt24"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/3j0SWDX4AtU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=3j0SWDX4AtU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt25')"><span class="vid-icon">📖</span><span class="vid-title">Learn Quick Sort in 13 minutes — Bro Code</span><span class="vid-duration">13:01</span><span class="vid-toggle" id="toggle-ics-yt25">▶</span></div><div class="video-player" id="player-ics-yt25"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Vtckgz38QHs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Vtckgz38QHs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
@@ -435,6 +1331,62 @@ outer()
         <div class="topic-block">
             <div class="topic-title">4.4 &mdash; Big-O Notation and Algorithm Efficiency</div>
             <div class="topic-desc">O(1), O(log n), O(n), O(n log n), O(n²), O(2&#8319;); growth rates; counting basic operations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Big-O notation</strong> describes how the running time (or memory usage) of an algorithm grows as the input size n grows. It is an <em>asymptotic upper bound</em>: it ignores constant factors and lower-order terms, focusing on the leading behaviour for large n. Saying an algorithm is O(n²) does not mean it takes exactly n² operations — it means there exist constants c and n₀ such that the run time is at most c·n² for all n ≥ n₀. This abstraction is what lets students reason about algorithm efficiency without knowing the speed of the hardware.</p>
+                <p>The common complexity classes, in increasing order, are <strong>O(1)</strong> (constant — array indexing, hash lookup), <strong>O(log n)</strong> (logarithmic — binary search, balanced-tree operations), <strong>O(n)</strong> (linear — single loop over input), <strong>O(n log n)</strong> (linearithmic — merge sort, heapsort), <strong>O(n²)</strong> (quadratic — nested loops, bubble sort), <strong>O(n³)</strong> (cubic — naive matrix multiplication), and <strong>O(2ⁿ)</strong> (exponential — brute-force subset enumeration). The gap between these classes is enormous: for n = 1,000,000, log n ≈ 20, n log n ≈ 2 × 10⁷, and n² ≈ 10¹², which on a 10⁹-operations-per-second machine takes roughly 20 microseconds vs 20 milliseconds vs over 16 minutes.</p>
+                <p>To analyse code, count the dominant basic operations as a function of n. Nested loops multiply; sequential blocks add (and the larger dominates); recursive calls follow a recurrence solved by the Master Theorem or by drawing the recursion tree. Constants and lower-order terms are dropped: O(3n + 7) = O(n), O(n² + n) = O(n²).</p>
+                <ul>
+                  <li><strong>Big-O</strong> — asymptotic upper bound.</li>
+                  <li><strong>Big-Ω (Omega)</strong> — asymptotic lower bound.</li>
+                  <li><strong>Big-Θ (Theta)</strong> — both bounds (tight estimate).</li>
+                  <li><strong>Best / average / worst case</strong> — bounds over best, typical, and worst inputs.</li>
+                  <li><strong>Amortised complexity</strong> — average cost per operation over a long sequence (e.g., Python list <code>.append</code> is amortised O(1)).</li>
+                  <li><strong>Space complexity</strong> — same idea applied to memory rather than time.</li>
+                  <li><strong>Polynomial vs exponential</strong> — the boundary between "tractable" and "intractable".</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — analysing four code fragments</p>
+<pre><code># (1) O(1)
+def first(a):
+    return a[0]
+
+# (2) O(n)
+def max_val(a):
+    m = a[0]
+    for x in a:    # n iterations
+        if x &gt; m: m = x
+    return m
+
+# (3) O(n²)
+def has_dup(a):
+    for i in range(len(a)):
+        for j in range(i+1, len(a)):
+            if a[i] == a[j]:
+                return True
+    return False
+
+# (4) O(log n)
+def count_halvings(n):
+    c = 0
+    while n &gt; 1:
+        n //= 2
+        c += 1
+    return c</code></pre>
+                  <p>(1) Does one indexing operation → constant time. (2) One pass through the list with constant work per element → linear. (3) Each i pairs with up to n-i-1 values of j; total ≈ n²/2 → quadratic. (4) The loop variable halves each iteration; the loop body runs log₂ n times → logarithmic. A faster O(n) alternative for (3) uses a hash set to detect duplicates in one pass — a classic time/space trade-off.</p>
+                </div>
+                <ul>
+                  <li>Confusing O(n²) with O(2ⁿ) — quadratic vs exponential are vastly different.</li>
+                  <li>Including constants: "O(2n)" is just O(n); never write O(½n²) — it's O(n²).</li>
+                  <li>Comparing constant-factor-improved versions of the same big-O — both are still O(n).</li>
+                  <li>Forgetting hidden costs: building a string with <code>+=</code> n times is O(n²), not O(n).</li>
+                  <li>Confusing best, average, and worst case — quicksort is O(n log n) average, O(n²) worst.</li>
+                  <li>Assuming O(log n) means "with logarithmic operations"; it means the count of operations grows logarithmically.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "use a variety of methods (e.g., visual representations such as graphs and tables, code tracing) to analyse the efficiency of algorithms".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt30')"><span class="vid-icon">📖</span><span class="vid-title">Learn Big O Notation in 6 Minutes — Bro Code</span><span class="vid-duration">6:25</span><span class="vid-toggle" id="toggle-ics-yt30">▶</span></div><div class="video-player" id="player-ics-yt30"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XMUe3zFhM5c?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=XMUe3zFhM5c" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt31')"><span class="vid-icon">📖</span><span class="vid-title">Big O Notation &amp; Time Complexity Analysis Tutorial — Tech With Tim</span><span class="vid-duration">28:44</span><span class="vid-toggle" id="toggle-ics-yt31">▶</span></div><div class="video-player" id="player-ics-yt31"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6aDHWSNKlVw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6aDHWSNKlVw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
@@ -442,6 +1394,46 @@ outer()
         <div class="topic-block">
             <div class="topic-title">4.5 &mdash; Algorithm Selection and Trade-offs</div>
             <div class="topic-desc">Choose the right algorithm: small lists, nearly-sorted data, memory constraints, stability requirements</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An algorithm's <strong>asymptotic complexity</strong> is one of several factors that go into choosing it for a given problem. Big-O captures the dominant term for large n, but real-world choices also depend on the size of n, the distribution of the input, the stability required of the result, the memory available, and the cost of operations the abstract model considers "constant" (a memory cache miss can be 100× a register operation). A working programmer must reason about all of these together.</p>
+                <p>For sorting specifically, the textbook hierarchy translates into the following practical rules. On <strong>small inputs</strong> (n &lt; ~50), insertion sort beats quicksort because its constant factors are tiny — this is why library sorts switch to insertion sort on small partitions. On <strong>nearly-sorted</strong> input, insertion sort and Timsort run in O(n); naive quicksort with a fixed pivot degrades to O(n²). With <strong>memory pressure</strong>, heapsort or in-place quicksort beat merge sort because the latter needs O(n) extra space. When <strong>stability</strong> is required (e.g., sorting students by GPA while preserving alphabetical order on ties), merge sort and Timsort qualify; heapsort and naive quicksort do not. <strong>External sorting</strong> on data larger than RAM uses merge-sort-style passes over disk because random access is too expensive.</p>
+                <p>Beyond sorting, algorithm selection covers the search-vs-hash trade-off (O(log n) tree vs O(1) hash, the former giving order, the latter not), the iterative-vs-recursive trade-off (stack depth, code clarity), and the precompute-vs-compute trade-off (memoise expensive sub-results once and reuse). Asking <em>what trade-offs am I making?</em> is the mark of a Grade 12-level programmer.</p>
+                <ul>
+                  <li><strong>Constant factors</strong> — the hidden multipliers that Big-O ignores but real time depends on.</li>
+                  <li><strong>Adaptive algorithm</strong> — one whose run time improves on favourable input.</li>
+                  <li><strong>Stability</strong> — preserves the relative order of equal-keyed elements.</li>
+                  <li><strong>In-place</strong> — uses O(1) auxiliary memory.</li>
+                  <li><strong>External algorithm</strong> — designed for data that does not fit in RAM.</li>
+                  <li><strong>Trade-off</strong> — improving one resource at the cost of another (time vs space, simplicity vs speed).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — pick the right tool</p>
+<pre><code># Scenario A: 30 student marks, sort by mark
+# → insertion sort or built-in sorted() — both fine, tiny n
+
+# Scenario B: 10 million log lines, sort by timestamp
+# → built-in sorted() (Timsort), or external merge sort if RAM-limited
+
+# Scenario C: sort employees by salary, preserve original
+#             order on ties for fairness in tie-breaks
+# → MUST be stable: merge sort, Timsort; NOT heapsort
+
+# Scenario D: maintain a "top 10" list as new scores arrive
+# → don't sort each time; use a min-heap of size 10 (O(log 10) per insert)</code></pre>
+                  <p>Scenario D illustrates a common pattern: choosing an entirely different data structure (a heap) avoids the sorting problem altogether. Time per insertion is O(log 10) = O(1) constant — the heap maintains its invariant incrementally, so the running cost of n insertions is O(n) rather than the O(n²) of "sort after each insert" or even the O(n · n log n) of "re-sort each time".</p>
+                </div>
+                <ul>
+                  <li>Picking the asymptotically best algorithm without checking whether n is large enough for it to matter.</li>
+                  <li>Ignoring memory: a great O(n log n) sort that needs 16 GB of RAM is useless on a 4 GB device.</li>
+                  <li>Forgetting stability when sorting tabular data on multiple keys.</li>
+                  <li>Re-running an O(n log n) sort every time one element is added, when an O(log n) heap insert suffices.</li>
+                  <li>Choosing recursion for problems with deep call chains and no tail-call optimisation.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "select and apply algorithms, data structures, and programming techniques to develop solutions to a variety of computational problems".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt26')"><span class="vid-icon">📖</span><span class="vid-title">15 Sorting Algorithms in 6 Minutes (Visual Comparison)</span><span class="vid-duration">5:51</span><span class="vid-toggle" id="toggle-ics-yt26">▶</span></div><div class="video-player" id="player-ics-yt26"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/kPRA0W1kECg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=kPRA0W1kECg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
@@ -483,36 +1475,322 @@ outer()
     <span class="kw">def</span> test_zero(self):
         self.assertRaises(ValueError, divide, <span class="num">10</span>, <span class="num">0</span>)
 </div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Testing</strong> verifies that a program does what it is supposed to do; <strong>debugging</strong> is the process of locating and fixing the cause when it does not. The two go hand in hand: a good test suite makes debugging easier because failing tests point precisely at what broke. Professional development teams write <strong>unit tests</strong> alongside the code they exercise — small, fast tests that examine one function at a time, asserting that specific inputs produce specific outputs.</p>
+                <p>The <strong>test-pyramid</strong> view of testing has many unit tests at the base (fast, focused), fewer <strong>integration tests</strong> in the middle (groups of modules working together), and a handful of <strong>end-to-end</strong> tests at the top (the whole system). When designing test cases, cover <em>typical</em> inputs, <em>boundary</em> inputs (empty list, single element, maximum size), and <em>invalid</em> inputs (negative numbers where positive expected, malformed strings). The boundary is where most bugs hide.</p>
+                <p>Debugging tactics include <strong>print-debugging</strong> (sprinkling temporary <code>print</code> statements to trace state), using an <strong>interactive debugger</strong> with breakpoints and single-stepping, reading the <strong>stack trace</strong> from top to bottom to find your own code in the call chain, the <strong>rubber-duck</strong> method (explaining the code aloud to an inanimate object often reveals the bug), and <strong>bisection</strong> (commenting out half the code to localise the failure). <strong>Regression tests</strong> — tests added after a bug is fixed — prevent the same bug from re-appearing.</p>
+                <ul>
+                  <li><strong>Unit test</strong> — exercises a single function or class.</li>
+                  <li><strong>Integration test</strong> — exercises multiple modules together.</li>
+                  <li><strong>Assertion</strong> — <code>assertEqual</code>, <code>assertTrue</code>, etc., that fails the test if the condition is false.</li>
+                  <li><strong>Fixture</strong> — set-up and tear-down code shared by multiple tests.</li>
+                  <li><strong>Boundary case</strong> — input at the edge of valid range.</li>
+                  <li><strong>Regression</strong> — a previously fixed bug that re-appears.</li>
+                  <li><strong>Test coverage</strong> — proportion of code exercised by tests.</li>
+                  <li><strong>Stack trace</strong> — the chain of function calls active when an exception was raised.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — designing a thorough test suite</p>
+<pre><code>import unittest
+
+def median(values):
+    """Return the median of a non-empty list of numbers."""
+    s = sorted(values)
+    n = len(s)
+    if n == 0:
+        raise ValueError("median of empty list")
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid-1] + s[mid]) / 2
+
+class TestMedian(unittest.TestCase):
+    def test_single(self):       self.assertEqual(median([7]), 7)
+    def test_odd_length(self):   self.assertEqual(median([1, 3, 2]), 2)
+    def test_even_length(self):  self.assertEqual(median([1, 2, 3, 4]), 2.5)
+    def test_unsorted_input(self):
+        self.assertEqual(median([5, 1, 4, 2, 3]), 3)
+    def test_negatives(self):    self.assertEqual(median([-2, -1, 0]), -1)
+    def test_duplicates(self):   self.assertEqual(median([2, 2, 2]), 2)
+    def test_empty_raises(self):
+        with self.assertRaises(ValueError):
+            median([])</code></pre>
+                  <p>Seven tests cover: single element (boundary), odd/even length (parity), unsorted (the function must sort internally), negatives, duplicates, and empty (error path). Each test runs in O(n log n) but n is tiny in tests. The whole suite finishes in milliseconds and gives confidence that future changes won't silently break <code>median</code>.</p>
+                </div>
+                <ul>
+                  <li>Testing only happy-path inputs — bugs live in the edge cases.</li>
+                  <li>Writing tests that all pass because the assertions are too weak (<code>assertTrue(result)</code> instead of <code>assertEqual(result, 42)</code>).</li>
+                  <li>Print-debugging then forgetting to remove the prints before committing.</li>
+                  <li>Modifying code without running existing tests — invites regressions.</li>
+                  <li>Ignoring the first failing test and skipping ahead — fix in order; later failures may be downstream effects.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.3 — "use a variety of techniques to test computer programs (e.g., test plans, test cases, test data, test scripts, debugger tools)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt27')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Unit Testing Your Code with the unittest Module — Corey Schafer</span><span class="vid-duration">22:30</span><span class="vid-toggle" id="toggle-ics-yt27">▶</span></div><div class="video-player" id="player-ics-yt27"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6tNS--WetLI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6tNS--WetLI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">5.2 &mdash; Version Control with Git (Essentials)</div>
             <div class="topic-desc">Repos, commits, branches, merges, pull requests, .gitignore; why version control matters in collaborative software</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>version control system</strong> (VCS) is a tool that records the complete history of changes to a code base. Every modern software team uses one, and <strong>Git</strong> dominates the field. The mental model is simple: a Git <strong>repository</strong> stores a directed graph of <strong>commits</strong>, where each commit is a snapshot of the project plus a pointer to its parent. A <strong>branch</strong> is just a movable label pointing at the tip of a line of commits; creating one is cheap and instant. <strong>Merging</strong> combines two branches' histories, producing a new commit with two parents.</p>
+                <p>Why does this matter? First, version control is the <strong>undo button</strong> for software — any earlier state can be restored, any change reviewed, any author identified. Second, it enables <strong>parallel work</strong>: two developers can work on different branches, then merge, with the VCS handling most of the bookkeeping. Third, it enables <strong>code review</strong>: changes are proposed as <strong>pull requests</strong>, examined by teammates, and only merged when approved. Fourth, it provides <strong>traceability</strong>: every line of code can be traced back to the commit that introduced it (<code>git blame</code>), which is invaluable for bug archaeology.</p>
+                <p>The discipline of <strong>good commits</strong> is more important than knowing every Git command. A commit should represent one logical change, with a message that says <em>what</em> and <em>why</em> (not how — the diff already shows how). The <code>.gitignore</code> file lists artefacts that should not be tracked: compiled files, virtual environments, secrets, IDE configuration. Committing a file that should not be tracked (especially API keys or passwords) is a security incident; the history makes it hard to fully remove.</p>
+                <ul>
+                  <li><strong>Repository (repo)</strong> — the project's history and metadata.</li>
+                  <li><strong>Commit</strong> — a snapshot plus parent pointer; identified by a SHA-1 hash.</li>
+                  <li><strong>Branch</strong> — a movable pointer to a commit, enabling parallel histories.</li>
+                  <li><strong>Merge</strong> — combining two branches into one.</li>
+                  <li><strong>Pull request (PR) / merge request (MR)</strong> — proposing a branch for review.</li>
+                  <li><strong>Remote</strong> — a copy of the repo hosted elsewhere (often on GitHub or GitLab).</li>
+                  <li><strong>.gitignore</strong> — list of files Git should not track.</li>
+                  <li><strong>Merge conflict</strong> — when two branches change the same lines and Git can't auto-merge.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a typical Git workflow</p>
+<pre><code># Start a new feature
+git checkout -b feature/letter-grades
+
+# Work, then stage and commit
+git add grader.py tests/test_grader.py
+git commit -m "Add letter-grade conversion using Ontario achievement chart"
+
+# Push to remote and open a pull request
+git push -u origin feature/letter-grades
+
+# After review, merge back into main
+git checkout main
+git pull
+git merge feature/letter-grades
+git push</code></pre>
+                  <p>Each step has a precise effect on the graph: <code>checkout -b</code> creates a new branch pointer; <code>add</code> stages changes for the next commit; <code>commit</code> creates the snapshot; <code>push</code> uploads commits to the remote; <code>merge</code> creates the merge commit. Mistakes can almost always be recovered because Git rarely deletes anything — even after a "delete" the SHA usually still references a reachable object for a while.</p>
+                </div>
+                <ul>
+                  <li>Committing secrets or .env files — anyone who later clones the repo can read them.</li>
+                  <li>Massive omnibus commits ("fix everything") — impossible to review or revert.</li>
+                  <li>Working directly on <code>main</code> instead of a branch — increases risk of breaking shared state.</li>
+                  <li>Forcing pushes (<code>git push --force</code>) on shared branches — rewrites history teammates rely on.</li>
+                  <li>Vague commit messages like "stuff" or "wip" — useless three weeks later.</li>
+                  <li>Failing to pull before pushing — leads to unnecessary merge conflicts.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "use software project management tools (e.g., version control software, project planning software) to facilitate collaboration on a software project".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt12')"><span class="vid-icon">📖</span><span class="vid-title">Git Tutorial for Beginners: Learn Git in 1 Hour — Programming with Mosh</span><span class="vid-duration">1:09:13</span><span class="vid-toggle" id="toggle-ics-yt12">▶</span></div><div class="video-player" id="player-ics-yt12"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8JJ101D3knE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=8JJ101D3knE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">5.3 &mdash; The Software Development Life Cycle &amp; Maintainability</div>
             <div class="topic-desc">Requirements gathering, design, implement, test, deploy, maintain; commenting; naming conventions (PEP 8); code reviews</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Software Development Life Cycle</strong> (SDLC) is the framework of activities that turn a problem statement into running, maintained software. The classical stages are <strong>requirements analysis</strong> (what does the user actually need?), <strong>design</strong> (how will the system be structured?), <strong>implementation</strong> (writing the code), <strong>testing</strong> (verifying behaviour), <strong>deployment</strong> (releasing to users), and <strong>maintenance</strong> (fixing bugs and adapting to change). Empirical studies show maintenance consumes 60-80% of total software cost — so writing code that <em>can</em> be maintained is at least as important as making it work the first time.</p>
+                <p>SDLC <strong>methodologies</strong> organise these stages differently. The <strong>waterfall</strong> model runs them sequentially; it is rigid but well suited to safety-critical systems with stable requirements. <strong>Agile</strong> (and its popular variant <strong>Scrum</strong>) iterates through all stages in short sprints (typically 1-4 weeks), producing a working increment each cycle and welcoming changing requirements. Most modern teams use some form of Agile because real users rarely know exactly what they want until they see something working.</p>
+                <p>Code quality has measurable indicators: <strong>readability</strong>, <strong>cohesion</strong>, <strong>coupling</strong>, <strong>cyclomatic complexity</strong> (the number of independent paths through a function — lower is better). Style guides such as <strong>PEP 8</strong> (Python) and <strong>Google Java Style</strong> codify naming, indentation, line length, and comment conventions so that one engineer's code looks like another's. <strong>Code review</strong> — a second pair of eyes on every change — is the single most effective quality practice in industry, catching bugs and spreading knowledge simultaneously.</p>
+                <ul>
+                  <li><strong>SDLC</strong> — sequence of activities from problem to deployed software.</li>
+                  <li><strong>Waterfall</strong> — strict sequential stages.</li>
+                  <li><strong>Agile / Scrum</strong> — short iterations with frequent user feedback.</li>
+                  <li><strong>Requirement</strong> — a statement of what the software must do (functional) or how well (non-functional).</li>
+                  <li><strong>Maintainability</strong> — the ease of changing software after release.</li>
+                  <li><strong>Style guide</strong> — coding conventions (e.g. PEP 8 for Python).</li>
+                  <li><strong>Code review</strong> — peer evaluation of changes before they are merged.</li>
+                  <li><strong>Technical debt</strong> — accumulated short-cuts that slow future development.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — refactoring for maintainability</p>
+<pre><code># BEFORE — undocumented, magic numbers, poor names
+def f(x):
+    if x &gt;= 80: return "A"
+    if x &gt;= 70: return "B"
+    if x &gt;= 60: return "C"
+    if x &gt;= 50: return "D"
+    return "F"
+
+# AFTER — named constants, docstring, type hints, tested
+LEVEL_4_THRESHOLD = 80   # Ontario Level 4: 80-100%
+LEVEL_3_THRESHOLD = 70   # Ontario Level 3: 70-79%
+LEVEL_2_THRESHOLD = 60   # Ontario Level 2: 60-69%
+LEVEL_1_THRESHOLD = 50   # Ontario Level 1: 50-59%
+
+def percent_to_letter(percent: float) -&gt; str:
+    """Map an Ontario achievement-chart percent to a letter grade.
+
+    Args:
+        percent: 0-100 inclusive.
+    Returns:
+        'A' for Level 4, 'B' for Level 3, …, 'F' for below 50.
+    """
+    if percent &gt;= LEVEL_4_THRESHOLD: return "A"
+    if percent &gt;= LEVEL_3_THRESHOLD: return "B"
+    if percent &gt;= LEVEL_2_THRESHOLD: return "C"
+    if percent &gt;= LEVEL_1_THRESHOLD: return "D"
+    return "F"</code></pre>
+                  <p>The two versions behave identically — both are O(1) — but the second can be understood, modified, and tested by someone other than the original author. The named thresholds prevent the "magic number" anti-pattern. The docstring documents the contract. Type hints let editors and static checkers flag misuse. This level of care is what makes a codebase maintainable over years.</p>
+                </div>
+                <ul>
+                  <li>Implementing before talking to users — building the wrong thing perfectly.</li>
+                  <li>Skipping the design step on a "small" project that grows — costs accumulate as technical debt.</li>
+                  <li>Commenting <em>what</em> the code does instead of <em>why</em> — comments duplicate code and rot.</li>
+                  <li>Inconsistent naming (<code>my_var</code>, <code>thatThing</code>, <code>X</code>) — slows every future reader.</li>
+                  <li>Treating code review as approval theatre rather than substantive discussion.</li>
+                  <li>"It works on my machine" — different environments need explicit dependency management.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "describe and use, in computer programs, the standard stages of the software-development life cycle".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt28')"><span class="vid-icon">📖</span><span class="vid-title">Software Engineering — Crash Course Computer Science #16</span><span class="vid-duration">11:51</span><span class="vid-toggle" id="toggle-ics-yt28">▶</span></div><div class="video-player" id="player-ics-yt28"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O753uuutqH8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=O753uuutqH8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">5.4 &mdash; Emerging Technologies: AI, Machine Learning, Quantum Computing</div>
             <div class="topic-desc">High-level overview of how supervised learning, neural networks, and large-language-models work; introduction to qubits and quantum advantage</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Artificial intelligence</strong> (AI) is the broad ambition of building systems that perform tasks normally requiring human intelligence. <strong>Machine learning</strong> (ML) is the dominant modern approach: rather than programming explicit rules, the developer supplies data and the algorithm discovers patterns. In <strong>supervised learning</strong>, training data is paired with correct labels, and the model learns to map inputs to outputs that generalise to new examples. <strong>Unsupervised learning</strong> works with unlabelled data, finding structure (clusters, anomalies). <strong>Reinforcement learning</strong> trains an agent by reward signals from interaction with an environment.</p>
+                <p><strong>Neural networks</strong> are the dominant model family. Each artificial neuron computes a weighted sum of its inputs, applies a non-linear activation function, and passes the result on. Stacked into <strong>deep networks</strong> with millions or billions of trainable weights, they can approximate complex functions. <strong>Large language models</strong> (LLMs) like the one generating this text are transformer-based neural networks trained on enormous text corpora to predict the next token; emergent abilities like question answering and translation arise from scale and architecture, not from any explicit grammar programmed in.</p>
+                <p><strong>Quantum computing</strong> exploits superposition and entanglement of quantum bits (<strong>qubits</strong>) to evaluate exponentially many possibilities simultaneously. Shor's algorithm factors integers in polynomial time on a quantum computer, which would break RSA encryption; Grover's algorithm searches unsorted data in O(√n). As of the late 2020s, quantum hardware has reached "noisy intermediate-scale" capability — useful for research but not yet for general-purpose computing. Quantum-resistant cryptography (post-quantum) is already a topic of standards work at NIST.</p>
+                <ul>
+                  <li><strong>Training data</strong> — examples used to fit a model's parameters.</li>
+                  <li><strong>Feature</strong> — one measurable property of the input.</li>
+                  <li><strong>Model</strong> — a mathematical function with learnable parameters.</li>
+                  <li><strong>Overfitting</strong> — performing well on training data but poorly on new data.</li>
+                  <li><strong>Generalisation</strong> — performing well on unseen inputs.</li>
+                  <li><strong>Neural network</strong> — a graph of weighted connections inspired (loosely) by biology.</li>
+                  <li><strong>Token</strong> — the basic unit (word/sub-word) an LLM processes.</li>
+                  <li><strong>Qubit</strong> — a quantum two-state system; can be in superposition of 0 and 1.</li>
+                  <li><strong>Entanglement</strong> — correlated quantum state of multiple qubits.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a tiny k-NN classifier</p>
+<pre><code>def euclidean(a, b):
+    return sum((x - y) ** 2 for x, y in zip(a, b)) ** 0.5
+
+def knn_predict(train, labels, query, k=3):
+    """Predict label of `query` using k-nearest neighbours."""
+    distances = [(euclidean(point, query), lbl)
+                 for point, lbl in zip(train, labels)]
+    distances.sort()                       # O(n log n)
+    top_k = distances[:k]
+    votes = {}
+    for _, lbl in top_k:
+        votes[lbl] = votes.get(lbl, 0) + 1
+    return max(votes, key=votes.get)       # most common label
+
+train  = [[1,2],[2,1],[5,5],[6,6]]
+labels = ['cat','cat','dog','dog']
+print(knn_predict(train, labels, [2,2]))   # 'cat'</code></pre>
+                  <p>k-NN is the gentlest entry into machine learning: there is no "training" beyond storing the data, and prediction is a sort plus a vote. With n training points and d features, prediction costs O(n·d + n log n) per query — fine for thousands of points, infeasible for millions without approximate-NN data structures. It illustrates the central ML idea: classification by similarity to known examples, parameterised by the choice of distance metric and k.</p>
+                </div>
+                <ul>
+                  <li>Believing ML "understands" — current models are statistical pattern matchers and can be confidently wrong (hallucinations).</li>
+                  <li>Training and evaluating on the same data — gives an inflated, useless accuracy score.</li>
+                  <li>Ignoring <strong>bias</strong> in training data — models inherit the patterns, including discriminatory ones.</li>
+                  <li>Conflating quantum computing with "faster classical computing" — it accelerates specific problem classes only.</li>
+                  <li>Assuming LLM outputs are factual — they predict plausible text, not truth.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.1 — "describe recent advances in computer technology (e.g., advances in artificial intelligence, robotics, computer-assisted modelling, quantum computing)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt9')"><span class="vid-icon">📖</span><span class="vid-title">Machine Learning &amp; Artificial Intelligence — Crash Course CS #34</span><span class="vid-duration">11:51</span><span class="vid-toggle" id="toggle-ics-yt9">▶</span></div><div class="video-player" id="player-ics-yt9"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/z-EtmaFJieY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=z-EtmaFJieY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">5.5 &mdash; Ethical &amp; Environmental Issues in Computing</div>
             <div class="topic-desc">Privacy, algorithmic bias, intellectual property, e-waste, energy footprint of data centres &amp; AI training, ethical AI design</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Computing technology shapes the lives of billions of people, which makes its <strong>ethical</strong> and <strong>environmental</strong> dimensions an inseparable part of the discipline. Software engineers are no longer simply "doing what the spec says" — the decisions they make about data, algorithms, and deployment have consequences for privacy, fairness, employment, the environment, and democratic discourse. Recognising the moral weight of these decisions is part of being a professional.</p>
+                <p><strong>Privacy</strong> is the foundational issue. Modern applications collect quantities of personal data that would have been unthinkable a generation ago. Canadian law (PIPEDA at the federal level; provincial laws in Quebec, Alberta, and BC) requires informed consent and limited retention. Designers should follow the <strong>data minimisation</strong> principle: collect only what is needed, store it for only as long as needed, and protect it (encryption at rest and in transit) for the entire time. <strong>Algorithmic bias</strong> occurs when models trained on historical data perpetuate or amplify existing inequities — credit-scoring systems, hiring filters, and predictive-policing tools have all been shown to discriminate. Mitigations include diverse training data, fairness metrics, human-in-the-loop review, and the right to contest automated decisions.</p>
+                <p><strong>Intellectual property</strong> protects the work of programmers and content creators. <strong>Copyright</strong> covers expressive works (including source code) automatically. <strong>Open-source licences</strong> (MIT, GPL, Apache 2) grant explicit permissions in exchange for conditions like attribution or copyleft. Using code without understanding its licence is a real legal risk. The training of large generative models on copyrighted data is an active legal frontier.</p>
+                <p><strong>Environmental impact</strong> is rising fast. Data-centre electricity consumption is projected to exceed 4% of global use by the late 2020s; training a single large language model can emit as much CO₂ as several transatlantic flights; the production of electronics is water-intensive and rare-earth-mineral-intensive. The end of a device's life — <strong>e-waste</strong> — accounts for the fastest-growing solid-waste stream worldwide. Mitigations include energy-efficient algorithms, sourcing renewable power, designing for repair and modularity, and extending device lifespans through software support.</p>
+                <ul>
+                  <li><strong>PIPEDA</strong> — Personal Information Protection and Electronic Documents Act (Canadian federal privacy law).</li>
+                  <li><strong>Data minimisation</strong> — collect only what is necessary.</li>
+                  <li><strong>Encryption</strong> — converting data so only authorised parties can read it.</li>
+                  <li><strong>Algorithmic bias</strong> — unfair outcomes from biased training data or design.</li>
+                  <li><strong>Open-source licence</strong> — legal terms for reuse of code (MIT, GPL, Apache 2, BSD).</li>
+                  <li><strong>Copyleft</strong> — licence clause requiring derivative works to use the same licence.</li>
+                  <li><strong>E-waste</strong> — discarded electronics; the largest growing waste stream.</li>
+                  <li><strong>Carbon footprint</strong> — total greenhouse gas emissions attributable to an activity.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — designing a school attendance app responsibly</p>
+                  <p>Suppose your team must build an attendance-tracking app for a Toronto-area school board. An ethical design checklist:</p>
+                  <ul>
+                    <li><strong>Minimise data</strong> — store student ID, date, status (present/late/absent). Do not store GPS, photos, or browsing.</li>
+                    <li><strong>Retention</strong> — purge records after the legally required retention period (typically 5 years for Ontario school records).</li>
+                    <li><strong>Encryption</strong> — HTTPS in transit; encrypt the database at rest.</li>
+                    <li><strong>Access control</strong> — students see their own records; teachers see their class; administrators see the school. No global access without audit.</li>
+                    <li><strong>Bias</strong> — if attendance flags trigger interventions, ensure thresholds do not disproportionately catch students from particular demographics; build in human review.</li>
+                    <li><strong>Sustainability</strong> — host on a green data-centre region; cache aggressively to reduce server cycles.</li>
+                    <li><strong>Transparency</strong> — provide a privacy notice in plain language; let students export and delete their data.</li>
+                  </ul>
+                  <p>None of these decisions is purely technical; every one balances utility, privacy, fairness, and cost. Making them deliberately, rather than by default, is the ethical commitment.</p>
+                </div>
+                <ul>
+                  <li>Storing personal data "just in case" — accumulates risk with no benefit.</li>
+                  <li>Logging passwords, tokens, or full credit card numbers — a future leak becomes catastrophic.</li>
+                  <li>Treating "the algorithm decided" as a defence against discrimination — algorithms reflect their training.</li>
+                  <li>Copying code from a Stack Overflow answer without checking the licence — Stack Overflow content is CC BY-SA, requiring attribution.</li>
+                  <li>Designing for the dominant user group only — accessibility and inclusion are quality attributes, not nice-to-haves.</li>
+                  <li>Ignoring the carbon cost of model training and large-scale data movement.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "analyse, on the basis of research, key issues related to the environmental impact of computer use (e.g., the disposal of hardware, the energy consumption of data centres)".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt10')"><span class="vid-icon">📖</span><span class="vid-title">The Psychology of Computing — Crash Course CS #38</span><span class="vid-duration">11:38</span><span class="vid-toggle" id="toggle-ics-yt10">▶</span></div><div class="video-player" id="player-ics-yt10"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/DEHsvQ3Ylwg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=DEHsvQ3Ylwg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">5.6 &mdash; History of Computing &amp; Career Pathways</div>
             <div class="topic-desc">From Babbage and Lovelace to modern cloud computing; CS-related careers in Canada (software dev, data science, security, ML, robotics, game dev); Canadian post-secondary CS programs</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Computer science is unusual among disciplines in that its entire intellectual history fits within roughly two centuries — and most of it within one human lifetime. <strong>Charles Babbage</strong> designed the <em>Analytical Engine</em> in the 1830s and <strong>Ada Lovelace</strong> wrote the first algorithm intended for machine execution, earning her the title of the first programmer. <strong>Alan Turing</strong>'s 1936 paper defined the abstract machine that bears his name and proved the existence of uncomputable problems. The <strong>ENIAC</strong> (1945) was the first general-purpose electronic computer; the <strong>transistor</strong> (1947), <strong>integrated circuit</strong> (1958), and <strong>microprocessor</strong> (1971) drove exponential miniaturisation captured by Moore's Law. The personal-computer era (1977 onward), the internet (1980s research, 1990s commercial), and the smartphone (2007 iPhone) each shifted computing's role in society dramatically. The current era is defined by <strong>cloud computing</strong> (utility-priced compute and storage), <strong>mobile-first</strong> design, and <strong>generative AI</strong>.</p>
+                <p>Canada plays a distinctive role: <strong>Geoffrey Hinton</strong>, Yoshua Bengio, and Yann LeCun (the "godfathers of deep learning") all studied or worked in Canadian universities, and Toronto and Montreal remain global hubs for AI research. The <strong>Vector Institute</strong> (Toronto), <strong>Mila</strong> (Montreal), and <strong>Amii</strong> (Edmonton) are world-class research centres. Major Canadian post-secondary computer-science programs include Waterloo, Toronto, McGill, UBC, McMaster, Western, Queen's, Carleton, Ottawa, Simon Fraser, Alberta, and the polytechnic colleges (Sheridan, Seneca, BCIT) for applied programs.</p>
+                <p><strong>Career paths</strong> in computing are now extremely diverse. <strong>Software developer</strong> remains the most common role; specialisations include <strong>front-end</strong> (browser UI), <strong>back-end</strong> (server APIs), <strong>full-stack</strong> (both), <strong>mobile</strong>, <strong>game development</strong>, and <strong>embedded systems</strong>. <strong>Data scientist</strong> and <strong>machine-learning engineer</strong> roles apply statistics and ML to business problems. <strong>Cybersecurity</strong> analysts defend systems against attack. <strong>DevOps</strong> and <strong>site reliability</strong> engineers run infrastructure. <strong>Cloud architects</strong>, <strong>database administrators</strong>, <strong>QA engineers</strong>, <strong>technical writers</strong>, <strong>product managers</strong>, and <strong>UX designers</strong> round out a typical software organisation. Many of these careers do not require a four-year university degree — community college programs and self-directed pathways are increasingly viable.</p>
+                <ul>
+                  <li><strong>Turing machine</strong> — abstract model of computation that defines what is computable.</li>
+                  <li><strong>Moore's Law</strong> — observation that transistor counts double roughly every 2 years.</li>
+                  <li><strong>Cloud computing</strong> — on-demand delivery of compute and storage over the internet.</li>
+                  <li><strong>DevOps</strong> — culture and tools that combine development and operations.</li>
+                  <li><strong>SRE (Site Reliability Engineering)</strong> — software-engineering approach to operations.</li>
+                  <li><strong>FAANG / MAANG</strong> — large US tech firms; Canadian equivalents include Shopify, OpenText, Constellation, BlackBerry.</li>
+                  <li><strong>Co-op / internship</strong> — paid work term integrated with study (Waterloo's program is world-famous).</li>
+                  <li><strong>Open source contribution</strong> — public portfolio that demonstrates skills to employers.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a career-planning checklist for an Ontario Grade 12 student</p>
+                  <ul>
+                    <li><strong>Foundations</strong> — solid grasp of one mainstream language (Python or Java), data structures, and Git. ICS4U covers all three.</li>
+                    <li><strong>Math</strong> — calculus and discrete math help in CS programs; statistics is essential for data roles.</li>
+                    <li><strong>Public portfolio</strong> — a GitHub profile with three or four substantive projects beats a résumé alone.</li>
+                    <li><strong>Choose an entry point</strong> — university (broad theory + research access), polytechnic college (faster, applied), bootcamp (intensive, networking-oriented), self-study (cheapest but requires discipline).</li>
+                    <li><strong>Apply early</strong> — Waterloo, Toronto, and McGill CS admissions are highly competitive; OUAC applications open in fall of Grade 12.</li>
+                    <li><strong>Co-op</strong> — programs like Waterloo CS or Toronto's PEY interleave paid work terms with study; many graduates have 2 years of industry experience at convocation.</li>
+                    <li><strong>Stay learning</strong> — technology shifts every 5-10 years; the durable skills are reading code, debugging, communicating, and learning fast.</li>
+                  </ul>
+                </div>
+                <ul>
+                  <li>Believing CS is just "coding" — the field is much broader (architecture, security, theory, HCI, applied math).</li>
+                  <li>Picking a university by ranking alone — fit, co-op opportunities, and city matter more for outcomes.</li>
+                  <li>Treating new tools as "fashions" to ignore — yesterday's fashion (Git, the cloud, ML) is today's foundation.</li>
+                  <li>Underestimating soft skills — code review, technical writing, and collaboration are graded on the job.</li>
+                  <li>Assuming the AI revolution makes programmers obsolete — it raises the floor of productivity but still rewards rigour and judgement.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "describe postsecondary education and training opportunities and career prospects related to computer studies".</p>
+              </div>
+            </details>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt11')"><span class="vid-icon">📖</span><span class="vid-title">Early Computing — Crash Course Computer Science #1</span><span class="vid-duration">11:53</span><span class="vid-toggle" id="toggle-ics-yt11">▶</span></div><div class="video-player" id="player-ics-yt11"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O5nskjZ_GoI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=O5nskjZ_GoI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
             <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt29')"><span class="vid-icon">📖</span><span class="vid-title">I Ranked Every Tech Career Path (Who Wins?) — Tech With Tim</span><span class="vid-duration">14:26</span><span class="vid-toggle" id="toggle-ics-yt29">▶</span></div><div class="video-player" id="player-ics-yt29"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/3GU7nAuchKA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=3GU7nAuchKA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
         </div>

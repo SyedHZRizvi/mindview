@@ -36,6 +36,17 @@
 .topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
 .topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
 
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
 </style>
 </head><body>
 <nav class="navbar"><div class="nav-container">
@@ -75,6 +86,37 @@
 
     <div class="resource-group">
     <div class="resource-group-label">📹 Video Lessons</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Strand A is a mandatory cross-cutting strand embedded throughout SCH4U. It develops the laboratory technique, experimental design, data analysis, and communication skills that every chemist must master. Students must move beyond simply following procedures: they design controlled experiments, identify independent, dependent, and controlled variables, evaluate sources of systematic and random error, propagate uncertainty through calculations, and communicate findings using the formal IUPAC and SI conventions expected at the university entry level.</p>
+        <p>Quantitative work in Grade 12 chemistry demands careful attention to significant figures, dimensional analysis, and the propagation of uncertainty. When measurements are added or subtracted, the result is reported to the same number of decimal places as the least precise measurement; when multiplied or divided, to the same number of significant figures as the least precise value. Graphical analysis is central: a linear plot of \(y = mx + b\) lets students extract rate constants from \([A]\) vs \(t\) (zero order), \(\ln[A]\) vs \(t\) (first order), or \(1/[A]\) vs \(t\) (second order). Linearization also yields activation energy from an Arrhenius plot of \(\ln k\) vs \(1/T\), where the slope equals \(-E_a/R\).</p>
+        <p>The career-exploration component asks students to connect chemistry to real occupations — pharmaceutical R&amp;D, forensic science, environmental monitoring, materials engineering, petrochemical refining — and to consider STSE (Science, Technology, Society, Environment) impacts of chemical innovations.</p>
+        <ul>
+          <li><strong>Accuracy</strong> — closeness of a measurement to the true value.</li>
+          <li><strong>Precision</strong> — reproducibility of repeated measurements.</li>
+          <li><strong>Random error</strong> — fluctuates unpredictably; reduced by averaging.</li>
+          <li><strong>Systematic error</strong> — consistent bias; not reduced by averaging.</li>
+          <li><strong>Percent error</strong> — \(\dfrac{|\text{experimental} - \text{accepted}|}{\text{accepted}} \times 100\%\).</li>
+          <li><strong>WHMIS 2015 / GHS pictograms</strong> — flame, exclamation, corrosion, health hazard, oxidizing flame-over-circle, gas cylinder, exploding bomb, skull &amp; crossbones, environment.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example: Significant figures and percent error</p>
+          <p>A student titrates HCl with NaOH and finds the concentration to be 0.1043 mol/L. The accepted value is 0.1000 mol/L. Calculate the percent error and report it to the correct number of significant figures.</p>
+          <p>Percent error \(= \dfrac{|0.1043 - 0.1000|}{0.1000} \times 100\% = \dfrac{0.0043}{0.1000}\times 100\% = 4.3\%\).</p>
+          <p>The numerator 0.0043 has 2 sig figs (subtraction rule limits to 4 decimal places, then sig figs are counted), so the answer is reported as 4.3%, not 4.30%.</p>
+        </div>
+        <p><strong>Common mistakes:</strong></p>
+        <ul>
+          <li>Confusing accuracy with precision — they are independent qualities.</li>
+          <li>Carrying extra significant figures through intermediate steps and rounding only at the end is good practice; rounding mid-calculation introduces error.</li>
+          <li>Forgetting units in dimensional analysis — a missing unit usually signals a missing conversion factor.</li>
+          <li>Reporting an instrument reading beyond its precision (e.g., 25.000 mL from a burette graduated to 0.1 mL).</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.5 — "conduct inquiries, controlling relevant variables, adapting or extending procedures as required, and using appropriate materials and equipment safely, accurately, and effectively, to collect observations and data."</p>
+      </div>
+    </details>
 
     <div class="video-card">
         <div class="video-header" onclick="toggleVideo('strandA-1-sch')">
@@ -163,6 +205,36 @@
 
         <div class="subsection-label">⛽ Hydrocarbons</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Hydrocarbons are organic compounds containing only carbon and hydrogen. They are classified by the degree of saturation and the geometry of the carbon framework. <strong>Alkanes</strong> (general formula \(C_nH_{2n+2}\)) contain only single C–C bonds and are saturated; they undergo combustion and free-radical halogenation but are otherwise relatively unreactive. <strong>Alkenes</strong> (\(C_nH_{2n}\)) contain at least one C=C double bond, and <strong>alkynes</strong> (\(C_nH_{2n-2}\)) contain at least one C≡C triple bond — both are unsaturated and undergo electrophilic addition. <strong>Aromatic</strong> hydrocarbons (e.g., benzene \(C_6H_6\)) have delocalized π electrons in a planar, cyclic system and undergo electrophilic aromatic substitution rather than addition, preserving aromaticity.</p>
+            <p>Bond hybridization explains shape and reactivity. Each carbon in an alkane is \(sp^3\) hybridized (tetrahedral, 109.5°); in an alkene, each sp² carbon (trigonal planar, 120°) holds a π bond above and below the plane; in an alkyne, each sp carbon is linear (180°). The strength order is C–C (≈347 kJ/mol) &lt; C=C (≈614 kJ/mol) &lt; C≡C (≈839 kJ/mol), but π bonds are weaker than σ bonds and so are attacked first by electrophiles.</p>
+            <p>Geometric (cis/trans) isomerism arises in alkenes because rotation about the C=C bond is restricted. Cycloalkanes (\(C_nH_{2n}\)) include strained rings such as cyclopropane and stable chair conformers in cyclohexane.</p>
+            <ul>
+              <li><strong>Saturated</strong> — only single C–C bonds.</li>
+              <li><strong>Unsaturated</strong> — contains C=C or C≡C.</li>
+              <li><strong>Combustion (complete):</strong> \(C_nH_m + (n + m/4)O_2 \rightarrow nCO_2 + (m/2)H_2O\).</li>
+              <li><strong>Markovnikov's rule</strong> — in HX addition to an alkene, H adds to the carbon already bearing more H's.</li>
+              <li><strong>Aromaticity</strong> — Hückel's rule: planar, cyclic, fully conjugated, \(4n+2\) π electrons.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Combustion of octane</p>
+              <p>Balance the complete combustion of octane, \(C_8H_{18}\) (a major gasoline component).</p>
+              <p>\(C_8H_{18} + \tfrac{25}{2}O_2 \rightarrow 8CO_2 + 9H_2O\)</p>
+              <p>Multiplying through by 2 to remove the fraction: \(2C_8H_{18} + 25O_2 \rightarrow 16CO_2 + 18H_2O\).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Drawing five bonds on a carbon — carbon forms a maximum of four bonds.</li>
+              <li>Confusing the general formula \(C_nH_{2n}\) for alkenes with that for cycloalkanes — both share it.</li>
+              <li>Assuming benzene undergoes addition like an alkene; it undergoes substitution to preserve aromaticity.</li>
+              <li>Ignoring cis/trans isomerism when reporting alkene products.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "describe, on the basis of observations, the chemical behaviour of various classes of organic compounds (e.g., hydrocarbons, alcohols, carboxylic acids), including their behaviour in chemical reactions (e.g., addition, substitution, elimination, oxidation, esterification, hydrolysis)."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v11')">
                 <span class="vid-icon">📖</span>
@@ -216,6 +288,38 @@
         </div>
 
         <div class="subsection-label">🧴 Functional Groups</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>functional group</strong> is the specific atom or arrangement of atoms within a molecule that confers characteristic chemical reactivity. The same functional group on different carbon skeletons behaves similarly, which is the organizing principle of organic chemistry. The main families covered in SCH4U are: alcohols (–OH), ethers (R–O–R'), aldehydes (–CHO), ketones (R–CO–R'), carboxylic acids (–COOH), esters (–COOR'), amines (–NH₂, –NHR, –NR₂), and amides (–CONR₂).</p>
+            <p>Alcohols are classified as primary, secondary, or tertiary by counting the number of carbons bonded to the C–OH carbon. Oxidation of a primary alcohol with an oxidizing agent such as acidified \(KMnO_4\) or \(K_2Cr_2O_7\) yields first an aldehyde and then a carboxylic acid; a secondary alcohol oxidizes only as far as the ketone; a tertiary alcohol cannot be oxidized without breaking the carbon skeleton. Carboxylic acids react with alcohols under acid catalysis in a Fischer <strong>esterification</strong> equilibrium, producing an ester and water. Amides form by condensation of a carboxylic acid (or derivative) with an amine, releasing water — this is the same C–N linkage found in proteins (the peptide bond).</p>
+            <p>Functional groups also dictate physical properties. Hydrogen bonding in alcohols, carboxylic acids, and amides raises boiling points sharply compared with hydrocarbons of similar molar mass; carboxylic acids dimerize through two H-bonds, raising their boiling points further.</p>
+            <ul>
+              <li><strong>Alcohol</strong> R–OH; suffix –ol (e.g., propan-2-ol).</li>
+              <li><strong>Aldehyde</strong> R–CHO; suffix –al (e.g., propanal).</li>
+              <li><strong>Ketone</strong> R–CO–R'; suffix –one (e.g., propan-2-one).</li>
+              <li><strong>Carboxylic acid</strong> R–COOH; suffix –oic acid (e.g., ethanoic acid).</li>
+              <li><strong>Ester</strong> R–COOR'; named alkyl alkanoate (e.g., ethyl ethanoate).</li>
+              <li><strong>Amine</strong> R–NH₂; suffix –amine.</li>
+              <li><strong>Amide</strong> R–CONR'₂; suffix –amide.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Esterification</p>
+              <p>Write the equation for the esterification of ethanoic acid with propan-1-ol under H₂SO₄ catalysis.</p>
+              <p>\(CH_3COOH + CH_3CH_2CH_2OH \;\underset{}{\overset{H_2SO_4}{\rightleftharpoons}}\; CH_3COOCH_2CH_2CH_3 + H_2O\)</p>
+              <p>The product is propyl ethanoate (propyl acetate, a pear-scented ester). The reaction is at equilibrium; excess acid or alcohol, or removal of water, drives it to products (Le Chatelier's principle).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Confusing aldehydes (CHO at chain end) with ketones (C=O internal).</li>
+              <li>Writing a tertiary alcohol oxidation product — it does not oxidize.</li>
+              <li>Naming esters backwards — the alcohol-derived alkyl group is named first.</li>
+              <li>Forgetting that esterification is reversible and that hydrolysis is the reverse reaction.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "describe some of the physical and chemical properties of the major classes of organic compounds (e.g., hydrocarbons, alcohols, ethers, aldehydes, ketones, carboxylic acids, esters, amines, amides), and compare the properties of compounds within the same class and in different classes."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v15')">
@@ -271,6 +375,37 @@
 
         <div class="subsection-label">🔗 Polymers</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>polymer</strong> is a macromolecule built from many repeating subunits called <strong>monomers</strong>. There are two principal mechanisms of polymerization in SCH4U: addition (chain-growth) polymerization and condensation (step-growth) polymerization. In <strong>addition polymerization</strong>, the π bonds of vinyl-type monomers (e.g., ethene, propene, vinyl chloride, styrene) break and the carbon atoms link end-to-end with no by-product. The polymer's empirical formula is identical to that of the monomer. Common examples include polyethylene from ethene, polypropylene from propene, PVC from chloroethene, and polystyrene from phenylethene.</p>
+            <p>In <strong>condensation polymerization</strong>, a small molecule (typically water or HCl) is eliminated each time two monomers join. Bifunctional monomers (one functional group at each end) are required. Polyesters such as PET form from a diol (e.g., ethylene glycol) and a dicarboxylic acid (terephthalic acid); polyamides such as nylon-6,6 form from a diamine (hexamethylenediamine) and a diacid (adipic acid). Biological condensation polymers include proteins (peptide bonds from amino acids), cellulose and starch (glycosidic bonds from glucose), and nucleic acids (phosphodiester bonds).</p>
+            <p>STSE connections include the lifecycle and recyclability of plastics, the persistence of microplastics in marine environments, the use of biodegradable polymers (PLA, PHA), and the substitution of bio-based feedstocks for petroleum-derived ones.</p>
+            <ul>
+              <li><strong>Monomer</strong> — the small repeating unit.</li>
+              <li><strong>Addition polymer</strong> — formed without loss of a small molecule.</li>
+              <li><strong>Condensation polymer</strong> — formed with loss of H₂O or HCl.</li>
+              <li><strong>Polyester</strong> — diol + diacid (e.g., PET).</li>
+              <li><strong>Polyamide</strong> — diamine + diacid (e.g., nylon-6,6); the linkage is the amide (peptide) bond.</li>
+              <li><strong>Degree of polymerization</strong> — number of monomer units per chain.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Repeating unit of polyethylene terephthalate (PET)</p>
+              <p>PET is formed from ethylene glycol \(HO–CH_2CH_2–OH\) and terephthalic acid \(HOOC–C_6H_4–COOH\). Each amide of esterification eliminates one H₂O. The repeating unit is:</p>
+              <p>\(-[O–CH_2CH_2–O–CO–C_6H_4–CO]-\)</p>
+              <p>If \(n = 100\), a total of \(2n - 1 \approx 200\) water molecules are released per chain (one per ester bond formed; an \(n\)-unit chain has \(2n\) ester bonds when the diol and diacid alternate).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Forgetting to remove H₂O when drawing condensation polymer repeat units.</li>
+              <li>Confusing the polymer name with the monomer name (e.g., polyethylene comes from ethene, not "ethylene" in modern IUPAC).</li>
+              <li>Drawing the brackets around the wrong segment of the repeat unit.</li>
+              <li>Assuming all polymers melt — thermosets do not.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.5 — "explain the difference between an addition reaction and a condensation reaction, and describe the formation of addition polymers and condensation polymers from their monomers."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v19')">
                 <span class="vid-icon">📖</span>
@@ -299,6 +434,35 @@
 
         <div class="subsection-label">🔤 IUPAC Nomenclature</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>International Union of Pure and Applied Chemistry (IUPAC)</strong> system gives every organic compound a unique, unambiguous name based on its structure. The general procedure is: (1) identify the principal characteristic group, which determines the suffix; (2) choose the longest continuous carbon chain containing this principal group as the parent; (3) number the parent chain so the principal group, then double/triple bonds, then substituents receive the lowest possible locants (the "first point of difference" rule); (4) list substituents alphabetically (ignoring multiplying prefixes di-, tri-, tetra- for alphabetization but considering iso-, sec-, tert- only when they are italicized); (5) assemble the name as <em>locants–prefixes–parent–unsaturation–suffix</em>.</p>
+            <p>The priority order of principal characteristic groups (highest to lowest, partial list) is: carboxylic acid &gt; ester &gt; amide &gt; nitrile &gt; aldehyde &gt; ketone &gt; alcohol &gt; amine &gt; alkene &gt; alkyne &gt; alkane. Only the highest-priority group becomes the suffix; lower-priority groups become prefixes (e.g., –OH becomes "hydroxy-"). For alkenes and alkynes, a 2013 update places the locant immediately before the suffix (e.g., but-2-ene, not 2-butene), though Canadian textbooks accept both styles.</p>
+            <p>Multiple substituents of the same kind use di-, tri-, tetra-, and each requires its own locant separated by commas (e.g., 2,3-dimethylbutane). Cyclic parents take the prefix "cyclo-". Benzene derivatives may use ortho/meta/para or numerical locants (1,2-/1,3-/1,4-).</p>
+            <ul>
+              <li><strong>Parent chain</strong> — longest C chain containing the principal group.</li>
+              <li><strong>Locant</strong> — number indicating substituent position.</li>
+              <li><strong>Substituent</strong> — branch or non-principal functional group.</li>
+              <li><strong>Suffix</strong> — derived from the highest-priority functional group.</li>
+              <li><strong>First point of difference</strong> — choose numbering that gives the lower locant set at the first comparison.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Naming a branched alcohol</p>
+              <p>Name the compound (CH₃)₂CHCH(OH)CH₂CH₃.</p>
+              <p>Step 1 — principal group is –OH (alcohol). Step 2 — longest chain containing C–OH is 5 carbons (pentane → pentan-…-ol). Step 3 — number to give OH the lowest locant: C1=CH₃, C2=CH(OH), … wait — write skeleton: CH₃–CH(CH₃)–CH(OH)–CH₂–CH₃. Numbering from the right gives OH at C3 and methyl at C4; from the left gives OH at C3 and methyl at C2. The set {2, 3} beats {3, 4} at first difference, so number from the left. Name: 2-methylpentan-3-ol.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Choosing a shorter parent chain because it "looks straight" — pick the longest containing the principal group.</li>
+              <li>Forgetting the "lowest locant" rule and numbering arbitrarily.</li>
+              <li>Alphabetizing using "di-" or "tri-" prefixes (you should alphabetize "ethyl" before "methyl" regardless of multipliers).</li>
+              <li>Writing "2-butene" without the modern locant placement — accept either, but be consistent.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "use International Union of Pure and Applied Chemistry (IUPAC) nomenclature rules to identify, write structural formulae for, and name the different classes of organic compounds (e.g., hydrocarbons, alcohols, aldehydes, ketones, carboxylic acids, esters, ethers, amines, amides)."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt15')">
                 <span class="vid-icon">📖</span>
@@ -314,6 +478,36 @@
 
         <div class="subsection-label">🔁 Organic Reaction Mechanisms</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Organic reactions are classified by what happens to bonds and to the carbon skeleton. The four main reaction types in SCH4U are <strong>addition</strong>, <strong>elimination</strong>, <strong>substitution</strong>, and rearrangement; combustion, esterification, hydrolysis, and oxidation/reduction are specific examples that fit within these categories. The driving force is usually formation of a stronger σ bond, a more stable carbocation, or release of energy.</p>
+            <p>An <strong>addition reaction</strong> breaks a π bond and forms two new σ bonds. Alkenes react with HX, H₂O (acid-catalyzed hydration), or H₂ (catalytic hydrogenation). <strong>Markovnikov's rule</strong> states that, in HX addition, the hydrogen attaches to the carbon already bearing more hydrogens, because this generates the more substituted, more stable carbocation intermediate. An <strong>elimination reaction</strong> is the reverse: a small molecule (H₂O from an alcohol, HX from a haloalkane) is removed and a π bond forms. <strong>Zaitsev's rule</strong> predicts the more substituted (more stable) alkene as the major product. A <strong>substitution reaction</strong> replaces one atom or group with another; haloalkanes are typical substrates, and the reaction proceeds via SN1 (rate \(= k[\text{substrate}]\), tertiary substrates) or SN2 (rate \(= k[\text{substrate}][\text{nucleophile}]\), primary substrates) pathways.</p>
+            <p>Nucleophiles are electron-rich species (anions, lone-pair donors) attracted to electron-poor carbons; electrophiles are electron-poor and attack electron-rich sites such as π bonds. Curved arrows show the movement of electron pairs (not atoms): the tail at the electron source, the head at the destination.</p>
+            <ul>
+              <li><strong>Addition</strong> — \(C=C + X–Y \rightarrow X–C–C–Y\).</li>
+              <li><strong>Elimination</strong> — \(X–C–C–Y \rightarrow C=C + X–Y\).</li>
+              <li><strong>Substitution</strong> — \(R–X + Y^- \rightarrow R–Y + X^-\).</li>
+              <li><strong>Markovnikov</strong> — H adds to the carbon with more H's.</li>
+              <li><strong>Zaitsev</strong> — the more substituted alkene predominates.</li>
+              <li><strong>Nucleophile / electrophile</strong> — electron donor / electron acceptor.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Markovnikov addition of HBr to propene</p>
+              <p>\(CH_3–CH=CH_2 + HBr \rightarrow ?\)</p>
+              <p>Step 1 — H⁺ adds to a π carbon, forming a carbocation. Adding H to C1 gives a secondary cation \(CH_3–CH^+–CH_3\); adding H to C2 gives a primary cation \(CH_3–CH_2–CH_2^+\). The secondary cation is more stable (more hyperconjugation/induction). Step 2 — Br⁻ attacks the cation. Major product: \(CH_3–CHBr–CH_3\) (2-bromopropane), consistent with Markovnikov's rule.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Confusing electrophile (electron-loving, accepts e⁻) with nucleophile (nucleus-loving, donates e⁻).</li>
+              <li>Drawing arrows from H⁺ to the alkene — arrows must originate from the electron source (the π bond).</li>
+              <li>Mis-applying Markovnikov to symmetric alkenes (where it gives no preference).</li>
+              <li>Forgetting that anti-Markovnikov addition occurs with HBr + peroxides (radical mechanism).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "explain the difference between addition and substitution reactions, and identify situations in which each type of reaction can occur."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt16')">
                 <span class="vid-icon">📖</span>
@@ -328,6 +522,36 @@
         </div>
 
         <div class="subsection-label">🔄 Isomers</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Isomers</strong> are compounds with the same molecular formula but different structures. They divide first into <strong>constitutional (structural) isomers</strong>, which have different connectivity (chain isomers, position isomers, functional-group isomers), and <strong>stereoisomers</strong>, which share connectivity but differ in spatial arrangement. Stereoisomers further split into <strong>cis-trans (geometric)</strong> isomers and <strong>enantiomers / diastereomers</strong>.</p>
+            <p><strong>Cis-trans isomerism</strong> appears when restricted rotation (a C=C bond or a ring) traps substituents in different orientations. Higher-priority groups on the same side are <em>cis</em> (or <em>Z</em>, from German <em>zusammen</em>); on opposite sides, <em>trans</em> (<em>E</em>, <em>entgegen</em>). Priority follows the Cahn–Ingold–Prelog (CIP) rules: higher atomic number outranks lower. <strong>Enantiomers</strong> are non-superimposable mirror images, arising when a carbon is bonded to four different groups (a <strong>chirality centre</strong>). They have identical scalar physical properties but rotate plane-polarized light in opposite directions (one is dextrorotatory, +; the other levorotatory, –) and may interact differently with other chiral molecules — crucial in pharmacology, where one enantiomer can be therapeutic and the other inactive or toxic (e.g., (S)-thalidomide).</p>
+            <p>A 50:50 mixture of enantiomers is a <strong>racemic mixture</strong> and is optically inactive. <strong>Diastereomers</strong> are stereoisomers that are not mirror images (e.g., (2R,3R) vs (2R,3S) tartaric acid); they have different physical properties.</p>
+            <ul>
+              <li><strong>Constitutional isomers</strong> — different bonding connectivity.</li>
+              <li><strong>Stereoisomers</strong> — same connectivity, different 3-D arrangement.</li>
+              <li><strong>Chirality centre</strong> — carbon with four different substituents.</li>
+              <li><strong>Enantiomers</strong> — non-superimposable mirror images.</li>
+              <li><strong>Diastereomers</strong> — stereoisomers that are not mirror images.</li>
+              <li><strong>Racemic mixture</strong> — equal parts of two enantiomers.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Constitutional isomers of C₄H₁₀O</p>
+              <p>Draw all constitutional isomers with the formula C₄H₁₀O.</p>
+              <p>Four alcohols: butan-1-ol, butan-2-ol, 2-methylpropan-1-ol, 2-methylpropan-2-ol. Three ethers: methoxypropane (methyl propyl ether), 2-methoxypropane (methyl isopropyl ether), ethoxyethane (diethyl ether). Total: 7 constitutional isomers. The alcohols and ethers are <em>functional-group isomers</em> of one another.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Calling cis-trans pairs "enantiomers" — they are diastereomers.</li>
+              <li>Identifying a chirality centre on a CH₂ or CH₃ carbon (no four different groups).</li>
+              <li>Confusing R/S (CIP rules) with +/– (optical rotation); they are not directly correlated.</li>
+              <li>Forgetting that meso compounds have chirality centres but are achiral overall due to an internal mirror plane.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe some chemical reactions of various classes of organic compounds … using IUPAC nomenclature, including structural and stereoisomers."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt1')">
@@ -385,6 +609,36 @@
 
         <div class="subsection-label">⚛️ Atomic Theory &amp; Electronic Structure</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Atomic theory in SCH4U traces the historical progression from Dalton's indivisible spheres (1808) through Thomson's "plum pudding" (1897), Rutherford's nuclear atom (1911), and Bohr's quantized orbits (1913), to the modern quantum-mechanical model (Schrödinger, 1926). The Bohr model successfully explained the line spectrum of hydrogen using \(E_n = -2.18 \times 10^{-18}\,\text{J}/n^2\) and \(\Delta E = h\nu\), where \(h = 6.626 \times 10^{-34}\,\text{J·s}\), but it failed for multi-electron atoms. The quantum model treats electrons as standing waves described by four quantum numbers: principal (\(n\)), angular-momentum (\(\ell\), determining subshell s, p, d, f), magnetic (\(m_\ell\), specifying orbital orientation), and spin (\(m_s = \pm\tfrac{1}{2}\)).</p>
+            <p>Electron configurations are written by filling orbitals in order of increasing energy following three rules: the <strong>Aufbau principle</strong> (lowest-energy orbitals first), the <strong>Pauli exclusion principle</strong> (no two electrons in an atom share all four quantum numbers — so an orbital holds at most two electrons of opposite spin), and <strong>Hund's rule</strong> (electrons occupy degenerate orbitals singly with parallel spins before pairing). Half-filled and fully-filled subshells confer extra stability, explaining the anomalous configurations of Cr ([Ar]3d⁵4s¹) and Cu ([Ar]3d¹⁰4s¹). Photoelectron spectroscopy (PES) directly measures orbital ionization energies, confirming the order \(1s \lt 2s \lt 2p \lt 3s \lt 3p \lt 4s \approx 3d\).</p>
+            <p>Energy of light: \(E = h\nu = hc/\lambda\). Emission lines in the hydrogen spectrum follow the Rydberg equation \(1/\lambda = R_H(1/n_1^2 - 1/n_2^2)\) with \(R_H = 1.097 \times 10^7\,\text{m}^{-1}\).</p>
+            <ul>
+              <li><strong>Quantum numbers</strong>: \(n\) (1, 2, 3…), \(\ell\) (0 to \(n-1\)), \(m_\ell\) (\(-\ell\) to \(+\ell\)), \(m_s\) (\(\pm\tfrac{1}{2}\)).</li>
+              <li><strong>Orbital shapes</strong>: s (spherical), p (dumbbell), d (cloverleaf, 5 orientations), f (complex, 7 orientations).</li>
+              <li><strong>Aufbau, Pauli, Hund</strong> — the three filling rules.</li>
+              <li><strong>Heisenberg uncertainty</strong> — \(\Delta x \cdot \Delta p \geq h/(4\pi)\).</li>
+              <li><strong>Planck's constant</strong> \(h = 6.626 \times 10^{-34}\,\text{J·s}\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Wavelength of an emission line</p>
+              <p>Calculate the wavelength of light emitted when an electron in hydrogen falls from \(n = 4\) to \(n = 2\).</p>
+              <p>\(\dfrac{1}{\lambda} = R_H\left(\dfrac{1}{2^2} - \dfrac{1}{4^2}\right) = 1.097\times 10^7\left(\dfrac{1}{4} - \dfrac{1}{16}\right) = 1.097\times 10^7 \times \dfrac{3}{16} = 2.057\times 10^6\,\text{m}^{-1}\).</p>
+              <p>\(\lambda = 1/2.057\times 10^6 = 4.86\times 10^{-7}\,\text{m} = 486\,\text{nm}\) — the blue-green H-β Balmer line.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Writing the 4s electrons after 3d in ground-state configurations of transition metal <em>ions</em> — ionize 4s before 3d (e.g., Fe²⁺ is [Ar]3d⁶, not [Ar]3d⁴4s²).</li>
+              <li>Forgetting Hund's rule and pairing electrons too early in degenerate p or d orbitals.</li>
+              <li>Confusing energy with frequency: long wavelength = low frequency = low energy.</li>
+              <li>Using the Bohr equation for atoms other than hydrogenic ions.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "explain how experimental observations and inferences made by Rutherford, Bohr, and others contributed to the development of the modern theory of atomic structure."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v1')">
                 <span class="vid-icon">📖</span>
@@ -438,6 +692,35 @@
         </div>
 
         <div class="subsection-label">🔗 Chemical Bonding &amp; Molecular Geometry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Chemical bonds form because atoms attain lower energy by sharing or transferring electrons. <strong>Ionic bonds</strong> (between metal and non-metal, large electronegativity difference &gt; ≈1.7) involve electron transfer and form crystal lattices held together by electrostatic attraction. <strong>Covalent bonds</strong> (small electronegativity difference) involve shared electron pairs; pure covalent (Δχ &lt; 0.4) and polar covalent (0.4 ≤ Δχ ≤ 1.7) are distinguished by dipole moments. <strong>Metallic bonds</strong> arise from delocalized "sea of electrons" shared across a metal lattice, explaining conductivity and malleability.</p>
+            <p><strong>VSEPR theory</strong> (Valence Shell Electron Pair Repulsion) predicts molecular geometry by minimizing repulsion between electron domains around a central atom. Lone pairs repel more strongly than bonding pairs, distorting ideal angles. The principal geometries are: 2 domains → linear (180°); 3 → trigonal planar (120°); 4 → tetrahedral (109.5°); 5 → trigonal bipyramidal (90°, 120°); 6 → octahedral (90°). With lone pairs, derivatives include bent, trigonal pyramidal, see-saw, T-shaped, and square planar. <strong>Hybridization</strong> rationalizes geometry in valence-bond terms: 2 domains → sp; 3 → sp²; 4 → sp³; 5 → sp³d; 6 → sp³d². Double bonds contain one σ + one π bond; triple bonds, one σ + two π. Only σ bonds permit free rotation; π bonds lock geometry.</p>
+            <p>Molecular polarity depends on both bond polarity and geometry: CO₂ is non-polar despite polar C=O bonds because the dipoles cancel in the linear geometry; H₂O is polar because its bent shape leaves a net dipole.</p>
+            <ul>
+              <li><strong>Electronegativity (χ)</strong> — Pauling scale; F = 4.0 is highest.</li>
+              <li><strong>Lewis structure</strong> — dot diagram showing valence electrons and bonds.</li>
+              <li><strong>Formal charge</strong> = (valence e⁻) − (lone-pair e⁻) − ½(bonding e⁻).</li>
+              <li><strong>Hybrid orbitals</strong>: sp, sp², sp³, sp³d, sp³d².</li>
+              <li><strong>σ bond</strong> (head-on overlap) vs <strong>π bond</strong> (side-on overlap).</li>
+              <li><strong>Resonance</strong> — delocalization of π electrons across equivalent structures.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Shape and polarity of SF₄</p>
+              <p>Sulfur (group 16) has 6 valence electrons. SF₄ has 4 bonding pairs and 1 lone pair on S → 5 electron domains, so the electron geometry is trigonal bipyramidal. The lone pair occupies an equatorial position (minimum repulsion), giving a <strong>see-saw</strong> molecular shape. Hybridization is sp³d. The S–F bonds are polar (χ_F − χ_S = 4.0 − 2.58 = 1.42), and the asymmetric geometry leaves a net dipole, so SF₄ is polar.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Reporting electron geometry as molecular geometry when lone pairs are present.</li>
+              <li>Forgetting that lone pairs distort bond angles below the ideal value (104.5° in H₂O, not 109.5°).</li>
+              <li>Assuming a molecule with polar bonds is automatically polar — geometry matters.</li>
+              <li>Drawing a "triple bond" with three σ bonds; it is one σ + two π.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.4 — "explain the theory of valence shell electron pair repulsion (VSEPR), and predict the shapes of simple molecules and ions, using Lewis structures and VSEPR theory."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v5')">
@@ -518,6 +801,36 @@
         </div>
         <div class="subsection-label">📈 Periodic Trends</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The modern periodic table is arranged by increasing atomic number, with elements in the same group sharing the same valence-shell electron configuration and therefore similar chemical behaviour. Trends across a period and down a group are explained by two competing factors: the <strong>effective nuclear charge (\(Z_{\text{eff}}\))</strong> felt by valence electrons and the <strong>shielding</strong> by inner-shell electrons. \(Z_{\text{eff}} \approx Z - S\), where \(S\) is the shielding constant (Slater's rules).</p>
+            <p><strong>Atomic radius</strong> decreases left-to-right across a period (greater \(Z_{\text{eff}}\) pulls electrons in) and increases down a group (additional shells). <strong>First ionization energy (IE₁)</strong>, the energy to remove the highest-energy electron from a gaseous atom, increases across and decreases down — opposite to radius — though with small dips at group 13 (a p-electron is easier to remove than an s) and group 16 (the first p-orbital pair is destabilized by electron-electron repulsion). <strong>Electron affinity</strong> follows similar reasoning, with the most negative (most exothermic) values for the halogens. <strong>Electronegativity</strong> peaks at fluorine.</p>
+            <p>Metallic character (electron-losing tendency) opposes all of the above, increasing down and to the left. These trends rationalize the chemistry of the s-block (very reactive metals: alkalis, alkaline earths), p-block (variable, includes metalloids and most non-metals), d-block (transition metals: multiple oxidation states, coloured complexes, paramagnetism), and f-block (lanthanides and actinides).</p>
+            <ul>
+              <li><strong>\(Z_{\text{eff}}\)</strong> — effective nuclear charge felt by an electron.</li>
+              <li><strong>Shielding</strong> — inner electrons partially cancel the nuclear charge.</li>
+              <li><strong>Atomic radius</strong> — decreases ↗, increases ↓.</li>
+              <li><strong>Ionization energy</strong> — increases ↗, decreases ↓.</li>
+              <li><strong>Electronegativity</strong> — increases ↗, decreases ↓; F is highest.</li>
+              <li><strong>Isoelectronic species</strong> — same number of electrons; smaller atomic number → larger radius.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Ordering isoelectronic ions by radius</p>
+              <p>Arrange N³⁻, O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺ in order of increasing radius.</p>
+              <p>All six species have 10 electrons (isoelectronic with Ne). The species with the smallest nuclear charge has the largest radius because its 10 electrons feel the least pull. Nuclear charges: N=7, O=8, F=9, Na=11, Mg=12, Al=13. Therefore: Al³⁺ &lt; Mg²⁺ &lt; Na⁺ &lt; F⁻ &lt; O²⁻ &lt; N³⁻. (Approximate radii: 53, 72, 102, 133, 140, 146 pm.)</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Memorizing trend "rules" without understanding the \(Z_{\text{eff}}\) and shielding logic.</li>
+              <li>Forgetting the small dips in IE₁ at groups 13 and 16.</li>
+              <li>Treating cations and anions as the same size as their parent atoms — cations shrink, anions expand.</li>
+              <li>Comparing IE₁ across periods without accounting for the new shell.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "describe periodic trends in properties of elements (e.g., ionization energy, electronegativity, electron affinity, atomic radius, ionic radius), and predict their properties based on their position in the periodic table."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt3')">
                 <span class="vid-icon">📖</span>
@@ -573,6 +886,36 @@
         <div class="resource-group-label">📹 Video Lessons</div>
 
         <div class="subsection-label">🔥 Thermochemistry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Thermochemistry</strong> is the quantitative study of heat in chemical reactions. The <strong>first law of thermodynamics</strong> states \(\Delta U = q + w\), where \(q\) is heat absorbed by the system and \(w\) is work done on the system. At constant pressure (the usual lab condition), the heat is the change in <strong>enthalpy</strong>: \(q_p = \Delta H\). An <strong>exothermic</strong> reaction releases heat (ΔH &lt; 0); an <strong>endothermic</strong> reaction absorbs heat (ΔH &gt; 0). Heat transfer is measured by calorimetry using \(q = mc\Delta T\), where \(c\) is specific heat capacity (water: 4.18 J/(g·°C)).</p>
+            <p>Standard enthalpies of formation, \(\Delta H_f^\circ\) (kJ/mol, at 1 bar and stated T, usually 298 K), are tabulated for substances in their standard states; the value is zero for an element in its most stable form. The enthalpy of any reaction can be calculated from \(\Delta H_{\text{rxn}}^\circ = \sum n\Delta H_f^\circ(\text{products}) - \sum n\Delta H_f^\circ(\text{reactants})\). <strong>Hess's Law</strong> permits the algebraic combination of step reactions: enthalpy is a state function, so its change depends only on initial and final states. Bond-energy calculations \(\Delta H_{\text{rxn}} \approx \sum E(\text{bonds broken}) - \sum E(\text{bonds formed})\) give an approximate value when formation enthalpies are unavailable.</p>
+            <p>Thermochemical equations show ΔH alongside the balanced equation, with phases noted, e.g., \(CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(\ell), \;\Delta H = -890\,\text{kJ}\).</p>
+            <ul>
+              <li><strong>System / surroundings</strong> — region of interest / everything else.</li>
+              <li><strong>Enthalpy (\(H\))</strong> — heat content at constant pressure; units kJ or kJ/mol.</li>
+              <li><strong>Specific heat capacity (\(c\))</strong> — J/(g·°C).</li>
+              <li><strong>Heat of combustion / formation / neutralization</strong> — standard enthalpies for specific reactions.</li>
+              <li><strong>Hess's Law</strong> — ΔH is path-independent.</li>
+              <li><strong>State function</strong> — depends only on state, not path (H, U, S, G).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Hess's Law</p>
+              <p>Given (1) \(C(s) + O_2(g) \rightarrow CO_2(g)\), ΔH₁ = −393.5 kJ; (2) \(H_2(g) + \tfrac{1}{2}O_2(g) \rightarrow H_2O(\ell)\), ΔH₂ = −285.8 kJ; (3) \(CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(\ell)\), ΔH₃ = −890.4 kJ. Find ΔH for \(C(s) + 2H_2(g) \rightarrow CH_4(g)\) (the standard enthalpy of formation of methane).</p>
+              <p>Target = (1) + 2·(2) − (3): ΔH = −393.5 + 2(−285.8) − (−890.4) = −393.5 − 571.6 + 890.4 = <strong>−74.7 kJ/mol</strong>, matching the tabulated \(\Delta H_f^\circ\) of CH₄.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Sign errors: heat absorbed by the system is +q (endothermic); heat released, −q (exothermic).</li>
+              <li>Forgetting to multiply ΔH by the stoichiometric coefficient when scaling a reaction.</li>
+              <li>Confusing specific heat capacity (per gram) with molar heat capacity (per mole).</li>
+              <li>Treating bond-energy estimates as exact — they are average values over many compounds.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.3 — "solve problems related to enthalpy change in a chemical reaction (e.g., problems involving the application of Hess's law, calorimetry, and standard enthalpies of formation)."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v21')">
@@ -641,6 +984,36 @@
 
         <div class="subsection-label">⚡ Reaction Rates</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Chemical kinetics</strong> deals with the speed of reactions and the molecular pathways by which reactants become products. For a general reaction \(aA + bB \rightarrow cC + dD\), the <strong>rate</strong> is \(-\tfrac{1}{a}\tfrac{d[A]}{dt} = -\tfrac{1}{b}\tfrac{d[B]}{dt} = +\tfrac{1}{c}\tfrac{d[C]}{dt} = +\tfrac{1}{d}\tfrac{d[D]}{dt}\). The <strong>rate law</strong>, \(\text{rate} = k[A]^m[B]^n\), is determined experimentally. The exponents \(m\) and \(n\) are the orders with respect to each reactant; their sum is the overall order. \(k\) is the rate constant with units depending on the overall order.</p>
+            <p><strong>Collision theory</strong> states that for a reaction to occur, particles must collide with proper orientation and with kinetic energy ≥ the <strong>activation energy</strong> \(E_a\). The <strong>Arrhenius equation</strong> \(k = Ae^{-E_a/RT}\), or in linear form \(\ln k = \ln A - E_a/(RT)\), quantifies how rate constants depend on temperature: a 10 °C rise typically doubles or triples \(k\). A <strong>catalyst</strong> provides an alternative mechanism with a lower \(E_a\), increasing rate without being consumed. <strong>Reaction mechanisms</strong> are step-by-step molecular descriptions; the overall rate law is determined by the slowest step, the <strong>rate-determining step (RDS)</strong>. Reaction intermediates appear in the mechanism but cancel in the overall equation; catalysts appear in early steps and are regenerated.</p>
+            <p>Integrated rate laws relate concentration to time: zero order, \([A] = [A]_0 - kt\); first order, \(\ln[A] = \ln[A]_0 - kt\), half-life \(t_{1/2} = \ln 2 / k\); second order, \(1/[A] = 1/[A]_0 + kt\).</p>
+            <ul>
+              <li><strong>Rate constant (\(k\))</strong> — temperature-dependent proportionality.</li>
+              <li><strong>Activation energy (\(E_a\))</strong> — minimum kinetic energy required.</li>
+              <li><strong>Transition state / activated complex</strong> — high-energy arrangement at the peak.</li>
+              <li><strong>Intermediate</strong> — species formed and consumed during the mechanism.</li>
+              <li><strong>Catalyst</strong> — lowers \(E_a\); homogeneous (same phase) or heterogeneous.</li>
+              <li><strong>Elementary step</strong> — single-collision event; molecularity = unimolecular, bimolecular, termolecular.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Determining a rate law from initial rates</p>
+              <p>For \(2NO(g) + O_2(g) \rightarrow 2NO_2(g)\), data show: doubling [NO] (with [O₂] fixed) quadruples the rate; doubling [O₂] (with [NO] fixed) doubles the rate. Find the rate law.</p>
+              <p>Order in NO: \(2^m = 4 \Rightarrow m = 2\). Order in O₂: \(2^n = 2 \Rightarrow n = 1\). Rate law: \(\text{rate} = k[NO]^2[O_2]\); overall order 3. Units of \(k\): mol⁻²·L²·s⁻¹ (i.e., M⁻²s⁻¹).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Using stoichiometric coefficients as rate-law exponents — they are only equal for elementary steps.</li>
+              <li>Confusing the rate-determining (slowest) step with the most thermodynamically favourable step; ΔG and \(E_a\) are independent.</li>
+              <li>Forgetting to include the temperature in Arrhenius problems (T in kelvin).</li>
+              <li>Mistaking a catalyst for an intermediate; the catalyst appears in the first step and reappears in a later step.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "explain, with reference to collision theory and potential energy diagrams, how factors such as concentration, surface area, pressure, temperature, and the presence of a catalyst affect the rate of a chemical reaction."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v26')">
                 <span class="vid-icon">📖</span>
@@ -680,6 +1053,37 @@
             </div>
         </div>
         <div class="subsection-label">♻️ Entropy and Gibbs Free Energy</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Entropy (\(S\))</strong> is a measure of the dispersal of energy and matter among accessible microstates; the <strong>second law of thermodynamics</strong> states that the entropy of the universe increases in every spontaneous process: \(\Delta S_{\text{univ}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \gt 0\). Entropy increases with temperature (more populated states), with the conversion solid → liquid → gas (greater positional disorder), and with the production of more moles of gas. Standard molar entropies \(S^\circ\) (J/(mol·K)) are absolute (the third law of thermodynamics sets \(S = 0\) for a perfect crystal at 0 K).</p>
+            <p>For a process at constant temperature and pressure, the two driving forces — enthalpy decrease (system stabilization) and entropy increase — are combined into the <strong>Gibbs free energy</strong>: \(\Delta G = \Delta H - T\Delta S\). The sign of ΔG predicts spontaneity: ΔG &lt; 0, spontaneous (product-favoured); ΔG = 0, at equilibrium; ΔG &gt; 0, non-spontaneous in the forward direction. Four cases follow from the signs of ΔH and ΔS: (ΔH&lt;0, ΔS&gt;0) always spontaneous; (ΔH&gt;0, ΔS&lt;0) never spontaneous; (ΔH&lt;0, ΔS&lt;0) spontaneous below a crossover \(T = \Delta H / \Delta S\); (ΔH&gt;0, ΔS&gt;0) spontaneous above the crossover.</p>
+            <p>At equilibrium, \(\Delta G^\circ = -RT\ln K\), linking thermodynamics to the equilibrium constant. Under non-standard conditions, \(\Delta G = \Delta G^\circ + RT\ln Q\), with \(Q\) the reaction quotient.</p>
+            <ul>
+              <li><strong>Entropy (\(S\))</strong> — J/(mol·K); always \(\geq\) 0 for substances.</li>
+              <li><strong>Gibbs free energy (\(G\))</strong> — \(\Delta G = \Delta H - T\Delta S\); kJ/mol.</li>
+              <li><strong>Spontaneous</strong> — proceeds without continuous external input; says nothing about rate.</li>
+              <li><strong>Standard conditions</strong> — 1 bar (or 1 atm), 1 M, stated T (usually 298.15 K).</li>
+              <li><strong>Crossover temperature</strong> — \(T = \Delta H / \Delta S\) where ΔG = 0.</li>
+              <li><strong>Coupling reactions</strong> — pairing a non-spontaneous reaction with a strongly spontaneous one (basis of ATP-driven biochemistry).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: ΔG° = −RT ln K</p>
+              <p>For the reaction \(N_2O_4(g) \rightleftharpoons 2NO_2(g)\) at 298 K, ΔH° = +57.2 kJ/mol and ΔS° = +175.8 J/(mol·K). Find ΔG° and K.</p>
+              <p>ΔG° = ΔH° − TΔS° = 57.2 − (298)(0.1758) = 57.2 − 52.4 = +4.8 kJ/mol.</p>
+              <p>ln K = −ΔG°/(RT) = −4800 / (8.314 × 298) = −1.937, so K = e^(−1.937) = <strong>0.144</strong>. Reactant-favoured, as expected for a small positive ΔG°.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Mixing units: ΔH in kJ/mol and ΔS in J/(mol·K) — convert ΔS to kJ before combining.</li>
+              <li>Concluding a "spontaneous" reaction is necessarily fast — thermodynamics says nothing about rate (diamond → graphite is spontaneous but glacially slow).</li>
+              <li>Forgetting that ΔS_surr also depends on temperature: \(\Delta S_{\text{surr}} = -\Delta H_{\text{sys}}/T\).</li>
+              <li>Treating ΔG° as the same as ΔG — only equilibrium between standard states uses the standard value.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.7 — "explain, in terms of entropy and enthalpy, the energy changes involved in a chemical reaction, and explain how these factors determine whether the reaction is spontaneous."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt5')">
@@ -737,6 +1141,36 @@
 
         <div class="subsection-label">⚖️ Chemical Equilibrium</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A reversible reaction reaches <strong>dynamic equilibrium</strong> when the forward and reverse rates become equal and macroscopic concentrations stop changing; molecules continue to react in both directions. For \(aA + bB \rightleftharpoons cC + dD\), the equilibrium constant is \(K_c = \dfrac{[C]^c[D]^d}{[A]^a[B]^b}\). \(K_p\) uses partial pressures and \(K_p = K_c(RT)^{\Delta n}\) where Δn = moles of gas products − moles of gas reactants. Pure solids and pure liquids are omitted from K expressions because their effective concentration (activity) is 1.</p>
+            <p>The <strong>reaction quotient</strong> \(Q\) has the same form as \(K\) but is evaluated at any moment; comparing \(Q\) to \(K\) predicts the direction of shift (Q &lt; K: net forward; Q = K: at equilibrium; Q &gt; K: net reverse). <strong>Le Chatelier's principle</strong> qualitatively predicts the response of an equilibrium to a stress: increasing reactant concentration shifts to products; increasing pressure on a gas-phase system shifts toward fewer gas moles; raising temperature shifts in the endothermic direction. A catalyst does <em>not</em> shift equilibrium — it only changes the time required to reach it.</p>
+            <p>An <strong>ICE table</strong> (Initial, Change, Equilibrium) is the standard tool for quantitative equilibrium problems. When \(K\) is very small, the "5% approximation" \([A] \approx [A]_0\) often simplifies the algebra; check that the approximation is valid by ensuring x &lt; 5% of [A]₀.</p>
+            <ul>
+              <li><strong>Dynamic equilibrium</strong> — forward rate = reverse rate; [reactants] and [products] constant.</li>
+              <li><strong>Equilibrium constant (\(K\))</strong> — unitless; depends only on temperature.</li>
+              <li><strong>Reaction quotient (\(Q\))</strong> — same form as K, evaluated at any moment.</li>
+              <li><strong>Le Chatelier's principle</strong> — system shifts to partially offset a stress.</li>
+              <li><strong>Homogeneous</strong> (single phase) vs <strong>heterogeneous</strong> equilibrium.</li>
+              <li><strong>Common-ion effect</strong> — adding an ion already in the equilibrium suppresses the reaction.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Calculating K_c from initial concentrations</p>
+              <p>For \(H_2(g) + I_2(g) \rightleftharpoons 2HI(g)\) at 698 K, initial \([H_2]_0 = [I_2]_0 = 0.0500\) M, [HI]₀ = 0. At equilibrium, [HI] = 0.0786 M. Find K_c.</p>
+              <p>ICE table: change in HI is +0.0786, so x = 0.0393 (since 2x = 0.0786). Equilibrium [H₂] = [I₂] = 0.0500 − 0.0393 = 0.0107 M. \(K_c = \dfrac{(0.0786)^2}{(0.0107)(0.0107)} = \dfrac{0.00618}{1.145\times 10^{-4}} = \mathbf{54.0}\), consistent with the tabulated value.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Including pure solids or liquids in the K expression.</li>
+              <li>Forgetting to raise concentrations to their stoichiometric powers.</li>
+              <li>Concluding a catalyst changes K — it does not.</li>
+              <li>Using the 5% approximation without checking its validity; if x exceeds 5% of [A]₀, solve the quadratic.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "solve problems involving the equilibrium constant expression (K_c) and the concentrations of reactants and products in a chemical reaction."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v29')">
                 <span class="vid-icon">📖</span>
@@ -790,6 +1224,37 @@
         </div>
 
         <div class="subsection-label">🧪 Acid-Base Chemistry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>Brønsted-Lowry definition</strong> identifies an acid as a proton (H⁺) donor and a base as a proton acceptor. In water, the autoionization \(2H_2O \rightleftharpoons H_3O^+ + OH^-\) gives \(K_w = [H_3O^+][OH^-] = 1.0 \times 10^{-14}\) at 25 °C, so pure water has pH = 7. <strong>pH</strong> is defined as \(-\log_{10}[H_3O^+]\), and pOH analogously; \(\text{pH} + \text{pOH} = 14\).</p>
+            <p>Strong acids (HCl, HBr, HI, HClO₄, HNO₃, H₂SO₄ in the first dissociation) ionize completely; their concentration equals [H₃O⁺]. Weak acids ionize only partly: \(HA + H_2O \rightleftharpoons H_3O^+ + A^-\), with \(K_a = [H_3O^+][A^-]/[HA]\). Larger \(K_a\) (smaller \(pK_a\)) means a stronger acid. Polyprotic acids ionize stepwise with successively smaller \(K_a\) values. For a conjugate acid/base pair, \(K_a \cdot K_b = K_w\) and \(pK_a + pK_b = 14\).</p>
+            <p>Acid-base <strong>titration</strong> follows the pH as a base is added to an acid (or vice versa). At the <strong>equivalence point</strong>, moles of acid = moles of base; pH at equivalence depends on the salt formed (strong-strong: 7; weak acid-strong base: &gt; 7; strong acid-weak base: &lt; 7). The <strong>half-equivalence point</strong> for a weak acid titrated with strong base is where [HA] = [A⁻] and pH = pK_a — a powerful way to determine pK_a graphically.</p>
+            <ul>
+              <li><strong>Brønsted-Lowry acid / base</strong> — proton donor / acceptor.</li>
+              <li><strong>Conjugate pair</strong> — HA / A⁻ differing by one H⁺.</li>
+              <li><strong>K_a, pK_a</strong> — acid dissociation constant and its negative log.</li>
+              <li><strong>K_w</strong> = 1.0 × 10⁻¹⁴ at 25 °C.</li>
+              <li><strong>Amphiprotic / amphoteric</strong> — can act as either acid or base (e.g., HCO₃⁻, H₂O).</li>
+              <li><strong>Equivalence point</strong> ≠ <strong>endpoint</strong>; the latter is where the indicator changes colour.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: pH of a weak acid</p>
+              <p>Find the pH of 0.100 M ethanoic acid (CH₃COOH), \(K_a = 1.8 \times 10^{-5}\).</p>
+              <p>Let x = [H₃O⁺] formed. \(K_a = \dfrac{x \cdot x}{0.100 - x} \approx \dfrac{x^2}{0.100} = 1.8\times 10^{-5}\) (5% approximation valid since K_a is small).</p>
+              <p>x² = 1.8 × 10⁻⁶, x = 1.34 × 10⁻³ M. Check: 1.34 × 10⁻³ / 0.100 = 1.3% &lt; 5%. So pH = −log(1.34 × 10⁻³) = <strong>2.87</strong>.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Treating weak acids as fully dissociated — only strong acids ionize 100%.</li>
+              <li>Forgetting the water contribution to [H₃O⁺] in very dilute (≤ 10⁻⁶ M) solutions.</li>
+              <li>Confusing K_a (acid) with K_b (its conjugate base) — their product is K_w.</li>
+              <li>Reading pH = pK_a as "equivalence point"; it is the half-equivalence point in a weak-acid titration.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.7 — "describe, using the Brønsted-Lowry theory, the behaviour of acids (e.g., HCl, H₂SO₄, HNO₃, CH₃COOH) and bases (e.g., NaOH, NH₃) in aqueous solution."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('v33')">
@@ -871,6 +1336,36 @@
 
         <div class="subsection-label">🧪 Buffers &amp; Henderson-Hasselbalch</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>buffer</strong> is an aqueous solution that resists changes in pH on the addition of small amounts of acid or base. It consists of a weak conjugate acid-base pair in roughly equal concentrations — typically a weak acid HA and its conjugate base A⁻, or a weak base B and its conjugate acid BH⁺. When acid is added, the base component neutralizes it (\(A^- + H_3O^+ \rightarrow HA + H_2O\)); when base is added, the acid component neutralizes it (\(HA + OH^- \rightarrow A^- + H_2O\)). The pH changes only slightly because the ratio [A⁻]/[HA] changes only slightly.</p>
+            <p>The <strong>Henderson–Hasselbalch equation</strong>, \(\text{pH} = pK_a + \log\dfrac{[A^-]}{[HA]}\), expresses the buffer pH directly from the conjugate-base-to-acid ratio. When [A⁻] = [HA], pH = pK_a — the centre of the buffering region. A buffer is generally effective within ±1 pH unit of pK_a (ratio between 1:10 and 10:1). <strong>Buffer capacity</strong> is the amount of strong acid or base that can be added before the buffer's pH changes significantly; it scales with the absolute concentration of the buffer components.</p>
+            <p>Buffers are essential in biological systems — blood is buffered near pH 7.40 by the H₂CO₃ / HCO₃⁻ system, with respiratory regulation of pCO₂ providing fine control. In the laboratory, phosphate and Tris buffers are common. Industrially, buffered solutions are used in pharmaceuticals, electroplating, fermentation, and water treatment.</p>
+            <ul>
+              <li><strong>Buffer</strong> — weak conjugate acid/base pair in similar concentrations.</li>
+              <li><strong>Buffer region</strong> — pH ≈ pK_a ± 1.</li>
+              <li><strong>Buffer capacity</strong> — moles of strong acid/base absorbed per unit pH change.</li>
+              <li><strong>Henderson-Hasselbalch</strong> — \(\text{pH} = pK_a + \log([A^-]/[HA])\).</li>
+              <li><strong>Common-ion effect</strong> — addition of A⁻ to HA suppresses HA ionization.</li>
+              <li><strong>Biological buffer</strong> — H₂CO₃/HCO₃⁻ (blood), H₂PO₄⁻/HPO₄²⁻ (intracellular).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Designing a pH 4.74 acetate buffer</p>
+              <p>Acetic acid has pK_a = 4.74. You wish to prepare 500 mL of a buffer at pH 4.74 using 0.10 M CH₃COOH and 0.10 M CH₃COONa stock solutions.</p>
+              <p>Setting pH = pK_a in Henderson-Hasselbalch gives [A⁻]/[HA] = 1, so mix equal volumes — 250 mL of each stock. Now suppose 10.0 mL of 0.10 M HCl (1.0 mmol H⁺) is added. The acetate converts: moles HA become (50 + 1) = 51 mmol; moles A⁻ become (50 − 1) = 49 mmol. New pH = 4.74 + log(49/51) = 4.74 − 0.017 = <strong>4.72</strong> — virtually unchanged.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Inverting the H-H ratio — base goes on top, acid on the bottom.</li>
+              <li>Using H-H for a strong acid/strong base mixture (no buffer forms).</li>
+              <li>Treating ratios in moles vs concentrations inconsistently — when both species are in the same solution, mole ratio = concentration ratio.</li>
+              <li>Forgetting that adding water dilutes a buffer's <em>capacity</em> (but not its pH).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.8 — "explain the importance of buffers and the role they play in maintaining equilibrium in physical and biological systems (e.g., human blood, oceans)."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt17')">
                 <span class="vid-icon">📖</span>
@@ -914,6 +1409,37 @@
 
         <div class="subsection-label">⚡ Oxidation-Reduction Reactions</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Oxidation-reduction (redox) reactions</strong> involve transfer of electrons. <strong>Oxidation</strong> is loss of electrons (OIL), an increase in oxidation number; <strong>reduction</strong> is gain of electrons (RIG), a decrease in oxidation number — mnemonic "OIL RIG." Because electrons cannot be lost without being gained, every redox reaction couples an oxidation half-reaction with a reduction half-reaction. The species being oxidized is the <strong>reducing agent</strong> (it donates electrons), and the species being reduced is the <strong>oxidizing agent</strong>.</p>
+            <p>To balance a redox equation in <strong>acidic solution</strong>: (1) write the two half-reactions; (2) balance atoms other than O and H; (3) balance O by adding H₂O; (4) balance H by adding H⁺; (5) balance charge by adding electrons; (6) multiply each half-reaction so the electrons cancel, and add. In <strong>basic solution</strong>, follow the same procedure, then add OH⁻ to both sides to neutralize all H⁺, combine to give H₂O, and cancel. Common oxidizing agents include MnO₄⁻ (purple → colourless or brown MnO₂), Cr₂O₇²⁻ (orange → green Cr³⁺), H₂O₂, and the halogens; common reducing agents include active metals (Zn, Fe), C, H₂, and reduced organic groups (–CHO).</p>
+            <p>Redox underpins respiration (glucose → CO₂), photosynthesis (reverse), combustion, metallurgy (smelting), corrosion, batteries, and electroplating.</p>
+            <ul>
+              <li><strong>Oxidation number</strong> — formal charge if all bonds were ionic.</li>
+              <li><strong>Oxidation</strong> — loss of e⁻; oxidation number increases.</li>
+              <li><strong>Reduction</strong> — gain of e⁻; oxidation number decreases.</li>
+              <li><strong>Half-reaction</strong> — shows one of oxidation or reduction with explicit electrons.</li>
+              <li><strong>Disproportionation</strong> — same species both oxidized and reduced (e.g., 2H₂O₂ → 2H₂O + O₂).</li>
+              <li><strong>Spectator ion</strong> — appears unchanged on both sides; not part of the redox change.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Balancing MnO₄⁻ + Fe²⁺ in acidic solution</p>
+              <p>Reduction: \(MnO_4^- + 8H^+ + 5e^- \rightarrow Mn^{2+} + 4H_2O\).</p>
+              <p>Oxidation: \(Fe^{2+} \rightarrow Fe^{3+} + e^-\) — multiply by 5: \(5Fe^{2+} \rightarrow 5Fe^{3+} + 5e^-\).</p>
+              <p>Add and cancel 5 e⁻: \(\mathbf{MnO_4^- + 8H^+ + 5Fe^{2+} \rightarrow Mn^{2+} + 5Fe^{3+} + 4H_2O}\). Check: charges (−1 + 8 + 10 = +17 = +2 + 15 + 0). Balanced.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Forgetting to balance charge before adding electrons.</li>
+              <li>Confusing oxidizing agent (gets reduced) with oxidized species (the one losing e⁻).</li>
+              <li>Mis-assigning oxidation numbers — remember peroxides (O = −1), superoxides (O = −½), and metal hydrides (H = −1).</li>
+              <li>Failing to convert acidic to basic balancing by simply changing "H⁺ → OH⁻" — you must add OH⁻ and combine with H⁺ to give H₂O.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.2 — "use appropriate procedures and tools to balance equations for redox reactions, using oxidation numbers and the half-reaction method, in both acidic and basic solutions."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt7')">
                 <span class="vid-icon">📖</span>
@@ -928,6 +1454,37 @@
         </div>
 
         <div class="subsection-label">🔋 Galvanic (Voltaic) Cells</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>galvanic (voltaic) cell</strong> converts the chemical energy of a spontaneous redox reaction into electrical work. It is constructed from two <strong>half-cells</strong> — each an electrode dipped in an electrolyte — connected by an external wire (for electron flow) and a salt bridge (for ion flow that maintains electroneutrality). The electrode where oxidation occurs is the <strong>anode</strong> (negative terminal in a galvanic cell); the electrode where reduction occurs is the <strong>cathode</strong> (positive terminal). Electrons flow externally from anode to cathode. The mnemonic "AN OX, RED CAT" pairs anode with oxidation and cathode with reduction.</p>
+            <p>The <strong>cell potential</strong>, \(E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}\), is calculated from standard reduction potentials \(E^\circ\) (V), tabulated against the standard hydrogen electrode (SHE = 0.000 V by definition). A positive \(E^\circ_{\text{cell}}\) means the reaction is spontaneous as written. The free-energy link is \(\Delta G^\circ = -nFE^\circ_{\text{cell}}\), with \(F = 96\,485\,\text{C/mol}\) and n = moles of electrons transferred per cycle. Under non-standard conditions the <strong>Nernst equation</strong> applies: \(E = E^\circ - \dfrac{RT}{nF}\ln Q = E^\circ - \dfrac{0.0592}{n}\log Q\) at 25 °C.</p>
+            <p>Practical examples include the Daniell cell (Zn|Zn²⁺‖Cu²⁺|Cu, E° ≈ +1.10 V), the lead-acid car battery (Pb / PbO₂, 2.04 V/cell), the alkaline dry cell (Zn / MnO₂, 1.5 V), and the lithium-ion cell (Li-graphite / LiCoO₂, ~3.7 V).</p>
+            <ul>
+              <li><strong>Anode</strong> — oxidation; negative in galvanic cells.</li>
+              <li><strong>Cathode</strong> — reduction; positive in galvanic cells.</li>
+              <li><strong>Salt bridge</strong> — maintains electroneutrality; ions migrate to balance charge build-up.</li>
+              <li><strong>Standard reduction potential (\(E^\circ\))</strong> — V vs SHE; intensive (not multiplied when scaling).</li>
+              <li><strong>Faraday's constant</strong> — F = 96,485 C/mol of electrons.</li>
+              <li><strong>Nernst equation</strong> — corrects E° for non-standard concentrations.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Daniell cell EMF and ΔG°</p>
+              <p>For Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s): E°(Cu²⁺/Cu) = +0.34 V; E°(Zn²⁺/Zn) = −0.76 V.</p>
+              <p>E°_cell = E°_cathode − E°_anode = (+0.34) − (−0.76) = <strong>+1.10 V</strong>. With n = 2:</p>
+              <p>ΔG° = −nFE° = −(2)(96,485)(1.10) = −212,267 J/mol = <strong>−212 kJ/mol</strong>. Strongly product-favoured, consistent with the spontaneous corrosion of zinc in copper sulfate solution.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Swapping anode and cathode signs — in galvanic cells, anode is negative; in electrolytic cells, anode is positive.</li>
+              <li>Multiplying E° values when balancing electrons — E° is intensive, do not scale.</li>
+              <li>Confusing electron flow (in the wire) with ion flow (in solution and salt bridge).</li>
+              <li>Forgetting that adding inert electrolyte changes Q but not the species in the reaction.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.4 — "describe the structure and function of galvanic cells (e.g., dry cells, alkaline batteries, lead-acid batteries, fuel cells) and predict the spontaneity of redox reactions using a table of standard reduction potentials."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt8')">
@@ -944,6 +1501,39 @@
 
         <div class="subsection-label">🔌 Electrolytic Cells &amp; Faraday's Laws</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <strong>electrolytic cell</strong> uses electrical energy from an external source (a power supply) to drive a non-spontaneous redox reaction (ΔG &gt; 0, E°_cell &lt; 0). The geometry resembles a galvanic cell, but with crucial sign reversals: the <strong>anode is positive</strong> (connected to the + terminal of the battery, attracting anions which are oxidized) and the <strong>cathode is negative</strong> (attracting cations which are reduced). Electrons still flow externally from anode to cathode through the wire — this is invariant.</p>
+            <p><strong>Faraday's first law of electrolysis</strong>: the mass of substance produced or consumed at an electrode is directly proportional to the charge passed. <strong>Faraday's second law</strong>: when the same charge is passed through different electrolytes, the masses produced are proportional to their equivalent masses (molar mass / n, where n is the number of electrons per ion). The quantitative relationship is \(\text{mol of product} = \dfrac{I \cdot t}{n F}\), where I is current (A), t is time (s), F is Faraday's constant (96,485 C/mol e⁻), and n is the electron transfer per formula unit.</p>
+            <p>Industrial applications include electroplating (depositing metals such as Cu, Ag, Au, Cr, Zn for corrosion protection and appearance), electrorefining (purification of Cu to ≥ 99.99%), chlor-alkali process (NaCl(aq) → Cl₂ + H₂ + NaOH), and the Hall-Héroult process (electrolysis of Al₂O₃ dissolved in molten cryolite to extract aluminum at ≈ 950 °C).</p>
+            <ul>
+              <li><strong>Electrolysis</strong> — using electricity to drive a non-spontaneous reaction.</li>
+              <li><strong>Anode (electrolytic cell)</strong> — positive electrode; oxidation.</li>
+              <li><strong>Cathode (electrolytic cell)</strong> — negative electrode; reduction.</li>
+              <li><strong>Charge</strong> — \(Q = It\) in coulombs.</li>
+              <li><strong>Faraday's constant</strong> — F = 96,485 C/mol of electrons.</li>
+              <li><strong>Electrolyte</strong> — molten salt or aqueous solution containing mobile ions.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Mass of copper plated by electrolysis</p>
+              <p>A current of 2.50 A flows through a CuSO₄(aq) solution for 30.0 minutes. What mass of copper is deposited on the cathode? (Cu²⁺ + 2e⁻ → Cu; M(Cu) = 63.55 g/mol).</p>
+              <p>Charge: Q = It = (2.50 A)(30.0 × 60 s) = 4500 C.</p>
+              <p>Moles of e⁻: 4500 / 96,485 = 0.04664 mol e⁻.</p>
+              <p>Moles of Cu: 0.04664 / 2 = 0.02332 mol (n = 2).</p>
+              <p>Mass: 0.02332 × 63.55 = <strong>1.48 g Cu</strong>.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Mixing up anode and cathode polarity between galvanic and electrolytic cells. Anode is always oxidation, cathode always reduction; only the sign convention flips.</li>
+              <li>Forgetting to divide by n (electrons per formula unit) when converting moles of e⁻ to moles of product.</li>
+              <li>Using minutes or hours directly without converting time to seconds.</li>
+              <li>Ignoring competing electrolysis reactions in aqueous solutions (e.g., water oxidation/reduction may occur instead of the dissolved ion).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.5 — "describe the structure and function of electrolytic cells, and explain how they differ from galvanic cells, including a description of the relationship between current, time, and mass of substance produced (i.e., Faraday's law of electrolysis)."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt9')">
                 <span class="vid-icon">📖</span>
@@ -958,6 +1548,36 @@
         </div>
 
         <div class="subsection-label">🦠 Corrosion &amp; Prevention</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Corrosion</strong> is the spontaneous deterioration of metal by environmental redox reactions. Iron and steel corrode through a coupled electrochemical mechanism in the presence of water and oxygen: an anodic region oxidizes Fe → Fe²⁺ + 2e⁻ (E° = −0.44 V), and a cathodic region reduces O₂ + 2H₂O + 4e⁻ → 4OH⁻ (E° = +0.40 V), giving an overall E° ≈ +0.84 V — strongly spontaneous. The Fe²⁺ ions diffuse, are further oxidized to Fe³⁺ by O₂, and precipitate as hydrated iron(III) oxide, Fe₂O₃·nH₂O (rust). Salt (NaCl on roads or in sea air) accelerates corrosion by increasing electrolyte conductivity, allowing the anode-cathode current loop to operate over a larger area.</p>
+            <p><strong>Corrosion prevention</strong> works by interrupting one of the requirements (metal, water, oxygen, electrolyte). Strategies include: (i) <em>barrier coatings</em> — paint, plastic, oil, or chromate conversion — which physically exclude water/O₂; (ii) <em>galvanizing</em> — coating with zinc, which acts as a <strong>sacrificial anode</strong> because Zn (E° = −0.76 V) oxidizes preferentially to Fe and even protects scratched areas; (iii) <em>cathodic protection</em> — connecting a more active metal (Zn, Mg, Al) to the structure (used on pipelines, ship hulls, buried tanks); (iv) <em>impressed current</em> — an external DC source maintains the protected metal as a cathode; (v) <em>alloying</em> — stainless steel (≥ 10.5% Cr) forms a self-passivating Cr₂O₃ film; (vi) <em>tin-plating</em> — works only as a barrier (Sn is less active than Fe, so it cannot protect sacrificially; scratched tin cans actually rust faster).</p>
+            <p>STSE relevance includes infrastructure costs (NACE International estimates corrosion at 3–4% of global GDP), bridge collapses, aircraft safety, and the durability of green-energy systems.</p>
+            <ul>
+              <li><strong>Rust</strong> — hydrated iron(III) oxide, Fe₂O₃·nH₂O.</li>
+              <li><strong>Sacrificial anode</strong> — more active metal oxidized in place of the protected one.</li>
+              <li><strong>Cathodic protection</strong> — forcing the metal to be the cathode (no oxidation).</li>
+              <li><strong>Galvanizing</strong> — coating Fe with Zn (sacrificial).</li>
+              <li><strong>Passivation</strong> — formation of a protective oxide layer (Al₂O₃ on aluminum, Cr₂O₃ on stainless steel).</li>
+              <li><strong>Anodizing</strong> — electrolytically thickening the oxide layer on aluminum.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Why does zinc protect iron?</p>
+              <p>Compare E° values: E°(Zn²⁺/Zn) = −0.76 V; E°(Fe²⁺/Fe) = −0.44 V. The more negative reduction potential means Zn is the stronger reducing agent — it oxidizes more easily than Fe.</p>
+              <p>If Zn is in electrical contact with Fe in the presence of water and O₂, the redox reaction \(Zn + Fe^{2+} \rightarrow Zn^{2+} + Fe\) has E°_cell = (−0.44) − (−0.76) = +0.32 V &gt; 0. Zn donates electrons preferentially, leaving Fe untouched. As long as Zn remains, Fe is protected — even at scratches in the coating, because the entire Fe surface is held at the cathodic potential.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Claiming tin protects iron sacrificially — it does not. Tin protects only as a barrier; scratched tin-plated steel rusts faster than bare steel.</li>
+              <li>Confusing passivation (a thin protective oxide) with general rusting.</li>
+              <li>Believing dry air alone causes rust — both H₂O and O₂ are required.</li>
+              <li>Selecting an anode metal less active than the one being protected.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F1.1 — "analyse, on the basis of research, the importance of an electrochemical technology (e.g., production of metals, fuel cells, sacrificial anodes) to society and the environment."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt10')">
@@ -974,6 +1594,37 @@
 
         <div class="subsection-label">🔢 Oxidation Numbers</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <strong>oxidation number</strong> (oxidation state) is the formal charge an atom would have if every bond in the molecule were treated as ionic, with the more electronegative atom taking the shared electrons. It is a bookkeeping device for tracking electron transfer in redox reactions and need not equal the real partial charge on the atom.</p>
+            <p>Assigning oxidation numbers follows a hierarchy of rules: (1) Elements in their standard states have ON = 0 (e.g., Na, Cl₂, O₂, P₄, S₈); (2) Monatomic ions: ON = ionic charge (e.g., Na⁺ is +1, S²⁻ is −2); (3) Group 1 metals are always +1, group 2 metals are always +2 in compounds; (4) Aluminum is +3; (5) Fluorine is always −1 in compounds; (6) Hydrogen is +1 with non-metals and −1 with metals (hydrides like NaH); (7) Oxygen is −2 in most compounds, but −1 in peroxides (H₂O₂, Na₂O₂), −½ in superoxides (KO₂), and +2 in OF₂; (8) The sum of all ON's equals the overall charge — zero for neutral molecules, the ionic charge for polyatomic ions. When in doubt, work outward from the well-defined atoms (alkali metals, halogens, oxygen, hydrogen) to find unknowns.</p>
+            <p>Redox reactions can be identified by changes in ON: any atom whose oxidation number changes between reactants and products has been oxidized (ON increases) or reduced (ON decreases). Reactions in which ON's do not change are <em>not</em> redox.</p>
+            <ul>
+              <li><strong>Oxidation number</strong> — formal charge as if all bonds were ionic.</li>
+              <li><strong>Group 1 metals</strong> — always +1; <strong>Group 2</strong> — always +2.</li>
+              <li><strong>Fluorine</strong> — always −1 in compounds.</li>
+              <li><strong>Oxygen</strong> — usually −2; −1 in peroxides; +2 in OF₂.</li>
+              <li><strong>Hydrogen</strong> — +1 with non-metals; −1 in metal hydrides.</li>
+              <li><strong>Sum rule</strong> — total ON = overall charge.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Oxidation number of S in S₂O₃²⁻</p>
+              <p>For the thiosulfate ion S₂O₃²⁻: 3 oxygens at −2 each gives −6. The total charge is −2, so the two S atoms together must contribute +4, meaning each S has an average ON of +2.</p>
+              <p>(In the actual structure, the two sulfurs have different oxidation numbers — one central S at +5 and one terminal S at −1 — but the "average" +2 is what bulk redox bookkeeping uses.)</p>
+              <p>Compare with sulfate SO₄²⁻: 4 O × (−2) = −8, total charge −2, so S = +6 — fully oxidized.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Treating ON as the actual ionic charge on an atom in a covalent molecule.</li>
+              <li>Forgetting the exceptions: peroxides (O = −1), superoxides (O = −½), metal hydrides (H = −1), OF₂ (O = +2).</li>
+              <li>Assigning ON to elements in the standard state as anything other than zero.</li>
+              <li>Not letting the sum of ON's equal the species' total charge (zero for neutral, ionic charge for ions).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.1 — "explain the difference between oxidation and reduction with reference to the loss and gain of electrons, and use oxidation numbers to identify the substances oxidized and reduced in redox reactions."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt11')">
                 <span class="vid-icon">📖</span>
@@ -988,6 +1639,40 @@
         </div>
 
         <div class="subsection-label">📝 Cell Notation &amp; Diagrams</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Cell notation</strong> (also called line or shorthand notation) is the IUPAC-standardized way to describe an electrochemical cell in one line of text. The convention places the <strong>anode on the left</strong> and the <strong>cathode on the right</strong>, separated by a salt bridge represented as a double vertical bar "‖". A single vertical bar "|" denotes a phase boundary (e.g., between solid metal and its aqueous ion), and commas separate species in the same phase. For example, the Daniell cell is written:</p>
+            <p>\(\text{Zn(s)} \mid \text{Zn}^{2+}(\text{aq, 1 M}) \;\|\; \text{Cu}^{2+}(\text{aq, 1 M}) \mid \text{Cu(s)}\)</p>
+            <p>Reading left to right: zinc metal (the anode) is oxidized to Zn²⁺; electrons travel through the external circuit; Cu²⁺ is reduced to copper metal at the cathode. Cells with no inert metal include an <strong>inert electrode</strong> such as platinum or graphite, separated by a comma from the redox-active species in solution. For example, the Fe²⁺/Fe³⁺ couple paired with a hydrogen electrode is:</p>
+            <p>\(\text{Pt(s)} \mid \text{H}_2(\text{g, 1 bar}) \mid \text{H}^+(\text{aq, 1 M}) \;\|\; \text{Fe}^{3+}(\text{aq}), \text{Fe}^{2+}(\text{aq}) \mid \text{Pt(s)}\)</p>
+            <p>Concentrations or pressures may be specified in parentheses after each species when non-standard. A complete cell diagram should also show the direction of electron flow (anode → cathode externally), ion migration through the salt bridge (cations toward the cathode compartment, anions toward the anode), and the half-reaction at each electrode.</p>
+            <ul>
+              <li><strong>Single bar</strong> "|" — phase boundary.</li>
+              <li><strong>Double bar</strong> "‖" — salt bridge.</li>
+              <li><strong>Comma</strong> "," — same phase, different species.</li>
+              <li><strong>Anode on left</strong>, <strong>cathode on right</strong> by convention.</li>
+              <li><strong>Inert electrode</strong> — Pt or graphite, used when neither half-cell species is a solid metal.</li>
+              <li><strong>Standard state</strong> — 1 M aqueous, 1 bar gases, pure solid/liquid, 25 °C unless stated.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Writing cell notation</p>
+              <p>An aluminum electrode in 1.0 M Al(NO₃)₃ is connected through a salt bridge to a silver electrode in 1.0 M AgNO₃. E°(Al³⁺/Al) = −1.66 V; E°(Ag⁺/Ag) = +0.80 V.</p>
+              <p>Identify the anode (lower E°): Al, oxidized as Al → Al³⁺ + 3e⁻. Cathode: Ag, reduced as Ag⁺ + e⁻ → Ag.</p>
+              <p>Cell notation: \(\text{Al(s)} \mid \text{Al}^{3+}(\text{aq, 1 M}) \;\|\; \text{Ag}^+(\text{aq, 1 M}) \mid \text{Ag(s)}\).</p>
+              <p>E°_cell = (+0.80) − (−1.66) = <strong>+2.46 V</strong>. Spontaneous.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Putting the cathode on the left — convention is always anode | left, cathode | right.</li>
+              <li>Using a single bar instead of the double bar for the salt bridge.</li>
+              <li>Forgetting to include an inert electrode when no half-cell species is itself a solid conductor (e.g., Fe²⁺/Fe³⁺ needs Pt).</li>
+              <li>Omitting concentrations under non-standard conditions, making Nernst-equation calculations impossible.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "draw labelled diagrams to represent the components of galvanic and electrolytic cells (e.g., anode, cathode, salt bridge, direction of electron flow, sign of electrodes, products of oxidation and reduction)."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt12')">
@@ -1004,6 +1689,39 @@
 
         <div class="subsection-label">⚖️ Faraday's Second Law</div>
 
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Michael Faraday's quantitative work on electrolysis (1832–1834) produced two laws that underlie modern electrochemistry. <strong>Faraday's first law</strong> states that the mass of substance produced (or consumed) at an electrode is proportional to the quantity of electric charge passed: \(m \propto Q = I \cdot t\). <strong>Faraday's second law</strong> states that, for a given amount of electric charge, the masses of different substances deposited or liberated are proportional to their <strong>equivalent masses</strong> (molar mass divided by the number of electrons per ion). In modern form: \(m = \dfrac{M \cdot I \cdot t}{n F}\), where M is molar mass (g/mol), n is electrons per formula unit, and F = 96 485 C/mol.</p>
+            <p>The practical implication is that, if the same current flows through several electrolytic cells in <strong>series</strong> (so each cell sees identical charge), the moles of metal deposited in each cell are in the ratio 1/n. For example, with the same charge: passing through Ag⁺ (n = 1), Cu²⁺ (n = 2), and Al³⁺ (n = 3), the molar ratio of deposited metals is 6 : 3 : 2 (Ag : Cu : Al). The mass ratio uses molar masses: \(\dfrac{M_{Ag}}{1} : \dfrac{M_{Cu}}{2} : \dfrac{M_{Al}}{3}\) = 107.9 : 31.8 : 9.0.</p>
+            <p>These laws permit precise current measurement (coulometry), electroplating thickness control, and the metallurgical recovery of metals such as copper (refining), aluminum (Hall-Héroult), and sodium (Downs cell). They also gave the first reliable estimate of Avogadro's number once the elementary charge was known.</p>
+            <ul>
+              <li><strong>Equivalent mass</strong> — M / n (g per mole of electrons).</li>
+              <li><strong>Faraday's first law</strong> — \(m \propto Q\).</li>
+              <li><strong>Faraday's second law</strong> — \(m \propto M/n\) for a given Q.</li>
+              <li><strong>Coulomb</strong> — SI unit of charge; 1 C = 1 A · 1 s.</li>
+              <li><strong>Mole of electrons</strong> — 1 F = 96,485 C.</li>
+              <li><strong>Cells in series</strong> — same current, therefore same charge through each.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Comparing masses deposited from Ag and Cu cells in series</p>
+              <p>A current of 3.00 A flows for 60.0 minutes through two electrolytic cells connected in series — one containing AgNO₃, the other CuSO₄. Find the masses of Ag (M = 107.87 g/mol, n = 1) and Cu (M = 63.55 g/mol, n = 2) deposited.</p>
+              <p>Q = It = (3.00)(3600) = 10,800 C. Moles of e⁻ = 10,800 / 96,485 = 0.1119 mol e⁻.</p>
+              <p>Ag: moles = 0.1119, mass = 0.1119 × 107.87 = <strong>12.07 g Ag</strong>.</p>
+              <p>Cu: moles = 0.1119 / 2 = 0.0560, mass = 0.0560 × 63.55 = <strong>3.56 g Cu</strong>.</p>
+              <p>Mass ratio Ag : Cu = 12.07 : 3.56 ≈ 3.39, matching the ratio of equivalent masses M_Ag / (M_Cu/2) = 107.87 / 31.78 = 3.39.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Treating cells in parallel as series — in parallel, each cell sees only part of the current.</li>
+              <li>Forgetting that n is electrons <em>per formula unit</em> of the deposited substance — for Cl₂ gas (2Cl⁻ → Cl₂ + 2e⁻), n = 2 per Cl₂ molecule.</li>
+              <li>Using minutes or hours directly in Q = It instead of converting to seconds.</li>
+              <li>Comparing moles when the question asks for mass (or vice versa).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.5 — "solve problems related to electrolytic cells involving the quantity of charge transferred, current, time, and the amounts of substance produced or consumed (e.g., using Faraday's law of electrolysis)."</p>
+          </div>
+        </details>
+
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt13')">
                 <span class="vid-icon">📖</span>
@@ -1018,6 +1736,37 @@
         </div>
 
         <div class="subsection-label">🏭 Industrial Electrochemistry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Electrochemistry sits at the heart of several of the largest industrial processes on Earth, particularly those that produce metals, chlorine, and energy storage devices. The <strong>Hall–Héroult process</strong> (independently developed by Charles Hall and Paul Héroult in 1886) extracts aluminum from purified bauxite-derived Al₂O₃. Because Al³⁺ is too stably bound in the oxide for chemical reduction, electrolysis is used: Al₂O₃ is dissolved in molten cryolite (Na₃AlF₆) at about 950 °C — far below alumina's 2072 °C melting point — and electrolysed between carbon electrodes. At the cathode, \(Al^{3+} + 3e^- \rightarrow Al(\ell)\); at the carbon anode, \(2O^{2-} + C \rightarrow CO_2 + 4e^-\), so the anodes are gradually consumed. Producing one tonne of aluminum requires about 13–15 MWh of electricity — about 1% of global electricity demand goes to aluminum smelting — which is why recycling (only ~5% of the original energy) is environmentally critical.</p>
+            <p>The <strong>chlor-alkali process</strong> electrolyses brine (NaCl(aq)) to make Cl₂ at the anode (\(2Cl^- \rightarrow Cl_2 + 2e^-\)) and H₂ + NaOH at the cathode (\(2H_2O + 2e^- \rightarrow H_2 + 2OH^-\)). A cation-exchange membrane separates the compartments to prevent the products from mixing and reacting. This single process supplies essentially all industrial Cl₂ (for PVC, water treatment, solvents) and NaOH (for paper, soap, alumina refining).</p>
+            <p><strong>Fuel cells</strong> are galvanic devices that consume reactants supplied continuously, generating electricity as long as fuel flows. A hydrogen-oxygen PEM fuel cell, used in vehicles and as backup power, has anode \(2H_2 \rightarrow 4H^+ + 4e^-\), cathode \(O_2 + 4H^+ + 4e^- \rightarrow 2H_2O\), overall \(2H_2 + O_2 \rightarrow 2H_2O\) with E°_cell = +1.23 V. Efficiency can exceed 60% (vs ≈ 30% for internal combustion), and the only by-product is water — though "green" hydrogen production by water electrolysis using renewable electricity is required to make the overall cycle low-carbon.</p>
+            <ul>
+              <li><strong>Hall-Héroult process</strong> — Al from Al₂O₃ in molten cryolite (~950 °C).</li>
+              <li><strong>Chlor-alkali process</strong> — NaCl(aq) → Cl₂ + H₂ + NaOH.</li>
+              <li><strong>Fuel cell</strong> — galvanic; reactants supplied continuously.</li>
+              <li><strong>PEM</strong> — proton-exchange membrane (Nafion).</li>
+              <li><strong>Electrorefining</strong> — purification of Cu, Ni, Au via electrolysis.</li>
+              <li><strong>Downs cell</strong> — electrolysis of molten NaCl for sodium production.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Electricity to make 1.00 tonne of aluminum (Hall-Héroult)</p>
+              <p>Mass of Al = 1.00 × 10⁶ g. Moles of Al = 1.00 × 10⁶ / 26.98 = 3.706 × 10⁴ mol. Each Al³⁺ requires 3 electrons, so moles of e⁻ = 3 × 3.706 × 10⁴ = 1.112 × 10⁵ mol.</p>
+              <p>Charge: Q = nF = 1.112 × 10⁵ × 96,485 = 1.073 × 10¹⁰ C.</p>
+              <p>At a typical operating voltage of 4.5 V, energy = QV = 1.073 × 10¹⁰ × 4.5 = 4.83 × 10¹⁰ J = <strong>1.34 × 10⁴ kWh ≈ 13.4 MWh per tonne</strong>, matching the published 13–15 MWh range. Recycling aluminum saves about 95% of this energy.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Forgetting that the carbon anode is consumed in the Hall-Héroult cell, so it must be continuously replaced.</li>
+              <li>Confusing fuel cells (galvanic, continuous fuel) with batteries (sealed, finite reactants).</li>
+              <li>Assuming hydrogen is automatically "clean" — its environmental benefit depends on the source of energy used to make it.</li>
+              <li>Reporting energy for one mole of Al instead of one tonne — keep mass units consistent.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F1.2 — "assess the environmental and social impact of an electrochemical technology (e.g., production of metals such as aluminum or copper; fuel cells), and propose ways to minimize the negative impact."</p>
+          </div>
+        </details>
 
         <div class="video-card">
             <div class="video-header" onclick="toggleVideo('yt14')">

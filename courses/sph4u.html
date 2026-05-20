@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPH4U — Physics | MindView</title>
 <link rel="stylesheet" href="../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 <style>
 
 .unit-section { margin-bottom: 48px; }
@@ -47,6 +49,17 @@
 .assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
 .assessment-card .a-body p { font-size: 12px; color: #64748b; }
 .assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
 
 </style>
 </head>
@@ -186,7 +199,34 @@
         <div class="topic-block">
             <div class="topic-title">1.1 — Kinematics — Motion and Motion Graphs</div>
             <div class="topic-desc">Review of 1D kinematics, position-time and velocity-time graphs, equations of motion</div>
-            
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Kinematics is the geometric description of motion: <em>where</em> an object is, <em>how fast</em> it is moving, and <em>how quickly</em> its velocity is changing — without yet asking <em>why</em>. In SPH4U we sharpen the SPH3U treatment by being strict about three vector ideas: <strong>position</strong> $\vec{x}$, <strong>displacement</strong> $\Delta\vec{x}$, and <strong>velocity</strong> $\vec{v}=d\vec{x}/dt$. The "why" of kinematics graphs is that calculus is hidden inside them: the slope of a position-time graph is instantaneous velocity, and the area under a velocity-time graph is displacement. Recognising those geometric meanings lets you solve problems even when you have data but no algebraic formula.</p>
+                <p>The five "BIG-5" kinematics equations apply <em>only</em> when acceleration is constant. Each equation eliminates one variable, so the trick is to list your knowns ($\vec{x}_0$, $\vec{v}_0$, $\vec{v}$, $\vec{a}$, $t$) and pick the equation missing the unknown you don't care about. Signs encode direction along a chosen axis; an object can have negative velocity while still speeding up if its acceleration is also negative. Free fall near Earth's surface is the canonical constant-acceleration problem with $\vec{a}=\vec{g}=9.81\,\text{m/s}^2$ downward.</p>
+                <ul>
+                  <li><strong>Displacement</strong> $\Delta\vec{x}$ (m) — vector from initial to final position; not the same as path length.</li>
+                  <li><strong>Average velocity</strong> $\vec{v}_{avg}=\Delta\vec{x}/\Delta t$ (m/s); <strong>instantaneous velocity</strong> = limit as $\Delta t\to 0$.</li>
+                  <li><strong>Acceleration</strong> $\vec{a}=d\vec{v}/dt$ (m/s²); dimensional check: $[\text{m/s}]/[\text{s}]=[\text{m/s}^2]$.</li>
+                  <li><strong>BIG-5</strong>: $v=v_0+at$; $\Delta x=v_0 t+\tfrac12 at^2$; $v^2=v_0^2+2a\Delta x$; $\Delta x=\tfrac12(v_0+v)t$; $\Delta x=vt-\tfrac12 at^2$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a stone dropped from rest</p>
+                  <p>A stone is dropped from a bridge and hits the water 2.4 s later. How far did it fall, and what speed does it strike the water with? Take down as positive, $g=9.81\,\text{m/s}^2$.</p>
+                  <p>Step 1 — list knowns: $v_0=0$, $a=+9.81\,\text{m/s}^2$, $t=2.4\,\text{s}$, $\Delta x=?$, $v=?$.</p>
+                  <p>Step 2 — choose $\Delta x=v_0 t+\tfrac12 at^2 = 0 + \tfrac12(9.81)(2.4)^2 = 28.2\,\text{m}$.</p>
+                  <p>Step 3 — choose $v=v_0+at = 0+(9.81)(2.4)=23.5\,\text{m/s}$ downward.</p>
+                  <p>Step 4 — sanity check with $v^2=v_0^2+2a\Delta x$: $\sqrt{2(9.81)(28.2)}=23.5$ m/s. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing speed and velocity</strong> — speed is a scalar; velocity carries a sign or direction.</li>
+                  <li><strong>Mis-reading a v-t graph</strong> — its <em>slope</em> is acceleration, its <em>area</em> is displacement, not the value on the y-axis.</li>
+                  <li><strong>Using BIG-5 with non-constant acceleration</strong> — illegal; you must use calculus or piecewise constant intervals.</li>
+                  <li><strong>Forgetting sign conventions</strong> — once you choose "up = +", every quantity must follow that convention.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "solve problems involving the motion of objects in horizontal, vertical, and inclined planes, using vectors, graphs, and free-body diagrams."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_201_20-_20Mechanics_20-_20Spring_202017.pdf" target="_blank" class="pdf-link">📄 Unit 1 — Mechanics Notes</a>
             </div>
@@ -227,6 +267,34 @@
         <div class="topic-block">
             <div class="topic-title">1.2 — Two-Dimensional Motion</div>
             <div class="topic-desc">Displacement, velocity, and acceleration vectors in 2D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In two dimensions, motion is described by independent perpendicular components — typically $x$ (horizontal) and $y$ (vertical). The deep reason this <em>works</em> is that Newton's second law is a vector equation: a force component along $x$ produces acceleration only along $x$. So a 2-D problem is really two simultaneous 1-D problems sharing a single clock $t$.</p>
+                <p>To resolve a vector $\vec{A}$ of magnitude $A$ at angle $\theta$ above the $+x$-axis: $A_x=A\cos\theta$, $A_y=A\sin\theta$. To recombine, $A=\sqrt{A_x^2+A_y^2}$ and $\theta=\tan^{-1}(A_y/A_x)$ (with attention to the quadrant). Adding vectors head-to-tail is geometrically intuitive but algebraically we add components: $\vec{C}=\vec{A}+\vec{B}\Rightarrow C_x=A_x+B_x,\ C_y=A_y+B_y$. Average velocity in 2-D is $\vec{v}_{avg}=\Delta\vec{r}/\Delta t$, where $\Delta\vec{r}$ is the straight-line vector between two positions, regardless of the actual curved path.</p>
+                <ul>
+                  <li><strong>Position vector</strong> $\vec{r}=(x,y)$ measured in metres from a chosen origin.</li>
+                  <li><strong>Unit vectors</strong> $\hat{i},\hat{j}$ — dimensionless, point along $+x$ and $+y$.</li>
+                  <li><strong>Magnitude/direction</strong> form ↔ <strong>component</strong> form — equivalent representations of the same vector.</li>
+                  <li><strong>Right-triangle SI check</strong>: $[A_x]=[A_y]=[A]$; angles are dimensionless.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — resultant displacement</p>
+                  <p>A hiker walks 4.0 km east, then 3.0 km at 60° north of east. Find the resultant displacement.</p>
+                  <p>Step 1 — resolve leg 2: $x_2=3.0\cos 60°=1.5$ km; $y_2=3.0\sin 60°=2.60$ km.</p>
+                  <p>Step 2 — sum components: $x_{tot}=4.0+1.5=5.5$ km; $y_{tot}=0+2.60=2.60$ km.</p>
+                  <p>Step 3 — magnitude: $|\vec{R}|=\sqrt{5.5^2+2.60^2}=6.08$ km.</p>
+                  <p>Step 4 — direction: $\theta=\tan^{-1}(2.60/5.5)=25.3°$ N of E.</p>
+                </div>
+                <ul>
+                  <li><strong>Adding magnitudes instead of vectors</strong> — only valid if the vectors are parallel.</li>
+                  <li><strong>Forgetting the quadrant</strong> — $\tan^{-1}$ on a calculator returns angles in $(-90°,+90°)$ only.</li>
+                  <li><strong>Mixing reference frames</strong> — components must be measured from the same axes throughout the problem.</li>
+                  <li><strong>Conflating displacement and distance</strong> — distance is the path length (scalar); displacement is the net vector.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "analyse, with the aid of vector diagrams, the relative motion of objects moving with uniform velocity in two dimensions."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -264,6 +332,33 @@
         <div class="topic-block">
             <div class="topic-title">1.3 — Projectile Motion and Relative Motion</div>
             <div class="topic-desc">Projectile motion analysis, relative velocity in 2D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A projectile is any object launched into the air with no propulsion, subject only to gravity (air resistance neglected at this level). The key physical insight — first articulated by Galileo — is the <em>independence of horizontal and vertical motion</em>: gravity acts only vertically, so $a_x=0$ and $a_y=-g$. Horizontally the projectile undergoes uniform velocity; vertically it accelerates downward. Both motions share the same time of flight, which is the variable that "stitches" the two 1-D problems together.</p>
+                <p>For a launch from ground level at speed $v_0$ and angle $\theta$: $v_{0x}=v_0\cos\theta$, $v_{0y}=v_0\sin\theta$. Time to apex: $t_{up}=v_{0y}/g$. Maximum height: $H=v_{0y}^2/(2g)$. Range on level ground: $R=v_0^2\sin(2\theta)/g$ — maximised at $\theta=45°$ in vacuum. Relative motion follows the Galilean transformation: if frame $B$ moves with velocity $\vec{v}_{BA}$ relative to frame $A$, then an object's velocity in $A$ equals its velocity in $B$ plus $\vec{v}_{BA}$ — i.e. $\vec{v}_{PA}=\vec{v}_{PB}+\vec{v}_{BA}$. This is essential for boats crossing rivers and planes in crosswinds.</p>
+                <ul>
+                  <li><strong>$g$</strong> = 9.81 m/s² downward near Earth's surface; always positive in magnitude.</li>
+                  <li><strong>Range equation</strong> $R=v_0^2\sin 2\theta/g$ — valid only for equal launch and landing heights.</li>
+                  <li><strong>Trajectory</strong> — parabolic in vacuum; shape derived by eliminating $t$ between $x(t)$ and $y(t)$.</li>
+                  <li><strong>Relative-velocity subscript rule</strong>: $\vec{v}_{AC}=\vec{v}_{AB}+\vec{v}_{BC}$ — inner subscripts cancel.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — projectile from a cliff</p>
+                  <p>A ball is kicked horizontally at 15 m/s off a 20 m cliff. Where does it land? Take down as positive $y$.</p>
+                  <p>Step 1 — vertical: $\Delta y=\tfrac12 g t^2 \Rightarrow 20=\tfrac12(9.81)t^2 \Rightarrow t=\sqrt{40/9.81}=2.02$ s.</p>
+                  <p>Step 2 — horizontal: $x=v_{0x}t=(15)(2.02)=30.3$ m.</p>
+                  <p>Step 3 — landing velocity components: $v_x=15$ m/s, $v_y=gt=19.8$ m/s; speed $=\sqrt{15^2+19.8^2}=24.8$ m/s at $\tan^{-1}(19.8/15)=52.9°$ below horizontal.</p>
+                </div>
+                <ul>
+                  <li><strong>Adding $g$ to horizontal motion</strong> — gravity has no horizontal component; $v_x$ is constant.</li>
+                  <li><strong>Using the range formula on unequal heights</strong> — it is invalid; you must do the full $y(t)$ analysis.</li>
+                  <li><strong>Forgetting that velocity at apex is not zero</strong> — only $v_y=0$ at peak; $v_x$ persists.</li>
+                  <li><strong>Mis-applying relative-velocity addition</strong> — order matters: $\vec{v}_{PA}\ne\vec{v}_{AP}$; they are opposite.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "solve problems involving the motion of objects in horizontal, vertical, and inclined planes, using vectors, graphs, and free-body diagrams."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -301,7 +396,34 @@
         <div class="topic-block">
             <div class="topic-title">1.4 — Forces and Newton's Laws</div>
             <div class="topic-desc">Free body diagrams, Newton's three laws, net force and acceleration</div>
-            
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Newton's three laws are the foundation of classical mechanics. The first law (inertia) defines what an inertial reference frame is: one in which an object free of net force keeps a constant velocity. The second law $\sum\vec{F}=m\vec{a}$ is the operational definition of force — it links the kinematic quantity $\vec{a}$ to the dynamical cause. The third law states that forces come in equal-and-opposite <em>action-reaction pairs</em> acting on <em>different</em> bodies. Mistaking the third law as "two forces on the same body" causes endless confusion; the two paired forces never cancel because they are not on the same object.</p>
+                <p>A free-body diagram (FBD) is the single most important tool. You isolate one object, represent it as a dot or box, then draw every force <em>acting on it</em> with arrows. Common forces: gravity $\vec{F}_g=m\vec{g}$, normal $\vec{F}_N$ (perpendicular to surface), tension $\vec{T}$, applied force, friction $\vec{f}$, and spring $\vec{F}_s=-k\vec{x}$. Once axes are chosen (often aligned with motion), Newton's second law is written separately for each axis: $\sum F_x=ma_x$ and $\sum F_y=ma_y$.</p>
+                <ul>
+                  <li><strong>Force</strong> $\vec{F}$ — SI unit newton (N); 1 N = 1 kg·m/s².</li>
+                  <li><strong>Mass</strong> $m$ (kg) — measure of inertia, frame-invariant in classical mechanics.</li>
+                  <li><strong>Weight</strong> $W=mg$ (N) — gravitational force, not the same as mass.</li>
+                  <li><strong>Normal force</strong> $F_N$ — a constraint force; adjusts itself to prevent interpenetration.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — elevator problem</p>
+                  <p>A 70.0 kg person stands on a scale in an elevator that accelerates upward at 1.20 m/s². What does the scale read?</p>
+                  <p>Step 1 — FBD: weight $mg$ down, normal $F_N$ up (scale reading).</p>
+                  <p>Step 2 — Newton II (up = +): $F_N-mg=ma \Rightarrow F_N=m(g+a)$.</p>
+                  <p>Step 3 — substitute: $F_N=70.0(9.81+1.20)=770.7$ N. Apparent weight ≈ 78.6 kg of force.</p>
+                  <p>Step 4 — interpret: scale reads more than rest weight because elevator accelerates upward.</p>
+                </div>
+                <ul>
+                  <li><strong>Pairing forces incorrectly under Newton III</strong> — gravity on you and normal on you are NOT an action-reaction pair (same body); gravity on you and gravity on Earth IS.</li>
+                  <li><strong>Confusing mass and weight</strong> — mass is in kg; weight is a force in N and changes with $g$.</li>
+                  <li><strong>Drawing forces from objects, not on objects</strong> — only forces <em>acting on</em> the chosen body belong on its FBD.</li>
+                  <li><strong>Forgetting the normal force is not always $mg$</strong> — on an incline or in an accelerating elevator it differs.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "analyse and describe, using Newton's laws, the forces acting on an object, and use free-body diagrams to determine net force and acceleration."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-2-Newtons-2nd-Law-1-Dim.pdf" target="_blank" class="pdf-link">📄 Newton 2nd Law — 1D Problems</a>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-3-Newtons-2nd-Law-2-Dim.pdf" target="_blank" class="pdf-link">📄 Newton 2nd Law — 2D Problems</a>
@@ -343,6 +465,34 @@
         <div class="topic-block">
             <div class="topic-title">1.5 — Applying Newton's Laws and Friction</div>
             <div class="topic-desc">Multi-body problems, static and kinetic friction, inclined planes</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Real Newton's-law problems usually have multiple bodies connected by strings, pushed up inclines, or sliding against rough surfaces. The strategy is unchanged but disciplined: choose your system, draw an FBD for <em>each</em> body separately, pick axes (on an incline, tilt them along the slope), and write Newton II for each axis. For connected bodies on a single inextensible string, the magnitude of acceleration is the same for both — that constraint plus the two Newton-II equations gives you a closed system of equations.</p>
+                <p>Friction opposes <em>relative</em> motion (or attempted motion) between surfaces. Static friction $f_s\le\mu_s F_N$ adjusts itself up to a maximum to prevent slipping; once $f_s$ would exceed $\mu_s F_N$, slipping begins and kinetic friction $f_k=\mu_k F_N$ takes over (typically $\mu_k<\mu_s$). On an incline of angle $\theta$ with no friction, the component of gravity along the slope is $mg\sin\theta$, and the normal force is $mg\cos\theta$. The acceleration of a block sliding freely down is $a=g\sin\theta$; with kinetic friction included it becomes $a=g(\sin\theta-\mu_k\cos\theta)$.</p>
+                <ul>
+                  <li><strong>Coefficient of friction</strong> $\mu$ — dimensionless; depends on surface pair, not area.</li>
+                  <li><strong>Tension</strong> $T$ — internal force in an ideal massless string, same throughout.</li>
+                  <li><strong>Normal force on incline</strong>: $F_N=mg\cos\theta$ (only if no extra perpendicular forces).</li>
+                  <li><strong>Atwood constraint</strong>: $|a_1|=|a_2|$, $T_1=T_2$ for ideal pulley.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — block on rough incline</p>
+                  <p>A 5.0 kg block slides down a 30° incline with $\mu_k=0.20$. Find the acceleration.</p>
+                  <p>Step 1 — tilt axes along slope (+ down-slope). FBD: $mg\sin\theta$ down-slope, $\mu_k F_N$ up-slope, $F_N=mg\cos\theta$ ⊥.</p>
+                  <p>Step 2 — Newton II along slope: $ma=mg\sin\theta-\mu_k mg\cos\theta$.</p>
+                  <p>Step 3 — divide by $m$: $a=g(\sin 30°-0.20\cos 30°)=9.81(0.500-0.173)=3.21\,\text{m/s}^2$.</p>
+                  <p>Step 4 — direction: positive means down the slope. Check: if $\mu_k\ge\tan\theta$, the block would not accelerate — here $0.20<\tan 30°=0.577$, so it slides. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Using $\mu_s$ when the block is already moving</strong> — must switch to $\mu_k$ once sliding.</li>
+                  <li><strong>Forgetting friction is parallel to surface</strong>, not horizontal.</li>
+                  <li><strong>Wrong normal force on incline</strong> — it is $mg\cos\theta$, not $mg$.</li>
+                  <li><strong>Treating tension as different on each side of an ideal pulley</strong> — for a massless, frictionless pulley it is the same.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "predict, in qualitative and quantitative terms, the forces acting on systems of objects (e.g., on an inclined plane, on a pulley system), and verify the predictions experimentally."</p>
+              </div>
+            </details>
             
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-4-Friction-Problems-2015.pdf" target="_blank" class="pdf-link">📄 Friction Problems</a>
@@ -387,6 +537,34 @@
         <div class="topic-block">
             <div class="topic-title">1.6 — Circular Motion</div>
             <div class="topic-desc">Centripetal acceleration and force, banked curves, vertical loops</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An object moving in a circle at constant speed is still <em>accelerating</em> because its velocity vector is constantly changing direction. The direction of this centripetal ("centre-seeking") acceleration is always toward the centre of the circle, and its magnitude is $a_c=v^2/r=\omega^2 r$, where $\omega=2\pi/T=2\pi f$ is the angular speed. The deep <em>why</em>: in time $\Delta t$, the velocity vector rotates through angle $\Delta\theta=v\Delta t/r$, so $|\Delta\vec{v}|\approx v\Delta\theta$ and $a=|\Delta\vec{v}|/\Delta t=v^2/r$.</p>
+                <p>Critically, "centripetal force" is not a new kind of force — it is the <em>net</em> radially-inward force, whatever its physical source: tension for a ball on a string, gravity for a satellite, friction for a car turning on a flat road, the horizontal component of normal force on a banked curve. On a properly banked frictionless curve of angle $\theta$: $\tan\theta=v^2/(rg)$. At the top of a vertical loop, gravity helps supply centripetal force; the minimum speed at which the track exerts zero normal force satisfies $v_{min}=\sqrt{rg}$.</p>
+                <ul>
+                  <li><strong>Period</strong> $T$ (s); <strong>frequency</strong> $f=1/T$ (Hz); <strong>angular speed</strong> $\omega=2\pi f$ (rad/s).</li>
+                  <li><strong>Centripetal acceleration</strong> $a_c=v^2/r$ (m/s²); always perpendicular to $\vec{v}$.</li>
+                  <li><strong>Centripetal force</strong> $F_c=mv^2/r$ — the <em>net</em> radial force, not a separate force on the FBD.</li>
+                  <li><strong>Tangential vs radial</strong>: tangential force changes speed; radial force changes direction only.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — car on a flat curve</p>
+                  <p>A 1200 kg car rounds a flat curve of radius 50 m at 20 m/s. What minimum coefficient of static friction is needed?</p>
+                  <p>Step 1 — required centripetal force: $F_c=mv^2/r=1200(20)^2/50=9600$ N inward.</p>
+                  <p>Step 2 — friction provides it: $f_s\ge F_c$, with $f_s\le\mu_s F_N=\mu_s mg$.</p>
+                  <p>Step 3 — solve $\mu_s\ge v^2/(rg)=400/(50\cdot 9.81)=0.816$.</p>
+                  <p>Step 4 — interpret: on wet asphalt ($\mu_s\approx 0.4$), the car would skid; needs a banked curve or slower speed.</p>
+                </div>
+                <ul>
+                  <li><strong>Drawing a "centripetal force" as an extra arrow</strong> — it is the resultant of real forces, not a separate one.</li>
+                  <li><strong>Including a fictitious "centrifugal" outward force</strong> in an inertial frame — there isn't one.</li>
+                  <li><strong>Confusing $v$ (linear) and $\omega$ (angular)</strong> — related by $v=\omega r$, units differ (m/s vs rad/s).</li>
+                  <li><strong>Forgetting direction of $\vec{a}_c$</strong> — it points toward the centre at every instant, not along $\vec{v}$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "analyse, in qualitative and quantitative terms, the forces acting on an object in uniform circular motion."</p>
+              </div>
+            </details>
             
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-15-Centripetal-Meets-Gravity-Solutions.pdf" target="_blank" class="pdf-link">📄 Centripetal Meets Gravity — Solutions</a>
@@ -465,6 +643,34 @@
         <div class="topic-block">
             <div class="topic-title">2.1 — Work and the Work-Energy Theorem</div>
             <div class="topic-desc">Work done by constant forces, kinetic energy, work-energy theorem</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Energy is a scalar bookkeeping quantity that — uniquely among physical concepts — is universally conserved. Work is the mechanism by which energy is transferred to or from an object by a force. For a constant force $\vec{F}$ acting through a displacement $\vec{d}$, work is the dot product $W=\vec{F}\cdot\vec{d}=Fd\cos\theta$. The $\cos\theta$ matters: only the component of force <em>along</em> the displacement does work. A force perpendicular to motion (like the normal force on a horizontally sliding block, or the centripetal force on circular motion) does <em>zero</em> work.</p>
+                <p>The work-energy theorem states that the net work done on an object equals the change in its kinetic energy: $W_{net}=\Delta E_k=\tfrac12 m v^2-\tfrac12 m v_0^2$. This is essentially Newton II integrated over distance, and it converts a complicated force-vs-time problem into a simpler force-vs-distance scalar one. For variable forces, work is the area under an $F$ vs. $x$ graph — that's why springs and other non-constant forces are handled through integration in calculus-based physics.</p>
+                <ul>
+                  <li><strong>Work</strong> $W$ — SI unit joule (J); 1 J = 1 N·m = 1 kg·m²/s².</li>
+                  <li><strong>Kinetic energy</strong> $E_k=\tfrac12 mv^2$ (J); always non-negative; depends on $v^2$ so doubling speed quadruples KE.</li>
+                  <li><strong>Power</strong> $P=W/t=\vec{F}\cdot\vec{v}$ (W); 1 W = 1 J/s.</li>
+                  <li><strong>Dimensional check</strong>: $[E_k]=[\text{kg}][\text{m/s}]^2=[\text{kg·m}^2/\text{s}^2]=[\text{J}]$. ✓</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — work and speed</p>
+                  <p>A 1500 kg car accelerates from 10 m/s to 25 m/s. Find the net work done.</p>
+                  <p>Step 1 — initial KE: $E_{k0}=\tfrac12(1500)(10)^2=75{,}000$ J.</p>
+                  <p>Step 2 — final KE: $E_k=\tfrac12(1500)(25)^2=468{,}750$ J.</p>
+                  <p>Step 3 — work-energy theorem: $W_{net}=\Delta E_k=468{,}750-75{,}000=3.94\times 10^5$ J.</p>
+                  <p>Step 4 — if this happens in 8.0 s, average power $P=W/t=3.94\times 10^5/8.0=49{,}200$ W = 49.2 kW (about 66 hp).</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting the $\cos\theta$ factor</strong> — only the parallel component does work.</li>
+                  <li><strong>Treating work as a vector</strong> — work is a scalar; it can be positive (energy in) or negative (energy out).</li>
+                  <li><strong>Saying "the centripetal force does work"</strong> — it is perpendicular to $\vec{v}$, so $W=0$.</li>
+                  <li><strong>Confusing average force × distance with $\int F\,dx$</strong> — only equal for constant force.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "analyse, and solve problems involving, the relationships between work, kinetic energy, and potential energy."</p>
+              </div>
+            </details>
             
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_202_20-_20Energy_20and_20Momentum.pdf" target="_blank" class="pdf-link">📄 Unit 2 — Energy & Momentum Notes</a>
@@ -491,6 +697,34 @@
         <div class="topic-block">
             <div class="topic-title">2.2 — Potential Energy and Conservation of Energy</div>
             <div class="topic-desc">Gravitational potential energy, law of conservation of energy, energy transformations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>conservative force</strong> (gravity, spring, electrostatics) has the special property that the work it does between two points is independent of path. This lets us define a potential energy function $U$ such that $W_{cons}=-\Delta U$. The work done <em>by</em> gravity in lowering an object equals the loss of gravitational PE. Near Earth's surface where $g$ is effectively constant, $U_g=mgh$ with $h$ measured from any chosen reference; only <em>changes</em> in PE matter physically.</p>
+                <p>Combining the work-energy theorem with PE gives the law of conservation of <strong>mechanical</strong> energy: when only conservative forces act, $E_k+U=$ constant. If non-conservative forces (friction, applied force, air drag) act, the energy equation becomes $E_{k,0}+U_0+W_{nc}=E_k+U$, where $W_{nc}$ is positive if non-conservative forces add energy (e.g. a push) and negative if they remove it (friction). The broader law of conservation of energy says the total energy of a closed system — including thermal, chemical, electromagnetic, nuclear, etc. — is constant. Friction does not "destroy" energy; it converts mechanical energy into thermal energy.</p>
+                <ul>
+                  <li><strong>Gravitational PE</strong> (near Earth): $U_g=mgh$ (J); reference height is arbitrary.</li>
+                  <li><strong>Mechanical energy</strong> $E_{mech}=E_k+U$ (J) — conserved iff only conservative forces act.</li>
+                  <li><strong>Thermal energy</strong> $Q$ — random KE of molecules; the "destination" of work done against friction.</li>
+                  <li><strong>Efficiency</strong> $\eta=E_{useful}/E_{input}\times 100\%$ — never exceeds 100% by the first law.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — roller coaster with friction</p>
+                  <p>A 500 kg coaster car starts at rest at height 30 m, reaches the bottom with speed 20 m/s. How much energy was lost to friction?</p>
+                  <p>Step 1 — initial energy: $E_0=mgh=500(9.81)(30)=1.47\times 10^5$ J (all PE).</p>
+                  <p>Step 2 — final energy: $E_f=\tfrac12 mv^2=\tfrac12(500)(20)^2=1.00\times 10^5$ J (all KE).</p>
+                  <p>Step 3 — energy "lost" (now thermal): $|W_{nc}|=E_0-E_f=4.7\times 10^4$ J.</p>
+                  <p>Step 4 — efficiency: $\eta=E_f/E_0=68\%$. The remaining 32% became heat and sound.</p>
+                </div>
+                <ul>
+                  <li><strong>Choosing two different reference heights</strong> for $U_0$ and $U_f$ — pick one and stick with it.</li>
+                  <li><strong>Saying "energy was lost"</strong> — it was <em>transformed</em>, never destroyed (first law).</li>
+                  <li><strong>Applying $E_k+U=$ const when friction is present</strong> — must include $W_{nc}$ term.</li>
+                  <li><strong>Confusing kinetic and potential energy signs</strong> — KE is always non-negative; gravitational PE near Earth can be negative if reference is above the object.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "use the law of conservation of energy to solve problems in a variety of contexts, including those involving efficiency."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -513,6 +747,34 @@
         <div class="topic-block">
             <div class="topic-title">2.3 — Elastic Potential Energy and Simple Harmonic Motion</div>
             <div class="topic-desc">Springs, Hooke's law, elastic PE, SHM, conservation with springs</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An ideal spring obeys Hooke's law $F_s=-kx$, where $x$ is the displacement from the natural (unstretched) length and $k$ (N/m) is the spring constant — a stiffness rating. The minus sign is essential: the spring force is always a <em>restoring</em> force, pointing back toward equilibrium. Because $F$ varies linearly with $x$, the work done in stretching from 0 to $x$ is the triangular area under the $F$ vs $x$ graph: $W=\tfrac12 kx^2$, which we call the elastic potential energy $U_s=\tfrac12 kx^2$.</p>
+                <p>When a mass on a spring is displaced and released, the system undergoes <strong>simple harmonic motion</strong> (SHM): $x(t)=A\cos(\omega t+\phi)$, with angular frequency $\omega=\sqrt{k/m}$ and period $T=2\pi\sqrt{m/k}$. SHM is the prototype of <em>every</em> small-amplitude oscillation in physics — pendulums, atomic vibrations in solids, LC circuits — because near any stable equilibrium the restoring force is approximately linear (Taylor expansion). Energy oscillates between $E_k=\tfrac12 mv^2$ and $U_s=\tfrac12 kx^2$, while the total $E=\tfrac12 kA^2$ stays constant.</p>
+                <ul>
+                  <li><strong>Spring constant</strong> $k$ (N/m); larger $k$ = stiffer spring.</li>
+                  <li><strong>Elastic PE</strong> $U_s=\tfrac12 kx^2$ (J) — quadratic in displacement.</li>
+                  <li><strong>Angular frequency</strong> $\omega=\sqrt{k/m}$ (rad/s); <strong>period</strong> $T=2\pi/\omega$ (s) — independent of amplitude.</li>
+                  <li><strong>Max speed</strong> in SHM: $v_{max}=\omega A$, at $x=0$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — spring launches a block</p>
+                  <p>A spring with $k=300$ N/m is compressed 0.15 m and released to launch a 0.50 kg block on a frictionless surface. Find its speed when the spring returns to natural length, and the period if it were attached.</p>
+                  <p>Step 1 — energy conservation: $\tfrac12 k x^2=\tfrac12 m v^2$.</p>
+                  <p>Step 2 — solve for $v$: $v=x\sqrt{k/m}=0.15\sqrt{300/0.50}=0.15(24.5)=3.67$ m/s.</p>
+                  <p>Step 3 — if attached, period $T=2\pi\sqrt{m/k}=2\pi\sqrt{0.50/300}=0.256$ s.</p>
+                  <p>Step 4 — frequency $f=1/T=3.91$ Hz; angular $\omega=24.5$ rad/s, matching the $\sqrt{k/m}$ above. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Dropping the minus in Hooke's law</strong> in vector form — it makes the force a restoring force.</li>
+                  <li><strong>Forgetting the $\tfrac12$ in $U_s$</strong> — area of a triangle, not a rectangle.</li>
+                  <li><strong>Thinking period depends on amplitude</strong> — for an ideal Hookean spring it does not.</li>
+                  <li><strong>Mixing $f$ (Hz) with $\omega$ (rad/s)</strong> — $\omega=2\pi f$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.5 — "analyse, in qualitative and quantitative terms, the relationships among the kinetic and potential energies of a mass undergoing simple harmonic motion."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -535,6 +797,34 @@
         <div class="topic-block">
             <div class="topic-title">2.4 — Momentum and Impulse</div>
             <div class="topic-desc">Linear momentum, impulse-momentum theorem, conservation of momentum in 1D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Linear momentum $\vec{p}=m\vec{v}$ is the proper way to express Newton's "quantity of motion." In fact Newton II is most precisely stated as $\vec{F}_{net}=d\vec{p}/dt$, which reduces to $m\vec{a}$ only when mass is constant (rockets, where fuel is expelled, are the famous counter-example). The integral of force over time is the <strong>impulse</strong> $\vec{J}=\int \vec{F}\,dt$, and the impulse-momentum theorem says $\vec{J}=\Delta\vec{p}$. This is why airbags work: spreading the same $\Delta p$ over a longer $\Delta t$ reduces the peak $\vec{F}$.</p>
+                <p>If no external force acts on a system, total momentum is conserved: $\sum\vec{p}_i = \sum\vec{p}_f$. This is independent of, and more general than, energy conservation — momentum is conserved in every collision (elastic, inelastic, explosive); kinetic energy is not. Because momentum is a vector, conservation applies <em>component-by-component</em>: $\sum p_x$ before = $\sum p_x$ after, and similarly for $y$.</p>
+                <ul>
+                  <li><strong>Momentum</strong> $\vec{p}=m\vec{v}$ — SI unit kg·m/s, equivalent to N·s; vector quantity.</li>
+                  <li><strong>Impulse</strong> $\vec{J}=\vec{F}_{avg}\Delta t$ (N·s) — equals $\Delta\vec{p}$.</li>
+                  <li><strong>System</strong> — collection of objects you've chosen; "internal" forces between them cancel by Newton III.</li>
+                  <li><strong>Dimensional check</strong>: $[J]=[\text{N}][\text{s}]=[\text{kg·m/s}^2][\text{s}]=[\text{kg·m/s}]=[p]$. ✓</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — recoil of a rifle</p>
+                  <p>A 4.0 kg rifle fires a 0.020 kg bullet at 400 m/s. Find the recoil speed of the rifle.</p>
+                  <p>Step 1 — system: rifle + bullet, both initially at rest, so $p_{total,i}=0$.</p>
+                  <p>Step 2 — conservation: $0=m_b v_b+m_r v_r\Rightarrow v_r=-m_b v_b/m_r$.</p>
+                  <p>Step 3 — compute: $v_r=-(0.020)(400)/4.0=-2.0$ m/s. Minus = opposite direction to bullet.</p>
+                  <p>Step 4 — energy check: $E_{bullet}=1600$ J vs $E_{rifle}=8$ J — KE is NOT conserved (this is an explosion, gas pressure adds KE).</p>
+                </div>
+                <ul>
+                  <li><strong>Treating momentum as a scalar</strong> — always a vector; direction matters.</li>
+                  <li><strong>Confusing momentum and kinetic energy</strong> — $p$ linear in $v$, $E_k$ quadratic in $v$.</li>
+                  <li><strong>Forgetting external forces</strong> — gravity, friction, etc. can change a system's total momentum.</li>
+                  <li><strong>Using $\vec{F}=m\vec{a}$ for variable-mass systems</strong> — must use $d\vec{p}/dt$ form.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.6 — "analyse, and solve problems involving, the law of conservation of momentum in one and two dimensions."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -557,6 +847,34 @@
         <div class="topic-block">
             <div class="topic-title">2.5 — Collisions in One and Two Dimensions</div>
             <div class="topic-desc">Elastic vs inelastic collisions, perfectly inelastic, 2D glancing collisions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Collisions are classified by what happens to kinetic energy. In an <strong>elastic</strong> collision both momentum AND kinetic energy are conserved — billiard balls and ideal hard-sphere scattering are good approximations. In an <strong>inelastic</strong> collision only momentum is conserved; some KE is converted to heat, sound, or deformation. The extreme case is a <strong>perfectly inelastic</strong> collision where the objects stick together and move with a common final velocity; this loses the maximum possible KE consistent with momentum conservation.</p>
+                <p>For a 1-D elastic collision between $m_1$ (initial velocity $v_1$) and a stationary $m_2$, the conservation equations solve to $v_1'=(m_1-m_2)v_1/(m_1+m_2)$ and $v_2'=2m_1 v_1/(m_1+m_2)$. Key limits: if $m_1=m_2$, the projectile stops and the target takes its full velocity. If $m_1\ll m_2$ (ball off a wall), $v_1'\to -v_1$ (perfect bounce). In 2-D collisions, momentum conservation gives two scalar equations ($p_x$ and $p_y$); if the collision is also elastic, kinetic energy gives a third — that's three equations for the four unknowns of two final velocity vectors, so you need additional info (like a scattering angle).</p>
+                <ul>
+                  <li><strong>Elastic</strong>: $\sum p$ conserved, $\sum E_k$ conserved.</li>
+                  <li><strong>Inelastic</strong>: $\sum p$ conserved, $\sum E_k$ decreases.</li>
+                  <li><strong>Perfectly inelastic</strong>: objects coalesce, common final $\vec{v}$; maximum KE loss.</li>
+                  <li><strong>Coefficient of restitution</strong> $e=|v_{2}'-v_1'|/|v_1-v_2|$ — 1 for elastic, 0 for perfectly inelastic.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — 2-D inelastic collision</p>
+                  <p>A 1500 kg car moving east at 20 m/s collides and locks with a 1000 kg car moving north at 15 m/s. Find their common velocity.</p>
+                  <p>Step 1 — $p_x$: $(1500)(20)+0=(2500)v_x' \Rightarrow v_x'=12.0$ m/s east.</p>
+                  <p>Step 2 — $p_y$: $0+(1000)(15)=(2500)v_y' \Rightarrow v_y'=6.0$ m/s north.</p>
+                  <p>Step 3 — magnitude: $v'=\sqrt{12^2+6^2}=13.4$ m/s.</p>
+                  <p>Step 4 — direction: $\theta=\tan^{-1}(6/12)=26.6°$ N of E. Check KE loss: $E_{k,i}=3.00\times 10^5+1.13\times 10^5=4.13\times 10^5$ J; $E_{k,f}=\tfrac12(2500)(13.4)^2=2.24\times 10^5$ J. Lost $\approx$ 46% to deformation/heat. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Assuming KE is conserved in every collision</strong> — only elastic ones.</li>
+                  <li><strong>Adding momenta as scalars in 2-D</strong> — they are vectors; do $x$ and $y$ separately.</li>
+                  <li><strong>Forgetting sign conventions</strong> — a head-on collision in 1-D needs opposite signs.</li>
+                  <li><strong>Confusing elastic with perfectly inelastic</strong> — opposite ends of the spectrum.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.7 — "analyse, with the aid of vector diagrams, the linear momentum of a collection of objects, and apply quantitatively the law of conservation of linear momentum."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -617,6 +935,34 @@
         <div class="topic-block">
             <div class="topic-title">3.1 — Newtonian Gravitation and Orbits</div>
             <div class="topic-desc">Universal gravitation, gravitational field strength, orbital mechanics</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Newton's law of universal gravitation states that every two point masses attract along the line joining them with a force $F=Gm_1m_2/r^2$, where $G=6.674\times 10^{-11}\,\text{N·m}^2/\text{kg}^2$. The inverse-square dependence is geometric — gravitational "flux" from a point spreads over a sphere of area $4\pi r^2$. This single law, paired with Newton II, explains both Galileo's free-fall observations near Earth and Kepler's laws of planetary motion, unifying terrestrial and celestial mechanics.</p>
+                <p>The gravitational <strong>field strength</strong> $\vec{g}$ at a point is the force per unit mass on a small test mass placed there: $\vec{g}=\vec{F}/m=GM/r^2$ directed toward the source. For circular orbits, gravity supplies the centripetal force: $GMm/r^2=mv^2/r$, giving orbital speed $v=\sqrt{GM/r}$ and period $T=2\pi\sqrt{r^3/(GM)}$ — Kepler's third law $T^2\propto r^3$. The gravitational potential energy of two masses (with PE=0 at infinity) is $U=-GMm/r$; the minus sign captures the fact that bringing masses together releases energy. Escape speed from a body of mass $M$ and radius $R$ comes from setting total energy to zero: $v_{esc}=\sqrt{2GM/R}$.</p>
+                <ul>
+                  <li><strong>$G$</strong> = 6.674×10⁻¹¹ N·m²/kg² — universal gravitational constant.</li>
+                  <li><strong>Field strength</strong> $g$ near Earth's surface ≈ 9.81 N/kg (numerically = $g$ in m/s²).</li>
+                  <li><strong>Gravitational PE</strong> (general): $U=-GMm/r$ (J); always negative.</li>
+                  <li><strong>Escape speed</strong>: $v_{esc}=\sqrt{2gR_E}\approx 11.2$ km/s for Earth.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — geostationary satellite</p>
+                  <p>Find the orbital radius of a satellite that orbits Earth with a period $T=86{,}400$ s (one sidereal day). $M_E=5.97\times 10^{24}$ kg.</p>
+                  <p>Step 1 — Kepler III: $T^2=4\pi^2 r^3/(GM_E)$.</p>
+                  <p>Step 2 — solve: $r^3=GM_E T^2/(4\pi^2)=(6.674\times 10^{-11})(5.97\times 10^{24})(86400)^2/(4\pi^2)$.</p>
+                  <p>Step 3 — $r^3=7.54\times 10^{22}\,\text{m}^3 \Rightarrow r=4.23\times 10^7$ m = 42 300 km from Earth's centre.</p>
+                  <p>Step 4 — altitude above Earth's surface: $r-R_E=42300-6378\approx 35{,}900$ km. Matches geostationary orbit. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Using $U_g=mgh$ for large altitudes</strong> — only valid when $h\ll R_E$; otherwise use $U=-GMm/r$.</li>
+                  <li><strong>Confusing mass and weight</strong> — astronauts in orbit are weightless (free-falling), not massless.</li>
+                  <li><strong>Forgetting the negative sign in $U$</strong> — leads to incorrect escape-speed derivations.</li>
+                  <li><strong>Adding/subtracting $r$ from Earth's surface incorrectly</strong> — $r$ in Newton's law is centre-to-centre distance.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "analyse, and solve problems involving, the gravitational force between two objects (e.g., the orbit of a planet around the Sun, the motion of a satellite)."</p>
+              </div>
+            </details>
             
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Fields_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Fields Unit Notes</a>
@@ -643,6 +989,34 @@
         <div class="topic-block">
             <div class="topic-title">3.2 — Electric Charge and Coulomb's Law</div>
             <div class="topic-desc">Properties of charge, Coulomb's law, comparing electric and gravitational forces</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Electric charge $q$ is a fundamental property of matter measured in coulombs (C). Charge is quantised in units of the elementary charge $e=1.602\times 10^{-19}$ C (the magnitude of the charge on a proton or electron), and is conserved in every interaction — charges can be transferred but never created or destroyed. Like charges repel; unlike charges attract. <strong>Coulomb's law</strong> gives the magnitude of the force between two point charges separated by distance $r$: $F=kq_1q_2/r^2$, with $k=8.99\times 10^{9}$ N·m²/C². Often written with the permittivity of free space $\varepsilon_0$: $k=1/(4\pi\varepsilon_0)$.</p>
+                <p>The structural parallel to Newton's gravitation is striking: both are inverse-square, central, conservative forces. The differences are equally important. Gravity acts on mass (always positive); electrostatics acts on charge, which can be of either sign — so the force can be attractive OR repulsive. Gravity is enormously weaker: the electrostatic repulsion between two protons is about $10^{36}$ times their gravitational attraction. To find the net force on a charge from several others, use vector superposition — compute each pairwise Coulomb force and add as vectors.</p>
+                <ul>
+                  <li><strong>Coulomb's constant</strong> $k=8.99\times 10^9\,\text{N·m}^2/\text{C}^2$; $\varepsilon_0=8.854\times 10^{-12}\,\text{C}^2/(\text{N·m}^2)$.</li>
+                  <li><strong>Elementary charge</strong> $e=1.602\times 10^{-19}$ C; charge of electron $=-e$.</li>
+                  <li><strong>Conservation of charge</strong>: net charge in an isolated system is constant.</li>
+                  <li><strong>Sign convention</strong>: when $q_1$ and $q_2$ have the same sign, $F$ comes out positive — interpret as repulsion along the line joining them.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — three collinear charges</p>
+                  <p>Charges $q_1=+3.0\,\mu$C at $x=0$ and $q_2=-2.0\,\mu$C at $x=0.40$ m. Find force on $q_3=+1.0\,\mu$C at $x=0.20$ m.</p>
+                  <p>Step 1 — force from $q_1$ on $q_3$ (both positive → repulsion, +x direction): $F_{13}=kq_1q_3/r_{13}^2=(8.99\times 10^9)(3.0\times 10^{-6})(1.0\times 10^{-6})/(0.20)^2=0.674$ N.</p>
+                  <p>Step 2 — force from $q_2$ on $q_3$ (opposite signs → attraction toward $q_2$, +x direction): $F_{23}=(8.99\times 10^9)(2.0\times 10^{-6})(1.0\times 10^{-6})/(0.20)^2=0.449$ N.</p>
+                  <p>Step 3 — both forces point in +x: $F_{net}=0.674+0.449=1.12$ N in the +x direction.</p>
+                  <p>Step 4 — sanity: $q_3$ is between $q_1$ (repels right) and $q_2$ (attracts right), so the net force must be to the right. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Including signs of charges in the Coulomb's-law formula and then again as direction</strong> — pick one convention. Best practice: use magnitudes for $F$, then assign direction from a diagram.</li>
+                  <li><strong>Confusing units</strong> — 1 μC = 10⁻⁶ C, 1 nC = 10⁻⁹ C; always convert before substituting.</li>
+                  <li><strong>Treating Coulomb's law as 1/r (gravity-like Newtonian potential)</strong> — it's $1/r^2$ for force, $1/r$ for potential.</li>
+                  <li><strong>Forgetting superposition is vectorial</strong> — for non-collinear charges you must add as components.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.3 — "analyse, and solve problems involving, the electric force on a point charge due to one or more other point charges, using Coulomb's law."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -665,6 +1039,34 @@
         <div class="topic-block">
             <div class="topic-title">3.3 — Electric Fields and Electric Potential</div>
             <div class="topic-desc">Electric field lines, parallel plates, potential difference, equipotential lines</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Rather than thinking of Coulomb forces as direct action-at-a-distance, modern physics uses the <strong>field</strong> concept: a charge $Q$ creates an electric field $\vec{E}$ in the surrounding space, and another charge $q$ placed in that field feels a force $\vec{F}=q\vec{E}$. The electric field of a point charge is $E=kQ/r^2$, directed away from $Q$ if positive, toward it if negative. Field lines visualise $\vec{E}$: they start on positive charges and end on negative charges, never cross, and their density represents field strength. Between parallel plates with separation $d$ and potential difference $V$, the field is uniform: $E=V/d$.</p>
+                <p>Electric potential $V$ at a point is the electric potential energy per unit charge: $V=U/q$, measured in volts (1 V = 1 J/C). The potential of a point charge is $V=kQ/r$ (reference at infinity), and the potential difference $\Delta V$ between two points is the work done per unit charge by an external agent moving a test charge between them: $W_{ext}=q\Delta V$. Equipotential surfaces are perpendicular to field lines because no work is done moving along them. The work-energy theorem for charges gives $\tfrac12 mv^2=q\Delta V$ when starting from rest — the basis of accelerator physics and CRTs.</p>
+                <ul>
+                  <li><strong>Electric field</strong> $\vec{E}=\vec{F}/q$ (N/C, equivalent to V/m); vector pointing in the direction a + test charge would accelerate.</li>
+                  <li><strong>Electric potential</strong> $V=U/q$ (V); scalar.</li>
+                  <li><strong>Between parallel plates</strong>: $E=V/d$, uniform, perpendicular to plates.</li>
+                  <li><strong>Electron-volt</strong>: 1 eV = work done on $e$ across 1 V = $1.602\times 10^{-19}$ J — energy unit for atomic physics.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — electron in parallel-plate field</p>
+                  <p>Parallel plates 5.0 cm apart maintain 250 V. An electron is released from rest at the negative plate. Find its speed when it reaches the positive plate. ($m_e=9.11\times 10^{-31}$ kg)</p>
+                  <p>Step 1 — field: $E=V/d=250/0.050=5000$ V/m, points from + to − plate.</p>
+                  <p>Step 2 — energy conservation: $q\Delta V=\tfrac12 mv^2$. The electron (negative charge) is accelerated toward + plate, gaining KE = $eV$ = $(1.602\times 10^{-19})(250)$ = $4.00\times 10^{-17}$ J.</p>
+                  <p>Step 3 — speed: $v=\sqrt{2(4.00\times 10^{-17})/(9.11\times 10^{-31})}=\sqrt{8.79\times 10^{13}}=9.37\times 10^6$ m/s.</p>
+                  <p>Step 4 — about 3% of $c$: still safely non-relativistic. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing field $\vec{E}$ (vector, N/C) with potential $V$ (scalar, V)</strong> — they're related by $E=-dV/dx$, but not the same.</li>
+                  <li><strong>Drawing field lines that cross</strong> — impossible; field at a point has one direction.</li>
+                  <li><strong>Forgetting electrons accelerate <em>against</em> $\vec{E}$</strong> — because their charge is negative.</li>
+                  <li><strong>Mixing V (volts) with J</strong> — energy is $qV$, not $V$ alone.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.5 — "analyse, and solve problems involving, the electric field and the electric potential at any point between or near charged parallel plates."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -702,6 +1104,34 @@
         <div class="topic-block">
             <div class="topic-title">3.4 — Magnets and Electromagnets</div>
             <div class="topic-desc">Magnetic fields, electromagnets, right-hand rules</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Magnetism, although discovered separately from electricity, is fundamentally an electric phenomenon: every magnetic field arises from moving electric charges. Permanent magnets owe their magnetism to the aligned spins (intrinsic angular momentum) and orbital motion of electrons within their atoms. Magnetic field lines, by convention, point from the north to the south pole outside a magnet, and from south to north inside it, forming closed loops — magnetic monopoles have never been observed, so $\vec{B}$ field lines have no start or end.</p>
+                <p>A straight current-carrying wire produces a magnetic field that circles it according to the <strong>right-hand rule for a wire</strong>: thumb along $I$, fingers curl in the direction of $\vec{B}$. Magnitude near a long straight wire: $B=\mu_0 I/(2\pi r)$, where $\mu_0=4\pi\times 10^{-7}$ T·m/A is the permeability of free space. A solenoid (current-carrying coil) produces a nearly uniform interior field $B=\mu_0 n I$, where $n$ is turns per metre — this is the basis of every electromagnet, from doorbells to MRI machines. Inserting a ferromagnetic core multiplies the field by the relative permeability of the material.</p>
+                <ul>
+                  <li><strong>Magnetic field strength</strong> $B$ — SI unit tesla (T); 1 T = 1 N/(A·m); the gauss (G) is the older cgs unit, 1 T = 10⁴ G.</li>
+                  <li><strong>Permeability</strong> $\mu_0=4\pi\times 10^{-7}\,\text{T·m/A}$ (exact by old SI definition).</li>
+                  <li><strong>Field of a long straight wire</strong>: $B=\mu_0 I/(2\pi r)$ — falls off as $1/r$.</li>
+                  <li><strong>Field inside a solenoid</strong>: $B=\mu_0 n I$ — independent of position (ideal limit).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — solenoid field</p>
+                  <p>A 25 cm solenoid has 1500 turns and carries 2.5 A. Find $B$ inside.</p>
+                  <p>Step 1 — turns per metre: $n=1500/0.25=6000$ turns/m.</p>
+                  <p>Step 2 — apply $B=\mu_0 n I=(4\pi\times 10^{-7})(6000)(2.5)$.</p>
+                  <p>Step 3 — multiply: $B=1.88\times 10^{-2}$ T = 18.8 mT.</p>
+                  <p>Step 4 — context: about 400× Earth's field (≈50 μT). Adding an iron core would boost this by 1000× or more.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing B (tesla) and H (A/m)</strong> — in vacuum $B=\mu_0 H$; B is the "field" we usually draw.</li>
+                  <li><strong>Using the right-hand rule with the left hand</strong> — physical convention is right hand for conventional (positive) current.</li>
+                  <li><strong>Treating field lines as something physically there</strong> — they are a visualization; the field is a vector at every point.</li>
+                  <li><strong>Forgetting that magnetic poles always come in pairs</strong> — cut a bar magnet in half and you get two complete dipoles, not isolated N and S.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.6 — "analyse the magnetic field produced by an electric current (e.g., in a straight wire, a solenoid), and predict the direction of the field using the right-hand rule."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -724,6 +1154,34 @@
         <div class="topic-block">
             <div class="topic-title">3.5 — Magnetic Force on Charges and Currents</div>
             <div class="topic-desc">Force on moving charges, force on current-carrying conductors, applications</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A magnetic field exerts force on moving charges (and on currents, which are moving charges). The Lorentz force on a charge $q$ moving with velocity $\vec{v}$ in field $\vec{B}$ is $\vec{F}=q\vec{v}\times\vec{B}$, magnitude $F=qvB\sin\theta$. The cross product means the force is perpendicular to both $\vec{v}$ and $\vec{B}$ — it can change direction but never speed, so a magnetic field does no work on a free charge. This is why charged particles in a uniform field travel in circles (or helices if there's a velocity component along $\vec{B}$): radius $r=mv/(qB)$, angular frequency $\omega=qB/m$ — the cyclotron frequency, independent of speed (non-relativistically).</p>
+                <p>For a current-carrying wire of length $L$ in a field $\vec{B}$: $\vec{F}=I\vec{L}\times\vec{B}$, magnitude $F=BIL\sin\theta$. Two parallel wires carrying currents in the same direction attract each other (and repel if antiparallel) — this was once used to define the ampere. Applications include the electric motor (current loop in $\vec{B}$ feels a torque), the mass spectrometer (charged ions deflected by radius $r=mv/qB$ separates isotopes), and velocity selectors (crossed $\vec{E}$ and $\vec{B}$ such that $qE=qvB$ → only ions with $v=E/B$ pass through undeflected).</p>
+                <ul>
+                  <li><strong>Lorentz force</strong> on a point charge: $\vec{F}=q(\vec{E}+\vec{v}\times\vec{B})$.</li>
+                  <li><strong>Right-hand rule (cross product)</strong>: fingers from $\vec{v}$ toward $\vec{B}$, thumb gives $\vec{F}$ direction for positive $q$ (reverse for negative).</li>
+                  <li><strong>Circular radius</strong>: $r=mv/(qB)$; <strong>period</strong> $T=2\pi m/(qB)$.</li>
+                  <li><strong>Force on a current</strong>: $F=BIL\sin\theta$ — note "$IL$" replaces "$qv$".</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — proton in a uniform field</p>
+                  <p>A proton moves at $v=2.0\times 10^6$ m/s perpendicular to a $B=0.50$ T field. Find the radius and period of its circular path.</p>
+                  <p>Step 1 — magnetic force provides centripetal: $qvB=mv^2/r \Rightarrow r=mv/(qB)$.</p>
+                  <p>Step 2 — substitute: $r=(1.67\times 10^{-27})(2.0\times 10^6)/[(1.602\times 10^{-19})(0.50)]=4.17\times 10^{-2}$ m = 4.17 cm.</p>
+                  <p>Step 3 — period: $T=2\pi r/v=2\pi(0.0417)/(2.0\times 10^6)=1.31\times 10^{-7}$ s.</p>
+                  <p>Step 4 — equivalently $T=2\pi m/(qB)$ confirms 131 ns; cyclotron frequency 7.6 MHz. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting the $\sin\theta$ factor</strong> — if $\vec{v}\parallel\vec{B}$, force is zero.</li>
+                  <li><strong>Using the right-hand rule for negative charges directly</strong> — must reverse direction, or use left hand.</li>
+                  <li><strong>Saying "$\vec{B}$ does work on the charge"</strong> — it never does on a free charge; speed is unchanged.</li>
+                  <li><strong>Mixing up wire-field rule and Lorentz rule</strong> — both are cross products; check $I\vec{L}$ vs $q\vec{v}$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.4 — "analyse, and solve problems involving, the magnetic force on a moving charge and on a current-carrying conductor (e.g., in a mass spectrometer, a velocity selector, an electric motor)."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -761,6 +1219,34 @@
         <div class="topic-block">
             <div class="topic-title">3.6 — Electromagnetic Induction</div>
             <div class="topic-desc">Faraday's law, Lenz's law, induced EMF, generators and motors, transformers</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Faraday's discovery in 1831 — that a changing magnetic flux through a circuit induces an EMF — closed the symmetry between electricity and magnetism and made the electrical age possible. The <strong>magnetic flux</strong> through a loop of area $A$ in a field $\vec{B}$ is $\Phi_B=\vec{B}\cdot\vec{A}=BA\cos\theta$ (Wb = T·m²). <strong>Faraday's law</strong> states that the induced EMF is $\varepsilon=-N\,d\Phi_B/dt$, where $N$ is the number of loops. The minus sign is <strong>Lenz's law</strong>: the induced current flows in whatever direction will create a magnetic field opposing the <em>change</em> in flux. Lenz's law is conservation of energy in disguise — if the induced current aided the change, you'd get free energy.</p>
+                <p>Three ways to change flux: change $B$ (a moving magnet near a coil), change $A$ (a sliding-bar rectangle in a fixed field), or change the angle (a rotating loop — the basis of every AC generator). For a rod of length $L$ moving at velocity $v$ perpendicular to $\vec{B}$: $\varepsilon=BvL$ (motional EMF). Generators convert mechanical work into electrical energy; motors are the inverse, converting electrical work into mechanical motion via $\vec{F}=I\vec{L}\times\vec{B}$. <strong>Transformers</strong> use mutual induction between two coils sharing an iron core: $V_s/V_p=N_s/N_p$ (ideal), allowing efficient long-distance power transmission at high voltage and low current (minimising $I^2R$ resistive losses).</p>
+                <ul>
+                  <li><strong>Magnetic flux</strong> $\Phi_B=BA\cos\theta$ (Wb).</li>
+                  <li><strong>Faraday's law</strong>: $\varepsilon=-N\,d\Phi_B/dt$ (V).</li>
+                  <li><strong>Lenz's law</strong>: induced current opposes the change in flux.</li>
+                  <li><strong>Transformer equation</strong>: $V_s/V_p=N_s/N_p$; ideal-power: $V_pI_p=V_sI_s$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — coil rotating in a magnetic field</p>
+                  <p>A 200-turn square coil of side 8.0 cm rotates at 60 Hz in a 0.30 T field. Find the peak EMF.</p>
+                  <p>Step 1 — area: $A=(0.08)^2=6.4\times 10^{-3}\,\text{m}^2$.</p>
+                  <p>Step 2 — angular frequency: $\omega=2\pi f=2\pi(60)=377$ rad/s.</p>
+                  <p>Step 3 — flux varies as $\Phi=BA\cos(\omega t)$, so $\varepsilon=-N\,d\Phi/dt=NBA\omega\sin(\omega t)$.</p>
+                  <p>Step 4 — peak EMF: $\varepsilon_{max}=NBA\omega=(200)(0.30)(6.4\times 10^{-3})(377)=145$ V.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting the minus sign / Lenz's law</strong> — leads to wrong polarity of induced EMF.</li>
+                  <li><strong>Computing $\Phi=BA$ without the $\cos\theta$</strong> — only valid when $\vec{B}\perp$ plane of loop.</li>
+                  <li><strong>Saying "current induces EMF"</strong> — it's the changing <em>flux</em> that induces EMF; current then results from $\varepsilon/R$.</li>
+                  <li><strong>Using transformer equation for DC</strong> — transformers need changing flux; pure DC produces zero output.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "explain the phenomenon of electromagnetic induction in qualitative and quantitative terms, using Faraday's law and Lenz's law."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -868,6 +1354,34 @@
         <div class="topic-block">
             <div class="topic-title">4.1 — Properties of Waves and Refraction</div>
             <div class="topic-desc">Wave properties, speed of light, refraction, total internal reflection</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>wave</strong> is a disturbance that transports energy (and momentum) through a medium — or, for light, through empty space — without net transport of matter. All periodic waves share the universal relationship $v=f\lambda$, where $v$ is the propagation speed, $f$ the frequency (Hz), and $\lambda$ the wavelength (m). For light in vacuum, $v=c=2.998\times 10^8$ m/s. In a medium of index of refraction $n$, light travels slower at speed $v=c/n$, and its wavelength shortens to $\lambda_{med}=\lambda_0/n$ — but frequency stays the same because frequency is set by the source.</p>
+                <p>When light crosses a boundary between two media, it bends according to <strong>Snell's law</strong>: $n_1\sin\theta_1=n_2\sin\theta_2$, with angles measured from the <em>normal</em> to the surface. Light entering a denser medium (larger $n$) bends toward the normal; going from dense to less dense, it bends away. If the angle of incidence in the denser medium is large enough, $\sin\theta_2$ would exceed 1 — physically impossible — so the light is entirely reflected back. This <strong>total internal reflection</strong> begins at the critical angle $\sin\theta_c=n_2/n_1$ (with $n_1>n_2$). It is the principle behind fiber optics, retroreflective prisms, and the brilliance of cut diamonds.</p>
+                <ul>
+                  <li><strong>Wave equation</strong>: $v=f\lambda$; all three SI units in one relation.</li>
+                  <li><strong>Index of refraction</strong> $n=c/v$ (dimensionless); typical: air ≈ 1.000, water ≈ 1.33, glass ≈ 1.50, diamond ≈ 2.42.</li>
+                  <li><strong>Snell's law</strong>: $n_1\sin\theta_1=n_2\sin\theta_2$.</li>
+                  <li><strong>Critical angle</strong>: $\sin\theta_c=n_2/n_1$, only defined for $n_1>n_2$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — fiber optic critical angle</p>
+                  <p>An optical fiber has core index $n_1=1.50$ and cladding $n_2=1.40$. Find the critical angle for total internal reflection.</p>
+                  <p>Step 1 — apply: $\sin\theta_c=n_2/n_1=1.40/1.50=0.9333$.</p>
+                  <p>Step 2 — invert: $\theta_c=\sin^{-1}(0.9333)=69.0°$.</p>
+                  <p>Step 3 — interpret: any ray hitting the core-cladding boundary at $>69°$ from the normal reflects 100%, propagating losslessly along the fiber.</p>
+                  <p>Step 4 — speed inside core: $v=c/n_1=3.00\times 10^8/1.50=2.00\times 10^8$ m/s.</p>
+                </div>
+                <ul>
+                  <li><strong>Measuring angles from the surface</strong> instead of the normal — Snell's law uses the normal.</li>
+                  <li><strong>Assuming $f$ changes when light enters a new medium</strong> — only $v$ and $\lambda$ change; $f$ is fixed.</li>
+                  <li><strong>Applying TIR formula when $n_1<n_2$</strong> — TIR only happens going from dense to less dense.</li>
+                  <li><strong>Treating reflection and refraction as alternatives</strong> — both happen at a boundary; TIR is the limiting case where refraction vanishes.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.1 — "use an inquiry process to investigate the properties of waves (e.g., reflection, refraction, diffraction, interference)."</p>
+              </div>
+            </details>
             
             <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
                 <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_205_20-_20Light_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Wave Nature of Light Notes</a>
@@ -894,6 +1408,34 @@
         <div class="topic-block">
             <div class="topic-title">4.2 — Diffraction and Interference of Waves</div>
             <div class="topic-desc">Diffraction, constructive and destructive interference, water wave demonstrations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Two phenomena distinguish waves from particles: <strong>diffraction</strong> and <strong>interference</strong>. Diffraction is the bending of waves around obstacles or through openings, becoming significant when the obstacle/aperture size is comparable to the wavelength. This is why you can hear someone around a corner (sound $\lambda\sim 1$ m, easily diffracts past door frames) but can't see them (light $\lambda\sim 500$ nm, requires nanometre-scale features to diffract visibly). Huygens' principle explains why: every point on a wavefront acts as a new source of secondary wavelets, and their envelope forms the next wavefront — so waves naturally spread into the geometric shadow.</p>
+                <p><strong>Interference</strong> happens when two coherent waves overlap. By the <strong>superposition principle</strong>, the resultant displacement is the algebraic sum of the individual displacements. Where crests meet crests (path-length difference $\Delta x=m\lambda$, $m=0,\pm 1,\pm 2,\ldots$), waves <strong>constructively interfere</strong> and produce a maximum. Where crests meet troughs ($\Delta x=(m+\tfrac12)\lambda$), they <strong>destructively interfere</strong> and cancel. Ripple-tank demonstrations with two in-phase sources show clear "antinodal" and "nodal" lines fanning outward — a hallmark of wave behaviour that no particle theory can explain.</p>
+                <ul>
+                  <li><strong>Coherent sources</strong> — same frequency, fixed phase relationship; required for stable interference patterns.</li>
+                  <li><strong>Superposition</strong>: $y_{total}=y_1+y_2$ — linear addition of displacements.</li>
+                  <li><strong>Constructive</strong>: path-difference $\Delta x = m\lambda$ ($m$ integer); amplitude adds.</li>
+                  <li><strong>Destructive</strong>: $\Delta x=(m+\tfrac12)\lambda$; amplitudes cancel.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — two ripple-tank sources</p>
+                  <p>Two in-phase sources 3.0 cm apart emit waves of $\lambda=1.5$ cm. At a point 25 cm from one source and 22 cm from the other, is the interference constructive or destructive?</p>
+                  <p>Step 1 — path-length difference: $|\Delta x|=|25-22|=3.0$ cm.</p>
+                  <p>Step 2 — express in $\lambda$: $\Delta x/\lambda=3.0/1.5=2.0$ — an integer.</p>
+                  <p>Step 3 — since $\Delta x=2\lambda$ exactly, the waves arrive in phase → constructive interference, amplitude is maximised (antinode).</p>
+                  <p>Step 4 — if the point had been 24 cm from one and 22 cm from the other, $\Delta x=2\,\text{cm}=4\lambda/3$ — neither fully constructive nor destructive; intermediate amplitude.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting coherence</strong> — incoherent sources (two lamps) produce no stable pattern.</li>
+                  <li><strong>Confusing diffraction with refraction</strong> — diffraction is bending due to an obstacle/aperture; refraction is bending due to a speed change.</li>
+                  <li><strong>Saying "energy is destroyed in destructive interference"</strong> — energy is redistributed to constructive regions; total energy conserved.</li>
+                  <li><strong>Using $\Delta x=m\lambda$ when sources are out of phase</strong> — formula assumes in-phase sources.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.2 — "analyse, in qualitative and quantitative terms, the conditions required for constructive and destructive interference of waves."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -916,6 +1458,34 @@
         <div class="topic-block">
             <div class="topic-title">4.3 — Wave-Particle Duality and Young's Double Slit</div>
             <div class="topic-desc">Evidence for wave nature of light, Young's experiment, fringe spacing</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In 1801 Thomas Young settled (for a century) the centuries-old debate over the nature of light by showing that light passing through two narrow slits produces an interference pattern of bright and dark fringes on a screen — exactly the behaviour predicted for a wave, never explicable by Newton's corpuscles. For two slits separated by $d$, with the screen at distance $L\gg d$, the bright fringes (maxima) occur at angles satisfying $d\sin\theta=m\lambda$, and the fringe spacing on the screen is $\Delta y=\lambda L/d$.</p>
+                <p>The geometric reason: light from the two slits travels different distances to a given point on the screen. The path-length difference is $d\sin\theta$ for distant points. When this equals an integer number of wavelengths, the waves arrive in phase → bright fringe. When it equals a half-integer number of wavelengths, they arrive out of phase → dark fringe. The pattern's fringe spacing $\lambda L/d$ also explains why visible-light interference patterns require slits within microns of each other: a 600-nm wavelength and 1-m screen with 0.1-mm slit spacing gives 6-mm fringes — barely visible. Young's experiment is the historical foundation of the wave theory of light; in modern physics, when repeated with single photons or electrons, it also reveals quantum wave-particle duality (Strand F).</p>
+                <ul>
+                  <li><strong>Young's bright-fringe condition</strong>: $d\sin\theta=m\lambda$, $m=0,\pm 1,\pm 2,\ldots$.</li>
+                  <li><strong>Dark-fringe condition</strong>: $d\sin\theta=(m+\tfrac12)\lambda$.</li>
+                  <li><strong>Fringe spacing</strong>: $\Delta y=\lambda L/d$ (m), for small angles.</li>
+                  <li><strong>Coherence length</strong> — laser light works best because it has long coherence; lamp light needs a single slit first to enforce coherence.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — measuring wavelength with double slit</p>
+                  <p>Young's experiment uses slits 0.10 mm apart, screen 2.0 m away. Fringes are 1.10 cm apart. Find $\lambda$.</p>
+                  <p>Step 1 — formula: $\Delta y=\lambda L/d \Rightarrow \lambda=d\,\Delta y/L$.</p>
+                  <p>Step 2 — convert: $d=1.0\times 10^{-4}$ m, $\Delta y=1.10\times 10^{-2}$ m, $L=2.0$ m.</p>
+                  <p>Step 3 — substitute: $\lambda=(1.0\times 10^{-4})(1.10\times 10^{-2})/2.0=5.5\times 10^{-7}$ m = 550 nm.</p>
+                  <p>Step 4 — interpret: this is green light, near the peak sensitivity of the human eye. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing $d$ (slit separation) and slit width</strong> — width affects single-slit envelope; $d$ sets fringe spacing.</li>
+                  <li><strong>Using $\sin\theta\approx\tan\theta\approx y/L$ for large angles</strong> — only valid in small-angle limit.</li>
+                  <li><strong>Mixing units</strong> — wavelength is in nm, slit separation in μm or mm; convert everything to metres.</li>
+                  <li><strong>Forgetting central maximum is at $m=0$</strong> — counting "first bright fringe" should be $m=1$, not $m=0$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.4 — "analyse, in qualitative and quantitative terms, the interference of light in a double-slit experiment (e.g., calculate the wavelength of light from data on the fringe pattern)."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -938,6 +1508,34 @@
         <div class="topic-block">
             <div class="topic-title">4.4 — Thin Film Interference</div>
             <div class="topic-desc">Interference in thin films, soap bubbles, anti-reflective coatings</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Thin films — soap bubbles, oil slicks on wet pavement, anti-reflective coatings on lenses, the iridescent layers of butterfly wings — exhibit interference between light reflected from the top and bottom surfaces of the film. Two physical effects combine: an <em>extra path length</em> $2t$ (where $t$ is the film thickness, for near-normal incidence) traversed inside the film, and possible <em>phase inversions</em> on reflection. A light wave reflecting from a medium of <em>higher</em> $n$ undergoes a half-wavelength ($\pi$) phase shift; reflection from a <em>lower</em>-$n$ medium does not.</p>
+                <p>The wavelength inside a film of index $n_f$ is $\lambda_f=\lambda_0/n_f$. For a film with phase shifts on both, only one, or neither reflection, the constructive/destructive conditions swap. A common case: soap bubble in air. Light reflecting from the outer surface flips (air to soap is low-to-high $n$); inner-surface reflection (soap to air is high-to-low) does not flip. Net phase difference is the geometric one plus $\pi$. Constructive (visible bright colour): $2n_f t=(m+\tfrac12)\lambda_0$. Destructive: $2n_f t=m\lambda_0$. The thinnest possible bright film has $t=\lambda_0/(4n_f)$ — the quarter-wave principle behind every anti-reflective lens coating.</p>
+                <ul>
+                  <li><strong>Optical path length</strong>: $n\cdot$(geometric length); makes phase comparison correct in any medium.</li>
+                  <li><strong>Phase inversion on reflection</strong>: occurs when reflecting off a higher-index medium.</li>
+                  <li><strong>Wavelength in film</strong>: $\lambda_f=\lambda_0/n_f$.</li>
+                  <li><strong>Quarter-wave coating</strong>: $t=\lambda_0/(4n_f)$ — minimum-thickness anti-reflective film.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — anti-reflective lens coating</p>
+                  <p>A camera lens ($n_{glass}=1.55$) is coated with MgF₂ ($n_f=1.38$) to minimise reflection at $\lambda_0=550$ nm (green). Find the minimum coating thickness.</p>
+                  <p>Step 1 — phase shifts: air→MgF₂ (low to high) → π flip. MgF₂→glass (low to high) → another π flip. Two π flips cancel, leaving only path-length effect.</p>
+                  <p>Step 2 — destructive condition (minimum reflection): $2n_f t=(m+\tfrac12)\lambda_0$.</p>
+                  <p>Step 3 — smallest $t$ with $m=0$: $t=\lambda_0/(4n_f)=550\,\text{nm}/(4\cdot 1.38)=99.6$ nm.</p>
+                  <p>Step 4 — physical check: this is ~100 nm, the standard for visible-light AR coatings. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting one or both phase inversions</strong> — track them at <em>each</em> interface based on the relative indices.</li>
+                  <li><strong>Using $\lambda_0$ inside the film</strong> — must use $\lambda_f=\lambda_0/n_f$ or equivalently multiply by $n_f$ to get optical path $2n_f t$.</li>
+                  <li><strong>Confusing condition for "bright" reflection vs. "bright" transmission</strong> — they are opposite.</li>
+                  <li><strong>Assuming the formula always involves a $+\tfrac12$</strong> — depends on phase-shift bookkeeping, not just film geometry.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.5 — "analyse, in qualitative and quantitative terms, the interference of light in thin films (e.g., soap bubbles, oil slicks, anti-reflective coatings)."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -960,6 +1558,34 @@
         <div class="topic-block">
             <div class="topic-title">4.5 — Single-Slit Diffraction and Diffraction Gratings</div>
             <div class="topic-desc">Single-slit pattern, diffraction gratings, resolving power</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A single narrow slit of width $a$ produces its own diffraction pattern, distinct from the double-slit case. The pattern features a broad bright central maximum flanked by progressively dimmer secondary maxima. The dark minima occur where the slit can be subdivided into pairs of points whose contributions exactly cancel: $a\sin\theta=m\lambda$ for $m=\pm 1,\pm 2,\ldots$ (note: $m=0$ is the central <em>maximum</em>, not a minimum, in single-slit diffraction — this is the key difference from double-slit). The angular width of the central peak is $\Delta\theta\approx 2\lambda/a$, so narrower slits spread light more.</p>
+                <p>A <strong>diffraction grating</strong> has many thousands of equally spaced slits, characterized by the slit spacing $d$ (or "grating constant"; often quoted as "lines per mm"). The condition for principal maxima is the same as for two slits, $d\sin\theta=m\lambda$, but with many slits in play the maxima become extremely sharp and narrow — gratings act as high-resolution spectrometers. Because $\sin\theta$ depends on $\lambda$, different wavelengths emerge at different angles, separating white light into a spectrum. <strong>Resolving power</strong>: a grating with $N$ illuminated lines can resolve wavelengths differing by $\Delta\lambda=\lambda/(mN)$ — Rayleigh's criterion — vastly outperforming prisms.</p>
+                <ul>
+                  <li><strong>Single-slit minima</strong>: $a\sin\theta=m\lambda$, $m=\pm 1,\pm 2,\ldots$ (not $m=0$).</li>
+                  <li><strong>Grating maxima</strong>: $d\sin\theta=m\lambda$, $m=0,\pm 1,\pm 2,\ldots$</li>
+                  <li><strong>Slit width</strong> $a$ vs <strong>slit spacing</strong> $d$ — different symbols for different roles.</li>
+                  <li><strong>Resolving power</strong>: $R=\lambda/\Delta\lambda=mN$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — grating spectrum of sodium</p>
+                  <p>A grating with 600 lines/mm is illuminated by sodium light ($\lambda=589$ nm). Find the angles of the first-order and second-order maxima.</p>
+                  <p>Step 1 — slit spacing: $d=1\,\text{mm}/600=1.667\times 10^{-6}$ m.</p>
+                  <p>Step 2 — first order ($m=1$): $\sin\theta_1=\lambda/d=5.89\times 10^{-7}/1.667\times 10^{-6}=0.3534 \Rightarrow \theta_1=20.7°$.</p>
+                  <p>Step 3 — second order ($m=2$): $\sin\theta_2=2\lambda/d=0.7068 \Rightarrow \theta_2=45.0°$.</p>
+                  <p>Step 4 — third order: $\sin\theta_3=3(0.3534)=1.06>1$ — no third-order maximum exists; cut off.</p>
+                </div>
+                <ul>
+                  <li><strong>Putting $m=0$ in single-slit minimum formula</strong> — gives nonsense; central is a maximum.</li>
+                  <li><strong>Confusing slit width and slit spacing in grating problems</strong> — width affects envelope, spacing sets fringes.</li>
+                  <li><strong>Forgetting $\sin\theta\le 1$</strong> — high orders may be physically inaccessible.</li>
+                  <li><strong>Assuming all maxima equal brightness</strong> — single-slit envelope modulates the intensity of grating peaks.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.6 — "analyse, in qualitative and quantitative terms, single-slit diffraction and the operation of diffraction gratings."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -982,6 +1608,34 @@
         <div class="topic-block">
             <div class="topic-title">4.6 — Electromagnetic Radiation and Polarization</div>
             <div class="topic-desc">EM spectrum, polarization of light, Malus's law</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Maxwell predicted in 1865 that oscillating electric and magnetic fields support each other and propagate through vacuum as a transverse <strong>electromagnetic wave</strong> at speed $c=1/\sqrt{\mu_0\varepsilon_0}\approx 3.00\times 10^8$ m/s. The agreement of this prediction with the measured speed of light proved that light is an EM wave. The electromagnetic spectrum is a continuum from radio waves ($\lambda\sim$ km, $f\sim$ kHz) through microwaves, infrared, visible ($\lambda\sim$ 400–700 nm), ultraviolet, X-rays, and gamma rays ($\lambda\sim 10^{-12}$ m and shorter). All travel at $c$ in vacuum; what differs is wavelength/frequency and how they interact with matter.</p>
+                <p>Because EM waves are <strong>transverse</strong>, the electric field oscillates in a plane perpendicular to the direction of propagation; "polarization" refers to the orientation of this plane. Ordinary (thermal) light is unpolarized — many emitters with random orientations. A <strong>polarizer</strong> (e.g. a Polaroid sheet) transmits only the component of $\vec{E}$ along its transmission axis. When polarized light of intensity $I_0$ passes through a second polarizer whose axis is at angle $\theta$ to the first, the transmitted intensity is $I=I_0\cos^2\theta$ — <strong>Malus's law</strong>. Two crossed polarizers ($\theta=90°$) block light entirely. Sunglasses, LCD screens, and photoelasticity all exploit polarization.</p>
+                <ul>
+                  <li><strong>Speed of light</strong> $c=2.998\times 10^8$ m/s in vacuum.</li>
+                  <li><strong>EM spectrum order</strong> (increasing $f$): radio → microwave → IR → visible → UV → X-ray → γ-ray.</li>
+                  <li><strong>Polarization</strong> — direction of $\vec{E}$ oscillation; only meaningful for transverse waves.</li>
+                  <li><strong>Malus's law</strong>: $I=I_0\cos^2\theta$ (for linearly polarized light through a second polarizer).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — three polarizers</p>
+                  <p>Unpolarized light of intensity $I_0$ passes through three polarizers: the first vertical, the second at 30° to vertical, the third horizontal. Find the final intensity.</p>
+                  <p>Step 1 — first polarizer transmits half of unpolarized: $I_1=I_0/2$, vertically polarized.</p>
+                  <p>Step 2 — second polarizer, $\theta=30°$: $I_2=I_1\cos^2 30°=(I_0/2)(0.75)=0.375 I_0$, polarized at 30°.</p>
+                  <p>Step 3 — third polarizer, angle from 30° to 90° = 60°: $I_3=I_2\cos^2 60°=0.375 I_0\cdot 0.25=0.0938 I_0$.</p>
+                  <p>Step 4 — about 9.4% of $I_0$. Removing the middle polarizer would block light entirely (crossed polarizers). The middle polarizer paradoxically <em>increases</em> transmission. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Applying Malus's law to unpolarized light</strong> — for the first polarizer, intensity halves regardless of orientation.</li>
+                  <li><strong>Saying "$E$ and $B$ point in the same direction"</strong> — they are perpendicular, both perpendicular to propagation.</li>
+                  <li><strong>Confusing wavelength and frequency on the spectrum</strong> — high $f$ ↔ short $\lambda$.</li>
+                  <li><strong>Treating polarization as a property of sound waves</strong> — sound is longitudinal in fluids and cannot be polarized.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.7 — "analyse, in qualitative and quantitative terms, the polarization of electromagnetic waves (e.g., using Malus's law)."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -1031,6 +1685,34 @@
         <div class="topic-block">
             <div class="topic-title">5.1 — Special Relativity</div>
             <div class="topic-desc">Einstein's postulates, time dilation, length contraction, mass-energy equivalence E=mc²</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In 1905 Einstein proposed two postulates that overturned 200 years of Newtonian thinking. <strong>Postulate 1 (principle of relativity):</strong> the laws of physics are identical in all inertial reference frames. <strong>Postulate 2 (invariance of $c$):</strong> the speed of light in vacuum, $c$, is the same in every inertial frame, regardless of the motion of the source or observer. The second postulate flatly contradicts Galilean velocity addition; preserving both postulates forces us to abandon absolute simultaneity and absolute time. Space and time become coupled coordinates of a single 4-dimensional spacetime.</p>
+                <p>The dramatic consequences: <strong>time dilation</strong> — a clock moving at speed $v$ relative to an observer ticks slowly: $\Delta t=\gamma\Delta t_0$, where $\Delta t_0$ is the proper time (in the clock's rest frame) and the Lorentz factor $\gamma=1/\sqrt{1-v^2/c^2}\ge 1$. <strong>Length contraction</strong> — an object's length along its direction of motion appears shortened: $L=L_0/\gamma$, where $L_0$ is the proper length. <strong>Mass-energy equivalence</strong> — the total energy of a particle of rest mass $m$ moving at speed $v$ is $E=\gamma mc^2$, comprising rest energy $E_0=mc^2$ and relativistic kinetic energy $E_k=(\gamma-1)mc^2$. At low speeds ($v\ll c$, $\gamma\approx 1+v^2/(2c^2)$) this reduces to Newtonian $E_k=\tfrac12 mv^2$ — the bridge between classical and relativistic mechanics.</p>
+                <ul>
+                  <li><strong>Lorentz factor</strong> $\gamma=1/\sqrt{1-v^2/c^2}$ (dimensionless); $\gamma=1$ at rest, $\to\infty$ as $v\to c$.</li>
+                  <li><strong>Proper time</strong> $\Delta t_0$ — measured in the frame where two events occur at the same place.</li>
+                  <li><strong>Proper length</strong> $L_0$ — measured in the rest frame of the object.</li>
+                  <li><strong>$E=mc^2$</strong> — 1 kg ↔ 9×10¹⁶ J; basis of nuclear energy and particle physics.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — muon decay</p>
+                  <p>A muon has a proper lifetime $\tau_0=2.2\,\mu$s. Cosmic-ray muons created at 15 km altitude travel at $v=0.995c$. Do they reach the ground before decaying?</p>
+                  <p>Step 1 — Lorentz factor: $\gamma=1/\sqrt{1-0.995^2}=1/\sqrt{0.00998}=10.0$.</p>
+                  <p>Step 2 — dilated lifetime as measured from the ground: $\tau=\gamma\tau_0=22\,\mu$s.</p>
+                  <p>Step 3 — distance travelled before decay: $d=v\tau=(0.995)(3\times 10^8)(22\times 10^{-6})=6.6\times 10^3$ m, but exponential decay extends this; the experimental flux at sea level matches relativistic prediction, not the 660 m of classical physics.</p>
+                  <p>Step 4 — alternative: in muon's frame, the 15 km mountain is contracted to $L_0/\gamma=1500$ m, easily covered in 5 μs &lt; lifetime. Same physics, two viewpoints. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Applying $\gamma$ formula at non-relativistic speeds</strong> — pointless; gives 1.000…; classical formulas suffice.</li>
+                  <li><strong>Saying "moving objects gain mass"</strong> — modern convention treats $m$ as invariant rest mass; what increases is $\gamma m$ (relativistic momentum and energy).</li>
+                  <li><strong>Mixing proper and improper time/length</strong> — always identify which observer measures the "proper" quantity.</li>
+                  <li><strong>Using Galilean velocity addition</strong> — must use $u'=(u-v)/(1-uv/c^2)$ at high speeds.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.3 — "solve problems related to Einstein's theory of special relativity (e.g., problems involving time dilation, length contraction, and mass-energy equivalence)."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -1077,6 +1759,34 @@
         <div class="topic-block">
             <div class="topic-title">5.2 — Photoelectric Effect &amp; Quantum Mechanics</div>
             <div class="topic-desc">Photons, work function, threshold frequency, de Broglie wavelength, wave-particle duality</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Despite the success of Maxwell's wave theory of light, three early-1900s experiments forced the introduction of <strong>quanta</strong>. The most decisive was the <strong>photoelectric effect</strong>: light incident on a metal ejects electrons, but only if the frequency $f$ exceeds a metal-specific threshold $f_0$, regardless of intensity. Einstein (1905) explained this by proposing that light comes in discrete bundles called <strong>photons</strong>, each carrying energy $E=hf$, where $h=6.626\times 10^{-34}$ J·s is Planck's constant. The maximum kinetic energy of an ejected electron is $E_{k,max}=hf-\phi$, where $\phi$ is the <strong>work function</strong> (the minimum energy needed to liberate an electron from that metal). Below threshold, $hf<\phi$, no electrons emerge no matter how bright the light. This won Einstein the 1921 Nobel Prize.</p>
+                <p>If light has particle properties, by symmetry matter should have wave properties. De Broglie (1924) postulated that every particle has a wavelength $\lambda=h/p$, where $p$ is its momentum. For electrons accelerated through a potential difference $V$, $p=\sqrt{2meV}$, giving $\lambda$ in the angstrom range — confirmed in 1927 when Davisson and Germer observed electron diffraction from a crystal lattice. Modern electron microscopes exploit this. Wave-particle duality is now a foundational principle: every quantum object is described by a wave function whose intensity gives the probability of finding the particle.</p>
+                <ul>
+                  <li><strong>Planck's constant</strong> $h=6.626\times 10^{-34}$ J·s; reduced $\hbar=h/(2\pi)$.</li>
+                  <li><strong>Photon energy</strong>: $E=hf=hc/\lambda$ (J); often quoted in eV: $E_\text{eV}=1240/\lambda_\text{nm}$.</li>
+                  <li><strong>Photoelectric equation</strong>: $E_{k,max}=hf-\phi=h(f-f_0)$, with $\phi=hf_0$.</li>
+                  <li><strong>de Broglie wavelength</strong>: $\lambda=h/p$ — applies to any particle.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — photoelectrons from sodium</p>
+                  <p>Sodium has $\phi=2.28$ eV. Light of $\lambda=400$ nm shines on it. Find the maximum KE of ejected photoelectrons and the cutoff frequency.</p>
+                  <p>Step 1 — photon energy: $E=hc/\lambda=(6.626\times 10^{-34})(3\times 10^8)/(400\times 10^{-9})=4.97\times 10^{-19}$ J = 3.10 eV.</p>
+                  <p>Step 2 — max KE: $E_{k,max}=E-\phi=3.10-2.28=0.82$ eV = $1.31\times 10^{-19}$ J.</p>
+                  <p>Step 3 — max electron speed: $v=\sqrt{2E_k/m_e}=\sqrt{2(1.31\times 10^{-19})/(9.11\times 10^{-31})}=5.37\times 10^5$ m/s.</p>
+                  <p>Step 4 — cutoff frequency: $f_0=\phi/h=(2.28\times 1.602\times 10^{-19})/(6.626\times 10^{-34})=5.51\times 10^{14}$ Hz (cutoff $\lambda_0=544$ nm, green-yellow). ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing photon energy with frequency</strong> — $E$ has units of J or eV; $f$ has units of Hz. They differ by a factor of $h$.</li>
+                  <li><strong>Thinking brighter light gives more energetic electrons</strong> — intensity gives more electrons (more photons), but $E_{k,max}$ depends only on $f$.</li>
+                  <li><strong>Using $E=hf$ for material particles</strong> — for particles, energy is $\tfrac12 mv^2$ (or relativistic), not $hf$ directly; their wavelength is $h/p$.</li>
+                  <li><strong>Forgetting $\phi$ varies with metal</strong> — Cs ≈ 2.1 eV, Na ≈ 2.3 eV, Cu ≈ 4.7 eV; affects threshold.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "analyse data related to the photoelectric effect, and use the data to determine Planck's constant and the work function of a metal."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">
@@ -1123,6 +1833,34 @@
         <div class="topic-block">
             <div class="topic-title">5.3 — Nuclear Physics &amp; Radioactivity</div>
             <div class="topic-desc">Atomic models, nuclear reactions, alpha/beta/gamma decay, half-life, fission and fusion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The atomic nucleus contains protons (charge $+e$, mass ≈ 1.673×10⁻²⁷ kg) and neutrons (no charge, mass ≈ 1.675×10⁻²⁷ kg), collectively called <strong>nucleons</strong>, bound together by the short-range <strong>strong nuclear force</strong>. A nuclide is labeled $^A_Z X$ where $Z$ is the atomic number (number of protons), $A$ is the mass number (total nucleons), and $N=A-Z$ is the number of neutrons. Isotopes of an element share $Z$ but differ in $N$. The mass of a nucleus is less than the sum of its constituents' masses; this <strong>mass defect</strong> $\Delta m$ corresponds (via $E=\Delta mc^2$) to the <strong>binding energy</strong> holding the nucleus together. Iron-56 has the highest binding energy per nucleon (~8.8 MeV), explaining why fusion of light nuclei and fission of heavy ones both release energy.</p>
+                <p>Unstable nuclei decay by three main modes. <strong>Alpha decay:</strong> emission of an $\alpha$ particle ($^4_2\text{He}$ nucleus); $A$ decreases by 4, $Z$ by 2. <strong>Beta-minus decay:</strong> a neutron converts to a proton plus an electron (the $\beta^-$ particle) and an antineutrino; $A$ unchanged, $Z$ increases by 1. <strong>Gamma decay:</strong> high-energy photon emission from an excited nucleus; $A$ and $Z$ unchanged. Each decay obeys conservation of charge, of nucleon number, and of energy-momentum. Decay is a statistical process: the number of undecayed nuclei follows $N(t)=N_0(1/2)^{t/T_{1/2}}$, where $T_{1/2}$ is the <strong>half-life</strong> — the time for half of a population to decay. Half-lives span from microseconds to billions of years.</p>
+                <ul>
+                  <li><strong>Atomic mass unit</strong>: 1 u = 1.661×10⁻²⁷ kg ↔ 931.5 MeV/c² of energy.</li>
+                  <li><strong>Decay law</strong>: $N(t)=N_0 e^{-\lambda t}=N_0(1/2)^{t/T_{1/2}}$; decay constant $\lambda=\ln 2/T_{1/2}$.</li>
+                  <li><strong>Activity</strong> $A=\lambda N$ (Bq = decays/s); 1 Ci = 3.7×10¹⁰ Bq.</li>
+                  <li><strong>Fission</strong> — heavy nucleus splits (e.g. U-235); <strong>fusion</strong> — light nuclei combine (e.g. D + T → He-4 + n).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — radiocarbon dating</p>
+                  <p>$^{14}\text{C}$ has $T_{1/2}=5730$ y. A wooden artifact contains $^{14}\text{C}$ at 25% of the ratio in living wood. Estimate its age.</p>
+                  <p>Step 1 — fraction remaining: $N/N_0=0.25=(1/2)^2$, so 2 half-lives have passed.</p>
+                  <p>Step 2 — age: $t=2\times 5730=11{,}460$ y.</p>
+                  <p>Step 3 — energy-defect cross-check: $^{14}\text{C}\to {}^{14}\text{N}+\beta^-+\bar\nu_e$. Mass excess: $\Delta m c^2=0.156$ MeV released per decay.</p>
+                  <p>Step 4 — uncertainty: dating reliable to ~50,000 y because $^{14}\text{C}$ becomes too sparse beyond ~9 half-lives.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting to conserve $A$ and $Z$</strong> in a decay equation — both must balance on each side.</li>
+                  <li><strong>Confusing $\beta^-$ (electron) and $\beta^+$ (positron) decay</strong> — they change $Z$ in opposite directions.</li>
+                  <li><strong>Linear scaling of decay</strong> — radioactive decay is exponential, not linear; "half-life" times two does NOT give zero remaining.</li>
+                  <li><strong>Mixing fission and fusion</strong> — both release energy because both move toward Fe-56 on the binding-energy curve, but from opposite ends.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.4 — "describe the principal types of nuclear reactions (e.g., alpha, beta, and gamma decay; fission; fusion), and represent them using nuclear equations."</p>
+              </div>
+            </details>
             <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
 
                 <div class="video-card">

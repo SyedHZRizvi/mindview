@@ -45,6 +45,17 @@
 .topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
 .topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
 
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
 </style>
 </head><body>
 <nav class="navbar"><div class="nav-container">
@@ -82,6 +93,44 @@
                 <span>📹 6 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Calculus begins with a deceptively simple question: how do we measure the slope of a curve at a single point, when "slope" was originally defined only between two distinct points? The historical breakthrough — credited to Newton and Leibniz in the late 17th century — was to study what happens to the slope of a secant line \(\frac{f(x+h)-f(x)}{h}\) as the second point slides toward the first, that is, as \(h \to 0\). The numerator and denominator both approach zero, so naïve substitution gives the indeterminate form \(\tfrac{0}{0}\). The <strong>limit</strong> is the rigorous tool that lets us extract a meaningful number from this expression.</p>
+            <p>This unit develops three intertwined ideas: the slope of a tangent line at a point, the instantaneous rate of change of a function, and the formal limit. The "why" matters more than the "what" — every later topic (derivatives, optimization, related rates) is built on this foundation. A function is <strong>continuous</strong> at \(x=a\) precisely when its limit exists, its value exists, and the two agree; this is why we factor, rationalize, or use conjugates to convert apparent \(\tfrac{0}{0}\) forms into algebraic expressions that survive the limiting process.</p>
+            <p>Average rate of change is geometric (a secant slope between two points); instantaneous rate of change is the limit of those secant slopes as the interval shrinks to zero. Understanding this distinction is the conceptual jump from Grade 11 functions to Grade 12 calculus.</p>
+            <ul>
+              <li><strong>Limit</strong> — the value \(L\) that \(f(x)\) approaches as \(x\) approaches \(a\); written \(\lim_{x\to a} f(x) = L\).</li>
+              <li><strong>Secant line</strong> — a straight line passing through two points on a curve; its slope is \(\frac{f(b)-f(a)}{b-a}\).</li>
+              <li><strong>Tangent line</strong> — the limiting position of secant lines as the two points coalesce; its slope is the instantaneous rate of change.</li>
+              <li><strong>Average rate of change</strong> — \(\frac{\Delta y}{\Delta x}\) over a finite interval.</li>
+              <li><strong>Instantaneous rate of change</strong> — \(\lim_{h\to 0} \frac{f(a+h)-f(a)}{h}\).</li>
+              <li><strong>Continuity at \(x=a\)</strong> — \(f(a)\) exists, \(\lim_{x\to a} f(x)\) exists, and the two are equal.</li>
+              <li><strong>Indeterminate form</strong> — an expression such as \(\tfrac{0}{0}\) whose value is not determined by the form alone and requires algebraic manipulation.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Slope of the tangent to \(f(x) = x^2\) at \(x = 3\)</p>
+              <p>Set up the difference quotient: \[m_{\text{tan}} = \lim_{h \to 0} \frac{f(3+h)-f(3)}{h} = \lim_{h\to 0} \frac{(3+h)^2 - 9}{h}.\]</p>
+              <p>Expand the numerator: \((3+h)^2 - 9 = 9 + 6h + h^2 - 9 = 6h + h^2\).</p>
+              <p>Factor and cancel: \[\lim_{h\to 0} \frac{6h + h^2}{h} = \lim_{h\to 0} \frac{h(6+h)}{h} = \lim_{h\to 0} (6 + h) = 6.\]</p>
+              <p>The tangent slope at \(x=3\) is \(m=6\). The cancellation step is legitimate because the limit only cares about values where \(h \ne 0\).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Limit requiring a conjugate</p>
+              <p>Evaluate \(\displaystyle \lim_{x\to 4} \frac{\sqrt{x}-2}{x-4}\). Direct substitution yields \(\tfrac{0}{0}\).</p>
+              <p>Multiply by the conjugate \(\frac{\sqrt{x}+2}{\sqrt{x}+2}\): \[\frac{\sqrt{x}-2}{x-4}\cdot\frac{\sqrt{x}+2}{\sqrt{x}+2} = \frac{x-4}{(x-4)(\sqrt{x}+2)} = \frac{1}{\sqrt{x}+2}.\]</p>
+              <p>Now substitute: \(\displaystyle \lim_{x\to 4} \frac{1}{\sqrt{x}+2} = \frac{1}{2+2} = \frac{1}{4}.\)</p>
+            </div>
+            <ul>
+              <li>Substituting \(h=0\) before simplifying — the whole point of factoring/rationalizing is to <em>remove</em> the \(\tfrac{0}{0}\) before substitution.</li>
+              <li>Forgetting that \(\lim_{x\to a} f(x)\) does not require \(f(a)\) to exist or equal the limit.</li>
+              <li>Confusing average rate of change (a secant slope, needs two points) with instantaneous rate of change (a limit, at one point).</li>
+              <li>Writing \(\frac{0}{0} = 0\) or \(\frac{0}{0} = 1\) — both wrong; the form is indeterminate.</li>
+              <li>Cancelling factors carelessly when the limit point is exactly the root of the cancelled factor — be sure the resulting function is defined at the limit point.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.4 — "make connections, with or without graphing technology, between an approximate value of the limit of a function, obtained using a table of values of \(\frac{f(a+h)-f(a)}{h}\), and the slope of the tangent to the graph of the function at \(x=a\)." Also A2.2 — "determine, through investigation, the equation of the line tangent to the graph of a polynomial function at a given point."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 1 Assessments</div>
@@ -182,6 +231,43 @@
                 <span>📹 6 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The derivative \(f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\) is the engine of differential calculus. Computing it from first principles every time would be tedious, so this unit establishes a toolkit of rules that let us differentiate by inspection. The <strong>power rule</strong>, <strong>product rule</strong>, <strong>quotient rule</strong> and <strong>chain rule</strong> are not arbitrary recipes — each is provable from the limit definition, and each addresses a specific way functions combine.</p>
+            <p>Why so many rules? Because functions combine in distinct ways: addition (handled by the linearity of limits), multiplication (product rule, because \((fg)' \ne f'g'\)), division (quotient rule, derived from the product rule), and composition (chain rule, the most consequential of all). The chain rule expresses how rates of change cascade through nested processes: if \(y\) depends on \(u\) and \(u\) depends on \(x\), then \(\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}\). This is precisely how related rates and implicit differentiation become tractable.</p>
+            <p>A subtle point: \(\frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)\) — both terms are required, because at any instant both factors are changing. Treating it like \(\frac{d}{dx}(c\cdot f) = c\cdot f'\) (which is correct only when one factor is a constant) is the single most common error in this unit.</p>
+            <ul>
+              <li><strong>Derivative</strong> — \(f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\); also written \(\frac{dy}{dx}\) or \(Df(x)\).</li>
+              <li><strong>Power rule</strong> — for any real \(n\), \(\frac{d}{dx}[x^n] = n x^{n-1}\).</li>
+              <li><strong>Product rule</strong> — \((fg)' = f'g + fg'\).</li>
+              <li><strong>Quotient rule</strong> — \(\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}\), valid where \(g \ne 0\).</li>
+              <li><strong>Chain rule</strong> — \(\frac{d}{dx}f(g(x)) = f'(g(x))\cdot g'(x)\).</li>
+              <li><strong>Differentiability</strong> — \(f\) is differentiable at \(x=a\) if \(f'(a)\) exists; differentiability implies continuity, but not vice versa.</li>
+              <li><strong>Implicit differentiation</strong> — applying \(\frac{d}{dx}\) to both sides of an equation in \(x\) and \(y\), treating \(y\) as an implicit function of \(x\) and applying the chain rule whenever \(y\) is differentiated.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Differentiate \(y = (3x^2+1)(x^3-4x)\)</p>
+              <p>Apply the product rule with \(f = 3x^2+1\) and \(g = x^3-4x\): \[y' = f'g + fg' = (6x)(x^3-4x) + (3x^2+1)(3x^2-4).\]</p>
+              <p>Expand each piece: \((6x)(x^3-4x) = 6x^4 - 24x^2\); \((3x^2+1)(3x^2-4) = 9x^4 - 12x^2 + 3x^2 - 4 = 9x^4 - 9x^2 - 4\).</p>
+              <p>Combine: \(y' = 6x^4 - 24x^2 + 9x^4 - 9x^2 - 4 = 15x^4 - 33x^2 - 4\).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Chain rule on \(y = (2x^3 - 5)^4\)</p>
+              <p>Identify outer function \(f(u) = u^4\) and inner function \(u = 2x^3 - 5\). Then \(\frac{dy}{du} = 4u^3\) and \(\frac{du}{dx} = 6x^2\).</p>
+              <p>Apply the chain rule: \[\frac{dy}{dx} = 4u^3 \cdot 6x^2 = 4(2x^3-5)^3 \cdot 6x^2 = 24x^2(2x^3-5)^3.\]</p>
+              <p>Notice the inner derivative \(6x^2\) does not get absorbed into the exponent — it multiplies the whole expression.</p>
+            </div>
+            <ul>
+              <li>Writing \((fg)' = f'g'\) — this is wrong; the product rule requires both cross terms.</li>
+              <li>Forgetting the inner derivative in the chain rule — \(\frac{d}{dx}(\sin(3x))=3\cos(3x)\), not \(\cos(3x)\).</li>
+              <li>Mis-signing the quotient rule numerator: it is \(f'g - fg'\), not \(fg' - f'g\).</li>
+              <li>Applying the power rule to non-power expressions (e.g., \(\frac{d}{dx}[2^x] \ne x\cdot 2^{x-1}\); that requires the exponential rule in Unit 5).</li>
+              <li>Forgetting the \(\frac{dy}{dx}\) factor when implicitly differentiating a \(y\)-term.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.3 — "verify the power rule for functions of the form \(f(x)=x^n\), where \(n\) is a natural number." Also A3.4 — "verify, through investigation, the constant, constant multiple, sum, and difference rules graphically and numerically … and read and interpret proofs involving \(\lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\) of the constant, constant multiple, sum, and difference rules."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 2 Assessments</div>
@@ -308,6 +394,46 @@
                 <span>📹 10 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>This unit turns the derivative from an abstract limit into a problem-solving instrument. If \(s(t)\) is position, then \(v(t) = s'(t)\) is velocity and \(a(t) = v'(t) = s''(t)\) is acceleration. The sign of \(v(t)\) tells us direction of motion; the sign of \(a(t)\) tells us whether the object is speeding up or slowing down (when \(v\) and \(a\) have the same sign, speed increases). These second-derivative ideas reappear in curve sketching as concavity.</p>
+            <p>Optimization is the most economically important application of calculus. Whenever you want to minimize cost, maximize area, or find the most efficient size or shape, you translate the situation into a function of one variable, differentiate, set the derivative to zero, and check that you have a maximum rather than a minimum (or vice versa). The <strong>Extreme Value Theorem</strong> guarantees that a continuous function on a closed interval attains both an absolute maximum and an absolute minimum — these occur either at critical points (where \(f'=0\) or is undefined) or at the endpoints.</p>
+            <p>Related rates problems use the chain rule to connect rates that change together: if a balloon's radius and volume both depend on time, then \(\frac{dV}{dt} = \frac{dV}{dr}\cdot \frac{dr}{dt}\). The key is to differentiate an equation in \(r\) and \(V\) implicitly with respect to \(t\), substituting numerical values only after differentiation.</p>
+            <ul>
+              <li><strong>Velocity</strong> — \(v(t) = s'(t)\); a signed quantity indicating speed and direction.</li>
+              <li><strong>Acceleration</strong> — \(a(t) = v'(t) = s''(t)\).</li>
+              <li><strong>Critical number</strong> — value of \(x\) in the domain of \(f\) where \(f'(x) = 0\) or \(f'(x)\) is undefined.</li>
+              <li><strong>Absolute (global) maximum/minimum</strong> — largest/smallest value of \(f\) on its domain.</li>
+              <li><strong>Local (relative) maximum/minimum</strong> — largest/smallest value of \(f\) on some open interval around the point.</li>
+              <li><strong>Extreme Value Theorem</strong> — a continuous function on a closed interval \([a,b]\) attains both an absolute maximum and an absolute minimum on that interval.</li>
+              <li><strong>Related rates</strong> — problems in which several quantities related by an equation vary with time; the chain rule links their rates.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Closed-interval optimization</p>
+              <p>Find the absolute maximum and minimum of \(f(x) = x^3 - 3x^2 + 2\) on \([-1, 3]\).</p>
+              <p>Differentiate: \(f'(x) = 3x^2 - 6x = 3x(x-2)\). Set \(f'(x)=0\): \(x=0\) or \(x=2\). Both lie in \([-1,3]\).</p>
+              <p>Evaluate at critical points and endpoints: \(f(-1) = -1 - 3 + 2 = -2\); \(f(0) = 2\); \(f(2) = 8 - 12 + 2 = -2\); \(f(3) = 27 - 27 + 2 = 2\).</p>
+              <p>Absolute maximum is \(2\) (attained at \(x=0\) and \(x=3\)); absolute minimum is \(-2\) (attained at \(x=-1\) and \(x=2\)).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Box optimization</p>
+              <p>An open-top box is built from a 12 cm by 18 cm sheet by cutting squares of side \(x\) from each corner and folding up the sides. Maximize the volume.</p>
+              <p>Volume: \(V(x) = x(12-2x)(18-2x) = x(216 - 60x + 4x^2) = 4x^3 - 60x^2 + 216x\), with \(0 < x < 6\).</p>
+              <p>Differentiate: \(V'(x) = 12x^2 - 120x + 216 = 12(x^2 - 10x + 18)\). Solve \(x^2 - 10x + 18 = 0\) by the quadratic formula: \(x = \frac{10 \pm \sqrt{100-72}}{2} = \frac{10 \pm \sqrt{28}}{2} = 5 \pm \sqrt{7}\).</p>
+              <p>Only \(x = 5 - \sqrt{7} \approx 2.354\) lies in \((0,6)\). Check it is a maximum: \(V''(x) = 24x - 120\); \(V''(5-\sqrt{7}) = 24(5-\sqrt{7}) - 120 = -24\sqrt{7} < 0\), so the function is concave down, confirming a maximum.</p>
+              <p>Maximum volume: \(V(5-\sqrt{7}) \approx 228.2\) cm\(^3\).</p>
+            </div>
+            <ul>
+              <li>Forgetting to check endpoints on a closed-interval optimization.</li>
+              <li>Solving \(f'(x)=0\) and reporting that value as the maximum without verifying it actually is a maximum (second-derivative test or sign chart needed).</li>
+              <li>Substituting numerical values for variables <em>before</em> differentiating in a related rates problem — the variables must remain symbolic through the differentiation step.</li>
+              <li>Confusing velocity (signed) with speed \(=|v(t)|\) (unsigned).</li>
+              <li>Reporting a maximum value that lies outside the domain dictated by the physical constraints of the problem.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "solve problems, using the derivative, that involve instantaneous rates of change, including problems arising from real-world applications (e.g., population growth, radioactive decay, temperature changes, hours of daylight, heights of tides), given the equation of a function." Also B2.5 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 3 Assessments</div>
@@ -473,6 +599,45 @@
                 <span>📹 10 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The first derivative tells us about the <em>direction</em> of a curve: \(f'(x) > 0\) means \(f\) is increasing, \(f'(x) < 0\) means decreasing. Where \(f'\) changes sign — at a critical number — the function may have a local maximum or minimum. The <strong>first derivative test</strong> diagnoses these: at a critical number \(c\), if \(f'\) changes from positive to negative, \(c\) is a local max; if negative to positive, a local min; if no sign change, neither.</p>
+            <p>The second derivative reveals <em>curvature</em>. When \(f''(x) > 0\), the curve is <strong>concave up</strong> (cup-shaped, holding water); when \(f''(x) < 0\), it is <strong>concave down</strong>. A point where concavity changes is a <strong>point of inflection</strong>. The <strong>second derivative test</strong> at a critical number \(c\) with \(f'(c)=0\): if \(f''(c) > 0\), local min; if \(f''(c) < 0\), local max; if \(f''(c)=0\), the test is inconclusive (fall back to the first derivative test).</p>
+            <p>Asymptotes describe end behaviour. <strong>Vertical asymptotes</strong> appear where a rational function's denominator is zero but the numerator is not. <strong>Horizontal asymptotes</strong> emerge from \(\lim_{x\to\pm\infty} f(x)\); for rational functions, compare degrees of numerator and denominator. <strong>Oblique (slant) asymptotes</strong> occur when the numerator degree exceeds the denominator's by exactly one — long division reveals the linear asymptote. A complete sketch synthesizes domain, intercepts, asymptotes, intervals of increase/decrease, local extrema, concavity, and inflection points.</p>
+            <ul>
+              <li><strong>Increasing</strong> — \(f(x_1) < f(x_2)\) whenever \(x_1 < x_2\); equivalent to \(f'(x) \ge 0\) on the interval (positive everywhere except possibly isolated points).</li>
+              <li><strong>Critical number</strong> — \(x = c\) where \(f'(c) = 0\) or \(f'(c)\) does not exist (and \(c\) is in the domain of \(f\)).</li>
+              <li><strong>Concave up / down</strong> — concave up when \(f''(x) > 0\); concave down when \(f''(x) < 0\).</li>
+              <li><strong>Point of inflection</strong> — a point on the graph where concavity changes and the tangent line exists.</li>
+              <li><strong>Vertical asymptote</strong> — line \(x=a\) such that \(\lim_{x\to a^\pm} f(x) = \pm\infty\).</li>
+              <li><strong>Horizontal asymptote</strong> — line \(y=L\) such that \(\lim_{x\to\pm\infty} f(x) = L\).</li>
+              <li><strong>Oblique asymptote</strong> — non-horizontal line \(y = mx + b\) that the curve approaches as \(x \to \pm\infty\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Full analysis of \(f(x) = x^3 - 6x^2 + 9x\)</p>
+              <p>Domain: all real \(x\). Intercepts: \(f(0)=0\); \(f(x) = x(x-3)^2 = 0\) at \(x=0\) and \(x=3\) (double root).</p>
+              <p>First derivative: \(f'(x) = 3x^2 - 12x + 9 = 3(x-1)(x-3)\). Critical numbers: \(x=1\), \(x=3\).</p>
+              <p>Sign of \(f'\): positive on \((-\infty,1)\), negative on \((1,3)\), positive on \((3,\infty)\). So \(f\) increases on \((-\infty,1)\), decreases on \((1,3)\), increases on \((3,\infty)\). Local max at \(x=1\): \(f(1) = 1-6+9 = 4\). Local min at \(x=3\): \(f(3) = 27 - 54 + 27 = 0\).</p>
+              <p>Second derivative: \(f''(x) = 6x - 12 = 6(x-2)\). Inflection at \(x=2\); \(f(2) = 8-24+18 = 2\). Concave down on \((-\infty,2)\), concave up on \((2,\infty)\).</p>
+              <p>Verify max/min with second derivative test: \(f''(1) = -6 < 0\) confirms local max; \(f''(3) = 6 > 0\) confirms local min.</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Asymptotes of \(\displaystyle f(x) = \frac{2x^2 + 3x - 1}{x - 2}\)</p>
+              <p>Vertical: denominator zero at \(x=2\); numerator at \(x=2\) is \(8 + 6 - 1 = 13 \ne 0\), so \(x=2\) is a vertical asymptote.</p>
+              <p>Degree of numerator (2) exceeds denominator (1) by one, so there is an oblique asymptote (and no horizontal asymptote). Polynomial long division: \[\frac{2x^2 + 3x - 1}{x-2} = 2x + 7 + \frac{13}{x-2}.\]</p>
+              <p>As \(x\to\pm\infty\), the remainder \(\frac{13}{x-2} \to 0\), so the oblique asymptote is \(y = 2x + 7\).</p>
+            </div>
+            <ul>
+              <li>Claiming an inflection point wherever \(f''=0\), without verifying that the sign of \(f''\) actually changes.</li>
+              <li>Treating every point where the denominator is zero as a vertical asymptote — if the numerator also vanishes there and the factor cancels, you have a hole, not an asymptote.</li>
+              <li>Forgetting that \(x=c\) is only a critical number if \(c\) is in the domain of \(f\).</li>
+              <li>Using the second derivative test when \(f''(c) = 0\) — the test gives no information; revert to the first derivative test.</li>
+              <li>Mis-reading a sign chart by testing values outside the interval being studied.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.4 — "describe key features of a polynomial function (e.g., increasing/decreasing intervals, local maxima and minima, points of inflection, intervals of concavity)." Also B1.7 — "sketch the graph of a derivative function, given the graph of a function that is continuous over an interval, and recognize points of inflection of the given function." B1.8 — "sketch the graph of a function, given the graph of its derivative function."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 4 Assessments</div>
@@ -625,6 +790,43 @@
                 <span>📹 7 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The exponential function \(y = e^x\) is the unique function (up to scaling) that is its own derivative: \(\frac{d}{dx}[e^x] = e^x\). The number \(e \approx 2.71828\) is precisely the base for which this happens. For a general base, \(\frac{d}{dx}[b^x] = b^x \ln b\), because \(b^x = e^{x\ln b}\) by the change-of-base identity, and the chain rule then provides the extra \(\ln b\) factor. This is the calculus reason \(e\) is "natural" — it eliminates a multiplicative constant that would otherwise appear forever.</p>
+            <p>Trigonometric derivatives all flow from two foundational limits: \(\lim_{x\to 0} \frac{\sin x}{x} = 1\) and \(\lim_{x\to 0} \frac{\cos x - 1}{x} = 0\). Using these and the angle-addition formulas, you can derive \(\frac{d}{dx}[\sin x] = \cos x\) from first principles. From this, the quotient rule gives \(\frac{d}{dx}[\tan x] = \sec^2 x\), and the chain rule gives \(\frac{d}{dx}[\sin(g(x))] = \cos(g(x))\cdot g'(x)\). All angles must be in <strong>radians</strong> for these formulas to hold — using degrees introduces a factor of \(\frac{\pi}{180}\) that breaks the limits.</p>
+            <p>Combining these new derivatives with the rules from Unit 2 unlocks modelling of natural phenomena: radioactive decay (\(N(t) = N_0 e^{-kt}\)), population growth, alternating current, sound waves, daylight hours, and tides. Optimization with exponential and trigonometric functions extends Unit 3's toolkit to a much wider class of problems.</p>
+            <ul>
+              <li><strong>Euler's number \(e\)</strong> — \(e = \lim_{n\to\infty}(1+\tfrac{1}{n})^n \approx 2.71828\); the unique base for which \((b^x)' = b^x\).</li>
+              <li><strong>\((e^x)' = e^x\)</strong> — the natural exponential is its own derivative.</li>
+              <li><strong>\((b^x)' = b^x \ln b\)</strong> — derivative of a general exponential.</li>
+              <li><strong>\((\sin x)' = \cos x\) and \((\cos x)' = -\sin x\)</strong> — fundamental trigonometric derivatives (radians required).</li>
+              <li><strong>\((\tan x)' = \sec^2 x\)</strong> — from quotient rule on \(\tan x = \sin x / \cos x\).</li>
+              <li><strong>Special limit</strong> — \(\lim_{x\to 0} \frac{\sin x}{x} = 1\); the foundation of all trig derivatives.</li>
+              <li><strong>Radian</strong> — angle measure such that arc length on a unit circle equals the angle; required for calculus formulas to work cleanly.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Differentiate \(y = x^2 e^{3x}\)</p>
+              <p>Product rule with \(f = x^2\), \(g = e^{3x}\): \(f' = 2x\) and (chain rule on \(g\)) \(g' = e^{3x}\cdot 3 = 3 e^{3x}\).</p>
+              <p>\[y' = f'g + fg' = 2x\cdot e^{3x} + x^2 \cdot 3 e^{3x} = e^{3x}(2x + 3x^2) = x e^{3x}(2 + 3x).\]</p>
+              <p>Factoring out the common \(e^{3x}\) at the end is good practice — it simplifies later analysis (e.g., finding critical numbers).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Differentiate \(y = \sin(\cos(2x))\)</p>
+              <p>Triple application of the chain rule. Identify layers: outermost \(\sin(\cdot)\); middle \(\cos(\cdot)\); inner \(2x\).</p>
+              <p>\[\frac{dy}{dx} = \cos(\cos(2x)) \cdot \frac{d}{dx}[\cos(2x)] = \cos(\cos(2x)) \cdot \bigl(-\sin(2x)\bigr) \cdot 2.\]</p>
+              <p>Final form: \(y' = -2\sin(2x)\cos(\cos(2x))\).</p>
+            </div>
+            <ul>
+              <li>Writing \(\frac{d}{dx}[e^x] = x e^{x-1}\) — confusing the exponential rule with the power rule. The power rule applies when the variable is in the <em>base</em>, not the exponent.</li>
+              <li>Forgetting the \(\ln b\) factor in \(\frac{d}{dx}[b^x] = b^x \ln b\).</li>
+              <li>Doing trig calculus in degrees — formulas like \((\sin x)' = \cos x\) require radians.</li>
+              <li>Dropping the inner derivative when differentiating composites like \(\sin(3x^2)\); the answer is \(6x \cos(3x^2)\), not \(\cos(3x^2)\).</li>
+              <li>Mis-signing \((\cos x)' = -\sin x\) — the negative sign is easy to overlook.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.6 — "determine, through investigation using technology, the graph of the derivative \(f'(x)\) of a given sinusoidal function … and make connections between the graphs of \(f(x)\) and \(f'(x)\)." Also A3.5 — "determine, through investigation using technology, the graph of the derivative \(f'(x)\) of a given exponential function \(f(x) = a^x, a > 0, a \ne 1\) … and conclude that the derivative is of the form \(f'(x) = k a^x\)." And A3.7 — "verify the derivatives of \(\sin x\) and \(\cos x\), and determine the derivatives of \(\tan x\)."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 5 Assessments</div>
@@ -804,6 +1006,47 @@
                 <span>📹 9 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>scalar</strong> is a quantity that has only magnitude (temperature, mass, time). A <strong>vector</strong> has both magnitude and direction (displacement, velocity, force). Vectors are represented geometrically as directed arrows whose length encodes magnitude and whose orientation encodes direction. Algebraically, a vector in two dimensions can be written in component form \(\vec{u} = (u_1, u_2)\) and in three dimensions as \(\vec{v} = (v_1, v_2, v_3)\). Two vectors are equal if and only if they have the same magnitude <em>and</em> direction — position in space is irrelevant.</p>
+            <p>Vectors are added using the <strong>triangle</strong> (or <strong>parallelogram</strong>) <strong>rule</strong>: place the tail of \(\vec{v}\) at the head of \(\vec{u}\); the resultant \(\vec{u}+\vec{v}\) runs from the tail of \(\vec{u}\) to the head of \(\vec{v}\). In component form, addition is componentwise. Subtraction reverses one vector: \(\vec{u} - \vec{v} = \vec{u} + (-\vec{v})\). <strong>Scalar multiplication</strong> by \(k\) scales magnitude by \(|k|\) and reverses direction if \(k<0\); collinear vectors are exactly those that are scalar multiples of each other.</p>
+            <p>A <strong>linear combination</strong> of vectors \(\vec{v}_1, \dots, \vec{v}_n\) is any expression \(c_1\vec{v}_1 + \dots + c_n\vec{v}_n\). The set of all such combinations is the <strong>spanning set</strong>. In \(\mathbb{R}^2\), any two non-collinear vectors span the whole plane; in \(\mathbb{R}^3\), any three non-coplanar vectors span the whole space. The Cartesian unit vectors \(\hat{i} = (1,0,0)\), \(\hat{j} = (0,1,0)\), \(\hat{k} = (0,0,1)\) are the standard basis: every vector in \(\mathbb{R}^3\) has a unique expression as \(a\hat{i} + b\hat{j} + c\hat{k}\).</p>
+            <ul>
+              <li><strong>Scalar</strong> — a real number; magnitude only.</li>
+              <li><strong>Vector</strong> — a directed quantity with magnitude and direction; written \(\vec{u}\) or in bold.</li>
+              <li><strong>Magnitude</strong> — \(|\vec{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}\) in \(\mathbb{R}^3\); the length of the arrow.</li>
+              <li><strong>Zero vector</strong> — \(\vec{0}\); has magnitude 0 and undefined direction; identity for addition.</li>
+              <li><strong>Unit vector</strong> — vector with magnitude 1; \(\hat{u} = \frac{\vec{u}}{|\vec{u}|}\).</li>
+              <li><strong>Collinear vectors</strong> — vectors parallel to the same line; one is a scalar multiple of the other.</li>
+              <li><strong>Linear combination</strong> — \(c_1\vec{v}_1 + c_2\vec{v}_2 + \dots + c_n\vec{v}_n\) for scalars \(c_i\).</li>
+              <li><strong>Spanning set</strong> — a set of vectors whose linear combinations produce every vector in the given space.</li>
+              <li><strong>Cartesian (standard) basis</strong> — \(\hat{i}, \hat{j}, \hat{k}\) in \(\mathbb{R}^3\); every vector decomposes uniquely.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Vector arithmetic in \(\mathbb{R}^3\)</p>
+              <p>Given \(\vec{u} = (2,-1,3)\) and \(\vec{v} = (1,4,-2)\), compute \(3\vec{u} - 2\vec{v}\) and its magnitude.</p>
+              <p>Scalar multiples: \(3\vec{u} = (6,-3,9)\); \(2\vec{v} = (2,8,-4)\).</p>
+              <p>Subtract componentwise: \(3\vec{u} - 2\vec{v} = (6-2, -3-8, 9-(-4)) = (4, -11, 13)\).</p>
+              <p>Magnitude: \(|3\vec{u} - 2\vec{v}| = \sqrt{4^2 + (-11)^2 + 13^2} = \sqrt{16 + 121 + 169} = \sqrt{306} \approx 17.49\).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Expressing a vector as a linear combination</p>
+              <p>Write \(\vec{w} = (7,4)\) as a linear combination of \(\vec{a} = (1,2)\) and \(\vec{b} = (3,-1)\).</p>
+              <p>Set \(\vec{w} = s\vec{a} + t\vec{b}\): \((7,4) = (s + 3t,\; 2s - t)\). System: \(s + 3t = 7\) and \(2s - t = 4\).</p>
+              <p>From the second equation \(t = 2s - 4\). Substitute: \(s + 3(2s-4) = 7 \implies 7s - 12 = 7 \implies s = \frac{19}{7}\). Then \(t = 2(\tfrac{19}{7}) - 4 = \tfrac{38}{7} - \tfrac{28}{7} = \tfrac{10}{7}\).</p>
+              <p>So \(\vec{w} = \tfrac{19}{7}\vec{a} + \tfrac{10}{7}\vec{b}\). Verify: \(\tfrac{19}{7}(1,2) + \tfrac{10}{7}(3,-1) = (\tfrac{19+30}{7}, \tfrac{38-10}{7}) = (7, 4)\). ✓</p>
+            </div>
+            <ul>
+              <li>Treating a vector as a point — vectors do not have a fixed location; only magnitude and direction matter.</li>
+              <li>Adding magnitudes of vectors instead of components: \(|\vec{u}+\vec{v}| \ne |\vec{u}| + |\vec{v}|\) in general.</li>
+              <li>Forgetting that the zero vector is parallel to every vector by convention (some texts disagree, but in Ontario MCV4U \(\vec{0}\) is taken to be parallel to all).</li>
+              <li>Confusing notation: \((2,-1,3)\) and \(2\hat{i} - \hat{j} + 3\hat{k}\) are the same vector written two ways.</li>
+              <li>Saying two vectors with the same magnitude are equal — direction must match too.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "recognize a vector as a quantity with both magnitude and direction, and identify, gather, and interpret information about real-world applications of vectors." Also C1.3 — "represent a vector in two-space geometrically as a directed line segment, with directions expressed in different ways … and algebraically (e.g., using Cartesian coordinates)." And C2.2 — "perform the operations of addition, subtraction, and scalar multiplication on vectors represented as directed line segments in two-space, and on vectors represented in Cartesian form in two-space."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 6 Assessments</div>
@@ -943,6 +1186,48 @@
                 <span>📹 8 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>This unit equips vectors with two multiplication operations that have no analogue in elementary algebra: the <strong>dot product</strong> and the <strong>cross product</strong>. The dot product takes two vectors and returns a scalar; the cross product takes two vectors in \(\mathbb{R}^3\) and returns a vector perpendicular to both. Each carries deep geometric meaning, and together they let calculus describe rigid-body physics, illumination, computer graphics, and 3D geometry rigorously.</p>
+            <p>The <strong>dot product</strong> is defined either algebraically as \(\vec{u}\cdot\vec{v} = u_1v_1 + u_2v_2 + u_3v_3\) or geometrically as \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta\). Equating these gives the cosine angle formula \(\cos\theta = \frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}\). Two non-zero vectors are <strong>perpendicular</strong> precisely when their dot product is zero. The dot product also computes <strong>work</strong>: if a constant force \(\vec{F}\) moves an object through displacement \(\vec{d}\), the work is \(W = \vec{F}\cdot\vec{d}\).</p>
+            <p>The <strong>cross product</strong> \(\vec{u}\times\vec{v}\) returns a vector perpendicular to both \(\vec{u}\) and \(\vec{v}\), with magnitude \(|\vec{u}\times\vec{v}| = |\vec{u}||\vec{v}|\sin\theta\) — which equals the area of the parallelogram they span. The direction is given by the right-hand rule. Importantly, \(\vec{u}\times\vec{v} = -\vec{v}\times\vec{u}\): the cross product is anti-commutative. <strong>Projections</strong> decompose one vector along the direction of another: the <strong>scalar projection</strong> of \(\vec{u}\) on \(\vec{v}\) is \(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\), and the <strong>vector projection</strong> is that scalar times the unit vector \(\hat{v}\).</p>
+            <ul>
+              <li><strong>Dot product (scalar product)</strong> — \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta = u_1v_1 + u_2v_2 + u_3v_3\).</li>
+              <li><strong>Cross product (vector product)</strong> — \(\vec{u}\times\vec{v}\) is the vector perpendicular to both \(\vec{u}\) and \(\vec{v}\) with magnitude \(|\vec{u}||\vec{v}|\sin\theta\) and direction by the right-hand rule.</li>
+              <li><strong>Orthogonal vectors</strong> — \(\vec{u}\cdot\vec{v} = 0\) for non-zero \(\vec{u}, \vec{v}\).</li>
+              <li><strong>Scalar projection</strong> of \(\vec{u}\) onto \(\vec{v}\) — \(\operatorname{proj}_{\vec{v}}\vec{u}\) magnitude is \(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\).</li>
+              <li><strong>Vector projection</strong> of \(\vec{u}\) onto \(\vec{v}\) — \(\left(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|^2}\right)\vec{v}\).</li>
+              <li><strong>Work</strong> — \(W = \vec{F}\cdot\vec{d}\), measured in joules when \(\vec{F}\) is in newtons and \(\vec{d}\) is in metres.</li>
+              <li><strong>Torque</strong> — \(\vec{\tau} = \vec{r}\times\vec{F}\); a vector perpendicular to both the lever arm \(\vec{r}\) and the applied force \(\vec{F}\).</li>
+              <li><strong>Triple scalar product</strong> — \(\vec{u}\cdot(\vec{v}\times\vec{w})\); its absolute value is the volume of the parallelepiped spanned by the three vectors.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Angle between vectors</p>
+              <p>Find the angle between \(\vec{u} = (2, 1, -2)\) and \(\vec{v} = (1, 3, 1)\).</p>
+              <p>Dot product: \(\vec{u}\cdot\vec{v} = (2)(1) + (1)(3) + (-2)(1) = 2 + 3 - 2 = 3\).</p>
+              <p>Magnitudes: \(|\vec{u}| = \sqrt{4+1+4} = 3\); \(|\vec{v}| = \sqrt{1+9+1} = \sqrt{11}\).</p>
+              <p>Cosine: \(\cos\theta = \frac{3}{3\sqrt{11}} = \frac{1}{\sqrt{11}}\). So \(\theta = \cos^{-1}\!\left(\frac{1}{\sqrt{11}}\right) \approx 72.5^\circ\).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Cross product and area</p>
+              <p>For \(\vec{a} = (1, 2, 3)\) and \(\vec{b} = (4, 5, 6)\), compute \(\vec{a}\times\vec{b}\) and the area of the parallelogram they span.</p>
+              <p>Use the determinant formula: \[\vec{a}\times\vec{b} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \end{vmatrix}.\]</p>
+              <p>Expand: \(\hat{i}\bigl((2)(6)-(3)(5)\bigr) - \hat{j}\bigl((1)(6)-(3)(4)\bigr) + \hat{k}\bigl((1)(5)-(2)(4)\bigr)\) \(= \hat{i}(12-15) - \hat{j}(6-12) + \hat{k}(5-8) = -3\hat{i} + 6\hat{j} - 3\hat{k} = (-3, 6, -3)\).</p>
+              <p>Area: \(|\vec{a}\times\vec{b}| = \sqrt{9+36+9} = \sqrt{54} = 3\sqrt{6} \approx 7.35\) square units.</p>
+              <p>Verify perpendicularity: \(\vec{a}\cdot(-3,6,-3) = -3+12-9 = 0\) ✓; \(\vec{b}\cdot(-3,6,-3) = -12+30-18 = 0\) ✓.</p>
+            </div>
+            <ul>
+              <li>Confusing dot product (returns a scalar) with cross product (returns a vector).</li>
+              <li>Forgetting that the cross product is only defined in \(\mathbb{R}^3\) — there is no cross product of two vectors in \(\mathbb{R}^2\).</li>
+              <li>Mis-signing the middle term in the determinant expansion: the \(\hat{j}\) component carries a minus sign.</li>
+              <li>Dropping the \(|\vec{v}|^2\) (not \(|\vec{v}|\)) in the denominator of the vector projection formula.</li>
+              <li>Treating \(\vec{u}\times\vec{v} = \vec{v}\times\vec{u}\) — the cross product is anti-commutative; sign matters.</li>
+              <li>Using the cross product to find the angle — use the dot product instead, since \(\sin\theta\) has two solutions in \([0,180^\circ]\) while \(\cos\theta\) is unique.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "determine, through investigation with and without technology, some properties (e.g., commutative, associative, and distributive properties) of the operations of addition, subtraction, and scalar multiplication of vectors." Also C3.2 — "perform the operation of dot product on two vectors represented as directed line segments … and in Cartesian form in two-space and three-space, and describe applications of the dot product (e.g., determining the angle between two vectors; determining the projection of one vector onto another)." And C3.3 — "determine, through investigation, properties of the dot product (e.g., investigate whether it is commutative, distributive, or associative; investigate the dot product of a vector with itself and the dot product of orthogonal vectors)." And C3.5 — "perform the operation of cross product on two vectors represented in Cartesian form in three-space, determine the magnitude of the cross product … and describe applications of the cross product (e.g., determining a vector orthogonal to two given vectors; determining the turning effect [or torque] when a force is applied to a wrench at different angles)."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 7 Assessments</div>
@@ -1082,6 +1367,50 @@
                 <span>📹 7 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>In Grade 10 we wrote lines as \(y = mx + b\). That representation works in \(\mathbb{R}^2\) but breaks down in \(\mathbb{R}^3\), where a single linear equation in \(x, y, z\) describes a plane, not a line. Vector geometry solves this. A line is uniquely determined by a point \(P_0\) on it and a <strong>direction vector</strong> \(\vec{d}\); its <strong>vector equation</strong> is \(\vec{r} = \vec{r}_0 + t\vec{d}\), where \(t\) is a real parameter. Splitting into components gives the <strong>parametric equations</strong>, and (in \(\mathbb{R}^3\)) eliminating \(t\) gives the <strong>symmetric equations</strong> \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\), valid only where the direction components are non-zero.</p>
+            <p>A plane in \(\mathbb{R}^3\) is uniquely determined by a point and a <strong>normal vector</strong> \(\vec{n}\) (a vector perpendicular to the plane). The <strong>scalar (Cartesian) equation</strong> of the plane is \(ax + by + cz + d = 0\), where \((a,b,c)\) are the components of \(\vec{n}\) and \(d = -\vec{n}\cdot\vec{r}_0\). Alternatively, a plane can be specified by two direction vectors lying within it, giving the <strong>vector equation</strong> \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\). To convert between the two forms, the normal is \(\vec{n} = \vec{a}\times\vec{b}\).</p>
+            <p>The power of these representations is that they handle parallelism, perpendicularity, and intersections uniformly. Two lines are parallel iff their direction vectors are scalar multiples; two planes are parallel iff their normals are; a line is parallel to a plane iff its direction is perpendicular to the plane's normal (\(\vec{d}\cdot\vec{n} = 0\)).</p>
+            <ul>
+              <li><strong>Direction vector</strong> — a non-zero vector \(\vec{d}\) parallel to a line; any non-zero scalar multiple is also a direction vector.</li>
+              <li><strong>Vector equation of a line</strong> — \(\vec{r} = \vec{r}_0 + t\vec{d}\), \(t \in \mathbb{R}\).</li>
+              <li><strong>Parametric equations</strong> — \(x = x_0 + t d_1\), \(y = y_0 + t d_2\), \(z = z_0 + t d_3\).</li>
+              <li><strong>Symmetric equations</strong> (\(\mathbb{R}^3\), nonzero direction components) — \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\).</li>
+              <li><strong>Normal vector to a plane</strong> — vector perpendicular to every direction in the plane.</li>
+              <li><strong>Scalar equation of a plane</strong> — \(ax + by + cz + d = 0\), where \(\vec{n} = (a,b,c)\) is normal.</li>
+              <li><strong>Vector equation of a plane</strong> — \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\) for non-collinear \(\vec{a}, \vec{b}\) in the plane.</li>
+              <li><strong>Skew lines</strong> — lines in \(\mathbb{R}^3\) that are neither parallel nor intersecting.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: All three forms of a line in \(\mathbb{R}^3\)</p>
+              <p>Find vector, parametric, and symmetric equations for the line through \(P(2, -1, 4)\) and \(Q(5, 3, -2)\).</p>
+              <p>Direction vector: \(\vec{d} = \vec{PQ} = (5-2,\, 3-(-1),\, -2-4) = (3, 4, -6)\).</p>
+              <p>Vector form: \(\vec{r} = (2,-1,4) + t(3,4,-6)\).</p>
+              <p>Parametric form: \(x = 2 + 3t\), \(y = -1 + 4t\), \(z = 4 - 6t\).</p>
+              <p>Symmetric form: \(\frac{x-2}{3} = \frac{y+1}{4} = \frac{z-4}{-6}\).</p>
+              <p>Check that \(Q\) lies on the line: \(t = 1\) gives \((2+3, -1+4, 4-6) = (5, 3, -2)\) ✓.</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Scalar equation of a plane from three points</p>
+              <p>Find the scalar equation of the plane through \(A(1,2,3)\), \(B(2,0,1)\), \(C(0,1,4)\).</p>
+              <p>Two direction vectors in the plane: \(\vec{AB} = (1,-2,-2)\) and \(\vec{AC} = (-1,-1,1)\).</p>
+              <p>Normal vector: \(\vec{n} = \vec{AB}\times\vec{AC}\). Compute the determinant: \[\vec{n} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & -2 & -2 \\ -1 & -1 & 1 \end{vmatrix} = \hat{i}((-2)(1)-(-2)(-1)) - \hat{j}((1)(1)-(-2)(-1)) + \hat{k}((1)(-1)-(-2)(-1)).\]</p>
+              <p>Evaluate: \(\hat{i}(-2-2) - \hat{j}(1-2) + \hat{k}(-1-2) = -4\hat{i} + \hat{j} - 3\hat{k} = (-4, 1, -3)\).</p>
+              <p>Use point \(A\): \(-4(x-1) + 1(y-2) - 3(z-3) = 0 \implies -4x + 4 + y - 2 - 3z + 9 = 0 \implies -4x + y - 3z + 11 = 0\).</p>
+              <p>Verify with \(B\): \(-4(2) + 0 - 3(1) + 11 = -8 + 0 - 3 + 11 = 0\) ✓.</p>
+            </div>
+            <ul>
+              <li>Writing a single linear equation in \(x, y, z\) and calling it a line — in \(\mathbb{R}^3\) that is a plane.</li>
+              <li>Forgetting that direction vectors and normal vectors are not unique — any non-zero scalar multiple works.</li>
+              <li>Using \(y = mx + b\) form in \(\mathbb{R}^3\) — slope-intercept does not generalize.</li>
+              <li>Writing symmetric equations when a direction component is zero — the corresponding fraction is undefined and that component must be treated separately.</li>
+              <li>Mixing up "parallel to the plane" (\(\vec{d}\cdot\vec{n} = 0\)) with "perpendicular to the plane" (\(\vec{d}\) parallel to \(\vec{n}\)).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.1 — "recognize that the solution points \((x, y)\) in two-space of a single linear equation in two variables form a line and that the solution points \((x, y)\) of a system of two linear equations in two variables determine the point of intersection of two lines, if the lines are not coincident or parallel." Also C4.2 — "determine, through investigation with technology … and without technology, the equation of a line in two-space, given the slope and a point on the line, two points on the line, the equation of a line parallel to the desired line and a point on the desired line, or the equation of a line perpendicular to the desired line and a point on the desired line." And C4.3 — "recognize that the solution points \((x, y, z)\) in three-space of a single linear equation in three variables form a plane and that the solution points \((x, y, z)\) of a system of two linear equations in three variables form the line of intersection of two planes, if the planes are not parallel."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 8 Assessments</div>
@@ -1208,6 +1537,57 @@
                 <span>📹 9 lessons</span>
             </div>
         </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Geometric intersection problems become algebraic systems once the objects are expressed in vector or scalar form. Two lines in \(\mathbb{R}^3\) can be <strong>coincident</strong> (same line), <strong>parallel and distinct</strong> (no intersection, same direction up to scalar), <strong>intersecting</strong> (one common point), or <strong>skew</strong> (no intersection, non-parallel directions). The first three cases also occur for two planes — but planes can never be skew. Three planes give richer possibilities: one common point, a common line, no intersection, or coincidence.</p>
+            <p>To intersect a line and a plane, substitute the parametric line equations into the scalar plane equation and solve for \(t\). One solution gives a single intersection point; no solution means the line is parallel to (and outside) the plane; infinitely many means the line lies in the plane. To intersect two planes, treat the system as two equations in three unknowns; the solution is one parameter family — a line. To intersect three planes, solve the \(3\times 3\) system, often using <strong>row reduction</strong> on an augmented matrix.</p>
+            <p>Distances are computed using projections. The distance from a point \(Q\) to a line with direction \(\vec{d}\) and point \(P_0\) is the magnitude of the component of \(\vec{P_0Q}\) perpendicular to \(\vec{d}\); compactly, \(\frac{|\vec{P_0Q}\times\vec{d}|}{|\vec{d}|}\). The distance from a point \(Q(x_1, y_1, z_1)\) to a plane \(ax + by + cz + d = 0\) is \[\frac{|ax_1 + by_1 + cz_1 + d|}{\sqrt{a^2+b^2+c^2}}.\]These formulas pack the entire chapter's geometry into clean one-line expressions.</p>
+            <ul>
+              <li><strong>Coincident lines/planes</strong> — same object, infinitely many points in common.</li>
+              <li><strong>Skew lines</strong> — lines in \(\mathbb{R}^3\) that are non-parallel and non-intersecting.</li>
+              <li><strong>Consistent system</strong> — system with at least one solution.</li>
+              <li><strong>Inconsistent system</strong> — system with no solution (contradictory equations).</li>
+              <li><strong>Augmented matrix</strong> — matrix representation of a linear system; coefficients on the left, constants on the right.</li>
+              <li><strong>Elementary row operations</strong> — swap two rows, multiply a row by a non-zero scalar, add a multiple of one row to another. They preserve the solution set.</li>
+              <li><strong>Row-echelon form</strong> — staircase pattern of leading entries; allows solving by back-substitution.</li>
+              <li><strong>Distance point-to-plane</strong> — \(\displaystyle d = \frac{|ax_1 + by_1 + cz_1 + d|}{\sqrt{a^2+b^2+c^2}}\).</li>
+              <li><strong>Distance point-to-line</strong> (\(\mathbb{R}^3\)) — \(\displaystyle d = \frac{|\vec{P_0Q}\times\vec{d}|}{|\vec{d}|}\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Intersection of a line and a plane</p>
+              <p>Line: \(\vec{r} = (1, 0, 2) + t(2, -1, 3)\). Plane: \(x + 2y - z + 4 = 0\). Find the point of intersection.</p>
+              <p>Parametric line: \(x = 1+2t\), \(y = -t\), \(z = 2 + 3t\).</p>
+              <p>Substitute into the plane: \((1+2t) + 2(-t) - (2+3t) + 4 = 0\).</p>
+              <p>Simplify: \(1 + 2t - 2t - 2 - 3t + 4 = 0 \implies 3 - 3t = 0 \implies t = 1\).</p>
+              <p>Intersection point: \((x,y,z) = (1+2, -1, 2+3) = (3, -1, 5)\). Verify in the plane: \(3 + 2(-1) - 5 + 4 = 0\) ✓.</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Distance from a point to a plane</p>
+              <p>Find the distance from \(Q(2, -1, 3)\) to the plane \(2x - y + 2z - 5 = 0\).</p>
+              <p>Apply the formula with \((a,b,c,d) = (2,-1,2,-5)\) and \((x_1, y_1, z_1) = (2,-1,3)\):</p>
+              <p>Numerator: \(|2(2) + (-1)(-1) + 2(3) - 5| = |4 + 1 + 6 - 5| = 6\).</p>
+              <p>Denominator: \(\sqrt{2^2 + (-1)^2 + 2^2} = \sqrt{9} = 3\).</p>
+              <p>Distance: \(\frac{6}{3} = 2\) units.</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Three-plane system via row reduction</p>
+              <p>Solve \(\;\;\Pi_1\!:\, x + y + z = 6,\;\; \Pi_2\!:\, 2x - y + z = 3,\;\; \Pi_3\!:\, x + 2y - z = 2\).</p>
+              <p>Augmented matrix: \[\begin{bmatrix} 1 & 1 & 1 & 6 \\ 2 & -1 & 1 & 3 \\ 1 & 2 & -1 & 2 \end{bmatrix}.\]</p>
+              <p>\(R_2 \to R_2 - 2R_1\) and \(R_3 \to R_3 - R_1\): \(\begin{bmatrix} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 1 & -2 & -4 \end{bmatrix}\).</p>
+              <p>\(R_3 \to 3R_3 + R_2\): \(\begin{bmatrix} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 0 & -7 & -21 \end{bmatrix}\). Back-substitute: \(-7z = -21 \implies z = 3\); \(-3y - 3 = -9 \implies y = 2\); \(x + 2 + 3 = 6 \implies x = 1\).</p>
+              <p>Unique solution \((1, 2, 3)\) — the three planes meet at exactly one point.</p>
+            </div>
+            <ul>
+              <li>Claiming "no intersection" when the system actually has infinitely many solutions (the line lies in the plane or two planes are coincident).</li>
+              <li>Forgetting absolute value in the point-to-plane distance formula — distance is non-negative.</li>
+              <li>Substituting numerical values for parameters before solving the system, then losing the parameter family description.</li>
+              <li>Using the same parameter \(t\) for two different lines when checking intersection — use \(s\) for one and \(t\) for the other.</li>
+              <li>Confusing "no solution" (parallel/inconsistent) with "infinitely many solutions" (dependent/coincident) when interpreting row-reduced systems.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.4 — "determine, through investigation with technology … and without technology, the equation of a plane in three-space, given the scalar equation of a plane parallel to the desired plane and a point on the desired plane, or the equation of a plane perpendicular to the desired plane and a point on the desired plane." Also C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically." And C4.6 — "determine, using properties of a plane, the equation of a plane in three-space, given … three non-collinear points on the plane, two non-parallel lines lying in the plane, [or] two parallel lines lying in the plane."</p>
+          </div>
+        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 9 Assessments</div>
