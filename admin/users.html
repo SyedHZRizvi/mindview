@@ -30,6 +30,13 @@ th, td{text-align:left;padding:12px 14px;border-bottom:1px solid #e2e8f0;font-si
 th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#64748b;font-weight:700;}
 .role-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;}
 .role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}.role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}
+table.role-matrix th, table.role-matrix td{vertical-align:middle;}
+table.role-matrix th:not(:first-child){text-align:center;}
+table.role-matrix td.yes{text-align:center;color:#16a34a;font-weight:800;font-size:18px;background:#f0fdf4;}
+table.role-matrix td.no{text-align:center;color:#dc2626;font-weight:800;font-size:18px;background:#fef2f2;}
+table.role-matrix tbody tr:hover td{background:#f8fafc;}
+table.role-matrix tbody tr:hover td.yes{background:#dcfce7;}
+table.role-matrix tbody tr:hover td.no{background:#fee2e2;}
 .muted{color:#94a3b8;font-size:13px;}
 .modal-bg{position:fixed;inset:0;background:rgba(15,23,42,0.6);display:none;align-items:center;justify-content:center;z-index:200;}
 .modal-bg.show{display:flex;}
@@ -83,45 +90,82 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
             </table>
         </div>
 
-        <!-- Role reference — quick guide for whoever is creating users -->
+        <!-- Role reference — capability matrix (rows = action, columns = role) -->
         <div style="margin-top:36px;">
             <h2 style="font-size:18px;font-weight:800;margin-bottom:4px;color:#1e293b;">Role reference</h2>
-            <p class="sub" style="font-size:13px;margin-bottom:14px;">What each role can do and who is allowed to manage them.</p>
-            <div class="card" style="overflow:hidden;">
-                <table>
+            <p class="sub" style="font-size:13px;margin-bottom:14px;">What each role is allowed to do. Capability on the left, role across the top.</p>
+            <div class="card" style="overflow:auto;">
+                <table class="role-matrix">
                     <thead>
                         <tr>
-                            <th style="width:140px;">Role</th>
-                            <th>What they can do</th>
-                            <th style="width:220px;">Who can manage them</th>
+                            <th style="width:46%;">Capability</th>
+                            <th style="text-align:center;"><span class="role-pill student">Student</span></th>
+                            <th style="text-align:center;"><span class="role-pill teacher">Teacher</span></th>
+                            <th style="text-align:center;"><span class="role-pill admin">Administrator</span></th>
+                            <th style="text-align:center;"><span class="role-pill superuser">Super User</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="role-pill superuser">Super User</span></td>
-                            <td>Full access. Manage <strong>all</strong> users — including other Super Users and Administrators. View the Admin Dashboard. Browse all courses, lessons, and assessments.</td>
-                            <td>Super User only</td>
+                            <td>Sign in to the site</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                         </tr>
                         <tr>
-                            <td><span class="role-pill admin">Administrator</span></td>
-                            <td>Manage <strong>Teachers and Students only</strong> — cannot create, edit, or delete Administrators or Super Users. View the Admin Dashboard. Browse all courses, lessons, and assessments.</td>
-                            <td>Super User</td>
+                            <td>Browse courses, lessons, videos, resources</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                         </tr>
                         <tr>
-                            <td><span class="role-pill teacher">Teacher</span></td>
-                            <td>Browse <strong>all</strong> course content, lessons, and assessments. No user-management privileges.</td>
-                            <td>Super User, Administrator</td>
+                            <td>Take assessments</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                         </tr>
                         <tr>
-                            <td><span class="role-pill student">Student</span></td>
-                            <td>Browse course materials, video lessons, and assessments. No user-management privileges.</td>
-                            <td>Super User, Administrator</td>
+                            <td>Copy / select / print / right-click site content</td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Open Admin Dashboard</td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Open Manage Users</td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Create / edit / delete <strong>Students</strong></td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Create / edit / delete <strong>Teachers</strong></td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Create / edit / delete <strong>Administrators</strong></td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Create / edit / delete <strong>Super Users</strong></td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Change own name &amp; password</td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Change own role</td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
+                        </tr>
+                        <tr>
+                            <td>Delete own account</td>
+                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="muted" style="margin-top:10px;font-size:12px;">
-                Note: every user can change their own name and password through their <strong>Edit</strong> button on this page, but cannot change their own role (to prevent accidental lock-out).
+            <p class="muted" style="margin-top:10px;font-size:12px;line-height:1.55;">
+                <strong>Notes.</strong>
+                Students and Teachers can't access Manage Users — to change their own name or password, ask an Administrator or Super User to edit them.
+                Nobody (not even a Super User) can change their own role or delete their own account, to prevent accidental lock-out.
+                Content protection (copy / right-click / print / drag-save) is only relaxed for Super Users; everyone else sees the site read-only.
             </p>
         </div>
     </div>
