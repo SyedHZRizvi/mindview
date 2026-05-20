@@ -57,7 +57,7 @@ th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5
     <div class="user-chip">
         <span id="user-name"></span>
         <span id="user-role" class="role"></span>
-        <a href="/cdn-cgi/access/logout" style="color:#94a3b8;">Logout</a>
+        <a href="/api/logout" style="color:#94a3b8;">Logout</a>
     </div>
 </div>
 
@@ -124,10 +124,10 @@ function showAlert(target, msg, kind) {
 }
 
 (async function() {
-    const r = await fetch('/api/me');
+    const r = await fetch('/api/me', { credentials: 'same-origin' });
     const data = r.ok ? await r.json() : null;
     if (!data || !data.authenticated) {
-        location.href = '/cdn-cgi/access/login' + location.pathname;
+        location.replace('/login?next=' + encodeURIComponent(location.pathname + location.search));
         return;
     }
     currentUser = data.user;

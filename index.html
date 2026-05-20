@@ -35,13 +35,15 @@
             <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
                 <span id="user-name" style="font-weight:700;"></span>
                 <span id="user-role" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;"></span>
-                <a href="/cdn-cgi/access/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
+                <a href="/api/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
             </span>
         </div>
     </div>
 </nav>
 <script>
-// Role-based UI driven by Cloudflare Access via /api/me
+// Role-based UI driven by the mv_session cookie via /api/me.
+// (Unauthenticated visitors have already been bounced to /login by
+// functions/_middleware.js before this script runs.)
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
 const ROLE_COLORS = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', student:'#2563eb'};
 

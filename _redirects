@@ -1,3 +1,7 @@
+# Pretty login URL — keep this near the top so the middleware's `/login`
+# allowlist entry resolves to the actual login page asset.
+/login   /admin/login.html   200
+
 # Block sensitive local-dev files from ever being served
 /app.py        /404   404
 /users.db      /404   404

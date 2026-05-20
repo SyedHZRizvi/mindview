@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — MindView</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  color:#1e293b;
+  background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#3b82f6 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.card{
+  width:100%;
+  max-width:420px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  padding:40px 36px;
+}
+.brand{
+  text-align:center;
+  margin-bottom:24px;
+}
+.brand img{
+  height:64px;
+  width:auto;
+  display:inline-block;
+}
+.brand .tag{
+  display:block;
+  margin-top:10px;
+  font-size:13px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:#64748b;
+  font-weight:700;
+}
+h1{
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:6px;
+  text-align:center;
+}
+.sub{
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
+  margin-bottom:26px;
+}
+.field{margin-bottom:14px;}
+.field label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:5px;
+  color:#475569;
+}
+.field input{
+  width:100%;
+  padding:11px 13px;
+  border:1.5px solid #e2e8f0;
+  border-radius:8px;
+  font-size:15px;
+  font-family:inherit;
+  transition:border-color .15s, box-shadow .15s;
+}
+.field input:focus{
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+}
+button.submit{
+  width:100%;
+  margin-top:6px;
+  padding:12px 16px;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .15s, transform .05s;
+}
+button.submit:hover{background:#1d4ed8;}
+button.submit:active{transform:translateY(1px);}
+button.submit:disabled{opacity:0.6;cursor:not-allowed;}
+.error{
+  display:none;
+  margin-top:14px;
+  padding:10px 12px;
+  background:#fee2e2;
+  color:#991b1b;
+  border:1px solid #fecaca;
+  border-radius:6px;
+  font-size:13px;
+}
+.error.show{display:block;}
+.footer-note{
+  margin-top:18px;
+  text-align:center;
+  font-size:12px;
+  color:#94a3b8;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand">
+    <img src="/logo.png" alt="MindView Academy">
+    <span class="tag">Virtual Classroom</span>
+  </div>
+  <h1>Sign in to your account</h1>
+  <p class="sub">Use the credentials your administrator gave you.</p>
+
+  <form id="loginForm" novalidate>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="username" required autofocus>
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required>
+    </div>
+    <button type="submit" class="submit" id="submitBtn">Sign in</button>
+    <div class="error" id="error" role="alert"></div>
+  </form>
+
+  <p class="footer-note">MindView Academy &middot; Ontario Curriculum Grades 11 &amp; 12</p>
+</div>
+
+<script>
+(function () {
+  const form = document.getElementById('loginForm');
+  const errEl = document.getElementById('error');
+  const btn = document.getElementById('submitBtn');
+
+  // Sanitize the `next` query param: must be a same-origin absolute path that
+  // starts with "/" but NOT "//" (which would be a protocol-relative URL).
+  function getSafeNext() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const n = params.get('next') || '/';
+      if (typeof n !== 'string') return '/';
+      if (!n.startsWith('/') || n.startsWith('//')) return '/';
+      return n;
+    } catch (_) {
+      return '/';
+    }
+  }
+
+  function showError(msg) {
+    errEl.textContent = msg;
+    errEl.classList.add('show');
+  }
+  function clearError() {
+    errEl.textContent = '';
+    errEl.classList.remove('show');
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    clearError();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    if (!email || !password) {
+      showError('Invalid email or password');
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Signing in…';
+    try {
+      const r = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ email: email, password: password }),
+      });
+      if (r.ok) {
+        const next = getSafeNext();
+        // Use replace so the login page doesn't sit in browser history.
+        window.location.replace(next);
+        return;
+      }
+      // Try to surface server's message but never trust it blindly; default to
+      // the generic line.
+      let msg = 'Invalid email or password';
+      try {
+        const data = await r.json();
+        if (data && typeof data.error === 'string') msg = data.error;
+      } catch (_) {}
+      showError(msg);
+    } catch (_) {
+      showError('Network error. Please try again.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Sign in';
+    }
+  });
+})();
+</script>
+</body>
+</html>

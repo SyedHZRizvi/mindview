@@ -44,7 +44,7 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
     <div class="user-chip">
         <span id="user-name"></span>
         <span id="user-role" class="role"></span>
-        <a href="/cdn-cgi/access/logout" style="color:#94a3b8;">Logout</a>
+        <a href="/api/logout" style="color:#94a3b8;">Logout</a>
     </div>
 </div>
 
@@ -82,11 +82,13 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
 
 (async function() {
-    const r = await fetch('/api/me');
+    const r = await fetch('/api/me', { credentials: 'same-origin' });
     const data = r.ok ? await r.json() : null;
     if (!data || !data.authenticated) {
-        // Cloudflare Access should have gated this already; if not, force its login.
-        location.href = '/cdn-cgi/access/login' + location.pathname;
+        // The middleware should already have bounced unauthenticated visitors,
+        // but if a session expires mid-session (e.g. via this XHR), redirect
+        // to the login page with a `next` param back to here.
+        location.replace('/login?next=' + encodeURIComponent(location.pathname + location.search));
         return;
     }
     render(data.user);
