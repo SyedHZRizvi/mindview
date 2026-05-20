@@ -37,6 +37,7 @@ table.role-matrix td.no{text-align:center;color:#dc2626;font-weight:800;font-siz
 table.role-matrix tbody tr:hover td{background:#f8fafc;}
 table.role-matrix tbody tr:hover td.yes{background:#dcfce7;}
 table.role-matrix tbody tr:hover td.no{background:#fee2e2;}
+table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
 .muted{color:#94a3b8;font-size:13px;}
 .modal-bg{position:fixed;inset:0;background:rgba(15,23,42,0.6);display:none;align-items:center;justify-content:center;z-index:200;}
 .modal-bg.show{display:flex;}
@@ -99,13 +100,14 @@ table.role-matrix tbody tr:hover td.no{background:#fee2e2;}
                     <thead>
                         <tr>
                             <th style="width:46%;">Capability</th>
-                            <th style="text-align:center;"><span class="role-pill student">Student</span></th>
-                            <th style="text-align:center;"><span class="role-pill teacher">Teacher</span></th>
-                            <th style="text-align:center;"><span class="role-pill admin">Administrator</span></th>
                             <th style="text-align:center;"><span class="role-pill superuser">Super User</span></th>
+                            <th style="text-align:center;"><span class="role-pill admin">Administrator</span></th>
+                            <th style="text-align:center;"><span class="role-pill teacher">Teacher</span></th>
+                            <th style="text-align:center;"><span class="role-pill student">Student</span></th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Group 1: everyone can do -->
                         <tr>
                             <td>Sign in to the site</td>
                             <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
@@ -114,42 +116,48 @@ table.role-matrix tbody tr:hover td.no{background:#fee2e2;}
                             <td>Browse courses, lessons, videos, resources</td>
                             <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                         </tr>
-                        <tr>
+                        <tr class="group-end">
                             <td>Take assessments</td>
                             <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                         </tr>
-                        <tr>
-                            <td>Copy / select / print / right-click site content</td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td>
-                        </tr>
+
+                        <!-- Group 2: Super User + Administrator only -->
                         <tr>
                             <td>Open Admin Dashboard</td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
                         <tr>
                             <td>Open Manage Users</td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
                         <tr>
                             <td>Create / edit / delete <strong>Students</strong></td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
                         <tr>
                             <td>Create / edit / delete <strong>Teachers</strong></td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td>
+                        </tr>
+                        <tr class="group-end">
+                            <td>Change own name &amp; password</td>
+                            <td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td>
+                        </tr>
+
+                        <!-- Group 3: Super User only -->
+                        <tr>
+                            <td>Copy / select / print / right-click site content</td>
+                            <td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
                         <tr>
                             <td>Create / edit / delete <strong>Administrators</strong></td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td>
+                            <td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
-                        <tr>
+                        <tr class="group-end">
                             <td>Create / edit / delete <strong>Super Users</strong></td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td>
+                            <td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
                         </tr>
-                        <tr>
-                            <td>Change own name &amp; password</td>
-                            <td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td>
-                        </tr>
+
+                        <!-- Group 4: nobody can do (lock-out protection) -->
                         <tr>
                             <td>Change own role</td>
                             <td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td>
