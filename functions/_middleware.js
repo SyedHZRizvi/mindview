@@ -7,11 +7,18 @@
 //   - Pass-through (no auth gate) for: /login, /api/login, /api/logout,
 //     /api/bootstrap, /api/me, /logo.png, and any path with a static-asset
 //     extension (.css .js .png .jpg .jpeg .gif .svg .webp .ico .woff .woff2
-//     .ttf .map).
+//     .ttf .map). Note that /js/content-protection.js is covered by the .js
+//     extension rule, so the login page can fetch it unauthenticated (the
+//     script self-skips on the login pages anyway).
 //   - For everything else: require a valid mv_session cookie. If missing/
 //     invalid, 302 to /login?next=<encoded original URL>.
 //   - If SESSION_SECRET is unset, return 500 with a clear error so the owner
 //     notices in dev/prod instead of silently allowing traffic through.
+//   - For HTML responses (content-type starts with text/html) on any path
+//     other than the login pages, inject
+//       <script src="/js/content-protection.js" defer></script>
+//     at the end of <head> via HTMLRewriter. This applies to public paths
+//     too (e.g. the index page), so the protection script is always loaded.
 
 import { readSessionFromRequest } from './lib/session.js';
 
@@ -64,6 +71,42 @@ function isPublic(pathname) {
   return false;
 }
 
+// Paths where we deliberately do NOT inject the content-protection script.
+// The script self-skips on these too, but skipping the inject avoids a
+// pointless network fetch on the login screen.
+const NO_INJECT_PATHS = new Set([
+  '/login',
+  '/admin/login',
+  '/admin/login.html',
+]);
+
+function shouldInject(pathname) {
+  let p = pathname;
+  if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+  return !NO_INJECT_PATHS.has(p);
+}
+
+// Wrap a downstream Response: if it's an HTML response, inject the
+// content-protection script tag at the end of <head> via HTMLRewriter.
+// Non-HTML responses (JSON, CSS, JS, images, redirects, 401s, etc.) are
+// returned unchanged.
+function withProtectionInjected(response, pathname) {
+  if (!response) return response;
+  if (!shouldInject(pathname)) return response;
+  const ct = response.headers.get('content-type') || '';
+  if (!ct.toLowerCase().includes('text/html')) return response;
+  return new HTMLRewriter()
+    .on('head', {
+      element(el) {
+        el.append(
+          '<script src="/js/content-protection.js" defer></script>',
+          { html: true }
+        );
+      },
+    })
+    .transform(response);
+}
+
 export async function onRequest(context) {
   const { request, env, next } = context;
   const url = new URL(request.url);
@@ -71,7 +114,12 @@ export async function onRequest(context) {
   // Always allow CORS preflights through unscathed.
   if (request.method === 'OPTIONS') return next();
 
-  if (isPublic(url.pathname)) return next();
+  if (isPublic(url.pathname)) {
+    // Public path (login page, /api/me, static assets, index, etc.) — still
+    // inject the protection script if the response turns out to be HTML.
+    const res = await next();
+    return withProtectionInjected(res, url.pathname);
+  }
 
   if (!env.SESSION_SECRET) {
     return new Response(
@@ -85,13 +133,16 @@ export async function onRequest(context) {
 
   const payload = await readSessionFromRequest(request, env.SESSION_SECRET);
   if (payload) {
-    // Authenticated — let downstream handler / static asset serve.
-    return next();
+    // Authenticated — let downstream handler / static asset serve, then
+    // inject the protection script into any HTML response.
+    const res = await next();
+    return withProtectionInjected(res, url.pathname);
   }
 
   // Not authenticated. For HTML / page navigations, redirect to /login with
   // a `next` param so the login page can bounce back. For API calls, return
   // 401 JSON so XHR / fetch callers can react without a confusing 302.
+  // (Neither of these is an HTML body, so no injection here.)
   if (url.pathname.startsWith('/api/')) {
     return new Response(JSON.stringify({ error: 'Authentication required' }), {
       status: 401,
