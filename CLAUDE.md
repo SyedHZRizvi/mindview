@@ -1,8 +1,9 @@
 # MindView Virtual Classroom — Baseline & Guardrails
 
-**Frozen baseline:** commit `afe04b2` / git tag `baseline-2026-05-20`.
+**Frozen baseline:** git tag `baseline-2026-05-21` (chapter-per-page layout).
+**Previous baseline:** `baseline-2026-05-20` (monolithic course pages — kept for rollback).
 **Live URL:** https://mindview.pages.dev/
-**Owner role for full access:** `superuser` (email-allowlisted in `USERS_KV`).
+**Owner role for full access:** `superuser` (email allowlisted in `USERS_KV`).
 
 This file is read automatically by Claude Code at the start of every session
 in this repo. **Future agents and humans must read this before changing
@@ -32,7 +33,8 @@ The site is a **Cloudflare Pages** project deployed via **Direct Upload**
 | Content protection | `js/content-protection.js` | Injected via middleware into every HTML response; disables copy/paste/right-click/print for non-superusers |
 | Auth UI | `admin/login.html` | Custom email+password form |
 | Admin UI | `admin/dashboard.html`, `admin/users.html` | Role-based admin pages |
-| Course pages | `courses/*.html` | 10 course landing pages |
+| Course landing pages | `courses/{code}.html` (10 files) | Slim landing page — hero, Course Resources, chapter-card grid |
+| **Chapter pages** | **`courses/{code}/ch{N}.html`** (64 files) | **One file per chapter — lesson notes + videos + AS/FOR/OF + prev/next** |
 | Curriculum cards | `courses/*_curriculum.html` | Ministry curriculum overview pages |
 | Assessments | `assessments/{course}/Unit*_{AS,FOR,OF}.html` for science / vectors / English / CS; flat `{course}_chN_*.html` for MCR3U, MHF4U, MDM4U | Practice quizzes, diagnostics, unit tests |
 
@@ -41,80 +43,68 @@ The site is a **Cloudflare Pages** project deployed via **Direct Upload**
 - `SESSION_SECRET` — Pages environment variable (Production + Preview),
   HMAC key for `mv_session` cookies. **If unset, middleware returns 500.**
 
-### Pages env vars must contain at minimum
-- `SESSION_SECRET` (Secret, encrypted)
-
 ---
 
 ## 2. Frozen UX patterns (additive changes only)
 
-These are the visual conventions that have been deliberately settled. **Add
-new things alongside; do not reorder, restyle, or remove the existing ones.**
+### 2a. Course landing pages (`courses/{code}.html`)
+Each is short and contains ONLY:
+1. Top hero with course code + title.
+2. Chapter-pill quick-nav row, each pill linking to `{code}/ch{N}.html`.
+3. **"Course Resources & Final Evaluation" block** — must be ABOVE the chapter cards. Two cards: Curriculum Document (left) + Final Exam (right).
+4. **Chapter-cards grid** — one card per chapter, linking to `{code}/ch{N}.html`. Each card has a color-matched left border, chapter number tag, title, and subtitle.
+5. Footer.
+**No `<div class="unit-section">` inline content** (one exception per file is allowed: the resources block uses `id="resources"`; SPH4U keeps a `strandA` block; MCR3U keeps a `bridge` review block).
 
-### 2a. Header / nav
-- Nav shows: brand logo on left, page links in centre, **user name + Logout**
-  on the right.
-- **No role pill** in the nav — role chip was deliberately removed.
+### 2b. Chapter pages (`courses/{code}/ch{N}.html`)
+Each chapter page MUST contain:
+1. Same `<head>` and nav as the landing (with relative paths bumped from `../` → `../../`).
+2. **Breadcrumb** in the chapter hero: `<a href="../{code}.html">← Back to course (CODE Title)</a>`.
+3. **Chapter hero** with the original unit-header gradient + title + subtitle.
+4. All topic blocks from that chapter (each with its `<details class="lesson-notes">` and `<div class="video-card">` and worked examples).
+5. The **AS → FOR → OF assessment strip** in that exact order.
+6. **Prev/Next chapter-nav strip** at the bottom (`.chapter-nav` with `.chnav-btn` styled buttons):
+   - First chapter: `← Back to course` + `Chapter 2 →`
+   - Middle chapters: `← Chapter N-1` + `Chapter N+1 →`
+   - Last chapter: `← Chapter N-1` + `↑ Back to course` (uses `.chnav-finish` green variant)
+7. Footer.
 
-### 2b. Course landing pages — fixed layout order
-1. Top hero gradient with course code + title.
-2. Chapter-pill quick-nav row.
-3. **"Course Resources & Final Evaluation" block** — dark gradient header,
-   two cards: 📋 Curriculum Document (left) + 🎓 Final Exam (right).
-   **This block MUST appear before the first chapter section.**
-4. Chapter sections (`<div class="unit-section">` each).
-5. Inside each chapter section, **at the bottom**, a `<div class="assessment-strip">`
-   with title "📊 Chapter N Assessments" and a 3-card grid in **THIS exact
-   order**:
-   - 🔄 **Practice Quiz — Assessment AS Learning** (cyan gradient)
-   - 📋 **Diagnostic — Assessment FOR Learning** (amber gradient)
-   - ✅ **Unit Test — Assessment OF Learning** (purple gradient)
-6. Lesson-notes (`<details class="lesson-notes">`) inside each `topic-block`
-   between the summary card and the video card.
+### 2c. Assessment strip card order — locked
+Inside every chapter page, the assessment strip is always:
+1. 🔄 **Practice Quiz — Assessment AS Learning** (cyan)
+2. 📋 **Diagnostic — Assessment FOR Learning** (amber)
+3. ✅ **Unit Test — Assessment OF Learning** (purple)
 
-### 2c. Manage Users page (`admin/users.html`)
-- Top: user table with per-row Edit (self can edit) and Delete (not self).
-- Bottom: **Role Reference matrix** — capabilities in rows, roles as
-  columns in order **Super User → Administrator → Teacher → Student**.
-- Rows grouped into 4 tiers (everyone / admin+ / superuser-only / nobody),
-  separated by slate-300 dividers. Green ✓ on light-green, red ✗ on
-  light-red.
+### 2d. Manage Users page (`admin/users.html`)
+- Role-reference matrix at the bottom — columns **Super User → Administrator → Teacher → Student** (left-to-right by power, descending).
+- Rows grouped into 4 tiers (everyone / admin+ / superuser-only / nobody) separated by slate-300 dividers.
 
-### 2d. Authentication-related rules
-- **Lock-out protection:** no user can change their own role; no user can
-  delete their own account. The Edit modal disables the role field when
-  `isMe`.
-- **Bootstrap endpoint is single-use:** must return 403 once KV has any
-  user. Do not re-enable `force_reset` or any other rescue flag in
-  steady-state code.
-- **Login page exemptions:** `/login`, `/admin/login`, `/admin/login.html`
-  must always remain in `PUBLIC_EXACT` in `functions/_middleware.js`, and
-  in `NO_INJECT_PATHS` for the content-protection script.
+### 2e. Nav / chrome
+- Nav shows brand logo, page links, user name + Logout. **No role pill.**
 
-### 2e. Curriculum lesson notes (course pages)
+### 2f. Authentication-related rules
+- **Lock-out protection:** no user can change their own role; no user can delete their own account. Edit modal disables the role field when `isMe`.
+- **Bootstrap endpoint is single-use:** must return 403 once KV has any user. Do not re-enable `force_reset` or any other rescue flag.
+- **Login page exemptions:** `/login`, `/admin/login`, `/admin/login.html` stay in `PUBLIC_EXACT` in `functions/_middleware.js` and in `NO_INJECT_PATHS` for content-protection.
+
+### 2g. Curriculum lesson notes (chapter pages)
 - Every `topic-block` has a `<details class="lesson-notes">` block.
-- Block contains: 600–1000 words including concept paragraphs, vocabulary
-  list, 1-2 `<div class="worked-example">`, common-mistakes list, and a
-  `<p class="curriculum-link">` citation.
-- MathJax `\( \)` and `\[ \]` for math (NOT `\\(`).
-- For CS pages, `<pre><code>` blocks (Python).
+- Block contains: 600–1000 words including concept paragraphs, vocabulary list, 1-2 `<div class="worked-example">`, common-mistakes list, and a `<p class="curriculum-link">` citation.
+- MathJax `\( \)` and `\[ \]` for math (single backslash; NOT `\\(`).
+- For ICS4U, `<pre><code>` blocks (Python).
 
-### 2f. Content protection
-- Non-superusers cannot copy, select, right-click, drag-save, print, or use
-  view-source shortcuts.
+### 2h. Content protection
+- Non-superusers cannot copy, select, right-click, drag-save, print, or use view-source shortcuts.
 - Superusers retain full browser interactivity.
-- The script self-skips on login pages (form fields must always accept paste).
+- Script self-skips on login pages (form fields must always accept paste).
 
 ---
 
 ## 3. Rules for future changes
 
 ### "Additive only" by default
-- New features add **new** files, **new** blocks, **new** rows. Never rename
-  existing files, never delete fields, never reorder UI without an explicit
-  request from the owner naming the thing being reordered.
-- Test new pages against the auth gate. They will be 302'd unless added to
-  `PUBLIC_EXACT` (rare) or the user is signed in.
+- New features add **new** files, **new** blocks, **new** rows. Never rename existing files, never delete fields, never reorder UI without an explicit request from the owner naming the thing being reordered.
+- Test new pages against the auth gate. They will be 302'd unless added to `PUBLIC_EXACT` (rare) or the user is signed in.
 
 ### Before modifying any of the following, ask first:
 - `functions/_middleware.js` exempt lists
@@ -126,37 +116,28 @@ new things alongside; do not reorder, restyle, or remove the existing ones.**
 - `js/content-protection.js` (security implication)
 - `_redirects` rules
 - Cookie attributes (`HttpOnly`, `Secure`, `SameSite`, `Path`, `Max-Age`)
+- The **chapter-per-page layout** (every chapter must be its own file at `courses/{code}/ch{N}.html`)
+- Prev/Next chapter-nav (every chapter must have it)
 
 ### Safe-to-change without prior approval
-- Adding a new course (follow the existing course-HTML template)
-- Adding a new chapter to an existing course (must include AS/FOR/OF strip
-  in the correct order)
-- Adding lesson-notes to a topic that lacks them (use the existing
-  `<details class="lesson-notes">` template)
-- Replacing a broken YouTube video (verify via oEmbed before writing)
-- Editing typos, fixing curriculum-citation phrasing
-- Adding new admin pages (must include `/api/me` auth check)
-- Adding new env vars in Pages settings
+- Adding a new chapter to an existing course: add `courses/{code}/ch{N+1}.html` following the chapter-page template; add a new chapter-card on the landing; AS/FOR/OF assessment files for that chapter.
+- Adding lesson-notes to a topic that lacks them (use the existing `<details class="lesson-notes">` template).
+- Replacing a broken YouTube video (verify via oEmbed before writing).
+- Editing typos, fixing curriculum-citation phrasing inside a chapter page.
+- Adding new admin pages (must include `/api/me` auth check).
 
 ### Deploy procedure
 ```
-# From repo root:
+cd /Users/syed/Documents/work/mindview
 wrangler pages deploy . --project-name=mindview --branch=main --commit-dirty=true
 ```
-Functions get bundled automatically when wrangler is run **from inside the
-project directory** (`wrangler pages deploy .`). Running it with a path
-argument from outside (`wrangler pages deploy /path/to/dir`) skips Functions
-bundling — *don't do that*.
+Functions get bundled automatically when wrangler is run **from inside the project directory** (`wrangler pages deploy .`). Running it with a path argument from outside skips Functions bundling — *don't do that*.
 
-After every deploy, run `scripts/verify-baseline.py` to confirm invariants
-hold.
+After every deploy, run `python3 scripts/verify-baseline.py` to confirm invariants hold.
 
 ### Database safety
-- `USERS_KV` is the only source of truth for user identity. Don't wipe it
-  without owner approval — there is no version history.
-- Password hashes are SHA-256 (no salt) for legacy compatibility. There is
-  an outstanding TODO to migrate to PBKDF2-with-salt on next login. Do that
-  only when explicitly requested.
+- `USERS_KV` is the only source of truth for user identity. Don't wipe it without owner approval — there is no version history.
+- Password hashes are SHA-256 (no salt) for legacy compatibility.
 
 ---
 
@@ -164,45 +145,62 @@ hold.
 
 Run `python3 scripts/verify-baseline.py` from the repo root. It asserts:
 
-- `functions/_middleware.js`, `functions/lib/session.js`, all API endpoints exist
-- `js/content-protection.js` exists
-- `admin/login.html`, `admin/dashboard.html`, `admin/users.html` exist
-- Every course HTML has a "Course Resources" block ABOVE the first `unit-section`
-- Every chapter has an assessment strip in **AS → FOR → OF** order
-- The Role Reference matrix order is **Super User → Administrator → Teacher → Student**
-- The role pill `<span id="user-role">` is **NOT** present in nav chips
-- Logout links point to `/api/logout` (not `/cdn-cgi/access/logout`)
-- No Netlify Identity script tags remain
-- All chapter-assessment hrefs resolve to files that exist
-- MathJax delimiters use single backslash, not `\\(`
+- All security-critical & UX-critical files exist
+- Middleware exempt list intact (login pages, API endpoints)
+- `SESSION_SECRET` referenced in middleware
+- No Netlify Identity remnants in any course or admin file
+- No Cloudflare Access remnants (`/cdn-cgi/access/`) in admin or index files
+- Logout links use `/api/logout`
+- No `<span id="user-role">` role pill in nav chips
+- Every course landing has the **Course Resources** block AND the **chapter-cards grid** AND NO `<div class="unit-section" id="unitN">` blocks for N≥1
+- Every course has the expected number of `courses/{code}/ch{N}.html` chapter pages
+- Every chapter page has: breadcrumb, hero, AS→FOR→OF strip in that order, prev/next chapter-nav, lesson-notes detail blocks
+- Role Reference matrix columns are Super User → Admin → Teacher → Student
+- No `\\(...\\)` double-backslash MathJax delimiters in any chapter or course HTML
+- All chapter-assessment hrefs resolve to existing files under `assessments/`
+- Session cookie keeps `HttpOnly` + `Secure` + `SameSite=Lax` + `Path=/`
+- Bootstrap endpoint contains the "Bootstrap already complete" lock-out
+- No rescue-mode (`force_reset`) code in bootstrap
 
-If any assertion fails, the script exits non-zero. **Do not deploy a state
-that fails the baseline check** without explicit owner approval.
+If any assertion fails, the script exits non-zero. **Do not deploy a state that fails the baseline check** without explicit owner approval.
 
 ---
 
 ## 5. Locked content
 
-- Curriculum lesson notes (~331 blocks across 10 courses): subject-matter
-  accuracy was audited; do not rewrite without retaining the structure
-  (concept paragraphs → vocabulary → worked examples → mistakes →
-  curriculum citation).
-- Role Reference matrix: 13 capability rows. Don't reorder columns. Do add
-  new rows if new capabilities ship — but new rows must follow the
-  existing tier-grouping convention (everyone / admin+ / superuser-only / nobody).
-- 49 video replacements made on 2026-05-20: every replacement was oEmbed-verified.
-  If a video breaks again, find another working replacement; don't restore
-  the old (broken) ID.
+- Curriculum lesson notes (~314 blocks across 64 chapter pages): subject-matter accuracy was audited; do not rewrite without retaining the structure (concept paragraphs → vocabulary → worked examples → mistakes → curriculum citation).
+- Role Reference matrix: 13 capability rows in the established tier-grouping (everyone / admin+ / superuser-only / nobody).
+- Video replacements made on 2026-05-20: every replacement was oEmbed-verified. If a video breaks again, find another working replacement; don't restore the old (broken) ID.
 
 ---
 
-## 6. Where to find prior decisions
+## 6. Per-course chapter counts (for the verifier)
 
-Commit messages on `main` are the canonical record. Recent ones to consult
-before structural changes:
+| Course | Expected chapter count |
+|---|---:|
+| MCR3U  | 8 |
+| MHF4U  | 8 |
+| MCV4U  | 9 |
+| MDM4U  | 8 |
+| SPH3U  | 5 |
+| SPH4U  | 5 |
+| SCH4U  | 5 |
+| SBI4U  | 5 |
+| ICS4U  | 5 |
+| ENG4U  | 6 |
+| **Total** | **64** |
 
-- `afe04b2` — chapter strip order set to AS → FOR → OF
-- `4c1350c` — curriculum-to-top + AS/FOR/OF strips + 49 video fixes
+---
+
+## 7. Where to find prior decisions
+
+Commit messages on `main` are the canonical record. Most-relevant recent ones:
+
+- (head) — Chapter-per-page restructure across all 10 courses
+- `113cc73` — Locked the baseline (CLAUDE.md + scripts/verify-baseline.py)
+- `18d3a91` — Verifier-regex fix + sph3u/sph4u MathJax delimiter fix
+- `afe04b2` — Chapter strip order set to AS → FOR → OF
+- `4c1350c` — Curriculum-to-top + AS/FOR/OF strips + 49 video fixes
 - `e7a2b12` — MCV4U lesson notes expanded to per-topic
 - `bf61f34` — Lesson notes added for 9 courses
 - `b684a7e` — MCR3U lesson notes pilot
@@ -210,6 +208,5 @@ before structural changes:
 - `94f3975` — Role-reference matrix added to Manage Users
 - `e113e66` — Custom email+password auth built
 - `fc00324` — Removed Netlify Identity
-- `b08c19bf` — Cloudflare Access removed (was the wrong product)
 
-**End of baseline. Last updated 2026-05-20 by the curriculum-shipping session.**
+**End of baseline. Last updated 2026-05-21 by the chapter-restructure session.**

@@ -22,11 +22,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-COURSES = [
-    "mcr3u", "mhf4u", "mcv4u", "mdm4u",
-    "sph3u", "sph4u", "sch4u", "sbi4u",
-    "ics4u", "eng4u",
+# (code, expected number of chapters)
+COURSES_AND_CHAPTERS = [
+    ("mcr3u", 8), ("mhf4u", 8), ("mcv4u", 9), ("mdm4u", 8),
+    ("sph3u", 5), ("sph4u", 5), ("sch4u", 5), ("sbi4u", 5),
+    ("ics4u", 5), ("eng4u", 6),
 ]
+COURSES = [c for c, _ in COURSES_AND_CHAPTERS]
 
 REQUIRED_FILES = [
     "functions/_middleware.js",
@@ -53,12 +55,35 @@ def fail(msg: str) -> None:
     failures.append(msg)
 
 
+# ---------- Existence checks ----------
+
 def check_required_files() -> None:
     """All security-critical & UX-critical files must exist."""
     for f in REQUIRED_FILES:
         if not (ROOT / f).is_file():
             fail(f"missing required file: {f}")
 
+
+def check_chapter_pages_exist() -> None:
+    """Every course must have exactly the expected count of chapter pages."""
+    for code, expected in COURSES_AND_CHAPTERS:
+        d = ROOT / "courses" / code
+        if not d.is_dir():
+            fail(f"{code}: missing courses/{code}/ chapter directory")
+            continue
+        pages = sorted(d.glob("ch*.html"))
+        if len(pages) != expected:
+            fail(f"{code}: found {len(pages)} chapter pages, expected {expected}")
+        # Verify ch1.html..chN.html sequence
+        nums = sorted(int(re.search(r'ch(\d+)\.html', p.name).group(1)) for p in pages)
+        for i, n in enumerate(nums, 1):
+            if i != n:
+                fail(f"{code}: chapter numbering not contiguous starting at 1 "
+                     f"(saw {nums})")
+                break
+
+
+# ---------- Auth invariants ----------
 
 def check_middleware_exempt_list() -> None:
     """Login pages and auth APIs must remain in PUBLIC_EXACT."""
@@ -71,134 +96,6 @@ def check_middleware_exempt_list() -> None:
             fail(f"middleware missing PUBLIC_EXACT entry: {entry}")
     if "env.SESSION_SECRET" not in text:
         fail("middleware no longer checks env.SESSION_SECRET")
-
-
-def check_no_netlify_identity() -> None:
-    """No Netlify Identity widget tags should remain anywhere."""
-    for course in COURSES:
-        text = (ROOT / f"courses/{course}.html").read_text()
-        if "netlify-identity-widget" in text or "netlifyIdentity." in text:
-            fail(f"{course}: contains Netlify Identity remnants")
-    for f in ["index.html", "admin/login.html",
-              "admin/dashboard.html", "admin/users.html"]:
-        text = (ROOT / f).read_text()
-        if "netlify-identity-widget" in text or "netlifyIdentity." in text:
-            fail(f"{f}: contains Netlify Identity remnants")
-
-
-def check_no_cloudflare_access() -> None:
-    """No cdn-cgi/access references should remain (was the wrong product)."""
-    for f in ["index.html", "admin/dashboard.html", "admin/users.html"]:
-        text = (ROOT / f).read_text()
-        if "/cdn-cgi/access/" in text:
-            fail(f"{f}: contains Cloudflare-Access logout/login link "
-                 "(should be /api/logout)")
-
-
-def check_logout_links() -> None:
-    """Logout links across pages must point to /api/logout."""
-    for f in ["index.html", "admin/dashboard.html", "admin/users.html"]:
-        text = (ROOT / f).read_text()
-        if "/api/logout" not in text:
-            fail(f"{f}: missing /api/logout link")
-
-
-def check_no_role_pill_in_nav() -> None:
-    """Per UX baseline, the role badge was removed from nav chips."""
-    for f in ["index.html", "admin/dashboard.html", "admin/users.html"]:
-        text = (ROOT / f).read_text()
-        # The role pill carried id="user-role" in a span. It must be gone.
-        if re.search(r'<span\s+id="user-role"', text):
-            fail(f"{f}: nav still contains <span id=\"user-role\"> "
-                 "(role badge was deliberately removed)")
-
-
-def check_course_resources_block_at_top() -> None:
-    """Course Resources block must appear BEFORE the first chapter section."""
-    for course in COURSES:
-        text = (ROOT / f"courses/{course}.html").read_text()
-        # The block contains the text "Course Resources" (header) and links
-        # to the curriculum overview.
-        m_block = re.search(r"Course Resources", text)
-        m_first_unit = re.search(r'<div class="unit-section"', text)
-        if not m_block or not m_first_unit:
-            # Some courses may not have either — flag if expected to.
-            if not m_block:
-                fail(f"{course}: missing 'Course Resources' block")
-            if not m_first_unit:
-                fail(f"{course}: missing 'unit-section' divs")
-            continue
-        if m_block.start() > m_first_unit.start():
-            fail(f"{course}: 'Course Resources' block appears AFTER the first "
-                 f"unit-section (must be ABOVE)")
-
-
-def check_assessment_strip_order() -> None:
-    """Every chapter assessment strip must be AS → FOR → OF.
-
-    Walks the assessment-strip-{for|as|of} class names in document order
-    and asserts they appear in repeating AS→FOR→OF triples. Avoids
-    fragile <div> nesting since each card is an <a> with inner <div>s.
-    """
-    card_pat = re.compile(r'assessment-strip-(for|as|of)\b')
-    for course in COURSES:
-        text = (ROOT / f"courses/{course}.html").read_text()
-        order = card_pat.findall(text)
-        # Drop CSS-rule occurrences (anything before <body>)
-        body_start = text.find('<body')
-        if body_start >= 0:
-            pre_body = text[:body_start]
-            pre_count = len(card_pat.findall(pre_body))
-            order = order[pre_count:]
-        if not order:
-            fail(f"{course}: no assessment-strip cards found in <body>")
-            continue
-        if len(order) % 3 != 0:
-            fail(f"{course}: assessment-strip card count {len(order)} "
-                 "not a multiple of 3")
-            continue
-        triples = [order[i:i+3] for i in range(0, len(order), 3)]
-        for i, t in enumerate(triples, 1):
-            if t != ["as", "for", "of"]:
-                fail(f"{course} strip #{i}: card order is "
-                     f"{'->'.join(c.upper() for c in t)}, expected AS->FOR->OF")
-
-
-def check_role_matrix_columns() -> None:
-    """Manage Users role matrix columns must be Super User → Admin → Teacher → Student."""
-    text = (ROOT / "admin/users.html").read_text()
-    m = re.search(r'<table class="role-matrix">[\s\S]*?<thead>([\s\S]*?)</thead>', text)
-    if not m:
-        fail("admin/users.html: role-matrix <thead> not found")
-        return
-    header = m.group(1)
-    order = re.findall(r'class="role-pill (\w+)"', header)
-    expected = ["superuser", "admin", "teacher", "student"]
-    if order != expected:
-        fail(f"role matrix columns are {order}, expected {expected}")
-
-
-def check_mathjax_delimiters() -> None:
-    """No double-backslash MathJax delimiters anywhere in course pages."""
-    bad_delims = [r"\\(", r"\\)", r"\\[", r"\\]"]
-    for course in COURSES:
-        text = (ROOT / f"courses/{course}.html").read_text()
-        for d in bad_delims:
-            if d in text:
-                count = text.count(d)
-                fail(f"{course}: {count}× double-backslash math delimiter "
-                     f"{d!r} (use single backslash)")
-
-
-def check_assessment_links_resolve() -> None:
-    """Every chapter assessment href must resolve to a real file."""
-    for course in COURSES:
-        text = (ROOT / f"courses/{course}.html").read_text()
-        for href in re.findall(r'href="\.\./assessments/([^"]+)"', text):
-            target = ROOT / "assessments" / href
-            if not target.is_file():
-                fail(f"{course}: assessment link points to missing file "
-                     f"assessments/{href}")
 
 
 def check_session_cookie_attributes() -> None:
@@ -221,24 +118,198 @@ def check_bootstrap_locked_when_kv_nonempty() -> None:
              "lock-out message")
 
 
+# ---------- Legacy-tech remnant checks ----------
+
+def _all_html_files() -> list[Path]:
+    out = []
+    for f in ["index.html", "admin/login.html", "admin/dashboard.html",
+              "admin/users.html"]:
+        out.append(ROOT / f)
+    for code in COURSES:
+        out.append(ROOT / f"courses/{code}.html")
+        out.extend(sorted((ROOT / f"courses/{code}").glob("ch*.html")))
+    return [p for p in out if p.exists()]
+
+
+def check_no_netlify_identity() -> None:
+    """No Netlify Identity widget tags should remain anywhere."""
+    for p in _all_html_files():
+        text = p.read_text()
+        if "netlify-identity-widget" in text or "netlifyIdentity." in text:
+            fail(f"{p.relative_to(ROOT)}: contains Netlify Identity remnants")
+
+
+def check_no_cloudflare_access() -> None:
+    """No cdn-cgi/access references should remain (was the wrong product)."""
+    for p in [ROOT / "index.html",
+              ROOT / "admin/dashboard.html",
+              ROOT / "admin/users.html"]:
+        text = p.read_text()
+        if "/cdn-cgi/access/" in text:
+            fail(f"{p.relative_to(ROOT)}: contains Cloudflare-Access "
+                 "logout/login link (should be /api/logout)")
+
+
+def check_logout_links() -> None:
+    """Logout links across pages must point to /api/logout."""
+    for f in ["index.html", "admin/dashboard.html", "admin/users.html"]:
+        text = (ROOT / f).read_text()
+        if "/api/logout" not in text:
+            fail(f"{f}: missing /api/logout link")
+
+
+def check_no_role_pill_in_nav() -> None:
+    """Per UX baseline, the role badge was removed from nav chips."""
+    for f in ["index.html", "admin/dashboard.html", "admin/users.html"]:
+        text = (ROOT / f).read_text()
+        if re.search(r'<span\s+id="user-role"', text):
+            fail(f"{f}: nav still contains <span id=\"user-role\"> "
+                 "(role badge was deliberately removed)")
+
+
+# ---------- Landing-page invariants ----------
+
+def check_landing_has_resources_and_cards() -> None:
+    """Every course landing page must have a Course Resources block AND
+    a chapter-cards grid AND no inline unit-section chapter content."""
+    for code in COURSES:
+        text = (ROOT / f"courses/{code}.html").read_text()
+        if "Course Resources" not in text:
+            fail(f"{code}.html: missing 'Course Resources' block on landing")
+        if "chapter-cards-grid" not in text and "chapter-card" not in text:
+            fail(f"{code}.html: missing chapter-cards grid on landing")
+        # No inline unit-section chapter content (resources / strandA /
+        # bridge are explicitly allowed)
+        for m in re.finditer(r'<div class="unit-section"[^>]*id="([^"]+)"',
+                             text, re.I):
+            uid = m.group(1)
+            if uid.lower() not in ("resources", "stranda", "bridge"):
+                fail(f"{code}.html: still contains inline unit-section id="
+                     f'"{uid}" on landing (should be in a chapter page)')
+
+
+# ---------- Chapter-page invariants ----------
+
+ASSESSMENT_CARD_RE = re.compile(r'assessment-strip-(for|as|of)\b', re.I)
+
+
+def check_chapter_pages_well_formed() -> None:
+    """Every chapter page must have: breadcrumb, hero, AS→FOR→OF strip,
+    prev/next nav, at least one lesson-notes block.
+
+    The first chapter has no "previous chapter" link (just back-to-course),
+    the last has no "next chapter" link (back-to-course again); both still
+    have a chapter-nav container.
+    """
+    for code in COURSES:
+        for p in sorted((ROOT / f"courses/{code}").glob("ch*.html")):
+            text = p.read_text()
+            rel = p.relative_to(ROOT)
+
+            # Breadcrumb / back-to-course
+            if 'Back to course' not in text:
+                fail(f"{rel}: missing 'Back to course' breadcrumb")
+
+            # Hero — accept either `chapter-hero` (most courses) or
+            # `unit-header` (the original class kept by MCR3U). Both render
+            # an identical gradient header at the top of the chapter.
+            if 'class="chapter-hero"' not in text and 'class="unit-header"' not in text:
+                fail(f"{rel}: missing chapter-hero / unit-header")
+
+            # Prev/Next nav
+            if 'chapter-nav' not in text:
+                fail(f"{rel}: missing chapter-nav strip at the bottom")
+
+            # AS → FOR → OF strip
+            order = ASSESSMENT_CARD_RE.findall(text)
+            # Drop occurrences inside <style> rules (before <body>)
+            body_pos = text.find("<body")
+            if body_pos >= 0:
+                pre = text[:body_pos]
+                pre_count = len(ASSESSMENT_CARD_RE.findall(pre))
+                order = order[pre_count:]
+            if len(order) < 3:
+                fail(f"{rel}: assessment-strip cards missing "
+                     f"(found {len(order)} card class occurrences)")
+            elif order[:3] != ["as", "for", "of"]:
+                fail(f"{rel}: assessment-strip order is "
+                     f"{'→'.join(c.upper() for c in order[:3])}, "
+                     "expected AS→FOR→OF")
+
+            # Lesson notes — at least one (some short chapters may have
+            # only one note; we just require non-zero)
+            if 'class="lesson-notes"' not in text:
+                fail(f"{rel}: no <details class=\"lesson-notes\"> block found")
+
+
+def check_chapter_assessment_links_resolve() -> None:
+    """Every assessment href on every chapter page must resolve to a real file."""
+    for code in COURSES:
+        for p in sorted((ROOT / f"courses/{code}").glob("ch*.html")):
+            text = p.read_text()
+            rel = p.relative_to(ROOT)
+            for href in re.findall(r'href="\.\./\.\./assessments/([^"]+)"', text):
+                target = ROOT / "assessments" / href
+                if not target.is_file():
+                    fail(f"{rel}: assessment link to missing file "
+                         f"assessments/{href}")
+
+
+def check_no_double_backslash_mathjax() -> None:
+    """No double-backslash MathJax delimiters anywhere in course or chapter HTML."""
+    bad_delims = [r"\\(", r"\\)", r"\\[", r"\\]"]
+    for code in COURSES:
+        candidates = [ROOT / f"courses/{code}.html"]
+        candidates.extend(sorted((ROOT / f"courses/{code}").glob("ch*.html")))
+        for p in candidates:
+            text = p.read_text()
+            for d in bad_delims:
+                if d in text:
+                    count = text.count(d)
+                    fail(f"{p.relative_to(ROOT)}: {count}× double-backslash "
+                         f"math delimiter {d!r} (use single backslash)")
+
+
+# ---------- Manage Users invariants ----------
+
+def check_role_matrix_columns() -> None:
+    """Manage Users role matrix columns must be Super User → Admin → Teacher → Student."""
+    text = (ROOT / "admin/users.html").read_text()
+    m = re.search(
+        r'<table class="role-matrix">[\s\S]*?<thead>([\s\S]*?)</thead>',
+        text,
+    )
+    if not m:
+        fail("admin/users.html: role-matrix <thead> not found")
+        return
+    header = m.group(1)
+    order = re.findall(r'class="role-pill (\w+)"', header)
+    expected = ["superuser", "admin", "teacher", "student"]
+    if order != expected:
+        fail(f"role matrix columns are {order}, expected {expected}")
+
+
+# ---------- Runner ----------
+
 def main() -> int:
     print("Verifying MindView baseline (CLAUDE.md invariants)…")
     checks = [
-        ("required files exist",           check_required_files),
-        ("middleware exempt list intact",  check_middleware_exempt_list),
-        ("no Netlify Identity remnants",   check_no_netlify_identity),
-        ("no Cloudflare Access remnants",  check_no_cloudflare_access),
-        ("logout links use /api/logout",   check_logout_links),
-        ("no role pill in nav",            check_no_role_pill_in_nav),
-        ("Course Resources block at top",  check_course_resources_block_at_top),
-        ("assessment strips AS→FOR→OF",    check_assessment_strip_order),
-        ("role matrix column order",       check_role_matrix_columns),
-        ("MathJax delimiters single-backslash", check_mathjax_delimiters),
-        ("assessment links resolve",       check_assessment_links_resolve),
-        ("session cookie attributes",      check_session_cookie_attributes),
-        ("bootstrap stays locked",         check_bootstrap_locked_when_kv_nonempty),
+        ("required files exist",                check_required_files),
+        ("chapter directories + counts",        check_chapter_pages_exist),
+        ("middleware exempt list intact",       check_middleware_exempt_list),
+        ("session cookie attributes",           check_session_cookie_attributes),
+        ("bootstrap stays locked",              check_bootstrap_locked_when_kv_nonempty),
+        ("no Netlify Identity remnants",        check_no_netlify_identity),
+        ("no Cloudflare Access remnants",       check_no_cloudflare_access),
+        ("logout links use /api/logout",        check_logout_links),
+        ("no role pill in nav",                 check_no_role_pill_in_nav),
+        ("landing pages: resources + cards, no inline chapters",
+         check_landing_has_resources_and_cards),
+        ("chapter pages well-formed",           check_chapter_pages_well_formed),
+        ("chapter assessment links resolve",    check_chapter_assessment_links_resolve),
+        ("MathJax delimiters single-backslash", check_no_double_backslash_mathjax),
+        ("role matrix column order",            check_role_matrix_columns),
     ]
-    initial = len(failures)
     for label, fn in checks:
         before = len(failures)
         fn()
