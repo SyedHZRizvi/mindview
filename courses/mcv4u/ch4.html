@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCV4U — Calculus and Vectors | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mcv4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCV4U Calculus and Vectors)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>∫ MCV4U: Unit 4: Curve Sketching</h1>
+    <p>Increasing/decreasing, critical points, concavity, asymptotes</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+            <h2>Unit 4: Curve Sketching</h2>
+            <p>Increasing/decreasing, critical points, concavity, asymptotes</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Derivatives & Applications</span>
+                <span>📹 10 lessons</span>
+            </div>
+        </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The first derivative tells us about the <em>direction</em> of a curve: \(f'(x) > 0\) means \(f\) is increasing, \(f'(x) < 0\) means decreasing. Where \(f'\) changes sign — at a critical number — the function may have a local maximum or minimum. The <strong>first derivative test</strong> diagnoses these: at a critical number \(c\), if \(f'\) changes from positive to negative, \(c\) is a local max; if negative to positive, a local min; if no sign change, neither.</p>
+            <p>The second derivative reveals <em>curvature</em>. When \(f''(x) > 0\), the curve is <strong>concave up</strong> (cup-shaped, holding water); when \(f''(x) < 0\), it is <strong>concave down</strong>. A point where concavity changes is a <strong>point of inflection</strong>. The <strong>second derivative test</strong> at a critical number \(c\) with \(f'(c)=0\): if \(f''(c) > 0\), local min; if \(f''(c) < 0\), local max; if \(f''(c)=0\), the test is inconclusive (fall back to the first derivative test).</p>
+            <p>Asymptotes describe end behaviour. <strong>Vertical asymptotes</strong> appear where a rational function's denominator is zero but the numerator is not. <strong>Horizontal asymptotes</strong> emerge from \(\lim_{x\to\pm\infty} f(x)\); for rational functions, compare degrees of numerator and denominator. <strong>Oblique (slant) asymptotes</strong> occur when the numerator degree exceeds the denominator's by exactly one — long division reveals the linear asymptote. A complete sketch synthesizes domain, intercepts, asymptotes, intervals of increase/decrease, local extrema, concavity, and inflection points.</p>
+            <ul>
+              <li><strong>Increasing</strong> — \(f(x_1) < f(x_2)\) whenever \(x_1 < x_2\); equivalent to \(f'(x) \ge 0\) on the interval (positive everywhere except possibly isolated points).</li>
+              <li><strong>Critical number</strong> — \(x = c\) where \(f'(c) = 0\) or \(f'(c)\) does not exist (and \(c\) is in the domain of \(f\)).</li>
+              <li><strong>Concave up / down</strong> — concave up when \(f''(x) > 0\); concave down when \(f''(x) < 0\).</li>
+              <li><strong>Point of inflection</strong> — a point on the graph where concavity changes and the tangent line exists.</li>
+              <li><strong>Vertical asymptote</strong> — line \(x=a\) such that \(\lim_{x\to a^\pm} f(x) = \pm\infty\).</li>
+              <li><strong>Horizontal asymptote</strong> — line \(y=L\) such that \(\lim_{x\to\pm\infty} f(x) = L\).</li>
+              <li><strong>Oblique asymptote</strong> — non-horizontal line \(y = mx + b\) that the curve approaches as \(x \to \pm\infty\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Full analysis of \(f(x) = x^3 - 6x^2 + 9x\)</p>
+              <p>Domain: all real \(x\). Intercepts: \(f(0)=0\); \(f(x) = x(x-3)^2 = 0\) at \(x=0\) and \(x=3\) (double root).</p>
+              <p>First derivative: \(f'(x) = 3x^2 - 12x + 9 = 3(x-1)(x-3)\). Critical numbers: \(x=1\), \(x=3\).</p>
+              <p>Sign of \(f'\): positive on \((-\infty,1)\), negative on \((1,3)\), positive on \((3,\infty)\). So \(f\) increases on \((-\infty,1)\), decreases on \((1,3)\), increases on \((3,\infty)\). Local max at \(x=1\): \(f(1) = 1-6+9 = 4\). Local min at \(x=3\): \(f(3) = 27 - 54 + 27 = 0\).</p>
+              <p>Second derivative: \(f''(x) = 6x - 12 = 6(x-2)\). Inflection at \(x=2\); \(f(2) = 8-24+18 = 2\). Concave down on \((-\infty,2)\), concave up on \((2,\infty)\).</p>
+              <p>Verify max/min with second derivative test: \(f''(1) = -6 < 0\) confirms local max; \(f''(3) = 6 > 0\) confirms local min.</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Asymptotes of \(\displaystyle f(x) = \frac{2x^2 + 3x - 1}{x - 2}\)</p>
+              <p>Vertical: denominator zero at \(x=2\); numerator at \(x=2\) is \(8 + 6 - 1 = 13 \ne 0\), so \(x=2\) is a vertical asymptote.</p>
+              <p>Degree of numerator (2) exceeds denominator (1) by one, so there is an oblique asymptote (and no horizontal asymptote). Polynomial long division: \[\frac{2x^2 + 3x - 1}{x-2} = 2x + 7 + \frac{13}{x-2}.\]</p>
+              <p>As \(x\to\pm\infty\), the remainder \(\frac{13}{x-2} \to 0\), so the oblique asymptote is \(y = 2x + 7\).</p>
+            </div>
+            <ul>
+              <li>Claiming an inflection point wherever \(f''=0\), without verifying that the sign of \(f''\) actually changes.</li>
+              <li>Treating every point where the denominator is zero as a vertical asymptote — if the numerator also vanishes there and the factor cancels, you have a hole, not an asymptote.</li>
+              <li>Forgetting that \(x=c\) is only a critical number if \(c\) is in the domain of \(f\).</li>
+              <li>Using the second derivative test when \(f''(c) = 0\) — the test gives no information; revert to the first derivative test.</li>
+              <li>Mis-reading a sign chart by testing values outside the interval being studied.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.4 — "describe key features of a polynomial function (e.g., increasing/decreasing intervals, local maxima and minima, points of inflection, intervals of concavity)." Also B1.7 — "sketch the graph of a derivative function, given the graph of a function that is continuous over an interval, and recognize points of inflection of the given function." B1.8 — "sketch the graph of a function, given the graph of its derivative function."</p>
+          </div>
+        </details>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.1 formalizes how the first derivative tells us where a function is rising or falling. A function \(f\) is <strong>increasing</strong> on an interval \(I\) if \(x_1 < x_2 \Rightarrow f(x_1) < f(x_2)\) for all \(x_1, x_2 \in I\); it is <strong>decreasing</strong> if \(x_1 < x_2 \Rightarrow f(x_1) > f(x_2)\). The first-derivative connection: if \(f'(x) > 0\) throughout \(I\), then \(f\) is increasing on \(I\); if \(f'(x) < 0\), then decreasing. This is a consequence of the Mean Value Theorem.</p>
+                    <p>The practical procedure is a <strong>sign chart for \(f'\)</strong>: (1) compute \(f'(x)\); (2) find critical numbers, where \(f'\) is zero or undefined; (3) determine the sign of \(f'\) on each interval between critical numbers and at the domain boundary, by testing a representative \(x\)-value or factoring; (4) state the intervals of increase (\(f'>0\)) and decrease (\(f'<0\)).</p>
+                    <p>Domain matters: include all numbers where \(f'\) is undefined but \(f\) is defined (cusps, vertical tangents), and exclude any number not in the domain of \(f\) (like the asymptote of a rational function). Critical numbers where \(f\) is undefined are NOT part of the function's intervals; they break the number line into separate analysis regions.</p>
+                    <ul>
+                      <li><strong>Increasing on \(I\)</strong> — \(f'(x) > 0\) for all \(x \in I\) (strict version).</li>
+                      <li><strong>Decreasing on \(I\)</strong> — \(f'(x) < 0\) for all \(x \in I\).</li>
+                      <li><strong>Critical number</strong> — value where \(f'(x) = 0\) or \(f'(x)\) is undefined (but \(f(x)\) is defined).</li>
+                      <li><strong>Sign chart</strong> — a number-line diagram showing signs of \(f'\) on each subinterval.</li>
+                      <li><strong>Mean Value Theorem</strong> — between any two values of \(x\) where \(f'>0\) throughout, \(f\) increases (the underlying theorem).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the intervals on which \(f(x) = x^3 - 6x^2 + 9x + 2\) is increasing and decreasing.</p>
+                      <p>\(f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3)\). Critical numbers: \(x = 1, 3\).</p>
+                      <p>Sign chart: for \(x<1\), \(f'>0\) (test \(x=0\): \(3(-1)(-3) = 9 > 0\)). For \(1 < x < 3\), \(f'<0\) (test \(x=2\): \(3(1)(-1) = -3 < 0\)). For \(x>3\), \(f'>0\) (test \(x=4\): \(3(3)(1) = 9 > 0\)).</p>
+                      <p>Increasing on \((-\infty, 1) \cup (3, \infty)\); decreasing on \((1, 3)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: For \(g(x) = \frac{x}{x^2 + 1}\), find the intervals of increase/decrease.</p>
+                      <p>\(g'(x) = \frac{(x^2+1) - x(2x)}{(x^2+1)^2} = \frac{1 - x^2}{(x^2+1)^2}\). Denominator always positive; sign of \(g'\) matches \(1 - x^2 = (1-x)(1+x)\).</p>
+                      <p>Critical numbers: \(x = \pm 1\). Sign: \(g'<0\) for \(x<-1\); \(g'>0\) for \(-1<x<1\); \(g'<0\) for \(x>1\).</p>
+                      <p>Decreasing on \((-\infty, -1) \cup (1, \infty)\); increasing on \((-1, 1)\).</p>
+                    </div>
+                    <ul>
+                      <li>Reporting "increasing where \(f > 0\)" — that's about the function's sign, not its slope; you want \(f' > 0\).</li>
+                      <li>Forgetting to factor \(f'\) before sign-charting; partially factored expressions hide critical numbers.</li>
+                      <li>Including critical numbers in BOTH the increasing and decreasing intervals — convention is to use open intervals at critical numbers.</li>
+                      <li>Forgetting to remove points outside the domain (e.g., vertical asymptotes of a rational function).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "sketch the graph of a derivative function, given the graph of a function that is continuous over an interval, and recognize points of inflection of the given function," with B2.1 — "make connections between the sign of the first derivative on either side of a critical number and the existence of a local extremum at that critical number."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v23')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.1 Increasing and Decreasing Functions</span>
+                        <span class="vid-duration">28:49</span>
+                        <span class="vid-toggle" id="toggle-v23">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v23">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/023_Calculus_4.1_Increasing_and_Decreasing_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=LggLn5ZfS60" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v24')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.1 Continued</span>
+                        <span class="vid-duration">16:36</span>
+                        <span class="vid-toggle" id="toggle-v24">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v24">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/024_Calculus_4.1_Continued.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=xD9HNQzj3WE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v25')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">Calculus 4.1 Homework questions p 171 # 10 and # 12</span>
+                        <span class="vid-duration">9:51</span>
+                        <span class="vid-toggle" id="toggle-v25">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v25">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/025_Calculus_4.1_Homework_questions_p_171___10_and___12.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=irWUBXfnyOk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.2 classifies critical points as <strong>local maxima</strong>, <strong>local minima</strong>, or <strong>neither</strong> using the <strong>first derivative test</strong>. At a critical number \(x=c\) (where \(f'(c)=0\) or \(f'\) is undefined), examine the sign of \(f'\) immediately to the left and right: if \(f'\) goes from \(+\) to \(-\), then \(c\) is a local max; from \(-\) to \(+\), local min; same sign on both sides (e.g., \(+/+\) or \(-/-\)), neither — typically a horizontal point of inflection.</p>
+                    <p>Local extrema are a <em>local</em> property: \(f(c)\) is larger (or smaller) than nearby \(f\) values, but not necessarily than all values on the function's domain. This contrasts with the absolute extrema on a closed interval (Topic 3.2). A function on an unbounded or open domain may have local extrema without absolute ones, or vice versa.</p>
+                    <p>The first-derivative test is a sign-change test, which makes it robust: it works even when \(f''\) is hard to compute, when \(f''(c) = 0\) (the second-derivative test becomes inconclusive), and when \(f'\) is undefined at \(c\) (e.g., a cusp like in \(f(x) = x^{2/3}\), where \(c=0\) is a local minimum despite \(f'(0)\) being undefined).</p>
+                    <ul>
+                      <li><strong>Local maximum</strong> at \(c\) — \(f(c) \ge f(x)\) for all \(x\) near \(c\).</li>
+                      <li><strong>Local minimum</strong> at \(c\) — \(f(c) \le f(x)\) for all \(x\) near \(c\).</li>
+                      <li><strong>Critical point</strong> — the point \((c, f(c))\) where \(c\) is a critical number.</li>
+                      <li><strong>First derivative test</strong> — sign change of \(f'\) at \(c\): \(+/-\) → max; \(-/+\) → min; same sign → neither.</li>
+                      <li><strong>Local vs. absolute</strong> — local extrema concern small neighbourhoods; absolute extrema concern the whole domain or interval.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Locate and classify the local extrema of \(f(x) = 2x^3 - 9x^2 + 12x - 1\).</p>
+                      <p>\(f'(x) = 6x^2 - 18x + 12 = 6(x^2 - 3x + 2) = 6(x-1)(x-2)\). Critical numbers: \(x=1, x=2\).</p>
+                      <p>Sign of \(f'\): at \(x=0\), \(f'(0) = 12 > 0\); at \(x = 1.5\), \(f'(1.5) = 6(0.5)(-0.5) = -1.5 < 0\); at \(x=3\), \(f'(3) = 6(2)(1) = 12 > 0\).</p>
+                      <p>So \(f'\) goes \(+,-,+\). At \(x=1\) (\(+\to -\)): local maximum, \(f(1) = 2 - 9 + 12 - 1 = 4\). At \(x=2\) (\(-\to +\)): local minimum, \(f(2) = 16 - 36 + 24 - 1 = 3\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Classify the critical point at \(x=0\) for \(f(x) = x^3\).</p>
+                      <p>\(f'(x) = 3x^2\). \(f'(0) = 0\), so \(x=0\) is a critical number.</p>
+                      <p>Sign of \(f'\): for \(x<0\), \(3x^2 > 0\); for \(x>0\), \(3x^2 > 0\). No sign change.</p>
+                      <p>Therefore \(x=0\) is neither a local max nor a local min; it's a horizontal point of inflection.</p>
+                    </div>
+                    <ul>
+                      <li>Concluding \(x=0\) is a local extremum for \(f(x)=x^3\) just because \(f'(0)=0\) — sign of \(f'\) doesn't change, so it isn't an extremum.</li>
+                      <li>Reporting only \(x\)-values without the corresponding \(f(c)\) value; the "extremum" is the function value.</li>
+                      <li>Forgetting critical numbers where \(f'\) is undefined (cusps).</li>
+                      <li>Confusing local max (\(+\to -\)) with local min (\(-\to +\)) — the direction matters.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "make connections between the sign of the first derivative on either side of a critical number and the existence of a local extremum at that critical number."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v26')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus 4.2 Critical Points, First Derivative Test</span>
+                        <span class="vid-duration">34:00</span>
+                        <span class="vid-toggle" id="toggle-v26">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v26">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/026_Calculus_4.2_Critical_Points__First_Derivative_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=CPMllZfuuSQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Asymptotes describe how a curve behaves at infinity or near a vertical line of indefinition. A <strong>vertical asymptote</strong> at \(x=a\) occurs when \(\lim_{x\to a^\pm}f(x) = \pm\infty\). For a rational function \(\frac{P(x)}{Q(x)}\) in lowest terms, this happens precisely when \(Q(a)=0\) and \(P(a)\ne 0\) — the denominator vanishes faster than the numerator. If both vanish, factor and cancel: the cancellation produces a removable discontinuity (a hole) rather than a vertical asymptote.</p>
+                    <p>A <strong>horizontal asymptote</strong> is a horizontal line \(y=L\) such that \(\lim_{x\to\pm\infty} f(x) = L\). For rationals, compare the degrees of numerator (\(n\)) and denominator (\(d\)): if \(n<d\), the horizontal asymptote is \(y=0\); if \(n=d\), it is \(y = \frac{\text{leading coeff of }P}{\text{leading coeff of }Q}\); if \(n>d\), there is no horizontal asymptote — but an <strong>oblique (slant) asymptote</strong> exists when \(n = d+1\), obtained by polynomial long division.</p>
+                    <p>The slant asymptote is the polynomial quotient. For \(\frac{x^2+1}{x-1}\), long division gives \(x + 1 + \frac{2}{x-1}\); as \(x\to\pm\infty\), the remainder term \(\frac{2}{x-1}\to 0\), so \(y = x+1\) is the slant asymptote. The curve approaches this line as \(x\) grows large in either direction.</p>
+                    <ul>
+                      <li><strong>Vertical asymptote</strong> at \(x=a\) — \(\lim_{x\to a^\pm}f(x)=\pm\infty\); for rationals in lowest terms, \(Q(a)=0, P(a)\ne 0\).</li>
+                      <li><strong>Horizontal asymptote</strong> — \(\lim_{x\to\pm\infty}f(x)=L\); compare numerator and denominator degrees.</li>
+                      <li><strong>Oblique (slant) asymptote</strong> — exists for rationals when \(\deg P = \deg Q + 1\); obtained by polynomial division.</li>
+                      <li><strong>Removable discontinuity</strong> — common factor of \(P\) and \(Q\); a hole, not an asymptote.</li>
+                      <li><strong>Behaviour near asymptote</strong> — examine one-sided limits to determine \(+\infty\) vs. \(-\infty\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find all asymptotes of \(f(x) = \dfrac{2x^2 - 3}{x^2 - 4}\).</p>
+                      <p>Denominator \(x^2 - 4 = (x-2)(x+2) = 0\) at \(x=\pm 2\); numerator at those points: \(2(4)-3 = 5\) and \(2(4)-3=5\), both nonzero. Vertical asymptotes at \(x=-2\) and \(x=2\).</p>
+                      <p>Degrees: numerator 2, denominator 2; horizontal asymptote at \(y = \tfrac{2}{1} = 2\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the oblique asymptote of \(g(x) = \dfrac{x^2 + 2x + 5}{x + 1}\).</p>
+                      <p>Polynomial long division: \(x^2 + 2x + 5 \div (x+1)\). Divide \(x^2 \div x = x\); multiply back: \(x(x+1) = x^2 + x\); subtract: \(x + 5\). Then \(x \div x = 1\); multiply: \(x+1\); subtract: \(4\).</p>
+                      <p>So \(g(x) = x + 1 + \frac{4}{x+1}\). As \(x \to \pm\infty\), \(\frac{4}{x+1} \to 0\); the slant asymptote is \(y = x + 1\).</p>
+                    </div>
+                    <ul>
+                      <li>Mistaking a hole for a vertical asymptote — always check whether the numerator also vanishes at the suspect point.</li>
+                      <li>Reporting a horizontal asymptote when degrees are unequal in the wrong direction (\(n>d\)): there isn't one.</li>
+                      <li>Forgetting that horizontal and oblique asymptotes are <em>mutually exclusive</em> for rationals.</li>
+                      <li>Setting up the limit \(\lim_{x\to a}f(x)\) without distinguishing left- and right-hand approaches at a vertical asymptote.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe key features of a polynomial function \(\big(\)e.g., domain and range, intercepts, increasing/decreasing intervals, local maxima and minima, points of inflection, intervals of concavity)\(\big)\), and of a rational function \(\big(\)e.g., asymptotes\(\big)\)."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v27')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus  4.3 Vertical and Horizontal Asymptotes (Obliques too!)</span>
+                        <span class="vid-duration">27:55</span>
+                        <span class="vid-toggle" id="toggle-v27">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v27">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/027_Calculus__4.3_Vertical_and_Horizontal_Asymptotes__Obliques_too__.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=hEgOEsM7SI0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v28')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.3 Sketching a Rational Function with an Oblique or Slant Asymptote</span>
+                        <span class="vid-duration">18:38</span>
+                        <span class="vid-toggle" id="toggle-v28">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v28">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/028_Calculus_4.3_Sketching_a_Rational_Function_with_an_Oblique_or_Slant_Asymptote.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Cl7cL4Z_R3E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.4 uses the second derivative to analyze a curve's <strong>concavity</strong> — the way it bends. A graph is <em>concave up</em> on an interval if the curve lies above its tangent lines (smiling, holds water); it is <em>concave down</em> if the curve lies below its tangent lines (frowning, sheds water). Algebraically, concavity is governed by the sign of \(f''\): \(f''(x) > 0\) means concave up, \(f''(x) < 0\) means concave down.</p>
+                    <p>A <strong>point of inflection</strong> is a point on the graph where concavity changes — from up to down or vice versa. To find them: (1) compute \(f''(x)\); (2) find where \(f''=0\) or \(f''\) is undefined; (3) verify that \(f''\) actually changes sign at each candidate (a zero of \(f''\) without sign change is not an inflection point — like \(x=0\) for \(f(x) = x^4\)).</p>
+                    <p>The <strong>second derivative test</strong> classifies critical points: at a critical number \(c\) with \(f'(c) = 0\), if \(f''(c) > 0\) the graph is concave up at \(c\) so \(c\) is a local min; if \(f''(c) < 0\), local max; if \(f''(c) = 0\), inconclusive — fall back to the first derivative test. The test is fast when \(f''\) is easy to compute, but it can fail at degenerate critical points.</p>
+                    <ul>
+                      <li><strong>Concave up</strong> — \(f''(x) > 0\); curve bends upward; tangent lies below the curve.</li>
+                      <li><strong>Concave down</strong> — \(f''(x) < 0\); curve bends downward; tangent lies above the curve.</li>
+                      <li><strong>Point of inflection</strong> — a point where concavity changes sign; \(f''\) must change sign there.</li>
+                      <li><strong>Second derivative test</strong> — at \(f'(c)=0\): \(f''(c)>0\) → local min; \(<0\) → local max; \(=0\) → inconclusive.</li>
+                      <li><strong>Sign chart for \(f''\)</strong> — analogous to the \(f'\) chart; intervals separated by zeros and discontinuities of \(f''\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the inflection points and intervals of concavity for \(f(x) = x^3 - 6x^2 + 5\).</p>
+                      <p>\(f'(x) = 3x^2 - 12x\); \(f''(x) = 6x - 12\). Set \(f''=0\): \(x=2\).</p>
+                      <p>Sign of \(f''\): for \(x<2\), \(f''<0\) (concave down); for \(x>2\), \(f''>0\) (concave up). Sign changes at \(x=2\), so \((2, f(2)) = (2, -11)\) is an inflection point.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Use the second derivative test on \(f(x) = x^4 - 4x^3\).</p>
+                      <p>\(f'(x) = 4x^3 - 12x^2 = 4x^2(x-3)\). Critical numbers: \(x=0\) and \(x=3\).</p>
+                      <p>\(f''(x) = 12x^2 - 24x\). \(f''(3) = 108 - 72 = 36 > 0\) → \(x=3\) is local min. \(f''(0) = 0\) → inconclusive.</p>
+                      <p>At \(x=0\), fall back to the first derivative test: \(f'(x) = 4x^2(x-3)\), and \(4x^2 \ge 0\) always. So \(f'\) has the same sign as \(x-3\); for \(x\) near 0 (and \(<3\)), \(f' < 0\) on both sides. No sign change — \(x=0\) is neither (a horizontal point of inflection at \((0,0)\)).</p>
+                    </div>
+                    <ul>
+                      <li>Concluding that \(f''(c)=0\) automatically means an inflection point — a sign change is required.</li>
+                      <li>Forgetting that the second derivative test is inconclusive when \(f''(c) = 0\).</li>
+                      <li>Confusing concave up with increasing — they describe different things (bending vs. rising).</li>
+                      <li>Reporting only the \(x\)-value of an inflection point; it's a point, so include \(f(x)\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.5 — "verify that the second derivative provides information about concavity and points of inflection, by … connecting the sign of the second derivative to the concavity of the graph of \(f\)."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v29')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus 4.4 Concavity, Points of Inflection and the 2nd Derivative Test</span>
+                        <span class="vid-duration">36:42</span>
+                        <span class="vid-toggle" id="toggle-v29">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v29">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/029_Calculus_4.4_Concavity__Points_of_Inflection_and_the_2nd_Derivative_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=v1tiIcFAYM4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v30')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">Calculus 4.4 Concavity and Points of Inflection homework questions</span>
+                        <span class="vid-duration">35:07</span>
+                        <span class="vid-toggle" id="toggle-v30">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v30">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/030_Calculus_4.4_Concavity_and_Points_of_Inflection_homework_questions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Gp5dzXalyVA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 4.5 integrates everything from Topics 4.1-4.4 into a single procedure: produce an accurate sketch of \(y = f(x)\) using calculus. The standard <strong>curve-sketching algorithm</strong> follows seven steps, each contributing a feature to the graph: (1) <em>Domain</em> — exclude points where \(f\) is undefined; (2) <em>Intercepts</em> — set \(y=0\) for \(x\)-intercepts (often hard, sometimes skipped) and evaluate \(f(0)\) for \(y\)-intercept; (3) <em>Symmetry</em> — check \(f(-x)\) against \(f(x)\) for even/odd parity; (4) <em>Asymptotes</em> — vertical (where denominator vanishes), horizontal (limits at \(\pm\infty\)), and oblique (polynomial long division if applicable).</p>
+                    <p>(5) <em>First derivative analysis</em> — compute \(f'(x)\), find critical numbers, build a sign chart, and identify intervals of increase/decrease plus local extrema; (6) <em>Second derivative analysis</em> — compute \(f''(x)\), find candidate inflection points, build a concavity chart; (7) <em>Sketch</em> — plot intercepts, asymptotes, extrema, and inflection points, then draw a smooth curve consistent with the sign charts. Label everything.</p>
+                    <p>The algorithm is rote, but the skill is in <em>interpreting</em> the algebra. A negative second derivative at a critical number tells you both "concave down here" AND "local maximum". A vertical asymptote near a critical number determines whether the curve runs to \(+\infty\) or \(-\infty\). Reading all signals together gives the global shape without plotting a hundred points.</p>
+                    <ul>
+                      <li><strong>Curve-sketching algorithm</strong> — domain, intercepts, symmetry, asymptotes, first-derivative analysis, second-derivative analysis, sketch.</li>
+                      <li><strong>Even function</strong> — \(f(-x) = f(x)\); symmetric about the \(y\)-axis.</li>
+                      <li><strong>Odd function</strong> — \(f(-x) = -f(x)\); symmetric about the origin.</li>
+                      <li><strong>Behaviour near asymptotes</strong> — examine one-sided limits to determine \(\pm\infty\).</li>
+                      <li><strong>Synthesis</strong> — first- and second-derivative charts together encode shape; intercepts and asymptotes pin down position.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Sketch \(f(x) = \dfrac{x^2}{x^2 - 4}\).</p>
+                      <p>Domain: \(x \ne \pm 2\). Y-intercept: \(f(0) = 0\). X-intercept: numerator = 0 at \(x=0\). Symmetry: \(f(-x) = f(x)\) — even.</p>
+                      <p>Vertical asymptotes at \(x = \pm 2\). Horizontal: \(\lim_{x\to\pm\infty}\frac{x^2}{x^2-4} = 1\), so \(y=1\).</p>
+                      <p>\(f'(x) = \frac{2x(x^2-4) - x^2(2x)}{(x^2-4)^2} = \frac{-8x}{(x^2-4)^2}\). Critical numbers: \(x=0\) (and \(\pm 2\) are not critical, they're excluded). \(f' > 0\) for \(x<0\) (except \(x=-2\)); \(f' < 0\) for \(x>0\) (except \(x=2\)). So \(x=0\) is a local max with \(f(0)=0\).</p>
+                      <p>The curve passes through \((0,0)\) as a local max, dives down to \(-\infty\) at the asymptotes, then climbs to \(+\infty\) on the outside of the asymptotes, leveling toward \(y=1\) at the far ends.</p>
+                    </div>
+                    <ul>
+                      <li>Skipping the domain step and ending up with extraneous features near excluded \(x\)-values.</li>
+                      <li>Forgetting to check symmetry — it cuts work in half for even or odd functions.</li>
+                      <li>Mixing up vertical vs. horizontal asymptote conditions; they require different limit setups.</li>
+                      <li>Drawing a sketch that contradicts the sign charts (e.g., a "concave up" piece where \(f''<0\)).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "determine, from the equation of a polynomial function or a simple rational function, the key features of the graph of the function (i.e., domain and range, intercepts, increasing/decreasing intervals, local maxima and minima, points of inflection, intervals of concavity, asymptotes), using the techniques of differential calculus, and sketch the graph by hand."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v31')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.5 An Algorithm for Curve Sketching</span>
+                        <span class="vid-duration">18:57</span>
+                        <span class="vid-toggle" id="toggle-v31">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v31">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/031_Calculus_4.5_An_Algorithm_for_Curve_Sketching.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=QdlypsJsAs0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v32')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus Chapter 4 Practice Test</span>
+                        <span class="vid-duration">41:52</span>
+                        <span class="vid-toggle" id="toggle-v32">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v32">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/032_Calculus_Chapter_4_Practice_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=5b7O8e_GfBY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcv4u/Unit4_Curve_Sketching_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcv4u/Unit4_Curve_Sketching_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcv4u/Unit4_Curve_Sketching_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

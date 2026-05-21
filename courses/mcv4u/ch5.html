@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCV4U — Calculus and Vectors | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#059669dd,#059669);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mcv4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCV4U Calculus and Vectors)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>∫ MCV4U: Unit 5: Exp. & Trig. Derivatives</h1>
+    <p>Derivatives of exponential, sine, cosine, tangent functions</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+            <h2>Unit 5: Exp. & Trig. Derivatives</h2>
+            <p>Derivatives of exponential, sine, cosine, tangent functions</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Rate of Change</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The exponential function \(y = e^x\) is the unique function (up to scaling) that is its own derivative: \(\frac{d}{dx}[e^x] = e^x\). The number \(e \approx 2.71828\) is precisely the base for which this happens. For a general base, \(\frac{d}{dx}[b^x] = b^x \ln b\), because \(b^x = e^{x\ln b}\) by the change-of-base identity, and the chain rule then provides the extra \(\ln b\) factor. This is the calculus reason \(e\) is "natural" — it eliminates a multiplicative constant that would otherwise appear forever.</p>
+            <p>Trigonometric derivatives all flow from two foundational limits: \(\lim_{x\to 0} \frac{\sin x}{x} = 1\) and \(\lim_{x\to 0} \frac{\cos x - 1}{x} = 0\). Using these and the angle-addition formulas, you can derive \(\frac{d}{dx}[\sin x] = \cos x\) from first principles. From this, the quotient rule gives \(\frac{d}{dx}[\tan x] = \sec^2 x\), and the chain rule gives \(\frac{d}{dx}[\sin(g(x))] = \cos(g(x))\cdot g'(x)\). All angles must be in <strong>radians</strong> for these formulas to hold — using degrees introduces a factor of \(\frac{\pi}{180}\) that breaks the limits.</p>
+            <p>Combining these new derivatives with the rules from Unit 2 unlocks modelling of natural phenomena: radioactive decay (\(N(t) = N_0 e^{-kt}\)), population growth, alternating current, sound waves, daylight hours, and tides. Optimization with exponential and trigonometric functions extends Unit 3's toolkit to a much wider class of problems.</p>
+            <ul>
+              <li><strong>Euler's number \(e\)</strong> — \(e = \lim_{n\to\infty}(1+\tfrac{1}{n})^n \approx 2.71828\); the unique base for which \((b^x)' = b^x\).</li>
+              <li><strong>\((e^x)' = e^x\)</strong> — the natural exponential is its own derivative.</li>
+              <li><strong>\((b^x)' = b^x \ln b\)</strong> — derivative of a general exponential.</li>
+              <li><strong>\((\sin x)' = \cos x\) and \((\cos x)' = -\sin x\)</strong> — fundamental trigonometric derivatives (radians required).</li>
+              <li><strong>\((\tan x)' = \sec^2 x\)</strong> — from quotient rule on \(\tan x = \sin x / \cos x\).</li>
+              <li><strong>Special limit</strong> — \(\lim_{x\to 0} \frac{\sin x}{x} = 1\); the foundation of all trig derivatives.</li>
+              <li><strong>Radian</strong> — angle measure such that arc length on a unit circle equals the angle; required for calculus formulas to work cleanly.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Differentiate \(y = x^2 e^{3x}\)</p>
+              <p>Product rule with \(f = x^2\), \(g = e^{3x}\): \(f' = 2x\) and (chain rule on \(g\)) \(g' = e^{3x}\cdot 3 = 3 e^{3x}\).</p>
+              <p>\[y' = f'g + fg' = 2x\cdot e^{3x} + x^2 \cdot 3 e^{3x} = e^{3x}(2x + 3x^2) = x e^{3x}(2 + 3x).\]</p>
+              <p>Factoring out the common \(e^{3x}\) at the end is good practice — it simplifies later analysis (e.g., finding critical numbers).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Differentiate \(y = \sin(\cos(2x))\)</p>
+              <p>Triple application of the chain rule. Identify layers: outermost \(\sin(\cdot)\); middle \(\cos(\cdot)\); inner \(2x\).</p>
+              <p>\[\frac{dy}{dx} = \cos(\cos(2x)) \cdot \frac{d}{dx}[\cos(2x)] = \cos(\cos(2x)) \cdot \bigl(-\sin(2x)\bigr) \cdot 2.\]</p>
+              <p>Final form: \(y' = -2\sin(2x)\cos(\cos(2x))\).</p>
+            </div>
+            <ul>
+              <li>Writing \(\frac{d}{dx}[e^x] = x e^{x-1}\) — confusing the exponential rule with the power rule. The power rule applies when the variable is in the <em>base</em>, not the exponent.</li>
+              <li>Forgetting the \(\ln b\) factor in \(\frac{d}{dx}[b^x] = b^x \ln b\).</li>
+              <li>Doing trig calculus in degrees — formulas like \((\sin x)' = \cos x\) require radians.</li>
+              <li>Dropping the inner derivative when differentiating composites like \(\sin(3x^2)\); the answer is \(6x \cos(3x^2)\), not \(\cos(3x^2)\).</li>
+              <li>Mis-signing \((\cos x)' = -\sin x\) — the negative sign is easy to overlook.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.6 — "determine, through investigation using technology, the graph of the derivative \(f'(x)\) of a given sinusoidal function … and make connections between the graphs of \(f(x)\) and \(f'(x)\)." Also A3.5 — "determine, through investigation using technology, the graph of the derivative \(f'(x)\) of a given exponential function \(f(x) = a^x, a > 0, a \ne 1\) … and conclude that the derivative is of the form \(f'(x) = k a^x\)." And A3.7 — "verify the derivatives of \(\sin x\) and \(\cos x\), and determine the derivatives of \(\tan x\)."</p>
+          </div>
+        </details>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.1 introduces the most important non-polynomial derivative: \[\frac{d}{dx}[e^x] = e^x.\] The natural exponential function is its own derivative — a property that distinguishes it among all functions and makes it the fundamental "rate-equals-amount" model. The number \(e \approx 2.71828\) is chosen precisely so that the slope of \(y=b^x\) at \(x=0\) is exactly 1; this calibration produces \(\frac{d}{dx}[e^x]=e^x\) at every point.</p>
+                    <p>Combined with the chain rule, this generalizes: \(\frac{d}{dx}[e^{g(x)}] = e^{g(x)}\cdot g'(x)\). So \(\frac{d}{dx}[e^{3x}] = 3e^{3x}\) and \(\frac{d}{dx}[e^{x^2}] = 2x e^{x^2}\). Exponentials are stable under differentiation: derivatives of exponentials are still exponentials, multiplied by the rate at which the exponent is changing.</p>
+                    <p>This rule is the basis of all exponential growth and decay models. If a population satisfies \(P(t) = P_0 e^{kt}\), then \(P'(t) = kP_0 e^{kt} = kP(t)\) — the instantaneous rate of growth is proportional to the current population, with proportionality constant \(k\). The same model fits radioactive decay (\(k<0\)), continuously compounded interest, and Newton's law of cooling.</p>
+                    <ul>
+                      <li><strong>Natural exponential function</strong> — \(y = e^x\); the unique exponential whose slope at \(x=0\) is 1.</li>
+                      <li><strong>Self-derivative property</strong> — \(\frac{d}{dx}[e^x] = e^x\); every higher derivative is also \(e^x\).</li>
+                      <li><strong>Chain rule extension</strong> — \(\frac{d}{dx}[e^{g(x)}] = e^{g(x)}\cdot g'(x)\).</li>
+                      <li><strong>Euler's number</strong> — \(e = \lim_{n\to\infty}(1+\tfrac{1}{n})^n \approx 2.71828\).</li>
+                      <li><strong>Exponential model</strong> — \(y = A e^{kt}\); \(k>0\) growth, \(k<0\) decay.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x^2 e^{3x}\).</p>
+                      <p>Product rule with \(f = x^2\) and \(g = e^{3x}\). Then \(f' = 2x\) and (chain rule) \(g' = 3e^{3x}\).</p>
+                      <p>\(y' = f'g + fg' = 2x e^{3x} + x^2 \cdot 3e^{3x} = e^{3x}(2x + 3x^2) = x e^{3x}(2 + 3x)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A bacterial colony has population \(P(t) = 500 e^{0.4t}\) (\(t\) in hours). When is the population growing at 1000 bacteria/hour?</p>
+                      <p>\(P'(t) = 500 \cdot 0.4 \cdot e^{0.4t} = 200 e^{0.4t}\). Set \(P'(t) = 1000\): \(200 e^{0.4t} = 1000 \Rightarrow e^{0.4t} = 5 \Rightarrow 0.4t = \ln 5 \Rightarrow t = \tfrac{\ln 5}{0.4} \approx 4.02\) hours.</p>
+                    </div>
+                    <ul>
+                      <li>Treating \(e^x\) like a power function: \(\frac{d}{dx}[e^x] \ne x e^{x-1}\) — that's the power rule for \(x^n\), not for \(b^x\).</li>
+                      <li>Forgetting the inner derivative on \(e^{g(x)}\): \(\frac{d}{dx}[e^{3x}] = 3e^{3x}\), not \(e^{3x}\).</li>
+                      <li>Confusing \(e\) (constant) with \(e^x\) (function): \(\frac{d}{dx}[e] = 0\) but \(\frac{d}{dx}[e^x] = e^x\).</li>
+                      <li>Writing the answer with \(\ln\) of \(e\) — \(\ln e = 1\), so simplify.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.7 — "verify, through investigation, using technology, that the derivative of the exponential function \(f(x) = a^x\) is \(f'(x) = a^x \ln a\) for various values of \(a\) (e.g., compare graphs of \(f(x)\) and \(f'(x)\) using calculator/computer technology) and recognize \(e\) as the value of \(a\) for which \(f'(x) = f(x)\)."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v33')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.1 Derivatives of Exponential Functions y = e^x</span>
+                        <span class="vid-duration">25:59</span>
+                        <span class="vid-toggle" id="toggle-v33">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v33">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/033_Calculus_5.1_Derivatives_of_Exponential_Functions_y___e_x.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ZHW-2EqcrP8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.2 generalizes the derivative of \(e^x\) to arbitrary positive base \(b\). The result is \[\frac{d}{dx}[b^x] = b^x \ln b,\] which reduces to \(\frac{d}{dx}[e^x] = e^x\) when \(b = e\) (since \(\ln e = 1\)). The factor \(\ln b\) arises naturally: rewriting \(b^x = e^{x\ln b}\) and applying the chain rule gives \(e^{x\ln b}\cdot \ln b = b^x \ln b\).</p>
+                    <p>This formula highlights why \(e\) is the privileged base: it eliminates the awkward \(\ln b\) factor. For computational ease we sometimes convert \(2^x\) or \(10^x\) into \(e^{x\ln 2}\) or \(e^{x\ln 10}\) before differentiating, but the direct rule is just as quick. Combined with the chain rule: \(\frac{d}{dx}[b^{g(x)}] = b^{g(x)} \ln b \cdot g'(x)\).</p>
+                    <p>This rule is important in modeling because real-world quantities are often given in base-10 or base-2 form: doubling times of populations, half-lives of radioactive isotopes, and decibel scales. Knowing how to differentiate \(b^x\) directly avoids unnecessary base conversions and keeps the model in its native units.</p>
+                    <ul>
+                      <li><strong>General exponential derivative</strong> — \(\frac{d}{dx}[b^x] = b^x \ln b\) for \(b > 0\).</li>
+                      <li><strong>Change of base</strong> — \(b^x = e^{x\ln b}\); useful for converting to base \(e\).</li>
+                      <li><strong>Special case \(b=e\)</strong> — \(\ln e = 1\), so \(\frac{d}{dx}[e^x] = e^x\).</li>
+                      <li><strong>Chain rule extension</strong> — \(\frac{d}{dx}[b^{g(x)}] = b^{g(x)}\ln b \cdot g'(x)\).</li>
+                      <li><strong>Sign of \(\ln b\)</strong> — positive when \(b>1\) (growth), negative when \(0<b<1\) (decay).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = 5^x + x^5\).</p>
+                      <p>Two different rules apply: \(\frac{d}{dx}[5^x] = 5^x \ln 5\) (exponential), and \(\frac{d}{dx}[x^5] = 5x^4\) (power).</p>
+                      <p>\(y' = 5^x \ln 5 + 5x^4\). Notice \(5^x\) and \(x^5\) look similar but are completely different objects.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A radioactive sample decays so that the mass at time \(t\) (in years) is \(m(t) = 100\cdot 2^{-t/30}\) grams. Find the rate of change of mass at \(t = 60\).</p>
+                      <p>\(m'(t) = 100 \cdot 2^{-t/30} \cdot \ln 2 \cdot (-\tfrac{1}{30}) = -\tfrac{100 \ln 2}{30} \cdot 2^{-t/30}\).</p>
+                      <p>At \(t = 60\): \(2^{-60/30} = 2^{-2} = \tfrac{1}{4}\). So \(m'(60) = -\tfrac{100 \ln 2}{30}\cdot \tfrac{1}{4} = -\tfrac{25 \ln 2}{30} \approx -0.578\) g/year.</p>
+                    </div>
+                    <ul>
+                      <li>Confusing \(\frac{d}{dx}[b^x]\) (exponential rule) with \(\frac{d}{dx}[x^b]\) (power rule). The variable's position matters.</li>
+                      <li>Omitting the \(\ln b\) factor when the base is not \(e\): \(\frac{d}{dx}[2^x] \ne 2^x\), it's \(2^x \ln 2\).</li>
+                      <li>Treating \(\ln b\) as a function of \(x\) — it is a constant (when \(b\) is constant).</li>
+                      <li>Mishandling the negative sign in decay exponents — the chain rule picks up the sign correctly only if you write the exponent properly.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.7 — "verify, through investigation, using technology, that the derivative of the exponential function \(f(x) = a^x\) is \(f'(x) = a^x \ln a\) for various values of \(a\)."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v34')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.2 The Derivative of y = b^x</span>
+                        <span class="vid-duration">20:27</span>
+                        <span class="vid-toggle" id="toggle-v34">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v34">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/034_Calculus_5.2_The_Derivative_of_y___b_x.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=R9G1LvokSYw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The derivative of the natural logarithm is one of the cleanest rules in calculus: \[\frac{d}{dx}[\ln x] = \frac{1}{x}, \qquad x > 0.\] This is derived by implicit differentiation: if \(y = \ln x\), then \(e^y = x\); differentiating both sides yields \(e^y\frac{dy}{dx} = 1\), and substituting \(e^y = x\) gives \(\frac{dy}{dx} = \frac{1}{x}\). The exponential and logarithmic derivatives are mirror images of each other (inverse functions).</p>
+                    <p>For a general base, the change-of-base identity \(\log_b x = \frac{\ln x}{\ln b}\) leads to \[\frac{d}{dx}[\log_b x] = \frac{1}{x \ln b}, \qquad x > 0, b > 0, b\ne 1.\] When \(b = e\), \(\ln b = 1\) and we recover \(\frac{1}{x}\). The chain-rule extensions are essential: \(\frac{d}{dx}[\ln g(x)] = \frac{g'(x)}{g(x)}\), and \(\frac{d}{dx}[\log_b g(x)] = \frac{g'(x)}{g(x)\ln b}\).</p>
+                    <p>The fact that \(\frac{d}{dx}[\ln x] = \frac{1}{x}\) means \(\ln\) "fills in" the missing antiderivative of \(\frac{1}{x}\) — the one case the power rule cannot handle (\(\int x^{-1}\,dx \ne \frac{x^0}{0}\)). It also explains why logarithms grow so slowly: their derivative drops to zero as \(x\to\infty\).</p>
+                    <ul>
+                      <li><strong>Natural log derivative</strong> — \(\frac{d}{dx}[\ln x] = \frac{1}{x}\), \(x > 0\).</li>
+                      <li><strong>General log derivative</strong> — \(\frac{d}{dx}[\log_b x] = \frac{1}{x\ln b}\).</li>
+                      <li><strong>Chain rule on logs</strong> — \(\frac{d}{dx}[\ln g(x)] = \frac{g'(x)}{g(x)}\); a quotient, not a product.</li>
+                      <li><strong>Domain restriction</strong> — \(\ln x\) is defined only for \(x>0\); the formula does not extend to negative \(x\) without an absolute value.</li>
+                      <li><strong>Logarithm of absolute value</strong> — \(\frac{d}{dx}[\ln|x|] = \frac{1}{x}\) for \(x\ne 0\) — extends the rule to all nonzero \(x\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \ln(x^2 + 1)\).</p>
+                      <p>Apply chain rule with \(g(x) = x^2 + 1\): \(g'(x) = 2x\). So \(y' = \frac{g'(x)}{g(x)} = \frac{2x}{x^2 + 1}\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x\ln x - x\).</p>
+                      <p>Product rule on \(x\ln x\): \((1)(\ln x) + (x)(\tfrac{1}{x}) = \ln x + 1\). Derivative of \(-x\) is \(-1\).</p>
+                      <p>\(y' = \ln x + 1 - 1 = \ln x\). (Side fact: this shows \(x\ln x - x\) is an antiderivative of \(\ln x\) — useful in later integral calculus.)</p>
+                    </div>
+                    <ul>
+                      <li>Writing \(\frac{d}{dx}[\ln(g(x))] = \ln(g'(x))\) — completely wrong; the derivative is \(\frac{g'(x)}{g(x)}\).</li>
+                      <li>Forgetting the \(\ln b\) factor for non-natural logs: \(\frac{d}{dx}[\log_{10} x] = \frac{1}{x \ln 10}\), not \(\frac{1}{x}\).</li>
+                      <li>Differentiating \(\ln x\) outside its domain (\(x \le 0\)) without using \(\ln|x|\).</li>
+                      <li>Confusing \(\ln(x^2)\) with \((\ln x)^2\) — they are different functions with different derivatives.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.7 — exponential and logarithmic derivative results: "verify, through investigation, using technology, that the derivative of the exponential function \(f(x) = a^x\) is \(f'(x) = a^x \ln a\)," paired with the inverse-function relationship between \(\ln x\) and \(e^x\) that yields \(\frac{d}{dx}[\ln x] = \frac{1}{x}\).</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Logarithmic Functions Differentiation — Derivative of ln x and log_b x — Khan Academy</span>
+                        <span class="vid-duration">8:39</span>
+                        <span class="vid-toggle" id="toggle-yt8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt8">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WZPpbkVESVk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=WZPpbkVESVk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.3 combines exponential calculus with optimization. Exponential models arise naturally in biology (population growth, drug elimination), finance (compound interest, present value), engineering (cooling, RC circuits), and economics. The optimization procedure is unchanged from Unit 3: identify the objective, eliminate variables via constraints, set the derivative to zero, and justify the extremum. The new wrinkle is that derivatives of exponentials and combinations like \(x e^{-x}\) or \(\frac{\ln x}{x}\) require the product, quotient, and chain rules from Unit 2 layered with the exponential and logarithmic rules from 5.1-5.2.</p>
+                    <p>Critical points of products like \(f(x) = x e^{-x}\) frequently arise. Differentiating: \(f'(x) = e^{-x} + x(-e^{-x}) = e^{-x}(1 - x)\). Since \(e^{-x}>0\) always, the sign of \(f'\) matches \(1-x\): positive for \(x<1\), negative for \(x>1\). So the function has a single critical maximum at \(x=1\), \(f(1) = e^{-1}\). This pattern — exponential decay times a polynomial — appears in countless models.</p>
+                    <p>Maximum profit from a continuous-decay product, minimum drug concentration after dosing, optimal harvest timing for a growing population — all fit this template. The exponential's monotone nature means there's typically a unique interior optimum, which simplifies justification: a single sign change in \(f'\) gives the absolute extremum on the relevant domain.</p>
+                    <ul>
+                      <li><strong>Exponential growth model</strong> — \(P(t) = P_0 e^{kt}\); \(P'(t) = kP(t)\); never has a critical point on its own.</li>
+                      <li><strong>Product with exponential</strong> — \(f(x) = g(x) e^{ax}\); apply the product rule to find critical numbers.</li>
+                      <li><strong>Logistic-style optima</strong> — many real models combine growth and resource limits, yielding a single interior optimum.</li>
+                      <li><strong>Sign of \(e^{ax}\)</strong> — always positive, so sign of \(f'\) is governed by the polynomial factor.</li>
+                      <li><strong>Justification</strong> — \(f''\) of products with exponentials, or first-derivative sign change.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the absolute maximum of \(f(x) = x e^{-x^2/2}\) for \(x \ge 0\).</p>
+                      <p>Product rule: \(f'(x) = e^{-x^2/2} + x \cdot e^{-x^2/2} \cdot (-x) = e^{-x^2/2}(1 - x^2)\).</p>
+                      <p>Critical numbers: \(1 - x^2 = 0\), so \(x = 1\) (only positive value). \(f''\) sign or quick check: \(f'\) goes from positive (when \(x<1\)) to negative (when \(x>1\)), so \(x=1\) is a maximum.</p>
+                      <p>\(f(1) = e^{-1/2} = \tfrac{1}{\sqrt{e}} \approx 0.607\). Boundary check: \(f(0) = 0\) and \(\lim_{x\to\infty}f(x)=0\); so \(x=1\) gives the absolute max.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A drug's blood concentration is \(C(t) = 5te^{-0.5t}\) (mg/L, \(t\) in hours). When does peak concentration occur, and what is it?</p>
+                      <p>\(C'(t) = 5e^{-0.5t} + 5t(-0.5)e^{-0.5t} = 5e^{-0.5t}(1 - 0.5t)\).</p>
+                      <p>\(C'(t) = 0\) when \(1 - 0.5t = 0\), i.e., \(t = 2\) hours. \(C(2) = 5(2)e^{-1} = \tfrac{10}{e} \approx 3.68\) mg/L. Peak concentration is about 3.68 mg/L at \(t=2\) h.</p>
+                    </div>
+                    <ul>
+                      <li>Setting \(e^{ax} = 0\) — exponentials are never zero; they cannot contribute to critical numbers.</li>
+                      <li>Forgetting the product rule when differentiating \(x e^{ax}\); both factors depend on \(x\).</li>
+                      <li>Reporting a critical \(x\)-value without the corresponding function value — for context the value is more informative.</li>
+                      <li>Ignoring the domain restriction (\(t \ge 0\), \(x \in [0, T]\)); some critical numbers may fall outside.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v35')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.3 Optimization Problems using exponential functions</span>
+                        <span class="vid-duration">32:58</span>
+                        <span class="vid-toggle" id="toggle-v35">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v35">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/035_Calculus_5.3_Optimization_Problems_using_exponential_functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=U5yInkijKxY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.4 introduces the derivatives of the two foundational trigonometric functions: \[\frac{d}{dx}[\sin x] = \cos x, \qquad \frac{d}{dx}[\cos x] = -\sin x.\] These are proven from first principles using the limit identities \(\lim_{h\to 0}\frac{\sin h}{h} = 1\) and \(\lim_{h\to 0}\frac{\cos h - 1}{h} = 0\), combined with the angle-addition formulas for \(\sin(x+h)\) and \(\cos(x+h)\). Both proofs require \(x\) and \(h\) to be in <em>radians</em>; the formulas fail if \(x\) is in degrees (you'd need an extra \(\frac{\pi}{180}\) factor).</p>
+                    <p>With these two rules and the chain rule, you can differentiate composite trig expressions: \(\frac{d}{dx}[\sin(g(x))] = \cos(g(x))\cdot g'(x)\), and similarly for cosine. A common pattern is \(\sin(\omega x)\), whose derivative is \(\omega \cos(\omega x)\) — the frequency parameter \(\omega\) gets multiplied out by the chain rule.</p>
+                    <p>The sign asymmetry is striking: \(\sin\) differentiates to \(\cos\) (no sign change), but \(\cos\) differentiates to \(-\sin\). Iterating, the derivative pattern of \(\sin x\) cycles \(\sin x \to \cos x \to -\sin x \to -\cos x \to \sin x\), returning every four derivatives. This pattern is the algebraic shadow of the geometric fact that sine and cosine are circular functions: differentiation rotates by a quarter turn.</p>
+                    <ul>
+                      <li><strong>Sine derivative</strong> — \(\frac{d}{dx}[\sin x] = \cos x\) (radians).</li>
+                      <li><strong>Cosine derivative</strong> — \(\frac{d}{dx}[\cos x] = -\sin x\); note the minus sign.</li>
+                      <li><strong>Radians required</strong> — formulas fail in degree mode; convert if necessary.</li>
+                      <li><strong>Chain rule</strong> — \(\frac{d}{dx}[\sin(g(x))] = \cos(g(x))\cdot g'(x)\).</li>
+                      <li><strong>Higher derivatives cycle</strong> — \(\sin^{(n)}x\) follows a period-4 pattern.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \sin(3x^2)\).</p>
+                      <p>Chain rule with \(g(x) = 3x^2\): \(g'(x) = 6x\). Then \(y' = \cos(3x^2)\cdot 6x = 6x\cos(3x^2)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = x^2 \cos x\) and find \(y'\) at \(x = \tfrac{\pi}{2}\).</p>
+                      <p>Product rule: \(y' = 2x\cos x + x^2(-\sin x) = 2x\cos x - x^2 \sin x\).</p>
+                      <p>At \(x = \pi/2\): \(\cos(\pi/2) = 0\), \(\sin(\pi/2) = 1\). So \(y'(\pi/2) = 2(\pi/2)(0) - (\pi/2)^2(1) = -\pi^2/4\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the minus sign in \(\frac{d}{dx}[\cos x] = -\sin x\) — this is the single most common error.</li>
+                      <li>Working in degrees instead of radians; the formulas hold only in radian mode.</li>
+                      <li>Missing the inner derivative in chain rule: \(\frac{d}{dx}[\sin(3x)] = 3\cos(3x)\), not \(\cos(3x)\).</li>
+                      <li>Confusing \(\sin^2 x = (\sin x)^2\) with \(\sin(x^2)\); their derivatives are completely different.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.8 — "verify, through investigation, using technology, the derivatives of sine and cosine functions \((y = \sin x, y = \cos x)\) by graphing the function and its derivative, recognizing that the derivative of \(\sin x\) is \(\cos x\) and the derivative of \(\cos x\) is \(-\sin x\)."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v36')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.4 Derivatives of Sine and Cosine Functions</span>
+                        <span class="vid-duration">24:00</span>
+                        <span class="vid-toggle" id="toggle-v36">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v36">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/036_Calculus_5.4_Derivatives_of_Sine_and_Cosine_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=J9j7jQCiSpo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v37')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.4 Extreme Values on an Interval  P 257 # 6 a, b, c</span>
+                        <span class="vid-duration">19:20</span>
+                        <span class="vid-toggle" id="toggle-v37">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v37">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/037_Calculus_5.4_Extreme_Values_on_an_Interval__P_257___6_a__b__c.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=AKRIBnKcamw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 5.5 derives the remaining basic trig derivatives by rewriting them in terms of \(\sin\) and \(\cos\) and applying the quotient rule. Starting with \(\tan x = \frac{\sin x}{\cos x}\): \[\frac{d}{dx}[\tan x] = \frac{\cos x \cdot \cos x - \sin x \cdot (-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x.\] So \(\frac{d}{dx}[\tan x] = \sec^2 x\). Similarly, \(\cot x = \frac{\cos x}{\sin x}\) yields \(\frac{d}{dx}[\cot x] = -\csc^2 x\).</p>
+                    <p>By the same method, the secant and cosecant derivatives are \(\frac{d}{dx}[\sec x] = \sec x \tan x\) and \(\frac{d}{dx}[\csc x] = -\csc x \cot x\). The pattern is: <em>co</em>-functions (cosine, cotangent, cosecant) pick up a minus sign when differentiated. With the chain rule, all extend: \(\frac{d}{dx}[\tan(g(x))] = \sec^2(g(x))\cdot g'(x)\), and so on.</p>
+                    <p>Trigonometric derivatives behave well except at the points where the original function blows up (where \(\cos x = 0\) for tan/sec, or \(\sin x = 0\) for cot/csc). At those points the function and its derivative are both undefined. Knowing the domain restrictions is essential when finding critical numbers or testing for extrema in trig contexts.</p>
+                    <ul>
+                      <li><strong>Tangent derivative</strong> — \(\frac{d}{dx}[\tan x] = \sec^2 x\); always non-negative where defined.</li>
+                      <li><strong>Cotangent derivative</strong> — \(\frac{d}{dx}[\cot x] = -\csc^2 x\); always non-positive where defined.</li>
+                      <li><strong>Secant derivative</strong> — \(\frac{d}{dx}[\sec x] = \sec x \tan x\).</li>
+                      <li><strong>Cosecant derivative</strong> — \(\frac{d}{dx}[\csc x] = -\csc x \cot x\).</li>
+                      <li><strong>Domain caveats</strong> — \(\tan, \sec\) undefined at odd multiples of \(\pi/2\); \(\cot, \csc\) undefined at integer multiples of \(\pi\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Differentiate \(y = \tan(x^3 + 2)\).</p>
+                      <p>Chain rule with \(g(x) = x^3 + 2\): \(g'(x) = 3x^2\). So \(y' = \sec^2(x^3+2)\cdot 3x^2 = 3x^2 \sec^2(x^3 + 2)\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the slope of \(y = \sec x\) at \(x = \tfrac{\pi}{3}\).</p>
+                      <p>\(y' = \sec x \tan x\). At \(x = \pi/3\): \(\sec(\pi/3) = 2\) and \(\tan(\pi/3) = \sqrt{3}\). Slope = \(2\sqrt{3}\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the minus sign on co-functions: \(\frac{d}{dx}[\cot x] = -\csc^2 x\), not \(\csc^2 x\).</li>
+                      <li>Writing \(\frac{d}{dx}[\tan^2 x] = \sec^2 x\) — this confuses \(\tan^2 x = (\tan x)^2\) with \(\tan x\). The correct derivative uses the chain rule: \(2\tan x \sec^2 x\).</li>
+                      <li>Trying to evaluate \(\sec x\) or \(\tan x\) at \(x = \pi/2\) — both are undefined there.</li>
+                      <li>Confusing \(\sec x\) (\(1/\cos x\)) with \(\arccos x\) or \(\cos^{-1} x\) (inverse cosine); they are different functions.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.9 — "solve problems, using the product, quotient, and chain rules, involving the derivatives of polynomial, rational, exponential, logarithmic, and trigonometric functions, and use the derivatives to determine information (e.g., equations of tangent lines, instantaneous rates of change) about the related functions."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v38')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.5 Derivatives of Tangent and Cotangent Functions</span>
+                        <span class="vid-duration">12:50</span>
+                        <span class="vid-toggle" id="toggle-v38">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v38">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/038_Calculus_5.5_Derivatives_of_Tangent_and_Cotangent_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=xrEleU8Dscc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v39')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus chapter 5 Practice Test</span>
+                        <span class="vid-duration">41:38</span>
+                        <span class="vid-toggle" id="toggle-v39">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v39">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/039_Calculus_chapter_5_Practice_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=B7iXl_C8rwk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+        <!-- Curriculum-aligned external video lessons -->
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Logarithmic Differentiation Formula — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">11:21</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/C2kbaQeb_FM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=C2kbaQeb_FM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Logarithmic Differentiation of Exponential Functions — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">40:13</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/lFl8ekyr63U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=lFl8ekyr63U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+_TEMP_SINUSOIDAL_
+                <span class="vid-duration">5:42</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/oD9e4xOeaWE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=oD9e4xOeaWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Sinusoidal Word Problems — Tides &amp; Periodic Functions — Khan Academy</span>
+                <span class="vid-duration">7:55</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/g0X4c8dBT4g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=g0X4c8dBT4g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcv4u/Unit5_Exp_and_Trig_Derivatives_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcv4u/Unit5_Exp_and_Trig_Derivatives_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcv4u/Unit5_Exp_and_Trig_Derivatives_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="ch6.html" class="chnav-btn chnav-next">Chapter 6 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

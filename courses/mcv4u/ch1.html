@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCV4U — Calculus and Vectors | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mcv4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCV4U Calculus and Vectors)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>∫ MCV4U: Unit 1: Introduction to Calculus</h1>
+    <p>Limits, slopes of tangents, rates of change, continuity</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+            <h2>Unit 1: Introduction to Calculus</h2>
+            <p>Limits, slopes of tangents, rates of change, continuity</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Rate of Change</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Calculus begins with a deceptively simple question: how do we measure the slope of a curve at a single point, when "slope" was originally defined only between two distinct points? The historical breakthrough — credited to Newton and Leibniz in the late 17th century — was to study what happens to the slope of a secant line \(\frac{f(x+h)-f(x)}{h}\) as the second point slides toward the first, that is, as \(h \to 0\). The numerator and denominator both approach zero, so naïve substitution gives the indeterminate form \(\tfrac{0}{0}\). The <strong>limit</strong> is the rigorous tool that lets us extract a meaningful number from this expression.</p>
+            <p>This unit develops three intertwined ideas: the slope of a tangent line at a point, the instantaneous rate of change of a function, and the formal limit. The "why" matters more than the "what" — every later topic (derivatives, optimization, related rates) is built on this foundation. A function is <strong>continuous</strong> at \(x=a\) precisely when its limit exists, its value exists, and the two agree; this is why we factor, rationalize, or use conjugates to convert apparent \(\tfrac{0}{0}\) forms into algebraic expressions that survive the limiting process.</p>
+            <p>Average rate of change is geometric (a secant slope between two points); instantaneous rate of change is the limit of those secant slopes as the interval shrinks to zero. Understanding this distinction is the conceptual jump from Grade 11 functions to Grade 12 calculus.</p>
+            <ul>
+              <li><strong>Limit</strong> — the value \(L\) that \(f(x)\) approaches as \(x\) approaches \(a\); written \(\lim_{x\to a} f(x) = L\).</li>
+              <li><strong>Secant line</strong> — a straight line passing through two points on a curve; its slope is \(\frac{f(b)-f(a)}{b-a}\).</li>
+              <li><strong>Tangent line</strong> — the limiting position of secant lines as the two points coalesce; its slope is the instantaneous rate of change.</li>
+              <li><strong>Average rate of change</strong> — \(\frac{\Delta y}{\Delta x}\) over a finite interval.</li>
+              <li><strong>Instantaneous rate of change</strong> — \(\lim_{h\to 0} \frac{f(a+h)-f(a)}{h}\).</li>
+              <li><strong>Continuity at \(x=a\)</strong> — \(f(a)\) exists, \(\lim_{x\to a} f(x)\) exists, and the two are equal.</li>
+              <li><strong>Indeterminate form</strong> — an expression such as \(\tfrac{0}{0}\) whose value is not determined by the form alone and requires algebraic manipulation.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Slope of the tangent to \(f(x) = x^2\) at \(x = 3\)</p>
+              <p>Set up the difference quotient: \[m_{\text{tan}} = \lim_{h \to 0} \frac{f(3+h)-f(3)}{h} = \lim_{h\to 0} \frac{(3+h)^2 - 9}{h}.\]</p>
+              <p>Expand the numerator: \((3+h)^2 - 9 = 9 + 6h + h^2 - 9 = 6h + h^2\).</p>
+              <p>Factor and cancel: \[\lim_{h\to 0} \frac{6h + h^2}{h} = \lim_{h\to 0} \frac{h(6+h)}{h} = \lim_{h\to 0} (6 + h) = 6.\]</p>
+              <p>The tangent slope at \(x=3\) is \(m=6\). The cancellation step is legitimate because the limit only cares about values where \(h \ne 0\).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Limit requiring a conjugate</p>
+              <p>Evaluate \(\displaystyle \lim_{x\to 4} \frac{\sqrt{x}-2}{x-4}\). Direct substitution yields \(\tfrac{0}{0}\).</p>
+              <p>Multiply by the conjugate \(\frac{\sqrt{x}+2}{\sqrt{x}+2}\): \[\frac{\sqrt{x}-2}{x-4}\cdot\frac{\sqrt{x}+2}{\sqrt{x}+2} = \frac{x-4}{(x-4)(\sqrt{x}+2)} = \frac{1}{\sqrt{x}+2}.\]</p>
+              <p>Now substitute: \(\displaystyle \lim_{x\to 4} \frac{1}{\sqrt{x}+2} = \frac{1}{2+2} = \frac{1}{4}.\)</p>
+            </div>
+            <ul>
+              <li>Substituting \(h=0\) before simplifying — the whole point of factoring/rationalizing is to <em>remove</em> the \(\tfrac{0}{0}\) before substitution.</li>
+              <li>Forgetting that \(\lim_{x\to a} f(x)\) does not require \(f(a)\) to exist or equal the limit.</li>
+              <li>Confusing average rate of change (a secant slope, needs two points) with instantaneous rate of change (a limit, at one point).</li>
+              <li>Writing \(\frac{0}{0} = 0\) or \(\frac{0}{0} = 1\) — both wrong; the form is indeterminate.</li>
+              <li>Cancelling factors carelessly when the limit point is exactly the root of the cancelled factor — be sure the resulting function is defined at the limit point.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.4 — "make connections, with or without graphing technology, between an approximate value of the limit of a function, obtained using a table of values of \(\frac{f(a+h)-f(a)}{h}\), and the slope of the tangent to the graph of the function at \(x=a\)." Also A2.2 — "determine, through investigation, the equation of the line tangent to the graph of a polynomial function at a given point."</p>
+          </div>
+        </details>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Before we tackle limits and tangent slopes, we need an algebraic toolkit that lets us rewrite expressions whose direct substitution gives an indeterminate form. The key technique introduced in 1.1 is <strong>rationalizing</strong> — multiplying numerator and denominator by a carefully chosen <em>conjugate</em> so that the troublesome radical disappears from the denominator (or, more usefully later, from the numerator). The conjugate of \(\sqrt{a}-\sqrt{b}\) is \(\sqrt{a}+\sqrt{b}\), and their product \((\sqrt{a}-\sqrt{b})(\sqrt{a}+\sqrt{b}) = a-b\) is rational.</p>
+                    <p>This matters in calculus because difference quotients of the form \(\frac{\sqrt{x+h}-\sqrt{x}}{h}\) cannot be evaluated at \(h=0\) until the \(h\) is removed from the denominator. Rationalizing the numerator by multiplying by \(\frac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}}\) converts the numerator to \((x+h)-x = h\), which then cancels with the \(h\) in the denominator. The resulting expression has a well-defined limit as \(h \to 0\).</p>
+                    <p>You will also encounter expressions with sums of three radicals or with cube roots, where the conjugate is built from the difference-of-cubes identity \(a^3-b^3 = (a-b)(a^2+ab+b^2)\) instead. The strategy generalizes: identify the algebraic identity that converts an irrational factor to a rational one, then multiply by its other factor over itself.</p>
+                    <ul>
+                      <li><strong>Radical expression</strong> — an algebraic expression containing a root, e.g., \(\sqrt{x}, \sqrt[3]{x+1}\).</li>
+                      <li><strong>Conjugate</strong> — for \(\sqrt{a}-\sqrt{b}\), the conjugate is \(\sqrt{a}+\sqrt{b}\) (same terms, opposite middle sign).</li>
+                      <li><strong>Rationalizing</strong> — multiplying numerator and denominator by a conjugate (or other factor) to eliminate radicals from the desired location.</li>
+                      <li><strong>Difference of squares</strong> — \((a-b)(a+b) = a^2-b^2\); the engine behind rationalizing square-root conjugates.</li>
+                      <li><strong>Indeterminate form</strong> — a substitution that yields \(\tfrac{0}{0}\), requiring algebraic manipulation before the limit is evaluable.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Rationalize the numerator of \(\dfrac{\sqrt{x+9}-3}{x}\) and evaluate the limit as \(x\to 0\).</p>
+                      <p>Multiply top and bottom by the conjugate of the numerator: \[\frac{\sqrt{x+9}-3}{x} \cdot \frac{\sqrt{x+9}+3}{\sqrt{x+9}+3} = \frac{(x+9)-9}{x(\sqrt{x+9}+3)} = \frac{x}{x(\sqrt{x+9}+3)}.\]</p>
+                      <p>Cancel the common \(x\): \(\dfrac{1}{\sqrt{x+9}+3}\). Now substitute \(x=0\): \(\dfrac{1}{\sqrt{9}+3} = \dfrac{1}{6}\).</p>
+                    </div>
+                    <ul>
+                      <li>Multiplying only the numerator (or only the denominator) by the conjugate — you must multiply BOTH or you change the value of the expression.</li>
+                      <li>Forgetting to use the correct sign change: the conjugate of \(\sqrt{a}+\sqrt{b}\) is \(\sqrt{a}-\sqrt{b}\), not \(-\sqrt{a}-\sqrt{b}\).</li>
+                      <li>Squaring instead of using the conjugate: \((\sqrt{a}-\sqrt{b})^2 \ne a-b\); it equals \(a - 2\sqrt{ab} + b\), which is worse.</li>
+                      <li>Cancelling factors that aren't common — only cancel \(x\) after rationalizing has produced a matching factor on top.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "describe examples of real-world applications of rates of change, represented in a variety of ways" and the prerequisite algebra needed to "simplify radical expressions [with] rationalizing denominators" so that limits of the form \(\lim_{h\to 0}\frac{\sqrt{a+h}-\sqrt{a}}{h}\) become evaluable.</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v1')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.1 Rationalizing denominators of radical expressions</span>
+                        <span class="vid-duration">9:00</span>
+                        <span class="vid-toggle" id="toggle-v1">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v1">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/001_Calculus_1.1_Rationalizing_denominators_of_radical_expressions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Yh-5B9VIHOY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The slope of a tangent line is the central geometric idea that motivates the derivative. A <strong>secant</strong> line through two points \((a, f(a))\) and \((a+h, f(a+h))\) on the graph of \(f\) has slope \(\frac{f(a+h)-f(a)}{h}\) — the average rate of change. As the second point slides toward the first (i.e., \(h\to 0\)), the secant rotates and approaches the <strong>tangent</strong> line at \((a, f(a))\). Its slope, \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\), is what we mean by the <em>instantaneous</em> slope of the curve at that point.</p>
+                    <p>This limiting process is the defining moment of differential calculus: every later formula — the power rule, product rule, chain rule — is a shortcut for this limit. Geometrically, the tangent at \((a, f(a))\) is the unique non-vertical line that "best fits" the curve locally; algebraically, it has equation \(y - f(a) = m(x - a)\) where \(m\) is the limit above.</p>
+                    <p>Not every curve has a tangent at every point. If the difference quotient does not approach a single finite value, the tangent fails to exist — at sharp corners, cusps, or vertical-tangent points. This is the first hint that differentiability is a stronger condition than continuity.</p>
+                    <ul>
+                      <li><strong>Secant line</strong> — a line through two distinct points of a curve; its slope is the average rate of change.</li>
+                      <li><strong>Tangent line</strong> — the limiting position of secant lines as the two intersection points merge.</li>
+                      <li><strong>Slope of tangent at \(x=a\)</strong> — \(m_{tan}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\), provided the limit exists.</li>
+                      <li><strong>Difference quotient</strong> — \(\frac{f(a+h)-f(a)}{h}\); the discrete version that becomes the derivative in the limit.</li>
+                      <li><strong>Tangent equation</strong> — \(y - f(a) = m_{tan}(x - a)\), point-slope form using the computed slope.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the equation of the tangent to \(f(x) = x^2 + 1\) at \(x = 2\).</p>
+                      <p>Set up the difference quotient: \[m_{tan} = \lim_{h\to 0}\frac{f(2+h)-f(2)}{h} = \lim_{h\to 0}\frac{(2+h)^2+1 - (4+1)}{h}.\]</p>
+                      <p>Expand: \((2+h)^2+1 = 4+4h+h^2+1 = 5+4h+h^2\). The numerator becomes \(5+4h+h^2 - 5 = 4h+h^2 = h(4+h)\).</p>
+                      <p>Cancel \(h\): \(\lim_{h\to 0}(4+h) = 4\). So the slope is \(4\) and the tangent equation through \((2,5)\) is \(y - 5 = 4(x-2)\), i.e., \(y = 4x - 3\).</p>
+                    </div>
+                    <ul>
+                      <li>Confusing average rate of change (secant slope, two points) with instantaneous rate of change (tangent slope, one point obtained by a limit).</li>
+                      <li>Substituting \(h=0\) directly into the difference quotient before simplifying — this gives \(\tfrac{0}{0}\), not the slope.</li>
+                      <li>Forgetting to cancel the \(h\) before taking the limit, then concluding the limit doesn't exist.</li>
+                      <li>Using \(f(a)\) in the tangent equation as a slope instead of the computed \(m_{tan}\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "determine, through investigation, the equation of the line tangent to the graph of a polynomial function at a given point, by determining the slope of the line by using a limit, in the form \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\)."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v2')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.2 The slope of a tangent to a curve</span>
+                        <span class="vid-duration">22:42</span>
+                        <span class="vid-toggle" id="toggle-v2">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v2">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/002_Calculus_1.2_The_slope_of_a_tangent_to_a_curve.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=DKwvbPXc6Cs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 1.3 promotes the slope idea from pure geometry into the language of <em>rates</em>. The <strong>average rate of change</strong> of a quantity \(y = f(x)\) on \([a, a+h]\) is \(\frac{\Delta y}{\Delta x} = \frac{f(a+h)-f(a)}{h}\) — exactly the secant slope from 1.2, but interpreted in problem units (m/s, dollars per item, °C per minute, etc.). The <strong>instantaneous rate of change</strong> at \(x=a\) is the limit \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\), which is the tangent slope reinterpreted as a rate.</p>
+                    <p>This dual identity — slope and rate — is what makes calculus so universally applicable. A position-time graph \(s(t)\) has secant slopes equal to <em>average velocity</em> and tangent slopes equal to <em>instantaneous velocity</em>. A cost-quantity graph has secants equal to average cost per unit and tangents equal to <em>marginal</em> cost. Even when no graph is drawn, the same algebraic limit governs the underlying rate.</p>
+                    <p>A useful approximation technique: when the limit is hard to evaluate algebraically, use a table of difference quotients with progressively smaller \(h\) (e.g., \(0.1, 0.01, 0.001\)) and look for the value they approach. This <em>numerical</em> estimate of the instantaneous rate is often enough to motivate a conjecture about the exact value.</p>
+                    <ul>
+                      <li><strong>Average rate of change</strong> on \([a,b]\) — \(\frac{f(b)-f(a)}{b-a}\); the slope of the secant.</li>
+                      <li><strong>Instantaneous rate of change</strong> at \(x=a\) — \(\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\); the slope of the tangent.</li>
+                      <li><strong>Average velocity</strong> — \(\frac{\Delta s}{\Delta t}\); change in displacement over change in time.</li>
+                      <li><strong>Instantaneous velocity</strong> — the limit of average velocities as \(\Delta t \to 0\); equals \(s'(t)\).</li>
+                      <li><strong>Units</strong> — always (output units)/(input units); a rate has dimensions, so keep them attached.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A ball's height in metres is \(h(t) = -5t^2 + 20t\). Find the average velocity on \([1,3]\) and the instantaneous velocity at \(t=1\).</p>
+                      <p>Average velocity: \(\frac{h(3)-h(1)}{3-1} = \frac{(-45+60)-(-5+20)}{2} = \frac{15-15}{2} = 0\) m/s. (The ball is at the same height at \(t=1\) and \(t=3\).)</p>
+                      <p>Instantaneous velocity at \(t=1\): \[\lim_{h\to 0}\frac{-5(1+h)^2+20(1+h) - 15}{h} = \lim_{h\to 0}\frac{-5(1+2h+h^2)+20+20h - 15}{h}.\]</p>
+                      <p>Simplify the numerator: \(-5 -10h -5h^2 + 20+20h -15 = 10h - 5h^2 = 5h(2-h)\). Divide by \(h\): \(5(2-h)\). The limit as \(h\to 0\) is \(10\) m/s.</p>
+                    </div>
+                    <ul>
+                      <li>Reporting an average rate without units, or attaching the wrong units (e.g., m instead of m/s).</li>
+                      <li>Confusing \(h(3) - h(1)\) (a difference of heights) with the average rate (which requires dividing by \(3-1\)).</li>
+                      <li>Plugging \(h=0\) into \(\frac{h(t+h)-h(t)}{h}\) directly — get \(\tfrac{0}{0}\), an indeterminate form requiring simplification.</li>
+                      <li>Sign errors when the displacement is decreasing — instantaneous velocity can be negative, and that information matters physically.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "describe connections between the average rate of change of a function that is smooth (i.e., continuous with no corners) over an interval and the slope of the corresponding secant, and between the instantaneous rate of change of a smooth function at a point and the slope of the tangent at that point."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v3')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.3 Rates of Change</span>
+                        <span class="vid-duration">12:39</span>
+                        <span class="vid-toggle" id="toggle-v3">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v3">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/003_Calculus_1.3_Rates_of_Change.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=6yp6eRcXoeQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 1.4 introduces the formal idea of a <strong>limit</strong>. We write \(\lim_{x\to a} f(x) = L\) to mean: as \(x\) approaches \(a\) (from either side, but not equal to \(a\)), \(f(x)\) approaches the single value \(L\). The crucial subtlety is that the limit cares about the behaviour of \(f\) <em>near</em> \(a\), not the value of \(f\) <em>at</em> \(a\) — those can disagree, or \(f(a)\) may even be undefined while the limit exists.</p>
+                    <p>One-sided limits sharpen the picture: \(\lim_{x\to a^-} f(x)\) considers only \(x < a\), and \(\lim_{x\to a^+} f(x)\) only \(x > a\). The two-sided limit \(\lim_{x\to a} f(x)\) exists if and only if both one-sided limits exist <em>and</em> agree. When they disagree — typical at jump discontinuities — the two-sided limit does not exist.</p>
+                    <p>Numerical, graphical, and algebraic approaches all play a role: build a table of \(f(x)\) values for \(x\) very close to \(a\); read the limit off a graph by tracing toward \(a\) from each side; or manipulate the algebra (factor, rationalize, common denominator) until direct substitution becomes valid.</p>
+                    <ul>
+                      <li><strong>Limit</strong> — \(\lim_{x\to a} f(x) = L\) if \(f(x)\) can be made arbitrarily close to \(L\) by choosing \(x\) sufficiently close to (but not equal to) \(a\).</li>
+                      <li><strong>Left-hand limit</strong> — \(\lim_{x\to a^-} f(x)\); approach from values less than \(a\).</li>
+                      <li><strong>Right-hand limit</strong> — \(\lim_{x\to a^+} f(x)\); approach from values greater than \(a\).</li>
+                      <li><strong>Two-sided limit existence</strong> — requires \(\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x)\).</li>
+                      <li><strong>Hole/removable discontinuity</strong> — limit exists but \(f(a)\) is undefined or different.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Evaluate \(\lim_{x\to 2} \frac{x^2-4}{x-2}\).</p>
+                      <p>Direct substitution gives \(\tfrac{0}{0}\), an indeterminate form. Factor the numerator: \(x^2-4 = (x-2)(x+2)\).</p>
+                      <p>Cancel the common factor (valid because \(x \ne 2\) in the limit): \(\frac{(x-2)(x+2)}{x-2} = x+2\).</p>
+                      <p>Now substitute: \(\lim_{x\to 2}(x+2) = 4\). The original function has a hole at \(x=2\), but the limit is still well-defined.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Decide whether \(\lim_{x\to 0}\frac{|x|}{x}\) exists.</p>
+                      <p>For \(x>0\), \(|x| = x\) so \(\frac{|x|}{x} = 1\); thus \(\lim_{x\to 0^+}\frac{|x|}{x} = 1\). For \(x<0\), \(|x| = -x\) so \(\frac{|x|}{x} = -1\); thus \(\lim_{x\to 0^-}\frac{|x|}{x} = -1\).</p>
+                      <p>The one-sided limits disagree (\(1 \ne -1\)), so the two-sided limit does not exist.</p>
+                    </div>
+                    <ul>
+                      <li>Concluding the limit equals \(f(a)\) without checking that \(f\) is continuous at \(a\) — for limits of indeterminate forms this is wrong.</li>
+                      <li>Stopping when you see \(\tfrac{0}{0}\) and declaring "does not exist" — \(\tfrac{0}{0}\) means "try harder algebraically", not "no limit".</li>
+                      <li>Forgetting to check both one-sided limits when the function is defined piecewise around \(a\).</li>
+                      <li>Cancelling factors without noting the implicit \(x \ne a\) — the cancellation is legitimate inside a limit because the limit excludes the point itself.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "make connections, with or without graphing technology, between an approximate value of the limit of a function, obtained using a table of values of \(f(x)\) for \(x\) near a given value, and the behaviour of the function near that value."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v4')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.4 The Limit of a Function</span>
+                        <span class="vid-duration">17:10</span>
+                        <span class="vid-toggle" id="toggle-v4">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v4">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/004_Calculus_1.4_The_Limit_of_a_Function.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_Y5hmCZUWT0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 1.5 develops the algebraic <strong>limit laws</strong> that let you compute limits without resorting to tables every time. If \(\lim_{x\to a} f(x)=L\) and \(\lim_{x\to a} g(x)=M\), then the limit of a sum is the sum of limits, product is product of limits, quotient is the quotient (provided \(M\ne 0\)), and constant multiple is the constant times the limit. Polynomial functions, in particular, are continuous everywhere, so for any polynomial \(p\), \(\lim_{x\to a} p(x) = p(a)\).</p>
+                    <p>The harder cases produce the <strong>indeterminate form \(\tfrac{0}{0}\)</strong>, where direct substitution fails. The standard repair toolkit: <em>factor</em> the numerator and denominator and cancel a common factor; <em>rationalize</em> when there are radicals; <em>combine fractions</em> over a common denominator; or apply a <em>change of variable</em> (\(u\)-substitution) so a hidden structure becomes visible.</p>
+                    <p>For example, in \(\lim_{x\to 1}\frac{\sqrt{x}-1}{x-1}\), let \(u=\sqrt{x}\), so \(x=u^2\) and \(x-1 = u^2-1 = (u-1)(u+1)\). The limit becomes \(\lim_{u\to 1}\frac{u-1}{(u-1)(u+1)} = \lim_{u\to 1}\frac{1}{u+1} = \tfrac{1}{2}\). The substitution converted an obscure problem into a routine cancellation.</p>
+                    <ul>
+                      <li><strong>Limit laws</strong> — sum, difference, product, quotient (\(M\ne 0\)), constant multiple, power, and root.</li>
+                      <li><strong>Direct substitution property</strong> — if \(f\) is continuous at \(a\), then \(\lim_{x\to a}f(x)=f(a)\).</li>
+                      <li><strong>Indeterminate form</strong> — \(\tfrac{0}{0}\), \(\tfrac{\infty}{\infty}\), \(\infty-\infty\), \(0\cdot\infty\): direct substitution is uninformative.</li>
+                      <li><strong>Factoring</strong> — common-factor cancellation; the cornerstone repair for \(\tfrac{0}{0}\).</li>
+                      <li><strong>u-substitution</strong> — let \(u\) represent a sub-expression to convert the limit into a simpler one in \(u\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Evaluate \(\lim_{x\to 3}\frac{x^2-9}{x^2-x-6}\).</p>
+                      <p>Substitution gives \(\tfrac{0}{0}\). Factor both: \(x^2-9 = (x-3)(x+3)\); \(x^2-x-6 = (x-3)(x+2)\).</p>
+                      <p>Cancel \((x-3)\): \(\frac{x+3}{x+2}\). Substitute \(x=3\): \(\frac{6}{5}\).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Evaluate \(\lim_{x\to 0}\frac{(x+1)^3 - 1}{x}\).</p>
+                      <p>Expand the numerator: \((x+1)^3 = x^3 + 3x^2 + 3x + 1\), so the numerator is \(x^3 + 3x^2 + 3x\).</p>
+                      <p>Factor out \(x\): \(\frac{x(x^2+3x+3)}{x} = x^2+3x+3\). Substitute \(x=0\): \(3\).</p>
+                    </div>
+                    <ul>
+                      <li>Applying the quotient law when the denominator's limit is \(0\) — the law requires \(M\ne 0\) and a separate analysis is needed when it fails.</li>
+                      <li>Forgetting to factor completely; partially factored expressions hide the common factor that would cancel.</li>
+                      <li>Cancelling \(x\) from \(\tfrac{\sin x}{x}\) — these are not algebraic factors; the famous limit equals \(1\), not the result of an illegitimate cancel.</li>
+                      <li>After u-substitution, forgetting to translate the limit endpoint to the new variable (e.g., if \(u=\sqrt{x}\) and \(x\to 4\), then \(u\to 2\)).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.5 — "make connections between the limit of a function as the variable approaches a value … and the value of the function, with attention to the cases when the function is and is not continuous at that value."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v5')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.5 Properties of Limits and 0/0 including u substitution</span>
+                        <span class="vid-duration">24:37</span>
+                        <span class="vid-toggle" id="toggle-v5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v5">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/005_Calculus_1.5_Properties_of_Limits_and_0_0_including_u_substitution.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=VIuewVMPuGE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A function \(f\) is <strong>continuous at \(x=a\)</strong> when three conditions all hold: (1) \(f(a)\) is defined, (2) \(\lim_{x\to a} f(x)\) exists, and (3) \(\lim_{x\to a} f(x) = f(a)\). Informally, you can draw the graph through \(x=a\) without lifting your pencil. Any continuous function on its domain is determined by its values at every nearby point.</p>
+                    <p>Three classic ways continuity can fail: a <strong>removable discontinuity</strong> (a "hole" — the limit exists but doesn't match \(f(a)\), or \(f(a)\) is undefined); a <strong>jump discontinuity</strong> (the left- and right-hand limits exist but disagree); and an <strong>infinite discontinuity</strong> (the function blows up to \(\pm\infty\) at \(a\)). Each appears in graphs of rational and piecewise functions, and each requires a different diagnostic.</p>
+                    <p>Continuity matters because powerful theorems (Intermediate Value Theorem, Extreme Value Theorem, the existence of definite integrals later in calculus) all assume continuity on a closed interval. It also matters for differentiation: differentiability implies continuity, so if you can show \(f\) is discontinuous at \(a\), you immediately know \(f'(a)\) doesn't exist.</p>
+                    <ul>
+                      <li><strong>Continuous at \(a\)</strong> — \(\lim_{x\to a} f(x) = f(a)\), with both sides defined.</li>
+                      <li><strong>Continuous on an interval</strong> — continuous at every point of the interval.</li>
+                      <li><strong>Removable discontinuity</strong> — \(\lim_{x\to a}f(x)\) exists but \(f(a)\) is missing or different.</li>
+                      <li><strong>Jump discontinuity</strong> — \(\lim_{x\to a^-}f(x) \ne \lim_{x\to a^+}f(x)\); both finite.</li>
+                      <li><strong>Infinite discontinuity</strong> — vertical asymptote at \(a\); one or both one-sided limits are \(\pm\infty\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Is \(f(x)=\begin{cases}x^2 & x<1\\ 3-x & x\ge 1\end{cases}\) continuous at \(x=1\)?</p>
+                      <p>Check \(f(1)\): the second branch applies, so \(f(1) = 3-1 = 2\). Defined.</p>
+                      <p>Compute one-sided limits. From the left: \(\lim_{x\to 1^-} x^2 = 1\). From the right: \(\lim_{x\to 1^+}(3-x) = 2\).</p>
+                      <p>The one-sided limits disagree (\(1 \ne 2\)), so \(\lim_{x\to 1}f(x)\) does not exist. Therefore \(f\) is not continuous at \(x=1\); it has a jump discontinuity.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: For what value of \(k\) is \(f(x)=\begin{cases}\frac{x^2-4}{x-2} & x\ne 2\\ k & x=2\end{cases}\) continuous at \(x=2\)?</p>
+                      <p>Compute the limit: \(\lim_{x\to 2}\frac{x^2-4}{x-2} = \lim_{x\to 2}(x+2) = 4\). For continuity, we need \(f(2)=k=4\). So \(k=4\) removes the discontinuity.</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting to check all three conditions — a function might satisfy two of them and still be discontinuous.</li>
+                      <li>Assuming a rational function is continuous everywhere — it has discontinuities wherever the denominator vanishes.</li>
+                      <li>Confusing "limit exists" with "continuous": holes give limits but break continuity.</li>
+                      <li>Believing every continuous function is differentiable — \(f(x)=|x|\) is continuous at \(0\) but not differentiable there.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.6 — "compare, through investigation, the calculation of instantaneous rates of change at a point \((a, f(a))\) for polynomial functions \(\big(\)e.g., \(f(x)=x^2, f(x)=x^3\big)\), with and without simplifying the expression \(\frac{f(a+h)-f(a)}{h}\) before substituting values of \(h\) that approach zero," with the prerequisite that \(f\) be continuous at \(a\).</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.6 Continuity</span>
+                        <span class="vid-duration">13:47</span>
+                        <span class="vid-toggle" id="toggle-v6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v6">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/006_Calculus_1.6_Continuity.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=882GLDws6ME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcv4u/Unit1_Intro_to_Calculus_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcv4u/Unit1_Intro_to_Calculus_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcv4u/Unit1_Intro_to_Calculus_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../mcv4u.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

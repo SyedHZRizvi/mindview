@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCH4U — Chemistry | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #059669; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sch4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SCH4U Chemistry)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧪 SCH4U: Unit 3: Energy and Rates of Reaction</h1>
+    <p>Thermochemistry, enthalpy, Hess's law, reaction rates, collision theory, rate law</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+            <h2>Unit 3: Energy and Rates of Reaction</h2>
+            <p>Thermochemistry, enthalpy, Hess's law, reaction rates, collision theory, rate law</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Energy &amp; Rates</span>
+                <span>📹 8 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">🔥 Thermochemistry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Thermochemistry</strong> is the quantitative study of heat in chemical reactions. The <strong>first law of thermodynamics</strong> states \(\Delta U = q + w\), where \(q\) is heat absorbed by the system and \(w\) is work done on the system. At constant pressure (the usual lab condition), the heat is the change in <strong>enthalpy</strong>: \(q_p = \Delta H\). An <strong>exothermic</strong> reaction releases heat (ΔH &lt; 0); an <strong>endothermic</strong> reaction absorbs heat (ΔH &gt; 0). Heat transfer is measured by calorimetry using \(q = mc\Delta T\), where \(c\) is specific heat capacity (water: 4.18 J/(g·°C)).</p>
+            <p>Standard enthalpies of formation, \(\Delta H_f^\circ\) (kJ/mol, at 1 bar and stated T, usually 298 K), are tabulated for substances in their standard states; the value is zero for an element in its most stable form. The enthalpy of any reaction can be calculated from \(\Delta H_{\text{rxn}}^\circ = \sum n\Delta H_f^\circ(\text{products}) - \sum n\Delta H_f^\circ(\text{reactants})\). <strong>Hess's Law</strong> permits the algebraic combination of step reactions: enthalpy is a state function, so its change depends only on initial and final states. Bond-energy calculations \(\Delta H_{\text{rxn}} \approx \sum E(\text{bonds broken}) - \sum E(\text{bonds formed})\) give an approximate value when formation enthalpies are unavailable.</p>
+            <p>Thermochemical equations show ΔH alongside the balanced equation, with phases noted, e.g., \(CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(\ell), \;\Delta H = -890\,\text{kJ}\).</p>
+            <ul>
+              <li><strong>System / surroundings</strong> — region of interest / everything else.</li>
+              <li><strong>Enthalpy (\(H\))</strong> — heat content at constant pressure; units kJ or kJ/mol.</li>
+              <li><strong>Specific heat capacity (\(c\))</strong> — J/(g·°C).</li>
+              <li><strong>Heat of combustion / formation / neutralization</strong> — standard enthalpies for specific reactions.</li>
+              <li><strong>Hess's Law</strong> — ΔH is path-independent.</li>
+              <li><strong>State function</strong> — depends only on state, not path (H, U, S, G).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Hess's Law</p>
+              <p>Given (1) \(C(s) + O_2(g) \rightarrow CO_2(g)\), ΔH₁ = −393.5 kJ; (2) \(H_2(g) + \tfrac{1}{2}O_2(g) \rightarrow H_2O(\ell)\), ΔH₂ = −285.8 kJ; (3) \(CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(\ell)\), ΔH₃ = −890.4 kJ. Find ΔH for \(C(s) + 2H_2(g) \rightarrow CH_4(g)\) (the standard enthalpy of formation of methane).</p>
+              <p>Target = (1) + 2·(2) − (3): ΔH = −393.5 + 2(−285.8) − (−890.4) = −393.5 − 571.6 + 890.4 = <strong>−74.7 kJ/mol</strong>, matching the tabulated \(\Delta H_f^\circ\) of CH₄.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Sign errors: heat absorbed by the system is +q (endothermic); heat released, −q (exothermic).</li>
+              <li>Forgetting to multiply ΔH by the stoichiometric coefficient when scaling a reaction.</li>
+              <li>Confusing specific heat capacity (per gram) with molar heat capacity (per mole).</li>
+              <li>Treating bond-energy estimates as exact — they are average values over many compounds.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.3 — "solve problems related to enthalpy change in a chemical reaction (e.g., problems involving the application of Hess's law, calorimetry, and standard enthalpies of formation)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Energy Changes and Enthalpy</span>
+                <span class="vid-duration">43:56</span>
+                <span class="vid-toggle" id="toggle-v21">▶</span>
+            </div>
+            <div class="video-player" id="player-v21">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/021_Chemistry_12_SCH4U_Energy_Changes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=t2hdrqVgwiQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Calorimetry</span>
+                <span class="vid-duration">55:56</span>
+                <span class="vid-toggle" id="toggle-v22">▶</span>
+            </div>
+            <div class="video-player" id="player-v22">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/022_Chemistry_12_SCH4U_Calorimetry.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=KJfSbdY5vWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Bond Energy</span>
+                <span class="vid-duration">30:27</span>
+                <span class="vid-toggle" id="toggle-v23">▶</span>
+            </div>
+            <div class="video-player" id="player-v23">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/023_Chemistry_12_SCH4U_Bond_Energy.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=elER4R2Edi4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hess's Law</span>
+                <span class="vid-duration">20:46</span>
+                <span class="vid-toggle" id="toggle-v24">▶</span>
+            </div>
+            <div class="video-player" id="player-v24">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/024_Chemistry_12_SCH4U_Hess_s_Law.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=35ouCRSq6x4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Standard Enthalpy of Formation</span>
+                <span class="vid-duration">35:51</span>
+                <span class="vid-toggle" id="toggle-v25">▶</span>
+            </div>
+            <div class="video-player" id="player-v25">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/025_Chemistry_12_SCH4U_Standard_Enthalpy_of_Formation.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Kylh7vieVws" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">⚡ Reaction Rates</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Chemical kinetics</strong> deals with the speed of reactions and the molecular pathways by which reactants become products. For a general reaction \(aA + bB \rightarrow cC + dD\), the <strong>rate</strong> is \(-\tfrac{1}{a}\tfrac{d[A]}{dt} = -\tfrac{1}{b}\tfrac{d[B]}{dt} = +\tfrac{1}{c}\tfrac{d[C]}{dt} = +\tfrac{1}{d}\tfrac{d[D]}{dt}\). The <strong>rate law</strong>, \(\text{rate} = k[A]^m[B]^n\), is determined experimentally. The exponents \(m\) and \(n\) are the orders with respect to each reactant; their sum is the overall order. \(k\) is the rate constant with units depending on the overall order.</p>
+            <p><strong>Collision theory</strong> states that for a reaction to occur, particles must collide with proper orientation and with kinetic energy ≥ the <strong>activation energy</strong> \(E_a\). The <strong>Arrhenius equation</strong> \(k = Ae^{-E_a/RT}\), or in linear form \(\ln k = \ln A - E_a/(RT)\), quantifies how rate constants depend on temperature: a 10 °C rise typically doubles or triples \(k\). A <strong>catalyst</strong> provides an alternative mechanism with a lower \(E_a\), increasing rate without being consumed. <strong>Reaction mechanisms</strong> are step-by-step molecular descriptions; the overall rate law is determined by the slowest step, the <strong>rate-determining step (RDS)</strong>. Reaction intermediates appear in the mechanism but cancel in the overall equation; catalysts appear in early steps and are regenerated.</p>
+            <p>Integrated rate laws relate concentration to time: zero order, \([A] = [A]_0 - kt\); first order, \(\ln[A] = \ln[A]_0 - kt\), half-life \(t_{1/2} = \ln 2 / k\); second order, \(1/[A] = 1/[A]_0 + kt\).</p>
+            <ul>
+              <li><strong>Rate constant (\(k\))</strong> — temperature-dependent proportionality.</li>
+              <li><strong>Activation energy (\(E_a\))</strong> — minimum kinetic energy required.</li>
+              <li><strong>Transition state / activated complex</strong> — high-energy arrangement at the peak.</li>
+              <li><strong>Intermediate</strong> — species formed and consumed during the mechanism.</li>
+              <li><strong>Catalyst</strong> — lowers \(E_a\); homogeneous (same phase) or heterogeneous.</li>
+              <li><strong>Elementary step</strong> — single-collision event; molecularity = unimolecular, bimolecular, termolecular.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Determining a rate law from initial rates</p>
+              <p>For \(2NO(g) + O_2(g) \rightarrow 2NO_2(g)\), data show: doubling [NO] (with [O₂] fixed) quadruples the rate; doubling [O₂] (with [NO] fixed) doubles the rate. Find the rate law.</p>
+              <p>Order in NO: \(2^m = 4 \Rightarrow m = 2\). Order in O₂: \(2^n = 2 \Rightarrow n = 1\). Rate law: \(\text{rate} = k[NO]^2[O_2]\); overall order 3. Units of \(k\): mol⁻²·L²·s⁻¹ (i.e., M⁻²s⁻¹).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Using stoichiometric coefficients as rate-law exponents — they are only equal for elementary steps.</li>
+              <li>Confusing the rate-determining (slowest) step with the most thermodynamically favourable step; ΔG and \(E_a\) are independent.</li>
+              <li>Forgetting to include the temperature in Arrhenius problems (T in kelvin).</li>
+              <li>Mistaking a catalyst for an intermediate; the catalyst appears in the first step and reappears in a later step.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "explain, with reference to collision theory and potential energy diagrams, how factors such as concentration, surface area, pressure, temperature, and the presence of a catalyst affect the rate of a chemical reaction."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Rate of Reaction</span>
+                <span class="vid-duration">33:01</span>
+                <span class="vid-toggle" id="toggle-v26">▶</span>
+            </div>
+            <div class="video-player" id="player-v26">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/026_Chemistry_12_SCH4U_Rate_of_Reaction.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=FLzGE7uz-mI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Collision Theory and Activation Energy</span>
+                <span class="vid-duration">44:28</span>
+                <span class="vid-toggle" id="toggle-v27">▶</span>
+            </div>
+            <div class="video-player" id="player-v27">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/027_Chemistry_12_SCH4U_Collision_Theory.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=QbM1IE14NN0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v28')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Rate Law and Reaction Mechanisms</span>
+                <span class="vid-duration">45:07</span>
+                <span class="vid-toggle" id="toggle-v28">▶</span>
+            </div>
+            <div class="video-player" id="player-v28">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/028_Chemistry_12_SCH4U_Rate_Law_and_Reaction_Mechanisms.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=YCsN_dV16Bg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        <div class="subsection-label">♻️ Entropy and Gibbs Free Energy</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Entropy (\(S\))</strong> is a measure of the dispersal of energy and matter among accessible microstates; the <strong>second law of thermodynamics</strong> states that the entropy of the universe increases in every spontaneous process: \(\Delta S_{\text{univ}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} \gt 0\). Entropy increases with temperature (more populated states), with the conversion solid → liquid → gas (greater positional disorder), and with the production of more moles of gas. Standard molar entropies \(S^\circ\) (J/(mol·K)) are absolute (the third law of thermodynamics sets \(S = 0\) for a perfect crystal at 0 K).</p>
+            <p>For a process at constant temperature and pressure, the two driving forces — enthalpy decrease (system stabilization) and entropy increase — are combined into the <strong>Gibbs free energy</strong>: \(\Delta G = \Delta H - T\Delta S\). The sign of ΔG predicts spontaneity: ΔG &lt; 0, spontaneous (product-favoured); ΔG = 0, at equilibrium; ΔG &gt; 0, non-spontaneous in the forward direction. Four cases follow from the signs of ΔH and ΔS: (ΔH&lt;0, ΔS&gt;0) always spontaneous; (ΔH&gt;0, ΔS&lt;0) never spontaneous; (ΔH&lt;0, ΔS&lt;0) spontaneous below a crossover \(T = \Delta H / \Delta S\); (ΔH&gt;0, ΔS&gt;0) spontaneous above the crossover.</p>
+            <p>At equilibrium, \(\Delta G^\circ = -RT\ln K\), linking thermodynamics to the equilibrium constant. Under non-standard conditions, \(\Delta G = \Delta G^\circ + RT\ln Q\), with \(Q\) the reaction quotient.</p>
+            <ul>
+              <li><strong>Entropy (\(S\))</strong> — J/(mol·K); always \(\geq\) 0 for substances.</li>
+              <li><strong>Gibbs free energy (\(G\))</strong> — \(\Delta G = \Delta H - T\Delta S\); kJ/mol.</li>
+              <li><strong>Spontaneous</strong> — proceeds without continuous external input; says nothing about rate.</li>
+              <li><strong>Standard conditions</strong> — 1 bar (or 1 atm), 1 M, stated T (usually 298.15 K).</li>
+              <li><strong>Crossover temperature</strong> — \(T = \Delta H / \Delta S\) where ΔG = 0.</li>
+              <li><strong>Coupling reactions</strong> — pairing a non-spontaneous reaction with a strongly spontaneous one (basis of ATP-driven biochemistry).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: ΔG° = −RT ln K</p>
+              <p>For the reaction \(N_2O_4(g) \rightleftharpoons 2NO_2(g)\) at 298 K, ΔH° = +57.2 kJ/mol and ΔS° = +175.8 J/(mol·K). Find ΔG° and K.</p>
+              <p>ΔG° = ΔH° − TΔS° = 57.2 − (298)(0.1758) = 57.2 − 52.4 = +4.8 kJ/mol.</p>
+              <p>ln K = −ΔG°/(RT) = −4800 / (8.314 × 298) = −1.937, so K = e^(−1.937) = <strong>0.144</strong>. Reactant-favoured, as expected for a small positive ΔG°.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Mixing units: ΔH in kJ/mol and ΔS in J/(mol·K) — convert ΔS to kJ before combining.</li>
+              <li>Concluding a "spontaneous" reaction is necessarily fast — thermodynamics says nothing about rate (diamond → graphite is spontaneous but glacially slow).</li>
+              <li>Forgetting that ΔS_surr also depends on temperature: \(\Delta S_{\text{surr}} = -\Delta H_{\text{sys}}/T\).</li>
+              <li>Treating ΔG° as the same as ΔG — only equilibrium between standard states uses the standard value.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.7 — "explain, in terms of entropy and enthalpy, the energy changes involved in a chemical reaction, and explain how these factors determine whether the reaction is spontaneous."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Gibbs Free Energy — Entropy, Enthalpy & Equilibrium Constant K — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">22:48</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2KuNzB0cZL4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2KuNzB0cZL4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Entropy: Embrace the Chaos! — Crash Course Chemistry #20</span>
+                <span class="vid-duration">12:24</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZsY4WcQOrfk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ZsY4WcQOrfk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sch4u/Unit3_Energy_and_Rates_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sch4u/Unit3_Energy_and_Rates_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sch4u/Unit3_Energy_and_Rates_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SCH4U Chemistry · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

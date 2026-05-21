@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Chapter 4: The Wave Nature of Light | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\(','\)']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../sph4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH4U Physics)</a></div>
+<div class="strand-tag">Science — Grade 12 University Preparation</div>
+<h1>⚡ SPH4U: Chapter 4: The Wave Nature of Light</h1>
+<p>Wave properties, refraction, diffraction, interference, Young's experiment</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section">
+        <div class="unit-header" style="background:linear-gradient(135deg, #d97706dd, #d97706);">
+            <h2>Unit 4: The Wave Nature of Light</h2>
+            <p>Wave properties, refraction, diffraction, interference, Young's experiment</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Wave Nature of Light</span>
+                <span>⏱️ ~20 hours</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.1 — Properties of Waves and Refraction</div>
+            <div class="topic-desc">Wave properties, speed of light, refraction, total internal reflection</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>wave</strong> is a disturbance that transports energy (and momentum) through a medium — or, for light, through empty space — without net transport of matter. All periodic waves share the universal relationship $v=f\lambda$, where $v$ is the propagation speed, $f$ the frequency (Hz), and $\lambda$ the wavelength (m). For light in vacuum, $v=c=2.998\times 10^8$ m/s. In a medium of index of refraction $n$, light travels slower at speed $v=c/n$, and its wavelength shortens to $\lambda_{med}=\lambda_0/n$ — but frequency stays the same because frequency is set by the source.</p>
+                <p>When light crosses a boundary between two media, it bends according to <strong>Snell's law</strong>: $n_1\sin\theta_1=n_2\sin\theta_2$, with angles measured from the <em>normal</em> to the surface. Light entering a denser medium (larger $n$) bends toward the normal; going from dense to less dense, it bends away. If the angle of incidence in the denser medium is large enough, $\sin\theta_2$ would exceed 1 — physically impossible — so the light is entirely reflected back. This <strong>total internal reflection</strong> begins at the critical angle $\sin\theta_c=n_2/n_1$ (with $n_1>n_2$). It is the principle behind fiber optics, retroreflective prisms, and the brilliance of cut diamonds.</p>
+                <ul>
+                  <li><strong>Wave equation</strong>: $v=f\lambda$; all three SI units in one relation.</li>
+                  <li><strong>Index of refraction</strong> $n=c/v$ (dimensionless); typical: air ≈ 1.000, water ≈ 1.33, glass ≈ 1.50, diamond ≈ 2.42.</li>
+                  <li><strong>Snell's law</strong>: $n_1\sin\theta_1=n_2\sin\theta_2$.</li>
+                  <li><strong>Critical angle</strong>: $\sin\theta_c=n_2/n_1$, only defined for $n_1>n_2$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — fiber optic critical angle</p>
+                  <p>An optical fiber has core index $n_1=1.50$ and cladding $n_2=1.40$. Find the critical angle for total internal reflection.</p>
+                  <p>Step 1 — apply: $\sin\theta_c=n_2/n_1=1.40/1.50=0.9333$.</p>
+                  <p>Step 2 — invert: $\theta_c=\sin^{-1}(0.9333)=69.0°$.</p>
+                  <p>Step 3 — interpret: any ray hitting the core-cladding boundary at $>69°$ from the normal reflects 100%, propagating losslessly along the fiber.</p>
+                  <p>Step 4 — speed inside core: $v=c/n_1=3.00\times 10^8/1.50=2.00\times 10^8$ m/s.</p>
+                </div>
+                <ul>
+                  <li><strong>Measuring angles from the surface</strong> instead of the normal — Snell's law uses the normal.</li>
+                  <li><strong>Assuming $f$ changes when light enters a new medium</strong> — only $v$ and $\lambda$ change; $f$ is fixed.</li>
+                  <li><strong>Applying TIR formula when $n_1<n_2$</strong> — TIR only happens going from dense to less dense.</li>
+                  <li><strong>Treating reflection and refraction as alternatives</strong> — both happen at a boundary; TIR is the limiting case where refraction vanishes.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.1 — "use an inquiry process to investigate the properties of waves (e.g., reflection, refraction, diffraction, interference)."</p>
+              </div>
+            </details>
+            
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_205_20-_20Light_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Wave Nature of Light Notes</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v26')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C9L1: Properties of Waves and Light, and Refraction and Total Internal Reflection</span>
+                        <span class="vid-duration">1:34:16</span>
+                        <span class="vid-toggle" id="toggle-v26">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v26">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/026_C9L1__Properties_of_Waves_and_Light__and_Refraction_and_Total_Internal_Reflection.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=psatXe3hyVs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.2 — Diffraction and Interference of Waves</div>
+            <div class="topic-desc">Diffraction, constructive and destructive interference, water wave demonstrations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Two phenomena distinguish waves from particles: <strong>diffraction</strong> and <strong>interference</strong>. Diffraction is the bending of waves around obstacles or through openings, becoming significant when the obstacle/aperture size is comparable to the wavelength. This is why you can hear someone around a corner (sound $\lambda\sim 1$ m, easily diffracts past door frames) but can't see them (light $\lambda\sim 500$ nm, requires nanometre-scale features to diffract visibly). Huygens' principle explains why: every point on a wavefront acts as a new source of secondary wavelets, and their envelope forms the next wavefront — so waves naturally spread into the geometric shadow.</p>
+                <p><strong>Interference</strong> happens when two coherent waves overlap. By the <strong>superposition principle</strong>, the resultant displacement is the algebraic sum of the individual displacements. Where crests meet crests (path-length difference $\Delta x=m\lambda$, $m=0,\pm 1,\pm 2,\ldots$), waves <strong>constructively interfere</strong> and produce a maximum. Where crests meet troughs ($\Delta x=(m+\tfrac12)\lambda$), they <strong>destructively interfere</strong> and cancel. Ripple-tank demonstrations with two in-phase sources show clear "antinodal" and "nodal" lines fanning outward — a hallmark of wave behaviour that no particle theory can explain.</p>
+                <ul>
+                  <li><strong>Coherent sources</strong> — same frequency, fixed phase relationship; required for stable interference patterns.</li>
+                  <li><strong>Superposition</strong>: $y_{total}=y_1+y_2$ — linear addition of displacements.</li>
+                  <li><strong>Constructive</strong>: path-difference $\Delta x = m\lambda$ ($m$ integer); amplitude adds.</li>
+                  <li><strong>Destructive</strong>: $\Delta x=(m+\tfrac12)\lambda$; amplitudes cancel.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — two ripple-tank sources</p>
+                  <p>Two in-phase sources 3.0 cm apart emit waves of $\lambda=1.5$ cm. At a point 25 cm from one source and 22 cm from the other, is the interference constructive or destructive?</p>
+                  <p>Step 1 — path-length difference: $|\Delta x|=|25-22|=3.0$ cm.</p>
+                  <p>Step 2 — express in $\lambda$: $\Delta x/\lambda=3.0/1.5=2.0$ — an integer.</p>
+                  <p>Step 3 — since $\Delta x=2\lambda$ exactly, the waves arrive in phase → constructive interference, amplitude is maximised (antinode).</p>
+                  <p>Step 4 — if the point had been 24 cm from one and 22 cm from the other, $\Delta x=2\,\text{cm}=4\lambda/3$ — neither fully constructive nor destructive; intermediate amplitude.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting coherence</strong> — incoherent sources (two lamps) produce no stable pattern.</li>
+                  <li><strong>Confusing diffraction with refraction</strong> — diffraction is bending due to an obstacle/aperture; refraction is bending due to a speed change.</li>
+                  <li><strong>Saying "energy is destroyed in destructive interference"</strong> — energy is redistributed to constructive regions; total energy conserved.</li>
+                  <li><strong>Using $\Delta x=m\lambda$ when sources are out of phase</strong> — formula assumes in-phase sources.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.2 — "analyse, in qualitative and quantitative terms, the conditions required for constructive and destructive interference of waves."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v27')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C9L2: Diffraction and Interference of Water Waves</span>
+                        <span class="vid-duration">1:04:54</span>
+                        <span class="vid-toggle" id="toggle-v27">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v27">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/027_C9L2__Diffraction_and_Interference_of_Water_Waves.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=SasFTh54jqM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.3 — Wave-Particle Duality and Young's Double Slit</div>
+            <div class="topic-desc">Evidence for wave nature of light, Young's experiment, fringe spacing</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In 1801 Thomas Young settled (for a century) the centuries-old debate over the nature of light by showing that light passing through two narrow slits produces an interference pattern of bright and dark fringes on a screen — exactly the behaviour predicted for a wave, never explicable by Newton's corpuscles. For two slits separated by $d$, with the screen at distance $L\gg d$, the bright fringes (maxima) occur at angles satisfying $d\sin\theta=m\lambda$, and the fringe spacing on the screen is $\Delta y=\lambda L/d$.</p>
+                <p>The geometric reason: light from the two slits travels different distances to a given point on the screen. The path-length difference is $d\sin\theta$ for distant points. When this equals an integer number of wavelengths, the waves arrive in phase → bright fringe. When it equals a half-integer number of wavelengths, they arrive out of phase → dark fringe. The pattern's fringe spacing $\lambda L/d$ also explains why visible-light interference patterns require slits within microns of each other: a 600-nm wavelength and 1-m screen with 0.1-mm slit spacing gives 6-mm fringes — barely visible. Young's experiment is the historical foundation of the wave theory of light; in modern physics, when repeated with single photons or electrons, it also reveals quantum wave-particle duality (Strand F).</p>
+                <ul>
+                  <li><strong>Young's bright-fringe condition</strong>: $d\sin\theta=m\lambda$, $m=0,\pm 1,\pm 2,\ldots$.</li>
+                  <li><strong>Dark-fringe condition</strong>: $d\sin\theta=(m+\tfrac12)\lambda$.</li>
+                  <li><strong>Fringe spacing</strong>: $\Delta y=\lambda L/d$ (m), for small angles.</li>
+                  <li><strong>Coherence length</strong> — laser light works best because it has long coherence; lamp light needs a single slit first to enforce coherence.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — measuring wavelength with double slit</p>
+                  <p>Young's experiment uses slits 0.10 mm apart, screen 2.0 m away. Fringes are 1.10 cm apart. Find $\lambda$.</p>
+                  <p>Step 1 — formula: $\Delta y=\lambda L/d \Rightarrow \lambda=d\,\Delta y/L$.</p>
+                  <p>Step 2 — convert: $d=1.0\times 10^{-4}$ m, $\Delta y=1.10\times 10^{-2}$ m, $L=2.0$ m.</p>
+                  <p>Step 3 — substitute: $\lambda=(1.0\times 10^{-4})(1.10\times 10^{-2})/2.0=5.5\times 10^{-7}$ m = 550 nm.</p>
+                  <p>Step 4 — interpret: this is green light, near the peak sensitivity of the human eye. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing $d$ (slit separation) and slit width</strong> — width affects single-slit envelope; $d$ sets fringe spacing.</li>
+                  <li><strong>Using $\sin\theta\approx\tan\theta\approx y/L$ for large angles</strong> — only valid in small-angle limit.</li>
+                  <li><strong>Mixing units</strong> — wavelength is in nm, slit separation in μm or mm; convert everything to metres.</li>
+                  <li><strong>Forgetting central maximum is at $m=0$</strong> — counting "first bright fringe" should be $m=1$, not $m=0$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.4 — "analyse, in qualitative and quantitative terms, the interference of light in a double-slit experiment (e.g., calculate the wavelength of light from data on the fringe pattern)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v28')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C9L3: Wave-Particle Duality of Light, and Young’s Double-Slit Experiment</span>
+                        <span class="vid-duration">55:28</span>
+                        <span class="vid-toggle" id="toggle-v28">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v28">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/028_C9L3__Wave-Particle_Duality_of_Light__and_Young_s_Double-Slit_Experiment.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=vQQsKzpuAEo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.4 — Thin Film Interference</div>
+            <div class="topic-desc">Interference in thin films, soap bubbles, anti-reflective coatings</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Thin films — soap bubbles, oil slicks on wet pavement, anti-reflective coatings on lenses, the iridescent layers of butterfly wings — exhibit interference between light reflected from the top and bottom surfaces of the film. Two physical effects combine: an <em>extra path length</em> $2t$ (where $t$ is the film thickness, for near-normal incidence) traversed inside the film, and possible <em>phase inversions</em> on reflection. A light wave reflecting from a medium of <em>higher</em> $n$ undergoes a half-wavelength ($\pi$) phase shift; reflection from a <em>lower</em>-$n$ medium does not.</p>
+                <p>The wavelength inside a film of index $n_f$ is $\lambda_f=\lambda_0/n_f$. For a film with phase shifts on both, only one, or neither reflection, the constructive/destructive conditions swap. A common case: soap bubble in air. Light reflecting from the outer surface flips (air to soap is low-to-high $n$); inner-surface reflection (soap to air is high-to-low) does not flip. Net phase difference is the geometric one plus $\pi$. Constructive (visible bright colour): $2n_f t=(m+\tfrac12)\lambda_0$. Destructive: $2n_f t=m\lambda_0$. The thinnest possible bright film has $t=\lambda_0/(4n_f)$ — the quarter-wave principle behind every anti-reflective lens coating.</p>
+                <ul>
+                  <li><strong>Optical path length</strong>: $n\cdot$(geometric length); makes phase comparison correct in any medium.</li>
+                  <li><strong>Phase inversion on reflection</strong>: occurs when reflecting off a higher-index medium.</li>
+                  <li><strong>Wavelength in film</strong>: $\lambda_f=\lambda_0/n_f$.</li>
+                  <li><strong>Quarter-wave coating</strong>: $t=\lambda_0/(4n_f)$ — minimum-thickness anti-reflective film.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — anti-reflective lens coating</p>
+                  <p>A camera lens ($n_{glass}=1.55$) is coated with MgF₂ ($n_f=1.38$) to minimise reflection at $\lambda_0=550$ nm (green). Find the minimum coating thickness.</p>
+                  <p>Step 1 — phase shifts: air→MgF₂ (low to high) → π flip. MgF₂→glass (low to high) → another π flip. Two π flips cancel, leaving only path-length effect.</p>
+                  <p>Step 2 — destructive condition (minimum reflection): $2n_f t=(m+\tfrac12)\lambda_0$.</p>
+                  <p>Step 3 — smallest $t$ with $m=0$: $t=\lambda_0/(4n_f)=550\,\text{nm}/(4\cdot 1.38)=99.6$ nm.</p>
+                  <p>Step 4 — physical check: this is ~100 nm, the standard for visible-light AR coatings. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting one or both phase inversions</strong> — track them at <em>each</em> interface based on the relative indices.</li>
+                  <li><strong>Using $\lambda_0$ inside the film</strong> — must use $\lambda_f=\lambda_0/n_f$ or equivalently multiply by $n_f$ to get optical path $2n_f t$.</li>
+                  <li><strong>Confusing condition for "bright" reflection vs. "bright" transmission</strong> — they are opposite.</li>
+                  <li><strong>Assuming the formula always involves a $+\tfrac12$</strong> — depends on phase-shift bookkeeping, not just film geometry.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.5 — "analyse, in qualitative and quantitative terms, the interference of light in thin films (e.g., soap bubbles, oil slicks, anti-reflective coatings)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v29')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C10L1: Interference in Thin Films</span>
+                        <span class="vid-duration">1:02:00</span>
+                        <span class="vid-toggle" id="toggle-v29">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v29">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/029_C10L1__Interference_in_Thin_Films.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=-Mvj4QDmrG4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.5 — Single-Slit Diffraction and Diffraction Gratings</div>
+            <div class="topic-desc">Single-slit pattern, diffraction gratings, resolving power</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A single narrow slit of width $a$ produces its own diffraction pattern, distinct from the double-slit case. The pattern features a broad bright central maximum flanked by progressively dimmer secondary maxima. The dark minima occur where the slit can be subdivided into pairs of points whose contributions exactly cancel: $a\sin\theta=m\lambda$ for $m=\pm 1,\pm 2,\ldots$ (note: $m=0$ is the central <em>maximum</em>, not a minimum, in single-slit diffraction — this is the key difference from double-slit). The angular width of the central peak is $\Delta\theta\approx 2\lambda/a$, so narrower slits spread light more.</p>
+                <p>A <strong>diffraction grating</strong> has many thousands of equally spaced slits, characterized by the slit spacing $d$ (or "grating constant"; often quoted as "lines per mm"). The condition for principal maxima is the same as for two slits, $d\sin\theta=m\lambda$, but with many slits in play the maxima become extremely sharp and narrow — gratings act as high-resolution spectrometers. Because $\sin\theta$ depends on $\lambda$, different wavelengths emerge at different angles, separating white light into a spectrum. <strong>Resolving power</strong>: a grating with $N$ illuminated lines can resolve wavelengths differing by $\Delta\lambda=\lambda/(mN)$ — Rayleigh's criterion — vastly outperforming prisms.</p>
+                <ul>
+                  <li><strong>Single-slit minima</strong>: $a\sin\theta=m\lambda$, $m=\pm 1,\pm 2,\ldots$ (not $m=0$).</li>
+                  <li><strong>Grating maxima</strong>: $d\sin\theta=m\lambda$, $m=0,\pm 1,\pm 2,\ldots$</li>
+                  <li><strong>Slit width</strong> $a$ vs <strong>slit spacing</strong> $d$ — different symbols for different roles.</li>
+                  <li><strong>Resolving power</strong>: $R=\lambda/\Delta\lambda=mN$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — grating spectrum of sodium</p>
+                  <p>A grating with 600 lines/mm is illuminated by sodium light ($\lambda=589$ nm). Find the angles of the first-order and second-order maxima.</p>
+                  <p>Step 1 — slit spacing: $d=1\,\text{mm}/600=1.667\times 10^{-6}$ m.</p>
+                  <p>Step 2 — first order ($m=1$): $\sin\theta_1=\lambda/d=5.89\times 10^{-7}/1.667\times 10^{-6}=0.3534 \Rightarrow \theta_1=20.7°$.</p>
+                  <p>Step 3 — second order ($m=2$): $\sin\theta_2=2\lambda/d=0.7068 \Rightarrow \theta_2=45.0°$.</p>
+                  <p>Step 4 — third order: $\sin\theta_3=3(0.3534)=1.06>1$ — no third-order maximum exists; cut off.</p>
+                </div>
+                <ul>
+                  <li><strong>Putting $m=0$ in single-slit minimum formula</strong> — gives nonsense; central is a maximum.</li>
+                  <li><strong>Confusing slit width and slit spacing in grating problems</strong> — width affects envelope, spacing sets fringes.</li>
+                  <li><strong>Forgetting $\sin\theta\le 1$</strong> — high orders may be physically inaccessible.</li>
+                  <li><strong>Assuming all maxima equal brightness</strong> — single-slit envelope modulates the intensity of grating peaks.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.6 — "analyse, in qualitative and quantitative terms, single-slit diffraction and the operation of diffraction gratings."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v30')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C10L2: Single-Slit Diffraction and The Diffraction Grating</span>
+                        <span class="vid-duration">51:36</span>
+                        <span class="vid-toggle" id="toggle-v30">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v30">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/030_C10L2__Single-Slit_Diffraction_and_The_Diffraction_Grating.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=uZRCHvQQyTU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.6 — Electromagnetic Radiation and Polarization</div>
+            <div class="topic-desc">EM spectrum, polarization of light, Malus's law</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Maxwell predicted in 1865 that oscillating electric and magnetic fields support each other and propagate through vacuum as a transverse <strong>electromagnetic wave</strong> at speed $c=1/\sqrt{\mu_0\varepsilon_0}\approx 3.00\times 10^8$ m/s. The agreement of this prediction with the measured speed of light proved that light is an EM wave. The electromagnetic spectrum is a continuum from radio waves ($\lambda\sim$ km, $f\sim$ kHz) through microwaves, infrared, visible ($\lambda\sim$ 400–700 nm), ultraviolet, X-rays, and gamma rays ($\lambda\sim 10^{-12}$ m and shorter). All travel at $c$ in vacuum; what differs is wavelength/frequency and how they interact with matter.</p>
+                <p>Because EM waves are <strong>transverse</strong>, the electric field oscillates in a plane perpendicular to the direction of propagation; "polarization" refers to the orientation of this plane. Ordinary (thermal) light is unpolarized — many emitters with random orientations. A <strong>polarizer</strong> (e.g. a Polaroid sheet) transmits only the component of $\vec{E}$ along its transmission axis. When polarized light of intensity $I_0$ passes through a second polarizer whose axis is at angle $\theta$ to the first, the transmitted intensity is $I=I_0\cos^2\theta$ — <strong>Malus's law</strong>. Two crossed polarizers ($\theta=90°$) block light entirely. Sunglasses, LCD screens, and photoelasticity all exploit polarization.</p>
+                <ul>
+                  <li><strong>Speed of light</strong> $c=2.998\times 10^8$ m/s in vacuum.</li>
+                  <li><strong>EM spectrum order</strong> (increasing $f$): radio → microwave → IR → visible → UV → X-ray → γ-ray.</li>
+                  <li><strong>Polarization</strong> — direction of $\vec{E}$ oscillation; only meaningful for transverse waves.</li>
+                  <li><strong>Malus's law</strong>: $I=I_0\cos^2\theta$ (for linearly polarized light through a second polarizer).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — three polarizers</p>
+                  <p>Unpolarized light of intensity $I_0$ passes through three polarizers: the first vertical, the second at 30° to vertical, the third horizontal. Find the final intensity.</p>
+                  <p>Step 1 — first polarizer transmits half of unpolarized: $I_1=I_0/2$, vertically polarized.</p>
+                  <p>Step 2 — second polarizer, $\theta=30°$: $I_2=I_1\cos^2 30°=(I_0/2)(0.75)=0.375 I_0$, polarized at 30°.</p>
+                  <p>Step 3 — third polarizer, angle from 30° to 90° = 60°: $I_3=I_2\cos^2 60°=0.375 I_0\cdot 0.25=0.0938 I_0$.</p>
+                  <p>Step 4 — about 9.4% of $I_0$. Removing the middle polarizer would block light entirely (crossed polarizers). The middle polarizer paradoxically <em>increases</em> transmission. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Applying Malus's law to unpolarized light</strong> — for the first polarizer, intensity halves regardless of orientation.</li>
+                  <li><strong>Saying "$E$ and $B$ point in the same direction"</strong> — they are perpendicular, both perpendicular to propagation.</li>
+                  <li><strong>Confusing wavelength and frequency on the spectrum</strong> — high $f$ ↔ short $\lambda$.</li>
+                  <li><strong>Treating polarization as a property of sound waves</strong> — sound is longitudinal in fluids and cannot be polarized.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.7 — "analyse, in qualitative and quantitative terms, the polarization of electromagnetic waves (e.g., using Malus's law)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v31')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C10L3: Electromagnetic Radiation and Polarization of Light</span>
+                        <span class="vid-duration">51:51</span>
+                        <span class="vid-toggle" id="toggle-v31">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v31">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/031_C10L3__Electromagnetic_Radiation_and_Polarization_of_Light.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=eFswyu6Mm9k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph4u/Unit4_Wave_Nature_of_Light_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph4u/Unit4_Wave_Nature_of_Light_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph4u/Unit4_Wave_Nature_of_Light_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+            <div style="margin-top:10px;"><a href="../../assessments/sph4u/Strand_D_Wave_Nature_of_Light_Notes_and_Worksheet.html" style="display:inline-block;padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Strand D — Notes &amp; Worksheet</a></div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch3.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 3</a>
+<a href="ch5.html" style="padding:10px 18px;background:#dc2626;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 5 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH4U Physics · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

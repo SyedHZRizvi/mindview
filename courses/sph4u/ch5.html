@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Chapter 5: Modern Physics | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\(','\)']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../sph4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH4U Physics)</a></div>
+<div class="strand-tag">Science — Grade 12 University Preparation</div>
+<h1>⚡ SPH4U: Chapter 5: Modern Physics</h1>
+<p>Special relativity, quantum mechanics, photoelectric effect, nuclear physics</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section">
+        <div class="unit-header" style="background:linear-gradient(135deg, #dc2626dd, #dc2626);">
+            <h2>Unit 5: Modern Physics</h2>
+            <p>Special relativity, quantum mechanics, photoelectric effect, nuclear physics</p>
+            <div class="unit-meta">
+                <span>📚 Strand F: Revolutions in Modern Physics</span>
+                <span>⏱️ ~20 hours</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group" style="margin-bottom:16px;"><div class="resource-group-label">📄 Notes & Worksheets</div>
+            <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_205_20-_20Modern_20Physics_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Modern Physics Notes</a>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 — Special Relativity</div>
+            <div class="topic-desc">Einstein's postulates, time dilation, length contraction, mass-energy equivalence E=mc²</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In 1905 Einstein proposed two postulates that overturned 200 years of Newtonian thinking. <strong>Postulate 1 (principle of relativity):</strong> the laws of physics are identical in all inertial reference frames. <strong>Postulate 2 (invariance of $c$):</strong> the speed of light in vacuum, $c$, is the same in every inertial frame, regardless of the motion of the source or observer. The second postulate flatly contradicts Galilean velocity addition; preserving both postulates forces us to abandon absolute simultaneity and absolute time. Space and time become coupled coordinates of a single 4-dimensional spacetime.</p>
+                <p>The dramatic consequences: <strong>time dilation</strong> — a clock moving at speed $v$ relative to an observer ticks slowly: $\Delta t=\gamma\Delta t_0$, where $\Delta t_0$ is the proper time (in the clock's rest frame) and the Lorentz factor $\gamma=1/\sqrt{1-v^2/c^2}\ge 1$. <strong>Length contraction</strong> — an object's length along its direction of motion appears shortened: $L=L_0/\gamma$, where $L_0$ is the proper length. <strong>Mass-energy equivalence</strong> — the total energy of a particle of rest mass $m$ moving at speed $v$ is $E=\gamma mc^2$, comprising rest energy $E_0=mc^2$ and relativistic kinetic energy $E_k=(\gamma-1)mc^2$. At low speeds ($v\ll c$, $\gamma\approx 1+v^2/(2c^2)$) this reduces to Newtonian $E_k=\tfrac12 mv^2$ — the bridge between classical and relativistic mechanics.</p>
+                <ul>
+                  <li><strong>Lorentz factor</strong> $\gamma=1/\sqrt{1-v^2/c^2}$ (dimensionless); $\gamma=1$ at rest, $\to\infty$ as $v\to c$.</li>
+                  <li><strong>Proper time</strong> $\Delta t_0$ — measured in the frame where two events occur at the same place.</li>
+                  <li><strong>Proper length</strong> $L_0$ — measured in the rest frame of the object.</li>
+                  <li><strong>$E=mc^2$</strong> — 1 kg ↔ 9×10¹⁶ J; basis of nuclear energy and particle physics.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — muon decay</p>
+                  <p>A muon has a proper lifetime $\tau_0=2.2\,\mu$s. Cosmic-ray muons created at 15 km altitude travel at $v=0.995c$. Do they reach the ground before decaying?</p>
+                  <p>Step 1 — Lorentz factor: $\gamma=1/\sqrt{1-0.995^2}=1/\sqrt{0.00998}=10.0$.</p>
+                  <p>Step 2 — dilated lifetime as measured from the ground: $\tau=\gamma\tau_0=22\,\mu$s.</p>
+                  <p>Step 3 — distance travelled before decay: $d=v\tau=(0.995)(3\times 10^8)(22\times 10^{-6})=6.6\times 10^3$ m, but exponential decay extends this; the experimental flux at sea level matches relativistic prediction, not the 660 m of classical physics.</p>
+                  <p>Step 4 — alternative: in muon's frame, the 15 km mountain is contracted to $L_0/\gamma=1500$ m, easily covered in 5 μs &lt; lifetime. Same physics, two viewpoints. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Applying $\gamma$ formula at non-relativistic speeds</strong> — pointless; gives 1.000…; classical formulas suffice.</li>
+                  <li><strong>Saying "moving objects gain mass"</strong> — modern convention treats $m$ as invariant rest mass; what increases is $\gamma m$ (relativistic momentum and energy).</li>
+                  <li><strong>Mixing proper and improper time/length</strong> — always identify which observer measures the "proper" quantity.</li>
+                  <li><strong>Using Galilean velocity addition</strong> — must use $u'=(u-v)/(1-uv/c^2)$ at high speeds.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.3 — "solve problems related to Einstein's theory of special relativity (e.g., problems involving time dilation, length contraction, and mass-energy equivalence)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt3')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Time Dilation and Length Contraction — Chad's Prep</span>
+                        <span class="vid-duration">25:55</span>
+                        <span class="vid-toggle" id="toggle-yt3">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt3">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/KbwjjcMGer0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=KbwjjcMGer0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt4')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Length Contraction and Time Dilation — MinutePhysics</span>
+                        <span class="vid-duration">7:48</span>
+                        <span class="vid-toggle" id="toggle-yt4">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt4">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-NN_m2yKAAk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=-NN_m2yKAAk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt13')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Mass-Energy Equivalence E = mc² — Derivation & Nuclear Binding Energy — PBS Space Time</span>
+                        <span class="vid-duration">10:51</span>
+                        <span class="vid-toggle" id="toggle-yt13">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt13">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Xo232kyTsO0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=Xo232kyTsO0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 — Photoelectric Effect &amp; Quantum Mechanics</div>
+            <div class="topic-desc">Photons, work function, threshold frequency, de Broglie wavelength, wave-particle duality</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Despite the success of Maxwell's wave theory of light, three early-1900s experiments forced the introduction of <strong>quanta</strong>. The most decisive was the <strong>photoelectric effect</strong>: light incident on a metal ejects electrons, but only if the frequency $f$ exceeds a metal-specific threshold $f_0$, regardless of intensity. Einstein (1905) explained this by proposing that light comes in discrete bundles called <strong>photons</strong>, each carrying energy $E=hf$, where $h=6.626\times 10^{-34}$ J·s is Planck's constant. The maximum kinetic energy of an ejected electron is $E_{k,max}=hf-\phi$, where $\phi$ is the <strong>work function</strong> (the minimum energy needed to liberate an electron from that metal). Below threshold, $hf<\phi$, no electrons emerge no matter how bright the light. This won Einstein the 1921 Nobel Prize.</p>
+                <p>If light has particle properties, by symmetry matter should have wave properties. De Broglie (1924) postulated that every particle has a wavelength $\lambda=h/p$, where $p$ is its momentum. For electrons accelerated through a potential difference $V$, $p=\sqrt{2meV}$, giving $\lambda$ in the angstrom range — confirmed in 1927 when Davisson and Germer observed electron diffraction from a crystal lattice. Modern electron microscopes exploit this. Wave-particle duality is now a foundational principle: every quantum object is described by a wave function whose intensity gives the probability of finding the particle.</p>
+                <ul>
+                  <li><strong>Planck's constant</strong> $h=6.626\times 10^{-34}$ J·s; reduced $\hbar=h/(2\pi)$.</li>
+                  <li><strong>Photon energy</strong>: $E=hf=hc/\lambda$ (J); often quoted in eV: $E_\text{eV}=1240/\lambda_\text{nm}$.</li>
+                  <li><strong>Photoelectric equation</strong>: $E_{k,max}=hf-\phi=h(f-f_0)$, with $\phi=hf_0$.</li>
+                  <li><strong>de Broglie wavelength</strong>: $\lambda=h/p$ — applies to any particle.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — photoelectrons from sodium</p>
+                  <p>Sodium has $\phi=2.28$ eV. Light of $\lambda=400$ nm shines on it. Find the maximum KE of ejected photoelectrons and the cutoff frequency.</p>
+                  <p>Step 1 — photon energy: $E=hc/\lambda=(6.626\times 10^{-34})(3\times 10^8)/(400\times 10^{-9})=4.97\times 10^{-19}$ J = 3.10 eV.</p>
+                  <p>Step 2 — max KE: $E_{k,max}=E-\phi=3.10-2.28=0.82$ eV = $1.31\times 10^{-19}$ J.</p>
+                  <p>Step 3 — max electron speed: $v=\sqrt{2E_k/m_e}=\sqrt{2(1.31\times 10^{-19})/(9.11\times 10^{-31})}=5.37\times 10^5$ m/s.</p>
+                  <p>Step 4 — cutoff frequency: $f_0=\phi/h=(2.28\times 1.602\times 10^{-19})/(6.626\times 10^{-34})=5.51\times 10^{14}$ Hz (cutoff $\lambda_0=544$ nm, green-yellow). ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing photon energy with frequency</strong> — $E$ has units of J or eV; $f$ has units of Hz. They differ by a factor of $h$.</li>
+                  <li><strong>Thinking brighter light gives more energetic electrons</strong> — intensity gives more electrons (more photons), but $E_{k,max}$ depends only on $f$.</li>
+                  <li><strong>Using $E=hf$ for material particles</strong> — for particles, energy is $\tfrac12 mv^2$ (or relativistic), not $hf$ directly; their wavelength is $h/p$.</li>
+                  <li><strong>Forgetting $\phi$ varies with metal</strong> — Cs ≈ 2.1 eV, Na ≈ 2.3 eV, Cu ≈ 4.7 eV; affects threshold.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "analyse data related to the photoelectric effect, and use the data to determine Planck's constant and the work function of a metal."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt5')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Blackbody Radiation, Photoelectric Effect &amp; de Broglie Relation — Chad's Prep</span>
+                        <span class="vid-duration">37:11</span>
+                        <span class="vid-toggle" id="toggle-yt5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt5">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LJd1ILe6O7s?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=LJd1ILe6O7s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">de Broglie Wavelength — Khan Academy Physics</span>
+                        <span class="vid-duration">10:33</span>
+                        <span class="vid-toggle" id="toggle-yt6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt6">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iTRxuBxttj8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=iTRxuBxttj8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt14')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Bohr Model of the Hydrogen Atom — Electron Transitions, Energy Levels, Lyman & Balmer Series — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">25:46</span>
+                        <span class="vid-toggle" id="toggle-yt14">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt14">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mXxsT1ut35Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=mXxsT1ut35Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 — Nuclear Physics &amp; Radioactivity</div>
+            <div class="topic-desc">Atomic models, nuclear reactions, alpha/beta/gamma decay, half-life, fission and fusion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The atomic nucleus contains protons (charge $+e$, mass ≈ 1.673×10⁻²⁷ kg) and neutrons (no charge, mass ≈ 1.675×10⁻²⁷ kg), collectively called <strong>nucleons</strong>, bound together by the short-range <strong>strong nuclear force</strong>. A nuclide is labeled $^A_Z X$ where $Z$ is the atomic number (number of protons), $A$ is the mass number (total nucleons), and $N=A-Z$ is the number of neutrons. Isotopes of an element share $Z$ but differ in $N$. The mass of a nucleus is less than the sum of its constituents' masses; this <strong>mass defect</strong> $\Delta m$ corresponds (via $E=\Delta mc^2$) to the <strong>binding energy</strong> holding the nucleus together. Iron-56 has the highest binding energy per nucleon (~8.8 MeV), explaining why fusion of light nuclei and fission of heavy ones both release energy.</p>
+                <p>Unstable nuclei decay by three main modes. <strong>Alpha decay:</strong> emission of an $\alpha$ particle ($^4_2\text{He}$ nucleus); $A$ decreases by 4, $Z$ by 2. <strong>Beta-minus decay:</strong> a neutron converts to a proton plus an electron (the $\beta^-$ particle) and an antineutrino; $A$ unchanged, $Z$ increases by 1. <strong>Gamma decay:</strong> high-energy photon emission from an excited nucleus; $A$ and $Z$ unchanged. Each decay obeys conservation of charge, of nucleon number, and of energy-momentum. Decay is a statistical process: the number of undecayed nuclei follows $N(t)=N_0(1/2)^{t/T_{1/2}}$, where $T_{1/2}$ is the <strong>half-life</strong> — the time for half of a population to decay. Half-lives span from microseconds to billions of years.</p>
+                <ul>
+                  <li><strong>Atomic mass unit</strong>: 1 u = 1.661×10⁻²⁷ kg ↔ 931.5 MeV/c² of energy.</li>
+                  <li><strong>Decay law</strong>: $N(t)=N_0 e^{-\lambda t}=N_0(1/2)^{t/T_{1/2}}$; decay constant $\lambda=\ln 2/T_{1/2}$.</li>
+                  <li><strong>Activity</strong> $A=\lambda N$ (Bq = decays/s); 1 Ci = 3.7×10¹⁰ Bq.</li>
+                  <li><strong>Fission</strong> — heavy nucleus splits (e.g. U-235); <strong>fusion</strong> — light nuclei combine (e.g. D + T → He-4 + n).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — radiocarbon dating</p>
+                  <p>$^{14}\text{C}$ has $T_{1/2}=5730$ y. A wooden artifact contains $^{14}\text{C}$ at 25% of the ratio in living wood. Estimate its age.</p>
+                  <p>Step 1 — fraction remaining: $N/N_0=0.25=(1/2)^2$, so 2 half-lives have passed.</p>
+                  <p>Step 2 — age: $t=2\times 5730=11{,}460$ y.</p>
+                  <p>Step 3 — energy-defect cross-check: $^{14}\text{C}\to {}^{14}\text{N}+\beta^-+\bar\nu_e$. Mass excess: $\Delta m c^2=0.156$ MeV released per decay.</p>
+                  <p>Step 4 — uncertainty: dating reliable to ~50,000 y because $^{14}\text{C}$ becomes too sparse beyond ~9 half-lives.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting to conserve $A$ and $Z$</strong> in a decay equation — both must balance on each side.</li>
+                  <li><strong>Confusing $\beta^-$ (electron) and $\beta^+$ (positron) decay</strong> — they change $Z$ in opposite directions.</li>
+                  <li><strong>Linear scaling of decay</strong> — radioactive decay is exponential, not linear; "half-life" times two does NOT give zero remaining.</li>
+                  <li><strong>Mixing fission and fusion</strong> — both release energy because both move toward Fe-56 on the binding-energy curve, but from opposite ends.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.4 — "describe the principal types of nuclear reactions (e.g., alpha, beta, and gamma decay; fission; fusion), and represent them using nuclear equations."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt7')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Nuclear Reactions, Radioactivity, Fission and Fusion</span>
+                        <span class="vid-duration">12:13</span>
+                        <span class="vid-toggle" id="toggle-yt7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt7">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fES21E0qebw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=fES21E0qebw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Nuclear Physics — Fission, Fusion &amp; Half-Life</span>
+                        <span class="vid-duration">15:42</span>
+                        <span class="vid-toggle" id="toggle-yt8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt8">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XJFWyMQFhLU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=XJFWyMQFhLU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt15')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Half Life Chemistry Problems — Nuclear Radioactive Decay Calculations & C-14 Dating — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">21:37</span>
+                        <span class="vid-toggle" id="toggle-yt15">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt15">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WTQvfvoOF3g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=WTQvfvoOF3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt16')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">The Standard Model — Quarks, Leptons & Fundamental Forces — PBS Space Time</span>
+                        <span class="vid-duration">14:09</span>
+                        <span class="vid-toggle" id="toggle-yt16">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt16">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2ynMmhqVGx4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=2ynMmhqVGx4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph4u/Unit5_Modern_Physics_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph4u/Unit5_Modern_Physics_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph4u/Unit5_Modern_Physics_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+            <div style="margin-top:10px;"><a href="../../assessments/sph4u/Strand_E_Modern_Physics_Notes_and_Worksheet.html" style="display:inline-block;padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Strand E — Notes &amp; Worksheet</a></div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch4.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 4</a>
+<a href="../sph4u.html" style="padding:10px 18px;background:#dc2626;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Back to course →</a>
+</div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH4U Physics · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

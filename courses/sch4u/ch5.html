@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCH4U — Chemistry | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #059669; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sch4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SCH4U Chemistry)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧪 SCH4U: Unit 5: Electrochemistry</h1>
+    <p>Oxidation-reduction reactions, galvanic cells, standard reduction potentials, electrolytic cells, Faraday's laws, corrosion</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+            <h2>Unit 5: Electrochemistry</h2>
+            <p>Oxidation-reduction reactions, galvanic cells, standard reduction potentials, electrolytic cells, Faraday's laws, corrosion</p>
+            <div class="unit-meta">
+                <span>📚 Strand E: Electrochemistry</span>
+                <span>📹 4 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⚡ Oxidation-Reduction Reactions</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Oxidation-reduction (redox) reactions</strong> involve transfer of electrons. <strong>Oxidation</strong> is loss of electrons (OIL), an increase in oxidation number; <strong>reduction</strong> is gain of electrons (RIG), a decrease in oxidation number — mnemonic "OIL RIG." Because electrons cannot be lost without being gained, every redox reaction couples an oxidation half-reaction with a reduction half-reaction. The species being oxidized is the <strong>reducing agent</strong> (it donates electrons), and the species being reduced is the <strong>oxidizing agent</strong>.</p>
+            <p>To balance a redox equation in <strong>acidic solution</strong>: (1) write the two half-reactions; (2) balance atoms other than O and H; (3) balance O by adding H₂O; (4) balance H by adding H⁺; (5) balance charge by adding electrons; (6) multiply each half-reaction so the electrons cancel, and add. In <strong>basic solution</strong>, follow the same procedure, then add OH⁻ to both sides to neutralize all H⁺, combine to give H₂O, and cancel. Common oxidizing agents include MnO₄⁻ (purple → colourless or brown MnO₂), Cr₂O₇²⁻ (orange → green Cr³⁺), H₂O₂, and the halogens; common reducing agents include active metals (Zn, Fe), C, H₂, and reduced organic groups (–CHO).</p>
+            <p>Redox underpins respiration (glucose → CO₂), photosynthesis (reverse), combustion, metallurgy (smelting), corrosion, batteries, and electroplating.</p>
+            <ul>
+              <li><strong>Oxidation number</strong> — formal charge if all bonds were ionic.</li>
+              <li><strong>Oxidation</strong> — loss of e⁻; oxidation number increases.</li>
+              <li><strong>Reduction</strong> — gain of e⁻; oxidation number decreases.</li>
+              <li><strong>Half-reaction</strong> — shows one of oxidation or reduction with explicit electrons.</li>
+              <li><strong>Disproportionation</strong> — same species both oxidized and reduced (e.g., 2H₂O₂ → 2H₂O + O₂).</li>
+              <li><strong>Spectator ion</strong> — appears unchanged on both sides; not part of the redox change.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Balancing MnO₄⁻ + Fe²⁺ in acidic solution</p>
+              <p>Reduction: \(MnO_4^- + 8H^+ + 5e^- \rightarrow Mn^{2+} + 4H_2O\).</p>
+              <p>Oxidation: \(Fe^{2+} \rightarrow Fe^{3+} + e^-\) — multiply by 5: \(5Fe^{2+} \rightarrow 5Fe^{3+} + 5e^-\).</p>
+              <p>Add and cancel 5 e⁻: \(\mathbf{MnO_4^- + 8H^+ + 5Fe^{2+} \rightarrow Mn^{2+} + 5Fe^{3+} + 4H_2O}\). Check: charges (−1 + 8 + 10 = +17 = +2 + 15 + 0). Balanced.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Forgetting to balance charge before adding electrons.</li>
+              <li>Confusing oxidizing agent (gets reduced) with oxidized species (the one losing e⁻).</li>
+              <li>Mis-assigning oxidation numbers — remember peroxides (O = −1), superoxides (O = −½), and metal hydrides (H = −1).</li>
+              <li>Failing to convert acidic to basic balancing by simply changing "H⁺ → OH⁻" — you must add OH⁻ and combine with H⁺ to give H₂O.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.2 — "use appropriate procedures and tools to balance equations for redox reactions, using oxidation numbers and the half-reaction method, in both acidic and basic solutions."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Half Reaction Method, Balancing Redox in Acidic &amp; Basic Solution — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">23:14</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fdbrhQAM9Gw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=fdbrhQAM9Gw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔋 Galvanic (Voltaic) Cells</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>galvanic (voltaic) cell</strong> converts the chemical energy of a spontaneous redox reaction into electrical work. It is constructed from two <strong>half-cells</strong> — each an electrode dipped in an electrolyte — connected by an external wire (for electron flow) and a salt bridge (for ion flow that maintains electroneutrality). The electrode where oxidation occurs is the <strong>anode</strong> (negative terminal in a galvanic cell); the electrode where reduction occurs is the <strong>cathode</strong> (positive terminal). Electrons flow externally from anode to cathode. The mnemonic "AN OX, RED CAT" pairs anode with oxidation and cathode with reduction.</p>
+            <p>The <strong>cell potential</strong>, \(E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}\), is calculated from standard reduction potentials \(E^\circ\) (V), tabulated against the standard hydrogen electrode (SHE = 0.000 V by definition). A positive \(E^\circ_{\text{cell}}\) means the reaction is spontaneous as written. The free-energy link is \(\Delta G^\circ = -nFE^\circ_{\text{cell}}\), with \(F = 96\,485\,\text{C/mol}\) and n = moles of electrons transferred per cycle. Under non-standard conditions the <strong>Nernst equation</strong> applies: \(E = E^\circ - \dfrac{RT}{nF}\ln Q = E^\circ - \dfrac{0.0592}{n}\log Q\) at 25 °C.</p>
+            <p>Practical examples include the Daniell cell (Zn|Zn²⁺‖Cu²⁺|Cu, E° ≈ +1.10 V), the lead-acid car battery (Pb / PbO₂, 2.04 V/cell), the alkaline dry cell (Zn / MnO₂, 1.5 V), and the lithium-ion cell (Li-graphite / LiCoO₂, ~3.7 V).</p>
+            <ul>
+              <li><strong>Anode</strong> — oxidation; negative in galvanic cells.</li>
+              <li><strong>Cathode</strong> — reduction; positive in galvanic cells.</li>
+              <li><strong>Salt bridge</strong> — maintains electroneutrality; ions migrate to balance charge build-up.</li>
+              <li><strong>Standard reduction potential (\(E^\circ\))</strong> — V vs SHE; intensive (not multiplied when scaling).</li>
+              <li><strong>Faraday's constant</strong> — F = 96,485 C/mol of electrons.</li>
+              <li><strong>Nernst equation</strong> — corrects E° for non-standard concentrations.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Daniell cell EMF and ΔG°</p>
+              <p>For Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s): E°(Cu²⁺/Cu) = +0.34 V; E°(Zn²⁺/Zn) = −0.76 V.</p>
+              <p>E°_cell = E°_cathode − E°_anode = (+0.34) − (−0.76) = <strong>+1.10 V</strong>. With n = 2:</p>
+              <p>ΔG° = −nFE° = −(2)(96,485)(1.10) = −212,267 J/mol = <strong>−212 kJ/mol</strong>. Strongly product-favoured, consistent with the spontaneous corrosion of zinc in copper sulfate solution.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Swapping anode and cathode signs — in galvanic cells, anode is negative; in electrolytic cells, anode is positive.</li>
+              <li>Multiplying E° values when balancing electrons — E° is intensive, do not scale.</li>
+              <li>Confusing electron flow (in the wire) with ion flow (in solution and salt bridge).</li>
+              <li>Forgetting that adding inert electrolyte changes Q but not the species in the reaction.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.4 — "describe the structure and function of galvanic cells (e.g., dry cells, alkaline batteries, lead-acid batteries, fuel cells) and predict the spontaneity of redox reactions using a table of standard reduction potentials."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Galvanic Cells, Cell Potential (E°cell) &amp; Standard Reduction Potentials</span>
+                <span class="vid-duration">42:01</span>
+                <span class="vid-toggle" id="toggle-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fPqHY1Wevzw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=fPqHY1Wevzw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔌 Electrolytic Cells &amp; Faraday's Laws</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <strong>electrolytic cell</strong> uses electrical energy from an external source (a power supply) to drive a non-spontaneous redox reaction (ΔG &gt; 0, E°_cell &lt; 0). The geometry resembles a galvanic cell, but with crucial sign reversals: the <strong>anode is positive</strong> (connected to the + terminal of the battery, attracting anions which are oxidized) and the <strong>cathode is negative</strong> (attracting cations which are reduced). Electrons still flow externally from anode to cathode through the wire — this is invariant.</p>
+            <p><strong>Faraday's first law of electrolysis</strong>: the mass of substance produced or consumed at an electrode is directly proportional to the charge passed. <strong>Faraday's second law</strong>: when the same charge is passed through different electrolytes, the masses produced are proportional to their equivalent masses (molar mass / n, where n is the number of electrons per ion). The quantitative relationship is \(\text{mol of product} = \dfrac{I \cdot t}{n F}\), where I is current (A), t is time (s), F is Faraday's constant (96,485 C/mol e⁻), and n is the electron transfer per formula unit.</p>
+            <p>Industrial applications include electroplating (depositing metals such as Cu, Ag, Au, Cr, Zn for corrosion protection and appearance), electrorefining (purification of Cu to ≥ 99.99%), chlor-alkali process (NaCl(aq) → Cl₂ + H₂ + NaOH), and the Hall-Héroult process (electrolysis of Al₂O₃ dissolved in molten cryolite to extract aluminum at ≈ 950 °C).</p>
+            <ul>
+              <li><strong>Electrolysis</strong> — using electricity to drive a non-spontaneous reaction.</li>
+              <li><strong>Anode (electrolytic cell)</strong> — positive electrode; oxidation.</li>
+              <li><strong>Cathode (electrolytic cell)</strong> — negative electrode; reduction.</li>
+              <li><strong>Charge</strong> — \(Q = It\) in coulombs.</li>
+              <li><strong>Faraday's constant</strong> — F = 96,485 C/mol of electrons.</li>
+              <li><strong>Electrolyte</strong> — molten salt or aqueous solution containing mobile ions.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Mass of copper plated by electrolysis</p>
+              <p>A current of 2.50 A flows through a CuSO₄(aq) solution for 30.0 minutes. What mass of copper is deposited on the cathode? (Cu²⁺ + 2e⁻ → Cu; M(Cu) = 63.55 g/mol).</p>
+              <p>Charge: Q = It = (2.50 A)(30.0 × 60 s) = 4500 C.</p>
+              <p>Moles of e⁻: 4500 / 96,485 = 0.04664 mol e⁻.</p>
+              <p>Moles of Cu: 0.04664 / 2 = 0.02332 mol (n = 2).</p>
+              <p>Mass: 0.02332 × 63.55 = <strong>1.48 g Cu</strong>.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Mixing up anode and cathode polarity between galvanic and electrolytic cells. Anode is always oxidation, cathode always reduction; only the sign convention flips.</li>
+              <li>Forgetting to divide by n (electrons per formula unit) when converting moles of e⁻ to moles of product.</li>
+              <li>Using minutes or hours directly without converting time to seconds.</li>
+              <li>Ignoring competing electrolysis reactions in aqueous solutions (e.g., water oxidation/reduction may occur instead of the dissolved ion).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.5 — "describe the structure and function of electrolytic cells, and explain how they differ from galvanic cells, including a description of the relationship between current, time, and mass of substance produced (i.e., Faraday's law of electrolysis)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Faraday's First Law of Electrolysis — Khan Academy</span>
+                <span class="vid-duration">10:24</span>
+                <span class="vid-toggle" id="toggle-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/sLq6DoNwn3g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=sLq6DoNwn3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🦠 Corrosion &amp; Prevention</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Corrosion</strong> is the spontaneous deterioration of metal by environmental redox reactions. Iron and steel corrode through a coupled electrochemical mechanism in the presence of water and oxygen: an anodic region oxidizes Fe → Fe²⁺ + 2e⁻ (E° = −0.44 V), and a cathodic region reduces O₂ + 2H₂O + 4e⁻ → 4OH⁻ (E° = +0.40 V), giving an overall E° ≈ +0.84 V — strongly spontaneous. The Fe²⁺ ions diffuse, are further oxidized to Fe³⁺ by O₂, and precipitate as hydrated iron(III) oxide, Fe₂O₃·nH₂O (rust). Salt (NaCl on roads or in sea air) accelerates corrosion by increasing electrolyte conductivity, allowing the anode-cathode current loop to operate over a larger area.</p>
+            <p><strong>Corrosion prevention</strong> works by interrupting one of the requirements (metal, water, oxygen, electrolyte). Strategies include: (i) <em>barrier coatings</em> — paint, plastic, oil, or chromate conversion — which physically exclude water/O₂; (ii) <em>galvanizing</em> — coating with zinc, which acts as a <strong>sacrificial anode</strong> because Zn (E° = −0.76 V) oxidizes preferentially to Fe and even protects scratched areas; (iii) <em>cathodic protection</em> — connecting a more active metal (Zn, Mg, Al) to the structure (used on pipelines, ship hulls, buried tanks); (iv) <em>impressed current</em> — an external DC source maintains the protected metal as a cathode; (v) <em>alloying</em> — stainless steel (≥ 10.5% Cr) forms a self-passivating Cr₂O₃ film; (vi) <em>tin-plating</em> — works only as a barrier (Sn is less active than Fe, so it cannot protect sacrificially; scratched tin cans actually rust faster).</p>
+            <p>STSE relevance includes infrastructure costs (NACE International estimates corrosion at 3–4% of global GDP), bridge collapses, aircraft safety, and the durability of green-energy systems.</p>
+            <ul>
+              <li><strong>Rust</strong> — hydrated iron(III) oxide, Fe₂O₃·nH₂O.</li>
+              <li><strong>Sacrificial anode</strong> — more active metal oxidized in place of the protected one.</li>
+              <li><strong>Cathodic protection</strong> — forcing the metal to be the cathode (no oxidation).</li>
+              <li><strong>Galvanizing</strong> — coating Fe with Zn (sacrificial).</li>
+              <li><strong>Passivation</strong> — formation of a protective oxide layer (Al₂O₃ on aluminum, Cr₂O₃ on stainless steel).</li>
+              <li><strong>Anodizing</strong> — electrolytically thickening the oxide layer on aluminum.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Why does zinc protect iron?</p>
+              <p>Compare E° values: E°(Zn²⁺/Zn) = −0.76 V; E°(Fe²⁺/Fe) = −0.44 V. The more negative reduction potential means Zn is the stronger reducing agent — it oxidizes more easily than Fe.</p>
+              <p>If Zn is in electrical contact with Fe in the presence of water and O₂, the redox reaction \(Zn + Fe^{2+} \rightarrow Zn^{2+} + Fe\) has E°_cell = (−0.44) − (−0.76) = +0.32 V &gt; 0. Zn donates electrons preferentially, leaving Fe untouched. As long as Zn remains, Fe is protected — even at scratches in the coating, because the entire Fe surface is held at the cathodic potential.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Claiming tin protects iron sacrificially — it does not. Tin protects only as a barrier; scratched tin-plated steel rusts faster than bare steel.</li>
+              <li>Confusing passivation (a thin protective oxide) with general rusting.</li>
+              <li>Believing dry air alone causes rust — both H₂O and O₂ are required.</li>
+              <li>Selecting an anode metal less active than the one being protected.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F1.1 — "analyse, on the basis of research, the importance of an electrochemical technology (e.g., production of metals, fuel cells, sacrificial anodes) to society and the environment."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Electrochemistry Made Easy: Corrosion — FuseSchool - Global Education</span>
+                <span class="vid-duration">14:50</span>
+                <span class="vid-toggle" id="toggle-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/TKMgUCq3npg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=TKMgUCq3npg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔢 Oxidation Numbers</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <strong>oxidation number</strong> (oxidation state) is the formal charge an atom would have if every bond in the molecule were treated as ionic, with the more electronegative atom taking the shared electrons. It is a bookkeeping device for tracking electron transfer in redox reactions and need not equal the real partial charge on the atom.</p>
+            <p>Assigning oxidation numbers follows a hierarchy of rules: (1) Elements in their standard states have ON = 0 (e.g., Na, Cl₂, O₂, P₄, S₈); (2) Monatomic ions: ON = ionic charge (e.g., Na⁺ is +1, S²⁻ is −2); (3) Group 1 metals are always +1, group 2 metals are always +2 in compounds; (4) Aluminum is +3; (5) Fluorine is always −1 in compounds; (6) Hydrogen is +1 with non-metals and −1 with metals (hydrides like NaH); (7) Oxygen is −2 in most compounds, but −1 in peroxides (H₂O₂, Na₂O₂), −½ in superoxides (KO₂), and +2 in OF₂; (8) The sum of all ON's equals the overall charge — zero for neutral molecules, the ionic charge for polyatomic ions. When in doubt, work outward from the well-defined atoms (alkali metals, halogens, oxygen, hydrogen) to find unknowns.</p>
+            <p>Redox reactions can be identified by changes in ON: any atom whose oxidation number changes between reactants and products has been oxidized (ON increases) or reduced (ON decreases). Reactions in which ON's do not change are <em>not</em> redox.</p>
+            <ul>
+              <li><strong>Oxidation number</strong> — formal charge as if all bonds were ionic.</li>
+              <li><strong>Group 1 metals</strong> — always +1; <strong>Group 2</strong> — always +2.</li>
+              <li><strong>Fluorine</strong> — always −1 in compounds.</li>
+              <li><strong>Oxygen</strong> — usually −2; −1 in peroxides; +2 in OF₂.</li>
+              <li><strong>Hydrogen</strong> — +1 with non-metals; −1 in metal hydrides.</li>
+              <li><strong>Sum rule</strong> — total ON = overall charge.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Oxidation number of S in S₂O₃²⁻</p>
+              <p>For the thiosulfate ion S₂O₃²⁻: 3 oxygens at −2 each gives −6. The total charge is −2, so the two S atoms together must contribute +4, meaning each S has an average ON of +2.</p>
+              <p>(In the actual structure, the two sulfurs have different oxidation numbers — one central S at +5 and one terminal S at −1 — but the "average" +2 is what bulk redox bookkeeping uses.)</p>
+              <p>Compare with sulfate SO₄²⁻: 4 O × (−2) = −8, total charge −2, so S = +6 — fully oxidized.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Treating ON as the actual ionic charge on an atom in a covalent molecule.</li>
+              <li>Forgetting the exceptions: peroxides (O = −1), superoxides (O = −½), metal hydrides (H = −1), OF₂ (O = +2).</li>
+              <li>Assigning ON to elements in the standard state as anything other than zero.</li>
+              <li>Not letting the sum of ON's equal the species' total charge (zero for neutral, ionic charge for ions).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.1 — "explain the difference between oxidation and reduction with reference to the loss and gain of electrons, and use oxidation numbers to identify the substances oxidized and reduced in redox reactions."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Assigning Oxidation Numbers — Tyler DeWitt</span>
+                <span class="vid-duration">12:23</span>
+                <span class="vid-toggle" id="toggle-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9nxfgI77Mxk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=9nxfgI77Mxk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">📝 Cell Notation &amp; Diagrams</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Cell notation</strong> (also called line or shorthand notation) is the IUPAC-standardized way to describe an electrochemical cell in one line of text. The convention places the <strong>anode on the left</strong> and the <strong>cathode on the right</strong>, separated by a salt bridge represented as a double vertical bar "‖". A single vertical bar "|" denotes a phase boundary (e.g., between solid metal and its aqueous ion), and commas separate species in the same phase. For example, the Daniell cell is written:</p>
+            <p>\(\text{Zn(s)} \mid \text{Zn}^{2+}(\text{aq, 1 M}) \;\|\; \text{Cu}^{2+}(\text{aq, 1 M}) \mid \text{Cu(s)}\)</p>
+            <p>Reading left to right: zinc metal (the anode) is oxidized to Zn²⁺; electrons travel through the external circuit; Cu²⁺ is reduced to copper metal at the cathode. Cells with no inert metal include an <strong>inert electrode</strong> such as platinum or graphite, separated by a comma from the redox-active species in solution. For example, the Fe²⁺/Fe³⁺ couple paired with a hydrogen electrode is:</p>
+            <p>\(\text{Pt(s)} \mid \text{H}_2(\text{g, 1 bar}) \mid \text{H}^+(\text{aq, 1 M}) \;\|\; \text{Fe}^{3+}(\text{aq}), \text{Fe}^{2+}(\text{aq}) \mid \text{Pt(s)}\)</p>
+            <p>Concentrations or pressures may be specified in parentheses after each species when non-standard. A complete cell diagram should also show the direction of electron flow (anode → cathode externally), ion migration through the salt bridge (cations toward the cathode compartment, anions toward the anode), and the half-reaction at each electrode.</p>
+            <ul>
+              <li><strong>Single bar</strong> "|" — phase boundary.</li>
+              <li><strong>Double bar</strong> "‖" — salt bridge.</li>
+              <li><strong>Comma</strong> "," — same phase, different species.</li>
+              <li><strong>Anode on left</strong>, <strong>cathode on right</strong> by convention.</li>
+              <li><strong>Inert electrode</strong> — Pt or graphite, used when neither half-cell species is a solid metal.</li>
+              <li><strong>Standard state</strong> — 1 M aqueous, 1 bar gases, pure solid/liquid, 25 °C unless stated.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Writing cell notation</p>
+              <p>An aluminum electrode in 1.0 M Al(NO₃)₃ is connected through a salt bridge to a silver electrode in 1.0 M AgNO₃. E°(Al³⁺/Al) = −1.66 V; E°(Ag⁺/Ag) = +0.80 V.</p>
+              <p>Identify the anode (lower E°): Al, oxidized as Al → Al³⁺ + 3e⁻. Cathode: Ag, reduced as Ag⁺ + e⁻ → Ag.</p>
+              <p>Cell notation: \(\text{Al(s)} \mid \text{Al}^{3+}(\text{aq, 1 M}) \;\|\; \text{Ag}^+(\text{aq, 1 M}) \mid \text{Ag(s)}\).</p>
+              <p>E°_cell = (+0.80) − (−1.66) = <strong>+2.46 V</strong>. Spontaneous.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Putting the cathode on the left — convention is always anode | left, cathode | right.</li>
+              <li>Using a single bar instead of the double bar for the salt bridge.</li>
+              <li>Forgetting to include an inert electrode when no half-cell species is itself a solid conductor (e.g., Fe²⁺/Fe³⁺ needs Pt).</li>
+              <li>Omitting concentrations under non-standard conditions, making Nernst-equation calculations impossible.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "draw labelled diagrams to represent the components of galvanic and electrolytic cells (e.g., anode, cathode, salt bridge, direction of electron flow, sign of electrodes, products of oxidation and reduction)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cell Notation Practice Problems, Voltaic Cells — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">14:51</span>
+                <span class="vid-toggle" id="toggle-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iWqUWwyPkSs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iWqUWwyPkSs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">⚖️ Faraday's Second Law</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Michael Faraday's quantitative work on electrolysis (1832–1834) produced two laws that underlie modern electrochemistry. <strong>Faraday's first law</strong> states that the mass of substance produced (or consumed) at an electrode is proportional to the quantity of electric charge passed: \(m \propto Q = I \cdot t\). <strong>Faraday's second law</strong> states that, for a given amount of electric charge, the masses of different substances deposited or liberated are proportional to their <strong>equivalent masses</strong> (molar mass divided by the number of electrons per ion). In modern form: \(m = \dfrac{M \cdot I \cdot t}{n F}\), where M is molar mass (g/mol), n is electrons per formula unit, and F = 96 485 C/mol.</p>
+            <p>The practical implication is that, if the same current flows through several electrolytic cells in <strong>series</strong> (so each cell sees identical charge), the moles of metal deposited in each cell are in the ratio 1/n. For example, with the same charge: passing through Ag⁺ (n = 1), Cu²⁺ (n = 2), and Al³⁺ (n = 3), the molar ratio of deposited metals is 6 : 3 : 2 (Ag : Cu : Al). The mass ratio uses molar masses: \(\dfrac{M_{Ag}}{1} : \dfrac{M_{Cu}}{2} : \dfrac{M_{Al}}{3}\) = 107.9 : 31.8 : 9.0.</p>
+            <p>These laws permit precise current measurement (coulometry), electroplating thickness control, and the metallurgical recovery of metals such as copper (refining), aluminum (Hall-Héroult), and sodium (Downs cell). They also gave the first reliable estimate of Avogadro's number once the elementary charge was known.</p>
+            <ul>
+              <li><strong>Equivalent mass</strong> — M / n (g per mole of electrons).</li>
+              <li><strong>Faraday's first law</strong> — \(m \propto Q\).</li>
+              <li><strong>Faraday's second law</strong> — \(m \propto M/n\) for a given Q.</li>
+              <li><strong>Coulomb</strong> — SI unit of charge; 1 C = 1 A · 1 s.</li>
+              <li><strong>Mole of electrons</strong> — 1 F = 96,485 C.</li>
+              <li><strong>Cells in series</strong> — same current, therefore same charge through each.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Comparing masses deposited from Ag and Cu cells in series</p>
+              <p>A current of 3.00 A flows for 60.0 minutes through two electrolytic cells connected in series — one containing AgNO₃, the other CuSO₄. Find the masses of Ag (M = 107.87 g/mol, n = 1) and Cu (M = 63.55 g/mol, n = 2) deposited.</p>
+              <p>Q = It = (3.00)(3600) = 10,800 C. Moles of e⁻ = 10,800 / 96,485 = 0.1119 mol e⁻.</p>
+              <p>Ag: moles = 0.1119, mass = 0.1119 × 107.87 = <strong>12.07 g Ag</strong>.</p>
+              <p>Cu: moles = 0.1119 / 2 = 0.0560, mass = 0.0560 × 63.55 = <strong>3.56 g Cu</strong>.</p>
+              <p>Mass ratio Ag : Cu = 12.07 : 3.56 ≈ 3.39, matching the ratio of equivalent masses M_Ag / (M_Cu/2) = 107.87 / 31.78 = 3.39.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Treating cells in parallel as series — in parallel, each cell sees only part of the current.</li>
+              <li>Forgetting that n is electrons <em>per formula unit</em> of the deposited substance — for Cl₂ gas (2Cl⁻ → Cl₂ + 2e⁻), n = 2 per Cl₂ molecule.</li>
+              <li>Using minutes or hours directly in Q = It instead of converting to seconds.</li>
+              <li>Comparing moles when the question asks for mass (or vice versa).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.5 — "solve problems related to electrolytic cells involving the quantity of charge transferred, current, time, and the amounts of substance produced or consumed (e.g., using Faraday's law of electrolysis)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Faraday's Second Law of Electrolysis — Khan Academy</span>
+                <span class="vid-duration">10:42</span>
+                <span class="vid-toggle" id="toggle-yt13">▶</span>
+            </div>
+            <div class="video-player" id="player-yt13">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/w9o1VP7m_Nc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=w9o1VP7m_Nc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🏭 Industrial Electrochemistry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Electrochemistry sits at the heart of several of the largest industrial processes on Earth, particularly those that produce metals, chlorine, and energy storage devices. The <strong>Hall–Héroult process</strong> (independently developed by Charles Hall and Paul Héroult in 1886) extracts aluminum from purified bauxite-derived Al₂O₃. Because Al³⁺ is too stably bound in the oxide for chemical reduction, electrolysis is used: Al₂O₃ is dissolved in molten cryolite (Na₃AlF₆) at about 950 °C — far below alumina's 2072 °C melting point — and electrolysed between carbon electrodes. At the cathode, \(Al^{3+} + 3e^- \rightarrow Al(\ell)\); at the carbon anode, \(2O^{2-} + C \rightarrow CO_2 + 4e^-\), so the anodes are gradually consumed. Producing one tonne of aluminum requires about 13–15 MWh of electricity — about 1% of global electricity demand goes to aluminum smelting — which is why recycling (only ~5% of the original energy) is environmentally critical.</p>
+            <p>The <strong>chlor-alkali process</strong> electrolyses brine (NaCl(aq)) to make Cl₂ at the anode (\(2Cl^- \rightarrow Cl_2 + 2e^-\)) and H₂ + NaOH at the cathode (\(2H_2O + 2e^- \rightarrow H_2 + 2OH^-\)). A cation-exchange membrane separates the compartments to prevent the products from mixing and reacting. This single process supplies essentially all industrial Cl₂ (for PVC, water treatment, solvents) and NaOH (for paper, soap, alumina refining).</p>
+            <p><strong>Fuel cells</strong> are galvanic devices that consume reactants supplied continuously, generating electricity as long as fuel flows. A hydrogen-oxygen PEM fuel cell, used in vehicles and as backup power, has anode \(2H_2 \rightarrow 4H^+ + 4e^-\), cathode \(O_2 + 4H^+ + 4e^- \rightarrow 2H_2O\), overall \(2H_2 + O_2 \rightarrow 2H_2O\) with E°_cell = +1.23 V. Efficiency can exceed 60% (vs ≈ 30% for internal combustion), and the only by-product is water — though "green" hydrogen production by water electrolysis using renewable electricity is required to make the overall cycle low-carbon.</p>
+            <ul>
+              <li><strong>Hall-Héroult process</strong> — Al from Al₂O₃ in molten cryolite (~950 °C).</li>
+              <li><strong>Chlor-alkali process</strong> — NaCl(aq) → Cl₂ + H₂ + NaOH.</li>
+              <li><strong>Fuel cell</strong> — galvanic; reactants supplied continuously.</li>
+              <li><strong>PEM</strong> — proton-exchange membrane (Nafion).</li>
+              <li><strong>Electrorefining</strong> — purification of Cu, Ni, Au via electrolysis.</li>
+              <li><strong>Downs cell</strong> — electrolysis of molten NaCl for sodium production.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Electricity to make 1.00 tonne of aluminum (Hall-Héroult)</p>
+              <p>Mass of Al = 1.00 × 10⁶ g. Moles of Al = 1.00 × 10⁶ / 26.98 = 3.706 × 10⁴ mol. Each Al³⁺ requires 3 electrons, so moles of e⁻ = 3 × 3.706 × 10⁴ = 1.112 × 10⁵ mol.</p>
+              <p>Charge: Q = nF = 1.112 × 10⁵ × 96,485 = 1.073 × 10¹⁰ C.</p>
+              <p>At a typical operating voltage of 4.5 V, energy = QV = 1.073 × 10¹⁰ × 4.5 = 4.83 × 10¹⁰ J = <strong>1.34 × 10⁴ kWh ≈ 13.4 MWh per tonne</strong>, matching the published 13–15 MWh range. Recycling aluminum saves about 95% of this energy.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Forgetting that the carbon anode is consumed in the Hall-Héroult cell, so it must be continuously replaced.</li>
+              <li>Confusing fuel cells (galvanic, continuous fuel) with batteries (sealed, finite reactants).</li>
+              <li>Assuming hydrogen is automatically "clean" — its environmental benefit depends on the source of energy used to make it.</li>
+              <li>Reporting energy for one mole of Al instead of one tonne — keep mass units consistent.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F1.2 — "assess the environmental and social impact of an electrochemical technology (e.g., production of metals such as aluminum or copper; fuel cells), and propose ways to minimize the negative impact."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Making Aluminium (The Hall-Héroult Process)</span>
+                <span class="vid-duration">10:09</span>
+                <span class="vid-toggle" id="toggle-yt14">▶</span>
+            </div>
+            <div class="video-player" id="player-yt14">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/aSx59lbc5cg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=aSx59lbc5cg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sch4u/Unit5_Electrochemistry_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sch4u/Unit5_Electrochemistry_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sch4u/Unit5_Electrochemistry_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../sch4u.html" class="chnav-btn chnav-next chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SCH4U Chemistry · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

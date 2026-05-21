@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#059669dd,#059669);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 6: Exponential & Logarithmic Functions</h1>
+<p>Logarithms, transformations, log laws, logarithmic scales</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit6">
+        <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+            <h2>Chapter 6: Exponential & Logarithmic Functions</h2>
+            <p>Logarithms, transformations, log laws, logarithmic scales</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Exponential & Logarithmic</span>
+                <span>⏱️ ~14h</span>
+                <span>📹 13 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">6.1 — Inverse of Exponential Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An exponential function \(f(x)=b^{x}\) with base \(b&gt;0,\,b\ne 1\) takes a real input \(x\) and produces a positive output \(b^{x}\). The function is one-to-one (each input gives a distinct output), so it has an inverse. The inverse takes a positive number and returns the exponent needed to produce it — that inverse function is the <strong>logarithm</strong>: \(\log_{b}y=x\) means exactly \(b^{x}=y\).</p>
+                <p>Graphically, the inverse of \(y=b^{x}\) is its reflection across the line \(y=x\). Every key feature swaps: the exponential's \(y\)-intercept \((0,1)\) becomes the logarithm's \(x\)-intercept \((1,0)\); the horizontal asymptote \(y=0\) becomes a vertical asymptote \(x=0\); the domain of one becomes the range of the other. So \(y=b^{x}\) has domain \(\mathbb{R}\) and range \((0,\infty)\); \(y=\log_{b}x\) has domain \((0,\infty)\) and range \(\mathbb{R}\).</p>
+                <p>The point of this section is to anchor logarithms as inverses, not abstract symbols. Whenever you see \(\log_{b}y=x\), translate it to "the exponent that takes base \(b\) to \(y\)". That habit makes every later log law feel inevitable.</p>
+                <ul>
+                  <li><strong>Exponential function</strong> — \(f(x)=b^{x}\), \(b&gt;0,\,b\ne 1\); domain \(\mathbb{R}\), range \((0,\infty)\).</li>
+                  <li><strong>Logarithm</strong> — the inverse of the exponential: \(\log_{b}y=x\iff b^{x}=y\), defined for \(y&gt;0\).</li>
+                  <li><strong>Inverse relationship</strong> — graphs of \(y=b^{x}\) and \(y=\log_{b}x\) are reflections in \(y=x\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Find the inverse algebraically</p>
+                  <p>Find the inverse of \(f(x)=3^{x}-2\).</p>
+                  <p>Step 1. Write \(y=3^{x}-2\) and swap \(x\) and \(y\): \(x=3^{y}-2\).</p>
+                  <p>Step 2. Solve for \(y\): \(3^{y}=x+2\), so \(y=\log_{3}(x+2)\).</p>
+                  <p>Step 3. \(f^{-1}(x)=\log_{3}(x+2)\). Domain of inverse: \(x+2&gt;0\Rightarrow x&gt;-2\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Key features from inverse</p>
+                  <p>State the domain, range, intercepts, and asymptote of \(g(x)=\log_{2}x\).</p>
+                  <p>Step 1. Domain: \((0,\infty)\). Range: \(\mathbb{R}\).</p>
+                  <p>Step 2. \(x\)-intercept where \(\log_{2}x=0\): \(x=2^{0}=1\). Intercept \((1,0)\).</p>
+                  <p>Step 3. No \(y\)-intercept (zero is not in the domain).</p>
+                  <p>Step 4. Vertical asymptote at \(x=0\) (the boundary of the domain).</p>
+                </div>
+                <ul>
+                  <li>Logarithms only accept positive inputs — the argument of every log must be positive.</li>
+                  <li>The base of a logarithm must be positive and not equal to 1; otherwise the inverse fails.</li>
+                  <li>Reflecting across \(y=x\) means swapping every \((a,b)\) on the original to \((b,a)\) — useful for sketching by hand.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "recognize the logarithm of a number to a given base as the exponent to which the base must be raised to get the number… and evaluate simple logarithmic expressions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v89')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 6.1a Inverse of an Exponential Function and their Properties</span>
+                        <span class="vid-duration">17:37</span>
+                        <span class="vid-toggle" id="toggle-v89">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v89">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/089_MHF4U_6.1a_Inverse_of_an_Exponential_Function_and_their_Properties.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ALKGrAKaETc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v90')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.1b Inverse of an Exponential Function Homework Solutions</span>
+                        <span class="vid-duration">2:50</span>
+                        <span class="vid-toggle" id="toggle-v90">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v90">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/090_MHF4U_6.1b_Inverse_of_an_Exponential_Function_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=5Fjq4pnboOk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">6.2 — Introduction to Logarithms</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The defining relationship of logarithms is the <strong>exponential–logarithmic equivalence</strong>: \(\log_{b}x=y\) is the same statement as \(b^{y}=x\). Reading equations both ways — exponential to logarithmic, logarithmic to exponential — is the most fundamental skill in this chapter. It is the move you make every time you evaluate a log, solve a log equation, or apply a log law.</p>
+                <p>Two special logarithms have shortened names. The <strong>common logarithm</strong> has base 10 and is written \(\log x\) (no base shown). The <strong>natural logarithm</strong> has base \(e\approx 2.71828\) and is written \(\ln x\). Both appear constantly in science: \(\log\) shows up in pH, dB, magnitude scales; \(\ln\) shows up in growth, decay, and calculus.</p>
+                <p>To evaluate a logarithm exactly, ask: "to what power must I raise \(b\) to get \(x\)?" For example, \(\log_{2}8=3\) because \(2^{3}=8\); \(\log_{5}\tfrac{1}{25}=-2\) because \(5^{-2}=\tfrac{1}{25}\); \(\log_{4}2=\tfrac{1}{2}\) because \(4^{1/2}=2\). Recognising these patterns quickly is the goal.</p>
+                <ul>
+                  <li><strong>Exponential–log equivalence</strong> — \(\log_{b}x=y\iff b^{y}=x\).</li>
+                  <li><strong>Common logarithm</strong> — \(\log x=\log_{10}x\).</li>
+                  <li><strong>Natural logarithm</strong> — \(\ln x=\log_{e}x\).</li>
+                  <li><strong>Key identities</strong> — \(\log_{b}1=0\), \(\log_{b}b=1\), \(\log_{b}b^{n}=n\), and \(b^{\log_{b}x}=x\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Evaluate exact logs</p>
+                  <p>Evaluate (a) \(\log_{3}81\); (b) \(\log_{8}2\); (c) \(\log_{1/2}16\).</p>
+                  <p>(a) \(81=3^{4}\), so \(\log_{3}81=4\).</p>
+                  <p>(b) \(2=8^{1/3}\) since \(8^{1/3}=\sqrt[3]{8}=2\). So \(\log_{8}2=\tfrac{1}{3}\).</p>
+                  <p>(c) Need \(\bigl(\tfrac{1}{2}\bigr)^{x}=16=2^{4}\). Rewrite: \(2^{-x}=2^{4}\Rightarrow x=-4\). So \(\log_{1/2}16=-4\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Convert between forms</p>
+                  <p>Rewrite \(2^{5}=32\) in logarithmic form, and \(\log_{7}49=2\) in exponential form.</p>
+                  <p>Step 1. \(2^{5}=32\Leftrightarrow\log_{2}32=5\).</p>
+                  <p>Step 2. \(\log_{7}49=2\Leftrightarrow 7^{2}=49\).</p>
+                </div>
+                <ul>
+                  <li>Negative arguments inside a log are undefined — always check the input is positive.</li>
+                  <li>Do not confuse \(\log_{b}(x\cdot y)\) with \(\log_{b}x\cdot\log_{b}y\) — the second is meaningless.</li>
+                  <li>\(\log 100=2\), not \(100\) — students sometimes mix up the input and output of a log.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "determine, with technology, the approximate logarithm of a number to any base, including base 10."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v91')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 6.2a Introduction to Logarithms</span>
+                        <span class="vid-duration">15:51</span>
+                        <span class="vid-toggle" id="toggle-v91">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v91">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/091_MHF4U_6.2a_Introduction_to_Logarithms.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=k9w883SUXgU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v92')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.2b Logarithms Homework Solutions</span>
+                        <span class="vid-duration">4:25</span>
+                        <span class="vid-toggle" id="toggle-v92">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v92">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/092_MHF4U_6.2b_Logarithms_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=kFMFj6Z73Hk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v93')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.2c Logarithm Exercise Homework Solutions</span>
+                        <span class="vid-duration">5:40</span>
+                        <span class="vid-toggle" id="toggle-v93">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v93">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/093_MHF4U_6.2c_Logarithm_Exercise_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_oZ_nTEWpP4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">6.3 — Transformations of Log Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The general transformed logarithm is \(g(x)=a\log_{b}\!\bigl(k(x-d)\bigr)+c\). Each parameter does what it always did: \(a\) controls vertical stretch and reflection across the \(x\)-axis; \(k\) controls horizontal stretch and reflection across the \(y\)-axis; \(d\) translates horizontally; \(c\) translates vertically. The parent curve \(y=\log_{b}x\) has its vertical asymptote at \(x=0\) and its \(x\)-intercept at \((1,0)\); these key features move with the transformation.</p>
+                <p>The most important consequence is the location of the vertical asymptote: it moves with the horizontal shift \(d\). Setting the argument of the log equal to zero, \(k(x-d)=0\), gives the asymptote \(x=d\). The domain restriction also shifts: instead of \(x&gt;0\), you need \(k(x-d)&gt;0\).</p>
+                <p>When sketching by hand, take two parent points like \((1,0)\) and \((b,1)\), apply the mapping \((x,y)\to\bigl(\tfrac{x}{k}+d,\;ay+c\bigr)\), and connect them following the asymptote at \(x=d\).</p>
+                <ul>
+                  <li><strong>General form</strong> — \(g(x)=a\log_{b}\!\bigl(k(x-d)\bigr)+c\); four parameters, same roles as for other transformations.</li>
+                  <li><strong>Vertical asymptote</strong> — at \(x=d\) (when \(k&gt;0\)); shifts with the horizontal translation.</li>
+                  <li><strong>Domain</strong> — solve \(k(x-d)&gt;0\); not always \(x&gt;d\) if \(k\) is negative.</li>
+                  <li><strong>Mapping rule</strong> — parent point \((x,y)\to\bigl(\tfrac{x}{k}+d,\;ay+c\bigr)\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Sketch by transformation</p>
+                  <p>Sketch \(g(x)=2\log_{3}(x-1)+4\) from the parent \(y=\log_{3}x\).</p>
+                  <p>Step 1. Parameters: \(a=2\), \(k=1\), \(d=1\), \(c=4\).</p>
+                  <p>Step 2. Vertical asymptote moves from \(x=0\) to \(x=1\).</p>
+                  <p>Step 3. Map parent point \((1,0)\): \(\bigl(\tfrac{1}{1}+1,\,2(0)+4\bigr)=(2,4)\). Map \((3,1)\): \(\bigl(3+1,\,2(1)+4\bigr)=(4,6)\).</p>
+                  <p>Step 4. Sketch: vertical asymptote \(x=1\); curve passes through \((2,4)\) and \((4,6)\), increasing.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Domain with reflection</p>
+                  <p>Find the domain of \(h(x)=\log(3-x)\).</p>
+                  <p>Step 1. Argument must be positive: \(3-x&gt;0\Rightarrow x&lt;3\).</p>
+                  <p>Step 2. Domain: \((-\infty,3)\). Vertical asymptote at \(x=3\); curve approaches from the left.</p>
+                </div>
+                <ul>
+                  <li>Domain depends on the sign of the argument, not just the value of \(d\). Always solve the inequality.</li>
+                  <li>The vertical asymptote remains a critical feature — never draw the curve crossing it.</li>
+                  <li>Reflecting horizontally (\(k&lt;0\)) flips the asymptote-to-curve orientation; check by plotting one point.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "determine, through investigation… key features of the graphs of logarithmic functions… and connect these features to those of the corresponding exponential function."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v94')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 6.3a Transformations of Logarithmic Functions</span>
+                        <span class="vid-duration">23:28</span>
+                        <span class="vid-toggle" id="toggle-v94">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v94">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/094_MHF4U_6.3a_Transformations_of_Logarithmic_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=RJZfjeD2Rmg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v95')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.3b Transformations of Logarithmic Functions Homework Solutions</span>
+                        <span class="vid-duration">3:35</span>
+                        <span class="vid-toggle" id="toggle-v95">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v95">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/095_MHF4U_6.3b_Transformations_of_Logarithmic_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=U25YrPkUPZo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">6.4 — Power Law of Logarithms</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Power Law of Logarithms</strong> says \(\log_{b}(x^{n})=n\log_{b}x\). An exponent inside the logarithm comes out front as a coefficient. The reason is simple if you trace it through the exponential equivalence: \(\log_{b}(x^{n})\) asks "to what power do I raise \(b\) to get \(x^{n}\)?" — and if \(b^{p}=x\), then \(b^{np}=x^{n}\), giving the exponent \(np=n\log_{b}x\).</p>
+                <p>The power law is the single most useful log identity for solving exponential equations. When you take the log of both sides of \(5^{x}=20\), the \(x\) drops out of the exponent to become a coefficient — converting an exponential equation into a linear one in \(x\). This is the standard move for any equation where the variable lives in an exponent.</p>
+                <p>The law works in both directions: you can pull exponents out front, but you can also push coefficients up into exponents. For example, \(3\log_{2}x=\log_{2}x^{3}\). Be alert for chances to compress (or expand) expressions to a useful form.</p>
+                <ul>
+                  <li><strong>Power law</strong> — \(\log_{b}(x^{n})=n\log_{b}x\), valid for \(x&gt;0\).</li>
+                  <li><strong>Reverse application</strong> — \(c\log_{b}x=\log_{b}(x^{c})\); useful for combining log expressions.</li>
+                  <li><strong>Change-of-base formula</strong> — \(\log_{b}x=\dfrac{\log x}{\log b}=\dfrac{\ln x}{\ln b}\); lets you evaluate any log on a standard calculator.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Simplify using the power law</p>
+                  <p>Simplify \(\log_{2}(32^{3})\) to a single number.</p>
+                  <p>Step 1. Power law: \(\log_{2}(32^{3})=3\log_{2}32\).</p>
+                  <p>Step 2. \(32=2^{5}\), so \(\log_{2}32=5\).</p>
+                  <p>Step 3. Result: \(3\cdot 5=15\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Solve an exponential equation</p>
+                  <p>Solve \(7^{x}=50\) for \(x\) to four decimal places.</p>
+                  <p>Step 1. Take a common log of both sides: \(\log(7^{x})=\log 50\).</p>
+                  <p>Step 2. Power law: \(x\log 7=\log 50\).</p>
+                  <p>Step 3. Solve: \(x=\dfrac{\log 50}{\log 7}\approx\dfrac{1.6990}{0.8451}\approx 2.0103\).</p>
+                </div>
+                <ul>
+                  <li>The power law requires the argument to be positive — be careful when \(n\) is even and \(x\) is negative.</li>
+                  <li>\(\log_{b}(x+y)\) is <em>not</em> \(\log_{b}x+\log_{b}y\) — that is the next section's law and applies only to multiplication.</li>
+                  <li>The change-of-base formula is the bridge to using a calculator for any logarithm.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.4 — "recognize the laws of logarithms… and use these laws to simplify and evaluate numerical expressions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v96')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 6.4a Power Law of Logarithms</span>
+                        <span class="vid-duration">16:14</span>
+                        <span class="vid-toggle" id="toggle-v96">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v96">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/096_MHF4U_6.4a_Power_Law_of_Logarithms.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=d9XarJHmLDo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v97')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.4b Power Law of Logarithms Homework Solutions</span>
+                        <span class="vid-duration">4:26</span>
+                        <span class="vid-toggle" id="toggle-v97">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v97">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/097_MHF4U_6.4b_Power_Law_of_Logarithms_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=QgrKQPXX_g8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">6.5 — Product and Quotient Laws</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Product Law</strong> states \(\log_{b}(xy)=\log_{b}x+\log_{b}y\); the <strong>Quotient Law</strong> states \(\log_{b}\!\bigl(\tfrac{x}{y}\bigr)=\log_{b}x-\log_{b}y\). Both follow from the fact that logarithms convert multiplication of arguments into addition of exponents — which is the entire reason logarithms were invented in the seventeenth century (to turn multiplication of large numbers into addition, before electronic calculators existed).</p>
+                <p>Combined with the Power Law from section 6.4, these three laws form the algebraic toolkit for all log manipulation. You will use them in two directions: <em>expand</em> a single complicated log into a sum of simpler logs (useful in calculus), and <em>condense</em> a sum or difference of logs into a single log (useful for solving log equations).</p>
+                <p>Always state restrictions when you apply log laws. Each input to a log must be positive, so combining \(\log x+\log(x-2)\) into \(\log\!\bigl(x(x-2)\bigr)\) is correct only when both \(x&gt;0\) and \(x-2&gt;0\), i.e., \(x&gt;2\). Forgetting the restriction is a routine cause of extraneous solutions.</p>
+                <ul>
+                  <li><strong>Product law</strong> — \(\log_{b}(xy)=\log_{b}x+\log_{b}y\).</li>
+                  <li><strong>Quotient law</strong> — \(\log_{b}\!\bigl(\tfrac{x}{y}\bigr)=\log_{b}x-\log_{b}y\).</li>
+                  <li><strong>Restrictions</strong> — every individual log argument must be positive.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Expand</p>
+                  <p>Expand \(\log_{2}\!\left(\dfrac{8x^{3}}{y}\right)\) into a sum/difference of simpler logs.</p>
+                  <p>Step 1. Quotient law: \(\log_{2}(8x^{3})-\log_{2}y\).</p>
+                  <p>Step 2. Product law: \(\log_{2}8+\log_{2}(x^{3})-\log_{2}y\).</p>
+                  <p>Step 3. Power law: \(\log_{2}8+3\log_{2}x-\log_{2}y\).</p>
+                  <p>Step 4. Evaluate \(\log_{2}8=3\): final expression \(3+3\log_{2}x-\log_{2}y\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Condense</p>
+                  <p>Condense \(2\log x+\log(x-3)-\log(x+1)\) into a single logarithm.</p>
+                  <p>Step 1. Power law on the first term: \(\log x^{2}+\log(x-3)-\log(x+1)\).</p>
+                  <p>Step 2. Product law: \(\log\!\bigl(x^{2}(x-3)\bigr)-\log(x+1)\).</p>
+                  <p>Step 3. Quotient law: \(\log\!\left(\dfrac{x^{2}(x-3)}{x+1}\right)\). Restrictions: \(x&gt;3\) (the most restrictive of \(x&gt;0,\,x&gt;3,\,x&gt;-1\)).</p>
+                </div>
+                <ul>
+                  <li>The product law is \(\log(xy)\), not \(\log(x+y)\) — confusion between these is the most common log error.</li>
+                  <li>State the combined restriction (the intersection of individual restrictions) after condensing.</li>
+                  <li>Coefficients become exponents <em>before</em> products combine — apply the Power Law first when condensing.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.4 — "recognize the laws of logarithms (i.e., the product law, \(\log_{b}(mn)=\log_{b}m+\log_{b}n\); the quotient law, \(\log_{b}\frac{m}{n}=\log_{b}m-\log_{b}n\); and the power law, \(\log_{b}m^{n}=n\log_{b}m\))."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v98')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 6.5a Product and Quotient Law of Logarithms</span>
+                        <span class="vid-duration">21:48</span>
+                        <span class="vid-toggle" id="toggle-v98">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v98">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/098_MHF4U_6.5a_Product_and_Quotient_Law_of_Logarithms.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=SEdiKUQcu-c" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v99')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.5b Product and Quotient Law of Logarithms Homework Solutions</span>
+                        <span class="vid-duration">4:24</span>
+                        <span class="vid-toggle" id="toggle-v99">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v99">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/099_MHF4U_6.5b_Product_and_Quotient_Law_of_Logarithms_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=8gP5yvOOPTE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">6.6 — Logarithmic Scales</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Many physical quantities span enormous ranges — earthquake energies vary by factors of millions, sound intensities cover \(10^{12}\) orders of magnitude, hydrogen-ion concentrations in water range over ten powers of ten. <strong>Logarithmic scales</strong> compress these vast ranges into manageable numbers by reporting the exponent rather than the raw value.</p>
+                <p>The three scales you must know in MHF4U: <strong>pH</strong> defined as \(\text{pH}=-\log[H^{+}]\), where \([H^{+}]\) is the hydrogen-ion concentration in mol/L. <strong>Richter magnitude</strong>: \(M=\log\!\bigl(\tfrac{I}{I_{0}}\bigr)\), where \(I\) is amplitude and \(I_{0}\) is a reference. <strong>Sound intensity in decibels</strong>: \(\beta=10\log\!\bigl(\tfrac{I}{I_{0}}\bigr)\), where \(I_{0}=10^{-12}\) W/m\(^{2}\) is the threshold of hearing.</p>
+                <p>Because the scales are logarithmic, each unit increase represents a constant multiplicative factor: pH down by 1 means concentration up by 10×; Richter magnitude up by 1 means amplitude up by 10× (and energy roughly 32×); dB up by 10 means intensity up by 10×. Interpreting these ratios is the heart of the application questions.</p>
+                <ul>
+                  <li><strong>pH scale</strong> — \(\text{pH}=-\log[H^{+}]\); each pH unit corresponds to a 10× change in concentration.</li>
+                  <li><strong>Richter scale</strong> — \(M=\log\!\bigl(\tfrac{I}{I_{0}}\bigr)\); each magnitude unit corresponds to a 10× change in amplitude.</li>
+                  <li><strong>Decibel scale</strong> — \(\beta=10\log\!\bigl(\tfrac{I}{I_{0}}\bigr)\); the factor of 10 means each 10 dB corresponds to 10× intensity.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Earthquake magnitude ratio</p>
+                  <p>An earthquake of magnitude 6.3 is how many times more intense (in amplitude) than one of magnitude 4.8?</p>
+                  <p>Step 1. Difference in magnitude: \(6.3-4.8=1.5\).</p>
+                  <p>Step 2. Each magnitude unit is a factor of 10 in amplitude, so ratio \(=10^{1.5}\).</p>
+                  <p>Step 3. \(10^{1.5}=10\cdot 10^{0.5}\approx 31.6\). The first earthquake's amplitude is about 32 times the second's.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — pH to concentration</p>
+                  <p>A solution has \(\text{pH}=3.4\). Find the hydrogen-ion concentration.</p>
+                  <p>Step 1. \(3.4=-\log[H^{+}]\Rightarrow\log[H^{+}]=-3.4\).</p>
+                  <p>Step 2. Convert to exponential: \([H^{+}]=10^{-3.4}\).</p>
+                  <p>Step 3. \(10^{-3.4}\approx 3.98\times 10^{-4}\) mol/L.</p>
+                </div>
+                <ul>
+                  <li>The pH formula has a leading minus sign — easy to drop, and it changes everything.</li>
+                  <li>"How many times louder" in dB needs careful interpretation: a 10 dB increase is 10× intensity, not 10 dB more loudness perceived.</li>
+                  <li>Always state units (mol/L for concentration, W/m\(^{2}\) for intensity).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.4 — "solve problems involving exponential and logarithmic equations algebraically, including problems arising from real-world applications."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v100')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 6.6a Logarithmic Scales in Physical Sciences</span>
+                        <span class="vid-duration">25:06</span>
+                        <span class="vid-toggle" id="toggle-v100">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v100">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/100_MHF4U_6.6a_Logarithmic_Scales_in_Physical_Sciences.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=07Y8hIhdpDw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v101')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 6.6b Logarithmic Scales in Physical Sciences Homework Solution</span>
+                        <span class="vid-duration">6:00</span>
+                        <span class="vid-toggle" id="toggle-v101">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v101">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/101_MHF4U_6.6b_Logarithmic_Scales_in_Physical_Sciences_Homework_Solution.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_TcP2JCUUVs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Missing curriculum topic — Chapter 6 -->
+        <!-- Curriculum-aligned external video lessons -->
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Exponential Growth, Decay &amp; Compound Interest Formulas — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">23:18</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2YS7T2NesY4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2YS7T2NesY4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Compound Interest and e — Khan Academy</span>
+                <span class="vid-duration">7:50</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/dzMvqJMLy9c?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=dzMvqJMLy9c" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">What is e and ln(x)? — Euler's Number and the Natural Logarithm</span>
+                <span class="vid-duration">9:00</span>
+                <span class="vid-toggle" id="toggle-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Q9puUgDc2BY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Q9puUgDc2BY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 6 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch6_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch6_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch6_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch5.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 5</a>
+<a href="ch7.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 7 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

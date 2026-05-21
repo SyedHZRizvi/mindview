@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 8: Sinusoidal Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit8">
+<div class="unit-header" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+<h2>Chapter 8: Sinusoidal Functions</h2>
+<p>Sine and cosine graphs, period, amplitude, phase shift, modeling periodic phenomena</p>
+<div class="unit-meta">
+<span>📚 Strand D: Trigonometric Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.1 &mdash; Graphs of \( y=\sin x \) and \( y=\cos x \)</div>
+<div class="topic-desc">Sketch the parent sinusoidal functions in degree mode; identify period (360°), amplitude (1), domain (\(\mathbb{R}\)), range (\([-1,1]\)).</div>
+<div class="summary-card">The sine function passes through (0,0), peaks at (90°,1), returns to 0 at (180°,0), reaches a minimum at (270°,-1), then back to 0 at (360°,0). Cosine is sine shifted left by 90°: \( \cos x = \sin(x+90°) \). Both repeat every 360° — they are <em>periodic</em>.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The trig ratios you've been using since Chapter 7 are also <em>functions</em>: feed in an angle, get back a number. When you plot \(y = \sin x\) or \(y = \cos x\) across a range of \(x\) (in degrees), you get a wave shape that repeats forever. These are the <em>sinusoidal functions</em> — the building blocks of describing anything that cycles: vibrations, sound, light, tides, biological rhythms, alternating current.</p>
+
+<p>Trace \(y = \sin x\) by stepping through the unit-circle perspective. As \(x\) rotates from 0° to 360°, the \(y\)-coordinate of the unit-circle point traces:</p>
+
+<ul>
+<li>\(x = 0°\): \(y = 0\). (Start at the positive \(x\)-axis.)</li>
+<li>\(x = 90°\): \(y = 1\). (Top of the circle — maximum.)</li>
+<li>\(x = 180°\): \(y = 0\). (Negative \(x\)-axis.)</li>
+<li>\(x = 270°\): \(y = -1\). (Bottom of the circle — minimum.)</li>
+<li>\(x = 360°\): \(y = 0\). (Back to start.)</li>
+</ul>
+
+<p>The graph of \(y = \cos x\) is identical in shape but shifted: at \(x = 0°\), cosine starts at 1 (the \(x\)-coordinate of the right side of the unit circle), peaks again at \(x = 360°\), and dips through 0 at \(x = 90°\) and \(x = 270°\). In fact \(\cos x = \sin(x + 90°)\) — cosine is just sine shifted left by 90°.</p>
+
+<p>Key features of both parent functions:</p>
+
+<ul>
+<li><strong>Period</strong>: 360° (the smallest \(x\)-interval after which the graph repeats).</li>
+<li><strong>Amplitude</strong>: 1 (half the vertical distance between max and min).</li>
+<li><strong>Domain</strong>: all real numbers — every angle has a sine and a cosine.</li>
+<li><strong>Range</strong>: \([-1, 1]\).</li>
+<li><strong>Midline</strong>: \(y = 0\) (the horizontal line halfway between max and min).</li>
+<li><strong>\(y\)-intercept</strong>: \(\sin\) has \((0, 0)\); \(\cos\) has \((0, 1)\).</li>
+<li><strong>Symmetry</strong>: \(\sin\) is odd (rotational about origin); \(\cos\) is even (symmetric in \(y\)-axis).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Sketch \(y = \sin x\) for \(-360° \le x \le 720°\).</p>
+<p>Plot key points at multiples of 90°: \(x = -360°, -270°, -180°, -90°, 0°, 90°, 180°, \ldots, 720°\). At each, \(y\) cycles through \(0, 1, 0, -1, 0\). Connect smoothly. The graph completes three full cycles across the given range (\(1080°\) wide divided by 360° period).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — From a sketch of \(y = \cos x\), find all solutions to \(\cos x = -0.5\) in \([0°, 360°]\).</p>
+<p>Sketch the graph; identify where it crosses \(y = -0.5\). Cosine equals \(-0.5\) at \(x = 120°\) and \(x = 240°\). These are the two values where the horizontal line \(y = -0.5\) intersects the cosine curve in one full period.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Verify graphically that \(\sin x = \cos(x - 90°)\).</p>
+<p>The graph of \(\cos x\) shifted right by 90° lands on the same wave as \(\sin x\). At \(x = 0\): \(\sin 0 = 0\); \(\cos(-90°) = \cos 90° = 0\). ✓ At \(x = 90°\): \(\sin 90° = 1\); \(\cos 0 = 1\). ✓</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Switching between degree and radian mode without realising. In MCR3U everything is degrees.</li>
+<li>Drawing pointy "V" shapes at the peaks. Sinusoidal curves are smooth — the maximum is rounded.</li>
+<li>Mislabeling \(y\)-coordinates as angles or vice versa. The \(x\)-axis is the angle (in degrees); the \(y\)-axis is the sine/cosine value (between \(-1\) and \(1\)).</li>
+<li>Memorising "sin starts at 0" without understanding the unit-circle origin. The unit circle is the source of every key value.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.1 — "describe key properties (e.g., cycle, amplitude, period) of periodic functions arising from real-world applications (e.g., natural gas consumption in Ontario, tides in the Bay of Fundy), given a numerical or graphical representation"; D2.2 — "predict, by extrapolating, the future behaviour of a relationship modelled using a numerical or graphical representation of a periodic function (e.g., predicting hours of daylight on a particular date from previous measurements; predicting natural gas consumption in Ontario from previous consumption)"; D2.3 — "make connections between the sine ratio and the sine function and between the cosine ratio and the cosine function by graphing the relationship between angles from 0° to 360° and the corresponding sine ratios or cosine ratios, with or without technology..."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt36')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Graphing Sine and Cosine — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">17:47</span>
+        <span class="vid-toggle" id="toggle-mcr-yt36">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt36">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Vw-RwPBWS8g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Vw-RwPBWS8g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.2 &mdash; Amplitude, Period, &amp; Vertical Shift</div>
+<div class="topic-desc">Analyse \( y = a\sin(kx) + c \): amplitude \( |a| \), period \( \dfrac{360°}{|k|} \), vertical shift \( c \), midline \( y=c \).</div>
+<div class="summary-card">For \( y=3\sin(2x)+1 \): amplitude 3, period \( 360°/2=180° \), midline \( y=1 \), maximum \( y=4 \), minimum \( y=-2 \). Stretch in the y-direction (amplitude) and compression in the x-direction (period) reshape the parent sine curve.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Three parameters reshape the parent sine or cosine wave: amplitude \(a\), the horizontal-stretch coefficient \(k\) that controls period, and vertical shift \(c\). The form is:</p>
+
+<p>\[ y = a\sin(kx) + c \quad \text{or} \quad y = a\cos(kx) + c \]</p>
+
+<p><strong>Amplitude \(|a|\)</strong> — half the vertical distance between the maximum and minimum. The graph stretches vertically by factor \(|a|\); if \(a < 0\), the wave is also reflected vertically. For \(y = 3\sin x\), the wave swings between \(-3\) and \(+3\). For \(y = -\sin x\), it's flipped: it starts going down from 0 instead of up.</p>
+
+<p><strong>Period</strong> \(= \dfrac{360°}{|k|}\) — the smallest horizontal distance over which the graph repeats. \(k\) horizontally compresses the wave when \(|k| > 1\) (so it cycles faster, period shrinks) and stretches it when \(0 < |k| < 1\) (period lengthens). For \(y = \sin(2x)\), the period is 180° — twice as fast as parent. For \(y = \sin(x/2)\), the period is 720° — twice as slow.</p>
+
+<p><strong>Vertical shift \(c\)</strong> — moves the entire wave up (positive \(c\)) or down. The <em>midline</em> moves from \(y = 0\) to \(y = c\). The max becomes \(c + |a|\), the min becomes \(c - |a|\).</p>
+
+<p>Summary for \(y = a\sin(kx) + c\): amplitude \(|a|\), period \(\dfrac{360°}{|k|}\), midline \(y = c\), maximum \(c + |a|\), minimum \(c - |a|\).</p>
+
+<ul>
+<li><strong>Amplitude</strong> — \(|a|\); half the distance from max to min; vertical "swing."</li>
+<li><strong>Period</strong> — \(\dfrac{360°}{|k|}\); horizontal length of one complete cycle.</li>
+<li><strong>Midline</strong> — horizontal line \(y = c\); the centre of the oscillation.</li>
+<li><strong>Maximum</strong> — \(c + |a|\); top of the wave.</li>
+<li><strong>Minimum</strong> — \(c - |a|\); bottom of the wave.</li>
+<li><strong>Frequency</strong> — number of cycles per unit; reciprocal of period. (\(k\) controls frequency proportionally.)</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Analyse \(y = 3\sin(2x) + 1\). State amplitude, period, midline, max, min, and sketch one period.</p>
+<p>\(a = 3, k = 2, c = 1\). Amplitude 3. Period \(= 360°/2 = 180°\). Midline \(y = 1\). Maximum \(1 + 3 = 4\). Minimum \(1 - 3 = -2\).</p>
+<p>Key points (over one period from 0° to 180°): at \(x = 0°\), \(y = 3\sin 0 + 1 = 1\). At \(x = 45°\) (quarter-period), \(y = 3\sin 90° + 1 = 4\) (max). At 90° (half), \(y = 1\) (midline). At 135° (three-quarters), \(y = 3\sin 270° + 1 = -2\) (min). At 180°, \(y = 1\). Connect smoothly.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Find the equation of a cosine function with amplitude 4, period 120°, and midline \(y = 2\).</p>
+<p>From period: \(120° = 360°/k\), so \(k = 3\). Amplitude is the absolute value of \(a\); take \(a = 4\) (positive, so cosine starts at the maximum).</p>
+<p>\(y = 4\cos(3x) + 2\). Maximum: \(6\); minimum: \(-2\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A Ferris wheel has radius 10 m, and its centre is 12 m above the ground. The wheel makes one full revolution every 60 seconds. Write a sinusoidal model for a rider's height above the ground, starting from the bottom of the wheel at \(t = 0\).</p>
+<p>Amplitude 10 (radius). Midline \(y = 12\) (centre height). Period 60 s, so \(k = 360°/60 = 6\) (in degrees per second).</p>
+<p>Starting at the bottom: \(y(0) = 12 - 10 = 2\) — minimum. The cosine model with a negative sign starts at its minimum: \(y(0) = -10\cos(0) + 12 = -10 + 12 = 2\). ✓.</p>
+<p>Model: \(h(t) = -10\cos(6t) + 12\) with \(t\) in seconds and \(6t\) interpreted in degrees.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing \(k\) with the period. Period \(= 360°/k\), not just \(k\). \(k = 2\) gives a period of 180° (faster), not a period of 2°.</li>
+<li>Taking the amplitude as the maximum value. Amplitude is half the swing, not the peak height.</li>
+<li>Forgetting to add (or subtract) \(c\) when reading off max/min. Max = midline + amplitude; min = midline − amplitude.</li>
+<li>Treating a negative amplitude as the actual amplitude. \(|a|\) is the amplitude; the sign of \(a\) controls the wave's starting direction.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.4 — "determine, through investigation using technology, the roles of the parameters \(d\) and \(c\) in functions of the form \(y = \sin(x - d) + c\) and \(y = \cos(x - d) + c\), and describe these roles in terms of transformations on the graphs of \(f(x) = \sin x\) and \(f(x) = \cos x\) with angles expressed in degrees..."; D2.5 — "determine the amplitude, period, and phase shift of sinusoidal functions whose equations are given in the form \(f(x) = a\sin(k(x - d)) + c\) or \(f(x) = a\cos(k(x - d)) + c\), and sketch graphs of \(y = a\sin(k(x - d)) + c\) and \(y = a\cos(k(x - d)) + c\) by applying transformations to the graphs of \(f(x) = \sin x\) and \(f(x) = \cos x\)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt37')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Amplitude Period and Vertical Shifts of Sinusoidal — blackpenredpen</span>
+        <span class="vid-duration">13:06</span>
+        <span class="vid-toggle" id="toggle-mcr-yt37">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt37">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/UdwRwdLvfMI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=UdwRwdLvfMI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.3 &mdash; Phase Shift &amp; the General Sinusoidal Form</div>
+<div class="topic-desc">Analyse the full form \( y = a\sin(k(x-d)) + c \): the parameter \( d \) is a horizontal (phase) shift; combine with all other transformations.</div>
+<div class="summary-card">For \( y=2\sin(3(x-30°))-1 \): amplitude 2, period 120°, phase shift 30° right, midline \( y=-1 \). Always factor out \( k \) inside the argument before reading off the phase shift: \( \sin(3x-90°)=\sin(3(x-30°)) \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The fourth and final parameter is the <em>phase shift</em> (also called horizontal shift). The full general form for a sinusoidal function is:</p>
+
+<p>\[ y = a\sin\bigl(k(x - d)\bigr) + c \quad \text{or} \quad y = a\cos\bigl(k(x - d)\bigr) + c \]</p>
+
+<p>The parameter \(d\) shifts the wave horizontally: positive \(d\) means shift right; negative \(d\) means shift left. The phase shift is exactly \(d\), provided the equation is written in the factored form \(k(x - d)\). That's the catch — equations often arrive with the inside expanded as \(kx - p\), and you must factor \(k\) before reading off \(d\).</p>
+
+<p>For example, \(y = \sin(3x - 90°)\) looks at first glance like a 90° shift, but factor first: \(3x - 90° = 3(x - 30°)\). So \(d = 30°\), not 90°. The phase shift is 30° right — the wave starts at the value where the parent \(\sin\) is at "horizontal position 0," but 30° later.</p>
+
+<p>With all four parameters present:</p>
+<ul>
+<li>Amplitude \(|a|\).</li>
+<li>Period \(\dfrac{360°}{|k|}\).</li>
+<li>Phase shift \(d\) (right if positive).</li>
+<li>Midline \(y = c\); max \(c + |a|\); min \(c - |a|\).</li>
+</ul>
+
+<p>Sketching is fastest with a <em>five-point method</em>. Start at the phase shift (\(x = d\)) on the midline going up (for \(+\sin\)). The next quarter-period takes you to the max; the next to the midline going down; the next to the min; the next back to the midline. Each step horizontally is one-quarter of the period.</p>
+
+<ul>
+<li><strong>Phase shift</strong> — horizontal translation \(d\) of the wave; the value of \(d\) in \(k(x - d)\).</li>
+<li><strong>Factoring step</strong> — before reading \(d\), rewrite \(kx + p\) as \(k(x + p/k)\) so that \(d = -p/k\) appears cleanly.</li>
+<li><strong>Five-point method</strong> — for sine starting from \(x = d\): midline up, max, midline down, min, midline up — equally spaced over one period.</li>
+<li><strong>Equivalent equations</strong> — a sine and cosine can describe the same wave with different phase shifts: \(\sin(x) = \cos(x - 90°)\).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Analyse \(y = 2\sin(3(x - 30°)) - 1\). State amplitude, period, phase shift, midline, max, min, and sketch one period starting at \(x = 30°\).</p>
+<p>\(a = 2, k = 3, d = 30°, c = -1\). Amplitude 2. Period \(360°/3 = 120°\). Phase shift 30° right. Midline \(y = -1\). Max \(1\), min \(-3\).</p>
+<p>Five-point method: quarter-period = 30°. Start at \(x = 30°\), midline (\(-1\)) going up; at \(x = 60°\), max \(1\); at \(x = 90°\), midline (\(-1\)) going down; at \(x = 120°\), min \(-3\); at \(x = 150°\), midline back. One period spans \([30°, 150°]\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Rewrite \(y = -4\cos(2x + 60°) + 5\) in the form \(y = a\cos(k(x - d)) + c\) and identify all parameters.</p>
+<p>Factor inside: \(2x + 60° = 2(x + 30°) = 2(x - (-30°))\). So \(y = -4\cos(2(x - (-30°))) + 5\).</p>
+<p>Parameters: \(a = -4\) (amplitude 4, reflection in \(x\)-axis), \(k = 2\) (period 180°), \(d = -30°\) (phase shift 30° to the <em>left</em>), \(c = 5\) (midline \(y = 5\)). Max: \(5 + 4 = 9\); min: \(5 - 4 = 1\). At \(x = -30°\), the reflected cosine is at its minimum (1) instead of its maximum.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Write a sine equation for a wave with amplitude 6, period 90°, midline \(y = 2\), and starting at the midline going up at \(x = 15°\).</p>
+<p>\(k = 360°/90° = 4\). \(d = 15°\) (the wave behaves like the parent sine at \(x = 0\), but at \(x = 15°\)). Midline \(c = 2\).</p>
+<p>Equation: \(y = 6\sin(4(x - 15°)) + 2\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Reading the phase shift directly from \(kx - p\) without factoring. Always factor \(k\) first.</li>
+<li>Confusing the sign of \(d\). \((x - 30°)\) means shift right by 30°, not left. The shift direction matches what's <em>subtracted</em>.</li>
+<li>Treating sin and cos as interchangeable without accounting for the 90° phase difference.</li>
+<li>Forgetting that quarter-period spacing is the cleanest way to plot key points.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.4 — "determine, through investigation using technology, the roles of the parameters \(d\) and \(c\) in functions of the form \(y = \sin(x - d) + c\) and \(y = \cos(x - d) + c\)..."; D2.5 — "determine the amplitude, period, and phase shift of sinusoidal functions whose equations are given in the form \(f(x) = a\sin(k(x - d)) + c\) or \(f(x) = a\cos(k(x - d)) + c\), and sketch graphs of \(y = a\sin(k(x - d)) + c\) and \(y = a\cos(k(x - d)) + c\) by applying transformations to the graphs of \(f(x) = \sin x\) and \(f(x) = \cos x\)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt38')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Determine Sinusoidal Function Equation and Sketch Graph MCR3U — Anil Kumar</span>
+        <span class="vid-duration">11:46</span>
+        <span class="vid-toggle" id="toggle-mcr-yt38">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt38">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xlpLoWiW2rU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=xlpLoWiW2rU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.4 &mdash; Modeling Periodic Phenomena</div>
+<div class="topic-desc">Build sinusoidal models from data: tides, daylight hours, sound waves, Ferris-wheel height, pendulum motion.</div>
+<div class="summary-card">Tide example: water depth varies between 1.5 m (low) and 7.5 m (high), with high tide at \( t=3 \) h and a 12-hour period. Midline \( c=4.5 \), amplitude \( a=3 \), period 12 → \( k=360°/12=30°/\text{h} \). Cosine fits cleanly with peak at \( t=3 \): \( h(t)=3\cos(30°(t-3))+4.5 \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Many real-world quantities oscillate between two extremes over time: ocean tides between high and low, daylight hours between summer and winter solstices, body temperature through the day, sound waves between compression and rarefaction. These are sinusoidal — modelled by \(y = a\sin(k(x - d)) + c\) or its cosine equivalent.</p>
+
+<p>The modelling recipe takes data (or a verbal description) and extracts the four parameters:</p>
+
+<p><strong>Step 1 — Find midline \(c\).</strong> Average the maximum and minimum: \(c = \dfrac{\max + \min}{2}\).</p>
+
+<p><strong>Step 2 — Find amplitude \(|a|\).</strong> Half the difference: \(|a| = \dfrac{\max - \min}{2}\).</p>
+
+<p><strong>Step 3 — Find \(k\) from the period.</strong> The period is one full cycle in the appropriate time units (hours, days, years). Then \(k = \dfrac{360°}{\text{period}}\).</p>
+
+<p><strong>Step 4 — Pick sine or cosine and find \(d\).</strong> Cosine is easiest when you know when the <em>maximum</em> occurs: set \(d\) equal to that time, take \(a > 0\), and the cosine wave peaks at \(x = d\). Sine is easiest when you know when the function crosses the midline going up: set \(d\) to that time.</p>
+
+<p>The same recipe works for any periodic phenomenon. The hardest part is usually identifying the four key values (max, min, period, time of a reference event) from a word problem.</p>
+
+<ul>
+<li><strong>Tides</strong> — typically two highs and two lows per day; semi-diurnal period ≈ 12.4 hours.</li>
+<li><strong>Daylight hours</strong> — annual cycle: period 365 days, with maximum near summer solstice (June 21).</li>
+<li><strong>Body temperature</strong> — circadian rhythm: period 24 hours, amplitude about 0.5°C around midline 37°C.</li>
+<li><strong>Ferris wheel</strong> — period equals one revolution; amplitude equals wheel radius; midline equals centre height.</li>
+<li><strong>AC voltage</strong> — period \(1/60\) s in North America; modelled as \(V(t) = V_{\max}\sin(120\pi t)\) (radians) or 21{,}600° \(t\) (degrees).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — In a harbour, the water depth varies sinusoidally between 1.5 m (low tide) and 7.5 m (high tide). High tide occurs at \(t = 3\) hours, and the period is 12 hours. Find the depth as a function of time.</p>
+<p>Step 1 — Midline: \(c = (7.5 + 1.5)/2 = 4.5\) m.</p>
+<p>Step 2 — Amplitude: \(|a| = (7.5 - 1.5)/2 = 3\) m. Take \(a = 3\) (cosine peaks).</p>
+<p>Step 3 — \(k = 360°/12 = 30°\) per hour.</p>
+<p>Step 4 — Cosine peaks at \(x = d\), and we want a peak at \(t = 3\), so \(d = 3\).</p>
+<p>Model: \(h(t) = 3\cos(30°(t - 3)) + 4.5\). Check: at \(t = 3\), \(h = 3 \cdot 1 + 4.5 = 7.5\) ✓. At \(t = 9\) (half-period later), \(h = 3 \cdot (-1) + 4.5 = 1.5\) ✓.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A Ferris wheel has radius 8 m, with its centre 10 m above the ground. It completes one revolution every 40 seconds. A passenger boards at the lowest point at \(t = 0\). Write a model for the rider's height above the ground.</p>
+<p>Midline \(c = 10\) m. Amplitude 8 m. \(k = 360°/40 = 9°\)/s.</p>
+<p>The rider starts at the minimum (\(t = 0\), height 2 m). A cosine with negative amplitude has its minimum at \(t = d = 0\): \(h(t) = -8\cos(9°t) + 10\).</p>
+<p>Check: \(t = 0\): \(h = -8 + 10 = 2\) ✓ (boarding). \(t = 10\) (quarter-period): \(h = -8\cos 90° + 10 = 10\) (midline, rising). \(t = 20\) (half): \(h = -8 \cdot (-1) + 10 = 18\) (top of wheel) ✓.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — In a Canadian city, the number of daylight hours \(D(n)\) on day \(n\) of the year varies sinusoidally between about 8 hours (winter solstice, ~day 355) and 16 hours (summer solstice, ~day 172). Find a model.</p>
+<p>Midline: \(c = (16 + 8)/2 = 12\). Amplitude: \(|a| = (16 - 8)/2 = 4\). Period: 365 days, so \(k = 360°/365 \approx 0.9863°\) per day.</p>
+<p>Cosine peaks at \(n = 172\): \(D(n) = 4\cos(0.9863°(n - 172)) + 12\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Computing amplitude as max − min (instead of half of that).</li>
+<li>Confusing midline with the \(y\)-intercept. The midline is a horizontal line; the \(y\)-intercept is one specific point on the curve.</li>
+<li>Forgetting that the period must match the units of \(t\) — hours, days, seconds, etc.</li>
+<li>Choosing sine when cosine fits more cleanly. If the problem tells you when a maximum (or minimum) occurs, cosine usually wins.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "collect data that can be modelled as a sinusoidal function (e.g., voltage in an AC circuit, sound waves), through investigation with and without technology, from primary sources, using a variety of tools (e.g., concrete materials, measurement tools such as motion sensors), or from secondary sources (e.g., websites such as Statistics Canada, E-STAT), and graph the data"; D3.2 — "identify sinusoidal functions, including those that arise from real-world applications involving periodic phenomena, given various representations (i.e., tables of values, graphs, equations), and explain any restrictions that the context places on the domain and range."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt39')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Model Wall Clock with Sinusoidal Function MCR3U Trigonometry — Anil Kumar</span>
+        <span class="vid-duration">12:24</span>
+        <span class="vid-toggle" id="toggle-mcr-yt39">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt39">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/0F2cRZFkztU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=0F2cRZFkztU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.5 &mdash; Solving Sinusoidal Equations Graphically</div>
+<div class="topic-desc">Use a graph or table to solve equations of the form \( a\sin(k(x-d))+c = K \) on a given interval; interpret in context.</div>
+<div class="summary-card">From the tide model \( h(t)=3\cos(30°(t-3))+4.5 \), find when \( h=6 \) m. Solve \( 3\cos(30°(t-3))=1.5 \), so \( \cos(30°(t-3))=0.5 \), giving \( 30°(t-3)=\pm 60° \), so \( t=1 \) h or \( t=5 \) h within one period. Algebraic solution methods are studied formally in MHF4U.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Once you have a sinusoidal model \(y = a\sin(k(x - d)) + c\) (or its cosine cousin), the next question is invariably: when does \(y\) equal some target value? When is the tide depth at least 6 m? When is daylight more than 14 hours? When is the rider 15 m above the ground? These are inequalities and equations involving sinusoidal expressions.</p>
+
+<p>In MCR3U we solve these <strong>graphically</strong>: graph the function and a horizontal line \(y = K\), and read off the intersection points. Use graphing technology, or sketch the wave by hand using the five-point method and estimate. You can also use the inverse-trig functions to get one solution, then use the wave's structure (symmetry within a period, periodicity to extend across multiple periods) to find all solutions in the desired interval.</p>
+
+<p>A typical workflow for \(a\sin(k(x - d)) + c = K\):</p>
+<ol>
+<li>Isolate the trig expression: \(\sin(k(x - d)) = \dfrac{K - c}{a}\). If the right side is outside \([-1, 1]\), no solutions exist.</li>
+<li>Let \(\theta = k(x - d)\). Solve \(\sin\theta = (K - c)/a\) in one period; use the reference angle and CAST.</li>
+<li>Convert back: \(x = \dfrac{\theta}{k} + d\) for each solution \(\theta\).</li>
+<li>Use periodicity (the function repeats every \(360°/k\)) to find all solutions in the required interval.</li>
+</ol>
+
+<p>Inequalities are read off the graph: the regions where the sine curve is above (or below) the horizontal line.</p>
+
+<ul>
+<li><strong>Graphical solution</strong> — solve \(f(x) = K\) by finding the \(x\)-coordinates where \(y = f(x)\) meets the line \(y = K\).</li>
+<li><strong>Periodicity</strong> — if \(x_0\) is a solution, so are \(x_0 + n \cdot (\text{period})\) for every integer \(n\).</li>
+<li><strong>Symmetry within a period</strong> — sine and cosine values typically appear twice per period; use the symmetry of the wave to find the second \(x\).</li>
+<li><strong>Restricted interval</strong> — most problems ask for solutions on a specific interval (e.g. one day, one period). Identify which solutions fall inside.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Using the tide model \(h(t) = 3\cos(30°(t - 3)) + 4.5\), find all times in the first 12 hours when the depth is exactly 6 m.</p>
+<p>Set up: \(3\cos(30°(t - 3)) + 4.5 = 6\), so \(\cos(30°(t - 3)) = 0.5\).</p>
+<p>Let \(\theta = 30°(t - 3)\). Solve \(\cos\theta = 0.5\) in one full revolution: \(\theta = 60°\) or \(\theta = 300°\) (equivalently \(-60°\)).</p>
+<p>Convert back: \(30°(t - 3) = 60° \Rightarrow t - 3 = 2 \Rightarrow t = 5\) h. \(30°(t - 3) = -60° \Rightarrow t = 1\) h.</p>
+<p>The first 12 hours contain one full period. The next two solutions within the period: \(\theta = 60° + 360° = 420°\) gives \(t - 3 = 14\), \(t = 17\) h (outside our interval); \(\theta = -60° + 360° = 300°\) is the same as \(t = 5\). So within \([0, 12]\) the depth is 6 m at \(t = 1\) h and \(t = 5\) h. Between these times the depth is above 6 m (tide is in).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — For the Ferris wheel model \(h(t) = -8\cos(9°t) + 10\), when is the rider exactly 14 m above the ground during the first revolution?</p>
+<p>Set: \(-8\cos(9°t) + 10 = 14\), so \(\cos(9°t) = -0.5\).</p>
+<p>\(\cos\theta = -0.5\) at \(\theta = 120°\) and \(\theta = 240°\) in \([0°, 360°]\).</p>
+<p>\(9°t = 120° \Rightarrow t = 13.33\) s. \(9°t = 240° \Rightarrow t = 26.67\) s.</p>
+<p>During the first 40-second revolution, the rider is at 14 m at \(t \approx 13.33\) s (rising) and \(t \approx 26.67\) s (descending).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Graphical interpretation: when is the daylight model \(D(n) = 4\cos(0.9863°(n - 172)) + 12\) above 14 hours?</p>
+<p>Set up: \(4\cos(0.9863°(n - 172)) + 12 > 14\), so \(\cos(0.9863°(n - 172)) > 0.5\).</p>
+<p>Cosine \(> 0.5\) where the angle is in \((-60°, 60°)\). So \(-60° < 0.9863°(n - 172) < 60°\), giving \(-60.84 < n - 172 < 60.84\), so roughly \(111 < n < 233\).</p>
+<p>That's approximately April 21 (day 111) to August 21 (day 233) — about four months of "long days."</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting the second solution per period. Sine and cosine values typically appear <em>twice</em> per cycle; the calculator only gives one.</li>
+<li>Treating "the graph crosses" as one event when it might cross multiple times within the interval. Sketch first to count.</li>
+<li>Mixing up \(\theta\) (the angle inside the sine/cosine) with \(x\) (the time/horizontal variable). After solving for \(\theta\), always convert back to \(x\) using \(x = \theta/k + d\).</li>
+<li>Solutions outside the asked-for interval. Restrict by inspecting whether each solution falls within the problem's bounds.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "pose problems based on applications involving a sinusoidal function, and solve these and other such problems by using a given graph or a graph generated with technology from its equation"; D3.2 — supporting expectation on identifying sinusoidal models and their domain restrictions in context.</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt40')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Solving Trigonometric Equations Using Graphs — Torben Graham</span>
+        <span class="vid-duration">13:54</span>
+        <span class="vid-toggle" id="toggle-mcr-yt40">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt40">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/n8XEkwpwyBU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=n8XEkwpwyBU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 8 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch8_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch8_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch8_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch7.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 7 &mdash; Trigonometric Ratios &amp; the Sine/Cosine Laws</div></a>
+<a href="../mcr3u.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&uarr; Back to course</div><div>MCR3U Functions</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

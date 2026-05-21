@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCH4U — Chemistry | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #059669; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sch4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SCH4U Chemistry)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧪 SCH4U: Unit 4: Chemical Systems and Equilibrium</h1>
+    <p>Dynamic equilibrium, Le Chatelier's principle, Keq, Ksp, acids &amp; bases, pH, Ka, Kb, titration</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+            <h2>Unit 4: Chemical Systems and Equilibrium</h2>
+            <p>Dynamic equilibrium, Le Chatelier's principle, Keq, Ksp, acids &amp; bases, pH, Ka, Kb, titration</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Equilibrium</span>
+                <span>📹 10 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⚖️ Chemical Equilibrium</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A reversible reaction reaches <strong>dynamic equilibrium</strong> when the forward and reverse rates become equal and macroscopic concentrations stop changing; molecules continue to react in both directions. For \(aA + bB \rightleftharpoons cC + dD\), the equilibrium constant is \(K_c = \dfrac{[C]^c[D]^d}{[A]^a[B]^b}\). \(K_p\) uses partial pressures and \(K_p = K_c(RT)^{\Delta n}\) where Δn = moles of gas products − moles of gas reactants. Pure solids and pure liquids are omitted from K expressions because their effective concentration (activity) is 1.</p>
+            <p>The <strong>reaction quotient</strong> \(Q\) has the same form as \(K\) but is evaluated at any moment; comparing \(Q\) to \(K\) predicts the direction of shift (Q &lt; K: net forward; Q = K: at equilibrium; Q &gt; K: net reverse). <strong>Le Chatelier's principle</strong> qualitatively predicts the response of an equilibrium to a stress: increasing reactant concentration shifts to products; increasing pressure on a gas-phase system shifts toward fewer gas moles; raising temperature shifts in the endothermic direction. A catalyst does <em>not</em> shift equilibrium — it only changes the time required to reach it.</p>
+            <p>An <strong>ICE table</strong> (Initial, Change, Equilibrium) is the standard tool for quantitative equilibrium problems. When \(K\) is very small, the "5% approximation" \([A] \approx [A]_0\) often simplifies the algebra; check that the approximation is valid by ensuring x &lt; 5% of [A]₀.</p>
+            <ul>
+              <li><strong>Dynamic equilibrium</strong> — forward rate = reverse rate; [reactants] and [products] constant.</li>
+              <li><strong>Equilibrium constant (\(K\))</strong> — unitless; depends only on temperature.</li>
+              <li><strong>Reaction quotient (\(Q\))</strong> — same form as K, evaluated at any moment.</li>
+              <li><strong>Le Chatelier's principle</strong> — system shifts to partially offset a stress.</li>
+              <li><strong>Homogeneous</strong> (single phase) vs <strong>heterogeneous</strong> equilibrium.</li>
+              <li><strong>Common-ion effect</strong> — adding an ion already in the equilibrium suppresses the reaction.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Calculating K_c from initial concentrations</p>
+              <p>For \(H_2(g) + I_2(g) \rightleftharpoons 2HI(g)\) at 698 K, initial \([H_2]_0 = [I_2]_0 = 0.0500\) M, [HI]₀ = 0. At equilibrium, [HI] = 0.0786 M. Find K_c.</p>
+              <p>ICE table: change in HI is +0.0786, so x = 0.0393 (since 2x = 0.0786). Equilibrium [H₂] = [I₂] = 0.0500 − 0.0393 = 0.0107 M. \(K_c = \dfrac{(0.0786)^2}{(0.0107)(0.0107)} = \dfrac{0.00618}{1.145\times 10^{-4}} = \mathbf{54.0}\), consistent with the tabulated value.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Including pure solids or liquids in the K expression.</li>
+              <li>Forgetting to raise concentrations to their stoichiometric powers.</li>
+              <li>Concluding a catalyst changes K — it does not.</li>
+              <li>Using the 5% approximation without checking its validity; if x exceeds 5% of [A]₀, solve the quadratic.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "solve problems involving the equilibrium constant expression (K_c) and the concentrations of reactants and products in a chemical reaction."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v29')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Dynamic Equilibrium</span>
+                <span class="vid-duration">47:45</span>
+                <span class="vid-toggle" id="toggle-v29">▶</span>
+            </div>
+            <div class="video-player" id="player-v29">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/029_Chemistry_12_SCH4U_Dynamic_Equilibrium.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=aUkl9sOX3Kc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v30')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Le Chatelier's Principle</span>
+                <span class="vid-duration">1:02:04</span>
+                <span class="vid-toggle" id="toggle-v30">▶</span>
+            </div>
+            <div class="video-player" id="player-v30">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/030_Chemistry_12_SCH4U_Le_Chatelier_s_Principle.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=xPppngRxuSk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v31')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Quantitative Equilibrium (Keq)</span>
+                <span class="vid-duration">49:41</span>
+                <span class="vid-toggle" id="toggle-v31">▶</span>
+            </div>
+            <div class="video-player" id="player-v31">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/031_Chemistry_12_SCH4U_Quantitative_Changes_in_Equilibrium.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=hTS6hmRHd1U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v32')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Solubility Equilibrium (Ksp)</span>
+                <span class="vid-duration">48:30</span>
+                <span class="vid-toggle" id="toggle-v32">▶</span>
+            </div>
+            <div class="video-player" id="player-v32">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/032_Chemistry_12_SCH4U_Solubility_Equilibrium.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=jSVEkCccrKc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧪 Acid-Base Chemistry</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>Brønsted-Lowry definition</strong> identifies an acid as a proton (H⁺) donor and a base as a proton acceptor. In water, the autoionization \(2H_2O \rightleftharpoons H_3O^+ + OH^-\) gives \(K_w = [H_3O^+][OH^-] = 1.0 \times 10^{-14}\) at 25 °C, so pure water has pH = 7. <strong>pH</strong> is defined as \(-\log_{10}[H_3O^+]\), and pOH analogously; \(\text{pH} + \text{pOH} = 14\).</p>
+            <p>Strong acids (HCl, HBr, HI, HClO₄, HNO₃, H₂SO₄ in the first dissociation) ionize completely; their concentration equals [H₃O⁺]. Weak acids ionize only partly: \(HA + H_2O \rightleftharpoons H_3O^+ + A^-\), with \(K_a = [H_3O^+][A^-]/[HA]\). Larger \(K_a\) (smaller \(pK_a\)) means a stronger acid. Polyprotic acids ionize stepwise with successively smaller \(K_a\) values. For a conjugate acid/base pair, \(K_a \cdot K_b = K_w\) and \(pK_a + pK_b = 14\).</p>
+            <p>Acid-base <strong>titration</strong> follows the pH as a base is added to an acid (or vice versa). At the <strong>equivalence point</strong>, moles of acid = moles of base; pH at equivalence depends on the salt formed (strong-strong: 7; weak acid-strong base: &gt; 7; strong acid-weak base: &lt; 7). The <strong>half-equivalence point</strong> for a weak acid titrated with strong base is where [HA] = [A⁻] and pH = pK_a — a powerful way to determine pK_a graphically.</p>
+            <ul>
+              <li><strong>Brønsted-Lowry acid / base</strong> — proton donor / acceptor.</li>
+              <li><strong>Conjugate pair</strong> — HA / A⁻ differing by one H⁺.</li>
+              <li><strong>K_a, pK_a</strong> — acid dissociation constant and its negative log.</li>
+              <li><strong>K_w</strong> = 1.0 × 10⁻¹⁴ at 25 °C.</li>
+              <li><strong>Amphiprotic / amphoteric</strong> — can act as either acid or base (e.g., HCO₃⁻, H₂O).</li>
+              <li><strong>Equivalence point</strong> ≠ <strong>endpoint</strong>; the latter is where the indicator changes colour.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: pH of a weak acid</p>
+              <p>Find the pH of 0.100 M ethanoic acid (CH₃COOH), \(K_a = 1.8 \times 10^{-5}\).</p>
+              <p>Let x = [H₃O⁺] formed. \(K_a = \dfrac{x \cdot x}{0.100 - x} \approx \dfrac{x^2}{0.100} = 1.8\times 10^{-5}\) (5% approximation valid since K_a is small).</p>
+              <p>x² = 1.8 × 10⁻⁶, x = 1.34 × 10⁻³ M. Check: 1.34 × 10⁻³ / 0.100 = 1.3% &lt; 5%. So pH = −log(1.34 × 10⁻³) = <strong>2.87</strong>.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Treating weak acids as fully dissociated — only strong acids ionize 100%.</li>
+              <li>Forgetting the water contribution to [H₃O⁺] in very dilute (≤ 10⁻⁶ M) solutions.</li>
+              <li>Confusing K_a (acid) with K_b (its conjugate base) — their product is K_w.</li>
+              <li>Reading pH = pK_a as "equivalence point"; it is the half-equivalence point in a weak-acid titration.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.7 — "describe, using the Brønsted-Lowry theory, the behaviour of acids (e.g., HCl, H₂SO₄, HNO₃, CH₃COOH) and bases (e.g., NaOH, NH₃) in aqueous solution."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v33')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Acids and Bases</span>
+                <span class="vid-duration">49:49</span>
+                <span class="vid-toggle" id="toggle-v33">▶</span>
+            </div>
+            <div class="video-player" id="player-v33">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/033_Chemistry_12_SCH4U_Acids_and_Bases.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Uwkwk3wJ7iM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v34')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">pH of Strong Acids and Bases</span>
+                <span class="vid-duration">43:35</span>
+                <span class="vid-toggle" id="toggle-v34">▶</span>
+            </div>
+            <div class="video-player" id="player-v34">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/034_Chemistry_12_SCH4U_pH_of_Strong_Acids_and_Bases.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=eUMFmXxZo9Y" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v35')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Ka and Kb Calculations</span>
+                <span class="vid-duration">28:52</span>
+                <span class="vid-toggle" id="toggle-v35">▶</span>
+            </div>
+            <div class="video-player" id="player-v35">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/035_Chemistry_12_SCH4U_Ka_and_Kb_Calculations.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=iiToVSasT9E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v36')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hydrolysis of Salts</span>
+                <span class="vid-duration">46:54</span>
+                <span class="vid-toggle" id="toggle-v36">▶</span>
+            </div>
+            <div class="video-player" id="player-v36">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/036_Chemistry_12_SCH4U_Hydrolysis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=EO7D9wB2SRg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v37')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Titration — Strong Acid/Base</span>
+                <span class="vid-duration">1:03:57</span>
+                <span class="vid-toggle" id="toggle-v37">▶</span>
+            </div>
+            <div class="video-player" id="player-v37">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/037_Chemistry_12_SCH4U_Strong_Titration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=fMM-3XkmI40" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v38')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Titration — Weak Acid/Base</span>
+                <span class="vid-duration">55:45</span>
+                <span class="vid-toggle" id="toggle-v38">▶</span>
+            </div>
+            <div class="video-player" id="player-v38">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/038_Chemistry_12_SCH4U_Weak_Titration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=mQc9RbJ23R4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧪 Buffers &amp; Henderson-Hasselbalch</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>buffer</strong> is an aqueous solution that resists changes in pH on the addition of small amounts of acid or base. It consists of a weak conjugate acid-base pair in roughly equal concentrations — typically a weak acid HA and its conjugate base A⁻, or a weak base B and its conjugate acid BH⁺. When acid is added, the base component neutralizes it (\(A^- + H_3O^+ \rightarrow HA + H_2O\)); when base is added, the acid component neutralizes it (\(HA + OH^- \rightarrow A^- + H_2O\)). The pH changes only slightly because the ratio [A⁻]/[HA] changes only slightly.</p>
+            <p>The <strong>Henderson–Hasselbalch equation</strong>, \(\text{pH} = pK_a + \log\dfrac{[A^-]}{[HA]}\), expresses the buffer pH directly from the conjugate-base-to-acid ratio. When [A⁻] = [HA], pH = pK_a — the centre of the buffering region. A buffer is generally effective within ±1 pH unit of pK_a (ratio between 1:10 and 10:1). <strong>Buffer capacity</strong> is the amount of strong acid or base that can be added before the buffer's pH changes significantly; it scales with the absolute concentration of the buffer components.</p>
+            <p>Buffers are essential in biological systems — blood is buffered near pH 7.40 by the H₂CO₃ / HCO₃⁻ system, with respiratory regulation of pCO₂ providing fine control. In the laboratory, phosphate and Tris buffers are common. Industrially, buffered solutions are used in pharmaceuticals, electroplating, fermentation, and water treatment.</p>
+            <ul>
+              <li><strong>Buffer</strong> — weak conjugate acid/base pair in similar concentrations.</li>
+              <li><strong>Buffer region</strong> — pH ≈ pK_a ± 1.</li>
+              <li><strong>Buffer capacity</strong> — moles of strong acid/base absorbed per unit pH change.</li>
+              <li><strong>Henderson-Hasselbalch</strong> — \(\text{pH} = pK_a + \log([A^-]/[HA])\).</li>
+              <li><strong>Common-ion effect</strong> — addition of A⁻ to HA suppresses HA ionization.</li>
+              <li><strong>Biological buffer</strong> — H₂CO₃/HCO₃⁻ (blood), H₂PO₄⁻/HPO₄²⁻ (intracellular).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Designing a pH 4.74 acetate buffer</p>
+              <p>Acetic acid has pK_a = 4.74. You wish to prepare 500 mL of a buffer at pH 4.74 using 0.10 M CH₃COOH and 0.10 M CH₃COONa stock solutions.</p>
+              <p>Setting pH = pK_a in Henderson-Hasselbalch gives [A⁻]/[HA] = 1, so mix equal volumes — 250 mL of each stock. Now suppose 10.0 mL of 0.10 M HCl (1.0 mmol H⁺) is added. The acetate converts: moles HA become (50 + 1) = 51 mmol; moles A⁻ become (50 − 1) = 49 mmol. New pH = 4.74 + log(49/51) = 4.74 − 0.017 = <strong>4.72</strong> — virtually unchanged.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Inverting the H-H ratio — base goes on top, acid on the bottom.</li>
+              <li>Using H-H for a strong acid/strong base mixture (no buffer forms).</li>
+              <li>Treating ratios in moles vs concentrations inconsistently — when both species are in the same solution, mole ratio = concentration ratio.</li>
+              <li>Forgetting that adding water dilutes a buffer's <em>capacity</em> (but not its pH).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.8 — "explain the importance of buffers and the role they play in maintaining equilibrium in physical and biological systems (e.g., human blood, oceans)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Buffer Solutions — pH Calculations, Henderson-Hasselbalch Equation — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">21:09</span>
+                <span class="vid-toggle" id="toggle-yt17">▶</span>
+            </div>
+            <div class="video-player" id="player-yt17">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/us_x9cbQs94?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=us_x9cbQs94" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sch4u/Unit4_Equilibrium_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sch4u/Unit4_Equilibrium_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sch4u/Unit4_Equilibrium_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SCH4U Chemistry · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

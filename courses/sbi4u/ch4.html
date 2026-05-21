@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI4U — Biology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sbi4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SBI4U Biology)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧬 SBI4U: Unit 4: Homeostasis</h1>
+    <p>Feedback mechanisms, nervous system, endocrine system, thermoregulation, osmoregulation, blood glucose regulation</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+            <h2>Unit 4: Homeostasis</h2>
+            <p>Feedback mechanisms, nervous system, endocrine system, thermoregulation, osmoregulation, blood glucose regulation</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Homeostasis</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Homeostasis Overview -->
+        <div class="subsection-label">⚖️ Homeostasis &amp; Feedback</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><em>Homeostasis</em> (Cannon, 1929) is the maintenance of a relatively constant internal environment — temperature, pH, osmolarity, blood glucose, ion balance — despite external fluctuation. Cells function only within narrow physiological ranges, so homeostasis is not a luxury; it is the cost of being alive. Every homeostatic system has four parts. A <em>set point</em> defines the target value. <em>Sensors (receptors)</em> detect deviations. A <em>control centre</em> (often the hypothalamus or brainstem) compares input to the set point and issues a signal. <em>Effectors</em> (muscles, glands) carry out the correction. Information flows in loops, not lines.</p>
+            <p>Most physiological control uses <em>negative feedback</em>: an effector action <em>opposes</em> the original change. When core temperature rises, sweat glands secrete and skin vessels dilate, dumping heat; when it falls, shivering and vasoconstriction generate and retain heat. Negative feedback produces oscillation around the set point, never perfect constancy — your body temperature swings about 0.5 °C through the day. <em>Positive feedback</em> is rarer because it amplifies a change away from the set point. Useful examples are limited and self-terminating: oxytocin during childbirth (each contraction stretches the cervix, triggering more oxytocin until birth), the clotting cascade (each clotting factor activates the next until a stable clot forms), and the action-potential upstroke (sodium influx triggers more sodium channels to open).</p>
+            <p>Homeostasis can fail. A loss of glucose regulation produces diabetes mellitus; failure of body-temperature regulation in extreme cold causes hypothermia; renal failure compromises ion and water balance. Many disease states are best described as homeostatic failures in specific control loops.</p>
+            <ul>
+              <li><strong>Set point</strong> — physiological target value (e.g., 37 °C, pH 7.35–7.45).</li>
+              <li><strong>Negative feedback</strong> — corrective response opposing the deviation; stabilising.</li>
+              <li><strong>Positive feedback</strong> — amplifying response; self-terminating after a specific event.</li>
+              <li><strong>Receptor / effector</strong> — sensor / structure that carries out the response.</li>
+              <li><strong>Hypothalamus</strong> — central control hub for temperature, hunger, thirst, hormones.</li>
+              <li><strong>Acclimation</strong> — physiological adjustment to chronic environmental change.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Mapping a feedback loop</p>
+              <p>You step outside on a –10 °C day. Identify the stimulus, receptor, control centre, effectors, and response in the feedback loop, and classify it as positive or negative.</p>
+              <p>Stimulus: cold air drops skin and core temperature. Receptors: peripheral thermoreceptors in skin and central thermoreceptors in the hypothalamus. Control centre: anterior/posterior hypothalamus. Effectors: skeletal muscles (shivering thermogenesis), arterioles (vasoconstriction), arrector pili (piloerection), and over time the thyroid (raises metabolic rate). Response: heat production rises and heat loss falls, returning core temperature toward 37 °C. This is <em>negative feedback</em> — the response opposes the original deviation.</p>
+            </div>
+            <ul>
+              <li>Calling negative feedback "bad" — negative refers to direction (opposing), not value.</li>
+              <li>Treating childbirth oxytocin as ongoing positive feedback — it ends when the baby is delivered.</li>
+              <li>Forgetting that homeostasis oscillates around a set point rather than holding it perfectly.</li>
+              <li>Mixing up receptor (detector) and effector (responder).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.1 — "explain the importance of maintaining homeostasis to ensure the proper functioning of body systems (e.g., the maintenance of body temperature, blood glucose levels, water balance)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Homeostasis</span>
+                <span class="vid-duration">14:18</span>
+                <span class="vid-toggle" id="toggle-v25">▶</span>
+            </div>
+            <div class="video-player" id="player-v25">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/025_Homeostasis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=oAsqYJUk-Xc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Thermoregulation</span>
+                <span class="vid-duration">12:56</span>
+                <span class="vid-toggle" id="toggle-v22">▶</span>
+            </div>
+            <div class="video-player" id="player-v22">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/022_Thermoregulation.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=942xZjVfCLw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Osmoregulation -->
+        <div class="subsection-label">💧 Osmoregulation</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><em>Osmoregulation</em> is the control of body-fluid composition — water content, solute concentration, and ion balance — within tolerable limits. In humans the principal osmoregulatory organ is the <em>kidney</em>. Each kidney contains roughly one million <em>nephrons</em>, the functional units. A nephron's filtration unit, the <em>glomerulus</em>, sits inside <em>Bowman's capsule</em>; blood pressure forces water and small solutes (ions, glucose, amino acids, urea) out of the glomerular capillaries into the capsule, producing a protein-free filtrate at roughly 180 L/day. From there the filtrate passes through the <em>proximal convoluted tubule</em>, the <em>loop of Henle</em>, the <em>distal convoluted tubule</em>, and the <em>collecting duct</em>, with selective reabsorption and secretion all along the way.</p>
+            <p>The proximal tubule reabsorbs about 65% of filtered water and all of the glucose and amino acids through active transport coupled to \(Na^+\). The loop of Henle creates a steep osmotic gradient in the medulla via countercurrent multiplication: the descending limb is water-permeable but solute-impermeable (water leaves into the salty medulla), the ascending limb is the reverse (\(Na^+\) and \(Cl^-\) actively leave but water does not). The distal tubule fine-tunes ion balance under the control of <em>aldosterone</em> (adrenal cortex), which increases \(Na^+\) reabsorption and \(K^+\) excretion. The final water adjustment happens in the collecting duct under the control of <em>antidiuretic hormone (ADH / vasopressin)</em>, released from the posterior pituitary in response to high blood osmolarity. ADH inserts aquaporin-2 channels into the duct membrane, allowing water to be reabsorbed and producing concentrated urine. When blood is dilute, ADH falls, aquaporins are withdrawn, and dilute urine is produced.</p>
+            <p>The renin–angiotensin–aldosterone system (RAAS) handles low blood pressure or volume: renin from the kidney converts angiotensinogen to angiotensin I, which is then converted to angiotensin II by ACE in the lungs. Angiotensin II vasoconstricts and stimulates aldosterone, restoring pressure.</p>
+            <ul>
+              <li><strong>Nephron</strong> — functional unit of the kidney; ~1 million per organ.</li>
+              <li><strong>Glomerulus / Bowman's capsule</strong> — capillary tuft / filtration cup of the nephron.</li>
+              <li><strong>Loop of Henle</strong> — creates medullary osmotic gradient through countercurrent multiplication.</li>
+              <li><strong>ADH / aldosterone</strong> — water-retaining / sodium-retaining hormones.</li>
+              <li><strong>Aquaporin</strong> — water channel inserted by ADH into the collecting duct.</li>
+              <li><strong>RAAS</strong> — renin–angiotensin–aldosterone system regulating blood pressure and volume.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting urine concentration after dehydration</p>
+              <p>A hiker has been sweating for hours and has not drunk water. Predict the changes in plasma osmolarity, ADH release, aquaporin insertion, and urine concentration.</p>
+              <p>Sweating loses water faster than solutes, so plasma osmolarity rises. Osmoreceptors in the hypothalamus detect this and trigger ADH release from the posterior pituitary. ADH binds collecting-duct cells, inserting aquaporin-2 channels. Water is reabsorbed into the medullary interstitium, leaving small volumes of highly concentrated urine. Plasma osmolarity falls back toward 290 mOsm/L — classic negative feedback.</p>
+            </div>
+            <ul>
+              <li>Saying ADH "adds water to the blood" directly — ADH increases water reabsorption from filtrate by inserting aquaporins.</li>
+              <li>Mixing up aldosterone (\(Na^+\)) and ADH (water).</li>
+              <li>Forgetting that glucose appears in urine (glucosuria) only when filtered glucose exceeds the proximal tubule's reabsorption capacity (diabetes).</li>
+              <li>Reversing the loop of Henle: descending limb is water-permeable; ascending limb is solute-permeable.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.2 — "describe the anatomy and physiology of the endocrine, excretory, and nervous systems, and explain their roles in maintaining homeostasis."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Urinary System</span>
+                <span class="vid-duration">24:16</span>
+                <span class="vid-toggle" id="toggle-v1">▶</span>
+            </div>
+            <div class="video-player" id="player-v1">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/001_The_Urinary_System.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Ela3stm0EEc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Endocrine System -->
+        <div class="subsection-label">🧬 Endocrine System &amp; Hormones</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>endocrine system</em> coordinates long-distance, slow-onset, long-lasting control of body function through <em>hormones</em> — chemical messengers secreted into the bloodstream by ductless glands. Compared to the nervous system, endocrine signalling is broader, slower, and persists for minutes to days. Major endocrine glands include the hypothalamus, anterior and posterior pituitary, thyroid, parathyroids, adrenal cortex and medulla, pancreas (islets of Langerhans), ovaries, and testes. Each gland secretes specific hormones that act only on cells bearing the matching <em>receptor</em>; specificity arises from the receptor, not from the bloodstream.</p>
+            <p>Hormones come in two structural classes that dictate how they signal. <em>Steroid hormones</em> (cortisol, aldosterone, oestrogen, testosterone) are lipid-soluble, diffuse through the plasma membrane, and bind intracellular receptors that act as transcription factors — slow but lasting effects on gene expression. <em>Peptide and amine hormones</em> (insulin, glucagon, ADH, adrenaline) are water-soluble and bind cell-surface receptors, triggering second-messenger cascades (cAMP, IP₃, \(Ca^{2+}\)) — rapid but transient effects on existing proteins. Adrenaline binding to a β-adrenergic receptor activates a G-protein, which activates adenylyl cyclase, which raises cAMP, which activates protein kinase A — a signal-amplifying cascade in which one hormone molecule can change the activity of thousands of enzymes.</p>
+            <p>The <em>hypothalamic–pituitary axis</em> is the master command structure. The hypothalamus releases tropic hormones (TRH, CRH, GnRH) that signal the anterior pituitary, which in turn releases its own tropic hormones (TSH, ACTH, FSH/LH, GH, prolactin) targeting peripheral glands. Negative feedback closes most loops: high circulating thyroid hormone (\(T_3, T_4\)) inhibits both TRH and TSH, preventing runaway secretion.</p>
+            <ul>
+              <li><strong>Hormone</strong> — blood-borne chemical signal acting on distant target cells.</li>
+              <li><strong>Steroid vs peptide hormone</strong> — lipid-soluble, intracellular receptor / water-soluble, cell-surface receptor.</li>
+              <li><strong>Second messenger</strong> — intracellular signal (cAMP, IP₃, \(Ca^{2+}\)) propagating a peptide-hormone signal.</li>
+              <li><strong>Tropic hormone</strong> — hormone whose target is another endocrine gland (e.g., TSH targets thyroid).</li>
+              <li><strong>Hypothalamic-pituitary axis</strong> — central control network for most endocrine glands.</li>
+              <li><strong>Negative feedback regulation</strong> — circulating hormone level inhibits its own release.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracing the thyroid axis</p>
+              <p>Trace the hormonal cascade that raises basal metabolic rate when body temperature falls, naming each gland, hormone, and the final feedback step.</p>
+              <p>Cold detected by hypothalamus → hypothalamus secretes TRH (thyrotropin-releasing hormone) → anterior pituitary secretes TSH (thyroid-stimulating hormone) → thyroid secretes \(T_3\) and \(T_4\) → target cells increase metabolic rate (more mitochondria, more thermogenesis). Negative feedback: rising \(T_3/T_4\) inhibits both TRH (hypothalamus) and TSH (pituitary), preventing overshoot. This is a textbook three-tier endocrine axis with negative feedback at two levels.</p>
+            </div>
+            <ul>
+              <li>Confusing exocrine (ducted, e.g., sweat) with endocrine (ductless) glands.</li>
+              <li>Saying all hormones act fast — steroid hormones change gene expression and act over hours.</li>
+              <li>Forgetting that target specificity depends on receptors, not on hormone routing.</li>
+              <li>Mixing up the anterior pituitary (synthesises its own hormones) with the posterior pituitary (stores ADH and oxytocin made in the hypothalamus).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.2 — "describe the anatomy and physiology of the endocrine, excretory, and nervous systems, and explain their roles in maintaining homeostasis."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hormones That Affect Metabolism</span>
+                <span class="vid-duration">16:04</span>
+                <span class="vid-toggle" id="toggle-v19">▶</span>
+            </div>
+            <div class="video-player" id="player-v19">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/019_Hormones_That_Affect_Metabolism.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=3PGoTBZ_wIQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Male Reproductive Hormones</span>
+                <span class="vid-duration">11:32</span>
+                <span class="vid-toggle" id="toggle-v20">▶</span>
+            </div>
+            <div class="video-player" id="player-v20">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/020_Male_Reproductive_Hormones.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Ozbu_nvLu24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Female Reproductive Hormones</span>
+                <span class="vid-duration">22:07</span>
+                <span class="vid-toggle" id="toggle-v21">▶</span>
+            </div>
+            <div class="video-player" id="player-v21">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/021_Female_Reproductive_Hormones.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=QmClBdZrJbA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Curriculum-aligned external video lessons -->
+        <div class="subsection-label">⚡ Nervous System</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The nervous system provides fast, targeted, short-acting control through electrical and chemical signalling in <em>neurons</em>. The two branches are the <em>central nervous system (CNS)</em> — brain and spinal cord — and the <em>peripheral nervous system (PNS)</em>, which carries sensory information into the CNS and motor commands out. The PNS subdivides into somatic (voluntary skeletal muscle) and autonomic (involuntary smooth muscle, cardiac muscle, glands) divisions; the autonomic system further splits into sympathetic (fight-or-flight) and parasympathetic (rest-and-digest) branches that usually act antagonistically.</p>
+            <p>A neuron has three functional regions. <em>Dendrites</em> receive signals; the <em>cell body (soma)</em> integrates them; the <em>axon</em> conducts action potentials to the synaptic terminals. At rest the inside of the axon is about −70 mV relative to outside, maintained by the \(Na^+/K^+\) pump (3 \(Na^+\) out, 2 \(K^+\) in per ATP) and by potassium-selective leak channels. When a stimulus depolarises the membrane past threshold (~−55 mV), voltage-gated \(Na^+\) channels open: \(Na^+\) rushes in, the membrane swings to +30 mV — this is the rising phase of the <em>action potential</em>. \(Na^+\) channels then inactivate and voltage-gated \(K^+\) channels open, \(K^+\) leaves, and the membrane repolarises (and briefly hyperpolarises) before settling back. Action potentials are all-or-nothing and propagate unidirectionally; in myelinated axons they jump between <em>nodes of Ranvier</em> in <em>saltatory conduction</em>, dramatically increasing speed.</p>
+            <p>At the <em>synapse</em>, the arriving action potential opens voltage-gated \(Ca^{2+}\) channels in the presynaptic terminal; \(Ca^{2+}\) triggers vesicle fusion and release of <em>neurotransmitter</em> (acetylcholine, glutamate, GABA, dopamine, serotonin, norepinephrine) into the synaptic cleft. The neurotransmitter binds postsynaptic receptors and causes either depolarisation (excitatory, EPSP) or hyperpolarisation (inhibitory, IPSP). The signal is terminated by enzymatic breakdown (e.g., acetylcholinesterase) or reuptake (e.g., SSRIs block serotonin reuptake).</p>
+            <ul>
+              <li><strong>Resting potential</strong> — ~−70 mV, maintained by \(Na^+/K^+\) pump and \(K^+\) leak.</li>
+              <li><strong>Action potential</strong> — all-or-nothing depolarisation triggered above threshold.</li>
+              <li><strong>Myelin sheath / nodes of Ranvier</strong> — insulating wrap / gaps where APs regenerate.</li>
+              <li><strong>Saltatory conduction</strong> — jumping conduction along myelinated axons.</li>
+              <li><strong>Synaptic vesicle / neurotransmitter</strong> — vesicle storing chemical messenger / messenger released at synapses.</li>
+              <li><strong>EPSP / IPSP</strong> — excitatory / inhibitory postsynaptic potential.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Why myelination matters</p>
+              <p>Compare the conduction speed of an unmyelinated 1 µm-diameter axon (~1 m/s) with a myelinated 1 µm axon (~50–100 m/s) and explain the underlying mechanism.</p>
+              <p>In an unmyelinated axon every patch of membrane must regenerate the action potential, which is slow. Myelin (made by oligodendrocytes in the CNS and Schwann cells in the PNS) electrically insulates the axon. Voltage-gated \(Na^+\) channels cluster at nodes of Ranvier, so the action potential effectively "jumps" from node to node — saltatory conduction. The same diameter axon conducts ~50–100× faster when myelinated. This is why demyelinating disease (multiple sclerosis) causes weakness and conduction delays.</p>
+            </div>
+            <ul>
+              <li>Saying \(Na^+\) channels open during repolarisation — they inactivate; \(K^+\) channels open in repolarisation.</li>
+              <li>Treating action potentials as graded — they are all-or-nothing once threshold is reached.</li>
+              <li>Confusing synaptic transmission direction — neurotransmitter flows pre → post.</li>
+              <li>Forgetting the absolute refractory period, which prevents backward propagation.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "explain the mechanisms by which the nervous system maintains homeostasis (e.g., the structure and function of neurons, action potentials, synaptic transmission)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Action Potential — Amoeba Sisters</span>
+                <span class="vid-duration">11:24</span>
+                <span class="vid-toggle" id="toggle-yt14">▶</span>
+            </div>
+            <div class="video-player" id="player-yt14">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-uty1gne6zs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=-uty1gne6zs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Nervous System, Part 2 — Action Potential — Crash Course A&amp;P #9</span>
+                <span class="vid-duration">10:54</span>
+                <span class="vid-toggle" id="toggle-yt15">▶</span>
+            </div>
+            <div class="video-player" id="player-yt15">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/OZG8M_ldA1M?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=OZG8M_ldA1M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Nervous System, Part 3 — Synapses! — Crash Course A&amp;P #10</span>
+                <span class="vid-duration">11:00</span>
+                <span class="vid-toggle" id="toggle-yt25">▶</span>
+            </div>
+            <div class="video-player" id="player-yt25">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/VitFvNvRIIY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=VitFvNvRIIY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🩸 Blood Glucose Regulation</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Blood glucose is one of the most tightly regulated physiological variables in the body. The normal fasting range is 4–6 mmol/L (about 70–110 mg/dL). Falling below it (hypoglycaemia) starves the brain — the only organ that under normal conditions cannot use fatty acids for fuel — and risks coma. Sustained elevation (hyperglycaemia) damages blood vessels, nerves, and kidneys. The <em>pancreas</em> is the central regulator, with two cell populations in the islets of Langerhans secreting hormones with opposing effects: <em>α-cells</em> release <em>glucagon</em>, and <em>β-cells</em> release <em>insulin</em>.</p>
+            <p>After a meal, blood glucose rises. β-cells sense the rise and release insulin. Insulin binds receptor tyrosine kinases on most body cells; in muscle and adipose tissue, this triggers translocation of GLUT4 glucose transporters from intracellular vesicles to the plasma membrane, allowing glucose uptake. In the liver, insulin stimulates <em>glycogenesis</em> (glucose polymerised to glycogen for storage) and lipogenesis. Blood glucose falls back to baseline — a classic negative-feedback loop. Between meals or during exercise, glucose falls. α-cells sense the drop and release glucagon. Glucagon acts mainly on the liver, stimulating <em>glycogenolysis</em> (breakdown of glycogen) and <em>gluconeogenesis</em> (synthesis of new glucose from amino acids, lactate, and glycerol) — restoring blood glucose. Adrenaline and cortisol reinforce glucagon's effect during stress.</p>
+            <p>Failures of this loop produce diabetes mellitus. <em>Type 1 diabetes</em> is autoimmune destruction of β-cells, so insulin production fails; treatment requires injected insulin. <em>Type 2 diabetes</em> is insulin resistance — receptors and downstream signalling are blunted, so even normal or elevated insulin cannot move glucose into cells. It is closely linked to obesity, inactivity, and genetics, and is managed by lifestyle change, oral hypoglycaemics, and sometimes insulin.</p>
+            <ul>
+              <li><strong>Insulin</strong> — β-cell hormone that lowers blood glucose.</li>
+              <li><strong>Glucagon</strong> — α-cell hormone that raises blood glucose.</li>
+              <li><strong>Glycogenesis / glycogenolysis</strong> — synthesis / breakdown of glycogen.</li>
+              <li><strong>Gluconeogenesis</strong> — synthesis of new glucose from non-carbohydrate precursors.</li>
+              <li><strong>GLUT4</strong> — insulin-regulated glucose transporter in muscle and fat.</li>
+              <li><strong>Type 1 vs Type 2 diabetes</strong> — autoimmune insulin deficiency vs insulin resistance.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracing the post-meal response</p>
+              <p>You eat a bowl of pasta. Trace the hormonal and cellular response that returns blood glucose to baseline.</p>
+              <p>Carbohydrate is digested to glucose and absorbed across the small-intestinal epithelium into blood. Blood glucose rises to ~8–10 mmol/L. β-cells of the pancreatic islets detect the rise and release insulin into the bloodstream. Insulin binds receptors on muscle and adipose cells, triggering GLUT4 vesicle fusion at the membrane — glucose is taken up. In the liver, insulin stimulates glycogen synthase, storing glucose as glycogen. As blood glucose returns to ~5 mmol/L, β-cells reduce insulin release and α-cells increase glucagon release slightly to prevent overshoot — negative feedback.</p>
+            </div>
+            <ul>
+              <li>Saying insulin "produces glucose" — insulin lowers blood glucose by promoting uptake and storage.</li>
+              <li>Confusing glycogenesis (storage) with gluconeogenesis (making new glucose from non-sugars).</li>
+              <li>Treating Type 1 and Type 2 diabetes as the same disease — mechanisms and treatments differ.</li>
+              <li>Forgetting that α-cells produce glucagon and β-cells produce insulin (β raises ↓, α raises ↑).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.1 — "explain the importance of maintaining homeostasis to ensure the proper functioning of body systems (e.g., the maintenance of body temperature, blood glucose levels, water balance)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Insulin and Glucagon | Physiology — FuseSchool</span>
+                <span class="vid-duration">5:10</span>
+                <span class="vid-toggle" id="toggle-yt16">▶</span>
+            </div>
+            <div class="video-player" id="player-yt16">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/y9Bdi4dnSlg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=y9Bdi4dnSlg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sbi4u/Unit4_Homeostasis_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sbi4u/Unit4_Homeostasis_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sbi4u/Unit4_Homeostasis_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <a href="../../assessments/sbi4u/Strand_D_Homeostasis_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SBI4U Biology · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

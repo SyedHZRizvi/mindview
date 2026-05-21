@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mdm4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MDM4U Mathematics of Data Management)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>📊 MDM4U: Chapter 6: The Normal Distribution</h1>
+    <p>Continuous distributions, properties of the normal curve, z-scores, the empirical rule, normal approximation to the binomial</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit6">
+    <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+        <h2>Chapter 6: The Normal Distribution</h2>
+        <p>Continuous distributions, properties of the normal curve, z-scores, the empirical rule, normal approximation to the binomial</p>
+        <div class="unit-meta">
+            <span>📚 Strand B: Probability Distributions</span>
+            <span>⏱️ ~12h</span>
+            <span>🎯 B1.5–B1.7</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.1 — Continuous Random Variables &amp; Density</div>
+        <div class="topic-desc">Probability density vs. probability mass; area under a density curve; uniform continuous distribution.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>So far our random variables have been discrete — they take integer values, and we assign each value a positive probability. <strong>Continuous random variables</strong> take values on an interval of real numbers (heights, weights, times, voltages). Because there are uncountably many possible values, assigning a positive probability to any single value would make the total exceed 1. Instead, probability is described by a <strong>probability density function</strong> \(f(x)\), and probabilities correspond to <em>areas</em> under \(f\): \( P(a \le X \le b) = \displaystyle\int_a^b f(x)\,dx\).</p>
+            <p>For a function \(f\) to be a valid density it must be non-negative everywhere and integrate to 1 over its domain. In MDM4U we typically work geometrically: the simplest continuous distribution is the <strong>uniform distribution on \([a, b]\)</strong>, where the density is the constant \(\tfrac{1}{b-a}\). Probabilities are then ratios of widths: \(P(c \le X \le d) = \tfrac{d - c}{b - a}\). One subtle but important consequence of continuity is that \(P(X = c) = 0\) for any single value \(c\); only intervals carry positive probability. As a result, \(P(X &lt; c) = P(X \le c)\) for continuous variables — the strict-versus-non-strict inequality does not matter.</p>
+            <ul>
+              <li><strong>Continuous random variable:</strong> takes values on an interval of \(\mathbb{R}\).</li>
+              <li><strong>Density \(f(x)\):</strong> \(f(x) \ge 0\), \(\int_{-\infty}^{\infty} f(x)\,dx = 1\).</li>
+              <li><strong>Probability = area:</strong> \(P(a \le X \le b) = \int_a^b f(x)\,dx\).</li>
+              <li><strong>Uniform \([a, b]\):</strong> \(f(x) = \tfrac{1}{b - a}\) on \([a, b]\), zero elsewhere.</li>
+              <li><strong>Point probability is zero:</strong> \(P(X = c) = 0\) for every single \(c\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A bus arrives at any time uniformly between 10 minutes after the hour and 25 minutes after the hour. Let \(X\) = arrival time. Find \(P(15 \le X \le 20)\) and \(P(X &gt; 22)\).</p>
+              <p>\(X\) is uniform on \([10, 25]\), so the density is \(f(x) = \tfrac{1}{25 - 10} = \tfrac{1}{15}\). Probabilities are ratios of interval widths:</p>
+              <p>\[ P(15 \le X \le 20) = \frac{20 - 15}{25 - 10} = \frac{5}{15} = \frac{1}{3}. \]</p>
+              <p>\[ P(X &gt; 22) = \frac{25 - 22}{25 - 10} = \frac{3}{15} = \frac{1}{5}. \]</p>
+            </div>
+            <ul>
+              <li>Trying to use \(P(X = c)\) for a continuous variable — this is always 0; ask for intervals instead.</li>
+              <li>Confusing the density value \(f(c)\) (which can exceed 1) with a probability (which cannot).</li>
+              <li>Using discrete formulas like \(\sum P(X = x_i)\) when continuous integration is required.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "recognize and identify a continuous random variable (i.e., a variable that assumes values from the infinite number of possible outcomes in a continuous sample space), and distinguish between situations that give rise to discrete frequency distributions (e.g., counting the number of times an event occurs) and situations that give rise to continuous frequency distributions (e.g., measuring the time required to complete a task)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to the Normal Distribution — jbstatistics</span>
+                <span class="vid-duration">8:11</span>
+                <span class="vid-toggle" id="toggle-mdm-yt25">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt25">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iYiOVISWXS4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iYiOVISWXS4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.2 — Properties of the Normal Distribution</div>
+        <div class="topic-desc">Bell-shape, symmetry about \( \mu \), inflection points at \( \mu \pm \sigma \), total area = 1; the empirical (68-95-99.7) rule.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>normal distribution</strong> is the most important continuous distribution in statistics. Its density is the bell-shaped curve \[ f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\!\Bigl(-\tfrac{(x - \mu)^2}{2\sigma^2}\Bigr), \] determined by two parameters: the mean \(\mu\) (location, peak position) and the standard deviation \(\sigma\) (spread). The curve is symmetric about \(\mu\), has inflection points exactly at \(\mu - \sigma\) and \(\mu + \sigma\), and its total area equals 1. Many naturally occurring measurements — human height, IQ scores, measurement errors, exam scores in a large class — are approximately normal because of the <em>central limit theorem</em> (Topic B3 in the bonus unit).</p>
+            <p>For practical work, the <strong>empirical (68-95-99.7) rule</strong> describes how probability is concentrated: approximately 68% of values fall within one \(\sigma\) of \(\mu\), 95% within two \(\sigma\), and 99.7% within three \(\sigma\). This rule lets you estimate probabilities and percentiles by eye without a z-table for "round" boundaries. For example, if heights of Grade 12 girls are approximately \(N(165\text{ cm}, 6\text{ cm})\), then about 95% fall between 153 cm and 177 cm. The rule also flags outliers: a value beyond \(\mu \pm 3\sigma\) occurs less than 0.3% of the time and is worth investigating.</p>
+            <ul>
+              <li><strong>Normal distribution:</strong> \(X \sim N(\mu, \sigma)\); density depends on \(\mu\) and \(\sigma\) only.</li>
+              <li><strong>Symmetry:</strong> \(f(\mu + a) = f(\mu - a)\), so \(P(X &lt; \mu) = P(X &gt; \mu) = 0.5\).</li>
+              <li><strong>Inflection points:</strong> at \(x = \mu \pm \sigma\).</li>
+              <li><strong>Empirical rule:</strong> 68 / 95 / 99.7% within 1 / 2 / 3 \(\sigma\) of \(\mu\).</li>
+              <li><strong>Total area:</strong> \(\int f(x)\,dx = 1\) (over all \(x\)).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Suppose adult male heights in Canada follow \(N(\mu = 175 \text{ cm}, \sigma = 7 \text{ cm})\). Estimate (a) \(P(168 \le X \le 182)\) and (b) \(P(X &gt; 196)\).</p>
+              <p>(a) The interval \([168, 182] = [\mu - \sigma, \mu + \sigma]\); by the empirical rule, about \(\mathbf{68\%}\) of men.</p>
+              <p>(b) \(196 = \mu + 3\sigma\). By the empirical rule, 99.7% lie within \(\mu \pm 3\sigma\), so 0.3% lie outside, split symmetrically. Therefore \(P(X &gt; 196) \approx 0.15\%\).</p>
+              <p>Cross-check using z-scores: \(z = (196 - 175)/7 = 3\) → \(P(Z &gt; 3) \approx 0.00135 = 0.135\%.\;\checkmark\)</p>
+            </div>
+            <ul>
+              <li>Stating the empirical rule with the wrong percentages (e.g. "68-95-99"). The third value is 99.7%, not 99.</li>
+              <li>Applying the empirical rule to clearly non-normal distributions (very skewed or bimodal data).</li>
+              <li>Forgetting that the rule is symmetric: half of the "outside the interval" probability lies in each tail.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "recognize standard deviation as a measure of the spread of a distribution, and determine, with and without technology, the mean and standard deviation of a sample of values of a continuous random variable."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Normal Distribution, Z-Scores &amp; Empirical Rule — MarinStatsLectures</span>
+                <span class="vid-duration">10:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt26">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt26">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/zUnC1CV4FAc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=zUnC1CV4FAc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.3 — Standardizing &amp; z-Scores</div>
+        <div class="topic-desc">\( z = \dfrac{x - \mu}{\sigma} \); using the standard-normal table to compute \( P(Z \le z) \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Every normal distribution is a stretched, shifted copy of the <strong>standard normal distribution</strong> \(Z \sim N(0, 1)\) with mean 0 and standard deviation 1. The transformation that converts any normal value \(x\) into a standard normal score is \(z = \dfrac{x - \mu}{\sigma}\), called a <strong>z-score</strong>. The z-score measures the number of standard deviations the value lies above (positive \(z\)) or below (negative \(z\)) the mean. Standardising lets us answer probability questions about any normal distribution by looking up a single table for \(Z\).</p>
+            <p>Standard-normal tables list \(\Phi(z) = P(Z \le z)\), the cumulative probability from \(-\infty\) up to \(z\). To find \(P(a \le X \le b)\) for a non-standard \(X\), convert both endpoints to z-scores and compute \(\Phi(z_b) - \Phi(z_a)\). To find an "at least" probability, use the complement: \(P(X &gt; b) = 1 - \Phi(z_b)\). Symmetry of the standard-normal curve is a powerful shortcut: \(\Phi(-z) = 1 - \Phi(z)\). Modern calculators replace the table with the function "normalcdf" — but understanding the underlying lookup remains an Ontario MDM4U expectation.</p>
+            <ul>
+              <li><strong>Standard normal:</strong> \(Z \sim N(0, 1)\).</li>
+              <li><strong>z-score:</strong> \(z = \dfrac{x - \mu}{\sigma}\), in units of standard deviations.</li>
+              <li><strong>Standard-normal CDF:</strong> \(\Phi(z) = P(Z \le z)\), tabulated.</li>
+              <li><strong>Symmetry:</strong> \(\Phi(-z) = 1 - \Phi(z)\).</li>
+              <li><strong>Inverse use:</strong> percentiles \(\to\) z, then \(x = \mu + z\sigma\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: SAT scores follow \(N(\mu = 1050, \sigma = 200)\). What proportion of test-takers scored between 900 and 1300?</p>
+              <p>Standardise both endpoints:</p>
+              <p>\[ z_1 = \frac{900 - 1050}{200} = -0.75, \qquad z_2 = \frac{1300 - 1050}{200} = 1.25. \]</p>
+              <p>Look up \(\Phi(1.25) = 0.8944\) and \(\Phi(-0.75) = 1 - 0.7734 = 0.2266\). Then:</p>
+              <p>\[ P(900 \le X \le 1300) = \Phi(1.25) - \Phi(-0.75) = 0.8944 - 0.2266 = 0.6678 \approx 66.8\%. \]</p>
+            </div>
+            <ul>
+              <li>Forgetting to subtract \(\mu\) before dividing by \(\sigma\) (only dividing gives the wrong z).</li>
+              <li>Looking up \(\Phi(z)\) but reporting \(1 - \Phi(z)\) — always sketch the curve and shade the area you want.</li>
+              <li>Reporting z-scores as final answers when the question asked for a probability or an \(x\)-value.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "determine, through investigation using dynamic statistical software, and describe the roles of \(\mu\) and \(\sigma\) in the normal distribution, and use a z-score table to determine the probabilities of values within a given range of values."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Standard Normal Distribution Tables, Z Scores, Probability — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">21:51</span>
+                <span class="vid-toggle" id="toggle-mdm-yt27">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt27">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CjF_yQ2N638?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CjF_yQ2N638" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.4 — Normal Approximation to the Binomial</div>
+        <div class="topic-desc">When \( np \ge 5 \) and \( n(1-p) \ge 5 \), \( X \approx N(np, \sqrt{np(1-p)}) \); continuity correction.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Computing binomial probabilities directly becomes unwieldy when \(n\) is large — formulas like \(P(X \le 30)\) require summing 31 terms. The <strong>normal approximation to the binomial</strong> exploits the fact that, as \(n\) grows, the binomial distribution increasingly resembles a normal curve. Specifically, if \(X \sim B(n, p)\) and both \(np \ge 5\) and \(n(1-p) \ge 5\) (a common rule of thumb), then \(X\) is approximately normal with mean \(\mu = np\) and standard deviation \(\sigma = \sqrt{np(1 - p)}\).</p>
+            <p>Because we are approximating a discrete distribution by a continuous one, we apply a <strong>continuity correction</strong>: for "at most \(k\)" use \(P(X \le k) \approx \Phi\!\left(\tfrac{k + 0.5 - np}{\sqrt{np(1-p)}}\right)\); for "at least \(k\)" use \(1 - \Phi\!\left(\tfrac{k - 0.5 - np}{\sqrt{np(1-p)}}\right)\); for \(P(X = k)\) use \(\Phi\!\left(\tfrac{k + 0.5 - np}{\sqrt{np(1-p)}}\right) - \Phi\!\left(\tfrac{k - 0.5 - np}{\sqrt{np(1-p)}}\right)\). The half-unit shift accounts for the fact that the discrete value \(k\) corresponds to the bar from \(k - 0.5\) to \(k + 0.5\) on the histogram. Without the correction, the approximation systematically under- or over-estimates tail probabilities.</p>
+            <ul>
+              <li><strong>Rule of thumb:</strong> apply the approximation when both \(np \ge 5\) and \(n(1-p) \ge 5\).</li>
+              <li><strong>Approximation:</strong> \(X \sim B(n,p)\) is approximately \(N(np, \sqrt{np(1-p)})\).</li>
+              <li><strong>Continuity correction:</strong> shift boundaries by \(\pm 0.5\) to align bars with the curve.</li>
+              <li><strong>When unnecessary:</strong> for moderate \(n\), modern calculators handle the exact binomial directly.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A fair coin is tossed 100 times. Estimate \(P(45 \le X \le 55)\) where \(X\) = number of heads.</p>
+              <p>Conditions: \(np = 50 \ge 5\) and \(n(1-p) = 50 \ge 5\). Use \(N(50, \sqrt{25}) = N(50, 5)\). Apply the continuity correction:</p>
+              <p>\[ P(45 \le X \le 55) \approx \Phi\!\Bigl(\tfrac{55.5 - 50}{5}\Bigr) - \Phi\!\Bigl(\tfrac{44.5 - 50}{5}\Bigr) = \Phi(1.10) - \Phi(-1.10). \]</p>
+              <p>\(\Phi(1.10) = 0.8643\), \(\Phi(-1.10) = 0.1357\). So \(P(45 \le X \le 55) \approx 0.8643 - 0.1357 = 0.7286\). Exact binomial computation gives 0.7287 — excellent agreement.</p>
+            </div>
+            <ul>
+              <li>Omitting the continuity correction — the approximation is less accurate, especially in tails.</li>
+              <li>Applying the rule of thumb \(np \ge 5\) when in fact \(np\) is much smaller (small samples need exact binomial or Poisson approximation).</li>
+              <li>Using \(\sigma = \sqrt{np}\) (forgetting the \(1-p\) factor).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "make connections, through investigation using dynamic statistical software, between the normal distribution and the binomial and hypergeometric distributions for increasing numbers of trials of the discrete distributions (e.g., recognizing that the shape of the hypergeometric distribution of the number of males on a 4-person committee selected from a group of people becomes more like the shape of a normal distribution as the size of the group from which the committee is drawn increases)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt28')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Normal Curve, The Empirical Rule and Z-Scores</span>
+                <span class="vid-duration">12:40</span>
+                <span class="vid-toggle" id="toggle-mdm-yt28">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt28">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CjF_yQ2N638?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CjF_yQ2N638" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 6 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mdm4u_ch6_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mdm4u_ch6_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mdm4u_ch6_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch5.html" class="chnav-btn chnav-prev">← Chapter 5</a>
+  <a href="ch7.html" class="chnav-btn chnav-next">Chapter 7 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

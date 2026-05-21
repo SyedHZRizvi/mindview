@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mdm4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MDM4U Mathematics of Data Management)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>📊 MDM4U: Chapter 5: Probability Distributions (Discrete)</h1>
+    <p>Binomial, geometric, and hypergeometric distributions; identifying which model fits a given experiment</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+        <h2>Chapter 5: Probability Distributions (Discrete)</h2>
+        <p>Binomial, geometric, and hypergeometric distributions; identifying which model fits a given experiment</p>
+        <div class="unit-meta">
+            <span>📚 Strand B: Probability Distributions</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 B1.1–B1.4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.1 — The Binomial Distribution</div>
+        <div class="topic-desc">Fixed number of independent Bernoulli trials: \( P(X=k) = \binom{n}{k} p^k (1-p)^{n-k} \). Mean \( np \), variance \( np(1-p) \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>binomial distribution</strong> is the natural model when an experiment consists of a fixed number of independent, identical trials, each producing one of two outcomes (often called "success" and "failure"). Such individual trials are called <em>Bernoulli trials</em>. If we perform \(n\) trials with constant success probability \(p\), the random variable \(X\) = "number of successes" is binomial, denoted \(X \sim B(n, p)\). The probability of exactly \(k\) successes is \( P(X = k) = \binom{n}{k} p^{k}(1-p)^{n-k}\). The factor \(\binom{n}{k}\) counts the orderings of \(k\) successes among \(n\) positions, and \(p^{k}(1-p)^{n-k}\) is the probability of any one such ordering.</p>
+            <p>Four conditions (BINS) must hold: <em>Binary outcomes, Independent trials, fixed Number of trials, identical Success probability</em>. When these hold, the distribution has the very clean mean and variance \(E(X) = np\) and \(\mathrm{Var}(X) = np(1-p)\); the standard deviation is \(\sigma = \sqrt{np(1-p)}\). The shape of the distribution is symmetric when \(p = 0.5\), right-skewed when \(p &lt; 0.5\), and left-skewed when \(p &gt; 0.5\). For large \(n\), the binomial becomes approximately normal (Topic 6.4).</p>
+            <ul>
+              <li><strong>Binomial random variable:</strong> \(X \sim B(n, p)\) — count of successes in \(n\) Bernoulli trials.</li>
+              <li><strong>Pmf:</strong> \(P(X = k) = \binom{n}{k} p^{k}(1-p)^{n-k}\), \(k = 0, 1, \ldots, n\).</li>
+              <li><strong>Mean and variance:</strong> \(\mu = np\), \(\sigma^2 = np(1-p)\).</li>
+              <li><strong>BINS conditions:</strong> Binary, Independent, Number fixed, Success probability constant.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A multiple-choice quiz has 8 questions, each with 4 options. A student guesses randomly. Let \(X\) = number of correct answers.</p>
+              <p>The BINS conditions are satisfied: each question is a Bernoulli trial with \(p = 0.25\), trials are independent, \(n = 8\) is fixed. So \(X \sim B(8, 0.25)\).</p>
+              <p>\[ P(X = 3) = \binom{8}{3}(0.25)^{3}(0.75)^{5} = 56 \cdot 0.015625 \cdot 0.2373 \approx 0.2076. \]</p>
+              <p>Mean and standard deviation: \(\mu = 8(0.25) = 2\); \(\sigma = \sqrt{8(0.25)(0.75)} = \sqrt{1.5} \approx 1.225\).</p>
+            </div>
+            <ul>
+              <li>Using the binomial model when sampling without replacement — the probability of success then changes between trials, breaking the constant-\(p\) condition (use hypergeometric instead).</li>
+              <li>Forgetting the combinatorial coefficient \(\binom{n}{k}\) and computing only \(p^k(1-p)^{n-k}\), which gives the probability of a specific ordering, not of \(k\) successes.</li>
+              <li>Treating \(p\) as the probability of failure when the problem actually defines it as success.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "recognize conditions (e.g., independent trials) that give rise to a random variable that follows a binomial probability distribution, calculate the probability associated with each value of the random variable, represent the distribution numerically using a table and graphically using a probability histogram, and make connections to the algebraic representation \(P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}\)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to the Binomial Distribution — jbstatistics</span>
+                <span class="vid-duration">11:11</span>
+                <span class="vid-toggle" id="toggle-mdm-yt21">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt21">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qIzC1-9PwQo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=qIzC1-9PwQo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.2 — The Geometric Distribution</div>
+        <div class="topic-desc">Number of independent Bernoulli trials until the first success: \( P(X = k) = (1-p)^{k-1} p \). Mean \( \tfrac{1}{p} \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>geometric distribution</strong> arises when we keep repeating a Bernoulli trial until the first success occurs. The random variable \(X\) = "trial number on which the first success appears" can take values 1, 2, 3, …, with no upper bound. The probability \(P(X = k)\) requires \(k - 1\) failures followed by 1 success: \( P(X = k) = (1-p)^{k-1}\,p\) for \(k = 1, 2, 3, \ldots\). Like the binomial, the geometric assumes independent trials with constant success probability \(p\).</p>
+            <p>Geometric reasoning answers "how long must I wait?" questions: how many phone calls until you get someone home; how many free-throw attempts until your first miss; how many widgets you must inspect before encountering a defect. The mean of a geometric random variable is \(\mu = \tfrac{1}{p}\) — a tidy formula whose intuition is "if you succeed with probability 0.20, expect to need 5 trials on average". The variance is \(\sigma^2 = \tfrac{1-p}{p^2}\). The distribution is always right-skewed: most successes come early, but a long tail of late successes is possible. The geometric has a unique <em>memoryless</em> property: \(P(X &gt; m + n \mid X &gt; m) = P(X &gt; n)\) — past failures provide no information about how much longer you must wait.</p>
+            <ul>
+              <li><strong>Geometric random variable:</strong> trial of first success, \(P(X = k) = (1-p)^{k-1} p\).</li>
+              <li><strong>Mean:</strong> \(\mu = \tfrac{1}{p}\).</li>
+              <li><strong>Variance:</strong> \(\sigma^2 = \tfrac{1-p}{p^2}\).</li>
+              <li><strong>Memoryless property:</strong> future waiting time is independent of past failures.</li>
+              <li><strong>Cumulative:</strong> \(P(X \le k) = 1 - (1-p)^{k}\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A basketball player makes a free throw with probability \(p = 0.7\). Let \(X\) = number of attempts until her first miss. Find \(P(X = 4)\) and \(E(X)\).</p>
+              <p>A "miss" is now the "success" event of interest, so the probability of a miss is \(0.3\). For the first miss on attempt 4, we need 3 makes followed by a miss:</p>
+              <p>\[ P(X = 4) = (0.7)^{3}(0.3) = 0.343 \cdot 0.3 = 0.1029. \]</p>
+              <p>Expected number of attempts until first miss: \(E(X) = \tfrac{1}{0.3} \approx 3.33\).</p>
+            </div>
+            <ul>
+              <li>Mixing up the role of \(p\) — make sure \(p\) is the probability of the event you are waiting for.</li>
+              <li>Treating the geometric distribution as if it had a fixed number of trials (that would be binomial).</li>
+              <li>Confusing the two conventions for "\(X\)": some texts count trials including the success (giving \(\mu = 1/p\)); others count only failures before success (giving \(\mu = (1-p)/p\)). Always read the definition.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "recognize conditions that give rise to discrete random variables that follow uniform, hypergeometric, and geometric probability distributions, and determine probabilities associated with values of these random variables."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Discrete Probability Distributions: Example Problems — jbstatistics</span>
+                <span class="vid-duration">11:53</span>
+                <span class="vid-toggle" id="toggle-mdm-yt22">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt22">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jm_Ch-iESBg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Jm_Ch-iESBg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.3 — The Hypergeometric Distribution</div>
+        <div class="topic-desc">Sampling without replacement from a finite population: \( P(X=k) = \dfrac{\binom{r}{k}\binom{N-r}{n-k}}{\binom{N}{n}} \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>hypergeometric distribution</strong> arises when we sample <em>without replacement</em> from a finite population that has been pre-partitioned into "successes" and "failures". Suppose a population of size \(N\) contains \(r\) successes and \(N - r\) failures, and we randomly select \(n\) items. Let \(X\) = the number of successes in our sample. Then \( P(X = k) = \dfrac{\binom{r}{k}\binom{N - r}{n - k}}{\binom{N}{n}} \) for \(k = \max(0, n - (N-r)), \ldots, \min(n, r)\).</p>
+            <p>The structure is "(ways to choose \(k\) successes) × (ways to choose \(n - k\) failures) ÷ (ways to choose any \(n\) items)". Unlike the binomial, the trials here are <em>not</em> independent: drawing a success reduces the proportion of successes available on the next draw. As a result, the hypergeometric has the same mean as the binomial, \(E(X) = n \cdot \tfrac{r}{N}\), but a slightly smaller variance, \(\mathrm{Var}(X) = n \cdot \tfrac{r}{N} \cdot \tfrac{N-r}{N} \cdot \tfrac{N-n}{N-1}\). The extra factor \(\tfrac{N-n}{N-1}\) is the <em>finite-population correction</em>. When \(n\) is small compared to \(N\) (a rule of thumb is \(n \le 0.05 N\)), the hypergeometric is well-approximated by the binomial with \(p = r/N\).</p>
+            <ul>
+              <li><strong>Hypergeometric variable:</strong> successes drawn in a sample of size \(n\) taken without replacement from population \(N\) containing \(r\) successes.</li>
+              <li><strong>Pmf:</strong> \(P(X = k) = \dfrac{\binom{r}{k}\binom{N-r}{n-k}}{\binom{N}{n}}\).</li>
+              <li><strong>Mean:</strong> \(E(X) = n \cdot \tfrac{r}{N}\).</li>
+              <li><strong>Variance:</strong> \(\mathrm{Var}(X) = n \cdot \tfrac{r}{N} \cdot \tfrac{N-r}{N} \cdot \tfrac{N-n}{N-1}\).</li>
+              <li><strong>Without replacement:</strong> trials are dependent; the binomial does not apply exactly.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A box contains 15 light bulbs, of which 4 are defective. An inspector randomly selects 5 bulbs without replacement. Find \(P(\text{exactly 2 defective})\).</p>
+              <p>Here \(N = 15\), \(r = 4\), \(n = 5\), \(k = 2\). Apply the hypergeometric formula:</p>
+              <p>\[ P(X = 2) = \frac{\binom{4}{2}\binom{11}{3}}{\binom{15}{5}} = \frac{6 \cdot 165}{3\,003} = \frac{990}{3\,003} \approx 0.3297. \]</p>
+              <p>Mean number of defectives in the sample: \(E(X) = 5 \cdot \tfrac{4}{15} = \tfrac{4}{3} \approx 1.33\).</p>
+            </div>
+            <ul>
+              <li>Applying the binomial formula when the sample is large relative to the population — the constant-\(p\) assumption fails.</li>
+              <li>Confusing the values of \(N, r, n, k\). Use a diagram: total / successes-in-population / sample / successes-in-sample.</li>
+              <li>Forgetting that \(k\) cannot exceed \(\min(n, r)\) or fall below \(\max(0, n - (N - r))\) — these are the valid \(k\) values for a non-zero probability.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "recognize conditions that give rise to discrete random variables that follow uniform, hypergeometric, and geometric probability distributions, and determine probabilities associated with values of these random variables."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to the Hypergeometric Distribution — jbstatistics</span>
+                <span class="vid-duration">10:14</span>
+                <span class="vid-toggle" id="toggle-mdm-yt23">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt23">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/L2KMttDm3aY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=L2KMttDm3aY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.4 — Choosing the Right Distribution</div>
+        <div class="topic-desc">Decision tree: replacement? fixed trials? counting trials or successes? — selecting binomial vs. geometric vs. hypergeometric.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Once three discrete distributions are in your toolkit, the strategic question is "which one applies?" The answer rests on three diagnostic questions about the experiment: (i) Is sampling done <em>with</em> or <em>without</em> replacement? (ii) Is the <em>number of trials fixed</em> in advance, or are we waiting for the first success? (iii) Are we counting <em>successes</em> in a fixed sample, or counting <em>trials</em> until something happens?</p>
+            <p>A short decision tree summarises the choices. If the trial count is fixed AND each trial has the same success probability (typically because we sample <em>with</em> replacement or from a very large population) — use the <strong>binomial</strong>. If the trial count is fixed AND we sample <em>without</em> replacement from a finite population with known sub-population sizes — use the <strong>hypergeometric</strong>. If we are waiting for the first success and trials are independent with constant \(p\) — use the <strong>geometric</strong>. A <em>uniform discrete</em> distribution (each value equally likely, like a fair die) applies when no waiting or sampling is involved. Identifying the right model is half the battle; once the model is named, formulas and parameters follow.</p>
+            <ul>
+              <li><strong>Uniform (discrete):</strong> finite list of equally likely outcomes.</li>
+              <li><strong>Binomial \(B(n,p)\):</strong> fixed \(n\), independent trials, constant \(p\).</li>
+              <li><strong>Hypergeometric \(H(N, r, n)\):</strong> fixed sample of size \(n\) drawn without replacement from population of \(N\) with \(r\) successes.</li>
+              <li><strong>Geometric:</strong> waiting time to first success; independent trials, constant \(p\), no fixed \(n\).</li>
+              <li><strong>Rule of thumb:</strong> hypergeometric ≈ binomial when \(n \le 0.05N\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Classify each scenario.</p>
+              <p>(a) "A bag has 6 red and 4 blue chips. Five chips are drawn without replacement; \(X\) = number of red chips drawn." Sample without replacement from a finite population → <strong>hypergeometric</strong>, \(N = 10, r = 6, n = 5\).</p>
+              <p>(b) "20 free throws are attempted with \(p = 0.8\); \(X\) = number made." Fixed \(n\), independent, constant \(p\) → <strong>binomial</strong>, \(B(20, 0.8)\).</p>
+              <p>(c) "A telemarketer calls until someone answers (\(p = 0.10\) per call); \(X\) = number of calls until first answer." Waiting time to first success → <strong>geometric</strong>, \(p = 0.10\), so \(P(X=k) = (0.9)^{k-1}(0.1)\).</p>
+            </div>
+            <ul>
+              <li>Using the binomial when sampling without replacement from a small population.</li>
+              <li>Using the hypergeometric when sampling <em>with</em> replacement — independence holds, so binomial is correct.</li>
+              <li>Forgetting that the geometric has no fixed upper bound on \(X\) — sums over \(k = 1, 2, 3, \ldots\) (a geometric series).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "compare, with technology and using numeric and graphical representations, the probability distributions of discrete random variables (e.g., compare binomial distributions with the same probability of success for increasing numbers of trials; compare the shapes of a hypergeometric distribution and a binomial distribution)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to the Binomial Distribution (fast version) — jbstatistics</span>
+                <span class="vid-duration">5:27</span>
+                <span class="vid-toggle" id="toggle-mdm-yt24">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt24">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/eSJ6ufTSJNk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=eSJ6ufTSJNk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 5 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mdm4u_ch5_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mdm4u_ch5_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mdm4u_ch5_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="ch6.html" class="chnav-btn chnav-next">Chapter 6 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

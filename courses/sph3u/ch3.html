@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Physics (Grade 11) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\(', '\)']], displayMath: [['\[', '\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #ea580c; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #d97706dd, #d97706);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sph3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH3U Physics)</a></div>
+    <div class="strand-tag">Science — Grade 11 University Preparation</div>
+    <h1>⚡ SPH3U: Unit 3: Energy and Society</h1>
+    <p>Work, kinetic &amp; gravitational potential energy, conservation of energy, power, efficiency, heat &amp; thermal energy, energy sources</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg, #d97706dd, #d97706);">
+            <h2>Unit 3: Energy and Society</h2>
+            <p>Work, kinetic &amp; gravitational potential energy, conservation of energy, power, efficiency, heat &amp; thermal energy, energy sources</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Energy</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 4 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.1 — Work, Power &amp; Kinetic Energy</div>
+            <div class="topic-desc">\( W = Fd\cos\theta \), \( E_k = \tfrac{1}{2}mv^2 \), \( P = W/t \), the work-energy theorem</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In physics, <strong>work</strong> has a precise meaning: it is the transfer of energy when a force acts on an object and the object moves in the direction of the force. Mathematically, \( W = F d \cos\theta \), where F is the magnitude of the force, d is the magnitude of the displacement, and θ is the angle between them. Work is a scalar measured in joules (J): 1 J = 1 N·m = the work done lifting an apple about 10 cm. If the force is perpendicular to displacement (θ = 90°), no work is done — a key reason that gravitational force does no work on a satellite in circular orbit. If the force opposes motion (θ = 180°), work is negative (friction takes energy away).</p>
+                <p><strong>Kinetic energy</strong> \( E_k = \tfrac{1}{2}mv^2 \) is the energy an object possesses by virtue of its motion. The <em>work–energy theorem</em> ties work and kinetic energy together: the net work done on an object equals the change in its kinetic energy, \( W_\text{net} = \Delta E_k = \tfrac{1}{2}m v_f^2 - \tfrac{1}{2}m v_i^2 \). This theorem gives a powerful alternative to Newton's second law for many problems, especially when time is unknown but distance is known.</p>
+                <p><strong>Power</strong> is the rate at which work is done (or energy is transferred): \( P = W/t \), measured in watts (W) where 1 W = 1 J/s. For an object moving at constant velocity v under a force F, \( P = Fv \). One horsepower equals about 746 W. Power explains why two cars can have the same engine "energy" but very different acceleration: the more powerful car delivers that energy faster.</p>
+                <ul>
+                  <li><strong>Work</strong> W = Fd cos θ — scalar, joule (J)</li>
+                  <li><strong>Kinetic energy</strong> \( E_k = \tfrac{1}{2}mv^2 \) — scalar, joule (J)</li>
+                  <li><strong>Power</strong> P = W/t = Fv — scalar, watt (W); 1 W = 1 J/s</li>
+                  <li><strong>Work–energy theorem</strong> \( W_\text{net} = \Delta E_k \)</li>
+                  <li><strong>Joule</strong> — 1 J = 1 N·m = 1 kg·m²/s²</li>
+                  <li><strong>Horsepower</strong> — 1 hp ≈ 746 W</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Work–energy theorem applied to a braking car</p>
+                  <p>A 1500 kg car travelling at 20 m/s brakes uniformly to rest over 50 m. Find (a) the work done by the brakes and (b) the average braking force.</p>
+                  <p><strong>Step 1.</strong> Initial kinetic energy: \( E_{k,i} = \tfrac{1}{2}(1500)(20)^2 = 0.5 \times 1500 \times 400 = 300\,000\ \text{J} = 300\ \text{kJ} \).</p>
+                  <p><strong>Step 2.</strong> Final kinetic energy: \( E_{k,f} = 0 \) (car stops).</p>
+                  <p><strong>Step 3.</strong> Work done by net force (brakes): \( W_\text{net} = \Delta E_k = 0 - 300\,000 = -300\,000\ \text{J} \). Negative because the force opposes motion.</p>
+                  <p><strong>Step 4.</strong> Average braking force: \( W = Fd\cos 180° = -Fd \), so \( F = 300\,000/50 = 6000\ \text{N} \) backward.</p>
+                  <p><strong>Step 5.</strong> Power dissipated: braking time \( t = 2 \cdot d/(v_i + v_f) = 2(50)/20 = 5.0\ \text{s} \). Average power = 300 kJ / 5 s = 60 kW (about 80 hp). All that energy heats the brake discs!</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting cos θ</strong> — work is zero when force is perpendicular to motion</li>
+                  <li><strong>Including the wrong angle</strong> — θ is between \( \vec{F} \) and \( \vec{d} \), not necessarily the angle of inclination</li>
+                  <li><strong>Squaring only v, not multiplying by ½ in \( E_k \)</strong></li>
+                  <li><strong>Using \( E_k = \tfrac{1}{2}mv \) (no square)</strong> — common units error</li>
+                  <li><strong>Confusing energy (J) with power (W)</strong> — energy is total work, power is rate</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "solve problems involving the concepts of work, mechanical energy, thermal energy and its transfer (heat), and the law of conservation of energy."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u3v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Work, Energy &amp; Power — CrashCourse</span>
+                    <span class="vid-duration">10:00</span>
+                    <span class="vid-toggle" id="toggle-u3v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u3v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/w4QFJb9a8vo?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=w4QFJb9a8vo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.2 — Gravitational Potential Energy &amp; Conservation</div>
+            <div class="topic-desc">\( E_g = mgh \), conservation of mechanical energy in systems with no friction</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Gravitational potential energy</strong> \( E_g \) is energy stored in an object because of its height above a reference level. Near Earth's surface, where g is essentially constant, \( E_g = mgh \), where m is mass in kg, g = 9.81 m/s², and h is height in metres above the chosen reference (often the ground or the lowest point of the motion). Because only <em>changes</em> in \( E_g \) have physical meaning, you may set the reference level wherever is convenient — at the bottom of a ramp, at table height, at sea level, etc.</p>
+                <p>The <strong>law of conservation of energy</strong> is one of the deepest principles in physics: energy is neither created nor destroyed, only transformed from one form to another or transferred from one object to another. For purely mechanical systems with no friction or air resistance, the sum of kinetic and gravitational potential energy — called the <em>total mechanical energy</em> — is conserved: \( E_{k,i} + E_{g,i} = E_{k,f} + E_{g,f} \). This lets us solve problems without ever finding the acceleration or the time, as long as we know the heights and speeds at two points.</p>
+                <p>When friction or air drag is present, mechanical energy is <em>not</em> conserved — energy leaks out as thermal energy. The total energy is still conserved, but you must include the heat: \( E_{k,i} + E_{g,i} = E_{k,f} + E_{g,f} + E_\text{thermal} \), where \( E_\text{thermal} = F_f \cdot d \) is the work done against friction over the path length d.</p>
+                <ul>
+                  <li><strong>Gravitational potential energy</strong> \( E_g = mgh \) — relative to a chosen reference, joule (J)</li>
+                  <li><strong>Reference level</strong> — point where h = 0, chosen for convenience</li>
+                  <li><strong>Mechanical energy</strong> \( E_\text{mech} = E_k + E_g \)</li>
+                  <li><strong>Conservation of mechanical energy</strong> — \( E_{\text{mech},i} = E_{\text{mech},f} \) (no friction)</li>
+                  <li><strong>Conservation of total energy</strong> — \( E_{k,i} + E_{g,i} = E_{k,f} + E_{g,f} + E_\text{thermal} + \ldots \)</li>
+                  <li><strong>Thermal energy from friction</strong> \( Q = F_f d \) (over path length)</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Roller coaster (frictionless)</p>
+                  <p>A 500 kg coaster car starts from rest at the top of a 30.0 m hill. Find its speed at the bottom of the hill and at the top of a smaller 12.0 m hill, assuming a frictionless track.</p>
+                  <p><strong>Step 1.</strong> Choose the bottom of the track (ground level) as h = 0.</p>
+                  <p><strong>Step 2.</strong> At the top of the 30 m hill: \( E_g = mgh = 500 \times 9.81 \times 30.0 = 147\,150\ \text{J} \); \( E_k = 0 \) (at rest). Total mechanical energy = 147 150 J.</p>
+                  <p><strong>Step 3.</strong> At the bottom (h = 0): all energy is kinetic. \( \tfrac{1}{2}m v^2 = 147\,150 \), so \( v^2 = 2 \times 147\,150/500 = 588.6 \), \( v = 24.3\ \text{m/s} \) (about 87 km/h).</p>
+                  <p><strong>Step 4.</strong> At the top of the 12 m hill: \( E_g = 500 \times 9.81 \times 12.0 = 58\,860\ \text{J} \). So \( E_k = 147\,150 - 58\,860 = 88\,290\ \text{J} \). Speed: \( v = \sqrt{2 \times 88\,290/500} = \sqrt{353.2} = 18.8\ \text{m/s} \).</p>
+                  <p><strong>Step 5.</strong> Note that the speeds depend only on height — not on the shape of the track between hills. The path is irrelevant for a conservative force.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting that h is height above the reference, not total altitude</strong></li>
+                  <li><strong>Assuming mechanical energy is conserved when friction is present</strong></li>
+                  <li><strong>Using a negative h without intending it</strong> — h is positive above the reference</li>
+                  <li><strong>Confusing mass m with weight mg in \( E_g \)</strong> — the formula already includes g</li>
+                  <li><strong>Solving with kinematics when conservation gives the answer in two lines</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.2 — "explain the law of conservation of energy, and apply the law in a variety of contexts."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u3v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Conservation of Energy — Professor Dave Explains</span>
+                    <span class="vid-duration">08:54</span>
+                    <span class="vid-toggle" id="toggle-u3v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u3v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/OTK9JrKC6EY?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=OTK9JrKC6EY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.3 — Heat, Thermal Energy &amp; Calorimetry</div>
+            <div class="topic-desc">\( Q = mc\Delta T \), specific heat capacity, principle of heat exchange, latent heat (qualitative)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Thermal energy</strong> is the total random kinetic energy of the particles (atoms and molecules) in a substance. <strong>Temperature</strong>, measured in kelvin (K) or degrees Celsius (°C), is a measure of the <em>average</em> kinetic energy per particle. <strong>Heat</strong> (symbol Q) is the energy transferred from a hotter object to a cooler one because of a temperature difference; it is not stored in objects, only transferred. The SI unit of heat is the joule (J), although historical units like the calorie (1 cal = 4.184 J) still appear in food labels.</p>
+                <p>The heat needed to change the temperature of a substance is \( Q = mc\Delta T \), where m is mass (kg), c is the <strong>specific heat capacity</strong> (J/(kg·K) or J/(kg·°C); a property of the material), and ΔT is the temperature change (\( T_f - T_i \)). Water has an unusually high specific heat capacity (\( c_\text{water} \approx 4186\ \text{J/(kg·K)} \)) — this is why oceans moderate climate, why your body sweats to cool down, and why the cooling system in a car uses water-based coolant.</p>
+                <p>The <strong>principle of heat exchange</strong> (a form of conservation of energy) states that in a thermally isolated system, the heat lost by hot objects equals the heat gained by cold objects: \( -Q_\text{hot} = Q_\text{cold} \) or \( \Sigma Q = 0 \). This is the basis of <em>calorimetry</em> — measuring heat capacities or chemical reactions by tracking temperature changes. <strong>Latent heat</strong> is the energy absorbed or released during a phase change (melting, boiling) <em>without</em> a temperature change; it is treated qualitatively at the Grade 11 level.</p>
+                <ul>
+                  <li><strong>Heat</strong> Q — energy transferred due to ΔT; joule (J)</li>
+                  <li><strong>Temperature</strong> T — average KE per particle; K or °C (size of degree is the same)</li>
+                  <li><strong>Specific heat capacity</strong> c — J/(kg·K); intrinsic to material</li>
+                  <li><strong>Heat capacity</strong> C = mc — J/K; depends on amount of substance</li>
+                  <li><strong>Principle of heat exchange</strong> — \( \Sigma Q = 0 \) in an isolated system</li>
+                  <li><strong>Latent heat</strong> — energy for phase change at constant T</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Mixing hot and cold water (calorimetry)</p>
+                  <p>200 g of water at 80 °C is mixed with 300 g of water at 20 °C in an insulated cup. Find the equilibrium temperature \( T_f \).</p>
+                  <p><strong>Step 1.</strong> Write \( \Sigma Q = 0 \): \( m_\text{hot} c (T_f - 80) + m_\text{cold} c (T_f - 20) = 0 \).</p>
+                  <p><strong>Step 2.</strong> Note c cancels (same substance): \( 0.200(T_f - 80) + 0.300(T_f - 20) = 0 \).</p>
+                  <p><strong>Step 3.</strong> Expand: \( 0.200 T_f - 16.0 + 0.300 T_f - 6.0 = 0 \), so \( 0.500 T_f = 22.0 \), giving \( T_f = 44\ \text{°C} \).</p>
+                  <p><strong>Step 4.</strong> Sanity check: \( T_f \) lies between 20 and 80 °C, closer to the cooler (more massive) sample. ✓</p>
+                  <p><strong>Step 5.</strong> Heat transferred: \( Q = m_\text{hot} c \Delta T = 0.200 \times 4186 \times (44 - 80) = -30\,140\ \text{J} \). The hot water lost 30 kJ; the cold water gained the same.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing heat (Q) with temperature (T)</strong> — heat is energy, temperature is intensity</li>
+                  <li><strong>Forgetting to use Kelvin sometimes</strong> — Δ°C = ΔK, so ΔT can use either, but absolute T should be in K for gas laws</li>
+                  <li><strong>Plugging mass in grams</strong> — c is in J/(kg·K), so convert g → kg</li>
+                  <li><strong>Including phase changes without using latent heat</strong> — \( Q = mc\Delta T \) does not apply across a phase change</li>
+                  <li><strong>Using sign of ΔT incorrectly</strong> — always \( T_f - T_i \)</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "describe and analyse the relationships among heat, work, and the various forms of energy involved in mechanical and thermal energy transfers."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u3v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Specific Heat Capacity Problems — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">17:32</span>
+                    <span class="vid-toggle" id="toggle-u3v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u3v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ePm_N6RgLfk?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=ePm_N6RgLfk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.4 — Efficiency &amp; Energy Sources (STSE)</div>
+            <div class="topic-desc">Energy efficiency \( \eta \); fossil, nuclear, hydro, wind, solar, geothermal; Ontario's energy mix</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>No energy transformation is perfect: some of the input energy always ends up as "waste" thermal energy. <strong>Efficiency</strong> \( \eta \) (Greek letter eta) is the ratio of useful output energy to total input energy, expressed as a percentage: \( \eta = (E_\text{useful}/E_\text{input}) \times 100\% \). A 60 W incandescent bulb that produces 3 W of light has efficiency 5%; the other 57 W heats the surroundings. A modern LED bulb of the same brightness consumes 8 W with about 40% efficiency. Efficiency is bounded above by 100%, but real machines fall well below this because of friction, heat loss, electrical resistance, and (for heat engines) the second law of thermodynamics.</p>
+                <p>Society's energy comes from several primary sources, each with physics-based advantages and disadvantages. <em>Fossil fuels</em> (coal, oil, natural gas) release energy stored in ancient biomass via chemical combustion; energy density is high, but combustion emits CO₂ and other pollutants. <em>Nuclear fission</em> releases energy from splitting uranium nuclei (\( E = mc^2 \), with very small Δm); high energy density, no CO₂ from operation, but produces long-lived radioactive waste. <em>Hydroelectric</em> converts the gravitational potential energy of stored water into electrical energy; renewable but disrupts ecosystems. <em>Wind</em> harvests kinetic energy of moving air. <em>Solar PV</em> converts photon energy directly to electricity via the photoelectric effect. <em>Geothermal</em> uses Earth's interior heat.</p>
+                <p>Ontario's electricity mix (2024) is roughly 50% nuclear (Bruce, Darlington, Pickering), 25% hydro, 8% wind, 8% natural gas, 7% solar/biomass, and small amounts from other sources. Per-kWh CO₂ emissions are among the lowest of any G7 jurisdiction. STSE analysis asks not just "which source is cheapest?" but "which trade-offs does society accept — climate risk, land use, intermittency, accident risk, waste?"</p>
+                <ul>
+                  <li><strong>Efficiency</strong> η = E_useful / E_input × 100% — dimensionless</li>
+                  <li><strong>Renewable</strong> — replenished on a human timescale (hydro, wind, solar, geothermal, biomass)</li>
+                  <li><strong>Non-renewable</strong> — finite supply (fossil fuels, uranium)</li>
+                  <li><strong>Energy density</strong> — energy per unit mass or volume; J/kg or J/m³</li>
+                  <li><strong>Capacity factor</strong> — average power output / nameplate power; dimensionless</li>
+                  <li><strong>Greenhouse gas</strong> — CO₂, CH₄, N₂O; traps infrared radiation, drives climate change</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Efficiency of a car engine</p>
+                  <p>A car burns 1.0 L of gasoline (energy content 34.8 MJ/L) and produces 8.2 MJ of useful mechanical work that drives it forward. Find the efficiency, and the thermal energy wasted.</p>
+                  <p><strong>Step 1.</strong> Energy input: \( E_\text{in} = 34.8\ \text{MJ} = 3.48 \times 10^7\ \text{J} \).</p>
+                  <p><strong>Step 2.</strong> Useful output: \( E_\text{useful} = 8.2\ \text{MJ} = 8.2 \times 10^6\ \text{J} \).</p>
+                  <p><strong>Step 3.</strong> Efficiency: \( \eta = (8.2/34.8) \times 100\% = 23.6\% \). Typical for a gasoline ICE — diesel engines reach ~40%, gas turbines ~60%.</p>
+                  <p><strong>Step 4.</strong> Wasted energy: \( E_\text{waste} = 34.8 - 8.2 = 26.6\ \text{MJ} \) lost as heat to the engine block, radiator, and exhaust.</p>
+                  <p><strong>Step 5.</strong> STSE: replacing the gasoline car with a 90%-efficient electric drivetrain (charged on Ontario's mostly carbon-free grid) reduces both energy use and CO₂ emissions dramatically.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing power output with energy output</strong> — efficiency uses energy (or steady-state power) totals</li>
+                  <li><strong>Allowing efficiency &gt; 100%</strong> — would violate conservation of energy</li>
+                  <li><strong>Calling all renewables "zero emission"</strong> — life-cycle emissions are non-zero</li>
+                  <li><strong>Ignoring capacity factor</strong> — solar at noon ≠ solar at midnight</li>
+                  <li><strong>Mixing units (kWh, MJ, BTU)</strong> — convert to a common SI unit</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.2 — "analyse the impact of various technological developments and innovations related to energy and society, and propose a course of action to make … energy use more sustainable."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt7')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">The Biggest Lie About Renewable Energy — Veritasium</span>
+                    <span class="vid-duration">19:24</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt7">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt7">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/EhAemz1v7dQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=EhAemz1v7dQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt8')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Energy Sources &amp; Efficiency — Crash Course Physics</span>
+                    <span class="vid-duration">11:21</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt8">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt8">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/w4QFJb9a8vo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=w4QFJb9a8vo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt16')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Exploring the Niagara Falls Power Vista — Hydroelectric Generation (Canadian STSE)</span>
+                    <span class="vid-duration">19:15</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt16">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt16">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LLgs1yUCqwY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=LLgs1yUCqwY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph3u/Unit3_Energy_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph3u/Unit3_Energy_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph3u/Unit3_Energy_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH3U — Physics, Grade 11 · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Physics (Grade 11) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\(', '\)']], displayMath: [['\[', '\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #ea580c; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #059669dd, #059669);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sph3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH3U Physics)</a></div>
+    <div class="strand-tag">Science — Grade 11 University Preparation</div>
+    <h1>⚡ SPH3U: Unit 2: Forces</h1>
+    <p>Newton's three laws, FBDs, friction, tension, normal force, inclined planes, Atwood machines</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg, #059669dd, #059669);">
+            <h2>Unit 2: Forces</h2>
+            <p>Newton's three laws, FBDs, friction, tension, normal force, inclined planes, Atwood machines</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Forces</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 — Forces &amp; Free-Body Diagrams</div>
+            <div class="topic-desc">Identifying forces (gravity, normal, friction, tension, applied), drawing accurate FBDs</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>force</strong> is an interaction that can change an object's motion — a push or a pull. Force is a vector, measured in newtons (N): one newton is the force that gives a 1 kg mass an acceleration of 1 m/s². Forces come in two categories: <em>contact forces</em> (normal, friction, tension, applied, spring) require physical touch; <em>field forces</em> (gravitational, electric, magnetic) act at a distance. The most common forces in Grade 11 mechanics are gravity (weight \( F_g = mg \) acting downward), the normal force (perpendicular to a surface, balancing perpendicular components of other forces), friction (parallel to a surface, opposing sliding), tension (along a rope or cable, pulling the object toward the rope), and applied/pushing forces.</p>
+                <p>A <strong>free-body diagram (FBD)</strong> is a schematic showing every force acting <em>on</em> an object, drawn as arrows starting at the centre of mass. The FBD is the single most important problem-solving tool in mechanics: a correctly-drawn FBD makes Newton's second law almost mechanical, while an incorrect FBD guarantees a wrong answer. Steps: isolate the object, draw a dot or simple box, draw every force as an arrow with a label (\( F_g \), \( F_N \), \( F_f \), \( F_T \), \( F_a \)), and choose coordinate axes (usually aligned with the surface or the direction of motion).</p>
+                <p>The <strong>net force</strong> \( \vec{F}_\text{net} = \Sigma\vec{F} \) is the vector sum of all forces on the object. If \( \vec{F}_\text{net} = 0 \), the object is in <em>equilibrium</em> (at rest or moving at constant velocity). If \( \vec{F}_\text{net} \neq 0 \), the object accelerates in the direction of the net force.</p>
+                <ul>
+                  <li><strong>Force</strong> \( \vec{F} \) — vector, newton (N), 1 N = 1 kg·m/s²</li>
+                  <li><strong>Weight</strong> \( F_g = mg \) — force of gravity, always downward, N</li>
+                  <li><strong>Normal force</strong> \( F_N \) — perpendicular to contact surface</li>
+                  <li><strong>Friction</strong> \( F_f \) — parallel to surface, opposes relative motion</li>
+                  <li><strong>Tension</strong> \( F_T \) — pull along a rope, same magnitude throughout an ideal (massless) rope</li>
+                  <li><strong>Net force</strong> \( \vec{F}_\text{net} \) — vector sum of all forces on the object</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — FBD for a crate being pulled across a rough floor</p>
+                  <p>A 25 kg crate is pulled across a floor by a rope inclined 30° above horizontal, with tension 100 N. Kinetic friction acts. Draw an FBD and list each force.</p>
+                  <p><strong>Step 1.</strong> Isolate the crate; draw a small box. The crate touches the floor (normal force up) and the rope (tension along the rope).</p>
+                  <p><strong>Step 2.</strong> Forces acting on the crate: gravity \( F_g = mg = 25 \times 9.81 = 245.25\ \text{N} \) straight down; normal force \( F_N \) straight up from the floor; kinetic friction \( F_f \) horizontal, opposite to motion; tension \( F_T = 100\ \text{N} \) at 30° above horizontal.</p>
+                  <p><strong>Step 3.</strong> Resolve the tension: \( F_{Tx} = 100\cos 30° = 86.6\ \text{N} \) horizontal; \( F_{Ty} = 100\sin 30° = 50.0\ \text{N} \) upward.</p>
+                  <p><strong>Step 4.</strong> Apply equilibrium in y: \( F_N + F_{Ty} - F_g = 0 \), so \( F_N = 245.25 - 50.0 = 195.25\ \text{N} \). Note that the upward pull reduces the normal force — important for friction calculations.</p>
+                </div>
+                <ul>
+                  <li><strong>Including a "force of motion"</strong> — moving does not require a force (Newton's first law)</li>
+                  <li><strong>Drawing the normal force as the reaction to gravity</strong> — they are not a Newton's-third-law pair</li>
+                  <li><strong>Forgetting to label the object</strong> — an FBD always isolates one object</li>
+                  <li><strong>Drawing forces of the object on others</strong> — FBD shows only forces <em>on</em> the chosen object</li>
+                  <li><strong>Mixing weight (N) and mass (kg)</strong> — they differ by a factor of g</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "draw free-body diagrams (FBDs) and use them to analyse force situations, including those involving an object on a horizontal surface, an object on an inclined plane, and an object suspended by ropes."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u2v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Free Body Diagrams — Khan Academy</span>
+                    <span class="vid-duration">12:15</span>
+                    <span class="vid-toggle" id="toggle-u2v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u2v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/nDis6HbXxjg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=nDis6HbXxjg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 — Newton's First &amp; Second Laws</div>
+            <div class="topic-desc">Inertia, equilibrium, \( \Sigma F = ma \) in 1-D and 2-D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Newton's First Law (the Law of Inertia)</strong> states that an object will remain at rest, or continue moving in a straight line at constant velocity, unless acted upon by a net external force. This contradicts everyday Aristotelian intuition (a sliding book "wants" to stop), but the apparent slowing down is caused by friction — a force we often forget to include. Inertia is the resistance of matter to changes in its motion, and it is quantified by <em>mass</em> (kg). A larger mass has more inertia: a transport truck takes much longer to stop than a bicycle even when both feel similar braking forces, because the truck's larger mass resists the change.</p>
+                <p><strong>Newton's Second Law</strong> connects force and motion quantitatively: \( \vec{F}_\text{net} = m\vec{a} \), or equivalently \( \vec{a} = \vec{F}_\text{net}/m \). The acceleration of an object is directly proportional to the net force on it and inversely proportional to its mass, and the acceleration is in the direction of the net force. Note carefully: it is the <em>net</em> (vector sum) force, not individual forces, that determines acceleration. A car at constant velocity has zero net force even though the engine is producing thrust — friction and drag balance the thrust.</p>
+                <p>In two dimensions, Newton's second law splits into independent component equations: \( \Sigma F_x = m a_x \) and \( \Sigma F_y = m a_y \). Pick axes aligned with the motion (e.g. along an incline) to minimise the number of components you need to resolve.</p>
+                <ul>
+                  <li><strong>Inertia</strong> — tendency to maintain state of motion (measured by mass)</li>
+                  <li><strong>Mass</strong> m — kg, scalar, measure of inertia</li>
+                  <li><strong>Newton (N)</strong> — derived unit: 1 N = 1 kg·m/s²</li>
+                  <li><strong>Equilibrium</strong> — \( \vec{F}_\text{net} = 0 \), so \( \vec{a} = 0 \) (static or dynamic)</li>
+                  <li><strong>Newton's 2nd Law</strong> — \( \vec{F}_\text{net} = m\vec{a} \), vector equation</li>
+                  <li><strong>Component form</strong> — \( \Sigma F_x = ma_x \), \( \Sigma F_y = ma_y \)</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Two horizontal forces on a sled</p>
+                  <p>A 30 kg sled is pushed forward by a child with a force of 80 N. Friction supplies 25 N opposing motion. Find the sled's acceleration.</p>
+                  <p><strong>Step 1.</strong> Draw an FBD: gravity down (\( F_g = 30 \times 9.81 = 294\ \text{N} \)), normal up (294 N), push 80 N forward, friction 25 N backward.</p>
+                  <p><strong>Step 2.</strong> Vertical equilibrium: \( F_N = F_g \) so vertical net force is zero, \( a_y = 0 \).</p>
+                  <p><strong>Step 3.</strong> Horizontal: \( F_\text{net} = 80 - 25 = 55\ \text{N} \) forward.</p>
+                  <p><strong>Step 4.</strong> Newton's 2nd Law: \( a = F_\text{net}/m = 55/30 = 1.83\ \text{m/s}^2 \) forward. Check units: N/kg = kg·m/s²/kg = m/s². ✓</p>
+                  <p><strong>Step 5.</strong> Conceptual check: if the child stops pushing, friction (still 25 N if sliding) becomes the only horizontal force, decelerating the sled at \( a = 25/30 = 0.83\ \text{m/s}^2 \).</p>
+                </div>
+                <ul>
+                  <li><strong>Believing constant velocity requires a constant force</strong> — only constant <em>net</em> force matters, and that net is zero at constant v</li>
+                  <li><strong>Setting \( F = ma \) with a single force when others act</strong> — must use the net</li>
+                  <li><strong>Forgetting that weight is mg in the FBD, not m</strong></li>
+                  <li><strong>Confusing inertia with momentum</strong> — inertia is "resistance to change", momentum is mv</li>
+                  <li><strong>Treating force as a property of the object</strong> — force is an <em>interaction</em> between two objects</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "describe and explain qualitatively and quantitatively, using Newton's laws, the relationship between the acceleration of a body and the net force acting on it."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u2v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Newton's Laws of Motion — Crash Course Physics</span>
+                    <span class="vid-duration">10:41</span>
+                    <span class="vid-toggle" id="toggle-u2v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u2v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/kKKM8Y-u7ds?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=kKKM8Y-u7ds" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 — Newton's Third Law</div>
+            <div class="topic-desc">Action-reaction pairs, identifying paired forces, walking, recoil, rocket propulsion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Newton's Third Law</strong> states that for every action force, there is an equal and opposite reaction force. More precisely: when object A exerts a force on object B, object B simultaneously exerts an equal-magnitude, oppositely-directed force on object A. These two forces are called an <em>action–reaction pair</em> (or "third-law pair"), and three rules always apply: (1) they have the same magnitude; (2) they point in opposite directions; (3) they act on <em>different</em> objects. The last rule is the key to understanding the law: because the two forces act on different objects, they do not cancel out within a single FBD.</p>
+                <p>Common examples illustrate the law clearly. When you walk forward, you push backward on the ground (friction), and the ground simultaneously pushes you forward — the ground's push on you is what actually accelerates you forward. When a rocket ignites, hot exhaust gases are pushed downward by the engine; the gases push the engine (and rocket) upward with the same force. When a gun fires a bullet, the gun pushes the bullet forward; the bullet pushes the gun backward — the recoil. The two forces in each pair are equal in magnitude even though the resulting accelerations may be very different (a heavy gun barely moves, the light bullet flies away).</p>
+                <p>A common source of confusion: weight (Earth pulling on you) and the normal force (floor pushing up on you) are <em>not</em> a third-law pair. They act on the same object (you), and they are not always equal (e.g. in an accelerating elevator). The third-law partner of your weight is the gravitational pull <em>you</em> exert on Earth.</p>
+                <ul>
+                  <li><strong>Action–reaction pair</strong> — two forces, equal magnitude, opposite direction, on different objects</li>
+                  <li><strong>Newton's 3rd Law</strong> — \( \vec{F}_{A\to B} = -\vec{F}_{B\to A} \)</li>
+                  <li><strong>Internal forces</strong> — forces between parts of a system; cancel for system-level F = ma</li>
+                  <li><strong>External forces</strong> — forces from outside the system; the only kind that accelerates the system as a whole</li>
+                  <li><strong>Recoil</strong> — backward acceleration of a gun/cannon, third-law partner of bullet thrust</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Bullet and gun</p>
+                  <p>A 0.020 kg bullet leaves a 4.0 kg rifle at 350 m/s after a 5.0 ms barrel time. Find the average force on the bullet and the recoil velocity of the rifle.</p>
+                  <p><strong>Step 1.</strong> Find the bullet's acceleration: \( a_b = \Delta v/\Delta t = 350/0.005 = 70\,000\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 2.</strong> Force on bullet (gun → bullet): \( F_{g\to b} = m_b a_b = 0.020 \times 70\,000 = 1400\ \text{N} \) forward.</p>
+                  <p><strong>Step 3.</strong> Newton's third law: bullet → gun force is 1400 N backward.</p>
+                  <p><strong>Step 4.</strong> Acceleration of the rifle: \( a_g = F/m_g = 1400/4.0 = 350\ \text{m/s}^2 \) backward.</p>
+                  <p><strong>Step 5.</strong> Recoil velocity over 5.0 ms: \( v_g = a_g \times t = 350 \times 0.005 = 1.75\ \text{m/s} \) — much smaller than the bullet's 350 m/s, because the rifle is 200× more massive (consistent with conservation of momentum, a key SPH4U preview).</p>
+                </div>
+                <ul>
+                  <li><strong>Saying "the larger object exerts more force"</strong> — the forces are equal; only accelerations differ</li>
+                  <li><strong>Listing weight and normal force as a third-law pair</strong> — they act on the same object</li>
+                  <li><strong>Cancelling action–reaction pairs in an FBD</strong> — they act on different objects, so neither appears on the other's FBD</li>
+                  <li><strong>Thinking "for every action there is a delay"</strong> — third-law forces are simultaneous</li>
+                  <li><strong>Confusing third-law pair with equilibrium pair</strong> — equilibrium pairs act on the same object and cancel; third-law pairs act on different objects</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "conduct an inquiry to analyse, in qualitative and quantitative terms, the relationships between mass, applied force, friction, and acceleration in linear motion, using Newton's laws of motion."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Newton's Third Law of Motion — Action and Reaction</span>
+                    <span class="vid-duration">10:30</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt4">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/y61_VPKH2B4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=y61_VPKH2B4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 — Friction (Static &amp; Kinetic)</div>
+            <div class="topic-desc">\( f_s \le \mu_s N \), \( f_k = \mu_k N \), starting vs. sliding, rolling resistance</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Friction</strong> is the force that opposes relative sliding (or attempted sliding) between two surfaces in contact. Microscopically it arises from the interlocking of surface irregularities and from molecular adhesion. Friction is essential to everyday life — without it we could not walk, drive, write, or strike a match — yet it also wastes energy as heat and wears out machinery. Friction always acts <em>parallel</em> to the contact surface and <em>opposite</em> the direction of motion (or attempted motion).</p>
+                <p>Two regimes exist. <strong>Static friction</strong> \( F_s \) prevents an object from starting to slide. It is self-adjusting: it matches whatever applied force is pushing the object, up to a maximum value \( F_{s,\max} = \mu_s F_N \), where \( \mu_s \) is the coefficient of static friction (dimensionless) and \( F_N \) is the normal force. Once the applied force exceeds \( F_{s,\max} \), the object breaks loose and slides; <strong>kinetic friction</strong> \( F_k = \mu_k F_N \) then acts, with \( \mu_k &lt; \mu_s \) for most material pairs (this is why a stationary box "jerks" into motion when you finally push hard enough — the resistance suddenly drops).</p>
+                <p>Notice that friction does <em>not</em> depend on contact area or on sliding speed (in the simple model used in Grade 11). It depends only on the normal force and the coefficient. Rolling resistance is a different and much smaller force — a tire on pavement has rolling resistance perhaps 1% of its weight, vs sliding kinetic friction of about 70%. That is why wheels were a great invention!</p>
+                <ul>
+                  <li><strong>Static friction</strong> \( F_s \le \mu_s F_N \) — variable, prevents starting to slide</li>
+                  <li><strong>Kinetic friction</strong> \( F_k = \mu_k F_N \) — constant, opposes sliding</li>
+                  <li><strong>Coefficient of friction</strong> μ — dimensionless; depends on material pair</li>
+                  <li><strong>Normal force</strong> \( F_N \) — perpendicular contact force; not always equal to mg</li>
+                  <li><strong>\( \mu_s &gt; \mu_k \)</strong> for typical materials — why static is harder to break</li>
+                  <li><strong>Rolling friction</strong> — small force on rolling wheels; not the same as kinetic friction</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Will the crate slide?</p>
+                  <p>A 50 kg crate sits on a level floor. \( \mu_s = 0.40 \), \( \mu_k = 0.30 \). A worker pushes horizontally with 150 N. Does the crate move, and if so what is its acceleration?</p>
+                  <p><strong>Step 1.</strong> Find the normal force on level ground: \( F_N = mg = 50 \times 9.81 = 490.5\ \text{N} \).</p>
+                  <p><strong>Step 2.</strong> Maximum static friction: \( F_{s,\max} = \mu_s F_N = 0.40 \times 490.5 = 196.2\ \text{N} \).</p>
+                  <p><strong>Step 3.</strong> Compare applied force to \( F_{s,\max} \): 150 N &lt; 196.2 N. Static friction adjusts to 150 N, the crate stays at rest, \( a = 0 \).</p>
+                  <p><strong>Step 4.</strong> Now suppose the worker increases the push to 220 N. The crate breaks loose. Kinetic friction: \( F_k = \mu_k F_N = 0.30 \times 490.5 = 147.2\ \text{N} \).</p>
+                  <p><strong>Step 5.</strong> Net force = 220 − 147.2 = 72.8 N. Acceleration = 72.8/50 = 1.46 m/s². The crate slides forward at 1.46 m/s² as long as the worker keeps pushing.</p>
+                </div>
+                <ul>
+                  <li><strong>Always setting \( F_f = \mu F_N \)</strong> — that is only valid for kinetic, or for static at the threshold</li>
+                  <li><strong>Using \( F_N = mg \) on an incline</strong> — on a slope \( F_N = mg\cos\theta \)</li>
+                  <li><strong>Assuming μ has units</strong> — it is dimensionless (force/force)</li>
+                  <li><strong>Forgetting that an upward pull reduces \( F_N \)</strong> — and hence reduces friction</li>
+                  <li><strong>Mixing up \( \mu_s \) and \( \mu_k \)</strong> — use \( \mu_s \) only for the "does it start to move?" check</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "explain how forces (e.g., friction) act on objects … and analyse, in qualitative and quantitative terms, the effects of these forces on the motion of objects."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u2v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Friction Force Problems — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">21:09</span>
+                    <span class="vid-toggle" id="toggle-u2v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u2v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RIBeeW1DSZg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=RIBeeW1DSZg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 — Inclined Planes &amp; Connected Bodies (Atwood)</div>
+            <div class="topic-desc">Resolving gravity into components, multi-body systems with pulleys</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>inclined plane</strong> (ramp) is the workhorse of mechanics problems because gravity, which is vertical, must be resolved into components parallel and perpendicular to the slope. The most powerful trick is to <em>tilt the coordinate axes</em> so that x points up the slope and y points perpendicular to it. With this choice, only gravity needs resolving; the normal force and motion are already along an axis. For an incline at angle θ above horizontal: \( F_{g,\parallel} = mg\sin\theta \) (down the slope) and \( F_{g,\perp} = mg\cos\theta \) (into the slope). The normal force balances the perpendicular component: \( F_N = mg\cos\theta \). The parallel component is what accelerates the object down the slope.</p>
+                <p>When there is no friction on the incline, the acceleration along the slope is simply \( a = g\sin\theta \) — independent of mass, an elegant result. When kinetic friction is present, \( F_f = \mu_k F_N = \mu_k mg\cos\theta \) opposes the motion, so \( a = g(\sin\theta - \mu_k\cos\theta) \) for an object sliding down. The object accelerates only if \( \tan\theta &gt; \mu_s \) (the static-friction threshold).</p>
+                <p><strong>Connected bodies</strong> linked by an ideal rope over a frictionless pulley (called an <em>Atwood machine</em>) share a common magnitude of acceleration because the rope is inextensible, and share a common tension because the rope is massless. The trick: write Newton's second law for each mass separately, choose consistent positive directions (the rope's path), and solve the system. For two masses \( m_1 \) and \( m_2 \) hanging vertically with \( m_2 &gt; m_1 \): \( a = (m_2 - m_1)g/(m_1 + m_2) \) and \( F_T = 2m_1 m_2 g/(m_1 + m_2) \).</p>
+                <ul>
+                  <li><strong>Parallel gravity component</strong> \( F_{g\parallel} = mg\sin\theta \)</li>
+                  <li><strong>Perpendicular gravity component</strong> \( F_{g\perp} = mg\cos\theta \)</li>
+                  <li><strong>Normal force on incline</strong> \( F_N = mg\cos\theta \) (no other perpendicular forces)</li>
+                  <li><strong>Tilted axes</strong> — align x with slope, y perpendicular</li>
+                  <li><strong>Atwood machine</strong> — two masses on a string over a pulley</li>
+                  <li><strong>Ideal rope</strong> — massless, inextensible, frictionless pulley → same a, same T</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Block on a frictionless ramp</p>
+                  <p>A 10 kg block slides down a frictionless 30° incline. Find its acceleration and the normal force.</p>
+                  <p><strong>Step 1.</strong> Tilt axes so x = down the slope (positive), y = away from surface.</p>
+                  <p><strong>Step 2.</strong> Forces in tilted frame: \( F_{g,x} = mg\sin 30° = 10 \times 9.81 \times 0.500 = 49.05\ \text{N} \) (down slope); \( F_{g,y} = -mg\cos 30° = -10 \times 9.81 \times 0.866 = -84.96\ \text{N} \); \( F_N = +84.96\ \text{N} \) (out of slope).</p>
+                  <p><strong>Step 3.</strong> Perpendicular equilibrium: \( F_N - mg\cos\theta = 0 \), so \( F_N = 84.96\ \text{N} \). ✓</p>
+                  <p><strong>Step 4.</strong> Parallel Newton's 2nd law: \( a = F_{g,x}/m = 49.05/10 = 4.91\ \text{m/s}^2 \). Equivalently \( a = g\sin\theta = 9.81 \times 0.500 = 4.91\ \text{m/s}^2 \) — mass cancels. ✓</p>
+                  <p><strong>Step 5.</strong> Sanity check: if θ = 0 (flat), \( a = 0 \); if θ = 90° (cliff), \( a = g \) (free fall). Both extremes match.</p>
+                </div>
+                <ul>
+                  <li><strong>Using \( F_N = mg \) on an incline</strong> — must use \( mg\cos\theta \)</li>
+                  <li><strong>Swapping sin and cos</strong> — sin scales with angle (steeper → more pull along slope)</li>
+                  <li><strong>Forgetting that tension on both sides of an ideal pulley is equal</strong></li>
+                  <li><strong>Picking different positive directions for the two masses in an Atwood problem</strong> — must follow the rope direction</li>
+                  <li><strong>Not resolving gravity</strong> — the perpendicular component must be balanced by the normal force</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.4 — "analyse, in qualitative and quantitative terms, accelerations experienced by objects in linear and projectile motion, and predict and explain motion using vector diagrams (e.g., for an object on an inclined plane)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt5')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Static &amp; Kinetic Friction, Tension, Inclined Plane &amp; Pulley Problems — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">21:46</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt5">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt5">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/pL2YfC-22Uc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=pL2YfC-22Uc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt6')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Atwood Machine Pulley Problems — Physics</span>
+                    <span class="vid-duration">14:29</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt6">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt6">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/teAbundrFLs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=teAbundrFLs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.6 — Circular Motion Introduction (SPH4U Bridge)</div>
+            <div class="topic-desc">Centripetal acceleration \( a_c = v^2/r \), centripetal force, banked curves — preview of SPH4U dynamics</div>
+            <div class="topic-note">🌉 Bridge content: Builds the conceptual foundation that SPH4U expands into orbits and gravitation.</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An object moving in a circle at constant speed is <em>not</em> in equilibrium. Its velocity vector continually changes direction even though its magnitude is constant, and any change in velocity requires acceleration. This acceleration always points <strong>toward the centre of the circle</strong> and is called <strong>centripetal acceleration</strong>: \( a_c = v^2/r \), where v is the speed and r is the radius of the circular path. Notice that doubling the speed quadruples the acceleration — a result that has profound consequences for highway design and roller-coaster engineering.</p>
+                <p>By Newton's second law, this acceleration requires a <strong>centripetal force</strong> \( F_c = mv^2/r \), also directed toward the centre. The word "centripetal" means "centre-seeking" — it describes the <em>direction</em> of an existing force, not a new kind of force. For a car rounding a flat curve, friction supplies the centripetal force; for a planet orbiting the Sun, gravity does; for a ball on a string twirled in a horizontal circle, the horizontal component of tension does. There is no "centrifugal force" pushing outward in an inertial frame — what passengers in a car feel as being "thrown outward" is just inertia (Newton's first law) trying to keep them moving in a straight line while the car turns.</p>
+                <p>For a banked curve with no friction, the horizontal component of the normal force provides the centripetal force: \( \tan\theta = v^2/(rg) \). Highway curves are banked at this ideal angle for the design speed so that drivers do not have to rely on friction alone. This topic is a bridge to SPH4U; the focus in SPH3U is conceptual understanding plus simple calculations.</p>
+                <ul>
+                  <li><strong>Centripetal acceleration</strong> \( a_c = v^2/r \) — directed toward centre, m/s²</li>
+                  <li><strong>Centripetal force</strong> \( F_c = mv^2/r \) — net inward force, newtons</li>
+                  <li><strong>Period</strong> T — time for one revolution, s</li>
+                  <li><strong>Frequency</strong> f = 1/T — revolutions per second, Hz</li>
+                  <li><strong>Speed</strong> v = 2πr/T — for circular motion</li>
+                  <li><strong>Uniform circular motion</strong> — constant speed but changing velocity direction</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Car rounding a curve</p>
+                  <p>A 1200 kg car rounds a flat curve of radius 50 m at 18 m/s (about 65 km/h). What centripetal force is needed, and what is the minimum coefficient of static friction with the road?</p>
+                  <p><strong>Step 1.</strong> Centripetal acceleration: \( a_c = v^2/r = (18)^2/50 = 324/50 = 6.48\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 2.</strong> Centripetal force needed: \( F_c = m a_c = 1200 \times 6.48 = 7776\ \text{N} \), directed toward the centre of the curve.</p>
+                  <p><strong>Step 3.</strong> On a flat curve, static friction supplies \( F_c \): \( F_s = \mu_s F_N = \mu_s mg \). Setting \( \mu_s mg = mv^2/r \): \( \mu_s = v^2/(rg) = 324/(50 \times 9.81) = 0.661 \).</p>
+                  <p><strong>Step 4.</strong> Interpretation: dry asphalt has \( \mu_s \approx 0.8\text{–}1.0 \), so the curve is safe in good weather. Wet pavement (\( \mu_s \approx 0.4 \)) cannot supply enough friction at 65 km/h; the car would skid outward — Newton's first law tendency, not a "centrifugal pull".</p>
+                </div>
+                <ul>
+                  <li><strong>Calling outward "centrifugal force" in an inertial frame</strong> — it is inertia, not a real force</li>
+                  <li><strong>Treating centripetal force as a new force in the FBD</strong> — it is the name for the net inward force, supplied by real forces (gravity, tension, friction, normal)</li>
+                  <li><strong>Confusing speed and velocity in circular motion</strong> — speed is constant, velocity is not</li>
+                  <li><strong>Using \( a = \Delta v/\Delta t \) with v and not Δv</strong> — Δv in circular motion is non-zero even at constant speed</li>
+                  <li><strong>Squaring v incorrectly</strong> — \( v^2/r \) doubles when v doubles? No, it quadruples!</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.5 — "analyse and predict, in quantitative terms, and explain the motion of objects in horizontal and vertical planes (e.g., the motion of an object in uniform circular motion)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt15')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Centripetal Acceleration &amp; Force — Circular Motion, Banked Curves — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">23:41</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt15">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt15">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/_psIWtPBHzA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=_psIWtPBHzA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph3u/Unit2_Forces_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph3u/Unit2_Forces_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph3u/Unit2_Forces_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH3U — Physics, Grade 11 · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

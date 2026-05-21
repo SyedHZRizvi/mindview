@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 4: Solving Exponential Equations &amp; Applications | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit4">
+<div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+<h2>Chapter 4: Solving Exponential Equations &amp; Applications</h2>
+<p>Same-base method, growth/decay models, half-life, compound interest preview</p>
+<div class="unit-meta">
+<span>📚 Strand B: Exponential Functions</span>
+<span>⏱️ ~12h</span>
+<span>📹 4 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.1 &mdash; Solving Exponential Equations (Same-Base Method)</div>
+<div class="topic-desc">Rewrite both sides with a common base, then equate exponents; recognise when the same-base technique applies.</div>
+<div class="summary-card">Solve \( 4^{x+1} = 8^{x-2} \): rewrite as \( (2^2)^{x+1}=(2^3)^{x-2} \), so \( 2^{2x+2}=2^{3x-6} \). Equate exponents: \( 2x+2=3x-6 \), giving \( x=8 \). When no common base exists (e.g. \( 2^x=7 \)), logarithms are required — that's MHF4U.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Equations like \(2^x = 8\) or \(4^{x + 1} = 8^{x - 2}\) hide a simple algebraic trick. Because the exponential function \(b^x\) is one-to-one (every output comes from exactly one input), the equation \(b^P = b^Q\) is equivalent to \(P = Q\) — once the bases match, you can drop the bases and solve the resulting equation in the exponents.</p>
+
+<p>The strategy: <strong>rewrite both sides with a common base</strong>, then equate exponents and solve. The work breaks into three steps.</p>
+
+<p><em>Step 1</em>: Identify a common base. If both sides are powers of 2 (e.g. 2, 4, 8, 16, 32), use 2. If they're powers of 3, use 3. Sometimes the equation hides a common base behind a different label — \(125 = 5^3\), \(\dfrac{1}{16} = 2^{-4}\), \(\sqrt{27} = 27^{1/2} = 3^{3/2}\).</p>
+
+<p><em>Step 2</em>: Use the power-of-a-power law \((b^m)^n = b^{mn}\) to express each side as a single power of the common base.</p>
+
+<p><em>Step 3</em>: Equate the exponents. You now have an ordinary linear (or sometimes quadratic) equation.</p>
+
+<p>This same-base technique handles many MCR3U-level problems. When no common base exists — say \(2^x = 7\) — logarithms are needed, and you'll meet those in MHF4U.</p>
+
+<ul>
+<li><strong>One-to-one property</strong> — for \(b > 0\), \(b \ne 1\): \(b^P = b^Q\) iff \(P = Q\).</li>
+<li><strong>Common base</strong> — a single base \(b\) into which all numerical bases in the equation can be rewritten as integer or rational powers.</li>
+<li><strong>Reciprocal as negative exponent</strong> — \(\dfrac{1}{b^n} = b^{-n}\); often the bridge that exposes a common base.</li>
+<li><strong>Radical as fractional exponent</strong> — \(\sqrt[n]{b^m} = b^{m/n}\); another bridge.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Solve \(2^x = 32\).</p>
+<p>Rewrite 32 as a power of 2: \(32 = 2^5\). Equation: \(2^x = 2^5\), so \(x = 5\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Solve \(4^{x + 1} = 8^{x - 2}\).</p>
+<p>Common base 2: \(4 = 2^2\), \(8 = 2^3\). Rewrite: \((2^2)^{x + 1} = (2^3)^{x - 2}\), so \(2^{2x + 2} = 2^{3x - 6}\).</p>
+<p>Equate exponents: \(2x + 2 = 3x - 6\). Solve: \(8 = x\), so \(x = 8\).</p>
+<p>Check: \(4^9 = 262144\); \(8^6 = 262144\). ✓</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Solve \(9^{x} = \dfrac{1}{27^{x - 1}}\).</p>
+<p>Rewrite both sides as powers of 3: \(9 = 3^2\), \(27 = 3^3\). So \((3^2)^x = \dfrac{1}{(3^3)^{x - 1}} = (3^3)^{-(x - 1)} = 3^{-3(x - 1)}\).</p>
+<p>Simplify exponents: \(3^{2x} = 3^{-3x + 3}\). Equate: \(2x = -3x + 3\), so \(5x = 3\), \(x = \dfrac{3}{5}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — Solve \(2^{x^2} = 2^{3x + 4}\).</p>
+<p>Equate exponents directly: \(x^2 = 3x + 4\), so \(x^2 - 3x - 4 = 0\). Factor: \((x - 4)(x + 1) = 0\). Solutions: \(x = 4\) or \(x = -1\). Both are valid (the exponent law works for any real exponent), so two solutions.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Trying to equate bases when only the exponents match. You can drop the bases only when the bases are equal (and positive and \(\ne 1\)).</li>
+<li>Distributing the exponent incorrectly: \((b^m)^n = b^{mn}\), not \(b^{m + n}\).</li>
+<li>Missing a negative when handling reciprocals. \(\dfrac{1}{b^{x - 1}} = b^{-(x - 1)} = b^{1 - x}\), and the minus sign distributes.</li>
+<li>Forgetting to check solutions in the original equation, especially when squaring or moving terms across the equation.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "collect data that can be modelled as an exponential function... and graph the data and a curve of best fit"; B3.3 — "solve problems involving the use of exponential equations whose exponents include integer and rational values, by rewriting each base as a power with a common base [e.g., \(4^{x + 1} = 8^{x - 2}\)] or by applying logarithms" — at MCR3U the common-base method is the focus.</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt17')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Solving Exponential Equations — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:46</span>
+        <span class="vid-toggle" id="toggle-mcr-yt17">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt17">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9tutJ5xrRwg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=9tutJ5xrRwg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.2 &mdash; Exponential Growth Models</div>
+<div class="topic-desc">Use \( A(t)=A_0(1+r)^t \) and \( A(t)=A_0\,b^{t/T} \) for population growth, viral spread, and continuous appreciation.</div>
+<div class="summary-card">A culture starts with 500 cells and doubles every 3 hours. After \( t \) hours: \( A(t)=500\cdot 2^{t/3} \). After 12 hours: \( A(12)=500\cdot 2^4=8000 \) cells. After 1 day: \( A(24)=500\cdot 2^8=128{,}000 \). The form \( b^{t/T} \) is read &ldquo;b raised to (time per period)&rdquo; — the <em>doubling time</em> form.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Exponential growth describes any quantity that increases by the same <em>proportion</em> (rather than the same amount) in each fixed time unit. Examples include population growth, viral infections, savings under compound interest, and bacteria in a culture. The defining feature is that the rate of growth is proportional to the current size — a population of 1000 grows ten times as fast as a population of 100.</p>
+
+<p>Two equivalent forms appear in MCR3U:</p>
+
+<p><strong>Rate form:</strong> \(A(t) = A_0(1 + r)^t\), where \(A_0\) is the initial amount, \(r\) is the growth rate per period (as a decimal), and \(t\) is the number of periods. Use this when the percent growth per period is given.</p>
+
+<p><strong>Period form:</strong> \(A(t) = A_0 \cdot b^{t/T}\), where \(b\) is a growth factor (most often 2 for doubling) and \(T\) is the time it takes the quantity to multiply by \(b\). Use this when the doubling/tripling period is given. The exponent \(t/T\) counts how many \(T\)-long periods have passed.</p>
+
+<p>Both forms are exponentials with positive base; they describe the same kind of growth. Translation between them uses an exponent law: \((1 + r)^t = (1 + r)^{T \cdot t/T} = [(1 + r)^T]^{t/T} = b^{t/T}\) where \(b = (1 + r)^T\). At MCR3U you'll typically be given a model in one form and asked to use it; at MHF4U you'll convert freely with logarithms.</p>
+
+<ul>
+<li><strong>Initial value \(A_0\)</strong> — the amount at \(t = 0\).</li>
+<li><strong>Growth rate \(r\)</strong> — proportional increase per period (e.g. \(r = 0.05\) for 5%/period).</li>
+<li><strong>Growth factor \(1 + r\)</strong> — multiplier per period; for a 5% increase, factor is 1.05.</li>
+<li><strong>Doubling time \(T\)</strong> — time for the quantity to double.</li>
+<li><strong>Period</strong> — the time unit of \(r\); must match the units of \(t\) (years with years, hours with hours).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A bacterial culture starts with 500 cells and doubles every 3 hours. Find the population after 12 hours and after 1 day.</p>
+<p>Doubling form: \(A(t) = 500 \cdot 2^{t/3}\) where \(t\) is in hours.</p>
+<p>At \(t = 12\): \(A(12) = 500 \cdot 2^{12/3} = 500 \cdot 2^4 = 500 \cdot 16 = 8000\) cells.</p>
+<p>At \(t = 24\): \(A(24) = 500 \cdot 2^{24/3} = 500 \cdot 2^8 = 500 \cdot 256 = 128{,}000\) cells.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A town of 12{,}000 grows at 3% per year. Find the population after 10 years and after 25 years.</p>
+<p>Rate form: \(P(t) = 12000(1.03)^t\).</p>
+<p>At \(t = 10\): \(P(10) = 12000(1.03)^{10} \approx 12000 \cdot 1.3439 \approx 16{,}127\).</p>
+<p>At \(t = 25\): \(P(25) = 12000(1.03)^{25} \approx 12000 \cdot 2.0938 \approx 25{,}126\).</p>
+<p>Notice the population a bit more than doubled in 25 years — consistent with a "rule of 70" estimate (70/3 ≈ 23 years to double).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A virus is spreading so the number of cases triples every 4 days. There are 200 cases today. Predict the number after 20 days.</p>
+<p>Tripling form: \(C(t) = 200 \cdot 3^{t/4}\).</p>
+<p>At \(t = 20\): \(C(20) = 200 \cdot 3^{5} = 200 \cdot 243 = 48{,}600\) cases. The geometric explosion is the hallmark of unchecked exponential growth.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing the growth <em>rate</em> \(r\) with the growth <em>factor</em> \(1 + r\). A 5% increase has \(r = 0.05\) and factor \(1.05\).</li>
+<li>Mismatched time units. If \(r\) is per year, \(t\) must be in years; otherwise convert.</li>
+<li>Reading "doubles every 3 hours" as \(2^t\) (forgetting the \(/3\)). At \(t = 1\) hour, the population has grown only by a factor of \(2^{1/3} \approx 1.26\), not by 2.</li>
+<li>Compounding "5% per year for 10 years" linearly as \(50\%\). Exponential compounding gives \(1.05^{10} - 1 \approx 63\%\), not 50%.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "collect data that can be modelled as an exponential function, through investigation with and without technology, from primary sources, using a variety of tools (e.g., concrete materials such as number cubes, coins; measurement tools such as electronic probes), or from secondary sources (e.g., websites such as Statistics Canada, E-STAT), and graph the data"; B3.2 — "identify exponential functions, including those that arise from real-world applications involving growth and decay (e.g., radioactive decay, population growth, cooling rates, pressure in a leaking tire), given various representations..."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt18')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Exponential Equations Growth and Decay Concepts MCR3U IB Math — Anil Kumar</span>
+        <span class="vid-duration">13:22</span>
+        <span class="vid-toggle" id="toggle-mcr-yt18">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt18">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/4Wt7FKuJu5Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=4Wt7FKuJu5Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.3 &mdash; Exponential Decay &amp; Half-Life</div>
+<div class="topic-desc">Use \( A(t)=A_0(\tfrac{1}{2})^{t/h} \) for radioactive decay, drug elimination, and cooling; relate half-life to the decay constant.</div>
+<div class="summary-card">Carbon-14 has a half-life of 5730 years. A 100 g sample after \( t \) years: \( A(t)=100(\tfrac{1}{2})^{t/5730} \). After 11{,}460 years: \( A=100(\tfrac{1}{2})^2=25 \) g. Equivalently: \( A(t)=100(0.5)^{t/5730} \). Decay models always have base \( 0<b<1 \) when written as \( b^t \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Exponential decay is the mirror image of exponential growth. A quantity decays exponentially when it shrinks by the same proportion in each fixed time unit. The same formulas apply, but with a decay rate or a base less than 1. Classic examples: radioactive isotopes, drug concentrations in the bloodstream, the temperature difference between an object and its surroundings (Newton's law of cooling), and tyre pressure leaking through a slow puncture.</p>
+
+<p>The most common model uses the <strong>half-life</strong> \(h\) — the time for the quantity to fall to half its current value:</p>
+
+<p>\[ A(t) = A_0 \left(\frac{1}{2}\right)^{t/h} \]</p>
+
+<p>The exponent \(t/h\) counts how many half-lives have passed. After 1 half-life, the amount is \(A_0/2\); after 2, \(A_0/4\); after 3, \(A_0/8\). The "halving" structure is exact, regardless of how much time has passed.</p>
+
+<p>The equivalent rate form is \(A(t) = A_0(1 - r)^t\) when the decay <em>rate</em> per period is \(r\) (e.g. \(r = 0.10\) for 10%/period loss). The growth factor \(1 - r\) is positive and less than 1; that's the algebraic signature of decay. You can also write decay using base \(b\) directly: any \(0 < b < 1\) gives a decay function as \(t\) increases.</p>
+
+<p>Half-life problems are central to radiometric dating (carbon-14 for ages up to ~50{,}000 years, uranium-lead for billions), to pharmacology (drug dosing intervals), and to nuclear safety. The mathematics is identical to compound interest with a negative rate.</p>
+
+<ul>
+<li><strong>Half-life \(h\)</strong> — time for the quantity to reduce to half its current value.</li>
+<li><strong>Decay rate \(r\)</strong> — proportional decrease per period; \(0 < r < 1\).</li>
+<li><strong>Decay factor \(1 - r\)</strong> — multiplier per period; less than 1.</li>
+<li><strong>Asymptote \(y = 0\)</strong> — decay functions approach but never reach zero; mathematically the quantity is never exactly zero, though physically it becomes negligibly small.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Carbon-14 has a half-life of 5730 years. A fossil starts with 100 g of C-14. How much remains after 11{,}460 years? After 17{,}190 years?</p>
+<p>Model: \(A(t) = 100 \left(\dfrac{1}{2}\right)^{t/5730}\).</p>
+<p>At \(t = 11{,}460\): exponent is \(11460/5730 = 2\). \(A = 100 \cdot (1/2)^2 = 25\) g.</p>
+<p>At \(t = 17{,}190\): exponent is \(3\). \(A = 100 \cdot (1/2)^3 = 12.5\) g.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A car loses 15% of its value each year. If it's worth \$25{,}000 today, what's it worth in 5 years? In 10 years?</p>
+<p>Rate form: \(V(t) = 25000 (1 - 0.15)^t = 25000(0.85)^t\).</p>
+<p>At \(t = 5\): \(V(5) = 25000(0.85)^5 \approx 25000 \cdot 0.4437 \approx \$11{,}092\).</p>
+<p>At \(t = 10\): \(V(10) = 25000(0.85)^{10} \approx 25000 \cdot 0.1969 \approx \$4{,}922\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A drug has a half-life of 6 hours in the bloodstream. A patient receives a 240 mg dose. Estimate the amount remaining after 6, 12, 24, and 48 hours.</p>
+<p>Model: \(D(t) = 240(1/2)^{t/6}\).</p>
+<p>\(t = 6\): one half-life, 120 mg.</p>
+<p>\(t = 12\): two half-lives, 60 mg.</p>
+<p>\(t = 24\): four half-lives, \(240/16 = 15\) mg.</p>
+<p>\(t = 48\): eight half-lives, \(240/256 \approx 0.94\) mg — clinically negligible.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Using a growth rate when you mean decay. Decay needs base \(b < 1\) or \(1 - r\) (subtraction), not \(1 + r\).</li>
+<li>Inserting the half-life into the wrong place: \(t/h\), not \(h \cdot t\).</li>
+<li>Reading "decreased by 15%" as "now equals 15%". It's a 15% loss; the remaining factor is 0.85, not 0.15.</li>
+<li>Computing decay for negative \(t\): the formula still works mathematically, but means "how much existed in the past" — physically requires care.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "identify exponential functions, including those that arise from real-world applications involving growth and decay (e.g., radioactive decay, population growth, cooling rates, pressure in a leaking tire), given various representations (i.e., tables of values, graphs, equations)..."; B3.3 — "solve problems involving exponential equations graphically, including those arising from real-world applications, by graphing the function and locating the appropriate intersection."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt19')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Half Life Chemistry Problems — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:24</span>
+        <span class="vid-toggle" id="toggle-mcr-yt19">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt19">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WTQvfvoOF3g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=WTQvfvoOF3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.4 &mdash; Compound Interest as an Exponential Application</div>
+<div class="topic-desc">Apply \( A=P(1+i)^n \) where \( i \) is the rate per compounding period and \( n \) is the number of compounding periods; preview the formal treatment in Ch 6.</div>
+<div class="summary-card">$1000 invested at 6% per annum compounded quarterly for 5 years: \( i = 0.06/4=0.015 \), \( n=5\cdot 4=20 \). \( A=1000(1.015)^{20}\approx \$1{,}346.86 \). Exponential growth at work — and the foundation for the more rigorous treatment of present value, future value, and annuities in Chapter 6.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Compound interest is the most important real-world example of exponential growth. Unlike <em>simple interest</em>, where interest is calculated only on the original principal, <em>compound interest</em> earns interest on previously-earned interest. Each compounding period, the new balance is the old balance times \((1 + i)\), where \(i\) is the rate per period. After \(n\) periods, the balance has been multiplied by \((1 + i)\) a total of \(n\) times:</p>
+
+<p>\[ A = P(1 + i)^n \]</p>
+
+<p>Here \(P\) is the principal (initial deposit), \(A\) is the amount after \(n\) periods, \(i\) is the periodic rate (the annual rate divided by the number of compoundings per year), and \(n\) is the total number of compounding periods.</p>
+
+<p>The "trick" — and the reason compound interest builds wealth quietly over decades — is that the interest earned each period sits in the account and earns its own interest the next period. Linear (simple) interest \(\$P + Pin\) is easy to predict but loses out badly over time compared with the exponential model.</p>
+
+<p>This topic previews Chapter 6 (Financial Math). What you need now is the formula, the substitution rules for \(i\) and \(n\), and an understanding that compound interest is just \(y = a(1 + i)^t\) in a financial costume.</p>
+
+<ul>
+<li><strong>Principal \(P\)</strong> — the initial deposit or loan.</li>
+<li><strong>Amount \(A\)</strong> — total value at the end (principal + interest).</li>
+<li><strong>Nominal annual rate</strong> — the stated yearly rate (e.g. 6%/yr). The periodic rate is this divided by the number of compoundings per year.</li>
+<li><strong>Periodic rate \(i\)</strong> — interest rate per compounding period; \(i = (\text{annual rate}) / (\text{compoundings per year})\).</li>
+<li><strong>Number of periods \(n\)</strong> — total compoundings; \(n = (\text{years}) \times (\text{compoundings per year})\).</li>
+<li><strong>Compounding frequency</strong> — annually (\(m = 1\)), semi-annually (2), quarterly (4), monthly (12), daily (365).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — \$1000 invested at 6% per annum compounded quarterly for 5 years.</p>
+<p>Periodic rate: \(i = 0.06 / 4 = 0.015\). Number of periods: \(n = 5 \times 4 = 20\).</p>
+<p>\(A = 1000(1.015)^{20}\). Compute \(1.015^{20} \approx 1.34686\). So \(A \approx \$1{,}346.86\). Total interest: \$346.86.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Compare \$5000 at 4% annually for 20 years, compounded annually vs. monthly.</p>
+<p>Annually: \(A = 5000(1.04)^{20} \approx 5000 \cdot 2.1911 \approx \$10{,}955.62\).</p>
+<p>Monthly: \(i = 0.04/12 \approx 0.003333\), \(n = 240\). \(A = 5000(1.003333)^{240} \approx 5000 \cdot 2.2226 \approx \$11{,}112.97\).</p>
+<p>Monthly compounding earns about \$157 more — small but real, and it scales.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Compound vs simple. \$2000 at 5%/yr for 10 years.</p>
+<p>Simple interest: \(I = Prt = 2000 \cdot 0.05 \cdot 10 = \$1000\). Total: \$3000.</p>
+<p>Compound (annually): \(A = 2000(1.05)^{10} \approx 2000 \cdot 1.6289 \approx \$3{,}257.79\). Total interest \$1257.79.</p>
+<p>Compounding earned an extra \$257.79 over 10 years. Over 30 years the gap widens to thousands.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Using the annual rate as \(i\) when the problem says "compounded quarterly/monthly." Always convert.</li>
+<li>Forgetting to multiply years by the compounding frequency to get \(n\).</li>
+<li>Treating "5%" as 5 instead of 0.05.</li>
+<li>Reaching for simple-interest \(I = Prt\) in a compound problem. Use compound formulas unless the question explicitly says "simple interest."</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.1 — "make connections between simple interest, arithmetic sequences, and linear growth, through investigation with technology (e.g., using a spreadsheet)..."; C3.2 — "make connections between compound interest, geometric sequences, and exponential growth, through investigation with technology (e.g., using a spreadsheet)..." (Compound interest is studied in greater depth in Chapter 6 of this course.)</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt20')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Compound Interest Word Problems — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:38</span>
+        <span class="vid-toggle" id="toggle-mcr-yt20">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt20">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/P182Abv3fOk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=P182Abv3fOk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 4 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch4_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch4_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch4_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch3.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 3 &mdash; Exponential Functions</div></a>
+<a href="ch5.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 5 &mdash; Sequences and Series</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

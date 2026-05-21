@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCH4U — Chemistry | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #059669; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#059669dd,#059669);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sch4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SCH4U Chemistry)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧪 SCH4U: Unit 1: Organic Chemistry</h1>
+    <p>Hydrocarbons, functional groups, IUPAC nomenclature, organic reactions, polymers</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+            <h2>Unit 1: Organic Chemistry</h2>
+            <p>Hydrocarbons, functional groups, IUPAC nomenclature, organic reactions, polymers</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Organic Chemistry</span>
+                <span>📹 10 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⛽ Hydrocarbons</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Hydrocarbons are organic compounds containing only carbon and hydrogen. They are classified by the degree of saturation and the geometry of the carbon framework. <strong>Alkanes</strong> (general formula \(C_nH_{2n+2}\)) contain only single C–C bonds and are saturated; they undergo combustion and free-radical halogenation but are otherwise relatively unreactive. <strong>Alkenes</strong> (\(C_nH_{2n}\)) contain at least one C=C double bond, and <strong>alkynes</strong> (\(C_nH_{2n-2}\)) contain at least one C≡C triple bond — both are unsaturated and undergo electrophilic addition. <strong>Aromatic</strong> hydrocarbons (e.g., benzene \(C_6H_6\)) have delocalized π electrons in a planar, cyclic system and undergo electrophilic aromatic substitution rather than addition, preserving aromaticity.</p>
+            <p>Bond hybridization explains shape and reactivity. Each carbon in an alkane is \(sp^3\) hybridized (tetrahedral, 109.5°); in an alkene, each sp² carbon (trigonal planar, 120°) holds a π bond above and below the plane; in an alkyne, each sp carbon is linear (180°). The strength order is C–C (≈347 kJ/mol) &lt; C=C (≈614 kJ/mol) &lt; C≡C (≈839 kJ/mol), but π bonds are weaker than σ bonds and so are attacked first by electrophiles.</p>
+            <p>Geometric (cis/trans) isomerism arises in alkenes because rotation about the C=C bond is restricted. Cycloalkanes (\(C_nH_{2n}\)) include strained rings such as cyclopropane and stable chair conformers in cyclohexane.</p>
+            <ul>
+              <li><strong>Saturated</strong> — only single C–C bonds.</li>
+              <li><strong>Unsaturated</strong> — contains C=C or C≡C.</li>
+              <li><strong>Combustion (complete):</strong> \(C_nH_m + (n + m/4)O_2 \rightarrow nCO_2 + (m/2)H_2O\).</li>
+              <li><strong>Markovnikov's rule</strong> — in HX addition to an alkene, H adds to the carbon already bearing more H's.</li>
+              <li><strong>Aromaticity</strong> — Hückel's rule: planar, cyclic, fully conjugated, \(4n+2\) π electrons.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Combustion of octane</p>
+              <p>Balance the complete combustion of octane, \(C_8H_{18}\) (a major gasoline component).</p>
+              <p>\(C_8H_{18} + \tfrac{25}{2}O_2 \rightarrow 8CO_2 + 9H_2O\)</p>
+              <p>Multiplying through by 2 to remove the fraction: \(2C_8H_{18} + 25O_2 \rightarrow 16CO_2 + 18H_2O\).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Drawing five bonds on a carbon — carbon forms a maximum of four bonds.</li>
+              <li>Confusing the general formula \(C_nH_{2n}\) for alkenes with that for cycloalkanes — both share it.</li>
+              <li>Assuming benzene undergoes addition like an alkene; it undergoes substitution to preserve aromaticity.</li>
+              <li>Ignoring cis/trans isomerism when reporting alkene products.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "describe, on the basis of observations, the chemical behaviour of various classes of organic compounds (e.g., hydrocarbons, alcohols, carboxylic acids), including their behaviour in chemical reactions (e.g., addition, substitution, elimination, oxidation, esterification, hydrolysis)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alkanes</span>
+                <span class="vid-duration">51:57</span>
+                <span class="vid-toggle" id="toggle-v11">▶</span>
+            </div>
+            <div class="video-player" id="player-v11">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/011_Chemistry_12_SCH4U_Alkanes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=oCjzGMChn3E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cycloalkanes and Alkyl Halides</span>
+                <span class="vid-duration">49:32</span>
+                <span class="vid-toggle" id="toggle-v12">▶</span>
+            </div>
+            <div class="video-player" id="player-v12">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/012_Chemistry_12_SCH4U_Cycloalkanes_and_Alkyl_Halides.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=fACc-0WfE8s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alkenes</span>
+                <span class="vid-duration">50:04</span>
+                <span class="vid-toggle" id="toggle-v13">▶</span>
+            </div>
+            <div class="video-player" id="player-v13">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/013_Chemistry_12_SCH4U_Alkenes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=gJk60joy12E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alkynes and Aromatics</span>
+                <span class="vid-duration">41:41</span>
+                <span class="vid-toggle" id="toggle-v14">▶</span>
+            </div>
+            <div class="video-player" id="player-v14">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/014_Chemistry_12_SCH4U_Alkynes_and_Aromatics.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=ObqaiwHX_2k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧴 Functional Groups</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>functional group</strong> is the specific atom or arrangement of atoms within a molecule that confers characteristic chemical reactivity. The same functional group on different carbon skeletons behaves similarly, which is the organizing principle of organic chemistry. The main families covered in SCH4U are: alcohols (–OH), ethers (R–O–R'), aldehydes (–CHO), ketones (R–CO–R'), carboxylic acids (–COOH), esters (–COOR'), amines (–NH₂, –NHR, –NR₂), and amides (–CONR₂).</p>
+            <p>Alcohols are classified as primary, secondary, or tertiary by counting the number of carbons bonded to the C–OH carbon. Oxidation of a primary alcohol with an oxidizing agent such as acidified \(KMnO_4\) or \(K_2Cr_2O_7\) yields first an aldehyde and then a carboxylic acid; a secondary alcohol oxidizes only as far as the ketone; a tertiary alcohol cannot be oxidized without breaking the carbon skeleton. Carboxylic acids react with alcohols under acid catalysis in a Fischer <strong>esterification</strong> equilibrium, producing an ester and water. Amides form by condensation of a carboxylic acid (or derivative) with an amine, releasing water — this is the same C–N linkage found in proteins (the peptide bond).</p>
+            <p>Functional groups also dictate physical properties. Hydrogen bonding in alcohols, carboxylic acids, and amides raises boiling points sharply compared with hydrocarbons of similar molar mass; carboxylic acids dimerize through two H-bonds, raising their boiling points further.</p>
+            <ul>
+              <li><strong>Alcohol</strong> R–OH; suffix –ol (e.g., propan-2-ol).</li>
+              <li><strong>Aldehyde</strong> R–CHO; suffix –al (e.g., propanal).</li>
+              <li><strong>Ketone</strong> R–CO–R'; suffix –one (e.g., propan-2-one).</li>
+              <li><strong>Carboxylic acid</strong> R–COOH; suffix –oic acid (e.g., ethanoic acid).</li>
+              <li><strong>Ester</strong> R–COOR'; named alkyl alkanoate (e.g., ethyl ethanoate).</li>
+              <li><strong>Amine</strong> R–NH₂; suffix –amine.</li>
+              <li><strong>Amide</strong> R–CONR'₂; suffix –amide.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Esterification</p>
+              <p>Write the equation for the esterification of ethanoic acid with propan-1-ol under H₂SO₄ catalysis.</p>
+              <p>\(CH_3COOH + CH_3CH_2CH_2OH \;\underset{}{\overset{H_2SO_4}{\rightleftharpoons}}\; CH_3COOCH_2CH_2CH_3 + H_2O\)</p>
+              <p>The product is propyl ethanoate (propyl acetate, a pear-scented ester). The reaction is at equilibrium; excess acid or alcohol, or removal of water, drives it to products (Le Chatelier's principle).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Confusing aldehydes (CHO at chain end) with ketones (C=O internal).</li>
+              <li>Writing a tertiary alcohol oxidation product — it does not oxidize.</li>
+              <li>Naming esters backwards — the alcohol-derived alkyl group is named first.</li>
+              <li>Forgetting that esterification is reversible and that hydrolysis is the reverse reaction.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "describe some of the physical and chemical properties of the major classes of organic compounds (e.g., hydrocarbons, alcohols, ethers, aldehydes, ketones, carboxylic acids, esters, amines, amides), and compare the properties of compounds within the same class and in different classes."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alcohols and Ethers</span>
+                <span class="vid-duration">40:15</span>
+                <span class="vid-toggle" id="toggle-v15">▶</span>
+            </div>
+            <div class="video-player" id="player-v15">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/015_Chemistry_12_SCH4U_Alcohols_and_Ethers.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=ijc89tAnNHc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Aldehydes and Ketones</span>
+                <span class="vid-duration">31:41</span>
+                <span class="vid-toggle" id="toggle-v16">▶</span>
+            </div>
+            <div class="video-player" id="player-v16">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/016_Chemistry_12_SCH4U_Aldehydes_and_Ketones.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=u9X7plDiowk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Carboxylic Acids and Esters</span>
+                <span class="vid-duration">42:42</span>
+                <span class="vid-toggle" id="toggle-v17">▶</span>
+            </div>
+            <div class="video-player" id="player-v17">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/017_Chemistry_12_SCH4U_Carboxylic_Acids_and_Esters.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=QFK3rWa4rjI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Amines and Amides</span>
+                <span class="vid-duration">29:48</span>
+                <span class="vid-toggle" id="toggle-v18">▶</span>
+            </div>
+            <div class="video-player" id="player-v18">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/018_Chemistry_12_SCH4U_Amines_and_Amides.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=6mCaJ42_c_M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔗 Polymers</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>polymer</strong> is a macromolecule built from many repeating subunits called <strong>monomers</strong>. There are two principal mechanisms of polymerization in SCH4U: addition (chain-growth) polymerization and condensation (step-growth) polymerization. In <strong>addition polymerization</strong>, the π bonds of vinyl-type monomers (e.g., ethene, propene, vinyl chloride, styrene) break and the carbon atoms link end-to-end with no by-product. The polymer's empirical formula is identical to that of the monomer. Common examples include polyethylene from ethene, polypropylene from propene, PVC from chloroethene, and polystyrene from phenylethene.</p>
+            <p>In <strong>condensation polymerization</strong>, a small molecule (typically water or HCl) is eliminated each time two monomers join. Bifunctional monomers (one functional group at each end) are required. Polyesters such as PET form from a diol (e.g., ethylene glycol) and a dicarboxylic acid (terephthalic acid); polyamides such as nylon-6,6 form from a diamine (hexamethylenediamine) and a diacid (adipic acid). Biological condensation polymers include proteins (peptide bonds from amino acids), cellulose and starch (glycosidic bonds from glucose), and nucleic acids (phosphodiester bonds).</p>
+            <p>STSE connections include the lifecycle and recyclability of plastics, the persistence of microplastics in marine environments, the use of biodegradable polymers (PLA, PHA), and the substitution of bio-based feedstocks for petroleum-derived ones.</p>
+            <ul>
+              <li><strong>Monomer</strong> — the small repeating unit.</li>
+              <li><strong>Addition polymer</strong> — formed without loss of a small molecule.</li>
+              <li><strong>Condensation polymer</strong> — formed with loss of H₂O or HCl.</li>
+              <li><strong>Polyester</strong> — diol + diacid (e.g., PET).</li>
+              <li><strong>Polyamide</strong> — diamine + diacid (e.g., nylon-6,6); the linkage is the amide (peptide) bond.</li>
+              <li><strong>Degree of polymerization</strong> — number of monomer units per chain.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Repeating unit of polyethylene terephthalate (PET)</p>
+              <p>PET is formed from ethylene glycol \(HO–CH_2CH_2–OH\) and terephthalic acid \(HOOC–C_6H_4–COOH\). Each amide of esterification eliminates one H₂O. The repeating unit is:</p>
+              <p>\(-[O–CH_2CH_2–O–CO–C_6H_4–CO]-\)</p>
+              <p>If \(n = 100\), a total of \(2n - 1 \approx 200\) water molecules are released per chain (one per ester bond formed; an \(n\)-unit chain has \(2n\) ester bonds when the diol and diacid alternate).</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Forgetting to remove H₂O when drawing condensation polymer repeat units.</li>
+              <li>Confusing the polymer name with the monomer name (e.g., polyethylene comes from ethene, not "ethylene" in modern IUPAC).</li>
+              <li>Drawing the brackets around the wrong segment of the repeat unit.</li>
+              <li>Assuming all polymers melt — thermosets do not.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.5 — "explain the difference between an addition reaction and a condensation reaction, and describe the formation of addition polymers and condensation polymers from their monomers."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Addition Polymers</span>
+                <span class="vid-duration">35:41</span>
+                <span class="vid-toggle" id="toggle-v19">▶</span>
+            </div>
+            <div class="video-player" id="player-v19">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/019_Chemistry_12_SCH4U_Addition_Polymers.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=HDcKtJOVLrI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Condensation Polymers</span>
+                <span class="vid-duration">34:26</span>
+                <span class="vid-toggle" id="toggle-v20">▶</span>
+            </div>
+            <div class="video-player" id="player-v20">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/020_Chemistry_12_SCH4U_Condensation_Polymers.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=SylG60UsGaQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔤 IUPAC Nomenclature</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>International Union of Pure and Applied Chemistry (IUPAC)</strong> system gives every organic compound a unique, unambiguous name based on its structure. The general procedure is: (1) identify the principal characteristic group, which determines the suffix; (2) choose the longest continuous carbon chain containing this principal group as the parent; (3) number the parent chain so the principal group, then double/triple bonds, then substituents receive the lowest possible locants (the "first point of difference" rule); (4) list substituents alphabetically (ignoring multiplying prefixes di-, tri-, tetra- for alphabetization but considering iso-, sec-, tert- only when they are italicized); (5) assemble the name as <em>locants–prefixes–parent–unsaturation–suffix</em>.</p>
+            <p>The priority order of principal characteristic groups (highest to lowest, partial list) is: carboxylic acid &gt; ester &gt; amide &gt; nitrile &gt; aldehyde &gt; ketone &gt; alcohol &gt; amine &gt; alkene &gt; alkyne &gt; alkane. Only the highest-priority group becomes the suffix; lower-priority groups become prefixes (e.g., –OH becomes "hydroxy-"). For alkenes and alkynes, a 2013 update places the locant immediately before the suffix (e.g., but-2-ene, not 2-butene), though Canadian textbooks accept both styles.</p>
+            <p>Multiple substituents of the same kind use di-, tri-, tetra-, and each requires its own locant separated by commas (e.g., 2,3-dimethylbutane). Cyclic parents take the prefix "cyclo-". Benzene derivatives may use ortho/meta/para or numerical locants (1,2-/1,3-/1,4-).</p>
+            <ul>
+              <li><strong>Parent chain</strong> — longest C chain containing the principal group.</li>
+              <li><strong>Locant</strong> — number indicating substituent position.</li>
+              <li><strong>Substituent</strong> — branch or non-principal functional group.</li>
+              <li><strong>Suffix</strong> — derived from the highest-priority functional group.</li>
+              <li><strong>First point of difference</strong> — choose numbering that gives the lower locant set at the first comparison.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Naming a branched alcohol</p>
+              <p>Name the compound (CH₃)₂CHCH(OH)CH₂CH₃.</p>
+              <p>Step 1 — principal group is –OH (alcohol). Step 2 — longest chain containing C–OH is 5 carbons (pentane → pentan-…-ol). Step 3 — number to give OH the lowest locant: C1=CH₃, C2=CH(OH), … wait — write skeleton: CH₃–CH(CH₃)–CH(OH)–CH₂–CH₃. Numbering from the right gives OH at C3 and methyl at C4; from the left gives OH at C3 and methyl at C2. The set {2, 3} beats {3, 4} at first difference, so number from the left. Name: 2-methylpentan-3-ol.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Choosing a shorter parent chain because it "looks straight" — pick the longest containing the principal group.</li>
+              <li>Forgetting the "lowest locant" rule and numbering arbitrarily.</li>
+              <li>Alphabetizing using "di-" or "tri-" prefixes (you should alphabetize "ethyl" before "methyl" regardless of multipliers).</li>
+              <li>Writing "2-butene" without the modern locant placement — accept either, but be consistent.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "use International Union of Pure and Applied Chemistry (IUPAC) nomenclature rules to identify, write structural formulae for, and name the different classes of organic compounds (e.g., hydrocarbons, alcohols, aldehydes, ketones, carboxylic acids, esters, ethers, amines, amides)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">IUPAC Nomenclature of Alkanes — Naming Organic Compounds — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">23:32</span>
+                <span class="vid-toggle" id="toggle-yt15">▶</span>
+            </div>
+            <div class="video-player" id="player-yt15">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/TYU_JluleME?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=TYU_JluleME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔁 Organic Reaction Mechanisms</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Organic reactions are classified by what happens to bonds and to the carbon skeleton. The four main reaction types in SCH4U are <strong>addition</strong>, <strong>elimination</strong>, <strong>substitution</strong>, and rearrangement; combustion, esterification, hydrolysis, and oxidation/reduction are specific examples that fit within these categories. The driving force is usually formation of a stronger σ bond, a more stable carbocation, or release of energy.</p>
+            <p>An <strong>addition reaction</strong> breaks a π bond and forms two new σ bonds. Alkenes react with HX, H₂O (acid-catalyzed hydration), or H₂ (catalytic hydrogenation). <strong>Markovnikov's rule</strong> states that, in HX addition, the hydrogen attaches to the carbon already bearing more hydrogens, because this generates the more substituted, more stable carbocation intermediate. An <strong>elimination reaction</strong> is the reverse: a small molecule (H₂O from an alcohol, HX from a haloalkane) is removed and a π bond forms. <strong>Zaitsev's rule</strong> predicts the more substituted (more stable) alkene as the major product. A <strong>substitution reaction</strong> replaces one atom or group with another; haloalkanes are typical substrates, and the reaction proceeds via SN1 (rate \(= k[\text{substrate}]\), tertiary substrates) or SN2 (rate \(= k[\text{substrate}][\text{nucleophile}]\), primary substrates) pathways.</p>
+            <p>Nucleophiles are electron-rich species (anions, lone-pair donors) attracted to electron-poor carbons; electrophiles are electron-poor and attack electron-rich sites such as π bonds. Curved arrows show the movement of electron pairs (not atoms): the tail at the electron source, the head at the destination.</p>
+            <ul>
+              <li><strong>Addition</strong> — \(C=C + X–Y \rightarrow X–C–C–Y\).</li>
+              <li><strong>Elimination</strong> — \(X–C–C–Y \rightarrow C=C + X–Y\).</li>
+              <li><strong>Substitution</strong> — \(R–X + Y^- \rightarrow R–Y + X^-\).</li>
+              <li><strong>Markovnikov</strong> — H adds to the carbon with more H's.</li>
+              <li><strong>Zaitsev</strong> — the more substituted alkene predominates.</li>
+              <li><strong>Nucleophile / electrophile</strong> — electron donor / electron acceptor.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Markovnikov addition of HBr to propene</p>
+              <p>\(CH_3–CH=CH_2 + HBr \rightarrow ?\)</p>
+              <p>Step 1 — H⁺ adds to a π carbon, forming a carbocation. Adding H to C1 gives a secondary cation \(CH_3–CH^+–CH_3\); adding H to C2 gives a primary cation \(CH_3–CH_2–CH_2^+\). The secondary cation is more stable (more hyperconjugation/induction). Step 2 — Br⁻ attacks the cation. Major product: \(CH_3–CHBr–CH_3\) (2-bromopropane), consistent with Markovnikov's rule.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Confusing electrophile (electron-loving, accepts e⁻) with nucleophile (nucleus-loving, donates e⁻).</li>
+              <li>Drawing arrows from H⁺ to the alkene — arrows must originate from the electron source (the π bond).</li>
+              <li>Mis-applying Markovnikov to symmetric alkenes (where it gives no preference).</li>
+              <li>Forgetting that anti-Markovnikov addition occurs with HBr + peroxides (radical mechanism).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "explain the difference between addition and substitution reactions, and identify situations in which each type of reaction can occur."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Reaction Mechanisms — Addition, Elimination, Substitution &amp; Rearrangement — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">22:01</span>
+                <span class="vid-toggle" id="toggle-yt16">▶</span>
+            </div>
+            <div class="video-player" id="player-yt16">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Efh5GkVbhEc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Efh5GkVbhEc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔄 Isomers</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Isomers</strong> are compounds with the same molecular formula but different structures. They divide first into <strong>constitutional (structural) isomers</strong>, which have different connectivity (chain isomers, position isomers, functional-group isomers), and <strong>stereoisomers</strong>, which share connectivity but differ in spatial arrangement. Stereoisomers further split into <strong>cis-trans (geometric)</strong> isomers and <strong>enantiomers / diastereomers</strong>.</p>
+            <p><strong>Cis-trans isomerism</strong> appears when restricted rotation (a C=C bond or a ring) traps substituents in different orientations. Higher-priority groups on the same side are <em>cis</em> (or <em>Z</em>, from German <em>zusammen</em>); on opposite sides, <em>trans</em> (<em>E</em>, <em>entgegen</em>). Priority follows the Cahn–Ingold–Prelog (CIP) rules: higher atomic number outranks lower. <strong>Enantiomers</strong> are non-superimposable mirror images, arising when a carbon is bonded to four different groups (a <strong>chirality centre</strong>). They have identical scalar physical properties but rotate plane-polarized light in opposite directions (one is dextrorotatory, +; the other levorotatory, –) and may interact differently with other chiral molecules — crucial in pharmacology, where one enantiomer can be therapeutic and the other inactive or toxic (e.g., (S)-thalidomide).</p>
+            <p>A 50:50 mixture of enantiomers is a <strong>racemic mixture</strong> and is optically inactive. <strong>Diastereomers</strong> are stereoisomers that are not mirror images (e.g., (2R,3R) vs (2R,3S) tartaric acid); they have different physical properties.</p>
+            <ul>
+              <li><strong>Constitutional isomers</strong> — different bonding connectivity.</li>
+              <li><strong>Stereoisomers</strong> — same connectivity, different 3-D arrangement.</li>
+              <li><strong>Chirality centre</strong> — carbon with four different substituents.</li>
+              <li><strong>Enantiomers</strong> — non-superimposable mirror images.</li>
+              <li><strong>Diastereomers</strong> — stereoisomers that are not mirror images.</li>
+              <li><strong>Racemic mixture</strong> — equal parts of two enantiomers.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Constitutional isomers of C₄H₁₀O</p>
+              <p>Draw all constitutional isomers with the formula C₄H₁₀O.</p>
+              <p>Four alcohols: butan-1-ol, butan-2-ol, 2-methylpropan-1-ol, 2-methylpropan-2-ol. Three ethers: methoxypropane (methyl propyl ether), 2-methoxypropane (methyl isopropyl ether), ethoxyethane (diethyl ether). Total: 7 constitutional isomers. The alcohols and ethers are <em>functional-group isomers</em> of one another.</p>
+            </div>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+              <li>Calling cis-trans pairs "enantiomers" — they are diastereomers.</li>
+              <li>Identifying a chirality centre on a CH₂ or CH₃ carbon (no four different groups).</li>
+              <li>Confusing R/S (CIP rules) with +/– (optical rotation); they are not directly correlated.</li>
+              <li>Forgetting that meso compounds have chirality centres but are achiral overall due to an internal mirror plane.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe some chemical reactions of various classes of organic compounds … using IUPAC nomenclature, including structural and stereoisomers."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to Stereoisomers — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">19:04</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XftIUcLWTEE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=XftIUcLWTEE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chirality, Enantiomers, & Diastereomers — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">15:59</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XftIUcLWTEE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=XftIUcLWTEE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sch4u/Unit1_Organic_Chemistry_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sch4u/Unit1_Organic_Chemistry_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sch4u/Unit1_Organic_Chemistry_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../sch4u.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SCH4U Chemistry · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

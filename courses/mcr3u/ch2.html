@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 2: Quadratic Functions &amp; Equations | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit2">
+<div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+<h2>Chapter 2: Quadratic Functions &amp; Equations</h2>
+<p>Factoring, completing the square, quadratic formula, vertex form, applications</p>
+<div class="unit-meta">
+<span>📚 Strand A: Characteristics of Functions</span>
+<span>⏱️ ~12h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.1 &mdash; Quadratic Functions Review: Three Forms</div>
+<div class="topic-desc">Move fluently between standard \( y=ax^2+bx+c \), vertex \( y=a(x-h)^2+k \), and factored \( y=a(x-r)(x-s) \) forms.</div>
+<div class="summary-card">Each form reveals different features: standard gives the y-intercept (\( c \)) immediately; vertex gives the vertex \( (h,k) \); factored gives the x-intercepts \( (r,0), (s,0) \). Conversion between forms is a critical skill: expand factored to get standard; complete the square on standard to get vertex.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>A quadratic function — one whose highest power of \(x\) is 2 — can be written in three algebraically equivalent forms, each emphasising different features of the parabola. Choosing the right form for a problem is half the battle; converting between them is the other half.</p>
+
+<p><strong>Standard form</strong> \(y = ax^2 + bx + c\) is the one that drops out of expansion. It immediately reveals the \(y\)-intercept (when \(x = 0\), \(y = c\)) and the direction of opening (\(a > 0\) up, \(a < 0\) down). The axis of symmetry sits at \(x = -\dfrac{b}{2a}\). This form is the one most often used in the quadratic formula.</p>
+
+<p><strong>Vertex form</strong> \(y = a(x - h)^2 + k\) puts the vertex \((h, k)\) on display and connects directly to function transformations (Chapter 1.5): the parent \(y = x^2\) shifted right \(h\), up \(k\), and stretched by \(a\). This form is best when you need the maximum or minimum value or want to graph by transformation.</p>
+
+<p><strong>Factored form</strong> \(y = a(x - r)(x - s)\) shows the \(x\)-intercepts (zeros) \((r, 0)\) and \((s, 0)\) — set each factor to zero and read off the roots. The axis of symmetry is the midpoint \(x = \dfrac{r + s}{2}\); use it to find the vertex without completing the square. Factored form is ideal whenever you know or can find the zeros.</p>
+
+<ul>
+<li><strong>Standard form</strong> — \(y = ax^2 + bx + c\); reveals \(y\)-intercept.</li>
+<li><strong>Vertex form</strong> — \(y = a(x - h)^2 + k\); reveals vertex \((h, k)\) and axis \(x = h\).</li>
+<li><strong>Factored form</strong> — \(y = a(x - r)(x - s)\); reveals \(x\)-intercepts \(r, s\).</li>
+<li><strong>Axis of symmetry</strong> — vertical line \(x = h\) through the vertex; midpoint of the two zeros.</li>
+<li><strong>Leading coefficient</strong> — \(a\); same value in all three forms; determines direction and stretch.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Convert \(y = 2(x - 1)(x + 3)\) to standard and vertex form.</p>
+<p>To standard: expand. \(y = 2(x^2 + 3x - x - 3) = 2(x^2 + 2x - 3) = 2x^2 + 4x - 6\).</p>
+<p>To vertex: axis of symmetry is midway between \(x = 1\) and \(x = -3\): \(x = -1\). Then \(y(-1) = 2(-1 - 1)(-1 + 3) = 2(-2)(2) = -8\). So vertex \((-1, -8)\) and \(y = 2(x + 1)^2 - 8\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Convert \(y = -3(x - 2)^2 + 12\) to standard and factored form.</p>
+<p>To standard: \(y = -3(x^2 - 4x + 4) + 12 = -3x^2 + 12x - 12 + 12 = -3x^2 + 12x\).</p>
+<p>To factored: factor out \(-3x\): \(y = -3x(x - 4)\). Zeros: \(x = 0, 4\).</p>
+<p>Check: from factored, axis is \(x = (0+4)/2 = 2\) — matches the vertex form's \(h = 2\). ✓</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A parabola has zeros at \(x = -2\) and \(x = 6\) and passes through \((1, -27)\). Find its equation in all three forms.</p>
+<p>Factored: \(y = a(x + 2)(x - 6)\). Substitute \((1, -27)\): \(-27 = a(3)(-5) = -15a\), so \(a = \tfrac{9}{5}\). Hmm, let me redo: \(-27 / -15 = 1.8 = 9/5\). Factored: \(y = \tfrac{9}{5}(x + 2)(x - 6)\).</p>
+<p>Standard: expand: \(y = \tfrac{9}{5}(x^2 - 4x - 12) = \tfrac{9}{5}x^2 - \tfrac{36}{5}x - \tfrac{108}{5}\).</p>
+<p>Vertex: axis at \(x = (-2 + 6)/2 = 2\); \(y(2) = \tfrac{9}{5}(4)(-4) = -\tfrac{144}{5}\). Vertex form: \(y = \tfrac{9}{5}(x - 2)^2 - \tfrac{144}{5}\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to multiply \(a\) through when converting factored to standard. \((x - r)(x - s)\) expanded does not equal \(a(x-r)(x-s)\) unless you keep the \(a\).</li>
+<li>Sign errors in vertex form: \(y = (x - 3)^2\) has vertex \((3, 0)\), not \((-3, 0)\).</li>
+<li>Assuming every quadratic factors over the rationals. Some don't (e.g. \(x^2 + 1\)), and conversion to factored form requires the quadratic formula or completing the square.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "pose problems involving quadratic functions arising from real-world applications, ... and solve such problems by interpreting the equation of a quadratic function in factored, vertex, or standard form, as appropriate."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt7')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Three Forms of a Quadratic Function — Dr. Pierce's Physics & Math</span>
+        <span class="vid-duration">14:50</span>
+        <span class="vid-toggle" id="toggle-mcr-yt7">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt7">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/1mbFjWt4xJ4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=1mbFjWt4xJ4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.2 &mdash; Factoring Trinomials &amp; Special Patterns</div>
+<div class="topic-desc">Factor \( ax^2+bx+c \), difference of squares \( a^2-b^2=(a-b)(a+b) \), perfect-square trinomials, and grouping; factor by GCF first.</div>
+<div class="summary-card">Examples: \( 6x^2+11x-10=(3x-2)(2x+5) \) (decomposition); \( 9x^2-25=(3x-5)(3x+5) \) (difference of squares); \( x^2+10x+25=(x+5)^2 \) (perfect square). Always factor out a GCF before attempting any other technique.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Factoring is the reverse of expanding. Where expansion turns \((x + 2)(x + 3)\) into \(x^2 + 5x + 6\), factoring goes the other way. Factoring a quadratic is how you turn standard form into factored form, which immediately reveals the zeros — the heart of solving quadratic equations and analysing parabolas.</p>
+
+<p>There is a strict checklist to follow whenever you see a polynomial to factor:</p>
+
+<p><strong>Step 1: Common factor.</strong> Look for the greatest common factor across all terms (numerical and variable). Pull it out front. This step is non-negotiable — skipping it usually means the rest of your work gets harder, and it can be the only step needed.</p>
+
+<p><strong>Step 2: Count terms and pick a strategy.</strong> Two terms suggest a <em>difference of squares</em> \(a^2 - b^2 = (a - b)(a + b)\). Three terms could be a <em>trinomial</em>: for \(x^2 + bx + c\), find two numbers that multiply to \(c\) and add to \(b\); for \(ax^2 + bx + c\) with \(a \ne 1\), use <em>decomposition</em> — find two numbers that multiply to \(ac\) and add to \(b\), split the middle term, then factor by grouping. Four terms call for <em>grouping</em>.</p>
+
+<p><strong>Step 3: Check for special patterns.</strong> Perfect-square trinomials \(a^2 \pm 2ab + b^2 = (a \pm b)^2\) factor instantly. Recognising them saves time.</p>
+
+<ul>
+<li><strong>GCF</strong> — greatest common factor; the largest expression that divides every term evenly.</li>
+<li><strong>Decomposition</strong> — splitting the middle term so the trinomial can be factored by grouping.</li>
+<li><strong>Difference of squares</strong> — \(a^2 - b^2 = (a - b)(a + b)\); only works for subtraction of two squares.</li>
+<li><strong>Perfect square trinomial</strong> — \(a^2 \pm 2ab + b^2 = (a \pm b)^2\); the middle coefficient is twice the product of the square roots of the outer terms.</li>
+<li><strong>Sum of squares</strong> — \(a^2 + b^2\) does <em>not</em> factor over the real numbers.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Factor \(6x^2 + 11x - 10\) by decomposition.</p>
+<p>Compute \(ac = 6 \cdot (-10) = -60\). Find two numbers multiplying to \(-60\) and summing to \(11\): \(15\) and \(-4\).</p>
+<p>Split the middle term: \(6x^2 + 15x - 4x - 10\).</p>
+<p>Group: \((6x^2 + 15x) + (-4x - 10) = 3x(2x + 5) - 2(2x + 5)\).</p>
+<p>Factor out the common binomial: \((2x + 5)(3x - 2)\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Factor \(9x^2 - 25\) (difference of squares).</p>
+<p>Recognise: \(9x^2 = (3x)^2\) and \(25 = 5^2\). So \(9x^2 - 25 = (3x - 5)(3x + 5)\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Factor \(4x^3 - 36x\) (GCF first, then difference of squares).</p>
+<p>GCF: \(4x\). Pull it out: \(4x(x^2 - 9)\).</p>
+<p>Now \(x^2 - 9 = (x - 3)(x + 3)\), so the full factorization is \(4x(x - 3)(x + 3)\).</p>
+<p>(Skipping the GCF would leave you trying to factor a cubic — the GCF made it easy.)</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — Factor \(x^2 + 10x + 25\) (perfect square).</p>
+<p>Check: \(\sqrt{x^2} = x\), \(\sqrt{25} = 5\), and \(2(x)(5) = 10x\) matches the middle term. So \(x^2 + 10x + 25 = (x + 5)^2\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Skipping the GCF step. Many "impossible" trinomials become easy once a common factor is removed.</li>
+<li>Trying to factor a sum of squares like \(x^2 + 9\) — it doesn't factor over the real numbers.</li>
+<li>Sign errors in decomposition: the two numbers must multiply to \(ac\) (not just \(c\)) and sum to the middle coefficient.</li>
+<li>Forgetting to write the leading coefficient out front when only the trinomial in brackets factors. After GCF \(2\) from \(2x^2 - 8x + 6\), you get \(2(x^2 - 4x + 3) = 2(x - 1)(x - 3)\) — keep the 2.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 — "simplify polynomial expressions by adding, subtracting, and multiplying"; A3.2 — "verify, through investigation with and without technology, that \(\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}\)..."; A2.1 (factoring as a tool for solving quadratics) — "...solve such problems by interpreting the equation of a quadratic function in factored, vertex, or standard form, as appropriate."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt8')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Factoring Trinomials — Mr H Tutoring</span>
+        <span class="vid-duration">17:36</span>
+        <span class="vid-toggle" id="toggle-mcr-yt8">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt8">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/MnGfA2uO6C8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=MnGfA2uO6C8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.3 &mdash; Completing the Square &amp; the Quadratic Formula</div>
+<div class="topic-desc">Convert standard form to vertex form by completing the square; derive and apply \( x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a} \); use the discriminant \( \Delta=b^2-4ac \) to count real roots.</div>
+<div class="summary-card">For \( y=2x^2+8x-3 \): factor 2 from x-terms: \( 2(x^2+4x)-3 \); add and subtract 4 inside: \( 2(x^2+4x+4-4)-3 = 2(x+2)^2 - 11 \). Vertex \( (-2,-11) \). The discriminant \( \Delta>0 \) means two real roots; \( \Delta=0 \) one (a double root); \( \Delta<0 \) no real roots.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p><em>Completing the square</em> is the algebraic move that converts a quadratic in standard form to vertex form. The vertex form makes the vertex visible, and — applied generally — produces the quadratic formula itself. So this technique is two things at once: a tool for graphing, and a derivation engine for the most important formula in Grade 11.</p>
+
+<p>The idea: \(x^2 + bx\) is "almost" a perfect square. To finish the square, add \(\left(\dfrac{b}{2}\right)^2\) — that's exactly the constant that makes \(x^2 + bx + \left(\dfrac{b}{2}\right)^2 = \left(x + \dfrac{b}{2}\right)^2\). But you can't just add a number to an expression without changing its value, so you add and subtract the same amount, keeping the equation balanced.</p>
+
+<p>If the leading coefficient \(a\) is not 1, factor \(a\) out of the \(x\)-terms first, complete the square inside the bracket, and then multiply back out. When the procedure is applied symbolically to \(ax^2 + bx + c = 0\), the result is the <strong>quadratic formula</strong>:</p>
+
+<p>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</p>
+
+<p>The expression under the radical, \(\Delta = b^2 - 4ac\), is the <em>discriminant</em>. It tells you immediately how many real roots the equation has — without solving anything: \(\Delta > 0\) gives two real roots, \(\Delta = 0\) gives one repeated root (the vertex sits on the \(x\)-axis), and \(\Delta < 0\) gives no real roots (the parabola never crosses the \(x\)-axis).</p>
+
+<ul>
+<li><strong>Completing the square</strong> — adding and subtracting \((b/2)^2\) to turn \(x^2 + bx\) into \((x + b/2)^2\).</li>
+<li><strong>Vertex form</strong> — the goal of completing the square: \(y = a(x - h)^2 + k\), vertex \((h, k)\).</li>
+<li><strong>Quadratic formula</strong> — \(x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\), the general solver for \(ax^2 + bx + c = 0\).</li>
+<li><strong>Discriminant</strong> \(\Delta = b^2 - 4ac\) — sign decides the number of real roots: \(>0\) two; \(=0\) one (double); \(<0\) none.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Convert \(y = 2x^2 + 8x - 3\) to vertex form by completing the square.</p>
+<p>Factor 2 from the \(x\)-terms only: \(y = 2(x^2 + 4x) - 3\).</p>
+<p>Half of 4 is 2; square it to get 4. Add and subtract 4 inside the bracket: \(y = 2(x^2 + 4x + 4 - 4) - 3 = 2[(x + 2)^2 - 4] - 3\).</p>
+<p>Distribute the 2: \(y = 2(x + 2)^2 - 8 - 3 = 2(x + 2)^2 - 11\).</p>
+<p>Vertex: \((-2, -11)\); parabola opens upward.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Solve \(3x^2 - 5x - 2 = 0\) using the quadratic formula.</p>
+<p>Identify \(a = 3\), \(b = -5\), \(c = -2\). Discriminant: \(\Delta = (-5)^2 - 4(3)(-2) = 25 + 24 = 49\). Since \(\Delta > 0\), expect two real roots.</p>
+<p>\(x = \dfrac{-(-5) \pm \sqrt{49}}{2(3)} = \dfrac{5 \pm 7}{6}\). So \(x = \dfrac{12}{6} = 2\) or \(x = \dfrac{-2}{6} = -\dfrac{1}{3}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Use the discriminant to determine the nature of the roots of \(x^2 - 6x + 9 = 0\) and \(x^2 + x + 1 = 0\) without solving.</p>
+<p>First: \(\Delta = 36 - 36 = 0\), so one repeated real root (the parabola touches the \(x\)-axis at one point).</p>
+<p>Second: \(\Delta = 1 - 4 = -3 < 0\), so no real roots (the parabola never crosses the \(x\)-axis).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to multiply the subtracted constant by \(a\) when distributing. In Example 1, \(2 \times (-4) = -8\), not \(-4\).</li>
+<li>Halving \(b\) incorrectly when \(b\) is odd or fractional — keep it as a fraction. For \(x^2 + 5x\), half of 5 is \(\tfrac{5}{2}\), square is \(\tfrac{25}{4}\).</li>
+<li>Sign mistakes when reading off the vertex: \((x + 2)^2\) corresponds to \(h = -2\), not \(+2\).</li>
+<li>Misreading the discriminant. A negative discriminant doesn't mean "error" — it means "no real solutions" (the roots are complex, studied in MHF4U/MCV4U).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "explain the meaning of the term inverse function, and determine the inverse of a linear function"; A2.3 — "determine the maximum or minimum value of a quadratic function whose equation is given in the form \(f(x) = ax^2 + bx + c\), using an algebraic method (e.g., completing the square; factoring to determine the zeros and averaging the zeros)" — and the closely related expectation that solving real-context problems uses the quadratic formula.</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt9')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Completing the Square — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:32</span>
+        <span class="vid-toggle" id="toggle-mcr-yt9">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt9">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bNQY0z76M5A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=bNQY0z76M5A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.4 &mdash; Solving Quadratic Equations</div>
+<div class="topic-desc">Solve quadratic equations by factoring, by completing the square, or by the quadratic formula; identify which method is most efficient.</div>
+<div class="summary-card">Solve \( 2x^2-7x+3=0 \): factor as \( (2x-1)(x-3)=0 \), so \( x=\tfrac{1}{2} \) or \( x=3 \). When factoring fails (e.g. \( x^2+4x+1=0 \)), use the quadratic formula: \( x=\frac{-4\pm\sqrt{12}}{2}=-2\pm\sqrt{3} \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Solving a quadratic equation means finding the values of \(x\) that make \(ax^2 + bx + c = 0\). Graphically, these are the \(x\)-intercepts of the parabola. There are three methods, and a key skill is choosing the most efficient one for the equation in front of you.</p>
+
+<p><strong>Method 1 — Factoring.</strong> If you can factor the quadratic over the rationals, use the <em>zero-product property</em>: if \(PQ = 0\), then \(P = 0\) or \(Q = 0\). Fast, exact, and clean. Try this first when the coefficients are small integers and a quick mental factorisation seems likely.</p>
+
+<p><strong>Method 2 — Completing the square.</strong> Convert to vertex form, then solve by isolating the square term. Most useful when an exact-radical answer is needed and factoring fails, or when the problem also asks for the vertex.</p>
+
+<p><strong>Method 3 — Quadratic formula.</strong> The universal fallback: \(x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\) works on every quadratic. Use it whenever factoring is awkward, especially when the discriminant isn't a perfect square.</p>
+
+<p>Before solving by any method, make sure the equation is written as \(ax^2 + bx + c = 0\). Move every term to one side; the other side must be zero. The zero-product property only works on a zero.</p>
+
+<ul>
+<li><strong>Root / zero / solution</strong> — same idea: a value of \(x\) making the equation true; the \(x\)-intercept of \(y = ax^2 + bx + c\).</li>
+<li><strong>Zero-product property</strong> — \(PQ = 0 \Rightarrow P = 0 \text{ or } Q = 0\). Requires the product to equal zero.</li>
+<li><strong>Double root</strong> — a single value occurring twice when the discriminant is zero; the parabola is tangent to the \(x\)-axis.</li>
+<li><strong>Extraneous solution</strong> — a value satisfying a transformed equation but not the original (rare in pure quadratics; common when squaring both sides of a radical equation).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Solve \(2x^2 - 7x + 3 = 0\) by factoring.</p>
+<p>Decompose: \(ac = 6\), find two numbers multiplying to 6, summing to \(-7\): \(-6\) and \(-1\). Split: \(2x^2 - 6x - x + 3 = 0\). Group: \(2x(x - 3) - 1(x - 3) = 0\), so \((2x - 1)(x - 3) = 0\). Zero-product: \(2x - 1 = 0\) gives \(x = \tfrac{1}{2}\); \(x - 3 = 0\) gives \(x = 3\). Solutions: \(x = \tfrac{1}{2}, 3\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Solve \(x^2 + 4x + 1 = 0\) using the quadratic formula.</p>
+<p>\(a = 1, b = 4, c = 1\). Discriminant: \(16 - 4 = 12\).</p>
+<p>\(x = \dfrac{-4 \pm \sqrt{12}}{2} = \dfrac{-4 \pm 2\sqrt{3}}{2} = -2 \pm \sqrt{3}\).</p>
+<p>Two irrational roots: \(x = -2 + \sqrt{3} \approx -0.27\) and \(x = -2 - \sqrt{3} \approx -3.73\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Solve \((x + 1)(x - 4) = 6\).</p>
+<p>Common mistake: setting each factor equal to 6. The zero-product property requires <em>zero</em> on the right.</p>
+<p>Expand and rearrange: \(x^2 - 3x - 4 = 6 \Rightarrow x^2 - 3x - 10 = 0\). Factor: \((x - 5)(x + 2) = 0\). So \(x = 5\) or \(x = -2\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — Solve \(3x^2 - 5x = 0\).</p>
+<p>Factor out the GCF: \(x(3x - 5) = 0\). Solutions: \(x = 0\) or \(x = \tfrac{5}{3}\).</p>
+<p>Tempting wrong move: divide both sides by \(x\). That throws away the solution \(x = 0\). Never divide by a variable unless you know it's nonzero.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Applying the zero-product property when the right side isn't zero. Move everything to one side first.</li>
+<li>Dividing both sides by \(x\) (or any variable). You lose the \(x = 0\) root — always factor out \(x\) instead.</li>
+<li>Sign mistakes in the quadratic formula. Write \(a, b, c\) carefully, including signs. Use brackets when substituting.</li>
+<li>Simplifying \(\sqrt{12}\) to \(\sqrt{12}\) and leaving it. Always reduce radicals: \(\sqrt{12} = 2\sqrt{3}\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "pose problems involving quadratic functions arising from real-world applications represented in a variety of ways (e.g., verbally, numerically, graphically, algebraically), and solve such problems by interpreting the equation of a quadratic function in factored, vertex, or standard form, as appropriate."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt10')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Solving Quadratic Equations By Factoring &amp; Quadratic Formula — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">19:42</span>
+        <span class="vid-toggle" id="toggle-mcr-yt10">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt10">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qwpxeaz2GBI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=qwpxeaz2GBI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.5 &mdash; Quadratic Applications: Optimization &amp; Projectiles</div>
+<div class="topic-desc">Set up quadratic models for projectile motion, area maximization, and revenue/profit; identify the vertex as the optimal value.</div>
+<div class="summary-card">A ball is thrown so its height (m) is \( h(t)=-5t^2+20t+1.5 \). Maximum height occurs at \( t=-\frac{b}{2a}=\frac{-20}{-10}=2 \) s; \( h(2)=-20+40+1.5=21.5 \) m. The ball hits the ground when \( h(t)=0 \), solved by the quadratic formula.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Many physical and economic situations have a hidden parabolic shape. Projectiles (anything thrown, kicked, or launched near Earth) trace parabolic paths because gravity is a constant downward acceleration. Maximising an enclosed area with a fixed perimeter leads to a parabola in width-vs-area space. Revenue and profit problems pair a linear price-vs-demand relationship with a quadratic revenue function. The key skill is to <em>set up</em> the quadratic model and then use the algebra of Chapter 2 to find the answer.</p>
+
+<p>The vertex is the optimal value — the maximum (parabola opening down, \(a < 0\)) or minimum (opening up, \(a > 0\)). The fastest way to find it once the model is in standard form \(y = ax^2 + bx + c\) is the formula \(x = -\dfrac{b}{2a}\) for the \(x\)-coordinate; then substitute to get the \(y\)-coordinate. If the equation is in factored form, average the zeros instead. If in vertex form, just read it off.</p>
+
+<p>Always interpret your answer in context. "Maximum at \(t = 2\)" is incomplete — say "the ball reaches its maximum height of 21.5 m at \(t = 2\) s." Always check that the optimal \(x\) lies in the contextual domain, and write any zero-finding result with appropriate units and rounding.</p>
+
+<ul>
+<li><strong>Projectile motion</strong> — in metric, near Earth, height (m) at time \(t\) (s): \(h(t) = -\tfrac{1}{2}gt^2 + v_0 t + h_0\) with \(g \approx 9.8\) (or \(\approx 10\) for tidy numbers in MCR3U).</li>
+<li><strong>Optimization</strong> — finding the maximum or minimum value of a quadratic model; equivalent to locating the vertex.</li>
+<li><strong>Revenue</strong> = price × quantity; if price and quantity are linearly related, revenue is quadratic.</li>
+<li><strong>Profit</strong> = revenue \(-\) cost; usually quadratic when revenue is quadratic and cost is linear.</li>
+<li><strong>Contextual domain</strong> — the realistic range of inputs (e.g. \(t \ge 0\)); the algebraic answer must fall inside.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A ball is launched upward. Its height (in metres) after \(t\) seconds is \(h(t) = -5t^2 + 20t + 1.5\). Find the maximum height, when it is reached, and when the ball hits the ground.</p>
+<p>Maximum: \(t = -\dfrac{b}{2a} = -\dfrac{20}{2(-5)} = 2\) s.</p>
+<p>\(h(2) = -5(4) + 20(2) + 1.5 = -20 + 40 + 1.5 = 21.5\) m.</p>
+<p>Hits the ground when \(h(t) = 0\): solve \(-5t^2 + 20t + 1.5 = 0\). Use the quadratic formula with \(a = -5, b = 20, c = 1.5\): discriminant \(= 400 + 30 = 430\); \(t = \dfrac{-20 \pm \sqrt{430}}{-10}\). The positive root is \(t = \dfrac{-20 - \sqrt{430}}{-10} = \dfrac{20 + \sqrt{430}}{10} \approx 4.07\) s.</p>
+<p>The ball reaches a maximum height of 21.5 m at \(t = 2\) s and lands after about 4.07 s.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A farmer has 100 m of fencing to enclose a rectangular pen against a barn (only three sides need fencing). Find the dimensions of maximum area.</p>
+<p>Let \(w\) be the width perpendicular to the barn and \(\ell\) the length parallel. Fencing: \(2w + \ell = 100\), so \(\ell = 100 - 2w\).</p>
+<p>Area: \(A(w) = w \cdot (100 - 2w) = 100w - 2w^2 = -2w^2 + 100w\).</p>
+<p>Vertex: \(w = -\dfrac{100}{2(-2)} = 25\). Then \(\ell = 100 - 50 = 50\). Maximum area \(= 25 \cdot 50 = 1250\) m\(^2\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A shop sells \(150\) hats per week at \$20 each. Market research suggests each \$1 price increase loses 5 sales per week. What price maximises weekly revenue?</p>
+<p>Let \(x\) be the number of \$1 increases. Price \(= 20 + x\). Quantity \(= 150 - 5x\). Revenue \(R(x) = (20 + x)(150 - 5x) = 3000 - 100x + 150x - 5x^2 = -5x^2 + 50x + 3000\).</p>
+<p>Vertex: \(x = -\dfrac{50}{2(-5)} = 5\). Optimal price \(= 20 + 5 = \$25\). Maximum revenue: \(R(5) = -125 + 250 + 3000 = \$3{,}125\) per week.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to substitute back to get the \(y\)-coordinate of the vertex once you've found the \(x\)-coordinate.</li>
+<li>Choosing the wrong root from the quadratic formula (e.g. negative time). Always check the contextual domain.</li>
+<li>Skipping units. "21.5" without "m" is incomplete; a marker will deduct.</li>
+<li>Setting up the wrong quadratic — read the problem carefully and label all variables before writing equations.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "determine the maximum or minimum value of a quadratic function whose equation is given in the form \(f(x) = ax^2 + bx + c\), using an algebraic method (e.g., completing the square; factoring to determine the zeros and averaging the zeros)"; A2.1 — "...solve such problems by interpreting the equation of a quadratic function in factored, vertex, or standard form, as appropriate."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt11')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Quadratic Word Problems — Mr. Robinson's Virtual Math Classroom</span>
+        <span class="vid-duration">22:18</span>
+        <span class="vid-toggle" id="toggle-mcr-yt11">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt11">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/05MdLfhmbyU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=05MdLfhmbyU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 2 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch2_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch2_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch2_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch1.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 1 &mdash; Introduction to Functions</div></a>
+<a href="ch3.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 3 &mdash; Exponential Functions</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

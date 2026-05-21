@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 3: Exponential Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit3">
+<div class="unit-header" style="background:linear-gradient(135deg,#e11d48dd,#e11d48);">
+<h2>Chapter 3: Exponential Functions</h2>
+<p>Exponent laws, rational exponents, graphing, transformations, key features</p>
+<div class="unit-meta">
+<span>📚 Strand B: Exponential Functions</span>
+<span>⏱️ ~12h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.1 &mdash; Exponent Laws &amp; Integer Exponents</div>
+<div class="topic-desc">Apply the laws of exponents: product, quotient, power-of-a-power, zero, and negative exponents.</div>
+<div class="summary-card">Key laws: \( a^m\cdot a^n=a^{m+n} \); \( \dfrac{a^m}{a^n}=a^{m-n} \); \( (a^m)^n=a^{mn} \); \( a^0=1 \) (\(a\ne 0\)); \( a^{-n}=\dfrac{1}{a^n} \). Example: \( \dfrac{(2x^3)^2 \cdot x^{-4}}{x^2} = \dfrac{4x^6 x^{-4}}{x^2}=4x^{6-4-2}=4x^0=4 \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Exponents are repeated multiplication: \(a^n = a \cdot a \cdot a \cdots a\) (\(n\) factors of \(a\)). All the exponent laws come from this single idea. If you forget a law, write it out longhand and the rule will fall out by counting factors.</p>
+
+<p>The <em>product law</em> \(a^m \cdot a^n = a^{m+n}\) follows because multiplying \(a \cdot a \cdot a\) (3 factors) by \(a \cdot a\) (2 factors) gives 5 factors. The <em>quotient law</em> \(a^m / a^n = a^{m - n}\) follows because dividing cancels factors: 5 factors on top, 2 below, leaves 3 on top. The <em>power-of-a-power law</em> \((a^m)^n = a^{mn}\) follows because raising \((a^m)\) to \(n\) means multiplying \(n\) copies of \(a^m\) — which is \(a^{m + m + \cdots + m} = a^{mn}\).</p>
+
+<p>The trickier extensions are zero and negative exponents. To keep the quotient law consistent, we <em>define</em> \(a^0 = 1\) (because \(a^m / a^m\) must equal both 1 and \(a^{m - m} = a^0\)). Similarly we define \(a^{-n} = \dfrac{1}{a^n}\) because \(a^0 / a^n\) must equal both \(a^{-n}\) and \(\dfrac{1}{a^n}\). These aren't separate laws — they're the only definitions that keep the laws working.</p>
+
+<ul>
+<li><strong>Base</strong> — the number being multiplied; <strong>exponent</strong> — how many times.</li>
+<li><strong>Product law</strong> — \(a^m \cdot a^n = a^{m+n}\).</li>
+<li><strong>Quotient law</strong> — \(\dfrac{a^m}{a^n} = a^{m-n}\) (\(a \ne 0\)).</li>
+<li><strong>Power of a power</strong> — \((a^m)^n = a^{mn}\).</li>
+<li><strong>Power of a product</strong> — \((ab)^n = a^n b^n\).</li>
+<li><strong>Power of a quotient</strong> — \(\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}\) (\(b \ne 0\)).</li>
+<li><strong>Zero exponent</strong> — \(a^0 = 1\) (\(a \ne 0\)).</li>
+<li><strong>Negative exponent</strong> — \(a^{-n} = \dfrac{1}{a^n}\) (\(a \ne 0\)).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Simplify \(\dfrac{(2x^3)^2 \cdot x^{-4}}{x^2}\), writing the answer with positive exponents.</p>
+<p>Apply power of a product to the numerator: \((2x^3)^2 = 4x^6\). So the expression becomes \(\dfrac{4x^6 \cdot x^{-4}}{x^2}\).</p>
+<p>Combine in the numerator: \(x^6 \cdot x^{-4} = x^{6 + (-4)} = x^2\). Now \(\dfrac{4x^2}{x^2} = 4 \cdot x^{2-2} = 4 \cdot x^0 = 4\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Simplify \(\left(\dfrac{3a^{-2}b^3}{6ab^{-1}}\right)^{-2}\).</p>
+<p>Simplify inside first: \(\dfrac{3}{6} = \dfrac{1}{2}\), \(\dfrac{a^{-2}}{a} = a^{-2-1} = a^{-3}\), \(\dfrac{b^3}{b^{-1}} = b^{3-(-1)} = b^4\). Inside becomes \(\dfrac{a^{-3} b^4}{2}\).</p>
+<p>Now apply the outer \(-2\): \(\left(\dfrac{a^{-3}b^4}{2}\right)^{-2} = \dfrac{a^{6} b^{-8}}{2^{-2}} = \dfrac{4 a^6}{b^8}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Evaluate \(2^{-3} + 5^0 - (-3)^2\).</p>
+<p>\(2^{-3} = \dfrac{1}{8}\); \(5^0 = 1\); \((-3)^2 = 9\). Sum: \(\dfrac{1}{8} + 1 - 9 = \dfrac{1}{8} - 8 = -\dfrac{63}{8}\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Multiplying the base by the exponent. \(2^3\) is \(2 \cdot 2 \cdot 2 = 8\), not \(2 \cdot 3 = 6\).</li>
+<li>\(-3^2\) versus \((-3)^2\). The first is \(-(3^2) = -9\); the second is \(9\). Brackets matter.</li>
+<li>Trying to use the product law when bases are different. \(2^3 \cdot 3^2\) does <em>not</em> equal \(5^5\) or \(6^5\) — the laws apply only to identical bases.</li>
+<li>Treating \(0^0\) as 1; it's an indeterminate form (you won't be tested on it at this level, but don't claim it equals 1).</li>
+<li>Negative exponents do not flip signs of bases; they flip locations: \(a^{-n} = \tfrac{1}{a^n}\), still positive if \(a > 0\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "graph, with and without technology, an exponential relation, given its equation in the form \(y = a^x\) (\(a > 0\), \(a \ne 1\))..."; B1.4 — "represent simple exponential equations with rational exponents... using a variety of tools (e.g., calculators, paper and pencil, computer algebra system) and strategies (e.g., applying the exponent laws)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt12')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Laws of Exponents — mathantics</span>
+        <span class="vid-duration">17:25</span>
+        <span class="vid-toggle" id="toggle-mcr-yt12">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt12">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LkhPRz7Hocg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=LkhPRz7Hocg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.2 &mdash; Rational Exponents &amp; Radicals</div>
+<div class="topic-desc">Convert between radical and rational-exponent form: \( a^{1/n} = \sqrt[n]{a} \) and \( a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m \).</div>
+<div class="summary-card">\( 27^{2/3} = (\sqrt[3]{27})^2 = 3^2 = 9 \). \( 16^{-3/4} = \dfrac{1}{16^{3/4}} = \dfrac{1}{(\sqrt[4]{16})^3} = \dfrac{1}{2^3} = \dfrac{1}{8} \). Rational exponents allow us to extend exponent laws beyond integer powers and are essential for working with exponential functions of any base.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>You've already learned that \(a^{-n} = \dfrac{1}{a^n}\) and \(a^0 = 1\). Rational exponents finish the job by giving meaning to expressions like \(a^{1/2}\), \(a^{2/3}\), \(a^{0.25}\). The definition is forced on us by the power-of-a-power law: if we want \((a^{1/2})^2 = a^{1/2 \cdot 2} = a^1 = a\), then \(a^{1/2}\) must be a number that squares to give \(a\) — which is exactly \(\sqrt{a}\).</p>
+
+<p>Generalising: \(a^{1/n} = \sqrt[n]{a}\), the \(n\)th root of \(a\). And \(a^{m/n}\) means take the \(n\)th root and raise to the \(m\)th power (or vice versa — they give the same result): \(a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m\). For positive bases this works for any rational exponent. Combine with the negative-exponent rule and you can handle every rational power: \(a^{-m/n} = \dfrac{1}{a^{m/n}}\).</p>
+
+<p>Which order is easier — root first or power first? Almost always <em>root first</em>: small numbers are easier to square than to take square roots of. \(8^{2/3}\) is easier as \((\sqrt[3]{8})^2 = 2^2 = 4\) than as \(\sqrt[3]{64} = 4\), though both work.</p>
+
+<ul>
+<li><strong>Rational exponent</strong> — an exponent that is a fraction \(m/n\) with integer numerator and positive integer denominator.</li>
+<li><strong>Root form</strong> — \(a^{1/n} = \sqrt[n]{a}\); the index of the radical is the denominator of the exponent.</li>
+<li><strong>Mixed power-root</strong> — \(a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m\).</li>
+<li><strong>Restriction on negative bases</strong> — \(a^{m/n}\) is well-defined for negative \(a\) only when \(n\) is odd (you can take odd roots of negatives, not even roots).</li>
+<li><strong>Principal root</strong> — by convention \(\sqrt[n]{a} \ge 0\) when \(n\) is even and \(a \ge 0\).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Evaluate \(27^{2/3}\).</p>
+<p>Root first: \(\sqrt[3]{27} = 3\) (since \(3^3 = 27\)). Then power: \(3^2 = 9\). So \(27^{2/3} = 9\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Evaluate \(16^{-3/4}\).</p>
+<p>Handle the negative first: \(16^{-3/4} = \dfrac{1}{16^{3/4}}\).</p>
+<p>\(16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = 8\).</p>
+<p>So \(16^{-3/4} = \dfrac{1}{8}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Simplify \(\dfrac{x^{1/2} \cdot x^{2/3}}{x^{-1/6}}\), writing the answer as a single power.</p>
+<p>Add exponents in the numerator: \(\dfrac{1}{2} + \dfrac{2}{3} = \dfrac{3}{6} + \dfrac{4}{6} = \dfrac{7}{6}\). Numerator: \(x^{7/6}\).</p>
+<p>Subtract the denominator's exponent: \(\dfrac{7}{6} - (-\dfrac{1}{6}) = \dfrac{8}{6} = \dfrac{4}{3}\).</p>
+<p>Answer: \(x^{4/3}\), or equivalently \(\sqrt[3]{x^4}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — Rewrite \(\sqrt[5]{x^3}\) using a rational exponent and simplify \(\left(\sqrt[5]{x^3}\right)^{10}\).</p>
+<p>\(\sqrt[5]{x^3} = x^{3/5}\). Then \(\left(x^{3/5}\right)^{10} = x^{3/5 \cdot 10} = x^6\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Reversing numerator and denominator in the exponent. The denominator is the root <em>index</em>; the numerator is the power. So \(a^{2/3}\) is a cube root, not a square root.</li>
+<li>Taking even roots of negative numbers in the real-number system. \((-16)^{1/2}\) is undefined over the reals.</li>
+<li>Forgetting to handle negative exponents before doing arithmetic. Convert to fraction first: \(a^{-m/n} = \tfrac{1}{a^{m/n}}\).</li>
+<li>Reducing \(\dfrac{a^{1/2}}{a^{1/3}}\) by subtracting unlike fractions. Find a common denominator first: \(\dfrac{3}{6} - \dfrac{2}{6} = \dfrac{1}{6}\), so the result is \(a^{1/6}\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.2 — "evaluate, with and without technology, numerical expressions containing integer and rational exponents and rational bases [e.g., \(2^{-3}\), \((-6)^3\), \(4^{1/2}\), \(1.01^{120}\)]"; B1.3 — "graph, with and without technology, an exponential relation, given its equation in the form \(y = a^x\)..."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt13')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Rational Exponents — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:50</span>
+        <span class="vid-toggle" id="toggle-mcr-yt13">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt13">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GipavLCnke0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=GipavLCnke0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.3 &mdash; The Exponential Function \( y = b^x \)</div>
+<div class="topic-desc">Graph parent exponentials \( y=2^x, y=10^x, y=(\tfrac{1}{2})^x \); identify domain, range, asymptote, intercepts; distinguish growth (\(b>1\)) from decay (\(0<b<1\)).</div>
+<div class="summary-card">For \( y=b^x \) with \( b>0, b\ne 1 \): domain \( \mathbb{R} \); range \( y>0 \); horizontal asymptote \( y=0 \); y-intercept always \( (0,1) \) since \( b^0=1 \); no x-intercept. Growth functions rise to the right; decay functions fall to the right.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The <em>exponential function</em> \(f(x) = b^x\) has the variable in the exponent — a profound change from the polynomial functions you've studied. Where polynomials grow at a rate proportional to a power of \(x\), exponentials grow at a rate proportional to themselves: a population that is twice as big today grows twice as fast today. That's the signature of exponential change, and it shows up everywhere — compound interest, populations, radioactivity, viral spread, cooling, learning curves.</p>
+
+<p>The base \(b\) is restricted: we require \(b > 0\) and \(b \ne 1\). If \(b = 1\), the function is constant (\(1^x = 1\) for any \(x\)). If \(b \le 0\), \(b^x\) is not consistently defined for all real \(x\) (e.g. \((-2)^{1/2}\) is not real). With \(b > 0\) and \(b \ne 1\), the function is one-to-one with a clean, continuous graph.</p>
+
+<p>Key features of every \(y = b^x\):</p>
+<ul>
+<li><strong>Domain</strong>: all real numbers, \((-\infty, \infty)\).</li>
+<li><strong>Range</strong>: positive reals, \((0, \infty)\). The graph never touches the \(x\)-axis.</li>
+<li><strong>\(y\)-intercept</strong>: \((0, 1)\) — because \(b^0 = 1\) for any allowed \(b\).</li>
+<li><strong>Horizontal asymptote</strong>: \(y = 0\). For growth (\(b > 1\)), approached as \(x \to -\infty\); for decay (\(0 < b < 1\)), as \(x \to +\infty\).</li>
+<li><strong>No \(x\)-intercept</strong>.</li>
+<li><strong>Growth</strong> when \(b > 1\): rises to the right, falls to the left.</li>
+<li><strong>Decay</strong> when \(0 < b < 1\): falls to the right, rises to the left.</li>
+<li><strong>One-to-one</strong>: so its inverse (the logarithm, studied in MHF4U) is a function.</li>
+</ul>
+
+<p>The bigger \(b\) is (for growth), the steeper the rise. The closer \(b\) is to 1, the slower the change. Decay with base \(b\) and growth with base \(1/b\) are reflections of each other across the \(y\)-axis.</p>
+
+<ul>
+<li><strong>Base</strong> — the constant \(b\); determines growth vs decay and the rate.</li>
+<li><strong>Asymptote</strong> — a line the curve approaches arbitrarily closely but never reaches. For \(y = b^x\), it's the \(x\)-axis.</li>
+<li><strong>Common base \(e \approx 2.71828\)</strong> — natural exponential, central in calculus; encountered fully in MHF4U.</li>
+<li><strong>Growth factor</strong> — \(b > 1\); each unit increase in \(x\) multiplies \(y\) by \(b\).</li>
+<li><strong>Decay factor</strong> — \(0 < b < 1\); each unit increase in \(x\) multiplies \(y\) by \(b\), shrinking it.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Sketch \(y = 2^x\). Identify domain, range, intercepts, and asymptote.</p>
+<p>Make a small table: \(x = -2: y = 1/4\); \(x = -1: y = 1/2\); \(x = 0: y = 1\); \(x = 1: y = 2\); \(x = 2: y = 4\); \(x = 3: y = 8\). Plot and connect smoothly.</p>
+<p>Domain \(\mathbb{R}\); range \((0, \infty)\); \(y\)-intercept \((0,1)\); no \(x\)-intercept; horizontal asymptote \(y = 0\) (approached as \(x \to -\infty\)).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Compare \(y = 2^x\) and \(y = (1/2)^x\).</p>
+<p>Table for \(y = (1/2)^x\): \(x = -2: y = 4\); \(x = -1: y = 2\); \(x = 0: y = 1\); \(x = 1: y = 1/2\); \(x = 2: y = 1/4\).</p>
+<p>Compared to \(2^x\), every \(y\)-value swaps from \(x = a\) to \(x = -a\): \(2^x\) at \(x = 1\) is 2; \((1/2)^x\) at \(x = -1\) is 2. So \((1/2)^x = 2^{-x}\). The graph of \((1/2)^x\) is the reflection of \(2^x\) in the \(y\)-axis. Both share the same horizontal asymptote and \(y\)-intercept.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A function \(f(x) = b^x\) passes through \((2, 9)\). Find \(b\).</p>
+<p>\(9 = b^2\), so \(b = 3\) (taking the positive root since \(b > 0\)). The function is \(y = 3^x\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing exponential growth with a quadratic. \(y = x^2\) doubles slowly; \(y = 2^x\) doubles every unit — by \(x = 10\) it's already 1024 and racing away.</li>
+<li>Forgetting the horizontal asymptote when sketching — the curve flattens toward \(y = 0\) but doesn't touch it.</li>
+<li>Mistakenly writing \((1/2)^x\) as \(2^{-x}\) and treating them as different functions — they're identical.</li>
+<li>Allowing the base to be negative. \(b\) must be positive (and \(\ne 1\)) for an exponential function.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "distinguish exponential functions from linear and quadratic functions by making comparisons in a variety of ways (e.g., comparing rates of change using finite differences in tables of values; identifying a constant ratio in a table of values; inspecting graphs; comparing equations)..."; B2.2 — "determine, through investigation, and describe key properties relating to domain and range, intercepts, increasing/decreasing intervals, and asymptotes (e.g., the domain is the set of real numbers; the range is the set of positive real numbers; the function either increases or decreases throughout its domain) for exponential functions represented in a variety of ways."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt14')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Graphing Exponential Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:18</span>
+        <span class="vid-toggle" id="toggle-mcr-yt14">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt14">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/3G5WluJ7LFA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=3G5WluJ7LFA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.4 &mdash; Transformations of Exponential Functions</div>
+<div class="topic-desc">Apply \( y=a\cdot b^{k(x-d)}+c \): identify the new asymptote (\( y=c \)), the y-intercept, and effects of each parameter.</div>
+<div class="summary-card">For \( y=2(3)^{x-1}-4 \): the parent \( y=3^x \) is stretched vertically by 2, shifted right 1, and down 4. New horizontal asymptote: \( y=-4 \). At \( x=1 \): \( y=2(3)^0-4=-2 \). At \( x=0 \): \( y=2(3)^{-1}-4=\tfrac{2}{3}-4=-\tfrac{10}{3} \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Exponential functions follow the same transformation framework as every other function family (Chapter 1.5). The general form is:</p>
+
+<p>\[ y = a \cdot b^{k(x - d)} + c \]</p>
+
+<p>where \(b\) is the original base (\(b > 0, b \ne 1\)) and \(a, k, d, c\) play their usual roles. The only new feature is the <strong>horizontal asymptote</strong>: the parent \(y = b^x\) has asymptote \(y = 0\), and the vertical translation \(c\) moves it to \(y = c\). This is unique to functions like exponentials and rationals — translating up or down literally moves the asymptote.</p>
+
+<p>The \(y\)-intercept changes in a predictable way. For the parent, \(y(0) = b^0 = 1\). For \(y = a \cdot b^{k(x - d)} + c\), substitute \(x = 0\): \(y(0) = a \cdot b^{-kd} + c\). The \(x\)-intercept may now exist (since the asymptote has moved) — solve \(y = 0\) to find it.</p>
+
+<p>The mapping rule for a key point \((x, y)\) on the parent is:</p>
+
+<p>\[ (x, y) \mapsto \left(\frac{x}{k} + d,\ ay + c\right) \]</p>
+
+<p>Use it on memorable points like \((-1, 1/b), (0, 1), (1, b)\) on the parent.</p>
+
+<ul>
+<li><strong>Vertical translation \(c\)</strong> — moves the entire graph (including asymptote) up by \(c\).</li>
+<li><strong>Horizontal translation \(d\)</strong> — shifts right by \(d\) when written as \(b^{k(x - d)}\); the asymptote is unchanged.</li>
+<li><strong>Vertical stretch \(a\)</strong> — multiplies all \(y\)-values by \(a\); if \(a < 0\), reflect in \(x\)-axis and the curve dips below the asymptote.</li>
+<li><strong>Horizontal compression / reflection \(k\)</strong> — divides \(x\)-coordinates by \(|k|\); if \(k < 0\), reflect in \(y\)-axis (swaps growth and decay).</li>
+<li><strong>New asymptote</strong> — \(y = c\) after the vertical shift.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Analyse \(y = 2(3)^{x - 1} - 4\). State the transformations, asymptote, \(y\)-intercept, and sketch.</p>
+<p>Parent: \(y = 3^x\). Parameters: \(a = 2\), \(k = 1\), \(d = 1\), \(c = -4\). Transformations: vertical stretch by 2; translate right 1; translate down 4.</p>
+<p>New asymptote: \(y = -4\).</p>
+<p>\(y\)-intercept: \(x = 0\): \(y = 2 \cdot 3^{-1} - 4 = \dfrac{2}{3} - 4 = -\dfrac{10}{3}\). So \((0, -\tfrac{10}{3})\).</p>
+<p>Point on parent: \((0, 1)\) maps to \((0 + 1, 2 \cdot 1 - 4) = (1, -2)\). \((1, 3) \mapsto (2, 2)\). \((2, 9)\mapsto (3, 14)\). Sketch through these points with asymptote \(y = -4\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Find the \(x\)-intercept of \(y = 2(3)^{x - 1} - 4\).</p>
+<p>Set \(y = 0\): \(2 \cdot 3^{x-1} - 4 = 0\), so \(3^{x-1} = 2\). Same-base method doesn't help (different bases). Logarithms (MHF4U) would let us solve exactly: \(x - 1 = \log_3 2\), so \(x = 1 + \log_3 2 \approx 1.631\). At this MCR3U level we'd estimate graphically — \(3^{0.6} \approx 1.93\) and \(3^{0.7} \approx 2.16\), so \(x \approx 1.63\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Describe the transformations applied to \(y = 5^x\) to obtain \(y = -3 \cdot 5^{-2(x + 1)} + 1\).</p>
+<p>\(a = -3\) (vertical stretch by 3 and reflection in \(x\)-axis); \(k = -2\) (horizontal compression by factor 2 and reflection in \(y\)-axis); \(d = -1\) (translate left 1); \(c = 1\) (translate up 1). New asymptote: \(y = 1\), and because of the negative \(a\) the curve sits <em>below</em> the asymptote.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to factor \(k\) out of the exponent before reading \(d\). \(b^{2x - 4}\) is \(b^{2(x - 2)}\), so \(d = 2\), not 4.</li>
+<li>Saying the asymptote is always \(y = 0\). It's \(y = c\) after the vertical translation.</li>
+<li>Skipping reflections when \(a\) or \(k\) is negative.</li>
+<li>Mixing decay vs growth. The reflection \(b^{-x} = (1/b)^x\) converts growth to decay (and vice versa).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "determine, through investigation (e.g., using graphing technology), the roles of the parameters \(a\), \(k\), \(d\), and \(c\) in functions of the form \(y = a b^{k(x - d)} + c\), and describe these roles in terms of transformations on the graph of \(f(x) = b^x\)..."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt15')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Transformations of Exponential Functions — Mario's Math Tutoring</span>
+        <span class="vid-duration">11:04</span>
+        <span class="vid-toggle" id="toggle-mcr-yt15">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt15">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jzE3rfRxlrQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=jzE3rfRxlrQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.5 &mdash; Comparing Linear, Quadratic, &amp; Exponential Growth</div>
+<div class="topic-desc">Compare rates of growth using finite differences and tables; understand why exponential eventually beats any polynomial.</div>
+<div class="summary-card">Linear functions have constant first differences; quadratics have constant second differences; exponentials have a constant <em>ratio</em> of consecutive y-values. For large \( x \), \( 2^x \) eventually exceeds \( x^{100} \) — a key intuition for limits and rates of change later in MHF4U.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Linear, quadratic, and exponential functions are the three workhorses of Grade 11 modelling. Recognising which one fits a data set is a high-value skill, and there's a simple table-based test that distinguishes them.</p>
+
+<p><strong>Linear</strong> functions \(y = mx + b\) have a constant <em>first difference</em>: every unit step in \(x\) changes \(y\) by the same amount \(m\). Subtract consecutive \(y\)-values; if you get the same number every time, it's linear.</p>
+
+<p><strong>Quadratic</strong> functions \(y = ax^2 + bx + c\) have variable first differences but constant <em>second differences</em>. Take differences of the differences; if those are constant, it's quadratic. The constant second difference equals \(2a \cdot (\Delta x)^2\).</p>
+
+<p><strong>Exponential</strong> functions \(y = a \cdot b^x\) have a constant <em>ratio</em>: divide consecutive \(y\)-values rather than subtract. \(y_{n+1}/y_n = b\) for every \(n\). No matter how far down the table you go, the multiplier stays the same.</p>
+
+<p>This distinction matters because <em>exponential growth eventually beats any polynomial growth</em>. For small \(x\), \(x^{10}\) towers over \(2^x\) — at \(x = 10\), \(x^{10} = 10^{10} \approx 10^{10}\) versus \(2^{10} = 1024\). But by \(x \approx 60\), \(2^x\) has overtaken \(x^{10}\). For \(x^{100}\) the crossover is later but inevitable. In the long run, no polynomial can keep up with an exponential — a fact that makes compound-interest schemes, viral spread, and computational complexity (e.g. why \(2^n\) algorithms are infeasible) so dramatic.</p>
+
+<ul>
+<li><strong>First difference</strong> — \(\Delta y = y_{n+1} - y_n\). Constant first difference ⇒ linear.</li>
+<li><strong>Second difference</strong> — \(\Delta(\Delta y)\). Constant second difference ⇒ quadratic.</li>
+<li><strong>Common ratio</strong> — \(y_{n+1}/y_n\). Constant common ratio ⇒ exponential.</li>
+<li><strong>End behaviour</strong> — describes \(y\) as \(x \to \pm \infty\). Exponential growth dominates polynomial growth as \(x \to \infty\).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Classify each table.</p>
+<p>(a) \(x: 0, 1, 2, 3, 4\); \(y: 1, 3, 5, 7, 9\). First differences: \(2, 2, 2, 2\) — constant. <strong>Linear</strong>: \(y = 2x + 1\).</p>
+<p>(b) \(x: 0, 1, 2, 3, 4\); \(y: 1, 2, 5, 10, 17\). First differences: \(1, 3, 5, 7\) — not constant. Second differences: \(2, 2, 2\) — constant. <strong>Quadratic</strong>: \(y = x^2 + 1\).</p>
+<p>(c) \(x: 0, 1, 2, 3, 4\); \(y: 1, 2, 4, 8, 16\). Differences: \(1, 2, 4, 8\) — not constant. Ratios: \(2/1, 4/2, 8/4, 16/8 = 2\) — constant. <strong>Exponential</strong>: \(y = 2^x\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A bacterial culture grows according to the table:</p>
+<p>\(t\) (hours): 0, 1, 2, 3, 4; population: 500, 600, 720, 864, 1036.8.</p>
+<p>Ratios: \(600/500 = 1.2\); \(720/600 = 1.2\); \(864/720 = 1.2\); \(1036.8/864 = 1.2\). Constant ratio \(1.2\). The model is exponential: \(P(t) = 500 \cdot 1.2^t\) — a 20% per-hour growth rate.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Compare long-run growth: which is larger at \(x = 100\), \(y = x^3\) or \(y = 1.05^x\)?</p>
+<p>At \(x = 100\): \(x^3 = 10^6 = 1{,}000{,}000\). \(1.05^{100} \approx 131.5\). Polynomial is much bigger.</p>
+<p>But at \(x = 500\): \(x^3 = 1.25 \times 10^8\). \(1.05^{500} \approx 3.93 \times 10^{10}\) — exponential dominates.</p>
+<p>Even a modest base like 1.05 (5%/period growth) eventually overtakes a cubic. This is the moral lesson of compound interest and a foundation for limits in MHF4U.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Stopping after first differences — if they're not constant, you haven't ruled out quadratic. Compute second differences before claiming "not polynomial."</li>
+<li>Computing ratios using subtraction. The exponential test is <em>division</em>, not difference.</li>
+<li>Comparing growth only on small intervals. Exponential lag at first; their dominance shows only as \(x\) grows.</li>
+<li>Assuming an arithmetic-looking sequence is linear without checking. Sometimes data is approximately linear over the visible range but actually exponential or quadratic.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "distinguish exponential functions from linear and quadratic functions by making comparisons in a variety of ways (e.g., comparing rates of change using finite differences in tables of values; identifying a constant ratio in a table of values; inspecting graphs; comparing equations), within the same context when possible (e.g., simple interest and compound interest, population growth)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt16')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Linear, Quadratic, &amp; Exponential Functions Compared — CK-12 Foundation</span>
+        <span class="vid-duration">9:48</span>
+        <span class="vid-toggle" id="toggle-mcr-yt16">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt16">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9Bu0Hkxw88g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=9Bu0Hkxw88g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 3 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch3_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch3_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch3_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch2.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 2 &mdash; Quadratic Functions &amp; Equations</div></a>
+<a href="ch4.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 4 &mdash; Solving Exponential Equations &amp; Applications</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

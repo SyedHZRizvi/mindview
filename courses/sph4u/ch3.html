@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Chapter 3: Gravitational, Electric, and Magnetic Fields | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\(','\)']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../sph4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH4U Physics)</a></div>
+<div class="strand-tag">Science — Grade 12 University Preparation</div>
+<h1>⚡ SPH4U: Chapter 3: Gravitational, Electric, and Magnetic Fields</h1>
+<p>Gravitational fields, Coulomb's law, electric fields and potential, magnetism</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section">
+        <div class="unit-header" style="background:linear-gradient(135deg, #7c3aeddd, #7c3aed);">
+            <h2>Unit 3: Gravitational, Electric, and Magnetic Fields</h2>
+            <p>Gravitational fields, Coulomb's law, electric fields and potential, magnetism</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Fields</span>
+                <span>⏱️ ~25 hours</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.1 — Newtonian Gravitation and Orbits</div>
+            <div class="topic-desc">Universal gravitation, gravitational field strength, orbital mechanics</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Newton's law of universal gravitation states that every two point masses attract along the line joining them with a force $F=Gm_1m_2/r^2$, where $G=6.674\times 10^{-11}\,\text{N·m}^2/\text{kg}^2$. The inverse-square dependence is geometric — gravitational "flux" from a point spreads over a sphere of area $4\pi r^2$. This single law, paired with Newton II, explains both Galileo's free-fall observations near Earth and Kepler's laws of planetary motion, unifying terrestrial and celestial mechanics.</p>
+                <p>The gravitational <strong>field strength</strong> $\vec{g}$ at a point is the force per unit mass on a small test mass placed there: $\vec{g}=\vec{F}/m=GM/r^2$ directed toward the source. For circular orbits, gravity supplies the centripetal force: $GMm/r^2=mv^2/r$, giving orbital speed $v=\sqrt{GM/r}$ and period $T=2\pi\sqrt{r^3/(GM)}$ — Kepler's third law $T^2\propto r^3$. The gravitational potential energy of two masses (with PE=0 at infinity) is $U=-GMm/r$; the minus sign captures the fact that bringing masses together releases energy. Escape speed from a body of mass $M$ and radius $R$ comes from setting total energy to zero: $v_{esc}=\sqrt{2GM/R}$.</p>
+                <ul>
+                  <li><strong>$G$</strong> = 6.674×10⁻¹¹ N·m²/kg² — universal gravitational constant.</li>
+                  <li><strong>Field strength</strong> $g$ near Earth's surface ≈ 9.81 N/kg (numerically = $g$ in m/s²).</li>
+                  <li><strong>Gravitational PE</strong> (general): $U=-GMm/r$ (J); always negative.</li>
+                  <li><strong>Escape speed</strong>: $v_{esc}=\sqrt{2gR_E}\approx 11.2$ km/s for Earth.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — geostationary satellite</p>
+                  <p>Find the orbital radius of a satellite that orbits Earth with a period $T=86{,}400$ s (one sidereal day). $M_E=5.97\times 10^{24}$ kg.</p>
+                  <p>Step 1 — Kepler III: $T^2=4\pi^2 r^3/(GM_E)$.</p>
+                  <p>Step 2 — solve: $r^3=GM_E T^2/(4\pi^2)=(6.674\times 10^{-11})(5.97\times 10^{24})(86400)^2/(4\pi^2)$.</p>
+                  <p>Step 3 — $r^3=7.54\times 10^{22}\,\text{m}^3 \Rightarrow r=4.23\times 10^7$ m = 42 300 km from Earth's centre.</p>
+                  <p>Step 4 — altitude above Earth's surface: $r-R_E=42300-6378\approx 35{,}900$ km. Matches geostationary orbit. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Using $U_g=mgh$ for large altitudes</strong> — only valid when $h\ll R_E$; otherwise use $U=-GMm/r$.</li>
+                  <li><strong>Confusing mass and weight</strong> — astronauts in orbit are weightless (free-falling), not massless.</li>
+                  <li><strong>Forgetting the negative sign in $U$</strong> — leads to incorrect escape-speed derivations.</li>
+                  <li><strong>Adding/subtracting $r$ from Earth's surface incorrectly</strong> — $r$ in Newton's law is centre-to-centre distance.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "analyse, and solve problems involving, the gravitational force between two objects (e.g., the orbit of a planet around the Sun, the motion of a satellite)."</p>
+              </div>
+            </details>
+            
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Fields_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Fields Unit Notes</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v19')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C6L1: Newtonian Gravitation and Orbits</span>
+                        <span class="vid-duration">1:48:26</span>
+                        <span class="vid-toggle" id="toggle-v19">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v19">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/019_C6L1__Newtonian_Gravitation_and_Orbits.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=ZU-M_zoxDOo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.2 — Electric Charge and Coulomb's Law</div>
+            <div class="topic-desc">Properties of charge, Coulomb's law, comparing electric and gravitational forces</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Electric charge $q$ is a fundamental property of matter measured in coulombs (C). Charge is quantised in units of the elementary charge $e=1.602\times 10^{-19}$ C (the magnitude of the charge on a proton or electron), and is conserved in every interaction — charges can be transferred but never created or destroyed. Like charges repel; unlike charges attract. <strong>Coulomb's law</strong> gives the magnitude of the force between two point charges separated by distance $r$: $F=kq_1q_2/r^2$, with $k=8.99\times 10^{9}$ N·m²/C². Often written with the permittivity of free space $\varepsilon_0$: $k=1/(4\pi\varepsilon_0)$.</p>
+                <p>The structural parallel to Newton's gravitation is striking: both are inverse-square, central, conservative forces. The differences are equally important. Gravity acts on mass (always positive); electrostatics acts on charge, which can be of either sign — so the force can be attractive OR repulsive. Gravity is enormously weaker: the electrostatic repulsion between two protons is about $10^{36}$ times their gravitational attraction. To find the net force on a charge from several others, use vector superposition — compute each pairwise Coulomb force and add as vectors.</p>
+                <ul>
+                  <li><strong>Coulomb's constant</strong> $k=8.99\times 10^9\,\text{N·m}^2/\text{C}^2$; $\varepsilon_0=8.854\times 10^{-12}\,\text{C}^2/(\text{N·m}^2)$.</li>
+                  <li><strong>Elementary charge</strong> $e=1.602\times 10^{-19}$ C; charge of electron $=-e$.</li>
+                  <li><strong>Conservation of charge</strong>: net charge in an isolated system is constant.</li>
+                  <li><strong>Sign convention</strong>: when $q_1$ and $q_2$ have the same sign, $F$ comes out positive — interpret as repulsion along the line joining them.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — three collinear charges</p>
+                  <p>Charges $q_1=+3.0\,\mu$C at $x=0$ and $q_2=-2.0\,\mu$C at $x=0.40$ m. Find force on $q_3=+1.0\,\mu$C at $x=0.20$ m.</p>
+                  <p>Step 1 — force from $q_1$ on $q_3$ (both positive → repulsion, +x direction): $F_{13}=kq_1q_3/r_{13}^2=(8.99\times 10^9)(3.0\times 10^{-6})(1.0\times 10^{-6})/(0.20)^2=0.674$ N.</p>
+                  <p>Step 2 — force from $q_2$ on $q_3$ (opposite signs → attraction toward $q_2$, +x direction): $F_{23}=(8.99\times 10^9)(2.0\times 10^{-6})(1.0\times 10^{-6})/(0.20)^2=0.449$ N.</p>
+                  <p>Step 3 — both forces point in +x: $F_{net}=0.674+0.449=1.12$ N in the +x direction.</p>
+                  <p>Step 4 — sanity: $q_3$ is between $q_1$ (repels right) and $q_2$ (attracts right), so the net force must be to the right. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Including signs of charges in the Coulomb's-law formula and then again as direction</strong> — pick one convention. Best practice: use magnitudes for $F$, then assign direction from a diagram.</li>
+                  <li><strong>Confusing units</strong> — 1 μC = 10⁻⁶ C, 1 nC = 10⁻⁹ C; always convert before substituting.</li>
+                  <li><strong>Treating Coulomb's law as 1/r (gravity-like Newtonian potential)</strong> — it's $1/r^2$ for force, $1/r$ for potential.</li>
+                  <li><strong>Forgetting superposition is vectorial</strong> — for non-collinear charges you must add as components.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.3 — "analyse, and solve problems involving, the electric force on a point charge due to one or more other point charges, using Coulomb's law."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v20')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C7L1: Properties of Electric Charge and Coulomb’s Law</span>
+                        <span class="vid-duration">1:34:15</span>
+                        <span class="vid-toggle" id="toggle-v20">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v20">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/020_C7L1__Properties_of_Electric_Charge_and_Coulomb_s_Law.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=2tSVeB154Vc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.3 — Electric Fields and Electric Potential</div>
+            <div class="topic-desc">Electric field lines, parallel plates, potential difference, equipotential lines</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Rather than thinking of Coulomb forces as direct action-at-a-distance, modern physics uses the <strong>field</strong> concept: a charge $Q$ creates an electric field $\vec{E}$ in the surrounding space, and another charge $q$ placed in that field feels a force $\vec{F}=q\vec{E}$. The electric field of a point charge is $E=kQ/r^2$, directed away from $Q$ if positive, toward it if negative. Field lines visualise $\vec{E}$: they start on positive charges and end on negative charges, never cross, and their density represents field strength. Between parallel plates with separation $d$ and potential difference $V$, the field is uniform: $E=V/d$.</p>
+                <p>Electric potential $V$ at a point is the electric potential energy per unit charge: $V=U/q$, measured in volts (1 V = 1 J/C). The potential of a point charge is $V=kQ/r$ (reference at infinity), and the potential difference $\Delta V$ between two points is the work done per unit charge by an external agent moving a test charge between them: $W_{ext}=q\Delta V$. Equipotential surfaces are perpendicular to field lines because no work is done moving along them. The work-energy theorem for charges gives $\tfrac12 mv^2=q\Delta V$ when starting from rest — the basis of accelerator physics and CRTs.</p>
+                <ul>
+                  <li><strong>Electric field</strong> $\vec{E}=\vec{F}/q$ (N/C, equivalent to V/m); vector pointing in the direction a + test charge would accelerate.</li>
+                  <li><strong>Electric potential</strong> $V=U/q$ (V); scalar.</li>
+                  <li><strong>Between parallel plates</strong>: $E=V/d$, uniform, perpendicular to plates.</li>
+                  <li><strong>Electron-volt</strong>: 1 eV = work done on $e$ across 1 V = $1.602\times 10^{-19}$ J — energy unit for atomic physics.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — electron in parallel-plate field</p>
+                  <p>Parallel plates 5.0 cm apart maintain 250 V. An electron is released from rest at the negative plate. Find its speed when it reaches the positive plate. ($m_e=9.11\times 10^{-31}$ kg)</p>
+                  <p>Step 1 — field: $E=V/d=250/0.050=5000$ V/m, points from + to − plate.</p>
+                  <p>Step 2 — energy conservation: $q\Delta V=\tfrac12 mv^2$. The electron (negative charge) is accelerated toward + plate, gaining KE = $eV$ = $(1.602\times 10^{-19})(250)$ = $4.00\times 10^{-17}$ J.</p>
+                  <p>Step 3 — speed: $v=\sqrt{2(4.00\times 10^{-17})/(9.11\times 10^{-31})}=\sqrt{8.79\times 10^{13}}=9.37\times 10^6$ m/s.</p>
+                  <p>Step 4 — about 3% of $c$: still safely non-relativistic. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing field $\vec{E}$ (vector, N/C) with potential $V$ (scalar, V)</strong> — they're related by $E=-dV/dx$, but not the same.</li>
+                  <li><strong>Drawing field lines that cross</strong> — impossible; field at a point has one direction.</li>
+                  <li><strong>Forgetting electrons accelerate <em>against</em> $\vec{E}$</strong> — because their charge is negative.</li>
+                  <li><strong>Mixing V (volts) with J</strong> — energy is $qV$, not $V$ alone.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.5 — "analyse, and solve problems involving, the electric field and the electric potential at any point between or near charged parallel plates."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v21')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C7L2: Electric Fields,  Electric Potential Difference, and Electric Potential</span>
+                        <span class="vid-duration">1:47:15</span>
+                        <span class="vid-toggle" id="toggle-v21">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v21">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/021_C7L2__Electric_Fields___Electric_Potential_Difference__and_Electric_Potential.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=yJr3nhPiGv4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v22')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C7L3: Electric Potential, Electric Potential Energy Due to Point Charges, and Millikan's Experiment</span>
+                        <span class="vid-duration">1:16:51</span>
+                        <span class="vid-toggle" id="toggle-v22">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v22">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/022_C7L3__Electric_Potential__Electric_Potential_Energy_Due_to_Point_Charges__and_Millikan_s_Experiment.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=Xz96WdZCn28" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.4 — Magnets and Electromagnets</div>
+            <div class="topic-desc">Magnetic fields, electromagnets, right-hand rules</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Magnetism, although discovered separately from electricity, is fundamentally an electric phenomenon: every magnetic field arises from moving electric charges. Permanent magnets owe their magnetism to the aligned spins (intrinsic angular momentum) and orbital motion of electrons within their atoms. Magnetic field lines, by convention, point from the north to the south pole outside a magnet, and from south to north inside it, forming closed loops — magnetic monopoles have never been observed, so $\vec{B}$ field lines have no start or end.</p>
+                <p>A straight current-carrying wire produces a magnetic field that circles it according to the <strong>right-hand rule for a wire</strong>: thumb along $I$, fingers curl in the direction of $\vec{B}$. Magnitude near a long straight wire: $B=\mu_0 I/(2\pi r)$, where $\mu_0=4\pi\times 10^{-7}$ T·m/A is the permeability of free space. A solenoid (current-carrying coil) produces a nearly uniform interior field $B=\mu_0 n I$, where $n$ is turns per metre — this is the basis of every electromagnet, from doorbells to MRI machines. Inserting a ferromagnetic core multiplies the field by the relative permeability of the material.</p>
+                <ul>
+                  <li><strong>Magnetic field strength</strong> $B$ — SI unit tesla (T); 1 T = 1 N/(A·m); the gauss (G) is the older cgs unit, 1 T = 10⁴ G.</li>
+                  <li><strong>Permeability</strong> $\mu_0=4\pi\times 10^{-7}\,\text{T·m/A}$ (exact by old SI definition).</li>
+                  <li><strong>Field of a long straight wire</strong>: $B=\mu_0 I/(2\pi r)$ — falls off as $1/r$.</li>
+                  <li><strong>Field inside a solenoid</strong>: $B=\mu_0 n I$ — independent of position (ideal limit).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — solenoid field</p>
+                  <p>A 25 cm solenoid has 1500 turns and carries 2.5 A. Find $B$ inside.</p>
+                  <p>Step 1 — turns per metre: $n=1500/0.25=6000$ turns/m.</p>
+                  <p>Step 2 — apply $B=\mu_0 n I=(4\pi\times 10^{-7})(6000)(2.5)$.</p>
+                  <p>Step 3 — multiply: $B=1.88\times 10^{-2}$ T = 18.8 mT.</p>
+                  <p>Step 4 — context: about 400× Earth's field (≈50 μT). Adding an iron core would boost this by 1000× or more.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing B (tesla) and H (A/m)</strong> — in vacuum $B=\mu_0 H$; B is the "field" we usually draw.</li>
+                  <li><strong>Using the right-hand rule with the left hand</strong> — physical convention is right hand for conventional (positive) current.</li>
+                  <li><strong>Treating field lines as something physically there</strong> — they are a visualization; the field is a vector at every point.</li>
+                  <li><strong>Forgetting that magnetic poles always come in pairs</strong> — cut a bar magnet in half and you get two complete dipoles, not isolated N and S.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.6 — "analyse the magnetic field produced by an electric current (e.g., in a straight wire, a solenoid), and predict the direction of the field using the right-hand rule."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v23')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C8L1: Magnets and Electromagnets</span>
+                        <span class="vid-duration">26:00</span>
+                        <span class="vid-toggle" id="toggle-v23">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v23">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/023_C8L1__Magnets_and_Electromagnets.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=075-rYLWCh8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.5 — Magnetic Force on Charges and Currents</div>
+            <div class="topic-desc">Force on moving charges, force on current-carrying conductors, applications</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A magnetic field exerts force on moving charges (and on currents, which are moving charges). The Lorentz force on a charge $q$ moving with velocity $\vec{v}$ in field $\vec{B}$ is $\vec{F}=q\vec{v}\times\vec{B}$, magnitude $F=qvB\sin\theta$. The cross product means the force is perpendicular to both $\vec{v}$ and $\vec{B}$ — it can change direction but never speed, so a magnetic field does no work on a free charge. This is why charged particles in a uniform field travel in circles (or helices if there's a velocity component along $\vec{B}$): radius $r=mv/(qB)$, angular frequency $\omega=qB/m$ — the cyclotron frequency, independent of speed (non-relativistically).</p>
+                <p>For a current-carrying wire of length $L$ in a field $\vec{B}$: $\vec{F}=I\vec{L}\times\vec{B}$, magnitude $F=BIL\sin\theta$. Two parallel wires carrying currents in the same direction attract each other (and repel if antiparallel) — this was once used to define the ampere. Applications include the electric motor (current loop in $\vec{B}$ feels a torque), the mass spectrometer (charged ions deflected by radius $r=mv/qB$ separates isotopes), and velocity selectors (crossed $\vec{E}$ and $\vec{B}$ such that $qE=qvB$ → only ions with $v=E/B$ pass through undeflected).</p>
+                <ul>
+                  <li><strong>Lorentz force</strong> on a point charge: $\vec{F}=q(\vec{E}+\vec{v}\times\vec{B})$.</li>
+                  <li><strong>Right-hand rule (cross product)</strong>: fingers from $\vec{v}$ toward $\vec{B}$, thumb gives $\vec{F}$ direction for positive $q$ (reverse for negative).</li>
+                  <li><strong>Circular radius</strong>: $r=mv/(qB)$; <strong>period</strong> $T=2\pi m/(qB)$.</li>
+                  <li><strong>Force on a current</strong>: $F=BIL\sin\theta$ — note "$IL$" replaces "$qv$".</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — proton in a uniform field</p>
+                  <p>A proton moves at $v=2.0\times 10^6$ m/s perpendicular to a $B=0.50$ T field. Find the radius and period of its circular path.</p>
+                  <p>Step 1 — magnetic force provides centripetal: $qvB=mv^2/r \Rightarrow r=mv/(qB)$.</p>
+                  <p>Step 2 — substitute: $r=(1.67\times 10^{-27})(2.0\times 10^6)/[(1.602\times 10^{-19})(0.50)]=4.17\times 10^{-2}$ m = 4.17 cm.</p>
+                  <p>Step 3 — period: $T=2\pi r/v=2\pi(0.0417)/(2.0\times 10^6)=1.31\times 10^{-7}$ s.</p>
+                  <p>Step 4 — equivalently $T=2\pi m/(qB)$ confirms 131 ns; cyclotron frequency 7.6 MHz. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting the $\sin\theta$ factor</strong> — if $\vec{v}\parallel\vec{B}$, force is zero.</li>
+                  <li><strong>Using the right-hand rule for negative charges directly</strong> — must reverse direction, or use left hand.</li>
+                  <li><strong>Saying "$\vec{B}$ does work on the charge"</strong> — it never does on a free charge; speed is unchanged.</li>
+                  <li><strong>Mixing up wire-field rule and Lorentz rule</strong> — both are cross products; check $I\vec{L}$ vs $q\vec{v}$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.4 — "analyse, and solve problems involving, the magnetic force on a moving charge and on a current-carrying conductor (e.g., in a mass spectrometer, a velocity selector, an electric motor)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v24')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C8L2: Magnetic Force on Moving Charges, and Magnetic Force on a Current-Carrying Conductor</span>
+                        <span class="vid-duration">1:23:37</span>
+                        <span class="vid-toggle" id="toggle-v24">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v24">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/024_C8L2__Magnetic_Force_on_Moving_Charges__and_Magnetic_Force_on_a_Current-Carrying_Conductor.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=a5JeM7MVyKI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v25')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C8L3: Motion of Charged Particles in Magnetic Fields, and Applications of Electric & Magnetic Fields</span>
+                        <span class="vid-duration">1:08:28</span>
+                        <span class="vid-toggle" id="toggle-v25">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v25">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/025_C8L3__Motion_of_Charged_Particles_in_Magnetic_Fields__and_Applications_of_Electric___Magnetic_Fields.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=loKR-wVWeus" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.6 — Electromagnetic Induction</div>
+            <div class="topic-desc">Faraday's law, Lenz's law, induced EMF, generators and motors, transformers</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Faraday's discovery in 1831 — that a changing magnetic flux through a circuit induces an EMF — closed the symmetry between electricity and magnetism and made the electrical age possible. The <strong>magnetic flux</strong> through a loop of area $A$ in a field $\vec{B}$ is $\Phi_B=\vec{B}\cdot\vec{A}=BA\cos\theta$ (Wb = T·m²). <strong>Faraday's law</strong> states that the induced EMF is $\varepsilon=-N\,d\Phi_B/dt$, where $N$ is the number of loops. The minus sign is <strong>Lenz's law</strong>: the induced current flows in whatever direction will create a magnetic field opposing the <em>change</em> in flux. Lenz's law is conservation of energy in disguise — if the induced current aided the change, you'd get free energy.</p>
+                <p>Three ways to change flux: change $B$ (a moving magnet near a coil), change $A$ (a sliding-bar rectangle in a fixed field), or change the angle (a rotating loop — the basis of every AC generator). For a rod of length $L$ moving at velocity $v$ perpendicular to $\vec{B}$: $\varepsilon=BvL$ (motional EMF). Generators convert mechanical work into electrical energy; motors are the inverse, converting electrical work into mechanical motion via $\vec{F}=I\vec{L}\times\vec{B}$. <strong>Transformers</strong> use mutual induction between two coils sharing an iron core: $V_s/V_p=N_s/N_p$ (ideal), allowing efficient long-distance power transmission at high voltage and low current (minimising $I^2R$ resistive losses).</p>
+                <ul>
+                  <li><strong>Magnetic flux</strong> $\Phi_B=BA\cos\theta$ (Wb).</li>
+                  <li><strong>Faraday's law</strong>: $\varepsilon=-N\,d\Phi_B/dt$ (V).</li>
+                  <li><strong>Lenz's law</strong>: induced current opposes the change in flux.</li>
+                  <li><strong>Transformer equation</strong>: $V_s/V_p=N_s/N_p$; ideal-power: $V_pI_p=V_sI_s$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — coil rotating in a magnetic field</p>
+                  <p>A 200-turn square coil of side 8.0 cm rotates at 60 Hz in a 0.30 T field. Find the peak EMF.</p>
+                  <p>Step 1 — area: $A=(0.08)^2=6.4\times 10^{-3}\,\text{m}^2$.</p>
+                  <p>Step 2 — angular frequency: $\omega=2\pi f=2\pi(60)=377$ rad/s.</p>
+                  <p>Step 3 — flux varies as $\Phi=BA\cos(\omega t)$, so $\varepsilon=-N\,d\Phi/dt=NBA\omega\sin(\omega t)$.</p>
+                  <p>Step 4 — peak EMF: $\varepsilon_{max}=NBA\omega=(200)(0.30)(6.4\times 10^{-3})(377)=145$ V.</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting the minus sign / Lenz's law</strong> — leads to wrong polarity of induced EMF.</li>
+                  <li><strong>Computing $\Phi=BA$ without the $\cos\theta$</strong> — only valid when $\vec{B}\perp$ plane of loop.</li>
+                  <li><strong>Saying "current induces EMF"</strong> — it's the changing <em>flux</em> that induces EMF; current then results from $\varepsilon/R$.</li>
+                  <li><strong>Using transformer equation for DC</strong> — transformers need changing flux; pure DC produces zero output.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "explain the phenomenon of electromagnetic induction in qualitative and quantitative terms, using Faraday's law and Lenz's law."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt1')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Induced Current in a Wire — Crash Course Physics #34</span>
+                        <span class="vid-duration">9:53</span>
+                        <span class="vid-toggle" id="toggle-yt1">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt1">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/vwIdZjjd8fo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=vwIdZjjd8fo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt2')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Faraday's Law and Lenz's Law — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">25:39</span>
+                        <span class="vid-toggle" id="toggle-yt2">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt2">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LDOa7UdfcMQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=LDOa7UdfcMQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt9')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Motional EMF (ε = BLv) — EMF Induced in Rod Through Magnetic Field — Khan Academy</span>
+                        <span class="vid-duration">9:50</span>
+                        <span class="vid-toggle" id="toggle-yt9">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt9">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rqq11Id_x5E?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=rqq11Id_x5E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt10')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Lenz's Law, Right Hand Rule, Induced Current Direction — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">12:20</span>
+                        <span class="vid-toggle" id="toggle-yt10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt10">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/HhFZfWLl-P0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=HhFZfWLl-P0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt11')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Generators, Motors & AC Generation — Chad's Prep</span>
+                        <span class="vid-duration">15:30</span>
+                        <span class="vid-toggle" id="toggle-yt11">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt11">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZRLXDiiUv8Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=ZRLXDiiUv8Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt12')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Transformers Physics Problems — Voltage, Current & Power Calculations — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">21:48</span>
+                        <span class="vid-toggle" id="toggle-yt12">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt12">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GJm-FOMeG4E?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=GJm-FOMeG4E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph4u/Unit3_Fields_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph4u/Unit3_Fields_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph4u/Unit3_Fields_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+            <div style="margin-top:10px;"><a href="../../assessments/sph4u/Strand_C_Fields_Notes_and_Worksheet.html" style="display:inline-block;padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Strand C — Notes &amp; Worksheet</a></div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch2.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 2</a>
+<a href="ch4.html" style="padding:10px 18px;background:#dc2626;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 4 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH4U Physics · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

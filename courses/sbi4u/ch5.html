@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI4U — Biology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sbi4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SBI4U Biology)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧬 SBI4U: Unit 5: Population Dynamics</h1>
+    <p>Population growth models, carrying capacity, limiting factors, predator-prey relationships, ecological succession, human population impact</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+            <h2>Unit 5: Population Dynamics</h2>
+            <p>Population growth models, carrying capacity, limiting factors, predator-prey relationships, ecological succession, human population impact</p>
+            <div class="unit-meta">
+                <span>📚 Strand E: Population Dynamics</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">📈 Exponential &amp; Logistic Population Growth</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <em>population</em> is a group of organisms of the same species living in a defined area and capable of interbreeding. Population ecology asks how and why populations change over time. Four processes drive change: births (natality, B), deaths (mortality, D), immigration (I), and emigration (E). The change in population size is \(\\Delta N = (B + I) - (D + E)\). When resources are unlimited, populations grow <em>exponentially</em>: \(\\frac{dN}{dt} = rN\), where \(r\) is the per-capita rate of increase. Integrated, this gives \(N_t = N_0 e^{rt}\) — a J-shaped curve that looks straight on a semi-log plot. Bacteria splitting every 20 minutes in a fresh nutrient broth, the early-stage colonisation of cleared land, and the first few decades of an invasive-species outbreak all approximate exponential growth.</p>
+            <p>Real environments have limits. Food, water, nesting sites, sunlight, predators, and disease impose a <em>carrying capacity</em> \(K\) — the maximum population the environment can sustain indefinitely. The <em>logistic growth</em> model adds this constraint: \(\\frac{dN}{dt} = rN\\left(\\frac{K - N}{K}\\right)\). When \(N\) is much smaller than \(K\), the term in brackets is near 1 and growth is nearly exponential. As \(N\) approaches \(K\), the brackets shrink toward zero and growth slows. If \(N\) exceeds \(K\), the term goes negative and the population declines. The resulting curve is S-shaped (sigmoidal).</p>
+            <p>Limiting factors are <em>density-dependent</em> (intensify as the population grows — competition for food, predation, infectious disease) or <em>density-independent</em> (act regardless of size — droughts, fires, hurricanes, cold snaps). Species also fall along an <em>r-selected / K-selected</em> continuum: r-strategists (mosquitoes, dandelions) produce many small offspring with little parental care and thrive in disturbed habitats; K-strategists (elephants, oak trees, humans) produce few large offspring with heavy investment and dominate stable habitats near \(K\). Population <em>survivorship curves</em> capture mortality patterns: Type I (low juvenile mortality, late-life decline, e.g., humans), Type II (constant mortality, e.g., many birds), Type III (high juvenile mortality, e.g., oysters, frogs).</p>
+            <ul>
+              <li><strong>Carrying capacity (\(K\))</strong> — maximum sustainable population size.</li>
+              <li><strong>Intrinsic rate of increase (\(r\))</strong> — per-capita growth under ideal conditions.</li>
+              <li><strong>Exponential vs logistic growth</strong> — unlimited (J-curve) vs limited (S-curve).</li>
+              <li><strong>Density-dependent vs independent</strong> — strength scales with population size or not.</li>
+              <li><strong>r-strategist / K-strategist</strong> — many cheap offspring vs few expensive offspring.</li>
+              <li><strong>Survivorship curve</strong> — graphical depiction of cohort survival over age.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Calculating exponential and logistic growth rates</p>
+              <p>A population of 1 000 deer has an intrinsic rate of increase \(r = 0.15\) yr⁻¹ and a carrying capacity \(K = 5\\,000\). Compute (a) the instantaneous growth rate under exponential conditions and (b) under logistic conditions at the current size.</p>
+              <p>(a) \(\\frac{dN}{dt} = rN = 0.15 \\times 1000 = 150\) deer/yr. (b) \(\\frac{dN}{dt} = rN\\,\\frac{K - N}{K} = 0.15 \\times 1000 \\times \\frac{5000 - 1000}{5000} = 150 \\times 0.8 = 120\) deer/yr. As \(N\) approaches \(K\), the logistic rate slows toward zero; at \(N = K\) the population is stable.</p>
+            </div>
+            <ul>
+              <li>Reading a J-curve on a semi-log plot as linear growth — exponential growth is linear ONLY after a log transformation.</li>
+              <li>Confusing carrying capacity with the maximum ever observed value — \(K\) is the sustainable level.</li>
+              <li>Treating "r-selected" as inferior — both strategies are evolutionarily successful in their respective environments.</li>
+              <li>Forgetting that \(\\frac{dN}{dt}\) can be negative if \(N > K\).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.1 — "describe the characteristics of populations and the factors that affect population growth (e.g., birth rate, death rate, immigration, emigration, carrying capacity, limiting factors)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Population Ecology — Crash Course Biology #46</span>
+                <span class="vid-duration">12:32</span>
+                <span class="vid-toggle" id="toggle-yt17">▶</span>
+            </div>
+            <div class="video-player" id="player-yt17">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RBOsqmBQBQk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=RBOsqmBQBQk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🦁 Community Ecology &amp; Predator-Prey</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <em>community</em> is the assemblage of all populations that interact in a given area. Community ecology asks how these populations are connected and how their interactions shape diversity, distribution, and stability. The major interactions are <em>competition</em> (both species are harmed when they share a limiting resource), <em>predation</em> (one benefits, one is killed), <em>herbivory</em> (a special case of predation on plants), <em>parasitism</em> (one benefits, the host is harmed but usually not killed), <em>mutualism</em> (both benefit, e.g., bees and flowers, mycorrhizae and tree roots), and <em>commensalism</em> (one benefits, the other is unaffected).</p>
+            <p>Predator-prey dynamics often produce coupled oscillations. As prey numbers rise, predators have abundant food and reproduce; growing predator numbers depress prey; reduced prey leads to predator decline; predator decline allows prey to recover — and the cycle repeats. The Lotka–Volterra equations \(\\frac{dN_{\\text{prey}}}{dt} = rN_{\\text{prey}} - aN_{\\text{prey}}N_{\\text{pred}}\) and \(\\frac{dN_{\\text{pred}}}{dt} = baN_{\\text{prey}}N_{\\text{pred}} - mN_{\\text{pred}}\) model this with characteristic out-of-phase cycles. The classic Hudson's Bay Company fur-record data for snowshoe hare and Canada lynx, spanning over a century, shows ~10-year oscillations where lynx peaks lag hare peaks by roughly 1–2 years.</p>
+            <p>Competition has two flavours: <em>interspecific</em> (between species) and <em>intraspecific</em> (within a species, usually more intense because needs are identical). The <em>competitive exclusion principle</em> (Gause) states that two species cannot coexist indefinitely if they occupy identical ecological niches; one will out-compete the other. Coexistence is possible through <em>resource partitioning</em>, in which species subdivide the niche (different feeding times, depths, or prey sizes). MacArthur's classic study of five warbler species in spruce trees showed each species feeding in a different vertical zone, an example of partitioning. <em>Keystone species</em> exert disproportionately large effects on community structure relative to their abundance (sea otters maintain kelp forests by suppressing urchins); <em>invasive species</em> can collapse community structure by lacking natural enemies in their new range.</p>
+            <ul>
+              <li><strong>Ecological niche</strong> — total set of biotic and abiotic conditions a species uses.</li>
+              <li><strong>Competitive exclusion</strong> — two species with identical niches cannot stably coexist.</li>
+              <li><strong>Resource partitioning</strong> — niche subdivision allowing coexistence.</li>
+              <li><strong>Predator-prey cycle</strong> — coupled oscillations with predator peaks lagging prey peaks.</li>
+              <li><strong>Symbiosis types</strong> — mutualism (+/+), commensalism (+/0), parasitism (+/−).</li>
+              <li><strong>Keystone species</strong> — species whose impact greatly exceeds its abundance.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Interpreting a predator-prey graph</p>
+              <p>A graph shows snowshoe hare populations peaking in 1865, 1875, 1885, and 1895. Lynx populations peak in 1866, 1876, 1886, and 1896. Explain the phase relationship and predict what happens when the hare population crashes.</p>
+              <p>Lynx peaks lag hare peaks by ~1 year — classic predator-prey coupling. The lag arises because predator reproduction depends on abundant prey, and predator decline follows prey decline. When hares crash, lynx food supply collapses; some lynx starve, others fail to reproduce, and lynx numbers fall sharply within 1–2 years. Reduced predation then lets hares recover, restarting the cycle.</p>
+            </div>
+            <ul>
+              <li>Saying predator-prey graphs are "in phase" — predator peaks lag prey peaks.</li>
+              <li>Confusing commensalism (+/0) with mutualism (+/+).</li>
+              <li>Forgetting that intraspecific competition is usually stronger than interspecific.</li>
+              <li>Treating every conspicuous predator as a keystone species — keystone status depends on disproportionate impact.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.2 — "describe the interactions among populations within a community (e.g., predator-prey relationships, competition, symbiosis) and explain their effect on population dynamics."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Community Ecology II: Predators — Crash Course Ecology #5</span>
+                <span class="vid-duration">11:38</span>
+                <span class="vid-toggle" id="toggle-yt18">▶</span>
+            </div>
+            <div class="video-player" id="player-yt18">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mFDiiSqGB7M?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=mFDiiSqGB7M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Community Ecology: Feel the Love — Competition &amp; Symbiosis — Crash Course Ecology #4</span>
+                <span class="vid-duration">10:53</span>
+                <span class="vid-toggle" id="toggle-yt26">▶</span>
+            </div>
+            <div class="video-player" id="player-yt26">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GxE1SSqbSn4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=GxE1SSqbSn4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🌳 Ecological Succession</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><em>Ecological succession</em> is the directional, often predictable, change in community composition over time following disturbance or colonisation of new ground. Two main types are recognised. <em>Primary succession</em> begins on bare substrate where no soil exists — newly cooled lava flows, glacial moraines exposed by retreating ice, or bare rock revealed by landslides. The first colonisers, called <em>pioneer species</em>, are usually lichens and cyanobacteria that break down rock and add organic matter; mosses and small herbs follow as a thin soil forms; grasses and shrubs come next; finally, trees of increasing size establish until a mature <em>climax community</em> is reached. The timescale is centuries to millennia. <em>Secondary succession</em> begins on disturbed ground where soil already exists — after fire, logging, abandoned farmland, or flooding. Because soil and seed banks are present, recovery is much faster (decades to a few centuries) and starts with grasses and herbs rather than lichens.</p>
+            <p>Two contrasting views explain succession's directionality. The classic <em>Clementsian</em> view treats the community as a "superorganism" with a predictable, deterministic climax. The modern <em>Gleasonian</em> view emphasises individual species' responses to local conditions and stochastic processes, so multiple climax outcomes are possible. Mechanisms of replacement include <em>facilitation</em> (early species modify the environment in ways that favour later species — nitrogen-fixing alder enriches soil for spruce), <em>tolerance</em> (later species can establish under early ones without help or harm), and <em>inhibition</em> (early species block later ones until disturbance reopens the system).</p>
+            <p>Disturbance is not always negative; <em>intermediate disturbance hypothesis</em> (Connell) predicts maximum diversity at moderate disturbance frequencies — frequent enough to prevent competitive exclusion by dominant species, rare enough to allow late-successional species to mature. Fire-adapted ecosystems (jack pine forests, prairies) depend on periodic burns for regeneration; suppressing fire entirely allows fuel to build up and eventually produces catastrophic crown fires.</p>
+            <ul>
+              <li><strong>Primary succession</strong> — starts on bare rock or new substrate without soil.</li>
+              <li><strong>Secondary succession</strong> — starts on disturbed ground where soil persists.</li>
+              <li><strong>Pioneer species</strong> — first colonisers (lichens, mosses, hardy weeds).</li>
+              <li><strong>Climax community</strong> — relatively stable end-stage assemblage.</li>
+              <li><strong>Facilitation / tolerance / inhibition</strong> — mechanisms of species replacement.</li>
+              <li><strong>Intermediate disturbance hypothesis</strong> — diversity peaks at moderate disturbance.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Classifying a succession</p>
+              <p>A forest in Algonquin Park burns in a lightning fire. Over the next 80 years, fireweed and grasses dominate, then aspen and birch, then white pine and maple. Identify the succession type and the mechanism driving the transition from fireweed to trees.</p>
+              <p>Soil and root systems survived the fire, so this is <em>secondary succession</em>. Fireweed and grasses are pioneer-like species that stabilise soil and contribute organic matter — they <em>facilitate</em> aspen and birch by modifying nutrient and light conditions. As aspen/birch grow they shade the herbaceous layer, suppressing fireweed (an example of inhibition mixed with tolerance), and create conditions in which shade-tolerant pine and maple can establish. The white pine–maple stage approximates a climax community for the boreal-mixed-wood region.</p>
+            </div>
+            <ul>
+              <li>Confusing primary with secondary succession — the key difference is the presence of soil.</li>
+              <li>Treating the climax community as eternal — disturbance resets succession repeatedly.</li>
+              <li>Forgetting that pioneer species are usually r-strategists and climax species are usually K-strategists.</li>
+              <li>Assuming succession always increases diversity linearly — diversity often peaks mid-succession.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.3 — "describe the process of ecological succession (e.g., primary and secondary succession, pioneer species, climax community)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Ecological Succession: Change is Good — Crash Course Ecology #6</span>
+                <span class="vid-duration">10:53</span>
+                <span class="vid-toggle" id="toggle-yt19">▶</span>
+            </div>
+            <div class="video-player" id="player-yt19">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jZKIHe2LDP8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=jZKIHe2LDP8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🌍 Human Population Growth &amp; Environmental Impact</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Human population has grown from roughly 1 billion in 1800 to over 8 billion in 2023 — a 700% increase in roughly two centuries. Three factors drove this expansion: the agricultural Green Revolution (synthetic fertilisers, irrigation, high-yield crops, mechanisation) boosted food supply; advances in public health (sanitation, vaccination, antibiotics) cut mortality, especially child mortality; and the industrial revolution provided energy and economic capacity to support larger populations. Growth has not been spatially or temporally even. Most developed countries have completed the <em>demographic transition</em>, in which high birth and death rates (Stage 1) drop sequentially through declining death rates (Stage 2, rapid growth), declining birth rates (Stage 3, slowing growth), and finally low birth and death rates (Stage 4, near-stable population). Many lower-income countries are in Stage 2 or 3, contributing most of current global growth.</p>
+            <p>Two measures matter for environmental impact: total population and per-capita resource use. The <em>ecological footprint</em> estimates the productive land and water area required to supply an individual or population's consumption and absorb its waste. Canadian per-capita ecological footprints (around 8 global hectares) are roughly 4× the global average and 30× a typical low-income-country footprint. The IPAT identity \(I = P \\times A \\times T\) (Impact = Population × Affluence × Technology) emphasises that environmental impact depends on consumption and technology, not population alone. A small wealthy population can have a larger total footprint than a large poor one.</p>
+            <p>Human activity is now a dominant geological force — the proposed <em>Anthropocene</em>. Land conversion for agriculture and cities has reduced wild habitat; CO₂ emissions from fossil fuels are driving climate change; nitrogen and phosphorus overload from fertiliser runoff produces eutrophic dead zones; plastic pollution permeates oceans; the current extinction rate runs 100–1000× background. Sustainability requires reducing per-capita impact (efficiency, renewable energy, dietary shifts) alongside policies that voluntarily slow population growth through education and reproductive health access.</p>
+            <ul>
+              <li><strong>Demographic transition</strong> — four-stage shift from high birth/death to low birth/death rates.</li>
+              <li><strong>Age structure pyramid</strong> — graphical age-and-sex distribution predicting growth or decline.</li>
+              <li><strong>Doubling time</strong> — \(t_d \\approx \\frac{70}{r\\,(\\%)}\) years for an exponentially growing population.</li>
+              <li><strong>Ecological footprint</strong> — productive area required to sustain consumption levels.</li>
+              <li><strong>IPAT</strong> — Impact = Population × Affluence × Technology framework.</li>
+              <li><strong>Carrying capacity for humans</strong> — contested estimate (8–16 billion) depending on diet, technology, and equity.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Doubling time calculation</p>
+              <p>A country has an annual population growth rate of 2.0%. Estimate how long it would take the population to double, and compare with a country growing at 0.5%/yr.</p>
+              <p>The rule of 70 (or "rule of 72") gives \(t_d \\approx 70 / r\\,(\\%)\). At 2.0% per year: \(t_d \\approx 70 / 2.0 = 35\) years. At 0.5% per year: \(t_d \\approx 70 / 0.5 = 140\) years. A four-fold difference in growth rate produces a four-fold difference in doubling time, illustrating how small changes in \(r\) compound enormously over decades.</p>
+            </div>
+            <ul>
+              <li>Reading log-scale population graphs as linear — exponential curves appear linear ONLY after log transformation.</li>
+              <li>Equating population growth with environmental impact — affluence and technology are part of the IPAT equation.</li>
+              <li>Confusing the demographic transition's stages — Stage 2 is rapid growth from falling death rates; Stage 3 is slowing growth from falling birth rates.</li>
+              <li>Assuming Earth has a single, fixed human carrying capacity — \(K\) depends on diet, technology, equity, and what quality of life is accepted.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "analyse, on the basis of research, the effects of human activities on the population dynamics of a species or community (e.g., habitat destruction, climate change, introduction of invasive species), and propose possible solutions."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Human Population Growth — Crash Course Ecology #3</span>
+                <span class="vid-duration">11:24</span>
+                <span class="vid-toggle" id="toggle-yt20">▶</span>
+            </div>
+            <div class="video-player" id="player-yt20">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/E8dkWQVFAoA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=E8dkWQVFAoA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sbi4u/Unit5_Population_Dynamics_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sbi4u/Unit5_Population_Dynamics_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sbi4u/Unit5_Population_Dynamics_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <a href="../../assessments/sbi4u/Strand_E_Population_Dynamics_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../sbi4u.html" class="chnav-btn chnav-next chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SBI4U Biology · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

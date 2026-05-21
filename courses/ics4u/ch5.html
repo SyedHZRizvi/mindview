@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS4U — Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #6366f1; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #7c3aeddd, #7c3aed);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS4U Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 12 University Preparation</div>
+    <h1>💻 ICS4U: Unit 5: Software Engineering &amp; Computing in Society</h1>
+    <p>Testing &amp; debugging, version control, the software-development life cycle, ethics, AI/ML overview, careers, environmental impact, history of computing</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg, #7c3aeddd, #7c3aed);">
+            <h2>Unit 5: Software Engineering &amp; Computing in Society</h2>
+            <p>Testing &amp; debugging, version control, the software-development life cycle, ethics, AI/ML overview, careers, environmental impact, history of computing</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand B (Software Development) &middot; Strand C2 &middot; Strand D (Topics in CS)</span>
+                <span>&#9201;&#65039; ~18 hours</span>
+                <span>&#128221; 6 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 &mdash; Testing &amp; Debugging Strategies</div>
+            <div class="topic-desc">Unit tests, boundary cases, regression testing, debugger basics, the rubber-duck method, common bug types (off-by-one, type, scope)</div>
+            <div class="code-snip"><span class="kw">import</span> unittest
+
+<span class="kw">def</span> divide(a, b):
+    <span class="kw">if</span> b == <span class="num">0</span>:
+        <span class="kw">raise</span> ValueError(<span class="str">"divide by zero"</span>)
+    <span class="kw">return</span> a / b
+
+<span class="kw">class</span> TestDivide(unittest.TestCase):
+    <span class="kw">def</span> test_basic(self):
+        self.assertEqual(divide(<span class="num">10</span>, <span class="num">2</span>), <span class="num">5</span>)
+    <span class="kw">def</span> test_zero(self):
+        self.assertRaises(ValueError, divide, <span class="num">10</span>, <span class="num">0</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Testing</strong> verifies that a program does what it is supposed to do; <strong>debugging</strong> is the process of locating and fixing the cause when it does not. The two go hand in hand: a good test suite makes debugging easier because failing tests point precisely at what broke. Professional development teams write <strong>unit tests</strong> alongside the code they exercise — small, fast tests that examine one function at a time, asserting that specific inputs produce specific outputs.</p>
+                <p>The <strong>test-pyramid</strong> view of testing has many unit tests at the base (fast, focused), fewer <strong>integration tests</strong> in the middle (groups of modules working together), and a handful of <strong>end-to-end</strong> tests at the top (the whole system). When designing test cases, cover <em>typical</em> inputs, <em>boundary</em> inputs (empty list, single element, maximum size), and <em>invalid</em> inputs (negative numbers where positive expected, malformed strings). The boundary is where most bugs hide.</p>
+                <p>Debugging tactics include <strong>print-debugging</strong> (sprinkling temporary <code>print</code> statements to trace state), using an <strong>interactive debugger</strong> with breakpoints and single-stepping, reading the <strong>stack trace</strong> from top to bottom to find your own code in the call chain, the <strong>rubber-duck</strong> method (explaining the code aloud to an inanimate object often reveals the bug), and <strong>bisection</strong> (commenting out half the code to localise the failure). <strong>Regression tests</strong> — tests added after a bug is fixed — prevent the same bug from re-appearing.</p>
+                <ul>
+                  <li><strong>Unit test</strong> — exercises a single function or class.</li>
+                  <li><strong>Integration test</strong> — exercises multiple modules together.</li>
+                  <li><strong>Assertion</strong> — <code>assertEqual</code>, <code>assertTrue</code>, etc., that fails the test if the condition is false.</li>
+                  <li><strong>Fixture</strong> — set-up and tear-down code shared by multiple tests.</li>
+                  <li><strong>Boundary case</strong> — input at the edge of valid range.</li>
+                  <li><strong>Regression</strong> — a previously fixed bug that re-appears.</li>
+                  <li><strong>Test coverage</strong> — proportion of code exercised by tests.</li>
+                  <li><strong>Stack trace</strong> — the chain of function calls active when an exception was raised.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — designing a thorough test suite</p>
+<pre><code>import unittest
+
+def median(values):
+    """Return the median of a non-empty list of numbers."""
+    s = sorted(values)
+    n = len(s)
+    if n == 0:
+        raise ValueError("median of empty list")
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid-1] + s[mid]) / 2
+
+class TestMedian(unittest.TestCase):
+    def test_single(self):       self.assertEqual(median([7]), 7)
+    def test_odd_length(self):   self.assertEqual(median([1, 3, 2]), 2)
+    def test_even_length(self):  self.assertEqual(median([1, 2, 3, 4]), 2.5)
+    def test_unsorted_input(self):
+        self.assertEqual(median([5, 1, 4, 2, 3]), 3)
+    def test_negatives(self):    self.assertEqual(median([-2, -1, 0]), -1)
+    def test_duplicates(self):   self.assertEqual(median([2, 2, 2]), 2)
+    def test_empty_raises(self):
+        with self.assertRaises(ValueError):
+            median([])</code></pre>
+                  <p>Seven tests cover: single element (boundary), odd/even length (parity), unsorted (the function must sort internally), negatives, duplicates, and empty (error path). Each test runs in O(n log n) but n is tiny in tests. The whole suite finishes in milliseconds and gives confidence that future changes won't silently break <code>median</code>.</p>
+                </div>
+                <ul>
+                  <li>Testing only happy-path inputs — bugs live in the edge cases.</li>
+                  <li>Writing tests that all pass because the assertions are too weak (<code>assertTrue(result)</code> instead of <code>assertEqual(result, 42)</code>).</li>
+                  <li>Print-debugging then forgetting to remove the prints before committing.</li>
+                  <li>Modifying code without running existing tests — invites regressions.</li>
+                  <li>Ignoring the first failing test and skipping ahead — fix in order; later failures may be downstream effects.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.3 — "use a variety of techniques to test computer programs (e.g., test plans, test cases, test data, test scripts, debugger tools)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt27')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Unit Testing Your Code with the unittest Module — Corey Schafer</span><span class="vid-duration">22:30</span><span class="vid-toggle" id="toggle-ics-yt27">▶</span></div><div class="video-player" id="player-ics-yt27"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6tNS--WetLI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6tNS--WetLI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 &mdash; Version Control with Git (Essentials)</div>
+            <div class="topic-desc">Repos, commits, branches, merges, pull requests, .gitignore; why version control matters in collaborative software</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>version control system</strong> (VCS) is a tool that records the complete history of changes to a code base. Every modern software team uses one, and <strong>Git</strong> dominates the field. The mental model is simple: a Git <strong>repository</strong> stores a directed graph of <strong>commits</strong>, where each commit is a snapshot of the project plus a pointer to its parent. A <strong>branch</strong> is just a movable label pointing at the tip of a line of commits; creating one is cheap and instant. <strong>Merging</strong> combines two branches' histories, producing a new commit with two parents.</p>
+                <p>Why does this matter? First, version control is the <strong>undo button</strong> for software — any earlier state can be restored, any change reviewed, any author identified. Second, it enables <strong>parallel work</strong>: two developers can work on different branches, then merge, with the VCS handling most of the bookkeeping. Third, it enables <strong>code review</strong>: changes are proposed as <strong>pull requests</strong>, examined by teammates, and only merged when approved. Fourth, it provides <strong>traceability</strong>: every line of code can be traced back to the commit that introduced it (<code>git blame</code>), which is invaluable for bug archaeology.</p>
+                <p>The discipline of <strong>good commits</strong> is more important than knowing every Git command. A commit should represent one logical change, with a message that says <em>what</em> and <em>why</em> (not how — the diff already shows how). The <code>.gitignore</code> file lists artefacts that should not be tracked: compiled files, virtual environments, secrets, IDE configuration. Committing a file that should not be tracked (especially API keys or passwords) is a security incident; the history makes it hard to fully remove.</p>
+                <ul>
+                  <li><strong>Repository (repo)</strong> — the project's history and metadata.</li>
+                  <li><strong>Commit</strong> — a snapshot plus parent pointer; identified by a SHA-1 hash.</li>
+                  <li><strong>Branch</strong> — a movable pointer to a commit, enabling parallel histories.</li>
+                  <li><strong>Merge</strong> — combining two branches into one.</li>
+                  <li><strong>Pull request (PR) / merge request (MR)</strong> — proposing a branch for review.</li>
+                  <li><strong>Remote</strong> — a copy of the repo hosted elsewhere (often on GitHub or GitLab).</li>
+                  <li><strong>.gitignore</strong> — list of files Git should not track.</li>
+                  <li><strong>Merge conflict</strong> — when two branches change the same lines and Git can't auto-merge.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a typical Git workflow</p>
+<pre><code># Start a new feature
+git checkout -b feature/letter-grades
+
+# Work, then stage and commit
+git add grader.py tests/test_grader.py
+git commit -m "Add letter-grade conversion using Ontario achievement chart"
+
+# Push to remote and open a pull request
+git push -u origin feature/letter-grades
+
+# After review, merge back into main
+git checkout main
+git pull
+git merge feature/letter-grades
+git push</code></pre>
+                  <p>Each step has a precise effect on the graph: <code>checkout -b</code> creates a new branch pointer; <code>add</code> stages changes for the next commit; <code>commit</code> creates the snapshot; <code>push</code> uploads commits to the remote; <code>merge</code> creates the merge commit. Mistakes can almost always be recovered because Git rarely deletes anything — even after a "delete" the SHA usually still references a reachable object for a while.</p>
+                </div>
+                <ul>
+                  <li>Committing secrets or .env files — anyone who later clones the repo can read them.</li>
+                  <li>Massive omnibus commits ("fix everything") — impossible to review or revert.</li>
+                  <li>Working directly on <code>main</code> instead of a branch — increases risk of breaking shared state.</li>
+                  <li>Forcing pushes (<code>git push --force</code>) on shared branches — rewrites history teammates rely on.</li>
+                  <li>Vague commit messages like "stuff" or "wip" — useless three weeks later.</li>
+                  <li>Failing to pull before pushing — leads to unnecessary merge conflicts.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "use software project management tools (e.g., version control software, project planning software) to facilitate collaboration on a software project".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt12')"><span class="vid-icon">📖</span><span class="vid-title">Git Tutorial for Beginners: Learn Git in 1 Hour — Programming with Mosh</span><span class="vid-duration">1:09:13</span><span class="vid-toggle" id="toggle-ics-yt12">▶</span></div><div class="video-player" id="player-ics-yt12"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8JJ101D3knE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=8JJ101D3knE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 &mdash; The Software Development Life Cycle &amp; Maintainability</div>
+            <div class="topic-desc">Requirements gathering, design, implement, test, deploy, maintain; commenting; naming conventions (PEP 8); code reviews</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Software Development Life Cycle</strong> (SDLC) is the framework of activities that turn a problem statement into running, maintained software. The classical stages are <strong>requirements analysis</strong> (what does the user actually need?), <strong>design</strong> (how will the system be structured?), <strong>implementation</strong> (writing the code), <strong>testing</strong> (verifying behaviour), <strong>deployment</strong> (releasing to users), and <strong>maintenance</strong> (fixing bugs and adapting to change). Empirical studies show maintenance consumes 60-80% of total software cost — so writing code that <em>can</em> be maintained is at least as important as making it work the first time.</p>
+                <p>SDLC <strong>methodologies</strong> organise these stages differently. The <strong>waterfall</strong> model runs them sequentially; it is rigid but well suited to safety-critical systems with stable requirements. <strong>Agile</strong> (and its popular variant <strong>Scrum</strong>) iterates through all stages in short sprints (typically 1-4 weeks), producing a working increment each cycle and welcoming changing requirements. Most modern teams use some form of Agile because real users rarely know exactly what they want until they see something working.</p>
+                <p>Code quality has measurable indicators: <strong>readability</strong>, <strong>cohesion</strong>, <strong>coupling</strong>, <strong>cyclomatic complexity</strong> (the number of independent paths through a function — lower is better). Style guides such as <strong>PEP 8</strong> (Python) and <strong>Google Java Style</strong> codify naming, indentation, line length, and comment conventions so that one engineer's code looks like another's. <strong>Code review</strong> — a second pair of eyes on every change — is the single most effective quality practice in industry, catching bugs and spreading knowledge simultaneously.</p>
+                <ul>
+                  <li><strong>SDLC</strong> — sequence of activities from problem to deployed software.</li>
+                  <li><strong>Waterfall</strong> — strict sequential stages.</li>
+                  <li><strong>Agile / Scrum</strong> — short iterations with frequent user feedback.</li>
+                  <li><strong>Requirement</strong> — a statement of what the software must do (functional) or how well (non-functional).</li>
+                  <li><strong>Maintainability</strong> — the ease of changing software after release.</li>
+                  <li><strong>Style guide</strong> — coding conventions (e.g. PEP 8 for Python).</li>
+                  <li><strong>Code review</strong> — peer evaluation of changes before they are merged.</li>
+                  <li><strong>Technical debt</strong> — accumulated short-cuts that slow future development.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — refactoring for maintainability</p>
+<pre><code># BEFORE — undocumented, magic numbers, poor names
+def f(x):
+    if x &gt;= 80: return "A"
+    if x &gt;= 70: return "B"
+    if x &gt;= 60: return "C"
+    if x &gt;= 50: return "D"
+    return "F"
+
+# AFTER — named constants, docstring, type hints, tested
+LEVEL_4_THRESHOLD = 80   # Ontario Level 4: 80-100%
+LEVEL_3_THRESHOLD = 70   # Ontario Level 3: 70-79%
+LEVEL_2_THRESHOLD = 60   # Ontario Level 2: 60-69%
+LEVEL_1_THRESHOLD = 50   # Ontario Level 1: 50-59%
+
+def percent_to_letter(percent: float) -&gt; str:
+    """Map an Ontario achievement-chart percent to a letter grade.
+
+    Args:
+        percent: 0-100 inclusive.
+    Returns:
+        'A' for Level 4, 'B' for Level 3, …, 'F' for below 50.
+    """
+    if percent &gt;= LEVEL_4_THRESHOLD: return "A"
+    if percent &gt;= LEVEL_3_THRESHOLD: return "B"
+    if percent &gt;= LEVEL_2_THRESHOLD: return "C"
+    if percent &gt;= LEVEL_1_THRESHOLD: return "D"
+    return "F"</code></pre>
+                  <p>The two versions behave identically — both are O(1) — but the second can be understood, modified, and tested by someone other than the original author. The named thresholds prevent the "magic number" anti-pattern. The docstring documents the contract. Type hints let editors and static checkers flag misuse. This level of care is what makes a codebase maintainable over years.</p>
+                </div>
+                <ul>
+                  <li>Implementing before talking to users — building the wrong thing perfectly.</li>
+                  <li>Skipping the design step on a "small" project that grows — costs accumulate as technical debt.</li>
+                  <li>Commenting <em>what</em> the code does instead of <em>why</em> — comments duplicate code and rot.</li>
+                  <li>Inconsistent naming (<code>my_var</code>, <code>thatThing</code>, <code>X</code>) — slows every future reader.</li>
+                  <li>Treating code review as approval theatre rather than substantive discussion.</li>
+                  <li>"It works on my machine" — different environments need explicit dependency management.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "describe and use, in computer programs, the standard stages of the software-development life cycle".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt28')"><span class="vid-icon">📖</span><span class="vid-title">Software Engineering — Crash Course Computer Science #16</span><span class="vid-duration">11:51</span><span class="vid-toggle" id="toggle-ics-yt28">▶</span></div><div class="video-player" id="player-ics-yt28"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O753uuutqH8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=O753uuutqH8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.4 &mdash; Emerging Technologies: AI, Machine Learning, Quantum Computing</div>
+            <div class="topic-desc">High-level overview of how supervised learning, neural networks, and large-language-models work; introduction to qubits and quantum advantage</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Artificial intelligence</strong> (AI) is the broad ambition of building systems that perform tasks normally requiring human intelligence. <strong>Machine learning</strong> (ML) is the dominant modern approach: rather than programming explicit rules, the developer supplies data and the algorithm discovers patterns. In <strong>supervised learning</strong>, training data is paired with correct labels, and the model learns to map inputs to outputs that generalise to new examples. <strong>Unsupervised learning</strong> works with unlabelled data, finding structure (clusters, anomalies). <strong>Reinforcement learning</strong> trains an agent by reward signals from interaction with an environment.</p>
+                <p><strong>Neural networks</strong> are the dominant model family. Each artificial neuron computes a weighted sum of its inputs, applies a non-linear activation function, and passes the result on. Stacked into <strong>deep networks</strong> with millions or billions of trainable weights, they can approximate complex functions. <strong>Large language models</strong> (LLMs) like the one generating this text are transformer-based neural networks trained on enormous text corpora to predict the next token; emergent abilities like question answering and translation arise from scale and architecture, not from any explicit grammar programmed in.</p>
+                <p><strong>Quantum computing</strong> exploits superposition and entanglement of quantum bits (<strong>qubits</strong>) to evaluate exponentially many possibilities simultaneously. Shor's algorithm factors integers in polynomial time on a quantum computer, which would break RSA encryption; Grover's algorithm searches unsorted data in O(√n). As of the late 2020s, quantum hardware has reached "noisy intermediate-scale" capability — useful for research but not yet for general-purpose computing. Quantum-resistant cryptography (post-quantum) is already a topic of standards work at NIST.</p>
+                <ul>
+                  <li><strong>Training data</strong> — examples used to fit a model's parameters.</li>
+                  <li><strong>Feature</strong> — one measurable property of the input.</li>
+                  <li><strong>Model</strong> — a mathematical function with learnable parameters.</li>
+                  <li><strong>Overfitting</strong> — performing well on training data but poorly on new data.</li>
+                  <li><strong>Generalisation</strong> — performing well on unseen inputs.</li>
+                  <li><strong>Neural network</strong> — a graph of weighted connections inspired (loosely) by biology.</li>
+                  <li><strong>Token</strong> — the basic unit (word/sub-word) an LLM processes.</li>
+                  <li><strong>Qubit</strong> — a quantum two-state system; can be in superposition of 0 and 1.</li>
+                  <li><strong>Entanglement</strong> — correlated quantum state of multiple qubits.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a tiny k-NN classifier</p>
+<pre><code>def euclidean(a, b):
+    return sum((x - y) ** 2 for x, y in zip(a, b)) ** 0.5
+
+def knn_predict(train, labels, query, k=3):
+    """Predict label of `query` using k-nearest neighbours."""
+    distances = [(euclidean(point, query), lbl)
+                 for point, lbl in zip(train, labels)]
+    distances.sort()                       # O(n log n)
+    top_k = distances[:k]
+    votes = {}
+    for _, lbl in top_k:
+        votes[lbl] = votes.get(lbl, 0) + 1
+    return max(votes, key=votes.get)       # most common label
+
+train  = [[1,2],[2,1],[5,5],[6,6]]
+labels = ['cat','cat','dog','dog']
+print(knn_predict(train, labels, [2,2]))   # 'cat'</code></pre>
+                  <p>k-NN is the gentlest entry into machine learning: there is no "training" beyond storing the data, and prediction is a sort plus a vote. With n training points and d features, prediction costs O(n·d + n log n) per query — fine for thousands of points, infeasible for millions without approximate-NN data structures. It illustrates the central ML idea: classification by similarity to known examples, parameterised by the choice of distance metric and k.</p>
+                </div>
+                <ul>
+                  <li>Believing ML "understands" — current models are statistical pattern matchers and can be confidently wrong (hallucinations).</li>
+                  <li>Training and evaluating on the same data — gives an inflated, useless accuracy score.</li>
+                  <li>Ignoring <strong>bias</strong> in training data — models inherit the patterns, including discriminatory ones.</li>
+                  <li>Conflating quantum computing with "faster classical computing" — it accelerates specific problem classes only.</li>
+                  <li>Assuming LLM outputs are factual — they predict plausible text, not truth.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.1 — "describe recent advances in computer technology (e.g., advances in artificial intelligence, robotics, computer-assisted modelling, quantum computing)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt9')"><span class="vid-icon">📖</span><span class="vid-title">Machine Learning &amp; Artificial Intelligence — Crash Course CS #34</span><span class="vid-duration">11:51</span><span class="vid-toggle" id="toggle-ics-yt9">▶</span></div><div class="video-player" id="player-ics-yt9"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/z-EtmaFJieY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=z-EtmaFJieY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.5 &mdash; Ethical &amp; Environmental Issues in Computing</div>
+            <div class="topic-desc">Privacy, algorithmic bias, intellectual property, e-waste, energy footprint of data centres &amp; AI training, ethical AI design</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Computing technology shapes the lives of billions of people, which makes its <strong>ethical</strong> and <strong>environmental</strong> dimensions an inseparable part of the discipline. Software engineers are no longer simply "doing what the spec says" — the decisions they make about data, algorithms, and deployment have consequences for privacy, fairness, employment, the environment, and democratic discourse. Recognising the moral weight of these decisions is part of being a professional.</p>
+                <p><strong>Privacy</strong> is the foundational issue. Modern applications collect quantities of personal data that would have been unthinkable a generation ago. Canadian law (PIPEDA at the federal level; provincial laws in Quebec, Alberta, and BC) requires informed consent and limited retention. Designers should follow the <strong>data minimisation</strong> principle: collect only what is needed, store it for only as long as needed, and protect it (encryption at rest and in transit) for the entire time. <strong>Algorithmic bias</strong> occurs when models trained on historical data perpetuate or amplify existing inequities — credit-scoring systems, hiring filters, and predictive-policing tools have all been shown to discriminate. Mitigations include diverse training data, fairness metrics, human-in-the-loop review, and the right to contest automated decisions.</p>
+                <p><strong>Intellectual property</strong> protects the work of programmers and content creators. <strong>Copyright</strong> covers expressive works (including source code) automatically. <strong>Open-source licences</strong> (MIT, GPL, Apache 2) grant explicit permissions in exchange for conditions like attribution or copyleft. Using code without understanding its licence is a real legal risk. The training of large generative models on copyrighted data is an active legal frontier.</p>
+                <p><strong>Environmental impact</strong> is rising fast. Data-centre electricity consumption is projected to exceed 4% of global use by the late 2020s; training a single large language model can emit as much CO₂ as several transatlantic flights; the production of electronics is water-intensive and rare-earth-mineral-intensive. The end of a device's life — <strong>e-waste</strong> — accounts for the fastest-growing solid-waste stream worldwide. Mitigations include energy-efficient algorithms, sourcing renewable power, designing for repair and modularity, and extending device lifespans through software support.</p>
+                <ul>
+                  <li><strong>PIPEDA</strong> — Personal Information Protection and Electronic Documents Act (Canadian federal privacy law).</li>
+                  <li><strong>Data minimisation</strong> — collect only what is necessary.</li>
+                  <li><strong>Encryption</strong> — converting data so only authorised parties can read it.</li>
+                  <li><strong>Algorithmic bias</strong> — unfair outcomes from biased training data or design.</li>
+                  <li><strong>Open-source licence</strong> — legal terms for reuse of code (MIT, GPL, Apache 2, BSD).</li>
+                  <li><strong>Copyleft</strong> — licence clause requiring derivative works to use the same licence.</li>
+                  <li><strong>E-waste</strong> — discarded electronics; the largest growing waste stream.</li>
+                  <li><strong>Carbon footprint</strong> — total greenhouse gas emissions attributable to an activity.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — designing a school attendance app responsibly</p>
+                  <p>Suppose your team must build an attendance-tracking app for a Toronto-area school board. An ethical design checklist:</p>
+                  <ul>
+                    <li><strong>Minimise data</strong> — store student ID, date, status (present/late/absent). Do not store GPS, photos, or browsing.</li>
+                    <li><strong>Retention</strong> — purge records after the legally required retention period (typically 5 years for Ontario school records).</li>
+                    <li><strong>Encryption</strong> — HTTPS in transit; encrypt the database at rest.</li>
+                    <li><strong>Access control</strong> — students see their own records; teachers see their class; administrators see the school. No global access without audit.</li>
+                    <li><strong>Bias</strong> — if attendance flags trigger interventions, ensure thresholds do not disproportionately catch students from particular demographics; build in human review.</li>
+                    <li><strong>Sustainability</strong> — host on a green data-centre region; cache aggressively to reduce server cycles.</li>
+                    <li><strong>Transparency</strong> — provide a privacy notice in plain language; let students export and delete their data.</li>
+                  </ul>
+                  <p>None of these decisions is purely technical; every one balances utility, privacy, fairness, and cost. Making them deliberately, rather than by default, is the ethical commitment.</p>
+                </div>
+                <ul>
+                  <li>Storing personal data "just in case" — accumulates risk with no benefit.</li>
+                  <li>Logging passwords, tokens, or full credit card numbers — a future leak becomes catastrophic.</li>
+                  <li>Treating "the algorithm decided" as a defence against discrimination — algorithms reflect their training.</li>
+                  <li>Copying code from a Stack Overflow answer without checking the licence — Stack Overflow content is CC BY-SA, requiring attribution.</li>
+                  <li>Designing for the dominant user group only — accessibility and inclusion are quality attributes, not nice-to-haves.</li>
+                  <li>Ignoring the carbon cost of model training and large-scale data movement.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "analyse, on the basis of research, key issues related to the environmental impact of computer use (e.g., the disposal of hardware, the energy consumption of data centres)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt10')"><span class="vid-icon">📖</span><span class="vid-title">The Psychology of Computing — Crash Course CS #38</span><span class="vid-duration">11:38</span><span class="vid-toggle" id="toggle-ics-yt10">▶</span></div><div class="video-player" id="player-ics-yt10"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/DEHsvQ3Ylwg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=DEHsvQ3Ylwg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.6 &mdash; History of Computing &amp; Career Pathways</div>
+            <div class="topic-desc">From Babbage and Lovelace to modern cloud computing; CS-related careers in Canada (software dev, data science, security, ML, robotics, game dev); Canadian post-secondary CS programs</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Computer science is unusual among disciplines in that its entire intellectual history fits within roughly two centuries — and most of it within one human lifetime. <strong>Charles Babbage</strong> designed the <em>Analytical Engine</em> in the 1830s and <strong>Ada Lovelace</strong> wrote the first algorithm intended for machine execution, earning her the title of the first programmer. <strong>Alan Turing</strong>'s 1936 paper defined the abstract machine that bears his name and proved the existence of uncomputable problems. The <strong>ENIAC</strong> (1945) was the first general-purpose electronic computer; the <strong>transistor</strong> (1947), <strong>integrated circuit</strong> (1958), and <strong>microprocessor</strong> (1971) drove exponential miniaturisation captured by Moore's Law. The personal-computer era (1977 onward), the internet (1980s research, 1990s commercial), and the smartphone (2007 iPhone) each shifted computing's role in society dramatically. The current era is defined by <strong>cloud computing</strong> (utility-priced compute and storage), <strong>mobile-first</strong> design, and <strong>generative AI</strong>.</p>
+                <p>Canada plays a distinctive role: <strong>Geoffrey Hinton</strong>, Yoshua Bengio, and Yann LeCun (the "godfathers of deep learning") all studied or worked in Canadian universities, and Toronto and Montreal remain global hubs for AI research. The <strong>Vector Institute</strong> (Toronto), <strong>Mila</strong> (Montreal), and <strong>Amii</strong> (Edmonton) are world-class research centres. Major Canadian post-secondary computer-science programs include Waterloo, Toronto, McGill, UBC, McMaster, Western, Queen's, Carleton, Ottawa, Simon Fraser, Alberta, and the polytechnic colleges (Sheridan, Seneca, BCIT) for applied programs.</p>
+                <p><strong>Career paths</strong> in computing are now extremely diverse. <strong>Software developer</strong> remains the most common role; specialisations include <strong>front-end</strong> (browser UI), <strong>back-end</strong> (server APIs), <strong>full-stack</strong> (both), <strong>mobile</strong>, <strong>game development</strong>, and <strong>embedded systems</strong>. <strong>Data scientist</strong> and <strong>machine-learning engineer</strong> roles apply statistics and ML to business problems. <strong>Cybersecurity</strong> analysts defend systems against attack. <strong>DevOps</strong> and <strong>site reliability</strong> engineers run infrastructure. <strong>Cloud architects</strong>, <strong>database administrators</strong>, <strong>QA engineers</strong>, <strong>technical writers</strong>, <strong>product managers</strong>, and <strong>UX designers</strong> round out a typical software organisation. Many of these careers do not require a four-year university degree — community college programs and self-directed pathways are increasingly viable.</p>
+                <ul>
+                  <li><strong>Turing machine</strong> — abstract model of computation that defines what is computable.</li>
+                  <li><strong>Moore's Law</strong> — observation that transistor counts double roughly every 2 years.</li>
+                  <li><strong>Cloud computing</strong> — on-demand delivery of compute and storage over the internet.</li>
+                  <li><strong>DevOps</strong> — culture and tools that combine development and operations.</li>
+                  <li><strong>SRE (Site Reliability Engineering)</strong> — software-engineering approach to operations.</li>
+                  <li><strong>FAANG / MAANG</strong> — large US tech firms; Canadian equivalents include Shopify, OpenText, Constellation, BlackBerry.</li>
+                  <li><strong>Co-op / internship</strong> — paid work term integrated with study (Waterloo's program is world-famous).</li>
+                  <li><strong>Open source contribution</strong> — public portfolio that demonstrates skills to employers.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a career-planning checklist for an Ontario Grade 12 student</p>
+                  <ul>
+                    <li><strong>Foundations</strong> — solid grasp of one mainstream language (Python or Java), data structures, and Git. ICS4U covers all three.</li>
+                    <li><strong>Math</strong> — calculus and discrete math help in CS programs; statistics is essential for data roles.</li>
+                    <li><strong>Public portfolio</strong> — a GitHub profile with three or four substantive projects beats a résumé alone.</li>
+                    <li><strong>Choose an entry point</strong> — university (broad theory + research access), polytechnic college (faster, applied), bootcamp (intensive, networking-oriented), self-study (cheapest but requires discipline).</li>
+                    <li><strong>Apply early</strong> — Waterloo, Toronto, and McGill CS admissions are highly competitive; OUAC applications open in fall of Grade 12.</li>
+                    <li><strong>Co-op</strong> — programs like Waterloo CS or Toronto's PEY interleave paid work terms with study; many graduates have 2 years of industry experience at convocation.</li>
+                    <li><strong>Stay learning</strong> — technology shifts every 5-10 years; the durable skills are reading code, debugging, communicating, and learning fast.</li>
+                  </ul>
+                </div>
+                <ul>
+                  <li>Believing CS is just "coding" — the field is much broader (architecture, security, theory, HCI, applied math).</li>
+                  <li>Picking a university by ranking alone — fit, co-op opportunities, and city matter more for outcomes.</li>
+                  <li>Treating new tools as "fashions" to ignore — yesterday's fashion (Git, the cloud, ML) is today's foundation.</li>
+                  <li>Underestimating soft skills — code review, technical writing, and collaboration are graded on the job.</li>
+                  <li>Assuming the AI revolution makes programmers obsolete — it raises the floor of productivity but still rewards rigour and judgement.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "describe postsecondary education and training opportunities and career prospects related to computer studies".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt11')"><span class="vid-icon">📖</span><span class="vid-title">Early Computing — Crash Course Computer Science #1</span><span class="vid-duration">11:53</span><span class="vid-toggle" id="toggle-ics-yt11">▶</span></div><div class="video-player" id="player-ics-yt11"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O5nskjZ_GoI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=O5nskjZ_GoI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt29')"><span class="vid-icon">📖</span><span class="vid-title">I Ranked Every Tech Career Path (Who Wins?) — Tech With Tim</span><span class="vid-duration">14:26</span><span class="vid-toggle" id="toggle-ics-yt29">▶</span></div><div class="video-player" id="player-ics-yt29"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/3GU7nAuchKA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=3GU7nAuchKA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics4u/Unit5_Software_Engineering_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics4u/Unit5_Software_Engineering_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics4u/Unit5_Software_Engineering_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../ics4u.html" class="chnav-btn chnav-next chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS4U &mdash; Computer Science, Grade 12 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

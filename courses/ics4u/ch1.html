@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS4U — Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #6366f1; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #6366f1dd, #6366f1);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS4U Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 12 University Preparation</div>
+    <h1>💻 ICS4U: Unit 1: Programming Foundations</h1>
+    <p>Python syntax, variables, primitive data types, expressions, input/output, control flow (selection &amp; iteration), and the fundamentals of program tracing</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg, #6366f1dd, #6366f1);">
+            <h2>Unit 1: Programming Foundations</h2>
+            <p>Python syntax, variables, primitive data types, expressions, input/output, control flow (selection &amp; iteration), and the fundamentals of program tracing</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand A1 (Data Types) &middot; Strand A2 (Sequence/Selection/Iteration)</span>
+                <span>&#9201;&#65039; ~20 hours</span>
+                <span>&#128221; 5 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.1 &mdash; Variables, Data Types, and Expressions</div>
+            <div class="topic-desc">Primitive types (int, float, str, bool); variable assignment; type conversion; operator precedence; basic expression evaluation</div>
+            <div class="code-snip"><span class="com"># Variable assignment and type conversion</span>
+<span class="kw">name</span> = <span class="str">"Ada"</span>
+<span class="kw">age</span> = <span class="num">17</span>
+<span class="kw">gpa</span> = <span class="num">3.85</span>
+<span class="kw">is_senior</span> = <span class="kw">True</span>
+<span class="com"># Build a record string with explicit conversions</span>
+<span class="kw">record</span> = name + <span class="str">" ("</span> + str(age) + <span class="str">"): "</span> + str(gpa)
+<span class="kw">print</span>(record)  <span class="com"># Ada (17): 3.85</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Every value a program manipulates has a <strong>data type</strong>, and every type carries with it a set of legal operations. Choosing the right primitive type is the first decision a programmer makes because it controls memory layout, the range of representable values, and which operators are valid. Confusing types is the source of a surprising number of bugs: <code>"7" + "8"</code> produces the string <code>"78"</code> in Python and Java, but <code>7 + 8</code> produces the integer <code>15</code>. Grade 12 students must learn to reason about types before they reason about logic.</p>
+                <p>Python uses <em>dynamic typing</em>: a variable name is a label that can be rebound to any object. By contrast, Java uses <em>static typing</em>, where the compiler verifies the type at every assignment. In both languages, the value stored in memory has a fixed type at any given moment. Type conversion (also called <em>casting</em>) is the act of producing a new value of a different type — for example, <code>str(age)</code> creates a string version of the integer <code>age</code> without altering the original. Implicit conversion (<code>3 + 4.0</code> becoming <code>7.0</code>) is called <em>type coercion</em> and is the most common source of silent floating-point error.</p>
+                <p>Expressions are built from operators and operands, and the order in which they evaluate is governed by <strong>operator precedence</strong>. Multiplication binds tighter than addition; exponentiation in Python (<code>**</code>) binds tighter than unary minus on the left but not on the right; comparison binds looser than arithmetic. When in doubt, add parentheses — they cost nothing at runtime and prevent precedence bugs.</p>
+                <ul>
+                  <li><strong>Primitive type</strong> — a built-in type that is not a collection (int, float, bool, str).</li>
+                  <li><strong>Literal</strong> — a value written directly in source code, e.g. <code>17</code> or <code>"Ada"</code>.</li>
+                  <li><strong>Identifier</strong> — the name of a variable, function, or class.</li>
+                  <li><strong>Casting / type conversion</strong> — explicit conversion from one type to another, e.g. <code>int("12")</code>.</li>
+                  <li><strong>Operator precedence</strong> — rules that determine the order in which sub-expressions evaluate.</li>
+                  <li><strong>Floating-point error</strong> — the rounding caused by binary representation of decimal fractions.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — precedence and floating-point</p>
+<pre><code>&gt;&gt;&gt; 2 + 3 * 4 ** 2     # ** first → 16, then * → 48, then + → 50
+50
+&gt;&gt;&gt; (2 + 3) * 4 ** 2   # () forces 5 first, ** still binds tighter than *
+80
+&gt;&gt;&gt; 0.1 + 0.2          # binary cannot represent 0.1 exactly
+0.30000000000000004
+&gt;&gt;&gt; round(0.1 + 0.2, 2)
+0.3</code></pre>
+                  <p>The exponent <code>4 ** 2</code> evaluates first because <code>**</code> has the highest precedence among arithmetic operators. Floating-point arithmetic in IEEE-754 cannot represent <code>0.1</code> exactly, so equality comparisons on floats should use a tolerance (<code>abs(a - b) &lt; 1e-9</code>) rather than <code>==</code>. Each operation here is O(1), so the running time of the expression is constant regardless of operand magnitude.</p>
+                </div>
+                <ul>
+                  <li>Forgetting to convert <code>input()</code> from string to number: <code>input() + 1</code> raises <code>TypeError</code>.</li>
+                  <li>Comparing floats with <code>==</code> — always use a tolerance.</li>
+                  <li>Using <code>=</code> when you mean <code>==</code>, or vice versa.</li>
+                  <li>Assuming integer division: in Python 3, <code>5 / 2</code> is <code>2.5</code>, not <code>2</code>. Use <code>//</code> for floor division.</li>
+                  <li>Overwriting a built-in name like <code>list</code> or <code>str</code> with your own variable.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "demonstrate the use of different data types … in computer programs (e.g., integer, floating-point, character/string, Boolean)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt1')"><span class="vid-icon">📖</span><span class="vid-title">Python Variables — Programming with Mosh</span><span class="vid-duration">11:01</span><span class="vid-toggle" id="toggle-ics-yt1">▶</span></div><div class="video-player" id="player-ics-yt1"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cQT33yu9pY8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=cQT33yu9pY8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.2 &mdash; Input, Output, and String Formatting</div>
+            <div class="topic-desc"><code>input()</code>, <code>print()</code>, f-strings, escape sequences, integer vs. float input parsing</div>
+            <div class="code-snip"><span class="com"># Build an interactive area calculator</span>
+<span class="kw">length</span> = float(input(<span class="str">"Length (m): "</span>))
+<span class="kw">width</span>  = float(input(<span class="str">"Width  (m): "</span>))
+<span class="kw">area</span>   = length * width
+<span class="kw">print</span>(<span class="str">f"Area = {area:.2f} m²"</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A program that cannot communicate with the outside world is not very useful. Input and output (I/O) are the bridges between the program's internal state and the user or another system. In Python, <code>input()</code> always returns a <code>str</code>, regardless of what the user types — even <code>"42"</code> arrives as four characters, not a number. The programmer must explicitly parse it with <code>int()</code> or <code>float()</code> before performing arithmetic. Forgetting this conversion is the single most common bug in introductory programs.</p>
+                <p>Output formatting matters because raw values rarely look the way humans want to read them. A bank balance of <code>1234.5</code> should display as <code>$1,234.50</code> with two decimal places and a thousands separator. Python's <strong>f-strings</strong> (formatted string literals, introduced in Python 3.6) embed expressions directly inside string literals with a format specifier after a colon: <code>f"{value:,.2f}"</code> means "thousands separator, two decimal places, fixed-point notation". F-strings are faster, easier to read, and less error-prone than the older <code>%</code> operator or the <code>.format()</code> method.</p>
+                <p>Escape sequences let strings contain characters that would otherwise have special meaning. <code>\n</code> produces a newline, <code>\t</code> produces a tab, <code>\\</code> produces a literal backslash, and <code>\"</code> escapes a double-quote inside a double-quoted string. Raw strings, prefixed with <code>r</code>, disable escapes — they are handy for Windows file paths and regular expressions.</p>
+                <ul>
+                  <li><strong>Standard input (stdin)</strong> — the default source of input, usually the keyboard.</li>
+                  <li><strong>Standard output (stdout)</strong> — the default destination of output, usually the terminal.</li>
+                  <li><strong>f-string</strong> — an expression-embedded literal of the form <code>f"…{expr:spec}…"</code>.</li>
+                  <li><strong>Format specifier</strong> — the part after the colon (<code>.2f</code>, <code>&gt;10</code>, <code>05d</code>) that controls width, precision, alignment.</li>
+                  <li><strong>Escape sequence</strong> — a two-character code beginning with <code>\</code> that represents a non-printable character.</li>
+                  <li><strong>Concatenation</strong> — joining strings end-to-end with <code>+</code>.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — receipt formatting</p>
+<pre><code>item  = input("Item: ")          # str
+qty   = int(input("Qty: "))      # int — parse!
+price = float(input("Price: "))  # float — parse!
+
+subtotal = qty * price
+tax      = subtotal * 0.13       # Ontario HST
+total    = subtotal + tax
+
+print(f"{'Item':&lt;15}{'Qty':&gt;5}{'Price':&gt;10}")
+print(f"{item:&lt;15}{qty:&gt;5}{price:&gt;10.2f}")
+print(f"{'Subtotal':&lt;20}{subtotal:&gt;10.2f}")
+print(f"{'HST (13%)':&lt;20}{tax:&gt;10.2f}")
+print(f"{'TOTAL':&lt;20}{total:&gt;10.2f}")</code></pre>
+                  <p>The <code>&lt;15</code> specifier left-aligns to width 15; <code>&gt;10.2f</code> right-aligns a float in width 10 with two decimals. Each <code>print</code> is an O(1) I/O operation. The arithmetic itself is O(1); the runtime is dominated by I/O latency, not computation.</p>
+                </div>
+                <ul>
+                  <li>Forgetting to wrap <code>input()</code> with <code>int()</code> or <code>float()</code> — leads to <code>TypeError</code> when arithmetic is attempted.</li>
+                  <li>Calling <code>int("3.5")</code> — raises <code>ValueError</code>. Use <code>float()</code> first, then <code>int()</code> if truncation is wanted.</li>
+                  <li>Using <code>print(x, y)</code> (which auto-inserts a space) when concatenation was intended.</li>
+                  <li>Forgetting the <code>f</code> prefix: <code>"{x}"</code> is the literal string <code>{x}</code>, not the value of <code>x</code>.</li>
+                  <li>Mixing tabs and spaces in formatted output — terminals may render them differently.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "use methods to manage data input and output in programs (e.g., format output to be displayed; validate input)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt13')"><span class="vid-icon">📖</span><span class="vid-title">Python Quick Tip: F-Strings — Advanced String Formatting — Corey Schafer</span><span class="vid-duration">12:59</span><span class="vid-toggle" id="toggle-ics-yt13">▶</span></div><div class="video-player" id="player-ics-yt13"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/nghuHvKLhJA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=nghuHvKLhJA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.3 &mdash; Selection: <code>if</code>/<code>elif</code>/<code>else</code> and Boolean Logic</div>
+            <div class="topic-desc">Comparison operators, logical <code>and</code>/<code>or</code>/<code>not</code>, truth tables, short-circuit evaluation, the dangling-else problem</div>
+            <div class="code-snip"><span class="com"># Letter-grade classifier (Ontario Achievement Chart)</span>
+<span class="kw">def</span> letter_grade(percent):
+    <span class="kw">if</span>   percent &gt;= <span class="num">80</span>: <span class="kw">return</span> <span class="str">"Level 4"</span>
+    <span class="kw">elif</span> percent &gt;= <span class="num">70</span>: <span class="kw">return</span> <span class="str">"Level 3"</span>
+    <span class="kw">elif</span> percent &gt;= <span class="num">60</span>: <span class="kw">return</span> <span class="str">"Level 2"</span>
+    <span class="kw">elif</span> percent &gt;= <span class="num">50</span>: <span class="kw">return</span> <span class="str">"Level 1"</span>
+    <span class="kw">else</span>:                <span class="kw">return</span> <span class="str">"R"</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Selection — choosing which branch of code to run — is one of the three pillars of structured programming alongside sequence and iteration. The Boolean expression in an <code>if</code> evaluates to either <code>True</code> or <code>False</code>, and the interpreter takes the corresponding branch. Cascaded <code>if</code>/<code>elif</code>/<code>else</code> chains are mutually exclusive: at most one branch executes, and they are evaluated top-to-bottom. The order of conditions is therefore semantically meaningful, not just stylistic. Writing the most restrictive condition first is a frequent source of bugs (e.g., <code>if percent &gt;= 50</code> before <code>if percent &gt;= 80</code> would classify every passing grade as Level 1).</p>
+                <p>Boolean logic is built from the three connectives <code>and</code>, <code>or</code>, and <code>not</code>. A truth table enumerates all input combinations. Python (and Java) use <strong>short-circuit evaluation</strong>: in <code>A and B</code>, if <code>A</code> is false, <code>B</code> is never evaluated; in <code>A or B</code>, if <code>A</code> is true, <code>B</code> is never evaluated. This is more than an optimisation — it lets programmers write guards like <code>if x != 0 and 1/x &gt; 0.5</code> without raising a division-by-zero exception when <code>x</code> is zero.</p>
+                <p>De Morgan's laws are essential for refactoring conditionals: <code>not (A and B)</code> is equivalent to <code>(not A) or (not B)</code>, and <code>not (A or B)</code> is equivalent to <code>(not A) and (not B)</code>. Students should be able to apply these mechanically to simplify nested negations.</p>
+                <ul>
+                  <li><strong>Boolean expression</strong> — any expression that evaluates to <code>True</code> or <code>False</code>.</li>
+                  <li><strong>Comparison operator</strong> — <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>.</li>
+                  <li><strong>Logical operator</strong> — <code>and</code>, <code>or</code>, <code>not</code> (in Java: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>).</li>
+                  <li><strong>Short-circuit evaluation</strong> — second operand is skipped when the first determines the result.</li>
+                  <li><strong>Truthy / Falsy</strong> — non-Boolean values evaluated in a Boolean context (<code>0</code>, <code>""</code>, <code>[]</code>, <code>None</code> are falsy).</li>
+                  <li><strong>Dangling-else</strong> — ambiguity in nested <code>if</code>s without braces, resolved in Python by indentation.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — input validation with short-circuit logic</p>
+<pre><code>def safe_divide(a_str, b_str):
+    if not a_str.lstrip('-').isdigit() or not b_str.lstrip('-').isdigit():
+        return "Inputs must be integers"
+    a, b = int(a_str), int(b_str)
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+
+print(safe_divide("12", "3"))   # 4.0
+print(safe_divide("12", "0"))   # Cannot divide by zero
+print(safe_divide("12", "x"))   # Inputs must be integers</code></pre>
+                  <p>The <code>or</code> in the first check short-circuits: if <code>a_str</code> is non-numeric, <code>b_str</code> is never tested. This protects against the <code>ValueError</code> that would arise from <code>int("x")</code>. The whole function runs in O(n) where n is the length of the input string (because of <code>isdigit</code>); the arithmetic itself is O(1).</p>
+                </div>
+                <ul>
+                  <li>Writing <code>if x = 5</code> instead of <code>if x == 5</code> (a syntax error in Python, a logic bug in C/Java).</li>
+                  <li>Putting the most general condition first in an <code>if</code>/<code>elif</code> chain, making later branches unreachable.</li>
+                  <li>Chaining comparisons in Java the way Python allows: <code>1 &lt; x &lt; 10</code> works in Python; in Java write <code>1 &lt; x &amp;&amp; x &lt; 10</code>.</li>
+                  <li>Forgetting that <code>and</code>/<code>or</code> return one of the operands, not necessarily <code>True</code>/<code>False</code>: <code>0 or "hello"</code> returns <code>"hello"</code>.</li>
+                  <li>Negating a compound condition without De Morgan's laws — easy to invert the wrong operator.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "use control structures (i.e., sequence, selection, iteration) to write modular code".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt14')"><span class="vid-icon">📖</span><span class="vid-title">Python Conditionals and Booleans — If, Else, and Elif Statements — Corey Schafer</span><span class="vid-duration">17:18</span><span class="vid-toggle" id="toggle-ics-yt14">▶</span></div><div class="video-player" id="player-ics-yt14"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/DZwmZ8Usvnk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=DZwmZ8Usvnk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.4 &mdash; Iteration: <code>for</code>, <code>while</code>, and Loop Tracing</div>
+            <div class="topic-desc">Counted loops with <code>range()</code>, conditional loops, accumulator pattern, sentinel-controlled loops, off-by-one errors</div>
+            <div class="code-snip"><span class="com"># Sum of numbers 1..n using accumulator pattern</span>
+<span class="kw">def</span> sum_to(n):
+    total = <span class="num">0</span>
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="num">1</span>, n + <span class="num">1</span>):
+        total += i
+    <span class="kw">return</span> total
+
+<span class="kw">print</span>(sum_to(<span class="num">100</span>))  <span class="com"># 5050  (Gauss)</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Iteration — repeating a block of code — is what makes a computer dramatically more powerful than a calculator. A <code>for</code> loop iterates over a known sequence (a list, a range, a string, a file), and the loop variable takes on each element in turn. A <code>while</code> loop continues as long as a Boolean condition holds, and is used when the number of iterations is not known in advance (e.g., reading until end-of-file, or polling for user input). Choosing between them is a design decision: <code>for</code> when you can describe what to iterate over; <code>while</code> when you need to describe when to stop.</p>
+                <p>The <strong>accumulator pattern</strong> initialises a result variable outside the loop, updates it inside the loop, and returns it after the loop. The accumulator can be a number (sum, product, count), a Boolean (any/all), a list (filter, map), or a dictionary (frequency count). Recognising this pattern lets students translate plain-English questions ("how many students passed?") into code mechanically.</p>
+                <p>The <strong>sentinel-controlled loop</strong> is a <code>while</code> idiom where a special "stop" value (like <code>"quit"</code>, <code>-1</code>, or empty string) ends the loop. The sentinel must be a value that could not appear as legitimate data; choosing it carelessly is a famous source of bugs.</p>
+                <ul>
+                  <li><strong>Loop body</strong> — the indented block that repeats.</li>
+                  <li><strong>Loop variable / index</strong> — the variable that changes each iteration.</li>
+                  <li><strong>Accumulator</strong> — a variable that builds up a result across iterations.</li>
+                  <li><strong>Sentinel</strong> — a special input value that signals the end of input.</li>
+                  <li><strong>Off-by-one error</strong> — looping one too few or one too many times, often from <code>range(n)</code> vs <code>range(n+1)</code>.</li>
+                  <li><strong>Infinite loop</strong> — a <code>while</code> whose condition never becomes false.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — tracing a nested loop</p>
+<pre><code>def count_pairs_summing_to(target, nums):
+    count = 0
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):  # j &gt; i avoids dupes
+            if nums[i] + nums[j] == target:
+                count += 1
+    return count
+
+print(count_pairs_summing_to(10, [1, 9, 4, 6, 5, 5]))  # 3</code></pre>
+                  <p>Pairs that sum to 10: (1,9), (4,6), (5,5). The outer loop runs n times; the inner loop runs n-i-1 times for iteration i. Total comparisons = n(n-1)/2, so the time complexity is <strong>O(n²)</strong>. Memory is O(1) — only a counter is stored. A faster O(n) algorithm uses a hash set to remember <code>target - nums[i]</code> values; this trade-off (time vs space) appears repeatedly in Unit 4.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — desk-checking a while loop</p>
+<pre><code>n = 12
+steps = 0
+while n &gt; 1:
+    if n % 2 == 0:
+        n = n // 2
+    else:
+        n = 3*n + 1
+    steps += 1
+print(steps)  # 9 — the Collatz sequence</code></pre>
+                  <p>Trace: 12 → 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1. Nine iterations. Whether this loop terminates for <em>every</em> positive n is the famous unsolved Collatz conjecture — a reminder that loop termination is not always trivial to prove.</p>
+                </div>
+                <ul>
+                  <li>Off-by-one: <code>range(1, n)</code> goes 1 to n-1, not 1 to n. Use <code>range(1, n+1)</code> to include n.</li>
+                  <li>Modifying a list while iterating over it — leads to skipped or duplicated elements.</li>
+                  <li>Infinite loops because the loop variable is never updated inside <code>while</code>.</li>
+                  <li>Initialising an accumulator inside the loop instead of outside — resets it every iteration.</li>
+                  <li>Using <code>break</code> in deeply nested loops without a clear exit strategy.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "use control structures (i.e., sequence, selection, iteration) to write modular code".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt15')"><span class="vid-icon">📖</span><span class="vid-title">Python Loops and Iterations — For/While Loops — Corey Schafer</span><span class="vid-duration">21:34</span><span class="vid-toggle" id="toggle-ics-yt15">▶</span></div><div class="video-player" id="player-ics-yt15"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6iF8Xb7Z3wQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6iF8Xb7Z3wQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.5 &mdash; Program Tracing and Desk Checks</div>
+            <div class="topic-desc">Variable trace tables, dry runs, predicting output, the IPO (Input-Process-Output) chart</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Tracing — manually simulating the execution of a program with pen and paper — is one of the most important diagnostic skills a programmer develops. A <strong>trace table</strong> has one column per variable plus an "output" column, and one row per statement executed. By filling it in step-by-step, the student verifies that what the code actually does matches what they think it does. The technique is invaluable on tests, in code reviews, and during debugging, because it forces explicit reasoning about every state change.</p>
+                <p>The <strong>IPO chart</strong> (Input-Process-Output) is a higher-level planning tool used before coding. It lists what data enters the program, what transformations are applied, and what data leaves. IPO charts feed into <strong>structure charts</strong>, which decompose the "Process" box into a tree of sub-functions. Together they constitute the documentation a maintainer needs to understand a program's purpose without reading every line.</p>
+                <p>Tracing also reveals the difference between three classes of error: a <strong>syntax error</strong> prevents the program from running; a <strong>runtime error</strong> aborts the program mid-execution (e.g., divide-by-zero, index out of range); and a <strong>logic error</strong> lets the program complete but produces the wrong answer. Logic errors are the hardest to find precisely because the program "works" — tracing exposes them by comparing predicted output against actual output.</p>
+                <ul>
+                  <li><strong>Trace table</strong> — a table tracking variable values line-by-line through execution.</li>
+                  <li><strong>Dry run</strong> — executing a program on paper without a computer.</li>
+                  <li><strong>IPO chart</strong> — a 3-column diagram listing Input, Process, Output.</li>
+                  <li><strong>Structure chart</strong> — a hierarchical diagram showing how modules call one another.</li>
+                  <li><strong>Syntax error</strong> — code that violates language grammar; caught by the parser.</li>
+                  <li><strong>Runtime error</strong> — an exception raised during execution.</li>
+                  <li><strong>Logic error</strong> — the program runs but produces incorrect output.</li>
+                  <li><strong>Invariant</strong> — a condition that holds true at a specific point in every iteration.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — trace this loop</p>
+<pre><code>def mystery(n):
+    a, b = 0, 1
+    while a &lt; n:
+        a, b = b, a + b
+    return a
+
+print(mystery(20))</code></pre>
+                  <p>Trace table:</p>
+<pre><code>iter | a  | b  | a &lt; 20?
+-----+----+----+--------
+ 0   | 0  | 1  | True
+ 1   | 1  | 1  | True
+ 2   | 1  | 2  | True
+ 3   | 2  | 3  | True
+ 4   | 3  | 5  | True
+ 5   | 5  | 8  | True
+ 6   | 8  | 13 | True
+ 7   | 13 | 21 | True
+ 8   | 21 | 34 | False → exit
+return 21</code></pre>
+                  <p>The function returns the smallest Fibonacci number ≥ n. The loop invariant is "<code>a</code> and <code>b</code> are consecutive Fibonacci numbers". Time complexity is O(log φ · n) ≈ O(log n) because Fibonacci numbers grow exponentially. Memory is O(1).</p>
+                </div>
+                <ul>
+                  <li>Updating two variables sequentially when simultaneous update is required: <code>a = b; b = a + b</code> is <em>not</em> the same as <code>a, b = b, a + b</code>.</li>
+                  <li>Forgetting to record output rows in the trace table — leads to missed off-by-one errors.</li>
+                  <li>Tracing only a couple of iterations and assuming the pattern continues.</li>
+                  <li>Confusing pre-condition (checked before the loop body) with post-condition (after).</li>
+                  <li>Building an IPO chart with "process" steps that are vague verbs like "do the math" — every step should be testable.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A4.1 — "trace code, comments, and program output to identify the relationships among different sections of a program".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt16')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Debugging logic errors by hand-tracing your code</span><span class="vid-duration">11:31</span><span class="vid-toggle" id="toggle-ics-yt16">▶</span></div><div class="video-player" id="player-ics-yt16"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jq5ac_BNzHs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Jq5ac_BNzHs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt17')"><span class="vid-icon">📖</span><span class="vid-title">IPO Charts and Structure Charts with Python</span><span class="vid-duration">9:32</span><span class="vid-toggle" id="toggle-ics-yt17">▶</span></div><div class="video-player" id="player-ics-yt17"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qXtYSL8VEDY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=qXtYSL8VEDY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics4u/Unit1_Programming_Foundations_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics4u/Unit1_Programming_Foundations_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics4u/Unit1_Programming_Foundations_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../ics4u.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS4U &mdash; Computer Science, Grade 12 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

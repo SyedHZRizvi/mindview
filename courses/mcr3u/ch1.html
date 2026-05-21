@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 1: Introduction to Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit1">
+<div class="unit-header" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+<h2>Chapter 1: Introduction to Functions</h2>
+<p>Function notation, domain &amp; range, mappings, even/odd, inverses, transformations</p>
+<div class="unit-meta">
+<span>📚 Strand A: Characteristics of Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 6 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.1 &mdash; Relations vs. Functions; the Vertical Line Test</div>
+<div class="topic-desc">Define a relation; recognise a function from a set of ordered pairs, mapping diagram, table, or graph; apply the vertical line test.</div>
+<div class="summary-card">A relation pairs inputs with outputs. A function is a relation in which <strong>each input has exactly one output</strong>. Graphically, a curve is a function iff every vertical line intersects it at most once. Common counter-example: \( x = y^2 \) (a sideways parabola) fails the test.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>A <em>relation</em> is any rule, table, set of ordered pairs, or graph that pairs values from one set (the inputs, or independent variable) with values from another set (the outputs, or dependent variable). A <em>function</em> is a special kind of relation — one with a strict promise: every input is paired with <strong>exactly one</strong> output. No input can produce two different outputs.</p>
+
+<p>Why does this matter? Because a huge amount of mathematics relies on being able to ask "what is the output when the input is \(x\)?" and get a single, unambiguous answer. If a relation could spit out two values for the same input, you couldn't write \(y = f(x)\) — the symbol \(f(x)\) would be ambiguous. Functions give us a clean input-output machine, which is exactly what we need for modelling real-world processes (height vs. time, temperature vs. depth, cost vs. quantity).</p>
+
+<p>The <strong>vertical line test</strong> turns this idea into a visual check. Draw any vertical line. If it ever crosses the graph in two or more places, then the \(x\)-value where it crosses is being mapped to multiple \(y\)-values — so the relation isn't a function. If every vertical line crosses the graph at most once, the relation is a function.</p>
+
+<ul>
+<li><strong>Relation</strong> — any pairing of inputs to outputs (a set of ordered pairs).</li>
+<li><strong>Function</strong> — a relation in which each input has exactly one output.</li>
+<li><strong>Domain</strong> — the set of all permissible inputs.</li>
+<li><strong>Range</strong> — the set of all outputs the function actually produces.</li>
+<li><strong>Vertical line test</strong> — a graph represents a function if and only if every vertical line meets the graph in at most one point.</li>
+<li><strong>Mapping diagram</strong> — a picture with arrows from inputs (left) to outputs (right); a function has at most one arrow leaving each input.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Decide whether each relation is a function.</p>
+<p>(a) \(\{(1,2),(2,4),(3,6),(4,8)\}\). Every \(x\)-value is different, so each input has exactly one output. <strong>This is a function.</strong></p>
+<p>(b) \(\{(0,1),(1,2),(0,-1),(2,3)\}\). The input \(0\) is paired with both \(1\) and \(-1\). <strong>Not a function.</strong></p>
+<p>(c) The graph of \(x = y^2\) (a sideways parabola). At \(x = 4\), both \(y=2\) and \(y=-2\) lie on the curve. A vertical line at \(x = 4\) hits the curve twice. <strong>Not a function.</strong></p>
+<p>(d) The graph of \(y = x^2\). For every \(x\), there is exactly one \(y = x^2\). A vertical line meets the curve once. <strong>Is a function.</strong></p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Does \(y^2 + x^2 = 25\) define \(y\) as a function of \(x\)?</p>
+<p>Solving for \(y\): \(y = \pm\sqrt{25 - x^2}\). At \(x = 3\), \(y = \pm 4\) — two outputs for one input. The graph is a circle of radius 5, which fails the vertical line test. <strong>Not a function.</strong></p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing the vertical line test with the horizontal line test — vertical decides "is this a function," horizontal decides "is the inverse a function."</li>
+<li>Assuming any equation involving \(x\) and \(y\) is a function. Circles, sideways parabolas, and many implicit curves are not.</li>
+<li>Forgetting that a function can repeat outputs — different inputs may share one output (e.g. \(f(-2) = f(2) = 4\) for \(y = x^2\)). What's forbidden is one input sharing two outputs.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "explain the meaning of the term function, and distinguish a function from a relation that is not a function, through investigation of linear and quadratic relations using a variety of representations (i.e., tables of values, mapping diagrams, graphs, function machines, equations) and strategies (e.g., identifying a one-to-one or many-to-one mapping; using the vertical-line test)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt1')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">What is a function? — Khan Academy</span>
+        <span class="vid-duration">9:22</span>
+        <span class="vid-toggle" id="toggle-mcr-yt1">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt1">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/52tpYl2tTqk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=52tpYl2tTqk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.2 &mdash; Function Notation \( f(x) \); Evaluation</div>
+<div class="topic-desc">Read and write \( f(x) \), \( g(t) \); evaluate at numerical and algebraic inputs; interpret the meaning of \( f(a) \) in context.</div>
+<div class="summary-card">For \( f(x)=2x^2-3x+1 \): \( f(-2)=2(4)-3(-2)+1=8+6+1=15 \). For \( f(a+h) \), substitute \( a+h \) wherever \( x \) appears: \( f(a+h)=2(a+h)^2-3(a+h)+1 \). Function notation makes the input-output relationship explicit and is foundational for all later work in MHF4U and MCV4U.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Up until now you've usually written equations as \(y = \text{(stuff with }x\text{)}\). Function notation just renames the output. Instead of \(y\), we write \(f(x)\), read as "\(f\) of \(x\)." The letter \(f\) is the <em>name</em> of the function (it can be \(g\), \(h\), \(P\), \(C\) — anything), and the \(x\) inside the brackets is a placeholder for whatever input you're about to substitute. This change of notation looks tiny but it is enormous: it lets you name many functions in one problem, talk about specific values like \(f(3)\) without ambiguity, and feed one function into another.</p>
+
+<p>Think of \(f\) as a machine. You feed in a number; the machine processes it; out comes a number. \(f(x) = 2x^2 - 3x + 1\) is the instruction sheet for the machine. \(f(-2)\) is the result of feeding \(-2\) into that specific machine. The brackets are <strong>not</strong> multiplication — \(f(x)\) does not mean \(f\) times \(x\).</p>
+
+<p>Once you're comfortable plugging in numbers, the same idea lets you plug in expressions: \(f(a+h)\), \(f(2x)\), \(f(x+1) - f(x)\). The last one is the key to the difference quotient, which becomes the derivative in calculus. Mastering substitution at this level pays off for years.</p>
+
+<ul>
+<li><strong>Function notation</strong> — write \(f(x)\) for the output of function \(f\) at input \(x\).</li>
+<li><strong>Argument</strong> — whatever sits inside the brackets (the input being fed in).</li>
+<li><strong>Evaluate</strong> — substitute a specific value or expression for the variable and simplify.</li>
+<li><strong>Independent variable</strong> — the input, usually \(x\); the value you choose.</li>
+<li><strong>Dependent variable</strong> — the output, \(f(x)\); its value depends on \(x\).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Let \(f(x) = 2x^2 - 3x + 1\). Compute \(f(-2)\), \(f(0)\), and \(f(\tfrac{1}{2})\).</p>
+<p>\(f(-2) = 2(-2)^2 - 3(-2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15\).</p>
+<p>\(f(0) = 2(0)^2 - 3(0) + 1 = 1\). (This is the \(y\)-intercept.)</p>
+<p>\(f(\tfrac{1}{2}) = 2(\tfrac{1}{4}) - 3(\tfrac{1}{2}) + 1 = \tfrac{1}{2} - \tfrac{3}{2} + 1 = 0\). So \((\tfrac{1}{2}, 0)\) is on the graph.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — For the same \(f\), simplify \(f(a+h) - f(a)\).</p>
+<p>\(f(a+h) = 2(a+h)^2 - 3(a+h) + 1 = 2(a^2 + 2ah + h^2) - 3a - 3h + 1 = 2a^2 + 4ah + 2h^2 - 3a - 3h + 1\).</p>
+<p>\(f(a) = 2a^2 - 3a + 1\).</p>
+<p>\(f(a+h) - f(a) = (2a^2 + 4ah + 2h^2 - 3a - 3h + 1) - (2a^2 - 3a + 1) = 4ah + 2h^2 - 3h\).</p>
+<p>This expression — and dividing it by \(h\) — is the average rate of change of \(f\) on \([a, a+h]\), foreshadowing calculus.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Given \(g(x) = \sqrt{x + 4}\), find \(g(5)\) and \(g(2t - 3)\).</p>
+<p>\(g(5) = \sqrt{5 + 4} = \sqrt{9} = 3\).</p>
+<p>\(g(2t - 3) = \sqrt{(2t - 3) + 4} = \sqrt{2t + 1}\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Reading \(f(x)\) as multiplication. It is a single symbol naming the output, not a product.</li>
+<li>Forgetting parentheses when substituting negatives. \(f(-2)\) needs \((-2)^2 = 4\), not \(-2^2 = -4\).</li>
+<li>When substituting an expression like \(a + h\), you must put it in brackets <em>everywhere</em> the variable appears, then expand carefully.</li>
+<li>Mixing up "find \(x\) when \(f(x) = 5\)" (an equation to solve) with "find \(f(5)\)" (an evaluation).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "represent linear and quadratic functions using function notation, given their equations, tables of values, or graphs, and substitute into and evaluate functions [e.g., evaluate \(f(\tfrac{1}{2})\), given \(f(x) = 2x^2 + 3x - 1\)]."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt2')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Function Notation Example Evaluate MCR3U — Anil Kumar</span>
+        <span class="vid-duration">8:45</span>
+        <span class="vid-toggle" id="toggle-mcr-yt2">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt2">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9Xbm1uhQGws?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=9Xbm1uhQGws" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.3 &mdash; Domain &amp; Range from Graphs and Equations</div>
+<div class="topic-desc">State domain and range using set-builder and interval notation; analyse restrictions from radicals (\( \sqrt{\,} \ge 0 \)) and rational expressions (denominator \( \ne 0 \)).</div>
+<div class="summary-card">For \( f(x)=\sqrt{x-3} \): domain \( \{x\in\mathbb{R} \mid x\ge 3\} \), range \( \{y\in\mathbb{R}\mid y\ge 0\} \). For \( g(x)=\dfrac{1}{x-2} \): domain \( \{x\in\mathbb{R}\mid x\ne 2\} \). Always check both algebraic restrictions and the contextual domain when modelling.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The <em>domain</em> of a function is the set of all inputs you're allowed to feed it. The <em>range</em> is the set of every output the function actually produces. Knowing both tells you the "shape" of the function before you even graph it: where it starts and ends, what gaps exist, and which heights are reachable.</p>
+
+<p>Domain restrictions come from two main sources at this level. <strong>Square roots</strong> (and any even-index radical) need a non-negative radicand — you can't take a real square root of a negative number, so anything under \(\sqrt{\ \ }\) must be \(\ge 0\). <strong>Rational expressions</strong> can never have zero in the denominator — division by zero is undefined. A third source, which appears in word problems, is the <em>context</em>: time can't be negative, you can't ship a fractional number of crates, etc.</p>
+
+<p>Range is usually best found from a graph or from a careful look at the function's behaviour: minimum/maximum value, asymptotes, end behaviour. There are two common notations: <strong>set-builder</strong> like \(\{x \in \mathbb{R} \mid x \ge 3\}\) and <strong>interval notation</strong> like \([3, \infty)\). Brackets \([\ ]\) include the endpoint; parentheses \((\ )\) exclude it. Infinity always gets a parenthesis because it isn't a real number.</p>
+
+<ul>
+<li><strong>Domain</strong> — set of all allowable inputs of a function.</li>
+<li><strong>Range</strong> — set of all outputs the function actually attains.</li>
+<li><strong>Set-builder notation</strong> — \(\{x \in \mathbb{R} \mid \text{condition}\}\); read "the set of \(x\) in the reals such that...".</li>
+<li><strong>Interval notation</strong> — \([a,b]\) closed, \((a,b)\) open, \([a,b)\) half-open; \(\infty\) is always paired with a parenthesis.</li>
+<li><strong>Restriction</strong> — an algebraic condition (e.g. denominator \(\ne 0\), radicand \(\ge 0\)) that excludes inputs from the domain.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — State the domain and range of \(f(x) = \sqrt{x - 3}\).</p>
+<p>Domain: the radicand must satisfy \(x - 3 \ge 0\), so \(x \ge 3\). In set-builder: \(\{x \in \mathbb{R} \mid x \ge 3\}\); in interval notation: \([3, \infty)\).</p>
+<p>Range: \(\sqrt{\ \ }\) by convention returns the non-negative root, so outputs are \(\ge 0\). When \(x = 3\), \(f(x) = 0\); as \(x\) grows, \(f(x)\) grows without bound. Range: \([0, \infty)\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — State the domain and range of \(g(x) = \dfrac{1}{x - 2}\).</p>
+<p>Domain: denominator cannot be zero, so \(x - 2 \ne 0\) means \(x \ne 2\). Domain: \(\{x \in \mathbb{R} \mid x \ne 2\}\), or \((-\infty, 2) \cup (2, \infty)\).</p>
+<p>Range: \(\dfrac{1}{x-2}\) can be any real number except \(0\) (since the numerator is a nonzero constant). The horizontal asymptote is \(y = 0\), and the function approaches but never reaches it. Range: \(\{y \in \mathbb{R} \mid y \ne 0\}\), or \((-\infty, 0) \cup (0, \infty)\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A ball is thrown with height \(h(t) = -5t^2 + 20t + 1.5\) (metres) where \(t\) is time in seconds.</p>
+<p>Algebraically, \(h\) is defined for every real \(t\). But in context, time starts at \(t = 0\), and the ball stops when it hits the ground: solve \(-5t^2 + 20t + 1.5 = 0\) by the quadratic formula to get \(t \approx 4.07\) s.</p>
+<p>Domain: \(\{t \in \mathbb{R} \mid 0 \le t \le 4.07\}\). Range: heights from \(0\) up to the vertex value of \(21.5\) m, i.e. \([0, 21.5]\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to set the denominator equal to zero <em>before</em> declaring the domain. Always solve for the forbidden \(x\)-values.</li>
+<li>Cube roots and other odd-index radicals accept negatives: domain of \(\sqrt[3]{x}\) is all real numbers.</li>
+<li>Mixing up brackets and parentheses. Use \([\ ]\) only when the endpoint is included; never use \([\ ]\) with \(\infty\).</li>
+<li>Stating algebraic domain but ignoring contextual restrictions in word problems.</li>
+<li>Confusing "no \(x\)-intercept" with "no \(y\)-value zero in the range" — those are different statements.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.7 — "determine, through investigation, and using the function notation \(f(x)\), key features of the graphs of the functions defined by \(f(x) = x\), \(f(x) = x^2\), \(f(x) = \sqrt{x}\), \(f(x) = \dfrac{1}{x}\), and \(f(x) = \sin x\) (i.e., domain and range, intercepts, increasing/decreasing intervals, symmetry)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt3')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Domain and Range of Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:30</span>
+        <span class="vid-toggle" id="toggle-mcr-yt3">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt3">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/0pNix4eCcno?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=0pNix4eCcno" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.4 &mdash; Inverse Functions \( f^{-1}(x) \)</div>
+<div class="topic-desc">Find inverses algebraically (swap \( x \) and \( y \), solve for \( y \)); reflect graphs across \( y = x \); identify when the inverse is itself a function.</div>
+<div class="summary-card">For \( f(x)=3x-5 \), the inverse is found by writing \( y=3x-5 \), swapping to get \( x=3y-5 \), and solving: \( f^{-1}(x)=\dfrac{x+5}{3} \). The graph of \( f^{-1} \) is the reflection of \( f \) over the line \( y=x \). The inverse of \( f(x)=x^2 \) is not a function unless we restrict the domain to \( x\ge 0 \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The inverse of a function reverses what the function does. If \(f\) takes 3 and turns it into 7, then \(f^{-1}\) takes 7 and turns it back into 3. Symbolically, the rule is \(f^{-1}(f(x)) = x\) and \(f(f^{-1}(x)) = x\). Inverses matter because lots of real questions ask the reverse of the original: if revenue depends on price, what price gives a target revenue? If distance depends on time, when do you arrive at a given distance?</p>
+
+<p>To find an inverse algebraically, swap \(x\) and \(y\) in the equation and solve for the new \(y\). The swap is the algebraic version of reflecting the graph in the line \(y = x\) — every point \((a, b)\) on \(f\) becomes \((b, a)\) on \(f^{-1}\). Because of this reflection, the domain of \(f\) becomes the range of \(f^{-1}\), and vice versa.</p>
+
+<p>A critical caveat: the inverse of a function is itself a function only if the original passes the <em>horizontal</em> line test (every output comes from exactly one input — a one-to-one function). \(f(x) = x^2\) fails this: both \(x = 2\) and \(x = -2\) give output 4, so reversing isn't unique. To get a true inverse function we restrict the domain (e.g. \(x \ge 0\)) before inverting, yielding \(f^{-1}(x) = \sqrt{x}\).</p>
+
+<ul>
+<li><strong>Inverse function</strong> — \(f^{-1}\) reverses \(f\): \(f^{-1}(f(x)) = x\) for every \(x\) in the domain of \(f\).</li>
+<li><strong>One-to-one</strong> — each output comes from exactly one input; only one-to-one functions have functional inverses.</li>
+<li><strong>Horizontal line test</strong> — a graph passes if every horizontal line meets it at most once; equivalent to one-to-one.</li>
+<li><strong>Line of reflection</strong> — graph of \(y = f^{-1}(x)\) is the reflection of \(y = f(x)\) across \(y = x\).</li>
+<li><strong>Domain restriction</strong> — used to force a many-to-one function to become one-to-one before inverting.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Find the inverse of \(f(x) = 3x - 5\).</p>
+<p>Step 1: write \(y = 3x - 5\).</p>
+<p>Step 2: swap \(x\) and \(y\): \(x = 3y - 5\).</p>
+<p>Step 3: solve for \(y\): \(x + 5 = 3y\), so \(y = \dfrac{x + 5}{3}\).</p>
+<p>Therefore \(f^{-1}(x) = \dfrac{x + 5}{3}\).</p>
+<p>Verify: \(f^{-1}(f(x)) = \dfrac{(3x - 5) + 5}{3} = \dfrac{3x}{3} = x\). Correct.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Find the inverse of \(f(x) = x^2 + 1\), restricted to \(x \ge 0\).</p>
+<p>Step 1: \(y = x^2 + 1\).</p>
+<p>Step 2: swap: \(x = y^2 + 1\).</p>
+<p>Step 3: solve for \(y\): \(y^2 = x - 1\), so \(y = \pm\sqrt{x - 1}\). Because we restricted the original to \(x \ge 0\) (giving outputs \(y \ge 1\)), the range of the original becomes the domain of the inverse, and we take the positive root: \(f^{-1}(x) = \sqrt{x - 1}\).</p>
+<p>Domain of \(f^{-1}\): \(x \ge 1\) (matches range of original). Range of \(f^{-1}\): \(y \ge 0\) (matches restricted domain of original).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>The symbol \(f^{-1}(x)\) does <strong>not</strong> mean \(\dfrac{1}{f(x)}\). The \(-1\) is a name, not an exponent. \(\dfrac{1}{f(x)}\) is the reciprocal function, a completely different thing.</li>
+<li>Skipping the swap step or doing it after solving — always swap first, then solve.</li>
+<li>Forgetting that the inverse may not be a function. Always check: does the original pass the horizontal line test?</li>
+<li>When restricting the domain to make an inverse exist, the new range of the inverse must match the chosen restricted domain.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.8 — "determine, through investigation, the relationship between the graph of a function and the graph of its inverse (e.g., the graph of the inverse can be obtained by reflecting the graph of the function in the line \(y = x\); the graph of the inverse is the graph of a function only if the original function is one-to-one)."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt4')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Inverse Functions Test Questions MCR3U — Anil Kumar</span>
+        <span class="vid-duration">14:20</span>
+        <span class="vid-toggle" id="toggle-mcr-yt4">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt4">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fJnLdn__R98?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=fJnLdn__R98" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.5 &mdash; Transformations of Functions: \( a f(k(x-d)) + c \)</div>
+<div class="topic-desc">Identify and apply vertical/horizontal stretches and compressions, reflections, and translations on parent functions \( y=x^2 \), \( y=\sqrt{x} \), \( y=|x| \), \( y=1/x \).</div>
+<div class="summary-card">In \( g(x)=a\,f(k(x-d))+c \): \( a \) controls vertical stretch (\(|a|>1\)) or compression and reflects in the x-axis if negative; \( k \) controls horizontal stretch (\(|k|<1\)) or compression and reflects in the y-axis if negative; \( d \) is a horizontal shift; \( c \) is a vertical shift. Always apply <em>stretches and reflections before translations</em>.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>A small number of parent functions — \(y = x\), \(y = x^2\), \(y = \sqrt{x}\), \(y = |x|\), \(y = \dfrac{1}{x}\), and later \(y = \sin x\) — generate an enormous family of related curves through four transformations: stretches, compressions, reflections, and translations. The general form bundles all four into one expression:</p>
+
+<p>\[ g(x) = a\,f\bigl(k(x - d)\bigr) + c \]</p>
+
+<p>Each parameter has a well-defined effect. The two <em>outside</em> the bracket affect \(y\)-values directly: \(a\) multiplies the output (vertical stretch by \(|a|\); if \(a<0\), reflect in the \(x\)-axis), and \(c\) adds to the output (vertical translation by \(c\)). The two <em>inside</em> the bracket affect \(x\)-values in the opposite way you might expect: \(k\) divides the \(x\)-coordinates by \(|k|\) (horizontal compression if \(|k|>1\), stretch if \(|k|<1\); reflect in the \(y\)-axis if \(k<0\)), and \(d\) <em>adds</em> to the \(x\)-coordinates (translation right by \(d\) when written as \((x - d)\)).</p>
+
+<p>The fastest way to graph a transformation is to track a few "key points" on the parent and apply the rule \((x, y) \to \bigl(\tfrac{x}{k} + d, \, ay + c\bigr)\). Apply stretches and reflections <em>first</em>, then translations. If the inside isn't already in the factored form \(k(x - d)\), factor first.</p>
+
+<ul>
+<li><strong>Vertical stretch/compression</strong> — factor \(a\) acting on \(y\). \(|a|>1\) stretch, \(0<|a|<1\) compression, \(a<0\) reflect in \(x\)-axis.</li>
+<li><strong>Horizontal stretch/compression</strong> — factor \(k\) acting on \(x\). \(|k|>1\) compression, \(0<|k|<1\) stretch, \(k<0\) reflect in \(y\)-axis.</li>
+<li><strong>Translation</strong> — \(c\) shifts up (positive) or down (negative); \(d\) shifts right (positive) or left (negative).</li>
+<li><strong>Mapping rule</strong> — \((x, y) \to \bigl(\tfrac{x}{k} + d,\ ay + c\bigr)\) sends every parent point to its image.</li>
+<li><strong>Parent function</strong> — the simplest member of a family from which others are obtained by transformation.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Sketch \(g(x) = -2(x - 3)^2 + 4\) from the parent \(f(x) = x^2\).</p>
+<p>Identify: \(a = -2\), \(k = 1\), \(d = 3\), \(c = 4\). So the transformation is: vertical stretch by 2, reflect in the \(x\)-axis, translate right 3, translate up 4.</p>
+<p>Parent key points: \((-1, 1), (0, 0), (1, 1), (2, 4), (-2, 4)\).</p>
+<p>Apply the mapping \((x, y) \to (x + 3, -2y + 4)\): \((-1,1) \to (2, 2)\), \((0,0)\to(3, 4)\), \((1,1)\to(4, 2)\), \((2,4)\to(5,-4)\), \((-2,4)\to(1,-4)\).</p>
+<p>Vertex of \(g\) is \((3, 4)\), opens downward. Sketch a parabola through the mapped points.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Describe the transformations applied to \(y = \sqrt{x}\) to obtain \(y = \sqrt{-2x + 6} - 1\).</p>
+<p>Inside the radical, factor out the coefficient of \(x\): \(-2x + 6 = -2(x - 3)\). So \(y = \sqrt{-2(x - 3)} - 1\).</p>
+<p>Identify: \(a = 1\), \(k = -2\), \(d = 3\), \(c = -1\). Transformations: horizontal compression by factor 2, reflection in the \(y\)-axis, translation right 3, translation down 1.</p>
+<p>Mapping: \((x, y) \to (-\tfrac{x}{2} + 3,\ y - 1)\). Parent point \((0,0) \to (3, -1)\); \((4, 2) \to (1, 1)\); \((9, 3) \to (\tfrac{3}{2}, 2)\). The graph "opens" to the left from \((3, -1)\) because of the reflection.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to factor \(k\) out of the bracket before reading off \(d\). \(\sqrt{2x - 6}\) is not "shift right 6" — first rewrite as \(\sqrt{2(x - 3)}\), then \(d = 3\).</li>
+<li>Reversing horizontal effects: an inside factor of \(k = 2\) <em>compresses</em>, not stretches; \((x - 3)\) shifts <em>right</em>, not left.</li>
+<li>Applying translations before stretches. Stretches/reflections are applied to the parent first; then the translations move the already-transformed graph.</li>
+<li>Confusing \(-f(x)\) (reflect in \(x\)-axis) with \(f(-x)\) (reflect in \(y\)-axis). The minus sign's position changes everything.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.9 — "determine, through investigation using technology, the roles of the parameters \(a\), \(k\), \(d\), and \(c\) in functions of the form \(y = af(k(x - d)) + c\), and describe these roles in terms of transformations on the graphs of \(f(x) = x\), \(f(x) = x^2\), \(f(x) = \sqrt{x}\), \(f(x) = \sin x\), and \(f(x) = \dfrac{1}{x}\) [e.g., translations; reflections in the axes; vertical and horizontal stretches and compressions to and from the \(x\)- and \(y\)-axes]."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt5')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Transformation of Functions MCR3U Concept with Examples — Anil Kumar</span>
+        <span class="vid-duration">15:05</span>
+        <span class="vid-toggle" id="toggle-mcr-yt5">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt5">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/q0BVoaiOxRU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=q0BVoaiOxRU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.6 &mdash; Even and Odd Functions; Symmetry</div>
+<div class="topic-desc">Test symmetry algebraically: even iff \( f(-x)=f(x) \) (y-axis symmetric); odd iff \( f(-x)=-f(x) \) (origin symmetric).</div>
+<div class="summary-card">\( f(x)=x^4-3x^2 \) is even because \( f(-x)=(-x)^4-3(-x)^2=x^4-3x^2=f(x) \). \( g(x)=x^3-x \) is odd because \( g(-x)=-x^3+x=-g(x) \). Functions like \( h(x)=x^2+x \) are neither.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Symmetry is one of the most powerful organising ideas in mathematics, and functions exhibit two especially useful kinds of it. A function is <em>even</em> when its graph is symmetric in the \(y\)-axis — flipping the graph left-to-right leaves it unchanged. Algebraically this means replacing \(x\) with \(-x\) gives back the same function: \(f(-x) = f(x)\). The classic example is \(y = x^2\): squaring kills the sign of the input.</p>
+
+<p>A function is <em>odd</em> when its graph has rotational symmetry about the origin — rotating 180° around the origin maps the graph onto itself. Algebraically: \(f(-x) = -f(x)\). The classic example is \(y = x^3\): cubing preserves the sign, but negating the input negates the whole output.</p>
+
+<p>Why test for symmetry? Two reasons. First, it can cut your work in half — once you've graphed half of an even function, you mirror the rest; for odd, you rotate. Second, symmetry is a structural property that shows up across mathematics and physics. Fourier analysis, integration over symmetric intervals, and many physical models all exploit even/odd behaviour. A function can be even, odd, or neither — and most functions are neither.</p>
+
+<ul>
+<li><strong>Even function</strong> — \(f(-x) = f(x)\); graph is symmetric in the \(y\)-axis.</li>
+<li><strong>Odd function</strong> — \(f(-x) = -f(x)\); graph has 180° rotational symmetry about the origin.</li>
+<li><strong>Neither</strong> — \(f(-x)\) equals neither \(f(x)\) nor \(-f(x)\); most polynomials with mixed even-and-odd-degree terms fall here.</li>
+<li><strong>Polynomial heuristic</strong> — a polynomial is even when every term has even degree, odd when every term has odd degree (treating constants as degree 0, which is even).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Classify \(f(x) = x^4 - 3x^2\).</p>
+<p>Compute \(f(-x) = (-x)^4 - 3(-x)^2 = x^4 - 3x^2\). This equals \(f(x)\). <strong>Even.</strong></p>
+<p>The polynomial heuristic also confirms this: every term has even degree (4 and 2).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Classify \(g(x) = x^3 - x\).</p>
+<p>Compute \(g(-x) = (-x)^3 - (-x) = -x^3 + x = -(x^3 - x) = -g(x)\). <strong>Odd.</strong></p>
+<p>Both terms have odd degree (3 and 1), confirming the result.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Classify \(h(x) = x^2 + x\).</p>
+<p>Compute \(h(-x) = (-x)^2 + (-x) = x^2 - x\). Compare to \(h(x) = x^2 + x\) and \(-h(x) = -x^2 - x\). It equals neither, so <strong>neither even nor odd.</strong></p>
+<p>The polynomial has a mix of even-degree (\(x^2\)) and odd-degree (\(x\)) terms — that mixing is exactly what breaks both symmetries.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — Classify \(p(x) = \dfrac{x}{x^2 + 4}\).</p>
+<p>\(p(-x) = \dfrac{-x}{(-x)^2 + 4} = \dfrac{-x}{x^2 + 4} = -p(x)\). <strong>Odd.</strong></p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Saying "if it has no \(y\)-axis symmetry it must be odd." Wrong — most functions are neither.</li>
+<li>Misreading signs after substituting \(-x\). Especially in expressions like \((-x)^3 = -x^3\) vs. \((-x)^2 = x^2\).</li>
+<li>Treating a constant function as odd. \(f(x) = c\) is even (\(c \ne 0\)) since \(f(-x) = c = f(x)\). Only \(f(x) = 0\) is both even and odd.</li>
+<li>Forgetting that for an odd function, \(f(0) = 0\) (because \(f(0) = -f(0)\) forces \(f(0) = 0\)).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.7 — "determine, through investigation, and using the function notation \(f(x)\), key features of the graphs of [parent functions]... (i.e., domain and range, intercepts, increasing/decreasing intervals, <strong>symmetry</strong>)" — symmetry is interpreted here as the even/odd classification.</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt6')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Even and Odd Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:18</span>
+        <span class="vid-toggle" id="toggle-mcr-yt6">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt6">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8VgmBe3ulb8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=8VgmBe3ulb8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 1 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch1_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch1_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch1_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="../mcr3u.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Back to course</div><div>MCR3U Functions</div></a>
+<a href="ch2.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 2 &mdash; Quadratic Functions &amp; Equations</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

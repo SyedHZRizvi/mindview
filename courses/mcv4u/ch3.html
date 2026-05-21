@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCV4U — Calculus and Vectors | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mcv4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCV4U Calculus and Vectors)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>∫ MCV4U: Unit 3: Derivative Applications</h1>
+    <p>Velocity, acceleration, optimization problems</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+            <h2>Unit 3: Derivative Applications</h2>
+            <p>Velocity, acceleration, optimization problems</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Derivatives & Applications</span>
+                <span>📹 10 lessons</span>
+            </div>
+        </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>This unit turns the derivative from an abstract limit into a problem-solving instrument. If \(s(t)\) is position, then \(v(t) = s'(t)\) is velocity and \(a(t) = v'(t) = s''(t)\) is acceleration. The sign of \(v(t)\) tells us direction of motion; the sign of \(a(t)\) tells us whether the object is speeding up or slowing down (when \(v\) and \(a\) have the same sign, speed increases). These second-derivative ideas reappear in curve sketching as concavity.</p>
+            <p>Optimization is the most economically important application of calculus. Whenever you want to minimize cost, maximize area, or find the most efficient size or shape, you translate the situation into a function of one variable, differentiate, set the derivative to zero, and check that you have a maximum rather than a minimum (or vice versa). The <strong>Extreme Value Theorem</strong> guarantees that a continuous function on a closed interval attains both an absolute maximum and an absolute minimum — these occur either at critical points (where \(f'=0\) or is undefined) or at the endpoints.</p>
+            <p>Related rates problems use the chain rule to connect rates that change together: if a balloon's radius and volume both depend on time, then \(\frac{dV}{dt} = \frac{dV}{dr}\cdot \frac{dr}{dt}\). The key is to differentiate an equation in \(r\) and \(V\) implicitly with respect to \(t\), substituting numerical values only after differentiation.</p>
+            <ul>
+              <li><strong>Velocity</strong> — \(v(t) = s'(t)\); a signed quantity indicating speed and direction.</li>
+              <li><strong>Acceleration</strong> — \(a(t) = v'(t) = s''(t)\).</li>
+              <li><strong>Critical number</strong> — value of \(x\) in the domain of \(f\) where \(f'(x) = 0\) or \(f'(x)\) is undefined.</li>
+              <li><strong>Absolute (global) maximum/minimum</strong> — largest/smallest value of \(f\) on its domain.</li>
+              <li><strong>Local (relative) maximum/minimum</strong> — largest/smallest value of \(f\) on some open interval around the point.</li>
+              <li><strong>Extreme Value Theorem</strong> — a continuous function on a closed interval \([a,b]\) attains both an absolute maximum and an absolute minimum on that interval.</li>
+              <li><strong>Related rates</strong> — problems in which several quantities related by an equation vary with time; the chain rule links their rates.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: Closed-interval optimization</p>
+              <p>Find the absolute maximum and minimum of \(f(x) = x^3 - 3x^2 + 2\) on \([-1, 3]\).</p>
+              <p>Differentiate: \(f'(x) = 3x^2 - 6x = 3x(x-2)\). Set \(f'(x)=0\): \(x=0\) or \(x=2\). Both lie in \([-1,3]\).</p>
+              <p>Evaluate at critical points and endpoints: \(f(-1) = -1 - 3 + 2 = -2\); \(f(0) = 2\); \(f(2) = 8 - 12 + 2 = -2\); \(f(3) = 27 - 27 + 2 = 2\).</p>
+              <p>Absolute maximum is \(2\) (attained at \(x=0\) and \(x=3\)); absolute minimum is \(-2\) (attained at \(x=-1\) and \(x=2\)).</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Box optimization</p>
+              <p>An open-top box is built from a 12 cm by 18 cm sheet by cutting squares of side \(x\) from each corner and folding up the sides. Maximize the volume.</p>
+              <p>Volume: \(V(x) = x(12-2x)(18-2x) = x(216 - 60x + 4x^2) = 4x^3 - 60x^2 + 216x\), with \(0 < x < 6\).</p>
+              <p>Differentiate: \(V'(x) = 12x^2 - 120x + 216 = 12(x^2 - 10x + 18)\). Solve \(x^2 - 10x + 18 = 0\) by the quadratic formula: \(x = \frac{10 \pm \sqrt{100-72}}{2} = \frac{10 \pm \sqrt{28}}{2} = 5 \pm \sqrt{7}\).</p>
+              <p>Only \(x = 5 - \sqrt{7} \approx 2.354\) lies in \((0,6)\). Check it is a maximum: \(V''(x) = 24x - 120\); \(V''(5-\sqrt{7}) = 24(5-\sqrt{7}) - 120 = -24\sqrt{7} < 0\), so the function is concave down, confirming a maximum.</p>
+              <p>Maximum volume: \(V(5-\sqrt{7}) \approx 228.2\) cm\(^3\).</p>
+            </div>
+            <ul>
+              <li>Forgetting to check endpoints on a closed-interval optimization.</li>
+              <li>Solving \(f'(x)=0\) and reporting that value as the maximum without verifying it actually is a maximum (second-derivative test or sign chart needed).</li>
+              <li>Substituting numerical values for variables <em>before</em> differentiating in a related rates problem — the variables must remain symbolic through the differentiation step.</li>
+              <li>Confusing velocity (signed) with speed \(=|v(t)|\) (unsigned).</li>
+              <li>Reporting a maximum value that lies outside the domain dictated by the physical constraints of the problem.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "solve problems, using the derivative, that involve instantaneous rates of change, including problems arising from real-world applications (e.g., population growth, radioactive decay, temperature changes, hours of daylight, heights of tides), given the equation of a function." Also B2.5 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations."</p>
+          </div>
+        </details>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 3.1 applies derivatives to <strong>rectilinear motion</strong> — motion along a straight line. If \(s(t)\) gives an object's <em>position</em> (signed displacement from a fixed origin) at time \(t\), then \(v(t) = s'(t)\) is the instantaneous <strong>velocity</strong> and \(a(t) = v'(t) = s''(t)\) is the instantaneous <strong>acceleration</strong>. The signs of these functions carry physical meaning: \(v > 0\) means motion in the positive direction, \(v < 0\) means motion in the negative direction, and \(v = 0\) marks an instant when the object is momentarily at rest (possibly reversing direction).</p>
+                    <p>Speed and velocity are not the same in calculus: <em>speed</em> is \(|v(t)|\), always non-negative, while <em>velocity</em> is the signed quantity \(v(t)\). An object's speed is increasing when \(v\) and \(a\) have the <em>same</em> sign — the engine pushes it in the direction it's already moving. Its speed is decreasing when they have opposite signs — the brake works against motion.</p>
+                    <p>Free-fall and projectile problems give clean examples. For a ball thrown upward, the position function is typically \(s(t) = -\tfrac{1}{2}gt^2 + v_0 t + s_0\). Differentiation gives \(v(t) = -gt + v_0\), and the ball reaches maximum height when \(v(t)=0\), i.e., \(t = v_0/g\). The acceleration is constant: \(a(t) = -g\).</p>
+                    <ul>
+                      <li><strong>Position function</strong> — \(s(t)\); signed displacement from a reference origin.</li>
+                      <li><strong>Velocity</strong> — \(v(t) = s'(t)\); rate of change of position; can be positive or negative.</li>
+                      <li><strong>Acceleration</strong> — \(a(t) = v'(t) = s''(t)\); rate of change of velocity.</li>
+                      <li><strong>Speed</strong> — \(|v(t)|\); always non-negative; magnitude of velocity.</li>
+                      <li><strong>At rest</strong> — \(v(t) = 0\); the object is momentarily stationary, often a turning point.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A particle moves along a line with \(s(t) = t^3 - 9t^2 + 15t + 5\) (metres, seconds). When is the particle at rest? What is its acceleration then?</p>
+                      <p>Velocity: \(v(t) = 3t^2 - 18t + 15 = 3(t^2 - 6t + 5) = 3(t-1)(t-5)\). At rest when \(v(t)=0\): \(t=1\) or \(t=5\).</p>
+                      <p>Acceleration: \(a(t) = 6t - 18\). At \(t=1\): \(a=-12\) m/s² (deceleration; direction change ahead). At \(t=5\): \(a=12\) m/s² (turning back into positive motion).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A ball is thrown upward with initial velocity 20 m/s from a height of 5 m. Using \(g=10\) m/s², find the maximum height.</p>
+                      <p>Position: \(s(t) = -5t^2 + 20t + 5\). Velocity: \(v(t) = -10t + 20\). Max height when \(v(t)=0\): \(t = 2\) s.</p>
+                      <p>\(s(2) = -20 + 40 + 5 = 25\) m. The ball reaches a maximum height of 25 m.</p>
+                    </div>
+                    <ul>
+                      <li>Confusing speed with velocity — a problem asking for "when speed is decreasing" requires comparing signs of \(v\) and \(a\), not just looking at \(v\).</li>
+                      <li>Assuming the object stops permanently at \(v=0\) — usually it reverses direction.</li>
+                      <li>Forgetting to differentiate twice when asked for acceleration; \(a(t) = s''(t)\), not \(s'(t)\).</li>
+                      <li>Ignoring direction sign — \(v(t)=-5\) m/s means moving backward at 5 m/s, not "negative speed".</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.4 — "solve problems, using the derivative, that involve instantaneous rates of change, including problems arising from real-world applications (e.g., population growth, radioactive decay, temperature changes, hours of daylight, heights of tides), given the equation of a function (a polynomial, rational, sinusoidal, exponential, logarithmic, etc. function)" — applied here to displacement-velocity-acceleration.</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v13')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.1 Velocity and Acceleration Part 1</span>
+                        <span class="vid-duration">17:53</span>
+                        <span class="vid-toggle" id="toggle-v13">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v13">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/013_Calculus_3.1_Velocity_and_Acceleration_Part_1.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=OCTYcY7-dpE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v14')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.1 Velocity and Acceleration Part 2</span>
+                        <span class="vid-duration">10:26</span>
+                        <span class="vid-toggle" id="toggle-v14">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v14">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/014_Calculus_3.1_Velocity_and_Acceleration_Part_2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=CCW5kwya4ys" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>Extreme Value Theorem</strong> guarantees that any function continuous on a closed interval \([a,b]\) attains an absolute maximum and an absolute minimum somewhere on that interval. The strategy to find them is the <strong>closed-interval method</strong>: (1) compute \(f'(x)\); (2) find <em>critical numbers</em> in \((a,b)\) — values where \(f'(x)=0\) or \(f'(x)\) is undefined; (3) evaluate \(f\) at every critical number and at both endpoints; (4) the largest value is the absolute max, the smallest is the absolute min.</p>
+                    <p>The reason this finite-list method works: an absolute extremum can occur only at a point where the tangent is horizontal (\(f'=0\)), where the derivative fails to exist (corners, cusps), or at the boundary of the interval. The critical numbers cover the first two cases; the endpoints cover the last. Test all candidates and compare.</p>
+                    <p>This differs from <em>local</em> extrema (covered in Unit 4), which require sign-change tests. For absolute extrema on a closed interval, simply comparing function values at the finite list is enough. If the interval is open or unbounded, the EVT doesn't apply and you need additional arguments (asymptotics, monotonicity) to guarantee existence.</p>
+                    <ul>
+                      <li><strong>Absolute (global) maximum</strong> on \([a,b]\) — the largest \(f(x)\) value over all \(x\) in \([a,b]\).</li>
+                      <li><strong>Absolute (global) minimum</strong> on \([a,b]\) — the smallest \(f(x)\) value over all \(x\) in \([a,b]\).</li>
+                      <li><strong>Critical number</strong> — \(x = c\) in \((a,b)\) where \(f'(c) = 0\) or \(f'(c)\) is undefined.</li>
+                      <li><strong>Extreme Value Theorem</strong> — continuous \(f\) on closed \([a,b]\) attains absolute max and min.</li>
+                      <li><strong>Closed-interval method</strong> — compare \(f\) values at critical numbers and at endpoints.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the absolute extrema of \(f(x) = x^3 - 3x + 1\) on \([-2, 3]\).</p>
+                      <p>Derivative: \(f'(x) = 3x^2 - 3 = 3(x-1)(x+1)\). Critical numbers: \(x=1\) and \(x=-1\), both in the interval.</p>
+                      <p>Evaluate: \(f(-2) = -8 + 6 + 1 = -1\); \(f(-1) = -1 + 3 + 1 = 3\); \(f(1) = 1 - 3 + 1 = -1\); \(f(3) = 27 - 9 + 1 = 19\).</p>
+                      <p>Absolute max: \(19\) at \(x=3\). Absolute min: \(-1\) at \(x=-2\) and at \(x=1\) (tied).</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Find the absolute extrema of \(f(x) = x + \tfrac{4}{x}\) on \([1, 4]\).</p>
+                      <p>Derivative: \(f'(x) = 1 - \tfrac{4}{x^2}\). Set equal to zero: \(x^2 = 4\), so \(x = 2\) (positive value in the interval).</p>
+                      <p>Evaluate: \(f(1) = 1 + 4 = 5\); \(f(2) = 2 + 2 = 4\); \(f(4) = 4 + 1 = 5\).</p>
+                      <p>Absolute max: \(5\) at both endpoints. Absolute min: \(4\) at \(x=2\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting to check the endpoints — they are critical candidates even when \(f'\ne 0\) there.</li>
+                      <li>Including critical numbers outside the interval — only \(c \in (a,b)\) count.</li>
+                      <li>Reporting only the \(x\)-value; the absolute max is the \(y\)-value (a function value), and the \(x\) is "where" it occurs.</li>
+                      <li>Forgetting to check points where \(f'\) is undefined (cusps, vertical tangents within the domain).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "make connections between the sign of the first derivative on either side of a critical number and the existence of a local extremum at that critical number," and B2.4 — "solve problems involving the absolute maximum and absolute minimum values of a function on an interval."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v15')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.2 Maximum and Minimum on an Interval</span>
+                        <span class="vid-duration">8:00</span>
+                        <span class="vid-toggle" id="toggle-v15">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v15">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/015_Calculus_3.2_Maximum_and_Minimum_on_an_Interval.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=zn_ZBGv8YBQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Optimization problems take a real-world scenario (maximize area, minimize cost, fastest route) and convert it into a single-variable extremum problem. The general procedure: (1) read the problem carefully and identify what to maximize or minimize; (2) draw a diagram and label variables; (3) write the <strong>objective function</strong> in terms of two or more variables; (4) use any <strong>constraint</strong> equation to eliminate variables until the objective depends on just one; (5) determine its domain; (6) find critical numbers and apply the closed-interval or first-derivative test; (7) <em>interpret</em> the answer in original problem units.</p>
+                    <p>Step 4 is usually where calculus students stumble: you must reduce the objective to one variable before differentiating. If you have area \(A = xy\) plus a perimeter constraint \(2x + 2y = 40\), solve for \(y = 20 - x\) and substitute to get \(A(x) = x(20-x) = 20x - x^2\). Now \(A\) depends only on \(x\), and \(A'(x) = 20 - 2x = 0\) gives \(x = 10\).</p>
+                    <p>Step 7 is where rigor is rewarded: justify that the critical number you found really is the optimum (not a minimum disguised as a maximum, or a boundary value). Use the second-derivative test or check the sign of \(f'\) around the critical number; or note that \(f\to 0\) at the domain endpoints in fencing problems, so an interior critical max must be the absolute max.</p>
+                    <ul>
+                      <li><strong>Objective function</strong> — the quantity to be maximized or minimized.</li>
+                      <li><strong>Constraint</strong> — an equation relating the variables; used to reduce the objective to one variable.</li>
+                      <li><strong>Domain of optimization</strong> — the set of physically/realistically valid inputs (e.g., positive lengths).</li>
+                      <li><strong>Justification</strong> — second-derivative test, first-derivative sign chart, or boundary comparison.</li>
+                      <li><strong>Interpretation</strong> — state the answer with units and identify which variable achieves the optimum.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A rectangular pen with one side along a river (so no fencing needed there) is to be built with 60 m of fencing. What dimensions maximize the area?</p>
+                      <p>Let the side perpendicular to the river be \(x\) (two such sides), and the side parallel to the river be \(y\) (one such side). Constraint: \(2x + y = 60\), so \(y = 60 - 2x\).</p>
+                      <p>Area: \(A(x) = xy = x(60 - 2x) = 60x - 2x^2\). Domain: \(0 < x < 30\).</p>
+                      <p>\(A'(x) = 60 - 4x = 0 \Rightarrow x = 15\). \(A''(x) = -4 < 0\), so this is a maximum.</p>
+                      <p>Then \(y = 60 - 30 = 30\). Maximum area = \(15 \cdot 30 = 450\) m². Pen dimensions: 15 m by 30 m.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: An open-top box is made from a 12 cm × 12 cm sheet by cutting equal squares of side \(x\) from each corner and folding. Find the value of \(x\) that maximizes volume.</p>
+                      <p>Volume: \(V(x) = x(12 - 2x)^2\). Domain: \(0 < x < 6\).</p>
+                      <p>\(V'(x) = (12-2x)^2 + x\cdot 2(12-2x)(-2) = (12-2x)[(12-2x) - 4x] = (12-2x)(12-6x)\).</p>
+                      <p>Critical numbers: \(x=6\) (boundary) and \(x=2\). Test \(x=2\): \(V''<0\) (or sign chart confirms max). So \(x=2\), \(V = 2 \cdot 8^2 = 128\) cm³.</p>
+                    </div>
+                    <ul>
+                      <li>Trying to optimize a two-variable expression directly without using the constraint to eliminate a variable.</li>
+                      <li>Forgetting to specify the domain; some critical numbers fall outside realistic ranges.</li>
+                      <li>Skipping the second-derivative or sign test; assuming the critical number is automatically the answer.</li>
+                      <li>Stopping at \(x = \) some value without reporting the actual maximum/minimum value and units.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations."</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v16')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization Problems Part 1</span>
+                        <span class="vid-duration">25:28</span>
+                        <span class="vid-toggle" id="toggle-v16">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v16">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/016_Calculus_3.3_Optimization_Problems_Part_1.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=h7uNcUuzFCQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v17')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization Problems Part 2</span>
+                        <span class="vid-duration">24:58</span>
+                        <span class="vid-toggle" id="toggle-v17">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v17">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/017_Calculus_3.3_Optimization_Problems_Part_2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=MPXIPwdIcDI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v18')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization Part 3</span>
+                        <span class="vid-duration">24:33</span>
+                        <span class="vid-toggle" id="toggle-v18">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v18">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/018_Calculus_3.3_Optimization_Part_3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=-ZaCMzyW-AM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v19')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization problem 13 page 146</span>
+                        <span class="vid-duration">12:57</span>
+                        <span class="vid-toggle" id="toggle-v19">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v19">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/019_Calculus_3.3_Optimization_problem_13_page_146.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=nfZMNXrQXE4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Topic 3.4 applies the optimization machinery to economics and science contexts. In economics, the central new vocabulary is the <strong>marginal</strong> family of functions: <em>marginal cost</em> \(MC(x) = C'(x)\) is the instantaneous rate at which total cost \(C(x)\) changes per additional unit produced; <em>marginal revenue</em> \(MR(x) = R'(x)\); and <em>marginal profit</em> \(MP(x) = P'(x)\) where \(P(x) = R(x) - C(x)\). Maximum profit occurs at a critical number of \(P(x)\), i.e., where \(MR(x) = MC(x)\).</p>
+                    <p>In economics problems the constraints often come implicitly through a <em>demand equation</em>: if selling at price \(p\) yields demand \(x = x(p)\) units, then revenue is \(R = p\cdot x(p)\) — a product that requires the product rule when you differentiate. Average cost \(\bar{C}(x) = C(x)/x\) is minimized when \(\bar{C}'(x) = 0\), which simplifies to \(\bar{C}(x) = C'(x)\) — the famous result that minimum average cost occurs where marginal cost equals average cost.</p>
+                    <p>In science contexts the same machinery applies to chemical reaction rates, population growth, drug concentration in the bloodstream, and so on. The objective function might be a rational or exponential expression, and the constraint domain may be open or unbounded — additional care is needed to confirm the critical number is a true extremum.</p>
+                    <ul>
+                      <li><strong>Cost function</strong> \(C(x)\), <strong>revenue function</strong> \(R(x)\), <strong>profit function</strong> \(P(x) = R(x) - C(x)\).</li>
+                      <li><strong>Marginal cost</strong> \(C'(x)\), <strong>marginal revenue</strong> \(R'(x)\), <strong>marginal profit</strong> \(P'(x)\).</li>
+                      <li><strong>Average cost</strong> \(\bar{C}(x) = C(x)/x\); minimized where \(\bar{C}'(x) = 0\), equivalently where \(C'(x) = \bar{C}(x)\).</li>
+                      <li><strong>Demand equation</strong> — relates price \(p\) and quantity demanded \(x\); used to write revenue in one variable.</li>
+                      <li><strong>Equilibrium principle</strong> — maximum profit at \(MR = MC\), provided this is a true maximum.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A company's cost (in dollars) is \(C(x) = 0.01x^2 + 5x + 1000\) and revenue is \(R(x) = 25x - 0.02x^2\). Find the production level that maximizes profit.</p>
+                      <p>Profit: \(P(x) = R(x) - C(x) = (25x - 0.02x^2) - (0.01x^2 + 5x + 1000) = -0.03x^2 + 20x - 1000\).</p>
+                      <p>\(P'(x) = -0.06x + 20 = 0 \Rightarrow x = \tfrac{20}{0.06} \approx 333.3\).</p>
+                      <p>\(P''(x) = -0.06 < 0\), so this is a maximum. Producing about 333 units maximizes profit. \(P(333) \approx -0.03(110889) + 20(333) - 1000 \approx 2333\) dollars.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: A drug's concentration in the bloodstream is modeled by \(C(t) = \frac{5t}{t^2 + 4}\) (mg/L, \(t\) hours after dose). When is concentration maximal?</p>
+                      <p>By the quotient rule: \(C'(t) = \frac{5(t^2+4) - 5t(2t)}{(t^2+4)^2} = \frac{5(4 - t^2)}{(t^2+4)^2}\).</p>
+                      <p>Critical numbers: \(t^2 = 4\), so \(t = 2\) (positive). \(C(2) = \tfrac{10}{8} = 1.25\) mg/L. Maximum concentration: 1.25 mg/L at \(t=2\) h.</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting that maximum revenue is not the same as maximum profit — they differ by the cost function.</li>
+                      <li>Treating "marginal cost" as the total cost — it's the derivative, with units of dollars per unit.</li>
+                      <li>Ignoring units (units sold, dollars per item, mg per litre); the answer needs context to be meaningful.</li>
+                      <li>Optimizing average cost by setting \(C(x)/x = 0\) — that doesn't optimize; differentiating \(\bar{C}\) does.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve optimization problems involving polynomial, simple rational, and exponential functions drawn from a variety of applications, including those arising from real-world situations," with emphasis on economic and scientific contexts.</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v20')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus and Vectors 3.4 Economics and Science Optimization Problems</span>
+                        <span class="vid-duration">28:15</span>
+                        <span class="vid-toggle" id="toggle-v20">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v20">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/020_Calculus_and_Vectors_3.4_Economics_and_Science_Optimization_Problems.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Mras1283EyE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v21')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus Chapter 3 Optimization practice test Part 1</span>
+                        <span class="vid-duration">18:20</span>
+                        <span class="vid-toggle" id="toggle-v21">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v21">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/021_Calculus_Chapter_3_Optimization_practice_test_Part_1.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=FBcgFQxNHeg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v22')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus Chapter 3 Optimization Practice Test Part 3</span>
+                        <span class="vid-duration">11:58</span>
+                        <span class="vid-toggle" id="toggle-v22">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v22">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/022_Calculus_Chapter_3_Optimization_Practice_Test_Part_3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=PJ4H_4kdFRc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p><strong>Related rates</strong> problems ask: given that two quantities are connected by an equation, and one is changing at a known rate, how fast is the other changing? The technique relies on <em>implicit differentiation with respect to time</em>. Each variable in the relating equation is viewed as a function of \(t\); differentiating both sides yields an equation in derivatives like \(\frac{dx}{dt}, \frac{dy}{dt}\) — the rates — and you solve for the unknown one.</p>
+                    <p>The standard recipe: (1) draw a labelled diagram; (2) write an equation that relates the variables (Pythagoras, area formula, similar triangles, volume formula, etc.); (3) differentiate both sides with respect to \(t\); (4) substitute the <em>instantaneous</em> numerical values and the known rate; (5) solve for the unknown rate and report with units. The crucial discipline: do not substitute values until <em>after</em> differentiating — otherwise the relationships between variables vanish.</p>
+                    <p>Common geometric setups: a sliding ladder (Pythagorean relation), a filling cone (volume formula, often with similar triangles to express one variable in terms of another), a moving shadow (similar triangles), or expanding circles/spheres (\(A = \pi r^2\) or \(V = \tfrac{4}{3}\pi r^3\)).</p>
+                    <ul>
+                      <li><strong>Related rates</strong> — multiple time-dependent quantities tied by an equation; differentiating gives a relation among their rates.</li>
+                      <li><strong>Implicit time differentiation</strong> — \(\frac{d}{dt}\) applied to each side; chain rule attaches \(\frac{dx}{dt}\), \(\frac{dy}{dt}\), etc.</li>
+                      <li><strong>Constraint equation</strong> — the geometric or physical relation (Pythagoras, similar triangles, volume formula).</li>
+                      <li><strong>Substitute last</strong> — plug in numerical values only after differentiation; otherwise the relationship is destroyed.</li>
+                      <li><strong>Sign convention</strong> — negative rates indicate decreasing quantities (water draining, ladder slipping).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: A 5 m ladder leans against a wall. The bottom slides outward at 0.3 m/s. How fast is the top sliding down when the bottom is 3 m from the wall?</p>
+                      <p>Let \(x\) = horizontal distance from wall, \(y\) = height on wall. Pythagoras: \(x^2 + y^2 = 25\).</p>
+                      <p>Differentiate with respect to \(t\): \(2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0 \Rightarrow \frac{dy}{dt} = -\frac{x}{y}\cdot\frac{dx}{dt}\).</p>
+                      <p>When \(x=3\), \(y = \sqrt{25-9} = 4\). With \(\frac{dx}{dt} = 0.3\): \(\frac{dy}{dt} = -\tfrac{3}{4}(0.3) = -0.225\) m/s. The top slides DOWN at 0.225 m/s.</p>
+                    </div>
+                    <div class="worked-example">
+                      <p>Worked Example: Water pours into a conical tank (point down) at 2 m³/min. The tank has height 10 m and top radius 5 m. How fast is the water level rising when the water is 6 m deep?</p>
+                      <p>By similar triangles, \(\frac{r}{h} = \frac{5}{10} = \tfrac{1}{2}\), so \(r = h/2\). Volume: \(V = \tfrac{1}{3}\pi r^2 h = \tfrac{1}{3}\pi (h/2)^2 h = \tfrac{\pi h^3}{12}\).</p>
+                      <p>Differentiate: \(\frac{dV}{dt} = \tfrac{\pi h^2}{4}\frac{dh}{dt}\). Solve: \(\frac{dh}{dt} = \frac{4}{\pi h^2}\frac{dV}{dt}\).</p>
+                      <p>At \(h=6\): \(\frac{dh}{dt} = \frac{4 \cdot 2}{\pi \cdot 36} = \frac{2}{9\pi} \approx 0.0707\) m/min.</p>
+                    </div>
+                    <ul>
+                      <li>Substituting numbers before differentiating, eliminating the variables that the chain rule needs.</li>
+                      <li>Forgetting the sign convention — the "ladder slipping down" rate is negative.</li>
+                      <li>Not using similar triangles to express two related geometric quantities in one variable when the constraint demands it.</li>
+                      <li>Reporting the rate without units (m/min, m/s, etc.); the units encode the physical meaning.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.5 — "solve problems arising from real-world applications by applying a mathematical model and the concepts and procedures associated with the derivative to determine mathematical results, and interpret and communicate the results" — emphasized through related-rates contexts.</p>
+                  </div>
+                </details>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt7')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Introduction to Related Rates — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">12:08</span>
+                        <span class="vid-toggle" id="toggle-yt7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt7">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/I9mVUo-bhM8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=I9mVUo-bhM8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcv4u/Unit3_Derivative_Applications_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcv4u/Unit3_Derivative_Applications_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcv4u/Unit3_Derivative_Applications_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

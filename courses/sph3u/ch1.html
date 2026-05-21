@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Physics (Grade 11) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\(', '\)']], displayMath: [['\[', '\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #ea580c; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sph3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH3U Physics)</a></div>
+    <div class="strand-tag">Science — Grade 11 University Preparation</div>
+    <h1>⚡ SPH3U: Unit 1: Kinematics</h1>
+    <p>1-D &amp; 2-D motion, vectors, projectile motion, relative velocity, kinematic equations</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+            <h2>Unit 1: Kinematics</h2>
+            <p>1-D &amp; 2-D motion, vectors, projectile motion, relative velocity, kinematic equations</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Kinematics</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.1 — Position, Displacement, Velocity, Acceleration</div>
+            <div class="topic-desc">Scalars vs. vectors, instantaneous vs. average, sign conventions in 1-D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Kinematics is the geometry of motion — describing how objects move without yet asking why. To describe motion we need a <em>frame of reference</em>: an origin, a direction we call positive, and a clock. Once the frame is set, every kinematic quantity is well-defined. <strong>Position</strong> \( \vec{d} \) is the location of an object relative to the origin (a vector, in metres). <strong>Displacement</strong> \( \Delta\vec{d} = \vec{d}_f - \vec{d}_i \) is the straight-line change in position; it answers "where did you end up, and in what direction?" — fundamentally different from <em>distance</em>, which is the total path length and never decreases.</p>
+                <p><strong>Velocity</strong> \( \vec{v} \) is the rate of change of position and is therefore a vector. Average velocity is \( \vec{v}_\text{avg} = \Delta\vec{d}/\Delta t \). Instantaneous velocity is the limit as \( \Delta t \to 0 \) — the slope of the tangent on a position–time graph. <em>Speed</em>, in contrast, is a scalar equal to distance divided by time, and is always non-negative. <strong>Acceleration</strong> \( \vec{a} \) is the rate of change of velocity, \( \vec{a} = \Delta\vec{v}/\Delta t \), measured in m/s². Acceleration is a vector: a negative sign means it points in the negative direction, which may speed an object up or slow it down depending on its current velocity.</p>
+                <p>Sign conventions matter. If you choose "east is positive", then a car moving west has negative velocity. If the same car is speeding up while heading west, its acceleration is also negative. If it is heading west but braking, its acceleration is positive (it points east). Confusing the sign of velocity with the sign of acceleration is the single most common mistake in Grade 11 kinematics.</p>
+                <ul>
+                  <li><strong>Position</strong> \( \vec{d} \) — vector, m</li>
+                  <li><strong>Displacement</strong> \( \Delta\vec{d} \) — vector, m</li>
+                  <li><strong>Distance</strong> d — scalar (path length), m</li>
+                  <li><strong>Velocity</strong> \( \vec{v} \) — vector, m/s</li>
+                  <li><strong>Speed</strong> \( |\vec{v}| \) — scalar, m/s</li>
+                  <li><strong>Acceleration</strong> \( \vec{a} \) — vector, m/s²</li>
+                  <li><strong>Frame of reference</strong> — origin + positive direction + clock</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Average velocity vs average speed</p>
+                  <p>A jogger runs 400 m east in 80 s, then 300 m west in 60 s. Find average speed and average velocity. Choose east = +.</p>
+                  <p><strong>Step 1.</strong> Total distance = 400 + 300 = 700 m. Total time = 80 + 60 = 140 s.</p>
+                  <p><strong>Step 2.</strong> Average speed = 700/140 = 5.0 m/s (scalar — direction not relevant).</p>
+                  <p><strong>Step 3.</strong> Displacement = +400 − 300 = +100 m (east). Average velocity = +100/140 = +0.71 m/s east.</p>
+                  <p><strong>Step 4.</strong> Notice the dramatic difference: average speed (5.0 m/s) is seven times the magnitude of average velocity (0.71 m/s) because the jogger doubled back. This is why distinguishing scalars from vectors is essential.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing distance with displacement</strong> — distance ≥ |displacement|</li>
+                  <li><strong>Confusing speed with velocity</strong> — speed is the magnitude, velocity carries direction</li>
+                  <li><strong>Forgetting to set a positive direction</strong> — without it, signs are meaningless</li>
+                  <li><strong>Assuming negative acceleration = slowing down</strong> — only if velocity is positive</li>
+                  <li><strong>Dropping the vector arrow in equations</strong> — write \( \vec{v} \), not v, when direction matters</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe and explain different kinds of motion, and apply quantitatively the relationships among displacement, velocity, and acceleration in specific contexts."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Distance, Displacement, Speed &amp; Velocity — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">15:40</span>
+                    <span class="vid-toggle" id="toggle-u1v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-Py2zI29THg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=-Py2zI29THg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Position vs. Time Graphs — Khan Academy</span>
+                    <span class="vid-duration">10:55</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt1">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GtoamALPOP0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=GtoamALPOP0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.2 — Motion Graphs &amp; Kinematic Equations</div>
+            <div class="topic-desc">Slopes, areas, the five kinematic equations of uniformly accelerated motion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Motion graphs are the visual language of kinematics. On a <strong>position–time (d–t) graph</strong>, the slope of the line at any instant is the instantaneous velocity. A horizontal line means the object is at rest; a straight diagonal means constant velocity; a curve means the velocity is changing (acceleration). On a <strong>velocity–time (v–t) graph</strong>, the slope is the acceleration, and the <em>area</em> between the line and the time axis equals the displacement during that interval — this is one of the most powerful insights in Grade 11 physics. On an <strong>acceleration–time (a–t) graph</strong>, the area equals the change in velocity. Learning to translate fluently between d–t, v–t, and a–t graphs is essential.</p>
+                <p>For motion in a straight line with <em>constant acceleration</em>, the five kinematic equations (sometimes called the BIG 5) connect five quantities — \( \Delta d \), \( v_i \), \( v_f \), \( a \), \( t \). Each equation is missing one variable, so you pick the equation that excludes the variable you do not know and do not need. The equations are derived from the definitions of average velocity and acceleration; you should be able to derive them, not just memorise them.</p>
+                <p>The five equations: \( v_f = v_i + at \); \( \Delta d = v_i t + \tfrac{1}{2}at^2 \); \( \Delta d = v_f t - \tfrac{1}{2}at^2 \); \( \Delta d = \tfrac{1}{2}(v_i + v_f)t \); \( v_f^2 = v_i^2 + 2a\Delta d \). Each is valid only when \( a \) is constant.</p>
+                <ul>
+                  <li><strong>Slope of d–t graph</strong> — instantaneous velocity, m/s</li>
+                  <li><strong>Slope of v–t graph</strong> — instantaneous acceleration, m/s²</li>
+                  <li><strong>Area under v–t graph</strong> — displacement, m</li>
+                  <li><strong>Area under a–t graph</strong> — change in velocity, m/s</li>
+                  <li><strong>BIG 5</strong> — five kinematic equations for uniform acceleration</li>
+                  <li><strong>Uniform acceleration</strong> — \( a = \) constant; required for the BIG 5 to apply</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Selecting the right kinematic equation</p>
+                  <p>A drag racer accelerates uniformly from rest and covers 402 m (a quarter mile) in 9.50 s. Find the acceleration and the final velocity.</p>
+                  <p><strong>Step 1.</strong> List knowns: \( v_i = 0 \), \( \Delta d = 402\ \text{m} \), \( t = 9.50\ \text{s} \). Unknowns: a, \( v_f \). Choose direction of motion as positive.</p>
+                  <p><strong>Step 2.</strong> Choose the equation that excludes \( v_f \): \( \Delta d = v_i t + \tfrac{1}{2}at^2 \). With \( v_i = 0 \): \( 402 = \tfrac{1}{2}a(9.50)^2 \).</p>
+                  <p><strong>Step 3.</strong> Solve: \( a = 2(402)/(9.50)^2 = 804/90.25 = 8.91\ \text{m/s}^2 \).</p>
+                  <p><strong>Step 4.</strong> Use \( v_f = v_i + at = 0 + (8.91)(9.50) = 84.6\ \text{m/s} \) (about 305 km/h — realistic for a top-fuel dragster).</p>
+                  <p><strong>Step 5.</strong> Check with a different equation: \( v_f^2 = 0 + 2(8.91)(402) = 7163 \), so \( v_f = 84.6\ \text{m/s}\ \checkmark \).</p>
+                </div>
+                <ul>
+                  <li><strong>Applying the BIG 5 when acceleration is not constant</strong> — they are invalid for variable a</li>
+                  <li><strong>Plugging in negative time</strong> — t is always ≥ 0 in our problems</li>
+                  <li><strong>Forgetting initial velocity</strong> — "from rest" means \( v_i = 0 \); otherwise read carefully</li>
+                  <li><strong>Mixing up \( v_i \) and \( v_f \)</strong> — they correspond to start and end of the chosen interval</li>
+                  <li><strong>Using \( v = d/t \) for non-uniform motion</strong> — that formula gives average, not instantaneous, velocity</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "solve problems involving displacement, velocity, and acceleration in one dimension, using the equations of motion (e.g., for uniformly accelerated motion)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Position, Velocity, Acceleration Graphs — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">10:12</span>
+                    <span class="vid-toggle" id="toggle-u1v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/nUb7xfkc0Ac?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=nUb7xfkc0Ac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.3 — Free Fall &amp; Acceleration Due to Gravity</div>
+            <div class="topic-desc">\( g = 9.8 \) m/s²; sign of \( g \); experimental determination using ticker timer or photogates</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Galileo's revolutionary insight was that, in the absence of air resistance, all objects near Earth's surface fall with the same constant downward acceleration regardless of mass. This acceleration is denoted \( g \), with magnitude approximately 9.81 m/s² (often rounded to 9.8 m/s² for Grade 11 work). A bowling ball and a feather, dropped in a vacuum chamber, hit the floor at the same instant — Apollo 15 astronaut Dave Scott demonstrated this dramatically on the Moon with a hammer and a feather. In our atmosphere a feather falls slowly because air drag, not weaker gravity, retards it.</p>
+                <p>"Free fall" describes any object on which gravity is the only force acting. This includes objects falling straight down, thrown straight up, and even thrown sideways (projectiles, see 1.5). At the top of an upward throw, the velocity is momentarily zero but the acceleration is still 9.8 m/s² downward — gravity does not "pause". The sign of g depends on your axis: if up is positive, then \( a = -9.8\ \text{m/s}^2 \); if down is positive, then \( a = +9.8\ \text{m/s}^2 \). The physics is the same; only the bookkeeping changes.</p>
+                <p>In the lab, g can be measured with a ticker-tape timer (60 dots per second from the AC line), a photogate connected to a smart timer, or modern motion sensors. The classical method drops a metal weight, photographs successive positions, computes velocities for each interval, and finds the slope of the v–t graph. Careful technique yields g within 2% of 9.81 m/s².</p>
+                <ul>
+                  <li><strong>Acceleration due to gravity</strong> g = 9.81 m/s² near Earth's surface (vector, downward)</li>
+                  <li><strong>Free fall</strong> — gravity is the only force acting</li>
+                  <li><strong>Terminal velocity</strong> — speed at which drag equals weight (not present in vacuum)</li>
+                  <li><strong>Up-positive convention</strong> — \( a = -g \), \( v_i \) positive for upward throws</li>
+                  <li><strong>Down-positive convention</strong> — \( a = +g \), useful for dropped-object problems</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Ball thrown vertically upward</p>
+                  <p>A ball is launched straight up from ground level at 19.6 m/s. Take up as positive, so \( a = -9.81\ \text{m/s}^2 \). Find (a) the time to reach maximum height, (b) the maximum height, (c) the total time of flight back to launch height.</p>
+                  <p><strong>Step 1.</strong> At maximum height \( v_f = 0 \). Use \( v_f = v_i + at \): \( 0 = 19.6 + (-9.81)t \), so \( t = 19.6/9.81 = 2.00\ \text{s} \).</p>
+                  <p><strong>Step 2.</strong> Maximum height using \( v_f^2 = v_i^2 + 2a\Delta d \): \( 0 = (19.6)^2 + 2(-9.81)\Delta d \), so \( \Delta d = 384.16/19.62 = 19.6\ \text{m} \).</p>
+                  <p><strong>Step 3.</strong> By symmetry, time to fall back from peak equals time to rise, so total flight time \( = 2 \times 2.00 = 4.00\ \text{s} \). At impact \( v_f = -19.6\ \text{m/s} \) — same speed, opposite direction.</p>
+                  <p><strong>Step 4.</strong> Sanity check: at any height during ascent the ball has the same speed it had at that height during descent (energy conservation, see 3.2).</p>
+                </div>
+                <ul>
+                  <li><strong>Saying "g = 9.8 N/kg"</strong> — that is the gravitational field strength (equal in magnitude but different concept)</li>
+                  <li><strong>Setting \( a = 0 \) at the top of the trajectory</strong> — only velocity is zero; acceleration remains g</li>
+                  <li><strong>Treating "g" as a vector with a sign</strong> — g is the positive magnitude; the sign comes from your axis choice</li>
+                  <li><strong>Forgetting that more-massive objects do not fall faster</strong> (in vacuum)</li>
+                  <li><strong>Including air resistance for a steel ball</strong> — usually negligible over short drops</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "analyse, in qualitative and quantitative terms, the linear motion of objects in horizontal, vertical, and inclined planes (e.g., the motion of an object falling freely under gravity)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Free Fall Physics Problems — Acceleration Due to Gravity — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">21:34</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt2">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/BVgemK1Y2wA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=BVgemK1Y2wA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt14')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Misconceptions About Falling Objects — Veritasium (Common Errors)</span>
+                    <span class="vid-duration">02:46</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt14">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt14">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/_mCC-68LyZM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=_mCC-68LyZM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Kinematic Equations — Five Big Ones — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">17:36</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt3">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ulXdXTkIkAM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=ulXdXTkIkAM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.4 — Vectors &amp; 2-D Motion</div>
+            <div class="topic-desc">Vector addition (graphical, component method), trigonometry review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Most real motion is two-dimensional: a hockey puck slides at an angle, a plane crosses a wind, a ball rolls across a field. To handle 2-D motion we extend the idea of a vector. A <strong>vector</strong> has both magnitude and direction (e.g. 25 m/s at 30° north of east), while a <strong>scalar</strong> has only magnitude (e.g. 25 m/s). Vectors are drawn as arrows whose length represents magnitude and orientation represents direction. Two vectors are equal if they have the same magnitude and direction, regardless of starting position.</p>
+                <p>To add vectors graphically, place them tip-to-tail; the resultant is the arrow from the tail of the first to the tip of the last. The <strong>component method</strong> is more accurate: any 2-D vector can be decomposed into perpendicular components along the x- and y-axes using trigonometry. For a vector \( \vec{A} \) of magnitude A at angle θ measured counter-clockwise from the +x-axis: \( A_x = A\cos\theta \) and \( A_y = A\sin\theta \). To add several vectors, sum their x-components and y-components separately, then reconstruct the resultant: \( R = \sqrt{R_x^2 + R_y^2} \) and \( \theta_R = \tan^{-1}(R_y/R_x) \), being careful about which quadrant the resultant lies in.</p>
+                <p>In two-dimensional kinematics, displacement, velocity, and acceleration are all vector quantities. Crucially, motion in perpendicular directions is independent — the x-equations and y-equations are separate copies of the BIG 5 that share only the time variable. This independence is the key to solving projectile and relative-velocity problems.</p>
+                <ul>
+                  <li><strong>Vector</strong> — quantity with magnitude and direction</li>
+                  <li><strong>Scalar</strong> — quantity with magnitude only</li>
+                  <li><strong>Resultant</strong> — single vector equal to the sum of two or more vectors</li>
+                  <li><strong>Component</strong> — projection of a vector onto an axis; \( A_x = A\cos\theta \), \( A_y = A\sin\theta \)</li>
+                  <li><strong>Magnitude</strong> — \( |\vec{A}| = \sqrt{A_x^2 + A_y^2} \)</li>
+                  <li><strong>Direction angle</strong> — \( \theta = \tan^{-1}(A_y/A_x) \), check quadrant</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Adding two displacement vectors</p>
+                  <p>A hiker walks 4.0 km east, then 3.0 km at 60° north of east. Find the total displacement (magnitude and direction).</p>
+                  <p><strong>Step 1.</strong> Vector A = 4.0 km east. Components: \( A_x = 4.0\cos 0° = 4.0\ \text{km} \), \( A_y = 4.0\sin 0° = 0\ \text{km} \).</p>
+                  <p><strong>Step 2.</strong> Vector B = 3.0 km at 60° N of E. Components: \( B_x = 3.0\cos 60° = 1.50\ \text{km} \), \( B_y = 3.0\sin 60° = 2.60\ \text{km} \).</p>
+                  <p><strong>Step 3.</strong> Sum components: \( R_x = 4.0 + 1.50 = 5.50\ \text{km} \); \( R_y = 0 + 2.60 = 2.60\ \text{km} \).</p>
+                  <p><strong>Step 4.</strong> Magnitude: \( R = \sqrt{5.50^2 + 2.60^2} = \sqrt{30.25 + 6.76} = \sqrt{37.01} = 6.08\ \text{km} \).</p>
+                  <p><strong>Step 5.</strong> Direction: \( \theta = \tan^{-1}(2.60/5.50) = \tan^{-1}(0.473) = 25.3° \) north of east. Total displacement: 6.08 km at 25° N of E.</p>
+                </div>
+                <ul>
+                  <li><strong>Adding magnitudes directly</strong> — only valid if vectors are in the same direction</li>
+                  <li><strong>Mixing degrees and radians</strong> — set calculator mode to DEG for Grade 11 problems</li>
+                  <li><strong>Forgetting to check quadrant</strong> — \( \tan^{-1} \) returns angles in (−90°, 90°)</li>
+                  <li><strong>Using sin for x-component and cos for y</strong> — only if angle is measured from y-axis; check carefully</li>
+                  <li><strong>Mixing units</strong> — convert km/m and h/s before substituting</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "analyse and predict, in quantitative terms, and explain the linear motion of objects in horizontal, vertical, and inclined planes (e.g., a hockey puck on ice, a baseball thrown vertically into the air)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Vectors — Adding Vectors Using Components — Professor Dave</span>
+                    <span class="vid-duration">11:23</span>
+                    <span class="vid-toggle" id="toggle-u1v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ml4NSzCQobk?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=ml4NSzCQobk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.5 — Projectile Motion &amp; Relative Velocity</div>
+            <div class="topic-desc">Independence of horizontal and vertical motion; range, time of flight, max height; river-crossing &amp; aircraft-in-wind problems</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>projectile</strong> is any object thrown or launched into the air on which only gravity acts (air resistance neglected). The single most important idea in projectile motion is the <em>independence of horizontal and vertical motion</em>. Horizontally, no force acts, so \( a_x = 0 \) and \( v_x = \) constant. Vertically, gravity acts, so \( a_y = -9.81\ \text{m/s}^2 \) (up positive). The two motions share only the time variable t. This is why a bullet fired horizontally and a bullet dropped from the same height hit the ground at the same instant — their vertical motions are identical.</p>
+                <p>To solve a projectile problem: (1) resolve the initial velocity into horizontal and vertical components, \( v_{ix} = v_i\cos\theta \), \( v_{iy} = v_i\sin\theta \); (2) write a separate BIG 5 for x and y; (3) use the shared time t to link them. For a projectile launched and landing at the same height, time of flight \( t = 2v_{iy}/g \), maximum height \( h = v_{iy}^2/(2g) \), and range \( R = v_i^2 \sin(2\theta)/g \) — yielding maximum range at θ = 45°.</p>
+                <p><strong>Relative velocity</strong> uses vector subtraction. The velocity of object A as measured by observer B is \( \vec{v}_\text{AB} = \vec{v}_\text{A,ground} - \vec{v}_\text{B,ground} \). A river-crossing problem treats the boat's velocity in still water as one vector and the river current as another; their sum gives the boat's velocity relative to the ground. An aircraft-in-wind problem is identical in structure: airspeed + wind = groundspeed.</p>
+                <ul>
+                  <li><strong>Projectile</strong> — object under gravity only (no air drag, no thrust)</li>
+                  <li><strong>Independence principle</strong> — horizontal and vertical motions are decoupled</li>
+                  <li><strong>Range</strong> R — horizontal displacement to landing</li>
+                  <li><strong>Time of flight</strong> t — total time in the air</li>
+                  <li><strong>Maximum range angle</strong> — 45° (level ground, no air drag)</li>
+                  <li><strong>Relative velocity</strong> — \( \vec{v}_\text{AB} = \vec{v}_A - \vec{v}_B \), all measured in the same ground frame</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Soccer kick</p>
+                  <p>A soccer ball is kicked at 18.0 m/s at 35° above the ground. Find time of flight, maximum height, and range. Use \( g = 9.81\ \text{m/s}^2 \), up positive, ignore air drag.</p>
+                  <p><strong>Step 1.</strong> Components: \( v_{ix} = 18.0\cos 35° = 14.74\ \text{m/s} \); \( v_{iy} = 18.0\sin 35° = 10.32\ \text{m/s} \).</p>
+                  <p><strong>Step 2.</strong> Time of flight (symmetric trajectory): use \( v_{fy} = -v_{iy} \) at landing. From \( v_{fy} = v_{iy} + a_y t \): \( -10.32 = 10.32 + (-9.81)t \), so \( t = 20.64/9.81 = 2.10\ \text{s} \).</p>
+                  <p><strong>Step 3.</strong> Maximum height: \( h = v_{iy}^2/(2g) = (10.32)^2/(2 \times 9.81) = 106.5/19.62 = 5.43\ \text{m} \).</p>
+                  <p><strong>Step 4.</strong> Range: \( R = v_{ix} \cdot t = 14.74 \times 2.10 = 30.95\ \text{m} \). The ball travels about 31 m, peaking at 5.4 m.</p>
+                </div>
+                <ul>
+                  <li><strong>Applying gravity horizontally</strong> — gravity has no horizontal component for projectiles</li>
+                  <li><strong>Forgetting to resolve the initial velocity</strong> — \( v_i \) must be split into x and y</li>
+                  <li><strong>Setting \( v_y = 0 \) at the top and assuming the ball stops</strong> — only vertical velocity is zero</li>
+                  <li><strong>Using \( R = v_i^2\sin(2\theta)/g \) when landing height ≠ launch height</strong> — derive from BIG 5 instead</li>
+                  <li><strong>Adding relative-velocity magnitudes instead of vectors</strong> — must use components</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "solve problems related to motion in a horizontal plane, in a vertical plane, and on an inclined plane, including problems involving frames of reference and relative motion."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Projectile Motion Problems — Professor Dave Explains</span>
+                    <span class="vid-duration">21:46</span>
+                    <span class="vid-toggle" id="toggle-u1v4">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/aY8z2qO44WA?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=aY8z2qO44WA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph3u/Unit1_Kinematics_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph3u/Unit1_Kinematics_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph3u/Unit1_Kinematics_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../sph3u.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH3U — Physics, Grade 11 · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

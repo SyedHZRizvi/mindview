@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS4U — Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #6366f1; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #059669dd, #059669);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS4U Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 12 University Preparation</div>
+    <h1>💻 ICS4U: Unit 3: Modular Programming &amp; Recursion</h1>
+    <p>Functions, parameters (positional/keyword/default), return values, scope (local/global), top-down design, recursion, the call stack</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg, #059669dd, #059669);">
+            <h2>Unit 3: Modular Programming &amp; Recursion</h2>
+            <p>Functions, parameters (positional/keyword/default), return values, scope (local/global), top-down design, recursion, the call stack</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand A2 &middot; Strand C1 (Modular Structure)</span>
+                <span>&#9201;&#65039; ~22 hours</span>
+                <span>&#128221; 5 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.1 &mdash; Defining and Calling Functions</div>
+            <div class="topic-desc">Function definition, parameters vs. arguments, return values, docstrings, the DRY principle</div>
+            <div class="code-snip"><span class="kw">def</span> celsius_to_fahrenheit(c):
+    <span class="str">"""Convert °C to °F."""</span>
+    <span class="kw">return</span> c * <span class="num">9</span>/<span class="num">5</span> + <span class="num">32</span>
+
+<span class="kw">def</span> describe_temp(c):
+    f = celsius_to_fahrenheit(c)
+    <span class="kw">return</span> <span class="str">f"{c}°C = {f:.1f}°F"</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>function</strong> is a named, reusable unit of computation. It takes <strong>parameters</strong> (the names listed in the definition), receives <strong>arguments</strong> (the values supplied at the call site), and may produce a <strong>return value</strong>. The discipline of factoring code into small, well-named functions is the single largest contributor to program quality. Functions enable the <strong>DRY principle</strong> (Don't Repeat Yourself), allow unit testing in isolation, and make the overall logic readable as a sequence of intentions rather than a wall of statements.</p>
+                <p>Every function should have one clear job, named with a verb phrase. <code>celsius_to_fahrenheit</code> is good; <code>doStuff</code> is not. A function that returns a value (a <em>pure function</em>) is easier to reason about than one that prints or mutates external state, because its behaviour is determined entirely by its arguments. Whenever possible, prefer returning a value to printing one — the caller can decide what to do with it.</p>
+                <p><strong>Docstrings</strong> (triple-quoted strings immediately after the <code>def</code> line) are documentation that lives with the code. They are accessible at runtime via <code>help(func)</code> and are read by IDEs to provide tooltips. PEP 257 recommends one-line docstrings for trivial functions and structured "Args/Returns/Raises" sections for complex ones.</p>
+                <ul>
+                  <li><strong>Function definition</strong> — the <code>def name(params):</code> header and body.</li>
+                  <li><strong>Parameter</strong> — a name in the function header.</li>
+                  <li><strong>Argument</strong> — a value passed at a call site.</li>
+                  <li><strong>Return value</strong> — the value produced by the <code>return</code> statement.</li>
+                  <li><strong>Pure function</strong> — output depends only on inputs; no side effects.</li>
+                  <li><strong>Side effect</strong> — modification of external state (I/O, globals, mutating arguments).</li>
+                  <li><strong>DRY</strong> — Don't Repeat Yourself; share logic via functions.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — refactoring to functions</p>
+<pre><code># BEFORE — repetitive, hard to test
+m1, m2, m3 = 88, 76, 91
+avg1 = (m1 + m2 + m3) / 3
+print(f"Avg 1: {avg1:.1f}")
+m4, m5, m6 = 65, 72, 68
+avg2 = (m4 + m5 + m6) / 3
+print(f"Avg 2: {avg2:.1f}")
+
+# AFTER — one function, one responsibility
+def average(marks):
+    """Return the arithmetic mean of a non-empty list of numbers."""
+    if not marks:
+        raise ValueError("cannot average an empty list")
+    return sum(marks) / len(marks)
+
+def report(label, marks):
+    print(f"{label}: {average(marks):.1f}")
+
+report("Avg 1", [88, 76, 91])  # Avg 1: 85.0
+report("Avg 2", [65, 72, 68])  # Avg 2: 68.3</code></pre>
+                  <p><code>average</code> is now O(n) in the length of the list, pure (no I/O), and testable in isolation: a unit test can assert <code>average([1,2,3]) == 2.0</code> without capturing print output. <code>report</code> handles the side effect (printing) separately. Separating concerns this way is fundamental to modular design.</p>
+                </div>
+                <ul>
+                  <li>Forgetting <code>return</code> — Python silently returns <code>None</code>, often producing puzzling downstream errors.</li>
+                  <li>Defining a function inside a loop unnecessarily, paying the definition cost on every iteration.</li>
+                  <li>Naming a function the same as a built-in (<code>sum</code>, <code>list</code>, <code>id</code>) — shadows the built-in.</li>
+                  <li>Mixing concerns: a function that computes <em>and</em> prints <em>and</em> writes to a file is hard to test.</li>
+                  <li>Using global variables inside a function instead of accepting them as parameters.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "use sub-programs (e.g., procedures, functions, methods) within computer programs (e.g., to handle input and output, to perform calculations, to return values)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt20')"><span class="vid-icon">📖</span><span class="vid-title">Python Functions — Definitions, Arguments, and Return Values — Corey Schafer</span><span class="vid-duration">21:48</span><span class="vid-toggle" id="toggle-ics-yt20">▶</span></div><div class="video-player" id="player-ics-yt20"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9Os0o3wzS_I?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=9Os0o3wzS_I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.2 &mdash; Parameters: Positional, Keyword, Default, and *args</div>
+            <div class="topic-desc">Default arguments, named arguments, variable-length argument lists, pass-by-object-reference behavior</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Python's parameter system is more flexible than the simple positional parameters found in many languages. <strong>Positional</strong> arguments are matched to parameters by their order in the call. <strong>Keyword</strong> arguments are matched by name and may appear in any order: <code>connect(host="hub.school.ca", port=22)</code> reads better than <code>connect("hub.school.ca", 22)</code>. <strong>Default</strong> values let parameters be omitted: <code>def greet(name, greeting="Hello")</code> may be called as <code>greet("Ada")</code>. <strong>Variable-length</strong> parameters (<code>*args</code>, <code>**kwargs</code>) collect any extra positional or keyword arguments into a tuple or dict.</p>
+                <p>Python uses <strong>pass-by-object-reference</strong> (sometimes called "pass-by-assignment"): the function parameter is bound to the same object the caller passed. For immutable types (int, float, str, tuple) this is observationally identical to pass-by-value — the function cannot affect the caller's variable. For mutable types (list, dict, set, custom objects) the function <em>can</em> mutate the object in place, and the caller sees the change. Reassigning the parameter (<code>x = something_new</code>) does not affect the caller because reassignment only rebinds the local name.</p>
+                <p>This distinction is the leading source of confusion for students who learned "pass-by-value vs pass-by-reference" in another course. The Python rule is simpler once internalised: <em>names are bindings to objects; arguments share the same binding</em>. Method calls and indexed assignment go through the object and are visible; rebinding the local name is not.</p>
+                <ul>
+                  <li><strong>Positional parameter</strong> — matched to argument by position.</li>
+                  <li><strong>Keyword parameter</strong> — matched by name.</li>
+                  <li><strong>Default value</strong> — used when no argument is supplied.</li>
+                  <li><strong>*args / **kwargs</strong> — collect surplus arguments.</li>
+                  <li><strong>Pass-by-object-reference</strong> — the parameter and argument refer to the same object.</li>
+                  <li><strong>Side effect</strong> — visible change to a mutable argument or external state.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — the mutable-default-argument trap</p>
+<pre><code># BUG — the default list is shared across calls
+def append_bad(item, lst=[]):
+    lst.append(item)
+    return lst
+
+print(append_bad(1))   # [1]
+print(append_bad(2))   # [1, 2]  ← surprise!
+print(append_bad(3))   # [1, 2, 3]
+
+# FIX — sentinel default, create a fresh list inside
+def append_ok(item, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(item)
+    return lst
+
+print(append_ok(1))    # [1]
+print(append_ok(2))    # [1]</code></pre>
+                  <p>The mutable default <code>[]</code> is evaluated <em>once</em> at function-definition time, not at every call. Every invocation that omits the argument therefore shares the same list. The <code>None</code> sentinel pattern is the canonical Python fix; this idiom appears constantly in production code.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — pass-by-object-reference</p>
+<pre><code>def add_one(lst):
+    lst.append(1)     # mutation — caller sees it
+    lst = [99]        # rebinding — caller does NOT see it
+
+data = [10, 20]
+add_one(data)
+print(data)           # [10, 20, 1]</code></pre>
+                  <p>The append modifies the object both names share. The reassignment changes only the local <code>lst</code>; the caller's <code>data</code> still points to the original (now mutated) list.</p>
+                </div>
+                <ul>
+                  <li>Mutable default arguments — single most famous Python trap.</li>
+                  <li>Putting positional parameters after defaulted ones — <code>SyntaxError</code>.</li>
+                  <li>Expecting reassignment of a parameter to affect the caller — it doesn't.</li>
+                  <li>Calling with positional args in the wrong order when keyword args would be clearer.</li>
+                  <li>Overusing <code>**kwargs</code> — opaque to readers and to the type checker.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "use parameter passing to control the scope of variables and the flow of data among sub-programs".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt21')"><span class="vid-icon">📖</span><span class="vid-title">Let's Learn Python — *Args and **Kwargs — Corey Schafer</span><span class="vid-duration">8:24</span><span class="vid-toggle" id="toggle-ics-yt21">▶</span></div><div class="video-player" id="player-ics-yt21"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WWm5DxTzLuk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=WWm5DxTzLuk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.3 &mdash; Variable Scope and the LEGB Rule</div>
+            <div class="topic-desc">Local, Enclosing, Global, Built-in scope; the <code>global</code> keyword; why mutable globals are dangerous</div>
+            <div class="code-snip"><span class="kw">x</span> = <span class="num">10</span>             <span class="com"># global</span>
+
+<span class="kw">def</span> outer():
+    x = <span class="num">5</span>          <span class="com"># enclosing (relative to inner)</span>
+    <span class="kw">def</span> inner():
+        x = <span class="num">1</span>      <span class="com"># local</span>
+        <span class="kw">print</span>(x)   <span class="com"># 1</span>
+    inner()
+    <span class="kw">print</span>(x)       <span class="com"># 5</span>
+
+outer()
+<span class="kw">print</span>(x)           <span class="com"># 10</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>scope</strong> of a name is the region of source code in which the name is visible. Python uses the <strong>LEGB rule</strong> to resolve names: it searches <strong>L</strong>ocal (current function), then <strong>E</strong>nclosing (any surrounding functions), then <strong>G</strong>lobal (module-level), then <strong>B</strong>uilt-in (the always-available names like <code>print</code> and <code>len</code>). The first match wins, and the search stops there. Understanding LEGB explains both why a name resolves the way it does and why some name-related errors appear.</p>
+                <p>Assigning to a name inside a function makes that name <em>local</em> to the function, even if a global with the same name exists. The <code>global</code> keyword overrides this, telling Python "this name refers to the module-level variable, not a new local one". The <code>nonlocal</code> keyword does the analogous job for enclosing scopes (used in closures). Heavy use of <code>global</code> is considered a smell because it makes functions dependent on hidden state — pass values in as parameters and return results explicitly.</p>
+                <p>Scope rules also explain the <strong>UnboundLocalError</strong>: if any line in a function assigns to <code>x</code>, then <em>every</em> reference to <code>x</code> in that function is treated as local, even references that physically precede the assignment. Reading <code>x</code> before the assignment runs raises <code>UnboundLocalError</code> rather than falling back to the global.</p>
+                <ul>
+                  <li><strong>Scope</strong> — the region of code in which a name is visible.</li>
+                  <li><strong>Local scope</strong> — names defined inside the current function.</li>
+                  <li><strong>Enclosing scope</strong> — names in outer functions when nested.</li>
+                  <li><strong>Global scope</strong> — names at module level.</li>
+                  <li><strong>Built-in scope</strong> — names provided by Python itself.</li>
+                  <li><strong>LEGB rule</strong> — order of scope resolution.</li>
+                  <li><strong>Shadowing</strong> — a local name hiding an outer name with the same identifier.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — the UnboundLocalError trap</p>
+<pre><code>counter = 0          # global
+
+def bump_bad():
+    counter += 1     # UnboundLocalError!
+    print(counter)
+
+def bump_global():
+    global counter
+    counter += 1
+    print(counter)
+
+def bump_clean(c):   # preferred: pass it in
+    return c + 1
+
+bump_global()        # 1
+bump_global()        # 2
+counter = bump_clean(counter)
+print(counter)       # 3</code></pre>
+                  <p><code>bump_bad</code> contains an assignment to <code>counter</code>, which marks the name as local for the entire function — so the read on the right-hand side fails before the write happens. <code>bump_global</code> opts in explicitly. <code>bump_clean</code> is the preferred design: parameters in, return values out, no hidden coupling. Each pattern is O(1).</p>
+                </div>
+                <ul>
+                  <li>Assigning to a global name without declaring <code>global</code> — creates a local accidentally.</li>
+                  <li>Using <code>global</code> for everything — defeats the purpose of functions.</li>
+                  <li>Reusing a built-in name (<code>list</code>, <code>str</code>, <code>id</code>, <code>type</code>) as a variable, then being unable to use the built-in.</li>
+                  <li>Expecting a loop variable to remain accessible only inside the loop — in Python it persists after the loop ends.</li>
+                  <li>Confusing <code>nonlocal</code> (enclosing function scope) with <code>global</code> (module scope).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "use parameter passing to control the scope of variables and the flow of data among sub-programs".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt22')"><span class="vid-icon">📖</span><span class="vid-title">Python Variable Scope — LEGB Rule and global/nonlocal — Corey Schafer</span><span class="vid-duration">19:31</span><span class="vid-toggle" id="toggle-ics-yt22">▶</span></div><div class="video-player" id="player-ics-yt22"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/QVdf0LgmICw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=QVdf0LgmICw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.4 &mdash; Recursion: Base Cases and Recursive Cases</div>
+            <div class="topic-desc">Designing the base case, the recursive call, the call stack, and the equivalence with iteration</div>
+            <div class="code-snip"><span class="kw">def</span> factorial(n):
+    <span class="kw">if</span> n &lt;= <span class="num">1</span>:                <span class="com"># base case</span>
+        <span class="kw">return</span> <span class="num">1</span>
+    <span class="kw">return</span> n * factorial(n-<span class="num">1</span>)  <span class="com"># recursive case</span>
+
+<span class="kw">def</span> fib(n):
+    <span class="kw">if</span> n &lt; <span class="num">2</span>:
+        <span class="kw">return</span> n
+    <span class="kw">return</span> fib(n-<span class="num">1</span>) + fib(n-<span class="num">2</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>recursive function</strong> is one that calls itself on a smaller version of the same problem, until it reaches a <strong>base case</strong> that can be answered directly. Every recursive solution has two essential parts: the base case (which must terminate the recursion) and the recursive case (which makes progress toward the base case). Forgetting either one is catastrophic — missing the base case produces infinite recursion until the interpreter raises <code>RecursionError: maximum recursion depth exceeded</code>; missing the progress step does the same.</p>
+                <p>Recursion is implemented via the <strong>call stack</strong>: each function call pushes a new <em>stack frame</em> holding the local variables and the return address; each return pops the top frame. A recursive call of depth d uses O(d) stack memory. Python's default recursion limit is 1000, which means deeply recursive solutions on big inputs can hit the wall even when the algorithm is correct. For problems that lend themselves to iteration (like factorial), the iterative form uses O(1) stack.</p>
+                <p>Recursion shines on problems that are themselves recursively structured: tree traversal, divide-and-conquer sorting, fractals, parsing nested expressions, the Towers of Hanoi, the Euclidean GCD algorithm. For "naturally linear" problems it is often a less efficient way to express what a loop does. Knowing when to choose recursion is a Grade 12 judgement call.</p>
+                <ul>
+                  <li><strong>Base case</strong> — the smallest case answered without further recursion.</li>
+                  <li><strong>Recursive case</strong> — the call(s) on a smaller sub-problem.</li>
+                  <li><strong>Call stack</strong> — the LIFO data structure holding active function calls.</li>
+                  <li><strong>Stack frame</strong> — one entry on the call stack.</li>
+                  <li><strong>Direct recursion</strong> — a function calls itself.</li>
+                  <li><strong>Indirect recursion</strong> — function A calls B which calls A.</li>
+                  <li><strong>Tail recursion</strong> — the recursive call is the very last action; some languages optimise it to a loop (Python does not).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — Euclidean GCD and exponentiation</p>
+<pre><code>def gcd(a, b):
+    if b == 0:               # base case
+        return a
+    return gcd(b, a % b)     # recursive case
+
+print(gcd(252, 105))         # 21
+
+def power(base, exp):
+    if exp == 0:
+        return 1
+    if exp % 2 == 0:
+        half = power(base, exp // 2)
+        return half * half
+    return base * power(base, exp - 1)
+
+print(power(2, 10))          # 1024</code></pre>
+                  <p><code>gcd</code> reduces the problem dramatically each call — by Lamé's theorem the depth is O(log(min(a, b))), so the algorithm runs in <strong>O(log n)</strong> time and O(log n) stack space. <code>power</code> uses fast exponentiation: by squaring on even exponents and decrementing on odd ones, it makes O(log exp) calls instead of the O(exp) of naive repeated multiplication. Both are textbook examples of how recursion captures the algorithm's structure cleanly.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — the naive Fibonacci performance trap</p>
+<pre><code>def fib(n):
+    if n &lt; 2: return n
+    return fib(n-1) + fib(n-2)
+
+# fib(40) takes ~1 second
+# fib(50) takes ~2 minutes
+# Why? T(n) = T(n-1) + T(n-2) + O(1)
+# This grows as O(φⁿ) ≈ O(1.618ⁿ)</code></pre>
+                  <p>The naive recurrence makes exponentially many calls because <code>fib(n-2)</code> is computed inside both branches. Memoisation (storing already-computed results in a dict) drops it to O(n). This is one of the cleanest demonstrations of why algorithm choice matters even when both versions are "correct".</p>
+                </div>
+                <ul>
+                  <li>Forgetting the base case — infinite recursion, <code>RecursionError</code>.</li>
+                  <li>Recursive case that does not make progress toward the base (e.g., calling <code>f(n)</code> instead of <code>f(n-1)</code>).</li>
+                  <li>Using recursion where iteration is simpler and uses O(1) stack.</li>
+                  <li>Naively recursing over overlapping sub-problems without memoisation — exponential blow-up.</li>
+                  <li>Returning the wrong value from the base case (e.g., returning <code>0</code> for empty-product when <code>1</code> is correct).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.3 — "use the technique of recursion in computer programs to solve problems involving repetition".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt6')"><span class="vid-icon">📖</span><span class="vid-title">Recursion for Python Beginners with Recursive Function Examples</span><span class="vid-duration">14:19</span><span class="vid-toggle" id="toggle-ics-yt6">▶</span></div><div class="video-player" id="player-ics-yt6"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/72uVUU1boKo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=72uVUU1boKo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.5 &mdash; Top-Down Design and Stepwise Refinement</div>
+            <div class="topic-desc">Decompose a problem into modules; structure charts; bottom-up integration; library reuse</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Top-down design</strong> is a problem-solving strategy: start with the highest-level statement of what the program must do, and recursively decompose it into sub-tasks until each sub-task is small enough to code in a few lines. The output of this process is a <strong>structure chart</strong>, a tree diagram where each node represents one function and arrows show "calls". Top-down design tames complexity because the programmer reasons about one level at a time; when a sub-task is implemented, the level above can use it without re-examining its internals.</p>
+                <p>The companion technique is <strong>stepwise refinement</strong>: take a pseudocode line like "process all students" and refine it into "for each student, validate the record, compute the GPA, write to the report". Each refinement adds detail without changing the structure above. The final code mirrors the chart — small, named functions that compose into the whole.</p>
+                <p>A complementary strategy, <strong>bottom-up design</strong>, builds reusable utilities first and assembles them into a larger system. In practice, professional software engineers oscillate between the two: top-down to clarify what is needed, bottom-up to leverage what already exists in standard libraries or previous projects. <strong>Library reuse</strong> — using the standard library, well-maintained third-party packages, or in-house modules — is the most cost-effective form of bottom-up design, because someone has already paid the cost of writing and debugging the code.</p>
+                <ul>
+                  <li><strong>Top-down design</strong> — decomposing a problem into sub-problems.</li>
+                  <li><strong>Bottom-up design</strong> — building reusable components first, then composing them.</li>
+                  <li><strong>Stepwise refinement</strong> — iteratively replacing a vague step with a detailed sub-procedure.</li>
+                  <li><strong>Structure chart</strong> — tree diagram of functions and their callers.</li>
+                  <li><strong>Module / library</strong> — a file (or package) of related functions and classes.</li>
+                  <li><strong>Cohesion</strong> — how focused a module is on a single purpose (high is good).</li>
+                  <li><strong>Coupling</strong> — how dependent modules are on each other (low is good).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — designing a marks-report generator</p>
+<pre><code># Top-level intention
+def generate_report(input_csv, output_pdf):
+    students = load_students(input_csv)
+    stats    = compute_class_stats(students)
+    write_pdf(output_pdf, students, stats)
+
+# Refinement of each sub-problem
+def load_students(path):
+    """Read CSV → list[Student]."""
+    ...
+
+def compute_class_stats(students):
+    """Return dict with mean, median, mode, stdev."""
+    ...
+
+def write_pdf(path, students, stats):
+    """Use reportlab to render the report."""
+    ...</code></pre>
+                  <p>The top-level function reads almost like the problem statement. Each sub-function has a single responsibility and can be tested independently. If next year the input format changes from CSV to JSON, only <code>load_students</code> needs to change; <code>compute_class_stats</code> and <code>write_pdf</code> remain untouched. This is the payoff of high cohesion and low coupling. The complexity of each sub-task can be analysed separately — <code>load_students</code> is O(n), <code>compute_class_stats</code> is O(n) (or O(n log n) if it sorts), and <code>write_pdf</code> is O(n) for the body of the document.</p>
+                </div>
+                <ul>
+                  <li>Writing one giant <code>main</code> function with everything inline — impossible to test or reuse.</li>
+                  <li>Skipping the design step and "just coding" — leads to refactors that should have been avoided.</li>
+                  <li>Excessive layers (a function for every two lines) — over-engineered and harder to follow.</li>
+                  <li>High coupling: one module reaches into another's internals instead of using its public API.</li>
+                  <li>Reinventing standard-library functionality (don't write your own <code>sort</code> or <code>csv</code> parser unless that's the assignment).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "use top-down design (i.e., stepwise refinement) and bottom-up design (i.e., incremental implementation) to develop a modular design for a computational problem".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt23')"><span class="vid-icon">📖</span><span class="vid-title">Stepwise Refinement, Decomposition, Modules, Top-Down Design</span><span class="vid-duration">12:25</span><span class="vid-toggle" id="toggle-ics-yt23">▶</span></div><div class="video-player" id="player-ics-yt23"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mtd3kv6C-TI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=mtd3kv6C-TI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics4u/Unit3_Modular_Programming_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics4u/Unit3_Modular_Programming_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics4u/Unit3_Modular_Programming_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS4U &mdash; Computer Science, Grade 12 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

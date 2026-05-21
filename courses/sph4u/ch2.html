@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Chapter 2: Energy and Momentum | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\(','\)']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#059669dd,#059669);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../sph4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH4U Physics)</a></div>
+<div class="strand-tag">Science — Grade 12 University Preparation</div>
+<h1>⚡ SPH4U: Chapter 2: Energy and Momentum</h1>
+<p>Work, kinetic and potential energy, conservation laws, impulse, and collisions</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section">
+        <div class="unit-header" style="background:linear-gradient(135deg, #059669dd, #059669);">
+            <h2>Unit 2: Energy and Momentum</h2>
+            <p>Work, kinetic and potential energy, conservation laws, impulse, and collisions</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Energy and Momentum</span>
+                <span>⏱️ ~20 hours</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 — Work and the Work-Energy Theorem</div>
+            <div class="topic-desc">Work done by constant forces, kinetic energy, work-energy theorem</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Energy is a scalar bookkeeping quantity that — uniquely among physical concepts — is universally conserved. Work is the mechanism by which energy is transferred to or from an object by a force. For a constant force $\vec{F}$ acting through a displacement $\vec{d}$, work is the dot product $W=\vec{F}\cdot\vec{d}=Fd\cos\theta$. The $\cos\theta$ matters: only the component of force <em>along</em> the displacement does work. A force perpendicular to motion (like the normal force on a horizontally sliding block, or the centripetal force on circular motion) does <em>zero</em> work.</p>
+                <p>The work-energy theorem states that the net work done on an object equals the change in its kinetic energy: $W_{net}=\Delta E_k=\tfrac12 m v^2-\tfrac12 m v_0^2$. This is essentially Newton II integrated over distance, and it converts a complicated force-vs-time problem into a simpler force-vs-distance scalar one. For variable forces, work is the area under an $F$ vs. $x$ graph — that's why springs and other non-constant forces are handled through integration in calculus-based physics.</p>
+                <ul>
+                  <li><strong>Work</strong> $W$ — SI unit joule (J); 1 J = 1 N·m = 1 kg·m²/s².</li>
+                  <li><strong>Kinetic energy</strong> $E_k=\tfrac12 mv^2$ (J); always non-negative; depends on $v^2$ so doubling speed quadruples KE.</li>
+                  <li><strong>Power</strong> $P=W/t=\vec{F}\cdot\vec{v}$ (W); 1 W = 1 J/s.</li>
+                  <li><strong>Dimensional check</strong>: $[E_k]=[\text{kg}][\text{m/s}]^2=[\text{kg·m}^2/\text{s}^2]=[\text{J}]$. ✓</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — work and speed</p>
+                  <p>A 1500 kg car accelerates from 10 m/s to 25 m/s. Find the net work done.</p>
+                  <p>Step 1 — initial KE: $E_{k0}=\tfrac12(1500)(10)^2=75{,}000$ J.</p>
+                  <p>Step 2 — final KE: $E_k=\tfrac12(1500)(25)^2=468{,}750$ J.</p>
+                  <p>Step 3 — work-energy theorem: $W_{net}=\Delta E_k=468{,}750-75{,}000=3.94\times 10^5$ J.</p>
+                  <p>Step 4 — if this happens in 8.0 s, average power $P=W/t=3.94\times 10^5/8.0=49{,}200$ W = 49.2 kW (about 66 hp).</p>
+                </div>
+                <ul>
+                  <li><strong>Forgetting the $\cos\theta$ factor</strong> — only the parallel component does work.</li>
+                  <li><strong>Treating work as a vector</strong> — work is a scalar; it can be positive (energy in) or negative (energy out).</li>
+                  <li><strong>Saying "the centripetal force does work"</strong> — it is perpendicular to $\vec{v}$, so $W=0$.</li>
+                  <li><strong>Confusing average force × distance with $\int F\,dx$</strong> — only equal for constant force.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "analyse, and solve problems involving, the relationships between work, kinetic energy, and potential energy."</p>
+              </div>
+            </details>
+            
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_202_20-_20Energy_20and_20Momentum.pdf" target="_blank" class="pdf-link">📄 Unit 2 — Energy & Momentum Notes</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v13')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C4L1: Work Done by a Constant Force, and Kinetic Energy and the Work-Energy Theorem</span>
+                        <span class="vid-duration">2:05:17</span>
+                        <span class="vid-toggle" id="toggle-v13">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v13">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/013_C4L1__Work_Done_by_a_Constant_Force__and_Kinetic_Energy_and_the_Work-Energy_Theorem.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=Nfv1__Ofu_M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 — Potential Energy and Conservation of Energy</div>
+            <div class="topic-desc">Gravitational potential energy, law of conservation of energy, energy transformations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>conservative force</strong> (gravity, spring, electrostatics) has the special property that the work it does between two points is independent of path. This lets us define a potential energy function $U$ such that $W_{cons}=-\Delta U$. The work done <em>by</em> gravity in lowering an object equals the loss of gravitational PE. Near Earth's surface where $g$ is effectively constant, $U_g=mgh$ with $h$ measured from any chosen reference; only <em>changes</em> in PE matter physically.</p>
+                <p>Combining the work-energy theorem with PE gives the law of conservation of <strong>mechanical</strong> energy: when only conservative forces act, $E_k+U=$ constant. If non-conservative forces (friction, applied force, air drag) act, the energy equation becomes $E_{k,0}+U_0+W_{nc}=E_k+U$, where $W_{nc}$ is positive if non-conservative forces add energy (e.g. a push) and negative if they remove it (friction). The broader law of conservation of energy says the total energy of a closed system — including thermal, chemical, electromagnetic, nuclear, etc. — is constant. Friction does not "destroy" energy; it converts mechanical energy into thermal energy.</p>
+                <ul>
+                  <li><strong>Gravitational PE</strong> (near Earth): $U_g=mgh$ (J); reference height is arbitrary.</li>
+                  <li><strong>Mechanical energy</strong> $E_{mech}=E_k+U$ (J) — conserved iff only conservative forces act.</li>
+                  <li><strong>Thermal energy</strong> $Q$ — random KE of molecules; the "destination" of work done against friction.</li>
+                  <li><strong>Efficiency</strong> $\eta=E_{useful}/E_{input}\times 100\%$ — never exceeds 100% by the first law.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — roller coaster with friction</p>
+                  <p>A 500 kg coaster car starts at rest at height 30 m, reaches the bottom with speed 20 m/s. How much energy was lost to friction?</p>
+                  <p>Step 1 — initial energy: $E_0=mgh=500(9.81)(30)=1.47\times 10^5$ J (all PE).</p>
+                  <p>Step 2 — final energy: $E_f=\tfrac12 mv^2=\tfrac12(500)(20)^2=1.00\times 10^5$ J (all KE).</p>
+                  <p>Step 3 — energy "lost" (now thermal): $|W_{nc}|=E_0-E_f=4.7\times 10^4$ J.</p>
+                  <p>Step 4 — efficiency: $\eta=E_f/E_0=68\%$. The remaining 32% became heat and sound.</p>
+                </div>
+                <ul>
+                  <li><strong>Choosing two different reference heights</strong> for $U_0$ and $U_f$ — pick one and stick with it.</li>
+                  <li><strong>Saying "energy was lost"</strong> — it was <em>transformed</em>, never destroyed (first law).</li>
+                  <li><strong>Applying $E_k+U=$ const when friction is present</strong> — must include $W_{nc}$ term.</li>
+                  <li><strong>Confusing kinetic and potential energy signs</strong> — KE is always non-negative; gravitational PE near Earth can be negative if reference is above the object.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "use the law of conservation of energy to solve problems in a variety of contexts, including those involving efficiency."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v14')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C4L2: Gravitational Potential Energy and The Law of Conservation of Energy</span>
+                        <span class="vid-duration">1:40:28</span>
+                        <span class="vid-toggle" id="toggle-v14">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v14">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/014_C4L2__Gravitational_Potential_Energy_and_The_Law_of_Conservation_of_Energy.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=Jp1w2WpgjHw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 — Elastic Potential Energy and Simple Harmonic Motion</div>
+            <div class="topic-desc">Springs, Hooke's law, elastic PE, SHM, conservation with springs</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An ideal spring obeys Hooke's law $F_s=-kx$, where $x$ is the displacement from the natural (unstretched) length and $k$ (N/m) is the spring constant — a stiffness rating. The minus sign is essential: the spring force is always a <em>restoring</em> force, pointing back toward equilibrium. Because $F$ varies linearly with $x$, the work done in stretching from 0 to $x$ is the triangular area under the $F$ vs $x$ graph: $W=\tfrac12 kx^2$, which we call the elastic potential energy $U_s=\tfrac12 kx^2$.</p>
+                <p>When a mass on a spring is displaced and released, the system undergoes <strong>simple harmonic motion</strong> (SHM): $x(t)=A\cos(\omega t+\phi)$, with angular frequency $\omega=\sqrt{k/m}$ and period $T=2\pi\sqrt{m/k}$. SHM is the prototype of <em>every</em> small-amplitude oscillation in physics — pendulums, atomic vibrations in solids, LC circuits — because near any stable equilibrium the restoring force is approximately linear (Taylor expansion). Energy oscillates between $E_k=\tfrac12 mv^2$ and $U_s=\tfrac12 kx^2$, while the total $E=\tfrac12 kA^2$ stays constant.</p>
+                <ul>
+                  <li><strong>Spring constant</strong> $k$ (N/m); larger $k$ = stiffer spring.</li>
+                  <li><strong>Elastic PE</strong> $U_s=\tfrac12 kx^2$ (J) — quadratic in displacement.</li>
+                  <li><strong>Angular frequency</strong> $\omega=\sqrt{k/m}$ (rad/s); <strong>period</strong> $T=2\pi/\omega$ (s) — independent of amplitude.</li>
+                  <li><strong>Max speed</strong> in SHM: $v_{max}=\omega A$, at $x=0$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — spring launches a block</p>
+                  <p>A spring with $k=300$ N/m is compressed 0.15 m and released to launch a 0.50 kg block on a frictionless surface. Find its speed when the spring returns to natural length, and the period if it were attached.</p>
+                  <p>Step 1 — energy conservation: $\tfrac12 k x^2=\tfrac12 m v^2$.</p>
+                  <p>Step 2 — solve for $v$: $v=x\sqrt{k/m}=0.15\sqrt{300/0.50}=0.15(24.5)=3.67$ m/s.</p>
+                  <p>Step 3 — if attached, period $T=2\pi\sqrt{m/k}=2\pi\sqrt{0.50/300}=0.256$ s.</p>
+                  <p>Step 4 — frequency $f=1/T=3.91$ Hz; angular $\omega=24.5$ rad/s, matching the $\sqrt{k/m}$ above. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Dropping the minus in Hooke's law</strong> in vector form — it makes the force a restoring force.</li>
+                  <li><strong>Forgetting the $\tfrac12$ in $U_s$</strong> — area of a triangle, not a rectangle.</li>
+                  <li><strong>Thinking period depends on amplitude</strong> — for an ideal Hookean spring it does not.</li>
+                  <li><strong>Mixing $f$ (Hz) with $\omega$ (rad/s)</strong> — $\omega=2\pi f$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.5 — "analyse, in qualitative and quantitative terms, the relationships among the kinetic and potential energies of a mass undergoing simple harmonic motion."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v15')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C4L3: Elastic Potential Energy and Simple Harmonic Motion, and Spring and Conservation of Energy</span>
+                        <span class="vid-duration">1:47:46</span>
+                        <span class="vid-toggle" id="toggle-v15">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v15">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/015_C4L3__Elastic_Potential_Energy_and_Simple_Harmonic_Motion__and_Spring_and_Conservation_of_Energy.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=hY_QJSdpuqw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 — Momentum and Impulse</div>
+            <div class="topic-desc">Linear momentum, impulse-momentum theorem, conservation of momentum in 1D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Linear momentum $\vec{p}=m\vec{v}$ is the proper way to express Newton's "quantity of motion." In fact Newton II is most precisely stated as $\vec{F}_{net}=d\vec{p}/dt$, which reduces to $m\vec{a}$ only when mass is constant (rockets, where fuel is expelled, are the famous counter-example). The integral of force over time is the <strong>impulse</strong> $\vec{J}=\int \vec{F}\,dt$, and the impulse-momentum theorem says $\vec{J}=\Delta\vec{p}$. This is why airbags work: spreading the same $\Delta p$ over a longer $\Delta t$ reduces the peak $\vec{F}$.</p>
+                <p>If no external force acts on a system, total momentum is conserved: $\sum\vec{p}_i = \sum\vec{p}_f$. This is independent of, and more general than, energy conservation — momentum is conserved in every collision (elastic, inelastic, explosive); kinetic energy is not. Because momentum is a vector, conservation applies <em>component-by-component</em>: $\sum p_x$ before = $\sum p_x$ after, and similarly for $y$.</p>
+                <ul>
+                  <li><strong>Momentum</strong> $\vec{p}=m\vec{v}$ — SI unit kg·m/s, equivalent to N·s; vector quantity.</li>
+                  <li><strong>Impulse</strong> $\vec{J}=\vec{F}_{avg}\Delta t$ (N·s) — equals $\Delta\vec{p}$.</li>
+                  <li><strong>System</strong> — collection of objects you've chosen; "internal" forces between them cancel by Newton III.</li>
+                  <li><strong>Dimensional check</strong>: $[J]=[\text{N}][\text{s}]=[\text{kg·m/s}^2][\text{s}]=[\text{kg·m/s}]=[p]$. ✓</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — recoil of a rifle</p>
+                  <p>A 4.0 kg rifle fires a 0.020 kg bullet at 400 m/s. Find the recoil speed of the rifle.</p>
+                  <p>Step 1 — system: rifle + bullet, both initially at rest, so $p_{total,i}=0$.</p>
+                  <p>Step 2 — conservation: $0=m_b v_b+m_r v_r\Rightarrow v_r=-m_b v_b/m_r$.</p>
+                  <p>Step 3 — compute: $v_r=-(0.020)(400)/4.0=-2.0$ m/s. Minus = opposite direction to bullet.</p>
+                  <p>Step 4 — energy check: $E_{bullet}=1600$ J vs $E_{rifle}=8$ J — KE is NOT conserved (this is an explosion, gas pressure adds KE).</p>
+                </div>
+                <ul>
+                  <li><strong>Treating momentum as a scalar</strong> — always a vector; direction matters.</li>
+                  <li><strong>Confusing momentum and kinetic energy</strong> — $p$ linear in $v$, $E_k$ quadratic in $v$.</li>
+                  <li><strong>Forgetting external forces</strong> — gravity, friction, etc. can change a system's total momentum.</li>
+                  <li><strong>Using $\vec{F}=m\vec{a}$ for variable-mass systems</strong> — must use $d\vec{p}/dt$ form.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.6 — "analyse, and solve problems involving, the law of conservation of momentum in one and two dimensions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v16')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C5L1: Momentum and Impulse, and Conservation of Momentum in One Dimension</span>
+                        <span class="vid-duration">25:01</span>
+                        <span class="vid-toggle" id="toggle-v16">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v16">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/016_C5L1__Momentum_and_Impulse__and_Conservation_of_Momentum_in_One_Dimension.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=mGEcTmflQnQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 — Collisions in One and Two Dimensions</div>
+            <div class="topic-desc">Elastic vs inelastic collisions, perfectly inelastic, 2D glancing collisions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Collisions are classified by what happens to kinetic energy. In an <strong>elastic</strong> collision both momentum AND kinetic energy are conserved — billiard balls and ideal hard-sphere scattering are good approximations. In an <strong>inelastic</strong> collision only momentum is conserved; some KE is converted to heat, sound, or deformation. The extreme case is a <strong>perfectly inelastic</strong> collision where the objects stick together and move with a common final velocity; this loses the maximum possible KE consistent with momentum conservation.</p>
+                <p>For a 1-D elastic collision between $m_1$ (initial velocity $v_1$) and a stationary $m_2$, the conservation equations solve to $v_1'=(m_1-m_2)v_1/(m_1+m_2)$ and $v_2'=2m_1 v_1/(m_1+m_2)$. Key limits: if $m_1=m_2$, the projectile stops and the target takes its full velocity. If $m_1\ll m_2$ (ball off a wall), $v_1'\to -v_1$ (perfect bounce). In 2-D collisions, momentum conservation gives two scalar equations ($p_x$ and $p_y$); if the collision is also elastic, kinetic energy gives a third — that's three equations for the four unknowns of two final velocity vectors, so you need additional info (like a scattering angle).</p>
+                <ul>
+                  <li><strong>Elastic</strong>: $\sum p$ conserved, $\sum E_k$ conserved.</li>
+                  <li><strong>Inelastic</strong>: $\sum p$ conserved, $\sum E_k$ decreases.</li>
+                  <li><strong>Perfectly inelastic</strong>: objects coalesce, common final $\vec{v}$; maximum KE loss.</li>
+                  <li><strong>Coefficient of restitution</strong> $e=|v_{2}'-v_1'|/|v_1-v_2|$ — 1 for elastic, 0 for perfectly inelastic.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — 2-D inelastic collision</p>
+                  <p>A 1500 kg car moving east at 20 m/s collides and locks with a 1000 kg car moving north at 15 m/s. Find their common velocity.</p>
+                  <p>Step 1 — $p_x$: $(1500)(20)+0=(2500)v_x' \Rightarrow v_x'=12.0$ m/s east.</p>
+                  <p>Step 2 — $p_y$: $0+(1000)(15)=(2500)v_y' \Rightarrow v_y'=6.0$ m/s north.</p>
+                  <p>Step 3 — magnitude: $v'=\sqrt{12^2+6^2}=13.4$ m/s.</p>
+                  <p>Step 4 — direction: $\theta=\tan^{-1}(6/12)=26.6°$ N of E. Check KE loss: $E_{k,i}=3.00\times 10^5+1.13\times 10^5=4.13\times 10^5$ J; $E_{k,f}=\tfrac12(2500)(13.4)^2=2.24\times 10^5$ J. Lost $\approx$ 46% to deformation/heat. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Assuming KE is conserved in every collision</strong> — only elastic ones.</li>
+                  <li><strong>Adding momenta as scalars in 2-D</strong> — they are vectors; do $x$ and $y$ separately.</li>
+                  <li><strong>Forgetting sign conventions</strong> — a head-on collision in 1-D needs opposite signs.</li>
+                  <li><strong>Confusing elastic with perfectly inelastic</strong> — opposite ends of the spectrum.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.7 — "analyse, with the aid of vector diagrams, the linear momentum of a collection of objects, and apply quantitatively the law of conservation of linear momentum."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v17')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C5L2: Collisions</span>
+                        <span class="vid-duration">1:01:46</span>
+                        <span class="vid-toggle" id="toggle-v17">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v17">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/017_C5L2__Collisions.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=mrR_KVfOZsQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v18')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C5L3: Head-on Elastic Collisions, and Collisions in Two Dimensions: Glancing Collisions</span>
+                        <span class="vid-duration">1:40:09</span>
+                        <span class="vid-toggle" id="toggle-v18">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v18">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/018_C5L3__Head-on_Elastic_Collisions__and_Collisions_in_Two_Dimensions__Glancing_Collisions.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=_I36EHHQ03g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph4u/Unit2_Energy_and_Momentum_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph4u/Unit2_Energy_and_Momentum_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph4u/Unit2_Energy_and_Momentum_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+            <div style="margin-top:10px;"><a href="../../assessments/sph4u/Strand_B_Energy_and_Momentum_Notes_and_Worksheet.html" style="display:inline-block;padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Strand B — Notes &amp; Worksheet</a></div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch1.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 1</a>
+<a href="ch3.html" style="padding:10px 18px;background:#dc2626;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 3 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH4U Physics · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

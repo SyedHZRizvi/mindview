@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 6: Financial Mathematics | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit6">
+<div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+<h2>Chapter 6: Financial Mathematics</h2>
+<p>Compound interest, present/future value, ordinary annuities, mortgages</p>
+<div class="unit-meta">
+<span>📚 Strand C: Discrete Functions</span>
+<span>⏱️ ~16h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.1 &mdash; Compound Interest: Future Value &amp; Present Value</div>
+<div class="topic-desc">Apply \( A=P(1+i)^n \); solve for \( P \) (present value) by rearranging: \( P=A(1+i)^{-n} \).</div>
+<div class="summary-card">How much to invest now to have \$10{,}000 in 8 years at 5%/yr compounded annually? \( P=10000(1.05)^{-8}\approx \$6{,}768.39 \). Present value answers &ldquo;what's it worth today?&rdquo;; future value answers &ldquo;what will it grow to?&rdquo;.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Compound interest is built on a single formula: \(A = P(1 + i)^n\), where \(P\) is principal, \(i\) is the rate per compounding period, \(n\) is the number of compoundings, and \(A\) is the future value. We already saw this in Chapter 4 as an application of exponential functions. Chapter 6 sharpens the language and starts working backwards: given a target future value, what principal do you need today?</p>
+
+<p>That backwards question is the <em>present value</em> question, and it's just algebra. Rearrange \(A = P(1 + i)^n\) for \(P\):</p>
+
+<p>\[ P = A(1 + i)^{-n} = \frac{A}{(1 + i)^n} \]</p>
+
+<p>The two forms are identical. Both express the principle that a future dollar is worth less than a dollar today — money in your hand can earn interest, so to compensate for waiting, future money must be <em>discounted</em>.</p>
+
+<p>The conceptual upshot: <strong>present value (PV)</strong> answers "what is a future amount worth today?"; <strong>future value (FV)</strong> answers "what will a present amount grow to?". They are inverses — multiply by \((1 + i)^n\) to go forward in time; multiply by \((1 + i)^{-n}\) to go backward.</p>
+
+<p>This idea — the <em>time value of money</em> — is the foundation of all of finance. Equating present values is how we compare a lump sum with a stream of payments, evaluate loans, price bonds, and make any decision that involves money over time.</p>
+
+<ul>
+<li><strong>Principal \(P\)</strong> — initial deposit (or the unknown in a present-value problem).</li>
+<li><strong>Amount \(A\)</strong> — final value (often FV).</li>
+<li><strong>Future value (FV)</strong> — value at a future date; \(FV = PV(1 + i)^n\).</li>
+<li><strong>Present value (PV)</strong> — value today; \(PV = FV(1 + i)^{-n}\).</li>
+<li><strong>Discount factor</strong> — \((1 + i)^{-n}\); shrinks future money to its present equivalent.</li>
+<li><strong>Time value of money</strong> — a dollar today is worth more than a dollar tomorrow.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — How much should you invest today to have \$10{,}000 in 8 years at 5%/yr compounded annually?</p>
+<p>\(A = 10000, i = 0.05, n = 8\).</p>
+<p>\(P = 10000(1.05)^{-8} = \dfrac{10000}{1.05^8} = \dfrac{10000}{1.47746} \approx \$6{,}768.39\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Bob's parents want \$50{,}000 available for his tuition in 18 years. The bank offers 4%/yr compounded semi-annually. What lump sum should they invest today?</p>
+<p>\(A = 50000\), periodic rate \(i = 0.04/2 = 0.02\), \(n = 18 \times 2 = 36\) compoundings.</p>
+<p>\(P = 50000(1.02)^{-36} = \dfrac{50000}{1.02^{36}} \approx \dfrac{50000}{2.0399} \approx \$24{,}511\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — \$4500 invested today at 3.5%/yr compounded quarterly. What's it worth in 12 years?</p>
+<p>\(i = 0.035/4 = 0.00875\), \(n = 48\).</p>
+<p>\(A = 4500(1.00875)^{48} \approx 4500 \cdot 1.5198 \approx \$6{,}839.18\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — Which is the better deal today: \$8000 now or \$10{,}000 in 6 years? Use 4.5%/yr compounded annually for comparison.</p>
+<p>Convert the \$10{,}000 to present value: \(PV = 10000(1.045)^{-6} \approx 10000 / 1.3023 \approx \$7{,}679.10\).</p>
+<p>\$8000 today is worth more than \$10{,}000 in 6 years (at this rate). Take the \$8000 now.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Using the annual rate as \(i\) when compounding is more frequent. Always set \(i = (\text{annual rate}) / (\text{periods per year})\).</li>
+<li>Forgetting the negative exponent when discounting. \(PV = FV(1 + i)^{-n}\), not \((1 + i)^n\).</li>
+<li>Comparing dollar amounts at different dates without first converting to a common point in time.</li>
+<li>Round-off errors in long compoundings — keep at least 6 decimal places in intermediate work, then round at the end.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "solve problems, using a TVM Solver on a graphing calculator or on a website, that involve the calculation of the amount, \(A\) (also referred to as future value, \(FV\)), the principal, \(P\) (also referred to as present value, \(PV\)), and the interest rate per compounding period, \(i\), in the compound interest formula \(A = P(1 + i)^n\) [or \(FV = PV(1 + i)^n\)]"; C3.4 — "...calculate the amount or the principal in problems involving compound interest..."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt26')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Present Value and Future Value — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:55</span>
+        <span class="vid-toggle" id="toggle-mcr-yt26">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt26">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cy4PiY5ERTI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=cy4PiY5ERTI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.2 &mdash; Compounding Periods &amp; Effective Rates</div>
+<div class="topic-desc">Convert a nominal annual rate to a periodic rate \( i = j/m \) for \( m \) compounding periods per year; compare effective annual yields.</div>
+<div class="summary-card">A 6% annual rate compounded monthly: \( i=0.06/12=0.005 \); after 1 year, factor is \( (1.005)^{12}\approx 1.0617 \), so the effective annual rate is \( \approx 6.17\% \). More frequent compounding → higher effective yield.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Two banks each advertise "6% per year" on a savings account. One compounds annually; the other monthly. They look the same on paper, but they don't give you the same return. The more often interest is compounded, the more times you earn interest-on-interest within a year, and the higher the real annual yield. To compare fairly, we use the <em>effective annual rate</em> (EAR).</p>
+
+<p>A <em>nominal</em> annual rate \(j\) compounded \(m\) times per year produces a periodic rate \(i = j/m\) per period. After one full year (\(m\) periods), \$1 grows to:</p>
+
+<p>\[ (1 + i)^m = \left(1 + \frac{j}{m}\right)^m \]</p>
+
+<p>The effective annual rate is this growth factor minus 1:</p>
+
+<p>\[ \text{EAR} = \left(1 + \frac{j}{m}\right)^m - 1 \]</p>
+
+<p>So 6% compounded annually gives EAR = 6%. 6% compounded monthly gives EAR = \((1.005)^{12} - 1 \approx 6.168\%\). 6% compounded daily gives EAR = \((1 + 0.06/365)^{365} - 1 \approx 6.183\%\). The more frequent the compounding, the higher the EAR — but with rapidly diminishing returns. As \(m \to \infty\) the limit is \(e^{0.06} - 1 \approx 6.184\%\) (continuous compounding, a Grade 12 topic).</p>
+
+<p>EAR is the consumer-facing number you compare. In Canada, mortgages must by law disclose the rate compounded semi-annually (a regulation). Investments may use any frequency. Knowing how to convert between nominal and effective rates is essential for honest comparisons.</p>
+
+<ul>
+<li><strong>Nominal annual rate \(j\)</strong> — the stated yearly rate, before accounting for compounding.</li>
+<li><strong>Compounding frequency \(m\)</strong> — number of times per year interest is added; \(m = 1\) (annual), 2 (semi-annual), 4 (quarterly), 12 (monthly), 52 (weekly), 365 (daily).</li>
+<li><strong>Periodic rate \(i\)</strong> — \(j/m\), the rate per compounding period.</li>
+<li><strong>Effective annual rate (EAR)</strong> — actual annual return: \((1 + j/m)^m - 1\).</li>
+<li><strong>Equivalent rates</strong> — two different (nominal, frequency) pairs are equivalent if they have the same EAR.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Find the EAR for a 6% nominal rate compounded monthly, quarterly, semi-annually, and annually.</p>
+<p>Monthly: \(i = 0.005\), \((1.005)^{12} \approx 1.06168\), EAR \(\approx 6.17\%\).</p>
+<p>Quarterly: \(i = 0.015\), \((1.015)^4 \approx 1.06136\), EAR \(\approx 6.14\%\).</p>
+<p>Semi-annually: \(i = 0.03\), \((1.03)^2 = 1.0609\), EAR = \(6.09\%\).</p>
+<p>Annually: EAR \(= 6.00\%\).</p>
+<p>The pattern: more frequent compounding → higher EAR; the gap is small at this rate.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Convert 8% compounded semi-annually to its monthly-compounded equivalent.</p>
+<p>EAR: \((1.04)^2 - 1 = 0.0816\) (i.e. 8.16%).</p>
+<p>Find monthly \(i\) such that \((1 + i)^{12} = 1.0816\): \(1 + i = 1.0816^{1/12} \approx 1.006558\), so \(i \approx 0.006558\). The equivalent monthly nominal rate is \(12i \approx 0.0787 = 7.87\%/\text{yr}\) compounded monthly.</p>
+<p>(This kind of conversion is exactly what's done to find the monthly rate on a Canadian mortgage that's quoted semi-annually.)</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Bank A offers 4.9% compounded daily; Bank B offers 5% compounded annually. Which is the better savings rate?</p>
+<p>A's EAR: \((1 + 0.049/365)^{365} - 1 \approx 0.05022 = 5.02\%\).</p>
+<p>B's EAR: \(5.00\%\) (already annual).</p>
+<p>Bank A is slightly better — the more frequent compounding overcomes the lower nominal rate.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Comparing nominal rates with different compounding frequencies. Always convert to EAR first.</li>
+<li>Forgetting that \(m\) is per year, not the number of periods in the whole problem.</li>
+<li>Confusing the periodic rate with the effective rate. Periodic = nominal/\(m\); effective = \((1 + i)^m - 1\).</li>
+<li>Rounding intermediate calculations too aggressively — small rate errors compound into noticeable dollar errors over long time horizons.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.4 — "determine, through investigation using technology, the effect of changing the conditions (i.e., the payments, the frequency of the payments, the interest rate, the compounding period) of an ordinary simple annuity (i.e., an annuity in which payments are made at the end of each period, and compounding and payment periods are the same)..." and C3.3 — "solve problems, using a TVM Solver on a graphing calculator or on a website, that involve the calculation of the amount, \(A\)..., the principal, \(P\)..., and the interest rate per compounding period, \(i\), in the compound interest formula \(A = P(1 + i)^n\)..."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt27')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Effective Annual Interest Rate — Edspira</span>
+        <span class="vid-duration">10:22</span>
+        <span class="vid-toggle" id="toggle-mcr-yt27">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt27">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Fy8Zd6QvwnU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Fy8Zd6QvwnU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.3 &mdash; Future Value of an Ordinary Annuity</div>
+<div class="topic-desc">Use \( FV = R\,\dfrac{(1+i)^n - 1}{i} \) for equal periodic deposits \( R \) made at the end of each period.</div>
+<div class="summary-card">Save \$200 monthly for 30 years at 6%/yr compounded monthly: \( i=0.005, n=360, R=200 \). \( FV=200\cdot\dfrac{1.005^{360}-1}{0.005}\approx \$200{,}903.01 \). Notice the formula is a finite geometric series — Ch 5 in disguise.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>An <em>annuity</em> is a stream of equal periodic payments. You contribute \$200 a month to an RRSP; an insurance company pays a retiree \$1500 a month; you make a fixed mortgage payment every month. The mathematics is the same in each case: you're either adding to or drawing from an account that earns interest between payments.</p>
+
+<p>The simplest case is an <strong>ordinary simple annuity</strong>: payments are made at the <em>end</em> of each compounding period (hence "ordinary"), and the payment period equals the compounding period (hence "simple"). For example, \$200 deposited at the end of every month into an account compounded monthly.</p>
+
+<p>The <strong>future value</strong> of an ordinary simple annuity is the total amount accumulated just after the final payment. Each payment grows separately by compound interest until that final date, and then they're added together. The formula:</p>
+
+<p>\[ FV = R \cdot \frac{(1 + i)^n - 1}{i} \]</p>
+
+<p>where \(R\) is the regular payment, \(i\) is the periodic interest rate, and \(n\) is the total number of payments.</p>
+
+<p>Where does this formula come from? The first payment compounds for \(n - 1\) periods (growing to \(R(1 + i)^{n - 1}\)); the second for \(n - 2\) (\(R(1 + i)^{n - 2}\)); ...; the last payment for 0 periods (\(R\)). Sum: \(R(1 + i)^{n - 1} + R(1 + i)^{n - 2} + \cdots + R\) — that's a geometric series with \(a = R\), ratio \(1 + i\), \(n\) terms. The geometric-series formula collapses it to the boxed expression. <em>Chapter 5 in disguise.</em></p>
+
+<ul>
+<li><strong>Annuity</strong> — series of equal periodic payments.</li>
+<li><strong>Ordinary annuity</strong> — payments at the end of each period.</li>
+<li><strong>Simple annuity</strong> — payment period equals compounding period.</li>
+<li><strong>Future value of annuity \(FV\)</strong> — total just after the last payment.</li>
+<li><strong>Annuity factor</strong> — \(\dfrac{(1 + i)^n - 1}{i}\); the value of one dollar paid every period for \(n\) periods, accumulated to the end.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Save \$200 at the end of every month for 30 years in an account paying 6%/yr compounded monthly. What's the value at the end?</p>
+<p>\(R = 200, i = 0.06/12 = 0.005, n = 30 \times 12 = 360\).</p>
+<p>\(FV = 200 \cdot \dfrac{(1.005)^{360} - 1}{0.005}\). Compute \(1.005^{360} \approx 6.02258\). Numerator: \(6.02258 - 1 = 5.02258\). Quotient: \(5.02258 / 0.005 = 1004.515\). Then \(FV \approx 200 \cdot 1004.52 \approx \$200{,}903.01\).</p>
+<p>Total contributions: \(360 \cdot 200 = \$72{,}000\). Interest earned: \(\approx \$128{,}903\). Most of the final value is compound interest — the magic of starting early.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A teen-saver deposits \$50 each month for 5 years at 3%/yr compounded monthly. Find FV.</p>
+<p>\(R = 50, i = 0.0025, n = 60\).</p>
+<p>\(FV = 50 \cdot \dfrac{(1.0025)^{60} - 1}{0.0025}\). \(1.0025^{60} \approx 1.16162\). Numerator \(\approx 0.16162\). Quotient \(\approx 64.647\). \(FV \approx 50 \cdot 64.65 \approx \$3{,}232\).</p>
+<p>Total contributions: \(50 \cdot 60 = \$3{,}000\). Interest \(\approx \$232\) — modest, but the habit matters more than the rate at this stage.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — What monthly payment is needed to reach \$1{,}000{,}000 in 40 years at 7%/yr compounded monthly?</p>
+<p>Rearrange the formula for \(R\): \(R = \dfrac{FV \cdot i}{(1 + i)^n - 1}\).</p>
+<p>\(i = 7/12 / 100 \approx 0.005833\), \(n = 480\). \((1.005833)^{480} \approx 16.4257\). Denominator: \(15.4257\). Annuity factor: \(15.4257 / 0.005833 \approx 2644.5\).</p>
+<p>\(R = 1{,}000{,}000 / 2644.5 \approx \$378.16\) per month.</p>
+<p>Compounded over 40 years, this turns about \$181,000 of deposits into a million. Compound interest, again.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Using the annual rate as \(i\). Always use the periodic rate.</li>
+<li>Counting years instead of payments for \(n\). \(n\) is the total number of payments.</li>
+<li>Forgetting that the formula assumes payments at the <em>end</em> of each period. "Annuity due" (payment at the beginning) requires multiplying FV by an extra factor of \((1 + i)\).</li>
+<li>Confusing FV (the goal of saving) with PV (the lump sum needed today).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "solve problems, using technology (e.g., scientific calculator, spreadsheet, graphing calculator), that involve the amount, the present value, and the regular payment of an ordinary simple annuity"; C3.4 — connecting compound interest, geometric sequences, and exponential growth (which underpins the annuity formula).</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt28')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Future Value of an Annuity — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:36</span>
+        <span class="vid-toggle" id="toggle-mcr-yt28">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt28">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bcuXY8WkjF4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=bcuXY8WkjF4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.4 &mdash; Present Value of an Ordinary Annuity</div>
+<div class="topic-desc">Use \( PV = R\,\dfrac{1-(1+i)^{-n}}{i} \) to find the lump sum equivalent to a stream of equal future payments.</div>
+<div class="summary-card">A retiree wants \$2{,}000/month for 25 years at 4%/yr compounded monthly: \( i=0.04/12 \approx 0.00333, n=300 \). \( PV \approx 2000\cdot \dfrac{1-(1.00333)^{-300}}{0.00333}\approx \$378{,}824 \). The required lump-sum invested today.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The future value of an annuity tells you what a stream of payments grows to. The <em>present value</em> of an annuity tells you what a stream of future payments is worth today — the lump sum that, invested at the same rate, would generate exactly that stream of payments.</p>
+
+<p>The formula for an ordinary simple annuity (payments at the end of each period):</p>
+
+<p>\[ PV = R \cdot \frac{1 - (1 + i)^{-n}}{i} \]</p>
+
+<p>where \(R\) is the regular payment, \(i\) is the periodic rate, \(n\) is the total number of payments.</p>
+
+<p>The reasoning is the same time-value-of-money idea, applied in reverse. The first payment of \(R\) will arrive at the end of period 1; its present value is \(R(1 + i)^{-1}\). The second arrives at end of period 2; PV is \(R(1 + i)^{-2}\). And so on. Sum the PVs: \(R(1 + i)^{-1} + R(1 + i)^{-2} + \cdots + R(1 + i)^{-n}\). That's a geometric series with first term \(R(1 + i)^{-1}\) and ratio \((1 + i)^{-1}\). Summing it produces the boxed formula.</p>
+
+<p>PV-of-annuity problems are everywhere: how much do you need in your retirement account at age 65 to fund \$3{,}000/month for 30 years? How much can you borrow if you can afford \$500/month payments for 5 years? What's a "lottery prize of \$1 million paid as \$50{,}000/yr for 20 years" actually worth today? All are present-value computations.</p>
+
+<ul>
+<li><strong>Present value of an annuity \(PV\)</strong> — lump sum equivalent to all future payments, discounted to today.</li>
+<li><strong>Discount factor</strong> — \((1 + i)^{-n}\) appears inside the formula.</li>
+<li><strong>Annuity present-value factor</strong> — \(\dfrac{1 - (1 + i)^{-n}}{i}\); the PV of one dollar paid every period for \(n\) periods.</li>
+<li><strong>Lottery vs lump sum</strong> — advertised "millions over 20 years" is always worth less than the headline number due to discounting.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A retiree wants to withdraw \$2{,}000 at the end of every month for 25 years from an account paying 4%/yr compounded monthly. How much must be in the account at retirement?</p>
+<p>\(R = 2000, i = 0.04/12 = 0.003333\), \(n = 25 \cdot 12 = 300\).</p>
+<p>\(PV = 2000 \cdot \dfrac{1 - (1.003333)^{-300}}{0.003333}\).</p>
+<p>Compute \((1.003333)^{300} \approx 2.7138\), so \((1.003333)^{-300} \approx 0.3685\). Numerator: \(1 - 0.3685 = 0.6315\). Quotient: \(0.6315 / 0.003333 \approx 189.45\). Then \(PV \approx 2000 \cdot 189.45 \approx \$378{,}824\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A car loan offers payments of \$385 per month for 5 years at 6.9%/yr compounded monthly. How much is being borrowed?</p>
+<p>\(R = 385, i = 0.069/12 = 0.00575\), \(n = 60\).</p>
+<p>\(PV = 385 \cdot \dfrac{1 - (1.00575)^{-60}}{0.00575}\).</p>
+<p>\(1.00575^{60} \approx 1.41203\); \((1.00575)^{-60} \approx 0.70820\). Numerator: \(0.29180\). Quotient: \(0.29180 / 0.00575 \approx 50.748\). Then \(PV \approx 385 \cdot 50.75 \approx \$19{,}538\).</p>
+<p>Total paid over 5 years: \(385 \cdot 60 = \$23{,}100\). Interest: \$23,100 − \$19,538 ≈ \$3,562.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A lottery advertises a prize of \$50{,}000 per year for 20 years (\$1 million total). With money worth 5%/yr compounded annually, what's the lump-sum equivalent today?</p>
+<p>\(R = 50000, i = 0.05, n = 20\).</p>
+<p>\(PV = 50000 \cdot \dfrac{1 - (1.05)^{-20}}{0.05} \approx 50000 \cdot \dfrac{1 - 0.3769}{0.05} \approx 50000 \cdot 12.462 \approx \$623{,}111\).</p>
+<p>The "\$1 million" prize is actually worth about \$623{,}000 today — a 38% haircut due to discounting.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting the negative exponent. PV uses \((1 + i)^{-n}\); FV uses \((1 + i)^n\). The minus sign matters.</li>
+<li>Mixing FV and PV formulas in the same problem.</li>
+<li>Using the annual rate or counting years instead of payments.</li>
+<li>Forgetting that the formula assumes the first payment is one period in the future (ordinary annuity). An annuity due (payments at the beginning of the period) multiplies the formula by \((1 + i)\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "solve problems, using technology (e.g., scientific calculator, spreadsheet, graphing calculator), that involve the amount, the present value, and the regular payment of an ordinary simple annuity."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt29')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Present Value of an Annuity — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:48</span>
+        <span class="vid-toggle" id="toggle-mcr-yt29">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt29">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RU-osjAs6hE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=RU-osjAs6hE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.5 &mdash; Mortgages &amp; Amortization</div>
+<div class="topic-desc">Apply PV-of-annuity to find mortgage payment \( R \); construct an amortization schedule (interest vs. principal).</div>
+<div class="summary-card">A \$300{,}000 mortgage at 5%/yr compounded semi-annually, 25-year amortization: convert to monthly equivalent rate, solve \( 300{,}000=R\cdot\dfrac{1-(1+i)^{-300}}{i} \) for \( R\approx \$1{,}744.81 \) per month. Early payments are mostly interest; later payments are mostly principal.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>A <em>mortgage</em> is a long-term loan secured against real estate. From a mathematical standpoint it's just a present-value annuity calculation viewed from the lender's perspective: the bank gives you a lump sum today (the loan amount), and you pay it back as a stream of equal monthly payments over the <em>amortization period</em> (commonly 25 years in Canada).</p>
+
+<p>Canadian mortgages have a quirky rate convention: by federal regulation they're quoted with <em>semi-annual compounding</em>, but payments are usually monthly. So the first step is converting the semi-annual rate to its monthly equivalent — find \(i\) such that \((1 + i)^{12} = (1 + j/2)^{2}\), where \(j\) is the quoted annual rate. Then apply the PV-of-annuity formula to solve for the payment \(R\).</p>
+
+<p>Rearranging the PV formula gives the payment:</p>
+
+<p>\[ R = \frac{PV \cdot i}{1 - (1 + i)^{-n}} \]</p>
+
+<p>Once you know \(R\), you can construct an <strong>amortization schedule</strong> — a table showing how each payment splits between interest and principal. The pattern is striking: <em>early payments are mostly interest; later payments are mostly principal.</em> That's because interest is charged on the outstanding balance, which is largest at the start. The payment is constant, but its split shifts dramatically over time.</p>
+
+<p>Each row of an amortization schedule has four numbers: payment, interest portion (previous balance × \(i\)), principal portion (payment − interest), new balance (previous − principal portion). The final row should end with a balance of zero.</p>
+
+<ul>
+<li><strong>Mortgage</strong> — loan secured by real property, repaid in equal periodic payments.</li>
+<li><strong>Amortization period</strong> — total time to pay off the loan in full (often 25 or 30 years).</li>
+<li><strong>Term</strong> — length of the interest-rate agreement, often shorter than amortization (e.g. 5-year term within a 25-year amortization); at the end of the term, the rate is renegotiated.</li>
+<li><strong>Equivalent rate conversion</strong> — Canadian convention: \((1 + i_m)^{12} = (1 + i_s)^2\), where \(i_m\) is monthly and \(i_s\) is semi-annual.</li>
+<li><strong>Amortization schedule</strong> — table of every payment, showing interest, principal, and remaining balance.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A \$300{,}000 mortgage at 5%/yr compounded semi-annually, 25-year amortization with monthly payments. Find the monthly payment.</p>
+<p>Convert the rate: semi-annual periodic \(= 0.025\); we need monthly \(i\) so \((1 + i)^{12} = (1.025)^2 = 1.050625\). Then \(1 + i = 1.050625^{1/12} \approx 1.0041239\), so \(i \approx 0.0041239\).</p>
+<p>\(n = 25 \cdot 12 = 300\).</p>
+<p>\(R = \dfrac{300000 \cdot 0.0041239}{1 - (1.0041239)^{-300}}\). Compute \(1.0041239^{300} \approx 3.4378\), so the denominator's discount factor \((1.0041239)^{-300} \approx 0.29089\), and \(1 - 0.29089 = 0.70911\). Numerator: \(300000 \cdot 0.0041239 \approx 1237.18\). Then \(R \approx 1237.18 / 0.70911 \approx \$1{,}744.81\) per month.</p>
+<p>Total paid over 25 years: \(300 \cdot 1744.81 \approx \$523{,}443\). Interest paid: \$223,443 — almost as much as the original loan.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — First two rows of the amortization schedule for the loan in Example 1.</p>
+<p>Month 1: balance \$300{,}000. Interest: \(300000 \cdot 0.0041239 \approx \$1{,}237.17\). Principal: \(1744.81 - 1237.17 \approx \$507.64\). New balance: \(300000 - 507.64 = \$299{,}492.36\).</p>
+<p>Month 2: balance \$299{,}492.36. Interest: \(299492.36 \cdot 0.0041239 \approx \$1{,}235.07\). Principal: \(1744.81 - 1235.07 \approx \$509.74\). New balance: \(\approx \$298{,}982.62\).</p>
+<p>Notice: of \$1{,}744.81 paid each month, almost \$1,235 disappears as interest in month 2; only \$510 reduces principal. Twenty years in, the split will be reversed.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Same loan, but 20-year amortization. How much do you save in total interest?</p>
+<p>\(n = 240\). Repeating the calculation: \(1.0041239^{240} \approx 2.6856\), \((1.0041239)^{-240} \approx 0.37236\), \(1 - 0.37236 = 0.62764\); \(R = 300000 \cdot 0.0041239 / 0.62764 \approx \$1{,}971.04\).</p>
+<p>Total paid: \(240 \cdot 1971.04 \approx \$473{,}050\). Interest: \$173,050. Savings versus 25-year: \$223,443 − \$173,050 = \$50,393. A shorter amortization saves real money.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting the semi-annual-compounding regulation. In Canadian MCR3U problems, the rate is quoted compounded semi-annually unless stated otherwise.</li>
+<li>Mixing up term and amortization. The 5-year term lets the bank reset the rate every 5 years, but the loan is fully paid only at the end of the (longer) amortization.</li>
+<li>Using the annual rate for the monthly calculation directly.</li>
+<li>Rounding the monthly rate too early; small errors balloon over hundreds of payments.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "solve problems, using technology (e.g., scientific calculator, spreadsheet, graphing calculator), that involve the amount, the present value, and the regular payment of an ordinary simple annuity"; the mortgage application is a standard real-world context for the present-value-of-annuity formula required by C3.4 and C3.5.</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt30')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Mortgage Payments Calculation — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">13:52</span>
+        <span class="vid-toggle" id="toggle-mcr-yt30">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt30">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-5cw1xc8pTw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=-5cw1xc8pTw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 6 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch6_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch6_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch6_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch5.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 5 &mdash; Sequences and Series</div></a>
+<a href="ch7.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 7 &mdash; Trigonometric Ratios &amp; the Sine/Cosine Laws</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

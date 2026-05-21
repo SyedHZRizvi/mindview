@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 7: Solving Exp. & Log. Equations</h1>
+<p>Techniques for solving exponential and logarithmic equations</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit7">
+        <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+            <h2>Chapter 7: Solving Exp. & Log. Equations</h2>
+            <p>Techniques for solving exponential and logarithmic equations</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Exponential & Logarithmic</span>
+                <span>⏱️ ~10h</span>
+                <span>📹 8 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">7.1 — Solving Exponential Equations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>exponential equation</strong> has the variable in an exponent. Two situations arise. If you can rewrite both sides as powers of the same base, equate the exponents and solve algebraically. For instance, \(2^{x+1}=8\) becomes \(2^{x+1}=2^{3}\), giving \(x+1=3\). This works whenever the constants are obvious powers of a common base.</p>
+                <p>When a common base is not available, take the logarithm of both sides — using any base, though \(\log\) (base 10) or \(\ln\) (base \(e\)) is most convenient on a calculator — and apply the Power Law to bring the exponent down. The equation \(5^{x}=12\) becomes \(x\log 5=\log 12\), so \(x=\dfrac{\log 12}{\log 5}\).</p>
+                <p>More complex equations may need substitution. The equation \(4^{x}-6\cdot 2^{x}+8=0\) becomes the quadratic \(u^{2}-6u+8=0\) under the substitution \(u=2^{x}\). Recognising this pattern — exponential-quadratic — is a recurring exam skill.</p>
+                <ul>
+                  <li><strong>Common base method</strong> — rewrite both sides as \(b^{\text{something}}\), then equate exponents.</li>
+                  <li><strong>Take a log method</strong> — apply \(\log\) or \(\ln\) to both sides, then Power Law to free the exponent.</li>
+                  <li><strong>Substitution method</strong> — let \(u=b^{x}\) when the equation is quadratic in the exponential.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Common base</p>
+                  <p>Solve \(3^{2x-1}=27^{x+2}\).</p>
+                  <p>Step 1. Rewrite 27 in base 3: \(27=3^{3}\), so \(27^{x+2}=3^{3(x+2)}=3^{3x+6}\).</p>
+                  <p>Step 2. Equate exponents: \(2x-1=3x+6\).</p>
+                  <p>Step 3. Solve: \(-7=x\), so \(x=-7\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Take a log</p>
+                  <p>Solve \(2^{x+1}=15\) to two decimal places.</p>
+                  <p>Step 1. \(\log\bigl(2^{x+1}\bigr)=\log 15\). Power Law: \((x+1)\log 2=\log 15\).</p>
+                  <p>Step 2. \(x+1=\dfrac{\log 15}{\log 2}\approx\dfrac{1.1761}{0.3010}\approx 3.9069\).</p>
+                  <p>Step 3. \(x\approx 2.91\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Quadratic substitution</p>
+                  <p>Solve \(9^{x}-4\cdot 3^{x}+3=0\).</p>
+                  <p>Step 1. Note \(9^{x}=(3^{x})^{2}\). Let \(u=3^{x}\): \(u^{2}-4u+3=0\).</p>
+                  <p>Step 2. Factor: \((u-1)(u-3)=0\), so \(u=1\) or \(u=3\).</p>
+                  <p>Step 3. Back-substitute: \(3^{x}=1\Rightarrow x=0\); \(3^{x}=3\Rightarrow x=1\).</p>
+                </div>
+                <ul>
+                  <li>Exponential expressions are always positive — reject any substitution solution \(u\le 0\).</li>
+                  <li>When taking logs, you can use any base; the calculator's \(\log\) (base 10) or \(\ln\) (base \(e\)) is fine.</li>
+                  <li>Always verify the final answer by substituting back into the original equation.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 — "recognize equivalent algebraic expressions involving logarithms and exponents, and simplify expressions of these types"; A3.3 — "solve exponential equations in one variable… by determining a common base, and by using logarithms."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v102')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 7.1a Solving Exponential Equations</span>
+                        <span class="vid-duration">26:35</span>
+                        <span class="vid-toggle" id="toggle-v102">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v102">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/102_MHF4U_7.1a_Solving_Exponential_Equations.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=izBhmbnQb6Y" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v103')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 7.1b Equivalent Forms of Exponential Equations Homework Solution</span>
+                        <span class="vid-duration">3:42</span>
+                        <span class="vid-toggle" id="toggle-v103">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v103">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/103_MHF4U_7.1b_Equivalent_Forms_of_Exponential_Equations_Homework_Solution.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=0ZcTq-ezZPc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v104')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 7.1c Solving More Exponential Equations Homework Solution</span>
+                        <span class="vid-duration">8:44</span>
+                        <span class="vid-toggle" id="toggle-v104">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v104">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/104_MHF4U_7.1c_Solving_More_Exponential_Equations_Homework_Solution.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=a5Y-aGUDPxE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">7.2 — Solving Logarithmic Equations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>logarithmic equation</strong> has the variable inside a logarithm. The strategy is to convert the equation into a form you already know how to solve, using two main moves. If the equation looks like \(\log_{b}(\text{expression})=c\), convert it to exponential form: \(\text{expression}=b^{c}\). Then solve the resulting polynomial or rational equation. If the equation contains multiple logs on different sides, use the laws of logarithms to <em>condense</em> each side into a single log; then the one-to-one property says \(\log_{b}A=\log_{b}B\Rightarrow A=B\) (assuming \(A,B&gt;0\)).</p>
+                <p>You must always state restrictions before solving and check every candidate against them at the end. Logarithms accept only positive arguments, so the algebra may produce a "valid" candidate that violates a restriction — that candidate is extraneous and must be rejected. Forgetting this check is the single most common cause of lost marks in Chapter 7.</p>
+                <p>For equations with logs of different bases, use the change-of-base formula to convert everything to a single base first.</p>
+                <ul>
+                  <li><strong>Exponential conversion</strong> — \(\log_{b}A=c\Leftrightarrow A=b^{c}\); the basic move for log equations.</li>
+                  <li><strong>One-to-one property</strong> — \(\log_{b}A=\log_{b}B\) implies \(A=B\) (with both positive).</li>
+                  <li><strong>Extraneous solutions</strong> — candidates that satisfy the converted equation but violate the original log's domain.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Convert to exponential</p>
+                  <p>Solve \(\log_{2}(x-3)=4\).</p>
+                  <p>Step 1. Restriction: \(x-3&gt;0\Rightarrow x&gt;3\).</p>
+                  <p>Step 2. Convert: \(x-3=2^{4}=16\).</p>
+                  <p>Step 3. Solve: \(x=19\). Check restriction: \(19&gt;3\). ✓</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Condense then one-to-one</p>
+                  <p>Solve \(\log(x+2)+\log(x-1)=\log 4\).</p>
+                  <p>Step 1. Restrictions: \(x+2&gt;0\) and \(x-1&gt;0\), giving \(x&gt;1\).</p>
+                  <p>Step 2. Product Law: \(\log\!\bigl((x+2)(x-1)\bigr)=\log 4\).</p>
+                  <p>Step 3. One-to-one: \((x+2)(x-1)=4\), so \(x^{2}+x-2=4\), giving \(x^{2}+x-6=0\).</p>
+                  <p>Step 4. Factor: \((x+3)(x-2)=0\). Candidates \(x=-3,\,2\).</p>
+                  <p>Step 5. Check restriction \(x&gt;1\): reject \(-3\); accept \(2\). Solution: \(x=2\).</p>
+                </div>
+                <ul>
+                  <li>Always write restrictions before solving; checking them is non-negotiable.</li>
+                  <li>The one-to-one property requires both sides to be single logarithms — condense first.</li>
+                  <li>When converting \(\log_{b}A=c\) to exponential form, the result is \(A=b^{c}\), not \(b\cdot c\).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.2 — "solve simple logarithmic equations in one variable algebraically (e.g., \(\log_{3}(5x+6)=2\), \(\log_{6}(x+4)=2-\log_{6}(x-2)\))."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v105')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 7.2a Solving Logarithmic Equations</span>
+                        <span class="vid-duration">22:19</span>
+                        <span class="vid-toggle" id="toggle-v105">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v105">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/105_MHF4U_7.2a_Solving_Logarithmic_Equations.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=RpbOTd_KiTw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v106')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 7.2b Solving Logarithmic Equations Homework Sheet</span>
+                        <span class="vid-duration">4:01</span>
+                        <span class="vid-toggle" id="toggle-v106">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v106">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/106_MHF4U_7.2b_Solving_Logarithmic_Equations_Homework_Sheet.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=vK36cPhV3dU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">7.3 — Chapters 6-7 Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapters 6 and 7 together cover the complete story of exponential and logarithmic functions: their inverse relationship, the laws of logarithms, transformations, equation solving in both directions, and applications via logarithmic scales. The unifying idea is that exponentials and logarithms are inverse operations — every move in one direction has a precise counterpart in the other.</p>
+                <p>For review, organise by skill: (1) translate between exponential and logarithmic forms instantly; (2) know all three laws (product, quotient, power) and apply them in both directions (expand / condense); (3) sketch transformed log graphs from parent \(y=\log_{b}x\); (4) solve exponential equations by common base or by taking logs; (5) solve logarithmic equations by exponential conversion or condensing-then-one-to-one, always with restrictions; (6) interpret pH, Richter, and decibel scales.</p>
+                <p>Application-style word problems often blend exponential growth/decay with logarithm-based solving. For example, a doubling-time question \(P(t)=P_{0}\cdot 2^{t/k}\) requires log manipulation. Practice these in both decimal-precision and exact-form contexts.</p>
+                <ul>
+                  <li><strong>Conversion fluency</strong> — \(\log_{b}A=c\Leftrightarrow A=b^{c}\) in both directions.</li>
+                  <li><strong>Three laws</strong> — product, quotient, power; restrictions on each argument.</li>
+                  <li><strong>Equation toolkit</strong> — common base, take a log, exponential conversion, one-to-one.</li>
+                  <li><strong>Real-world scales</strong> — pH, Richter, decibels; interpret each unit change as a multiplicative factor.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Doubling-time application</p>
+                  <p>A bacteria population doubles every 5 hours. If the initial population is 200, how long until it reaches 1500?</p>
+                  <p>Step 1. Model: \(P(t)=200\cdot 2^{t/5}\). Set \(P(t)=1500\): \(200\cdot 2^{t/5}=1500\).</p>
+                  <p>Step 2. Isolate: \(2^{t/5}=\dfrac{1500}{200}=7.5\).</p>
+                  <p>Step 3. Take a log: \(\dfrac{t}{5}\log 2=\log 7.5\), so \(\dfrac{t}{5}=\dfrac{\log 7.5}{\log 2}\approx\dfrac{0.8751}{0.3010}\approx 2.907\).</p>
+                  <p>Step 4. \(t\approx 14.5\) hours.</p>
+                </div>
+                <ul>
+                  <li>Watch the difference between \(\log\) and \(\ln\) when setting up; either works but be consistent.</li>
+                  <li>Word problems often have a "round to a sensible value" instruction — note units (hours vs days) at the end.</li>
+                  <li>Always check restrictions on log equations, even when the algebra looks clean.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Overall Expectation A3 — "solve exponential and simple logarithmic equations in one variable algebraically, including those in problems arising from real-world applications."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v107')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">MHF4U 7.3a Chapter 6 and 7 Summary</span>
+                        <span class="vid-duration">5:58</span>
+                        <span class="vid-toggle" id="toggle-v107">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v107">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/107_MHF4U_7.3a_Chapter_6_and_7_Summary.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=E8ubyvve95I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v108')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 7.3b Chapter 6 Review Homework Solutions</span>
+                        <span class="vid-duration">7:12</span>
+                        <span class="vid-toggle" id="toggle-v108">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v108">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/108_MHF4U_7.3b_Chapter_6_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=wM0wGVVPAIQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v109')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 7.3c Chapter 7 Review Homework Solutions</span>
+                        <span class="vid-duration">7:18</span>
+                        <span class="vid-toggle" id="toggle-v109">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v109">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/109_MHF4U_7.3c_Chapter_7_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ZeMG23HAqpo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 7 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch7_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch7_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch7_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch6.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 6</a>
+<a href="ch8.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 8 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

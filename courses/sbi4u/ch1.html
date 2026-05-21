@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI4U — Biology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sbi4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SBI4U Biology)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧬 SBI4U: Unit 1: Biochemistry</h1>
+    <p>Biological molecules (carbohydrates, lipids, proteins, nucleic acids), enzymes, cell membrane structure and transport</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+            <h2>Unit 1: Biochemistry</h2>
+            <p>Biological molecules (carbohydrates, lipids, proteins, nucleic acids), enzymes, cell membrane structure and transport</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Biochemistry</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Biological Molecules -->
+        <div class="subsection-label">🧪 Biological Molecules</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>All life is built from four families of biological macromolecules: carbohydrates, lipids, proteins, and nucleic acids. Three of the four (carbohydrates, proteins, nucleic acids) are true polymers built from monomers by <em>condensation (dehydration) synthesis</em>, in which a covalent bond forms with the release of one water molecule. The reverse reaction, <em>hydrolysis</em>, splits a polymer by adding water. Lipids are not polymers in the strict sense, but triglycerides and phospholipids are still assembled by condensation reactions between glycerol and fatty acids (ester bonds).</p>
+            <p>Carbohydrates obey the empirical formula \((CH_2O)_n\). Monosaccharides like glucose and fructose join through <em>glycosidic linkages</em> to form disaccharides (sucrose = glucose + fructose) and polysaccharides (starch, glycogen, cellulose, chitin). The same monomer (α-glucose vs β-glucose) yields radically different polymers — branched starch for energy storage in plants versus straight, hydrogen-bonded cellulose for structural support. Understanding <em>why</em> matters: cellulose's β-1,4 bonds resist mammalian digestive enzymes, which is why we need fibre but cannot extract glucose from it.</p>
+            <p>Lipids are defined by hydrophobicity rather than by a shared monomer. Triglycerides store energy at more than twice the caloric density of carbohydrates because their C–H bonds are highly reduced. Phospholipids — amphipathic molecules with a polar phosphate head and two nonpolar fatty-acid tails — spontaneously form the lipid bilayer of every cell membrane. Steroids (cholesterol, testosterone, oestrogen) share a four-ring carbon skeleton and act as signalling molecules and membrane fluidity modulators.</p>
+            <ul>
+              <li><strong>Monomer / polymer</strong> — single repeating unit / chain built from monomers.</li>
+              <li><strong>Condensation synthesis</strong> — bond formation releasing \(H_2O\).</li>
+              <li><strong>Hydrolysis</strong> — bond cleavage consuming \(H_2O\).</li>
+              <li><strong>Glycosidic bond</strong> — covalent C–O–C bond between monosaccharides.</li>
+              <li><strong>Ester bond</strong> — bond linking glycerol to fatty acids in triglycerides.</li>
+              <li><strong>Saturated vs unsaturated</strong> — no C=C double bonds vs one or more C=C double bonds in fatty-acid tails.</li>
+              <li><strong>Amphipathic</strong> — having both hydrophilic and hydrophobic regions (e.g., phospholipids).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Counting water molecules in polymer synthesis</p>
+              <p>How many water molecules are released when 8 glucose monomers polymerise into a single chain of glycogen?</p>
+              <p>Each glycosidic bond release one \(H_2O\). Linking <em>n</em> monomers in a single unbranched chain requires \(n - 1\) bonds. For 8 monomers: \(8 - 1 = 7\) water molecules released. (If branching occurs, count one bond per branch point in addition to the linear bonds.)</p>
+            </div>
+            <ul>
+              <li>Confusing condensation (releases water) with hydrolysis (consumes water).</li>
+              <li>Calling lipids "polymers" — only carbohydrates, proteins, and nucleic acids are true polymers.</li>
+              <li>Forgetting that α-glucose vs β-glucose changes whether a polysaccharide is digestible.</li>
+              <li>Drawing saturated fats with kinked tails — saturated tails are straight; unsaturated tails kink at C=C.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "explain the roles of various biochemical compounds, including carbohydrates, proteins, lipids, and nucleic acids."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Carbohydrates</span>
+                <span class="vid-duration">31:36</span>
+                <span class="vid-toggle" id="toggle-v17">▶</span>
+            </div>
+            <div class="video-player" id="player-v17">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/017_Carbohydrates.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=39VD467cb0I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Lipids</span>
+                <span class="vid-duration">3:42</span>
+                <span class="vid-toggle" id="toggle-v23">▶</span>
+            </div>
+            <div class="video-player" id="player-v23">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/023_Lipids_Warm-Up.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=KVSpmgzgTj0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Biomolecules — Lipids: Saturated/Unsaturated, Phospholipids &amp; Steroids — Amoeba Sisters</span>
+                <span class="vid-duration">9:31</span>
+                <span class="vid-toggle" id="toggle-yt27">▶</span>
+            </div>
+            <div class="video-player" id="player-yt27">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/1Dx7LDwINLU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=1Dx7LDwINLU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Enzymes -->
+        <div class="subsection-label">⚗️ Enzymes</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Enzymes are biological catalysts — almost always globular proteins (a few are ribozymes made of RNA) that accelerate reactions by lowering activation energy \(E_a\). They achieve this by binding the substrate at the <em>active site</em>, stabilising the <em>transition state</em>, and orienting reactants in a favourable geometry. The <em>induced-fit model</em> (Koshland) refines the older lock-and-key model: the active site flexes slightly when the substrate binds, optimising the catalytic contacts. Enzymes are not consumed in the reaction, so a single molecule may turn over thousands of substrate molecules per second (catalase converts ~40 million \(H_2O_2\) per second).</p>
+            <p>Enzyme activity depends on conditions. Temperature, pH, substrate concentration, enzyme concentration, and the presence of inhibitors all matter. Plotting reaction rate against substrate concentration produces the hyperbolic Michaelis–Menten curve: rate climbs steeply at low [S], then plateaus at \(V_{max}\) when all active sites are saturated. The substrate concentration at half-\(V_{max}\) is \(K_m\) — a measure of binding affinity. Most human enzymes peak near 37 °C and pH 7.4, but pepsin in the stomach is optimal at pH 2, while trypsin in the small intestine prefers pH 8. Beyond an optimum, the enzyme <em>denatures</em>: hydrogen bonds and disulfide bridges break, the tertiary structure unfolds, and the active site loses its shape.</p>
+            <p>Regulation occurs through inhibitors and activators. <em>Competitive inhibitors</em> resemble the substrate and bind at the active site (raising apparent \(K_m\) without changing \(V_{max}\)); <em>non-competitive (allosteric) inhibitors</em> bind elsewhere, altering enzyme shape (lowering \(V_{max}\)). <em>Feedback inhibition</em> uses the end product of a metabolic pathway to switch off an earlier enzyme — a key example is isoleucine inhibiting threonine deaminase.</p>
+            <ul>
+              <li><strong>Active site</strong> — region where substrate binds and catalysis occurs.</li>
+              <li><strong>Activation energy (\(E_a\))</strong> — energy barrier to reach the transition state.</li>
+              <li><strong>Cofactor / coenzyme</strong> — inorganic ion / organic helper molecule required by some enzymes.</li>
+              <li><strong>Denaturation</strong> — loss of 3-D shape (and function) from disruption of bonds maintaining structure.</li>
+              <li><strong>\(K_m\) and \(V_{max}\)</strong> — substrate concentration at half-maximal rate; maximum reaction velocity.</li>
+              <li><strong>Allosteric site</strong> — regulatory binding site distinct from the active site.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Distinguishing competitive vs non-competitive inhibition</p>
+              <p>Adding inhibitor X to an enzyme assay shifts \(K_m\) from 2.0 mM to 4.0 mM but leaves \(V_{max}\) unchanged. Inhibitor Y lowers \(V_{max}\) from 60 µmol/min to 40 µmol/min but leaves \(K_m\) unchanged. Classify each inhibitor and explain the reasoning.</p>
+              <p>X is a <em>competitive inhibitor</em>: increasing [S] outcompetes the inhibitor, so \(V_{max}\) is reached eventually, but more substrate is needed to do so (higher apparent \(K_m\)). Y is a <em>non-competitive (allosteric) inhibitor</em>: it binds away from the active site and decreases the proportion of functional enzymes, so \(V_{max}\) falls; binding affinity at the active site is unaffected, so \(K_m\) is constant.</p>
+            </div>
+            <ul>
+              <li>Saying enzymes "are used up" — they are regenerated after each catalytic cycle.</li>
+              <li>Claiming higher temperature always means faster reaction — true only up to the optimum; beyond it, denaturation collapses activity.</li>
+              <li>Mixing up competitive (changes \(K_m\)) and non-competitive (changes \(V_{max}\)) effects.</li>
+              <li>Forgetting that enzymes lower \(E_a\) but do not change \(\\Delta G\) of the overall reaction.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "describe, on the basis of research, the structural and functional diversity of proteins (e.g., enzymes, hormones, antibodies) in cells and tissues."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Enzymes</span>
+                <span class="vid-duration">14:28</span>
+                <span class="vid-toggle" id="toggle-v12">▶</span>
+            </div>
+            <div class="video-player" id="player-v12">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/012_Enzymes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=md7l5bO1Oqs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Cell Membrane & Transport -->
+        <div class="subsection-label">🔬 Cell Membrane Structure &amp; Transport</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The plasma membrane is best described by the <em>fluid mosaic model</em> (Singer and Nicolson, 1972): a two-dimensional fluid phospholipid bilayer studded with proteins, cholesterol, and glycolipids/glycoproteins. The bilayer's hydrophobic core (fatty-acid tails) forms a selective barrier to polar and charged solutes, while embedded proteins create regulated entry and exit points. Cholesterol intercalates between phospholipids, modulating fluidity: it prevents the membrane from becoming too fluid at high temperatures and from solidifying at low temperatures. Glycoproteins and glycolipids on the outer leaflet serve as cell-identity markers, essential for tissue recognition, immune function, and blood typing.</p>
+            <p>Transport across the membrane is classified by whether ATP is required. <em>Passive transport</em> (no ATP) follows the concentration gradient: simple diffusion of small nonpolar molecules (\(O_2\), \(CO_2\)) directly through the bilayer; facilitated diffusion of larger polar molecules and ions through channel and carrier proteins; and osmosis, the diffusion of water across a semipermeable membrane (often through aquaporins). <em>Active transport</em> requires energy: the sodium–potassium pump uses ATP to move 3 \(Na^+\) out and 2 \(K^+\) in against their gradients, maintaining the resting membrane potential of neurons. <em>Bulk transport</em> moves large quantities: endocytosis (phagocytosis, pinocytosis, receptor-mediated) brings material in, exocytosis releases it.</p>
+            <p>Tonicity describes how the extracellular solution affects a cell. In a <em>hypotonic</em> solution, water enters and animal cells may lyse (plant cells become turgid). In a <em>hypertonic</em> solution, water exits, animal cells crenate and plant cells plasmolyse. <em>Isotonic</em> solutions produce no net water movement and are used for IV fluids.</p>
+            <ul>
+              <li><strong>Phospholipid bilayer</strong> — amphipathic lipid sheet forming the membrane core.</li>
+              <li><strong>Integral / peripheral protein</strong> — proteins embedded in / loosely attached to the membrane.</li>
+              <li><strong>Aquaporin</strong> — channel protein that allows rapid water movement.</li>
+              <li><strong>Na⁺/K⁺ ATPase</strong> — antiporter pumping 3 \(Na^+\) out and 2 \(K^+\) in per ATP hydrolysed.</li>
+              <li><strong>Tonicity</strong> — relative solute concentration of two solutions separated by a membrane.</li>
+              <li><strong>Endocytosis / exocytosis</strong> — vesicle-mediated uptake / release of bulk material.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting cell volume in different solutions</p>
+              <p>A red blood cell with internal solute concentration of 0.9% NaCl is placed sequentially in three beakers: (a) 0.45% NaCl, (b) 0.9% NaCl, (c) 1.8% NaCl. Predict whether the cell shrinks, stays the same, or swells in each case.</p>
+              <p>(a) The cell's interior is hypertonic to the beaker, so water enters by osmosis and the cell swells (and may lyse). (b) The solutions are isotonic; no net water movement, cell volume unchanged. (c) The beaker is hypertonic to the cell, water exits and the cell crenates (shrivels).</p>
+            </div>
+            <ul>
+              <li>Confusing active transport (uses ATP, against gradient) with facilitated diffusion (no ATP, with gradient).</li>
+              <li>Saying "the bilayer is impermeable to everything" — small nonpolar molecules cross freely.</li>
+              <li>Mixing up hypertonic and hypotonic (remember: water flows toward the higher solute concentration).</li>
+              <li>Describing osmosis as "movement of solutes" — osmosis specifically refers to the movement of <em>water</em>.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.5 — "explain the chemical structure and biological importance of the molecular components of cell membranes (e.g., the lipid bilayer; the role of cholesterol, glycolipids, and proteins) in maintaining cellular function."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v35')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Fluid Mosaic Model</span>
+                <span class="vid-duration">3:04</span>
+                <span class="vid-toggle" id="toggle-v35">▶</span>
+            </div>
+            <div class="video-player" id="player-v35">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/035_The_Fluid_Mosaic_Model.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=1OJgh6bzUN0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v37')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Passive Transport — Part A</span>
+                <span class="vid-duration">12:32</span>
+                <span class="vid-toggle" id="toggle-v37">▶</span>
+            </div>
+            <div class="video-player" id="player-v37">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/037_Passive_Transport_-_Part_A.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=MARdteTAJNw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v38')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Passive Transport — Part B</span>
+                <span class="vid-duration">10:49</span>
+                <span class="vid-toggle" id="toggle-v38">▶</span>
+            </div>
+            <div class="video-player" id="player-v38">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/038_Passive_Transport_-_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=m1BSs6mmqSk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v36')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Active Transport</span>
+                <span class="vid-duration">12:48</span>
+                <span class="vid-toggle" id="toggle-v36">▶</span>
+            </div>
+            <div class="video-player" id="player-v36">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/036_Active_Transport.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=A1rRh-HXzhE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        <!-- Curriculum topics — Proteins & Nucleic Acids (curated YouTube) -->
+        <div class="subsection-label">🧫 Proteins &amp; Amino Acids</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Proteins are polymers of <em>amino acids</em>, of which 20 are encoded by the standard genetic code in humans. Every amino acid shares the same backbone (an α-carbon bonded to an amino group, a carboxyl group, a hydrogen, and a variable R-group) but differs in the side chain. The R-group dictates whether the amino acid is nonpolar (e.g., valine, leucine), polar (e.g., serine), acidic (aspartate), basic (lysine), or contains sulfur (cysteine — important for disulfide bridges). Amino acids polymerise via <em>peptide bonds</em>, a condensation reaction between the carboxyl of one amino acid and the amino group of the next, releasing water.</p>
+            <p>Protein structure is hierarchical and shape determines function. <em>Primary structure</em> is the linear sequence of amino acids, dictated by the gene's mRNA. <em>Secondary structure</em> arises from hydrogen bonding between backbone atoms, forming α-helices and β-pleated sheets. <em>Tertiary structure</em> is the overall three-dimensional fold, stabilised by hydrogen bonds, ionic bonds, hydrophobic interactions, van der Waals forces, and disulfide bridges between cysteine residues. <em>Quaternary structure</em> exists only when two or more polypeptide chains assemble (haemoglobin has four subunits — two α and two β chains, each with a heme cofactor).</p>
+            <p>A protein's job depends on its shape. Enzymes catalyse reactions, antibodies bind antigens, haemoglobin transports \(O_2\), keratin and collagen provide structure, insulin signals between cells, and membrane transport proteins move solutes. A single amino-acid substitution can be catastrophic: in sickle-cell anaemia, glutamate is replaced by valine at position 6 of the β-globin chain, creating a hydrophobic patch that makes haemoglobin polymerise under low \(O_2\) — the molecular root of a debilitating disease.</p>
+            <ul>
+              <li><strong>α-carbon</strong> — central carbon of an amino acid, bonded to four different groups.</li>
+              <li><strong>Peptide bond</strong> — covalent C–N bond between two amino acids, formed by condensation.</li>
+              <li><strong>R-group / side chain</strong> — variable portion of an amino acid that determines its chemical character.</li>
+              <li><strong>Disulfide bridge</strong> — covalent S–S bond between two cysteine residues, stabilising tertiary structure.</li>
+              <li><strong>Denaturation</strong> — loss of higher-order structure (secondary, tertiary, quaternary) without breaking peptide bonds.</li>
+              <li><strong>Chaperone protein</strong> — assists correct folding of nascent polypeptides.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting the consequence of a point mutation</p>
+              <p>A gene encodes a transmembrane receptor with a hydrophobic α-helical region embedded in the lipid bilayer. A point mutation changes a valine (nonpolar) in the helix to a glutamate (acidic, charged). Predict the effect on the protein.</p>
+              <p>Charged residues destabilise hydrophobic environments. Introducing glutamate into the lipid-buried helix forces the helix out of the membrane or distorts the local fold, very likely disrupting tertiary structure and membrane anchoring. The receptor may misfold, be tagged for degradation, or fail to transduce signals.</p>
+            </div>
+            <ul>
+              <li>Saying "primary structure determines function directly" — primary structure determines folding, which determines function.</li>
+              <li>Confusing peptide bonds (between amino acids) with hydrogen bonds (within and between proteins).</li>
+              <li>Forgetting that denaturation breaks higher-order bonds but leaves peptide bonds intact.</li>
+              <li>Drawing only one chain for haemoglobin — it is a tetramer (quaternary structure).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "describe, on the basis of research, the structural and functional diversity of proteins (e.g., enzymes, hormones, antibodies) in cells and tissues."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Biomolecules (Updated): Proteins — Amoeba Sisters</span>
+                <span class="vid-duration">8:24</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2Jgb_DpaQhM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2Jgb_DpaQhM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Protein Structure and Folding — Bozeman Science</span>
+                <span class="vid-duration">9:08</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/hok2hyED9go?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=hok2hyED9go" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧬 Nucleic Acids — DNA &amp; RNA</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Nucleic acids — DNA and RNA — are polymers of <em>nucleotides</em>. Each nucleotide consists of three parts: a pentose sugar (deoxyribose in DNA, ribose in RNA), a phosphate group, and one of five nitrogenous bases. Purines (adenine, guanine) have a double-ring structure; pyrimidines (cytosine, thymine in DNA, uracil in RNA) have a single ring. Nucleotides link via <em>phosphodiester bonds</em> between the 3′ hydroxyl of one sugar and the 5′ phosphate of the next, giving every strand a directional 5′ → 3′ polarity.</p>
+            <p>DNA is a right-handed double helix (Watson, Crick, Franklin, Wilkins, 1953). The two strands are <em>antiparallel</em>: one runs 5′ → 3′, the other 3′ → 5′. Bases pair through hydrogen bonds — A with T (two H-bonds), G with C (three H-bonds), which is why GC-rich regions are more thermally stable. <em>Chargaff's rules</em> follow: %A = %T and %G = %C in any double-stranded DNA. The sugar-phosphate backbone forms the outside; the bases stack on the inside, shielded from water — an elegant arrangement that simultaneously protects the genetic information and allows it to be copied.</p>
+            <p>RNA differs from DNA in three ways: it uses ribose (with a 2′-OH that makes RNA more reactive but less stable than DNA), uracil instead of thymine, and is usually single-stranded. There are three principal RNA species in protein synthesis: messenger RNA (mRNA) carries the gene's code from the nucleus to the ribosome; transfer RNA (tRNA) brings amino acids that match each mRNA codon via a complementary anticodon; ribosomal RNA (rRNA) is the catalytic core of the ribosome. Other RNAs (microRNAs, siRNAs, lncRNAs) regulate gene expression.</p>
+            <ul>
+              <li><strong>Nucleotide</strong> — phosphate + pentose sugar + nitrogenous base.</li>
+              <li><strong>Phosphodiester bond</strong> — covalent linkage in the nucleic-acid backbone.</li>
+              <li><strong>Antiparallel</strong> — strands run in opposite 5′–3′ directions.</li>
+              <li><strong>Purine vs pyrimidine</strong> — double-ring (A, G) vs single-ring (C, T, U) bases.</li>
+              <li><strong>Chargaff's rules</strong> — %A = %T and %G = %C in double-stranded DNA.</li>
+              <li><strong>Complementary base pairing</strong> — A–T and G–C via hydrogen bonds.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Applying Chargaff's rules</p>
+              <p>Analysis of a DNA sample shows it contains 22% adenine. What are the percentages of T, G, and C?</p>
+              <p>Chargaff: %A = %T, so %T = 22%. The four bases sum to 100%, so %G + %C = 100 − 22 − 22 = 56%. Because %G = %C, each is 28%. Final answer: T = 22%, G = 28%, C = 28%.</p>
+            </div>
+            <ul>
+              <li>Drawing DNA with parallel strands — the two strands are antiparallel.</li>
+              <li>Pairing A with G or C with T — only A–T (or A–U in RNA) and G–C pair.</li>
+              <li>Saying RNA contains thymine — RNA replaces thymine with uracil.</li>
+              <li>Forgetting the directionality: DNA polymerase can only add nucleotides to the 3′ end.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "explain the structure and function of cell components (e.g., DNA, RNA, ribosomes) at the molecular level."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">DNA vs RNA (Updated) — Amoeba Sisters</span>
+                <span class="vid-duration">6:14</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/JQByjprj_mA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=JQByjprj_mA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">DNA Structure and Replication — Crash Course Biology #10</span>
+                <span class="vid-duration">12:59</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8kK2zwjRV0M?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=8kK2zwjRV0M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sbi4u/Unit1_Biochemistry_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sbi4u/Unit1_Biochemistry_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sbi4u/Unit1_Biochemistry_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <a href="../../assessments/sbi4u/Strand_A_Biochemistry_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../sbi4u.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SBI4U Biology · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

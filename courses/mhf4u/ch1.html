@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 1: Polynomial Functions</h1>
+<p>Power functions, characteristics, graphing from factored form, even/odd, rates of change</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+            <h2>Chapter 1: Polynomial Functions</h2>
+            <p>Power functions, characteristics, graphing from factored form, even/odd, rates of change</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Polynomial & Rational</span>
+                <span>⏱️ ~20h</span>
+                <span>📹 20 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.1 — Power Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>power function</strong> has the form \(f(x)=ax^{n}\), where \(a\in\mathbb{R}\) and \(n\) is a whole number. Power functions are the building blocks of every polynomial you will study this year — so understanding how the leading term \(ax^{n}\) controls a graph's overall shape is the foundation everything else rests on. The key intuition is that for large \(|x|\), the term with the highest power dominates: it dictates the function's end behaviour, while smaller-degree terms only fine-tune the middle of the graph.</p>
+                <p>Two characteristics determine the end behaviour of \(y=ax^{n}\): the <em>parity</em> of \(n\) (whether \(n\) is even or odd) and the <em>sign</em> of \(a\). Even-degree power functions are symmetric about the \(y\)-axis; their two ends point the same direction. Odd-degree power functions are symmetric about the origin; their two ends point in opposite directions. Knowing this lets you predict the rough silhouette of a polynomial before ever plotting a point.</p>
+                <p>You will describe end behaviour using arrow notation such as "as \(x\to\infty,\;f(x)\to-\infty\)". This vocabulary is identical to what you will see in calculus, so building fluency now pays dividends in MCV4U.</p>
+                <ul>
+                  <li><strong>Power function</strong> — a function of the form \(f(x)=ax^{n}\) with whole-number exponent.</li>
+                  <li><strong>Degree</strong> — the value of the exponent \(n\); it controls the maximum number of turning points and \(x\)-intercepts.</li>
+                  <li><strong>Leading coefficient</strong> — the constant \(a\); a positive \(a\) keeps the right end pointing up, a negative \(a\) reflects the graph vertically.</li>
+                  <li><strong>End behaviour</strong> — the direction of \(f(x)\) as \(x\to\pm\infty\), determined entirely by the leading term in a polynomial.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Classifying end behaviour</p>
+                  <p>Describe the end behaviour of \(f(x)=-3x^{5}\).</p>
+                  <p>Step 1. Identify degree and leading coefficient: \(n=5\) (odd), \(a=-3\) (negative).</p>
+                  <p>Step 2. Odd degree means the two ends behave oppositely. Negative leading coefficient flips the parent \(y=x^{5}\) vertically.</p>
+                  <p>Step 3. The parent \(y=x^{5}\) goes from quadrant III to quadrant I. A vertical reflection sends it from quadrant II to quadrant IV.</p>
+                  <p>Conclusion: as \(x\to-\infty,\;f(x)\to\infty\); as \(x\to\infty,\;f(x)\to-\infty\). The graph starts in quadrant II and ends in quadrant IV.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Domain, range, symmetry</p>
+                  <p>State the domain, range, and symmetry of \(g(x)=2x^{4}\).</p>
+                  <p>Step 1. Any whole-number power is defined for every real input, so \(\text{Domain}=\{x\in\mathbb{R}\}\).</p>
+                  <p>Step 2. With even degree and \(a&gt;0\), the graph opens upward with minimum value \(g(0)=0\). Range \(=\{y\in\mathbb{R}\mid y\ge 0\}\).</p>
+                  <p>Step 3. Check symmetry: \(g(-x)=2(-x)^{4}=2x^{4}=g(x)\), so \(g\) is even and symmetric about the \(y\)-axis.</p>
+                </div>
+                <ul>
+                  <li>Do not confuse "degree" with "leading coefficient" — they control different features.</li>
+                  <li>A negative \(a\) flips end behaviour vertically; it does not change whether the function is even or odd in parity.</li>
+                  <li>End behaviour is determined by the <em>highest</em>-degree term only; lower-degree terms are irrelevant as \(|x|\to\infty\).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "recognize a polynomial expression… recognize the equation of a polynomial function and give reasons why it is a function, and identify linear and quadratic functions as examples of polynomial functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v1')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.1a Power Functions</span>
+                        <span class="vid-duration">21:29</span>
+                        <span class="vid-toggle" id="toggle-v1">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v1">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/001_MHF4U_1.1a_Power_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ytEmCJyoI-0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v2')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U1 1.1b Power Functions Homework Solutions</span>
+                        <span class="vid-duration">1:57</span>
+                        <span class="vid-toggle" id="toggle-v2">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v2">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/002_MHF4U1_1.1b_Power_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=EH2pGqDo4yw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.2 — Stating Intervals</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>When you describe a function's behaviour — where it is increasing, where it is positive, where it is undefined — you need a precise way to talk about regions of the real line. Mathematicians use three equivalent notations: <strong>interval notation</strong>, <strong>set-builder notation</strong>, and <strong>inequalities</strong>. Each has a place. Interval notation is compact and standard in calculus textbooks; set-builder is precise and forces you to name the variable; inequalities feel intuitive for hand-drawn number lines.</p>
+                <p>The single most important distinction is whether an endpoint is <em>included</em> or <em>excluded</em>. Square brackets <code>[ ]</code> include the endpoint, round brackets <code>( )</code> exclude it. The symbols \(\infty\) and \(-\infty\) are not numbers — they describe unbounded behaviour — so they always get round brackets. Getting this notation right matters because in calculus, missing a single endpoint can change whether a maximum exists or whether a function is continuous.</p>
+                <p>You will use intervals to state domains, ranges, increasing/decreasing intervals, and intervals of positive/negative values for every function this year. Master the notation now and the rest of the course goes much more smoothly.</p>
+                <ul>
+                  <li><strong>Interval notation</strong> — \([a,b]\), \((a,b)\), \([a,b)\), \((a,b]\), \((-\infty,b)\), etc., with square brackets for inclusion and round brackets for exclusion.</li>
+                  <li><strong>Set-builder notation</strong> — \(\{x\in\mathbb{R}\mid a\le x&lt;b\}\), read "the set of real \(x\) such that…".</li>
+                  <li><strong>Union</strong> — the symbol \(\cup\) combines disjoint intervals into a single set, e.g., \((-\infty,-2)\cup(3,\infty)\).</li>
+                  <li><strong>Open / closed interval</strong> — an interval is open when both endpoints are excluded, closed when both are included.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Translating between notations</p>
+                  <p>Express "\(x\) is greater than \(-4\) and at most \(7\)" in interval and set-builder notation.</p>
+                  <p>Step 1. "Greater than \(-4\)" excludes \(-4\); "at most \(7\)" includes \(7\).</p>
+                  <p>Step 2. Inequality: \(-4&lt;x\le 7\).</p>
+                  <p>Step 3. Interval: \((-4,\,7]\). Set-builder: \(\{x\in\mathbb{R}\mid -4&lt;x\le 7\}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Domain of a graph with two pieces</p>
+                  <p>A function is graphed for all \(x\) less than \(-1\) and again for all \(x\) at least \(2\). State the domain.</p>
+                  <p>Step 1. Left piece: \(x&lt;-1\) gives \((-\infty,-1)\).</p>
+                  <p>Step 2. Right piece: \(x\ge 2\) gives \([2,\infty)\).</p>
+                  <p>Step 3. Combine with a union: \(\text{Domain}=(-\infty,-1)\cup[2,\infty)\).</p>
+                </div>
+                <ul>
+                  <li>Always put the smaller value first: \([3,7)\) is correct, \([7,3)\) is meaningless.</li>
+                  <li>Use \(\cup\) (union), not a comma, to glue disjoint intervals together.</li>
+                  <li>Infinity is never closed: write \((-\infty,5]\), never \([-\infty,5]\).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "recognize and describe key features of the graphs of functions… including domain and range, intervals of increase and decrease, and zeros."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v3')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.2 Stating Intervals</span>
+                        <span class="vid-duration">11:50</span>
+                        <span class="vid-toggle" id="toggle-v3">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v3">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/003_MHF4U_1.2_Stating_Intervals.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=yUE2EW_gzgk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.3 — Characteristics of Polynomial Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>polynomial function</strong> of degree \(n\) has the standard form \(f(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\dots+a_{1}x+a_{0}\), where \(a_{n}\ne 0\) and every exponent is a non-negative integer. From this single expression you can read off five characteristics that completely sketch the graph's silhouette: degree, leading coefficient, end behaviour, number of \(x\)-intercepts, and number of turning points. Investing time here means that later — when you graph a quintic or analyze a rational function — you can describe its shape in seconds.</p>
+                <p>The relationship to remember is this: a polynomial of degree \(n\) has <em>at most</em> \(n\) real zeros and <em>at most</em> \(n-1\) turning points. The phrase "at most" matters: a cubic could have one real zero or three, and either zero or two turning points. End behaviour, however, is fully determined by the leading term, so it is always predictable.</p>
+                <p>You should also be comfortable identifying when an expression is <em>not</em> a polynomial. Negative exponents, fractional exponents, radicals over the variable, and variables in denominators all disqualify an expression. Spotting these quickly will save errors later.</p>
+                <ul>
+                  <li><strong>Polynomial function</strong> — a sum of terms \(a_{k}x^{k}\) with non-negative integer exponents and real coefficients.</li>
+                  <li><strong>Turning point</strong> — a point where the function changes from increasing to decreasing or vice versa; at most \(n-1\) of them for degree \(n\).</li>
+                  <li><strong>Zero (root, \(x\)-intercept)</strong> — a value of \(x\) where \(f(x)=0\); at most \(n\) for degree \(n\).</li>
+                  <li><strong>Constant term</strong> — the term \(a_{0}\), equal to \(f(0)\); the \(y\)-intercept.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Full characteristics from an equation</p>
+                  <p>For \(f(x)=-2x^{4}+5x^{2}-x+3\), state the degree, leading coefficient, end behaviour, maximum number of zeros, maximum number of turning points, and \(y\)-intercept.</p>
+                  <p>Step 1. Degree \(=4\) (highest exponent); leading coefficient \(=-2\).</p>
+                  <p>Step 2. Even degree with negative leading coefficient: both ends point down. As \(x\to\pm\infty,\;f(x)\to-\infty\).</p>
+                  <p>Step 3. Maximum zeros: \(4\). Maximum turning points: \(4-1=3\).</p>
+                  <p>Step 4. \(y\)-intercept: \(f(0)=3\), so \((0,3)\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Is it a polynomial?</p>
+                  <p>Classify each: (a) \(p(x)=4x^{3}-\tfrac{1}{2}x+7\); (b) \(q(x)=x^{2}+\sqrt{x}-1\); (c) \(r(x)=\dfrac{3}{x}+2x\).</p>
+                  <p>(a) All exponents are non-negative integers, so \(p\) is a cubic polynomial.</p>
+                  <p>(b) \(\sqrt{x}=x^{1/2}\) is a fractional exponent — not a polynomial.</p>
+                  <p>(c) \(\tfrac{3}{x}=3x^{-1}\) has a negative exponent — not a polynomial.</p>
+                </div>
+                <ul>
+                  <li>Maximum turning points is \(n-1\), not \(n\) — a frequent off-by-one mistake.</li>
+                  <li>A polynomial can have <em>fewer</em> real zeros than its degree if some zeros are complex.</li>
+                  <li>The constant term is the \(y\)-intercept; do not confuse it with the leading coefficient.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.2 — "compare, through investigation using graphing technology, the numeric, graphical, and algebraic representations of polynomial… functions… and describe key features of the graphs of polynomial functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v4')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.3a Characteristics of Polynomial Functions</span>
+                        <span class="vid-duration">31:01</span>
+                        <span class="vid-toggle" id="toggle-v4">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v4">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/004_MHF4U_1.3a_Characteristics_of_Polynomial_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Mq92sEsAxrQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v5')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.3b Characteristics of Polynomial Functions Homework</span>
+                        <span class="vid-duration">3:23</span>
+                        <span class="vid-toggle" id="toggle-v5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v5">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/005_MHF4U_1.3b_Characteristics_of_Polynomial_Functions_Homework.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=YwI4i4yerQo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.4 — Finite Differences</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Given a table of values from a polynomial sampled at equally spaced \(x\)-values, the method of <strong>finite differences</strong> lets you recover the polynomial's degree — and even its leading coefficient — without graphing or factoring. The idea is simple: subtract consecutive \(y\)-values to get first differences; subtract consecutive first differences to get second differences; and keep going until the differences become constant. The "level" at which they go constant equals the degree of the polynomial.</p>
+                <p>This works because differentiation lowers the degree of a polynomial by one, and finite differences are the discrete cousin of differentiation. So a cubic flattens out to a constant on the third difference, a quartic on the fourth, and so on. The leading coefficient is then recovered from the formula \(a_{n}=\dfrac{\Delta_{n}}{n!\,h^{n}}\), where \(\Delta_{n}\) is the constant \(n\)-th difference and \(h\) is the common spacing between \(x\)-values.</p>
+                <p>The method is also a powerful diagnostic: if no level of differences ever becomes constant, the data is not polynomial — it might be exponential, trigonometric, or rational. Finite differences therefore give you a fast way to test what kind of function you are looking at.</p>
+                <ul>
+                  <li><strong>First differences</strong> — \(\Delta y_{k}=y_{k+1}-y_{k}\); constant first differences indicate a linear function.</li>
+                  <li><strong>\(n\)-th differences</strong> — the differences of the \((n-1)\)-th differences; constant at level \(n\) indicates degree \(n\).</li>
+                  <li><strong>Common spacing \(h\)</strong> — the constant gap between consecutive \(x\)-values; finite differences require this.</li>
+                  <li><strong>Leading coefficient formula</strong> — \(a_{n}=\dfrac{\Delta_{n}}{n!\,h^{n}}\) recovers the highest-power coefficient.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Degree from a table</p>
+                  <p>Find the degree and leading coefficient of the polynomial whose values at \(x=0,1,2,3,4\) are \(1,2,11,34,77\).</p>
+                  <p>Step 1. First differences: \(2-1,11-2,34-11,77-34=1,9,23,43\).</p>
+                  <p>Step 2. Second differences: \(9-1,23-9,43-23=8,14,20\).</p>
+                  <p>Step 3. Third differences: \(14-8,20-14=6,6\). Constant at level 3, so degree \(=3\).</p>
+                  <p>Step 4. Leading coefficient: \(a_{3}=\dfrac{6}{3!\cdot 1^{3}}=\dfrac{6}{6}=1\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Identifying non-polynomial data</p>
+                  <p>For \(y=2,4,8,16,32\) at \(x=0,1,2,3,4\), test whether the data is polynomial.</p>
+                  <p>Step 1. First differences: \(2,4,8,16\). Second: \(2,4,8\). Third: \(2,4\). Differences keep doubling, never constant.</p>
+                  <p>Step 2. Conclude: the data is not polynomial. In fact \(y=2^{x+1}\), an exponential.</p>
+                </div>
+                <ul>
+                  <li>The method fails if \(x\)-values are not equally spaced — always check the common difference first.</li>
+                  <li>Remember \(n!\,h^{n}\) in the leading-coefficient formula, not just \(n!\).</li>
+                  <li>Sign matters: if all the constant differences are negative, the leading coefficient is negative.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.3 — "describe key features of the graphs of polynomial functions… and identify the connection between the degree of a polynomial function and the corresponding constant finite differences."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.4a Finite Differences</span>
+                        <span class="vid-duration">10:11</span>
+                        <span class="vid-toggle" id="toggle-v6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v6">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/006_MHF4U_1.4a_Finite_Differences.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=PI1Ka3ZSyLI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v7')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.4b Finite Differences Homework Solutions</span>
+                        <span class="vid-duration">2:25</span>
+                        <span class="vid-toggle" id="toggle-v7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v7">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/007_MHF4U_1.4b_Finite_Differences_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=OF2_9oAlMS4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.5 — Graphing from Factored Form</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>When a polynomial is written in <strong>factored form</strong>, \(f(x)=a(x-r_{1})^{m_{1}}(x-r_{2})^{m_{2}}\dots(x-r_{k})^{m_{k}}\), it tells you exactly where the graph crosses or touches the \(x\)-axis and how it behaves at each zero. The exponent on each factor is the <strong>multiplicity</strong> of that zero, and multiplicity controls a key visual cue. With multiplicity 1 the curve passes straight through the \(x\)-axis; with multiplicity 2 it bounces off; with multiplicity 3 it flattens out and squeezes through with an inflection.</p>
+                <p>To produce a quick sketch from factored form, you only need four ingredients: the zeros (with their multiplicities), the \(y\)-intercept (evaluate \(f(0)\)), the end behaviour (from the expanded leading term), and the sign of the function on each interval between zeros. Together these give you a graph accurate enough for any analysis question in this course — no graphing calculator required.</p>
+                <p>This factored-form perspective also previews polynomial inequalities: the sign of \(f\) changes at zeros of odd multiplicity and stays the same across zeros of even multiplicity. That rule will become the engine of the sign-chart method in Chapter 2.</p>
+                <ul>
+                  <li><strong>Factored form</strong> — \(f(x)=a(x-r_{1})^{m_{1}}\dots(x-r_{k})^{m_{k}}\); each \(r_{i}\) is a zero and each \(m_{i}\) its multiplicity.</li>
+                  <li><strong>Multiplicity</strong> — the exponent on a factor; controls cross-through (odd) vs. bounce (even) behaviour at the zero.</li>
+                  <li><strong>Sign chart</strong> — a number line marking zeros and the sign of \(f(x)\) in each resulting interval.</li>
+                  <li><strong>\(y\)-intercept</strong> — \(f(0)\); the constant produced when every \(x\) is set to zero in factored form.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Sketch from factored form</p>
+                  <p>Sketch \(f(x)=-2(x+3)(x-1)^{2}(x-4)\).</p>
+                  <p>Step 1. Zeros: \(x=-3\) (mult 1, cross), \(x=1\) (mult 2, bounce), \(x=4\) (mult 1, cross).</p>
+                  <p>Step 2. Degree: \(1+2+1=4\). Leading coefficient: \(-2(1)(1)(1)=-2\). Even degree, negative \(a\) — both ends point down.</p>
+                  <p>Step 3. \(y\)-intercept: \(f(0)=-2(3)(1)(-4)=24\), so \((0,24)\).</p>
+                  <p>Step 4. Sign chart: test \(x=-4\to-2(-)(+)(-)=-\); \(x=0\to+\); \(x=2\to-\); \(x=5\to+\)? Recheck \(x=5\): \(-2(8)(16)(1)=-256\). Both ends down, so the right side is negative — \(f(5)\) negative. ✓</p>
+                  <p>Step 5. Curve enters from \(-\infty\), rises through \(x=-3\), passes through \((0,24)\), bounces at \(x=1\), comes back down, and exits through \(x=4\) into \(-\infty\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Equation from a graph</p>
+                  <p>A cubic touches the \(x\)-axis at \(x=2\) and crosses at \(x=-1\); the \(y\)-intercept is \(-4\). Find the equation.</p>
+                  <p>Step 1. Multiplicity 2 at \(x=2\) and multiplicity 1 at \(x=-1\): \(f(x)=a(x-2)^{2}(x+1)\).</p>
+                  <p>Step 2. Use \(f(0)=-4\): \(a(-2)^{2}(1)=4a=-4\Rightarrow a=-1\).</p>
+                  <p>Step 3. Equation: \(f(x)=-(x-2)^{2}(x+1)\).</p>
+                </div>
+                <ul>
+                  <li>Multiplicity 2 means <em>bounce</em>, not cross — drawing a cross-through is the most common sketching error.</li>
+                  <li>When finding \(a\), include the sign — a missing negative ruins the whole graph.</li>
+                  <li>End behaviour comes from the <em>expanded</em> leading term \(a\cdot x^{m_{1}+m_{2}+\dots}\), not just \(a\).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.4 — "distinguish polynomial functions from sinusoidal and exponential functions… and compare and contrast the graphs of various polynomial functions with the graphs of other types of functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.5a Graphing Polynomial Functions from Factored Form</span>
+                        <span class="vid-duration">32:37</span>
+                        <span class="vid-toggle" id="toggle-v8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v8">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/008_MHF4U_1.5a_Graphing_Polynomial_Functions_from_Factored_Form.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=y_EAuQ2k5AQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v9')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.5b Equations and Graphs of Polynomial Functions Homework Solutions</span>
+                        <span class="vid-duration">7:45</span>
+                        <span class="vid-toggle" id="toggle-v9">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v9">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/009_MHF4U_1.5b_Equations_and_Graphs_of_Polynomial_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=BcJ1KkGVj6M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v10')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.5c Extra Practice with Graphs of Polynomial Functions Homework Solutions</span>
+                        <span class="vid-duration">6:46</span>
+                        <span class="vid-toggle" id="toggle-v10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v10">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/010_MHF4U_1.5c_Extra_Practice_with_Graphs_of_Polynomial_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=YMrnR2obvAI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.6 — Even and Odd Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Symmetry is one of the most powerful shortcuts in mathematics. If a function has a symmetry, you only need to understand half of it — the other half is free. In MHF4U we focus on two algebraic symmetries: <strong>even</strong> functions, which satisfy \(f(-x)=f(x)\), and <strong>odd</strong> functions, which satisfy \(f(-x)=-f(x)\). The names match what you see in polynomial powers: \(x^{2}, x^{4}, x^{6}\) are even functions, while \(x, x^{3}, x^{5}\) are odd functions.</p>
+                <p>Geometrically, an even function is mirror-symmetric across the \(y\)-axis: folding the page along the \(y\)-axis lines up the two halves. An odd function has point-symmetry through the origin: rotating the graph 180° around \((0,0)\) lands it back on itself. Most functions are neither even nor odd, and that is fine — but when symmetry exists, it tells you about zeros (odd functions, if defined at 0, must have \(f(0)=0\)) and about long-run behaviour.</p>
+                <p>The test is purely algebraic: replace every \(x\) with \(-x\), simplify, and compare to \(f(x)\) and \(-f(x)\). Be careful with signs — a sign error makes a function look like the wrong parity.</p>
+                <ul>
+                  <li><strong>Even function</strong> — satisfies \(f(-x)=f(x)\) for all \(x\) in the domain; graph is symmetric about the \(y\)-axis.</li>
+                  <li><strong>Odd function</strong> — satisfies \(f(-x)=-f(x)\) for all \(x\) in the domain; graph is symmetric about the origin.</li>
+                  <li><strong>Neither</strong> — most functions are neither even nor odd; this is the default outcome.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Classify a polynomial</p>
+                  <p>Determine whether \(f(x)=3x^{4}-5x^{2}+7\) is even, odd, or neither.</p>
+                  <p>Step 1. Compute \(f(-x)=3(-x)^{4}-5(-x)^{2}+7=3x^{4}-5x^{2}+7\).</p>
+                  <p>Step 2. Compare: \(f(-x)=f(x)\). The function is even — every exponent on \(x\) is even, including the constant (which is \(x^{0}\)).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — A mixed polynomial</p>
+                  <p>Classify \(g(x)=x^{3}-4x\).</p>
+                  <p>Step 1. \(g(-x)=(-x)^{3}-4(-x)=-x^{3}+4x=-(x^{3}-4x)=-g(x)\).</p>
+                  <p>Step 2. So \(g(-x)=-g(x)\): the function is odd. Check at \(x=0\): \(g(0)=0\), as required for an odd function defined at 0.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Neither</p>
+                  <p>Classify \(h(x)=x^{2}+x\).</p>
+                  <p>Step 1. \(h(-x)=x^{2}-x\). Compare to \(h(x)=x^{2}+x\) — not equal.</p>
+                  <p>Step 2. Compare to \(-h(x)=-x^{2}-x\) — also not equal.</p>
+                  <p>Step 3. The function is neither even nor odd. Mixing even and odd power terms breaks both symmetries.</p>
+                </div>
+                <ul>
+                  <li>For polynomials, the shortcut is: only even powers \(\Rightarrow\) even; only odd powers \(\Rightarrow\) odd; any mix \(\Rightarrow\) neither (provided the constant term is non-zero for the odd test).</li>
+                  <li>Watch parity of signs when raising to powers: \((-x)^{4}=x^{4}\), but \((-x)^{3}=-x^{3}\).</li>
+                  <li>An odd function defined at 0 must pass through the origin. If \(f(0)\ne 0\) the function cannot be odd.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.5 — "determine, through investigation, and compare the properties of even and odd polynomial functions… and determine whether a given polynomial function is even, odd, or neither."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v11')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.6a Even and Odd Functions</span>
+                        <span class="vid-duration">20:10</span>
+                        <span class="vid-toggle" id="toggle-v11">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v11">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/011_MHF4U_1.6a_Even_and_Odd_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=s01g6Mb3Vy4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v12')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.6b Even and Odd Functions Homework Solutions</span>
+                        <span class="vid-duration">2:44</span>
+                        <span class="vid-toggle" id="toggle-v12">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v12">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/012_MHF4U_1.6b_Even_and_Odd_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=jChL2M_HcRU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.7 — Transformations of Power Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Every transformed power function in this course can be written in the form \(g(x)=a\,f\!\bigl(k(x-d)\bigr)+c\). The four parameters \(a\), \(k\), \(d\), and \(c\) control four independent geometric actions: \(a\) stretches or reflects vertically, \(k\) stretches or reflects horizontally, \(d\) translates horizontally, and \(c\) translates vertically. Once you can extract these from any equation, you can graph the transformed function from the parent function's key points without re-plotting.</p>
+                <p>Two cautions are worth flagging up front. First, vertical stretches "feel" intuitive because the multiplier acts on \(y\): doubling \(a\) doubles every \(y\)-value. Horizontal stretches act the opposite way: dividing \(x\) by \(k\) outside the bracket means each point's \(x\)-coordinate <em>shrinks</em> by a factor of \(\tfrac{1}{|k|}\). Second, you must factor \(k\) out before reading the horizontal shift — \(g(x)=f(2x-6)\) is \(f\bigl(2(x-3)\bigr)\), so the shift is \(3\) right, not \(6\).</p>
+                <p>The order of operations matters when sketching by hand: apply stretches and reflections before translations. Any key point \((x,y)\) on the parent maps to \(\bigl(\tfrac{x}{k}+d,\;ay+c\bigr)\) on the image.</p>
+                <ul>
+                  <li><strong>\(a\)</strong> — vertical stretch by \(|a|\), with reflection in the \(x\)-axis if \(a&lt;0\).</li>
+                  <li><strong>\(k\)</strong> — horizontal stretch by \(\tfrac{1}{|k|}\), with reflection in the \(y\)-axis if \(k&lt;0\).</li>
+                  <li><strong>\(d\)</strong> — horizontal translation: right by \(d\) if \(d&gt;0\), left if \(d&lt;0\).</li>
+                  <li><strong>\(c\)</strong> — vertical translation: up by \(c\) if \(c&gt;0\), down if \(c&lt;0\).</li>
+                  <li><strong>Mapping rule</strong> — \((x,y)\to\bigl(\tfrac{x}{k}+d,\;ay+c\bigr)\) transforms each parent point.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Reading parameters</p>
+                  <p>Describe the transformations of \(g(x)=-\tfrac{1}{2}\bigl(2(x+3)\bigr)^{3}-1\) relative to \(y=x^{3}\).</p>
+                  <p>Step 1. Identify: \(a=-\tfrac{1}{2}\), \(k=2\), \(d=-3\), \(c=-1\).</p>
+                  <p>Step 2. \(a=-\tfrac{1}{2}\): vertical compression by \(\tfrac{1}{2}\) and reflection in the \(x\)-axis.</p>
+                  <p>Step 3. \(k=2\): horizontal compression by \(\tfrac{1}{2}\).</p>
+                  <p>Step 4. \(d=-3\): shift 3 units left. \(c=-1\): shift 1 unit down.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Transforming a point</p>
+                  <p>The point \((2,16)\) lies on \(y=x^{4}\). Find its image on \(y=3(x-1)^{4}+5\).</p>
+                  <p>Step 1. Parameters: \(a=3\), \(k=1\), \(d=1\), \(c=5\).</p>
+                  <p>Step 2. Apply mapping rule \((x,y)\to\bigl(\tfrac{x}{k}+d,\;ay+c\bigr)=\bigl(\tfrac{2}{1}+1,\;3\cdot 16+5\bigr)=(3,53)\).</p>
+                  <p>Step 3. Check: substitute into the new equation. \(3(3-1)^{4}+5=3\cdot 16+5=53\). ✓</p>
+                </div>
+                <ul>
+                  <li>Always factor \(k\) out of the bracket before reading \(d\); failing to do so misplaces the horizontal shift.</li>
+                  <li>Horizontal transformations are inverses of what they look like — a factor of \(k=3\) compresses, it does not stretch.</li>
+                  <li>Stretch/reflect first, then translate. Switching the order will move points to the wrong place.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.6 — "sketch graphs of \(y=af(k(x-d))+c\) by applying one or more transformations to the graphs of \(f(x)=x^{n}\)… and state the domain and range of the transformed functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v13')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.7a Transformations of Power Functions</span>
+                        <span class="vid-duration">37:38</span>
+                        <span class="vid-toggle" id="toggle-v13">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v13">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/013_MHF4U_1.7a_Transformations_of_Power_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=dky8kqe_2UY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v14')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.7b Transformations of Power Functions Homework Solutions</span>
+                        <span class="vid-duration">3:03</span>
+                        <span class="vid-toggle" id="toggle-v14">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v14">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/014_MHF4U_1.7b_Transformations_of_Power_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=CxotW-rGNWY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.8 — Average Rate of Change</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>average rate of change</strong> of a function \(f\) on the interval \([a,b]\) is the slope of the secant line connecting the points \(\bigl(a,f(a)\bigr)\) and \(\bigl(b,f(b)\bigr)\). Algebraically, \(\text{AROC}=\dfrac{f(b)-f(a)}{b-a}\). This is just the familiar rise-over-run from Grade 9, but now applied to curves. The big idea is that even when a function is not linear, you can talk meaningfully about how fast it is changing on a stretch of its domain.</p>
+                <p>Average rate of change is the bridge to calculus. The instantaneous rate of change you study in section 1.9 is the <em>limit</em> of average rates as the interval shrinks. So mastering this computation — including handling units in word problems — sets you up for derivatives next year.</p>
+                <p>Units are critical in applied problems. If \(f\) measures height in metres and \(x\) measures time in seconds, then the average rate of change has units of metres per second. Always carry the units through; an answer of "5" is meaningless without them.</p>
+                <ul>
+                  <li><strong>Secant line</strong> — a straight line passing through two points on a curve.</li>
+                  <li><strong>Average rate of change</strong> — slope of the secant: \(\dfrac{f(b)-f(a)}{b-a}\).</li>
+                  <li><strong>Difference quotient</strong> — the algebraic form \(\dfrac{f(x+h)-f(x)}{h}\); generalises the AROC formula.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Numerical AROC</p>
+                  <p>Find the average rate of change of \(f(x)=x^{2}-3x\) on the interval \([1,4]\).</p>
+                  <p>Step 1. \(f(1)=1-3=-2\). \(f(4)=16-12=4\).</p>
+                  <p>Step 2. \(\text{AROC}=\dfrac{f(4)-f(1)}{4-1}=\dfrac{4-(-2)}{3}=\dfrac{6}{3}=2\).</p>
+                  <p>Step 3. Interpretation: the function increases by an average of 2 units of \(y\) for every 1 unit of \(x\) on this interval.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Word problem with units</p>
+                  <p>A baseball's height (in metres) at time \(t\) seconds is \(h(t)=-4.9t^{2}+20t+1\). Find the average vertical velocity over \([0,2]\) seconds.</p>
+                  <p>Step 1. \(h(0)=1\); \(h(2)=-4.9(4)+40+1=-19.6+41=21.4\) m.</p>
+                  <p>Step 2. \(\text{AROC}=\dfrac{21.4-1}{2-0}=\dfrac{20.4}{2}=10.2\) m/s.</p>
+                  <p>Step 3. The baseball rises an average of 10.2 metres per second over the first two seconds.</p>
+                </div>
+                <ul>
+                  <li>Order matters in the formula — be consistent: top and bottom should both go "later minus earlier".</li>
+                  <li>A negative AROC means the function decreases on average — not that the function is itself negative.</li>
+                  <li>Always state units in applied problems; a numerical answer is incomplete.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.7 — "make connections, through investigation, between average rate of change and slope of a secant on the graph of a function, and between instantaneous rate of change and slope of a tangent at a point on a graph."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v15')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.8a Average Rate of Change</span>
+                        <span class="vid-duration">13:51</span>
+                        <span class="vid-toggle" id="toggle-v15">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v15">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/015_MHF4U_1.8a_Average_Rate_of_Change.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=eLyi28Al2oA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v16')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.8b Average Rate of Change Homework Solutions</span>
+                        <span class="vid-duration">2:13</span>
+                        <span class="vid-toggle" id="toggle-v16">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v16">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/016_MHF4U_1.8b_Average_Rate_of_Change_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=NFOxmLPVkfM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.9 — Instantaneous Rate of Change</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>instantaneous rate of change</strong> (IROC) of a function at a point is the slope of the <em>tangent line</em> there — geometrically the line that "just touches" the curve at that single point. Without the machinery of calculus, you cannot compute this slope exactly, but you can <em>estimate</em> it to any accuracy by computing average rates of change over shorter and shorter intervals containing the point. This is your first taste of the limit concept.</p>
+                <p>Two standard estimation methods appear in MHF4U. The <em>preceding-interval</em> and <em>following-interval</em> approach picks a tiny \(h\) and computes \(\dfrac{f(a)-f(a-h)}{h}\) or \(\dfrac{f(a+h)-f(a)}{h}\). The <em>centred-interval</em> approach uses \(\dfrac{f(a+h)-f(a-h)}{2h}\), which averages the two one-sided estimates and is usually more accurate.</p>
+                <p>The IROC is the same numerical object that you will call the <em>derivative</em> \(f'(a)\) in MCV4U. Right now you compute it numerically; soon you will compute it symbolically. Understanding the limit-from-secants idea now makes the calculus transition seamless.</p>
+                <ul>
+                  <li><strong>Tangent line</strong> — the unique straight line touching a curve at exactly one nearby point; its slope is the IROC.</li>
+                  <li><strong>Centred difference quotient</strong> — \(\dfrac{f(a+h)-f(a-h)}{2h}\); a symmetric, more accurate IROC estimate.</li>
+                  <li><strong>Limit</strong> — the value approached by the AROC as the interval shrinks to zero; this is the exact IROC.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — IROC by squeezing intervals</p>
+                  <p>Estimate the IROC of \(f(x)=x^{2}\) at \(x=3\) using \(h=0.1\) and \(h=0.01\).</p>
+                  <p>Step 1. \(h=0.1\): \(\dfrac{f(3.1)-f(2.9)}{0.2}=\dfrac{9.61-8.41}{0.2}=\dfrac{1.20}{0.2}=6\).</p>
+                  <p>Step 2. \(h=0.01\): \(\dfrac{f(3.01)-f(2.99)}{0.02}=\dfrac{9.0601-8.9401}{0.02}=\dfrac{0.12}{0.02}=6\).</p>
+                  <p>Step 3. The IROC at \(x=3\) appears to equal exactly \(6\). (This matches the exact derivative \(2x\) at \(x=3\).)</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Velocity at an instant</p>
+                  <p>For \(h(t)=-4.9t^{2}+20t+1\), estimate the instantaneous velocity at \(t=2\) s using \(h=0.001\).</p>
+                  <p>Step 1. \(h(2.001)=-4.9(2.001)^{2}+20(2.001)+1\). Compute \((2.001)^{2}=4.004001\), so \(-4.9(4.004001)=-19.6196049\), giving \(-19.6196049+40.02+1=21.4003951\).</p>
+                  <p>Step 2. \(h(1.999)=-4.9(3.996001)+19.99+1=-19.5804049+20.99=21.4095951\).</p>
+                  <p>Step 3. Centred: \(\dfrac{21.4003951-21.4095951}{0.002}=\dfrac{-0.0092}{0.002}=-4.6\) m/s. The ball is moving downward at about 4.6 m/s at \(t=2\).</p>
+                </div>
+                <ul>
+                  <li>The IROC is a <em>slope</em>, not a function value — do not confuse \(f(a)\) with \(f'(a)\).</li>
+                  <li>One-sided estimates can be biased; the centred difference is usually closer to the true value.</li>
+                  <li>For applied problems, the sign of the IROC tells you the direction of change (increasing vs. decreasing).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.8 — "determine, through investigation using a variety of tools and strategies… the approximate slope of the tangent to a given point on the graph of a function… by using the slopes of secants through the given point."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v17')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 1.9a Instantaneous Rate of Change</span>
+                        <span class="vid-duration">13:11</span>
+                        <span class="vid-toggle" id="toggle-v17">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v17">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/017_MHF4U_1.9a_Instantaneous_Rate_of_Change.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Uj2J4yQw1L8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v18')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.9b Instantaneous Rate of Change Homework Solutions</span>
+                        <span class="vid-duration">2:25</span>
+                        <span class="vid-toggle" id="toggle-v18">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v18">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/018_MHF4U_1.9b_Instantaneous_Rate_of_Change_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=u346x7-XT6Y" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.10 — Chapter Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapter 1 builds the analytic vocabulary you will use for the rest of the course. The thread running through every topic — power functions, polynomial characteristics, finite differences, factored-form graphing, symmetry, transformations, and rates of change — is that a function's <em>algebraic form</em> and its <em>graphical features</em> are two sides of the same coin. Strong analysts move fluently between them.</p>
+                <p>When you review, focus on the connections, not the individual facts. The degree of a polynomial appears in finite differences (the level at which they go constant), in the maximum number of turning points (\(n-1\)), in the maximum number of real zeros (\(n\)), and in end behaviour (combined with the leading coefficient). The factored form reveals zeros directly, and multiplicity ties together graphing, sign analysis, and (in Chapter 2) the Factor Theorem.</p>
+                <p>For the chapter test, expect a mix of mechanical questions (compute, classify, sketch) and reasoning questions ("explain why a quintic must have at least one real zero"). Practise writing your justifications in full sentences — that habit pays off on the final exam, where Communication is a quarter of the mark.</p>
+                <ul>
+                  <li><strong>End-behaviour rule</strong> — driven solely by the leading term \(a_{n}x^{n}\) for large \(|x|\).</li>
+                  <li><strong>Degree–differences link</strong> — the \(n\)-th finite differences of a degree-\(n\) polynomial are constant.</li>
+                  <li><strong>Mapping rule</strong> — \((x,y)\to\bigl(\tfrac{x}{k}+d,\;ay+c\bigr)\) for \(y=af\!\bigl(k(x-d)\bigr)+c\).</li>
+                  <li><strong>AROC vs IROC</strong> — slope of a secant vs. slope of a tangent; limit of the former gives the latter.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Synthesis problem</p>
+                  <p>A quartic polynomial has zeros at \(x=-2\) (multiplicity 1), \(x=1\) (multiplicity 2), \(x=3\) (multiplicity 1), and passes through \((0,-6)\). State its factored form, determine end behaviour, and find the AROC on \([0,3]\).</p>
+                  <p>Step 1. Factored form: \(f(x)=a(x+2)(x-1)^{2}(x-3)\).</p>
+                  <p>Step 2. Use \((0,-6)\): \(a(2)(1)(-3)=-6a=-6\Rightarrow a=1\). So \(f(x)=(x+2)(x-1)^{2}(x-3)\).</p>
+                  <p>Step 3. End behaviour: leading term is \(x\cdot x^{2}\cdot x=x^{4}\) with positive coefficient — both ends point up.</p>
+                  <p>Step 4. AROC on \([0,3]\): \(f(0)=-6\), \(f(3)=(5)(4)(0)=0\). \(\text{AROC}=\dfrac{0-(-6)}{3-0}=2\).</p>
+                </div>
+                <ul>
+                  <li>When solving for \(a\), keep the sign visible at every step — losing it is the most common review-test error.</li>
+                  <li>Practise stating domain and range in interval notation; teachers often deduct for inequalities-only answers.</li>
+                  <li>Re-read each question after solving to verify you answered <em>every</em> part (zeros, end behaviour, intercepts).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Overall Expectation C1 — "demonstrate an understanding of the relationship between the equation of a polynomial function and the shape of its graph by recognizing the characteristics that are common to functions of the same type."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v19')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">MHF4U 1.10a Chapter 1 Summary</span>
+                        <span class="vid-duration">7:19</span>
+                        <span class="vid-toggle" id="toggle-v19">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v19">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/019_MHF4U_1.10a_Chapter_1_Summary.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=iYQiuOKWcC4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v20')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 1.10b Chapter 1 Review Homework Solutions</span>
+                        <span class="vid-duration">6:10</span>
+                        <span class="vid-toggle" id="toggle-v20">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v20">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/020_MHF4U_1.10b_Chapter_1_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=xAo_34x4XkE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch1_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch1_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch1_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="../mhf4u.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Back to course</a>
+<a href="ch2.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 2 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

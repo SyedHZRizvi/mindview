@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Physics (Grade 11) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\(', '\)']], displayMath: [['\[', '\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #ea580c; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #7c3aeddd, #7c3aed);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sph3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH3U Physics)</a></div>
+    <div class="strand-tag">Science — Grade 11 University Preparation</div>
+    <h1>⚡ SPH3U: Unit 4: Waves and Sound</h1>
+    <p>Wave properties, sound waves, interference, resonance, the Doppler effect, music &amp; medical applications</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg, #7c3aeddd, #7c3aed);">
+            <h2>Unit 4: Waves and Sound</h2>
+            <p>Wave properties, sound waves, interference, resonance, the Doppler effect, music &amp; medical applications</p>
+            <div class="unit-meta">
+                <span>📚 Strand E: Waves &amp; Sound</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 4 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.1 — Wave Properties &amp; the Wave Equation</div>
+            <div class="topic-desc">Transverse vs. longitudinal, amplitude, wavelength, frequency, period, \( v = f\lambda \)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>wave</strong> is a disturbance that transfers energy through a medium (or, for electromagnetic waves, through empty space) without the medium being permanently displaced — water ripples carry energy across a lake but the water itself stays roughly in place. Two main types appear in nature. In a <em>transverse wave</em>, particles of the medium oscillate <em>perpendicular</em> to the direction of energy propagation (a wave on a string, light, all electromagnetic waves). In a <em>longitudinal wave</em>, particles oscillate <em>parallel</em> to the direction of energy propagation (sound in air, compressions on a Slinky). Surface water waves are a combination of both.</p>
+                <p>Every periodic wave is described by four key quantities. <strong>Amplitude</strong> A is the maximum displacement from equilibrium — related to the energy carried (energy ∝ A² for most waves). <strong>Wavelength</strong> λ is the distance between two consecutive identical points (crest to crest), measured in metres. <strong>Period</strong> T is the time for one full oscillation, in seconds. <strong>Frequency</strong> f = 1/T is the number of oscillations per second, in hertz (Hz). For periodic waves these are linked by the <strong>universal wave equation</strong> \( v = f\lambda \): wave speed = frequency × wavelength.</p>
+                <p>The wave speed depends on the <em>medium</em>, not on the source. A piano string and a violin string vibrating at the same 440 Hz produce different wavelengths because their wave speeds are different. Light in vacuum has \( c = 3.00 \times 10^8\ \text{m/s} \); in glass it slows to about \( 2 \times 10^8\ \text{m/s} \) — slower medium → shorter wavelength at the same frequency (the basis of refraction in Snell's law).</p>
+                <ul>
+                  <li><strong>Wave</strong> — disturbance carrying energy through space</li>
+                  <li><strong>Transverse</strong> — oscillation ⊥ to propagation (string, light)</li>
+                  <li><strong>Longitudinal</strong> — oscillation ∥ to propagation (sound)</li>
+                  <li><strong>Amplitude</strong> A — max displacement; units depend on wave (m for string, Pa for sound)</li>
+                  <li><strong>Wavelength</strong> λ — m, distance for one full cycle</li>
+                  <li><strong>Period</strong> T — s, time for one full cycle</li>
+                  <li><strong>Frequency</strong> f = 1/T — Hz; 1 Hz = 1 cycle/s</li>
+                  <li><strong>Wave speed</strong> v = fλ — m/s; depends only on medium</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Radio wave wavelength</p>
+                  <p>A CHUM 104.5 FM radio station broadcasts at 104.5 MHz. Find the wavelength of the radio wave (in air, v ≈ c = 3.00 × 10⁸ m/s).</p>
+                  <p><strong>Step 1.</strong> Convert frequency: \( f = 104.5\ \text{MHz} = 1.045 \times 10^8\ \text{Hz} \).</p>
+                  <p><strong>Step 2.</strong> Apply \( v = f\lambda \): \( \lambda = v/f = (3.00 \times 10^8)/(1.045 \times 10^8) = 2.87\ \text{m} \).</p>
+                  <p><strong>Step 3.</strong> Sanity check: FM antennas are typically a half- or quarter-wavelength, so about 1.4 m or 0.7 m — matches the size of a real car antenna.</p>
+                  <p><strong>Step 4.</strong> Compare to a 60 Hz AC power-line wave: \( \lambda = 3 \times 10^8/60 = 5 \times 10^6\ \text{m} = 5000\ \text{km} \) — vastly larger because frequency is much smaller. The product fλ is fixed by the medium.</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing wave speed with particle speed</strong> — particles oscillate locally; the wave moves forward</li>
+                  <li><strong>Mixing wavelength and amplitude</strong> — wavelength is spatial period, amplitude is height</li>
+                  <li><strong>Assuming louder = faster sound</strong> — louder = larger amplitude, same speed</li>
+                  <li><strong>Forgetting units in v = fλ</strong> — Hz × m = 1/s × m = m/s ✓</li>
+                  <li><strong>Using v = fλ for a wave on a stretched string when v changes</strong> — must use the actual v in that string</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.2 — "analyse, in qualitative and quantitative terms, the properties of mechanical waves and sound (e.g., wavelength, frequency, period, amplitude, phase, speed), using the universal wave equation."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u4v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Mechanical Waves — CrashCourse</span>
+                    <span class="vid-duration">11:09</span>
+                    <span class="vid-toggle" id="toggle-u4v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u4v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qV4lR9EWGlY?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.2 — Sound Waves &amp; the Speed of Sound</div>
+            <div class="topic-desc">\( v_\text{sound} = 331 + 0.6 T_C \) m/s, intensity, decibel scale, hearing range</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Sound</strong> is a longitudinal mechanical wave consisting of pressure variations propagating through a medium. In air, a vibrating source (vocal cords, loudspeaker cone, guitar string) alternately compresses and rarefies the surrounding gas, sending a chain of compressions and rarefactions outward at the speed of sound. Because sound is mechanical, it cannot travel through vacuum — astronauts on EVA communicate by radio, not by yelling. The speed of sound in air depends primarily on temperature; a useful empirical equation is \( v = 331 + 0.6\, T_C \) m/s, where \( T_C \) is the Celsius temperature. At 20 °C, sound travels at about 343 m/s.</p>
+                <p>Sound has the usual wave properties — wavelength, frequency, amplitude — plus a few unique attributes. The <strong>pitch</strong> of a sound corresponds to its frequency: higher frequency → higher pitch. Humans typically hear from about 20 Hz to 20 000 Hz (kHz); below 20 Hz is <em>infrasound</em>, above 20 kHz is <em>ultrasound</em>. Different animals hear different ranges: dogs to about 40 kHz, bats to 100 kHz (essential for echolocation). The <strong>loudness</strong> of a sound corresponds to its <em>intensity</em>, measured in W/m². Because our ears respond logarithmically, loudness is reported on the <strong>decibel scale</strong>: \( \beta = 10\log_{10}(I/I_0) \), where \( I_0 = 10^{-12}\ \text{W/m}^2 \) is the threshold of human hearing.</p>
+                <p>Sound speeds depend strongly on medium. In water sound travels at about 1500 m/s (4× air); in steel at 5100 m/s (15× air). This is why you can hear a train coming by putting your ear to the rail much earlier than through the air.</p>
+                <ul>
+                  <li><strong>Sound</strong> — longitudinal mechanical wave, pressure variation</li>
+                  <li><strong>Speed of sound in air</strong> v = 331 + 0.6 T_C (m/s)</li>
+                  <li><strong>Audible range</strong> — 20 Hz to 20 kHz for healthy young humans</li>
+                  <li><strong>Infrasound</strong> — &lt; 20 Hz (earthquakes, whale song)</li>
+                  <li><strong>Ultrasound</strong> — &gt; 20 kHz (medical imaging, bat sonar)</li>
+                  <li><strong>Intensity</strong> I — W/m²; \( I = P/(4\pi r^2) \) for a point source</li>
+                  <li><strong>Sound level</strong> β = 10 log(I/I₀) — dB; +10 dB ≈ 10× the intensity</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — How far away is the thunderstorm?</p>
+                  <p>You see a flash of lightning, then hear thunder 4.5 s later. Air temperature is 22 °C. Find your distance to the lightning strike.</p>
+                  <p><strong>Step 1.</strong> Speed of sound at 22 °C: \( v = 331 + 0.6(22) = 331 + 13.2 = 344.2\ \text{m/s} \).</p>
+                  <p><strong>Step 2.</strong> Light reaches you essentially instantly (\( c = 3 \times 10^8 \) m/s, so 1 km takes 3 μs).</p>
+                  <p><strong>Step 3.</strong> Distance from sound time: \( d = v \cdot t = 344.2 \times 4.5 = 1549\ \text{m} \approx 1.55\ \text{km} \).</p>
+                  <p><strong>Step 4.</strong> Rule of thumb: divide seconds by 3 for kilometres (or by 5 for miles) — 4.5/3 = 1.5 km. ✓</p>
+                  <p><strong>Step 5.</strong> Decibel sanity check: a thunderclap at 1.5 km is about 70 dB at your ear (loud conversation level); at 10 m it would be about 120 dB (painful).</p>
+                </div>
+                <ul>
+                  <li><strong>Treating sound as a transverse wave</strong> — sound in fluids is purely longitudinal</li>
+                  <li><strong>Using v = 343 m/s in a hot or cold environment</strong> — apply the temperature correction</li>
+                  <li><strong>Confusing intensity (W/m²) with sound level (dB)</strong> — sound level is logarithmic</li>
+                  <li><strong>Saying "louder sound travels faster"</strong> — speed depends on medium, not amplitude</li>
+                  <li><strong>Forgetting that sound cannot travel in vacuum</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "explain the components and characteristics of sound waves (e.g., compression, rarefaction, longitudinal motion of particles), including the relationship between intensity and amplitude."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u4v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Sound Waves — Crash Course Physics</span>
+                    <span class="vid-duration">10:08</span>
+                    <span class="vid-toggle" id="toggle-u4v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u4v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qV4lR9EWGlY?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.3 — Interference, Resonance &amp; Standing Waves</div>
+            <div class="topic-desc">Constructive/destructive interference, harmonics on strings (\( f_n = nv/(2L) \)) and in pipes</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>When two waves overlap in the same medium, they superpose: the displacement at every point is the sum of the displacements each wave would produce alone. This is the <strong>principle of superposition</strong>. If two crests arrive at the same point at the same time, they add to make a bigger crest — <em>constructive interference</em>. If a crest meets a trough of equal amplitude, they cancel — <em>destructive interference</em>. After overlapping the two waves pass through each other unchanged; the interference is momentary.</p>
+                <p>A <strong>standing wave</strong> forms when a wave reflects from a boundary and interferes with itself. At specific frequencies (the <em>resonant</em> or <em>natural</em> frequencies), the interference produces a stationary pattern of <em>nodes</em> (points of zero displacement) and <em>antinodes</em> (points of maximum oscillation). On a string fixed at both ends (like a guitar string of length L), the fundamental wavelength is \( \lambda_1 = 2L \), giving fundamental frequency \( f_1 = v/(2L) \). The harmonics are integer multiples: \( f_n = nv/(2L) \) for n = 1, 2, 3, … The series f₁, 2f₁, 3f₁ … is what gives musical instruments their characteristic timbre.</p>
+                <p>For an air column open at both ends (a flute), the harmonic series is the same: \( f_n = nv/(2L) \). For an air column closed at one end (a clarinet, or a bottle), only odd harmonics exist: \( f_n = nv/(4L) \) with n = 1, 3, 5… <strong>Resonance</strong> occurs when an external driving force matches a natural frequency, producing dramatically large amplitude — the basis of musical instruments, but also of the Tacoma Narrows bridge collapse (1940).</p>
+                <ul>
+                  <li><strong>Principle of superposition</strong> — total displacement = sum of individual displacements</li>
+                  <li><strong>Constructive interference</strong> — in-phase waves; amplitudes add</li>
+                  <li><strong>Destructive interference</strong> — out-of-phase waves; amplitudes subtract</li>
+                  <li><strong>Standing wave</strong> — stationary pattern of nodes and antinodes</li>
+                  <li><strong>Node</strong> — fixed point of zero displacement</li>
+                  <li><strong>Antinode</strong> — point of maximum oscillation</li>
+                  <li><strong>Harmonic</strong> — integer multiple of the fundamental frequency</li>
+                  <li><strong>Resonance</strong> — large response when driven at a natural frequency</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Frequencies of a guitar string</p>
+                  <p>A guitar string of length L = 0.65 m has a wave speed of 286 m/s. Find the first three harmonic frequencies.</p>
+                  <p><strong>Step 1.</strong> Use the formula for a string fixed at both ends: \( f_n = nv/(2L) \).</p>
+                  <p><strong>Step 2.</strong> Fundamental (n = 1): \( f_1 = (1)(286)/(2 \times 0.65) = 286/1.30 = 220\ \text{Hz} \) — this is musical A3, the open A string.</p>
+                  <p><strong>Step 3.</strong> Second harmonic (n = 2): \( f_2 = 2 f_1 = 440\ \text{Hz} \) — concert pitch A4, one octave up.</p>
+                  <p><strong>Step 4.</strong> Third harmonic (n = 3): \( f_3 = 3 f_1 = 660\ \text{Hz} \) — about a perfect fifth above A4.</p>
+                  <p><strong>Step 5.</strong> Visualise: at n = 1 the string has one antinode in the middle; at n = 2 it has two antinodes and one node in the middle; at n = 3 it has three antinodes and two interior nodes. The mix of these harmonics gives a guitar its rich tone.</p>
+                </div>
+                <ul>
+                  <li><strong>Counting nodes as harmonics</strong> — n is the antinode count (string fixed both ends)</li>
+                  <li><strong>Using both-ends formula for a closed pipe</strong> — closed pipes use \( f_n = nv/(4L) \) with odd n only</li>
+                  <li><strong>Forgetting that resonance requires matching frequency, not amplitude</strong></li>
+                  <li><strong>Treating interference as a permanent change</strong> — waves emerge intact</li>
+                  <li><strong>Adding wave speeds when waves overlap</strong> — superposition adds displacements, not speeds</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.3 — "investigate, through laboratory inquiry or computer simulation, the properties of mechanical waves and sound, and use the universal wave equation to determine various characteristics of waves (e.g., the wavelength of standing waves)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u4v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Standing Waves &amp; Resonance — Khan Academy</span>
+                    <span class="vid-duration">14:00</span>
+                    <span class="vid-toggle" id="toggle-u4v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u4v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/no7ZPPqtZEg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=no7ZPPqtZEg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.4 — The Doppler Effect &amp; Applications</div>
+            <div class="topic-desc">Source/observer motion, ultrasound imaging, sonar, weather radar</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Doppler effect</strong> is the change in observed frequency of a wave when the source and the observer are moving relative to each other. Discovered by Christian Doppler in 1842, it explains why a passing ambulance siren drops in pitch as it goes by, why police radar can measure car speeds, and why astronomers can detect the expansion of the universe by red-shifted starlight. The fundamental cause is geometric: when the source approaches, successive wave fronts are emitted closer together (shorter wavelength → higher frequency); when it recedes, wave fronts are spread out (longer wavelength → lower frequency).</p>
+                <p>For sound waves with stationary observer and source moving toward the observer at speed \( v_s \): \( f_\text{obs} = f_\text{src}\,v/(v - v_s) \). When the source recedes, the denominator becomes \( v + v_s \). When the observer moves toward a stationary source at speed \( v_o \): \( f_\text{obs} = f_\text{src}(v + v_o)/v \). The general form is \( f_\text{obs} = f_\text{src}(v \pm v_o)/(v \mp v_s) \), with signs chosen so that motion <em>toward</em> increases the frequency. Note: the wave speed v depends only on the medium and is unchanged by source or observer motion.</p>
+                <p>Applications are everywhere. <em>Medical ultrasound Doppler</em> measures blood flow velocity by comparing emitted and reflected ultrasound frequencies. <em>Sonar</em> uses underwater Doppler to detect submarine motion. <em>Weather radar</em> uses Doppler to identify tornadoes by detecting rotating wind patterns. <em>Speed-trap radar</em> bounces microwaves off a car. In astronomy, <em>red-shift</em> of distant galaxies established that the universe is expanding — a discovery by Edwin Hubble in 1929 that revolutionised cosmology.</p>
+                <ul>
+                  <li><strong>Doppler effect</strong> — shift in observed frequency due to relative motion</li>
+                  <li><strong>Source velocity</strong> \( v_s \) — speed of source relative to medium</li>
+                  <li><strong>Observer velocity</strong> \( v_o \) — speed of observer relative to medium</li>
+                  <li><strong>Wave speed</strong> v — depends only on medium (343 m/s for sound in air at 20 °C)</li>
+                  <li><strong>Blue-shift / red-shift</strong> — light from approaching / receding objects</li>
+                  <li><strong>Sonic boom</strong> — shock wave when source exceeds wave speed</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Ambulance siren</p>
+                  <p>An ambulance siren emits a 920 Hz tone. The ambulance approaches you at 25 m/s through still air (T = 20 °C, v = 343 m/s). What frequency do you hear (a) as it approaches and (b) after it passes?</p>
+                  <p><strong>Step 1.</strong> Approaching: source moves toward observer, observer stationary. \( f_\text{obs} = f_\text{src}\,v/(v - v_s) = 920 \times 343/(343 - 25) = 920 \times 343/318 \).</p>
+                  <p><strong>Step 2.</strong> Compute: \( 343/318 = 1.0786 \), so \( f_\text{obs} = 920 \times 1.0786 = 992\ \text{Hz} \) — pitched up by about 72 Hz.</p>
+                  <p><strong>Step 3.</strong> Receding: \( f_\text{obs} = f_\text{src}\,v/(v + v_s) = 920 \times 343/(343 + 25) = 920 \times 343/368 \).</p>
+                  <p><strong>Step 4.</strong> Compute: \( 343/368 = 0.9321 \), so \( f_\text{obs} = 920 \times 0.9321 = 858\ \text{Hz} \) — pitched down by about 62 Hz.</p>
+                  <p><strong>Step 5.</strong> Total shift heard as the ambulance passes: 992 → 858 Hz, a drop of 134 Hz — easily detected by the ear (corresponds to about 2 semitones).</p>
+                </div>
+                <ul>
+                  <li><strong>Thinking the wave speed changes</strong> — it does not; only frequency and wavelength shift</li>
+                  <li><strong>Forgetting the medium matters</strong> — Doppler shift in air ≠ in water</li>
+                  <li><strong>Confusing the source and observer formulas</strong> — keep careful track of who is moving</li>
+                  <li><strong>Using sign convention inconsistently</strong> — "toward" always increases f</li>
+                  <li><strong>Assuming Doppler only applies to sound</strong> — it works for all waves, including light</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E2.5 — "analyse, in qualitative and quantitative terms, the conditions required for resonance and the Doppler effect in mechanical systems, and explain the conditions in terms of the properties of mechanical waves and sound."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt9')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">The Doppler Effect — Khan Academy</span>
+                    <span class="vid-duration">11:12</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt9">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt9">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/h4OnBYrbCjY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=h4OnBYrbCjY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt10')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Ultrasound Physics — Explaining Doppler</span>
+                    <span class="vid-duration">09:08</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt10">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt10">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9nzkF0hmy04?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=9nzkF0hmy04" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph3u/Unit4_Waves_and_Sound_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph3u/Unit4_Waves_and_Sound_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph3u/Unit4_Waves_and_Sound_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH3U — Physics, Grade 11 · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

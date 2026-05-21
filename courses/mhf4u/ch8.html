@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 8: Combining Functions</h1>
+<p>Sums, differences, products, quotients, composite functions, modeling</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit8">
+        <div class="unit-header" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+            <h2>Chapter 8: Combining Functions</h2>
+            <p>Sums, differences, products, quotients, composite functions, modeling</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Characteristics of Functions</span>
+                <span>⏱️ ~10h</span>
+                <span>📹 8 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">8.1 — Sums and Differences of Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Given two functions \(f\) and \(g\), the <strong>sum function</strong> is defined as \((f+g)(x)=f(x)+g(x)\), and the <strong>difference function</strong> as \((f-g)(x)=f(x)-g(x)\). These new functions have a domain equal to the <em>intersection</em> of the original domains: a value of \(x\) must be valid for both \(f\) and \(g\) before \(f+g\) can be evaluated there.</p>
+                <p>Combining functions lets you build complex models from simple components. A noisy signal might be modelled as a sinusoid plus a polynomial trend; a profit function is revenue minus cost; the height of a damped oscillator is exponential decay times sine. Understanding how to graph and analyse the combined function is the gateway to function composition in section 8.3 and to early calculus modelling.</p>
+                <p>To sketch \(f+g\) from the graphs of \(f\) and \(g\), use <em>ordinate addition</em>: at each \(x\), the height of \(f+g\) equals the sum of the heights of \(f\) and \(g\). Where one function is zero, the sum equals the other; where they are equal in magnitude but opposite in sign, the sum is zero.</p>
+                <ul>
+                  <li><strong>Sum function</strong> — \((f+g)(x)=f(x)+g(x)\), with domain \(D_{f}\cap D_{g}\).</li>
+                  <li><strong>Difference function</strong> — \((f-g)(x)=f(x)-g(x)\), same domain rule.</li>
+                  <li><strong>Ordinate addition</strong> — graphical technique: add \(y\)-values at each \(x\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Combine algebraically</p>
+                  <p>For \(f(x)=x^{2}-1\) and \(g(x)=\sqrt{x}\), find \((f+g)(x)\), \((f-g)(x)\), and state the domain.</p>
+                  <p>Step 1. \((f+g)(x)=x^{2}-1+\sqrt{x}\). \((f-g)(x)=x^{2}-1-\sqrt{x}\).</p>
+                  <p>Step 2. Domain of \(f\): \(\mathbb{R}\). Domain of \(g\): \([0,\infty)\). Intersection: \([0,\infty)\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Application</p>
+                  <p>A company's revenue is \(R(x)=20x\) and cost is \(C(x)=0.5x^{2}+5x+50\). Find the profit function and the break-even points.</p>
+                  <p>Step 1. Profit \(P(x)=R(x)-C(x)=20x-(0.5x^{2}+5x+50)=-0.5x^{2}+15x-50\).</p>
+                  <p>Step 2. Break-even: \(P(x)=0\), so \(0.5x^{2}-15x+50=0\), or \(x^{2}-30x+100=0\).</p>
+                  <p>Step 3. Quadratic formula: \(x=\dfrac{30\pm\sqrt{900-400}}{2}=\dfrac{30\pm\sqrt{500}}{2}=15\pm 5\sqrt{5}\approx 3.82,\,26.18\).</p>
+                </div>
+                <ul>
+                  <li>Domain of a sum is the <em>intersection</em> — both originals must be defined at \(x\).</li>
+                  <li>Even and odd properties: sum of two even functions is even; sum of two odd is odd; sum of even and odd is neither.</li>
+                  <li>Graphical sums can introduce new zeros where the two functions cancel each other.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.1 — "determine, through investigation using graphing technology, key features… of the graphs of functions created by adding, subtracting, multiplying, or dividing functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v110')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 8.1a Sums and Differences of Functions</span>
+                        <span class="vid-duration">19:14</span>
+                        <span class="vid-toggle" id="toggle-v110">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v110">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/110_MHF4U_8.1a_Sums_and_Differences_of_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=vyFq6RggWxs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v111')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 8.1b Sums and Differences of Functions Homework Solutions</span>
+                        <span class="vid-duration">4:47</span>
+                        <span class="vid-toggle" id="toggle-v111">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v111">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/111_MHF4U_8.1b_Sums_and_Differences_of_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=XNFkEr9nSjU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">8.2 — Products and Quotients of Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>product function</strong> is defined as \((fg)(x)=f(x)\cdot g(x)\), and the <strong>quotient function</strong> as \(\bigl(\tfrac{f}{g}\bigr)(x)=\dfrac{f(x)}{g(x)}\). The product's domain is the intersection \(D_{f}\cap D_{g}\). The quotient's domain is the intersection minus any values where \(g(x)=0\). These zeros of the denominator typically introduce vertical asymptotes or holes in the quotient — just as in Chapter 3.</p>
+                <p>Multiplying functions is the standard way to model phenomena that combine two effects multiplicatively. A damped oscillation \(y=e^{-t}\sin t\) is the product of exponential decay and a sinusoid; its envelope shrinks like \(e^{-t}\) while it oscillates inside. A package's variable price might be \(\text{(price per unit)}\times\text{(units sold)}\); seasonal patterns multiply trends in many applications.</p>
+                <p>Sign analysis of a product is straightforward: the product is positive where both factors share a sign, negative where their signs differ, zero where either factor is zero. This lets you sketch the product graph from the sign chart of its components.</p>
+                <ul>
+                  <li><strong>Product function</strong> — \((fg)(x)=f(x)g(x)\); domain \(D_{f}\cap D_{g}\).</li>
+                  <li><strong>Quotient function</strong> — \(\bigl(\tfrac{f}{g}\bigr)(x)=\dfrac{f(x)}{g(x)}\); domain \(D_{f}\cap D_{g}\setminus\{x:g(x)=0\}\).</li>
+                  <li><strong>Sign of a product</strong> — positive when factors agree in sign, negative when they differ.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Product domain and zeros</p>
+                  <p>For \(f(x)=x-2\) and \(g(x)=\sqrt{x+1}\), find \((fg)(x)\), state the domain, and find zeros.</p>
+                  <p>Step 1. \((fg)(x)=(x-2)\sqrt{x+1}\).</p>
+                  <p>Step 2. Domain of \(g\) requires \(x+1\ge 0\Rightarrow x\ge -1\). Domain of \(f\) is \(\mathbb{R}\). Intersection: \([-1,\infty)\).</p>
+                  <p>Step 3. Zeros: either \(x-2=0\) or \(\sqrt{x+1}=0\), so \(x=2\) or \(x=-1\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Quotient with restrictions</p>
+                  <p>For \(f(x)=x^{2}-9\) and \(g(x)=x-3\), find \(\bigl(\tfrac{f}{g}\bigr)(x)\) in simplified form and state the domain.</p>
+                  <p>Step 1. \(\dfrac{x^{2}-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}\).</p>
+                  <p>Step 2. Cancel: simplified form is \(x+3\) for \(x\ne 3\).</p>
+                  <p>Step 3. Domain: \(\{x\in\mathbb{R}\mid x\ne 3\}\). The graph is a line with a hole at \((3,6)\).</p>
+                </div>
+                <ul>
+                  <li>Always check denominator zeros — they restrict the quotient's domain even if they cancel.</li>
+                  <li>Products of functions of opposite parity are usually neither even nor odd.</li>
+                  <li>For damped oscillations, the envelope is the absolute value of the decaying factor.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "recognize real-world applications of combinations of functions… and solve related problems graphically."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v112')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 8.2a Product and Quotient of Functions</span>
+                        <span class="vid-duration">11:09</span>
+                        <span class="vid-toggle" id="toggle-v112">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v112">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/112_MHF4U_8.2a_Product_and_Quotient_of_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=7SKqWWm30RQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v113')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 8.2b Product and Quotient of Functions Homework Solutions</span>
+                        <span class="vid-duration">3:25</span>
+                        <span class="vid-toggle" id="toggle-v113">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v113">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/113_MHF4U_8.2b_Product_and_Quotient_of_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_IV5kvVQARM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">8.3 — Composite Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>composite</strong> of two functions, written \((f\circ g)(x)=f\!\bigl(g(x)\bigr)\), means "apply \(g\) first, then apply \(f\) to the result". Composition is the deep operation that lets you build a function from simpler pieces: every transformation you have studied — \(y=af(k(x-d))+c\) — is a composition with linear inner and outer functions. Calculus, when you reach it, builds further: the chain rule is the differentiation rule for composites.</p>
+                <p>Composition is generally <em>not commutative</em>: \(f\circ g\) and \(g\circ f\) are usually different functions. The order matters because the inner function's output becomes the outer function's input, and "do A then B" is not the same as "do B then A" in most situations.</p>
+                <p>The domain of \(f\circ g\) requires two conditions: \(x\) must lie in the domain of \(g\), and \(g(x)\) must lie in the domain of \(f\). Skipping the second check is a frequent error and can produce extraneous values.</p>
+                <ul>
+                  <li><strong>Composite function</strong> — \((f\circ g)(x)=f\!\bigl(g(x)\bigr)\); read right-to-left as "\(g\), then \(f\)".</li>
+                  <li><strong>Non-commutative</strong> — generally \(f\circ g\ne g\circ f\).</li>
+                  <li><strong>Domain of composite</strong> — \(\{x\in D_{g}\mid g(x)\in D_{f}\}\).</li>
+                  <li><strong>Identity composition</strong> — \(f\circ f^{-1}=f^{-1}\circ f=x\), the identity on the appropriate domain.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Compose two ways</p>
+                  <p>Let \(f(x)=x^{2}+1\) and \(g(x)=2x-3\). Find \((f\circ g)(x)\) and \((g\circ f)(x)\).</p>
+                  <p>Step 1. \((f\circ g)(x)=f(2x-3)=(2x-3)^{2}+1=4x^{2}-12x+9+1=4x^{2}-12x+10\).</p>
+                  <p>Step 2. \((g\circ f)(x)=g(x^{2}+1)=2(x^{2}+1)-3=2x^{2}-1\).</p>
+                  <p>Step 3. Different functions — confirms non-commutativity.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Domain of a composite</p>
+                  <p>For \(f(x)=\sqrt{x}\) and \(g(x)=x-4\), find \((f\circ g)(x)\) and its domain.</p>
+                  <p>Step 1. \((f\circ g)(x)=\sqrt{x-4}\).</p>
+                  <p>Step 2. Domain of \(g\) is \(\mathbb{R}\); need \(g(x)\in D_{f}=[0,\infty)\), so \(x-4\ge 0\Rightarrow x\ge 4\).</p>
+                  <p>Step 3. Domain: \([4,\infty)\).</p>
+                </div>
+                <ul>
+                  <li>Composition order matters — read \(f\circ g\) as "\(g\) first, then \(f\)".</li>
+                  <li>Domain of a composite is not always the intersection of domains; check the inner function's output landing inside the outer's input set.</li>
+                  <li>For inverse functions, composing them recovers the identity — a key diagnostic test.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "determine, through investigation, and explain some properties (i.e., odd, even, or neither; increasing/decreasing behaviours) of functions formed by adding, subtracting, multiplying, dividing, and composing two functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v114')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 8.3a Composite Functions</span>
+                        <span class="vid-duration">22:32</span>
+                        <span class="vid-toggle" id="toggle-v114">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v114">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/114_MHF4U_8.3a_Composite_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=o8Q4O1QASdg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v115')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 8.3b Composite Functions Homework Solutions</span>
+                        <span class="vid-duration">5:28</span>
+                        <span class="vid-toggle" id="toggle-v115">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v115">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/115_MHF4U_8.3b_Composite_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=t0PPoF3Dau4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">8.4 — Modeling with Combined Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Real-world phenomena rarely match one of the six function families exactly. More often you need to combine several base functions — through addition, multiplication, or composition — to capture the behaviour. Modelling with combined functions is the culmination of MHF4U: every algebraic and graphical tool from Chapters 1 through 7 comes together here.</p>
+                <p>The modelling cycle has three stages. <em>Identify</em> the underlying behaviours: is there a trend (polynomial or exponential)? A periodic component (sinusoidal)? A multiplicative envelope (decay × oscillation)? <em>Build</em> a candidate model by combining the relevant base functions. <em>Validate</em> by checking the model against known data points and reasoning about long-run behaviour. Iterate as needed.</p>
+                <p>Common archetypes to recognise: damped oscillation (\(y=e^{-kt}\sin\omega t\)), seasonal trend (\(y=\text{linear}+\text{sinusoid}\)), profit (revenue minus cost), and probabilistic decay (\(y=\text{polynomial}\cdot\text{exponential}\)). Each maps cleanly to a combination operation you have studied.</p>
+                <ul>
+                  <li><strong>Modelling cycle</strong> — identify behaviours, build a candidate, validate against data.</li>
+                  <li><strong>Damped oscillation</strong> — product of decay and sinusoid; amplitude shrinks toward zero.</li>
+                  <li><strong>Trend plus seasonality</strong> — sum of a slow function (linear, polynomial, exponential) and a periodic function.</li>
+                  <li><strong>Envelope</strong> — the graph of the slow factor of a product, bounding the oscillating factor's amplitude.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Damped oscillator</p>
+                  <p>A pendulum's displacement from rest is modelled by \(d(t)=10\,e^{-0.1t}\cos(2t)\) cm with \(t\) in seconds. Find \(d(0)\), describe long-run behaviour, and predict the displacement at \(t=5\) s.</p>
+                  <p>Step 1. \(d(0)=10\,e^{0}\cos 0=10\cdot 1\cdot 1=10\) cm.</p>
+                  <p>Step 2. As \(t\to\infty\), \(e^{-0.1t}\to 0\), so \(d(t)\to 0\). The oscillation amplitude decays — the pendulum gradually stops.</p>
+                  <p>Step 3. \(d(5)=10\,e^{-0.5}\cos 10\approx 10\cdot 0.6065\cdot(-0.8391)\approx -5.09\) cm.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Seasonal temperature model</p>
+                  <p>A city's average monthly temperature is modelled by \(T(m)=15\sin\!\bigl(\tfrac{\pi}{6}(m-4)\bigr)+10\). Average temperature increases by 0.05°C/month due to climate change. Write a model for the temperature including the trend.</p>
+                  <p>Step 1. Original model has midline 10. Add linear trend \(0.05m\) to make midline rise.</p>
+                  <p>Step 2. New model: \(T(m)=15\sin\!\bigl(\tfrac{\pi}{6}(m-4)\bigr)+10+0.05m\).</p>
+                  <p>Step 3. After 60 months: midline rises by \(0.05\cdot 60=3\) °C; seasonal oscillation continues with amplitude 15.</p>
+                </div>
+                <ul>
+                  <li>Always verify your model at a known point — if it does not match, the form is wrong.</li>
+                  <li>Long-run behaviour comes from the dominant component (exponential beats polynomial beats sinusoidal).</li>
+                  <li>Note units throughout — degrees, metres, seconds, and so on.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "solve problems involving the composition of two functions, including problems arising from real-world applications."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v116')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 8.4 Modeling Combining Functions</span>
+                        <span class="vid-duration">20:18</span>
+                        <span class="vid-toggle" id="toggle-v116">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v116">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/116_MHF4U_8.4_Modeling_Combining_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=X3-aMtPqP5g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">8.5 — Chapter Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapter 8 is the synthesis chapter, the place where you assemble everything from the course. You can now combine functions in four ways — sum, difference, product, quotient — and compose them. You can analyse the domain of the result, sketch combined graphs, identify symmetries, and build models from real-world descriptions.</p>
+                <p>For the final review of MHF4U, focus on flexibility. The most demanding final-exam questions combine techniques from multiple chapters: solve a rational equation that involves a logarithm; sketch a function that is the product of a polynomial and a sinusoid; find the average rate of change of a composite function. Practise these multi-step problems explicitly, and pay attention to where one chapter's restrictions interact with another's (log domain + rational restrictions together, for instance).</p>
+                <p>For Communication marks, work on writing answers that explain your reasoning, not just compute. The Ontario Achievement Chart weights Communication at 25%, so a clear, well-organised solution earns marks even when arithmetic stumbles. State assumptions, define variables, justify each manipulation, interpret final answers in context.</p>
+                <ul>
+                  <li><strong>Combined function toolkit</strong> — sum, difference, product, quotient, composite; track domain restrictions for each.</li>
+                  <li><strong>Multi-chapter integration</strong> — many final-exam problems mix polynomial/rational with trig or log.</li>
+                  <li><strong>Communication priorities</strong> — define, justify, interpret, conclude.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Cross-chapter synthesis</p>
+                  <p>Let \(f(x)=\log_{2}x\) and \(g(x)=x^{2}-4\). Find \((f\circ g)(x)\), state the domain, and find the \(x\)-intercepts.</p>
+                  <p>Step 1. \((f\circ g)(x)=\log_{2}(x^{2}-4)\).</p>
+                  <p>Step 2. Domain requires \(x^{2}-4&gt;0\), so \(x&lt;-2\) or \(x&gt;2\). Domain: \((-\infty,-2)\cup(2,\infty)\).</p>
+                  <p>Step 3. \(x\)-intercepts where \(\log_{2}(x^{2}-4)=0\), i.e., \(x^{2}-4=1\), so \(x^{2}=5\), giving \(x=\pm\sqrt{5}\).</p>
+                  <p>Step 4. Both \(\sqrt{5}\approx 2.24\) and \(-\sqrt{5}\approx -2.24\) lie in the domain — accepted.</p>
+                </div>
+                <ul>
+                  <li>Mix-and-match problems often hide a single error in the domain calculation — slow down on that step.</li>
+                  <li>For inverse-related composites, check whether the two functions are actually inverses by computing both compositions.</li>
+                  <li>Final answers in word problems must include units and an interpretive sentence.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Overall Expectation D3 — "demonstrate an understanding of operations on, and compositions of, functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v117')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 8.5 Chapter 8 Review Homework Solutions</span>
+                        <span class="vid-duration">2:07</span>
+                        <span class="vid-toggle" id="toggle-v117">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v117">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/117_MHF4U_8.5_Chapter_8_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=HNut8PwdbXw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Missing curriculum topic — Chapter 8 -->
+        <!-- Curriculum-aligned external video lessons -->
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Comparing Linear, Polynomial &amp; Exponential Functions</span>
+                <span class="vid-duration">9:24</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/hQ-TzP2iT9w?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=hQ-TzP2iT9w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Comparing Exponential and Logarithmic Functions — Khan Academy</span>
+                <span class="vid-duration">5:32</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/K_PiPfYxtao?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=K_PiPfYxtao" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Average vs Instantaneous Rate of Change — Trig, Exp, Log &amp; Rational Functions (Advanced Functions 8.8)</span>
+                <span class="vid-duration">10:08</span>
+                <span class="vid-toggle" id="toggle-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O9ftXe0goD0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=O9ftXe0goD0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 8 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch8_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch8_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch8_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch7.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 7</a>
+<a href="../mhf4u.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Back to course →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

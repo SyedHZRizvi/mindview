@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCV4U — Calculus and Vectors | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mcv4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCV4U Calculus and Vectors)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>∫ MCV4U: Unit 8: Lines and Planes</h1>
+    <p>Equations of lines in 2D/3D, equations of planes</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit8">
+        <div class="unit-header" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+            <h2>Unit 8: Lines and Planes</h2>
+            <p>Equations of lines in 2D/3D, equations of planes</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Vectors</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>In Grade 10 we wrote lines as \(y = mx + b\). That representation works in \(\mathbb{R}^2\) but breaks down in \(\mathbb{R}^3\), where a single linear equation in \(x, y, z\) describes a plane, not a line. Vector geometry solves this. A line is uniquely determined by a point \(P_0\) on it and a <strong>direction vector</strong> \(\vec{d}\); its <strong>vector equation</strong> is \(\vec{r} = \vec{r}_0 + t\vec{d}\), where \(t\) is a real parameter. Splitting into components gives the <strong>parametric equations</strong>, and (in \(\mathbb{R}^3\)) eliminating \(t\) gives the <strong>symmetric equations</strong> \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\), valid only where the direction components are non-zero.</p>
+            <p>A plane in \(\mathbb{R}^3\) is uniquely determined by a point and a <strong>normal vector</strong> \(\vec{n}\) (a vector perpendicular to the plane). The <strong>scalar (Cartesian) equation</strong> of the plane is \(ax + by + cz + d = 0\), where \((a,b,c)\) are the components of \(\vec{n}\) and \(d = -\vec{n}\cdot\vec{r}_0\). Alternatively, a plane can be specified by two direction vectors lying within it, giving the <strong>vector equation</strong> \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\). To convert between the two forms, the normal is \(\vec{n} = \vec{a}\times\vec{b}\).</p>
+            <p>The power of these representations is that they handle parallelism, perpendicularity, and intersections uniformly. Two lines are parallel iff their direction vectors are scalar multiples; two planes are parallel iff their normals are; a line is parallel to a plane iff its direction is perpendicular to the plane's normal (\(\vec{d}\cdot\vec{n} = 0\)).</p>
+            <ul>
+              <li><strong>Direction vector</strong> — a non-zero vector \(\vec{d}\) parallel to a line; any non-zero scalar multiple is also a direction vector.</li>
+              <li><strong>Vector equation of a line</strong> — \(\vec{r} = \vec{r}_0 + t\vec{d}\), \(t \in \mathbb{R}\).</li>
+              <li><strong>Parametric equations</strong> — \(x = x_0 + t d_1\), \(y = y_0 + t d_2\), \(z = z_0 + t d_3\).</li>
+              <li><strong>Symmetric equations</strong> (\(\mathbb{R}^3\), nonzero direction components) — \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\).</li>
+              <li><strong>Normal vector to a plane</strong> — vector perpendicular to every direction in the plane.</li>
+              <li><strong>Scalar equation of a plane</strong> — \(ax + by + cz + d = 0\), where \(\vec{n} = (a,b,c)\) is normal.</li>
+              <li><strong>Vector equation of a plane</strong> — \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\) for non-collinear \(\vec{a}, \vec{b}\) in the plane.</li>
+              <li><strong>Skew lines</strong> — lines in \(\mathbb{R}^3\) that are neither parallel nor intersecting.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked Example: All three forms of a line in \(\mathbb{R}^3\)</p>
+              <p>Find vector, parametric, and symmetric equations for the line through \(P(2, -1, 4)\) and \(Q(5, 3, -2)\).</p>
+              <p>Direction vector: \(\vec{d} = \vec{PQ} = (5-2,\, 3-(-1),\, -2-4) = (3, 4, -6)\).</p>
+              <p>Vector form: \(\vec{r} = (2,-1,4) + t(3,4,-6)\).</p>
+              <p>Parametric form: \(x = 2 + 3t\), \(y = -1 + 4t\), \(z = 4 - 6t\).</p>
+              <p>Symmetric form: \(\frac{x-2}{3} = \frac{y+1}{4} = \frac{z-4}{-6}\).</p>
+              <p>Check that \(Q\) lies on the line: \(t = 1\) gives \((2+3, -1+4, 4-6) = (5, 3, -2)\) ✓.</p>
+            </div>
+            <div class="worked-example">
+              <p>Worked Example: Scalar equation of a plane from three points</p>
+              <p>Find the scalar equation of the plane through \(A(1,2,3)\), \(B(2,0,1)\), \(C(0,1,4)\).</p>
+              <p>Two direction vectors in the plane: \(\vec{AB} = (1,-2,-2)\) and \(\vec{AC} = (-1,-1,1)\).</p>
+              <p>Normal vector: \(\vec{n} = \vec{AB}\times\vec{AC}\). Compute the determinant: \[\vec{n} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & -2 & -2 \\ -1 & -1 & 1 \end{vmatrix} = \hat{i}((-2)(1)-(-2)(-1)) - \hat{j}((1)(1)-(-2)(-1)) + \hat{k}((1)(-1)-(-2)(-1)).\]</p>
+              <p>Evaluate: \(\hat{i}(-2-2) - \hat{j}(1-2) + \hat{k}(-1-2) = -4\hat{i} + \hat{j} - 3\hat{k} = (-4, 1, -3)\).</p>
+              <p>Use point \(A\): \(-4(x-1) + 1(y-2) - 3(z-3) = 0 \implies -4x + 4 + y - 2 - 3z + 9 = 0 \implies -4x + y - 3z + 11 = 0\).</p>
+              <p>Verify with \(B\): \(-4(2) + 0 - 3(1) + 11 = -8 + 0 - 3 + 11 = 0\) ✓.</p>
+            </div>
+            <ul>
+              <li>Writing a single linear equation in \(x, y, z\) and calling it a line — in \(\mathbb{R}^3\) that is a plane.</li>
+              <li>Forgetting that direction vectors and normal vectors are not unique — any non-zero scalar multiple works.</li>
+              <li>Using \(y = mx + b\) form in \(\mathbb{R}^3\) — slope-intercept does not generalize.</li>
+              <li>Writing symmetric equations when a direction component is zero — the corresponding fraction is undefined and that component must be treated separately.</li>
+              <li>Mixing up "parallel to the plane" (\(\vec{d}\cdot\vec{n} = 0\)) with "perpendicular to the plane" (\(\vec{d}\) parallel to \(\vec{n}\)).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.1 — "recognize that the solution points \((x, y)\) in two-space of a single linear equation in two variables form a line and that the solution points \((x, y)\) of a system of two linear equations in two variables determine the point of intersection of two lines, if the lines are not coincident or parallel." Also C4.2 — "determine, through investigation with technology … and without technology, the equation of a line in two-space, given the slope and a point on the line, two points on the line, the equation of a line parallel to the desired line and a point on the desired line, or the equation of a line perpendicular to the desired line and a point on the desired line." And C4.3 — "recognize that the solution points \((x, y, z)\) in three-space of a single linear equation in three variables form a plane and that the solution points \((x, y, z)\) of a system of two linear equations in three variables form the line of intersection of two planes, if the planes are not parallel."</p>
+          </div>
+        </details>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v57')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.1 Equations of lines in 2 space</span>
+                        <span class="vid-duration">18:44</span>
+                        <span class="vid-toggle" id="toggle-v57">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v57">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/057_Vectors_8.1_Equations_of_lines_in_2_space.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=PmTt5zuaIEo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v58')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.2 Cartesian Equation of a line (R2)</span>
+                        <span class="vid-duration">24:17</span>
+                        <span class="vid-toggle" id="toggle-v58">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v58">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/058_Vectors_8.2_Cartesian_Equation_of_a_line__R2_.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=8sHk7A-KMt0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v59')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.1/8.2  Necessary skills with equations of lines</span>
+                        <span class="vid-duration">16:20</span>
+                        <span class="vid-toggle" id="toggle-v59">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v59">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/059_Vectors_8.1_8.2__Necessary_skills_with_equations_of_lines.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=592WL7t1eZM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v60')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.3 Vector, Parametric and Symmetric equations of lines in R3</span>
+                        <span class="vid-duration">26:03</span>
+                        <span class="vid-toggle" id="toggle-v60">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v60">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/060_Vectors_8.3_Vector__Parametric_and_Symmetric_equations_of_lines_in_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=te0rNvGiP6s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v61')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.4 Vector Equation of a Plane</span>
+                        <span class="vid-duration">21:12</span>
+                        <span class="vid-toggle" id="toggle-v61">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v61">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/061_Vectors_8.4_Vector_Equation_of_a_Plane.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=vX2RXK9I4vU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v62')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.5 The Cartesian Equation of a Plane</span>
+                        <span class="vid-duration">14:13</span>
+                        <span class="vid-toggle" id="toggle-v62">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v62">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/062_Vectors_8.5_The_Cartesian_Equation_of_a_Plane.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=A0t6nxDm0ic" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt10')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Equation of a Plane Given a Point and Perpendicular Normal Vector — Scalar/Normal Form — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">10:58</span>
+                        <span class="vid-toggle" id="toggle-yt10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt10">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2sZKZHyaQJ8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=2sZKZHyaQJ8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v63')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Vectors Chapter 8 Practice Test Equations of Lines and Planes</span>
+                        <span class="vid-duration">28:39</span>
+                        <span class="vid-toggle" id="toggle-v63">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v63">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/063_Vectors_Chapter_8_Practice_Test_Equations_of_Lines_and_Planes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=zqBo8uZBCi8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 8 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcv4u/Unit8_Lines_and_Planes_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcv4u/Unit8_Lines_and_Planes_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcv4u/Unit8_Lines_and_Planes_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch7.html" class="chnav-btn chnav-prev">← Chapter 7</a>
+  <a href="ch9.html" class="chnav-btn chnav-next">Chapter 9 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

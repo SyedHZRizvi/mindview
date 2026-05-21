@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#e11d48dd,#e11d48);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 5: Trigonometric Functions</h1>
+<p>Graphing trig functions, transformations, sinusoidal equations, applications</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#e11d48dd,#e11d48);">
+            <h2>Chapter 5: Trigonometric Functions</h2>
+            <p>Graphing trig functions, transformations, sinusoidal equations, applications</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Trigonometric Functions</span>
+                <span>⏱️ ~12h</span>
+                <span>📹 13 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 — Graphing 6 Trig Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The six trigonometric ratios become <em>functions</em> when you let the angle vary over the real numbers (in radians) and plot the ratio versus the angle. The result is six distinctive curves: \(y=\sin x\) and \(y=\cos x\) are smooth waves of amplitude 1 and period \(2\pi\); \(y=\tan x\) is a periodic curve with period \(\pi\) and vertical asymptotes at every odd multiple of \(\tfrac{\pi}{2}\); and the three reciprocal graphs (\(\csc, \sec, \cot\)) have asymptotes wherever their base functions are zero.</p>
+                <p>You should know each graph's domain, range, period, asymptotes (if any), maximum and minimum, and the locations of its zeros and turning points. For sine and cosine specifically, the five key points per period — start, max, midline crossing, min, end — give an accurate sketch from memory.</p>
+                <p>These six graphs are the universal reference. Every transformed sinusoid in the next section starts from \(y=\sin x\) or \(y=\cos x\). Internalising their shapes now makes all that follows visual rather than algebraic.</p>
+                <ul>
+                  <li><strong>Period</strong> — the smallest horizontal distance after which the graph repeats; \(2\pi\) for \(\sin, \cos, \csc, \sec\) and \(\pi\) for \(\tan, \cot\).</li>
+                  <li><strong>Amplitude</strong> — half the difference between max and min; \(1\) for \(\sin\) and \(\cos\), undefined for the others.</li>
+                  <li><strong>Asymptotes</strong> — vertical lines where the function is undefined; \(\tan\) and \(\sec\) at odd multiples of \(\tfrac{\pi}{2}\); \(\cot\) and \(\csc\) at multiples of \(\pi\).</li>
+                  <li><strong>Five key points</strong> — for \(y=\sin x\) on \([0,2\pi]\): \((0,0),\bigl(\tfrac{\pi}{2},1\bigr),(\pi,0),\bigl(\tfrac{3\pi}{2},-1\bigr),(2\pi,0)\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Compare sine and cosecant</p>
+                  <p>Describe how the graphs of \(y=\sin x\) and \(y=\csc x\) relate.</p>
+                  <p>Step 1. \(\csc x=\dfrac{1}{\sin x}\), so reciprocate every \(y\)-value of \(\sin x\).</p>
+                  <p>Step 2. Where \(\sin x=0\) (at \(x=0,\pi,2\pi,\dots\)), \(\csc x\) is undefined: vertical asymptotes there.</p>
+                  <p>Step 3. At max of \(\sin x\) (\(y=1\)), \(\csc x\) is also \(1\) — local min on its arch.</p>
+                  <p>Step 4. Result: \(\csc x\) is a series of U-shaped arches reaching down to \(y=1\) (or up to \(y=-1\)), separated by vertical asymptotes.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Key features of tangent</p>
+                  <p>State the domain, range, period, and asymptote locations of \(y=\tan x\).</p>
+                  <p>Step 1. Tangent is undefined where \(\cos x=0\), i.e., at \(x=\tfrac{\pi}{2}+k\pi\) for integer \(k\).</p>
+                  <p>Step 2. Domain: \(\{x\in\mathbb{R}\mid x\ne\tfrac{\pi}{2}+k\pi\}\). Range: \(\{y\in\mathbb{R}\}\) — all real values.</p>
+                  <p>Step 3. Period: \(\pi\), not \(2\pi\). Asymptotes spaced \(\pi\) apart.</p>
+                </div>
+                <ul>
+                  <li>Tangent and cotangent have period \(\pi\), not \(2\pi\) — a classic test trap.</li>
+                  <li>The reciprocal trig graphs touch (not cross) the original at max/min; mark this clearly.</li>
+                  <li>Cosecant and secant have range \((-\infty,-1]\cup[1,\infty)\) — no values strictly between \(-1\) and \(1\).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.4 — "sketch the graphs of \(f(x)=\sin x\), \(f(x)=\cos x\), and \(f(x)=\tan x\)… and describe the key features of these graphs."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v76')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 5.1 Graphing 6 Trig Functions and their Properties</span>
+                        <span class="vid-duration">32:45</span>
+                        <span class="vid-toggle" id="toggle-v76">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v76">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/076_MHF4U_5.1_Graphing_6_Trig_Functions_and_their_Properties.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=8JqqMOfGwg0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 — Transformations of Sinusoidal Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>sinusoidal function</strong> takes the form \(y=a\sin\!\bigl(k(x-d)\bigr)+c\) (or with cosine instead of sine). The four parameters carry the same geometric meaning as in section 1.7 — vertical stretch, horizontal stretch, horizontal shift, vertical shift — but each one now has a specific trigonometric interpretation. The amplitude is \(|a|\); the period is \(\dfrac{2\pi}{|k|}\); the phase shift (also called horizontal translation) is \(d\); and the vertical translation \(c\) is the equation of the midline \(y=c\).</p>
+                <p>From these four numbers you can recover every feature: maximum \(y=c+|a|\), minimum \(y=c-|a|\), period \(\dfrac{2\pi}{|k|}\), and the location of the first cycle. The five key points of the parent wave map to corresponding key points of the transformed wave.</p>
+                <p>Be careful with the order of operations: always factor \(k\) out of the bracket before reading the phase shift. The expression \(\sin(2x-\pi)\) is really \(\sin\!\bigl(2(x-\tfrac{\pi}{2})\bigr)\), so the phase shift is \(\tfrac{\pi}{2}\) to the right, not \(\pi\).</p>
+                <ul>
+                  <li><strong>Amplitude</strong> — \(|a|\); the vertical distance from midline to peak.</li>
+                  <li><strong>Period</strong> — \(\dfrac{2\pi}{|k|}\) (or \(\dfrac{360°}{|k|}\) in degree mode); the length of one full cycle.</li>
+                  <li><strong>Phase shift</strong> — \(d\); horizontal translation, positive \(\Rightarrow\) right.</li>
+                  <li><strong>Midline</strong> — \(y=c\); the horizontal axis of the wave.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Read parameters from an equation</p>
+                  <p>State amplitude, period, phase shift, and midline for \(y=3\sin\!\bigl(2(x-\tfrac{\pi}{4})\bigr)-1\).</p>
+                  <p>Step 1. \(a=3\): amplitude \(3\). \(k=2\): period \(\dfrac{2\pi}{2}=\pi\). \(d=\tfrac{\pi}{4}\): phase shift \(\tfrac{\pi}{4}\) right. \(c=-1\): midline \(y=-1\).</p>
+                  <p>Step 2. Maximum: \(-1+3=2\); minimum: \(-1-3=-4\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Factor before reading</p>
+                  <p>Find the phase shift of \(y=\cos(3x+\pi)\).</p>
+                  <p>Step 1. Factor: \(\cos\!\bigl(3(x+\tfrac{\pi}{3})\bigr)\).</p>
+                  <p>Step 2. So \(d=-\tfrac{\pi}{3}\): phase shift \(\tfrac{\pi}{3}\) to the left.</p>
+                </div>
+                <ul>
+                  <li>Phase shift uses \(d\) <em>after</em> factoring \(k\) out — not the constant inside the bracket.</li>
+                  <li>Period scales <em>inversely</em> with \(|k|\): doubling \(k\) halves the period.</li>
+                  <li>A negative \(a\) flips the graph over the midline — peaks become troughs and vice versa.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.5 — "graph, with technology and using the primary trigonometric functions, the function \(f(x)=a\sin(k(x-d))+c\) and \(f(x)=a\cos(k(x-d))+c\) by varying the parameters \(a\), \(k\), \(d\), and \(c\), and describe the connections between the numeric, graphical, and algebraic representations."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v77')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 5.2a Graphing Transformed Sine and Cosine Functions</span>
+                        <span class="vid-duration">23:48</span>
+                        <span class="vid-toggle" id="toggle-v77">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v77">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/077_MHF4U_5.2a_Graphing_Transformed_Sine_and_Cosine_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=QZRhubz0FJU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v78')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 5.2b Graphing Transformed Sine and Cosine Functions</span>
+                        <span class="vid-duration">15:18</span>
+                        <span class="vid-toggle" id="toggle-v78">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v78">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/078_MHF4U_5.2b_Graphing_Transformed_Sine_and_Cosine_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Wa9NfMsv72g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v79')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 5.2c Graphing Transformed Sine and Cosine Functions Solutions</span>
+                        <span class="vid-duration">9:21</span>
+                        <span class="vid-toggle" id="toggle-v79">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v79">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/079_MHF4U_5.2c_Graphing_Transformed_Sine_and_Cosine_Functions_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=uSf6aHE9lOk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 — Equations of Sinusoidal Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>To write the equation of a sinusoid from a graph or description, find the four parameters in turn. The recipe is mechanical once you know what to look for:</p>
+                <p>(1) <strong>Midline \(c\)</strong> — average of max and min: \(c=\dfrac{y_{\max}+y_{\min}}{2}\). (2) <strong>Amplitude \(a\)</strong> — half the distance between max and min: \(|a|=\dfrac{y_{\max}-y_{\min}}{2}\). (3) <strong>Period</strong> — the horizontal length of one full cycle; then \(|k|=\dfrac{2\pi}{\text{period}}\). (4) <strong>Phase shift \(d\)</strong> — choose a reference point on the parent and find how far it has moved.</p>
+                <p>For sine, the natural reference is the midline crossing where the function is increasing (the start of a fresh cycle on \(y=\sin x\)). For cosine, the natural reference is the maximum. If you cannot identify either cleanly from the data, fit both and choose whichever gives the simpler equation.</p>
+                <p>Many graphs admit multiple correct equations — sine and cosine forms of the same wave differ only by a \(\tfrac{\pi}{2}\) phase shift. Either is acceptable; verify your equation by plugging in one extra point.</p>
+                <ul>
+                  <li><strong>Midline</strong> — \(c=\dfrac{y_{\max}+y_{\min}}{2}\).</li>
+                  <li><strong>Amplitude</strong> — \(|a|=\dfrac{y_{\max}-y_{\min}}{2}\).</li>
+                  <li><strong>Period to \(k\)</strong> — \(|k|=\dfrac{2\pi}{\text{period}}\).</li>
+                  <li><strong>Reference points</strong> — sine: midline going up; cosine: maximum.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — From a description</p>
+                  <p>A sinusoid has max \(7\) at \(x=2\), next min \(-3\) at \(x=5\). Write an equation using cosine.</p>
+                  <p>Step 1. Midline: \(c=\dfrac{7+(-3)}{2}=2\).</p>
+                  <p>Step 2. Amplitude: \(|a|=\dfrac{7-(-3)}{2}=5\). Use \(a=5\) (max above midline).</p>
+                  <p>Step 3. Half-period: from max to next min is half a cycle. \(5-2=3\), so period \(=6\), and \(k=\dfrac{2\pi}{6}=\dfrac{\pi}{3}\).</p>
+                  <p>Step 4. Cosine has max at \(x=d\); given max at \(x=2\), \(d=2\).</p>
+                  <p>Step 5. Equation: \(y=5\cos\!\bigl(\tfrac{\pi}{3}(x-2)\bigr)+2\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — From a graph in seconds</p>
+                  <p>A tide model shows water height oscillating between 1 m and 5 m, completing one full cycle every 12 hours, with high tide at \(t=3\) h. Model with cosine.</p>
+                  <p>Step 1. Midline \(c=\dfrac{5+1}{2}=3\). Amplitude \(|a|=\dfrac{5-1}{2}=2\).</p>
+                  <p>Step 2. Period \(=12\), so \(k=\dfrac{2\pi}{12}=\dfrac{\pi}{6}\).</p>
+                  <p>Step 3. High tide (max) at \(t=3\), so \(d=3\) for cosine.</p>
+                  <p>Step 4. \(h(t)=2\cos\!\bigl(\tfrac{\pi}{6}(t-3)\bigr)+3\).</p>
+                </div>
+                <ul>
+                  <li>Sine and cosine equations of the same wave are both valid — they just differ by a phase shift.</li>
+                  <li>Verify by substituting a known point (max or midline crossing) into your final equation.</li>
+                  <li>If max is below midline (descending wave), use \(a&lt;0\) instead of changing the reference point.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.7 — "pose problems based on applications involving a trigonometric function, and solve these and other such problems by using a given graph or a graph generated… by hand or with technology."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v80')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 5.3a Equations of Sinusoidal Functions</span>
+                        <span class="vid-duration">27:04</span>
+                        <span class="vid-toggle" id="toggle-v80">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v80">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/080_MHF4U_5.3a_Equations_of_Sinusoidal_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=6tlXAbp5R5w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v81')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 5.3b Equations of Sinusoidal Functions Homework</span>
+                        <span class="vid-duration">6:07</span>
+                        <span class="vid-toggle" id="toggle-v81">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v81">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/081_MHF4U_5.3b_Equations_of_Sinusoidal_Functions_Homework.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=DjlntjRSJiw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.4 — Solving Trig Equations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Solving a <strong>trigonometric equation</strong> means finding every angle (in a specified interval) that makes the equation true. Because trig functions are periodic, equations almost always have infinitely many solutions — one base solution plus any integer number of full periods. Most exam questions restrict the interval to \([0,2\pi)\) or \([0,2\pi]\) and ask for all solutions in that window.</p>
+                <p>The standard procedure: (1) isolate the trig function (e.g., get \(\sin x=\tfrac{1}{2}\)); (2) find the reference angle using the inverse trig function; (3) use the CAST rule to find every quadrant where the sign matches; (4) compute the actual solutions in the required interval. If the equation is quadratic-in-trig (\(2\sin^{2}x-\sin x=0\)), factor first, then solve each factor's simpler equation separately.</p>
+                <p>Identity substitution is often required. If you see \(\sin 2x\) and the rest of the equation involves \(\sin x\), use \(\sin 2x=2\sin x\cos x\) to rewrite the equation in one common ratio. Then factor and solve.</p>
+                <ul>
+                  <li><strong>Reference angle</strong> — the acute angle whose trig ratio matches the magnitude; produced by \(\sin^{-1}\), \(\cos^{-1}\), \(\tan^{-1}\).</li>
+                  <li><strong>CAST</strong> — which quadrants give positive ratios; determines how many solutions in \([0,2\pi)\).</li>
+                  <li><strong>General solution</strong> — every solution plus integer multiples of the function's period.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Linear-in-trig</p>
+                  <p>Solve \(2\cos x+\sqrt{3}=0\) on \([0,2\pi)\).</p>
+                  <p>Step 1. Isolate: \(\cos x=-\dfrac{\sqrt{3}}{2}\).</p>
+                  <p>Step 2. Reference angle: \(\cos^{-1}\bigl(\tfrac{\sqrt{3}}{2}\bigr)=\dfrac{\pi}{6}\).</p>
+                  <p>Step 3. Cosine is negative in quadrants II and III. \(\text{Q-II}: \pi-\tfrac{\pi}{6}=\tfrac{5\pi}{6}\). \(\text{Q-III}: \pi+\tfrac{\pi}{6}=\tfrac{7\pi}{6}\).</p>
+                  <p>Step 4. Solutions: \(x=\dfrac{5\pi}{6},\,\dfrac{7\pi}{6}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Quadratic-in-trig</p>
+                  <p>Solve \(2\sin^{2}x-\sin x-1=0\) on \([0,2\pi)\).</p>
+                  <p>Step 1. Factor as a quadratic in \(u=\sin x\): \(2u^{2}-u-1=(2u+1)(u-1)=0\).</p>
+                  <p>Step 2. Either \(\sin x=-\dfrac{1}{2}\) or \(\sin x=1\).</p>
+                  <p>Step 3. \(\sin x=1\Rightarrow x=\dfrac{\pi}{2}\). \(\sin x=-\dfrac{1}{2}\): reference angle \(\tfrac{\pi}{6}\), sine negative in Q-III and Q-IV: \(x=\dfrac{7\pi}{6},\,\dfrac{11\pi}{6}\).</p>
+                  <p>Step 4. Solutions: \(x=\dfrac{\pi}{2},\,\dfrac{7\pi}{6},\,\dfrac{11\pi}{6}\).</p>
+                </div>
+                <ul>
+                  <li>Always state the interval and check that every solution lies in it.</li>
+                  <li>Calculators give only one inverse value; do not stop after finding the reference angle.</li>
+                  <li>For equations of the form \(\sin(kx)=c\), divide the period by \(k\) when listing solutions — there are more of them per \(2\pi\) interval.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "solve linear and quadratic trigonometric equations, with and without graphing technology, for the domain of real values from \(0\) to \(2\pi\), and solve related problems."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v82')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 5.4a Solving Trigonometric Equations</span>
+                        <span class="vid-duration">50:01</span>
+                        <span class="vid-toggle" id="toggle-v82">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v82">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/082_MHF4U_5.4a_Solving_Trigonometric_Equations.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Tx0xeq9NmzA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v83')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 5.4b Solve Trigonometric Equations Solutions</span>
+                        <span class="vid-duration">10:07</span>
+                        <span class="vid-toggle" id="toggle-v83">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v83">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/083_MHF4U_5.4b_Solve_Trigonometric_Equations_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=rnQpCNI8hMw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v84')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 5.4c Solve Trigonometric Equations (Challenge) Solutions</span>
+                        <span class="vid-duration">13:48</span>
+                        <span class="vid-toggle" id="toggle-v84">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v84">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/084_MHF4U_5.4c_Solve_Trigonometric_Equations__Challenge__Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=fD_qw6Q0atU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.5 — Applications of Trig Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Sinusoidal functions model any phenomenon that oscillates periodically about a mean value. Examples include daylight hours through the year, tides through the day, a Ferris-wheel rider's height, alternating current voltage, pendulum motion, and seasonal temperature. The modelling recipe is the same in every case: identify the maximum and minimum to find amplitude and midline, identify the period from one full cycle, and identify a known maximum or midline crossing for the phase shift.</p>
+                <p>Once you have a model, the typical questions are: "What is the height/temperature/voltage at time \(t\)?" (substitute), "When is the value first equal to \(X\)?" (solve a trig equation), "For how long during one cycle does the value exceed \(X\)?" (solve a trig inequality, typically via the graph), and "How many complete cycles occur in the interval?" (divide time by period).</p>
+                <p>Always include units in setup and conclusion, and watch the difference between radian-mode and degree-mode calculations. In a Ferris-wheel problem with angular speed in radians per second, your input \(t\) is in seconds and the trig function expects a radian argument; mixing units is a common cost of marks.</p>
+                <ul>
+                  <li><strong>Mean / equilibrium value</strong> — the midline \(c\) of the sinusoid; physical interpretation depends on context.</li>
+                  <li><strong>Amplitude</strong> — the maximum deviation from the mean; e.g., tidal range divided by 2.</li>
+                  <li><strong>Angular frequency</strong> — the value of \(k\); for time-based models often expressed as \(\dfrac{2\pi}{T}\) where \(T\) is the period in time units.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Ferris wheel</p>
+                  <p>A Ferris wheel of radius 10 m rotates once every 40 seconds, with the lowest point 1 m above the ground. A rider boards at the lowest point at \(t=0\). Model the rider's height \(h(t)\).</p>
+                  <p>Step 1. Centre of wheel is at \(10+1=11\) m, so midline \(c=11\).</p>
+                  <p>Step 2. Amplitude is the radius: \(|a|=10\).</p>
+                  <p>Step 3. Period \(40\) s, so \(k=\dfrac{2\pi}{40}=\dfrac{\pi}{20}\).</p>
+                  <p>Step 4. At \(t=0\) the rider is at minimum, so use cosine with negative \(a\): \(h(t)=-10\cos\!\bigl(\tfrac{\pi}{20}t\bigr)+11\).</p>
+                  <p>Step 5. Check: \(h(0)=-10(1)+11=1\). ✓ \(h(20)=-10(-1)+11=21\) m at the top. ✓</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Solving a model</p>
+                  <p>Using \(h(t)=-10\cos\!\bigl(\tfrac{\pi}{20}t\bigr)+11\), find the first time the rider is 16 m above the ground.</p>
+                  <p>Step 1. Set up: \(-10\cos\!\bigl(\tfrac{\pi}{20}t\bigr)+11=16\Rightarrow \cos\!\bigl(\tfrac{\pi}{20}t\bigr)=-\dfrac{1}{2}\).</p>
+                  <p>Step 2. \(\tfrac{\pi}{20}t=\cos^{-1}\bigl(-\tfrac{1}{2}\bigr)\). First positive solution: \(\tfrac{2\pi}{3}\).</p>
+                  <p>Step 3. \(t=\tfrac{20}{\pi}\cdot\tfrac{2\pi}{3}=\dfrac{40}{3}\approx 13.33\) s.</p>
+                </div>
+                <ul>
+                  <li>Make sure your calculator is in radian mode for radian-argument models.</li>
+                  <li>Sketch the model before solving — a quick graph catches missed solutions and helps interpret context.</li>
+                  <li>"First time" means smallest positive \(t\), not the only mathematical solution.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.6 — "represent a sinusoidal function with an equation, given its graph or its properties"; B2.8 — "solve problems by interpreting the graphs of sinusoidal functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v85')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 5.5a Application of Trigonometric Functions</span>
+                        <span class="vid-duration">25:23</span>
+                        <span class="vid-toggle" id="toggle-v85">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v85">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/085_MHF4U_5.5a_Application_of_Trigonometric_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=uaVhJ0hHDqI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v86')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 5.5b Solving Trigonometric Word Problems Solutions</span>
+                        <span class="vid-duration">7:44</span>
+                        <span class="vid-toggle" id="toggle-v86">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v86">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/086_MHF4U_5.5b_Solving_Trigonometric_Word_Problems_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=5g1gVA1Iy0I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.6 — Chapter Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapter 5 is the integration chapter: every tool from Chapter 4 (radians, exact values, identities) plus every transformation skill from Chapter 1 combine to handle trig functions as graphical, algebraic, and modelling objects. By the end you should be able to graph any sinusoid by extracting its four parameters, write an equation from a graph or description, solve trig equations and inequalities on bounded intervals, and build sinusoidal models of real-world periodic phenomena.</p>
+                <p>For review, set up a parameter-extraction table for any sinusoidal problem: midline (\(c\)), amplitude (\(|a|\)), period (\(\dfrac{2\pi}{|k|}\)), phase shift (\(d\)). Filling in those four boxes is half the battle. The other half is the equation-solving routine: isolate, reference angle, CAST, list all solutions in the interval, check.</p>
+                <p>On the unit test, expect a modelling question worth most of the Application marks. Spend a moment sketching the situation before writing the equation — the visual prevents sign mistakes on \(a\) and on the choice between sine and cosine.</p>
+                <ul>
+                  <li><strong>Parameter table</strong> — midline, amplitude, period, phase shift; the four numbers that determine any sinusoid.</li>
+                  <li><strong>Equation-solving checklist</strong> — isolate, reference angle, CAST, interval check.</li>
+                  <li><strong>Modelling checklist</strong> — define variable with units, identify max/min, identify period, choose sin or cos, verify with a known point.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Mixed review</p>
+                  <p>For \(f(x)=4\sin\!\bigl(\tfrac{\pi}{2}(x-1)\bigr)-2\), state amplitude, period, phase shift, midline. Then solve \(f(x)=0\) on \([0,4]\).</p>
+                  <p>Step 1. Parameters: \(|a|=4\), period \(=\tfrac{2\pi}{\pi/2}=4\), phase shift \(=1\), midline \(y=-2\).</p>
+                  <p>Step 2. Set \(f(x)=0\): \(4\sin\!\bigl(\tfrac{\pi}{2}(x-1)\bigr)=2\Rightarrow \sin\!\bigl(\tfrac{\pi}{2}(x-1)\bigr)=\dfrac{1}{2}\).</p>
+                  <p>Step 3. Let \(u=\tfrac{\pi}{2}(x-1)\). Reference angle \(\tfrac{\pi}{6}\); sine positive in Q-I and Q-II. \(u=\dfrac{\pi}{6}\) or \(u=\dfrac{5\pi}{6}\) within one period.</p>
+                  <p>Step 4. Back-substitute: \(\dfrac{\pi}{2}(x-1)=\dfrac{\pi}{6}\Rightarrow x-1=\dfrac{1}{3}\Rightarrow x=\dfrac{4}{3}\). Similarly \(x=\dfrac{8}{3}\).</p>
+                  <p>Step 5. Check interval: both lie in \([0,4]\). Period \(=4\), so no second cycle within range. Final: \(x=\dfrac{4}{3},\,\dfrac{8}{3}\).</p>
+                </div>
+                <ul>
+                  <li>When inside the trig argument is not just \(x\), use a substitution \(u=\)(argument) to keep track.</li>
+                  <li>Number of solutions in a period grows with \(|k|\); always double-check by listing them all.</li>
+                  <li>Modelling marks usually require an interpretation sentence — do not skip it.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Overall Expectation B2 — "demonstrate an understanding of the meaning and application of radian measure… and connect the algebraic and graphical representations of sinusoidal functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v87')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">MHF4U 5.6a Chapter 5 Summary</span>
+                        <span class="vid-duration">12:26</span>
+                        <span class="vid-toggle" id="toggle-v87">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v87">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/087_MHF4U_5.6a_Chapter_5_Summary.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=rSOHHcFNB8w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v88')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 5.6b Chapter 5 Review Homework Solutions</span>
+                        <span class="vid-duration">10:52</span>
+                        <span class="vid-toggle" id="toggle-v88">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v88">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/088_MHF4U_5.6b_Chapter_5_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ka3a6gZYZ4k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch5_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch5_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch5_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch4.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 4</a>
+<a href="ch6.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 6 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

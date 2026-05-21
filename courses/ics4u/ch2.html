@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS4U — Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #6366f1; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS4U Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 12 University Preparation</div>
+    <h1>💻 ICS4U: Unit 2: Data Structures</h1>
+    <p>1-D and 2-D lists (arrays), dictionaries (maps/records), tuples, strings as sequences, file I/O, classes &amp; objects</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+            <h2>Unit 2: Data Structures</h2>
+            <p>1-D and 2-D lists (arrays), dictionaries (maps/records), tuples, strings as sequences, file I/O, classes &amp; objects</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand A1 (Data Structures) &middot; Strand C1 (Object Modeling)</span>
+                <span>&#9201;&#65039; ~25 hours</span>
+                <span>&#128221; 6 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 &mdash; 1-D Lists (Arrays): Indexing, Slicing, Mutation</div>
+            <div class="topic-desc">List literal syntax, zero-based indexing, negative indices, slice notation, common methods (<code>.append</code>, <code>.pop</code>, <code>.insert</code>, <code>.remove</code>)</div>
+            <div class="code-snip"><span class="kw">scores</span> = [<span class="num">82</span>, <span class="num">76</span>, <span class="num">91</span>, <span class="num">68</span>, <span class="num">88</span>]
+<span class="kw">print</span>(scores[<span class="num">0</span>])     <span class="com"># 82  (first)</span>
+<span class="kw">print</span>(scores[-<span class="num">1</span>])    <span class="com"># 88  (last)</span>
+<span class="kw">print</span>(scores[<span class="num">1</span>:<span class="num">4</span>])   <span class="com"># [76, 91, 68]</span>
+scores.append(<span class="num">95</span>)        <span class="com"># mutate in place</span>
+<span class="kw">avg</span> = sum(scores) / len(scores)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A list (in many languages called an <strong>array</strong>) is the single most useful data structure in computing. It stores an ordered, zero-indexed collection of elements in contiguous (or logically contiguous) memory, supporting O(1) random access via an integer index. Python lists are mutable and heterogeneous (they may hold mixed types), unlike Java arrays which are fixed-size and homogeneous. Python's <code>list</code> is implemented as a dynamic array of object references — appending amortises to O(1), but inserting at the front (<code>insert(0, x)</code>) is O(n) because every element must shift right.</p>
+                <p>Indexing in Python starts at 0 and runs to <code>len(lst) - 1</code>; negative indices count from the end (<code>lst[-1]</code> is the last element). <strong>Slicing</strong> with <code>lst[start:stop:step]</code> returns a <em>new</em> list — a critical fact, because modifying the slice does not affect the original. The half-open interval convention (<code>start</code> inclusive, <code>stop</code> exclusive) means <code>lst[1:4]</code> contains exactly 3 elements, not 4. This eliminates many off-by-one bugs once you internalise it: the length of a slice is always <code>stop - start</code>.</p>
+                <p>Mutability has consequences. Assigning <code>b = a</code> creates an <em>alias</em>, not a copy — both names refer to the same underlying list. <code>b.append(7)</code> changes what <code>a</code> sees. To make a shallow copy, use <code>a[:]</code>, <code>list(a)</code>, or <code>a.copy()</code>. For nested lists, use <code>copy.deepcopy</code>.</p>
+                <ul>
+                  <li><strong>Index</strong> — a zero-based integer position into a list.</li>
+                  <li><strong>Slicing</strong> — extracting a sub-range with <code>lst[start:stop:step]</code>.</li>
+                  <li><strong>Mutable</strong> — can be changed in place after creation (lists, dicts, sets).</li>
+                  <li><strong>Immutable</strong> — cannot be changed in place (strings, tuples, ints, floats).</li>
+                  <li><strong>Aliasing</strong> — two names referring to the same object.</li>
+                  <li><strong>Shallow copy</strong> — copies the top-level list but shares nested objects.</li>
+                  <li><strong>Amortised complexity</strong> — average cost per operation over a sequence of operations.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — building a histogram</p>
+<pre><code>def histogram(scores, bin_size=10):
+    bins = [0] * (100 // bin_size + 1)   # 11 bins for 0-100
+    for s in scores:
+        bins[s // bin_size] += 1
+    return bins
+
+print(histogram([55, 62, 68, 71, 73, 84, 91, 91, 99]))
+# [0, 0, 0, 0, 0, 1, 2, 2, 1, 2, 1]</code></pre>
+                  <p>Constructing the bins list is O(k) where k is the number of bins; the loop runs through n scores doing O(1) work each, so the total complexity is <strong>O(n + k)</strong>. This is asymptotically optimal for counting because every score must be examined at least once. The space cost is O(k).</p>
+                </div>
+                <ul>
+                  <li>Index out of range: accessing <code>lst[len(lst)]</code> raises <code>IndexError</code>. Last valid index is <code>len(lst) - 1</code>.</li>
+                  <li>Aliasing bug: <code>b = a</code> then thinking <code>b</code> is a copy. Use <code>b = a[:]</code> or <code>b = list(a)</code>.</li>
+                  <li>Multiplying a list of lists: <code>[[0]*3]*3</code> creates three references to the <em>same</em> inner list. Use a list comprehension instead.</li>
+                  <li>Calling <code>lst.append</code> expecting a new list back — it returns <code>None</code>.</li>
+                  <li>Repeatedly inserting at the front when the desired order can be built by appending and reversing once at the end.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "demonstrate the ability to use one-dimensional arrays of compound data types … in computer programs".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt2')"><span class="vid-icon">📖</span><span class="vid-title">Python Lists, Tuples, and Sets — Corey Schafer</span><span class="vid-duration">23:43</span><span class="vid-toggle" id="toggle-ics-yt2">▶</span></div><div class="video-player" id="player-ics-yt2"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/W8KRzm-HUcc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=W8KRzm-HUcc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 &mdash; 2-D Lists / Multi-Dimensional Arrays</div>
+            <div class="topic-desc">Lists of lists, row/column indexing, nested loops to traverse a grid, building a tic-tac-toe or seating chart</div>
+            <div class="code-snip"><span class="com"># 3 x 3 game board (None = empty)</span>
+<span class="kw">board</span> = [
+    [<span class="kw">None</span>, <span class="str">"X"</span>, <span class="kw">None</span>],
+    [<span class="kw">None</span>, <span class="str">"O"</span>, <span class="kw">None</span>],
+    [<span class="str">"X"</span>,  <span class="kw">None</span>, <span class="kw">None</span>]
+]
+
+<span class="kw">for</span> row <span class="kw">in</span> board:
+    <span class="kw">for</span> cell <span class="kw">in</span> row:
+        <span class="kw">print</span>(cell <span class="kw">if</span> cell <span class="kw">else</span> <span class="str">"."</span>, end=<span class="str">" "</span>)
+    <span class="kw">print</span>()
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Two-dimensional data — grids, matrices, images, game boards, spreadsheets — show up everywhere in computing. In Python the natural representation is a <strong>list of lists</strong>: the outer list holds rows, each row is itself a list of cells. To address cell (r, c) we write <code>grid[r][c]</code>: the first index selects the row, the second selects the column. This convention (row-major) matches mathematical matrix notation and how C/Java store 2-D arrays in memory.</p>
+                <p>Traversing a 2-D structure almost always uses <strong>nested loops</strong>: the outer loop walks rows, the inner loop walks columns. The order matters for performance in compiled languages because of CPU cache lines, but at the Python level it changes only the order in which cells are visited. The total work for a full traversal of an r × c grid is <strong>O(r·c)</strong>, which is linear in the number of cells.</p>
+                <p>A frequent pitfall is creating an "empty" 2-D grid by multiplying a row: <code>[[0]*c]*r</code> looks reasonable but produces a list where every row is the <em>same object</em>. Writing to <code>grid[0][1]</code> also writes to <code>grid[1][1]</code>, <code>grid[2][1]</code>, and so on. The correct idiom is a nested list comprehension: <code>[[0]*c for _ in range(r)]</code>, which evaluates the inner expression independently for each row.</p>
+                <ul>
+                  <li><strong>2-D list / matrix</strong> — a list whose elements are themselves lists of equal length.</li>
+                  <li><strong>Row-major order</strong> — storing elements row-by-row in memory; the natural Python layout.</li>
+                  <li><strong>Nested loop</strong> — a loop inside another loop, giving multiplicative iteration counts.</li>
+                  <li><strong>Dimensions</strong> — the number of rows and columns, often written r × c.</li>
+                  <li><strong>Sparse vs dense</strong> — whether most cells hold meaningful data (dense) or default values (sparse).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — Conway's Life one-step update</p>
+<pre><code>def neighbour_count(grid, r, c):
+    rows, cols = len(grid), len(grid[0])
+    count = 0
+    for dr in (-1, 0, 1):
+        for dc in (-1, 0, 1):
+            if dr == 0 and dc == 0:
+                continue
+            nr, nc = r + dr, c + dc
+            if 0 &lt;= nr &lt; rows and 0 &lt;= nc &lt; cols:
+                count += grid[nr][nc]
+    return count
+
+def step(grid):
+    rows, cols = len(grid), len(grid[0])
+    new = [[0]*cols for _ in range(rows)]   # independent rows!
+    for r in range(rows):
+        for c in range(cols):
+            n = neighbour_count(grid, r, c)
+            if grid[r][c] == 1 and n in (2, 3):
+                new[r][c] = 1
+            elif grid[r][c] == 0 and n == 3:
+                new[r][c] = 1
+    return new</code></pre>
+                  <p>For each of the r·c cells we examine 8 neighbours, all O(1) work, so a single step costs <strong>O(r·c)</strong>. Bounds checking (<code>0 &lt;= nr &lt; rows</code>) handles edge cells without special cases. The <code>new</code> grid is built fresh to avoid reading half-updated state.</p>
+                </div>
+                <ul>
+                  <li>Initialising with <code>[[0]*c]*r</code> — every row aliases the same list. Use a comprehension.</li>
+                  <li>Swapping <code>r</code> and <code>c</code> in the index: <code>grid[c][r]</code> when you meant <code>grid[r][c]</code>.</li>
+                  <li>Updating the grid in place while reading it — neighbouring cells see the new state, not the old.</li>
+                  <li>Forgetting to bounds-check at edges, producing <code>IndexError</code> or wraparound from negative indices.</li>
+                  <li>Assuming all rows have the same length — they don't, unless you enforce it.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.4 — "use multi-dimensional arrays in computer programs (e.g., a two-dimensional array to represent a game board)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt18')"><span class="vid-icon">📖</span><span class="vid-title">Intro to Nested Lists (2D Lists) — Tech With Tim</span><span class="vid-duration">9:25</span><span class="vid-toggle" id="toggle-ics-yt18">▶</span></div><div class="video-player" id="player-ics-yt18"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rO5TMSMTs3o?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=rO5TMSMTs3o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 &mdash; Dictionaries (Maps) and Records</div>
+            <div class="topic-desc">Key-value pairs, lookup vs. linear search, dictionaries as records, nested dictionaries</div>
+            <div class="code-snip"><span class="kw">student</span> = {
+    <span class="str">"name"</span>: <span class="str">"Hopper"</span>,
+    <span class="str">"id"</span>:   <span class="num">100451</span>,
+    <span class="str">"grades"</span>: {<span class="str">"ICS4U"</span>: <span class="num">94</span>, <span class="str">"MCV4U"</span>: <span class="num">88</span>}
+}
+<span class="kw">print</span>(student[<span class="str">"grades"</span>][<span class="str">"ICS4U"</span>])  <span class="com"># 94</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>dictionary</strong> (also called a <em>map</em>, <em>hash table</em>, or <em>associative array</em>) maps <strong>keys</strong> to <strong>values</strong>. Where a list is indexed by integer position, a dictionary is indexed by arbitrary immutable values — most commonly strings. Internally, Python uses an open-addressed hash table, which gives <em>expected</em> O(1) lookup, insertion, and deletion. Compare this with a linear search through a list of n records (O(n)): on a roster of 10,000 students, a dictionary lookup is roughly 10,000× faster.</p>
+                <p>Keys must be <em>hashable</em>, which in practice means immutable: strings, numbers, and tuples-of-immutables work; lists and dicts do not. The hash function maps each key to a bucket; collisions are resolved by probing. When the table fills past a load factor (~⅔), it is resized — an amortised cost that does not affect the O(1) expected bound.</p>
+                <p>Dictionaries shine as <strong>records</strong>: bundling related fields under named keys (<code>student["name"]</code>, <code>student["gpa"]</code>) makes code self-documenting compared with parallel lists or magic tuple positions. They are also the workhorse for <strong>counting</strong> (frequency tables), <strong>grouping</strong> (bucketing by key), <strong>memoisation</strong> (caching computed results), and <strong>graph adjacency</strong> (mapping vertex → list of neighbours).</p>
+                <ul>
+                  <li><strong>Key-value pair</strong> — the unit of storage in a dict.</li>
+                  <li><strong>Hash function</strong> — maps a key to an integer bucket index.</li>
+                  <li><strong>Hashable</strong> — has a stable hash; in Python, immutable types are hashable.</li>
+                  <li><strong>Collision</strong> — two keys hash to the same bucket.</li>
+                  <li><strong>Load factor</strong> — ratio of stored entries to bucket count.</li>
+                  <li><strong>Memoisation</strong> — caching the result of an expensive function in a dict.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — word-frequency counter</p>
+<pre><code>def word_frequencies(text):
+    freq = {}
+    for word in text.lower().split():
+        word = word.strip(".,!?;:\"'")
+        if word:
+            freq[word] = freq.get(word, 0) + 1
+    return freq
+
+text = "To be, or not to be: that is the question."
+print(word_frequencies(text))
+# {'to': 2, 'be': 2, 'or': 1, 'not': 1, 'that': 1, 'is': 1, 'the': 1, 'question': 1}</code></pre>
+                  <p>The <code>.get(word, 0)</code> idiom returns 0 when the key is missing, avoiding a <code>KeyError</code>. The total cost is O(n) where n is the number of words: each iteration does O(1) hash work, and the final dict has at most n entries. For comparison, doing the same job with a list of <code>(word, count)</code> tuples and a linear search would be O(n²) — quadratically slower as the text grows.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example — memoised Fibonacci</p>
+<pre><code>cache = {}
+def fib(n):
+    if n in cache:
+        return cache[n]
+    if n &lt; 2:
+        return n
+    cache[n] = fib(n-1) + fib(n-2)
+    return cache[n]
+
+print(fib(50))  # 12586269025 — instant with memoisation</code></pre>
+                  <p>Without the cache, naive recursive Fibonacci is O(φⁿ) ≈ O(1.618ⁿ); with memoisation each <code>n</code> is computed once and stored, dropping the cost to <strong>O(n)</strong> time and O(n) space. This is the same principle that powers dynamic programming.</p>
+                </div>
+                <ul>
+                  <li>Using a list as a dict key — raises <code>TypeError: unhashable type</code>. Convert to <code>tuple</code> first.</li>
+                  <li>Accessing a missing key with <code>d[k]</code> — raises <code>KeyError</code>. Use <code>d.get(k, default)</code> or <code>if k in d</code>.</li>
+                  <li>Iterating over <code>d</code> assuming it yields values — it yields keys. Use <code>d.values()</code> or <code>d.items()</code>.</li>
+                  <li>Mutating a dict while iterating over it — raises <code>RuntimeError</code>. Iterate over <code>list(d.keys())</code> instead.</li>
+                  <li>Assuming order: insertion order is preserved since Python 3.7, but never rely on sorted order.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "demonstrate the ability to use one-dimensional arrays of compound data types (e.g., records) in computer programs".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt3')"><span class="vid-icon">📖</span><span class="vid-title">Python Data Structures — Lists, Tuples, Sets &amp; Dictionaries</span><span class="vid-duration">28:18</span><span class="vid-toggle" id="toggle-ics-yt3">▶</span></div><div class="video-player" id="player-ics-yt3"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/R-HLU9Fl5ug?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=R-HLU9Fl5ug" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 &mdash; Strings as Sequences</div>
+            <div class="topic-desc">Strings are immutable sequences; common methods (<code>.split</code>, <code>.join</code>, <code>.strip</code>, <code>.lower</code>, <code>.replace</code>, <code>.find</code>); slicing and reversal</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A string is an <strong>immutable sequence of characters</strong>. Many of the operations that work on lists — indexing, slicing, iteration, <code>len</code>, <code>in</code> — also work on strings. The crucial difference is mutability: you cannot write <code>s[0] = 'X'</code> because strings cannot be modified in place. Every method that "changes" a string actually returns a new string. For long-running text processing this matters: building a result by repeated concatenation (<code>result = result + char</code>) is O(n²) because each <code>+</code> copies the entire accumulated string. The idiomatic fix is to collect parts in a list and call <code>"".join(parts)</code> at the end, which is O(n).</p>
+                <p>Python strings are <strong>Unicode</strong> (UTF-8 internally on most platforms); each character is a code point, not a byte. This means <code>len("café")</code> is 4, not 5 — but writing it to a file in UTF-8 produces 5 bytes because <code>é</code> takes two bytes. Awareness of the text/bytes distinction prevents the classic "works on my machine until the input contains an accent" bug.</p>
+                <p>String <strong>methods</strong> form a small standard library every Grade 12 student should memorise: <code>.split(sep)</code> tokenises into a list, <code>sep.join(lst)</code> is its inverse, <code>.strip()</code> removes leading/trailing whitespace, <code>.lower()</code> and <code>.upper()</code> change case, <code>.replace(old, new)</code> substitutes, <code>.find(sub)</code> returns the first index or <code>-1</code>, <code>.startswith</code>/<code>.endswith</code> are useful for parsing.</p>
+                <ul>
+                  <li><strong>Immutable</strong> — value cannot be modified after creation.</li>
+                  <li><strong>Code point</strong> — a Unicode integer identifying one character.</li>
+                  <li><strong>Encoding</strong> — the byte sequence used to store a code point (UTF-8, UTF-16, ASCII).</li>
+                  <li><strong>Substring</strong> — a contiguous slice of a string.</li>
+                  <li><strong>Tokenisation</strong> — splitting a string into meaningful units (words, fields).</li>
+                  <li><strong>Palindrome</strong> — a string that reads the same forwards and backwards.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — palindrome check and CSV parse</p>
+<pre><code>def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]   # [::-1] reverses
+
+print(is_palindrome("A man, a plan, a canal: Panama"))  # True
+print(is_palindrome("ICS4U"))                            # False
+
+def parse_csv_row(row):
+    return [field.strip() for field in row.split(',')]
+
+print(parse_csv_row(" Ada , 17, 3.85 "))  # ['Ada', '17', '3.85']</code></pre>
+                  <p>The palindrome routine first filters out non-alphanumeric characters and lowercases each one — O(n). The slice <code>s[::-1]</code> creates a reversed copy in O(n), and the equality check is O(n). Total: <strong>O(n)</strong> time, O(n) space. The CSV parser uses <code>.split(',')</code> followed by <code>.strip()</code> on each field; this is also O(n) but ignores the subtleties of quoted fields — the <code>csv</code> module handles those properly.</p>
+                </div>
+                <ul>
+                  <li>Trying to assign to an index: <code>s[0] = 'X'</code> raises <code>TypeError</code>.</li>
+                  <li>Building a result with <code>+=</code> in a loop — O(n²). Use <code>"".join(list_of_parts)</code>.</li>
+                  <li>Confusing <code>.find</code> (returns -1 on miss) with <code>.index</code> (raises <code>ValueError</code>).</li>
+                  <li>Treating <code>str.split()</code> with no argument as the same as <code>.split(' ')</code> — they differ on runs of whitespace.</li>
+                  <li>Forgetting that <code>"7" &lt; "10"</code> is True (lexicographic), not False (numeric).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "demonstrate the use of different data types (e.g., integer, floating-point, character/string, Boolean) in computer programs".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt4')"><span class="vid-icon">📖</span><span class="vid-title">Python Strings: Working with Textual Data — Corey Schafer</span><span class="vid-duration">21:09</span><span class="vid-toggle" id="toggle-ics-yt4">▶</span></div><div class="video-player" id="player-ics-yt4"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/k9TUPpGqYTo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=k9TUPpGqYTo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 &mdash; File I/O: Reading and Writing Text Files</div>
+            <div class="topic-desc"><code>open()</code>, context managers (<code>with</code> statement), reading lines, writing CSV-like data</div>
+            <div class="code-snip"><span class="com"># Read a roster file, output the average mark</span>
+<span class="kw">with</span> open(<span class="str">"roster.csv"</span>) <span class="kw">as</span> f:
+    total, count = <span class="num">0</span>, <span class="num">0</span>
+    <span class="kw">for</span> line <span class="kw">in</span> f:
+        name, mark = line.strip().split(<span class="str">","</span>)
+        total += int(mark)
+        count += <span class="num">1</span>
+<span class="kw">print</span>(<span class="str">f"Class average: {total/count:.1f}"</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Programs need <strong>persistence</strong> — the ability to save data between runs. Files are the simplest form of persistence: a named, byte-addressed region on disk. Python's <code>open(path, mode)</code> returns a file object; <code>mode</code> is <code>"r"</code> for read, <code>"w"</code> for write (truncates existing content), <code>"a"</code> for append, and <code>"b"</code> appended for binary. A file object is iterable in line-by-line fashion, which means <code>for line in f</code> reads one line at a time without loading the entire file into memory — essential for large data sets.</p>
+                <p>The <strong><code>with</code> statement</strong> is a <em>context manager</em> that guarantees the file is closed even if an exception is raised inside the block. Forgetting to close a file can leak operating-system handles and, on Windows, prevent other programs from accessing it. <code>with</code> is the modern, idiomatic way to handle files; bare <code>open</code> without <code>close</code> is a code-review red flag.</p>
+                <p>Text files store lines terminated by <code>\n</code> (Unix) or <code>\r\n</code> (Windows); Python's text-mode I/O normalises these to <code>\n</code> on read and the platform default on write. The <strong>CSV</strong> (comma-separated values) format is the simplest tabular interchange format: one row per line, fields separated by commas. The <code>csv</code> module in the standard library handles quoted fields, escaped commas, and varied dialects — students should prefer it over hand-rolled <code>.split(',')</code> once data gets messy.</p>
+                <ul>
+                  <li><strong>File handle</strong> — the OS-level reference returned by <code>open</code>.</li>
+                  <li><strong>Mode</strong> — <code>"r"</code>, <code>"w"</code>, <code>"a"</code>, optionally with <code>"b"</code> for binary or <code>"+"</code> for read/write.</li>
+                  <li><strong>Context manager</strong> — an object usable with <code>with</code> that defines setup/teardown.</li>
+                  <li><strong>Buffering</strong> — accumulating writes before flushing to disk for efficiency.</li>
+                  <li><strong>EOF (end-of-file)</strong> — signalled by an empty string from <code>read</code> or by the loop ending.</li>
+                  <li><strong>CSV</strong> — a plain-text tabular format.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — read, transform, write</p>
+<pre><code>import csv
+
+def upgrade_marks(in_path, out_path, bonus=5):
+    with open(in_path, newline='') as fin, \
+         open(out_path, 'w', newline='') as fout:
+        reader = csv.DictReader(fin)
+        writer = csv.DictWriter(fout, fieldnames=reader.fieldnames)
+        writer.writeheader()
+        for row in reader:
+            row['mark'] = min(100, int(row['mark']) + bonus)
+            writer.writerow(row)
+
+upgrade_marks('marks.csv', 'marks_curved.csv')</code></pre>
+                  <p>Two files are opened in a single <code>with</code>; both are guaranteed to close. The reader and writer stream line-by-line so memory use is O(1) regardless of file size. Total time is <strong>O(n)</strong> in the number of rows. The <code>min(100, …)</code> guard caps marks so a bonus never pushes a 98 to 103. Real Ontario reporting policies vary; this is just an illustration.</p>
+                </div>
+                <ul>
+                  <li>Opening a file in <code>"w"</code> mode "to check it exists" — it will be truncated to empty.</li>
+                  <li>Forgetting <code>with</code> and not calling <code>.close()</code>, leaking handles.</li>
+                  <li>Reading the whole file into memory with <code>f.read()</code> when streaming would suffice.</li>
+                  <li>Forgetting that <code>line</code> from iteration includes the trailing <code>\n</code>; use <code>line.rstrip("\n")</code>.</li>
+                  <li>Hand-parsing CSV with <code>split(',')</code> when fields may contain commas inside quotes.</li>
+                  <li>Hard-coding absolute paths that break on another machine — use relative paths or <code>pathlib</code>.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "use methods to manage data input and output in programs (e.g., to read from and write to a sequential file)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt19')"><span class="vid-icon">📖</span><span class="vid-title">Python File Objects — Reading and Writing to Files — Corey Schafer</span><span class="vid-duration">24:33</span><span class="vid-toggle" id="toggle-ics-yt19">▶</span></div><div class="video-player" id="player-ics-yt19"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Uh2ebFW8OYM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Uh2ebFW8OYM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.6 &mdash; Classes and Objects (Introduction to OOP)</div>
+            <div class="topic-desc">Defining a class, attributes, methods, the <code>__init__</code> constructor, encapsulation; objects vs. records</div>
+            <div class="code-snip"><span class="kw">class</span> Student:
+    <span class="kw">def</span> __init__(self, name, grade):
+        self.name  = name
+        self.grade = grade
+
+    <span class="kw">def</span> promote(self):
+        self.grade += <span class="num">1</span>
+
+    <span class="kw">def</span> __str__(self):
+        <span class="kw">return</span> <span class="str">f"{self.name} (Grade {self.grade})"</span>
+
+<span class="kw">s</span> = Student(<span class="str">"Turing"</span>, <span class="num">11</span>)
+s.promote()
+<span class="kw">print</span>(s)   <span class="com"># Turing (Grade 12)</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Object-oriented programming</strong> (OOP) bundles related data and the operations on that data into a single unit called a <strong>class</strong>. A class is a blueprint; an <strong>instance</strong> (or <em>object</em>) is a concrete realisation in memory. The instance's <strong>attributes</strong> hold its data, and its <strong>methods</strong> are functions that operate on that data. The <code>__init__</code> method (the <em>constructor</em>) runs automatically when a new instance is created, initialising attributes from the arguments passed.</p>
+                <p>OOP's main benefits are <strong>encapsulation</strong> (data and behaviour live together, so external code does not need to know representation details), <strong>abstraction</strong> (a clean interface hides complexity), and (once we add inheritance) <strong>reuse</strong>. A <code>Student</code> object knows its own name and grade and knows how to promote itself — calling code just writes <code>s.promote()</code> rather than manipulating fields directly. This makes the program easier to read, easier to change (the implementation can swap out without touching callers), and easier to test (each class can be unit-tested in isolation).</p>
+                <p>The <code>self</code> parameter is the explicit reference to the current instance. In Python you must list it; Java's <code>this</code> is implicit. The <code>__str__</code> "dunder" method (double-underscore on both sides) defines how the object is converted to a string for <code>print</code> or <code>str()</code>. Providing a meaningful <code>__str__</code> is a small effort that pays huge dividends during debugging.</p>
+                <ul>
+                  <li><strong>Class</strong> — a blueprint defining attributes and methods.</li>
+                  <li><strong>Instance / object</strong> — a concrete value created from a class.</li>
+                  <li><strong>Attribute</strong> — a piece of data stored on an instance (or class).</li>
+                  <li><strong>Method</strong> — a function defined inside a class.</li>
+                  <li><strong>Constructor</strong> — the <code>__init__</code> method that runs at creation.</li>
+                  <li><strong>Encapsulation</strong> — bundling state with the methods that change it.</li>
+                  <li><strong>Dunder method</strong> — a special method named with double underscores (e.g. <code>__str__</code>, <code>__eq__</code>).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a <code>BankAccount</code> class</p>
+<pre><code>class BankAccount:
+    def __init__(self, owner, opening_balance=0):
+        self.owner = owner
+        self._balance = opening_balance        # leading _ = "private"
+
+    def deposit(self, amount):
+        if amount &lt;= 0:
+            raise ValueError("amount must be positive")
+        self._balance += amount
+
+    def withdraw(self, amount):
+        if amount &gt; self._balance:
+            raise ValueError("insufficient funds")
+        self._balance -= amount
+
+    def balance(self):
+        return self._balance
+
+    def __str__(self):
+        return f"{self.owner}: ${self._balance:,.2f}"
+
+a = BankAccount("Ada", 100)
+a.deposit(50)
+a.withdraw(30)
+print(a)            # Ada: $120.00
+print(a.balance())  # 120</code></pre>
+                  <p>Each operation runs in O(1) and uses O(1) extra memory per account. The leading underscore on <code>_balance</code> is a convention signalling "do not access from outside the class" — Python does not enforce it but reviewers do. Encapsulation here prevents callers from corrupting the balance directly; the only legal mutations go through <code>deposit</code> and <code>withdraw</code>, which validate their arguments.</p>
+                </div>
+                <ul>
+                  <li>Forgetting <code>self</code> as the first parameter of every instance method — produces confusing <code>TypeError</code>s.</li>
+                  <li>Defining attributes outside <code>__init__</code> (as class variables) and then mutating them — they are shared across all instances.</li>
+                  <li>Using a mutable default argument: <code>def __init__(self, items=[])</code> — every instance shares the same list!</li>
+                  <li>Returning <code>self</code> from a setter and then assigning <code>obj = obj.set_x(5)</code> — works, but confuses students about mutation vs assignment.</li>
+                  <li>Comparing objects with <code>==</code> without overriding <code>__eq__</code> — falls back to identity comparison.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.4 — "describe the characteristics of object-oriented programming (e.g., classes, objects, methods, instance variables, encapsulation, inheritance)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics-yt5')"><span class="vid-icon">📖</span><span class="vid-title">Python OOP — Classes and Instances — Corey Schafer</span><span class="vid-duration">15:24</span><span class="vid-toggle" id="toggle-ics-yt5">▶</span></div><div class="video-player" id="player-ics-yt5"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZDa-Z5JzLYM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=ZDa-Z5JzLYM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics4u/Unit2_Data_Structures_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics4u/Unit2_Data_Structures_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics4u/Unit2_Data_Structures_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS4U &mdash; Computer Science, Grade 12 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mdm4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MDM4U Mathematics of Data Management)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>📊 MDM4U: Chapter 1: Counting &amp; Sample Spaces</h1>
+    <p>Fundamental counting principle, sample spaces, mutually exclusive and independent events, Venn diagrams, additive principle</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+    <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+        <h2>Chapter 1: Counting &amp; Sample Spaces</h2>
+        <p>Fundamental counting principle, sample spaces, mutually exclusive and independent events, Venn diagrams, additive principle</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~12h</span>
+            <span>🎯 A1.1–A1.5</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.1 — Sample Spaces &amp; Counting Outcomes</div>
+        <div class="topic-desc">Listing outcomes of probability experiments; tree diagrams and tables for one- and two-stage experiments.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Before any probability can be computed, the question "what could possibly happen?" must be answered with complete precision. The collection of every possible distinct outcome of a probability experiment is called the <strong>sample space</strong>, written \(S\). Listing \(S\) is the foundation of all classical probability — if even one outcome is missed, every later calculation is wrong. The reason we spend so much time on this seemingly simple step is that the human brain is notoriously poor at exhaustive listing; we naturally clump outcomes that "feel" the same and skip outcomes that "feel" impossible.</p>
+            <p>Two systematic tools rescue us from this. A <strong>tree diagram</strong> branches one stage at a time, guaranteeing that no path is forgotten; an <strong>outcome table</strong> arranges all combinations of two stages in a grid. The size of the sample space, \(n(S)\), is read directly from these structures. An <strong>event</strong> \(A\) is a subset of \(S\); the outcomes that satisfy a description (e.g. "the sum is 7") form \(A\), and \(n(A)\) is found by counting checkmarks in the diagram.</p>
+            <ul>
+              <li><strong>Sample space \(S\):</strong> the set of all possible outcomes.</li>
+              <li><strong>Outcome:</strong> a single element of \(S\).</li>
+              <li><strong>Event:</strong> a subset of \(S\) (one or more outcomes).</li>
+              <li><strong>Equally likely:</strong> every outcome in \(S\) has the same chance.</li>
+              <li><strong>Tree diagram / outcome table:</strong> exhaustive listing devices.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Tossing a coin and rolling a die.</p>
+              <p>Stage 1 has outcomes \{H, T\}; stage 2 has \{1, 2, 3, 4, 5, 6\}. Building a tree gives 2 first-stage branches, each splitting into 6 second-stage branches:</p>
+              <p>\[ S = \{H1, H2, H3, H4, H5, H6, T1, T2, T3, T4, T5, T6\}, \quad n(S) = 12. \]</p>
+              <p>Let \(A\) = "Head and an even number". From \(S\) we mark \(H2, H4, H6\), so \(n(A) = 3\) and \(P(A) = \tfrac{3}{12} = \tfrac{1}{4}\).</p>
+            </div>
+            <ul>
+              <li>Listing "HH, HT, TT" for two coin tosses (forgetting TH) — order matters when distinguishing outcomes.</li>
+              <li>Treating "sum = 7" as a single outcome rather than counting the six ordered pairs \((1,6),(2,5),\ldots,(6,1)\).</li>
+              <li>Assuming equal likelihood without checking — for instance, dart-throwing on uneven targets is not uniform.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "recognize the use of probabilities and odds in contexts (e.g., insurance, weather reports, sports statistics, medical research, lotteries), and recognize and describe how probabilities and odds are determined using empirical or theoretical methods."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Sample Spaces, Tree Diagrams, Fundamental Counting Principle — Mario's Math Tutoring</span>
+                <span class="vid-duration">10:30</span>
+                <span class="vid-toggle" id="toggle-mdm-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/7V6QMb9koNs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=7V6QMb9koNs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.2 — The Fundamental Counting Principle</div>
+        <div class="topic-desc">Multiplicative principle for sequential independent choices; product rule \( n_1 \times n_2 \times \cdots \times n_k \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When an experiment proceeds in a sequence of independent stages, drawing a tree to count every leaf quickly becomes impractical. The <strong>Fundamental Counting Principle</strong> (also called the product rule or multiplicative principle) replaces drawing with a single multiplication: if stage 1 has \(n_1\) outcomes, stage 2 has \(n_2\), and so on through stage \(k\), the number of complete outcome sequences is \(n_1 \times n_2 \times \cdots \times n_k\). The reason this works is exactly what the tree diagram shows visually — each of the \(n_1\) initial branches splits into \(n_2\) more branches, multiplying the leaf count at every level.</p>
+            <p>The conceptual hinge is the word <em>independent</em>: the number of choices available at stage \(i\) must not depend on which option was chosen at stages \(1, 2, \ldots, i-1\). If it does (say, "pick one of three shirts, then a tie that matches"), we still count by stages, but \(n_2\) is recomputed for each first-stage outcome. The principle is the engine behind permutations, combinations, license-plate problems, password counts, and indeed every counting technique in MDM4U.</p>
+            <ul>
+              <li><strong>Product rule:</strong> independent stages multiply.</li>
+              <li><strong>Sum rule:</strong> disjoint cases add (used when the outcome is one of several alternative experiments).</li>
+              <li><strong>With/without replacement:</strong> determines whether \(n_i\) decreases by 1 each step.</li>
+              <li><strong>Independent stages:</strong> the choices available at later stages do not depend on earlier ones.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: License-plate format LL-DDD-L (letters from 26, digits from 10).</p>
+              <p>Each character is filled independently:</p>
+              <p>\[ N = 26 \times 26 \times 10 \times 10 \times 10 \times 26 = 26^3 \times 10^3 = 17\,576 \times 1\,000 = 17\,576\,000. \]</p>
+              <p>If letters must be distinct and digits must be distinct, the counts drop step-by-step: \(26 \times 25 \times 10 \times 9 \times 8 \times 24 = 11\,232\,000\).</p>
+            </div>
+            <ul>
+              <li>Adding when you should multiply (and vice-versa). "AND" between stages → multiply; "OR" between disjoint cases → add.</li>
+              <li>Forgetting that "no repetition" changes \(n_i\) for later stages.</li>
+              <li>Double-counting when order does not actually matter — that is a clue to switch to combinations.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.2 — "solve problems, using the fundamental counting principle, involving the number of ways in which a sequence of events can occur."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Fundamental Counting Principle (MDM4U) — Educator</span>
+                <span class="vid-duration">9:42</span>
+                <span class="vid-toggle" id="toggle-mdm-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/549eLWIu0Xk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=549eLWIu0Xk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.3 — Mutually Exclusive Events &amp; the Additive Principle</div>
+        <div class="topic-desc">When events cannot occur together: \( P(A \cup B) = P(A) + P(B) \). Inclusive case: \( P(A \cup B) = P(A) + P(B) - P(A \cap B) \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Two events are <strong>mutually exclusive</strong> (or <em>disjoint</em>) when they cannot both happen on the same trial — formally, \(A \cap B = \varnothing\). For such events, the probability of "\(A\) or \(B\)" is simply the sum of the individual probabilities: \(P(A \cup B) = P(A) + P(B)\). The reason this clean addition works is that no outcome is counted in both \(A\) and \(B\), so adding probabilities counts every favourable outcome exactly once.</p>
+            <p>Most pairs of events in real problems, however, do overlap. Drawing a card that is "a heart or a face card" is not mutually exclusive because the J, Q, K of hearts satisfy both. The <strong>inclusion-exclusion (additive) principle</strong> repairs the over-count: \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\). Subtracting \(P(A \cap B)\) removes the outcomes that were counted twice. The same logic extends to three events: \(P(A \cup B \cup C) = P(A)+P(B)+P(C) - P(A\cap B) - P(A\cap C) - P(B\cap C) + P(A\cap B\cap C)\).</p>
+            <ul>
+              <li><strong>Mutually exclusive:</strong> \(A\cap B = \varnothing\), so \(P(A\cap B) = 0\).</li>
+              <li><strong>Union \(A \cup B\):</strong> outcomes in \(A\), in \(B\), or in both.</li>
+              <li><strong>Intersection \(A \cap B\):</strong> outcomes in both.</li>
+              <li><strong>Complement \(A'\):</strong> outcomes not in \(A\); \(P(A') = 1 - P(A)\).</li>
+              <li><strong>Inclusion-exclusion:</strong> the general additive rule for overlapping events.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A single card is drawn from a standard deck. Find \(P(\text{heart or face card})\).</p>
+              <p>Let \(H\) = "heart" and \(F\) = "face card". Then \(P(H) = \tfrac{13}{52}\) and \(P(F) = \tfrac{12}{52}\). The intersection \(H \cap F\) is "heart and face card" = \{J♥, Q♥, K♥\}, so \(P(H \cap F) = \tfrac{3}{52}\). Applying inclusion-exclusion:</p>
+              <p>\[ P(H \cup F) = \tfrac{13}{52} + \tfrac{12}{52} - \tfrac{3}{52} = \tfrac{22}{52} = \tfrac{11}{26} \approx 0.423. \]</p>
+              <p>If we had treated "heart" and "face card" as mutually exclusive we would have got \(\tfrac{25}{52}\), over-counting three cards.</p>
+            </div>
+            <ul>
+              <li>Confusing \(P(A \cap B)\) with \(P(A \mid B)\) — intersection asks "both"; conditional asks "given".</li>
+              <li>Using \(P(A) + P(B)\) when the events overlap. Always check if \(A \cap B = \varnothing\) before omitting the subtraction.</li>
+              <li>Forgetting the third intersection term \(+P(A\cap B\cap C)\) in three-set Venn problems.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 — "determine, through investigation using a variety of tools (e.g., cards, dice, tree diagrams, software), the probabilities of various combinations of events (e.g., the probability of obtaining four of a kind in a poker hand)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Probability of Mutually Exclusive Events With Venn Diagrams — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">12:35</span>
+                <span class="vid-toggle" id="toggle-mdm-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/X6usGgwXFyU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=X6usGgwXFyU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.4 — Venn Diagrams &amp; Set Operations</div>
+        <div class="topic-desc">Union, intersection, complement, and difference of events; counting elements in unions of sets.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Venn diagrams</strong> are not decorative — they are the most reliable bookkeeping device for events that overlap. Drawing two overlapping circles inside a rectangle (the universal set \(S\)) partitions the universe into four pieces: "only \(A\)", "only \(B\)", "both" \((A \cap B)\), and "neither" \((A' \cap B')\). Once a problem's data are placed into the correct regions, set operations such as union, intersection, complement, and difference can be read off by adding the numbers in the appropriate regions.</p>
+            <p>The key to Venn-diagram problems is to <strong>start at the intersection</strong> and work outward. If \(n(A) = 30\), \(n(B) = 25\), and \(n(A \cap B) = 10\), then "only \(A\)" holds \(30 - 10 = 20\) and "only \(B\)" holds \(25 - 10 = 15\). The grand total \(n(A \cup B) = 20 + 10 + 15 = 45\) reproduces the inclusion-exclusion identity. For three overlapping sets the same outside-in approach prevents double-counting, but eight regions must be filled instead of four.</p>
+            <ul>
+              <li><strong>Universal set \(S\):</strong> all outcomes under consideration.</li>
+              <li><strong>Union \(A \cup B\):</strong> elements in \(A\), in \(B\), or both.</li>
+              <li><strong>Intersection \(A \cap B\):</strong> elements in both.</li>
+              <li><strong>Complement \(A'\) or \(\overline{A}\):</strong> elements not in \(A\); \(n(A') = n(S) - n(A)\).</li>
+              <li><strong>Difference \(A \setminus B\):</strong> elements in \(A\) but not in \(B\); \(n(A \setminus B) = n(A) - n(A \cap B)\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: In a class of 30, 18 take Biology, 14 take Chemistry, 8 take both. How many take neither?</p>
+              <p>Place 8 in the intersection. Then "Bio only" \(= 18 - 8 = 10\); "Chem only" \(= 14 - 8 = 6\). So:</p>
+              <p>\[ n(B \cup C) = 10 + 8 + 6 = 24, \qquad n(\text{neither}) = n(S) - n(B \cup C) = 30 - 24 = 6. \]</p>
+              <p>Equivalently, by inclusion-exclusion: \(n(B \cup C) = 18 + 14 - 8 = 24\).</p>
+            </div>
+            <ul>
+              <li>Writing the totals 18 and 14 directly into the "only" regions instead of the full circles — always subtract the intersection first.</li>
+              <li>Forgetting the "neither" region: students often assume \(n(A \cup B) = n(S)\).</li>
+              <li>Mis-applying De Morgan's laws: \((A \cup B)' = A' \cap B'\), not \(A' \cup B'\).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.4 — "solve probability problems involving combinations of simple events, using counting techniques (e.g., listing all outcomes in a sample space using a tree diagram, Venn diagram, or table)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mutually Exclusive Events — Khan Academy</span>
+                <span class="vid-duration">5:18</span>
+                <span class="vid-toggle" id="toggle-mdm-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8xlaJ9dGr9A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=8xlaJ9dGr9A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.5 — Independent vs Dependent Events</div>
+        <div class="topic-desc">Multiplicative principle for independent events; conditional probability for dependent events: \( P(A \cap B) = P(A) \cdot P(B \mid A) \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Two events are <strong>independent</strong> when the occurrence of one provides no information about the other; mathematically, \(P(B \mid A) = P(B)\). For independent events the <em>multiplicative principle</em> simplifies dramatically: \(P(A \cap B) = P(A) \cdot P(B)\). The intuition is that any "AND" question is answered by chaining probabilities — but only after we verify that the second probability is unaffected by the first.</p>
+            <p>When the events are <strong>dependent</strong>, the general multiplication rule applies: \(P(A \cap B) = P(A) \cdot P(B \mid A)\). The conditional factor \(P(B \mid A)\) measures how likely \(B\) is once we know \(A\) has happened. Sampling without replacement is the classroom prototype: after drawing one ace from a deck, only 3 aces remain out of 51 cards, so \(P(\text{ace}_2 \mid \text{ace}_1) = \tfrac{3}{51}\) rather than \(\tfrac{4}{52}\). Recognising the dependence is what distinguishes a thoughtful probability student from one who simply multiplies blindly.</p>
+            <ul>
+              <li><strong>Independent:</strong> \(P(A \cap B) = P(A)P(B)\) and \(P(B \mid A) = P(B)\).</li>
+              <li><strong>Dependent:</strong> \(P(A \cap B) = P(A) \cdot P(B \mid A)\).</li>
+              <li><strong>With replacement</strong> → typically independent; <strong>without replacement</strong> → dependent.</li>
+              <li><strong>Mutually exclusive \(\ne\) independent:</strong> mutually exclusive events with positive probability are always dependent (knowing \(A\) happened forces \(B\) not to happen).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Two cards are drawn without replacement from a standard deck. Find \(P(\text{both aces})\).</p>
+              <p>Let \(A_1\) = "first card is an ace", \(A_2\) = "second card is an ace". These are dependent. By the general multiplication rule:</p>
+              <p>\[ P(A_1 \cap A_2) = P(A_1) \cdot P(A_2 \mid A_1) = \frac{4}{52} \cdot \frac{3}{51} = \frac{12}{2652} = \frac{1}{221} \approx 0.0045. \]</p>
+              <p>If the first card were replaced before the second draw, \(A_1\) and \(A_2\) would be independent and \(P = \tfrac{4}{52} \cdot \tfrac{4}{52} = \tfrac{1}{169} \approx 0.0059\).</p>
+            </div>
+            <ul>
+              <li>Confusing "independent" with "mutually exclusive". These describe different relationships and (for events with positive probability) cannot both be true.</li>
+              <li>Using \(P(A) \cdot P(B)\) when sampling without replacement. Whenever the population changes between trials, conditional probability is required.</li>
+              <li>Forgetting that "no effect on the other" must be checked, not assumed.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.5 — "determine the probability of an event involving combinations of up to 3 simple events, using counting techniques."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Independent Events (Basics of Probability) — jbstatistics</span>
+                <span class="vid-duration">8:51</span>
+                <span class="vid-toggle" id="toggle-mdm-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/1wuRV5z0PPE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=1wuRV5z0PPE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 1 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mdm4u_ch1_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mdm4u_ch1_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mdm4u_ch1_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../mdm4u.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

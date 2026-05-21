@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 2: Polynomial Equations & Inequalities</h1>
+<p>Remainder theorem, factor theorem, solving equations, polynomial inequalities</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+            <h2>Chapter 2: Polynomial Equations & Inequalities</h2>
+            <p>Remainder theorem, factor theorem, solving equations, polynomial inequalities</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Polynomial & Rational</span>
+                <span>⏱️ ~15h</span>
+                <span>📹 16 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 — Remainder Theorem & Synthetic Division</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>To solve polynomial equations of degree 3 or higher, you need a systematic way to divide a polynomial by a linear factor and find its roots. The <strong>Remainder Theorem</strong> states that when a polynomial \(P(x)\) is divided by \((x-c)\), the remainder is exactly \(P(c)\). This is profoundly useful: evaluating \(P\) at \(c\) is far easier than carrying out the long division, and it tells you instantly whether \((x-c)\) divides cleanly into \(P(x)\) — namely, when \(P(c)=0\).</p>
+                <p>When you do need the quotient (not just the remainder), <strong>synthetic division</strong> provides a quick shortcut for dividing by a linear binomial. It is just the bookkeeping of polynomial long division compressed into a single row of arithmetic. Synthetic division gives you both the quotient and the remainder, and it sets up factoring of higher-degree polynomials in section 2.2.</p>
+                <p>The Division Algorithm ties everything together: \(P(x)=(x-c)\,Q(x)+R\), where \(Q(x)\) is the quotient polynomial and \(R\) is the constant remainder. Understanding this identity is what makes both theorems intuitive.</p>
+                <ul>
+                  <li><strong>Remainder Theorem</strong> — for any polynomial \(P(x)\), dividing by \((x-c)\) gives remainder \(P(c)\).</li>
+                  <li><strong>Division algorithm</strong> — \(P(x)=D(x)\,Q(x)+R(x)\), with \(\deg R&lt;\deg D\).</li>
+                  <li><strong>Synthetic division</strong> — a streamlined algorithm for dividing \(P(x)\) by \((x-c)\), using only the coefficients.</li>
+                  <li><strong>Quotient polynomial \(Q(x)\)</strong> — the polynomial obtained from the division, with degree one less than \(P\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Remainder via the theorem</p>
+                  <p>Find the remainder when \(P(x)=2x^{3}-5x^{2}+x-3\) is divided by \(x-2\).</p>
+                  <p>Step 1. By the Remainder Theorem, the remainder equals \(P(2)\).</p>
+                  <p>Step 2. \(P(2)=2(8)-5(4)+2-3=16-20+2-3=-5\).</p>
+                  <p>Step 3. So the remainder is \(-5\), and \((x-2)\) does <em>not</em> divide \(P(x)\) evenly.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Synthetic division</p>
+                  <p>Divide \(P(x)=x^{3}-4x^{2}+5x-2\) by \((x-1)\) using synthetic division.</p>
+                  <p>Step 1. Coefficients of \(P\): \(1,\,-4,\,5,\,-2\). Divisor root: \(c=1\).</p>
+                  <p>Step 2. Bring down \(1\). Multiply: \(1\cdot 1=1\); add to \(-4\): \(-3\). Multiply: \(-3\cdot 1=-3\); add to \(5\): \(2\). Multiply: \(2\cdot 1=2\); add to \(-2\): \(0\).</p>
+                  <p>Step 3. Bottom row: \(1,\,-3,\,2,\,0\). Quotient \(Q(x)=x^{2}-3x+2\), remainder \(R=0\).</p>
+                  <p>Step 4. Verify: \((x-1)(x^{2}-3x+2)=x^{3}-3x^{2}+2x-x^{2}+3x-2=x^{3}-4x^{2}+5x-2\). ✓</p>
+                </div>
+                <ul>
+                  <li>For divisor \((x+3)\), use \(c=-3\) in the Remainder Theorem — the sign flips.</li>
+                  <li>Synthetic division requires the polynomial to be in <em>descending order</em>; insert \(0\) for any missing degree.</li>
+                  <li>The bottom-row entries shift in degree by 1: a cubic dividend gives a quadratic quotient.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.1 — "make connections, through investigation… between the polynomial function \(f(x)\), the divisor \(x-a\), the remainder from the division \(\frac{f(x)}{x-a}\), and \(f(a)\) to verify the remainder theorem."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v21')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.1a Remainder Theorem</span>
+                        <span class="vid-duration">23:39</span>
+                        <span class="vid-toggle" id="toggle-v21">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v21">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/021_MHF4U_2.1a_Remainder_Theorem.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=390efS-99Js" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v22')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.1b Synthetic Division</span>
+                        <span class="vid-duration">13:00</span>
+                        <span class="vid-toggle" id="toggle-v22">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v22">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/022_MHF4U_2.1b_Synthetic_Division.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=BJ3tEyeGORQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v23')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.1c Remainder Theorem Homework Solutions</span>
+                        <span class="vid-duration">5:45</span>
+                        <span class="vid-toggle" id="toggle-v23">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v23">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/023_MHF4U_2.1c_Remainder_Theorem_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=2t4ZgXlzo0Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 — Factor Theorem & Sum/Difference of Cubes</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>Factor Theorem</strong> is a direct consequence of the Remainder Theorem: \((x-c)\) is a factor of \(P(x)\) if and only if \(P(c)=0\). This converts the problem of <em>finding a factor</em> into the easier problem of <em>finding a zero</em>. The Integral Zero Theorem narrows the search: every rational integer zero of a polynomial with integer coefficients must be a divisor of the constant term. The Rational Zero Theorem extends this to fractions \(\tfrac{p}{q}\), where \(p\) divides the constant term and \(q\) divides the leading coefficient.</p>
+                <p>Once you have one zero \(c\), divide by \((x-c)\) using synthetic division to drop the degree by one. Repeat on the quotient until you reach a quadratic, which you can then factor or solve with the quadratic formula. This factor-and-divide cycle is the engine for solving cubics, quartics, and beyond.</p>
+                <p>Two special-product identities expand your toolkit. The <strong>sum of cubes</strong> factors as \(a^{3}+b^{3}=(a+b)(a^{2}-ab+b^{2})\), and the <strong>difference of cubes</strong> as \(a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2})\). Memorising these saves time and reveals zeros that trial-and-error would miss.</p>
+                <ul>
+                  <li><strong>Factor Theorem</strong> — \((x-c)\) is a factor of \(P(x)\) iff \(P(c)=0\).</li>
+                  <li><strong>Integral Zero Theorem</strong> — integer zeros of \(P(x)\) (with integer coefficients) divide the constant term.</li>
+                  <li><strong>Rational Zero Theorem</strong> — rational zeros take the form \(\tfrac{p}{q}\) where \(p\mid a_{0}\), \(q\mid a_{n}\).</li>
+                  <li><strong>Sum / difference of cubes</strong> — \(a^{3}\pm b^{3}=(a\pm b)(a^{2}\mp ab+b^{2})\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Factor a cubic completely</p>
+                  <p>Factor \(P(x)=x^{3}-2x^{2}-5x+6\) completely over the reals.</p>
+                  <p>Step 1. Integer Zero Theorem: candidates are \(\pm1,\pm2,\pm3,\pm6\).</p>
+                  <p>Step 2. Test \(x=1\): \(1-2-5+6=0\). So \((x-1)\) is a factor.</p>
+                  <p>Step 3. Synthetic division by \(1\) on \(1,-2,-5,6\) gives \(1,-1,-6,0\), so \(Q(x)=x^{2}-x-6\).</p>
+                  <p>Step 4. Factor the quadratic: \(x^{2}-x-6=(x-3)(x+2)\).</p>
+                  <p>Step 5. Complete factorization: \(P(x)=(x-1)(x-3)(x+2)\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Difference of cubes</p>
+                  <p>Factor \(8x^{3}-27\) completely.</p>
+                  <p>Step 1. Recognise \(8x^{3}=(2x)^{3}\) and \(27=3^{3}\), so \(a=2x\), \(b=3\).</p>
+                  <p>Step 2. Apply the identity: \(8x^{3}-27=(2x-3)\bigl((2x)^{2}+(2x)(3)+3^{2}\bigr)=(2x-3)(4x^{2}+6x+9)\).</p>
+                  <p>Step 3. Check the quadratic factor for further real roots: discriminant \(36-144=-108&lt;0\), so it is irreducible over the reals.</p>
+                </div>
+                <ul>
+                  <li>Watch the middle sign in the cubic identity: it is opposite to the binomial sign — easy to flip in haste.</li>
+                  <li>Test small integer candidates first; positive and negative one and two are usually quickest to evaluate.</li>
+                  <li>Do not stop after the first factor — the question almost always asks for complete factoring.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "factor polynomial expressions in one variable, of degree no higher than four, by selecting and applying strategies (i.e., common factoring, difference of squares, trinomial factoring, factoring by grouping, remainder theorem, factor theorem)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v24')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.2a Factor Theorem</span>
+                        <span class="vid-duration">35:50</span>
+                        <span class="vid-toggle" id="toggle-v24">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v24">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/024_MHF4U_2.2a_Factor_Theorem.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=5qO2wk2KAss" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v25')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.2b Sum and Difference of Cubes</span>
+                        <span class="vid-duration">9:22</span>
+                        <span class="vid-toggle" id="toggle-v25">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v25">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/025_MHF4U_2.2b_Sum_and_Difference_of_Cubes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=d3nPxEbhdes" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v26')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.2c Factor Theorem Homework Solutions</span>
+                        <span class="vid-duration">7:43</span>
+                        <span class="vid-toggle" id="toggle-v26">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v26">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/026_MHF4U_2.2c_Factor_Theorem_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=XPKV6m4su4U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 — Solving Polynomial Equations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>To solve a <strong>polynomial equation</strong> \(P(x)=0\) you find every value of \(x\) that makes the polynomial vanish. Geometrically these are the \(x\)-intercepts of \(y=P(x)\). Algebraically the strategy is always the same: move everything to one side so the equation reads \(\text{polynomial}=0\), factor completely, and apply the <strong>Zero Product Property</strong> — if a product equals zero, at least one factor must equal zero.</p>
+                <p>The factoring step is where the work lives. For quadratics use any of the familiar tools (common factoring, trinomial factoring, difference of squares, quadratic formula, completing the square). For cubics and quartics use the Factor Theorem to find one zero, divide out the linear factor, and recurse on the lower-degree quotient. The Fundamental Theorem of Algebra guarantees that a degree-\(n\) polynomial has exactly \(n\) zeros when counted with multiplicity over the complex numbers, although in this course you usually report only real solutions.</p>
+                <p>If a quadratic factor is irreducible over the reals (discriminant negative), state that there are no further real solutions — do not invent ones. Multiplicities still count, so report repeated roots clearly: "\(x=2\) (double root)".</p>
+                <ul>
+                  <li><strong>Zero Product Property</strong> — if \(A\cdot B=0\), then \(A=0\) or \(B=0\) (or both).</li>
+                  <li><strong>Fundamental Theorem of Algebra</strong> — a degree-\(n\) polynomial has exactly \(n\) complex zeros counted with multiplicity.</li>
+                  <li><strong>Discriminant</strong> — for \(ax^{2}+bx+c\), the value \(b^{2}-4ac\); negative means no real roots.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Solve a cubic</p>
+                  <p>Solve \(x^{3}+x^{2}-4x-4=0\).</p>
+                  <p>Step 1. Try grouping: \(x^{2}(x+1)-4(x+1)=(x+1)(x^{2}-4)\).</p>
+                  <p>Step 2. Factor \(x^{2}-4=(x-2)(x+2)\).</p>
+                  <p>Step 3. Complete factoring: \((x+1)(x-2)(x+2)=0\).</p>
+                  <p>Step 4. Zero Product Property: \(x=-1,\,2,\,-2\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Solve a quartic</p>
+                  <p>Solve \(2x^{4}-5x^{3}-8x^{2}+17x-6=0\).</p>
+                  <p>Step 1. Rational Zero Theorem: candidates are \(\pm 1,\pm 2,\pm 3,\pm 6,\pm\tfrac{1}{2},\pm\tfrac{3}{2}\).</p>
+                  <p>Step 2. Test \(x=2\): \(2(16)-5(8)-8(4)+17(2)-6=32-40-32+34-6=-12\). Not zero.</p>
+                  <p>Step 3. Test \(x=3\): \(2(81)-5(27)-8(9)+17(3)-6=162-135-72+51-6=0\). So \((x-3)\) is a factor.</p>
+                  <p>Step 4. Synthetic division by \(3\) on \(2,-5,-8,17,-6\): \(2,1,-5,2,0\). Quotient \(2x^{3}+x^{2}-5x+2\).</p>
+                  <p>Step 5. Test \(x=1\) in the cubic: \(2+1-5+2=0\). Divide by \(1\): \(2,3,-2,0\). Quotient \(2x^{2}+3x-2=(2x-1)(x+2)\).</p>
+                  <p>Step 6. Solutions: \(x=3,\,1,\,\tfrac{1}{2},\,-2\).</p>
+                </div>
+                <ul>
+                  <li>Move everything to one side first — students often forget and try to factor an unequal expression.</li>
+                  <li>Repeated factors give repeated roots; count multiplicity to match the Fundamental Theorem total.</li>
+                  <li>Check each candidate solution by substituting it back into the original equation.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "determine, through investigation using technology, the connection between the real roots of a polynomial equation and the \(x\)-intercepts of the graph of the corresponding polynomial function."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v27')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.3a Solving Polynomial Equations</span>
+                        <span class="vid-duration">35:09</span>
+                        <span class="vid-toggle" id="toggle-v27">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v27">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/027_MHF4U_2.3a_Solving_Polynomial_Equations.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=7JEDhdh7stc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v28')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.3b Solving Polynomial Equations Homework Solutions</span>
+                        <span class="vid-duration">4:43</span>
+                        <span class="vid-toggle" id="toggle-v28">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v28">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/028_MHF4U_2.3b_Solving_Polynomial_Equations_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Sv8LJvFVPrQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v29')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.3c Solving Polynomial Equations (Word Problems) Homework Solutions</span>
+                        <span class="vid-duration">10:32</span>
+                        <span class="vid-toggle" id="toggle-v29">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v29">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/029_MHF4U_2.3c_Solving_Polynomial_Equations__Word_Problems__Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=DEWtCGrJs0U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 — Family of Polynomial Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>family of polynomial functions</strong> is the collection of all polynomials sharing the same zeros. Symbolically the family is \(f(x)=a(x-r_{1})(x-r_{2})\cdots(x-r_{k})\), where \(a\) is any non-zero real number. Every member of the family has identical \(x\)-intercepts; what changes between members is the vertical stretch — controlled entirely by \(a\) — which also affects the \(y\)-intercept and every \(y\)-value.</p>
+                <p>This idea matters because <em>knowing the zeros alone is not enough to determine the polynomial</em>. You need one additional point — usually the \(y\)-intercept or any other specified point — to pin down \(a\). This is the modelling skeleton: zeros give shape, a single anchor point gives scale.</p>
+                <p>In modelling word problems you will frequently be told a curve has zeros at certain values and passes through a given point. The recipe is identical to section 1.5 sketching, just in reverse: write the family, substitute the anchor point to find \(a\), and write the unique solution.</p>
+                <ul>
+                  <li><strong>Family of polynomial functions</strong> — all polynomials sharing the same zeros, differing only by the parameter \(a\).</li>
+                  <li><strong>Parameter \(a\)</strong> — controls vertical stretch and the overall sign; pinned down by one extra point.</li>
+                  <li><strong>Anchor point</strong> — any non-zero point on the curve used to solve for \(a\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Quartic family from zeros</p>
+                  <p>Write the family of quartic polynomials with zeros at \(x=-3,\,-1,\,1,\,4\), then find the member passing through \((0,12)\).</p>
+                  <p>Step 1. Family: \(f(x)=a(x+3)(x+1)(x-1)(x-4)\).</p>
+                  <p>Step 2. Use \((0,12)\): \(f(0)=a(3)(1)(-1)(-4)=12a=12\Rightarrow a=1\).</p>
+                  <p>Step 3. Specific member: \(f(x)=(x+3)(x+1)(x-1)(x-4)\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Repeated zero in a family</p>
+                  <p>A cubic has a double root at \(x=2\) and a simple root at \(x=-1\). It passes through \((1,-4)\). Find the cubic.</p>
+                  <p>Step 1. Family: \(f(x)=a(x-2)^{2}(x+1)\).</p>
+                  <p>Step 2. Use \((1,-4)\): \(a(1-2)^{2}(1+1)=a(1)(2)=2a=-4\Rightarrow a=-2\).</p>
+                  <p>Step 3. Cubic: \(f(x)=-2(x-2)^{2}(x+1)\).</p>
+                </div>
+                <ul>
+                  <li>Do not solve for \(a\) using a zero — substituting a zero just gives \(0=0\), no information.</li>
+                  <li>If the anchor point happens to be a zero, you need a <em>different</em> point on the curve.</li>
+                  <li>Keep multiplicities visible in the family — \((x-2)^{2}\), not \((x-2)\), when there is a double root.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.7 — "determine, through investigation, and compare the properties of even and odd polynomial functions… and determine an equation to represent a given graph of a polynomial function, using methods appropriate to the situation."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v30')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.4a Family of Polynomial Functions</span>
+                        <span class="vid-duration">11:48</span>
+                        <span class="vid-toggle" id="toggle-v30">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v30">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/030_MHF4U_2.4a_Family_of_Polynomial_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=lqOgO-r8iB8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v31')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.4b Family of Polynomial Functions Homework Solutions</span>
+                        <span class="vid-duration">4:58</span>
+                        <span class="vid-toggle" id="toggle-v31">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v31">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/031_MHF4U_2.4b_Family_of_Polynomial_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ZsrUd3t74zE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 — Polynomial Inequalities</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>polynomial inequality</strong> asks for all \(x\) where \(P(x)&gt;0\), \(P(x)&lt;0\), \(P(x)\ge 0\), or \(P(x)\le 0\). The most reliable method is the <strong>sign chart</strong>: factor the polynomial completely to find its zeros, mark them on a number line, and test a sample point in each resulting interval to determine the sign of \(P\) on that interval. Read the solution off the chart in the direction the inequality requires.</p>
+                <p>Two refinements speed things up. First, the sign of a polynomial can only change at a real zero, and only when that zero has <em>odd</em> multiplicity — even multiplicity bounces, so the sign stays the same. Second, when you write the answer, use the right endpoint conventions: square brackets for strict-or-equal (\(\le, \ge\)), round brackets for strict (\(&lt;, &gt;\)).</p>
+                <p>Avoid the tempting shortcut of "multiplying through" by a variable — variables can be negative or zero, which can flip or break the inequality. Always rearrange to put zero on one side and factor instead.</p>
+                <ul>
+                  <li><strong>Sign chart</strong> — a number line marked with the polynomial's zeros and the sign of \(P\) on each subinterval.</li>
+                  <li><strong>Test point</strong> — any convenient value inside an interval, substituted into the factored form to find the sign.</li>
+                  <li><strong>Inclusive vs strict inequality</strong> — \(\ge, \le\) include the zeros; \(&gt;, &lt;\) exclude them.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Cubic inequality</p>
+                  <p>Solve \(x^{3}-x^{2}-6x&gt;0\).</p>
+                  <p>Step 1. Factor: \(x(x^{2}-x-6)=x(x-3)(x+2)\).</p>
+                  <p>Step 2. Zeros: \(x=-2,\,0,\,3\). Intervals: \((-\infty,-2),(-2,0),(0,3),(3,\infty)\).</p>
+                  <p>Step 3. Test points: \(x=-3:(-3)(-6)(-1)=-18\;(-)\). \(x=-1:(-1)(-4)(1)=4\;(+)\). \(x=1:(1)(-2)(3)=-6\;(-)\). \(x=4:(4)(1)(6)=24\;(+)\).</p>
+                  <p>Step 4. Want \(P&gt;0\): take positive intervals. Solution: \(x\in(-2,0)\cup(3,\infty)\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Inequality with repeated factor</p>
+                  <p>Solve \((x-1)^{2}(x+3)\le 0\).</p>
+                  <p>Step 1. Zeros: \(x=1\) (multiplicity 2), \(x=-3\) (multiplicity 1).</p>
+                  <p>Step 2. Sign analysis: \((x-1)^{2}\ge 0\) always. So the sign is governed by \((x+3)\): negative for \(x&lt;-3\), positive for \(x&gt;-3\).</p>
+                  <p>Step 3. Want \(\le 0\): need \((x+3)\le 0\) <em>or</em> \((x-1)^{2}=0\). That gives \(x\le -3\) together with the isolated point \(x=1\).</p>
+                  <p>Step 4. Solution: \(x\in(-\infty,-3]\cup\{1\}\).</p>
+                </div>
+                <ul>
+                  <li>Never multiply both sides by a variable expression — its sign may change.</li>
+                  <li>Even-multiplicity zeros are sign-preserving — easy to miss and they often appear on tests.</li>
+                  <li>Read the inequality direction at the end: \(P&gt;0\) wants positive intervals; \(P&lt;0\) wants negative ones.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.4 — "solve polynomial inequalities (e.g., solve \(f(x)\ge 0\), where \(f(x)=x^{3}-x^{2}+3x-9\)) by graphing the corresponding functions, with or without technology, and identifying the intervals for which the inequality holds."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v32')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 2.5a Polynomial Inequalities</span>
+                        <span class="vid-duration">28:00</span>
+                        <span class="vid-toggle" id="toggle-v32">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v32">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/032_MHF4U_2.5a_Polynomial_Inequalities.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=G2Faf2Uyu1M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v33')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.5b Solving Factorable Polynomial Inequalities Homework Solutions</span>
+                        <span class="vid-duration">9:41</span>
+                        <span class="vid-toggle" id="toggle-v33">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v33">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/033_MHF4U_2.5b_Solving_Factorable_Polynomial_Inequalities_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=0Ht7i3nVmwY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.6 — Chapter Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapter 2 hands you a complete algebraic toolkit for polynomials. You can divide them (Remainder Theorem, synthetic division), factor them (Factor Theorem, Rational Zero Theorem, special products), solve equations (Zero Product Property), build families from zeros (parameter \(a\)), and analyse sign behaviour (inequalities by sign chart). Every later chapter — rational functions in Chapter 3, trig equations in Chapters 4–5, even composite functions in Chapter 8 — leans on these techniques.</p>
+                <p>For review, focus on the decision flow: "given a polynomial expression / equation / inequality, what's my first move?" If the polynomial is already factored, jump straight to the Zero Product Property or sign chart. Otherwise, look for common factors, then for special forms (difference of squares, sum/difference of cubes), then for groupings, and finally use the Factor Theorem with candidates from the Rational Zero Theorem.</p>
+                <p>Communication-style questions ask you to <em>justify</em>. "Explain why \(x=2\) is a root" should be answered by citing the Factor Theorem and showing \(P(2)=0\), not just by writing the value. Practising these justifications in full sentences is the single best investment you can make for the unit test.</p>
+                <ul>
+                  <li><strong>Decision flow</strong> — factor → solve / sign chart → interpret.</li>
+                  <li><strong>Justification habits</strong> — name the theorem, show the computation, state the conclusion.</li>
+                  <li><strong>Special forms</strong> — keep \(a^{3}\pm b^{3}\) at the front of your mind for quick wins.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Combined task</p>
+                  <p>(a) Factor \(P(x)=x^{4}-x^{3}-7x^{2}+x+6\). (b) Solve \(P(x)=0\). (c) Solve \(P(x)&lt;0\).</p>
+                  <p>Step 1. Candidates by Integer Zero Theorem: \(\pm 1,\pm 2,\pm 3,\pm 6\). Test \(x=1\): \(1-1-7+1+6=0\). ✓</p>
+                  <p>Step 2. Synthetic divide by \(1\) on \(1,-1,-7,1,6\): \(1,0,-7,-6,0\). Quotient \(x^{3}-7x-6\).</p>
+                  <p>Step 3. Test \(x=-1\) in cubic: \(-1+7-6=0\). ✓ Divide by \(-1\) on \(1,0,-7,-6\): \(1,-1,-6,0\). Quotient \(x^{2}-x-6=(x-3)(x+2)\).</p>
+                  <p>Step 4. (a) \(P(x)=(x-1)(x+1)(x-3)(x+2)\).</p>
+                  <p>Step 5. (b) Zeros: \(x=-2,-1,1,3\).</p>
+                  <p>Step 6. (c) Sign chart with four simple zeros — sign alternates. Test \(x=0\): \((-1)(1)(-3)(2)=6\), positive. So \(P&lt;0\) on intervals adjacent to that positive interval: \((-2,-1)\cup(1,3)\).</p>
+                </div>
+                <ul>
+                  <li>When testing zero candidates, prefer integers over fractions for speed; only go to \(\tfrac{p}{q}\) when integers fail.</li>
+                  <li>Re-read the question after factoring — you may be asked to also state intercepts, multiplicity, or end behaviour.</li>
+                  <li>Sign charts with simple zeros alternate sign — a fast sanity check.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Overall Expectation C3 — "solve problems involving polynomial and simple rational equations graphically and algebraically."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v34')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">MHF4U 2.6a Chapter 2 Summary</span>
+                        <span class="vid-duration">6:06</span>
+                        <span class="vid-toggle" id="toggle-v34">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v34">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/034_MHF4U_2.6a_Chapter_2_Summary.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=aji03Cme6rE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v35')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.6b Chapter 2 Review Homework Solutions</span>
+                        <span class="vid-duration">6:36</span>
+                        <span class="vid-toggle" id="toggle-v35">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v35">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/035_MHF4U_2.6b_Chapter_2_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=sW9-2NRqOHU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v36')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 2.6c Chapter 2 Challenge Problems Homework Solutions</span>
+                        <span class="vid-duration">13:37</span>
+                        <span class="vid-toggle" id="toggle-v36">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v36">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/036_MHF4U_2.6c_Chapter_2_Challenge_Problems_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=baLfR47yn7w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch2_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch2_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch2_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch1.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 1</a>
+<a href="ch3.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 3 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

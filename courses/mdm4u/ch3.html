@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#059669dd,#059669);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mdm4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MDM4U Mathematics of Data Management)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>📊 MDM4U: Chapter 3: Combinations</h1>
+    <p>Selections without order: \( C(n,r) \), Pascal's triangle, the binomial theorem, applications to probability</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+    <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+        <h2>Chapter 3: Combinations</h2>
+        <p>Selections without order: \( C(n,r) \), Pascal's triangle, the binomial theorem, applications to probability</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 A2.5–A2.8</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.1 — Combinations: Counting Without Order</div>
+        <div class="topic-desc">Number of subsets of size \( r \) from \( n \): \( C(n,r) = \binom{n}{r} = \dfrac{n!}{r!(n-r)!} \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>combination</strong> is a selection of objects where <em>order does not matter</em>. To count the number of ways to choose an unordered subset of size \(r\) from \(n\) distinct objects, start with the permutation count \(P(n,r) = \tfrac{n!}{(n-r)!}\) and then divide by \(r!\) to remove the over-counting created by the \(r!\) orderings of any chosen subset. This produces the celebrated combination formula \(C(n,r) = \binom{n}{r} = \dfrac{n!}{r!\,(n-r)!}\).</p>
+            <p>The defining contrast with permutations: if the question concerns ordered outcomes (race finishes, locker codes, three different officer titles) use \(P(n,r)\); if it concerns an unordered group (a committee of three, a poker hand, a lottery ticket) use \(C(n,r)\). The notation \(\binom{n}{r}\), read "\(n\) choose \(r\)", emphasises the choice idea. Note that \(\binom{n}{0} = 1\) (the empty subset is the only way to choose nothing) and \(\binom{n}{n} = 1\) (only one way to choose everything).</p>
+            <ul>
+              <li><strong>Combination \(C(n,r)\), \(_nC_r\), \(\binom{n}{r}\):</strong> unordered selection.</li>
+              <li><strong>Formula:</strong> \(\binom{n}{r} = \dfrac{n!}{r!\,(n-r)!}\).</li>
+              <li><strong>Order does not matter:</strong> ABC and CBA are the same combination.</li>
+              <li><strong>Relation to permutations:</strong> \(P(n,r) = r! \cdot C(n,r)\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: How many five-card poker hands can be dealt from a 52-card deck?</p>
+              <p>Cards are dealt without regard to order in which they reach your hand, so we use \(C(52, 5)\):</p>
+              <p>\[ \binom{52}{5} = \frac{52!}{5!\,47!} = \frac{52 \cdot 51 \cdot 50 \cdot 49 \cdot 48}{5!} = \frac{311\,875\,200}{120} = 2\,598\,960. \]</p>
+              <p>To find the probability of being dealt a flush in spades: \(\binom{13}{5} = 1\,287\). So \(P(\text{spade flush}) = \tfrac{1\,287}{2\,598\,960} \approx 0.000495\).</p>
+            </div>
+            <ul>
+              <li>Using \(P(n,r)\) when order does not matter (over-counting by a factor of \(r!\)).</li>
+              <li>Confusing "5 cards" (combination) with "5 letters in a row" (permutation). Read the verb: <em>choose, select, form a committee</em> → combination; <em>arrange, line up, rank, assign roles</em> → permutation.</li>
+              <li>Forgetting that the formula assumes \(n\) distinct objects — repeats require a separate technique (stars-and-bars).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "solve problems, using a variety of strategies, that involve the calculation of the number of combinations of n distinct items taken r at a time."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Counting Principles Combinations MDM4U Data Management Statistics</span>
+                <span class="vid-duration">10:42</span>
+                <span class="vid-toggle" id="toggle-mdm-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-zjqpzBzV54?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=-zjqpzBzV54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.2 — Combination Identities</div>
+        <div class="topic-desc">\( \binom{n}{r} = \binom{n}{n-r} \) and \( \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1} \); the symmetry property.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Two identities power most combinatorial manipulations. The first is the <strong>symmetry identity</strong> \(\binom{n}{r} = \binom{n}{n-r}\). The algebraic proof is one line: \(\tfrac{n!}{r!(n-r)!} = \tfrac{n!}{(n-r)!\,r!}\). The combinatorial proof is more illuminating — choosing which \(r\) objects go <em>into</em> a subset is the same as choosing which \(n - r\) objects go <em>out</em>. This is why \(\binom{10}{7} = \binom{10}{3} = 120\), which is much faster to compute than expanding \(\tfrac{10!}{7!\,3!}\) by brute force.</p>
+            <p>The second is <strong>Pascal's identity</strong>: \(\binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1}\). Combinatorially, to form a subset of size \(r+1\) from \(n+1\) people, pick a focal person Alice: either she is in (then choose \(r\) more from the remaining \(n\), giving \(\binom{n}{r}\)) or she is out (choose all \(r+1\) from the other \(n\), giving \(\binom{n}{r+1}\)). The sum is exactly \(\binom{n+1}{r+1}\). This identity is the recursion underlying Pascal's triangle (Topic 3.3): every entry equals the sum of the two entries diagonally above.</p>
+            <ul>
+              <li><strong>Symmetry:</strong> \(\binom{n}{r} = \binom{n}{n-r}\).</li>
+              <li><strong>Pascal's identity:</strong> \(\binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1}\).</li>
+              <li><strong>Boundary values:</strong> \(\binom{n}{0} = \binom{n}{n} = 1\).</li>
+              <li><strong>Row-sum:</strong> \(\sum_{r=0}^{n} \binom{n}{r} = 2^n\) — the number of subsets of an \(n\)-element set.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Verify Pascal's identity for \(n = 7\), \(r = 3\).</p>
+              <p>Compute each side:</p>
+              <p>\[ \binom{7}{3} + \binom{7}{4} = 35 + 35 = 70, \qquad \binom{8}{4} = \frac{8!}{4!\,4!} = 70. \;\checkmark \]</p>
+              <p>The combinatorial reading: choosing a 4-person team from 8 is either choosing a focal player (then 3 of the remaining 7) or not (then 4 of the remaining 7).</p>
+            </div>
+            <ul>
+              <li>Mis-stating Pascal's identity as \(\binom{n}{r} + \binom{n+1}{r} = \binom{n+1}{r+1}\). The second index also increases on the right.</li>
+              <li>Computing \(\binom{20}{18}\) the long way — use symmetry: \(\binom{20}{18} = \binom{20}{2} = 190\).</li>
+              <li>Forgetting that the identities require non-negative integer indices with \(r \le n\).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.4 — "make connections, through investigation, between combinations (i.e., n choose r) and Pascal's triangle [e.g., between \(\binom{n}{r}\) and entries in Pascal's triangle]."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Pascal's Triangle &amp; Combinatorics — Khan Academy</span>
+                <span class="vid-duration">7:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/x-N76NrMDNE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=x-N76NrMDNE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.3 — Pascal's Triangle &amp; Patterns</div>
+        <div class="topic-desc">Constructing Pascal's triangle; recursion, row sums \( 2^n \), hockey-stick identity, Fibonacci numbers in diagonals.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Pascal's triangle</strong> is constructed by placing 1s along both edges and filling each interior entry with the sum of the two entries diagonally above it. Rows are numbered starting from \(n = 0\), and within each row the positions are numbered \(r = 0, 1, \ldots, n\). The entry in row \(n\), position \(r\) is exactly \(\binom{n}{r}\). The construction rule is a direct visualisation of Pascal's identity (Topic 3.2).</p>
+            <p>The triangle is a hive of numerical patterns. Row sums double: \(\sum_{r=0}^n \binom{n}{r} = 2^n\) (every element of an \(n\)-set is either in or out of a subset). The diagonals deliver familiar sequences: the second diagonal is the natural numbers, the third diagonal is the triangular numbers \(\tfrac{n(n+1)}{2}\). Shallow diagonals — summing entries diagonally up-and-right — give the <strong>Fibonacci numbers</strong>. The <strong>hockey-stick identity</strong> \(\sum_{k=r}^{n} \binom{k}{r} = \binom{n+1}{r+1}\) bundles a diagonal run into a single combination. These connections make Pascal's triangle a wonderful playground for "explore-then-explain" investigations required by Ontario's mathematical processes.</p>
+            <ul>
+              <li><strong>Construction rule:</strong> each entry = sum of the two entries diagonally above.</li>
+              <li><strong>Row sums:</strong> row \(n\) sums to \(2^n\); alternating sums give 0 for \(n \ge 1\).</li>
+              <li><strong>Hockey-stick identity:</strong> \(\sum_{k=r}^{n}\binom{k}{r} = \binom{n+1}{r+1}\).</li>
+              <li><strong>Fibonacci diagonals:</strong> shallow sums up-and-right yield 1, 1, 2, 3, 5, 8, …</li>
+              <li><strong>Symmetry:</strong> rows read the same left-to-right and right-to-left.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Use Pascal's triangle to find the number of lattice paths from \((0,0)\) to \((4,3)\) moving only right (R) or up (U).</p>
+              <p>Each path is a sequence of 7 moves with exactly 4 R's and 3 U's, so the count is \(\binom{7}{3}\). Reading row 7 of Pascal's triangle: 1, 7, 21, 35, 35, 21, 7, 1. The entry at \(r = 3\) is \(35\). So there are 35 distinct shortest paths.</p>
+              <p>Cross-check: \(\binom{7}{3} = \dfrac{7!}{3!\,4!} = \dfrac{5\,040}{6 \cdot 24} = 35. \;\checkmark\)</p>
+            </div>
+            <ul>
+              <li>Indexing rows from 1 instead of 0 — Pascal's triangle starts at row 0 (the single 1).</li>
+              <li>Confusing the row number with the row's largest entry; row \(n\) has \(n+1\) entries.</li>
+              <li>Adding the wrong direction's neighbours when filling the triangle; always two entries diagonally above.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.4 — "make connections, through investigation, between combinations (i.e., n choose r) and Pascal's triangle."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Pascal's Triangle for Binomial Expansion — Khan Academy</span>
+                <span class="vid-duration">8:24</span>
+                <span class="vid-toggle" id="toggle-mdm-yt13">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt13">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/v9Evg2tBdRk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=v9Evg2tBdRk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.4 — The Binomial Theorem</div>
+        <div class="topic-desc">Expansion \( (a+b)^n = \displaystyle\sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k \); finding specific terms.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>binomial theorem</strong> expands \((a+b)^n\) as a finite sum of \(n+1\) terms whose coefficients are the entries of row \(n\) of Pascal's triangle: \[ (a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k. \] The combinatorial proof is illuminating: when we expand the product \((a+b)(a+b)\cdots(a+b)\) (n factors) using the distributive law, every term of the expansion arises by choosing either \(a\) or \(b\) from each of the \(n\) factors. The term \(a^{n-k}b^k\) appears exactly as many times as we can choose which \(k\) of the \(n\) factors contribute their \(b\); that count is \(\binom{n}{k}\).</p>
+            <p>Two practical skills follow. First, the <strong>general term</strong> formula \(t_{k+1} = \binom{n}{k} a^{n-k} b^k\) lets you write down any specific term without expanding the whole expression — invaluable for "find the term containing \(x^7\)" problems. Second, evaluating both sides at \(a = b = 1\) reproduces the row-sum identity \(2^n = \sum \binom{n}{k}\), and \(a = 1, b = -1\) gives the alternating-sum identity. These give algebraic proofs of combinatorial facts.</p>
+            <ul>
+              <li><strong>Binomial theorem:</strong> \((a+b)^n = \displaystyle\sum_{k=0}^{n}\binom{n}{k} a^{n-k} b^k\).</li>
+              <li><strong>General term:</strong> \(t_{k+1} = \binom{n}{k}\,a^{n-k}\,b^k\); terms are numbered from \(k = 0\).</li>
+              <li><strong>Binomial coefficient:</strong> \(\binom{n}{k}\) — same numbers as row \(n\) of Pascal's triangle.</li>
+              <li><strong>Sign-tracking:</strong> when expanding \((a-b)^n\), the sign of \(t_{k+1}\) is \((-1)^k\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Find the term containing \(x^7\) in the expansion of \((2x - 3)^{10}\).</p>
+              <p>Use the general-term formula with \(a = 2x\), \(b = -3\), \(n = 10\). We need the power of \(x\) to equal 7, so \(10 - k = 7\), giving \(k = 3\):</p>
+              <p>\[ t_{4} = \binom{10}{3}(2x)^{7}(-3)^{3} = 120 \cdot 128 x^{7} \cdot (-27) = 120 \cdot 128 \cdot (-27)\, x^{7}. \]</p>
+              <p>Multiplying: \(120 \cdot 128 = 15\,360\); \(15\,360 \cdot 27 = 414\,720\), and the negative sign gives \(t_{4} = -414\,720\, x^{7}\).</p>
+            </div>
+            <ul>
+              <li>Off-by-one in term numbering — \(t_1\) corresponds to \(k = 0\), not \(k = 1\).</li>
+              <li>Forgetting the sign when one of the binomial terms is negative; \(b^k\) carries the sign.</li>
+              <li>Not raising the entire \(a\) (or \(b\)) to its power — for \((2x)^7\), it is \(2^7 \cdot x^7 = 128 x^7\), not \(2 x^7\).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.5 — "solve problems, using a variety of strategies, that involve finding the number of combinations of n distinct items taken r at a time, and use combinations in the binomial theorem."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Binomial Theorem Expansion, Pascal's Triangle, Finding Terms — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">22:55</span>
+                <span class="vid-toggle" id="toggle-mdm-yt14">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt14">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/s19dWIHficY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=s19dWIHficY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.5 — Combinations &amp; Probability</div>
+        <div class="topic-desc">Computing probabilities using combinations: \( P = \dfrac{\binom{\text{favourable}}{r}}{\binom{n}{r}} \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When a probability experiment involves selecting an unordered subset (cards from a deck, balls from an urn, applicants for a committee), the classical probability formula \(P(A) = \tfrac{n(A)}{n(S)}\) combines beautifully with combinations. The denominator counts every possible selection — usually a single combination \(\binom{n}{r}\). The numerator counts favourable selections by partitioning the population into "successes" and "failures" and using the multiplicative principle on a product of combinations: \(\binom{\text{successes available}}{\text{successes wanted}} \cdot \binom{\text{failures available}}{\text{failures wanted}}\).</p>
+            <p>This pattern — a ratio of products of combinations — is precisely the <strong>hypergeometric probability</strong> formula introduced formally in Chapter 5, but it is worth practising early because it appears in poker hands, raffles, lottery analyses, quality control sampling, and many lottery-style word problems. The conceptual habit is: identify the sub-populations first, then count favourable outcomes as a product, then divide by the total number of equally-likely subsets.</p>
+            <ul>
+              <li><strong>Equally likely subsets:</strong> assumed when "randomly selected" without replacement.</li>
+              <li><strong>Successes / failures:</strong> partition the population so that the event of interest can be expressed by how many of each are chosen.</li>
+              <li><strong>Product of combinations:</strong> count favourable outcomes as \(\binom{S}{s}\binom{F}{f}\).</li>
+              <li><strong>Total selections:</strong> \(\binom{S+F}{s+f} = \binom{n}{r}\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A box contains 8 red and 5 blue balls. Four balls are drawn at random without replacement. Find \(P(\text{exactly 2 red})\).</p>
+              <p>Total ways to draw 4 balls: \(\binom{13}{4} = 715\). Favourable: choose 2 of the 8 red and 2 of the 5 blue:</p>
+              <p>\[ \binom{8}{2}\binom{5}{2} = 28 \cdot 10 = 280. \]</p>
+              <p>So \(P(\text{exactly 2 red}) = \dfrac{280}{715} = \dfrac{56}{143} \approx 0.3916.\)</p>
+            </div>
+            <ul>
+              <li>Using \(P(n,r)\) instead of \(C(n,r)\) — once we are computing probabilities of unordered selections, order has been removed from both numerator and denominator.</li>
+              <li>Adding instead of multiplying combinations: \(\binom{8}{2} + \binom{5}{2}\) is meaningless here; the events "choose reds" and "choose blues" both happen, so multiply.</li>
+              <li>Forgetting cases when the event allows multiple breakdowns (e.g. "at least 2 red" requires summing \(P(2)+P(3)+P(4)\)).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.6 — "solve probability problems involving combinations of simple events, using counting techniques."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">MDM4U — 2.5 Probability Problems Using Permutations</span>
+                <span class="vid-duration">9:30</span>
+                <span class="vid-toggle" id="toggle-mdm-yt15">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt15">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jg91Ic0EknE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Jg91Ic0EknE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 3 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mdm4u_ch3_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mdm4u_ch3_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mdm4u_ch3_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

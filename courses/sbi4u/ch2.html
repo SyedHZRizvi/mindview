@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI4U — Biology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sbi4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SBI4U Biology)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧬 SBI4U: Unit 2: Metabolic Processes</h1>
+    <p>Photosynthesis (light reactions, Calvin cycle), cellular respiration (glycolysis, Krebs cycle, ETC), fermentation</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+            <h2>Unit 2: Metabolic Processes</h2>
+            <p>Photosynthesis (light reactions, Calvin cycle), cellular respiration (glycolysis, Krebs cycle, ETC), fermentation</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Metabolic Processes</span>
+                <span>📹 21 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- PHOTOSYNTHESIS -->
+        <div class="subsection-label">🌿 Photosynthesis</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Photosynthesis is the process by which autotrophs convert light energy into chemical energy stored in glucose. The overall equation \(6CO_2 + 6H_2O + \\text{light} \\rightarrow C_6H_{12}O_6 + 6O_2\) hides considerable complexity. In plants, photosynthesis takes place in the <em>chloroplast</em>, an organelle with a double membrane and an internal system of thylakoid sacs stacked into <em>grana</em>. The <em>light-dependent reactions</em> happen on the thylakoid membrane; the <em>Calvin cycle</em> (light-independent) happens in the surrounding fluid called the <em>stroma</em>. This compartmentalisation is essential — it lets the cell maintain a proton gradient across the thylakoid membrane that drives ATP synthesis.</p>
+            <p>Light-dependent reactions begin when chlorophyll <em>a</em> in <em>photosystem II</em> (PSII, P680) absorbs a photon and is oxidised. Water is split by the oxygen-evolving complex (\(2H_2O \\rightarrow 4H^+ + 4e^- + O_2\)) — the source of all atmospheric oxygen. Excited electrons travel through plastoquinone, the cytochrome b₆f complex, plastocyanin, then to <em>photosystem I</em> (PSI, P700), which re-energises them. The final acceptor is NADP⁺, reduced to NADPH by ferredoxin and NADP⁺ reductase. Along the way, protons are pumped into the thylakoid lumen, building the gradient that ATP synthase uses to make ATP from ADP + Pᵢ (chemiosmosis). The net products are ATP, NADPH, and \(O_2\) — the first two power the Calvin cycle, the third is released as a "waste" product.</p>
+            <p>Wavelength matters: chlorophyll <em>a</em> absorbs maximally in the blue (~430 nm) and red (~660 nm) regions and reflects green, which is why leaves appear green. Accessory pigments (chlorophyll <em>b</em>, carotenoids, xanthophylls) broaden the absorption spectrum and protect chlorophyll from oxidative damage. An <em>action spectrum</em> overlaid on an absorption spectrum shows that photosynthetic rate closely tracks pigment absorption — strong historical evidence (Engelmann, 1882) that pigments drive photosynthesis.</p>
+            <ul>
+              <li><strong>Thylakoid / granum / stroma</strong> — flattened sac / stack of thylakoids / fluid matrix of the chloroplast.</li>
+              <li><strong>Photosystem II (P680) / Photosystem I (P700)</strong> — light-harvesting complexes.</li>
+              <li><strong>Electron transport chain (ETC)</strong> — series of carriers (plastoquinone, cyt b₆f, plastocyanin, ferredoxin) that move electrons and pump \(H^+\).</li>
+              <li><strong>Chemiosmosis</strong> — ATP production driven by \(H^+\) flowing through ATP synthase down its gradient.</li>
+              <li><strong>NADPH</strong> — electron carrier supplying reducing power to the Calvin cycle.</li>
+              <li><strong>Absorption vs action spectrum</strong> — wavelengths absorbed vs wavelengths driving photosynthesis.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracing oxygen isotopes</p>
+              <p>An experiment uses \(H_2{}^{18}O\) and \(C{}^{16}O_2\) to feed a plant. Predict whether the released \(O_2\) carries the \({}^{18}O\) or the \({}^{16}O\) label, and explain.</p>
+              <p>The oxygen released comes from the splitting of water at PSII, not from \(CO_2\). Therefore the released \(O_2\) is labelled \({}^{18}O_2\). This Ruben and Kamen experiment (1941) established that water is the source of photosynthetic oxygen.</p>
+            </div>
+            <ul>
+              <li>Saying "\(O_2\) comes from \(CO_2\)" — \(O_2\) comes from the splitting of \(H_2O\) at PSII.</li>
+              <li>Confusing the order: PSII fires first (despite the number), then PSI.</li>
+              <li>Locating the Calvin cycle in the thylakoid membrane — it occurs in the stroma.</li>
+              <li>Forgetting that ATP synthase is powered by the \(H^+\) gradient (chemiosmosis), not directly by electrons.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "explain the chemical changes and energy conversions that occur in metabolic processes related to photosynthesis (e.g., the light reactions and Calvin cycle)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Leaf Structure</span>
+                <span class="vid-duration">13:23</span>
+                <span class="vid-toggle" id="toggle-v10">▶</span>
+            </div>
+            <div class="video-player" id="player-v10">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/010_Leaf_Structure.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=aY3nN_0xg54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Light and Photosynthetic Pigments</span>
+                <span class="vid-duration">14:08</span>
+                <span class="vid-toggle" id="toggle-v13">▶</span>
+            </div>
+            <div class="video-player" id="player-v13">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/013_Light_and_Photosynthetic_Pigments.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=tbRFGwBmTso" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chlorophyll and Chloroplasts</span>
+                <span class="vid-duration">20:35</span>
+                <span class="vid-toggle" id="toggle-v4">▶</span>
+            </div>
+            <div class="video-player" id="player-v4">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/004_Chlorophyll_and_Chloroplasts.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Gr1hh4eLLo8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Overview of Photosynthesis</span>
+                <span class="vid-duration">12:03</span>
+                <span class="vid-toggle" id="toggle-v15">▶</span>
+            </div>
+            <div class="video-player" id="player-v15">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/015_Overview_of_Photosynthesis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=wuW7T5S2sNk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Noncyclic Electron Flow</span>
+                <span class="vid-duration">17:30</span>
+                <span class="vid-toggle" id="toggle-v2">▶</span>
+            </div>
+            <div class="video-player" id="player-v2">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/002_Noncyclic_Electron_Flow.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=1bduTeEo1Nc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Light Reactions — Part B</span>
+                <span class="vid-duration">19:49</span>
+                <span class="vid-toggle" id="toggle-v5">▶</span>
+            </div>
+            <div class="video-player" id="player-v5">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/005_Light_Reactions-_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=LLOWikE-3PY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Stomata Opening and Closing</span>
+                <span class="vid-duration">14:38</span>
+                <span class="vid-toggle" id="toggle-v14">▶</span>
+            </div>
+            <div class="video-player" id="player-v14">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/014_Stomata_Opening_and_Closing.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=urPPrct-iJU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🌱 Calvin Cycle (Light-Independent Reactions)</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The Calvin cycle (also called the C₃ cycle or carbon fixation pathway) takes place in the <em>stroma</em> of the chloroplast and converts the ATP and NADPH generated by the light reactions into a stable carbohydrate. It is called "light-independent" because it does not directly require photons, but it is wholly dependent on the products of the light reactions and effectively stops in the dark. The cycle has three phases — carbon fixation, reduction, and regeneration of RuBP — and turns three times to produce one molecule of glyceraldehyde-3-phosphate (G3P), the immediate sugar product. Six turns are required to make a hexose like glucose.</p>
+            <p>In the <em>carbon fixation</em> phase, the enzyme <em>RuBisCO</em> (ribulose-1,5-bisphosphate carboxylase/oxygenase) attaches \(CO_2\) to the 5-carbon sugar RuBP. The unstable 6-carbon intermediate splits immediately into two molecules of 3-phosphoglycerate (3-PGA). RuBisCO is the most abundant protein on Earth, but it is also slow (3 reactions per second) and prone to grab \(O_2\) instead of \(CO_2\) — a wasteful side reaction called photorespiration. In the <em>reduction</em> phase, each 3-PGA is phosphorylated by ATP (giving 1,3-BPG) and reduced by NADPH to G3P. Some G3P leaves the cycle to make glucose; most re-enters the cycle. In the <em>regeneration</em> phase, ATP-driven reshuffling rebuilds RuBP from five G3P molecules so the cycle can continue.</p>
+            <p>The energy bookkeeping for one G3P is precise: 3 \(CO_2\) in, 9 ATP and 6 NADPH consumed, 1 G3P out (plus regenerated RuBP). For one glucose (2 G3P), that is 18 ATP and 12 NADPH. \(C_4\) plants (corn, sugarcane) and CAM plants (cacti, pineapples) have evolved mechanisms to concentrate \(CO_2\) around RuBisCO and suppress photorespiration in hot, dry climates.</p>
+            <ul>
+              <li><strong>RuBP (ribulose-1,5-bisphosphate)</strong> — 5-carbon \(CO_2\) acceptor.</li>
+              <li><strong>RuBisCO</strong> — enzyme that fixes \(CO_2\) to RuBP.</li>
+              <li><strong>3-PGA / G3P</strong> — 3-carbon intermediates of the cycle; G3P is the net product.</li>
+              <li><strong>Photorespiration</strong> — wasteful oxygenation by RuBisCO when \(O_2\) outcompetes \(CO_2\).</li>
+              <li><strong>C₄ pathway / CAM</strong> — adaptations that concentrate \(CO_2\) before delivering it to the Calvin cycle.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — ATP and NADPH accounting</p>
+              <p>How many ATP and NADPH molecules are required to synthesise one molecule of glucose (\(C_6H_{12}O_6\)) via the Calvin cycle?</p>
+              <p>Glucose has 6 carbons, so 6 turns of the cycle (one \(CO_2\) fixed per turn) are needed, yielding 2 G3P. Each turn uses 3 ATP (2 in reduction, 1 in regeneration) and 2 NADPH (in reduction). Total: \(6 \\times 3 = 18\) ATP and \(6 \\times 2 = 12\) NADPH. The cycle also regenerates 6 RuBP, so RuBP is catalytic, not net consumed.</p>
+            </div>
+            <ul>
+              <li>Calling the Calvin cycle the "dark reaction" — it can occur in light; it simply does not require photons directly.</li>
+              <li>Saying RuBisCO fixes \(O_2\) only — it fixes \(CO_2\) preferentially, but oxygenation occurs and is wasteful (photorespiration).</li>
+              <li>Reporting glucose as the direct product — G3P is the immediate product; glucose is built from two G3P downstream.</li>
+              <li>Forgetting that ATP is used in <em>both</em> reduction and regeneration phases.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "explain the chemical changes and energy conversions that occur in metabolic processes related to photosynthesis (e.g., the light reactions and Calvin cycle)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Photosynthesis: Calvin Cycle — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">7:55</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/D2Y_eEaxrYo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=D2Y_eEaxrYo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">C3, C4 and CAM Plant Photosynthesis &amp; Photorespiration — Professor Dave Explains</span>
+                <span class="vid-duration">9:24</span>
+                <span class="vid-toggle" id="toggle-yt21">▶</span>
+            </div>
+            <div class="video-player" id="player-yt21">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/P_JU9vYd5O0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=P_JU9vYd5O0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Photosynthesis (Updated) — Amoeba Sisters</span>
+                <span class="vid-duration">7:12</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CMiPYHNNg28?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CMiPYHNNg28" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- CELLULAR RESPIRATION -->
+        <div class="subsection-label">🔋 Cellular Respiration</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Cellular respiration is the catabolic process that extracts chemical energy from glucose and stores it in ATP. The overall equation \(C_6H_{12}O_6 + 6O_2 \\rightarrow 6CO_2 + 6H_2O + \\text{ATP} + \\text{heat}\) sums four stages: glycolysis, pyruvate oxidation, the Krebs cycle, and oxidative phosphorylation. Glycolysis is the only stage that occurs in the cytoplasm — it is universal across life and evolutionarily ancient, predating oxygenic conditions on Earth. The remaining three stages take place in the <em>mitochondrion</em>: pyruvate oxidation and the Krebs cycle in the mitochondrial <em>matrix</em>; the electron transport chain and ATP synthase on the inner mitochondrial membrane (folded into <em>cristae</em> to maximise surface area).</p>
+            <p>In <em>glycolysis</em>, one 6-carbon glucose is split into two 3-carbon pyruvates, generating 2 ATP net (4 made, 2 invested) and 2 NADH. <em>Pyruvate oxidation</em> (in the matrix) converts each pyruvate to acetyl-CoA, releasing \(CO_2\) and producing NADH. The two-carbon acetyl group then enters the <em>Krebs cycle</em>, which spins twice per glucose and yields, per turn, 3 NADH, 1 FADH₂, 1 ATP (or GTP), and 2 \(CO_2\). The real energy harvest happens in <em>oxidative phosphorylation</em>: NADH and FADH₂ deliver electrons to Complex I and Complex II of the inner-membrane electron transport chain. As electrons fall energetically through Complexes I → III → IV (via mobile carriers ubiquinone and cytochrome c), \(H^+\) ions are pumped from matrix to intermembrane space. The proton gradient drives ATP synthase to produce roughly 26 ATP. Oxygen is the terminal electron acceptor, combining with \(H^+\) to form water; without it, the chain backs up and the cycle stops.</p>
+            <p>If oxygen is absent, cells run <em>fermentation</em> to regenerate NAD⁺ so glycolysis can continue. Lactate fermentation (muscle, lactobacillus) reduces pyruvate to lactate; alcohol fermentation (yeast) releases \(CO_2\) and produces ethanol. Fermentation makes no additional ATP beyond glycolysis's 2 — a steep penalty for anaerobic life.</p>
+            <ul>
+              <li><strong>Substrate-level phosphorylation</strong> — direct ATP synthesis by transfer of a phosphate from a substrate.</li>
+              <li><strong>Oxidative phosphorylation</strong> — ATP synthesis driven by the proton gradient established by the ETC.</li>
+              <li><strong>NADH / FADH₂</strong> — reduced electron carriers feeding the ETC.</li>
+              <li><strong>Cristae / matrix / intermembrane space</strong> — mitochondrial compartments separated by inner and outer membranes.</li>
+              <li><strong>Chemiosmosis</strong> — coupling of \(H^+\) flow through ATP synthase to ATP synthesis.</li>
+              <li><strong>Fermentation</strong> — anaerobic regeneration of NAD⁺ from NADH.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — ATP yield per glucose</p>
+              <p>Using the conventional yields (2.5 ATP per NADH, 1.5 ATP per FADH₂), calculate the total ATP per glucose under aerobic conditions.</p>
+              <p>Glycolysis: 2 ATP + 2 NADH (≈ 5 ATP) = 7 ATP. Pyruvate oxidation: 2 NADH (≈ 5 ATP). Krebs cycle: 2 ATP + 6 NADH (≈ 15 ATP) + 2 FADH₂ (≈ 3 ATP) = 20 ATP. Grand total ≈ 7 + 5 + 20 = 32 ATP per glucose. (Older texts quote 36–38 if they assume 3 ATP/NADH and 2 ATP/FADH₂.)</p>
+            </div>
+            <ul>
+              <li>Locating glycolysis in the mitochondrion — it occurs in the cytoplasm.</li>
+              <li>Forgetting that the Krebs cycle turns twice per glucose (one turn per pyruvate-derived acetyl-CoA).</li>
+              <li>Confusing oxidative phosphorylation (uses ETC and \(H^+\) gradient) with substrate-level phosphorylation (direct transfer).</li>
+              <li>Saying \(O_2\) is "used in the Krebs cycle" — \(O_2\) is consumed only at Complex IV as the final electron acceptor.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.1 — "explain the chemical changes and energy conversions that occur in metabolic processes related to cellular respiration (e.g., glycolysis, the Krebs cycle, electron transport, oxidative phosphorylation)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to Metabolism</span>
+                <span class="vid-duration">14:07</span>
+                <span class="vid-toggle" id="toggle-v24">▶</span>
+            </div>
+            <div class="video-player" id="player-v24">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/024_Introduction_To_Metabolism.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=fyAc5CvOCgk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v28')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Redox Reactions</span>
+                <span class="vid-duration">13:30</span>
+                <span class="vid-toggle" id="toggle-v28">▶</span>
+            </div>
+            <div class="video-player" id="player-v28">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/028_Redox_Reactions.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=3NNAkTOi2Lc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">NAD⁺ and FAD</span>
+                <span class="vid-duration">9:50</span>
+                <span class="vid-toggle" id="toggle-v26">▶</span>
+            </div>
+            <div class="video-player" id="player-v26">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/026_NAD__and_FAD.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=pRf3x1wEFq4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v30')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Overview of Cellular Respiration</span>
+                <span class="vid-duration">15:00</span>
+                <span class="vid-toggle" id="toggle-v30">▶</span>
+            </div>
+            <div class="video-player" id="player-v30">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/030_Note_4___Overview_of_Cellular_Respiratation.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Uf26tM2haKg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Glycolysis — Part A</span>
+                <span class="vid-duration">10:40</span>
+                <span class="vid-toggle" id="toggle-v27">▶</span>
+            </div>
+            <div class="video-player" id="player-v27">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/027_Glycolysis_Part_A.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=0xPmmh2uDJg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v34')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Glycolysis — Part B</span>
+                <span class="vid-duration">10:31</span>
+                <span class="vid-toggle" id="toggle-v34">▶</span>
+            </div>
+            <div class="video-player" id="player-v34">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/034_Glycolysis_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=kW2vgSlVmzU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v29')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Glycolysis — Part C</span>
+                <span class="vid-duration">13:20</span>
+                <span class="vid-toggle" id="toggle-v29">▶</span>
+            </div>
+            <div class="video-player" id="player-v29">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/029_Glycolysis_Part_C.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=EMw1uyyeEco" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v33')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Krebs Cycle — Part A</span>
+                <span class="vid-duration">8:59</span>
+                <span class="vid-toggle" id="toggle-v33">▶</span>
+            </div>
+            <div class="video-player" id="player-v33">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/033_Krebs_Cycle_-_Part_A.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=iJVG6XIarvo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v31')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Krebs Cycle — Part B</span>
+                <span class="vid-duration">14:11</span>
+                <span class="vid-toggle" id="toggle-v31">▶</span>
+            </div>
+            <div class="video-player" id="player-v31">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/031_Krebs_Cycle_-_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=cjeReav_xEE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Electron Transport Chain</span>
+                <span class="vid-duration">19:31</span>
+                <span class="vid-toggle" id="toggle-v18">▶</span>
+            </div>
+            <div class="video-player" id="player-v18">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/018_The_Electron_Transport_Chain.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=arQKhsAQnAI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chemiosmosis</span>
+                <span class="vid-duration">9:57</span>
+                <span class="vid-toggle" id="toggle-v9">▶</span>
+            </div>
+            <div class="video-player" id="player-v9">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/009_Chemiosmosis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=V9JSzCX4Bac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v32')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Energy Transfer</span>
+                <span class="vid-duration">13:23</span>
+                <span class="vid-toggle" id="toggle-v32">▶</span>
+            </div>
+            <div class="video-player" id="player-v32">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/032_Note__5_Energy_Transfer.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=dH3kZJyMF10" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cellular Respiration — ATP Count</span>
+                <span class="vid-duration">8:56</span>
+                <span class="vid-toggle" id="toggle-v11">▶</span>
+            </div>
+            <div class="video-player" id="player-v11">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/011_Cellular_Respiration_ATP_Count.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=mE0hIVWmj54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v6')">
+                <span class="vid-icon">📝</span>
+                <span class="vid-title">Alternate Pathways — Fermentation</span>
+                <span class="vid-duration">24:10</span>
+                <span class="vid-toggle" id="toggle-v6">▶</span>
+            </div>
+            <div class="video-player" id="player-v6">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/006_Alternate_Pathways_-_Cellular_Respiration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=MKnmuW_PGUE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sbi4u/Unit2_Metabolic_Processes_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sbi4u/Unit2_Metabolic_Processes_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sbi4u/Unit2_Metabolic_Processes_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <a href="../../assessments/sbi4u/Strand_B_Metabolic_Processes_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SBI4U Biology · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

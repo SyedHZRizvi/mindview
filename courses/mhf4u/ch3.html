@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 3: Rational Functions</h1>
+<p>Reciprocal functions, asymptotes, holes, rational equations and inequalities</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+            <h2>Chapter 3: Rational Functions</h2>
+            <p>Reciprocal functions, asymptotes, holes, rational equations and inequalities</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Polynomial & Rational</span>
+                <span>⏱️ ~15h</span>
+                <span>📹 19 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.1 — Introduction to Rational Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>rational function</strong> is any function of the form \(f(x)=\dfrac{P(x)}{Q(x)}\), where \(P\) and \(Q\) are polynomials and \(Q\) is not the zero polynomial. The new feature compared with polynomials is the denominator: any value of \(x\) that makes \(Q(x)=0\) is excluded from the domain. These excluded values produce one of two graphical features — a <em>vertical asymptote</em> or a <em>hole</em> — and distinguishing the two is the central skill of Chapter 3.</p>
+                <p>If a factor of \(Q(x)\) does not cancel with a matching factor of \(P(x)\), the excluded \(x\)-value produces a vertical asymptote: the curve shoots to \(\pm\infty\) as \(x\) approaches that value. If the factor cancels completely, the excluded value produces a hole — a single point removed from an otherwise continuous curve. End behaviour produces <em>horizontal</em> or <em>oblique</em> asymptotes depending on the degree comparison.</p>
+                <p>Approaching rational functions for the first time, it helps to think of them as polynomials with controlled defects. Most of the curve looks polynomial-like; the asymptotes and holes are localised disruptions you can describe precisely.</p>
+                <ul>
+                  <li><strong>Rational function</strong> — \(f(x)=\dfrac{P(x)}{Q(x)}\), with polynomials \(P,Q\) and \(Q\not\equiv 0\).</li>
+                  <li><strong>Vertical asymptote</strong> — a vertical line \(x=a\) approached but never crossed by the graph, occurring at non-cancelling zeros of the denominator.</li>
+                  <li><strong>Hole</strong> — a single removed point, occurring where a factor of the denominator cancels with a factor of the numerator.</li>
+                  <li><strong>Horizontal asymptote</strong> — a horizontal line approached by the graph as \(x\to\pm\infty\); its location depends on the degrees of \(P\) and \(Q\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Domain and feature classification</p>
+                  <p>For \(f(x)=\dfrac{x-2}{x^{2}-4}\), state the domain and classify each excluded value.</p>
+                  <p>Step 1. Factor: \(f(x)=\dfrac{x-2}{(x-2)(x+2)}\).</p>
+                  <p>Step 2. Denominator zeros at \(x=2\) and \(x=-2\); both excluded from domain.</p>
+                  <p>Step 3. The factor \((x-2)\) cancels, leaving \(f(x)=\dfrac{1}{x+2}\) for \(x\ne 2\). So \(x=2\) is a hole; \(x=-2\) is a vertical asymptote.</p>
+                  <p>Step 4. Domain: \(\{x\in\mathbb{R}\mid x\ne 2,\,x\ne -2\}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — End-behaviour comparison</p>
+                  <p>For \(g(x)=\dfrac{3x^{2}-1}{x^{2}+5}\), determine the horizontal asymptote.</p>
+                  <p>Step 1. Compare degrees: numerator degree \(=2\), denominator degree \(=2\). Equal degrees.</p>
+                  <p>Step 2. Horizontal asymptote at the ratio of leading coefficients: \(y=\dfrac{3}{1}=3\).</p>
+                </div>
+                <ul>
+                  <li>Always factor before declaring asymptotes — cancellations turn would-be asymptotes into holes.</li>
+                  <li>The domain comes from the <em>original</em> denominator, not the simplified one.</li>
+                  <li>If numerator degree exceeds denominator degree by 1 you get an oblique asymptote, not horizontal.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.1 — "determine, through investigation with and without technology, key features (i.e., vertical and horizontal asymptotes, domain and range, intercepts, positive/negative intervals, increasing/decreasing intervals) of the graphs of rational functions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v37')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.1 Introduction to Rational Functions</span>
+                        <span class="vid-duration">10:55</span>
+                        <span class="vid-toggle" id="toggle-v37">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v37">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/037_MHF4U_3.1_Introduction_to_Rational_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=idlD4UM29R0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.2 — Reciprocal of Linear Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The simplest rational function is the reciprocal of a linear function: \(f(x)=\dfrac{1}{ax+b}\). Its graph is a translated, possibly stretched version of the parent reciprocal \(y=\dfrac{1}{x}\). Two asymptotes appear: a vertical asymptote where the denominator is zero (\(x=-\tfrac{b}{a}\)) and a horizontal asymptote at \(y=0\) (because the numerator's degree is lower than the denominator's). Together they cut the plane into two regions, with a hyperbolic branch in each.</p>
+                <p>The reciprocal flips magnitudes: where the linear function is large, the reciprocal is small; where the linear function is near zero, the reciprocal is enormous. As you approach the vertical asymptote, the sign of the linear factor determines whether the reciprocal heads to \(+\infty\) or \(-\infty\) — this is the most-asked detail.</p>
+                <p>Domain, range, asymptotes, and a clean sketch with the correct branch orientations are all you need to fully describe these functions. Practising the sign analysis near the vertical asymptote will pay off in later sections where you build up to more complicated rationals.</p>
+                <ul>
+                  <li><strong>Reciprocal function</strong> — \(f(x)=\dfrac{1}{g(x)}\); each \(y\)-value is the multiplicative inverse of \(g(x)\).</li>
+                  <li><strong>Vertical asymptote (VA)</strong> — at \(x=-\tfrac{b}{a}\) for \(f(x)=\dfrac{1}{ax+b}\).</li>
+                  <li><strong>Horizontal asymptote (HA)</strong> — at \(y=0\) because the degree of the numerator is less than the degree of the denominator.</li>
+                  <li><strong>One-sided behaviour</strong> — \(f\to+\infty\) or \(-\infty\) at the VA, determined by the sign of the linear factor.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Asymptotes and intercepts</p>
+                  <p>Analyse \(f(x)=\dfrac{1}{2x-6}\).</p>
+                  <p>Step 1. VA: \(2x-6=0\Rightarrow x=3\).</p>
+                  <p>Step 2. HA: \(y=0\) (numerator constant, denominator linear).</p>
+                  <p>Step 3. Intercepts: no \(x\)-intercept (numerator never zero). \(y\)-intercept: \(f(0)=\dfrac{1}{-6}=-\dfrac{1}{6}\).</p>
+                  <p>Step 4. Domain: \(\{x\in\mathbb{R}\mid x\ne 3\}\). Range: \(\{y\in\mathbb{R}\mid y\ne 0\}\).</p>
+                  <p>Step 5. Sign near VA: as \(x\to 3^{-}\), \(2x-6\to 0^{-}\), so \(f\to-\infty\); as \(x\to 3^{+}\), \(f\to+\infty\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Behaviour at far ends</p>
+                  <p>Describe end behaviour of \(g(x)=\dfrac{1}{-x+4}\) as \(x\to\pm\infty\).</p>
+                  <p>Step 1. As \(x\to\infty\), \(-x+4\to-\infty\), so \(g(x)\to 0^{-}\).</p>
+                  <p>Step 2. As \(x\to-\infty\), \(-x+4\to\infty\), so \(g(x)\to 0^{+}\).</p>
+                  <p>Step 3. The graph approaches \(y=0\) from below on the right and from above on the left.</p>
+                </div>
+                <ul>
+                  <li>The reciprocal has no \(x\)-intercept — the numerator is a non-zero constant.</li>
+                  <li>Always check the sign on each side of the VA; reversing the signs places the branches in the wrong quadrants.</li>
+                  <li>Domain excludes the VA but range excludes the HA value — these are different exclusions.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.4 — "sketch the graph of a simple rational function… by considering the domain and range, and the impact of asymptotes on the graph."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v38')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.2a Reciprocal of Linear Functions</span>
+                        <span class="vid-duration">26:12</span>
+                        <span class="vid-toggle" id="toggle-v38">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v38">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/038_MHF4U_3.2a_Reciprocal_of_Linear_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=oBdYsBacIM4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v39')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.2b Reciprocal of Linear Function Homework Solutions</span>
+                        <span class="vid-duration">5:07</span>
+                        <span class="vid-toggle" id="toggle-v39">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v39">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/039_MHF4U_3.2b_Reciprocal_of_Linear_Function_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=c4ffAAFCAHY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v40')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.2c Graphing Reciprocal of Linear Function Homework Solutions</span>
+                        <span class="vid-duration">4:40</span>
+                        <span class="vid-toggle" id="toggle-v40">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v40">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/040_MHF4U_3.2c_Graphing_Reciprocal_of_Linear_Function_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ZP032cdfJvQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.3 — Reciprocal of Quadratic Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>When you reciprocate a quadratic, three distinct shapes can appear depending on the discriminant. If the quadratic has two distinct real roots, the reciprocal has <em>two</em> vertical asymptotes — one at each root — and a hump or pit between them. If it has a single repeated root, there is one vertical asymptote and the reciprocal opens upward or downward on both sides like a "tower". If the quadratic has no real roots (discriminant negative), the denominator is never zero, so there is no vertical asymptote — the reciprocal is a single smooth curve.</p>
+                <p>In every case the horizontal asymptote is \(y=0\) (numerator degree is less than denominator degree by at least one). The maximum or minimum of the reciprocal occurs at the vertex of the quadratic: when the quadratic hits its minimum (lowest \(y\)), the reciprocal hits its maximum (highest \(y\)), and vice versa, after attention to sign.</p>
+                <p>Sketching is a sign-tracking exercise. Determine the sign of the original quadratic in each region between roots, then reciprocate the magnitude while keeping the same sign. Tall narrow towers near the asymptotes, low flat curves elsewhere.</p>
+                <ul>
+                  <li><strong>Reciprocal of a quadratic</strong> — \(f(x)=\dfrac{1}{ax^{2}+bx+c}\); shape determined by the discriminant.</li>
+                  <li><strong>Discriminant cases</strong> — two VAs, one VA, or no VA, depending on \(b^{2}-4ac\).</li>
+                  <li><strong>Reciprocal of vertex</strong> — vertex \((h,k)\) of the quadratic maps to \(\bigl(h,\tfrac{1}{k}\bigr)\) on the reciprocal, an extremum.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Two-root case</p>
+                  <p>Sketch \(f(x)=\dfrac{1}{x^{2}-4}\).</p>
+                  <p>Step 1. Factor denominator: \(x^{2}-4=(x-2)(x+2)\). Zeros at \(x=\pm 2\). Two VAs.</p>
+                  <p>Step 2. HA: \(y=0\).</p>
+                  <p>Step 3. Sign chart of denominator: positive on \((-\infty,-2)\) and \((2,\infty)\); negative on \((-2,2)\). Reciprocal mirrors this sign.</p>
+                  <p>Step 4. Vertex of \(x^{2}-4\) at \((0,-4)\), so reciprocal has a maximum (least negative) at \((0,-\tfrac{1}{4})\).</p>
+                  <p>Step 5. Sketch: tall asymptotic towers at \(x=\pm 2\); a downward hump between them peaking at \((0,-\tfrac{1}{4})\); curve approaches \(y=0\) from above on outer branches.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — No-real-root case</p>
+                  <p>Analyse \(g(x)=\dfrac{1}{x^{2}+1}\).</p>
+                  <p>Step 1. Denominator zero: \(x^{2}+1=0\) has no real solutions. No VA.</p>
+                  <p>Step 2. Domain: all real numbers.</p>
+                  <p>Step 3. Vertex of \(x^{2}+1\) at \((0,1)\); reciprocal maximum at \((0,1)\). As \(x\to\pm\infty\), \(g\to 0^{+}\).</p>
+                  <p>Step 4. Range: \((0,1]\). Curve is a smooth bell shape symmetric about the \(y\)-axis.</p>
+                </div>
+                <ul>
+                  <li>Always test the discriminant first — it determines the entire structure.</li>
+                  <li>Vertex of the quadratic gives an extremum of the reciprocal; do not confuse the two \(y\)-values.</li>
+                  <li>Sign of the reciprocal matches the sign of the original quadratic in each interval.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.4 — "sketch the graph of a simple rational function… by considering the domain and range, and the impact of asymptotes on the graph."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v41')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.3a Reciprocal of Quadratic Functions</span>
+                        <span class="vid-duration">28:43</span>
+                        <span class="vid-toggle" id="toggle-v41">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v41">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/041_MHF4U_3.3a_Reciprocal_of_Quadratic_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=1gX-sCrb3WU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v42')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.3b Reciprocal of Quadratic Function Homework Solutions</span>
+                        <span class="vid-duration">8:23</span>
+                        <span class="vid-toggle" id="toggle-v42">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v42">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/042_MHF4U_3.3b_Reciprocal_of_Quadratic_Function_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=DdP81Vts-wo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v43')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.3c Graphing Reciprocal of Quadratic Function Homework Solutions</span>
+                        <span class="vid-duration">8:23</span>
+                        <span class="vid-toggle" id="toggle-v43">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v43">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/043_MHF4U_3.3c_Graphing_Reciprocal_of_Quadratic_Function_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=aCEkvKoTNis" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.4 — Linear over Linear Rational Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>linear-over-linear</strong> rational function has the form \(f(x)=\dfrac{ax+b}{cx+d}\) with \(c\ne 0\). Its graph is a transformed reciprocal — that is, a translated and stretched hyperbola — because polynomial long division converts the expression into \(f(x)=A+\dfrac{B}{cx+d}\) for some constants \(A,B\). From this form you can read off every feature: a vertical asymptote where the denominator vanishes, a horizontal asymptote at \(y=A=\tfrac{a}{c}\) (the ratio of leading coefficients), and the usual intercept calculations.</p>
+                <p>The \(x\)-intercept comes from solving the numerator equal to zero: \(ax+b=0\) gives \(x=-\tfrac{b}{a}\). The \(y\)-intercept is just \(f(0)=\tfrac{b}{d}\). Together with the asymptotes these give a fully-determined sketch — only two pieces of information beyond the asymptotes are needed.</p>
+                <p>One subtlety: if the numerator and denominator share a common factor, the function simplifies and the would-be VA becomes a hole. Always look for common factors before declaring asymptotes.</p>
+                <ul>
+                  <li><strong>Linear over linear</strong> — \(f(x)=\dfrac{ax+b}{cx+d}\), \(c\ne 0\), \(ad\ne bc\).</li>
+                  <li><strong>Horizontal asymptote</strong> — \(y=\tfrac{a}{c}\), the ratio of the leading coefficients.</li>
+                  <li><strong>Vertical asymptote</strong> — \(x=-\tfrac{d}{c}\), where the denominator vanishes.</li>
+                  <li><strong>Centre of the hyperbola</strong> — the intersection of the asymptotes, \(\bigl(-\tfrac{d}{c},\tfrac{a}{c}\bigr)\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Full analysis</p>
+                  <p>For \(f(x)=\dfrac{2x+1}{x-3}\), find both asymptotes, both intercepts, the domain, and the range.</p>
+                  <p>Step 1. VA: \(x-3=0\Rightarrow x=3\).</p>
+                  <p>Step 2. HA: ratio of leading coefficients \(=\tfrac{2}{1}=2\), so \(y=2\).</p>
+                  <p>Step 3. \(x\)-intercept: \(2x+1=0\Rightarrow x=-\tfrac{1}{2}\).</p>
+                  <p>Step 4. \(y\)-intercept: \(f(0)=\dfrac{1}{-3}=-\dfrac{1}{3}\).</p>
+                  <p>Step 5. Domain: \(\{x\in\mathbb{R}\mid x\ne 3\}\). Range: \(\{y\in\mathbb{R}\mid y\ne 2\}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Rewriting in transformation form</p>
+                  <p>Rewrite \(f(x)=\dfrac{3x-7}{x-2}\) in the form \(A+\dfrac{B}{x-2}\).</p>
+                  <p>Step 1. Polynomial long division: \(3x-7=3(x-2)-1\).</p>
+                  <p>Step 2. \(f(x)=\dfrac{3(x-2)-1}{x-2}=3-\dfrac{1}{x-2}\).</p>
+                  <p>Step 3. Read off: HA at \(y=3\), VA at \(x=2\), reflection in the \(x\)-axis (because of the minus sign), no stretch beyond magnitude 1.</p>
+                </div>
+                <ul>
+                  <li>Watch for common factors — they convert VAs into holes.</li>
+                  <li>The HA is the ratio of leading coefficients, not the ratio of any other coefficients.</li>
+                  <li>Range excludes only the HA value, not zero — a common confusion with reciprocal functions.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "determine, through investigation… the connection between the equation of a rational function and the location of its asymptotes."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v44')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.4a Linear over Linear Rational Functions</span>
+                        <span class="vid-duration">33:35</span>
+                        <span class="vid-toggle" id="toggle-v44">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v44">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/044_MHF4U_3.4a_Linear_over_Linear_Rational_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=BcjKR34VmZM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v45')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.4b Linear over Linear Rational Functions Homework Solutions</span>
+                        <span class="vid-duration">3:10</span>
+                        <span class="vid-toggle" id="toggle-v45">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v45">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/045_MHF4U_3.4b_Linear_over_Linear_Rational_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=wvKEBaAbuB4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v46')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.4c Graphing Linear over Linear Rational Functions Homework Solutions</span>
+                        <span class="vid-duration">1:52</span>
+                        <span class="vid-toggle" id="toggle-v46">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v46">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/046_MHF4U_3.4c_Graphing_Linear_over_Linear_Rational_Functions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=0E9GR3xdAko" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.5 — Holes and Oblique Asymptotes</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Two features distinguish more complex rational functions from the simple ones in 3.2–3.4: <strong>holes</strong> and <strong>oblique asymptotes</strong>. A hole appears at any \(x\)-value where a factor cancels between numerator and denominator. The function is undefined there, but the limit exists — geometrically you draw an open circle at the missing point. To locate the hole's \(y\)-coordinate, simplify the function and evaluate the simplified form at the excluded \(x\)-value.</p>
+                <p>An <strong>oblique (slant) asymptote</strong> appears when the degree of the numerator is <em>exactly one more</em> than the degree of the denominator. As \(x\to\pm\infty\) the function behaves like a non-horizontal line. To find the equation of the oblique asymptote, perform polynomial long division: the quotient (ignoring the fractional remainder) is the line \(y=mx+b\) the function approaches.</p>
+                <p>Knowing how to combine these features with VAs and intercepts means you can sketch any quadratic-over-linear or cubic-over-quadratic rational function from first principles.</p>
+                <ul>
+                  <li><strong>Hole</strong> — a single removed point where a factor cancels in numerator and denominator.</li>
+                  <li><strong>Oblique asymptote</strong> — a line \(y=mx+b\) approached at infinity, present when \(\deg P=\deg Q+1\).</li>
+                  <li><strong>Polynomial long division</strong> — the method for splitting \(P/Q\) into quotient \(+\) remainder; quotient gives the oblique asymptote.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Locate a hole</p>
+                  <p>For \(f(x)=\dfrac{x^{2}-x-6}{x-3}\), find any holes, asymptotes, and intercepts.</p>
+                  <p>Step 1. Factor numerator: \(x^{2}-x-6=(x-3)(x+2)\). So \(f(x)=\dfrac{(x-3)(x+2)}{x-3}=x+2\) for \(x\ne 3\).</p>
+                  <p>Step 2. Hole at \(x=3\). Plug into simplified form: \(y=3+2=5\). Hole at \((3,5)\).</p>
+                  <p>Step 3. No VA (the would-be VA cancelled into a hole). The simplified function is a line: \(y=x+2\) with a hole.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Oblique asymptote</p>
+                  <p>Find the oblique asymptote of \(g(x)=\dfrac{x^{2}+3x-1}{x-1}\).</p>
+                  <p>Step 1. Degrees: numerator 2, denominator 1. Difference is 1, so an oblique asymptote exists.</p>
+                  <p>Step 2. Long division: divide \(x^{2}+3x-1\) by \(x-1\). \(x^{2}\div x=x\); multiply \(x(x-1)=x^{2}-x\); subtract: \(4x-1\). \(4x\div x=4\); multiply \(4(x-1)=4x-4\); subtract: \(3\).</p>
+                  <p>Step 3. So \(g(x)=x+4+\dfrac{3}{x-1}\). Oblique asymptote: \(y=x+4\).</p>
+                  <p>Step 4. VA at \(x=1\). No HA (different oblique structure replaces it).</p>
+                </div>
+                <ul>
+                  <li>Always factor and cancel first — holes hide behind un-simplified expressions.</li>
+                  <li>Use the <em>simplified</em> function to compute the hole's \(y\)-coordinate, not the original.</li>
+                  <li>If the degree difference is greater than 1, the function has no horizontal or oblique asymptote — only a higher-order curve at infinity.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "sketch the graph of a simple rational function using its key features, given the algebraic representation of the function."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v47')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.5a Holes in Graphs of Rational Function</span>
+                        <span class="vid-duration">4:51</span>
+                        <span class="vid-toggle" id="toggle-v47">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v47">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/047_MHF4U_3.5a_Holes_in_Graphs_of_Rational_Function.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ijnep9-jOK4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v48')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.5b Practice Graphing Challenging Rational Functions</span>
+                        <span class="vid-duration">19:57</span>
+                        <span class="vid-toggle" id="toggle-v48">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v48">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/048_MHF4U_3.5b_Practice_Graphing_Challenging_Rational_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=jnKZHdvBC-0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v49')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.5c Oblique Asymptotes</span>
+                        <span class="vid-duration">12:49</span>
+                        <span class="vid-toggle" id="toggle-v49">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v49">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/049_MHF4U_3.5c_Oblique_Asymptotes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=rgaecJ5yUP8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.6 — Rational Equations and Inequalities</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>rational equation</strong> contains rational expressions with variable denominators. To solve, identify all values of \(x\) that make any denominator zero — these are <em>restrictions</em> that must be excluded from your final answer. Then multiply both sides by the LCD (least common denominator) to clear fractions, solve the resulting polynomial equation, and check each candidate solution against the restrictions. Any candidate equal to a restricted value is <strong>extraneous</strong> and must be rejected.</p>
+                <p><strong>Rational inequalities</strong> require more care because multiplying by a denominator may flip the inequality sign — and you cannot know in advance whether the denominator is positive or negative. The safe method is to move everything to one side, combine into a single rational expression, and build a <em>sign chart</em> using the zeros of the numerator <em>and</em> the zeros of the denominator as critical values. Then read off the intervals where the inequality holds, taking care to exclude denominator zeros even when the inequality is non-strict.</p>
+                <p>The zeros of the numerator are candidate solutions (included for \(\le\) and \(\ge\), excluded for \(&lt;\) and \(&gt;\)); zeros of the denominator are <em>always</em> excluded.</p>
+                <ul>
+                  <li><strong>Restriction</strong> — a value that makes any denominator zero; must be excluded from the domain.</li>
+                  <li><strong>Extraneous solution</strong> — a candidate that satisfies the cleared equation but violates a restriction; must be rejected.</li>
+                  <li><strong>Sign chart for rational inequality</strong> — uses numerator zeros and denominator zeros as critical values.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Rational equation</p>
+                  <p>Solve \(\dfrac{2}{x-1}+\dfrac{1}{x+2}=1\).</p>
+                  <p>Step 1. Restrictions: \(x\ne 1,\,x\ne -2\). LCD \(=(x-1)(x+2)\).</p>
+                  <p>Step 2. Multiply: \(2(x+2)+1(x-1)=(x-1)(x+2)\).</p>
+                  <p>Step 3. Simplify: \(2x+4+x-1=x^{2}+x-2\), so \(3x+3=x^{2}+x-2\).</p>
+                  <p>Step 4. Rearrange: \(x^{2}-2x-5=0\). Quadratic formula: \(x=\dfrac{2\pm\sqrt{4+20}}{2}=1\pm\sqrt{6}\).</p>
+                  <p>Step 5. Both \(1+\sqrt{6}\approx 3.45\) and \(1-\sqrt{6}\approx -1.45\) are different from the restrictions. Both accepted.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Rational inequality</p>
+                  <p>Solve \(\dfrac{x+1}{x-2}\le 0\).</p>
+                  <p>Step 1. Critical values: numerator zero at \(x=-1\); denominator zero at \(x=2\).</p>
+                  <p>Step 2. Sign chart on \((-\infty,-1),(-1,2),(2,\infty)\). Test \(x=-2:\dfrac{-1}{-4}=+\). Test \(x=0:\dfrac{1}{-2}=-\). Test \(x=3:\dfrac{4}{1}=+\).</p>
+                  <p>Step 3. Want \(\le 0\): negative interval is \((-1,2)\). Include \(x=-1\) (numerator zero, expression equals 0). Exclude \(x=2\) (undefined).</p>
+                  <p>Step 4. Solution: \(x\in[-1,2)\).</p>
+                </div>
+                <ul>
+                  <li>Always write down restrictions before doing any algebra — they save you from extraneous solutions later.</li>
+                  <li>Do not multiply both sides of an inequality by a variable denominator; build a sign chart instead.</li>
+                  <li>Denominator zeros are <em>always</em> excluded — even when the inequality includes equality.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "solve simple rational equations in one variable algebraically, and verify solutions using technology."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v50')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.6a Rational Equations and Inequalities</span>
+                        <span class="vid-duration">33:54</span>
+                        <span class="vid-toggle" id="toggle-v50">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v50">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/050_MHF4U_3.6a_Rational_Equations_and_Inequalities.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=dqNEs2Y7KeM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v51')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.6b Rational Equations and Inequalities Homework Solutions</span>
+                        <span class="vid-duration">4:28</span>
+                        <span class="vid-toggle" id="toggle-v51">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v51">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/051_MHF4U_3.6b_Rational_Equations_and_Inequalities_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=BoK3pwBz-TE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.7 — Word Problems with Rational Functions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Word problems modelled by rational functions usually arise from <em>combining rates</em> or expressing a quantity that is naturally a ratio. Classic examples include shared-work problems ("two pipes filling a tank together"), average-cost problems ("cost per unit when fixed costs are spread over many units"), travel-time problems with current or wind, and concentration problems involving dilution. The unifying idea is that rational functions are how mathematics expresses "per" quantities and their interactions.</p>
+                <p>The setup is the same as any modelling problem: define your variable carefully (units!), express each relevant quantity as a rational expression in that variable, write the equation that captures the problem's constraint, and solve. The pay-off is being able to interpret asymptotes meaningfully — for instance, average cost approaches a horizontal asymptote (the variable cost per unit) as production grows large, with the difference representing the spread of fixed costs.</p>
+                <p>Always finish by checking that your answer makes sense in context: negative times, lengths, or quantities are usually inadmissible even when they satisfy the equation.</p>
+                <ul>
+                  <li><strong>Combined rate</strong> — for shared work, \(\dfrac{1}{T}=\dfrac{1}{t_{1}}+\dfrac{1}{t_{2}}\), where \(T\) is total time.</li>
+                  <li><strong>Average cost</strong> — \(\overline{C}(x)=\dfrac{\text{total cost}}{x}\); horizontal asymptote represents variable cost.</li>
+                  <li><strong>Contextual restriction</strong> — domain restrictions that come from the real-world meaning (e.g., \(x&gt;0\) for physical quantities).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Shared work</p>
+                  <p>Alex paints a room in 6 hours; Mia paints the same room in 4 hours. How long does it take working together?</p>
+                  <p>Step 1. Rates: Alex \(=\tfrac{1}{6}\) room/hour, Mia \(=\tfrac{1}{4}\) room/hour. Combined rate \(=\tfrac{1}{6}+\tfrac{1}{4}=\tfrac{2+3}{12}=\tfrac{5}{12}\) room/hour.</p>
+                  <p>Step 2. Time \(T\) satisfies \(\tfrac{1}{T}=\tfrac{5}{12}\), so \(T=\tfrac{12}{5}=2.4\) hours \(=2\) h \(24\) min.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Average cost interpretation</p>
+                  <p>A company has fixed costs of \(\$5000\) plus \(\$8\) per item. Write the average cost per item and interpret as \(x\to\infty\).</p>
+                  <p>Step 1. Total cost \(C(x)=8x+5000\). Average cost \(\overline{C}(x)=\dfrac{8x+5000}{x}=8+\dfrac{5000}{x}\).</p>
+                  <p>Step 2. HA: as \(x\to\infty\), \(\dfrac{5000}{x}\to 0\), so \(\overline{C}\to 8\).</p>
+                  <p>Step 3. Interpretation: average cost approaches the variable cost of \(\$8\) per item as production grows large; fixed costs spread thinly and become negligible.</p>
+                </div>
+                <ul>
+                  <li>Always state units when defining your variable; many marks are lost by mismatched units.</li>
+                  <li>Check that solutions satisfy contextual restrictions (e.g., positive time, integer number of items).</li>
+                  <li>Interpret asymptotes in plain English — that explanation is often the Communication mark.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.7 — "solve problems involving applications of polynomial and rational functions… by interpreting the mathematical results in the context of the problem."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v52')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 3.7a Word Problems with Rational Functions and Rational Equations</span>
+                        <span class="vid-duration">22:29</span>
+                        <span class="vid-toggle" id="toggle-v52">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v52">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/052_MHF4U_3.7a_Word_Problems_with_Rational_Functions_and_Rational_Equations.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=qR8-y6islxI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v53')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.7b Word Problems with Rational Functions and Rational Equations Homework Solutions</span>
+                        <span class="vid-duration">9:00</span>
+                        <span class="vid-toggle" id="toggle-v53">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v53">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/053_MHF4U_3.7b_Word_Problems_with_Rational_Functions_and_Rational_Equations_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=esQsBfEk724" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.8 — Chapter Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapter 3 gave you a complete toolkit for rational functions: identifying asymptotes (vertical, horizontal, oblique) and holes, sketching from algebraic form, solving equations with restrictions, solving inequalities with sign charts, and modelling word problems. The recurring move is to <em>factor</em> the numerator and denominator before doing anything else — every feature ultimately depends on what factors cancel and what factors do not.</p>
+                <p>For review, organise your knowledge by feature: VAs come from non-cancelling denominator zeros; HAs come from comparing degrees (less than \(\Rightarrow y=0\); equal \(\Rightarrow\) ratio of leading coefficients; greater by 1 \(\Rightarrow\) oblique by long division; greater by more than 1 \(\Rightarrow\) none); holes come from cancelling factors; intercepts come from setting numerator (\(x\)-intercept) or evaluating at zero (\(y\)-intercept).</p>
+                <p>When tested, expect at least one full sketch and one inequality. The sketch is graded on asymptotes drawn correctly, intercepts marked, holes shown as open circles, and one-sided behaviour at VAs going the right direction. The inequality is graded on the sign-chart logic and the bracket conventions in the final answer.</p>
+                <ul>
+                  <li><strong>Asymptote checklist</strong> — VA, HA or oblique, holes, intercepts, sign on each side of each VA.</li>
+                  <li><strong>Inequality checklist</strong> — restrictions, sign chart, included/excluded endpoints, correct interval notation.</li>
+                  <li><strong>Word-problem checklist</strong> — variable defined with units, equation set up, contextual restrictions applied, interpretation in words.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Full sketch</p>
+                  <p>Sketch \(f(x)=\dfrac{x^{2}-1}{x^{2}-x-2}\).</p>
+                  <p>Step 1. Factor: numerator \((x-1)(x+1)\); denominator \((x-2)(x+1)\).</p>
+                  <p>Step 2. Cancel \((x+1)\): \(f(x)=\dfrac{x-1}{x-2}\) for \(x\ne -1\). Hole at \(x=-1\): plug into simplified form, \(\dfrac{-2}{-3}=\tfrac{2}{3}\). Hole at \((-1,\tfrac{2}{3})\).</p>
+                  <p>Step 3. VA at \(x=2\). HA at \(y=1\) (equal degrees, ratio \(\tfrac{1}{1}\)).</p>
+                  <p>Step 4. \(x\)-intercept: \(x-1=0\Rightarrow x=1\). \(y\)-intercept: \(f(0)=\dfrac{-1}{-2}=\tfrac{1}{2}\).</p>
+                  <p>Step 5. One-sided behaviour at \(x=2\): from left, denominator \(\to 0^{-}\), numerator \(\to 1\), so \(f\to-\infty\). From right, \(f\to+\infty\).</p>
+                </div>
+                <ul>
+                  <li>Mark holes with open circles — leaving them as filled points loses Communication marks.</li>
+                  <li>Distinguish "no horizontal asymptote" (degree differs by 2+) from "horizontal asymptote at \(y=0\)" (numerator lower degree).</li>
+                  <li>For inequalities, never skip the sign chart even if you "see" the answer — show the work.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Overall Expectation C2 — "identify and describe some key features of the graphs of rational functions, and represent rational functions graphically."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v54')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">MHF4U 3.8a Chapter 3 Summary</span>
+                        <span class="vid-duration">4:40</span>
+                        <span class="vid-toggle" id="toggle-v54">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v54">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/054_MHF4U_3.8a_Chapter_3_Summary.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=k7qAe2ZE_d4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v55')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 3.8b Chapter 3 Review Homework Solutions</span>
+                        <span class="vid-duration">3:52</span>
+                        <span class="vid-toggle" id="toggle-v55">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v55">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/055_MHF4U_3.8b_Chapter_3_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=4RLmh1JoypA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch3_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch3_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch3_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch2.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 2</a>
+<a href="ch4.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 4 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

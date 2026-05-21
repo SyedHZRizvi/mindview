@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Chapter 7: Trigonometric Ratios &amp; the Sine/Cosine Laws | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mcr3u.html" style="color:#0e7490;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCR3U Functions)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit7">
+<div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<h2>Chapter 7: Trigonometric Ratios &amp; the Sine/Cosine Laws</h2>
+<p>Right triangles, primary &amp; reciprocal ratios, special angles, sine/cosine laws, ambiguous case</p>
+<div class="unit-meta">
+<span>📚 Strand D: Trigonometric Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.1 &mdash; Primary &amp; Reciprocal Trigonometric Ratios</div>
+<div class="topic-desc">Define \( \sin\theta = \tfrac{\text{opp}}{\text{hyp}}, \cos\theta = \tfrac{\text{adj}}{\text{hyp}}, \tan\theta = \tfrac{\text{opp}}{\text{adj}} \) and the reciprocals \( \csc, \sec, \cot \) for acute angles.</div>
+<div class="summary-card">In a right triangle with opposite 5, adjacent 12, hypotenuse 13: \( \sin\theta=\tfrac{5}{13}, \cos\theta=\tfrac{12}{13}, \tan\theta=\tfrac{5}{12} \) and \( \csc\theta=\tfrac{13}{5}, \sec\theta=\tfrac{13}{12}, \cot\theta=\tfrac{12}{5} \). Reciprocal ratios extend the toolkit beyond the three primary ratios.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The three <em>primary trigonometric ratios</em> connect the angles of a right triangle to the lengths of its sides. For an acute angle \(\theta\), define:</p>
+
+<p>\[ \sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}, \quad \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}, \quad \tan\theta = \frac{\text{opposite}}{\text{adjacent}} \]</p>
+
+<p>Remember "SOH-CAH-TOA." The <em>opposite</em> side is across from \(\theta\); the <em>adjacent</em> is the leg touching \(\theta\) (not the hypotenuse); the <em>hypotenuse</em> is the longest side, opposite the right angle. Each ratio depends only on the angle \(\theta\), not on the triangle's size — similar triangles share trig ratios, which is why these are well-defined functions of \(\theta\).</p>
+
+<p>The three <em>reciprocal ratios</em> flip the primaries:</p>
+
+<p>\[ \csc\theta = \frac{1}{\sin\theta} = \frac{\text{hyp}}{\text{opp}}, \quad \sec\theta = \frac{1}{\cos\theta} = \frac{\text{hyp}}{\text{adj}}, \quad \cot\theta = \frac{1}{\tan\theta} = \frac{\text{adj}}{\text{opp}} \]</p>
+
+<p>Memorisation aid: c<strong>s</strong>c reciprocates <strong>s</strong>in, <strong>s</strong>ec reciprocates <strong>c</strong>os, <strong>c</strong>ot reciprocates <strong>t</strong>an — pairing each "co-" with the opposite primary.</p>
+
+<p>Why six ratios? In solving any triangle you may need ratios both ways: sometimes you know opposite-and-hypotenuse and want \(\theta\); sometimes you know hypotenuse-and-opposite and want a different ratio expressed cleanly. The reciprocals also let you write identities and formulas more compactly.</p>
+
+<ul>
+<li><strong>SOH-CAH-TOA</strong> — mnemonic for the three primary ratios.</li>
+<li><strong>Opposite, adjacent, hypotenuse</strong> — three labelled sides of a right triangle; opposite/adjacent are relative to the angle of interest.</li>
+<li><strong>Reciprocal ratios</strong> — cosecant (csc), secant (sec), cotangent (cot); each is one over a primary ratio.</li>
+<li><strong>Pythagorean identity</strong> — \(\sin^2\theta + \cos^2\theta = 1\); follows from Pythagoras \(a^2 + b^2 = c^2\) divided by \(c^2\).</li>
+<li><strong>Quotient identity</strong> — \(\tan\theta = \dfrac{\sin\theta}{\cos\theta}\); follows directly from the definitions.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A right triangle has opposite leg 5, adjacent leg 12, hypotenuse 13 (a Pythagorean triple). Find all six trig ratios of the angle \(\theta\) opposite the side of length 5.</p>
+<p>\(\sin\theta = \dfrac{5}{13}, \cos\theta = \dfrac{12}{13}, \tan\theta = \dfrac{5}{12}\).</p>
+<p>\(\csc\theta = \dfrac{13}{5}, \sec\theta = \dfrac{13}{12}, \cot\theta = \dfrac{12}{5}\).</p>
+<p>Verify Pythagorean identity: \(\sin^2\theta + \cos^2\theta = \dfrac{25}{169} + \dfrac{144}{169} = \dfrac{169}{169} = 1\). ✓</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Given that \(\sin\theta = \dfrac{3}{5}\) and \(\theta\) is acute, find \(\cos\theta\), \(\tan\theta\), and \(\sec\theta\) without a calculator.</p>
+<p>Sketch a right triangle: opposite = 3, hypotenuse = 5. By Pythagoras: adjacent \(= \sqrt{25 - 9} = 4\).</p>
+<p>\(\cos\theta = \dfrac{4}{5}\); \(\tan\theta = \dfrac{3}{4}\); \(\sec\theta = \dfrac{5}{4}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A ladder leans against a wall. The foot is 1.8 m from the wall and the angle with the ground is 70°. How long is the ladder, and how high up the wall does it reach?</p>
+<p>The ladder is the hypotenuse \(h\). Adjacent to the 70° angle is 1.8 m (along the ground).</p>
+<p>\(\cos 70° = \dfrac{1.8}{h}\), so \(h = \dfrac{1.8}{\cos 70°} \approx \dfrac{1.8}{0.342} \approx 5.26\) m.</p>
+<p>Wall height (opposite to 70°): \(\tan 70° = \dfrac{\text{height}}{1.8}\), so height \(\approx 1.8 \cdot 2.747 \approx 4.94\) m.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing opposite and adjacent. Always identify them <em>relative to the angle of interest</em>; rotating which angle you focus on swaps which leg is which.</li>
+<li>Using degrees vs radians. MCR3U is degree-mode; make sure your calculator agrees.</li>
+<li>Computing \(\sin^{-1}\) as \(\dfrac{1}{\sin}\) — they're different things. \(\sin^{-1}\) is inverse sine (gives an angle); \(\dfrac{1}{\sin}\) is the reciprocal (cosecant).</li>
+<li>Forgetting to write units (degrees, metres) in final answers.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "determine the exact values of the sine, cosine, and tangent of the special angles: 0°, 30°, 45°, 60°, 90°, and their multiples less than or equal to 360°"; D1.2 — "determine the values of the sine, cosine, and tangent of angles from 0° to 360°, through investigation using a variety of tools (e.g., dynamic geometry software, graphing tools)..." and the supporting expectation D1.3 — "determine the measures of two angles from 0° to 360° for which the value of a given trigonometric function is the same."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt31')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Trigonometric Ratios SOH CAH TOA — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">15:30</span>
+        <span class="vid-toggle" id="toggle-mcr-yt31">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt31">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jsiy4TxgIME?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Jsiy4TxgIME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.2 &mdash; Trigonometric Ratios of Any Angle (0°–360°)</div>
+<div class="topic-desc">Use the unit circle and the CAST rule to determine the sign of each trig ratio; find related/reference angles.</div>
+<div class="summary-card">For \( \theta \) in standard position with terminal arm passing through \( (-3, 4) \): \( r=5 \), so \( \sin\theta=4/5, \cos\theta=-3/5, \tan\theta=-4/3 \). The reference angle is \( \tan^{-1}(4/3)\approx 53.13° \); the principal angle is \( 180°-53.13°=126.87° \). Quadrant II: only sine positive (CAST).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Right-triangle trig only works for acute angles between 0° and 90°. To extend the trig ratios to <em>any</em> angle — including 0°, 90°, 180°, negative angles, angles bigger than 360° — we use the <em>unit circle</em> and the idea of an angle in <em>standard position</em>.</p>
+
+<p>An angle is in <em>standard position</em> when its vertex is at the origin and its initial arm lies along the positive \(x\)-axis. The <em>terminal arm</em> is rotated counter-clockwise by the angle measure (clockwise for negative angles). The terminal arm crosses points \((x, y)\); at distance \(r = \sqrt{x^2 + y^2}\) from the origin, we define:</p>
+
+<p>\[ \sin\theta = \frac{y}{r}, \quad \cos\theta = \frac{x}{r}, \quad \tan\theta = \frac{y}{x} \]</p>
+
+<p>For acute angles in the first quadrant this matches SOH-CAH-TOA. But now negative \(x\) or \(y\) values are allowed, so the ratios can be positive or negative depending on which quadrant the terminal arm lands in.</p>
+
+<p>The <strong>CAST rule</strong> tells you which ratios are positive in each quadrant. Starting from Quadrant IV and going counter-clockwise: <strong>C</strong> (Q IV, <em>cosine</em> positive), <strong>A</strong> (Q I, <em>all</em> positive), <strong>S</strong> (Q II, <em>sine</em> positive), <strong>T</strong> (Q III, <em>tangent</em> positive). The other ratios in each quadrant are negative.</p>
+
+<p>The <strong>reference angle</strong> is the acute angle the terminal arm makes with the \(x\)-axis (positive or negative). Trig values for any angle in standard position equal \(\pm\) the trig values of its reference angle — the sign is determined by CAST.</p>
+
+<ul>
+<li><strong>Standard position</strong> — vertex at origin, initial arm along positive \(x\)-axis.</li>
+<li><strong>Terminal arm</strong> — the rotated ray that defines the angle's measure.</li>
+<li><strong>\(r\)</strong> — distance from origin to a point on the terminal arm, \(r = \sqrt{x^2 + y^2}\); always positive.</li>
+<li><strong>Reference angle \(\beta\)</strong> — acute angle between the terminal arm and the \(x\)-axis; \(0° < \beta \le 90°\).</li>
+<li><strong>CAST rule</strong> — quadrant signs: Q I all positive, Q II sin, Q III tan, Q IV cos.</li>
+<li><strong>Principal angle</strong> — angle in standard position between 0° and 360°.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — The terminal arm of an angle \(\theta\) in standard position passes through \((-3, 4)\). Find the six trig ratios, the reference angle, and the principal angle.</p>
+<p>\(x = -3, y = 4, r = \sqrt{9 + 16} = 5\).</p>
+<p>\(\sin\theta = \dfrac{4}{5}, \cos\theta = -\dfrac{3}{5}, \tan\theta = -\dfrac{4}{3}\).</p>
+<p>\(\csc\theta = \dfrac{5}{4}, \sec\theta = -\dfrac{5}{3}, \cot\theta = -\dfrac{3}{4}\).</p>
+<p>Reference angle: \(\tan\beta = \dfrac{|y|}{|x|} = \dfrac{4}{3}\), so \(\beta \approx 53.13°\).</p>
+<p>Principal angle: terminal arm is in Quadrant II (\(x < 0, y > 0\)). Principal \(\theta = 180° - 53.13° = 126.87°\).</p>
+<p>CAST check: Q II → only sine is positive. ✓</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Find both angles between 0° and 360° for which \(\sin\theta = -\dfrac{1}{2}\).</p>
+<p>Sine is negative in Q III and Q IV. Reference angle: \(\sin\beta = \dfrac{1}{2}\) gives \(\beta = 30°\).</p>
+<p>Q III: \(\theta = 180° + 30° = 210°\). Q IV: \(\theta = 360° - 30° = 330°\).</p>
+<p>Solutions: \(\theta = 210°, 330°\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Evaluate \(\cos 240°\).</p>
+<p>240° is in Q III. Reference angle: \(240° - 180° = 60°\). In Q III, cosine is negative.</p>
+<p>\(\cos 240° = -\cos 60° = -\dfrac{1}{2}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 — If \(\cos\theta = -\dfrac{5}{13}\) and \(\theta\) is in Quadrant III, find \(\sin\theta\) and \(\tan\theta\).</p>
+<p>In Q III, \(x < 0, y < 0\). \(x = -5, r = 13\), so \(y = -\sqrt{r^2 - x^2} = -12\).</p>
+<p>\(\sin\theta = \dfrac{y}{r} = -\dfrac{12}{13}\); \(\tan\theta = \dfrac{y}{x} = \dfrac{-12}{-5} = \dfrac{12}{5}\). (Sine negative, tangent positive — matches CAST for Q III.)</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to use CAST when reading signs. Calculator gives only one solution; you may need others.</li>
+<li>Confusing reference angle with principal angle. The reference is always between 0° and 90°; the principal is anywhere 0° to 360°.</li>
+<li>Treating \(r\) as negative. \(r\) is a distance — always positive. Signs come from \(x\) and \(y\).</li>
+<li>Calculators returning a Q I or Q IV answer for \(\sin^{-1}\). You may have to add or subtract from 180° (or 360°) to find the answer in the correct quadrant.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.2 — "determine the values of the sine, cosine, and tangent of angles from 0° to 360°, through investigation using a variety of tools (e.g., dynamic geometry software, graphing tools) and strategies (e.g., applying the unit circle; examining angles related to special angles)"; D1.3 — "determine the measures of two angles from 0° to 360° for which the value of a given trigonometric function is the same."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt32')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Reference Angles and CAST Rule — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:14</span>
+        <span class="vid-toggle" id="toggle-mcr-yt32">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt32">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/E-xFXpVo14o?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=E-xFXpVo14o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.3 &mdash; Special Angles &amp; Exact Values</div>
+<div class="topic-desc">Memorise the exact ratios for 0°, 30°, 45°, 60°, 90° and their multiples in standard position.</div>
+<div class="summary-card">Key exact values: \( \sin 30°=\tfrac{1}{2}, \cos 30°=\tfrac{\sqrt{3}}{2}, \tan 30°=\tfrac{1}{\sqrt{3}} \); \( \sin 45°=\cos 45°=\tfrac{\sqrt{2}}{2}, \tan 45°=1 \); \( \sin 60°=\tfrac{\sqrt{3}}{2}, \cos 60°=\tfrac{1}{2}, \tan 60°=\sqrt{3} \). Derived from 30-60-90 and 45-45-90 reference triangles.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Calculators give decimal approximations for trig ratios. For certain "special" angles, however, the exact values are pleasant fractions or surds. Memorising these — and being able to derive them on the fly from two reference triangles — pays huge dividends in MCR3U, MHF4U, and MCV4U, where exact answers are often required.</p>
+
+<p>The two key triangles:</p>
+
+<p><strong>30°-60°-90° triangle.</strong> Start with an equilateral triangle of side 2 and bisect it. You get a right triangle with hypotenuse 2, shorter leg 1 (opposite the 30°), and longer leg \(\sqrt{3}\) (opposite the 60°, by Pythagoras: \(\sqrt{2^2 - 1^2} = \sqrt{3}\)).</p>
+
+<p><strong>45°-45°-90° triangle.</strong> Take an isosceles right triangle with legs 1. Hypotenuse = \(\sqrt{1^2 + 1^2} = \sqrt{2}\). Both acute angles are 45°.</p>
+
+<p>From these two triangles, every special-angle ratio drops out:</p>
+
+<ul>
+<li>\(\sin 30° = \dfrac{1}{2}, \cos 30° = \dfrac{\sqrt{3}}{2}, \tan 30° = \dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}\).</li>
+<li>\(\sin 45° = \dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}, \cos 45° = \dfrac{\sqrt{2}}{2}, \tan 45° = 1\).</li>
+<li>\(\sin 60° = \dfrac{\sqrt{3}}{2}, \cos 60° = \dfrac{1}{2}, \tan 60° = \sqrt{3}\).</li>
+<li>\(\sin 0° = 0, \cos 0° = 1, \tan 0° = 0\) (degenerate triangle: terminal arm on \(+x\)-axis).</li>
+<li>\(\sin 90° = 1, \cos 90° = 0, \tan 90°\) is <em>undefined</em> (terminal arm on \(+y\)-axis; \(x = 0\) so division by zero).</li>
+</ul>
+
+<p>For angles in Quadrants II, III, IV, use the reference angle (one of 30°, 45°, 60°, 90°) together with the CAST sign rule to write the exact value.</p>
+
+<ul>
+<li><strong>Special angles</strong> — 0°, 30°, 45°, 60°, 90° and their reflections in other quadrants.</li>
+<li><strong>30-60-90 triangle</strong> — sides in ratio \(1 : \sqrt{3} : 2\).</li>
+<li><strong>45-45-90 triangle</strong> — sides in ratio \(1 : 1 : \sqrt{2}\).</li>
+<li><strong>Rationalising the denominator</strong> — preferred form for fractions like \(\dfrac{1}{\sqrt{3}}\): multiply top and bottom by \(\sqrt{3}\) to get \(\dfrac{\sqrt{3}}{3}\).</li>
+<li><strong>Undefined</strong> — \(\tan 90°\), \(\sec 90°\), etc., correspond to vertical terminal arms where division by zero would occur.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Find the exact values of \(\sin 150°\), \(\cos 225°\), and \(\tan 300°\).</p>
+<p>150° in Q II: reference 30°. Sine positive in Q II: \(\sin 150° = \sin 30° = \dfrac{1}{2}\).</p>
+<p>225° in Q III: reference 45°. Cosine negative in Q III: \(\cos 225° = -\cos 45° = -\dfrac{\sqrt{2}}{2}\).</p>
+<p>300° in Q IV: reference 60°. Tangent negative in Q IV: \(\tan 300° = -\tan 60° = -\sqrt{3}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Evaluate \(\sin^2 60° + \cos^2 60°\).</p>
+<p>\(\sin 60° = \dfrac{\sqrt{3}}{2}\), so \(\sin^2 60° = \dfrac{3}{4}\). \(\cos 60° = \dfrac{1}{2}\), so \(\cos^2 60° = \dfrac{1}{4}\). Sum: \(\dfrac{3}{4} + \dfrac{1}{4} = 1\). ✓ (Verifies the Pythagorean identity.)</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Simplify \(\sin 30° \cos 60° + \cos 30° \sin 60°\) and interpret.</p>
+<p>\(= \dfrac{1}{2} \cdot \dfrac{1}{2} + \dfrac{\sqrt{3}}{2} \cdot \dfrac{\sqrt{3}}{2} = \dfrac{1}{4} + \dfrac{3}{4} = 1\).</p>
+<p>This equals \(\sin(30° + 60°) = \sin 90° = 1\). The expression is an instance of the sine sum identity \(\sin(A + B) = \sin A \cos B + \cos A \sin B\), studied formally in MHF4U.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Mixing up \(\sin 30°\) and \(\sin 60°\). Memorise the position of the 30° (short side) vs 60° (long side) in the 30-60-90 triangle.</li>
+<li>Leaving \(\dfrac{1}{\sqrt{3}}\) unsimplified. Most teachers prefer the rationalised form \(\dfrac{\sqrt{3}}{3}\).</li>
+<li>Forgetting to apply the CAST sign rule for angles outside Q I.</li>
+<li>Writing \(\sin 90° = 0\) or \(\cos 0° = 0\) — the special boundary cases are easy to confuse. \(\sin 90° = 1, \cos 90° = 0, \sin 0° = 0, \cos 0° = 1\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "determine the exact values of the sine, cosine, and tangent of the special angles: 0°, 30°, 45°, 60°, 90°, and their multiples less than or equal to 360°."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt33')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Trigonometric Special Angles 30-60-90 and 45-45-90 — Does Math for Coffee</span>
+        <span class="vid-duration">14:42</span>
+        <span class="vid-toggle" id="toggle-mcr-yt33">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt33">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/QmsrC3qk6gk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=QmsrC3qk6gk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.4 &mdash; The Sine Law &amp; the Ambiguous Case</div>
+<div class="topic-desc">Apply \( \dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C} \) to non-right triangles; recognise SSA situations producing 0, 1, or 2 triangles.</div>
+<div class="summary-card">In \( \triangle ABC \): \( a=10, b=14, A=35° \). By sine law: \( \sin B=\dfrac{14\sin 35°}{10}\approx 0.803 \), so \( B\approx 53.4° \) or \( B\approx 126.6° \) — two triangles satisfy the data. Ambiguous case (SSA): always check whether the supplementary angle also gives a valid triangle (i.e. \( A+B<180° \)).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Right-triangle trig only handles right triangles. The <em>sine law</em> works for any triangle. In a triangle \(ABC\) with side \(a\) opposite angle \(A\), side \(b\) opposite \(B\), side \(c\) opposite \(C\):</p>
+
+<p>\[ \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} \]</p>
+
+<p>All three ratios are equal. (Their common value, geometrically, is the diameter of the triangle's circumscribed circle — a fact you'll see in MHF4U.) The sine law is used in two main cases:</p>
+
+<p><strong>AAS / ASA</strong>: two angles and a side. Find the third angle (angles sum to 180°), then use the law to find the remaining sides.</p>
+
+<p><strong>SSA</strong>: two sides and a non-included angle. This is the <strong>ambiguous case</strong> — depending on the data you can get 0, 1, or 2 triangles. The sine law gives \(\sin B = \dfrac{b \sin A}{a}\), and:</p>
+<ul>
+<li>If \(\sin B > 1\), no triangle exists.</li>
+<li>If \(\sin B = 1\), exactly one (right) triangle.</li>
+<li>If \(\sin B < 1\), there are two candidate angles for \(B\) (the inverse sine and its supplement, \(180° - B_1\)). Both must be checked: a candidate is valid only if the angles still sum to under 180° (i.e. \(A + B < 180°\)).</li>
+</ul>
+
+<p>When in SSA territory, never trust your calculator's first answer. Always test the supplementary angle. If only one of the two candidates gives a valid triangle, you have one solution; if both do, you have two distinct triangles.</p>
+
+<ul>
+<li><strong>Sine law</strong> — \(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}\), valid in any triangle.</li>
+<li><strong>AAS / ASA</strong> — angle-angle-side or angle-side-angle; sine law gives a unique solution.</li>
+<li><strong>SSA</strong> — side-side-angle (also called the ambiguous case); may give 0, 1, or 2 triangles.</li>
+<li><strong>Supplementary angles</strong> — pair \(B\) and \(180° - B\) have the same sine.</li>
+<li><strong>Triangle inequality</strong> — the sum of any two angles must be less than 180° for a valid triangle.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 (ASA) — In \(\triangle ABC\): \(A = 40°, B = 75°, c = 12\). Solve the triangle.</p>
+<p>Third angle: \(C = 180° - 40° - 75° = 65°\).</p>
+<p>By sine law: \(\dfrac{a}{\sin 40°} = \dfrac{12}{\sin 65°}\), so \(a = \dfrac{12 \sin 40°}{\sin 65°} \approx \dfrac{12 \cdot 0.6428}{0.9063} \approx 8.51\).</p>
+<p>\(b = \dfrac{12 \sin 75°}{\sin 65°} \approx \dfrac{12 \cdot 0.9659}{0.9063} \approx 12.79\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 (SSA, ambiguous case) — In \(\triangle ABC\): \(a = 10, b = 14, A = 35°\). Solve.</p>
+<p>By sine law: \(\sin B = \dfrac{b \sin A}{a} = \dfrac{14 \sin 35°}{10} = \dfrac{14 \cdot 0.5736}{10} \approx 0.8030\).</p>
+<p>Two candidates: \(B_1 = \sin^{-1}(0.8030) \approx 53.4°\) and \(B_2 = 180° - 53.4° = 126.6°\).</p>
+<p>Check angle sum: \(A + B_1 = 35° + 53.4° = 88.4° < 180°\) ✓; \(A + B_2 = 35° + 126.6° = 161.6° < 180°\) ✓. Both triangles exist.</p>
+<p><em>Triangle 1</em>: \(B = 53.4°, C = 91.6°\). \(c = \dfrac{10 \sin 91.6°}{\sin 35°} \approx \dfrac{10 \cdot 0.9996}{0.5736} \approx 17.43\).</p>
+<p><em>Triangle 2</em>: \(B = 126.6°, C = 18.4°\). \(c = \dfrac{10 \sin 18.4°}{\sin 35°} \approx \dfrac{10 \cdot 0.3156}{0.5736} \approx 5.50\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 (SSA, no solution) — In \(\triangle ABC\): \(a = 6, b = 12, A = 60°\). Solve.</p>
+<p>\(\sin B = \dfrac{12 \sin 60°}{6} = 2 \sin 60° = \sqrt{3} \approx 1.732\).</p>
+<p>Since \(\sin B > 1\), no triangle exists with these measurements.</p>
+<p>Geometrically: \(b = 12\) is too long relative to the available "drop" from \(A\) — the second side can't reach.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Setting up the sine law with the wrong pairing. Each side must be paired with the angle <em>opposite</em> to it.</li>
+<li>Skipping the supplement check in SSA problems. Always test \(180° - B_1\).</li>
+<li>Forgetting to verify \(A + B < 180°\) for each candidate. A "valid" supplement fails if it leaves no room for the third angle.</li>
+<li>Using the sine law when the cosine law is the right tool. Sine law needs at least one opposite angle-side pair to be known.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.4 — "explore the development of the sine law within acute triangles (e.g., use dynamic geometry software to determine that the ratio of the side lengths equals the ratio of the sines of the opposite angles; follow the algebraic development of the sine law and identify the application of solving systems of equations [student reproduction of the development of the formula is not required])"; D1.5 — "solve problems involving oblique triangles, including those that arise from real-world applications (e.g., surveying, navigation, building construction), using the sine law (including the ambiguous case) and the cosine law."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt34')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Ambiguous Case with Sine Law 4 Examples MCR3U — Anil Kumar</span>
+        <span class="vid-duration">17:38</span>
+        <span class="vid-toggle" id="toggle-mcr-yt34">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt34">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Y1FvHbKpSac?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Y1FvHbKpSac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.5 &mdash; The Cosine Law &amp; 2D/3D Applications</div>
+<div class="topic-desc">Use \( c^2 = a^2 + b^2 - 2ab\cos C \) for SAS and SSS triangles; apply both laws in surveying, navigation, and 3D problems.</div>
+<div class="summary-card">In \( \triangle ABC \): \( a=8, b=11, C=42° \). Then \( c^2=64+121-2(8)(11)\cos 42°=185-130.79\approx 54.21 \), so \( c\approx 7.36 \). Cosine law is needed when sine law has insufficient information (no opposite-pair).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The <em>cosine law</em> is the other major tool for solving non-right triangles. For any triangle \(ABC\) with sides \(a, b, c\) opposite the angles \(A, B, C\):</p>
+
+<p>\[ c^2 = a^2 + b^2 - 2ab\cos C \]</p>
+
+<p>(And similarly with the roles cycled: \(a^2 = b^2 + c^2 - 2bc \cos A\), \(b^2 = a^2 + c^2 - 2ac \cos B\).)</p>
+
+<p>If \(C = 90°\), then \(\cos C = 0\) and the formula reduces to Pythagoras: \(c^2 = a^2 + b^2\). So the cosine law is a generalisation of Pythagoras that accounts for non-right angles via the correction term \(-2ab\cos C\). If \(C\) is acute (\(\cos C > 0\)), the correction subtracts; \(c\) is shorter than the Pythagorean prediction. If \(C\) is obtuse (\(\cos C < 0\)), the correction adds; \(c\) is longer.</p>
+
+<p>Use the cosine law in two situations the sine law can't handle:</p>
+
+<p><strong>SAS</strong> — given two sides and the included angle, find the third side. Apply the formula directly with \(C\) as the included angle.</p>
+
+<p><strong>SSS</strong> — given all three sides, find an angle. Rearrange: \(\cos C = \dfrac{a^2 + b^2 - c^2}{2ab}\), then take the inverse cosine.</p>
+
+<p>Once you have one new side or angle from the cosine law, you can usually switch to the sine law for the remaining unknowns (the sine law arithmetic is simpler).</p>
+
+<ul>
+<li><strong>Cosine law</strong> — \(c^2 = a^2 + b^2 - 2ab\cos C\), valid in any triangle.</li>
+<li><strong>SAS</strong> — side-angle-side; cosine law gives the third side directly.</li>
+<li><strong>SSS</strong> — side-side-side; rearranged cosine law gives an angle.</li>
+<li><strong>Included angle</strong> — angle between two given sides.</li>
+<li><strong>Generalisation of Pythagoras</strong> — Pythagorean theorem is the cosine law at \(C = 90°\).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 (SAS) — In \(\triangle ABC\): \(a = 8, b = 11, C = 42°\). Find \(c\).</p>
+<p>\(c^2 = 8^2 + 11^2 - 2(8)(11)\cos 42° = 64 + 121 - 176 \cdot 0.7431 \approx 185 - 130.79 \approx 54.21\).</p>
+<p>\(c \approx \sqrt{54.21} \approx 7.36\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 (SSS) — In \(\triangle ABC\): \(a = 6, b = 8, c = 10\). Find angle \(C\).</p>
+<p>\(\cos C = \dfrac{a^2 + b^2 - c^2}{2ab} = \dfrac{36 + 64 - 100}{2 \cdot 6 \cdot 8} = \dfrac{0}{96} = 0\).</p>
+<p>\(C = \cos^{-1}(0) = 90°\). The triangle is right-angled at \(C\) — consistent with the 6-8-10 Pythagorean triple.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 (Surveying, 2D) — Two ships leave the same port. One sails 20 km at a bearing of 040°; the other sails 28 km at 110°. How far apart are they?</p>
+<p>The angle between the two paths (as seen from the port) is \(110° - 40° = 70°\). The setup is SAS with \(a = 20\), \(b = 28\), included angle \(70°\).</p>
+<p>\(c^2 = 400 + 784 - 2 \cdot 20 \cdot 28 \cdot \cos 70° = 1184 - 1120 \cdot 0.3420 \approx 1184 - 383.1 \approx 800.9\).</p>
+<p>\(c \approx \sqrt{800.9} \approx 28.3\) km.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 4 (3D) — A flagpole of height 12 m stands on flat ground. From a point \(P\), the angle of elevation to the top is 35°. From another point \(Q\), 25 m from \(P\) along the ground, the angle of elevation is 48°. The angle \(\angle PFQ\) at the base of the pole is 110°. Find the distance \(PQ\) through the air to verify the data.</p>
+<p>From elevations: distance from base of pole to \(P\) is \(\dfrac{12}{\tan 35°} \approx 17.14\) m; to \(Q\) is \(\dfrac{12}{\tan 48°} \approx 10.81\) m.</p>
+<p>Cosine law in \(\triangle PFQ\): \(PQ^2 = 17.14^2 + 10.81^2 - 2 \cdot 17.14 \cdot 10.81 \cos 110° = 293.8 + 116.9 - 370.6 \cdot (-0.342) \approx 410.7 + 126.7 = 537.4\). \(PQ \approx 23.2\) m. The given 25 m is close — consistent with measurement error.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing which angle is "included." The included angle is the one <em>between</em> the two given sides.</li>
+<li>Sign errors. \(\cos\) of an obtuse angle is negative; the \(-2ab\cos C\) term then becomes positive, making the third side longer.</li>
+<li>Computing \(\sqrt{}\) of a negative result. If \(c^2 < 0\) you've made an arithmetic mistake — recompute.</li>
+<li>Using the sine law when the cosine law is needed. Sine law needs at least one matched side-and-opposite-angle.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.4 — "explore the development of the cosine law within acute triangles (e.g., use dynamic geometry software to verify the cosine law; follow the algebraic development of the cosine law and identify its relationship to the Pythagorean theorem and the cosine ratio [student reproduction of the development of the formula is not required])"; D1.5 — "solve problems involving oblique triangles, including those that arise from real-world applications (e.g., surveying, navigation, building construction), using the sine law (including the ambiguous case) and the cosine law."</p>
+</div>
+</details>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt35')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Law of Cosines Word Problems — Brain Gainz</span>
+        <span class="vid-duration">12:48</span>
+        <span class="vid-toggle" id="toggle-mcr-yt35">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt35">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2dR9fcEYyH8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=2dR9fcEYyH8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 7 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mcr3u_ch7_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mcr3u_ch7_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mcr3u_ch7_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch6.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 6 &mdash; Financial Mathematics</div></a>
+<a href="ch8.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 8 &mdash; Sinusoidal Functions</div></a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

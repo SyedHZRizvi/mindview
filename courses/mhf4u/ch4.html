@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U — Advanced Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mhf4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MHF4U Advanced Functions)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📐 MHF4U: Chapter 4: Trigonometry</h1>
+<p>Radian measure, special angles, compound angle formulas, proving identities</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+            <h2>Chapter 4: Trigonometry</h2>
+            <p>Radian measure, special angles, compound angle formulas, proving identities</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Trigonometric Functions</span>
+                <span>⏱️ ~15h</span>
+                <span>📹 20 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.1 — Radian Measure</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>radian</strong> is the angle subtended at the centre of a circle by an arc whose length equals the circle's radius. It is a natural, dimensionless angle measure that arises directly from arc length: the formula \(s=r\theta\) (arc length equals radius times angle in radians) is the reason radians are the standard unit in calculus and physics. Degrees, by contrast, are a historical convention with no geometric content — the choice of 360 traces back to ancient astronomy.</p>
+                <p>The conversion between the two systems comes from the full revolution: \(360°=2\pi\) radians, so \(1\text{ rad}=\tfrac{180°}{\pi}\approx 57.3°\) and \(1°=\tfrac{\pi}{180}\) rad. You should know the key benchmarks by sight: \(30°=\tfrac{\pi}{6}\), \(45°=\tfrac{\pi}{4}\), \(60°=\tfrac{\pi}{3}\), \(90°=\tfrac{\pi}{2}\), \(180°=\pi\), and so on around the unit circle.</p>
+                <p>From radian measure you also get formulas for arc length \(s=r\theta\) and sector area \(A=\tfrac{1}{2}r^{2}\theta\), both of which only work when \(\theta\) is in radians. These are favourite exam application problems.</p>
+                <ul>
+                  <li><strong>Radian</strong> — angle whose arc length equals the radius; \(2\pi\) radians make one full revolution.</li>
+                  <li><strong>Conversion factors</strong> — \(\theta_{\text{rad}}=\theta_{\text{deg}}\cdot\dfrac{\pi}{180}\); \(\theta_{\text{deg}}=\theta_{\text{rad}}\cdot\dfrac{180}{\pi}\).</li>
+                  <li><strong>Arc length</strong> — \(s=r\theta\) (\(\theta\) in radians).</li>
+                  <li><strong>Sector area</strong> — \(A=\tfrac{1}{2}r^{2}\theta\) (\(\theta\) in radians).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Convert between units</p>
+                  <p>(a) Convert \(135°\) to radians. (b) Convert \(\tfrac{7\pi}{6}\) radians to degrees.</p>
+                  <p>(a) \(135\cdot\dfrac{\pi}{180}=\dfrac{135\pi}{180}=\dfrac{3\pi}{4}\) rad.</p>
+                  <p>(b) \(\dfrac{7\pi}{6}\cdot\dfrac{180}{\pi}=\dfrac{7\cdot 180}{6}=210°\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Arc length and sector area</p>
+                  <p>A sector of radius \(8\) cm subtends an angle of \(\tfrac{\pi}{3}\) radians. Find the arc length and the sector area.</p>
+                  <p>Step 1. \(s=r\theta=8\cdot\dfrac{\pi}{3}=\dfrac{8\pi}{3}\) cm \(\approx 8.38\) cm.</p>
+                  <p>Step 2. \(A=\tfrac{1}{2}r^{2}\theta=\tfrac{1}{2}\cdot 64\cdot\dfrac{\pi}{3}=\dfrac{32\pi}{3}\) cm\(^{2}\approx 33.51\) cm\(^{2}\).</p>
+                </div>
+                <ul>
+                  <li>The formulas \(s=r\theta\) and \(A=\tfrac{1}{2}r^{2}\theta\) require radians — converting to degrees first will give wrong answers.</li>
+                  <li>When you see \(\sin(2)\) without a degree symbol, the input is in radians (about \(115°\)), not 2°.</li>
+                  <li>Keep \(\pi\) as a symbol in exact answers; only switch to decimals when asked.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "recognize the radian as an alternative unit to the degree for angle measurement, define the radian measure of an angle as the length of the arc that subtends this angle at the centre of a unit circle, and develop and apply the relationship between radian and degree measure."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v56')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.1a Radian Measure</span>
+                        <span class="vid-duration">17:04</span>
+                        <span class="vid-toggle" id="toggle-v56">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v56">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/056_MHF4U_4.1a_Radian_Measure.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=4Wsu_8VJP3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v57')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.1b Radian Measure Homework Solutions</span>
+                        <span class="vid-duration">5:24</span>
+                        <span class="vid-toggle" id="toggle-v57">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v57">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/057_MHF4U_4.1b_Radian_Measure_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=urk03XYxp8o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.2 — Special Angles and Trig Ratios</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The unit circle is the universal reference for trigonometric values. A point on the unit circle at angle \(\theta\) (measured counter-clockwise from the positive \(x\)-axis) has coordinates \((\cos\theta,\sin\theta)\). From these primary ratios you also get \(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\), and the reciprocal ratios \(\csc\theta=\dfrac{1}{\sin\theta}\), \(\sec\theta=\dfrac{1}{\cos\theta}\), and \(\cot\theta=\dfrac{1}{\tan\theta}\).</p>
+                <p>For the <strong>special angles</strong> \(0,\,\tfrac{\pi}{6},\,\tfrac{\pi}{4},\,\tfrac{\pi}{3},\,\tfrac{\pi}{2}\) and their reflections across the axes, exact values come from two reference triangles: the 30–60–90 (sides \(1:\sqrt{3}:2\)) and the 45–45–90 (sides \(1:1:\sqrt{2}\)). For any angle outside the first quadrant, find the <em>reference angle</em> — the acute angle to the nearest \(x\)-axis — compute the ratio there, and attach the correct sign based on which quadrant the original angle lies in (the "CAST" rule: Cosine in IV, All in I, Sine in II, Tangent in III are positive).</p>
+                <p>Knowing exact ratios for special angles by sight saves enormous time on tests, where calculators may be restricted or where answers must be in exact form.</p>
+                <ul>
+                  <li><strong>Unit circle</strong> — circle of radius 1 centred at the origin; coordinates of \(\theta\) are \((\cos\theta,\sin\theta)\).</li>
+                  <li><strong>Reference angle</strong> — the acute angle between the terminal arm and the nearest \(x\)-axis.</li>
+                  <li><strong>CAST rule</strong> — quadrant-by-quadrant sign chart for the three primary trig ratios.</li>
+                  <li><strong>Reciprocal ratios</strong> — \(\csc,\sec,\cot\) are the reciprocals of \(\sin,\cos,\tan\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Exact ratio in quadrant III</p>
+                  <p>Find \(\sin\bigl(\tfrac{7\pi}{6}\bigr)\) exactly.</p>
+                  <p>Step 1. \(\tfrac{7\pi}{6}=\pi+\tfrac{\pi}{6}\) — angle is in quadrant III.</p>
+                  <p>Step 2. Reference angle: \(\tfrac{\pi}{6}=30°\).</p>
+                  <p>Step 3. \(\sin\tfrac{\pi}{6}=\tfrac{1}{2}\). In quadrant III, sine is negative.</p>
+                  <p>Step 4. So \(\sin\bigl(\tfrac{7\pi}{6}\bigr)=-\tfrac{1}{2}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Find all six ratios from one point</p>
+                  <p>A point on the terminal arm of \(\theta\) (in standard position) is \((-3,4)\). Find all six trig ratios of \(\theta\).</p>
+                  <p>Step 1. Distance from origin: \(r=\sqrt{9+16}=5\). The angle is in quadrant II (\(x&lt;0,y&gt;0\)).</p>
+                  <p>Step 2. Primary ratios: \(\sin\theta=\dfrac{y}{r}=\dfrac{4}{5}\); \(\cos\theta=\dfrac{x}{r}=-\dfrac{3}{5}\); \(\tan\theta=\dfrac{y}{x}=-\dfrac{4}{3}\).</p>
+                  <p>Step 3. Reciprocals: \(\csc\theta=\dfrac{5}{4}\); \(\sec\theta=-\dfrac{5}{3}\); \(\cot\theta=-\dfrac{3}{4}\).</p>
+                </div>
+                <ul>
+                  <li>The CAST rule is for the <em>sign</em> only — magnitude always comes from the reference-angle triangle.</li>
+                  <li>\(r\) is always positive; only \(x\) and \(y\) carry quadrant signs.</li>
+                  <li>Reciprocal ratios are undefined where their base ratios are zero (e.g., \(\csc 0\) and \(\sec\tfrac{\pi}{2}\) are undefined).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.3 — "determine, with technology, the primary trigonometric ratios and the reciprocal trigonometric ratios of angles expressed in radian measure."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v58')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.2a Special Angles and Trigonometric Ratios Intro</span>
+                        <span class="vid-duration">5:24</span>
+                        <span class="vid-toggle" id="toggle-v58">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v58">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/058_MHF4U_4.2a_Special_Angles_and_Trigonometric_Ratios_Intro.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=bMf06fRxruw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v59')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.2b Special Angles and Trigonometric Ratios</span>
+                        <span class="vid-duration">18:49</span>
+                        <span class="vid-toggle" id="toggle-v59">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v59">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/059_MHF4U_4.2b_Special_Angles_and_Trigonometric_Ratios.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=91ewX2jUWMU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v60')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.2c Special Angles and Trigonometric Ratios</span>
+                        <span class="vid-duration">13:00</span>
+                        <span class="vid-toggle" id="toggle-v60">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v60">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/060_MHF4U_4.2c_Special_Angles_and_Trigonometric_Ratios.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=lSVZZMSCRaI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v61')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.2d Special Triangles Homework</span>
+                        <span class="vid-duration">10:09</span>
+                        <span class="vid-toggle" id="toggle-v61">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v61">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/061_MHF4U_4.2d_Special_Triangles_Homework.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=tllgGkVn_-U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v62')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.2e Special Angles Chart</span>
+                        <span class="vid-duration">9:33</span>
+                        <span class="vid-toggle" id="toggle-v62">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v62">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/062_MHF4U_4.2e_Special_Angles_Chart.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Ui14Ws9ORas" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.3 — Equivalent Trig Expressions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Sine and cosine are <strong>cofunctions</strong> — they are translates of each other by a quarter-turn (\(\tfrac{\pi}{2}\) radians). This gives the cofunction identities: \(\sin\bigl(\tfrac{\pi}{2}-\theta\bigr)=\cos\theta\) and \(\cos\bigl(\tfrac{\pi}{2}-\theta\bigr)=\sin\theta\). Similar relations hold for tangent/cotangent and secant/cosecant. These identities let you rewrite expressions in sine as expressions in cosine (and vice versa), which is essential for proving identities and solving equations.</p>
+                <p>You should also know the <strong>even–odd identities</strong>: cosine and secant are even (\(\cos(-\theta)=\cos\theta\)), while sine, tangent, cosecant and cotangent are all odd (e.g., \(\sin(-\theta)=-\sin\theta\)). These follow directly from the geometry of the unit circle, where reflecting across the \(x\)-axis flips the \(y\)-coordinate but leaves the \(x\)-coordinate unchanged.</p>
+                <p>Working through "equivalent expressions" exercises trains the algebraic dexterity you need for trig identities later in the chapter. Treat them as transformation puzzles: each rule moves you between equivalent forms, and you choose the path.</p>
+                <ul>
+                  <li><strong>Cofunction identity</strong> — \(\sin\bigl(\tfrac{\pi}{2}-\theta\bigr)=\cos\theta\); each trig function and its co- partner swap under the quarter-turn complement.</li>
+                  <li><strong>Even–odd identities</strong> — \(\cos(-\theta)=\cos\theta\); \(\sin(-\theta)=-\sin\theta\); \(\tan(-\theta)=-\tan\theta\).</li>
+                  <li><strong>Periodicity</strong> — sine and cosine have period \(2\pi\); tangent has period \(\pi\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Rewrite using a cofunction</p>
+                  <p>Rewrite \(\sin\bigl(\tfrac{\pi}{2}-x\bigr)\) using cosine.</p>
+                  <p>Step 1. Direct cofunction identity: \(\sin\bigl(\tfrac{\pi}{2}-x\bigr)=\cos x\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Combine identities</p>
+                  <p>Express \(\cos\bigl(\tfrac{\pi}{2}+x\bigr)\) in terms of sine.</p>
+                  <p>Step 1. Write \(\tfrac{\pi}{2}+x=\tfrac{\pi}{2}-(-x)\).</p>
+                  <p>Step 2. Cofunction: \(\cos\bigl(\tfrac{\pi}{2}-(-x)\bigr)=\sin(-x)\).</p>
+                  <p>Step 3. Apply odd identity: \(\sin(-x)=-\sin x\).</p>
+                  <p>Step 4. Therefore \(\cos\bigl(\tfrac{\pi}{2}+x\bigr)=-\sin x\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Use periodicity</p>
+                  <p>Find an equivalent expression for \(\sin\bigl(\theta+2\pi\bigr)\).</p>
+                  <p>Step 1. Sine has period \(2\pi\). Adding a full period leaves the value unchanged.</p>
+                  <p>Step 2. \(\sin(\theta+2\pi)=\sin\theta\).</p>
+                </div>
+                <ul>
+                  <li>Cofunction identities use \(\tfrac{\pi}{2}-\theta\), <em>not</em> \(\tfrac{\pi}{2}+\theta\) — the latter requires an additional manipulation.</li>
+                  <li>The odd identities pick up a minus sign — easy to drop accidentally.</li>
+                  <li>Sine and cosine both have period \(2\pi\); tangent has period \(\pi\), not \(2\pi\).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "make connections between the tangent ratio and the tangent function by using technology to graph the relationship between angles in radians and their tangent ratios… and describe the resulting graph."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v63')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.3a Equivalent Trig Expressions Intro</span>
+                        <span class="vid-duration">7:44</span>
+                        <span class="vid-toggle" id="toggle-v63">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v63">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/063_MHF4U_4.3a_Equivalent_Trig_Expressions_Intro.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=6B29Dzv-fo8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v64')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.3b Equivalent Trig Expressions</span>
+                        <span class="vid-duration">12:54</span>
+                        <span class="vid-toggle" id="toggle-v64">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v64">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/064_MHF4U_4.3b_Equivalent_Trig_Expressions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=wtDBaQtvF_s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v65')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.3c Equivalent Trig Expressions</span>
+                        <span class="vid-duration">13:53</span>
+                        <span class="vid-toggle" id="toggle-v65">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v65">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/065_MHF4U_4.3c_Equivalent_Trig_Expressions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=eY2-AWwLZHU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v66')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.3d Equivalent Trig Expressions Homework Solutions</span>
+                        <span class="vid-duration">11:27</span>
+                        <span class="vid-toggle" id="toggle-v66">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v66">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/066_MHF4U_4.3d_Equivalent_Trig_Expressions_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ylP3iWC0244" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.4 — Compound Angles</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>compound-angle formulas</strong> tell you how to compute the sine, cosine, or tangent of the sum or difference of two angles. They are the workhorse identities of trigonometry, used to derive every other trig identity in the course. The most important ones are:</p>
+                <p>\[\sin(A\pm B)=\sin A\cos B\pm\cos A\sin B,\qquad \cos(A\pm B)=\cos A\cos B\mp\sin A\sin B.\]</p>
+                <p>Notice the sign pattern: in \(\sin(A+B)\) the signs match, in \(\cos(A+B)\) they switch. Memorise this carefully — sign errors here ripple through every later proof.</p>
+                <p>From the sum formulas you can derive the <strong>double-angle</strong> identities by setting \(B=A\): \(\sin 2A=2\sin A\cos A\) and \(\cos 2A=\cos^{2}A-\sin^{2}A\) (which has two equivalent forms via the Pythagorean identity: \(=1-2\sin^{2}A=2\cos^{2}A-1\)). These are essential for the proofs in section 4.5 and the equation-solving in section 5.4.</p>
+                <p>The main exam use case is computing an exact value of a non-special angle by decomposing it into a sum or difference of special angles. For example, \(75°=45°+30°\), so you can find \(\sin 75°\) exactly without a calculator.</p>
+                <ul>
+                  <li><strong>Sum formula for sine</strong> — \(\sin(A+B)=\sin A\cos B+\cos A\sin B\).</li>
+                  <li><strong>Sum formula for cosine</strong> — \(\cos(A+B)=\cos A\cos B-\sin A\sin B\) (note the sign flip).</li>
+                  <li><strong>Double-angle for sine</strong> — \(\sin 2A=2\sin A\cos A\).</li>
+                  <li><strong>Double-angle for cosine</strong> — \(\cos 2A=\cos^{2}A-\sin^{2}A=1-2\sin^{2}A=2\cos^{2}A-1\).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Exact value of a non-special angle</p>
+                  <p>Find \(\sin\bigl(\tfrac{7\pi}{12}\bigr)\) exactly.</p>
+                  <p>Step 1. \(\tfrac{7\pi}{12}=\tfrac{4\pi}{12}+\tfrac{3\pi}{12}=\tfrac{\pi}{3}+\tfrac{\pi}{4}\).</p>
+                  <p>Step 2. Apply sum formula: \(\sin\bigl(\tfrac{\pi}{3}+\tfrac{\pi}{4}\bigr)=\sin\tfrac{\pi}{3}\cos\tfrac{\pi}{4}+\cos\tfrac{\pi}{3}\sin\tfrac{\pi}{4}\).</p>
+                  <p>Step 3. Substitute: \(\dfrac{\sqrt{3}}{2}\cdot\dfrac{\sqrt{2}}{2}+\dfrac{1}{2}\cdot\dfrac{\sqrt{2}}{2}=\dfrac{\sqrt{6}+\sqrt{2}}{4}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Using a known angle</p>
+                  <p>Given \(\cos A=\dfrac{3}{5}\) with \(A\) in quadrant IV, find \(\sin 2A\).</p>
+                  <p>Step 1. Sign of \(\sin A\) in quadrant IV: negative. Use \(\sin^{2}A+\cos^{2}A=1\): \(\sin A=-\sqrt{1-\tfrac{9}{25}}=-\tfrac{4}{5}\).</p>
+                  <p>Step 2. \(\sin 2A=2\sin A\cos A=2\cdot\bigl(-\tfrac{4}{5}\bigr)\cdot\tfrac{3}{5}=-\dfrac{24}{25}\).</p>
+                </div>
+                <ul>
+                  <li>Cosine sum/difference: sign in the formula is <em>opposite</em> to the sign in the argument. Easy to flip in haste.</li>
+                  <li>When the angle is given by a Pythagorean condition, always check which quadrant determines signs.</li>
+                  <li>Memorise all three forms of \(\cos 2A\) — different forms simplify different identity proofs.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "recognize equivalent trigonometric expressions… and verify equivalence using graphing technology"; B3.2 — "explore the algebraic development of the compound angle formulas… and use the formulas to determine exact values of trigonometric ratios."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v67')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.4a Compound Angles</span>
+                        <span class="vid-duration">36:33</span>
+                        <span class="vid-toggle" id="toggle-v67">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v67">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/067_MHF4U_4.4a_Compound_Angles.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=wc1niJjWeek" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v68')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.4b Compound Angles</span>
+                        <span class="vid-duration">17:40</span>
+                        <span class="vid-toggle" id="toggle-v68">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v68">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/068_MHF4U_4.4b_Compound_Angles.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=zV4DvzTQgRA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v69')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.4c Compound Angle Homework Solutions</span>
+                        <span class="vid-duration">10:03</span>
+                        <span class="vid-toggle" id="toggle-v69">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v69">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/069_MHF4U_4.4c_Compound_Angle_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=UQR1yqSV54c" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v70')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.4d Double Angle and Half Angle Homework Solutions</span>
+                        <span class="vid-duration">12:08</span>
+                        <span class="vid-toggle" id="toggle-v70">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v70">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/070_MHF4U_4.4d_Double_Angle_and_Half_Angle_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_ArLBnoqHTM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.5 — Proving Trig Identities</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>trigonometric identity</strong> is an equation in trig functions that holds for every value of the variable for which both sides are defined. Proving an identity means showing — algebraically — that one side is equivalent to the other. Unlike solving an equation, you do not "balance" an identity by manipulating both sides simultaneously. Instead you start with one side (typically the more complicated one) and transform it step by step until it matches the other.</p>
+                <p>Your toolkit is the entire catalogue of identities: Pythagorean (\(\sin^{2}\theta+\cos^{2}\theta=1\) and its rearrangements), reciprocal, quotient (\(\tan=\sin/\cos\)), cofunction, even–odd, compound-angle, and double-angle. A common strategic move is to convert everything to sines and cosines, simplify algebraically (common denominator, factor, cancel), and then re-package.</p>
+                <p>The crucial habit is to keep the two sides separated by the word "LS" (left side) and "RS" (right side) and to never use the equality sign between them until the proof is complete — that is, only write "LS = RS" as your final line, never inside the work.</p>
+                <ul>
+                  <li><strong>Pythagorean identity</strong> — \(\sin^{2}\theta+\cos^{2}\theta=1\), with consequences \(1+\tan^{2}\theta=\sec^{2}\theta\) and \(1+\cot^{2}\theta=\csc^{2}\theta\).</li>
+                  <li><strong>Reciprocal identity</strong> — \(\csc\theta=\dfrac{1}{\sin\theta}\), etc.</li>
+                  <li><strong>Quotient identity</strong> — \(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\).</li>
+                  <li><strong>Proof structure</strong> — manipulate one side independently until it equals the other; do not transpose terms.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Pythagorean substitution</p>
+                  <p>Prove \(\dfrac{1-\cos^{2}\theta}{\sin\theta}=\sin\theta\).</p>
+                  <p>Step 1. Start with the left side: \(\text{LS}=\dfrac{1-\cos^{2}\theta}{\sin\theta}\).</p>
+                  <p>Step 2. Use Pythagorean identity: \(1-\cos^{2}\theta=\sin^{2}\theta\). So \(\text{LS}=\dfrac{\sin^{2}\theta}{\sin\theta}\).</p>
+                  <p>Step 3. Cancel: \(\text{LS}=\sin\theta=\text{RS}\). ✓</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Convert to sines and cosines</p>
+                  <p>Prove \(\tan\theta+\cot\theta=\sec\theta\csc\theta\).</p>
+                  <p>Step 1. \(\text{LS}=\dfrac{\sin\theta}{\cos\theta}+\dfrac{\cos\theta}{\sin\theta}\).</p>
+                  <p>Step 2. Common denominator: \(\dfrac{\sin^{2}\theta+\cos^{2}\theta}{\sin\theta\cos\theta}=\dfrac{1}{\sin\theta\cos\theta}\).</p>
+                  <p>Step 3. Split as reciprocals: \(\dfrac{1}{\sin\theta}\cdot\dfrac{1}{\cos\theta}=\csc\theta\sec\theta=\text{RS}\). ✓</p>
+                </div>
+                <ul>
+                  <li>Never cross-multiply or move terms between sides — that destroys the proof structure.</li>
+                  <li>Always note restricted values (e.g., \(\sin\theta\ne 0\)) when cancelling factors.</li>
+                  <li>If you are stuck on one side, work the other side from the bottom up and look for a meeting point.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "recognize that trigonometric identities are equations that are true for every value in the domain… prove trigonometric identities through the application of reasoning and the use of basic identities."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v71')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">MHF4U 4.5a Trig Identities</span>
+                        <span class="vid-duration">17:36</span>
+                        <span class="vid-toggle" id="toggle-v71">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v71">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/071_MHF4U_4.5a_Trig_Identities.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ibNTu_3w6d8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v72')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.5b Prove Trig Identities Homework Solutions</span>
+                        <span class="vid-duration">10:14</span>
+                        <span class="vid-toggle" id="toggle-v72">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v72">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/072_MHF4U_4.5b_Prove_Trig_Identities_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=3X1uNkLunJA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v73')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.5c Keep Proving Identities Homework Solutions</span>
+                        <span class="vid-duration">11:59</span>
+                        <span class="vid-toggle" id="toggle-v73">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v73">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/073_MHF4U_4.5c_Keep_Proving_Identities_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=LVJHQZ51tvk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.6 — Chapter Summary & Review</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Chapter 4 builds your trig fluency: radians, exact ratios from special angles and reference triangles, equivalent expressions via cofunction and even–odd identities, compound-angle and double-angle formulas, and identity proofs. Every concept feeds into Chapter 5, where the functions become graphical objects and equations need to be solved over intervals.</p>
+                <p>For review, prioritise speed on the unit circle. You should be able to produce \(\sin\) and \(\cos\) of any multiple of \(\tfrac{\pi}{6}\) or \(\tfrac{\pi}{4}\) in under five seconds, including signs. Practise daily until this is automatic — every later chapter assumes it. After that, drill the compound-angle and double-angle formulas in both directions: given the sum, expand; given the expansion, recognise.</p>
+                <p>Identity-proof questions are graded almost entirely on Communication. Use proper notation ("LS", "RS"), justify each substitution by naming the identity used, and write the final line as a clean equality. Sloppy proofs that arrive at the right answer often lose half their marks.</p>
+                <ul>
+                  <li><strong>Drill priorities</strong> — unit circle ratios, sum/difference formulas, double-angle forms.</li>
+                  <li><strong>Proof rubric</strong> — pick a side, transform algebraically, name each identity, end with "LS = RS".</li>
+                  <li><strong>Conversion habit</strong> — when stuck, convert everything to sine and cosine.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Integrated problem</p>
+                  <p>Prove \(\dfrac{\sin 2\theta}{1+\cos 2\theta}=\tan\theta\).</p>
+                  <p>Step 1. \(\text{LS}=\dfrac{\sin 2\theta}{1+\cos 2\theta}\).</p>
+                  <p>Step 2. Use \(\sin 2\theta=2\sin\theta\cos\theta\) and \(\cos 2\theta=2\cos^{2}\theta-1\):</p>
+                  <p>\(\text{LS}=\dfrac{2\sin\theta\cos\theta}{1+(2\cos^{2}\theta-1)}=\dfrac{2\sin\theta\cos\theta}{2\cos^{2}\theta}\).</p>
+                  <p>Step 3. Cancel \(2\cos\theta\) (assuming \(\cos\theta\ne 0\)): \(\text{LS}=\dfrac{\sin\theta}{\cos\theta}=\tan\theta=\text{RS}\). ✓</p>
+                </div>
+                <ul>
+                  <li>Choose the form of \(\cos 2\theta\) that creates a useful cancellation with the rest of the expression.</li>
+                  <li>State the restriction (here, \(\cos\theta\ne 0\)) whenever you cancel a trig factor.</li>
+                  <li>For exact-value problems, decompose into special angles before computing — never just punch into a calculator.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Overall Expectation B3 — "solve problems involving trigonometric equations and prove trigonometric identities."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v74')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">MHF4U 4.6a Chapter 4 Summary</span>
+                        <span class="vid-duration">9:18</span>
+                        <span class="vid-toggle" id="toggle-v74">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v74">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/074_MHF4U_4.6a_Chapter_4_Summary.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=IOJQzV3yg6k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v75')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">MHF4U 4.6b Chapter 4 Review Homework Solutions</span>
+                        <span class="vid-duration">8:53</span>
+                        <span class="vid-toggle" id="toggle-v75">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v75">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MHF4U/075_MHF4U_4.6b_Chapter_4_Review_Homework_Solutions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=h29_KWvch1Y" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mhf4u_ch4_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mhf4u_ch4_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mhf4u_ch4_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="ch3.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Ch 3</a>
+<a href="ch5.html" style="padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 5 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MHF4U Advanced Functions · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>

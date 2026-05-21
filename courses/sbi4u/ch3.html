@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI4U — Biology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sbi4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SBI4U Biology)</a></div>
+    <div class="strand-tag">Science — Grade 12 University Preparation</div>
+    <h1>🧬 SBI4U: Unit 3: Molecular Genetics</h1>
+    <p>DNA structure and replication, transcription, translation (protein synthesis), gene regulation, mutations, biotechnology</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+            <h2>Unit 3: Molecular Genetics</h2>
+            <p>DNA structure and replication, transcription, translation (protein synthesis), gene regulation, mutations, biotechnology</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Molecular Genetics</span>
+                <span>📹 4 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- DNA -->
+        <div class="subsection-label">🧬 DNA Structure &amp; Replication</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>DNA replication is <em>semiconservative</em>: each parental strand serves as a template for a new daughter strand, so every daughter molecule contains one old and one new strand. Meselson and Stahl (1958) proved this with density-gradient centrifugation of bacteria grown in ¹⁵N then shifted to ¹⁴N. Replication begins at sequences called <em>origins of replication</em>. In <em>E. coli</em>, the single circular chromosome has one origin; eukaryotic chromosomes have hundreds, allowing the entire human genome to be copied in roughly six hours.</p>
+            <p>The replication machinery is a coordinated complex. <em>Helicase</em> unwinds the parental double helix; <em>topoisomerase</em> (gyrase) relieves the supercoiling ahead of the fork; <em>single-strand binding proteins</em> keep the unwound strands apart. <em>Primase</em> synthesises a short RNA primer (~10 nucleotides) because <em>DNA polymerase III</em> cannot initiate new strands — it can only extend an existing 3′-OH. DNA polymerase III then adds nucleotides 5′ → 3′, complementary to the template. Because the two parental strands are antiparallel, only the <em>leading strand</em> is synthesised continuously toward the fork. The <em>lagging strand</em> is built in short <em>Okazaki fragments</em> away from the fork; each requires its own primer, and the fragments are later joined by <em>DNA ligase</em> after <em>DNA polymerase I</em> replaces RNA primers with DNA.</p>
+            <p>Fidelity is extraordinary — roughly one error per 10⁹–10¹⁰ nucleotides — because DNA polymerase has a <em>3′ → 5′ exonuclease proofreading</em> activity and is followed by mismatch repair. At chromosome ends, <em>telomeres</em> (repetitive TTAGGG sequences in vertebrates) shorten with each division; <em>telomerase</em>, an RNA-templated reverse transcriptase, extends them in germline and stem cells. Loss of telomere maintenance limits replicative lifespan and is linked to senescence and cancer.</p>
+            <ul>
+              <li><strong>Semiconservative replication</strong> — each daughter helix has one parental and one new strand.</li>
+              <li><strong>Helicase, topoisomerase, primase, ligase</strong> — enzymes that unwind, relax, prime, and seal.</li>
+              <li><strong>DNA polymerase III</strong> — main replication enzyme; extends 5′ → 3′ only.</li>
+              <li><strong>Leading / lagging strand</strong> — continuously synthesised toward / discontinuously synthesised away from the fork.</li>
+              <li><strong>Okazaki fragment</strong> — short DNA segment on the lagging strand.</li>
+              <li><strong>Telomere / telomerase</strong> — protective end repeats / enzyme that extends them.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting an Okazaki count</p>
+              <p>A replication bubble travels 5 000 nucleotides along a eukaryotic chromosome with Okazaki fragments of 200 nucleotides each. Approximately how many primers does the lagging strand require?</p>
+              <p>Lagging-strand length ≈ 5 000 nucleotides; each Okazaki fragment is ~200 nt and requires one primer. Number of primers ≈ 5 000 / 200 = 25 primers. Each primer is later replaced by DNA polymerase I and the fragments are sealed by ligase. (The leading strand requires only one primer.)</p>
+            </div>
+            <ul>
+              <li>Saying DNA polymerase can start synthesis from scratch — it requires an RNA primer with a 3′-OH.</li>
+              <li>Drawing both strands as continuous — the lagging strand is discontinuous.</li>
+              <li>Forgetting that helicase, primase, and polymerase function together at the replication fork.</li>
+              <li>Confusing semiconservative with conservative or dispersive models (both ruled out by Meselson–Stahl).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "describe the structure and function of DNA and its replication."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">DNA Direction of Construction</span>
+                <span class="vid-duration">5:48</span>
+                <span class="vid-toggle" id="toggle-v8">▶</span>
+            </div>
+            <div class="video-player" id="player-v8">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/008_DNA_Direction_Of_Construction.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Okzgy72jsX8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Transcription & Translation -->
+        <div class="subsection-label">🔬 Transcription &amp; Translation</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>central dogma of molecular biology</em> (Crick, 1958) states that genetic information flows DNA → RNA → protein. <em>Transcription</em> copies a gene from DNA into messenger RNA. In eukaryotes it happens in the nucleus and proceeds in three phases. <em>Initiation</em>: RNA polymerase II, with general transcription factors, binds the gene's <em>promoter</em> (often containing a TATA box ~25 bp upstream). <em>Elongation</em>: the polymerase unwinds DNA and synthesises pre-mRNA 5′ → 3′, reading the <em>template strand</em> 3′ → 5′; the <em>coding strand</em> has the same sequence as the mRNA (except U replaces T). <em>Termination</em> releases the polymerase at a termination signal. The pre-mRNA is then processed: a 5′ <em>7-methylguanosine cap</em> is added, a <em>poly-A tail</em> of ~200 adenines is appended at the 3′ end, and <em>introns</em> are removed while <em>exons</em> are spliced together by the spliceosome. Alternative splicing of the same pre-mRNA produces multiple protein isoforms, which is one reason humans have only ~20 000 genes but hundreds of thousands of proteins.</p>
+            <p>Mature mRNA exits the nucleus through a nuclear pore and meets a ribosome in the cytoplasm. <em>Translation</em> decodes the mRNA into a polypeptide using <em>codons</em> — three-nucleotide units, 64 in total, encoding 20 amino acids plus start and stop signals. The code is redundant (most amino acids have several codons), nearly universal across life, and read in a fixed reading frame from the <em>start codon</em> AUG. Translation has three phases. <em>Initiation</em>: the small ribosomal subunit binds the mRNA at the 5′ cap and scans to AUG; the initiator tRNA (carrying methionine) base-pairs there, and the large subunit joins. <em>Elongation</em>: each new tRNA enters the A site with its amino acid; a peptide bond forms (catalysed by the rRNA in the large subunit — a ribozyme); the ribosome translocates by one codon, ejecting the empty tRNA from the E site. <em>Termination</em>: when a stop codon (UAA, UAG, UGA) enters the A site, release factors trigger polypeptide release.</p>
+            <p>Polypeptides leaving the ribosome then fold, often with chaperones, undergo post-translational modifications (phosphorylation, glycosylation, cleavage), and are targeted to their cellular destinations.</p>
+            <ul>
+              <li><strong>Promoter / TATA box</strong> — DNA region where RNA polymerase binds to start transcription.</li>
+              <li><strong>Template vs coding strand</strong> — read by RNA polymerase vs identical in sequence to the mRNA.</li>
+              <li><strong>Exon / intron</strong> — coding region kept / non-coding region removed during splicing.</li>
+              <li><strong>5′ cap / poly-A tail</strong> — mRNA modifications that protect from degradation and aid export.</li>
+              <li><strong>Codon / anticodon</strong> — 3-nucleotide mRNA unit / complementary tRNA 3-nucleotide region.</li>
+              <li><strong>Ribosome A/P/E sites</strong> — aminoacyl, peptidyl, exit sites where tRNAs occupy the ribosome.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — From DNA to polypeptide</p>
+              <p>Given the DNA template strand 3′–TAC GGA TTC ACG ATT–5′, write the mRNA sequence (5′ → 3′) and the resulting amino acid sequence (use the start codon and read until a stop codon).</p>
+              <p>Transcription reads the template 3′ → 5′ and builds mRNA 5′ → 3′ with complementary bases (A pairs with U). mRNA: 5′–AUG CCU AAG UGC UAA–3′. Codons: AUG (Met / start) – CCU (Pro) – AAG (Lys) – UGC (Cys) – UAA (stop). The polypeptide is Met–Pro–Lys–Cys.</p>
+            </div>
+            <ul>
+              <li>Confusing the directions: transcription reads the template 3′ → 5′ and synthesises mRNA 5′ → 3′.</li>
+              <li>Mistaking the coding strand for the template — the coding strand looks like the mRNA (T for U).</li>
+              <li>Forgetting that introns are removed before mRNA leaves the nucleus.</li>
+              <li>Reading a codon table without setting the reading frame from AUG.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "explain the steps involved in the process of protein synthesis and how genetic expression is controlled in prokaryotes and eukaryotes."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Transcription</span>
+                <span class="vid-duration">13:52</span>
+                <span class="vid-toggle" id="toggle-v3">▶</span>
+            </div>
+            <div class="video-player" id="player-v3">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/003_Transcription.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=CLxfOaEeiMI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">tRNA</span>
+                <span class="vid-duration">7:13</span>
+                <span class="vid-toggle" id="toggle-v7">▶</span>
+            </div>
+            <div class="video-player" id="player-v7">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/007_tRNA.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Nghb08oZ4L4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Overview of Protein Synthesis</span>
+                <span class="vid-duration">31:22</span>
+                <span class="vid-toggle" id="toggle-v16">▶</span>
+            </div>
+            <div class="video-player" id="player-v16">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/016_Overview_of_Protein_Synthesis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=zMurY1aiFug" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Curriculum topics — Gene Regulation, Mutations, Biotechnology (curated YouTube) -->
+        <div class="subsection-label">🔧 Gene Regulation</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Every cell in your body contains the same DNA, yet a neuron, an erythrocyte, and a hepatocyte look and behave nothing alike. The difference lies in <em>gene regulation</em>: which genes are switched on, in which cells, at what intensity, and at what time. In <em>prokaryotes</em>, gene regulation is fast and largely transcriptional. The classic example is the <em>lac operon</em> in <em>E. coli</em>. When lactose is absent, a repressor protein binds the operator and blocks transcription. When lactose is present, allolactose binds the repressor, changes its shape, and releases it from the operator — so the lacZ, lacY, and lacA genes (β-galactosidase, permease, transacetylase) are transcribed and lactose can be used. The <em>trp operon</em> uses the opposite logic: tryptophan acts as a corepressor; when it is abundant, the operon is repressed.</p>
+            <p><em>Eukaryotic</em> regulation is multilayered. <em>Chromatin remodelling</em>: tightly packed heterochromatin is inaccessible; histone acetylation (loosening) and methylation (variable) modulate openness. DNA methylation at CpG islands generally silences genes and is the basis of <em>epigenetic inheritance</em>. <em>Transcriptional regulation</em>: enhancers and silencers, sometimes thousands of base pairs away, are brought to the promoter by activator and repressor transcription factors that bind specific DNA motifs. <em>Post-transcriptional</em>: alternative splicing produces different protein isoforms from one gene; microRNAs and siRNAs bind complementary mRNAs and trigger degradation or block translation (RNA interference). <em>Translational and post-translational</em>: mRNA stability, ribosome availability, phosphorylation, ubiquitination, and degradation all tune protein levels.</p>
+            <p>Why does this matter? Misregulation causes disease. Mutations in transcription factors (e.g., p53) or in tumour-suppressor microRNAs are central to cancer. Imprinted genes and X-inactivation are gene-regulation phenomena with developmental consequences. Stem-cell pluripotency relies on a master-regulator network (Oct4, Sox2, Nanog) that keeps differentiation genes silenced.</p>
+            <ul>
+              <li><strong>Operon</strong> — cluster of co-regulated genes under one promoter (prokaryotes).</li>
+              <li><strong>Inducible vs repressible operon</strong> — turned ON by a signal (lac) vs turned OFF by a signal (trp).</li>
+              <li><strong>Transcription factor</strong> — protein that binds DNA to activate or repress transcription.</li>
+              <li><strong>Enhancer / silencer</strong> — distal DNA elements that increase / decrease transcription.</li>
+              <li><strong>Epigenetics</strong> — heritable changes in gene expression without altering DNA sequence (methylation, histone modification).</li>
+              <li><strong>RNA interference (RNAi)</strong> — gene silencing by microRNAs or siRNAs.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting lac-operon expression</p>
+              <p>Predict whether <em>lacZ</em> is transcribed in each scenario: (i) glucose absent, lactose present; (ii) glucose present, lactose present; (iii) glucose absent, lactose absent.</p>
+              <p>(i) Lactose binds the repressor (operator free) AND low glucose means high cAMP, which binds CAP/CRP to enhance promoter activity — STRONG transcription. (ii) Lactose removes the repressor BUT high glucose means low cAMP, so CAP is inactive — only weak basal transcription. (iii) No lactose means the repressor sits on the operator — NO transcription. The operon integrates two signals: lactose (induction) and glucose absence (catabolite activation).</p>
+            </div>
+            <ul>
+              <li>Confusing inducible (lac, normally OFF) with repressible (trp, normally ON) operons.</li>
+              <li>Saying gene regulation occurs "only at transcription" — it operates at every step from chromatin to protein degradation.</li>
+              <li>Treating epigenetic changes as DNA mutations — DNA sequence is unchanged.</li>
+              <li>Forgetting that all body cells share the same genome; differences come from differential expression.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "explain the steps involved in the process of protein synthesis and how genetic expression is controlled in prokaryotes and eukaryotes."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The lac Operon — Amoeba Sisters</span>
+                <span class="vid-duration">7:47</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/oBwtxdI1zvk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=oBwtxdI1zvk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Gene Regulation and the Order of the Operon — Amoeba Sisters</span>
+                <span class="vid-duration">11:47</span>
+                <span class="vid-toggle" id="toggle-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ebIpkw3XapE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ebIpkw3XapE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">⚠️ Mutations</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <em>mutation</em> is any heritable change in the DNA sequence. Mutations are the ultimate source of genetic variation — without them, there would be no evolution — but a single misplaced nucleotide can also cause severe disease. Mutations are categorised by scale and effect. <em>Point mutations</em> change a single base. A <em>silent mutation</em> alters a codon but produces the same amino acid (a consequence of the genetic code's redundancy). A <em>missense mutation</em> changes one amino acid; sickle-cell anaemia (Glu → Val at position 6 of β-globin) is the textbook case. A <em>nonsense mutation</em> creates a premature stop codon, truncating the protein. <em>Insertions</em> and <em>deletions</em> that are not multiples of three nucleotides cause a <em>frameshift</em>, which scrambles every downstream codon and almost always disables the protein.</p>
+            <p><em>Chromosomal mutations</em> are larger in scale. A <em>deletion</em> removes part of a chromosome (e.g., cri-du-chat from a 5p deletion). A <em>duplication</em> copies a region (often a source of evolutionary novelty). An <em>inversion</em> reverses a segment. A <em>translocation</em> moves a segment to a non-homologous chromosome — the Philadelphia chromosome (t(9;22)) creates the BCR-ABL fusion in chronic myeloid leukaemia. <em>Nondisjunction</em> during meiosis can yield <em>aneuploidies</em>, such as trisomy 21 (Down syndrome).</p>
+            <p>Causes are split between <em>spontaneous</em> (replication errors, tautomeric shifts, depurination) and <em>induced</em> (mutagens). Physical mutagens include UV light (forms thymine dimers) and ionising radiation (double-strand breaks). Chemical mutagens include base analogues (5-bromouracil), alkylating agents (mustard gas), and intercalating agents (ethidium bromide) that cause insertions or deletions. Cells defend themselves with multiple <em>DNA repair</em> pathways: mismatch repair, base excision repair, nucleotide excision repair, and homologous recombination. Failures of repair, such as in xeroderma pigmentosum (UV repair defect), produce high cancer risk.</p>
+            <ul>
+              <li><strong>Point mutation</strong> — single-base substitution.</li>
+              <li><strong>Silent / missense / nonsense</strong> — same / different / stop amino-acid outcome.</li>
+              <li><strong>Frameshift</strong> — indel that shifts the reading frame.</li>
+              <li><strong>Aneuploidy</strong> — abnormal chromosome number (trisomy, monosomy) from nondisjunction.</li>
+              <li><strong>Mutagen</strong> — agent that increases mutation rate (UV, X-rays, chemicals).</li>
+              <li><strong>Germline vs somatic mutation</strong> — passed to offspring vs confined to the individual.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Classifying mutations</p>
+              <p>The wild-type mRNA reads 5′–AUG GCA UUC UGG UAA–3′ encoding Met-Ala-Phe-Trp-(stop). Classify each mutant: (a) 5′–AUG GCC UUC UGG UAA–3′; (b) 5′–AUG GCA UAC UGG UAA–3′; (c) 5′–AUG GCA UUC UGA UAA–3′; (d) 5′–AUG GAU UCU GGU AA–3′.</p>
+              <p>(a) GCA → GCC, both Ala — <em>silent</em>. (b) UUC → UAC, Phe → Tyr — <em>missense</em>. (c) UGG → UGA, Trp → stop — <em>nonsense</em>, truncating the protein. (d) An A was deleted, shifting the reading frame — <em>frameshift</em>, scrambling all downstream codons.</p>
+            </div>
+            <ul>
+              <li>Assuming every mutation is harmful — many are silent or neutral; a few are beneficial.</li>
+              <li>Treating frameshift and point mutations as equivalent — frameshifts usually have far larger effects.</li>
+              <li>Confusing germline (heritable) with somatic (not heritable) mutations.</li>
+              <li>Equating "mutation" with "cancer" — most cancers require multiple driver mutations in oncogenes and tumour suppressors.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "describe the diversity of organisms in terms of the chemical structures and processes that underlie genetic continuity and variation (e.g., mutation, genetic recombination)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mutations (Updated) — Amoeba Sisters</span>
+                <span class="vid-duration">7:53</span>
+                <span class="vid-toggle" id="toggle-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qxXRKVompI8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=qxXRKVompI8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mutations: The Potential Power of a Small Change — Amoeba Sisters</span>
+                <span class="vid-duration">7:52</span>
+                <span class="vid-toggle" id="toggle-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GieZ3pk9YVo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=GieZ3pk9YVo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔬 Biotechnology &amp; Genetic Engineering</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Biotechnology uses biological systems and molecules to make products or solve problems. Modern molecular biotechnology rests on a small set of foundational tools. <em>Restriction enzymes</em> (restriction endonucleases) cut DNA at specific palindromic recognition sequences — for example, EcoRI cleaves between G and A in GAATTC, leaving complementary "sticky ends." A second enzyme, <em>DNA ligase</em>, seals compatible ends. Together they enable <em>recombinant DNA</em>: a gene of interest from one organism is inserted into a <em>vector</em> (commonly a bacterial plasmid) and introduced into a host (transformation). If the vector carries an antibiotic-resistance gene, transformed bacteria can be selected on antibiotic plates.</p>
+            <p>The <em>polymerase chain reaction (PCR)</em>, invented by Mullis in 1983, exponentially amplifies a defined DNA segment. Each cycle has three temperature steps: <em>denaturation</em> at ~95 °C (strands separate), <em>annealing</em> at ~55 °C (forward and reverse primers bind), and <em>extension</em> at ~72 °C (heat-stable <em>Taq polymerase</em>, from <em>Thermus aquaticus</em>, synthesises new strands). After <em>n</em> cycles, copies grow roughly as \(2^n\). PCR underpins forensic identification, paternity testing, disease diagnostics, and ancient-DNA studies. <em>Gel electrophoresis</em> sorts DNA fragments by size: negatively charged DNA migrates through an agarose gel toward the positive electrode, with shorter fragments travelling faster. <em>DNA sequencing</em> (Sanger dideoxy method or next-generation methods) reads the base order.</p>
+            <p><em>Genetic engineering</em> applications include transgenic crops (Bt corn, golden rice with β-carotene), pharmaceutical production (human insulin in <em>E. coli</em>, factor VIII for haemophilia), gene therapy, and genome editing with <em>CRISPR-Cas9</em>, a guide-RNA-directed nuclease system that allows targeted edits in living cells. Each application carries STSE implications: ecological risk from transgene escape, equitable access to gene therapies, animal welfare in transgenic livestock, and ethical limits on human germline editing.</p>
+            <ul>
+              <li><strong>Restriction enzyme</strong> — sequence-specific DNA endonuclease (e.g., EcoRI, HindIII, BamHI).</li>
+              <li><strong>Plasmid vector</strong> — small circular bacterial DNA used to carry recombinant inserts.</li>
+              <li><strong>Sticky ends / blunt ends</strong> — complementary single-stranded overhangs / flush double-stranded ends.</li>
+              <li><strong>Taq polymerase</strong> — thermostable DNA polymerase enabling PCR.</li>
+              <li><strong>Gel electrophoresis</strong> — size-based separation of nucleic acids in an electric field.</li>
+              <li><strong>CRISPR-Cas9</strong> — RNA-guided endonuclease system for targeted genome editing.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — PCR amplification factor</p>
+              <p>You start a PCR with 100 copies of a target sequence and run 25 cycles at perfect efficiency. How many copies of the target are produced?</p>
+              <p>PCR doubles the number of target-defined copies each cycle: final copies \(\\approx N_0 \\times 2^n = 100 \\times 2^{25}\). \(2^{25} = 33\\,554\\,432\), so the yield is roughly \(3.36 \\times 10^9\) copies. In practice, efficiency is below 100% in later cycles as primers and nucleotides become limiting, so the real yield is somewhat less.</p>
+            </div>
+            <ul>
+              <li>Saying restriction enzymes "cut DNA at random" — they cut only at their specific recognition site.</li>
+              <li>Forgetting primer design in PCR — primers must flank the target and be complementary to opposite strands.</li>
+              <li>Loading the gel at the positive electrode — DNA loads near the negative electrode and migrates toward the positive.</li>
+              <li>Treating CRISPR as "always safe" — off-target edits and ethical concerns must be evaluated.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.4 — "investigate, through laboratory inquiry or computer simulation, the process of DNA replication, transcription, translation, and the use of biotechnological techniques (e.g., PCR, gel electrophoresis)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Biotechnology — Amoeba Sisters</span>
+                <span class="vid-duration">7:36</span>
+                <span class="vid-toggle" id="toggle-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CDw4WPng2iE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CDw4WPng2iE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">PCR (Polymerase Chain Reaction) — Bozeman Science</span>
+                <span class="vid-duration">8:18</span>
+                <span class="vid-toggle" id="toggle-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iQsu3Kz9NYo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iQsu3Kz9NYo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">CRISPR: Gene editing and beyond — TED-Ed</span>
+                <span class="vid-duration">5:24</span>
+                <span class="vid-toggle" id="toggle-yt13">▶</span>
+            </div>
+            <div class="video-player" id="player-yt13">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/UKbrwPL3wXE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=UKbrwPL3wXE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Gel Electrophoresis — Amoeba Sisters</span>
+                <span class="vid-duration">7:30</span>
+                <span class="vid-toggle" id="toggle-yt22">▶</span>
+            </div>
+            <div class="video-player" id="player-yt22">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZDZUAleWX78?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ZDZUAleWX78" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Genetic Engineering: Restriction Enzymes &amp; Recombinant DNA — Amoeba Sisters</span>
+                <span class="vid-duration">8:54</span>
+                <span class="vid-toggle" id="toggle-yt23">▶</span>
+            </div>
+            <div class="video-player" id="player-yt23">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CDw4WPng2iE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CDw4WPng2iE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Regulation of Gene Expression: Operons, Epigenetics, and Transcription Factors — Professor Dave Explains</span>
+                <span class="vid-duration">9:38</span>
+                <span class="vid-toggle" id="toggle-yt24">▶</span>
+            </div>
+            <div class="video-player" id="player-yt24">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=J9jhg90A7Lw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sbi4u/Unit3_Molecular_Genetics_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sbi4u/Unit3_Molecular_Genetics_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sbi4u/Unit3_Molecular_Genetics_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <a href="../../assessments/sbi4u/Strand_C_Molecular_Genetics_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SBI4U Biology · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

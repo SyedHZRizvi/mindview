@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#db2777dd,#db2777);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mdm4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MDM4U Mathematics of Data Management)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>📊 MDM4U: Chapter 8: Correlation, Regression &amp; the Culminating Investigation</h1>
+    <p>Scatter plots, correlation coefficient, linear regression, residuals, two-variable analysis, the culminating data-management investigation</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit8">
+    <div class="unit-header" style="background:linear-gradient(135deg,#db2777dd,#db2777);">
+        <h2>Chapter 8: Correlation, Regression &amp; the Culminating Investigation</h2>
+        <p>Scatter plots, correlation coefficient, linear regression, residuals, two-variable analysis, the culminating data-management investigation</p>
+        <div class="unit-meta">
+            <span>📚 Strands C &amp; D: Organization &amp; Culminating Investigation</span>
+            <span>⏱️ ~16h</span>
+            <span>🎯 C3.1–C3.4, D1–D4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.1 — Scatter Plots &amp; Correlation</div>
+        <div class="topic-desc">Constructing scatter plots; describing the form, direction, and strength of a relationship; explanatory vs response variable.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>One-variable statistics summarise a single quantity. <strong>Two-variable</strong> (bivariate) analysis asks whether two quantities tend to vary together. Each observation contributes an ordered pair \((x, y)\); plotting these pairs gives a <strong>scatter plot</strong>, the foundational picture for studying relationships. By convention, the <strong>explanatory (independent) variable</strong> \(x\) goes on the horizontal axis and the <strong>response (dependent) variable</strong> \(y\) goes on the vertical axis. The choice of which is which depends on context: when modelling crop yield from rainfall, rainfall is the explanatory variable.</p>
+            <p>A good description of a scatter plot mentions four features: <em>form</em> (linear, curved, no apparent pattern), <em>direction</em> (positive, negative, none), <em>strength</em> (how tightly the points cluster around a curve), and <em>unusual features</em> (outliers, clusters, separate groups). These qualitative descriptions complement the quantitative measure (Pearson's \(r\), Topic 8.2). A weak linear pattern with a strong curved pattern is common — and warns you that a straight-line fit will mislead.</p>
+            <ul>
+              <li><strong>Bivariate data:</strong> measurements of two variables on the same individuals.</li>
+              <li><strong>Explanatory variable \(x\):</strong> the predictor; horizontal axis.</li>
+              <li><strong>Response variable \(y\):</strong> the outcome; vertical axis.</li>
+              <li><strong>Form:</strong> linear, quadratic, exponential, none.</li>
+              <li><strong>Direction:</strong> positive (both increase together) or negative (one up, one down).</li>
+              <li><strong>Strength:</strong> how closely the points cluster around the underlying pattern.</li>
+              <li><strong>Outlier:</strong> a point far from the overall pattern.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Twelve students plot study hours per week against final exam scores. The scatter plot shows points clustering along a rising straight line from \((2, 55)\) to \((15, 92)\), with one outlier at \((10, 50)\).</p>
+              <p>Describing the relationship: <em>form</em> linear; <em>direction</em> positive (more study, higher score); <em>strength</em> moderately strong (points cluster tightly but the outlier weakens the fit); <em>unusual feature</em> one outlier — possibly a student who studied with poor strategy or had a difficult exam. The explanatory variable is study hours, the response variable is exam score; reversing them would change the regression line and prediction.</p>
+            </div>
+            <ul>
+              <li>Switching axes: putting \(y\) on the \(x\)-axis changes the regression line and the meaning of slope.</li>
+              <li>Treating a strong curved pattern as if it had no relationship just because the linear correlation is weak.</li>
+              <li>Ignoring outliers in the description — they often carry the most important information.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.1 — "create a graphical summary of two-variable data using a scatter plot (e.g., by identifying and justifying the dependent and independent variables; by drawing the line of best fit, when appropriate)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt34')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Linear Regression &amp; Correlation Coefficient — Algebra 1 Lesson</span>
+                <span class="vid-duration">9:18</span>
+                <span class="vid-toggle" id="toggle-mdm-yt34">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt34">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/m0mDTCA2ZsU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=m0mDTCA2ZsU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.2 — The Pearson Correlation Coefficient \( r \)</div>
+        <div class="topic-desc">\( r = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^{n} \dfrac{x_i-\bar{x}}{s_x}\cdot\dfrac{y_i-\bar{y}}{s_y} \); interpreting \( r \in [-1, 1] \); correlation \(\ne\) causation.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Pearson's correlation coefficient \(r\)</strong> is a single number that summarises the strength and direction of the <em>linear</em> relationship between two quantitative variables. Defined as \[ r = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right), \] \(r\) is the average product of standardised \(x\) and \(y\) deviations. Standardising removes units, so \(r\) is dimensionless and lies in \([-1, 1]\) regardless of the original variables.</p>
+            <p>Interpretation: \(r = +1\) means the points lie exactly on a line of positive slope; \(r = -1\) on a line of negative slope; \(r = 0\) means no linear association (although a strong non-linear pattern may still exist). Common qualitative bands: \(|r| &lt; 0.3\) weak, \(0.3 \le |r| &lt; 0.7\) moderate, \(|r| \ge 0.7\) strong. <em>Crucially, correlation does not imply causation</em>: a strong \(r\) between ice-cream sales and drownings is created by the lurking variable "summer". Both variables must be quantitative and the relationship roughly linear for \(r\) to mean what it suggests; \(r\) is also sensitive to outliers, which can artificially inflate or shrink the value.</p>
+            <ul>
+              <li><strong>Pearson \(r\):</strong> measures linear association; \(r \in [-1, 1]\).</li>
+              <li><strong>Sign:</strong> positive = both increase together; negative = one up, other down.</li>
+              <li><strong>Magnitude:</strong> closer to \(\pm 1\) = stronger linear pattern.</li>
+              <li><strong>\(r^2\) (coefficient of determination):</strong> proportion of variance in \(y\) explained by a linear model on \(x\).</li>
+              <li><strong>Correlation \(\ne\) causation:</strong> a strong \(r\) cannot prove cause-and-effect.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: For 5 students, hours of sleep (\(x\)) and quiz scores (\(y\)) are recorded:</p>
+              <p>(5, 60), (6, 65), (7, 78), (8, 82), (9, 90). Then \(\bar{x} = 7\), \(\bar{y} = 75\).</p>
+              <p>Deviations: \(x_i - \bar{x}\): \(-2, -1, 0, 1, 2\); \(y_i - \bar{y}\): \(-15, -10, 3, 7, 15\). Products: \(30, 10, 0, 7, 30\); sum = 77.</p>
+              <p>\(s_x = \sqrt{\tfrac{10}{4}} \approx 1.581\); \(s_y = \sqrt{\tfrac{608}{4}} \approx 12.328\).</p>
+              <p>\[ r = \frac{77}{(n-1)\,s_x\,s_y} = \frac{77}{4 \cdot 1.581 \cdot 12.328} \approx \frac{77}{77.96} \approx 0.988. \]</p>
+              <p>This is a very strong positive linear relationship. So \(r^2 \approx 0.976\): about 97.6% of the variation in quiz scores is explained by hours of sleep — in this small sample.</p>
+            </div>
+            <ul>
+              <li>Concluding causation from correlation, especially in observational (non-experimental) data.</li>
+              <li>Reporting \(r\) for clearly non-linear data — \(r\) only captures the linear part.</li>
+              <li>Letting a single outlier dominate \(r\); always look at the scatter plot before trusting the number.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "recognize and distinguish different types of relationships between two variables that have a mathematical correlation (e.g., the cause-and-effect relationship between the age of a tree and its diameter; the common-cause relationship between ice-cream sales and forest fires over the course of a year)."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt35')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Regression Analysis: Learn Everything With Examples — CrashCourse</span>
+                <span class="vid-duration">19:23</span>
+                <span class="vid-toggle" id="toggle-mdm-yt35">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt35">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WWqE7YHR4Jc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=WWqE7YHR4Jc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.3 — Linear Regression &amp; Line of Best Fit</div>
+        <div class="topic-desc">Least-squares line \( \hat{y} = b_0 + b_1 x \) where \( b_1 = r\dfrac{s_y}{s_x} \); interpreting slope and intercept; using \( \hat{y} \) for prediction.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When a scatter plot shows an approximately linear pattern, we can summarise the trend by a single straight line — the <strong>line of best fit</strong>. The standard mathematical choice is the <strong>least-squares regression line</strong> \(\hat{y} = b_0 + b_1 x\), where \(\hat{y}\) is the predicted response for a given \(x\). "Least squares" refers to choosing \(b_0\) and \(b_1\) so that the sum of squared vertical distances from the points to the line, \(\sum (y_i - \hat{y}_i)^2\), is as small as possible.</p>
+            <p>The formulas link to material we already have. The slope is \( b_1 = r\,\dfrac{s_y}{s_x} \) and the intercept is \(b_0 = \bar{y} - b_1 \bar{x}\). The slope tells you the predicted change in \(y\) for each one-unit increase in \(x\); the intercept is the predicted \(y\) when \(x = 0\) (often a meaningless extrapolation if \(x = 0\) is outside the data range). Using \(\hat{y}\) to predict \(y\) inside the range of observed \(x\) values is called <em>interpolation</em>; outside that range it is <em>extrapolation</em>, which is dangerous because the linear pattern may not continue. Most importantly, the regression line is asymmetric: regressing \(y\) on \(x\) gives a different line than regressing \(x\) on \(y\) — choose your explanatory and response variables based on context.</p>
+            <ul>
+              <li><strong>Least-squares line:</strong> \(\hat{y} = b_0 + b_1 x\) minimising \(\sum (y_i - \hat{y}_i)^2\).</li>
+              <li><strong>Slope:</strong> \(b_1 = r\,\dfrac{s_y}{s_x}\).</li>
+              <li><strong>Intercept:</strong> \(b_0 = \bar{y} - b_1\bar{x}\).</li>
+              <li><strong>Interpolation vs extrapolation:</strong> predicting inside (safe) vs outside (risky) the data range.</li>
+              <li><strong>Asymmetry:</strong> regressing \(y\) on \(x\) is not the same as regressing \(x\) on \(y\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Using the sleep / quiz data from Topic 8.2 (\(\bar{x} = 7, \bar{y} = 75, r = 0.988, s_x = 1.581, s_y = 12.328\)), find the line of best fit and predict the score for 6.5 hours of sleep.</p>
+              <p>Slope: \(b_1 = 0.988 \cdot \dfrac{12.328}{1.581} \approx 0.988 \cdot 7.797 \approx 7.704\). Intercept: \(b_0 = 75 - 7.704 \cdot 7 = 75 - 53.93 = 21.07\).</p>
+              <p>\[ \hat{y} = 21.07 + 7.704\, x. \]</p>
+              <p>Prediction for \(x = 6.5\): \(\hat{y} = 21.07 + 7.704(6.5) \approx 21.07 + 50.08 = 71.15\). The model predicts a quiz score of about 71.</p>
+            </div>
+            <ul>
+              <li>Treating the intercept as meaningful when \(x = 0\) is outside the data range.</li>
+              <li>Extrapolating far beyond the observed \(x\) values — slope drift, curvature, or saturation can invalidate predictions.</li>
+              <li>Forgetting that the regression line passes through \((\bar{x}, \bar{y})\); use this as a sanity check.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "generate, using available technology, the line of best fit (e.g., the least-squares line) for a scatter plot, and recognize this line as the line that minimizes the sum of the squares of the deviations from the line to the points in the scatter plot."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt36')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Causality — Khan Academy</span>
+                <span class="vid-duration">5:34</span>
+                <span class="vid-toggle" id="toggle-mdm-yt36">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt36">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ROpbdO-gRUo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ROpbdO-gRUo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.4 — Residuals &amp; Goodness of Fit</div>
+        <div class="topic-desc">Residual \( e_i = y_i - \hat{y}_i \); residual plots; identifying when a non-linear model fits better.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A regression line is only as useful as its fit, and the fit is judged by <strong>residuals</strong>. For each observation, the residual is \(e_i = y_i - \hat{y}_i\) — the vertical distance from the actual point to the line. Residuals can be positive (point above the line) or negative (below). The least-squares method ensures that \(\sum e_i = 0\) (residuals balance) and that \(\sum e_i^2\) is minimised; it does not guarantee a good fit, only the best linear fit.</p>
+            <p>The crucial diagnostic is the <strong>residual plot</strong>: residuals on the vertical axis against \(x\) (or against \(\hat{y}\)) on the horizontal axis. A "good" residual plot shows a random, structureless scatter band around zero. <em>Patterns</em> in the residual plot reveal model inadequacy: a curve indicates a non-linear true relationship (try quadratic, exponential, or power models); a fan shape (increasing spread) indicates heteroscedasticity (changing variance); a single isolated point indicates an outlier. The <strong>coefficient of determination \(r^2\)</strong> reports the fraction of the variance in \(y\) explained by the regression on \(x\); higher \(r^2\) means smaller residuals. Always look at both \(r^2\) and the residual plot before trusting a model.</p>
+            <ul>
+              <li><strong>Residual:</strong> \(e_i = y_i - \hat{y}_i\) — vertical distance from point to line.</li>
+              <li><strong>Properties:</strong> \(\sum e_i = 0\) and \(\sum e_i^2\) is minimised by least squares.</li>
+              <li><strong>Residual plot:</strong> residuals vs \(x\); should look structureless if the linear model is appropriate.</li>
+              <li><strong>Patterns to watch:</strong> curvature → non-linear model needed; fanning → unequal variance; outlier → isolated point far from band.</li>
+              <li><strong>Coefficient of determination:</strong> \(r^2\) (square of Pearson \(r\)) = proportion of variance explained.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Using \(\hat{y} = 21.07 + 7.704\,x\) from Topic 8.3, compute residuals for the observed pairs (5, 60) and (8, 82).</p>
+              <p>For \(x = 5\): \(\hat{y} = 21.07 + 7.704(5) = 21.07 + 38.52 = 59.59\). Residual: \(60 - 59.59 = +0.41\) (above the line by 0.41).</p>
+              <p>For \(x = 8\): \(\hat{y} = 21.07 + 7.704(8) = 21.07 + 61.63 = 82.70\). Residual: \(82 - 82.70 = -0.70\) (below the line by 0.70).</p>
+              <p>Both residuals are small relative to the typical \(y\)-spread of 12.3, consistent with the high \(r^2 \approx 0.976\). A residual plot should show no obvious pattern.</p>
+            </div>
+            <ul>
+              <li>Reporting only \(r^2\) and skipping the residual plot — a misleadingly high \(r^2\) can hide curvature.</li>
+              <li>Confusing residuals with errors — residuals are observed, errors are unobservable model deviations.</li>
+              <li>Forgetting that the sign of the residual matters: above vs below the line communicates real information.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "generate, using available technology, the line of best fit (e.g., the least-squares line) for a scatter plot, and recognize this line as the line that minimizes the sum of the squares of the deviations from the line to the points in the scatter plot."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt37')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Causation — Praxis Core Math (Khan Academy)</span>
+                <span class="vid-duration">3:48</span>
+                <span class="vid-toggle" id="toggle-mdm-yt37">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt37">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rzfEj8jjs24?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=rzfEj8jjs24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.5 — Two-Variable Analysis &amp; Causation</div>
+        <div class="topic-desc">Cause-and-effect, common cause, reverse cause-and-effect, accidental and presumed relationships; lurking and confounding variables.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Even when a strong statistical correlation exists between two variables, the relationship between them can come in several flavours. Ontario MDM4U asks students to <strong>classify and critique causal claims</strong> — a vital skill in a world saturated with statistical headlines. The five categories typically discussed are: <strong>cause-and-effect</strong> (changes in \(x\) directly produce changes in \(y\)); <strong>common-cause</strong> (a third variable \(z\) causes both \(x\) and \(y\)); <strong>reverse cause-and-effect</strong> (in fact \(y\) causes \(x\)); <strong>accidental</strong> (coincidence with no underlying mechanism); and <strong>presumed</strong> (cause-and-effect is plausible but not proven).</p>
+            <p>A <strong>lurking variable</strong> is one that is not measured but influences both \(x\) and \(y\); a <strong>confounding variable</strong> is one whose effect on \(y\) cannot be separated from \(x\)'s effect. The single best protection against these is the <strong>randomised controlled experiment</strong>: by randomly assigning subjects to treatment and control groups, the experimenter ensures that other variables (measured or not) are balanced across groups, allowing a genuine causal inference. Observational data — surveys, historical records — can only suggest associations; causation requires either a randomised experiment or a careful argument (mechanism, dose-response, temporal precedence, etc., as in the Bradford-Hill criteria used by epidemiology).</p>
+            <ul>
+              <li><strong>Cause-and-effect:</strong> \(x\) directly produces changes in \(y\).</li>
+              <li><strong>Common-cause:</strong> hidden third variable causes both.</li>
+              <li><strong>Reverse cause-and-effect:</strong> \(y\) actually causes \(x\).</li>
+              <li><strong>Accidental:</strong> coincidence with no plausible mechanism.</li>
+              <li><strong>Presumed:</strong> causal direction plausible but unproven.</li>
+              <li><strong>Lurking / confounding variable:</strong> unmeasured (or inseparable) third factor.</li>
+              <li><strong>Randomised experiment:</strong> the gold standard for establishing causation.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Classify each correlation.</p>
+              <p>(a) Children's shoe size and reading ability are positively correlated. → <strong>Common-cause</strong>: age causes both shoe size and reading ability.</p>
+              <p>(b) Smoking and incidence of lung cancer are strongly positively correlated. → <strong>Cause-and-effect</strong>, supported by extensive randomised animal experiments, mechanistic studies, and dose-response data.</p>
+              <p>(c) Annual cheese consumption and number of people who drown by falling into a pool show a 95% correlation across 10 years. → <strong>Accidental</strong>: no plausible mechanism — a classic "spurious correlation".</p>
+              <p>(d) Hours spent on social media and self-reported anxiety. → <strong>Presumed</strong> (or reverse): plausible that social media causes anxiety, but anxious people might also use social media more.</p>
+            </div>
+            <ul>
+              <li>Asserting causation from a correlation, especially in observational data without controls.</li>
+              <li>Ignoring lurking variables — the most famous traps in statistical reasoning.</li>
+              <li>Forgetting that correlation can be misleading when one variable is a known time-trend (cheese and drownings both rise with population).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.4 — "describe possible misuses of regression (e.g., the danger of using the regression line of best fit to make a prediction for a value of the independent variable that is not in the domain of the data being considered) and how they could affect the interpretation of the data."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt38')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Causation Worked Example — Khan Academy</span>
+                <span class="vid-duration">3:48</span>
+                <span class="vid-toggle" id="toggle-mdm-yt38">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt38">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rzfEj8jjs24?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=rzfEj8jjs24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.6 — Culminating Data-Management Investigation</div>
+        <div class="topic-desc">Independent inquiry: develop a research question, collect/find primary or secondary data, apply two-variable analysis, present a written and oral report.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>Culminating Data-Management Investigation</strong> is the synthesising experience of MDM4U — a full Strand E independent inquiry that draws on every other strand. Students pose a meaningful research question, collect or gather data, analyse the data using the tools developed in Strands A through D, and communicate the findings in both written and oral form. The project counts toward the 30% Final Evaluation along with the final exam, so it is the single most important deliverable of the course.</p>
+            <p>An effective investigation has a clear, focused research question that is genuinely answerable with statistical methods. Data may be <em>primary</em> (collected by the student via survey or experiment) or <em>secondary</em> (from Statistics Canada, OECD, Gapminder, or other credible sources). The analysis typically combines one-variable summaries (means, medians, standard deviation, histograms) with two-variable methods (scatter plots, regression, correlation). The written report should follow a recognisable structure: introduction and research question, methodology and data source, analysis with appropriate graphs and statistics, discussion of bias and limitations, and conclusion. The oral presentation must explain — not just display — the findings, anticipating questions about sampling method, statistical inference, and alternative interpretations. Ontario's Growing Success policy requires assessment across all four achievement categories: Knowledge &amp; Understanding, Thinking, Communication, and Application.</p>
+            <ul>
+              <li><strong>Research question:</strong> focused, statistical, answerable with available data.</li>
+              <li><strong>Primary data:</strong> collected by the student (survey, experiment, simulation).</li>
+              <li><strong>Secondary data:</strong> obtained from credible existing sources.</li>
+              <li><strong>Analysis tools:</strong> descriptive statistics, scatter plot, regression, correlation, probability distributions where applicable.</li>
+              <li><strong>Report structure:</strong> introduction, methodology, analysis, discussion, conclusion, references.</li>
+              <li><strong>Achievement chart:</strong> Knowledge, Thinking, Communication, Application — each /25.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: A sample research question — "Is there a relationship between average annual screen time and self-reported sleep quality among Grade 12 students at our school?"</p>
+              <p>Variables: explanatory \(x\) = weekly screen time (hours); response \(y\) = sleep-quality score (1–10). Methodology: anonymous online survey of ~80 Grade 12 students, with stratified random sampling across the four homeroom sections (5.4). Analysis steps:</p>
+              <p>(1) Compute \(\bar{x}, \bar{y}, s_x, s_y\). (2) Build a scatter plot and describe form, direction, strength. (3) Compute Pearson \(r\) and the regression line \(\hat{y} = b_0 + b_1 x\) using Excel's <em>SLOPE</em>, <em>INTERCEPT</em>, and <em>CORREL</em> functions. (4) Examine the residual plot. (5) Discuss sources of bias (self-report, voluntary response within the sample, lurking variables like part-time work). (6) Conclude with statistical and contextual interpretation; avoid causal language unless an experiment was performed.</p>
+            </div>
+            <ul>
+              <li>Choosing a vague or unanswerable research question — sharpen it before collecting data.</li>
+              <li>Asserting causation from observational data — limit conclusions to "associated with" rather than "causes".</li>
+              <li>Skipping the discussion of bias and limitations — Ontario rubrics weight this heavily under Thinking and Communication.</li>
+              <li>Ignoring the four achievement categories — strong analysis alone will not earn full marks if Communication is weak.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E (Culminating Data Management Investigation), Expectation E1.1 — "design a culminating investigation that requires the integration and application of the knowledge and skills related to the expectations of this course."</p>
+          </div>
+        </details>
+        <div class="topic-coming-soon"><span class="tcs-icon">🎬</span><div><div class="tcs-title">Project guidelines</div><div class="tcs-desc">The Culminating Investigation contributes to the 30% Final Evaluation. See the Final Exam page for the rubric.</div></div></div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 8 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mdm4u_ch8_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mdm4u_ch8_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mdm4u_ch8_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch7.html" class="chnav-btn chnav-prev">← Chapter 7</a>
+  <a href="../mdm4u.html" class="chnav-btn chnav-next chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

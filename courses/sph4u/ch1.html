@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Chapter 1: Dynamics | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\(','\)']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../sph4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH4U Physics)</a></div>
+<div class="strand-tag">Science — Grade 12 University Preparation</div>
+<h1>⚡ SPH4U: Chapter 1: Dynamics</h1>
+<p>Kinematics, Newton's laws, friction, projectile motion, and circular motion</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section">
+        <div class="unit-header" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+            <h2>Unit 1: Dynamics</h2>
+            <p>Kinematics, Newton's laws, friction, projectile motion, and circular motion</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Dynamics</span>
+                <span>⏱️ ~25 hours</span>
+                <span>📹 12 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.1 — Kinematics — Motion and Motion Graphs</div>
+            <div class="topic-desc">Review of 1D kinematics, position-time and velocity-time graphs, equations of motion</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Kinematics is the geometric description of motion: <em>where</em> an object is, <em>how fast</em> it is moving, and <em>how quickly</em> its velocity is changing — without yet asking <em>why</em>. In SPH4U we sharpen the SPH3U treatment by being strict about three vector ideas: <strong>position</strong> $\vec{x}$, <strong>displacement</strong> $\Delta\vec{x}$, and <strong>velocity</strong> $\vec{v}=d\vec{x}/dt$. The "why" of kinematics graphs is that calculus is hidden inside them: the slope of a position-time graph is instantaneous velocity, and the area under a velocity-time graph is displacement. Recognising those geometric meanings lets you solve problems even when you have data but no algebraic formula.</p>
+                <p>The five "BIG-5" kinematics equations apply <em>only</em> when acceleration is constant. Each equation eliminates one variable, so the trick is to list your knowns ($\vec{x}_0$, $\vec{v}_0$, $\vec{v}$, $\vec{a}$, $t$) and pick the equation missing the unknown you don't care about. Signs encode direction along a chosen axis; an object can have negative velocity while still speeding up if its acceleration is also negative. Free fall near Earth's surface is the canonical constant-acceleration problem with $\vec{a}=\vec{g}=9.81\,\text{m/s}^2$ downward.</p>
+                <ul>
+                  <li><strong>Displacement</strong> $\Delta\vec{x}$ (m) — vector from initial to final position; not the same as path length.</li>
+                  <li><strong>Average velocity</strong> $\vec{v}_{avg}=\Delta\vec{x}/\Delta t$ (m/s); <strong>instantaneous velocity</strong> = limit as $\Delta t\to 0$.</li>
+                  <li><strong>Acceleration</strong> $\vec{a}=d\vec{v}/dt$ (m/s²); dimensional check: $[\text{m/s}]/[\text{s}]=[\text{m/s}^2]$.</li>
+                  <li><strong>BIG-5</strong>: $v=v_0+at$; $\Delta x=v_0 t+\tfrac12 at^2$; $v^2=v_0^2+2a\Delta x$; $\Delta x=\tfrac12(v_0+v)t$; $\Delta x=vt-\tfrac12 at^2$.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — a stone dropped from rest</p>
+                  <p>A stone is dropped from a bridge and hits the water 2.4 s later. How far did it fall, and what speed does it strike the water with? Take down as positive, $g=9.81\,\text{m/s}^2$.</p>
+                  <p>Step 1 — list knowns: $v_0=0$, $a=+9.81\,\text{m/s}^2$, $t=2.4\,\text{s}$, $\Delta x=?$, $v=?$.</p>
+                  <p>Step 2 — choose $\Delta x=v_0 t+\tfrac12 at^2 = 0 + \tfrac12(9.81)(2.4)^2 = 28.2\,\text{m}$.</p>
+                  <p>Step 3 — choose $v=v_0+at = 0+(9.81)(2.4)=23.5\,\text{m/s}$ downward.</p>
+                  <p>Step 4 — sanity check with $v^2=v_0^2+2a\Delta x$: $\sqrt{2(9.81)(28.2)}=23.5$ m/s. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Confusing speed and velocity</strong> — speed is a scalar; velocity carries a sign or direction.</li>
+                  <li><strong>Mis-reading a v-t graph</strong> — its <em>slope</em> is acceleration, its <em>area</em> is displacement, not the value on the y-axis.</li>
+                  <li><strong>Using BIG-5 with non-constant acceleration</strong> — illegal; you must use calculus or piecewise constant intervals.</li>
+                  <li><strong>Forgetting sign conventions</strong> — once you choose "up = +", every quantity must follow that convention.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "solve problems involving the motion of objects in horizontal, vertical, and inclined planes, using vectors, graphs, and free-body diagrams."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_201_20-_20Mechanics_20-_20Spring_202017.pdf" target="_blank" class="pdf-link">📄 Unit 1 — Mechanics Notes</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v1')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C1L1 (A): Motion and Motion Graphs</span>
+                        <span class="vid-duration">56:32</span>
+                        <span class="vid-toggle" id="toggle-v1">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v1">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/001_C1L1__A___Motion_and_Motion_Graphs.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=G7PrBD3d_rk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v2')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C1L1 (B):  Equations of Motion</span>
+                        <span class="vid-duration">1:00:43</span>
+                        <span class="vid-toggle" id="toggle-v2">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v2">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/002_C1L1__B____Equations_of_Motion.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=LRBmxp_5Jcc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.2 — Two-Dimensional Motion</div>
+            <div class="topic-desc">Displacement, velocity, and acceleration vectors in 2D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>In two dimensions, motion is described by independent perpendicular components — typically $x$ (horizontal) and $y$ (vertical). The deep reason this <em>works</em> is that Newton's second law is a vector equation: a force component along $x$ produces acceleration only along $x$. So a 2-D problem is really two simultaneous 1-D problems sharing a single clock $t$.</p>
+                <p>To resolve a vector $\vec{A}$ of magnitude $A$ at angle $\theta$ above the $+x$-axis: $A_x=A\cos\theta$, $A_y=A\sin\theta$. To recombine, $A=\sqrt{A_x^2+A_y^2}$ and $\theta=\tan^{-1}(A_y/A_x)$ (with attention to the quadrant). Adding vectors head-to-tail is geometrically intuitive but algebraically we add components: $\vec{C}=\vec{A}+\vec{B}\Rightarrow C_x=A_x+B_x,\ C_y=A_y+B_y$. Average velocity in 2-D is $\vec{v}_{avg}=\Delta\vec{r}/\Delta t$, where $\Delta\vec{r}$ is the straight-line vector between two positions, regardless of the actual curved path.</p>
+                <ul>
+                  <li><strong>Position vector</strong> $\vec{r}=(x,y)$ measured in metres from a chosen origin.</li>
+                  <li><strong>Unit vectors</strong> $\hat{i},\hat{j}$ — dimensionless, point along $+x$ and $+y$.</li>
+                  <li><strong>Magnitude/direction</strong> form ↔ <strong>component</strong> form — equivalent representations of the same vector.</li>
+                  <li><strong>Right-triangle SI check</strong>: $[A_x]=[A_y]=[A]$; angles are dimensionless.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — resultant displacement</p>
+                  <p>A hiker walks 4.0 km east, then 3.0 km at 60° north of east. Find the resultant displacement.</p>
+                  <p>Step 1 — resolve leg 2: $x_2=3.0\cos 60°=1.5$ km; $y_2=3.0\sin 60°=2.60$ km.</p>
+                  <p>Step 2 — sum components: $x_{tot}=4.0+1.5=5.5$ km; $y_{tot}=0+2.60=2.60$ km.</p>
+                  <p>Step 3 — magnitude: $|\vec{R}|=\sqrt{5.5^2+2.60^2}=6.08$ km.</p>
+                  <p>Step 4 — direction: $\theta=\tan^{-1}(2.60/5.5)=25.3°$ N of E.</p>
+                </div>
+                <ul>
+                  <li><strong>Adding magnitudes instead of vectors</strong> — only valid if the vectors are parallel.</li>
+                  <li><strong>Forgetting the quadrant</strong> — $\tan^{-1}$ on a calculator returns angles in $(-90°,+90°)$ only.</li>
+                  <li><strong>Mixing reference frames</strong> — components must be measured from the same axes throughout the problem.</li>
+                  <li><strong>Conflating displacement and distance</strong> — distance is the path length (scalar); displacement is the net vector.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "analyse, with the aid of vector diagrams, the relative motion of objects moving with uniform velocity in two dimensions."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v3')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C1L2 (A): Displacement in Two Dimensions</span>
+                        <span class="vid-duration">57:06</span>
+                        <span class="vid-toggle" id="toggle-v3">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v3">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/003_C1L2__A___Displacement_in_Two_Dimensions.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=-XvZSFmrHhU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v4')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C1L2 (B): Velocity and Acceleration in Two Dimensions</span>
+                        <span class="vid-duration">48:33</span>
+                        <span class="vid-toggle" id="toggle-v4">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v4">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/004_C1L2__B___Velocity_and_Acceleration_in_Two_Dimensions.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=ZO7FRFRAGwQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.3 — Projectile Motion and Relative Motion</div>
+            <div class="topic-desc">Projectile motion analysis, relative velocity in 2D</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A projectile is any object launched into the air with no propulsion, subject only to gravity (air resistance neglected at this level). The key physical insight — first articulated by Galileo — is the <em>independence of horizontal and vertical motion</em>: gravity acts only vertically, so $a_x=0$ and $a_y=-g$. Horizontally the projectile undergoes uniform velocity; vertically it accelerates downward. Both motions share the same time of flight, which is the variable that "stitches" the two 1-D problems together.</p>
+                <p>For a launch from ground level at speed $v_0$ and angle $\theta$: $v_{0x}=v_0\cos\theta$, $v_{0y}=v_0\sin\theta$. Time to apex: $t_{up}=v_{0y}/g$. Maximum height: $H=v_{0y}^2/(2g)$. Range on level ground: $R=v_0^2\sin(2\theta)/g$ — maximised at $\theta=45°$ in vacuum. Relative motion follows the Galilean transformation: if frame $B$ moves with velocity $\vec{v}_{BA}$ relative to frame $A$, then an object's velocity in $A$ equals its velocity in $B$ plus $\vec{v}_{BA}$ — i.e. $\vec{v}_{PA}=\vec{v}_{PB}+\vec{v}_{BA}$. This is essential for boats crossing rivers and planes in crosswinds.</p>
+                <ul>
+                  <li><strong>$g$</strong> = 9.81 m/s² downward near Earth's surface; always positive in magnitude.</li>
+                  <li><strong>Range equation</strong> $R=v_0^2\sin 2\theta/g$ — valid only for equal launch and landing heights.</li>
+                  <li><strong>Trajectory</strong> — parabolic in vacuum; shape derived by eliminating $t$ between $x(t)$ and $y(t)$.</li>
+                  <li><strong>Relative-velocity subscript rule</strong>: $\vec{v}_{AC}=\vec{v}_{AB}+\vec{v}_{BC}$ — inner subscripts cancel.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — projectile from a cliff</p>
+                  <p>A ball is kicked horizontally at 15 m/s off a 20 m cliff. Where does it land? Take down as positive $y$.</p>
+                  <p>Step 1 — vertical: $\Delta y=\tfrac12 g t^2 \Rightarrow 20=\tfrac12(9.81)t^2 \Rightarrow t=\sqrt{40/9.81}=2.02$ s.</p>
+                  <p>Step 2 — horizontal: $x=v_{0x}t=(15)(2.02)=30.3$ m.</p>
+                  <p>Step 3 — landing velocity components: $v_x=15$ m/s, $v_y=gt=19.8$ m/s; speed $=\sqrt{15^2+19.8^2}=24.8$ m/s at $\tan^{-1}(19.8/15)=52.9°$ below horizontal.</p>
+                </div>
+                <ul>
+                  <li><strong>Adding $g$ to horizontal motion</strong> — gravity has no horizontal component; $v_x$ is constant.</li>
+                  <li><strong>Using the range formula on unequal heights</strong> — it is invalid; you must do the full $y(t)$ analysis.</li>
+                  <li><strong>Forgetting that velocity at apex is not zero</strong> — only $v_y=0$ at peak; $v_x$ persists.</li>
+                  <li><strong>Mis-applying relative-velocity addition</strong> — order matters: $\vec{v}_{PA}\ne\vec{v}_{AP}$; they are opposite.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "solve problems involving the motion of objects in horizontal, vertical, and inclined planes, using vectors, graphs, and free-body diagrams."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v5')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C1L3 (A): Projectile Motion</span>
+                        <span class="vid-duration">56:03</span>
+                        <span class="vid-toggle" id="toggle-v5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v5">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/005_C1L3__A___Projectile_Motion.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=NwRuBjCSf1I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C1L3 (B): Relative Motion</span>
+                        <span class="vid-duration">1:07:26</span>
+                        <span class="vid-toggle" id="toggle-v6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v6">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/006_C1L3__B___Relative_Motion.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=jeDTPMhQh3Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.4 — Forces and Newton's Laws</div>
+            <div class="topic-desc">Free body diagrams, Newton's three laws, net force and acceleration</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Newton's three laws are the foundation of classical mechanics. The first law (inertia) defines what an inertial reference frame is: one in which an object free of net force keeps a constant velocity. The second law $\sum\vec{F}=m\vec{a}$ is the operational definition of force — it links the kinematic quantity $\vec{a}$ to the dynamical cause. The third law states that forces come in equal-and-opposite <em>action-reaction pairs</em> acting on <em>different</em> bodies. Mistaking the third law as "two forces on the same body" causes endless confusion; the two paired forces never cancel because they are not on the same object.</p>
+                <p>A free-body diagram (FBD) is the single most important tool. You isolate one object, represent it as a dot or box, then draw every force <em>acting on it</em> with arrows. Common forces: gravity $\vec{F}_g=m\vec{g}$, normal $\vec{F}_N$ (perpendicular to surface), tension $\vec{T}$, applied force, friction $\vec{f}$, and spring $\vec{F}_s=-k\vec{x}$. Once axes are chosen (often aligned with motion), Newton's second law is written separately for each axis: $\sum F_x=ma_x$ and $\sum F_y=ma_y$.</p>
+                <ul>
+                  <li><strong>Force</strong> $\vec{F}$ — SI unit newton (N); 1 N = 1 kg·m/s².</li>
+                  <li><strong>Mass</strong> $m$ (kg) — measure of inertia, frame-invariant in classical mechanics.</li>
+                  <li><strong>Weight</strong> $W=mg$ (N) — gravitational force, not the same as mass.</li>
+                  <li><strong>Normal force</strong> $F_N$ — a constraint force; adjusts itself to prevent interpenetration.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — elevator problem</p>
+                  <p>A 70.0 kg person stands on a scale in an elevator that accelerates upward at 1.20 m/s². What does the scale read?</p>
+                  <p>Step 1 — FBD: weight $mg$ down, normal $F_N$ up (scale reading).</p>
+                  <p>Step 2 — Newton II (up = +): $F_N-mg=ma \Rightarrow F_N=m(g+a)$.</p>
+                  <p>Step 3 — substitute: $F_N=70.0(9.81+1.20)=770.7$ N. Apparent weight ≈ 78.6 kg of force.</p>
+                  <p>Step 4 — interpret: scale reads more than rest weight because elevator accelerates upward.</p>
+                </div>
+                <ul>
+                  <li><strong>Pairing forces incorrectly under Newton III</strong> — gravity on you and normal on you are NOT an action-reaction pair (same body); gravity on you and gravity on Earth IS.</li>
+                  <li><strong>Confusing mass and weight</strong> — mass is in kg; weight is a force in N and changes with $g$.</li>
+                  <li><strong>Drawing forces from objects, not on objects</strong> — only forces <em>acting on</em> the chosen body belong on its FBD.</li>
+                  <li><strong>Forgetting the normal force is not always $mg$</strong> — on an incline or in an accelerating elevator it differs.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.2 — "analyse and describe, using Newton's laws, the forces acting on an object, and use free-body diagrams to determine net force and acceleration."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-2-Newtons-2nd-Law-1-Dim.pdf" target="_blank" class="pdf-link">📄 Newton 2nd Law — 1D Problems</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-3-Newtons-2nd-Law-2-Dim.pdf" target="_blank" class="pdf-link">📄 Newton 2nd Law — 2D Problems</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v7')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C2L1 (A): Forces and Free-Body Diagrams</span>
+                        <span class="vid-duration">48:30</span>
+                        <span class="vid-toggle" id="toggle-v7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v7">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/007_C2L1__A___Forces_and_Free-Body_Diagrams.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=EnpgITSK1Hs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C2L1 (B): Newton’s Laws of Motion</span>
+                        <span class="vid-duration">32:40</span>
+                        <span class="vid-toggle" id="toggle-v8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v8">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/008_C2L1__B___Newton_s_Laws_of_Motion.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=rjhSqzEKLj8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.5 — Applying Newton's Laws and Friction</div>
+            <div class="topic-desc">Multi-body problems, static and kinetic friction, inclined planes</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Real Newton's-law problems usually have multiple bodies connected by strings, pushed up inclines, or sliding against rough surfaces. The strategy is unchanged but disciplined: choose your system, draw an FBD for <em>each</em> body separately, pick axes (on an incline, tilt them along the slope), and write Newton II for each axis. For connected bodies on a single inextensible string, the magnitude of acceleration is the same for both — that constraint plus the two Newton-II equations gives you a closed system of equations.</p>
+                <p>Friction opposes <em>relative</em> motion (or attempted motion) between surfaces. Static friction $f_s\le\mu_s F_N$ adjusts itself up to a maximum to prevent slipping; once $f_s$ would exceed $\mu_s F_N$, slipping begins and kinetic friction $f_k=\mu_k F_N$ takes over (typically $\mu_k<\mu_s$). On an incline of angle $\theta$ with no friction, the component of gravity along the slope is $mg\sin\theta$, and the normal force is $mg\cos\theta$. The acceleration of a block sliding freely down is $a=g\sin\theta$; with kinetic friction included it becomes $a=g(\sin\theta-\mu_k\cos\theta)$.</p>
+                <ul>
+                  <li><strong>Coefficient of friction</strong> $\mu$ — dimensionless; depends on surface pair, not area.</li>
+                  <li><strong>Tension</strong> $T$ — internal force in an ideal massless string, same throughout.</li>
+                  <li><strong>Normal force on incline</strong>: $F_N=mg\cos\theta$ (only if no extra perpendicular forces).</li>
+                  <li><strong>Atwood constraint</strong>: $|a_1|=|a_2|$, $T_1=T_2$ for ideal pulley.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — block on rough incline</p>
+                  <p>A 5.0 kg block slides down a 30° incline with $\mu_k=0.20$. Find the acceleration.</p>
+                  <p>Step 1 — tilt axes along slope (+ down-slope). FBD: $mg\sin\theta$ down-slope, $\mu_k F_N$ up-slope, $F_N=mg\cos\theta$ ⊥.</p>
+                  <p>Step 2 — Newton II along slope: $ma=mg\sin\theta-\mu_k mg\cos\theta$.</p>
+                  <p>Step 3 — divide by $m$: $a=g(\sin 30°-0.20\cos 30°)=9.81(0.500-0.173)=3.21\,\text{m/s}^2$.</p>
+                  <p>Step 4 — direction: positive means down the slope. Check: if $\mu_k\ge\tan\theta$, the block would not accelerate — here $0.20<\tan 30°=0.577$, so it slides. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Using $\mu_s$ when the block is already moving</strong> — must switch to $\mu_k$ once sliding.</li>
+                  <li><strong>Forgetting friction is parallel to surface</strong>, not horizontal.</li>
+                  <li><strong>Wrong normal force on incline</strong> — it is $mg\cos\theta$, not $mg$.</li>
+                  <li><strong>Treating tension as different on each side of an ideal pulley</strong> — for a massless, frictionless pulley it is the same.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "predict, in qualitative and quantitative terms, the forces acting on systems of objects (e.g., on an inclined plane, on a pulley system), and verify the predictions experimentally."</p>
+              </div>
+            </details>
+            
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-4-Friction-Problems-2015.pdf" target="_blank" class="pdf-link">📄 Friction Problems</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-7-Friction-Practice-Quiz.pdf" target="_blank" class="pdf-link">📄 Friction Practice Quiz</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-8-Friction-Review-Problems.pdf" target="_blank" class="pdf-link">📄 Friction Review Problems</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-10-Towing-and-Cabling-Questions.pdf" target="_blank" class="pdf-link">📄 Towing & Cabling Questions</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v9')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C2L2 (A): Applying Newton’s Laws of Motion</span>
+                        <span class="vid-duration">58:49</span>
+                        <span class="vid-toggle" id="toggle-v9">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v9">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/009_C2L2__A___Applying_Newton_s_Laws_of_Motion.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=NcPDg55N11E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v10')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C2L2 (B): Forces of Friction</span>
+                        <span class="vid-duration">54:24</span>
+                        <span class="vid-toggle" id="toggle-v10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v10">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/010_C2L2__B___Forces_of_Friction.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=J6jGCBTydRM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.6 — Circular Motion</div>
+            <div class="topic-desc">Centripetal acceleration and force, banked curves, vertical loops</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An object moving in a circle at constant speed is still <em>accelerating</em> because its velocity vector is constantly changing direction. The direction of this centripetal ("centre-seeking") acceleration is always toward the centre of the circle, and its magnitude is $a_c=v^2/r=\omega^2 r$, where $\omega=2\pi/T=2\pi f$ is the angular speed. The deep <em>why</em>: in time $\Delta t$, the velocity vector rotates through angle $\Delta\theta=v\Delta t/r$, so $|\Delta\vec{v}|\approx v\Delta\theta$ and $a=|\Delta\vec{v}|/\Delta t=v^2/r$.</p>
+                <p>Critically, "centripetal force" is not a new kind of force — it is the <em>net</em> radially-inward force, whatever its physical source: tension for a ball on a string, gravity for a satellite, friction for a car turning on a flat road, the horizontal component of normal force on a banked curve. On a properly banked frictionless curve of angle $\theta$: $\tan\theta=v^2/(rg)$. At the top of a vertical loop, gravity helps supply centripetal force; the minimum speed at which the track exerts zero normal force satisfies $v_{min}=\sqrt{rg}$.</p>
+                <ul>
+                  <li><strong>Period</strong> $T$ (s); <strong>frequency</strong> $f=1/T$ (Hz); <strong>angular speed</strong> $\omega=2\pi f$ (rad/s).</li>
+                  <li><strong>Centripetal acceleration</strong> $a_c=v^2/r$ (m/s²); always perpendicular to $\vec{v}$.</li>
+                  <li><strong>Centripetal force</strong> $F_c=mv^2/r$ — the <em>net</em> radial force, not a separate force on the FBD.</li>
+                  <li><strong>Tangential vs radial</strong>: tangential force changes speed; radial force changes direction only.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example — car on a flat curve</p>
+                  <p>A 1200 kg car rounds a flat curve of radius 50 m at 20 m/s. What minimum coefficient of static friction is needed?</p>
+                  <p>Step 1 — required centripetal force: $F_c=mv^2/r=1200(20)^2/50=9600$ N inward.</p>
+                  <p>Step 2 — friction provides it: $f_s\ge F_c$, with $f_s\le\mu_s F_N=\mu_s mg$.</p>
+                  <p>Step 3 — solve $\mu_s\ge v^2/(rg)=400/(50\cdot 9.81)=0.816$.</p>
+                  <p>Step 4 — interpret: on wet asphalt ($\mu_s\approx 0.4$), the car would skid; needs a banked curve or slower speed.</p>
+                </div>
+                <ul>
+                  <li><strong>Drawing a "centripetal force" as an extra arrow</strong> — it is the resultant of real forces, not a separate one.</li>
+                  <li><strong>Including a fictitious "centrifugal" outward force</strong> in an inertial frame — there isn't one.</li>
+                  <li><strong>Confusing $v$ (linear) and $\omega$ (angular)</strong> — related by $v=\omega r$, units differ (m/s vs rad/s).</li>
+                  <li><strong>Forgetting direction of $\vec{a}_c$</strong> — it points toward the centre at every instant, not along $\vec{v}$.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "analyse, in qualitative and quantitative terms, the forces acting on an object in uniform circular motion."</p>
+              </div>
+            </details>
+            
+            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-15-Centripetal-Meets-Gravity-Solutions.pdf" target="_blank" class="pdf-link">📄 Centripetal Meets Gravity — Solutions</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-16-Loop-De-Loop-Problems-1.pdf" target="_blank" class="pdf-link">📄 Loop-de-Loop Problems</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-20-Centripetal-Review-Problems.pdf" target="_blank" class="pdf-link">📄 Centripetal Review Problems</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Day-20-Linear-Dynamics-Review-Problems.pdf" target="_blank" class="pdf-link">📄 Linear Dynamics Review</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Summary-Notes-Centripetal-and-Gravity.pdf" target="_blank" class="pdf-link">📄 Summary — Centripetal & Gravity</a>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Summary-Notes-Vertical-Loops-g-Forces-Friction.pdf" target="_blank" class="pdf-link">📄 Summary — Vertical Loops & g Forces</a>
+            </div>
+<div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v11')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C3L1: Inertial and Non-inertial Frames of Reference, and Centripetal Acceleration</span>
+                        <span class="vid-duration">1:39:41</span>
+                        <span class="vid-toggle" id="toggle-v11">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v11">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/011_C3L1__Inertial_and_Non-inertial_Frames_of_Reference__and_Centripetal_Acceleration.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=wjci3bycuwk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v12')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">C3L2: Centripetal Force and Rotating Frames of Reference</span>
+                        <span class="vid-duration">1:51:40</span>
+                        <span class="vid-toggle" id="toggle-v12">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v12">
+                        <video controls preload="none">
+                            <source src="https://storage.googleapis.com/dondelete_vi/SPH4U/012_C3L2__Centripetal_Force_and_Rotating_Frames_of_Reference.mp4" type="video/mp4">
+                        </video>
+                        <a href="https://youtube.com/watch?v=GhJX1or8tqE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph4u/Unit1_Dynamics_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph4u/Unit1_Dynamics_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph4u/Unit1_Dynamics_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+            <div style="margin-top:10px;"><a href="../../assessments/sph4u/Strand_A_Dynamics_Notes_and_Worksheet.html" style="display:inline-block;padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Strand A — Notes &amp; Worksheet</a></div>
+        </div>
+
+        <div class="assessment-card">
+            <div class="a-icon">✅</div>
+            <div class="a-body">
+                <h4>Unit 1 Test</h4>
+                <p>Summative assessment — counts toward 70% term mark</p>
+                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit-Test-Dynamics-2019-04.pdf" target="_blank">View Unit Test →</a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+<a href="../sph4u.html" style="padding:10px 18px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">← Back to course</a>
+<a href="ch2.html" style="padding:10px 18px;background:#dc2626;color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Ch 2 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH4U Physics · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

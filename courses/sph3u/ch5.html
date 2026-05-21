@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Physics (Grade 11) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\(', '\)']], displayMath: [['\[', '\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #ea580c; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #dc2626dd, #dc2626);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../sph3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SPH3U Physics)</a></div>
+    <div class="strand-tag">Science — Grade 11 University Preparation</div>
+    <h1>⚡ SPH3U: Unit 5: Electricity and Magnetism</h1>
+    <p>Charge, current, voltage, resistance, Ohm's law, series &amp; parallel circuits, magnetism, motors, generators</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg, #dc2626dd, #dc2626);">
+            <h2>Unit 5: Electricity and Magnetism</h2>
+            <p>Charge, current, voltage, resistance, Ohm's law, series &amp; parallel circuits, magnetism, motors, generators</p>
+            <div class="unit-meta">
+                <span>📚 Strand F: E &amp; M</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 — Electric Charge &amp; Static Electricity</div>
+            <div class="topic-desc">Coulomb (qualitative), conductors vs. insulators, charging by friction, induction, contact</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Electric charge</strong> is a fundamental property of matter, just as mass is. Charges come in two types — <em>positive</em> (held by protons in atomic nuclei) and <em>negative</em> (held by electrons orbiting the nucleus). Like charges repel; opposite charges attract. The unit of charge is the coulomb (C); the elementary charge carried by a proton or (oppositely) by an electron is \( e = 1.60 \times 10^{-19}\ \text{C} \). One coulomb is therefore the charge of about 6.24 × 10¹⁸ electrons — a very large amount, which is why typical static-electricity charges are microcoulombs.</p>
+                <p>Charge obeys a strict conservation law: the total electric charge in an isolated system is constant. Charging an object does not create new charge — it transfers electrons from one object to another. Three common processes transfer charge. <em>Friction</em> (e.g. rubbing a balloon on hair) strips electrons from one material onto the other, leaving them oppositely charged. <em>Conduction</em> (direct contact) shares charge between two objects until they reach the same potential. <em>Induction</em> uses a charged object to rearrange charges in a neutral one without touching it; if the neutral object is briefly grounded, electrons can flow off (or onto) it, leaving it net charged after the ground is removed.</p>
+                <p>Materials differ in how easily charges flow within them. <strong>Conductors</strong> (metals, salt water, plasma) have many free electrons and allow charge to redistribute almost instantly. <strong>Insulators</strong> (rubber, glass, dry wood, plastic) hold electrons tightly in place; charge stays where you put it. Semi-conductors (silicon, germanium) lie between the two extremes and form the basis of all modern electronics. Coulomb's law \( F = kq_1q_2/r^2 \) (treated qualitatively at the Grade 11 level) quantifies the force between point charges.</p>
+                <ul>
+                  <li><strong>Electric charge</strong> q — coulomb (C); scalar</li>
+                  <li><strong>Elementary charge</strong> e = 1.60 × 10⁻¹⁹ C</li>
+                  <li><strong>Conservation of charge</strong> — total q in isolated system is constant</li>
+                  <li><strong>Conductor</strong> — free electrons; metals, ionic solutions</li>
+                  <li><strong>Insulator</strong> — bound electrons; rubber, glass, dry air</li>
+                  <li><strong>Charging by friction</strong> — electron transfer via rubbing</li>
+                  <li><strong>Charging by induction</strong> — charge separation without contact</li>
+                  <li><strong>Grounding</strong> — connecting to Earth as an electron reservoir</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Balloon on the wall</p>
+                  <p>A student rubs a balloon on her hair, then holds it against a wall. The balloon sticks. Explain what happens in terms of charge transfer and induction.</p>
+                  <p><strong>Step 1.</strong> Charging by friction: rubbing removes electrons from hair onto the balloon (rubber holds electrons more tightly than human hair, which sits higher on the triboelectric series). The balloon becomes negatively charged; hair becomes positively charged.</p>
+                  <p><strong>Step 2.</strong> Bring the negative balloon near the neutral wall. Electrons in the wall's surface layer (free in the small dipoles of the insulating paint and plaster) are repelled away from the balloon, leaving the surface of the wall closest to the balloon with a small positive charge — this is <em>induced</em> polarisation.</p>
+                  <p><strong>Step 3.</strong> The (−) balloon attracts the (+) induced charge on the wall surface. Because attraction is between closer charges and repulsion is between farther charges, the net force is attractive.</p>
+                  <p><strong>Step 4.</strong> Estimate: if a typical balloon carries about \( 10^{-8}\ \text{C} \) of charge after rubbing (about 6 × 10¹⁰ excess electrons), Coulomb's law predicts attractive forces of millinewtons — easily enough to hold a few-gram balloon against gravity.</p>
+                </div>
+                <ul>
+                  <li><strong>Believing protons are transferred during friction</strong> — only electrons move (protons are locked in nuclei)</li>
+                  <li><strong>Saying "the balloon becomes positively charged" after rubbing on hair</strong> — depends on which material is higher on triboelectric series; for hair → balloon, balloon goes negative</li>
+                  <li><strong>Forgetting that induction does not transfer net charge</strong> unless followed by grounding</li>
+                  <li><strong>Confusing "static" with "stationary"</strong> — static charges can produce huge sparks (lightning)</li>
+                  <li><strong>Treating Coulomb force as 1/r instead of 1/r²</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.1 — "describe and explain the properties of electric charge, including the laws of electric charges (e.g., like charges repel, opposite charges attract)."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Electric Charge: Crash Course Physics</span>
+                    <span class="vid-duration">09:23</span>
+                    <span class="vid-toggle" id="toggle-u5v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/TFlVWf8JX4A?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=TFlVWf8JX4A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt17')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Coulomb's Law — Charge &amp; Force Introduction (SPH4U Bridge) — Khan Academy</span>
+                    <span class="vid-duration">11:28</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt17">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt17">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/MsINeZMeTMQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=MsINeZMeTMQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 — Current, Voltage, Resistance &amp; Ohm's Law</div>
+            <div class="topic-desc">\( I = Q/t \), \( V = IR \), measuring with ammeter (series) and voltmeter (parallel)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>electric current</strong> is a flow of charge. Quantitatively, \( I = Q/t \), where Q is the charge (coulombs) passing a point in the circuit in time t (seconds). The unit is the ampere (A): 1 A = 1 C/s. By historical convention (Benjamin Franklin's guess) conventional current is the direction positive charges would flow — opposite to the actual electron motion in a metal wire. In Grade 11 we use conventional current in all circuit analysis. A 1 A current corresponds to about 6 × 10¹⁸ electrons passing per second — a huge number but a modest current; a typical LED bulb draws roughly 0.05 A, a kettle 12 A.</p>
+                <p><strong>Voltage</strong> (potential difference) V is the energy per unit charge supplied or used between two points: \( V = E/Q \), measured in volts (V) where 1 V = 1 J/C. A battery or cell does work against an internal electric field to "lift" each coulomb of charge to a higher potential; the charge then flows through the external circuit, delivering its energy to bulbs, motors, or heaters. Voltage is like a height difference; current is like the flow rate; resistance is like the narrowness of the pipe.</p>
+                <p><strong>Resistance</strong> R opposes the flow of current and converts electrical energy into thermal energy. <strong>Ohm's law</strong> states \( V = IR \) for an "ohmic" conductor (most metals at constant temperature). R is measured in ohms (Ω); 1 Ω = 1 V/A. To measure these quantities: an <em>ammeter</em> is connected <em>in series</em> with the component (so all the current flows through it; it has very low internal resistance). A <em>voltmeter</em> is connected <em>in parallel</em> with the component (so it does not divert current; it has very high internal resistance). Reversing this leads to short circuits or no reading.</p>
+                <ul>
+                  <li><strong>Current</strong> I = Q/t — ampere (A); scalar with direction (conventional = + charge flow)</li>
+                  <li><strong>Charge</strong> Q — coulomb (C); 1 A·s</li>
+                  <li><strong>Voltage</strong> V = E/Q — volt (V); 1 J/C</li>
+                  <li><strong>Resistance</strong> R = V/I — ohm (Ω); 1 V/A</li>
+                  <li><strong>Ohm's law</strong> — V = IR for an ohmic conductor</li>
+                  <li><strong>Ammeter</strong> — connected in series, low R</li>
+                  <li><strong>Voltmeter</strong> — connected in parallel, high R</li>
+                  <li><strong>Electrical power</strong> P = VI — watt (W); also P = I²R = V²/R</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Resistance of a light bulb</p>
+                  <p>A 60 W incandescent bulb is plugged into a 120 V outlet. Find the current it draws and its operating resistance.</p>
+                  <p><strong>Step 1.</strong> Use \( P = VI \): \( I = P/V = 60/120 = 0.50\ \text{A} \).</p>
+                  <p><strong>Step 2.</strong> Apply Ohm's law: \( R = V/I = 120/0.50 = 240\ \Omega \).</p>
+                  <p><strong>Step 3.</strong> Sanity check with \( P = V^2/R \): \( P = 120^2/240 = 14400/240 = 60\ \text{W} \). ✓</p>
+                  <p><strong>Step 4.</strong> Energy used in 1 hour: \( E = P \cdot t = 60\ \text{W} \times 3600\ \text{s} = 216\,000\ \text{J} = 0.060\ \text{kWh} \). At Ontario's average electricity price of 12 ¢/kWh, the bulb costs about 0.72 ¢ per hour.</p>
+                  <p><strong>Step 5.</strong> Replace with a 9 W LED bulb (same brightness): \( I = 0.075\ \text{A} \), saving 51 W and reducing CO₂ emissions accordingly.</p>
+                </div>
+                <ul>
+                  <li><strong>Connecting an ammeter in parallel</strong> — its low R creates a short circuit</li>
+                  <li><strong>Connecting a voltmeter in series</strong> — its high R blocks the current</li>
+                  <li><strong>Mixing up V and I in formulas</strong> — voltage = current × resistance, not the reverse</li>
+                  <li><strong>Forgetting Ohm's law fails when R changes</strong> — a filament's R increases with temperature</li>
+                  <li><strong>Confusing power (W) with energy (J or kWh)</strong></li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.4 — "solve problems involving current, charge, voltage, resistance, power, and energy in simple electric circuits."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Voltage, Current, Resistance &amp; Ohm's Law — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">09:33</span>
+                    <span class="vid-toggle" id="toggle-u5v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/_rSHqvjDksg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=_rSHqvjDksg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 — Series &amp; Parallel Circuits</div>
+            <div class="topic-desc">\( R_T \) for series and parallel; \( I, V \) splitting rules; mixed networks</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Circuits combine multiple resistors in two basic ways. In a <strong>series</strong> connection, components are joined end-to-end so that the same current passes through each in turn. There is only one path for the current. In a <strong>parallel</strong> connection, components are placed on separate branches that share common end-points; the current splits among the branches, but every branch experiences the same voltage. Most household wiring is parallel — that way each appliance gets the full 120 V regardless of what else is plugged in.</p>
+                <p>The rules for combining resistors follow from conservation of charge (Kirchhoff's current law) and conservation of energy (Kirchhoff's voltage law). For resistors in <em>series</em>: \( R_T = R_1 + R_2 + R_3 + \ldots \); the total resistance is always larger than any individual resistor. The current is the same everywhere: \( I_T = I_1 = I_2 \). Voltages add: \( V_T = V_1 + V_2 \). For resistors in <em>parallel</em>: \( 1/R_T = 1/R_1 + 1/R_2 + 1/R_3 + \ldots \); the total resistance is always smaller than the smallest branch resistance, because adding paths makes it easier for current to flow. The voltage is the same across each branch: \( V_T = V_1 = V_2 \). Currents add: \( I_T = I_1 + I_2 \).</p>
+                <p>Mixed (combination) circuits are solved by breaking them into series and parallel sub-networks, simplifying step by step until a single equivalent resistance remains. Then work back to find the current and voltage in each component. Real circuits in homes use parallel wiring with a circuit breaker (a current limiter) on each branch — if you plug in too many appliances, the total current in the supply wire exceeds the rating and the breaker opens to prevent fire.</p>
+                <ul>
+                  <li><strong>Series</strong> — single path; \( R_T = R_1 + R_2 + \ldots \); same I, voltages add</li>
+                  <li><strong>Parallel</strong> — multiple paths; \( 1/R_T = 1/R_1 + 1/R_2 + \ldots \); same V, currents add</li>
+                  <li><strong>Kirchhoff's current law (KCL)</strong> — \( \Sigma I_\text{in} = \Sigma I_\text{out} \) at any junction</li>
+                  <li><strong>Kirchhoff's voltage law (KVL)</strong> — sum of voltage rises = sum of drops around any loop</li>
+                  <li><strong>Voltage divider</strong> — series resistors split V in proportion to their R</li>
+                  <li><strong>Current divider</strong> — parallel resistors split I in inverse proportion to their R</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Series–parallel combination</p>
+                  <p>A 12 V battery is connected to a 6 Ω resistor in series with a parallel combination of a 4 Ω and a 12 Ω resistor. Find the total resistance, the current from the battery, and the current through each resistor.</p>
+                  <p><strong>Step 1.</strong> Simplify the parallel pair first: \( 1/R_\text{p} = 1/4 + 1/12 = 3/12 + 1/12 = 4/12 \), so \( R_\text{p} = 3.0\ \Omega \).</p>
+                  <p><strong>Step 2.</strong> Total resistance: \( R_T = 6 + 3 = 9.0\ \Omega \).</p>
+                  <p><strong>Step 3.</strong> Battery current: \( I_T = V/R_T = 12/9 = 1.33\ \text{A} \). All this current flows through the 6 Ω resistor.</p>
+                  <p><strong>Step 4.</strong> Voltage across the parallel pair: \( V_\text{p} = I_T R_\text{p} = 1.33 \times 3 = 4.0\ \text{V} \).</p>
+                  <p><strong>Step 5.</strong> Current through the 4 Ω: \( I_4 = 4/4 = 1.0\ \text{A} \); through the 12 Ω: \( I_{12} = 4/12 = 0.33\ \text{A} \). Check KCL: 1.0 + 0.33 = 1.33 A = battery current. ✓</p>
+                </div>
+                <ul>
+                  <li><strong>Adding parallel resistors directly</strong> — must use reciprocals or product/sum formula</li>
+                  <li><strong>Assuming current is the same in a parallel circuit</strong> — voltage is the same; current splits</li>
+                  <li><strong>Believing parallel R is the average</strong> — it is smaller than the smallest</li>
+                  <li><strong>Forgetting to convert milliamps to amps</strong> — 250 mA = 0.250 A</li>
+                  <li><strong>Mixing up series-rule and parallel-rule</strong> — sketch the circuit before applying formulas</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.5 — "investigate, through laboratory inquiry, the relationships among the variables involved in current, charge, time, voltage, energy, and electrical resistance in series and parallel circuits."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Series &amp; Parallel Circuits — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">23:43</span>
+                    <span class="vid-toggle" id="toggle-u5v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/7mdc-lRrW1c?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=7mdc-lRrW1c" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.4 — Magnetism &amp; Electromagnetism</div>
+            <div class="topic-desc">Magnetic fields, right-hand rules, force on a current-carrying conductor</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>magnetic field</strong> \( \vec{B} \) is a region of space where magnetic forces are exerted on moving charges and on materials made of certain atoms (iron, cobalt, nickel — ferromagnetic). The unit of magnetic field strength is the tesla (T); Earth's surface field is only about 50 μT, while an MRI scanner runs at 1.5–3 T. Magnetic field lines run from the north pole of a magnet to the south pole outside the magnet, and from south to north inside. Like poles repel; unlike poles attract. Magnets always have two poles — there are no isolated magnetic monopoles, as far as anyone has observed.</p>
+                <p>Hans Christian Ørsted's accidental 1820 discovery — that a wire carrying current deflects a compass needle — revealed that <em>electricity and magnetism are aspects of one phenomenon: electromagnetism</em>. A current-carrying wire produces a magnetic field that loops around it; the direction is given by the <strong>first right-hand rule</strong>: point your right thumb in the direction of conventional current, and your fingers curl in the direction of \( \vec{B} \). For a long straight wire, \( B \) decreases with distance from the wire. For a coil (solenoid), the fields of every loop add to produce a uniform field along the axis, much like a bar magnet — this is how electromagnets are made.</p>
+                <p>A current in a magnetic field experiences a force: \( \vec{F} = I\vec{L}\times\vec{B} \), with magnitude \( F = BIL\sin\theta \), where θ is the angle between current and field. The direction of the force is given by the <strong>third right-hand rule</strong> (the "motor rule"): fingers point in the current direction, curl them toward \( \vec{B} \); the thumb gives the force direction. This is the working principle of every electric motor, every loudspeaker, every MRI gradient coil, and every Hall-effect sensor.</p>
+                <ul>
+                  <li><strong>Magnetic field</strong> \( \vec{B} \) — tesla (T); 1 T = 1 N/(A·m)</li>
+                  <li><strong>Magnetic field lines</strong> — closed loops; N→S outside, S→N inside</li>
+                  <li><strong>Right-hand rule #1</strong> — thumb = current, fingers curl = field around wire</li>
+                  <li><strong>Right-hand rule #2 (solenoid)</strong> — fingers curl with current, thumb = north pole</li>
+                  <li><strong>Right-hand rule #3 (motor)</strong> — current → field → force directions</li>
+                  <li><strong>Force on a wire</strong> F = BIL sin θ</li>
+                  <li><strong>Domains</strong> — microscopic regions in a ferromagnet that align in an external field</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Force on a current-carrying wire</p>
+                  <p>A horizontal wire 0.50 m long carries 4.0 A toward the east. It lies in a uniform magnetic field of 0.25 T pointing north. Find the magnitude and direction of the force on the wire.</p>
+                  <p><strong>Step 1.</strong> Angle between current (east) and field (north) is 90°, so \( \sin\theta = 1 \).</p>
+                  <p><strong>Step 2.</strong> Force magnitude: \( F = BIL\sin\theta = (0.25)(4.0)(0.50)(1) = 0.50\ \text{N} \).</p>
+                  <p><strong>Step 3.</strong> Direction by right-hand rule: point fingers east (current), curl them to point north (field). The thumb points up (out of the ground). So the force is vertically upward, 0.50 N.</p>
+                  <p><strong>Step 4.</strong> Physical interpretation: this is exactly how a railgun or maglev train works — current crossed with a strong field gives mechanical force. Reversing the current direction reverses the force direction (a key idea for DC motors).</p>
+                  <p><strong>Step 5.</strong> If the wire were aligned with the field (current also pointing north), θ = 0 and F = 0 — no force.</p>
+                </div>
+                <ul>
+                  <li><strong>Using the left hand</strong> — conventional current uses the right hand; left-hand rules apply only to electron flow</li>
+                  <li><strong>Forgetting sin θ</strong> — force is zero when current is parallel to field</li>
+                  <li><strong>Calling magnetic field lines "lines of force"</strong> — they show direction, not magnitude of force on charge</li>
+                  <li><strong>Believing magnets attract all metals</strong> — only ferromagnetic (Fe, Co, Ni and some alloys)</li>
+                  <li><strong>Treating B and F as the same direction</strong> — F is perpendicular to both I and B</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F3.4 — "describe and explain the magnetic field around a current-carrying conductor, and the electromagnetic force between a current-carrying conductor and an external magnetic field."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Magnetism: Crash Course Physics</span>
+                    <span class="vid-duration">10:48</span>
+                    <span class="vid-toggle" id="toggle-u5v4">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/s94suB5uLWw?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=s94suB5uLWw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.5 — Motors, Generators &amp; Electromagnetic Induction</div>
+            <div class="topic-desc">Faraday's law (qualitative), simple DC motor, AC generator, transformers (intro)</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The deep symmetry between electricity and magnetism is captured in two complementary devices. A <strong>motor</strong> uses an electric current in a magnetic field to produce mechanical motion: \( F = BIL \) on each side of a current-carrying loop produces a torque that rotates the loop. A simple DC motor adds a <em>commutator</em> (a split ring) that reverses the current direction every half-turn so the torque always rotates the loop the same way. Motors convert electrical energy into mechanical energy and are everywhere: electric cars, kitchen blenders, hard drives, drones, robots.</p>
+                <p>A <strong>generator</strong> does the reverse: it uses mechanical motion in a magnetic field to produce electric current. Discovered by Michael Faraday and Joseph Henry independently in 1831, this is the principle of <em>electromagnetic induction</em>: a changing magnetic flux through a coil <em>induces</em> a voltage (EMF) in the coil. <strong>Faraday's law</strong> (qualitative form at Grade 11): the induced EMF is proportional to the rate of change of magnetic flux. <strong>Lenz's law</strong> tells us the direction of the induced current: it always opposes the change in flux that caused it (a consequence of energy conservation). Rotating a coil in a fixed field generates an alternating current (AC); this is how the Niagara Falls hydro turbines, nuclear-plant steam turbines, and wind turbines all generate Ontario's electricity.</p>
+                <p>A <strong>transformer</strong> uses two coils wound on a shared iron core. AC in the primary creates a changing flux through the secondary, inducing an AC voltage there. The voltage ratio equals the turns ratio: \( V_2/V_1 = N_2/N_1 \). Step-up transformers raise the voltage for long-distance transmission (less current → less I²R loss in the lines), and step-down transformers lower it again for safe household use. Transformers only work with AC, which is one of the historical reasons the grid uses AC.</p>
+                <ul>
+                  <li><strong>Motor</strong> — electrical → mechanical energy via F = BIL on a current loop</li>
+                  <li><strong>Commutator</strong> — split ring that reverses current each half-turn (DC motor)</li>
+                  <li><strong>Generator</strong> — mechanical → electrical via EM induction</li>
+                  <li><strong>Faraday's law</strong> — EMF ∝ rate of change of magnetic flux</li>
+                  <li><strong>Lenz's law</strong> — induced current opposes the flux change that caused it</li>
+                  <li><strong>EMF</strong> ε — induced voltage; volts</li>
+                  <li><strong>Magnetic flux</strong> Φ = BA cos θ — weber (Wb); 1 Wb = 1 T·m²</li>
+                  <li><strong>Transformer</strong> — \( V_2/V_1 = N_2/N_1 \); AC only</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Step-down transformer for a phone charger</p>
+                  <p>A phone charger contains a transformer that steps 120 V AC down to 5.0 V to charge the battery. The primary coil has 1200 turns. (a) How many turns are needed in the secondary? (b) If the charger draws 0.10 A from the wall, what current does it deliver to the phone (assume ideal)?</p>
+                  <p><strong>Step 1.</strong> Turns ratio: \( N_2/N_1 = V_2/V_1 \), so \( N_2 = N_1 \cdot V_2/V_1 = 1200 \times 5.0/120 = 50 \) turns.</p>
+                  <p><strong>Step 2.</strong> Ideal transformers conserve power: \( P_\text{in} = P_\text{out} \), so \( V_1 I_1 = V_2 I_2 \), giving \( I_2 = V_1 I_1 / V_2 = 120 \times 0.10/5.0 = 2.4\ \text{A} \).</p>
+                  <p><strong>Step 3.</strong> Sanity check: voltage dropped by factor 24 (120/5), current rose by factor 24 (2.4/0.10). Product VI is unchanged (12 W in = 12 W out). ✓</p>
+                  <p><strong>Step 4.</strong> Real chargers are about 85% efficient because of core losses and resistance, so the actual current is somewhat less than 2.4 A and the rest becomes heat — which is why your charger feels warm.</p>
+                  <p><strong>Step 5.</strong> Without transformers, transmitting power from Niagara Falls to Toronto at 120 V would require currents of millions of amps with enormous I²R losses; high-voltage lines (e.g. 500 kV) move the same power at 1/4000 the current, slashing losses by a factor of 16 million.</p>
+                </div>
+                <ul>
+                  <li><strong>Using transformers on DC</strong> — DC creates no changing flux, so no induced EMF</li>
+                  <li><strong>Forgetting that induced EMF requires <em>change</em> in flux</strong> — a stationary magnet near a stationary coil produces no current</li>
+                  <li><strong>Mixing up motor and generator roles</strong> — motor consumes electrical energy, generator produces it</li>
+                  <li><strong>Treating EMF as power instead of voltage</strong> — EMF is V, work per coulomb</li>
+                  <li><strong>Believing transformers create energy</strong> — they trade V for I at constant P (minus losses)</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand F, Expectation F2.6 — "investigate, through laboratory inquiry or computer simulation, the operation of an electric motor and an electric generator, and explain how each operates in terms of the forces and fields involved."</p>
+              </div>
+            </details>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt11')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">World's First Electric Generator — Veritasium</span>
+                    <span class="vid-duration">04:34</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt11">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt11">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/NqdOyxJZj0U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=NqdOyxJZj0U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt12')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Faraday's Law of Electromagnetic Induction, Magnetic Flux &amp; Induced EMF — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">14:11</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt12">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt12">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LDOa7UdfcMQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=LDOa7UdfcMQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/sph3u/Unit5_Electricity_and_Magnetism_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/sph3u/Unit5_Electricity_and_Magnetism_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/sph3u/Unit5_Electricity_and_Magnetism_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../sph3u.html" class="chnav-btn chnav-next chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH3U — Physics, Grade 11 · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

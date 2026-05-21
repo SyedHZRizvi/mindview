@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#15803ddd,#15803d);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../mdm4u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MDM4U Mathematics of Data Management)</a></div>
+    <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+    <h1>📊 MDM4U: Chapter 2: Permutations</h1>
+    <p>Arrangements with order: factorial notation, distinct objects, indistinguishable objects, restricted arrangements, circular permutations</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+    <div class="unit-header" style="background:linear-gradient(135deg,#15803ddd,#15803d);">
+        <h2>Chapter 2: Permutations</h2>
+        <p>Arrangements with order: factorial notation, distinct objects, indistinguishable objects, restricted arrangements, circular permutations</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 A2.1–A2.4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.1 — Factorial Notation</div>
+        <div class="topic-desc">Definition \( n! = n(n-1)(n-2)\cdots 1 \); convention \( 0! = 1 \); evaluation and simplification of factorial expressions.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>factorial</strong> \(n!\) counts the number of ways to arrange \(n\) distinct objects in a sequence. To build such an arrangement we place an object in position 1 (\(n\) choices), then position 2 (\(n-1\) remaining choices), then position 3 (\(n-2\) choices), and so on, giving by the fundamental counting principle \(n! = n(n-1)(n-2)\cdots 2 \cdot 1\). The notation collapses what could otherwise be a long product into a single symbol, and it grows astonishingly fast: \(5! = 120\), \(10! = 3\,628\,800\), and \(20!\) already exceeds \(10^{18}\).</p>
+            <p>The convention \(0! = 1\) is not arbitrary. It is needed so that recursive identities such as \(n! = n \cdot (n-1)!\) extend down to \(n = 1\), and so that combination formulas like \(C(n,n) = \tfrac{n!}{n!\,0!} = 1\) return the correct value. Treating \(0!\) as 1 also fits the empty-product convention used throughout mathematics. When simplifying factorial fractions, never expand both numerator and denominator fully — instead, cancel by writing the larger factorial in terms of the smaller, e.g. \(\tfrac{n!}{(n-2)!} = n(n-1)\).</p>
+            <ul>
+              <li><strong>Factorial \(n!\):</strong> \(n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1\).</li>
+              <li><strong>Convention:</strong> \(0! = 1\) and \(1! = 1\).</li>
+              <li><strong>Recursive rule:</strong> \(n! = n \cdot (n-1)!\).</li>
+              <li><strong>Falling product:</strong> \(\dfrac{n!}{(n-r)!} = n(n-1)(n-2)\cdots(n-r+1)\) — useful for permutations.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Simplify \(\dfrac{10!}{7!\,3!}\) without a calculator.</p>
+              <p>Expand only as much of the larger factorial as needed to cancel with the smaller:</p>
+              <p>\[ \frac{10!}{7!\,3!} = \frac{10 \cdot 9 \cdot 8 \cdot 7!}{7!\,3!} = \frac{10 \cdot 9 \cdot 8}{3!} = \frac{720}{6} = 120. \]</p>
+              <p>Notice that \(7!\) appears in both numerator and denominator and cancels cleanly — never compute \(10! = 3\,628\,800\) by hand.</p>
+            </div>
+            <ul>
+              <li>Writing \(0! = 0\) instead of \(1\) — this breaks every combination formula.</li>
+              <li>Forgetting that factorial is defined only for non-negative integers; \(\bigl(-3\bigr)!\) and \((1.5)!\) are undefined in MDM4U.</li>
+              <li>Expanding both factorials in a fraction (and reaching for a calculator) instead of cancelling symbolically.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "solve problems, using a variety of strategies, that involve the calculation of the number of permutations of n distinct items taken r at a time."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">MDM4U — Factorials and Permutations</span>
+                <span class="vid-duration">12:14</span>
+                <span class="vid-toggle" id="toggle-mdm-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/t2Dxdrg72Pg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=t2Dxdrg72Pg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.2 — Permutations of Distinct Objects</div>
+        <div class="topic-desc">Number of arrangements of \( r \) objects from \( n \) distinct objects: \( P(n,r) = \dfrac{n!}{(n-r)!} \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <strong>permutation</strong> is an arrangement of objects in which <em>order matters</em>. When we choose \(r\) of \(n\) distinct objects and lay them out in a sequence, the fundamental counting principle gives the count directly: \(n\) choices for the first spot, \(n-1\) for the second, …, \(n-r+1\) for the \(r\)th. Packing this into factorial notation yields \(P(n,r) = \dfrac{n!}{(n-r)!}\). The two special cases worth memorising are \(P(n,n) = n!\) (arranging all \(n\) objects) and \(P(n,1) = n\) (choosing one in order).</p>
+            <p>Permutations are the right model whenever positions are distinguishable — finishing places in a race, seats in a row, letters in a password, or three officers (president, VP, secretary) drawn from a club. Whenever swapping two objects produces a different result, order matters and permutations are the right tool. Whenever swapping produces the same selection, the topic shifts to combinations (Chapter 3).</p>
+            <ul>
+              <li><strong>Permutation \(P(n,r)\)</strong> or <strong>\(_nP_r\):</strong> ordered arrangement of \(r\) from \(n\).</li>
+              <li><strong>Formula:</strong> \(P(n,r) = \dfrac{n!}{(n-r)!}\).</li>
+              <li><strong>Order matters:</strong> ABC and CBA are different permutations.</li>
+              <li><strong>All \(n\):</strong> \(P(n,n) = n!\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: From 12 student-council members, in how many ways can a president, vice-president, and treasurer be selected?</p>
+              <p>Order matters because the three roles are distinct. With \(n = 12\) and \(r = 3\):</p>
+              <p>\[ P(12, 3) = \frac{12!}{(12-3)!} = \frac{12!}{9!} = 12 \cdot 11 \cdot 10 = 1\,320. \]</p>
+              <p>If we instead chose three undifferentiated representatives, we would divide by \(3! = 6\) to get \(C(12,3) = 220\) — a combination, not a permutation.</p>
+            </div>
+            <ul>
+              <li>Using \(C(n,r)\) when the roles are distinct (or vice-versa). Ask "does swapping change the result?"</li>
+              <li>Computing \(\tfrac{n!}{r!}\) instead of \(\tfrac{n!}{(n-r)!}\) — the \(r!\) belongs only to combinations.</li>
+              <li>Treating identical objects as distinct (covered in 2.3) — \(P(n,n) = n!\) over-counts when repeats exist.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "solve problems, using a variety of strategies, that involve the calculation of the number of permutations of n distinct items taken r at a time."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Permutations and Combinations Tutorial — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">14:48</span>
+                <span class="vid-toggle" id="toggle-mdm-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XJnIdRXUi7A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=XJnIdRXUi7A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.3 — Permutations with Identical Objects</div>
+        <div class="topic-desc">Arrangements when some objects are indistinguishable: \( \dfrac{n!}{a!\,b!\,c!\cdots} \).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When some of the \(n\) objects we are arranging are <strong>identical</strong>, the naive count \(n!\) double-counts every rearrangement that just swaps duplicates. Suppose we are arranging the letters of <em>MISSISSIPPI</em>. With 11 distinct letters there would be \(11!\) arrangements, but because there are 4 I's, 4 S's, and 2 P's, any permutation among the I's (and among the S's, and among the P's) leaves the visible word unchanged. We therefore divide by the factorials of each repeat count.</p>
+            <p>The general formula is \( \dfrac{n!}{n_1!\,n_2!\,\cdots\,n_k!} \), where \(n_1, n_2, \ldots, n_k\) are the sizes of the identical groups and \(n_1 + n_2 + \cdots + n_k = n\). This is sometimes called the <em>multinomial</em> permutation. The deeper insight is that the same formula counts the number of distinct paths in a grid, the number of binary strings with given numbers of 0s and 1s, and the coefficient in a multinomial expansion — three apparently different problems with one identical structure.</p>
+            <ul>
+              <li><strong>Identical (indistinguishable) objects:</strong> objects whose interchange produces the same arrangement.</li>
+              <li><strong>Formula:</strong> \(\dfrac{n!}{n_1!\,n_2!\,\cdots\,n_k!}\).</li>
+              <li><strong>Grid-path interpretation:</strong> number of monotone paths from \((0,0)\) to \((a,b)\) is \(\binom{a+b}{a} = \dfrac{(a+b)!}{a!\,b!}\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: How many distinguishable arrangements of the letters of <em>MISSISSIPPI</em> are there?</p>
+              <p>Total letters: \(n = 11\). Repeats: I appears 4 times, S appears 4 times, P appears 2 times, M appears 1 time.</p>
+              <p>\[ \frac{11!}{4!\,4!\,2!\,1!} = \frac{39\,916\,800}{24 \cdot 24 \cdot 2 \cdot 1} = \frac{39\,916\,800}{1\,152} = 34\,650. \]</p>
+              <p>The same formula applies to a 7-step staircase that goes 3 right and 4 up: \(\binom{7}{3} = \dfrac{7!}{3!\,4!} = 35\) distinct lattice paths.</p>
+            </div>
+            <ul>
+              <li>Forgetting to divide by \(1!\) for singleton letters — harmless, since \(1! = 1\), but a clue you may have miscounted repeats.</li>
+              <li>Dividing by the wrong group size; recount each repeated letter carefully.</li>
+              <li>Mixing up "arrangements of a word" (positions matter) with "selections of letters" (combinations).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "solve problems involving the calculation of the number of permutations of n items taken r at a time, including those involving permutations with restrictions and permutations of objects that are not all distinguishable."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Permutations and Combinations Examples — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">10:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/lEzAMe47VWE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=lEzAMe47VWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.4 — Permutations with Restrictions</div>
+        <div class="topic-desc">Cases where certain elements must (or must not) be adjacent, in specific positions, or treated as a single unit.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Real arrangement problems rarely allow every position to be filled freely. Restrictions such as "the two friends must sit together", "no two women are adjacent", "the vowels must be in alphabetical order", or "the first letter must be a consonant" change the count in a structured, learnable way. The two key techniques are <strong>bundling</strong> (treat objects that must stay together as a single super-object) and the <strong>complement / gap method</strong> (count arrangements that violate the restriction and subtract, or insert restricted objects into gaps).</p>
+            <p>For "must be together" problems: bundle the constrained objects into one block, arrange the resulting fewer items, then multiply by the internal arrangements of the bundle. For "must not be together" problems: arrange the unrestricted objects first, then insert the restricted objects into the gaps (there are one more gap than there are unrestricted objects). For fixed-position problems: place the restricted item first, then permute the rest. Many problems combine techniques, and a clearly drawn diagram of "slots" prevents most errors.</p>
+            <ul>
+              <li><strong>Bundling:</strong> treat "always together" objects as a single unit, then multiply by their internal order.</li>
+              <li><strong>Gap method:</strong> for "never adjacent" constraints, place fixed items first, count gaps, insert restricted items.</li>
+              <li><strong>Complement:</strong> sometimes easier to count "bad" arrangements and subtract from the total.</li>
+              <li><strong>Cases:</strong> for OR conditions, split into mutually exclusive cases and add.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: In how many ways can 6 people sit in a row if Anu and Ben must sit together?</p>
+              <p>Bundle Anu and Ben as a single super-person. We now arrange 5 units in a row:</p>
+              <p>\[ 5! = 120 \text{ ways}. \]</p>
+              <p>Inside the bundle, Anu-Ben or Ben-Anu — 2 internal arrangements. Total:</p>
+              <p>\[ 5! \cdot 2! = 120 \cdot 2 = 240. \]</p>
+              <p>If instead they must <em>not</em> sit together, use the complement: \(6! - 240 = 720 - 240 = 480\).</p>
+            </div>
+            <ul>
+              <li>Forgetting to multiply by the internal arrangements after bundling (here, the \(\times 2!\)).</li>
+              <li>Mistakenly using the gap method when the unrestricted items themselves are interchangeable.</li>
+              <li>Adding cases that overlap (double-counting). Always check that case partitions are mutually exclusive.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "solve problems involving the calculation of the number of permutations of n items taken r at a time, including those involving permutations with restrictions and permutations of objects that are not all distinguishable."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">MDM4U Permutations Review — Counting Principles</span>
+                <span class="vid-duration">11:08</span>
+                <span class="vid-toggle" id="toggle-mdm-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jJWEAvxk6RI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=jJWEAvxk6RI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.5 — Circular Permutations</div>
+        <div class="topic-desc">Arrangements around a circle: \( (n-1)! \); applications to seating around tables and bracelet problems.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Circular permutations</strong> count arrangements around a closed curve where only the relative order of objects matters — rotating everyone one seat to the left does not create a "new" arrangement at a round table because the same neighbours sit beside each other. To convert a linear-style count into a circular one we fix one object as a reference (this "anchors" the rotation) and arrange the remaining \(n - 1\) objects relative to it. The count is therefore \((n - 1)!\) instead of \(n!\).</p>
+            <p>A further subtlety arises with <strong>bracelets</strong> or other objects where reflections (mirror images) are also considered the same arrangement. In that case we additionally divide by 2, giving \(\dfrac{(n-1)!}{2}\). When some seats <em>are</em> distinguishable — for instance, a king's throne or a head of the table — the problem reverts to the linear case \(n!\) because rotations now produce genuinely different arrangements. Always ask, "what does rotating the whole picture by one seat do?" If the answer is "nothing", use \((n-1)!\). If it produces a different valid arrangement, use \(n!\).</p>
+            <ul>
+              <li><strong>Round table (no fixed seat):</strong> \((n-1)!\) distinct arrangements.</li>
+              <li><strong>Bracelet/necklace (rotations and reflections equivalent):</strong> \(\dfrac{(n-1)!}{2}\).</li>
+              <li><strong>Distinguishable seats (head of table, throne):</strong> use \(n!\).</li>
+              <li><strong>Restrictions:</strong> combine with bundling and gap methods just as in linear permutations.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Example: Eight people sit around a round table. In how many distinguishable arrangements?</p>
+              <p>Fix one person as a reference; arrange the other 7 in the remaining seats:</p>
+              <p>\[ (8 - 1)! = 7! = 5\,040. \]</p>
+              <p>If two of the eight (Anu and Ben) must sit together, bundle them and arrange the resulting 7 units around the circle: \((7-1)! \cdot 2! = 6! \cdot 2 = 720 \cdot 2 = 1\,440\).</p>
+            </div>
+            <ul>
+              <li>Using \(n!\) at a round table — forgetting that all \(n\) rotations of the same arrangement collapse into one.</li>
+              <li>Forgetting to divide by 2 for bracelets, or dividing by 2 when reflections are <em>not</em> considered identical.</li>
+              <li>Treating a seat with a fixed marker (the king's throne) as a regular round-table seat.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "solve problems involving the calculation of the number of permutations of n items taken r at a time, including those involving permutations with restrictions and permutations of objects that are not all distinguishable."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Harder Practice with Permutations and Combinations — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">12:52</span>
+                <span class="vid-toggle" id="toggle-mdm-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/B6RWpsE1YRM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=B6RWpsE1YRM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 2 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mdm4u_ch2_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mdm4u_ch2_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mdm4u_ch2_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>
