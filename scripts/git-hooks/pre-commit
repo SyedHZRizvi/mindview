@@ -1,0 +1,37 @@
+#!/bin/sh
+# MindView baseline guard — runs scripts/verify-baseline.py before any commit.
+# If the verifier fails, the commit is rejected.
+#
+# To install this hook after cloning the repo, run:
+#   cp scripts/git-hooks/pre-commit .git/hooks/pre-commit
+#   chmod +x .git/hooks/pre-commit
+# OR run the one-shot installer:
+#   sh scripts/install-hooks.sh
+#
+# Override (e.g. when you're intentionally changing the baseline):
+#   git commit --no-verify
+# But: if you do override, also update CLAUDE.md and verify-baseline.py
+# in the same commit so the new baseline is documented and re-verifiable.
+
+REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
+
+VERIFIER="$REPO_ROOT/scripts/verify-baseline.py"
+if [ ! -f "$VERIFIER" ]; then
+  echo "[pre-commit] no verifier at scripts/verify-baseline.py — skipping baseline check"
+  exit 0
+fi
+
+echo "[pre-commit] running scripts/verify-baseline.py …"
+cd "$REPO_ROOT" || exit 1
+if ! python3 scripts/verify-baseline.py; then
+  echo ""
+  echo "❌ Baseline check failed — commit rejected."
+  echo ""
+  echo "Either fix the failures, or — if this commit deliberately changes"
+  echo "the baseline — update CLAUDE.md and scripts/verify-baseline.py to"
+  echo "reflect the new state, then re-commit. As a last resort:"
+  echo "    git commit --no-verify"
+  echo ""
+  exit 1
+fi
+exit 0

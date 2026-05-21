@@ -52,8 +52,6 @@ function renderUser(fullName, role) {
     if (role === 'admin' || role === 'superuser') {
         document.getElementById('nav-manage-users').style.display = 'inline-block';
         document.getElementById('nav-admin').style.display = 'inline-block';
-        const adminSection = document.getElementById('admin-tools-section');
-        if (adminSection) adminSection.style.display = 'block';
     }
 }
 
@@ -133,19 +131,6 @@ fetch('/api/me')
             </a>
         </div>
 
-        <!-- Admin Tools (visible only to superuser / admin) -->
-        <div id="admin-tools-section" style="display:none;margin-top:48px;">
-            <h2 style="display:flex;align-items:center;gap:10px;">🔐 Administration <span style="font-size:13px;background:#fee2e2;color:#991b1b;padding:4px 12px;border-radius:12px;font-weight:700;letter-spacing:0.5px;">RESTRICTED</span></h2>
-            <p class="section-sub">User management, audit trail, and system settings — visible only to administrators.</p>
-            <div class="tools-grid">
-                <a href="/admin/users.html" class="tool-card" style="border-top:4px solid #dc2626;">
-                    <div class="tool-icon">👥</div><h3>Manage Users</h3><p>Create, edit, disable accounts (Super User &amp; Admin)</p>
-                </a>
-                <a href="/admin/dashboard.html" class="tool-card" style="border-top:4px solid #7c3aed;">
-                    <div class="tool-icon">⚙️</div><h3>Admin Dashboard</h3><p>System overview, user counts, recent activity</p>
-                </a>
-            </div>
-        </div>
     </div>
 </section>
 <script>

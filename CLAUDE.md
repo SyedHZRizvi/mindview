@@ -164,6 +164,31 @@ Run `python3 scripts/verify-baseline.py` from the repo root. It asserts:
 
 If any assertion fails, the script exits non-zero. **Do not deploy a state that fails the baseline check** without explicit owner approval.
 
+### Hard enforcement (recommended)
+
+A **git pre-commit hook** is shipped at `scripts/git-hooks/pre-commit`. It runs
+`verify-baseline.py` before every commit and rejects the commit if any check
+fails. Install it once after cloning the repo:
+
+```
+sh scripts/install-hooks.sh
+```
+
+After install, `git commit` will refuse to create a commit that breaks the
+baseline. You can still bypass with `git commit --no-verify` — but if you
+do, you must update `CLAUDE.md` and `verify-baseline.py` in the same commit
+to reflect the new baseline, then re-tag.
+
+A **safe-deploy wrapper** is at `scripts/safe-deploy.sh`. Use it instead of
+calling `wrangler pages deploy .` directly:
+
+```
+sh scripts/safe-deploy.sh
+```
+
+It runs the verifier first and only invokes wrangler if the baseline is
+intact. Bypass with `FORCE=1 sh scripts/safe-deploy.sh` if absolutely needed.
+
 ---
 
 ## 5. Locked content
