@@ -134,22 +134,34 @@ def check_course_resources_block_at_top() -> None:
 
 
 def check_assessment_strip_order() -> None:
-    """Every chapter assessment strip must be AS → FOR → OF."""
-    grid_pat = re.compile(
-        r'<div class="assessment-strip-grid"[^>]*>([\s\S]*?)</div>',
-    )
-    card_pat = re.compile(r'assessment-strip-(for|as|of)')
+    """Every chapter assessment strip must be AS → FOR → OF.
+
+    Walks the assessment-strip-{for|as|of} class names in document order
+    and asserts they appear in repeating AS→FOR→OF triples. Avoids
+    fragile <div> nesting since each card is an <a> with inner <div>s.
+    """
+    card_pat = re.compile(r'assessment-strip-(for|as|of)\b')
     for course in COURSES:
         text = (ROOT / f"courses/{course}.html").read_text()
-        grids = grid_pat.findall(text)
-        if not grids:
-            fail(f"{course}: no assessment-strip-grid found")
+        order = card_pat.findall(text)
+        # Drop CSS-rule occurrences (anything before <body>)
+        body_start = text.find('<body')
+        if body_start >= 0:
+            pre_body = text[:body_start]
+            pre_count = len(card_pat.findall(pre_body))
+            order = order[pre_count:]
+        if not order:
+            fail(f"{course}: no assessment-strip cards found in <body>")
             continue
-        for i, body in enumerate(grids, 1):
-            order = card_pat.findall(body)[:3]
-            if order != ["as", "for", "of"]:
+        if len(order) % 3 != 0:
+            fail(f"{course}: assessment-strip card count {len(order)} "
+                 "not a multiple of 3")
+            continue
+        triples = [order[i:i+3] for i in range(0, len(order), 3)]
+        for i, t in enumerate(triples, 1):
+            if t != ["as", "for", "of"]:
                 fail(f"{course} strip #{i}: card order is "
-                     f"{'→'.join(order)}, expected AS→FOR→OF")
+                     f"{'->'.join(c.upper() for c in t)}, expected AS->FOR->OF")
 
 
 def check_role_matrix_columns() -> None:
