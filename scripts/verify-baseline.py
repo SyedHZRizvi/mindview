@@ -256,18 +256,57 @@ def check_chapter_assessment_links_resolve() -> None:
 
 
 def check_no_double_backslash_mathjax() -> None:
-    """No double-backslash MathJax delimiters anywhere in course or chapter HTML."""
+    """No double-backslash MathJax delimiters OR macros anywhere in course
+    or chapter HTML. MathJax 3 wants `\X` (single backslash). `\\X` is a
+    literal backslash followed by X — does NOT trigger the macro.
+
+    Catches both the wrapper-delimiter form (e.g. ``\\(``, ``\\[``) and the
+    in-span macro form (e.g. ``\\frac``, ``\\Delta``, ``\\rightarrow``).
+    The macro form is detected only inside ``\(...\)`` and ``\[...\]``
+    spans so unrelated `\\foo` in regular prose doesn't false-positive.
+    """
     bad_delims = [r"\\(", r"\\)", r"\\[", r"\\]"]
+    # Anything starting with two backslashes followed by 1+ letters
+    # (commands like \frac, \Delta, \text, \rightarrow), or backslash-comma
+    # (\, thin space) is a doubled backslash inside a math span.
+    bad_macro_re = re.compile(r"\\\\([A-Za-z]+|,)")
+    span_re = re.compile(r"\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]")
+
     for code in COURSES:
         candidates = [ROOT / f"courses/{code}.html"]
         candidates.extend(sorted((ROOT / f"courses/{code}").glob("ch*.html")))
         for p in candidates:
             text = p.read_text()
+            # 1) delimiter brackets anywhere
             for d in bad_delims:
                 if d in text:
                     count = text.count(d)
                     fail(f"{p.relative_to(ROOT)}: {count}× double-backslash "
                          f"math delimiter {d!r} (use single backslash)")
+            # 2) double-backslash macros INSIDE \( … \) and \[ … \] spans
+            macros_in_span = 0
+            for span in span_re.findall(text):
+                macros_in_span += len(bad_macro_re.findall(span))
+            if macros_in_span:
+                fail(f"{p.relative_to(ROOT)}: {macros_in_span}× double-"
+                     f"backslash MathJax macro (e.g. \\\\frac, \\\\Delta) "
+                     "inside \\(…\\) or \\[…\\] — use single backslash")
+
+
+def check_eng4u_citation_consistency() -> None:
+    """ENG4U citations had a class of bugs where the strand letter and the
+    expectation code's leading letter didn't match (e.g. 'Strand B,
+    Expectation A3'). Catch that going forward.
+    """
+    pat = re.compile(r'Strand\s+([A-D]),\s+Expectation\s+([A-Z])')
+    for p in sorted((ROOT / "courses/eng4u").glob("ch*.html")):
+        text = p.read_text()
+        for m in pat.finditer(text):
+            strand, code_letter = m.group(1), m.group(2)
+            if strand != code_letter:
+                fail(f"{p.relative_to(ROOT)}: citation 'Strand {strand}, "
+                     f"Expectation {code_letter}…' — strand letter and "
+                     "expectation code's first letter must match")
 
 
 # ---------- Manage Users invariants ----------
@@ -307,7 +346,8 @@ def main() -> int:
          check_landing_has_resources_and_cards),
         ("chapter pages well-formed",           check_chapter_pages_well_formed),
         ("chapter assessment links resolve",    check_chapter_assessment_links_resolve),
-        ("MathJax delimiters single-backslash", check_no_double_backslash_mathjax),
+        ("MathJax delimiters & macros single-backslash", check_no_double_backslash_mathjax),
+        ("ENG4U citation strand/code letters match",   check_eng4u_citation_consistency),
         ("role matrix column order",            check_role_matrix_columns),
     ]
     for label, fn in checks:
