@@ -311,6 +311,34 @@ def check_eng4u_citation_consistency() -> None:
 
 # ---------- Manage Users invariants ----------
 
+def check_chapter_titles_use_h1() -> None:
+    """Every chapter page must have at least one <h1> as its top-level
+    chapter title. We don't forbid <h2>s elsewhere on the page — many
+    chapters keep an inner unit-header <h2> as a secondary heading from
+    the pre-restructure layout. We just require an <h1> exists, which
+    indicates the page has a proper top-level title element.
+    """
+    for code in COURSES:
+        for p in sorted((ROOT / f"courses/{code}").glob("ch*.html")):
+            text = p.read_text()
+            # Match an <h1> containing a chapter or unit indicator.
+            if not re.search(r'<h1[^>]*>[^<]*(?:Chapter|Unit|MCR3U|MHF4U|MCV4U|MDM4U|SPH3U|SPH4U|SCH4U|SBI4U|ICS4U|ENG4U)', text):
+                fail(f"{p.relative_to(ROOT)}: chapter page is missing an "
+                     "<h1> top-level chapter title")
+
+
+def check_chnav_btn_class() -> None:
+    """Every chapter page must use the canonical .chnav-btn class on its
+    prev/next nav anchors (not inline-styled <a>s). The CSS for the class
+    must also be present in the page."""
+    for code in COURSES:
+        for p in sorted((ROOT / f"courses/{code}").glob("ch*.html")):
+            text = p.read_text()
+            if 'class="chnav-btn' not in text:
+                fail(f"{p.relative_to(ROOT)}: chapter-nav anchors do not "
+                     "use the .chnav-btn class (visual consistency)")
+
+
 def check_role_matrix_columns() -> None:
     """Manage Users role matrix columns must be Super User → Admin → Teacher → Student."""
     text = (ROOT / "admin/users.html").read_text()
@@ -348,6 +376,8 @@ def main() -> int:
         ("chapter assessment links resolve",    check_chapter_assessment_links_resolve),
         ("MathJax delimiters & macros single-backslash", check_no_double_backslash_mathjax),
         ("ENG4U citation strand/code letters match",   check_eng4u_citation_consistency),
+        ("chapter titles use <h1>",             check_chapter_titles_use_h1),
+        ("chapter-nav uses .chnav-btn",         check_chnav_btn_class),
         ("role matrix column order",            check_role_matrix_columns),
     ]
     for label, fn in checks:

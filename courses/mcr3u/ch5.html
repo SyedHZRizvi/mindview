@@ -35,6 +35,15 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
 .lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
 
 </style>
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
 </head><body>
 <nav class="navbar"><div class="nav-container">
 <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
@@ -48,7 +57,7 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
 
 <div class="unit-section" id="unit5">
 <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
-<h2>Chapter 5: Sequences and Series</h2>
+<h1>Chapter 5: Sequences and Series</h1>
 <p>Arithmetic, geometric, recursive, sigma notation, finite series formulas</p>
 <div class="unit-meta">
 <span>📚 Strand C: Discrete Functions</span>
@@ -459,12 +468,10 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
 </div>
 </div>
 
-<div class="chapter-nav" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:stretch;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;">
-<a href="ch4.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&larr; Previous chapter</div><div>Chapter 4 &mdash; Solving Exponential Equations &amp; Applications</div></a>
-<a href="ch6.html" style="flex:1;min-width:240px;display:block;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-decoration:none;color:#1e293b;font-size:14px;font-weight:600;text-align:right;"><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Next chapter &rarr;</div><div>Chapter 6 &mdash; Financial Mathematics</div></a>
-</div>
-
-</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="ch6.html" class="chnav-btn chnav-next">Chapter 6 →</a>
+</div></div>
 
 <footer class="site-footer"><div class="container">
 <p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>

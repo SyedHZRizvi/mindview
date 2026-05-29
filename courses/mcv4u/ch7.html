@@ -91,49 +91,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                 <span>📹 8 lessons</span>
             </div>
         </div>
-        <details class="lesson-notes">
-          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
-          <div class="lesson-notes-body">
-            <p>This unit equips vectors with two multiplication operations that have no analogue in elementary algebra: the <strong>dot product</strong> and the <strong>cross product</strong>. The dot product takes two vectors and returns a scalar; the cross product takes two vectors in \(\mathbb{R}^3\) and returns a vector perpendicular to both. Each carries deep geometric meaning, and together they let calculus describe rigid-body physics, illumination, computer graphics, and 3D geometry rigorously.</p>
-            <p>The <strong>dot product</strong> is defined either algebraically as \(\vec{u}\cdot\vec{v} = u_1v_1 + u_2v_2 + u_3v_3\) or geometrically as \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta\). Equating these gives the cosine angle formula \(\cos\theta = \frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}\). Two non-zero vectors are <strong>perpendicular</strong> precisely when their dot product is zero. The dot product also computes <strong>work</strong>: if a constant force \(\vec{F}\) moves an object through displacement \(\vec{d}\), the work is \(W = \vec{F}\cdot\vec{d}\).</p>
-            <p>The <strong>cross product</strong> \(\vec{u}\times\vec{v}\) returns a vector perpendicular to both \(\vec{u}\) and \(\vec{v}\), with magnitude \(|\vec{u}\times\vec{v}| = |\vec{u}||\vec{v}|\sin\theta\) — which equals the area of the parallelogram they span. The direction is given by the right-hand rule. Importantly, \(\vec{u}\times\vec{v} = -\vec{v}\times\vec{u}\): the cross product is anti-commutative. <strong>Projections</strong> decompose one vector along the direction of another: the <strong>scalar projection</strong> of \(\vec{u}\) on \(\vec{v}\) is \(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\), and the <strong>vector projection</strong> is that scalar times the unit vector \(\hat{v}\).</p>
-            <ul>
-              <li><strong>Dot product (scalar product)</strong> — \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta = u_1v_1 + u_2v_2 + u_3v_3\).</li>
-              <li><strong>Cross product (vector product)</strong> — \(\vec{u}\times\vec{v}\) is the vector perpendicular to both \(\vec{u}\) and \(\vec{v}\) with magnitude \(|\vec{u}||\vec{v}|\sin\theta\) and direction by the right-hand rule.</li>
-              <li><strong>Orthogonal vectors</strong> — \(\vec{u}\cdot\vec{v} = 0\) for non-zero \(\vec{u}, \vec{v}\).</li>
-              <li><strong>Scalar projection</strong> of \(\vec{u}\) onto \(\vec{v}\) — \(\operatorname{proj}_{\vec{v}}\vec{u}\) magnitude is \(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\).</li>
-              <li><strong>Vector projection</strong> of \(\vec{u}\) onto \(\vec{v}\) — \(\left(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|^2}\right)\vec{v}\).</li>
-              <li><strong>Work</strong> — \(W = \vec{F}\cdot\vec{d}\), measured in joules when \(\vec{F}\) is in newtons and \(\vec{d}\) is in metres.</li>
-              <li><strong>Torque</strong> — \(\vec{\tau} = \vec{r}\times\vec{F}\); a vector perpendicular to both the lever arm \(\vec{r}\) and the applied force \(\vec{F}\).</li>
-              <li><strong>Triple scalar product</strong> — \(\vec{u}\cdot(\vec{v}\times\vec{w})\); its absolute value is the volume of the parallelepiped spanned by the three vectors.</li>
-            </ul>
-            <div class="worked-example">
-              <p>Worked Example: Angle between vectors</p>
-              <p>Find the angle between \(\vec{u} = (2, 1, -2)\) and \(\vec{v} = (1, 3, 1)\).</p>
-              <p>Dot product: \(\vec{u}\cdot\vec{v} = (2)(1) + (1)(3) + (-2)(1) = 2 + 3 - 2 = 3\).</p>
-              <p>Magnitudes: \(|\vec{u}| = \sqrt{4+1+4} = 3\); \(|\vec{v}| = \sqrt{1+9+1} = \sqrt{11}\).</p>
-              <p>Cosine: \(\cos\theta = \frac{3}{3\sqrt{11}} = \frac{1}{\sqrt{11}}\). So \(\theta = \cos^{-1}\!\left(\frac{1}{\sqrt{11}}\right) \approx 72.5^\circ\).</p>
-            </div>
-            <div class="worked-example">
-              <p>Worked Example: Cross product and area</p>
-              <p>For \(\vec{a} = (1, 2, 3)\) and \(\vec{b} = (4, 5, 6)\), compute \(\vec{a}\times\vec{b}\) and the area of the parallelogram they span.</p>
-              <p>Use the determinant formula: \[\vec{a}\times\vec{b} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \end{vmatrix}.\]</p>
-              <p>Expand: \(\hat{i}\bigl((2)(6)-(3)(5)\bigr) - \hat{j}\bigl((1)(6)-(3)(4)\bigr) + \hat{k}\bigl((1)(5)-(2)(4)\bigr)\) \(= \hat{i}(12-15) - \hat{j}(6-12) + \hat{k}(5-8) = -3\hat{i} + 6\hat{j} - 3\hat{k} = (-3, 6, -3)\).</p>
-              <p>Area: \(|\vec{a}\times\vec{b}| = \sqrt{9+36+9} = \sqrt{54} = 3\sqrt{6} \approx 7.35\) square units.</p>
-              <p>Verify perpendicularity: \(\vec{a}\cdot(-3,6,-3) = -3+12-9 = 0\) ✓; \(\vec{b}\cdot(-3,6,-3) = -12+30-18 = 0\) ✓.</p>
-            </div>
-            <ul>
-              <li>Confusing dot product (returns a scalar) with cross product (returns a vector).</li>
-              <li>Forgetting that the cross product is only defined in \(\mathbb{R}^3\) — there is no cross product of two vectors in \(\mathbb{R}^2\).</li>
-              <li>Mis-signing the middle term in the determinant expansion: the \(\hat{j}\) component carries a minus sign.</li>
-              <li>Dropping the \(|\vec{v}|^2\) (not \(|\vec{v}|\)) in the denominator of the vector projection formula.</li>
-              <li>Treating \(\vec{u}\times\vec{v} = \vec{v}\times\vec{u}\) — the cross product is anti-commutative; sign matters.</li>
-              <li>Using the cross product to find the angle — use the dot product instead, since \(\sin\theta\) has two solutions in \([0,180^\circ]\) while \(\cos\theta\) is unique.</li>
-            </ul>
-            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "determine, through investigation with and without technology, some properties (e.g., commutative, associative, and distributive properties) of the operations of addition, subtraction, and scalar multiplication of vectors." Also C3.2 — "perform the operation of dot product on two vectors represented as directed line segments … and in Cartesian form in two-space and three-space, and describe applications of the dot product (e.g., determining the angle between two vectors; determining the projection of one vector onto another)." And C3.3 — "determine, through investigation, properties of the dot product (e.g., investigate whether it is commutative, distributive, or associative; investigate the dot product of a vector with itself and the dot product of orthogonal vectors)." And C3.5 — "perform the operation of cross product on two vectors represented in Cartesian form in three-space, determine the magnitude of the cross product … and describe applications of the cross product (e.g., determining a vector orthogonal to two given vectors; determining the turning effect [or torque] when a force is applied to a wrench at different angles)."</p>
-          </div>
-        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Vectors describe many physical quantities — force, velocity, displacement, acceleration — that have both magnitude and direction. When several forces act on a single object, their combined effect is the <strong>resultant</strong>, obtained by vector addition. Two forces acting on a body at an angle \(\theta\) can be combined using the parallelogram rule or by resolving each force into perpendicular components and summing component-by-component.</p>
+                    <p>Tension in ropes, weight of suspended loads, river-crossing problems, and pilot-heading-versus-ground-track problems all reduce to vector addition or vector triangles. In equilibrium, the sum of all forces is the zero vector. In relative motion, the apparent velocity equals the vector sum of the object's velocity and the surroundings' velocity (e.g., ground velocity = boat-relative velocity + water current velocity).</p>
+                    <ul>
+                      <li><strong>Force vector</strong> — directed quantity in newtons; magnitude is the force's strength.</li>
+                      <li><strong>Resultant</strong> — the vector sum of two or more vectors representing combined effect.</li>
+                      <li><strong>Equilibrium</strong> — the resultant of all applied forces is \(\vec{0}\).</li>
+                      <li><strong>Component resolution</strong> — break a vector into perpendicular pieces (e.g., \(\vec{F} = F_x\hat{i} + F_y\hat{j}\)).</li>
+                      <li><strong>Relative velocity</strong> — \(\vec{v}_{\text{ground}} = \vec{v}_{\text{object-relative}} + \vec{v}_{\text{medium}}\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Resultant of two forces</p>
+                      <p>Forces of 30 N due east and 40 N due north act on a body. Find the magnitude and direction of the resultant.</p>
+                      <p>The forces are perpendicular, so magnitude: \(|\vec{R}| = \sqrt{30^2 + 40^2} = \sqrt{900+1600} = \sqrt{2500} = 50\) N.</p>
+                      <p>Direction from east: \(\tan\theta = \tfrac{40}{30} = \tfrac{4}{3}\), so \(\theta \approx 53.1^\circ\) north of east.</p>
+                    </div>
+                    <ul>
+                      <li>Adding force magnitudes directly when the forces are not collinear — must use vector addition.</li>
+                      <li>Forgetting to convert the resultant back into magnitude-and-direction form after summing components.</li>
+                      <li>Mixing reference frames (boat-relative speed reported as ground speed in a river-crossing problem).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "perform the operations of addition, subtraction, and scalar multiplication on vectors represented as directed line segments in two-space, and on vectors represented in Cartesian form in two-space and three-space."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v49')">
@@ -174,6 +159,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>dot product</strong> (or scalar product) takes two vectors and returns a single real number. It has two equivalent definitions: algebraically, \(\vec{u}\cdot\vec{v} = u_1 v_1 + u_2 v_2\) in \(\mathbb{R}^2\); geometrically, \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta\) where \(\theta\) is the angle between the two vectors. Equating these gives the angle formula \(\cos\theta = \frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}\), the standard way to compute angles between vectors.</p>
+                    <p>The dot product also models physical work: when a constant force \(\vec{F}\) acts through a displacement \(\vec{d}\), the work done is \(W = \vec{F}\cdot\vec{d} = |\vec{F}||\vec{d}|\cos\theta\). Work is positive when the force has a component in the direction of motion, zero when force is perpendicular to motion, and negative when force opposes motion.</p>
+                    <ul>
+                      <li><strong>Dot product (algebraic)</strong> — \(\vec{u}\cdot\vec{v} = u_1 v_1 + u_2 v_2\) in \(\mathbb{R}^2\).</li>
+                      <li><strong>Dot product (geometric)</strong> — \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta\).</li>
+                      <li><strong>Angle formula</strong> — \(\cos\theta = \frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}\).</li>
+                      <li><strong>Work</strong> — \(W = \vec{F}\cdot\vec{d}\), measured in joules when \(\vec{F}\) is in newtons and \(\vec{d}\) is in metres.</li>
+                      <li><strong>Sign of the dot product</strong> — positive iff \(\theta < 90^\circ\), negative iff \(\theta > 90^\circ\), zero iff vectors are perpendicular.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Angle between two 2D vectors</p>
+                      <p>Find the angle between \(\vec{u} = (3, 4)\) and \(\vec{v} = (-1, 7)\).</p>
+                      <p>Dot product: \(\vec{u}\cdot\vec{v} = (3)(-1) + (4)(7) = -3 + 28 = 25\).</p>
+                      <p>Magnitudes: \(|\vec{u}| = 5\); \(|\vec{v}| = \sqrt{1+49} = \sqrt{50}\).</p>
+                      <p>\(\cos\theta = \frac{25}{5\sqrt{50}} = \frac{5}{\sqrt{50}} = \frac{1}{\sqrt{2}}\). Hence \(\theta = 45^\circ\).</p>
+                    </div>
+                    <ul>
+                      <li>Reading the dot product as another vector — it returns a scalar.</li>
+                      <li>Forgetting to divide by both magnitudes when extracting the angle.</li>
+                      <li>Mis-signing entries with negative components when computing the algebraic form.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "perform the operation of dot product on two vectors represented as directed line segments … and in Cartesian form in two-space and three-space, and describe applications of the dot product (e.g., determining the angle between two vectors; determining the projection of one vector onto another)."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v52')">
                         <span class="vid-icon">📖</span>
@@ -186,6 +199,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=uf5wrtyqL-s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The algebraic definition extends naturally to three dimensions: \(\vec{u}\cdot\vec{v} = u_1 v_1 + u_2 v_2 + u_3 v_3\). The geometric definition is unchanged: \(\vec{u}\cdot\vec{v} = |\vec{u}||\vec{v}|\cos\theta\). Together they imply two non-zero vectors are <strong>orthogonal</strong> (perpendicular) precisely when their dot product is zero. The dot product is <em>commutative</em> (\(\vec{u}\cdot\vec{v} = \vec{v}\cdot\vec{u}\)) and <em>distributive</em> over addition (\(\vec{u}\cdot(\vec{v}+\vec{w}) = \vec{u}\cdot\vec{v} + \vec{u}\cdot\vec{w}\)), but it is <em>not</em> associative because \((\vec{u}\cdot\vec{v})\) is a scalar — there's no way to dot it again with another vector.</p>
+                    <p>A useful identity is \(\vec{u}\cdot\vec{u} = |\vec{u}|^2\): the dot product of a vector with itself is the square of its magnitude. This connects vector algebra to ordinary length calculations.</p>
+                    <ul>
+                      <li><strong>Dot product in \(\mathbb{R}^3\)</strong> — \(\vec{u}\cdot\vec{v} = u_1 v_1 + u_2 v_2 + u_3 v_3\).</li>
+                      <li><strong>Orthogonal vectors</strong> — \(\vec{u}\cdot\vec{v} = 0\) for non-zero \(\vec{u}, \vec{v}\).</li>
+                      <li><strong>Commutativity</strong> — \(\vec{u}\cdot\vec{v} = \vec{v}\cdot\vec{u}\).</li>
+                      <li><strong>Distributivity</strong> — \(\vec{u}\cdot(\vec{v}+\vec{w}) = \vec{u}\cdot\vec{v} + \vec{u}\cdot\vec{w}\).</li>
+                      <li><strong>Self-dot identity</strong> — \(\vec{u}\cdot\vec{u} = |\vec{u}|^2\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Angle between vectors</p>
+                      <p>Find the angle between \(\vec{u} = (2, 1, -2)\) and \(\vec{v} = (1, 3, 1)\).</p>
+                      <p>Dot product: \(\vec{u}\cdot\vec{v} = (2)(1) + (1)(3) + (-2)(1) = 2 + 3 - 2 = 3\).</p>
+                      <p>Magnitudes: \(|\vec{u}| = \sqrt{4+1+4} = 3\); \(|\vec{v}| = \sqrt{1+9+1} = \sqrt{11}\).</p>
+                      <p>Cosine: \(\cos\theta = \frac{3}{3\sqrt{11}} = \frac{1}{\sqrt{11}}\). So \(\theta = \cos^{-1}\!\left(\frac{1}{\sqrt{11}}\right) \approx 72.5^\circ\).</p>
+                    </div>
+                    <ul>
+                      <li>Trying to "associate" three dot products — the dot product takes two vectors and returns a scalar, so \((\vec{u}\cdot\vec{v})\cdot\vec{w}\) is undefined.</li>
+                      <li>Mis-signing entries with negative components when computing in \(\mathbb{R}^3\).</li>
+                      <li>Mixing up orthogonality (dot product = 0) with parallelism (cross product = 0).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "determine, through investigation, properties of the dot product (e.g., investigate whether it is commutative, distributive, or associative; investigate the dot product of a vector with itself and the dot product of orthogonal vectors)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v53')">
@@ -200,6 +241,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p><strong>Projections</strong> decompose one vector along the direction of another. The <strong>scalar projection</strong> of \(\vec{u}\) onto \(\vec{v}\) is the signed length of the shadow that \(\vec{u}\) casts on the line through \(\vec{v}\): \(\operatorname{comp}_{\vec{v}}\vec{u} = \frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\). The <strong>vector projection</strong> turns that scalar into an actual vector by multiplying by the unit vector \(\hat{v}\): \(\operatorname{proj}_{\vec{v}}\vec{u} = \left(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|^2}\right)\vec{v}\).</p>
+                    <p>Projections appear whenever you need the component of a force along a chosen direction (e.g., the component of gravity along an inclined plane), or when resolving a vector into perpendicular pieces: \(\vec{u} = \operatorname{proj}_{\vec{v}}\vec{u} + \vec{u}_{\perp}\), where \(\vec{u}_{\perp}\) is perpendicular to \(\vec{v}\). This decomposition underlies most physics applications in this chapter.</p>
+                    <ul>
+                      <li><strong>Scalar projection</strong> of \(\vec{u}\) onto \(\vec{v}\) — \(\operatorname{comp}_{\vec{v}}\vec{u} = \frac{\vec{u}\cdot\vec{v}}{|\vec{v}|}\); signed, can be negative.</li>
+                      <li><strong>Vector projection</strong> of \(\vec{u}\) onto \(\vec{v}\) — \(\operatorname{proj}_{\vec{v}}\vec{u} = \left(\frac{\vec{u}\cdot\vec{v}}{|\vec{v}|^2}\right)\vec{v}\).</li>
+                      <li><strong>Perpendicular component</strong> — \(\vec{u}_{\perp} = \vec{u} - \operatorname{proj}_{\vec{v}}\vec{u}\).</li>
+                      <li><strong>Sign convention</strong> — scalar projection negative when \(\vec{u}\) points opposite to \(\vec{v}\).</li>
+                      <li><strong>Physical application</strong> — work in a direction, decomposing forces on inclines.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Vector projection in \(\mathbb{R}^2\)</p>
+                      <p>Project \(\vec{u} = (3, 5)\) onto \(\vec{v} = (4, 0)\).</p>
+                      <p>\(\vec{u}\cdot\vec{v} = 12 + 0 = 12\). \(|\vec{v}|^2 = 16\).</p>
+                      <p>\(\operatorname{proj}_{\vec{v}}\vec{u} = \frac{12}{16}(4,0) = (3, 0)\). The scalar projection is \(\frac{12}{|\vec{v}|} = \frac{12}{4} = 3\).</p>
+                    </div>
+                    <ul>
+                      <li>Dropping the \(|\vec{v}|^2\) (not \(|\vec{v}|\)) in the denominator of the vector projection formula.</li>
+                      <li>Reporting a vector projection as a scalar (or vice versa); they're different objects.</li>
+                      <li>Forgetting that projection onto \(\vec{v}\) and projection onto \(\vec{u}\) are different; the operation is not symmetric.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "perform the operation of dot product on two vectors … and describe applications of the dot product (e.g., determining the angle between two vectors; determining the projection of one vector onto another)."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v54')">
                         <span class="vid-icon">📖</span>
@@ -213,6 +281,36 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>cross product</strong> \(\vec{u}\times\vec{v}\) takes two vectors in \(\mathbb{R}^3\) and returns a vector perpendicular to both. Its magnitude is \(|\vec{u}\times\vec{v}| = |\vec{u}||\vec{v}|\sin\theta\), which equals the area of the parallelogram spanned by \(\vec{u}\) and \(\vec{v}\). The direction is given by the <strong>right-hand rule</strong>: point your fingers along \(\vec{u}\), curl them toward \(\vec{v}\), and your thumb points along \(\vec{u}\times\vec{v}\).</p>
+                    <p>Computationally, the cross product is the symbolic determinant \(\vec{u}\times\vec{v} = \begin{vmatrix}\hat{i}&\hat{j}&\hat{k}\u_1&u_2&u_3\v_1&v_2&v_3\end{vmatrix}\). The cross product is <em>anti-commutative</em>: \(\vec{u}\times\vec{v} = -\vec{v}\times\vec{u}\). It is defined only in three dimensions — there is no cross product of two vectors in \(\mathbb{R}^2\).</p>
+                    <ul>
+                      <li><strong>Cross product (vector product)</strong> — \(\vec{u}\times\vec{v}\) is perpendicular to both \(\vec{u}\) and \(\vec{v}\); magnitude \(|\vec{u}||\vec{v}|\sin\theta\).</li>
+                      <li><strong>Right-hand rule</strong> — determines the direction of \(\vec{u}\times\vec{v}\).</li>
+                      <li><strong>Determinant formula</strong> — expand along the first row using \(\hat{i}, \hat{j}, \hat{k}\) cofactors.</li>
+                      <li><strong>Anti-commutativity</strong> — \(\vec{u}\times\vec{v} = -\vec{v}\times\vec{u}\); reversing the order flips the sign.</li>
+                      <li><strong>Parallel test</strong> — \(\vec{u}\times\vec{v} = \vec{0}\) iff \(\vec{u}\) and \(\vec{v}\) are parallel (or one is zero).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Cross product and area</p>
+                      <p>For \(\vec{a} = (1, 2, 3)\) and \(\vec{b} = (4, 5, 6)\), compute \(\vec{a}\times\vec{b}\) and the area of the parallelogram they span.</p>
+                      <p>Use the determinant formula: \[\vec{a}\times\vec{b} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & 2 & 3 \\ 4 & 5 & 6 \end{vmatrix}.\]</p>
+                      <p>Expand: \(\hat{i}\bigl((2)(6)-(3)(5)\bigr) - \hat{j}\bigl((1)(6)-(3)(4)\bigr) + \hat{k}\bigl((1)(5)-(2)(4)\bigr)\) \(= \hat{i}(12-15) - \hat{j}(6-12) + \hat{k}(5-8) = -3\hat{i} + 6\hat{j} - 3\hat{k} = (-3, 6, -3)\).</p>
+                      <p>Area: \(|\vec{a}\times\vec{b}| = \sqrt{9+36+9} = \sqrt{54} = 3\sqrt{6} \approx 7.35\) square units.</p>
+                      <p>Verify perpendicularity: \(\vec{a}\cdot(-3,6,-3) = -3+12-9 = 0\) ✓; \(\vec{b}\cdot(-3,6,-3) = -12+30-18 = 0\) ✓.</p>
+                    </div>
+                    <ul>
+                      <li>Confusing dot product (returns a scalar) with cross product (returns a vector).</li>
+                      <li>Mis-signing the middle term in the determinant expansion: the \(\hat{j}\) component carries a minus sign.</li>
+                      <li>Treating \(\vec{u}\times\vec{v} = \vec{v}\times\vec{u}\) — the cross product is anti-commutative; sign matters.</li>
+                      <li>Forgetting that the cross product is only defined in \(\mathbb{R}^3\) — there is no cross product of two vectors in \(\mathbb{R}^2\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "perform the operation of cross product on two vectors represented in Cartesian form in three-space, determine the magnitude of the cross product … and describe applications of the cross product (e.g., determining a vector orthogonal to two given vectors; determining the turning effect [or torque] when a force is applied to a wrench at different angles)."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('yt9')">
                         <span class="vid-icon">📖</span>
@@ -225,6 +323,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://www.youtube.com/watch?v=pWbOisq1MJU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The cross product packages several geometric quantities cleanly. The <strong>torque</strong> about a pivot is \(\vec{\tau} = \vec{r}\times\vec{F}\), where \(\vec{r}\) is the lever arm from pivot to point of application and \(\vec{F}\) is the applied force. Its magnitude is \(|\vec{r}||\vec{F}|\sin\theta\) — maximum when the force is perpendicular to the lever, zero when along it.</p>
+                    <p>The <strong>triple scalar product</strong> \(\vec{u}\cdot(\vec{v}\times\vec{w})\) gives the signed volume of the parallelepiped spanned by the three vectors; its absolute value is the (unsigned) volume. Three vectors are <em>coplanar</em> exactly when this product is zero. Numerically, the triple scalar product equals the determinant of the \(3\times 3\) matrix whose rows are the three vectors.</p>
+                    <ul>
+                      <li><strong>Torque</strong> — \(\vec{\tau} = \vec{r}\times\vec{F}\); vector perpendicular to both lever arm and force.</li>
+                      <li><strong>Magnitude of torque</strong> — \(|\vec{r}||\vec{F}|\sin\theta\); maximized at \(\theta = 90^\circ\).</li>
+                      <li><strong>Triple scalar product</strong> — \(\vec{u}\cdot(\vec{v}\times\vec{w})\); its absolute value is the volume of the parallelepiped.</li>
+                      <li><strong>Coplanarity test</strong> — three vectors are coplanar iff their triple scalar product is zero.</li>
+                      <li><strong>Determinant interpretation</strong> — the triple product equals \(\det\begin{pmatrix}u_1&u_2&u_3\v_1&v_2&v_3\w_1&w_2&w_3\end{pmatrix}\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Volume of a parallelepiped</p>
+                      <p>Find the volume of the parallelepiped spanned by \(\vec{u}=(1,0,2)\), \(\vec{v}=(2,1,0)\), \(\vec{w}=(0,1,3)\).</p>
+                      <p>First \(\vec{v}\times\vec{w} = \begin{vmatrix}\hat{i}&\hat{j}&\hat{k}\\2&1&0\\0&1&3\end{vmatrix} = \hat{i}(3-0)-\hat{j}(6-0)+\hat{k}(2-0) = (3,-6,2)\).</p>
+                      <p>Then \(\vec{u}\cdot(\vec{v}\times\vec{w}) = (1)(3)+(0)(-6)+(2)(2) = 3+0+4 = 7\).</p>
+                      <p>Volume = \(|7| = 7\) cubic units.</p>
+                    </div>
+                    <ul>
+                      <li>Using the cross product to find the angle — use the dot product instead, since \(\sin\theta\) has two solutions in \([0,180^\circ]\) while \(\cos\theta\) is unique.</li>
+                      <li>Skipping the absolute value when reporting volume — the triple product can be negative.</li>
+                      <li>Computing \(\vec{u}\times(\vec{v}\cdot\vec{w})\) — the inner expression is a scalar, so this is undefined.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "perform the operation of cross product on two vectors represented in Cartesian form in three-space, determine the magnitude of the cross product, and describe applications of the cross product (e.g., determining a vector orthogonal to two given vectors; determining the turning effect [or torque] when a force is applied to a wrench at different angles)."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v55')">

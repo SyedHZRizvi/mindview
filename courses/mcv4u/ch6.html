@@ -91,48 +91,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                 <span>📹 9 lessons</span>
             </div>
         </div>
-        <details class="lesson-notes">
-          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
-          <div class="lesson-notes-body">
-            <p>A <strong>scalar</strong> is a quantity that has only magnitude (temperature, mass, time). A <strong>vector</strong> has both magnitude and direction (displacement, velocity, force). Vectors are represented geometrically as directed arrows whose length encodes magnitude and whose orientation encodes direction. Algebraically, a vector in two dimensions can be written in component form \(\vec{u} = (u_1, u_2)\) and in three dimensions as \(\vec{v} = (v_1, v_2, v_3)\). Two vectors are equal if and only if they have the same magnitude <em>and</em> direction — position in space is irrelevant.</p>
-            <p>Vectors are added using the <strong>triangle</strong> (or <strong>parallelogram</strong>) <strong>rule</strong>: place the tail of \(\vec{v}\) at the head of \(\vec{u}\); the resultant \(\vec{u}+\vec{v}\) runs from the tail of \(\vec{u}\) to the head of \(\vec{v}\). In component form, addition is componentwise. Subtraction reverses one vector: \(\vec{u} - \vec{v} = \vec{u} + (-\vec{v})\). <strong>Scalar multiplication</strong> by \(k\) scales magnitude by \(|k|\) and reverses direction if \(k<0\); collinear vectors are exactly those that are scalar multiples of each other.</p>
-            <p>A <strong>linear combination</strong> of vectors \(\vec{v}_1, \dots, \vec{v}_n\) is any expression \(c_1\vec{v}_1 + \dots + c_n\vec{v}_n\). The set of all such combinations is the <strong>spanning set</strong>. In \(\mathbb{R}^2\), any two non-collinear vectors span the whole plane; in \(\mathbb{R}^3\), any three non-coplanar vectors span the whole space. The Cartesian unit vectors \(\hat{i} = (1,0,0)\), \(\hat{j} = (0,1,0)\), \(\hat{k} = (0,0,1)\) are the standard basis: every vector in \(\mathbb{R}^3\) has a unique expression as \(a\hat{i} + b\hat{j} + c\hat{k}\).</p>
-            <ul>
-              <li><strong>Scalar</strong> — a real number; magnitude only.</li>
-              <li><strong>Vector</strong> — a directed quantity with magnitude and direction; written \(\vec{u}\) or in bold.</li>
-              <li><strong>Magnitude</strong> — \(|\vec{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}\) in \(\mathbb{R}^3\); the length of the arrow.</li>
-              <li><strong>Zero vector</strong> — \(\vec{0}\); has magnitude 0 and undefined direction; identity for addition.</li>
-              <li><strong>Unit vector</strong> — vector with magnitude 1; \(\hat{u} = \frac{\vec{u}}{|\vec{u}|}\).</li>
-              <li><strong>Collinear vectors</strong> — vectors parallel to the same line; one is a scalar multiple of the other.</li>
-              <li><strong>Linear combination</strong> — \(c_1\vec{v}_1 + c_2\vec{v}_2 + \dots + c_n\vec{v}_n\) for scalars \(c_i\).</li>
-              <li><strong>Spanning set</strong> — a set of vectors whose linear combinations produce every vector in the given space.</li>
-              <li><strong>Cartesian (standard) basis</strong> — \(\hat{i}, \hat{j}, \hat{k}\) in \(\mathbb{R}^3\); every vector decomposes uniquely.</li>
-            </ul>
-            <div class="worked-example">
-              <p>Worked Example: Vector arithmetic in \(\mathbb{R}^3\)</p>
-              <p>Given \(\vec{u} = (2,-1,3)\) and \(\vec{v} = (1,4,-2)\), compute \(3\vec{u} - 2\vec{v}\) and its magnitude.</p>
-              <p>Scalar multiples: \(3\vec{u} = (6,-3,9)\); \(2\vec{v} = (2,8,-4)\).</p>
-              <p>Subtract componentwise: \(3\vec{u} - 2\vec{v} = (6-2, -3-8, 9-(-4)) = (4, -11, 13)\).</p>
-              <p>Magnitude: \(|3\vec{u} - 2\vec{v}| = \sqrt{4^2 + (-11)^2 + 13^2} = \sqrt{16 + 121 + 169} = \sqrt{306} \approx 17.49\).</p>
-            </div>
-            <div class="worked-example">
-              <p>Worked Example: Expressing a vector as a linear combination</p>
-              <p>Write \(\vec{w} = (7,4)\) as a linear combination of \(\vec{a} = (1,2)\) and \(\vec{b} = (3,-1)\).</p>
-              <p>Set \(\vec{w} = s\vec{a} + t\vec{b}\): \((7,4) = (s + 3t,\; 2s - t)\). System: \(s + 3t = 7\) and \(2s - t = 4\).</p>
-              <p>From the second equation \(t = 2s - 4\). Substitute: \(s + 3(2s-4) = 7 \implies 7s - 12 = 7 \implies s = \frac{19}{7}\). Then \(t = 2(\tfrac{19}{7}) - 4 = \tfrac{38}{7} - \tfrac{28}{7} = \tfrac{10}{7}\).</p>
-              <p>So \(\vec{w} = \tfrac{19}{7}\vec{a} + \tfrac{10}{7}\vec{b}\). Verify: \(\tfrac{19}{7}(1,2) + \tfrac{10}{7}(3,-1) = (\tfrac{19+30}{7}, \tfrac{38-10}{7}) = (7, 4)\). ✓</p>
-            </div>
-            <ul>
-              <li>Treating a vector as a point — vectors do not have a fixed location; only magnitude and direction matter.</li>
-              <li>Adding magnitudes of vectors instead of components: \(|\vec{u}+\vec{v}| \ne |\vec{u}| + |\vec{v}|\) in general.</li>
-              <li>Forgetting that the zero vector is parallel to every vector by convention (some texts disagree, but in Ontario MCV4U \(\vec{0}\) is taken to be parallel to all).</li>
-              <li>Confusing notation: \((2,-1,3)\) and \(2\hat{i} - \hat{j} + 3\hat{k}\) are the same vector written two ways.</li>
-              <li>Saying two vectors with the same magnitude are equal — direction must match too.</li>
-            </ul>
-            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "recognize a vector as a quantity with both magnitude and direction, and identify, gather, and interpret information about real-world applications of vectors." Also C1.3 — "represent a vector in two-space geometrically as a directed line segment, with directions expressed in different ways … and algebraically (e.g., using Cartesian coordinates)." And C2.2 — "perform the operations of addition, subtraction, and scalar multiplication on vectors represented as directed line segments in two-space, and on vectors represented in Cartesian form in two-space."</p>
-          </div>
-        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A <strong>scalar</strong> is a quantity that has only magnitude (temperature, mass, time). A <strong>vector</strong> has both magnitude and direction (displacement, velocity, force). Vectors are represented geometrically as directed arrows whose length encodes magnitude and whose orientation encodes direction. Algebraically, a vector in two dimensions can be written in component form \(\vec{u} = (u_1, u_2)\).</p>
+                    <p>Two vectors are equal if and only if they have the same magnitude <em>and</em> direction — position in space is irrelevant. The length of a vector \(\vec{u} = (u_1, u_2)\) is \(|\vec{u}| = \sqrt{u_1^2 + u_2^2}\).</p>
+                    <ul>
+                      <li><strong>Scalar</strong> — a real number; magnitude only.</li>
+                      <li><strong>Vector</strong> — a directed quantity with magnitude and direction; written \(\vec{u}\) or in bold.</li>
+                      <li><strong>Magnitude</strong> — the length of the arrow; \(|\vec{u}| = \sqrt{u_1^2 + u_2^2}\) in \(\mathbb{R}^2\).</li>
+                      <li><strong>Zero vector</strong> — \(\vec{0}\); has magnitude 0 and undefined direction; identity for addition.</li>
+                      <li><strong>Equal vectors</strong> — same magnitude <em>and</em> direction; location does not matter.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Magnitude of a 2D vector</p>
+                      <p>Find the magnitude of \(\vec{u} = (3, -4)\).</p>
+                      <p>\(|\vec{u}| = \sqrt{3^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5\).</p>
+                    </div>
+                    <ul>
+                      <li>Treating a vector as a point — vectors do not have a fixed location; only magnitude and direction matter.</li>
+                      <li>Saying two vectors with the same magnitude are equal — direction must match too.</li>
+                      <li>Conflating scalars (real numbers) with one-dimensional vectors; they live in different settings.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "recognize a vector as a quantity with both magnitude and direction, and identify, gather, and interpret information about real-world applications of vectors."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v40')">
@@ -147,6 +132,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Vectors are added using the <strong>triangle rule</strong>: place the tail of \(\vec{v}\) at the head of \(\vec{u}\); the resultant \(\vec{u}+\vec{v}\) runs from the tail of \(\vec{u}\) to the head of \(\vec{v}\). The equivalent <strong>parallelogram rule</strong> places both vectors tail-to-tail; the diagonal of the resulting parallelogram is the sum. In component form, addition is componentwise: \((u_1, u_2) + (v_1, v_2) = (u_1+v_1,\, u_2+v_2)\).</p>
+                    <p>Subtraction reverses one vector: \(\vec{u} - \vec{v} = \vec{u} + (-\vec{v})\). Geometrically, \(\vec{u}-\vec{v}\) is the vector from the head of \(\vec{v}\) to the head of \(\vec{u}\) when both are drawn from a common tail. Magnitudes of a sum do not simply add: in general \(|\vec{u}+\vec{v}| \ne |\vec{u}| + |\vec{v}|\) — equality holds only when the two vectors point in the same direction.</p>
+                    <ul>
+                      <li><strong>Triangle rule</strong> — head-to-tail addition: \(\vec{u}+\vec{v}\) closes the third side.</li>
+                      <li><strong>Parallelogram rule</strong> — equivalent geometric method with tail-to-tail vectors and the diagonal as the sum.</li>
+                      <li><strong>Componentwise addition</strong> — add corresponding entries; same idea for subtraction.</li>
+                      <li><strong>Resultant</strong> — the single vector equivalent to a sum of several vectors.</li>
+                      <li><strong>Negative of a vector</strong> — same magnitude, opposite direction; \(\vec{u} + (-\vec{u}) = \vec{0}\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Sum and difference in \(\mathbb{R}^2\)</p>
+                      <p>Let \(\vec{u} = (4, -2)\) and \(\vec{v} = (-1, 5)\). Compute \(\vec{u}+\vec{v}\) and \(\vec{u}-\vec{v}\).</p>
+                      <p>\(\vec{u}+\vec{v} = (4+(-1),\, -2+5) = (3, 3)\).</p>
+                      <p>\(\vec{u}-\vec{v} = (4-(-1),\, -2-5) = (5, -7)\). Magnitude check: \(|\vec{u}-\vec{v}| = \sqrt{25+49} = \sqrt{74} \approx 8.60\).</p>
+                    </div>
+                    <ul>
+                      <li>Adding magnitudes of vectors instead of components: \(|\vec{u}+\vec{v}| \ne |\vec{u}| + |\vec{v}|\) unless \(\vec{u}\) and \(\vec{v}\) are parallel and same-direction.</li>
+                      <li>Drawing the resultant from the wrong endpoint in the triangle rule — the resultant starts at the original tail, not at the head.</li>
+                      <li>Mixing up \(\vec{u}-\vec{v}\) with \(\vec{v}-\vec{u}\); they have opposite directions.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "perform the operations of addition, subtraction, and scalar multiplication on vectors represented as directed line segments in two-space, and on vectors represented in Cartesian form in two-space."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v41')">
                         <span class="vid-icon">📖</span>
@@ -159,6 +171,32 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=jeDS3JwGqrs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p><strong>Scalar multiplication</strong> by a real number \(k\) scales magnitude by \(|k|\) and reverses direction if \(k<0\). Algebraically \(k\vec{u} = (k u_1, k u_2)\) in \(\mathbb{R}^2\). Geometrically, \(2\vec{u}\) is twice as long as \(\vec{u}\) and points the same way; \(-\tfrac{1}{2}\vec{u}\) is half as long and points the opposite way. The basic algebraic properties — commutative, associative, and distributive over addition — all carry over from real-number arithmetic: \(k(\vec{u}+\vec{v}) = k\vec{u} + k\vec{v}\), and \((k+m)\vec{u} = k\vec{u} + m\vec{u}\).</p>
+                    <p>Two non-zero vectors are <strong>collinear</strong> exactly when one is a scalar multiple of the other; this is the algebraic test for parallelism. The <strong>unit vector</strong> in the direction of \(\vec{u}\) is \(\hat{u} = \frac{\vec{u}}{|\vec{u}|}\); dividing by magnitude rescales any non-zero vector to length 1 while keeping its direction.</p>
+                    <ul>
+                      <li><strong>Scalar multiplication</strong> — \(k\vec{u}\) scales magnitude by \(|k|\); flips direction when \(k<0\).</li>
+                      <li><strong>Unit vector</strong> — \(\hat{u} = \frac{\vec{u}}{|\vec{u}|}\); used to express direction independently of length.</li>
+                      <li><strong>Collinear vectors</strong> — parallel to the same line; one is a scalar multiple of the other.</li>
+                      <li><strong>Distributive law</strong> — \(k(\vec{u}+\vec{v}) = k\vec{u} + k\vec{v}\); pulls the scalar through a sum.</li>
+                      <li><strong>Zero vector under scaling</strong> — \(0\cdot\vec{u} = \vec{0}\) for any \(\vec{u}\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Unit vector in a given direction</p>
+                      <p>Find the unit vector in the direction of \(\vec{u} = (6, -8)\).</p>
+                      <p>Magnitude: \(|\vec{u}| = \sqrt{36+64} = \sqrt{100} = 10\). Unit vector: \(\hat{u} = \frac{1}{10}(6,-8) = (0.6, -0.8)\). Verify length: \(\sqrt{0.36+0.64} = 1\) ✓.</p>
+                    </div>
+                    <ul>
+                      <li>Scaling only one component when applying a scalar — both must be multiplied.</li>
+                      <li>Forgetting that the zero vector is parallel to every vector by convention (in Ontario MCV4U \(\vec{0}\) is taken to be parallel to all).</li>
+                      <li>Calling two vectors collinear when they happen to have the same magnitude — only proportional components count.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.3 — "determine, through investigation with and without technology, some properties (e.g., commutative, associative, and distributive properties) of the operations of addition, subtraction, and scalar multiplication of vectors."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v42')">
@@ -186,6 +224,32 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>In three dimensions a vector is written \(\vec{v} = (v_1, v_2, v_3)\), where the three components are signed lengths along the \(x\), \(y\), and \(z\) axes. The magnitude generalizes the Pythagorean formula: \(|\vec{v}| = \sqrt{v_1^2 + v_2^2 + v_3^2}\). Two vectors in \(\mathbb{R}^3\) are equal iff all three components match. The coordinate axes follow the <em>right-hand rule</em>: if your right thumb points along \(+x\) and your index finger along \(+y\), your middle finger points along \(+z\).</p>
+                    <p>Drawing vectors in \(\mathbb{R}^3\) requires care — perspective sketches typically show \(x\) and \(y\) in the plane of the page with \(z\) coming out toward the viewer. Locating a point \((a,b,c)\) means stepping \(a\) units along \(x\), then \(b\) units along \(y\), then \(c\) units along \(z\). The same vector \((a,b,c)\) can be drawn anywhere — position is irrelevant.</p>
+                    <ul>
+                      <li><strong>Three-space (\(\mathbb{R}^3\))</strong> — the set of ordered triples \((x,y,z)\) of real numbers.</li>
+                      <li><strong>Position vector</strong> — vector from the origin to a point, \(\vec{OP} = (a,b,c)\).</li>
+                      <li><strong>Magnitude in \(\mathbb{R}^3\)</strong> — \(|\vec{v}| = \sqrt{v_1^2 + v_2^2 + v_3^2}\).</li>
+                      <li><strong>Right-hand orientation</strong> — convention used to fix the positive \(z\)-axis relative to \(x\) and \(y\).</li>
+                      <li><strong>Equal vectors in \(\mathbb{R}^3\)</strong> — all three components agree.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Magnitude in \(\mathbb{R}^3\)</p>
+                      <p>Find \(|\vec{v}|\) for \(\vec{v} = (1, -2, 2)\).</p>
+                      <p>\(|\vec{v}| = \sqrt{1^2 + (-2)^2 + 2^2} = \sqrt{1+4+4} = \sqrt{9} = 3\).</p>
+                    </div>
+                    <ul>
+                      <li>Dropping a component when computing magnitude — all three squares enter the sum.</li>
+                      <li>Reading off coordinates in the wrong order when reading a 3D sketch; \((1,2,3)\) is not the same as \((3,2,1)\).</li>
+                      <li>Assuming \(\mathbb{R}^3\) behaves "like \(\mathbb{R}^2\) with an extra dimension" without checking each formula in three components.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.3 — "represent a vector in two-space geometrically as a directed line segment, with directions expressed in different ways … and algebraically (e.g., using Cartesian coordinates), and recognize vectors with the same magnitude and direction but different positions as equal vectors."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v44')">
                         <span class="vid-icon">📖</span>
@@ -198,6 +262,32 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=gDWHZH99-w0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>Cartesian (standard) unit vectors</strong> in \(\mathbb{R}^3\) are \(\hat{i} = (1,0,0)\), \(\hat{j} = (0,1,0)\), and \(\hat{k} = (0,0,1)\). Every vector in \(\mathbb{R}^3\) has a unique expression as \(a\hat{i} + b\hat{j} + c\hat{k}\), where \((a,b,c)\) are the Cartesian components. In \(\mathbb{R}^2\), the same role is played by \(\hat{i} = (1,0)\) and \(\hat{j} = (0,1)\). Working with \(\hat{i}, \hat{j}, \hat{k}\) form versus the tuple form is purely a matter of notation — they encode the same information.</p>
+                    <p>Componentwise arithmetic carries over directly. To add, subtract, or scale, treat the basis vectors like algebraic variables: \((3\hat{i} - 2\hat{j}) + (\hat{i} + 4\hat{j}) = 4\hat{i} + 2\hat{j}\). Cartesian form is the bridge between the geometric picture (arrows) and algebraic computation; once a vector is in components, every operation reduces to ordinary number arithmetic on the entries.</p>
+                    <ul>
+                      <li><strong>Cartesian (standard) basis</strong> — \(\hat{i}, \hat{j}, \hat{k}\); pairwise perpendicular unit vectors along the axes.</li>
+                      <li><strong>Unique decomposition</strong> — \(\vec{v} = a\hat{i} + b\hat{j} + c\hat{k}\); coefficients are the components.</li>
+                      <li><strong>Tuple vs. \(\hat{i}\hat{j}\hat{k}\) notation</strong> — \((2,-1,3)\) and \(2\hat{i}-\hat{j}+3\hat{k}\) are the same vector.</li>
+                      <li><strong>Component addition</strong> — coefficients on the same basis vector combine.</li>
+                      <li><strong>Magnitude from components</strong> — \(|a\hat{i}+b\hat{j}+c\hat{k}| = \sqrt{a^2+b^2+c^2}\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Cartesian decomposition and magnitude</p>
+                      <p>Write \(\vec{u} = (-2, 1, 2)\) in \(\hat{i}\hat{j}\hat{k}\) notation and find \(|\vec{u}|\).</p>
+                      <p>\(\vec{u} = -2\hat{i} + \hat{j} + 2\hat{k}\). Magnitude: \(\sqrt{(-2)^2 + 1^2 + 2^2} = \sqrt{4+1+4} = 3\).</p>
+                    </div>
+                    <ul>
+                      <li>Confusing notation: \((2,-1,3)\) and \(2\hat{i} - \hat{j} + 3\hat{k}\) are the same vector written two ways.</li>
+                      <li>Mixing dimensions — using \(\hat{k}\) in a \(\mathbb{R}^2\) problem (no \(z\)-component exists).</li>
+                      <li>Writing \(\hat{i} \cdot 2\) when \(2\hat{i}\) is intended; the coefficient is just multiplication.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.3 — "represent a vector in two-space … and algebraically (e.g., using Cartesian coordinates), and recognize vectors with the same magnitude and direction but different positions as equal vectors."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v45')">
@@ -212,6 +302,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Once a vector is in Cartesian form, every operation we learned in \(\mathbb{R}^2\) extends to \(\mathbb{R}^3\) componentwise. To add or subtract, combine corresponding entries. To scale, multiply every entry by the scalar. To compute magnitude, take the square root of the sum of squared components: \(|(a,b,c)| = \sqrt{a^2+b^2+c^2}\). The same algebraic properties — commutativity, associativity, and distributivity — hold in three dimensions for the same reason they hold in two: each component obeys ordinary real-number arithmetic.</p>
+                    <p>A common task is computing a linear combination such as \(3\vec{u} - 2\vec{v}\) entry by entry, then finding the magnitude of the result. The procedure is mechanical: scale, subtract, simplify, then apply the magnitude formula.</p>
+                    <ul>
+                      <li><strong>Componentwise addition (\(\mathbb{R}^3\))</strong> — \((a_1,a_2,a_3) + (b_1,b_2,b_3) = (a_1+b_1, a_2+b_2, a_3+b_3)\).</li>
+                      <li><strong>Componentwise subtraction</strong> — same idea with minus signs.</li>
+                      <li><strong>Componentwise scaling</strong> — \(k(a,b,c) = (ka, kb, kc)\).</li>
+                      <li><strong>Magnitude of a combination</strong> — apply \(\sqrt{a^2+b^2+c^2}\) <em>after</em> computing the resultant components.</li>
+                      <li><strong>Algebraic properties</strong> — commutative, associative, distributive over scalar multiplication.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Vector arithmetic in \(\mathbb{R}^3\)</p>
+                      <p>Given \(\vec{u} = (2,-1,3)\) and \(\vec{v} = (1,4,-2)\), compute \(3\vec{u} - 2\vec{v}\) and its magnitude.</p>
+                      <p>Scalar multiples: \(3\vec{u} = (6,-3,9)\); \(2\vec{v} = (2,8,-4)\).</p>
+                      <p>Subtract componentwise: \(3\vec{u} - 2\vec{v} = (6-2, -3-8, 9-(-4)) = (4, -11, 13)\).</p>
+                      <p>Magnitude: \(|3\vec{u} - 2\vec{v}| = \sqrt{4^2 + (-11)^2 + 13^2} = \sqrt{16 + 121 + 169} = \sqrt{306} \approx 17.49\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting a sign when scaling a component with a negative entry.</li>
+                      <li>Taking the magnitude of \(\vec{u}\) and \(\vec{v}\) separately and combining — magnitudes do not distribute over subtraction.</li>
+                      <li>Confusing notation: \((2,-1,3)\) and \(2\hat{i} - \hat{j} + 3\hat{k}\) are the same vector written two ways.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 — "perform the operations of addition, subtraction, and scalar multiplication on vectors represented as directed line segments in two-space, and on vectors represented in Cartesian form in two-space and three-space."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v46')">
                         <span class="vid-icon">📖</span>
@@ -224,6 +342,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=L2vPGVTdaeA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A <strong>linear combination</strong> of vectors \(\vec{v}_1, \dots, \vec{v}_n\) is any expression \(c_1\vec{v}_1 + \dots + c_n\vec{v}_n\) where the \(c_i\) are scalars. The set of all such combinations is the <strong>spanning set</strong> of \(\{\vec{v}_1,\dots,\vec{v}_n\}\). In \(\mathbb{R}^2\), any two non-collinear vectors span the whole plane; in \(\mathbb{R}^3\), any three non-coplanar vectors span the whole space. The Cartesian unit vectors \(\hat{i}, \hat{j}, \hat{k}\) are the canonical example — they span \(\mathbb{R}^3\), and every vector decomposes uniquely on this basis.</p>
+                    <p>Expressing a given vector as a linear combination of others reduces to solving a linear system: equate components and solve for the scalar coefficients. If the system has a unique solution, the target vector lies in the span; if it has no solution, it does not.</p>
+                    <ul>
+                      <li><strong>Linear combination</strong> — \(c_1\vec{v}_1 + c_2\vec{v}_2 + \dots + c_n\vec{v}_n\) for scalars \(c_i\).</li>
+                      <li><strong>Spanning set</strong> — a set whose linear combinations produce every vector in the given space.</li>
+                      <li><strong>Basis in \(\mathbb{R}^2\)</strong> — any two non-collinear vectors.</li>
+                      <li><strong>Basis in \(\mathbb{R}^3\)</strong> — any three non-coplanar vectors; the standard one is \(\{\hat{i},\hat{j},\hat{k}\}\).</li>
+                      <li><strong>Existence test</strong> — solve the resulting linear system in the scalar coefficients.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Expressing a vector as a linear combination</p>
+                      <p>Write \(\vec{w} = (7,4)\) as a linear combination of \(\vec{a} = (1,2)\) and \(\vec{b} = (3,-1)\).</p>
+                      <p>Set \(\vec{w} = s\vec{a} + t\vec{b}\): \((7,4) = (s + 3t,\; 2s - t)\). System: \(s + 3t = 7\) and \(2s - t = 4\).</p>
+                      <p>From the second equation \(t = 2s - 4\). Substitute: \(s + 3(2s-4) = 7 \implies 7s - 12 = 7 \implies s = \frac{19}{7}\). Then \(t = 2(\tfrac{19}{7}) - 4 = \tfrac{38}{7} - \tfrac{28}{7} = \tfrac{10}{7}\).</p>
+                      <p>So \(\vec{w} = \tfrac{19}{7}\vec{a} + \tfrac{10}{7}\vec{b}\). Verify: \(\tfrac{19}{7}(1,2) + \tfrac{10}{7}(3,-1) = (\tfrac{19+30}{7}, \tfrac{38-10}{7}) = (7, 4)\). ✓</p>
+                    </div>
+                    <ul>
+                      <li>Confusing "spans \(\mathbb{R}^2\)" with "is a basis" — a spanning set may have extra (linearly dependent) vectors.</li>
+                      <li>Trying to span \(\mathbb{R}^3\) with only two vectors — at best you get a plane.</li>
+                      <li>Setting up the system in the wrong order (treating the target vector as one of the spanning vectors).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.4 — "determine, through investigation, and prove some properties of linear combinations of vectors (e.g., scalar multiples, sums and differences) … and use these properties to solve problems involving the representation of vectors in two-space."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v47')">

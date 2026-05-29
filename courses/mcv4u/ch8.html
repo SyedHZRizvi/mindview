@@ -91,51 +91,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                 <span>📹 7 lessons</span>
             </div>
         </div>
-        <details class="lesson-notes">
-          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
-          <div class="lesson-notes-body">
-            <p>In Grade 10 we wrote lines as \(y = mx + b\). That representation works in \(\mathbb{R}^2\) but breaks down in \(\mathbb{R}^3\), where a single linear equation in \(x, y, z\) describes a plane, not a line. Vector geometry solves this. A line is uniquely determined by a point \(P_0\) on it and a <strong>direction vector</strong> \(\vec{d}\); its <strong>vector equation</strong> is \(\vec{r} = \vec{r}_0 + t\vec{d}\), where \(t\) is a real parameter. Splitting into components gives the <strong>parametric equations</strong>, and (in \(\mathbb{R}^3\)) eliminating \(t\) gives the <strong>symmetric equations</strong> \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\), valid only where the direction components are non-zero.</p>
-            <p>A plane in \(\mathbb{R}^3\) is uniquely determined by a point and a <strong>normal vector</strong> \(\vec{n}\) (a vector perpendicular to the plane). The <strong>scalar (Cartesian) equation</strong> of the plane is \(ax + by + cz + d = 0\), where \((a,b,c)\) are the components of \(\vec{n}\) and \(d = -\vec{n}\cdot\vec{r}_0\). Alternatively, a plane can be specified by two direction vectors lying within it, giving the <strong>vector equation</strong> \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\). To convert between the two forms, the normal is \(\vec{n} = \vec{a}\times\vec{b}\).</p>
-            <p>The power of these representations is that they handle parallelism, perpendicularity, and intersections uniformly. Two lines are parallel iff their direction vectors are scalar multiples; two planes are parallel iff their normals are; a line is parallel to a plane iff its direction is perpendicular to the plane's normal (\(\vec{d}\cdot\vec{n} = 0\)).</p>
-            <ul>
-              <li><strong>Direction vector</strong> — a non-zero vector \(\vec{d}\) parallel to a line; any non-zero scalar multiple is also a direction vector.</li>
-              <li><strong>Vector equation of a line</strong> — \(\vec{r} = \vec{r}_0 + t\vec{d}\), \(t \in \mathbb{R}\).</li>
-              <li><strong>Parametric equations</strong> — \(x = x_0 + t d_1\), \(y = y_0 + t d_2\), \(z = z_0 + t d_3\).</li>
-              <li><strong>Symmetric equations</strong> (\(\mathbb{R}^3\), nonzero direction components) — \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\).</li>
-              <li><strong>Normal vector to a plane</strong> — vector perpendicular to every direction in the plane.</li>
-              <li><strong>Scalar equation of a plane</strong> — \(ax + by + cz + d = 0\), where \(\vec{n} = (a,b,c)\) is normal.</li>
-              <li><strong>Vector equation of a plane</strong> — \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\) for non-collinear \(\vec{a}, \vec{b}\) in the plane.</li>
-              <li><strong>Skew lines</strong> — lines in \(\mathbb{R}^3\) that are neither parallel nor intersecting.</li>
-            </ul>
-            <div class="worked-example">
-              <p>Worked Example: All three forms of a line in \(\mathbb{R}^3\)</p>
-              <p>Find vector, parametric, and symmetric equations for the line through \(P(2, -1, 4)\) and \(Q(5, 3, -2)\).</p>
-              <p>Direction vector: \(\vec{d} = \vec{PQ} = (5-2,\, 3-(-1),\, -2-4) = (3, 4, -6)\).</p>
-              <p>Vector form: \(\vec{r} = (2,-1,4) + t(3,4,-6)\).</p>
-              <p>Parametric form: \(x = 2 + 3t\), \(y = -1 + 4t\), \(z = 4 - 6t\).</p>
-              <p>Symmetric form: \(\frac{x-2}{3} = \frac{y+1}{4} = \frac{z-4}{-6}\).</p>
-              <p>Check that \(Q\) lies on the line: \(t = 1\) gives \((2+3, -1+4, 4-6) = (5, 3, -2)\) ✓.</p>
-            </div>
-            <div class="worked-example">
-              <p>Worked Example: Scalar equation of a plane from three points</p>
-              <p>Find the scalar equation of the plane through \(A(1,2,3)\), \(B(2,0,1)\), \(C(0,1,4)\).</p>
-              <p>Two direction vectors in the plane: \(\vec{AB} = (1,-2,-2)\) and \(\vec{AC} = (-1,-1,1)\).</p>
-              <p>Normal vector: \(\vec{n} = \vec{AB}\times\vec{AC}\). Compute the determinant: \[\vec{n} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & -2 & -2 \\ -1 & -1 & 1 \end{vmatrix} = \hat{i}((-2)(1)-(-2)(-1)) - \hat{j}((1)(1)-(-2)(-1)) + \hat{k}((1)(-1)-(-2)(-1)).\]</p>
-              <p>Evaluate: \(\hat{i}(-2-2) - \hat{j}(1-2) + \hat{k}(-1-2) = -4\hat{i} + \hat{j} - 3\hat{k} = (-4, 1, -3)\).</p>
-              <p>Use point \(A\): \(-4(x-1) + 1(y-2) - 3(z-3) = 0 \implies -4x + 4 + y - 2 - 3z + 9 = 0 \implies -4x + y - 3z + 11 = 0\).</p>
-              <p>Verify with \(B\): \(-4(2) + 0 - 3(1) + 11 = -8 + 0 - 3 + 11 = 0\) ✓.</p>
-            </div>
-            <ul>
-              <li>Writing a single linear equation in \(x, y, z\) and calling it a line — in \(\mathbb{R}^3\) that is a plane.</li>
-              <li>Forgetting that direction vectors and normal vectors are not unique — any non-zero scalar multiple works.</li>
-              <li>Using \(y = mx + b\) form in \(\mathbb{R}^3\) — slope-intercept does not generalize.</li>
-              <li>Writing symmetric equations when a direction component is zero — the corresponding fraction is undefined and that component must be treated separately.</li>
-              <li>Mixing up "parallel to the plane" (\(\vec{d}\cdot\vec{n} = 0\)) with "perpendicular to the plane" (\(\vec{d}\) parallel to \(\vec{n}\)).</li>
-            </ul>
-            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.1 — "recognize that the solution points \((x, y)\) in two-space of a single linear equation in two variables form a line and that the solution points \((x, y)\) of a system of two linear equations in two variables determine the point of intersection of two lines, if the lines are not coincident or parallel." Also C4.2 — "determine, through investigation with technology … and without technology, the equation of a line in two-space, given the slope and a point on the line, two points on the line, the equation of a line parallel to the desired line and a point on the desired line, or the equation of a line perpendicular to the desired line and a point on the desired line." And C4.3 — "recognize that the solution points \((x, y, z)\) in three-space of a single linear equation in three variables form a plane and that the solution points \((x, y, z)\) of a system of two linear equations in three variables form the line of intersection of two planes, if the planes are not parallel."</p>
-          </div>
-        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A line in \(\mathbb{R}^2\) is uniquely determined by a point \(P_0(x_0,y_0)\) on it together with a <strong>direction vector</strong> \(\vec{d} = (d_1, d_2)\) parallel to the line. The <strong>vector equation</strong> is \(\vec{r} = \vec{r}_0 + t\vec{d}\), where \(t\) is a real parameter sweeping out every point on the line. Reading off components yields the <strong>parametric equations</strong> \(x = x_0 + t d_1\) and \(y = y_0 + t d_2\).</p>
+                    <p>Any non-zero scalar multiple of \(\vec{d}\) is an equally valid direction vector for the same line; the choice of \(P_0\) is also non-unique. As \(t\) varies, the parametric form generates every point on the line — values of \(t > 0\) trace one direction from \(P_0\), values \(t < 0\) trace the opposite direction, and \(t = 0\) recovers \(P_0\).</p>
+                    <ul>
+                      <li><strong>Direction vector</strong> — a non-zero vector \(\vec{d}\) parallel to a line; any non-zero scalar multiple is also a direction vector.</li>
+                      <li><strong>Vector equation of a line (\(\mathbb{R}^2\))</strong> — \(\vec{r} = \vec{r}_0 + t\vec{d}\), \(t \in \mathbb{R}\).</li>
+                      <li><strong>Parametric equations (\(\mathbb{R}^2\))</strong> — \(x = x_0 + t d_1\), \(y = y_0 + t d_2\).</li>
+                      <li><strong>Parameter</strong> — the scalar \(t\) that traces all points on the line.</li>
+                      <li><strong>Non-uniqueness</strong> — many \((P_0, \vec{d})\) pairs describe the same line.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Vector and parametric form of a line in \(\mathbb{R}^2\)</p>
+                      <p>Find vector and parametric equations of the line through \(P(1, -2)\) with direction \(\vec{d} = (3, 5)\).</p>
+                      <p>Vector form: \(\vec{r} = (1, -2) + t(3, 5)\).</p>
+                      <p>Parametric form: \(x = 1 + 3t\), \(y = -2 + 5t\). At \(t = 2\) we get \((7, 8)\), confirming the line continues into the first quadrant.</p>
+                    </div>
+                    <ul>
+                      <li>Picking a direction vector that is the zero vector — \(\vec{d}\) must be non-zero or there is no direction.</li>
+                      <li>Believing only one parametrization is correct; both \((1,-2)+t(3,5)\) and \((4,3)+t(6,10)\) describe the same line.</li>
+                      <li>Confusing the parameter \(t\) with the \(x\)-coordinate.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.2 — "determine, through investigation with technology … and without technology, the equation of a line in two-space, given the slope and a point on the line, two points on the line, the equation of a line parallel to the desired line and a point on the desired line, or the equation of a line perpendicular to the desired line and a point on the desired line."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v57')">
@@ -149,6 +132,32 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=PmTt5zuaIEo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>In Grade 10 we wrote lines as \(y = mx + b\). The <strong>Cartesian (scalar) equation</strong> generalizes this: in \(\mathbb{R}^2\) every line satisfies \(ax + by + c = 0\), where the <strong>normal vector</strong> to the line is \(\vec{n} = (a, b)\). The relation \(\vec{n}\cdot\vec{d} = 0\) ties the normal to the direction: if \(\vec{d} = (d_1, d_2)\), one valid normal is \((d_2, -d_1)\). The slope of the line is \(-\tfrac{a}{b}\) (when \(b \ne 0\)).</p>
+                    <p>To convert from parametric to Cartesian form, eliminate the parameter \(t\) from the two component equations. To go the other way, choose a point satisfying the Cartesian equation and read off any direction vector perpendicular to \(\vec{n}\). The Cartesian form is convenient for testing whether a given point lies on the line (substitute and check) and for finding intersections (solve a system).</p>
+                    <ul>
+                      <li><strong>Cartesian (scalar) equation (\(\mathbb{R}^2\))</strong> — \(ax + by + c = 0\), with \((a,b)\) the normal vector.</li>
+                      <li><strong>Normal to a line</strong> — vector perpendicular to the direction; rotates \((d_1,d_2)\) by \(90^\circ\) to \((d_2, -d_1)\) or \((-d_2, d_1)\).</li>
+                      <li><strong>Slope from Cartesian</strong> — \(m = -\tfrac{a}{b}\) when \(b \ne 0\).</li>
+                      <li><strong>Point test</strong> — substitute coordinates into \(ax+by+c\) and check for 0.</li>
+                      <li><strong>Conversion</strong> — eliminate \(t\) between parametric equations to obtain Cartesian.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Convert parametric to Cartesian</p>
+                      <p>Line: \(x = 1 + 3t\), \(y = -2 + 5t\). From the first, \(t = \tfrac{x-1}{3}\). Sub into the second: \(y = -2 + 5\cdot\tfrac{x-1}{3}\).</p>
+                      <p>Multiply by 3: \(3y = -6 + 5(x-1) = 5x - 11\), so \(5x - 3y - 11 = 0\). Normal: \(\vec{n} = (5, -3)\); slope: \(\tfrac{5}{3}\).</p>
+                    </div>
+                    <ul>
+                      <li>Using \(y = mx + b\) form in \(\mathbb{R}^3\) — slope-intercept does not generalize.</li>
+                      <li>Forgetting the normal is perpendicular to (not parallel to) the line's direction.</li>
+                      <li>Mis-rotating the direction: \((d_1, d_2) \to (d_2, -d_1)\), not \((-d_1, d_2)\).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.1 — "recognize that the solution points \((x, y)\) in two-space of a single linear equation in two variables form a line and that the solution points \((x, y)\) of a system of two linear equations in two variables determine the point of intersection of two lines, if the lines are not coincident or parallel."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v58')">
@@ -176,6 +185,36 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>In \(\mathbb{R}^3\), a single linear equation describes a plane, not a line — so the Cartesian form does not generalize directly. The vector and parametric forms do: a line is given by \(\vec{r} = \vec{r}_0 + t\vec{d}\), with \(\vec{r}_0 = (x_0, y_0, z_0)\) and \(\vec{d} = (d_1, d_2, d_3)\). Eliminating \(t\) component-by-component yields the <strong>symmetric equations</strong> \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\), valid only when all direction components are non-zero.</p>
+                    <p>Two lines in \(\mathbb{R}^3\) can be coincident, parallel and distinct, intersecting, or <strong>skew</strong> (neither parallel nor intersecting — a configuration impossible in \(\mathbb{R}^2\)). Parallelism is tested algebraically: directions must be scalar multiples.</p>
+                    <ul>
+                      <li><strong>Vector equation (\(\mathbb{R}^3\))</strong> — \(\vec{r} = \vec{r}_0 + t\vec{d}\); \(t\) sweeps the line.</li>
+                      <li><strong>Parametric equations</strong> — \(x = x_0 + t d_1\), \(y = y_0 + t d_2\), \(z = z_0 + t d_3\).</li>
+                      <li><strong>Symmetric equations</strong> — \(\frac{x-x_0}{d_1} = \frac{y-y_0}{d_2} = \frac{z-z_0}{d_3}\) when no \(d_i = 0\).</li>
+                      <li><strong>Skew lines</strong> — lines in \(\mathbb{R}^3\) that are neither parallel nor intersecting.</li>
+                      <li><strong>Parallel test</strong> — direction vectors are scalar multiples of each other.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: All three forms of a line in \(\mathbb{R}^3\)</p>
+                      <p>Find vector, parametric, and symmetric equations for the line through \(P(2, -1, 4)\) and \(Q(5, 3, -2)\).</p>
+                      <p>Direction vector: \(\vec{d} = \vec{PQ} = (5-2,\, 3-(-1),\, -2-4) = (3, 4, -6)\).</p>
+                      <p>Vector form: \(\vec{r} = (2,-1,4) + t(3,4,-6)\).</p>
+                      <p>Parametric form: \(x = 2 + 3t\), \(y = -1 + 4t\), \(z = 4 - 6t\).</p>
+                      <p>Symmetric form: \(\frac{x-2}{3} = \frac{y+1}{4} = \frac{z-4}{-6}\).</p>
+                      <p>Check that \(Q\) lies on the line: \(t = 1\) gives \((2+3, -1+4, 4-6) = (5, 3, -2)\) ✓.</p>
+                    </div>
+                    <ul>
+                      <li>Writing a single linear equation in \(x, y, z\) and calling it a line — in \(\mathbb{R}^3\) that is a plane.</li>
+                      <li>Writing symmetric equations when a direction component is zero — the corresponding fraction is undefined and that component must be treated separately.</li>
+                      <li>Using the same parameter \(t\) for two different lines when looking for intersections; use distinct parameters.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.2 — "determine, through investigation … the equation of a line in two-space and three-space, given the slope and a point on the line, two points on the line, the equation of a line parallel to the desired line and a point on the desired line, or the equation of a line perpendicular to the desired line and a point on the desired line."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v60')">
                         <span class="vid-icon">📖</span>
@@ -188,6 +227,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=te0rNvGiP6s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A plane in \(\mathbb{R}^3\) is uniquely determined by a point \(\vec{r}_0\) lying in it together with two non-collinear direction vectors \(\vec{a}\) and \(\vec{b}\) that lie within the plane. The <strong>vector equation</strong> is \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\), where \(s\) and \(t\) are real parameters. Reading off components gives the parametric equations for the plane: \(x = x_0 + s a_1 + t b_1\), and similarly for \(y\) and \(z\). Two parameters are needed because a plane is two-dimensional.</p>
+                    <p>The same plane can also be determined by three non-collinear points: convert by computing two direction vectors as differences of point position vectors (e.g., \(\vec{a} = \vec{AB}\) and \(\vec{b} = \vec{AC}\)). Any non-zero scalar multiples of these direction vectors work equally well.</p>
+                    <ul>
+                      <li><strong>Vector equation of a plane</strong> — \(\vec{r} = \vec{r}_0 + s\vec{a} + t\vec{b}\) for non-collinear \(\vec{a}, \vec{b}\) in the plane.</li>
+                      <li><strong>Parametric equations of a plane</strong> — three equations of the form \(x = x_0 + s a_1 + t b_1\), etc.</li>
+                      <li><strong>Non-collinearity requirement</strong> — \(\vec{a}\) and \(\vec{b}\) must not be parallel, or they describe a line, not a plane.</li>
+                      <li><strong>From three points</strong> — let \(\vec{a} = \vec{AB}\) and \(\vec{b} = \vec{AC}\); use any one of the three as \(\vec{r}_0\).</li>
+                      <li><strong>Two parameters</strong> — required because a plane has two dimensions.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Vector equation of a plane through three points</p>
+                      <p>Plane through \(A(1,2,3)\), \(B(2,0,1)\), \(C(0,1,4)\).</p>
+                      <p>Direction vectors: \(\vec{AB} = (1,-2,-2)\) and \(\vec{AC} = (-1,-1,1)\). Check non-collinearity: \(\vec{AB}\) is not a scalar multiple of \(\vec{AC}\) (e.g., compare ratios of entries) ✓.</p>
+                      <p>Vector equation: \(\vec{r} = (1,2,3) + s(1,-2,-2) + t(-1,-1,1)\).</p>
+                    </div>
+                    <ul>
+                      <li>Picking collinear direction vectors — the result is a line, not a plane.</li>
+                      <li>Using only one parameter — describes a line within the plane, not the whole plane.</li>
+                      <li>Forgetting that direction vectors and normal vectors are not unique — any non-zero scalar multiple works.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.6 — "determine, using properties of a plane, the equation of a plane in three-space, given … three non-collinear points on the plane, two non-parallel lines lying in the plane, [or] two parallel lines lying in the plane."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v61')">
@@ -202,6 +268,36 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The <strong>scalar (Cartesian) equation</strong> of a plane in \(\mathbb{R}^3\) is \(ax + by + cz + d = 0\), where \((a,b,c)\) are the components of the <strong>normal vector</strong> \(\vec{n}\) — a vector perpendicular to every direction lying in the plane — and \(d = -\vec{n}\cdot\vec{r}_0\) for any point \(\vec{r}_0\) on the plane. A single linear equation in \(x, y, z\) describes a plane; this is the three-dimensional analogue of \(ax + by + c = 0\) for a line in \(\mathbb{R}^2\).</p>
+                    <p>To go from vector form to scalar form, compute the normal as \(\vec{n} = \vec{a}\times\vec{b}\). To go from three points, take cross products of difference vectors. To test whether a point lies on the plane, substitute its coordinates into the scalar equation and check for zero.</p>
+                    <ul>
+                      <li><strong>Scalar equation of a plane</strong> — \(ax + by + cz + d = 0\), with \((a,b,c) = \vec{n}\).</li>
+                      <li><strong>Normal vector</strong> — perpendicular to every direction lying in the plane.</li>
+                      <li><strong>Conversion</strong> — \(\vec{n} = \vec{a}\times\vec{b}\) for plane spanned by \(\vec{a}\) and \(\vec{b}\).</li>
+                      <li><strong>Constant \(d\)</strong> — set \(d = -(\vec{n}\cdot\vec{r}_0)\) using any known point \(\vec{r}_0\) on the plane.</li>
+                      <li><strong>Point test</strong> — substitute and check whether the expression is zero.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Scalar equation of a plane from three points</p>
+                      <p>Find the scalar equation of the plane through \(A(1,2,3)\), \(B(2,0,1)\), \(C(0,1,4)\).</p>
+                      <p>Two direction vectors in the plane: \(\vec{AB} = (1,-2,-2)\) and \(\vec{AC} = (-1,-1,1)\).</p>
+                      <p>Normal vector: \(\vec{n} = \vec{AB}\times\vec{AC}\). Compute the determinant: \[\vec{n} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & -2 & -2 \\ -1 & -1 & 1 \end{vmatrix} = \hat{i}((-2)(1)-(-2)(-1)) - \hat{j}((1)(1)-(-2)(-1)) + \hat{k}((1)(-1)-(-2)(-1)).\]</p>
+                      <p>Evaluate: \(\hat{i}(-2-2) - \hat{j}(1-2) + \hat{k}(-1-2) = -4\hat{i} + \hat{j} - 3\hat{k} = (-4, 1, -3)\).</p>
+                      <p>Use point \(A\): \(-4(x-1) + 1(y-2) - 3(z-3) = 0 \implies -4x + 4 + y - 2 - 3z + 9 = 0 \implies -4x + y - 3z + 11 = 0\).</p>
+                      <p>Verify with \(B\): \(-4(2) + 0 - 3(1) + 11 = -8 + 0 - 3 + 11 = 0\) ✓.</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting the constant \(d\) in the scalar equation; it shifts the plane to pass through the chosen point.</li>
+                      <li>Mis-signing the middle term in the determinant expansion; the \(\hat{j}\) component carries a minus sign.</li>
+                      <li>Confusing the normal vector with a direction vector in the plane.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.3 — "recognize that the solution points \((x, y, z)\) in three-space of a single linear equation in three variables form a plane and that the solution points \((x, y, z)\) of a system of two linear equations in three variables form the line of intersection of two planes, if the planes are not parallel."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v62')">
                         <span class="vid-icon">📖</span>
@@ -214,6 +310,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=A0t6nxDm0ic" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>When a plane is specified by a point \(\vec{r}_0\) and a normal vector \(\vec{n}\), the equation falls out of the perpendicularity condition: any point \(\vec{r}\) in the plane satisfies \(\vec{n}\cdot(\vec{r} - \vec{r}_0) = 0\), which expands to the scalar form \(ax + by + cz + d = 0\) with \(d = -\vec{n}\cdot\vec{r}_0\). This <strong>point-normal form</strong> is the most direct route to the scalar equation when a normal is already known.</p>
+                    <p>Parallelism, perpendicularity, and intersections of lines and planes all reduce to algebra on direction and normal vectors. Two planes are <em>parallel</em> iff their normals are scalar multiples. A line with direction \(\vec{d}\) is <em>parallel to</em> a plane (and either lies in it or misses it entirely) iff \(\vec{d}\cdot\vec{n} = 0\); it is <em>perpendicular to</em> the plane iff \(\vec{d}\) is parallel to \(\vec{n}\). These tests are independent of the specific points chosen.</p>
+                    <ul>
+                      <li><strong>Point-normal form</strong> — \(\vec{n}\cdot(\vec{r}-\vec{r}_0) = 0\), expands to \(ax + by + cz + d = 0\).</li>
+                      <li><strong>Parallel planes</strong> — normals are scalar multiples.</li>
+                      <li><strong>Line parallel to plane</strong> — \(\vec{d}\cdot\vec{n} = 0\).</li>
+                      <li><strong>Line perpendicular to plane</strong> — \(\vec{d}\) is a scalar multiple of \(\vec{n}\).</li>
+                      <li><strong>Non-uniqueness of normal</strong> — any non-zero scalar multiple of \(\vec{n}\) works.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Plane from a point and a normal</p>
+                      <p>Find the scalar equation of the plane through \(P_0(2, -1, 3)\) with normal \(\vec{n} = (4, 1, -2)\).</p>
+                      <p>Point-normal: \(4(x-2) + 1(y+1) - 2(z-3) = 0\).</p>
+                      <p>Expand: \(4x - 8 + y + 1 - 2z + 6 = 0 \implies 4x + y - 2z - 1 = 0\).</p>
+                    </div>
+                    <ul>
+                      <li>Mixing up "parallel to the plane" (\(\vec{d}\cdot\vec{n} = 0\)) with "perpendicular to the plane" (\(\vec{d}\) parallel to \(\vec{n}\)).</li>
+                      <li>Computing \(d\) with the wrong sign — remember \(d = -\vec{n}\cdot\vec{r}_0\), with the minus.</li>
+                      <li>Treating a different scalar multiple of \(\vec{n}\) as defining a different plane — it does not.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.4 — "determine, through investigation with technology … and without technology, the equation of a plane in three-space, given the scalar equation of a plane parallel to the desired plane and a point on the desired plane, or the equation of a plane perpendicular to the desired plane and a point on the desired plane."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('yt10')">

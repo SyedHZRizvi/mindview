@@ -91,58 +91,36 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                 <span>📹 9 lessons</span>
             </div>
         </div>
-        <details class="lesson-notes">
-          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
-          <div class="lesson-notes-body">
-            <p>Geometric intersection problems become algebraic systems once the objects are expressed in vector or scalar form. Two lines in \(\mathbb{R}^3\) can be <strong>coincident</strong> (same line), <strong>parallel and distinct</strong> (no intersection, same direction up to scalar), <strong>intersecting</strong> (one common point), or <strong>skew</strong> (no intersection, non-parallel directions). The first three cases also occur for two planes — but planes can never be skew. Three planes give richer possibilities: one common point, a common line, no intersection, or coincidence.</p>
-            <p>To intersect a line and a plane, substitute the parametric line equations into the scalar plane equation and solve for \(t\). One solution gives a single intersection point; no solution means the line is parallel to (and outside) the plane; infinitely many means the line lies in the plane. To intersect two planes, treat the system as two equations in three unknowns; the solution is one parameter family — a line. To intersect three planes, solve the \(3\times 3\) system, often using <strong>row reduction</strong> on an augmented matrix.</p>
-            <p>Distances are computed using projections. The distance from a point \(Q\) to a line with direction \(\vec{d}\) and point \(P_0\) is the magnitude of the component of \(\vec{P_0Q}\) perpendicular to \(\vec{d}\); compactly, \(\frac{|\vec{P_0Q}\times\vec{d}|}{|\vec{d}|}\). The distance from a point \(Q(x_1, y_1, z_1)\) to a plane \(ax + by + cz + d = 0\) is \[\frac{|ax_1 + by_1 + cz_1 + d|}{\sqrt{a^2+b^2+c^2}}.\]These formulas pack the entire chapter's geometry into clean one-line expressions.</p>
-            <ul>
-              <li><strong>Coincident lines/planes</strong> — same object, infinitely many points in common.</li>
-              <li><strong>Skew lines</strong> — lines in \(\mathbb{R}^3\) that are non-parallel and non-intersecting.</li>
-              <li><strong>Consistent system</strong> — system with at least one solution.</li>
-              <li><strong>Inconsistent system</strong> — system with no solution (contradictory equations).</li>
-              <li><strong>Augmented matrix</strong> — matrix representation of a linear system; coefficients on the left, constants on the right.</li>
-              <li><strong>Elementary row operations</strong> — swap two rows, multiply a row by a non-zero scalar, add a multiple of one row to another. They preserve the solution set.</li>
-              <li><strong>Row-echelon form</strong> — staircase pattern of leading entries; allows solving by back-substitution.</li>
-              <li><strong>Distance point-to-plane</strong> — \(\displaystyle d = \frac{|ax_1 + by_1 + cz_1 + d|}{\sqrt{a^2+b^2+c^2}}\).</li>
-              <li><strong>Distance point-to-line</strong> (\(\mathbb{R}^3\)) — \(\displaystyle d = \frac{|\vec{P_0Q}\times\vec{d}|}{|\vec{d}|}\).</li>
-            </ul>
-            <div class="worked-example">
-              <p>Worked Example: Intersection of a line and a plane</p>
-              <p>Line: \(\vec{r} = (1, 0, 2) + t(2, -1, 3)\). Plane: \(x + 2y - z + 4 = 0\). Find the point of intersection.</p>
-              <p>Parametric line: \(x = 1+2t\), \(y = -t\), \(z = 2 + 3t\).</p>
-              <p>Substitute into the plane: \((1+2t) + 2(-t) - (2+3t) + 4 = 0\).</p>
-              <p>Simplify: \(1 + 2t - 2t - 2 - 3t + 4 = 0 \implies 3 - 3t = 0 \implies t = 1\).</p>
-              <p>Intersection point: \((x,y,z) = (1+2, -1, 2+3) = (3, -1, 5)\). Verify in the plane: \(3 + 2(-1) - 5 + 4 = 0\) ✓.</p>
-            </div>
-            <div class="worked-example">
-              <p>Worked Example: Distance from a point to a plane</p>
-              <p>Find the distance from \(Q(2, -1, 3)\) to the plane \(2x - y + 2z - 5 = 0\).</p>
-              <p>Apply the formula with \((a,b,c,d) = (2,-1,2,-5)\) and \((x_1, y_1, z_1) = (2,-1,3)\):</p>
-              <p>Numerator: \(|2(2) + (-1)(-1) + 2(3) - 5| = |4 + 1 + 6 - 5| = 6\).</p>
-              <p>Denominator: \(\sqrt{2^2 + (-1)^2 + 2^2} = \sqrt{9} = 3\).</p>
-              <p>Distance: \(\frac{6}{3} = 2\) units.</p>
-            </div>
-            <div class="worked-example">
-              <p>Worked Example: Three-plane system via row reduction</p>
-              <p>Solve \(\;\;\Pi_1\!:\, x + y + z = 6,\;\; \Pi_2\!:\, 2x - y + z = 3,\;\; \Pi_3\!:\, x + 2y - z = 2\).</p>
-              <p>Augmented matrix: \[\begin{bmatrix} 1 & 1 & 1 & 6 \\ 2 & -1 & 1 & 3 \\ 1 & 2 & -1 & 2 \end{bmatrix}.\]</p>
-              <p>\(R_2 \to R_2 - 2R_1\) and \(R_3 \to R_3 - R_1\): \(\begin{bmatrix} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 1 & -2 & -4 \end{bmatrix}\).</p>
-              <p>\(R_3 \to 3R_3 + R_2\): \(\begin{bmatrix} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 0 & -7 & -21 \end{bmatrix}\). Back-substitute: \(-7z = -21 \implies z = 3\); \(-3y - 3 = -9 \implies y = 2\); \(x + 2 + 3 = 6 \implies x = 1\).</p>
-              <p>Unique solution \((1, 2, 3)\) — the three planes meet at exactly one point.</p>
-            </div>
-            <ul>
-              <li>Claiming "no intersection" when the system actually has infinitely many solutions (the line lies in the plane or two planes are coincident).</li>
-              <li>Forgetting absolute value in the point-to-plane distance formula — distance is non-negative.</li>
-              <li>Substituting numerical values for parameters before solving the system, then losing the parameter family description.</li>
-              <li>Using the same parameter \(t\) for two different lines when checking intersection — use \(s\) for one and \(t\) for the other.</li>
-              <li>Confusing "no solution" (parallel/inconsistent) with "infinitely many solutions" (dependent/coincident) when interpreting row-reduced systems.</li>
-            </ul>
-            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.4 — "determine, through investigation with technology … and without technology, the equation of a plane in three-space, given the scalar equation of a plane parallel to the desired plane and a point on the desired plane, or the equation of a plane perpendicular to the desired plane and a point on the desired plane." Also C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically." And C4.6 — "determine, using properties of a plane, the equation of a plane in three-space, given … three non-collinear points on the plane, two non-parallel lines lying in the plane, [or] two parallel lines lying in the plane."</p>
-          </div>
-        </details>
         <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Geometric intersection problems become algebraic systems once the objects are expressed in vector or scalar form. To intersect a <strong>line</strong> with a <strong>plane</strong>, substitute the parametric line equations into the scalar plane equation and solve for the parameter \(t\). One solution gives a single intersection point; no solution means the line is parallel to (and outside) the plane; infinitely many means the line lies in the plane.</p>
+                    <p>The three outcomes are diagnosed by the relationship between the line's direction \(\vec{d}\) and the plane's normal \(\vec{n}\). If \(\vec{d}\cdot\vec{n} \ne 0\) the line crosses the plane at a unique point. If \(\vec{d}\cdot\vec{n} = 0\) the line is parallel to the plane and either lies in it or misses it entirely — distinguish these by testing whether a single line point satisfies the plane equation.</p>
+                    <ul>
+                      <li><strong>Substitution method</strong> — plug parametric \(x(t), y(t), z(t)\) into the scalar plane equation.</li>
+                      <li><strong>One solution</strong> — single intersection point at the value of \(t\) solving the equation.</li>
+                      <li><strong>No solution</strong> — line parallel to plane and not in it.</li>
+                      <li><strong>Infinitely many solutions</strong> — line lies in the plane.</li>
+                      <li><strong>Diagnostic via dot product</strong> — \(\vec{d}\cdot\vec{n} = 0\) signals parallelism.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Intersection of a line and a plane</p>
+                      <p>Line: \(\vec{r} = (1, 0, 2) + t(2, -1, 3)\). Plane: \(x + 2y - z + 4 = 0\). Find the point of intersection.</p>
+                      <p>Parametric line: \(x = 1+2t\), \(y = -t\), \(z = 2 + 3t\).</p>
+                      <p>Substitute into the plane: \((1+2t) + 2(-t) - (2+3t) + 4 = 0\).</p>
+                      <p>Simplify: \(1 + 2t - 2t - 2 - 3t + 4 = 0 \implies 3 - 3t = 0 \implies t = 1\).</p>
+                      <p>Intersection point: \((x,y,z) = (1+2, -1, 2+3) = (3, -1, 5)\). Verify in the plane: \(3 + 2(-1) - 5 + 4 = 0\) ✓.</p>
+                    </div>
+                    <ul>
+                      <li>Claiming "no intersection" when the system actually has infinitely many solutions (the line lies in the plane).</li>
+                      <li>Forgetting to verify the intersection point satisfies the plane equation.</li>
+                      <li>Mixing up "parallel to plane" (\(\vec{d}\cdot\vec{n}=0\)) with "perpendicular to plane" (\(\vec{d}\) parallel to \(\vec{n}\)).</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v64')">
@@ -157,6 +135,34 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Two lines in \(\mathbb{R}^3\) can be <strong>coincident</strong> (same line), <strong>parallel and distinct</strong> (no intersection, same direction up to scalar), <strong>intersecting</strong> (one common point), or <strong>skew</strong> (no intersection, non-parallel directions). The skew case occurs only in three dimensions — in \(\mathbb{R}^2\) two non-parallel lines must cross.</p>
+                    <p>To test for intersection, write both lines parametrically using <em>different</em> parameters (say \(s\) for the first, \(t\) for the second). Setting the position vectors equal gives a system of three equations (one per coordinate) in two unknowns. If the system is consistent, the lines intersect at the resulting \((s, t)\); if inconsistent, the lines are skew or parallel — distinguish by checking whether the direction vectors are scalar multiples.</p>
+                    <ul>
+                      <li><strong>Coincident lines</strong> — same line; infinitely many points in common.</li>
+                      <li><strong>Parallel and distinct</strong> — same direction up to scalar; no common point.</li>
+                      <li><strong>Intersecting</strong> — one common point; non-parallel directions.</li>
+                      <li><strong>Skew lines</strong> — non-parallel and non-intersecting; impossible in \(\mathbb{R}^2\).</li>
+                      <li><strong>Parameter-distinct trick</strong> — use \(s\) and \(t\), not both \(t\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Test for intersection</p>
+                      <p>Line 1: \(\vec{r}_1 = (1,2,0) + s(2,1,-1)\). Line 2: \(\vec{r}_2 = (4,0,1) + t(1,-1,2)\).</p>
+                      <p>Equate: \(1 + 2s = 4 + t\), \(2 + s = -t\), \(-s = 1 + 2t\).</p>
+                      <p>From the second: \(t = -2 - s\). Sub into the first: \(1 + 2s = 4 + (-2 - s) \implies 3s = 1 \implies s = \tfrac{1}{3}\), so \(t = -\tfrac{7}{3}\).</p>
+                      <p>Check the third: \(-\tfrac{1}{3} \stackrel{?}{=} 1 + 2(-\tfrac{7}{3}) = 1 - \tfrac{14}{3} = -\tfrac{11}{3}\). Not equal — the lines are skew.</p>
+                    </div>
+                    <ul>
+                      <li>Using the same parameter \(t\) for two different lines when checking intersection — use \(s\) for one and \(t\) for the other.</li>
+                      <li>Stopping after solving two of the three equations without checking the third — an inconsistent third equation reveals skew lines.</li>
+                      <li>Treating "no intersection" as automatically meaning parallel; could be skew.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v65')">
                         <span class="vid-icon">📖</span>
@@ -169,6 +175,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=7RE0LpjST6M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>A linear system in \(n\) unknowns is most efficiently solved by writing it as an <strong>augmented matrix</strong> — coefficients on the left, constants on the right — and applying <strong>elementary row operations</strong>: swap two rows, multiply a row by a non-zero scalar, or add a multiple of one row to another. Each operation preserves the solution set. The goal is to reach <strong>row-echelon form</strong>, a staircase pattern of leading entries from which we can read solutions by back-substitution.</p>
+                    <p>A system is <strong>consistent</strong> if it has at least one solution, <strong>inconsistent</strong> if no solution. A consistent system has a unique solution when the number of leading entries equals the number of unknowns; otherwise it has a one- or two-parameter family of solutions. Row-reduction is the universal procedure behind every intersection problem in this unit.</p>
+                    <ul>
+                      <li><strong>Augmented matrix</strong> — matrix representation of a linear system; coefficients left, constants right.</li>
+                      <li><strong>Elementary row operations</strong> — row swap, row scaling by non-zero scalar, adding a multiple of one row to another.</li>
+                      <li><strong>Row-echelon form</strong> — staircase pattern; allows back-substitution.</li>
+                      <li><strong>Consistent system</strong> — at least one solution.</li>
+                      <li><strong>Inconsistent system</strong> — no solution; signalled by a row \([0\;0\;0\;|\;c]\) with \(c\ne 0\).</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Row-reducing a \(2\times 2\) system</p>
+                      <p>Solve \(2x + 3y = 7\), \(x - y = 1\).</p>
+                      <p>Augmented matrix: \(\begin{bmatrix} 2 & 3 & 7 \\ 1 & -1 & 1 \end{bmatrix}\). Swap to put 1 in position (1,1): \(\begin{bmatrix} 1 & -1 & 1 \\ 2 & 3 & 7 \end{bmatrix}\).</p>
+                      <p>\(R_2 \to R_2 - 2R_1\): \(\begin{bmatrix} 1 & -1 & 1 \\ 0 & 5 & 5 \end{bmatrix}\). Back-substitute: \(5y = 5 \implies y = 1\); \(x - 1 = 1 \implies x = 2\).</p>
+                    </div>
+                    <ul>
+                      <li>Confusing "no solution" (parallel/inconsistent) with "infinitely many solutions" (dependent/coincident) when interpreting row-reduced systems.</li>
+                      <li>Forgetting that an operation like multiplying a row by zero is <em>not</em> elementary — it would destroy information.</li>
+                      <li>Mixing row and column operations; only row operations are allowed in this method.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v66')">
@@ -183,6 +216,33 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Two planes in \(\mathbb{R}^3\) can be coincident (same plane), parallel and distinct (no intersection), or intersecting in a line (the generic case). Planes can never be skew because they are infinite in two directions. The intersection of two non-parallel planes is always a line, parameterized by one free variable.</p>
+                    <p>To find this line, treat the two scalar equations as a system of two equations in three unknowns and row-reduce. One variable will be free; setting it equal to a parameter \(t\) yields parametric equations for the intersection line. Geometrically, the line of intersection is perpendicular to both normal vectors, so its direction is \(\vec{n}_1 \times \vec{n}_2\) — a convenient shortcut when only the direction (not a specific point) is needed.</p>
+                    <ul>
+                      <li><strong>Two-plane intersection</strong> — line in \(\mathbb{R}^3\) (generic case).</li>
+                      <li><strong>Coincident planes</strong> — same equation up to a non-zero scalar multiple.</li>
+                      <li><strong>Parallel and distinct</strong> — normals proportional but constants don't match.</li>
+                      <li><strong>Direction shortcut</strong> — \(\vec{d} = \vec{n}_1 \times \vec{n}_2\) for the intersection line.</li>
+                      <li><strong>Free parameter</strong> — one variable remains free after row reduction.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Line of intersection of two planes</p>
+                      <p>Planes: \(\Pi_1: x + y - z = 2\) and \(\Pi_2: 2x - y + z = 1\).</p>
+                      <p>Add the equations: \(3x = 3 \implies x = 1\). From \(\Pi_1\): \(1 + y - z = 2 \implies y = 1 + z\). Let \(z = t\): \(y = 1 + t\).</p>
+                      <p>Parametric form: \(x = 1\), \(y = 1 + t\), \(z = t\). Direction: \((0, 1, 1)\); a point on the line: \((1, 1, 0)\).</p>
+                    </div>
+                    <ul>
+                      <li>Claiming "no intersection" when two planes are actually coincident — infinitely many points lie on both.</li>
+                      <li>Forgetting to introduce a free parameter when reporting the line of intersection.</li>
+                      <li>Confusing the normal to a plane with the direction of the intersection line; they are perpendicular.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.3 — "recognize that the solution points \((x, y, z)\) in three-space of a single linear equation in three variables form a plane and that the solution points \((x, y, z)\) of a system of two linear equations in three variables form the line of intersection of two planes, if the planes are not parallel."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v67')">
                         <span class="vid-icon">📖</span>
@@ -195,6 +255,35 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=R1MEfS9gH9o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>Three planes in \(\mathbb{R}^3\) can intersect in a single point, a common line, a common plane (all three coincident), or not at all. Row-reduction of the \(3\times 4\) augmented matrix distinguishes the cases automatically: three leading entries with consistent rows give a unique point; two leading entries plus a consistent free-variable row give a line; and an inconsistent row \([0\;0\;0\;|\;c]\) with \(c\ne 0\) signals no intersection (a "prism" of three parallel-edge planes).</p>
+                    <p>Geometric configurations to recognize: three coincident planes (one solution surface, all equations multiples), three planes meeting in a line (two equations independent, third redundant), three planes meeting at a point (all three normals linearly independent), and three planes with no common point (parallel pairs, prism shapes, or a triangle of pairwise intersection lines).</p>
+                    <ul>
+                      <li><strong>Unique point</strong> — three independent equations; the \(3\times 3\) coefficient matrix is invertible.</li>
+                      <li><strong>Common line</strong> — one equation is redundant; one free parameter remains.</li>
+                      <li><strong>Common plane</strong> — two equations are redundant; two free parameters remain.</li>
+                      <li><strong>No intersection</strong> — row reduction yields a contradiction.</li>
+                      <li><strong>Prism configuration</strong> — pairwise intersections are three distinct parallel lines.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Three-plane system via row reduction</p>
+                      <p>Solve \(\;\;\Pi_1\!:\, x + y + z = 6,\;\; \Pi_2\!:\, 2x - y + z = 3,\;\; \Pi_3\!:\, x + 2y - z = 2\).</p>
+                      <p>Augmented matrix: \[\begin{bmatrix} 1 & 1 & 1 & 6 \\ 2 & -1 & 1 & 3 \\ 1 & 2 & -1 & 2 \end{bmatrix}.\]</p>
+                      <p>\(R_2 \to R_2 - 2R_1\) and \(R_3 \to R_3 - R_1\): \(\begin{bmatrix} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 1 & -2 & -4 \end{bmatrix}\).</p>
+                      <p>\(R_3 \to 3R_3 + R_2\): \(\begin{bmatrix} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 0 & -7 & -21 \end{bmatrix}\). Back-substitute: \(-7z = -21 \implies z = 3\); \(-3y - 3 = -9 \implies y = 2\); \(x + 2 + 3 = 6 \implies x = 1\).</p>
+                      <p>Unique solution \((1, 2, 3)\) — the three planes meet at exactly one point.</p>
+                    </div>
+                    <ul>
+                      <li>Substituting numerical values for parameters before solving the system, then losing the parameter family description.</li>
+                      <li>Calling the system "inconsistent" when a row of zeros appears; \([0\;0\;0\;|\;0]\) means dependent, not inconsistent.</li>
+                      <li>Forgetting to interpret the geometry once the algebra is done — a unique solution corresponds to a single intersection point.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v68')">
@@ -222,6 +311,35 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                     </div>
                 </div>
 
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The distance from a point \(Q\) to a line with direction \(\vec{d}\) and known point \(P_0\) is the length of the perpendicular dropped from \(Q\) onto the line. Compactly, in \(\mathbb{R}^3\): \[d = \frac{|\vec{P_0Q}\times\vec{d}|}{|\vec{d}|}.\] The cross product produces a vector whose magnitude is \(|\vec{P_0Q}||\vec{d}|\sin\theta\); dividing by \(|\vec{d}|\) leaves \(|\vec{P_0Q}|\sin\theta\), which is exactly the perpendicular distance.</p>
+                    <p>In \(\mathbb{R}^2\), the same logic applies, but the cross product is replaced by the determinant-like scalar \(|d_1 \cdot (Q_y - P_{0y}) - d_2 \cdot (Q_x - P_{0x})|\) (the "2D cross"). Alternatively, in \(\mathbb{R}^2\) the line has a Cartesian form \(ax + by + c = 0\) and the distance becomes \(\frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}}\), mirroring the point-to-plane formula.</p>
+                    <ul>
+                      <li><strong>Distance point-to-line (\(\mathbb{R}^3\))</strong> — \(\displaystyle d = \frac{|\vec{P_0Q}\times\vec{d}|}{|\vec{d}|}\).</li>
+                      <li><strong>Distance point-to-line (\(\mathbb{R}^2\), Cartesian form)</strong> — \(\displaystyle d = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}}\).</li>
+                      <li><strong>Perpendicular foot</strong> — the closest point on the line to \(Q\), obtained by orthogonal projection.</li>
+                      <li><strong>Magnitude of cross</strong> — \(|\vec{P_0Q}\times\vec{d}| = |\vec{P_0Q}||\vec{d}|\sin\theta\); the geometric source of the formula.</li>
+                      <li><strong>Sign of numerator</strong> — irrelevant: absolute value ensures non-negative distance.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Distance from a point to a line in \(\mathbb{R}^3\)</p>
+                      <p>Find the distance from \(Q(2, 1, 4)\) to the line \(\vec{r} = (1, 0, 1) + t(1, 2, 2)\).</p>
+                      <p>\(\vec{P_0Q} = (2-1,\,1-0,\,4-1) = (1, 1, 3)\). \(\vec{d} = (1, 2, 2)\).</p>
+                      <p>Cross product: \(\vec{P_0Q}\times\vec{d} = (1\cdot 2 - 3\cdot 2,\;3\cdot 1 - 1\cdot 2,\;1\cdot 2 - 1\cdot 1) = (-4, 1, 1)\).</p>
+                      <p>Magnitudes: \(|\vec{P_0Q}\times\vec{d}| = \sqrt{16+1+1} = \sqrt{18}\); \(|\vec{d}| = \sqrt{1+4+4} = 3\).</p>
+                      <p>Distance: \(\frac{\sqrt{18}}{3} = \sqrt{2} \approx 1.41\).</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting absolute value in the formula — distance is non-negative.</li>
+                      <li>Confusing the position vector with the displacement \(\vec{P_0Q}\); the formula needs the displacement.</li>
+                      <li>Using just \(|\vec{P_0Q}|\) instead of dividing by \(|\vec{d}|\) after the cross product.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically."</p>
+                  </div>
+                </details>
+
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v70')">
                         <span class="vid-icon">📖</span>
@@ -234,6 +352,35 @@ details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
                         <a href="https://youtube.com/watch?v=0xlWhT6zlp8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <details class="lesson-notes">
+                  <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+                  <div class="lesson-notes-body">
+                    <p>The distance from a point \(Q(x_1, y_1, z_1)\) to the plane \(ax + by + cz + d = 0\) is \[d = \frac{|ax_1 + by_1 + cz_1 + d|}{\sqrt{a^2+b^2+c^2}}.\] The numerator is the value of the plane expression at \(Q\); the denominator \(|\vec{n}| = \sqrt{a^2+b^2+c^2}\) normalizes by the magnitude of the normal vector. The absolute value ensures the result is non-negative regardless of which side of the plane \(Q\) lies on.</p>
+                    <p>This formula generalizes the familiar point-to-line distance in \(\mathbb{R}^2\), \(\frac{|ax_1+by_1+c|}{\sqrt{a^2+b^2}}\). Both come from projecting the displacement from a known point on the plane (or line) onto the normal direction. Many distance problems — including distance between parallel planes, or between a line and a parallel plane — reduce to a point-to-plane calculation by picking any convenient point.</p>
+                    <ul>
+                      <li><strong>Distance point-to-plane</strong> — \(\displaystyle d = \frac{|ax_1 + by_1 + cz_1 + d|}{\sqrt{a^2+b^2+c^2}}\).</li>
+                      <li><strong>Numerator</strong> — value of the plane expression at the point; can be positive or negative before the absolute value.</li>
+                      <li><strong>Denominator</strong> — magnitude of the normal vector.</li>
+                      <li><strong>Parallel-plane distance</strong> — pick any point on one plane, then apply the point-to-plane formula with the other.</li>
+                      <li><strong>Sign of \((ax_1 + by_1 + cz_1 + d)\)</strong> — indicates which side of the plane \(Q\) is on.</li>
+                    </ul>
+                    <div class="worked-example">
+                      <p>Worked Example: Distance from a point to a plane</p>
+                      <p>Find the distance from \(Q(2, -1, 3)\) to the plane \(2x - y + 2z - 5 = 0\).</p>
+                      <p>Apply the formula with \((a,b,c,d) = (2,-1,2,-5)\) and \((x_1, y_1, z_1) = (2,-1,3)\):</p>
+                      <p>Numerator: \(|2(2) + (-1)(-1) + 2(3) - 5| = |4 + 1 + 6 - 5| = 6\).</p>
+                      <p>Denominator: \(\sqrt{2^2 + (-1)^2 + 2^2} = \sqrt{9} = 3\).</p>
+                      <p>Distance: \(\frac{6}{3} = 2\) units.</p>
+                    </div>
+                    <ul>
+                      <li>Forgetting absolute value in the point-to-plane distance formula — distance is non-negative.</li>
+                      <li>Using \(|\vec{n}|^2\) (instead of \(|\vec{n}|\)) in the denominator.</li>
+                      <li>Plugging in the point but forgetting the constant \(d\) in the numerator.</li>
+                    </ul>
+                    <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C4.5 — "solve problems relating to lines and planes in three-space that are represented in a variety of ways (e.g., scalar, vector, parametric equations) and involving distances (e.g., between a point and a plane; between two skew lines) or intersections (e.g., of two lines, of a line and a plane), and interpret the result geometrically."</p>
+                  </div>
+                </details>
 
                 <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v71')">
