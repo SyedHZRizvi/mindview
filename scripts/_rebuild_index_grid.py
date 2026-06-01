@@ -15,14 +15,47 @@ INDEX = ROOT / "index.html"
 
 # Subject-group layout. The user's request: Grade 10 first, then 11, then 12;
 # paired siblings (Chemistry 11 next to Chemistry 12 etc.) on the same row.
-# Layout: each subject group lists its specific subjects in sequence,
-# and within each specific subject all grade levels go in ascending order
-# (Grade 10 → 11 → 12). One subject completes all its grades before the
-# next subject starts, per owner's instruction (2026-06-01).
+# Layout: each section heading matches an Ontario Ministry curriculum
+# discipline OR strand (sub-discipline) name. Within each section, courses
+# are listed in grade order (10 → 11 → 12) and paired siblings sit
+# adjacent (e.g. SCH3U → SCH4U).
+#
+# Ontario discipline → strand mapping reference (audit, 2026-06-01):
+#
+#   Mathematics                            → Mathematics (single section)
+#   Science                                → split by strand:
+#                                              · Science (integrated G10)
+#                                              · Biology
+#                                              · Chemistry
+#                                              · Physics
+#   English                                → English (single section)
+#   Computer Studies                       → Computer Studies (single section)
+#   Canadian and World Studies             → split by strand:
+#                                              · Civics and Citizenship
+#                                                (formally "Politics" strand)
+#                                              · History
+#                                              · Law
+#                                              · Geography
+#   Business Studies                       → split by strand:
+#                                              · Accounting
+#                                              · International Business
+#                                              · Business Leadership
+#                                                (formally "Management" strand)
+#   Social Sciences and Humanities         → split by strand:
+#                                              · Food and Nutrition
+#                                                (Family Studies discipline)
+#                                              · World Cultures
+#                                                (Equity Studies discipline)
+#   Guidance and Career Education          → single section
+#
+# Source: https://www.dcp.edu.gov.on.ca/en/curriculum/
+# Single-course strands are kept as their own section per owner instruction
+# (consistent with the Geography-as-own-section pattern from 2026-06-01).
 #
 # Each tuple is (code, label, grade, accent, title, description).
 # The list of tuples within each group is presented in display order.
 LAYOUT = [
+    # ─── Mathematics discipline ────────────────────────────────────────
     ("📐 Mathematics", [
         # — Functions sequence (MCR3U → MHF4U)
         ("mcr3u", "MCR3U", 11, "#0891b2", "Functions", "Function notation, quadratics, exponentials, sequences, financial math, trig & sinusoids"),
@@ -35,71 +68,96 @@ LAYOUT = [
         ("mct3m", "MCT3M", 11, "#ea580c", "Math for College Tech", "Exponentials, polynomials, trig, measurement, geometric modelling — college pathway"),
         ("mct4m", "MCT4M", 12, "#c2410c", "Math for College Tech", "Exp/log functions, polynomial equations, trig functions, geometry applications"),
     ]),
+
+    # ─── Science discipline ─ split by strand ──────────────────────────
     ("🔬 Science", [
-        # — Grade 10 academic gateway
+        # Grade 10 Academic integrated science (Biology + Chemistry + Earth/
+        # Space + Physics strands per Ontario Science 2008, rev.). Functions
+        # as the prerequisite gate for SBI3U / SCH3U / SPH3U.
         ("snc2d", "SNC2D", 10, "#0891b2", "Science (Academic)", "Biology — tissues & systems, Chemistry — reactions, Earth/Space — climate change, Physics — light & optics"),
-        # — Chemistry (Grade 11 → Grade 12)
-        ("sch3u", "SCH3U", 11, "#0d9488", "Chemistry", "Matter & bonding, reactions, stoichiometry, solutions, gases — prerequisite for SCH4U"),
-        ("sch4u", "SCH4U", 12, "#059669", "Chemistry", "Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry"),
-        # — Biology (Grade 11 → Grade 12)
+    ]),
+    ("🧬 Biology", [
         ("sbi3u", "SBI3U", 11, "#15803d", "Biology", "Diversity, evolution, genetics, animal systems, plant biology — prerequisite for SBI4U"),
         ("sbi4u", "SBI4U", 12, "#16a34a", "Biology", "Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics"),
-        # — Physics (Grade 11 → Grade 12)
+    ]),
+    ("🧪 Chemistry", [
+        ("sch3u", "SCH3U", 11, "#0d9488", "Chemistry", "Matter & bonding, reactions, stoichiometry, solutions, gases — prerequisite for SCH4U"),
+        ("sch4u", "SCH4U", 12, "#059669", "Chemistry", "Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry"),
+    ]),
+    ("⚡ Physics", [
         ("sph3u", "SPH3U", 11, "#ea580c", "Physics", "Kinematics, forces, energy & society, waves & sound, electricity & magnetism — prerequisite for SPH4U"),
         ("sph4u", "SPH4U", 12, "#dc2626", "Physics", "Dynamics, energy & momentum, fields, wave nature of light, modern physics"),
     ]),
+
+    # ─── English discipline ────────────────────────────────────────────
     ("📚 English", [
-        # — Grade 10 → 11 → 12 single progression
         ("eng2d", "ENG2D", 10, "#1e40af", "English (Academic)", "Critical reading, the essay, drama (Romeo and Juliet), short stories & poetry, media literacy"),
         ("eng3u", "ENG3U", 11, "#3b82f6", "English", "Critical reading, the essay, Macbeth, short stories & poetry, ISU, media literacy — prerequisite for ENG4U"),
         ("eng4u", "ENG4U", 12, "#1e40af", "English", "Critical reading, essay writing, Shakespearean tragedy, Canadian voices, ISU, media literacy"),
     ]),
+
+    # ─── Computer Studies discipline ───────────────────────────────────
     ("💻 Computer Studies", [
-        # — Grade 11 → Grade 12 single progression
         ("ics3u", "ICS3U", 11, "#14b8a6", "Introduction to Computer Science", "Programming with Python — variables, control flow, functions, lists, software dev — prerequisite for ICS4U"),
         ("ics4u", "ICS4U", 12, "#6366f1", "Computer Science", "Programming, data structures, recursion, algorithms, software engineering, AI/ethics"),
     ]),
-    ("🏛️ Canadian and World Studies", [
-        # — Civics (Grade 10 only, half-credit)
+
+    # ─── Canadian and World Studies discipline ─ split by strand ───────
+    ("🏛️ Civics and Citizenship", [
+        # Ontario CWS 2018 — Politics strand. CHV2O is the only currently-
+        # offered Grade 10 Politics course; named per the course title.
         ("chv2o", "CHV2O", 10, "#7c3aed", "Civics and Citizenship", "Half-credit (0.5). Civic awareness, civic engagement & action, political inquiry skills"),
-        # — History (Grade 10 → Grade 11 → Grade 12)
+    ]),
+    ("📜 History", [
+        # Ontario CWS 2018 — History strand.
         ("chc2d", "CHC2D", 10, "#dc2626", "Canadian History since WWI", "Canada 1914-1929, 1929-1945, 1945-1982, 1982-Present, historical inquiry skills"),
         ("chw3m", "CHW3M", 11, "#a16207", "World History to 16th Century", "Early civilizations, Classical Greco-Roman, Medieval Europe, non-European civilizations, interactions"),
         ("chy4u", "CHY4U", 12, "#a16207", "World History since 15th Century", "Renaissance/Reformation, Enlightenment, Revolutions, World Wars, Contemporary era"),
-        # — Law (Grade 11 → Grade 12)
+    ]),
+    ("⚖️ Law", [
+        # Ontario CWS 2018 — Law strand.
         ("clu3m", "CLU3M", 11, "#b91c1c", "Understanding Canadian Law", "Heritage of law, Charter rights, criminal law, civil law & dispute resolution, legal inquiry"),
         ("cln4u", "CLN4U", 12, "#7f1d1d", "Canadian and International Law", "Legal theory, Constitution, international law, human rights, disputes between nations"),
-        # — World Cultures (Grade 12 only)
-        ("hsc4m", "HSC4M", 12, "#9333ea", "World Cultures", "Foundations of culture, cultural expressions, identity & diversity, globalization, inquiry skills"),
     ]),
     ("🌍 Geography", [
-        # Per Ontario curriculum the Geography strand sits within Canadian and
-        # World Studies, but the owner asked for it as its own home-page
-        # section (2026-06-01) so siblings CGF3M → CGW4U are visually grouped
-        # without being absorbed into the larger CWS block.
+        # Ontario CWS 2018 — Geography strand.
         ("cgf3m", "CGF3M", 11, "#0e7490", "Physical Geography", "Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues"),
         ("cgw4u", "CGW4U", 12, "#155e75", "World Issues: A Geographic Analysis", "Quality of life, sustainability & climate, conflict & cooperation, global connections"),
     ]),
-    ("💼 Business Studies", [
-        # — Financial Accounting (Grade 11 → Grade 12)
+
+    # ─── Business Studies discipline ─ split by strand ─────────────────
+    ("📒 Accounting", [
+        # Ontario Business Studies 2006 (rev.) — Accounting strand.
         ("baf3m", "BAF3M", 11, "#15803d", "Financial Accounting Fundamentals", "Accounting equation, journal & ledger, trial balance, financial statements, internal control & ethics"),
         ("bat4m", "BAT4M", 12, "#166534", "Financial Accounting Principles", "Specific accounts, subsidiary ledgers, statement analysis, internal control, computerized accounting"),
-        # — International Business (Grade 12 only)
+    ]),
+    ("🌐 International Business", [
+        # Ontario Business Studies 2006 (rev.) — International Business strand.
         ("bbb4m", "BBB4M", 12, "#0891b2", "International Business Fundamentals", "Global business environment, international marketing, sales & logistics, trade documentation"),
-        # — Business Leadership (Grade 12 only)
+    ]),
+    ("👔 Business Leadership", [
+        # Ontario Business Studies 2006 (rev.) — Management strand.
         ("boh4m", "BOH4M", 12, "#7c3aed", "Business Leadership: Management", "Foundations of management, leadership theory, decision-making, planning, controlling & ethics"),
     ]),
+
+    # ─── Social Sciences and Humanities discipline ─ split by strand ───
     ("🥗 Food and Nutrition", [
-        # Per Ontario "Social Sciences and Humanities" curriculum (2013, rev.):
-        # within the Family Studies discipline the Food and Nutrition strand
-        # is the umbrella for HFN3M and HFA4M. Owner asked for the section
-        # heading to match the strand name (2026-06-01).
-        # https://www.dcp.edu.gov.on.ca/en/curriculum/social-sciences-humanities/courses-list
+        # Ontario SSH 2013 (rev.) — Family Studies discipline,
+        # Food and Nutrition strand.
         ("hfn3m", "HFN3M", 11, "#16a34a", "Nutrition and Health", "Nutrition basics, digestion & metabolism, Canadian Food Guide, food safety, trends & issues"),
         ("hfa4m", "HFA4M", 12, "#15803d", "Nutrition and Health Issues", "Determinants of nutritional health, lifespan nutrition, nutrition & disease, food systems"),
     ]),
-    ("🧭 Career Studies", [
-        # — Grade 10 only, half-credit
+    ("🎭 World Cultures", [
+        # Ontario SSH 2013 (rev.) — Equity Studies discipline, World Cultures
+        # course. Section uses the course name (not the broader "Equity
+        # Studies" parent) since HSC4M is the only Equity Studies course in
+        # the catalogue and "World Cultures" is more descriptive for users.
+        ("hsc4m", "HSC4M", 12, "#9333ea", "World Cultures", "Foundations of culture, cultural expressions, identity & diversity, globalization, inquiry skills"),
+    ]),
+
+    # ─── Guidance and Career Education discipline ──────────────────────
+    ("🧭 Guidance and Career Education", [
+        # Ontario discipline name (the course GLC2O is "Career Studies").
         ("glc2o", "GLC2O", 10, "#059669", "Career Studies", "Half-credit (0.5). Knowing yourself, exploring opportunities, decisions & goals, transitions"),
     ]),
 ]
@@ -132,26 +190,38 @@ def grade_pill(grade, accent_hex):
 
 
 def card(code, label, grade, accent, title, desc):
+    # Per-course icon. Picked so each Ontario discipline / strand has a
+    # consistent emoji family within its section.
     icon_for_subject = (
+        # Mathematics
         "📐" if code.startswith("m") else
-        "🧪" if code.startswith("sch") else
-        "🧬" if code.startswith("sbi") else
-        "⚡" if code.startswith("sph") else
-        "🔬" if code.startswith("snc") else
+        # Science → split by strand
+        "🔬" if code == "snc2d" else                    # integrated G10
+        "🧬" if code.startswith("sbi") else             # Biology
+        "🧪" if code.startswith("sch") else             # Chemistry
+        "⚡" if code.startswith("sph") else             # Physics
+        # English
         "📚" if code.startswith("eng") else
+        # Computer Studies
         "💻" if code.startswith("ics") else
-        "🍁" if code == "chc2d" else
-        "🏛️" if code == "chv2o" else
-        "🏺" if code == "chw3m" else
-        "🌍" if code in ("chy4u", "cgw4u") else
-        "⚖️" if code in ("clu3m", "cln4u") else
-        "🌐" if code in ("cgf3m", "bbb4m") else
-        "🎭" if code == "hsc4m" else
-        "📒" if code == "baf3m" else
-        "📊" if code == "bat4m" else
-        "👔" if code == "boh4m" else
-        "🥗" if code == "hfn3m" else
-        "🥦" if code == "hfa4m" else
+        # Canadian and World Studies — by strand
+        "🏛️" if code == "chv2o" else                  # Politics → Civics
+        "🍁" if code == "chc2d" else                    # History (Canadian)
+        "🏺" if code == "chw3m" else                    # History (Ancient)
+        "🌍" if code == "chy4u" else                    # History (Modern)
+        "⚖️" if code in ("clu3m", "cln4u") else        # Law
+        "🌐" if code == "cgf3m" else                    # Geography (Physical)
+        "🗺️" if code == "cgw4u" else                  # Geography (World Issues)
+        # Social Sciences and Humanities — by strand
+        "🥗" if code == "hfn3m" else                    # Food and Nutrition G11
+        "🥦" if code == "hfa4m" else                    # Food and Nutrition G12
+        "🎭" if code == "hsc4m" else                    # Equity Studies / World Cultures
+        # Business Studies — by strand
+        "📒" if code == "baf3m" else                    # Accounting G11
+        "📊" if code == "bat4m" else                    # Accounting G12
+        "💱" if code == "bbb4m" else                    # International Business
+        "👔" if code == "boh4m" else                    # Management
+        # Guidance and Career Education
         "🧭" if code == "glc2o" else
         "📘"
     )
