@@ -15,55 +15,82 @@ INDEX = ROOT / "index.html"
 
 # Subject-group layout. The user's request: Grade 10 first, then 11, then 12;
 # paired siblings (Chemistry 11 next to Chemistry 12 etc.) on the same row.
+# Layout: each subject group lists its specific subjects in sequence,
+# and within each specific subject all grade levels go in ascending order
+# (Grade 10 → 11 → 12). One subject completes all its grades before the
+# next subject starts, per owner's instruction (2026-06-01).
+#
+# Each tuple is (code, label, grade, accent, title, description).
+# The list of tuples within each group is presented in display order.
 LAYOUT = [
     ("📐 Mathematics", [
+        # — Functions sequence (MCR3U → MHF4U)
         ("mcr3u", "MCR3U", 11, "#0891b2", "Functions", "Function notation, quadratics, exponentials, sequences, financial math, trig & sinusoids"),
         ("mhf4u", "MHF4U", 12, "#2563eb", "Advanced Functions", "Polynomial, rational, logarithmic, and trigonometric functions; rates of change"),
+        # — Calculus and Vectors
+        ("mcv4u", "MCV4U", 12, "#7c3aed", "Calculus and Vectors", "Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes"),
+        # — Data Management
+        ("mdm4u", "MDM4U", 12, "#16a34a", "Mathematics of Data Management", "Counting, probability, distributions, statistics, correlation & regression"),
+        # — College-Technology Mathematics (Grade 11 → Grade 12)
         ("mct3m", "MCT3M", 11, "#ea580c", "Math for College Tech", "Exponentials, polynomials, trig, measurement, geometric modelling — college pathway"),
         ("mct4m", "MCT4M", 12, "#c2410c", "Math for College Tech", "Exp/log functions, polynomial equations, trig functions, geometry applications"),
-        ("mcv4u", "MCV4U", 12, "#7c3aed", "Calculus and Vectors", "Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes"),
-        ("mdm4u", "MDM4U", 12, "#16a34a", "Mathematics of Data Management", "Counting, probability, distributions, statistics, correlation & regression"),
     ]),
     ("🔬 Science", [
+        # — Grade 10 academic gateway
         ("snc2d", "SNC2D", 10, "#0891b2", "Science (Academic)", "Biology — tissues & systems, Chemistry — reactions, Earth/Space — climate change, Physics — light & optics"),
+        # — Chemistry (Grade 11 → Grade 12)
         ("sch3u", "SCH3U", 11, "#0d9488", "Chemistry", "Matter & bonding, reactions, stoichiometry, solutions, gases — prerequisite for SCH4U"),
         ("sch4u", "SCH4U", 12, "#059669", "Chemistry", "Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry"),
+        # — Biology (Grade 11 → Grade 12)
         ("sbi3u", "SBI3U", 11, "#15803d", "Biology", "Diversity, evolution, genetics, animal systems, plant biology — prerequisite for SBI4U"),
         ("sbi4u", "SBI4U", 12, "#16a34a", "Biology", "Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics"),
+        # — Physics (Grade 11 → Grade 12)
         ("sph3u", "SPH3U", 11, "#ea580c", "Physics", "Kinematics, forces, energy & society, waves & sound, electricity & magnetism — prerequisite for SPH4U"),
         ("sph4u", "SPH4U", 12, "#dc2626", "Physics", "Dynamics, energy & momentum, fields, wave nature of light, modern physics"),
     ]),
     ("📚 English", [
+        # — Grade 10 → 11 → 12 single progression
         ("eng2d", "ENG2D", 10, "#1e40af", "English (Academic)", "Critical reading, the essay, drama (Romeo and Juliet), short stories & poetry, media literacy"),
         ("eng3u", "ENG3U", 11, "#3b82f6", "English", "Critical reading, the essay, Macbeth, short stories & poetry, ISU, media literacy — prerequisite for ENG4U"),
         ("eng4u", "ENG4U", 12, "#1e40af", "English", "Critical reading, essay writing, Shakespearean tragedy, Canadian voices, ISU, media literacy"),
     ]),
     ("💻 Computer Studies", [
+        # — Grade 11 → Grade 12 single progression
         ("ics3u", "ICS3U", 11, "#14b8a6", "Introduction to Computer Science", "Programming with Python — variables, control flow, functions, lists, software dev — prerequisite for ICS4U"),
         ("ics4u", "ICS4U", 12, "#6366f1", "Computer Science", "Programming, data structures, recursion, algorithms, software engineering, AI/ethics"),
     ]),
     ("🏛️ Canadian and World Studies", [
+        # — Civics (Grade 10 only, half-credit)
         ("chv2o", "CHV2O", 10, "#7c3aed", "Civics and Citizenship", "Half-credit (0.5). Civic awareness, civic engagement & action, political inquiry skills"),
+        # — History (Grade 10 → Grade 11 → Grade 12)
         ("chc2d", "CHC2D", 10, "#dc2626", "Canadian History since WWI", "Canada 1914-1929, 1929-1945, 1945-1982, 1982-Present, historical inquiry skills"),
         ("chw3m", "CHW3M", 11, "#a16207", "World History to 16th Century", "Early civilizations, Classical Greco-Roman, Medieval Europe, non-European civilizations, interactions"),
         ("chy4u", "CHY4U", 12, "#a16207", "World History since 15th Century", "Renaissance/Reformation, Enlightenment, Revolutions, World Wars, Contemporary era"),
+        # — Law (Grade 11 → Grade 12)
         ("clu3m", "CLU3M", 11, "#b91c1c", "Understanding Canadian Law", "Heritage of law, Charter rights, criminal law, civil law & dispute resolution, legal inquiry"),
         ("cln4u", "CLN4U", 12, "#7f1d1d", "Canadian and International Law", "Legal theory, Constitution, international law, human rights, disputes between nations"),
+        # — Geography (Grade 11 → Grade 12)
         ("cgf3m", "CGF3M", 11, "#0e7490", "Physical Geography", "Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues"),
         ("cgw4u", "CGW4U", 12, "#155e75", "World Issues: A Geographic Analysis", "Quality of life, sustainability & climate, conflict & cooperation, global connections"),
+        # — World Cultures (Grade 12 only)
         ("hsc4m", "HSC4M", 12, "#9333ea", "World Cultures", "Foundations of culture, cultural expressions, identity & diversity, globalization, inquiry skills"),
     ]),
     ("💼 Business Studies", [
+        # — Financial Accounting (Grade 11 → Grade 12)
         ("baf3m", "BAF3M", 11, "#15803d", "Financial Accounting Fundamentals", "Accounting equation, journal & ledger, trial balance, financial statements, internal control & ethics"),
         ("bat4m", "BAT4M", 12, "#166534", "Financial Accounting Principles", "Specific accounts, subsidiary ledgers, statement analysis, internal control, computerized accounting"),
+        # — International Business (Grade 12 only)
         ("bbb4m", "BBB4M", 12, "#0891b2", "International Business Fundamentals", "Global business environment, international marketing, sales & logistics, trade documentation"),
+        # — Business Leadership (Grade 12 only)
         ("boh4m", "BOH4M", 12, "#7c3aed", "Business Leadership: Management", "Foundations of management, leadership theory, decision-making, planning, controlling & ethics"),
     ]),
     ("🥗 Family Studies", [
+        # — Nutrition (Grade 11 → Grade 12)
         ("hfn3m", "HFN3M", 11, "#16a34a", "Nutrition and Health", "Nutrition basics, digestion & metabolism, Canadian Food Guide, food safety, trends & issues"),
         ("hfa4m", "HFA4M", 12, "#15803d", "Nutrition and Health Issues", "Determinants of nutritional health, lifespan nutrition, nutrition & disease, food systems"),
     ]),
     ("🧭 Career Studies", [
+        # — Grade 10 only, half-credit
         ("glc2o", "GLC2O", 10, "#059669", "Career Studies", "Half-credit (0.5). Knowing yourself, exploring opportunities, decisions & goals, transitions"),
     ]),
 ]
@@ -133,8 +160,11 @@ def card(code, label, grade, accent, title, desc):
 def build_grid():
     parts = []
     for group_label, courses in LAYOUT:
-        sorted_courses = sorted(courses, key=lambda c: (c[2], c[0]))  # grade asc, then code asc
-        cards = "".join(card(*c) for c in sorted_courses)
+        # Preserve LAYOUT order verbatim: per owner instruction (2026-06-01),
+        # complete one sub-subject across all its grade levels before moving
+        # to the next sub-subject (Chemistry 11 → Chemistry 12 → Biology 11
+        # → Biology 12 → Physics 11 → Physics 12, etc.). Do NOT re-sort.
+        cards = "".join(card(*c) for c in courses)
         parts.append(
             f'        <div class="subject-group">\n'
             f'            <div class="subject-label">{group_label}</div>\n'
