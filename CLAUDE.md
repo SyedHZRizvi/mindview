@@ -1,9 +1,25 @@
 # MindView Virtual Classroom — Baseline & Guardrails
 
-**Frozen baseline:** git tag `baseline-2026-05-21` (chapter-per-page layout).
-**Previous baseline:** `baseline-2026-05-20` (monolithic course pages — kept for rollback).
-**Live URL:** https://mindview.pages.dev/
+**Frozen baseline:** git tag `baseline-2026-06-01` (chapter-per-page layout + Phase A Grade 11 courses in staging).
+**Previous baseline:** `baseline-2026-05-21` (Phase A absent — current production state).
+**Production URL:** https://mindview.pages.dev/ (only owner-approved content)
+**Staging URL:** https://staging.mindview.pages.dev/ (review queue, same USERS_KV)
 **Owner role for full access:** `superuser` (email allowlisted in `USERS_KV`).
+
+## Two-environment deployment policy (STRICT)
+
+The owner reviews changes in staging BEFORE production. No new content lands on
+`https://mindview.pages.dev/` without explicit owner approval.
+
+- **Staging** (`https://staging.mindview.pages.dev/`) — `wrangler --branch=staging`.
+  Shares `USERS_KV` and `SESSION_SECRET` with production, so the same login works.
+  This is the default deploy target.
+- **Production** (`https://mindview.pages.dev/`) — `wrangler --branch=main`.
+  Only after owner has reviewed staging and said "ship to prod".
+
+Use `sh scripts/safe-deploy.sh` (default → staging) or
+`TARGET=production sh scripts/safe-deploy.sh` (only with owner approval).
+**Never run `wrangler pages deploy . --branch=main` directly.**
 
 This file is read automatically by Claude Code at the start of every session
 in this repo. **Future agents and humans must read this before changing

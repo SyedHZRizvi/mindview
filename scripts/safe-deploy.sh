@@ -3,7 +3,12 @@
 # Runs scripts/verify-baseline.py first; only invokes wrangler if it passes.
 # Use this INSTEAD of calling `wrangler pages deploy .` directly.
 #
-# Override (only if you must — and you should also update the baseline):
+# By default deploys to STAGING (--branch=staging → https://staging.mindview.pages.dev).
+# To deploy to PRODUCTION (--branch=main → https://mindview.pages.dev), set
+#   TARGET=production sh scripts/safe-deploy.sh
+# This MUST only be done after the owner has reviewed staging.
+#
+# Override the baseline check (only if you must — and you should also update CLAUDE.md):
 #   FORCE=1 sh scripts/safe-deploy.sh
 
 set -e
@@ -49,7 +54,19 @@ if [ -z "$WRANGLER" ]; then
   exit 1
 fi
 
+# Default branch is staging. Owner sets TARGET=production for live deploy.
+BRANCH="${BRANCH:-staging}"
+if [ "$TARGET" = "production" ]; then
+  BRANCH="main"
+  echo "🚨  TARGET=production — deploying to live https://mindview.pages.dev/"
+  echo "    (staging.mindview.pages.dev is the review URL; production should"
+  echo "     only be deployed AFTER owner has reviewed staging)"
+else
+  echo "→ Deploying to STAGING (https://staging.mindview.pages.dev/)"
+  echo "  (To deploy to production after review: TARGET=production sh scripts/safe-deploy.sh)"
+fi
+
 "$WRANGLER" pages deploy . \
   --project-name=mindview \
-  --branch=main \
+  --branch="$BRANCH" \
   --commit-dirty=true
