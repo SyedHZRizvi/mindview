@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Macbeth — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #2563eb; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Macbeth — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B + A</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 90 minutes &nbsp;|&nbsp; <strong>Total:</strong> /80 marks &nbsp;|&nbsp; Show all reasoning. Open answer keys after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/20</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/20</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/20</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/20</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [20 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify the date <em>Macbeth</em> was probably written and explain three contemporary events or contexts that shape the play.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><em>Macbeth</em> was probably written around 1606. Three contexts: (1) the reign of James I, Shakespeare's patron, who claimed descent from Banquo; (2) the Gunpowder Plot (November 1605), a Catholic conspiracy against the king and Parliament — the play's interest in equivocation responds to Father Garnet's trial in March 1606; (3) James I's interest in witchcraft, demonstrated by his 1597 treatise <em>Daemonologie</em>.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define <em>hamartia</em>, <em>peripeteia</em>, and <em>anagnorisis</em>. Identify a moment in <em>Macbeth</em> that exemplifies any one of these terms.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Hamartia — tragic flaw or error of judgement; Macbeth names his own as "vaulting ambition" (1.7.27). Peripeteia — reversal of fortune; the killing of Macduff's family in 4.2 turns the hunter into the hunted. Anagnorisis — moment of recognition; many readers locate it in 5.5 ("Tomorrow, and tomorrow, and tomorrow…", 5.5.19–28) or in 5.7 when Macbeth learns Macduff was "from his mother's womb / Untimely ripp'd" (5.8.15–16).</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define <em>soliloquy</em>, <em>monologue</em>, and <em>aside</em>. Give one example of each from <em>Macbeth</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Soliloquy — a speech alone on stage, shared with the audience; Macbeth's "If it were done when 'tis done" (1.7.1–28). Monologue — a long speech with others present; the captain's report of Macbeth's bravery to Duncan in 1.2 (1.2.7–23). Aside — a brief remark to the audience while others are present; Macbeth's aside "[Aside.] Glamis, and Thane of Cawdor: / The greatest is behind" (1.3.117–18). Each term has a specific staging condition; mixing them up is a common error.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">In Shakespeare, what is <em>blank verse</em>, and which characters in <em>Macbeth</em> tend to speak it (and why)?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Blank verse = unrhymed iambic pentameter (five iambs per line, no rhyme). It is the default verse for Shakespeare's nobles. Macbeth, Lady Macbeth, Duncan, Banquo, and Malcolm all speak in blank verse for most of the play. When Lady Macbeth shifts to prose in 5.1, the shift is the play's grammatical announcement of her breakdown.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify three motifs in <em>Macbeth</em> and a line that exemplifies each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Blood — "Will all great Neptune's ocean wash this blood / Clean from my hand?" (2.2.78–9); also "Out, damned spot!" (5.1.39). Sleep — "Methought I heard a voice cry 'Sleep no more!'" (2.2.38). Hands — see the blood examples; also "A little water clears us of this deed" (2.2.86–7). Other accepted motifs: darkness, clothing, equivocation/"Fair is foul," nature/the unnatural.</p></details></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">In an MLA-9 in-text citation for a Shakespeare play, the locator is formatted as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6"> The page number, e.g., (Shakespeare 42)</label></li>
+<li><label><input type="radio" name="q6"> Act.scene.line, e.g., (1.7.1–2)</label></li>
+<li><label><input type="radio" name="q6"> Chapter and section</label></li>
+<li><label><input type="radio" name="q6"> No locator</label></li>
+</ul>
+<details><summary>Answer Key</summary><p>B. For drama, the standard MLA-9 locator is act.scene.line. Using page numbers for plays is a common Grade 11 error and reads as careless to a university grader.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[3]</span>
+<div class="qtxt">Banquo, Macduff, and Malcolm are <em>foils</em> for Macbeth. Briefly explain how each contrasts with Macbeth.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Banquo hears the same prophecy as Macbeth (1.3) but does not act on it; he asks the witches about his own future ("If you can look into the seeds of time", 1.3.58–60) without trying to bend that future. Macduff loses his family because he chooses kingdom (loyalty to the rightful succession) over family (he fled to England without his wife and children). Malcolm tests his own readiness to rule by inventing vices he does not have (4.3), which both protects against deception and dramatises his political seriousness.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [20 marks]</div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[7]</span>
+<div class="passage">"If it were done when 'tis done, then 'twere well / It were done quickly. If th' assassination / Could trammel up the consequence and catch / With his surcease, success: that but this blow / Might be the be-all and the end-all here…" — Macbeth (1.7.1–5)</div>
+<div class="qtxt">Analyse the soliloquy opening. Refer to specific words and grammar. Aim for 6–8 sentences.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses notice: (1) the repetition of "done" four times in two lines — Macbeth is trying to think of the murder as a single completed act, and the repetition exposes the effort; (2) the conditionals "If… If…" carry the load — Macbeth has not committed, only imagined; (3) "assassination" was new and clinical (first recorded use in English) — Macbeth reaches for a Latinate noun to distance himself; (4) the pair "surcease" / "success" rhymes on the same sibilant, binding Duncan's death to Macbeth's rise; (5) "be-all and the end-all" treats the murder as if it could close itself — the play spends three acts proving this is impossible. Marks: identify three of these moves (3); explain the analytical significance of each (3); communication (1).</p></details></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[7]</span>
+<div class="passage">"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time, / And all our yesterdays have lighted fools / The way to dusty death. Out, out, brief candle! / Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more." — Macbeth (5.5.19–26)</div>
+<div class="qtxt">Analyse how this speech achieves its effect. Refer to repetition, metaphor, and what the speech is reacting to in the plot.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses notice: (1) the triple "Tomorrow" flattens time into repetition that already feels empty; (2) the metaphors recast life as theatre that ends — "walking shadow," "poor player," "struts and frets his hour upon the stage" — staging a self-aware tragic vision; (3) the speech responds to news that Lady Macbeth is dead (5.5.16–18), but the response is generalisation rather than grief — a recognition that the prizes he murdered for are also "nothing"; (4) the carefully arranged verse delivers the message of meaninglessness, contradicting the content with form. Marks: 3 textual observations, 3 interpretations, 1 communication.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">A reader argues that Lady Macbeth is simply "the stronger character" who pushes a weaker Macbeth into action. Refute this reading in 5–7 sentences, using at least one quotation from each of the Macbeths.</div>
+<textarea placeholder="Your refutation..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses: (1) name the strongest version of the opposing reading honestly; (2) cite Lady Macbeth's "unsex me here" speech and read the verb "fill" as confessing emptiness rather than declaring strength: "fill me from the crown to the toe top-full / Of direst cruelty" (1.5.42–3) — she prays to be made cruel, not announces she is; (3) cite Macbeth's autonomous later action (e.g., his decision to kill Banquo without consulting her, 3.1; or his self-named "vaulting ambition" in 1.7); (4) name the bidirectional motion across the play — by Act 3 she is the one pulling back ("Things without all remedy / Should be without regard," 3.2.13–14). Marks: 1 honest counterargument, 2 evidence from Lady Macbeth, 2 evidence from Macbeth, 1 a closing claim that re-establishes the original reading.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [20 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[10]</span>
+<div class="qtxt">Write one complete analytical body paragraph (8–10 sentences) using PEEL, on the following thesis: <em>"The motif of blood in</em> Macbeth <em>migrates from external violence to internal guilt without ever leaving the same word, refusing the boundary between moral and bodily contamination."</em> Embed at least two short quotations with proper act.scene.line citation, drawn from at least two different acts.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: (P) topic sentence that frames the migration of blood across the play; (E) two embedded quotations from different acts, e.g., Macbeth's "Will all great Neptune's ocean wash this blood / Clean from my hand?" (2.2.78–9) and Lady Macbeth's "Out, damned spot!" (5.1.39); (Explain) interpretation of how the same word is doing different work across acts (literal violence → internal guilt → bodily contamination as moral diagnosis); (Link) closing sentence connecting to the thesis. Marks: 2 thesis-aligned topic sentence, 4 evidence and citation (2 quotations × 2), 3 depth of explanation, 1 Link + conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[10]</span>
+<div class="qtxt">Write one paragraph (6–8 sentences) comparing how Macbeth and Lady Macbeth handle the same image (water on hands) in 2.2 and 5.1. Embed at least one quotation from each character. Conclude with a sentence stating what the comparison reveals about how guilt moves between them.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: (1) Lady Macbeth's "A little water clears us of this deed: / How easy is it then!" (2.2.86–7) contrasted with her later "Here's the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand" (5.1.55–7); (2) Macbeth's "Will all great Neptune's ocean wash this blood / Clean from my hand?" (2.2.77–9); (3) the analytical observation that the easy denial passes between the Macbeths and the haunted knowledge is left with Lady Macbeth — guilt is transferred rather than extinguished. Marks: 3 evidence with citation, 4 comparative analysis (not parallel summary), 3 communication and a synthesis sentence.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [20 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[10]</span>
+<div class="qtxt"><strong>Apply</strong> what you have learned about performance analysis. Describe how a director could stage Lady Macbeth's "unsex me here" speech (1.5.40–55) to read as either (a) a declaration of cruelty or (b) a confession of need. For each, name two specific staging choices (lighting, blocking, gesture, voice, pacing) and explain what those choices make the speech mean. Aim for 6–8 sentences total.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses give two specific staging choices per reading. Sample for (a): high-angle lighting from above, hard side-light on the face, steady voice, expansive arm gestures, brisk pacing — reads as a queen taking command. Sample for (b): low single light source, kneeling blocking, voice that drops in volume on "fill," held silence after "unsex me here" — reads as the prayer of someone who does not yet have what she is asking for. Marks: 2 staging choices per reading × 2 readings (8), 2 communication.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[10]</span>
+<div class="qtxt"><strong>Real-World Application:</strong> The play's interest in <em>equivocation</em> — language that is technically true but designed to deceive — was a response to a specific Jacobean controversy. Explain in 5–7 sentences why this 400-year-old concern still matters in the contemporary information environment (politics, advertising, social media, AI-generated content). Give one specific (real or invented) modern example of equivocation.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses connect the Jacobean concern to modern contexts: political speech that is technically accurate but designed to mislead (carefully chosen phrasing about a policy's "effects" without naming the costs); corporate communications that use technically true language to imply impossible claims ("up to 99% effective"); AI-generated content where the form (confident sentences) implies a reliability the content does not have. The Grade 11 student is asked to make the connection live: the witches' "Fair is foul, and foul is fair" (1.1.10) is the structural blueprint for every public statement that says two things at once. Marks: 1 explanation of the Jacobean concern, 3 transfer to modern context, 2 specific example, 4 communication and analysis.</p></details></div>
+
+<footer>ENG3U — English, Grade 11 | Strand B + A | Assessment OF Learning — Graded</footer>
+</div></body></html>

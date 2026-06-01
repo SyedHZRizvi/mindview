@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS3U — Final Exam</title>
+<style>
+:root{--p:#1e293b;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:920px;margin:0 auto;padding:20px}
+header{background:linear-gradient(135deg,#0f172a,#14b8a6);color:#fff;padding:28px;border-radius:14px;margin-bottom:24px}
+header h1{font-size:26px}.sub{font-size:14px;opacity:.85;margin-top:4px}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 14px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:18px;margin-bottom:14px}
+.qn{font-weight:700;color:#14b8a6;font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.tag{display:inline-block;font-size:11px;background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;margin-right:6px}
+textarea{width:100%;min-height:90px;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit;resize:vertical}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.chart-i{text-align:center;padding:14px;border-radius:8px}
+.chart-i .lb{font-size:13px;font-weight:600}.chart-i .vl{font-size:26px;font-weight:800}
+details{background:#f8fafc;border:1px solid var(--b);border-radius:8px;padding:12px 16px;margin-top:16px}
+details summary{font-weight:700;color:#14b8a6;cursor:pointer;font-size:15px}
+details .sol-block{margin-top:12px;font-size:14px}
+details .sol-block h4{color:#14b8a6;margin:10px 0 4px;font-size:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#14b8a6;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+<header>
+<h1>&#128221; ICS3U &mdash; Final Exam</h1>
+<div class="sub">Cumulative summative evaluation across all 5 units</div>
+<div class="badge">&#9201;&#65039; 2.5 hours &middot; /100 marks &middot; Worth up to 30% of final grade</div>
+</header>
+
+<div class="warn">
+<strong>Instructions.</strong> All code must be syntactically valid <strong>Python 3</strong>. Show all work, including trace tables and reasoning. Use proper style: meaningful names, comments where useful. Write code by hand &mdash; you may not run it. <strong>No internet, no AI tools, no calculator beyond a basic four-function calculator.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;color:#1e40af"><div class="lb">K/U</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#fef3c7;color:#92400e"><div class="lb">Thinking</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#d1fae5;color:#065f46"><div class="lb">Communication</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#ede9fe;color:#5b21b6"><div class="lb">Application</div><div class="vl">/25</div></div>
+</div>
+
+<!-- ========== K/U ========== -->
+<div class="sec-hdr ku">Part A &mdash; Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
+<span class="tag">Unit 1 &middot; Types</span>
+<div class="qt">Give the value AND the type of each:
+<ol style="margin-left:24px;">
+<li><code>3 / 2</code></li>
+<li><code>3 // 2</code></li>
+<li><code>"a" * 3</code></li>
+<li><code>bool(0)</code></li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
+<span class="tag">Unit 1 &middot; Tracing</span>
+<div class="qt">What is the output of:
+<div class="code">x = 5
+y = 0
+for i in range(4):
+    y = y + x
+    x = x - 1
+print(x, y)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
+<span class="tag">Unit 2 &middot; Booleans</span>
+<div class="qt">State True or False for each.
+<ol style="margin-left:24px;">
+<li><code>(5 &gt; 3) and (3 &gt; 5)</code></li>
+<li><code>not (False or True)</code></li>
+<li><code>1 &lt; 4 &lt; 10</code></li>
+<li><code>"abc" &lt; "abd"</code></li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
+<span class="tag">Unit 2 &middot; Loop trace</span>
+<div class="qt">What is the value of <code>total</code> after this loop?
+<div class="code">total = 0
+for i in range(1, 8):
+    if i % 2 == 0:
+        total += i
+print(total)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
+<span class="tag">Unit 3 &middot; Lists</span>
+<div class="qt">Given <code>a = [10, 20, 30, 40, 50]</code>, write the value of:
+<ol style="margin-left:24px;">
+<li><code>a[1:4]</code></li>
+<li><code>sum(a) / len(a)</code></li>
+<li><code>a[-1] + a[-2]</code></li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">6. <span class="qm">[3]</span></div>
+<span class="tag">Unit 3 &middot; Scope</span>
+<div class="qt">What is printed?
+<div class="code">total = 0
+def add(x):
+    total = x
+    return total
+
+print(add(5))
+print(total)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">7. <span class="qm">[3]</span></div>
+<span class="tag">Unit 4 &middot; Errors</span>
+<div class="qt">Classify each as <strong>syntax</strong>, <strong>runtime</strong>, or <strong>logic</strong> error:
+<ol style="margin-left:24px;">
+<li><code>print(items[10])</code> where <code>items</code> has 5 elements.</li>
+<li><code>for i in range(5)</code>  (missing colon)</li>
+<li>A function that returns <code>x*2</code> instead of <code>x**2</code> when squaring was intended.</li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">8. <span class="qm">[2]</span></div>
+<span class="tag">Unit 5 &middot; Binary</span>
+<div class="qt">(a) Convert decimal <code>21</code> to binary. (b) Convert binary <code>11010</code> to decimal.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">9. <span class="qm">[2]</span></div>
+<span class="tag">Unit 5 &middot; Security</span>
+<div class="qt">Name <strong>two</strong> things you can do to make your online accounts more secure.</div>
+<textarea></textarea></div>
+
+<!-- ========== Thinking ========== -->
+<div class="sec-hdr t">Part B &mdash; Thinking &amp; Investigation <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">10. <span class="qm">[6]</span></div>
+<span class="tag">Units 1+2 &middot; Debugging</span>
+<div class="qt">Find &amp; fix the bugs. This function should return the sum of even numbers in a list. There are <strong>three bugs</strong>. (a) Provide the corrected function. (b) Briefly state what each bug was.
+<div class="code">def sum_evens(nums):
+    total = 1
+    for n in range(nums):
+        if n % 2 = 0:
+            total + n
+    return total</div>
+</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">11. <span class="qm">[6]</span></div>
+<span class="tag">Unit 2 &middot; Nested-loop trace</span>
+<div class="qt">List every line that <code>print</code> outputs, in order.
+<div class="code">for i in range(3):
+    for j in range(i + 1):
+        print(f"{i},{j}", end=" ")
+    print()</div>
+</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">12. <span class="qm">[6]</span></div>
+<span class="tag">Unit 3 &middot; List algorithm</span>
+<div class="qt">Write a function <code>second_largest(nums)</code> that returns the second-largest distinct value in a list of at least 2 numbers. Example: <code>second_largest([5, 3, 8, 8, 2])</code> &rarr; 5.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">13. <span class="qm">[7]</span></div>
+<span class="tag">Units 2+3 &middot; Decomposition</span>
+<div class="qt">A small grading program needs to (a) compute the average of a list of marks, (b) return the highest, and (c) print a formatted report. Design the program by listing the helper functions you would write (just the function signatures and what each returns), then write valid Python for the two most important helpers.</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<!-- ========== Communication ========== -->
+<div class="sec-hdr c">Part C &mdash; Communication <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">14. <span class="qm">[6]</span></div>
+<span class="tag">Unit 1 &middot; Style</span>
+<div class="qt">A peer submits the code below. List <strong>five distinct style/quality issues</strong> and suggest a fix for each.
+<div class="code">def f(L,n):
+ r=[]
+ for i in range(0,len(L)):
+  if L[i]&gt;n:r.append(L[i])
+ return r</div>
+</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">15. <span class="qm">[5]</span></div>
+<span class="tag">Unit 4 &middot; Pseudocode</span>
+<div class="qt">Write pseudocode (NOT Python) for the following: "Read marks until the user types -1; print the count, the average, and the highest mark."</div>
+<textarea style="min-height:180px;"></textarea></div>
+
+<div class="qc"><div class="qn">16. <span class="qm">[7]</span></div>
+<span class="tag">Unit 5 &middot; Ethics essay</span>
+<div class="qt">Write a 200-250 word response: <em>"Should social-media platforms be legally responsible for misinformation spread on their services?"</em> Take a clear position. Address: (a) at least one concrete real-world example, (b) at least one stakeholder beyond the platform, and (c) a comparison to liability in another industry.</div>
+<textarea style="min-height:220px;"></textarea></div>
+
+<div class="qc"><div class="qn">17. <span class="qm">[7]</span></div>
+<span class="tag">Unit 5 &middot; Documentation</span>
+<div class="qt">Add a header comment, a docstring, meaningful variable names, and at least two inline comments to this program.
+<div class="code">def x(a):
+    t=0
+    c=0
+    for n in a:
+        if n%2==0:
+            t+=n
+            c+=1
+    if c==0:
+        return 0
+    return t/c</div>
+</div>
+<textarea style="min-height:220px;"></textarea></div>
+
+<!-- ========== Application ========== -->
+<div class="sec-hdr a">Part D &mdash; Application <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">18. <span class="qm">[6]</span></div>
+<span class="tag">Units 1+2 &middot; Complete program</span>
+<div class="qt">Write a complete Python program that:
+<ol style="margin-left:24px;">
+<li>Asks the user for an hourly wage and number of hours worked this week.</li>
+<li>Pays regular rate for the first 40 hours and time-and-a-half for hours over 40.</li>
+<li>Prints the total formatted to two decimal places.</li>
+</ol>
+If either input is negative, print an error and stop.
+</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">19. <span class="qm">[6]</span></div>
+<span class="tag">Unit 3 &middot; Function + list</span>
+<div class="qt">Write a function <code>count_vowels(text)</code> (case-insensitive). Then call it on <code>"Introduction to Computer Science"</code> and state the expected return value.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">20. <span class="qm">[6]</span></div>
+<span class="tag">Unit 4 &middot; File I/O</span>
+<div class="qt">A file <code>marks.csv</code> has lines of the form <code>name,mark</code>:
+<div class="code">Ada,85
+Bob,72
+Cay,91
+Dee,64</div>
+Write a complete program that reads the file and prints (a) the number of students, (b) the class average to 1 decimal, and (c) the name of the highest-scoring student. Use the <code>with</code> idiom.
+</div>
+<textarea style="min-height:220px;"></textarea></div>
+
+<div class="qc"><div class="qn">21. <span class="qm">[7]</span></div>
+<span class="tag">All units &middot; Capstone</span>
+<div class="qt">Write a quiz program that:
+<ol style="margin-left:24px;">
+<li>Has a list of 3 questions, each a tuple <code>(question_text, correct_answer)</code>.</li>
+<li>Loops through the questions, asks each, and keeps a running count of correct answers (case-insensitive comparison).</li>
+<li>After all questions, prints the score as <code>"X / 3"</code> and a percentage.</li>
+<li>Uses at least one helper function (e.g., <code>ask(question, answer)</code> that returns True/False).</li>
+</ol>
+Add comments and a short docstring.</div>
+<textarea style="min-height:280px;"></textarea></div>
+
+<details>
+<summary>&#128214; Complete Answer Key (click to reveal)</summary>
+<div class="sol-block">
+<h4>Part A &mdash; K/U</h4>
+<p><strong>Q1.</strong> (1) 1.5 (float). (2) 1 (int). (3) "aaa" (str). (4) False (bool).</p>
+<p><strong>Q2.</strong> Iter 0: y=5, x=4. Iter 1: y=9, x=3. Iter 2: y=12, x=2. Iter 3: y=14, x=1. Prints <code>1 14</code>.</p>
+<p><strong>Q3.</strong> (1) False. (2) False. (3) True. (4) True.</p>
+<p><strong>Q4.</strong> Even values in 1..7 are 2, 4, 6. Total = 12.</p>
+<p><strong>Q5.</strong> (1) [20, 30, 40]. (2) 30.0. (3) 50 + 40 = 90.</p>
+<p><strong>Q6.</strong> Inside <code>add</code>, <code>total = x</code> is LOCAL, shadowing the global. Prints 5, then 0.</p>
+<p><strong>Q7.</strong> (1) runtime (IndexError). (2) syntax. (3) logic.</p>
+<p><strong>Q8.</strong> (a) 21 = 16+4+1 = 10101. (b) 11010 = 16+8+2 = 26.</p>
+<p><strong>Q9.</strong> Any two of: strong unique passwords, password manager, multi-factor authentication, keep software updated, be sceptical of phishing.</p>
+
+<h4>Part B &mdash; Thinking</h4>
+<p><strong>Q10.</strong> Bugs: (1) <code>range(nums)</code> should be <code>nums</code> (iterate the list directly). (2) <code>=</code> should be <code>==</code>. (3) <code>total + n</code> doesn't store; should be <code>total += n</code>. (Also the initial <code>total = 1</code> is wrong &mdash; should be 0; mark this as a 4th if shown.)
+<div class="code">def sum_evens(nums):
+    total = 0
+    for n in nums:
+        if n % 2 == 0:
+            total += n
+    return total</div></p>
+<p><strong>Q11.</strong>
+<div class="code">0,0
+1,0 1,1
+2,0 2,1 2,2</div></p>
+<p><strong>Q12.</strong>
+<div class="code">def second_largest(nums):
+    unique = sorted(set(nums), reverse=True)
+    return unique[1]</div>
+Or an O(n) one-pass version tracking <code>first</code> and <code>second</code>.</p>
+<p><strong>Q13.</strong> Helpers (signatures):
+<div class="code">def average(marks): -&gt; float
+def highest(marks): -&gt; float
+def report(marks):   # prints
+
+def average(marks):
+    return sum(marks) / len(marks)
+
+def highest(marks):
+    return max(marks)</div></p>
+
+<h4>Part C &mdash; Communication</h4>
+<p><strong>Q14.</strong> Sample issues: (1) name <code>x</code> is uninformative &rarr; <code>filter_above</code>. (2) <code>L</code>, <code>n</code> are uninformative. (3) inconsistent indentation (1 then 2 spaces) &rarr; PEP 8: 4 spaces. (4) <code>range(0, len(L))</code> can be <code>for value in L:</code>. (5) missing docstring. (6) single-line if/append is hard to read. (7) no comments.</p>
+<p><strong>Q15.</strong>
+<div class="code">SET count = 0
+SET total = 0
+SET highest = -infinity
+WHILE True:
+    READ mark
+    IF mark == -1:
+        BREAK
+    ADD 1 to count
+    ADD mark to total
+    IF mark &gt; highest:
+        SET highest = mark
+IF count == 0:
+    PRINT "no marks"
+ELSE:
+    PRINT count
+    PRINT total / count
+    PRINT highest</div></p>
+<p><strong>Q16.</strong> Free response. Award marks for: clear position; concrete example (Cambridge Analytica, COVID misinformation, etc.); named stakeholder (users, advertisers, governments); industry comparison (broadcast TV under CRTC regulation, pharmaceutical liability, etc.).</p>
+<p><strong>Q17.</strong> Sample documented version:
+<div class="code"># average_evens.py
+# Author: ...   Date: 2026-05-31
+# Purpose: average the even numbers in a list.
+
+def average_of_evens(numbers):
+    """Return the average of the even numbers in 'numbers', or 0 if none."""
+    total = 0
+    count = 0
+    for n in numbers:
+        if n % 2 == 0:    # only even numbers contribute
+            total += n
+            count += 1
+    if count == 0:
+        return 0          # avoid division-by-zero
+    return total / count</div></p>
+
+<h4>Part D &mdash; Application</h4>
+<p><strong>Q18.</strong> Sample:
+<div class="code">wage = float(input("Hourly wage: "))
+hours = float(input("Hours: "))
+if wage &lt; 0 or hours &lt; 0:
+    print("Error: negative input.")
+else:
+    if hours &lt;= 40:
+        pay = wage * hours
+    else:
+        pay = wage * 40 + wage * 1.5 * (hours - 40)
+    print(f"Total: ${pay:.2f}")</div></p>
+<p><strong>Q19.</strong>
+<div class="code">def count_vowels(text):
+    count = 0
+    for ch in text.lower():
+        if ch in "aeiou":
+            count += 1
+    return count
+# count_vowels("Introduction to Computer Science") -&gt; 11
+# (i-o-u-i-o-o-o-u-e-i-e-e &mdash; count carefully on test paper)</div>
+(Accept any answer with the correct algorithm; the exact count is verifiable by hand.)</p>
+<p><strong>Q20.</strong>
+<div class="code">total = 0
+count = 0
+top_name = ""
+top_mark = -1
+with open("marks.csv") as f:
+    for line in f:
+        name, mark_str = line.strip().split(",")
+        mark = int(mark_str)
+        total += mark
+        count += 1
+        if mark &gt; top_mark:
+            top_mark = mark
+            top_name = name
+print(f"{count} students")
+print(f"Average: {total/count:.1f}")
+print(f"Top:     {top_name} ({top_mark})")</div></p>
+<p><strong>Q21.</strong> Sample:
+<div class="code">"""Three-question quiz."""
+
+def ask(question, answer):
+    given = input(question + " ").strip().lower()
+    return given == answer.lower()
+
+QUESTIONS = [
+    ("Capital of Canada?", "Ottawa"),
+    ("2 + 2 * 3 = ?", "8"),
+    ("Author of the first algorithm?", "Lovelace"),
+]
+
+score = 0
+for q, a in QUESTIONS:
+    if ask(q, a):
+        score += 1
+
+percent = score / len(QUESTIONS) * 100
+print(f"{score} / {len(QUESTIONS)} = {percent:.0f}%")</div></p>
+</div>
+</details>
+
+<div class="rubric"><h3 style="margin-top:24px;">Final Exam Rubric (per category)</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough, insightful, demonstrates a high degree of effectiveness</td><td>80&ndash;100%</td></tr>
+<tr><td>3</td><td>Considerable effectiveness &mdash; provincial standard</td><td>70&ndash;79%</td></tr>
+<tr><td>2</td><td>Some effectiveness</td><td>60&ndash;69%</td></tr>
+<tr><td>1</td><td>Limited effectiveness</td><td>50&ndash;59%</td></tr>
+<tr><td>R</td><td>Insufficient &mdash; has not demonstrated the required knowledge or skills</td><td>&lt;50%</td></tr></table></div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 University Preparation | Final Exam | Ontario Curriculum 2008 (Revised) | Aligned with Growing Success (2010)</footer>
+</div></body></html>

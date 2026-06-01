@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI3U Ch 2: Evolution — Unit Test (OF Learning)</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+:root { --primary: #0d9488; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0d9488;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sbi3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 2: Evolution — Unit Test</h1><div class="sub">Assessment OF Learning · Strand C</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 70 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all work. Reveal answer keys only after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">List the four conditions required for natural selection to occur. Explain why all four must be satisfied.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Variation exists in the population. (2) Variation is heritable. (3) Differential survival/reproduction occurs. (4) More offspring are produced than can survive (overproduction). Without variation, selection has nothing to act on. Without heritability, the trait does not pass to offspring. Without differential reproduction, allele frequencies do not change. Without overproduction, every variant could survive equally — no competition or selection pressure.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">A species' "biological fitness" is best defined as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Physical strength</label></li>
+<li><label><input type="radio" name="q2"> Longevity</label></li>
+<li><label><input type="radio" name="q2"> Number of offspring that survive to reproduce</label></li>
+<li><label><input type="radio" name="q2"> Resistance to disease</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>C.</strong> Fitness = reproductive success — number of viable, fertile offspring contributed to the next generation. Strength or longevity contribute only if they translate into more offspring.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">Vestigial structures in humans (e.g., the appendix) provide evidence of evolution because they:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> Continue to serve their original function</label></li>
+<li><label><input type="radio" name="q3"> Are reduced remnants of structures that were functional in ancestors</label></li>
+<li><label><input type="radio" name="q3"> Have evolved independently in multiple species</label></li>
+<li><label><input type="radio" name="q3"> Are caused by mutation</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Vestigial structures persist as reduced versions of ancestral structures with no or minimal current function, showing evolutionary history.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Compare directional, stabilising, and disruptive selection. For each, name one real-world example.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><em>Directional</em>: one extreme favoured, mean shifts; e.g., peppered moth industrial melanism, antibiotic-resistant bacteria. <em>Stabilising</em>: average favoured, extremes selected against, variance shrinks; e.g., human birth weight. <em>Disruptive</em>: both extremes favoured, mean disfavoured; can split a population; e.g., African finches with two distinct beak sizes on the same island.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">List three lines of evidence for evolution besides the fossil record. For each, give a one-sentence example.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Biogeography</em>: closely related species occur in adjacent regions (Galápagos finches, marsupials in Australia). (2) <em>Comparative anatomy</em>: homologous bone plan in tetrapod forelimbs (human arm, whale flipper, bat wing). (3) <em>Molecular biology</em>: all life shares DNA and a near-universal genetic code; sequence similarity correlates with evolutionary relatedness. Also acceptable: embryology (vertebrate pharyngeal arches), direct observation (Lenski's E. coli, Grants' finches).</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[4]</span>
+<div class="qtxt">In a population of moths, 36% are homozygous recessive (dd, dark wings) and 64% display the dominant (light) phenotype. Assuming Hardy–Weinberg equilibrium, calculate: (a) the frequency of the d allele, (b) the frequency of the D allele, (c) the proportion of heterozygous (Dd) individuals.</div>
+<textarea placeholder="Show all work..."></textarea>
+<details><summary>Answer Key</summary><p>(a) \(q^2 = 0.36 \Rightarrow q = 0.6\). (b) \(p = 1 - q = 0.4\). (c) \(2pq = 2(0.4)(0.6) = \mathbf{0.48}\) — 48% are heterozygous. Check: \(p^2 + 2pq + q^2 = 0.16 + 0.48 + 0.36 = 1.00\). ✓</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">A drug company developed a new antibiotic. After widespread use in hospitals for 5 years, 30% of bacterial infections in those hospitals no longer respond to the drug. Explain the evolutionary mechanism using all four conditions for natural selection.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Variation</em>: a small number of bacterial cells in the original population already carry resistance mutations by chance (mutation rate ~10⁻⁹/nucleotide/generation × billions of bacteria = many mutations). (2) <em>Heritability</em>: resistance alleles are genetic and are passed to daughter cells when bacteria divide (plus possible horizontal gene transfer via plasmids). (3) <em>Differential survival/reproduction</em>: in the presence of antibiotic, susceptible bacteria die; resistant bacteria survive and reproduce. (4) <em>Overproduction</em>: bacteria divide every ~20 minutes, producing huge numbers of offspring, so the population can rapidly fill with descendants of the resistant survivors. Over 5 years (millions of generations), the frequency of the resistance allele rises until 30% of strains are resistant. Slowing this evolution requires antibiotic stewardship (correct prescriptions, full courses, fewer agricultural uses).</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Design an experimental protocol to test whether artificial selection can change average bristle number in fruit flies (Drosophila) over 20 generations. Specify variables, replicates, and how you would distinguish drift from selection.</div>
+<textarea placeholder="Your protocol..."></textarea>
+<details><summary>Answer Key</summary><p>IV: selection treatment (high-bristle line — breed only flies in the top 10% for bristle number; low-bristle line — breed only flies in the bottom 10%; control line — breed random flies). DV: mean bristle number per generation. Replicates: ≥ 3 independent populations per treatment to estimate drift. Controlled variables: rearing temperature, food, population size, generation time. After 20 generations, compare lines: if both selected lines shift in their respective directions and diverge from the control, selection has acted; if all three lines drift in random directions, the change is due to chance. Statistical test: ANOVA across treatments.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[4]</span>
+<div class="qtxt">Describe in your own words the difference between microevolution and macroevolution. Give one example of each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><em>Microevolution</em>: changes in allele frequencies within a population over a few generations — e.g., antibiotic resistance evolving in bacteria, peppered moths darkening, finch beak depth shifting after drought. <em>Macroevolution</em>: large-scale patterns over millions of years — e.g., speciation events, the origin of tetrapods, mammalian adaptive radiation after dinosaur extinction, mass extinctions. Macroevolution is the cumulative outcome of microevolution operating across long timescales, with extinction and speciation shaping diversity.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Compare and contrast allopatric and sympatric speciation. Include the reproductive barrier and one example of each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><em>Allopatric</em> (literally "other land"): geographic barrier physically separates a population; over time, genetic drift, mutation, and different selection pressures cause divergence; reproductive isolation evolves indirectly. Example: pocket gophers split by the Grand Canyon; Galápagos finches diverging on different islands. <em>Sympatric</em> (literally "same land"): divergence occurs within a single geographic area, usually via polyploidy (instant reproductive isolation due to chromosome incompatibility) or strong disruptive selection on habitat or mate preference. Example: many crop plants (wheat, cotton, strawberry) arose by polyploidy; cichlid fishes in Lake Victoria diverging by female colour preference.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Explain how Hardy–Weinberg equilibrium serves as a null model for detecting evolution in a population. Include the five assumptions and what each violation reveals.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Hardy–Weinberg states that allele and genotype frequencies remain stable across generations under five assumptions: (1) large population size — violation → genetic drift; (2) no migration — violation → gene flow; (3) no mutation — violation → new alleles; (4) random mating — violation → assortative mating or inbreeding skews genotype ratios; (5) no selection — violation → directional/stabilising/disruptive selection. If observed genotype frequencies match \(p^2 + 2pq + q^2 = 1\), the population is at HWE and is not measurably evolving at that locus. If observed frequencies deviate, one or more assumptions are violated, signalling evolution. HWE is a null hypothesis, not a description of real populations.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE — Genetic counselling:</strong> Cystic fibrosis (CF) is an autosomal recessive disorder. About 1 in 2 500 Canadian newborns are affected. Use Hardy–Weinberg to estimate the carrier (heterozygous) frequency in the population. Show all work, and discuss the relevance to genetic counselling.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>\(q^2 = 1/2500 = 0.0004 \Rightarrow q = 0.02\). \(p = 1 - q = 0.98\). Carrier frequency \(2pq = 2(0.98)(0.02) \approx 0.0392\), or about 1 in 25 individuals. Implication: most carriers are unaffected and unaware. For a couple where both have a family history of CF, genetic testing can confirm carrier status; if both partners are heterozygous, each child has a 25% chance of having CF. Counsellors use these probabilities to inform family planning, prenatal testing decisions, and access to support services.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Case study — Galápagos finches:</strong> Peter and Rosemary Grant documented that during a 1977 drought on Daphne Major island, average beak depth in <em>Geospiza fortis</em> increased by 4%. (a) Which mode of selection acted? (b) Why was beak depth heritable a precondition for evolution? (c) Predict what would happen to beak depth if a wet year followed and small seeds returned in abundance.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) <em>Directional selection</em> favoured the deeper-beaked extreme of the distribution, shifting the population mean upward. Drought eliminated small soft seeds, leaving only large hard seeds that required deep, strong beaks. (b) Without heritability, even if some birds survived better, their advantage would not be passed to offspring and the population mean would return to the original distribution. The Grants documented that beak depth has a heritability of about 0.65 in this species. (c) When small seeds returned, directional selection reversed: the smaller-beaked birds had an advantage at the new food source, and the population mean shifted back toward smaller beaks. This back-and-forth selection was directly observed in subsequent years. The Grants' work showed that natural selection can act within a few generations.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Application — Conservation:</strong> A wild population of an endangered cat has fallen to about 50 individuals due to habitat loss. Conservation biologists are worried about long-term genetic effects. (a) Identify the genetic mechanism most threatening to a tiny population. (b) Explain how a conservation strategy could mitigate the threat.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) <em>Genetic drift</em> and inbreeding depression: in a small population, allele frequencies can fluctuate randomly each generation; rare alleles can be lost; harmful recessive alleles can rise to high frequency through inbreeding; the population suffers reduced fertility, increased disease susceptibility, and lower long-term adaptive potential. (b) Strategies: establish habitat corridors connecting fragmented populations to restore gene flow (reduce isolation); translocation of individuals between populations to introduce new alleles ("genetic rescue"); captive-breeding programs designed to maximise allelic diversity using pedigree management; permanent protection and restoration of habitat to allow population recovery. The Florida panther recovery program is a documented success of inter-population translocation reversing genetic decline.</p></details></div>
+
+<footer>SBI3U — Biology, Grade 11 | Strand C: Evolution | Assessment OF Learning — Graded</footer>
+</div></body></html>

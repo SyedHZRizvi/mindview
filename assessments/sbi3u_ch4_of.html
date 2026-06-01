@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI3U Ch 4: Animals — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #be123c; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#be123c;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sbi3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 4: Animals — Structure and Function — Unit Test</h1><div class="sub">Assessment OF Learning · Strand E</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 80 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all work. Reveal answer keys only after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name the four major animal tissue types and state one function and one example location for each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Epithelial</em>: protective barrier and absorption/secretion; skin epidermis, gut lining, alveoli. (2) <em>Connective</em>: support and binding; bone, cartilage, blood, tendons. (3) <em>Muscle</em>: movement; skeletal (biceps), cardiac (heart), smooth (gut walls). (4) <em>Nervous</em>: electrical signalling; brain, spinal cord, peripheral nerves.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which sequence correctly traces the path of food through the digestive tract?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Mouth → stomach → oesophagus → small intestine → large intestine</label></li>
+<li><label><input type="radio" name="q2"> Mouth → oesophagus → stomach → small intestine → large intestine → rectum → anus</label></li>
+<li><label><input type="radio" name="q2"> Mouth → stomach → liver → large intestine → small intestine</label></li>
+<li><label><input type="radio" name="q2"> Mouth → small intestine → stomach → oesophagus → anus</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Mouth → oesophagus → stomach → small intestine (duodenum, jejunum, ileum) → large intestine (colon) → rectum → anus.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Trace the path of a red blood cell from the right atrium through the pulmonary circuit back to the left atrium. Name each chamber and major vessel.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Right atrium → tricuspid valve → right ventricle → pulmonary semilunar valve → pulmonary trunk → pulmonary arteries → pulmonary capillaries in lungs (gas exchange) → pulmonary veins → left atrium.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name the three steps of urine formation in the nephron and the part of the nephron where each predominantly occurs.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Filtration</em>: glomerulus + Bowman's capsule — high pressure forces water and small solutes from blood into the capsule. (2) <em>Reabsorption</em>: proximal convoluted tubule (most), loop of Henle, distal tubule — useful substances (glucose, amino acids, ions, water) returned to blood. (3) <em>Secretion</em>: tubular cells actively transport H+, K+, drugs, toxins from blood into the filtrate.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">A typical resting membrane potential of a neuron is about:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> +30 mV</label></li>
+<li><label><input type="radio" name="q5"> 0 mV</label></li>
+<li><label><input type="radio" name="q5"> −70 mV</label></li>
+<li><label><input type="radio" name="q5"> −400 mV</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>C (−70 mV).</strong> Maintained by the Na+/K+ ATPase moving 3 Na+ out and 2 K+ in per ATP, plus background K+ leak channels.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [12 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[4]</span>
+<div class="qtxt">A patient drinks 1 L of water rapidly. (a) Predict the change in plasma osmolarity, ADH secretion, and urine output over the next hour. (b) Explain the negative-feedback loop that restores plasma osmolarity.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Plasma osmolarity decreases as water dilutes the blood. Osmoreceptors in the hypothalamus detect this and signal the posterior pituitary to <em>reduce</em> ADH secretion. With less ADH, the collecting duct becomes less permeable to water; less water is reabsorbed; the patient produces a large volume of dilute urine. (b) Feedback loop: ↑water intake → ↓osmolarity (deviation from set point) → osmoreceptors detect → hypothalamus reduces ADH → collecting duct less permeable to water → more water excreted → osmolarity rises back toward set point. Negative because the response opposes the original change.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">Design an experiment to test how exercise intensity affects heart rate. Specify independent and dependent variables, controlled variables, and how you would graph the data.</div>
+<textarea placeholder="Your protocol..."></textarea>
+<details><summary>Answer Key</summary><p>IV: exercise intensity (e.g., rest, light walking, jogging in place, fast running — 4 levels). DV: heart rate (beats per minute, measured immediately after each 3-minute interval at the carotid or radial artery, or with a heart-rate monitor). Controlled variables: subject (use same person or several matched subjects), ambient temperature, time of day, hydration, recent food, equipment, duration of each exercise level. Method: subject performs each intensity for 3 min in random order, rests 5 min between, repeat 3 trials. Graph: heart rate (y-axis) vs exercise intensity (x-axis), with error bars showing standard deviation; expect a positive linear-to-curvilinear relationship.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">A patient has been diagnosed with emphysema, which destroys alveolar walls and reduces alveolar surface area. (a) Predict the effects on (i) gas-exchange efficiency, (ii) blood gases (O<sub>2</sub>, CO<sub>2</sub>), and (iii) breathing rate. (b) Explain why patients with severe emphysema often have an enlarged ("barrel") chest.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) (i) Less surface area for diffusion → reduced gas exchange efficiency. (ii) Less O<sub>2</sub> diffuses in (mild hypoxia) and less CO<sub>2</sub> diffuses out (hypercapnia). (iii) Rising blood CO<sub>2</sub>/falling pH stimulates chemoreceptors in the medulla to increase breathing rate. (b) Loss of elastic recoil in alveolar walls means air is trapped in the lungs at end-expiration ("air-trapping"). The chest expands and remains inflated, producing the characteristic barrel-chest appearance.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[4]</span>
+<div class="qtxt">Compare arteries, capillaries, and veins in a labelled 3-row table. Include: wall thickness, diameter, presence of valves, pressure, and one example.</div>
+<textarea placeholder="Build your table..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Arteries:</strong> thick muscular elastic walls; varied diameter; no valves (except semilunar at heart exit); high pressure with pulse; example aorta. <strong>Capillaries:</strong> wall = single endothelial layer; microscopic diameter; no valves; intermediate then low pressure; example alveolar capillary. <strong>Veins:</strong> thin walls with little muscle; large diameter; one-way valves; low pressure; example vena cava. Function: arteries deliver, capillaries exchange, veins return.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Describe (with diagrams optional) the structure and function of a neuron. Then outline the events of an action potential from resting state through repolarisation, naming the ions and channels involved.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Neuron structure: dendrites receive signals, cell body integrates, axon transmits, axon terminals release neurotransmitter at synapses. Many axons wrapped in myelin (Schwann cells in PNS) with nodes of Ranvier in between. Action potential: (1) Resting state (~−70 mV) maintained by Na+/K+ ATPase + K+ leak channels. (2) A stimulus depolarises the membrane to threshold (~−55 mV). (3) Voltage-gated Na+ channels open → Na+ rushes in → membrane depolarises to ~+30 mV. (4) Voltage-gated Na+ channels inactivate; voltage-gated K+ channels open → K+ leaves → repolarisation. (5) Brief hyperpolarisation; Na+/K+ pump restores ion gradients. The signal travels down the axon, jumping between nodes in myelinated fibres (saltatory conduction). All-or-nothing: stronger stimuli increase the frequency of action potentials, not their size.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Explain how negative feedback loops maintain homeostasis. Use blood glucose regulation as your specific example, including the relevant hormones, organs, and target tissues.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Negative feedback opposes a change to restore the set point. Blood glucose example: after a meal, blood glucose rises → β-cells of the pancreas release <em>insulin</em> → insulin signals liver, muscle, and adipose cells to take up glucose (and the liver to store it as glycogen) → blood glucose falls back to ~5 mmol/L. Conversely, when glucose drops between meals → α-cells of the pancreas release <em>glucagon</em> → liver breaks down glycogen (glycogenolysis) and synthesises glucose (gluconeogenesis) → blood glucose rises back to set point. The two hormones are antagonistic and together produce stable blood glucose. Type 1 diabetes: autoimmune destruction of β-cells → no insulin → hyperglycaemia; treated with insulin injections.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Case study — Type 2 diabetes:</strong> A patient is diagnosed with type 2 diabetes. Her cells respond poorly to insulin. (a) Predict the effect on her blood glucose after a meal. (b) Suggest two lifestyle changes she could make to improve glucose control, and explain why each works at the cellular level.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Her cells (muscle, liver, adipose) are insulin-resistant, so glucose stays in the blood after meals: hyperglycaemia, especially post-prandial spikes. The pancreas compensates with extra insulin, eventually exhausting β-cells. (b) (1) <em>Regular exercise</em> increases muscle glucose uptake via GLUT4 translocation (an insulin-independent mechanism in active muscle) and improves insulin sensitivity over weeks. (2) <em>Dietary changes</em> (reduce refined carbs and added sugars, choose whole grains, increase fibre and protein) lower post-prandial glucose spikes, reduce insulin demand, and (when combined with weight loss) restore receptor responsiveness in muscle and liver. Pharmacological options (metformin) also exist.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE — Smoking and lung health:</strong> Long-term cigarette smoking damages the respiratory tract. (a) Identify two specific structures damaged by smoking and the consequence of each. (b) Vaping has been marketed as a "safer alternative." Discuss one health concern that has emerged from vaping.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) (1) <em>Cilia</em> on respiratory epithelium are paralysed and then destroyed → mucus and trapped particles cannot be swept up, leading to chronic bronchitis and persistent cough. (2) <em>Alveolar walls</em> are gradually destroyed (emphysema) — reducing gas-exchange surface area, causing hypoxia, hypercapnia, and barrel-chest. Smoking is also the leading risk factor for lung cancer (damage to bronchial epithelial DNA), atherosclerosis, and stroke. (b) Vaping concerns include: EVALI (e-cigarette/vaping-associated lung injury) reported in 2019–2020; nicotine addiction in adolescents whose brains are still developing; unknown long-term effects of inhaling flavouring chemicals and metal-vapour particles. Vaping is not harmless; population-level health effects remain an area of active research.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Application — Kidney disease and dialysis:</strong> A patient's kidneys can no longer filter waste effectively. (a) Predict the changes in blood urea, electrolytes, and water balance. (b) Briefly explain how haemodialysis substitutes for kidney function, and why a kidney transplant is generally preferred to long-term dialysis.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Blood urea, creatinine, and potassium rise (uraemia, hyperkalaemia); fluid overload causes high blood pressure and oedema; acid-base imbalance (acidosis) develops. (b) Haemodialysis: blood is pumped through a machine where a semipermeable membrane separates it from dialysis fluid. Urea and excess ions diffuse out into the dialysate (which is then discarded); water can be removed by ultrafiltration. Dialysis takes ~4 hours, 3 times per week. Transplant: a single donor kidney replaces the lost function 24/7, returns the patient to near-normal life, and is associated with longer survival and better quality of life. Drawbacks of transplant: scarcity of donors, requirement for lifelong immunosuppression, surgical risk. Both options are major investments and depend on access to specialised care.</p></details></div>
+
+<footer>SBI3U — Biology, Grade 11 | Strand E: Animals — Structure and Function | Assessment OF Learning — Graded</footer>
+</div></body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6: Media Literacy — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 6: Media Literacy — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand D</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of media conventions, bias and source evaluation, rhetorical appeals, and media production.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.1 — Media Conventions</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Marshall McLuhan's slogan "the medium is the message" argues that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Messages should be kept short</label></li>
+<li><label><input type="radio" name="q1" value="b"> The form a message takes shapes what it can say at least as much as its content does</label></li>
+<li><label><input type="radio" name="q1" value="c"> All media are equally good</label></li>
+<li><label><input type="radio" name="q1" value="d"> Television replaces print</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> McLuhan's claim is that the form is content. A news story rendered as a 30-second TikTok and a 4,000-word feature article are not the same story in different containers; they are different stories. Strong media analysis takes the form itself as content.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">A typical newscast frames the anchor at eye level, in centre frame, with soft three-point lighting. These choices primarily code:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Comedy</label></li>
+<li><label><input type="radio" name="q2" value="b"> Authority — eye-level makes the viewer the anchor's equal; centre framing gives dominance; soft lighting flattens skin tone toward neutrality</label></li>
+<li><label><input type="radio" name="q2" value="c"> Surrealism</label></li>
+<li><label><input type="radio" name="q2" value="d"> Nothing in particular</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The convention is the credibility appeal. "Objectivity" in television news is, technically, a particular set of visual codes. Becoming aware of those codes is the first step toward asking what they hide.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">An <em>affordance</em> in media studies is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> A price discount</label></li>
+<li><label><input type="radio" name="q3" value="b"> What a medium makes easy or hard to do — TikTok's affordance is vertical short-form video with algorithmic distribution; print's affordance is permanence and rereadability</label></li>
+<li><label><input type="radio" name="q3" value="c"> A marketing slogan</label></li>
+<li><label><input type="radio" name="q3" value="d"> A camera lens</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Affordances are what a medium makes possible or impossible. Naming the affordances of a platform is the move that turns a media essay from description ("the post is short") into analysis ("the post is short because TikTok's affordances reward density of attention and punish complexity").</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.2 — News and Bias</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">"Bias" in news reporting is best understood as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Always wrong or unethical</label></li>
+<li><label><input type="radio" name="q4" value="b"> Selectivity — the unavoidable choices about which stories to cover, which sources to call, which adjectives and headlines to use; the goal is not unbiased news but news whose biases you can identify and account for</label></li>
+<li><label><input type="radio" name="q4" value="c"> Synonymous with disinformation</label></li>
+<li><label><input type="radio" name="q4" value="d"> Only a problem on the internet</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> All news is selective; there is no neutral choice about which stories to cover. The Grade 11 media-literate reader does not look for sources without bias — she looks for sources whose biases she can identify, whose factual claims she can verify, and whose method she can hold to a standard.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The most reliable evaluation technique is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Trusting sites that "look professional"</label></li>
+<li><label><input type="radio" name="q5" value="b"> Lateral reading — leaving the source and searching what other reputable outlets say about it</label></li>
+<li><label><input type="radio" name="q5" value="c"> Sharing the link before reading</label></li>
+<li><label><input type="radio" name="q5" value="d"> Reading the comments section first</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Lateral reading shifts the question from "does this site look trustworthy?" — a design question that is cheap to fake — to "what do independent sources say about this site?" — an evidence question that is much harder to fake.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">"False balance" is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> A camera trick</label></li>
+<li><label><input type="radio" name="q6" value="b"> Giving equal weight to unequal claims, so that a strongly supported view and a fringe view appear as "two sides" of equal merit</label></li>
+<li><label><input type="radio" name="q6" value="c"> A type of grammar error</label></li>
+<li><label><input type="radio" name="q6" value="d"> A printing convention</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> False balance treats unequal claims as if they were equally well supported. A news story that presents "scientists who study climate change" and "people who deny climate change" as two equivalent sides has done false balance. Recognising it is part of media literacy.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.3 — Rhetorical Appeals</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Aristotle's three classical rhetorical appeals are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Logos (logic), ethos (credibility), pathos (emotion)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Hook, thesis, conclusion</label></li>
+<li><label><input type="radio" name="q7" value="c"> Headline, lede, kicker</label></li>
+<li><label><input type="radio" name="q7" value="d"> Sound, image, text</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Logos, ethos, pathos — Aristotle's three appeals, still the standard vocabulary for rhetorical analysis. Every persuasive media text combines at least two of these; identifying which appeals are doing the work is the first analytical move.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Kenneth Burke's concept of <em>identification</em> in persuasion claims that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Logical arguments always win</label></li>
+<li><label><input type="radio" name="q8" value="b"> Persuasion happens not when an audience accepts a logical claim but when they recognise themselves as already being the kind of person the speaker is</label></li>
+<li><label><input type="radio" name="q8" value="c"> Ads must always be funny</label></li>
+<li><label><input type="radio" name="q8" value="d"> Brands should never use celebrities</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Burke's identification — modern advertising's most powerful technique — sidesteps scepticism because it never asks the viewer to evaluate a claim, only to recognise herself in a scene. An ad rarely says "buy this"; it stages a scene the viewer wants to be inside and offers the product as the entry ticket.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A "glittering generality" is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> A type of literal sparkle</label></li>
+<li><label><input type="radio" name="q9" value="b"> Vague positive language that sounds meaningful but cannot be falsified — "Vote for change," "Open happiness"</label></li>
+<li><label><input type="radio" name="q9" value="c"> A musical term</label></li>
+<li><label><input type="radio" name="q9" value="d"> A fact-check protocol</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Glittering generalities are vague positive abstractions used in propaganda and advertising. They feel meaningful but resist being tested against evidence — exactly the function the speaker wants.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.4 — Media Production</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Strong media production begins with:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> The camera</label></li>
+<li><label><input type="radio" name="q10" value="b"> A written brief that names the purpose, audience, platform, and intended effect</label></li>
+<li><label><input type="radio" name="q10" value="c"> A trailer</label></li>
+<li><label><input type="radio" name="q10" value="d"> Music</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> The brief is the production document. Every later choice — music, framing, length, captions — should be answerable back to the brief. Starting with the camera before the brief is the most common reason student media projects miss their purpose.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Captions on a media production are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Optional decorations</label></li>
+<li><label><input type="radio" name="q11" value="b"> Ethically and increasingly legally required for accessibility, and also a proofreading layer that catches transcription errors no other editing pass catches</label></li>
+<li><label><input type="radio" name="q11" value="c"> Only for foreign-language films</label></li>
+<li><label><input type="radio" name="q11" value="d"> A type of branding</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Captions are accessibility, not afterthought. They also catch transcription errors no other editing pass catches — "captioning is editorial proofreading by other means." High-contrast typography is part of the same accessibility commitment.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Under Canadian <em>fair dealing</em>, a student can use short excerpts of copyrighted material for educational purposes, but those rights end the moment:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> The teacher leaves the room</label></li>
+<li><label><input type="radio" name="q12" value="b"> The work is published on YouTube or TikTok in a way that competes with the original</label></li>
+<li><label><input type="radio" name="q12" value="c"> The student turns 18</label></li>
+<li><label><input type="radio" name="q12" value="d"> The original work is more than 50 years old</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Canadian fair dealing covers limited educational and review use. Publishing a student project on a public platform in a way that could compete with the original (e.g., uploading a copyrighted song under your own video) is outside fair dealing. Use royalty-free libraries or seek explicit permission for any borrowed clip.</div></div>
+
+</div>
+
+<footer>ENG3U — English, Grade 11 | Strand D: Media Studies | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Macbeth — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Macbeth — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B + A</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of Jacobean context, tragic form, soliloquy, motif tracking, and performance reading.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.1 — Jacobean Context</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt"><em>Macbeth</em> was probably written around:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> 1485, during the Wars of the Roses</label></li>
+<li><label><input type="radio" name="q1" value="b"> 1606, during the reign of James I and shortly after the Gunpowder Plot</label></li>
+<li><label><input type="radio" name="q1" value="c"> 1700, during the Restoration</label></li>
+<li><label><input type="radio" name="q1" value="d"> 1820, during the Romantic period</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> <em>Macbeth</em> is a Jacobean play, written ~1606. Knowing this matters because the play responds to specific contemporary anxieties — regicide, the Gunpowder Plot, equivocation, witchcraft — that shape what the play imagines.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">"Equivocation" — words that say two contradictory things at once — was a doctrine of interest to Shakespeare's first audience because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> It was a popular hobby</label></li>
+<li><label><input type="radio" name="q2" value="b"> The Jesuit conspirator Father Henry Garnet had been tried for it in March 1606, shortly before the play was written</label></li>
+<li><label><input type="radio" name="q2" value="c"> It was forbidden in Scotland</label></li>
+<li><label><input type="radio" name="q2" value="d"> The witches invented it</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The Porter's drunken speech in 2.3 about "an equivocator" refers directly to Garnet's trial. The witches' "Fair is foul, and foul is fair" (1.1.10) is a verbal equivocation, and the line lands as charged contemporary reference for a 1606 audience.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Banquo is descended (in the play's genealogy) from a figure whose line stretches to "th' crack of doom" (4.1.117). This compliments:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Queen Elizabeth I</label></li>
+<li><label><input type="radio" name="q3" value="b"> King James I, who claimed descent from Banquo and was Shakespeare's patron</label></li>
+<li><label><input type="radio" name="q3" value="c"> The Pope</label></li>
+<li><label><input type="radio" name="q3" value="d"> The Globe Theatre's owners</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> James I claimed descent from Banquo. Showing Banquo's line stretching forward in 4.1 was a deliberate compliment to the patron sitting (potentially) in the front row of a court performance.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.2 — Tragic Form</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Macbeth himself names his tragic flaw in a soliloquy. He calls it:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> "Vaulting ambition" (1.7.27)</label></li>
+<li><label><input type="radio" name="q4" value="b"> "Sound and fury" (5.5.27)</label></li>
+<li><label><input type="radio" name="q4" value="c"> "Fair is foul" (1.1.10)</label></li>
+<li><label><input type="radio" name="q4" value="d"> "Sleep no more" (2.2.38)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','a')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Macbeth names his hamartia in Act 1 Scene 7: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th' other" (1.7.25–28). The metaphor (a rider whose vault clears the horse) already contains the catastrophe.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">In Aristotle's <em>Poetics</em>, <em>hamartia</em> means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Excessive pride</label></li>
+<li><label><input type="radio" name="q5" value="b"> A tragic flaw or error of judgement</label></li>
+<li><label><input type="radio" name="q5" value="c"> A recognition of truth</label></li>
+<li><label><input type="radio" name="q5" value="d"> The reversal of fortune</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Hamartia is a tragic flaw or error of judgement. <em>Hubris</em> is one species of hamartia (excessive pride). <em>Anagnorisis</em> is recognition. <em>Peripeteia</em> is reversal. Knowing these four terms cold is a Grade 11 expectation.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Banquo, Macduff, and Malcolm function in the play as Macbeth's:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Loyal advisors throughout</label></li>
+<li><label><input type="radio" name="q6" value="b"> <em>Foils</em> — characters whose contrast illuminates the protagonist by showing alternative responses to the same crisis</label></li>
+<li><label><input type="radio" name="q6" value="c"> Identical copies</label></li>
+<li><label><input type="radio" name="q6" value="d"> Comic relief</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Foils sharpen the tragic question by staging alternative responses. Banquo hears the same prophecy and does not act; Macduff loses his family to political principle; Malcolm tests his readiness for rule. Reading Macbeth through the foils is what graduates a competent essay to a strong one.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.3 — Soliloquy</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A <em>soliloquy</em> is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> A long speech delivered to other characters on stage</label></li>
+<li><label><input type="radio" name="q7" value="b"> A speech delivered alone on stage, voicing inner thought to the audience</label></li>
+<li><label><input type="radio" name="q7" value="c"> A duet between two characters</label></li>
+<li><label><input type="radio" name="q7" value="d"> A printed stage direction</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Soliloquy is the convention by which a character alone on stage shares thought with the audience. A long speech with others present is a <em>monologue</em>. The two are often confused; the test is whether other characters are present.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div>
+<div class="passage">"If it were done when 'tis done, then 'twere well / It were done quickly." (1.7.1–2)</div>
+<div class="qtxt">What is the analytical significance of the repetition of "done" four times in two lines?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Shakespeare ran out of synonyms</label></li>
+<li><label><input type="radio" name="q8" value="b"> Macbeth is trying to think of the murder as a single completed act, and the repetition exposes the effort — the very work of compressing the crime into one word is what reveals the impossibility of doing so</label></li>
+<li><label><input type="radio" name="q8" value="c"> The repetition is meaningless</label></li>
+<li><label><input type="radio" name="q8" value="d"> It is a printer's error</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Macbeth is trying to compress the murder into a single closed action ("done"). The repetition exposes the effort and the impossibility — the play spends three acts proving that the murder will never be "done" in the sense Macbeth needs it to be.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">When Lady Macbeth speaks in prose in Act 5 Scene 1 (the sleepwalking scene), the verse-to-prose shift signals:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> That Shakespeare did not finish the scene</label></li>
+<li><label><input type="radio" name="q9" value="b"> Low status, madness, or psychological rupture — in this case, the unmaking of the character who in 1.5 prayed in elaborate blank verse</label></li>
+<li><label><input type="radio" name="q9" value="c"> That she is reading a letter</label></li>
+<li><label><input type="radio" name="q9" value="d"> Nothing in particular</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> In Shakespeare, the verse-to-prose shift is a grammatical marker of social status, madness, or psychological breakdown. Lady Macbeth's collapse from formal blank verse (1.5) to fragmented prose (5.1) is the play's syntactic announcement of her unmaking.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.4 — Motifs</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">The motif of <em>blood</em> in <em>Macbeth</em>:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Appears only once, in Act 5</label></li>
+<li><label><input type="radio" name="q10" value="b"> Migrates from the literal blood of battle to Macbeth's hands ("Will all great Neptune's ocean wash this blood / Clean from my hand?" 2.2.78–9) and finally to Lady Macbeth's sleepwalking ("Out, damned spot!" 5.1.39), so that bodily and moral contamination become inseparable</label></li>
+<li><label><input type="radio" name="q10" value="c"> Is only used by the witches</label></li>
+<li><label><input type="radio" name="q10" value="d"> Is decoration without analytic weight</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> The blood motif moves from external violence to internal guilt without ever leaving the same word. Tracking it across acts produces a theme — that moral guilt is staged through bodily contamination, and the body cannot be cleaned of what the mind has authorised.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">A "theme" in <em>Macbeth</em> is best stated as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A single noun ("ambition," "guilt")</label></li>
+<li><label><input type="radio" name="q11" value="b"> A sentence that makes a debatable claim about life ("In <em>Macbeth</em>, the violation of natural order shows up first in the disruption of sleep, long before it shows up in armies on the move")</label></li>
+<li><label><input type="radio" name="q11" value="c"> The title of an act</label></li>
+<li><label><input type="radio" name="q11" value="d"> A character's name</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Themes are sentences, not nouns. A topic is "ambition"; a theme is a claim about ambition the play makes. The diagnostic question: could a reader disagree with this sentence? If yes, you have a theme.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div>
+<div class="passage">"A little water clears us of this deed: / How easy is it then!" — Lady Macbeth (2.2.86–7)<br>"Here's the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand." — Lady Macbeth (5.1.55–7)</div>
+<div class="qtxt">Reading these two Lady Macbeth lines together, the strongest analytical observation is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Lady Macbeth has bad personal hygiene</label></li>
+<li><label><input type="radio" name="q12" value="b"> Lady Macbeth has changed her mind</label></li>
+<li><label><input type="radio" name="q12" value="c"> The same character contradicts her earlier confidence; what she dismissed as cleanable (2.2.86) becomes uncleanable (5.1.55) — the play uses the same image (water on hands) to track a moral exchange where the easy denial passes between the Macbeths and the haunted knowledge is left with Lady Macbeth</label></li>
+<li><label><input type="radio" name="q12" value="d"> The two quotations are from different plays</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','c')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Shakespeare uses the same image (water on hands) across three acts to track a moral exchange between two characters. Tracking the motif across the play is how a strong essay produces a defensible theme rather than a recycled assertion that "the play is about guilt."</div></div>
+
+</div>
+
+<footer>ENG3U — English, Grade 11 | Strand B + A | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

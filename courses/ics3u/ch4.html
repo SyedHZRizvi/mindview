@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS3U — Introduction to Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #d97706; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #d97706; color: #fff; }
+.chnav-next:hover { background: #b45309; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #d97706dd, #b45309);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS3U Introduction to Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 11 University Preparation</div>
+    <h1>💻 ICS3U: Unit 4: Software Development Process</h1>
+    <p>Problem-solving, IPO charts, pseudocode, debugging strategies, test cases, documentation, sequential file I/O</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg, #d97706dd, #b45309);">
+            <h2>Unit 4: Software Development Process</h2>
+            <p>Problem-solving, IPO charts, pseudocode, debugging strategies, test cases, documentation, sequential file I/O</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand B (Software Development)</span>
+                <span>&#9201;&#65039; ~22 hours</span>
+                <span>&#128221; 5 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.1 &mdash; The Software Development Process</div>
+            <div class="topic-desc">Understand-design-code-test-document-maintain; iterative refinement; why coding is only part of the job</div>
+            <div class="code-snip"><span class="com"># The same five-stage cycle is followed even on a small program.</span>
+<span class="com"># 1. UNDERSTAND THE PROBLEM</span>
+<span class="com">#    "Compute the average of three test scores"</span>
+<span class="com">#</span>
+<span class="com"># 2. DESIGN  (IPO + pseudocode)</span>
+<span class="com">#    Input : three numbers from the user</span>
+<span class="com">#    Process: average = (a + b + c) / 3</span>
+<span class="com">#    Output: print rounded to 1 decimal</span>
+<span class="com">#</span>
+<span class="com"># 3. CODE</span>
+<span class="kw">a</span> = float(input(<span class="str">"a: "</span>))
+<span class="kw">b</span> = float(input(<span class="str">"b: "</span>))
+<span class="kw">c</span> = float(input(<span class="str">"c: "</span>))
+<span class="kw">avg</span> = (a + b + c) / <span class="num">3</span>
+<span class="kw">print</span>(<span class="str">f"Average: {avg:.1f}"</span>)
+<span class="com">#</span>
+<span class="com"># 4. TEST   — try (90, 80, 70) → 80.0; try (0, 0, 0) → 0.0</span>
+<span class="com"># 5. DOCUMENT — header comment, docstrings, README</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Writing software is not the same as typing code. It is a <strong>process</strong> with several distinct stages: <strong>understand the problem</strong>, <strong>design a solution</strong>, <strong>code it</strong>, <strong>test it</strong>, and <strong>document it</strong>. After release, you may also <strong>maintain</strong> the code &mdash; fixing bugs and adapting it to new needs. Skipping stages is tempting (especially "design") but expensive: a bug caught in design takes minutes to fix; the same bug caught after deployment can take days. Experienced developers spend more time thinking and reading than typing.</p>
+                <p>The first stage &mdash; <strong>understanding the problem</strong> &mdash; is the most important. You cannot solve a problem you have not stated clearly. A useful technique is to write a one-sentence description of the program's purpose ("This program counts the words in a file"), then list its inputs, its outputs, and any constraints or assumptions ("input is a plain text file; assume ASCII only; the file fits in memory"). If you cannot write these down, you do not understand the problem yet.</p>
+                <p>The next stage, <strong>design</strong>, produces a plan before any code. Two common tools are <strong>IPO charts</strong> (next topic) and <strong>pseudocode</strong> (the topic after). For larger programs the design also identifies the functions that will need to exist and the data structures they will share. A good design lets you anticipate problems before you have committed code that will be costly to change.</p>
+                <ul>
+                  <li><strong>Software development process / SDLC</strong> &mdash; the stages from problem to deployed software.</li>
+                  <li><strong>Requirement</strong> &mdash; a statement of what the software must do.</li>
+                  <li><strong>Design</strong> &mdash; planning the solution before coding.</li>
+                  <li><strong>Implementation / coding</strong> &mdash; writing the code.</li>
+                  <li><strong>Testing</strong> &mdash; verifying the code behaves as required.</li>
+                  <li><strong>Documentation</strong> &mdash; written explanations for future users and maintainers.</li>
+                  <li><strong>Maintenance</strong> &mdash; fixing and updating software after initial release.</li>
+                  <li><strong>Iteration</strong> &mdash; cycling back to an earlier stage when a problem is found.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; mapping the five stages to a small project</p>
+<pre><code># Task: "Build a quiz that asks 5 multiple-choice questions and reports the score."
+#
+# 1. UNDERSTAND
+#    Inputs: user's choice (a/b/c/d) for each of 5 questions.
+#    Output: number correct + percentage.
+#    Constraint: questions hard-coded in the program for now.
+#
+# 2. DESIGN (pseudocode)
+#    set score = 0
+#    for each question in list:
+#        show question and choices
+#        read user choice
+#        if choice matches the correct answer:
+#            score += 1
+#    print score and percent
+#
+# 3. CODE — implement the loop and the question list.
+# 4. TEST — try answering all correctly; all incorrectly; mixed.
+# 5. DOCUMENT — header comment + a brief README.</code></pre>
+                  <p>Note how design captures the algorithm in plain language. The code stage becomes mechanical: each pseudocode line corresponds to one or two Python lines. Tests are designed once the algorithm is known.</p>
+                </div>
+                <ul>
+                  <li>Jumping straight to code without writing down what the program is supposed to do &mdash; you will end up rewriting.</li>
+                  <li>Treating testing as something to skip if the code "looks right" &mdash; bugs hide in plain sight.</li>
+                  <li>Designing a single monolithic block of code instead of decomposing into functions &mdash; hard to debug.</li>
+                  <li>Believing documentation is optional &mdash; you will be the future reader who is grateful for it.</li>
+                  <li>Ignoring requirements ("I'll figure it out as I go") &mdash; leads to features that don't match user needs.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 &mdash; "describe the stages of the software-development process (understanding the problem, planning the solution, coding, testing, documenting, maintaining)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt16')"><span class="vid-icon">📖</span><span class="vid-title">The Software Development Life Cycle (SDLC) Explained &mdash; Crash Course</span><span class="vid-duration">12:51</span><span class="vid-toggle" id="toggle-ics3-yt16">▶</span></div><div class="video-player" id="player-ics3-yt16"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O753uuutqH8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=O753uuutqH8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.2 &mdash; IPO Charts and Pseudocode</div>
+            <div class="topic-desc">Input-Process-Output charts; writing pseudocode; flowcharts; translating pseudocode into Python</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>IPO chart</strong> (Input-Process-Output) is a simple, three-column planning tool used before coding. The Input column lists every value the program receives (from the user, a file, a sensor, etc.). The Output column lists what the program produces (printed text, written files, on-screen graphics). The Process column lists the transformations &mdash; the calculations and decisions &mdash; that turn the inputs into the outputs. Filling out an IPO chart forces you to think about the program holistically before committing to a particular implementation.</p>
+                <p><strong>Pseudocode</strong> describes an algorithm in mostly-English with a few programming-like conventions. It uses control words like <code>IF</code>, <code>WHILE</code>, <code>FOR</code>, <code>SET</code>, and <code>PRINT</code>, but is not constrained by the syntax of any one language. Indentation indicates structure. The point of pseudocode is to plan the logic without getting distracted by syntax issues. Once the pseudocode is correct, translating to Python (or Java) becomes a mechanical step.</p>
+                <p>A <strong>flowchart</strong> is a graphical alternative to pseudocode using rectangles (for processes), diamonds (for decisions), and arrows (for flow). The shape conventions come from a 1960s standard (ANSI X3.5). Flowcharts are excellent for visual learners and for explaining algorithms to non-programmers, but they can become unwieldy for larger programs &mdash; that is where pseudocode shines.</p>
+                <ul>
+                  <li><strong>IPO chart</strong> &mdash; Input-Process-Output planning tool.</li>
+                  <li><strong>Pseudocode</strong> &mdash; an informal mix of English and programming-like control words.</li>
+                  <li><strong>Flowchart</strong> &mdash; a graphical algorithm diagram (rectangles, diamonds, arrows).</li>
+                  <li><strong>Stepwise refinement</strong> &mdash; starting with a high-level outline and adding detail level by level.</li>
+                  <li><strong>Decomposition</strong> &mdash; breaking a problem into smaller subproblems.</li>
+                  <li><strong>Trace</strong> &mdash; manually following pseudocode on paper with sample inputs.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; IPO chart for a marks summary</p>
+<pre><code>Problem: read a list of student marks and report count, average, and high.
+
+INPUT             | PROCESS                                  | OUTPUT
+------------------+------------------------------------------+----------------
+- list of marks   | 1. count = length of marks               | "n students"
+  (e.g., 5 floats)| 2. average = sum / count                 | "average: X"
+                  | 3. highest = maximum of marks            | "highest: Y"
+                  | (handle empty list: skip with "no data") |</code></pre>
+                  <p>The IPO chart captures the program's intent in a compact table. Notice how the Process column already mentions the empty-list edge case &mdash; design is the right time to think about it, not after the program crashes.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; pseudocode for the same task</p>
+<pre><code>READ marks as a list of numbers
+
+IF marks is empty:
+    PRINT "no data"
+ELSE:
+    SET n = length of marks
+    SET total = 0
+    FOR each mark in marks:
+        ADD mark to total
+    SET average = total / n
+    SET highest = maximum of marks
+    PRINT n, average, highest</code></pre>
+                  <p>Each pseudocode line maps almost directly to a Python statement. <code>SET</code> becomes <code>=</code>, <code>FOR each</code> becomes <code>for ... in</code>, <code>ADD x TO y</code> becomes <code>y += x</code>, and <code>PRINT</code> becomes <code>print</code>. The pseudocode is clear without committing to a language.</p>
+                </div>
+                <ul>
+                  <li>Writing pseudocode that is so detailed it is essentially Python &mdash; defeats the purpose of language independence.</li>
+                  <li>Writing pseudocode that is so vague it does not constrain the implementation &mdash; "compute the answer" is not a step.</li>
+                  <li>Omitting edge cases from the IPO chart (empty input, very large input, negative values) &mdash; deal with them in the design.</li>
+                  <li>Drawing flowcharts that contain ten levels of nested diamonds &mdash; switch to pseudocode at that point.</li>
+                  <li>Not updating the pseudocode after the code changes &mdash; the two drift apart and only one is correct.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 &mdash; "use IPO (Input-Process-Output) charts and structured pseudocode to plan a solution before coding".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt17')"><span class="vid-icon">📖</span><span class="vid-title">IPO Charts and Structure Charts with Python</span><span class="vid-duration">9:32</span><span class="vid-toggle" id="toggle-ics3-yt17">▶</span></div><div class="video-player" id="player-ics3-yt17"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qXtYSL8VEDY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=qXtYSL8VEDY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.3 &mdash; Debugging: Finding and Fixing Errors</div>
+            <div class="topic-desc">Syntax vs. runtime vs. logic errors; reading tracebacks; print-debugging; the rubber-duck method; the debugger</div>
+            <div class="code-snip"><span class="com"># Three kinds of error in three lines:</span>
+<span class="com"># 1. SYNTAX ERROR — Python won't even start running the program</span>
+<span class="com"># if x &gt; 5      <span style="color:#fbbf24">  # missing colon — SyntaxError</span></span>
+<span class="com">#     print(x)</span>
+
+<span class="com"># 2. RUNTIME ERROR — crashes during execution</span>
+<span class="kw">lst</span> = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]
+<span class="com"># print(lst[5])  # IndexError: list index out of range</span>
+
+<span class="com"># 3. LOGIC ERROR — runs but produces the wrong answer</span>
+<span class="kw">def</span> average_wrong(nums):
+    <span class="kw">return</span> sum(nums) / <span class="num">3</span>      <span class="com"># BUG: should be / len(nums)</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Every programmer writes bugs. The job is not to avoid them &mdash; that is impossible &mdash; but to find and fix them efficiently. Bugs fall into three categories. A <strong>syntax error</strong> is a violation of the language grammar (missing colon, mismatched quote, wrong indentation). The interpreter refuses to run the program at all and points (usually fairly accurately) at the offending line. These are the easiest to fix once you read the error message. A <strong>runtime error</strong> happens during execution: the program starts, runs partway, and then raises an exception (<code>ZeroDivisionError</code>, <code>IndexError</code>, <code>ValueError</code>, <code>TypeError</code>). The Python <strong>traceback</strong> tells you which line raised the exception and through what chain of calls. A <strong>logic error</strong> is the most insidious: the program runs to completion but produces wrong answers, because the algorithm itself is incorrect. There is no error message; you find these only by testing.</p>
+                <p>The most reliable debugging tool is <strong>print-debugging</strong>: sprinkle temporary <code>print(...)</code> statements to display the value of key variables at strategic points. Compare what you see against what you expect; the first place they differ is usually near the bug. Once the bug is fixed, remove the prints (or convert them to proper logging).</p>
+                <p>The famous <strong>rubber-duck method</strong> is to explain the code out loud, line by line, to a rubber duck (or any inanimate object). The act of forcing yourself to verbalise often reveals what you had been glossing over. The <strong>interactive debugger</strong> &mdash; <code>pdb</code> in Python, or the visual debugger in Thonny / VS Code / IDLE &mdash; lets you set breakpoints, step through one line at a time, and inspect variables without modifying the program. For non-trivial bugs the debugger is far faster than scattering print statements.</p>
+                <ul>
+                  <li><strong>Bug</strong> &mdash; a defect in a program.</li>
+                  <li><strong>Syntax error</strong> &mdash; code that violates the language's grammar.</li>
+                  <li><strong>Runtime error</strong> &mdash; an exception raised during execution.</li>
+                  <li><strong>Logic error</strong> &mdash; the program runs but produces wrong output.</li>
+                  <li><strong>Exception</strong> &mdash; Python's mechanism for signalling runtime errors.</li>
+                  <li><strong>Traceback</strong> &mdash; the chain of function calls printed when an exception is raised.</li>
+                  <li><strong>Breakpoint</strong> &mdash; a marker that tells the debugger to pause execution at a specific line.</li>
+                  <li><strong>Print-debugging</strong> &mdash; inserting temporary <code>print</code> statements to inspect program state.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; reading a traceback</p>
+<pre><code>def average(nums):
+    return sum(nums) / len(nums)
+
+print(average([]))
+
+# Traceback (most recent call last):
+#   File "demo.py", line 4, in &lt;module&gt;
+#     print(average([]))
+#   File "demo.py", line 2, in average
+#     return sum(nums) / len(nums)
+# ZeroDivisionError: division by zero</code></pre>
+                  <p>Read tracebacks <em>from the bottom up</em>: the last line names the error (<code>ZeroDivisionError</code>), the line above it shows the exact statement that triggered it, and the lines above that show how we got there (the function call chain). The fix here is to guard against an empty list: <code>if not nums: return 0</code>.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; print-debugging a wrong answer</p>
+<pre><code>def count_evens(nums):
+    count = 0
+    for n in nums:
+        if n % 2 == 1:           # BUG: this counts ODD numbers
+            count += 1
+    return count
+
+# Add print to see what's happening
+def count_evens_debug(nums):
+    count = 0
+    for n in nums:
+        is_even = (n % 2 == 1)
+        print(f"  n={n}, is_even?={is_even}")   # diagnostic
+        if is_even:
+            count += 1
+    return count
+
+print(count_evens_debug([2, 3, 4]))
+# n=2, is_even?=False    ← wait, 2 IS even
+# n=3, is_even?=True
+# n=4, is_even?=False
+# 1</code></pre>
+                  <p>The trace shows that <code>n=2</code> is reported as not even &mdash; pointing directly at the broken condition. The fix: <code>n % 2 == 0</code> (an even number leaves remainder 0 when divided by 2). Once verified, remove the diagnostic prints.</p>
+                </div>
+                <ul>
+                  <li>Reading only the last line of a traceback &mdash; the line above usually points at <em>your</em> code, the most useful clue.</li>
+                  <li>Trying random changes ("change-and-pray") without understanding what is broken.</li>
+                  <li>Forgetting to remove print-debugging statements before committing &mdash; clutters real output.</li>
+                  <li>Treating a fixed test as proof the bug is gone &mdash; write a regression test (a test for the specific bug) so it cannot reappear silently.</li>
+                  <li>Ignoring the warning signs of a syntax error (red underline in the editor) and running the program anyway.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 &mdash; "distinguish syntax errors, runtime errors, and logic errors, and explain how each is diagnosed and fixed".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt18')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Debugging logic errors by hand-tracing your code</span><span class="vid-duration">11:31</span><span class="vid-toggle" id="toggle-ics3-yt18">▶</span></div><div class="video-player" id="player-ics3-yt18"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jq5ac_BNzHs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Jq5ac_BNzHs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.4 &mdash; Testing and Documentation</div>
+            <div class="topic-desc">Designing test cases (normal, boundary, invalid); test plans; header comments; docstrings; README files</div>
+            <div class="code-snip"><span class="com"># Quick "manual unit tests" using assert</span>
+<span class="kw">def</span> max_of(a, b, c):
+    <span class="str">"""Return the largest of three numbers."""</span>
+    <span class="kw">return</span> max(a, max(b, c))
+
+<span class="kw">assert</span> max_of(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>) == <span class="num">3</span>        <span class="com"># normal</span>
+<span class="kw">assert</span> max_of(<span class="num">5</span>, <span class="num">5</span>, <span class="num">5</span>) == <span class="num">5</span>        <span class="com"># ties</span>
+<span class="kw">assert</span> max_of(-<span class="num">3</span>, -<span class="num">2</span>, -<span class="num">5</span>) == -<span class="num">2</span>     <span class="com"># negatives</span>
+<span class="kw">assert</span> max_of(<span class="num">0</span>, <span class="num">0</span>, <span class="num">1</span>) == <span class="num">1</span>        <span class="com"># boundary with 0</span>
+<span class="kw">print</span>(<span class="str">"All tests passed."</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Testing</strong> is the discipline of verifying that a program does what it is supposed to do. Manual testing &mdash; running the program with sample inputs and checking the output &mdash; works for tiny programs but quickly becomes impossible to repeat for anything larger. Professional teams write <strong>automated tests</strong>: small programs whose only job is to exercise the main program and report success or failure. Even in Grade 11, getting in the habit of testing every function on a handful of inputs is a small effort that catches a surprising number of bugs.</p>
+                <p>A good <strong>test plan</strong> covers three categories of input. <strong>Normal cases</strong> are typical, expected inputs (a function that averages marks should work for <code>[80, 90, 85]</code>). <strong>Boundary cases</strong> are at the edges of what is legal (empty list, single element, the largest or smallest legal value). <strong>Invalid cases</strong> are inputs that should be rejected (negative ages, malformed strings). Bugs love boundaries: most off-by-one and special-case errors live there.</p>
+                <p><strong>Documentation</strong> is for future readers, including your future self. The minimum for a small program is a <strong>header comment</strong> at the top of each file (purpose, author, date) and a <strong>docstring</strong> for each function describing what it does, its parameters, and its return value. A larger project also includes a <strong>README</strong> file with installation and usage instructions, and ideally a few sentences describing the overall design. Good documentation does not duplicate the code &mdash; it explains <em>why</em> the code does what it does and how to use it without reading every line.</p>
+                <ul>
+                  <li><strong>Test case</strong> &mdash; one specific input plus the expected output.</li>
+                  <li><strong>Test plan</strong> &mdash; the collection of test cases covering a function.</li>
+                  <li><strong>Normal / typical input</strong> &mdash; expected, ordinary data.</li>
+                  <li><strong>Boundary case</strong> &mdash; an input at the edge of the valid range (empty, single, max).</li>
+                  <li><strong>Invalid input</strong> &mdash; an input the function should reject.</li>
+                  <li><strong>Assertion</strong> &mdash; a check that a condition is true (Python's <code>assert</code>).</li>
+                  <li><strong>Regression</strong> &mdash; a previously fixed bug that re-appears.</li>
+                  <li><strong>README</strong> &mdash; a plain-text description of a project at its root.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; designing test cases</p>
+<pre><code># Function under test:
+def percent(score, total):
+    """Return score as a percentage of total, rounded to 1 decimal."""
+    return round(score / total * 100, 1)
+
+# Test plan
+# normal:        percent(80, 100)  == 80.0
+# normal:        percent(45, 50)   == 90.0
+# boundary:      percent(0, 50)    == 0.0
+# boundary:      percent(50, 50)   == 100.0
+# boundary:      percent(33, 33)   == 100.0     ← exact division
+# rounding:      percent(2, 3)     == 66.7      ← documented behaviour
+# invalid:       percent(80, 0)    → ZeroDivisionError (or handled)
+
+assert percent(80, 100) == 80.0
+assert percent(45, 50)  == 90.0
+assert percent(0, 50)   == 0.0
+assert percent(50, 50)  == 100.0
+assert percent(2, 3)    == 66.7</code></pre>
+                  <p>Eight tests, written once, will run every time we change the function. The invalid case (<code>total = 0</code>) is documented but not asserted here &mdash; instead we would either add a guard inside the function or document that callers must not pass 0.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; a documented function</p>
+<pre><code># grader.py
+# Author: A. Lovelace    Date: 2026-05-31
+# Purpose: convert percentage marks to Ontario achievement levels.
+
+def to_level(percent):
+    """Return the Ontario achievement level for a percentage mark.
+
+    Parameters:
+        percent (float): mark between 0 and 100 inclusive.
+
+    Returns:
+        str: one of "Level 4", "Level 3", "Level 2", "Level 1", "R".
+    """
+    if percent &gt;= 80: return "Level 4"
+    if percent &gt;= 70: return "Level 3"
+    if percent &gt;= 60: return "Level 2"
+    if percent &gt;= 50: return "Level 1"
+    return "R"</code></pre>
+                  <p>The header comment identifies the file's purpose; the docstring explains the function precisely. A future reader (or you in three months) can understand <code>to_level</code> without reading any of its code.</p>
+                </div>
+                <ul>
+                  <li>Testing only the easy cases &mdash; bugs live at the boundaries.</li>
+                  <li>Writing tests that pass even when the code is wrong (e.g., asserting <code>result is not None</code> instead of asserting a specific value).</li>
+                  <li>Skipping documentation because "the code is obvious" &mdash; it is not obvious to anyone but you, and not even to you in a month.</li>
+                  <li>Letting tests rot: if you change the function, update the tests in the same commit.</li>
+                  <li>Writing one giant test that does everything &mdash; small, focused tests give better failure messages.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 &mdash; "construct a test plan with normal, boundary, and invalid cases; record expected vs. actual behaviour".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt19')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Unit Testing Your Code with the unittest Module &mdash; Corey Schafer</span><span class="vid-duration">22:30</span><span class="vid-toggle" id="toggle-ics3-yt19">▶</span></div><div class="video-player" id="player-ics3-yt19"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6tNS--WetLI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6tNS--WetLI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.5 &mdash; Sequential File I/O</div>
+            <div class="topic-desc">Why files matter; the <code>with open() as f</code> idiom; reading line by line; writing text; basic CSV reading</div>
+            <div class="code-snip"><span class="com"># Write a marks file, then read it back and average it.</span>
+<span class="com"># WRITE</span>
+<span class="kw">with</span> open(<span class="str">"marks.txt"</span>, <span class="str">"w"</span>) <span class="kw">as</span> f:
+    f.write(<span class="str">"82\n"</span>)
+    f.write(<span class="str">"76\n"</span>)
+    f.write(<span class="str">"91\n"</span>)
+
+<span class="com"># READ</span>
+<span class="kw">total</span>, <span class="kw">count</span> = <span class="num">0</span>, <span class="num">0</span>
+<span class="kw">with</span> open(<span class="str">"marks.txt"</span>) <span class="kw">as</span> f:
+    <span class="kw">for</span> line <span class="kw">in</span> f:
+        total += int(line.strip())
+        count += <span class="num">1</span>
+
+<span class="kw">print</span>(<span class="str">f"Average of {count} marks: {total/count:.1f}"</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Programs that lose their data when they stop running are seldom useful. <strong>File I/O</strong> is the simplest form of <strong>persistence</strong>: storing data on disk so it can be re-read on a later run. Python provides a built-in <code>open(path, mode)</code> function that returns a file object. The mode is <code>"r"</code> for read (the default), <code>"w"</code> for write (creates a new file, replaces any existing content), <code>"a"</code> for append (adds to an existing file), and a few others. Once you have a file object you can read or write through it.</p>
+                <p>The modern, recommended way to use a file is the <strong><code>with</code> statement</strong>: <code>with open("data.txt") as f:</code>. The <code>with</code> block is a <em>context manager</em> that guarantees the file is closed when the block ends, even if an exception is raised inside. Forgetting to close a file can leak operating-system handles, lose buffered writes, and on Windows prevent other programs from accessing the file. The bare <code>open</code> without <code>close</code> is a code-smell.</p>
+                <p>To <strong>read</strong> a file line by line, iterate over the file object: <code>for line in f:</code>. Each line includes its trailing newline, which is why we usually call <code>.strip()</code>. To <strong>write</strong>, use <code>f.write(text)</code>; this does <em>not</em> add a newline automatically &mdash; include <code>"\n"</code> in the text yourself. For tabular data, the standard format is <strong>CSV</strong> (comma-separated values): one row per line, fields separated by commas. Python's <code>csv</code> module handles edge cases (quoted fields, escaped commas) properly &mdash; for messy data, prefer it over hand-rolled <code>.split(',')</code>.</p>
+                <ul>
+                  <li><strong>File</strong> &mdash; a named, persistent region of storage on disk.</li>
+                  <li><strong>Open / close</strong> &mdash; obtaining and releasing a file handle.</li>
+                  <li><strong>Mode</strong> &mdash; <code>"r"</code> (read), <code>"w"</code> (write/truncate), <code>"a"</code> (append).</li>
+                  <li><strong>Context manager (<code>with</code>)</strong> &mdash; automatically closes the file at block exit.</li>
+                  <li><strong>Line</strong> &mdash; a string of characters ending at a newline.</li>
+                  <li><strong>End-of-file (EOF)</strong> &mdash; the position after the last byte.</li>
+                  <li><strong>CSV</strong> &mdash; comma-separated values; the most common simple tabular format.</li>
+                  <li><strong>Path</strong> &mdash; the filesystem name of a file (relative or absolute).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; a small log-file writer</p>
+<pre><code>def log(message, path="events.log"):
+    """Append a timestamped message to the log file."""
+    import datetime
+    stamp = datetime.datetime.now().isoformat(timespec="seconds")
+    with open(path, "a") as f:
+        f.write(f"{stamp}  {message}\n")
+
+log("Program started")
+log("User logged in: ada")
+log("Program ended")</code></pre>
+                  <p>Each call appends a line to the file. Mode <code>"a"</code> means new lines are added at the end &mdash; existing content is preserved. The <code>with</code> ensures the file is closed promptly. If the file does not exist, Python creates it.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; reading a CSV of names and ages</p>
+<pre><code>def read_roster(path):
+    """Read 'name,age' lines from a CSV; return a list of (name, age) tuples."""
+    roster = []
+    with open(path) as f:
+        next(f)                       # skip header line
+        for line in f:
+            name, age_str = line.strip().split(",")
+            roster.append((name, int(age_str)))
+    return roster
+
+# Sample roster.csv:
+# name,age
+# Ada,17
+# Bob,16
+# Cay,17
+
+people = read_roster("roster.csv")
+for name, age in people:
+    print(f"{name} is {age}.")</code></pre>
+                  <p>The function iterates line by line with O(1) extra memory regardless of file size &mdash; perfect for very large data. <code>next(f)</code> reads (and discards) the header. The <code>split(",")</code> here is fine because the file is simple; for files with quoted fields containing commas, use <code>import csv</code> and <code>csv.DictReader</code>.</p>
+                </div>
+                <ul>
+                  <li>Opening a file in <code>"w"</code> mode "just to check" &mdash; it truncates the file to empty.</li>
+                  <li>Forgetting <code>with</code> and not calling <code>.close()</code> &mdash; leaks handles, and writes may not flush to disk.</li>
+                  <li>Iterating over a file object twice without seeking back to the start &mdash; the second loop sees nothing.</li>
+                  <li>Forgetting to convert text read from the file to numbers &mdash; <code>line</code> is always a string.</li>
+                  <li>Hand-parsing complex CSV with <code>split(',')</code> &mdash; quoted commas will break it.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.2 &mdash; "read and write simple sequential files for data persistence".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt20')"><span class="vid-icon">📖</span><span class="vid-title">Python File Objects &mdash; Reading and Writing to Files &mdash; Corey Schafer</span><span class="vid-duration">24:33</span><span class="vid-toggle" id="toggle-ics3-yt20">▶</span></div><div class="video-player" id="player-ics3-yt20"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Uh2ebFW8OYM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Uh2ebFW8OYM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics3u/Unit4_Software_Development_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics3u/Unit4_Software_Development_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics3u/Unit4_Software_Development_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS3U &mdash; Introduction to Computer Science, Grade 11 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

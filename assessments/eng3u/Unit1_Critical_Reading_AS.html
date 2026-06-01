@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Critical Reading — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Critical Reading — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of close reading, literary devices, inference, and paraphrase vs. analysis. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1 — Close Reading</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The single most reliable practice that distinguishes a strong Grade 11 reader from a weak one is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Memorising plot summaries before class</label></li>
+<li><label><input type="radio" name="q1" value="b"> Re-reading the text at least twice and annotating during the second pass</label></li>
+<li><label><input type="radio" name="q1" value="c"> Looking up theme statements online</label></li>
+<li><label><input type="radio" name="q1" value="d"> Writing the essay in one continuous sitting</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Close reading depends on re-reading and annotation. The first read absorbs plot; the second read sees structure and pattern. Annotations leave a trail of attention you can return to when drafting.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div>
+<div class="passage">"It was a bright cold day in April, and the clocks were striking thirteen." — George Orwell, opening of <em>1984</em></div>
+<div class="qtxt">A strong close reader's first analytical move on this sentence is to notice:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> That the sentence is set in April</label></li>
+<li><label><input type="radio" name="q2" value="b"> That ordinary details ("a bright cold day in April") sit beside a quietly impossible image ("clocks were striking thirteen"), pulling realism out from under the reader without announcing it</label></li>
+<li><label><input type="radio" name="q2" value="c"> That clocks normally exist</label></li>
+<li><label><input type="radio" name="q2" value="d"> That the sentence has no theme</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The opening juxtaposes a realistic setting with one impossible detail (thirteenth chime), training the reader from the first sentence to look for what is wrong in this world. That move is what close reading produces.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Tone and mood differ because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> They are synonyms</label></li>
+<li><label><input type="radio" name="q3" value="b"> Tone is the writer's or speaker's attitude toward the subject; mood is the emotional atmosphere the reader feels</label></li>
+<li><label><input type="radio" name="q3" value="c"> Tone is for poems; mood is for stories</label></li>
+<li><label><input type="radio" name="q3" value="d"> Mood is a synonym for theme</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Tone is produced by the writer (bitter, reverent, sardonic). Mood is felt by the audience (eerie, joyful). Keeping them separate prevents one of the most common analytical confusions in Grade 11 essays.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Literary Devices</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div>
+<div class="passage">"O my Luve is like a red, red rose / That's newly sprung in June." — Robert Burns</div>
+<div class="qtxt">The dominant device in these two lines is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Metaphor</label></li>
+<li><label><input type="radio" name="q4" value="b"> Simile (the word "like" signals an explicit comparison)</label></li>
+<li><label><input type="radio" name="q4" value="c"> Personification</label></li>
+<li><label><input type="radio" name="q4" value="d"> Onomatopoeia</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> A simile uses "like" or "as" for the comparison; a metaphor identifies one thing as another without those markers. Distinguishing the two is one of the most-tested literary-device questions in Grade 11.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A boy in a story plants a seed; later, his mother dies; later, the seed has grown into a tree. The recurring image of the tree is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A simile</label></li>
+<li><label><input type="radio" name="q5" value="b"> A symbol (a concrete image that accumulates meaning through repetition and context)</label></li>
+<li><label><input type="radio" name="q5" value="c"> Verbal irony</label></li>
+<li><label><input type="radio" name="q5" value="d"> A pun</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Symbols are concrete images that gain abstract meaning through repetition and the surrounding context (here, life persisting through loss). A symbol must accumulate weight; a one-off image is not yet a symbol.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">In <em>Macbeth</em>, the audience knows the witches are dangerous from the first scene, but Macbeth does not yet. This gap between audience knowledge and character knowledge is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Verbal irony</label></li>
+<li><label><input type="radio" name="q6" value="b"> Situational irony</label></li>
+<li><label><input type="radio" name="q6" value="c"> Dramatic irony</label></li>
+<li><label><input type="radio" name="q6" value="d"> Hyperbole</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Dramatic irony is the structured gap between what a character knows and what the audience knows. Verbal irony is saying the opposite of what is meant; situational irony is the gap between expectation and outcome.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Inference and Evidence</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The difference between an inference and a guess is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Inferences are made by teachers; guesses are made by students</label></li>
+<li><label><input type="radio" name="q7" value="b"> An inference is a claim you can back with specific textual evidence; a guess is a claim you cannot</label></li>
+<li><label><input type="radio" name="q7" value="c"> Inferences must be correct; guesses must be wrong</label></li>
+<li><label><input type="radio" name="q7" value="d"> Inferences appear only in poetry</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> An inference is a reasoned claim about the text supported by stated and implied details. A guess is unsupported. Strong analysis names the inference, the evidence, and the reasoning that connects them.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The strongest form of textual evidence for a Grade 11 essay is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> A whole-paragraph block quotation</label></li>
+<li><label><input type="radio" name="q8" value="b"> A short, embedded quotation (three to seven words) integrated grammatically into your own sentence, with citation</label></li>
+<li><label><input type="radio" name="q8" value="c"> A paraphrase with no citation</label></li>
+<li><label><input type="radio" name="q8" value="d"> A summary of the chapter</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> A short, embedded quotation is precise, integrates with the writer's analytical sentence, and shows craft. Block quotations are reserved for moments when the full passage's structure is itself the evidence.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A "signal phrase" is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Words that introduce and attribute a quotation</label></li>
+<li><label><input type="radio" name="q9" value="b"> A formatting symbol</label></li>
+<li><label><input type="radio" name="q9" value="c"> The title of a chapter</label></li>
+<li><label><input type="radio" name="q9" value="d"> A type of sentence fragment</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> A signal phrase is the words that introduce a quotation and tell the reader where it came from — "Atwood writes…", "Macbeth observes…". Without a signal phrase, the quotation reads as orphaned.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Paraphrase vs Analysis</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Which of the following is analysis rather than paraphrase?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> "Macbeth says he sees a dagger in front of him."</label></li>
+<li><label><input type="radio" name="q10" value="b"> "Macbeth is having a vision of a dagger."</label></li>
+<li><label><input type="radio" name="q10" value="c"> "Macbeth's unanswered question — 'Is this a dagger which I see before me?' — refuses to resolve into a statement, and the syntax performs the very doubt the line names: a self in the act of distrusting its own perception."</label></li>
+<li><label><input type="radio" name="q10" value="d"> "The dagger scene happens in Act 2."</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','c')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Choice (c) names a specific technique (the unanswered question, the syntax), explains the effect (doubt enacted by form), and connects to a larger claim. (a), (b), and (d) are summary or paraphrase.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">In the PEEL paragraph structure, the second "E" stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Edit</label></li>
+<li><label><input type="radio" name="q11" value="b"> Explain — analysing how the cited evidence supports your point, by naming the device or technique and saying why it produces this effect</label></li>
+<li><label><input type="radio" name="q11" value="c"> Evidence again</label></li>
+<li><label><input type="radio" name="q11" value="d"> End</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> PEEL = Point, Evidence, Explain, Link. The "Explain" step is where analytical work happens — interpreting how the quoted evidence supports the topic-sentence claim. Skipping it produces summary, not analysis.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">A strong "Link" sentence at the end of a body paragraph should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Restate the topic sentence word for word</label></li>
+<li><label><input type="radio" name="q12" value="b"> Quote another author's opinion</label></li>
+<li><label><input type="radio" name="q12" value="c"> Move the argument one step forward by tying this paragraph back to the thesis or setting up the next paragraph's claim</label></li>
+<li><label><input type="radio" name="q12" value="d"> Introduce a new piece of evidence</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','c')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> The Link advances the argument. A weak Link restates the Point; a strong Link names what this paragraph's analysis contributes to the larger thesis or signals the move to the next paragraph.</div></div>
+
+</div>
+
+<footer>ENG3U — English, Grade 11 | Strand B: Reading and Literature Studies | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

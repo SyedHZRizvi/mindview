@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Quantities in Reactions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#dc2626;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 3: Quantities in Chemical Reactions</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check the mole, molar mass, percent composition, empirical/molecular formulas, and stoichiometry.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Mole &amp; Molar Mass</div>
+
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">Molar mass of CO₂ (M(C)=12.01, M(O)=16.00):</div>
+<div class="answer-area"><input type="text" id="q1-input" placeholder="g/mol..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q1', 44.01)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>12.01 + 2(16.00) = <strong>44.01 g/mol</strong>.</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">How many moles in 88.0 g of CO₂?</div>
+<div class="answer-area"><input type="text" id="q2-input" placeholder="mol..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q2', 2.0)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>n = m/M = 88.0/44.01 = <strong>2.00 mol</strong>.</div>
+</div>
+
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">How many H atoms in 1.00 mol of H₂O?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> \(6.022 \times 10^{23}\)</label></li>
+<li><label><input type="radio" name="q3" value="b"> \(1.204 \times 10^{24}\)</label></li>
+<li><label><input type="radio" name="q3" value="c"> \(3.011 \times 10^{23}\)</label></li>
+<li><label><input type="radio" name="q3" value="d"> 2</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','b')">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>1 mol H₂O has 2 mol H, so \(2 \times 6.022 \times 10^{23} = 1.204 \times 10^{24}\) H atoms.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Percent Composition &amp; Formulas</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">Percent of oxygen by mass in water:</div>
+<div class="answer-area"><input type="text" id="q4-input" placeholder="% O..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q4', 88.8)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>%O = 16.00/18.02 × 100 = <strong>88.8%</strong>.</div>
+</div>
+
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">A compound contains 40.0% C, 6.7% H, 53.3% O. Empirical formula:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q5" value="a"> CH₂O</label></li>
+<li><label><input type="radio" name="q5" value="b"> C₂H₄O₂</label></li>
+<li><label><input type="radio" name="q5" value="c"> C₆H₁₂O₆</label></li>
+<li><label><input type="radio" name="q5" value="d"> CHO</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q5','a')">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>In 100 g: C 3.33 mol, H 6.63 mol, O 3.33 mol → ratio 1:2:1 → empirical formula <strong>CH₂O</strong>.</div>
+</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">If a compound has empirical formula CH₂O and molar mass 180 g/mol, its molecular formula is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q6" value="a"> CH₂O</label></li>
+<li><label><input type="radio" name="q6" value="b"> C₂H₄O₂</label></li>
+<li><label><input type="radio" name="q6" value="c"> C₆H₁₂O₆</label></li>
+<li><label><input type="radio" name="q6" value="d"> C₃H₆O₃</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q6','c')">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Empirical mass = 30 g/mol. 180/30 = 6 → multiply subscripts by 6 → <strong>C₆H₁₂O₆</strong> (glucose).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Stoichiometry</div>
+
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">For \(2\text{H}_2 + \text{O}_2 \rightarrow 2\text{H}_2\text{O}\), how many mol of H₂O form from 5.0 mol H₂ (excess O₂)?</div>
+<div class="answer-area"><input type="text" id="q7-input" placeholder="mol H₂O..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q7', 5.0)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Mole ratio H₂:H₂O = 2:2 = 1:1 → 5.0 mol H₂ → <strong>5.0 mol</strong> H₂O.</div>
+</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">Mass of CO₂ produced when 2.0 mol of C is burned in excess O₂: \( \text{C} + \text{O}_2 \rightarrow \text{CO}_2 \).</div>
+<div class="answer-area"><input type="text" id="q8-input" placeholder="g..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q8', 88)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>1:1 mole ratio. n(CO₂) = 2.0 mol. m = 2.0 × 44.01 = <strong>88 g</strong> (88.02 g, rounded).</div>
+</div>
+
+<div class="question-card" id="q9">
+<div class="q-number">Question 9</div>
+<div class="q-text">In \(2\text{H}_2 + \text{O}_2 \rightarrow 2\text{H}_2\text{O}\): 4 mol H₂ reacts with 1 mol O₂. The limiting reactant is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q9" value="a"> H₂</label></li>
+<li><label><input type="radio" name="q9" value="b"> O₂</label></li>
+<li><label><input type="radio" name="q9" value="c"> Neither — stoichiometric</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q9','b')">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Stoichiometric ratio requires 4 mol H₂ : 2 mol O₂. But only 1 mol O₂ given → O₂ runs out first. <strong>O₂ is limiting</strong>.</div>
+</div>
+
+<div class="question-card" id="q10">
+<div class="q-number">Question 10</div>
+<div class="q-text">Theoretical yield is 25.0 g; actual yield is 20.0 g. Percent yield = ?</div>
+<div class="answer-area"><input type="text" id="q10-input" placeholder="%..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q10', 80)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>20.0/25.0 × 100 = <strong>80.0%</strong>.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Application</div>
+
+<div class="question-card" id="q11">
+<div class="q-number">Question 11</div>
+<div class="q-text">A student reports a percent yield of 105%. What is the most likely explanation?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q11" value="a"> The reaction violates conservation of mass</label></li>
+<li><label><input type="radio" name="q11" value="b"> The product was not fully dried (still contains water/solvent)</label></li>
+<li><label><input type="radio" name="q11" value="c"> The student over-counted moles</label></li>
+<li><label><input type="radio" name="q11" value="d"> The activity series was misapplied</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q11','b')">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>A yield over 100% almost always means the product still contained <strong>moisture or other impurities</strong>, inflating its mass.</div>
+</div>
+
+<div class="question-card" id="q12">
+<div class="q-number">Question 12</div>
+<div class="q-text">How many atoms total are in 2.0 mol of NH₃?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q12" value="a"> \(6.022 \times 10^{23}\)</label></li>
+<li><label><input type="radio" name="q12" value="b"> \(1.204 \times 10^{24}\)</label></li>
+<li><label><input type="radio" name="q12" value="c"> \(4.82 \times 10^{24}\)</label></li>
+<li><label><input type="radio" name="q12" value="d"> \(8.0 \times 10^{24}\)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q12','c')">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>2.0 mol × 4 atoms per molecule × \(6.022 \times 10^{23}\) = <strong>4.82 × 10²⁴ atoms</strong>.</div>
+</div>
+</div>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand D: Quantities in Reactions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Not quite. See solution below.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<Math.max(0.1,Math.abs(c)*0.02)){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ The correct answer is ${c}. See solution below.`;}sl.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

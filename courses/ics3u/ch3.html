@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS3U — Introduction to Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #059669; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #059669; color: #fff; }
+.chnav-next:hover { background: #047857; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #059669dd, #047857);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS3U Introduction to Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 11 University Preparation</div>
+    <h1>💻 ICS3U: Unit 3: Modular Programming and Data Structures</h1>
+    <p>Functions, parameters and return values, variable scope, 1-D lists/arrays, strings as sequences, simple algorithms</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg, #059669dd, #047857);">
+            <h2>Unit 3: Modular Programming and Data Structures</h2>
+            <p>Functions, parameters and return values, variable scope, 1-D lists/arrays, strings as sequences, simple algorithms</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand A3 (Functions/Style) &middot; Strand A1 (Lists)</span>
+                <span>&#9201;&#65039; ~24 hours</span>
+                <span>&#128221; 5 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.1 &mdash; Defining and Calling Functions</div>
+            <div class="topic-desc"><code>def</code>, the function body, the <code>return</code> statement; pure functions vs. side effects; docstrings</div>
+            <div class="code-snip"><span class="com"># A function definition and three calls</span>
+<span class="kw">def</span> area_rectangle(length, width):
+    <span class="str">"""Return the area of a rectangle."""</span>
+    <span class="kw">return</span> length * width
+
+<span class="kw">print</span>(area_rectangle(<span class="num">5</span>, <span class="num">3</span>))     <span class="com"># 15</span>
+<span class="kw">print</span>(area_rectangle(<span class="num">10</span>, <span class="num">2</span>))    <span class="com"># 20</span>
+<span class="kw">print</span>(area_rectangle(<span class="num">7.5</span>, <span class="num">4</span>))   <span class="com"># 30.0</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>function</strong> is a named piece of reusable code that performs a specific task. Functions are the most important tool for managing complexity: instead of repeating the same code in many places, you write it once and call it by name. Calling a function passes <strong>arguments</strong> (the values you supply) to its <strong>parameters</strong> (the names listed in the definition); the function runs its body, optionally produces a <strong>return value</strong>, and execution resumes where the call was made. The function definition uses the keyword <code>def</code>, followed by the function's name, parentheses listing parameters, and a colon. The body is indented underneath.</p>
+                <p>A <strong>return statement</strong> sends a value back to the caller and immediately ends the function. If a function does not execute a return statement, it implicitly returns <code>None</code>. This is fine for functions whose only purpose is a <strong>side effect</strong> (printing, modifying a list, writing a file). A function with no side effects whose return value depends only on its inputs is called <strong>pure</strong> &mdash; pure functions are easier to test and reason about. As a rule, prefer pure functions where you can; isolate side effects in a few well-marked functions.</p>
+                <p>The first line inside a function may be a <strong>docstring</strong>: a string literal (usually triple-quoted) that documents the function's purpose. Docstrings serve two roles: they explain the function to human readers, and they are accessible at runtime through the <code>help()</code> built-in. A good docstring states what the function does, its parameters, and its return value &mdash; nothing more, nothing less.</p>
+                <ul>
+                  <li><strong>Function</strong> &mdash; a named, reusable block of code.</li>
+                  <li><strong>Definition</strong> &mdash; the <code>def</code> statement that creates the function.</li>
+                  <li><strong>Call (invocation)</strong> &mdash; the expression that runs the function, written <code>name(arg1, arg2, ...)</code>.</li>
+                  <li><strong>Parameter</strong> &mdash; a name in the function definition that receives an argument.</li>
+                  <li><strong>Argument</strong> &mdash; the actual value passed in at a call site.</li>
+                  <li><strong>Return value</strong> &mdash; the value the function sends back to the caller.</li>
+                  <li><strong>Side effect</strong> &mdash; any change the function makes to the world outside itself (print, file write, mutate a list).</li>
+                  <li><strong>Docstring</strong> &mdash; a triple-quoted documentation string at the start of a function.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; a small helper function</p>
+<pre><code>def fahrenheit_to_celsius(f):
+    """Convert a temperature from Fahrenheit to Celsius."""
+    return (f - 32) * 5 / 9
+
+# Two calls; the second uses the first
+freezing = fahrenheit_to_celsius(32)   # 0.0
+boiling  = fahrenheit_to_celsius(212)  # 100.0
+
+print(f"Freezing: {freezing} C")
+print(f"Boiling:  {boiling} C")</code></pre>
+                  <p>Writing the conversion once as a function lets us reuse it without copy-pasting the formula. The function is pure: same input, same output, no side effects. Each call runs in O(1). If we later discover the formula was wrong, we change one place. That is the essence of modular programming.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; pure vs. side-effect functions</p>
+<pre><code># Pure: returns a value, no side effects
+def double(x):
+    return x * 2
+
+# Side-effect: prints, returns None
+def announce(x):
+    print(f"The value is {x}")
+
+result = double(5)         # 10, no output yet
+announce(result)           # prints; returns None</code></pre>
+                  <p>Mixing the two roles is a common beginner mistake: writing <code>print(...)</code> inside a function that should return a value, then being unable to use the answer later. Decide up front whether the function returns or prints, and follow through.</p>
+                </div>
+                <ul>
+                  <li>Forgetting <code>return</code> &mdash; Python silently returns <code>None</code>, often producing puzzling downstream errors.</li>
+                  <li>Confusing a function definition with a call: <code>def f():</code> defines, <code>f()</code> calls. You must do both.</li>
+                  <li>Using a function before defining it &mdash; in Python you must define a function in the file before any call that runs at module load time.</li>
+                  <li>Using <code>print</code> inside a function and expecting the caller to use the printed value &mdash; <code>print</code> writes to the terminal, it does not return.</li>
+                  <li>Re-using a parameter name as a local variable inside the function &mdash; usually fine, but can confuse readers.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 &mdash; "write functions that accept parameters and return values".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt11')"><span class="vid-icon">📖</span><span class="vid-title">Python Functions &mdash; Definitions, Arguments, and Return Values &mdash; Corey Schafer</span><span class="vid-duration">21:48</span><span class="vid-toggle" id="toggle-ics3-yt11">▶</span></div><div class="video-player" id="player-ics3-yt11"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9Os0o3wzS_I?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=9Os0o3wzS_I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.2 &mdash; Parameters, Arguments, and Default Values</div>
+            <div class="topic-desc">Positional vs. keyword arguments; default parameter values; multiple return values via tuples</div>
+            <div class="code-snip"><span class="com"># Default parameter and keyword argument</span>
+<span class="kw">def</span> greet(name, greeting=<span class="str">"Hello"</span>):
+    <span class="kw">return</span> <span class="str">f"{greeting}, {name}!"</span>
+
+<span class="kw">print</span>(greet(<span class="str">"Ada"</span>))                       <span class="com"># Hello, Ada!</span>
+<span class="kw">print</span>(greet(<span class="str">"Bob"</span>, <span class="str">"Welcome"</span>))             <span class="com"># Welcome, Bob!</span>
+<span class="kw">print</span>(greet(name=<span class="str">"Cay"</span>, greeting=<span class="str">"Hi"</span>))    <span class="com"># Hi, Cay!</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Functions become more flexible once we allow more than one way to pass values in. <strong>Positional arguments</strong> match parameters by their order: <code>area_rectangle(5, 3)</code> sets <code>length=5</code> and <code>width=3</code> because of how they appear in the definition. <strong>Keyword arguments</strong> match by name: <code>area_rectangle(width=3, length=5)</code> works regardless of order and is more readable when there are several parameters. You can mix the two, but all positional arguments must come before any keyword argument.</p>
+                <p><strong>Default parameter values</strong> let a parameter be omitted at the call site: <code>def greet(name, greeting="Hello")</code> allows <code>greet("Ada")</code> &mdash; the missing <code>greeting</code> receives its default value. Defaulted parameters must come <em>after</em> all non-defaulted ones in the definition. Defaults are evaluated once at function-definition time; using a mutable default like <code>[]</code> is a famous Python trap that we will see again in ICS4U.</p>
+                <p>A Python function may return <strong>multiple values</strong> by listing them after <code>return</code>, separated by commas. Technically, this packages them into a <em>tuple</em>; the caller can <strong>unpack</strong> the tuple into separate names: <code>quotient, remainder = divmod(17, 5)</code>. This pattern is everywhere in idiomatic Python and is a powerful tool for clean code.</p>
+                <ul>
+                  <li><strong>Positional argument</strong> &mdash; matched to a parameter by order.</li>
+                  <li><strong>Keyword argument</strong> &mdash; matched to a parameter by name.</li>
+                  <li><strong>Default value</strong> &mdash; a fallback used when an argument is omitted.</li>
+                  <li><strong>Tuple</strong> &mdash; an immutable ordered group of values, written with commas (optionally with parentheses).</li>
+                  <li><strong>Tuple unpacking</strong> &mdash; assigning each element of a tuple to a separate name.</li>
+                  <li><strong>Function signature</strong> &mdash; the function name and parameter list, defining the calling contract.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; a function that returns two values</p>
+<pre><code>def min_and_max(numbers):
+    """Return (minimum, maximum) of a non-empty list."""
+    smallest = numbers[0]
+    largest  = numbers[0]
+    for n in numbers[1:]:
+        if n &lt; smallest:
+            smallest = n
+        if n &gt; largest:
+            largest = n
+    return smallest, largest
+
+lo, hi = min_and_max([4, 1, 9, 2, 7])
+print(lo, hi)   # 1 9</code></pre>
+                  <p>The function returns a tuple <code>(smallest, largest)</code> by simply listing them after <code>return</code>. The caller unpacks the tuple in a single assignment, getting two clean variable names. Total time is O(n) in the length of the list; memory is O(1) extra.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; default parameter for currency</p>
+<pre><code>def format_money(amount, currency="$"):
+    return f"{currency}{amount:.2f}"
+
+print(format_money(12.5))           # $12.50
+print(format_money(12.5, "CAD "))   # CAD 12.50
+print(format_money(12.5, currency="EUR ")) # EUR 12.50</code></pre>
+                  <p>The default makes the common case (Canadian dollars) easy while still permitting other currencies. Keyword form (<code>currency="EUR "</code>) is identical to positional form here but makes the call more self-documenting in code where the function takes many parameters.</p>
+                </div>
+                <ul>
+                  <li>Putting a non-defaulted parameter after a defaulted one: <code>def f(x=1, y)</code> &mdash; <code>SyntaxError</code>.</li>
+                  <li>Passing keyword arguments before positional ones: <code>f(x=1, 2)</code> &mdash; <code>SyntaxError</code>.</li>
+                  <li>Using a mutable default like <code>def f(lst=[])</code> &mdash; the list is shared across calls; use <code>lst=None</code> and create a fresh list inside.</li>
+                  <li>Forgetting that returning multiple values packages them into a tuple: <code>x = min_and_max(...)</code> gives a tuple, not the first value.</li>
+                  <li>Calling a function with the wrong number of arguments &mdash; <code>TypeError</code>.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 &mdash; "write functions that accept parameters and return values; explain the difference between formal parameters and arguments".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt12')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial for Beginners &mdash; Functions &mdash; Programming with Mosh</span><span class="vid-duration">7:11</span><span class="vid-toggle" id="toggle-ics3-yt12">▶</span></div><div class="video-player" id="player-ics3-yt12"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/u-OmVr_fT4s?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=u-OmVr_fT4s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.3 &mdash; Variable Scope: Local and Global</div>
+            <div class="topic-desc">Local variables; the global namespace; why mutable globals are dangerous; the <code>global</code> keyword (rarely used)</div>
+            <div class="code-snip"><span class="kw">PI</span> = <span class="num">3.14159</span>      <span class="com"># global constant — safe to read everywhere</span>
+
+<span class="kw">def</span> circle_area(radius):
+    area = PI * radius ** <span class="num">2</span>   <span class="com"># 'area' is LOCAL to this function</span>
+    <span class="kw">return</span> area
+
+<span class="kw">print</span>(circle_area(<span class="num">3</span>))      <span class="com"># 28.27431</span>
+<span class="com"># print(area)  — NameError: 'area' is not defined out here</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>scope</strong> of a variable is the region of code where the variable is visible. Variables created inside a function are <strong>local</strong>: they live only while the function is running and disappear when it returns. Variables created at the top level of a script are <strong>global</strong>: they are visible everywhere, including inside functions. Local and global variables are separate names, even if they happen to be spelled the same way; the function's local <code>x</code> has nothing to do with a global <code>x</code> that exists outside.</p>
+                <p>This sounds restrictive but is actually a powerful safety feature. Two functions can each use <code>i</code> as a loop variable without interfering with each other, because each function's <code>i</code> is its own local variable. Function parameters are local variables too &mdash; the parameter <code>x</code> in <code>def f(x): ...</code> is a fresh name that exists only inside <code>f</code>.</p>
+                <p>You <em>can</em> modify a global variable from inside a function using the <code>global</code> keyword, but it is almost always a bad idea. Code that uses many globals is hard to reason about because any function might change them. The professional convention is: <strong>pass values in as parameters and return results explicitly</strong>. Globals are appropriate only for <em>constants</em> (values that never change, conventionally named in <code>UPPER_CASE</code>) like <code>PI</code> or <code>MAX_STUDENTS</code>.</p>
+                <ul>
+                  <li><strong>Scope</strong> &mdash; the region of code where a name is visible.</li>
+                  <li><strong>Local variable</strong> &mdash; defined inside a function; exists only during that call.</li>
+                  <li><strong>Global variable</strong> &mdash; defined at module/script top level.</li>
+                  <li><strong>Constant</strong> &mdash; a global value intended never to change (Python convention: <code>UPPER_CASE</code>).</li>
+                  <li><strong>Shadowing</strong> &mdash; a local name hiding a global one with the same identifier.</li>
+                  <li><strong>NameError</strong> &mdash; raised when a name is referenced but not defined in any visible scope.</li>
+                  <li><strong>Parameter</strong> &mdash; a local variable that receives an argument at call time.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; scope in action</p>
+<pre><code>def show():
+    x = 5            # local
+    print("inside:", x)
+
+x = 100              # global
+show()               # prints: inside: 5
+print("outside:", x) # prints: outside: 100</code></pre>
+                  <p>The function's <code>x</code> and the global <code>x</code> are completely separate. Assigning to <code>x</code> inside <code>show</code> creates a brand-new local; it does not change the global. After <code>show()</code> returns, the local <code>x</code> is gone forever.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; globals done right and wrong</p>
+<pre><code># GOOD: a named constant
+SPEED_OF_LIGHT = 299792458   # metres per second
+
+def travel_time(distance):
+    return distance / SPEED_OF_LIGHT
+
+# BAD: a mutable global modified across functions
+running_total = 0
+
+def add(x):
+    global running_total
+    running_total += x       # changes shared state
+
+def reset():
+    global running_total
+    running_total = 0</code></pre>
+                  <p>The constant is fine: every reader knows it never changes. The mutable global, in contrast, ties the two functions together in an invisible way &mdash; calling <code>add</code> changes what later calls see. Passing the running total as a parameter, or wrapping it in an object, makes the dependency explicit.</p>
+                </div>
+                <ul>
+                  <li>Trying to modify a global without declaring <code>global</code> &mdash; Python creates a new local instead, and the global is unchanged.</li>
+                  <li>Reading a name that doesn't exist anywhere &mdash; <code>NameError</code>.</li>
+                  <li>Reusing the same name for a local in one function and a global &mdash; works but is confusing.</li>
+                  <li>Using globals to "communicate" between functions &mdash; pass parameters and return values instead.</li>
+                  <li>Forgetting that function parameters are local to that function only.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 &mdash; "explain the difference between formal parameters and arguments, and between local and global variables".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt13')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Variable Scope &mdash; Understanding the LEGB Rule and Global/Local Scope</span><span class="vid-duration">14:02</span><span class="vid-toggle" id="toggle-ics3-yt13">▶</span></div><div class="video-player" id="player-ics3-yt13"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/QVdf0LgmICw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=QVdf0LgmICw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.4 &mdash; Lists (1-D Arrays)</div>
+            <div class="topic-desc">List literals; indexing (zero-based and negative); slicing; common methods (<code>.append</code>, <code>.pop</code>, <code>.insert</code>, <code>.remove</code>, <code>len</code>); iterating over a list</div>
+            <div class="code-snip"><span class="kw">scores</span> = [<span class="num">82</span>, <span class="num">76</span>, <span class="num">91</span>, <span class="num">68</span>, <span class="num">88</span>]
+<span class="kw">print</span>(scores[<span class="num">0</span>])         <span class="com"># 82  (first element)</span>
+<span class="kw">print</span>(scores[-<span class="num">1</span>])        <span class="com"># 88  (last element)</span>
+<span class="kw">print</span>(scores[<span class="num">1</span>:<span class="num">4</span>])       <span class="com"># [76, 91, 68]</span>
+<span class="kw">print</span>(len(scores))       <span class="com"># 5</span>
+scores.append(<span class="num">95</span>)         <span class="com"># now [82, 76, 91, 68, 88, 95]</span>
+<span class="kw">total</span> = sum(scores)
+<span class="kw">average</span> = total / len(scores)
+<span class="kw">print</span>(<span class="str">f"Average: {average:.1f}"</span>)
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>list</strong> (called an <strong>array</strong> in many languages) is an ordered collection of values stored under a single name. Lists are the most useful data structure in computing because so many real-world things are naturally ordered collections: scores, names, sensor readings, words in a sentence. In Python you write a list literal with square brackets: <code>[82, 76, 91]</code>. Lists are <strong>indexed</strong> starting at 0: <code>scores[0]</code> is the first element, <code>scores[1]</code> the second, and so on. Negative indices count from the end: <code>scores[-1]</code> is the last element, <code>scores[-2]</code> the second-to-last.</p>
+                <p><strong>Slicing</strong> extracts a range of elements: <code>scores[1:4]</code> returns a new list with elements at positions 1, 2, and 3 &mdash; the start is inclusive, the stop is exclusive, and the length of the slice is always <code>stop - start</code>. This half-open convention takes some getting used to but eliminates many off-by-one errors. <code>scores[:3]</code> takes the first three; <code>scores[3:]</code> takes everything from position 3 onwards; <code>scores[:]</code> makes a complete copy of the list.</p>
+                <p>Lists are <strong>mutable</strong>: you can change them after creation. The common modifier methods are <code>.append(x)</code> (add to the end), <code>.insert(i, x)</code> (insert at position <code>i</code>), <code>.pop()</code> (remove and return the last), <code>.pop(i)</code> (remove and return position <code>i</code>), and <code>.remove(x)</code> (remove the first occurrence of <code>x</code>). The built-in <code>len(lst)</code> returns the number of elements; <code>sum(lst)</code>, <code>min(lst)</code>, and <code>max(lst)</code> work on numeric lists. The <code>in</code> operator tests membership: <code>91 in scores</code> is <code>True</code>.</p>
+                <ul>
+                  <li><strong>List / array</strong> &mdash; an ordered collection of values stored under one name.</li>
+                  <li><strong>Index</strong> &mdash; a zero-based integer position into a list.</li>
+                  <li><strong>Slice</strong> &mdash; a sub-range of a list given by <code>lst[start:stop]</code>.</li>
+                  <li><strong>Element</strong> &mdash; one value in a list.</li>
+                  <li><strong>Length (<code>len</code>)</strong> &mdash; the number of elements.</li>
+                  <li><strong>Mutable</strong> &mdash; can be changed after creation.</li>
+                  <li><strong>Membership (<code>in</code>)</strong> &mdash; tests whether a value appears in the list.</li>
+                  <li><strong>Aliasing</strong> &mdash; two names referring to the same list (changes through one are visible through the other).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; finding the average and the highest</p>
+<pre><code>def class_stats(marks):
+    """Return (count, average, highest) for a list of marks."""
+    if len(marks) == 0:
+        return 0, 0.0, None
+    count   = len(marks)
+    average = sum(marks) / count
+    highest = max(marks)
+    return count, average, highest
+
+n, avg, hi = class_stats([82, 76, 91, 68, 88])
+print(f"{n} students; avg {avg:.1f}; high {hi}")
+# 5 students; avg 81.0; high 91</code></pre>
+                  <p>The function uses three built-ins (<code>len</code>, <code>sum</code>, <code>max</code>), each O(n) in the list length, so the total is O(n). Guarding against the empty list prevents a division-by-zero error and returns sensible defaults. Returning a tuple of three values is idiomatic; the caller unpacks them in one line.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; building a list with a loop</p>
+<pre><code># Read 5 marks from the user and store them.
+marks = []                          # start empty
+for i in range(5):
+    m = float(input(f"Mark {i+1}: "))
+    marks.append(m)                 # grow by one each iteration
+
+print("Sorted:", sorted(marks))     # sorted() returns a new list
+print("Average:", sum(marks)/len(marks))</code></pre>
+                  <p>The accumulator pattern adapted to a list: start with <code>[]</code>, append inside the loop, use the result afterwards. <code>sorted(marks)</code> returns a sorted copy without changing the original. <code>marks.sort()</code> would sort in place and return <code>None</code>.</p>
+                </div>
+                <ul>
+                  <li>Index out of range: <code>scores[5]</code> when the list has only 5 elements &mdash; the last valid index is 4 (<code>len(lst) - 1</code>).</li>
+                  <li>Calling <code>.append</code> expecting a new list back &mdash; it returns <code>None</code> and mutates the original.</li>
+                  <li>Confusing <code>sort()</code> (in-place, returns <code>None</code>) with <code>sorted(lst)</code> (returns a new sorted list).</li>
+                  <li>Aliasing: <code>b = a</code> does <em>not</em> copy; both names refer to the same list. Use <code>b = a[:]</code> or <code>b = list(a)</code>.</li>
+                  <li>Removing items by index while iterating &mdash; can skip elements.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.3 &mdash; "use one-dimensional arrays or lists to store and retrieve a collection of related values".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt14')"><span class="vid-icon">📖</span><span class="vid-title">Python Lists, Tuples, and Sets &mdash; Corey Schafer</span><span class="vid-duration">23:43</span><span class="vid-toggle" id="toggle-ics3-yt14">▶</span></div><div class="video-player" id="player-ics3-yt14"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/W8KRzm-HUcc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=W8KRzm-HUcc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.5 &mdash; Strings as Sequences</div>
+            <div class="topic-desc">Strings are immutable sequences of characters; common string methods (<code>.upper</code>, <code>.lower</code>, <code>.strip</code>, <code>.split</code>, <code>.replace</code>, <code>.find</code>); iterating over characters</div>
+            <div class="code-snip"><span class="com"># Strings behave a lot like lists of characters</span>
+<span class="kw">name</span> = <span class="str">"Ada Lovelace"</span>
+<span class="kw">print</span>(len(name))            <span class="com"># 12</span>
+<span class="kw">print</span>(name[<span class="num">0</span>])             <span class="com"># A</span>
+<span class="kw">print</span>(name[-<span class="num">1</span>])            <span class="com"># e</span>
+<span class="kw">print</span>(name[<span class="num">4</span>:])            <span class="com"># Lovelace</span>
+<span class="kw">print</span>(name.upper())         <span class="com"># ADA LOVELACE</span>
+<span class="kw">print</span>(name.replace(<span class="str">" "</span>, <span class="str">"_"</span>))  <span class="com"># Ada_Lovelace</span>
+<span class="kw">print</span>(<span class="str">"Lovelace"</span> <span class="kw">in</span> name)   <span class="com"># True</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A string is an ordered <strong>sequence of characters</strong> &mdash; technically Unicode code points. Many of the operations that work on lists also work on strings: <code>len(s)</code>, indexing (<code>s[0]</code>), negative indices (<code>s[-1]</code>), slicing (<code>s[1:5]</code>), iteration (<code>for ch in s</code>), and the <code>in</code> membership operator. The big difference between strings and lists is mutability: <strong>strings are immutable</strong>. You cannot write <code>s[0] = "X"</code>; every "modification" actually produces a new string. This is why <code>s.upper()</code> returns a new uppercase string rather than changing <code>s</code> in place.</p>
+                <p>Python strings have a rich set of <strong>methods</strong> that every Grade-11 student should know. <code>.upper()</code> and <code>.lower()</code> change case. <code>.strip()</code> removes whitespace from both ends; <code>.lstrip()</code> and <code>.rstrip()</code> remove from only one end. <code>.replace(old, new)</code> substitutes every occurrence. <code>.split(sep)</code> breaks a string into a list of pieces around the separator; <code>sep.join(list)</code> is its inverse. <code>.find(sub)</code> returns the index of the first occurrence or <code>-1</code> if not found. <code>.startswith(p)</code> and <code>.endswith(s)</code> test prefixes and suffixes.</p>
+                <p>String <strong>concatenation</strong> with <code>+</code> joins two strings end to end: <code>"Hello, " + name</code>. Repetition with <code>*</code> repeats a string: <code>"ab" * 3</code> is <code>"ababab"</code>. For building up long strings inside a loop, <em>collecting parts in a list and joining at the end</em> is far faster than repeated <code>+=</code>: each <code>+=</code> copies the whole accumulated string, costing quadratic time over the loop, while <code>"".join(parts)</code> is linear.</p>
+                <ul>
+                  <li><strong>String</strong> &mdash; an immutable ordered sequence of characters.</li>
+                  <li><strong>Character</strong> &mdash; a single Unicode code point.</li>
+                  <li><strong>Substring</strong> &mdash; a contiguous slice of a string.</li>
+                  <li><strong>Method</strong> &mdash; a function attached to a string, called with dot notation.</li>
+                  <li><strong>Concatenation (<code>+</code>)</strong> &mdash; joining strings end to end.</li>
+                  <li><strong>Repetition (<code>*</code>)</strong> &mdash; repeating a string a number of times.</li>
+                  <li><strong>Tokenisation</strong> &mdash; splitting a string into pieces (words, fields) using <code>.split</code>.</li>
+                  <li><strong>Palindrome</strong> &mdash; a string that reads the same forwards and backwards.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; counting words in a sentence</p>
+<pre><code>def word_count(sentence):
+    """Return the number of whitespace-separated words."""
+    words = sentence.split()         # split on any whitespace
+    return len(words)
+
+print(word_count("The quick brown fox"))   # 4
+print(word_count("   hello    world  "))   # 2  — extra spaces ignored</code></pre>
+                  <p><code>str.split()</code> with no argument splits on any run of whitespace and discards empty pieces &mdash; perfect for word counting. With an argument like <code>split(",")</code> it splits on every comma, including empty fields.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; building a string from parts</p>
+<pre><code>def initials(full_name):
+    """Return uppercase initials, e.g. 'Ada Lovelace' -&gt; 'A.L.'"""
+    parts = full_name.split()
+    letters = []
+    for word in parts:
+        letters.append(word[0].upper())
+    return ".".join(letters) + "."
+
+print(initials("Ada Lovelace"))           # A.L.
+print(initials("alan mathison turing"))   # A.M.T.</code></pre>
+                  <p>The algorithm splits the name into words, takes the first letter of each (uppercased), and joins them with periods. Total runtime is O(n) in the length of the full name. The pattern (split &rarr; transform &rarr; join) appears constantly in real text-processing code.</p>
+                </div>
+                <ul>
+                  <li>Trying to modify a string in place &mdash; <code>s[0] = "X"</code> raises <code>TypeError</code>.</li>
+                  <li>Building a long string with repeated <code>s = s + char</code> &mdash; O(n<sup>2</sup>) work. Use a list and <code>"".join</code>.</li>
+                  <li>Confusing <code>.find</code> (returns <code>-1</code> on miss) with <code>.index</code> (raises <code>ValueError</code>).</li>
+                  <li>Forgetting that string comparison is case-sensitive: <code>"hi" == "Hi"</code> is False.</li>
+                  <li>Calling <code>s.upper()</code> and discarding the result, expecting <code>s</code> to change.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 &mdash; "demonstrate the ability to declare, initialize, modify, and access primitive types (integer, real/float, character/string, Boolean) in computer programs".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt15')"><span class="vid-icon">📖</span><span class="vid-title">Python Strings: Working with Textual Data &mdash; Corey Schafer</span><span class="vid-duration">21:09</span><span class="vid-toggle" id="toggle-ics3-yt15">▶</span></div><div class="video-player" id="player-ics3-yt15"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/k9TUPpGqYTo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=k9TUPpGqYTo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics3u/Unit3_Modular_Programming_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics3u/Unit3_Modular_Programming_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics3u/Unit3_Modular_Programming_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS3U &mdash; Introduction to Computer Science, Grade 11 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

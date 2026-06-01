@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI3U Ch 2: Evolution — Practice Quiz (AS Learning)</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+:root { --primary: #0d9488; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0d9488;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sbi3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 2: Evolution — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Test your grasp of natural selection, evidence for evolution, speciation, and Hardy–Weinberg. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1–2.2 — Natural Selection &amp; Its Modes</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which is NOT one of the four conditions required for natural selection to occur?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Heritable variation in a trait</label></li>
+<li><label><input type="radio" name="q1" value="b"> Differential survival or reproductive success</label></li>
+<li><label><input type="radio" name="q1" value="c"> Over-production of offspring</label></li>
+<li><label><input type="radio" name="q1" value="d"> A long human lifespan to observe change</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','d')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Selection requires variation, heritability, differential reproduction, and overproduction. Human observation has nothing to do with whether selection occurs — selection has been operating on Earth for billions of years.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">In a population of moths, dark-coloured moths are favoured because they are less visible on soot-darkened tree trunks. The mean colour darkens over generations. This is an example of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Directional selection</label></li>
+<li><label><input type="radio" name="q2" value="b"> Stabilising selection</label></li>
+<li><label><input type="radio" name="q2" value="c"> Disruptive selection</label></li>
+<li><label><input type="radio" name="q2" value="d"> Sexual selection</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','a')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> <em>Directional selection</em> favours one extreme of the distribution and shifts the mean — classic example: industrial melanism in the peppered moth, <em>Biston betularia</em>.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">A peacock's enormous tail is costly to survival. Why does it persist?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> It evolved by genetic drift only</label></li>
+<li><label><input type="radio" name="q3" value="b"> Peahens prefer males with elaborate tails, increasing those males' reproductive success</label></li>
+<li><label><input type="radio" name="q3" value="c"> It helps the peacock fly</label></li>
+<li><label><input type="radio" name="q3" value="d"> Bigger tails are required for thermoregulation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> <em>Sexual selection</em> by female choice (intersexual selection) favours males with elaborate ornaments. Females select for "honest signals" of genetic quality. Mating success is a component of fitness even when survival decreases.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3–2.4 — Evidence &amp; Sources of Variation</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The forelimb bones of a human, a whale, and a bat are very similar in structure. This similarity is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Analogous structures</label></li>
+<li><label><input type="radio" name="q4" value="b"> Homologous structures</label></li>
+<li><label><input type="radio" name="q4" value="c"> Vestigial structures</label></li>
+<li><label><input type="radio" name="q4" value="d"> Convergent structures</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Same skeletal plan, different functions — <em>homologous</em>. The shared structure comes from a common tetrapod ancestor.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Which is the ULTIMATE source of new genetic variation in a population?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Independent assortment</label></li>
+<li><label><input type="radio" name="q5" value="b"> Random fertilization</label></li>
+<li><label><input type="radio" name="q5" value="c"> Mutation</label></li>
+<li><label><input type="radio" name="q5" value="d"> Crossing over</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','c')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Only <em>mutation</em> creates new alleles. Meiosis (independent assortment, crossing over) and random fertilization <em>shuffle</em> existing alleles into new combinations.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Humans have 23 pairs of chromosomes. Ignoring crossing over, how many genetically distinct gametes can independent assortment alone produce?</div>
+<input type="text" id="q6-in" placeholder="Enter the number">
+<button class="btn" onclick="cN('q6',8388608)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Each pair contributes 2 possible gametes (maternal or paternal homolog). With 23 pairs: \(2^{23} = 8\,388\,608\) gametes. Crossing over multiplies this enormously.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.5–2.6 — Speciation &amp; Hardy–Weinberg</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A mountain range rises, dividing a single species of squirrel into two isolated populations that eventually become unable to interbreed. This is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Sympatric speciation</label></li>
+<li><label><input type="radio" name="q7" value="b"> Allopatric speciation</label></li>
+<li><label><input type="radio" name="q7" value="c"> Adaptive radiation</label></li>
+<li><label><input type="radio" name="q7" value="d"> Polyploidy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Geographic barrier → divergence in isolation → reproductive isolation: classic <em>allopatric</em> speciation.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In a population, 16% of individuals are homozygous recessive (aa) for a trait. Assuming Hardy–Weinberg, what is the allele frequency of the recessive allele (q)?</div>
+<input type="text" id="q8-in" placeholder="e.g., 0.4">
+<button class="btn" onclick="cN('q8',0.4)">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> \(q^2 = 0.16\), so \(q = \sqrt{0.16} = \mathbf{0.4}\).</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Using the value of q from question 8 (q = 0.4, p = 0.6), what fraction of the population is heterozygous (Aa)? Give as a decimal to 2 dp.</div>
+<input type="text" id="q9-in" placeholder="e.g., 0.48">
+<button class="btn" onclick="cN('q9',0.48)">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> \(2pq = 2(0.6)(0.4) = \mathbf{0.48}\) or 48% of the population.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Which is a postzygotic reproductive barrier?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Two species mate at different times of year</label></li>
+<li><label><input type="radio" name="q10" value="b"> Pollen of one species cannot fertilise the eggs of another</label></li>
+<li><label><input type="radio" name="q10" value="c"> A hybrid (e.g., mule) is sterile</label></li>
+<li><label><input type="radio" name="q10" value="d"> Two species live in different habitats and never meet</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','c')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Postzygotic = after a zygote forms. Hybrid sterility (mule = horse × donkey) is the classic example. A, B, and D are prezygotic (temporal, gametic, habitat isolation).</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Polyploidy is a major route to sympatric speciation in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Mammals</label></li>
+<li><label><input type="radio" name="q11" value="b"> Plants</label></li>
+<li><label><input type="radio" name="q11" value="c"> Birds</label></li>
+<li><label><input type="radio" name="q11" value="d"> Reptiles</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Polyploid speciation is common in <em>plants</em> (modern wheat is hexaploid, strawberries are octoploid, many crops are polyploid hybrids). Most animals do not tolerate polyploidy.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Which is NOT an assumption of Hardy–Weinberg equilibrium?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> No mutation</label></li>
+<li><label><input type="radio" name="q12" value="b"> No selection</label></li>
+<li><label><input type="radio" name="q12" value="c"> Small population size</label></li>
+<li><label><input type="radio" name="q12" value="d"> Random mating</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','c')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Hardy–Weinberg requires <em>large</em> population size (to avoid genetic drift). The five assumptions are large population, no migration, no mutation, random mating, no selection.</div></div>
+
+</div>
+
+<footer>SBI3U — Biology, Grade 11 | Strand C: Evolution | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;const tol=Math.max(Math.abs(c)*0.02,0.02);if(Math.abs(v-c)<=tol){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

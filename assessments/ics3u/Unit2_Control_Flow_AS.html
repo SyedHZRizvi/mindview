@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Control Flow and Logic — Practice Quiz</title>
+<style>
+:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#dbeafe;border:1px solid #93c5fd;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128187; Unit 2: Control Flow and Logic &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test your understanding of Boolean expressions, <code>if</code>/<code>elif</code>/<code>else</code>, <code>while</code> and <code>for</code> loops, and nested control flow. Instant feedback. Python 3 throughout.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 &mdash; Boolean expression</div>
+<div class="qt">What is the value of <code>(5 &gt; 3) and (10 &lt; 5)</code>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> True</label></li>
+<li><label><input type="radio" name="q1" value="b"> False</label></li>
+<li><label><input type="radio" name="q1" value="c"> None</label></li>
+<li><label><input type="radio" name="q1" value="d"> SyntaxError</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div><code>5 &gt; 3</code> &rarr; <code>True</code>; <code>10 &lt; 5</code> &rarr; <code>False</code>. <code>True and False</code> &rarr; <strong>False</strong>.</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 &mdash; Tracing if/elif</div>
+<div class="qt">What is printed?
+<div class="code">x = 75
+if x &gt;= 90:
+    print("A")
+elif x &gt;= 80:
+    print("B")
+elif x &gt;= 70:
+    print("C")
+else:
+    print("F")</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> A</label></li>
+<li><label><input type="radio" name="q2" value="b"> B</label></li>
+<li><label><input type="radio" name="q2" value="c"> C</label></li>
+<li><label><input type="radio" name="q2" value="d"> F</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>75 fails <code>&gt;=90</code> and <code>&gt;=80</code> but passes <code>&gt;=70</code>. Print <strong>"C"</strong> and exit the chain.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 &mdash; Loop sum</div>
+<div class="qt">What is <code>total</code> after this loop?
+<div class="code">total = 0
+for i in range(1, 6):
+    total += i
+print(total)</div>
+</div>
+<input type="text" id="q3-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q3','15')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div><code>range(1, 6)</code> yields 1, 2, 3, 4, 5. Sum = 1+2+3+4+5 = <strong>15</strong>.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 &mdash; Logic with <code>not</code></div>
+<div class="qt">What is <code>not (5 == 5)</code>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> True</label></li>
+<li><label><input type="radio" name="q4" value="b"> False</label></li>
+<li><label><input type="radio" name="q4" value="c"> 5</label></li>
+<li><label><input type="radio" name="q4" value="d"> Error</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div><code>5 == 5</code> &rarr; <code>True</code>. <code>not True</code> &rarr; <strong>False</strong>.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 &mdash; Off-by-one</div>
+<div class="qt">This loop is supposed to print numbers 1 through 10. What's wrong?
+<div class="code">i = 1
+while i &lt; 10:
+    print(i)
+    i += 1</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Variable i is not initialized</label></li>
+<li><label><input type="radio" name="q5" value="b"> Off-by-one: should be i &lt;= 10</label></li>
+<li><label><input type="radio" name="q5" value="c"> The increment should be i = i + 2</label></li>
+<li><label><input type="radio" name="q5" value="d"> while loops cannot print numbers</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>The condition <code>i &lt; 10</code> stops at i=9. Fix: <code>i &lt;= 10</code>. Classic <strong>off-by-one</strong> error.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 &mdash; Nested loop count</div>
+<div class="qt">How many <code>"*"</code> characters are printed?
+<div class="code">for i in range(3):
+    for j in range(4):
+        print("*", end="")</div>
+</div>
+<input type="text" id="q6-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q6','12')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>Outer runs 3 times; inner runs 4 times each: 3 &times; 4 = <strong>12</strong>.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 &mdash; Chained comparison</div>
+<div class="qt">For <code>x = 7</code>, is <code>1 &lt; x &lt; 10</code> True or False?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> True</label></li>
+<li><label><input type="radio" name="q7" value="b"> False</label></li>
+<li><label><input type="radio" name="q7" value="c"> SyntaxError</label></li>
+<li><label><input type="radio" name="q7" value="d"> 7</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','a')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>Python allows chained comparisons. <code>1 &lt; 7</code> AND <code>7 &lt; 10</code> are both True, so the whole expression is <strong>True</strong>.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 &mdash; Identify the bug</div>
+<div class="qt">What is wrong with this check? <code>if x == 1 or 2:</code></div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Nothing — it works correctly.</label></li>
+<li><label><input type="radio" name="q8" value="b"> It always evaluates to True because <code>2</code> alone is truthy.</label></li>
+<li><label><input type="radio" name="q8" value="c"> <code>or</code> cannot be used in if statements.</label></li>
+<li><label><input type="radio" name="q8" value="d"> It is a SyntaxError.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Python evaluates this as <code>(x == 1) or 2</code>. The second operand <code>2</code> is truthy on its own, so the whole expression is always True. Correct form: <code>x == 1 or x == 2</code>, or <code>x in (1, 2)</code>.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 &mdash; While loop trace</div>
+<div class="qt">What is the final printed value of <code>n</code>?
+<div class="code">n = 1
+while n &lt; 100:
+    n = n * 2
+print(n)</div>
+</div>
+<input type="text" id="q9-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q9','128')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>n doubles: 1 &rarr; 2 &rarr; 4 &rarr; 8 &rarr; 16 &rarr; 32 &rarr; 64 &rarr; 128. At n=128, <code>128 &lt; 100</code> is False, loop exits. Print <strong>128</strong>.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 &mdash; Short-circuit evaluation</div>
+<div class="qt">Does this line raise an error if <code>y</code> is 0?
+<div class="code">if y != 0 and 10 / y &gt; 2:
+    print("big")</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Yes, ZeroDivisionError.</label></li>
+<li><label><input type="radio" name="q10" value="b"> No — short-circuit evaluation skips the division.</label></li>
+<li><label><input type="radio" name="q10" value="c"> No, because Python rounds <code>10/0</code> to infinity.</label></li>
+<li><label><input type="radio" name="q10" value="d"> Yes, SyntaxError.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div><strong>Short-circuit evaluation</strong>: in <code>A and B</code>, if A is false (here <code>y != 0</code> is False), B is never evaluated. So <code>10/y</code> is skipped and no error occurs.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 &mdash; Counting evens</div>
+<div class="qt">Write the one-line condition that checks whether an integer <code>n</code> is even. (Type just the Boolean expression.)</div>
+<input type="text" id="q11-in" placeholder="e.g. n % 2 == 0">
+<button class="btn btn-p" onclick="chkContains('q11',['n%2==0','n%2 == 0'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div><code>n % 2 == 0</code>. The remainder when dividing by 2 is 0 exactly when n is even.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 &mdash; De Morgan's law</div>
+<div class="qt">Which expression is equivalent to <code>not (x &gt; 5 and y &gt; 5)</code>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> <code>x &lt;= 5 and y &lt;= 5</code></label></li>
+<li><label><input type="radio" name="q12" value="b"> <code>x &lt;= 5 or y &lt;= 5</code></label></li>
+<li><label><input type="radio" name="q12" value="c"> <code>x &gt; 5 or y &gt; 5</code></label></li>
+<li><label><input type="radio" name="q12" value="d"> <code>not x &gt; 5 and not y &gt; 5</code></label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>De Morgan's law: <code>not (A and B)</code> = <code>(not A) or (not B)</code>. So <code>not (x &gt; 5 and y &gt; 5)</code> = <code>x &lt;= 5 or y &lt;= 5</code>.</div></div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 2: Control Flow and Logic | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector('input[name="'+q+'"]:checked');if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}if(sl)sl.classList.add('show');up();}
+function chkText(q,c){const v=document.getElementById(q+'-in').value.trim();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}if(sl)sl.classList.add('show');up();}
+function chkContains(q,acceptable){const v=document.getElementById(q+'-in').value.trim().toLowerCase();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;const norm=v.replace(/\s+/g,'');const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

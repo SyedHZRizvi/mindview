@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Gases & Atmosphere — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #d97706; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#d97706;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 5: Gases and Atmospheric Chemistry</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check kinetic molecular theory, gas laws, the ideal-gas equation, gas stoichiometry, and atmospheric chemistry.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Kinetic Molecular Theory &amp; Gas Laws</div>
+
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">According to KMT, increasing temperature of a gas at constant V increases the:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> Average kinetic energy of particles</label></li>
+<li><label><input type="radio" name="q1" value="b"> Average size of particles</label></li>
+<li><label><input type="radio" name="q1" value="c"> Volume occupied by each particle</label></li>
+<li><label><input type="radio" name="q1" value="d"> Average mass of particles</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','a')">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>T ∝ average kinetic energy (KMT). Particle mass/size do not change with T.</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">A gas at 100 kPa and 2.0 L is compressed to 1.0 L at constant T. The new pressure is:</div>
+<div class="answer-area"><input type="text" id="q2-input" placeholder="kPa..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q2', 200)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Boyle's law: P₁V₁ = P₂V₂ → P₂ = 100×2.0/1.0 = <strong>200 kPa</strong>.</div>
+</div>
+
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">A balloon at 27 °C has V = 1.00 L. At constant P, heated to 327 °C, the new volume (in L) is:</div>
+<div class="answer-area"><input type="text" id="q3-input" placeholder="L..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q3', 2.0)">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Charles's law in K: T₁ = 300 K, T₂ = 600 K. V₂ = V₁ × T₂/T₁ = 1.00 × 600/300 = <strong>2.00 L</strong>.</div>
+</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">Which gas law relates P and T at constant V and n?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q4" value="a"> Boyle's</label></li>
+<li><label><input type="radio" name="q4" value="b"> Charles's</label></li>
+<li><label><input type="radio" name="q4" value="c"> Gay-Lussac's</label></li>
+<li><label><input type="radio" name="q4" value="d"> Avogadro's</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q4','c')">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Gay-Lussac's: P/T = const at constant V, n.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Ideal Gas Law &amp; Stoichiometry</div>
+
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">At STP (0 °C, 101.325 kPa), the volume of 1.00 mol of any ideal gas is:</div>
+<div class="answer-area"><input type="text" id="q5-input" placeholder="L..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q5', 22.4)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Molar volume at STP = <strong>22.4 L/mol</strong>.</div>
+</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">What volume does 4.0 mol of N₂ occupy at SATP (25 °C, 100 kPa, V_m = 24.8 L/mol)?</div>
+<div class="answer-area"><input type="text" id="q6-input" placeholder="L..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q6', 99.2)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>V = 4.0 × 24.8 = <strong>99.2 L</strong>.</div>
+</div>
+
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">Apply PV=nRT (R=8.314 L·kPa/(mol·K)). Find n for 5.00 L of CO₂ at 25 °C and 100 kPa.</div>
+<div class="answer-area"><input type="text" id="q7-input" placeholder="mol..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q7', 0.202)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>n = PV/RT = (100)(5.00)/(8.314 × 298) = 500/2478 = <strong>0.202 mol</strong>.</div>
+</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">For \( \text{2H}_2 + \text{O}_2 \rightarrow \text{2H}_2\text{O} \), how many litres of H₂(g) at STP react with 11.2 L of O₂(g) at STP?</div>
+<div class="answer-area"><input type="text" id="q8-input" placeholder="L..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q8', 22.4)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Volume ratio at same P, T equals mole ratio (Avogadro's law). H₂:O₂ = 2:1 → 22.4 L H₂ : 11.2 L O₂.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Atmospheric Chemistry</div>
+
+<div class="question-card" id="q9">
+<div class="q-number">Question 9</div>
+<div class="q-text">Which gas is the primary greenhouse gas of human concern (anthropogenic)?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q9" value="a"> O₂</label></li>
+<li><label><input type="radio" name="q9" value="b"> N₂</label></li>
+<li><label><input type="radio" name="q9" value="c"> CO₂</label></li>
+<li><label><input type="radio" name="q9" value="d"> Ar</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q9','c')">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>CO₂ is the dominant <em>anthropogenic</em> greenhouse-gas driver (rising from ~280 ppm pre-industrial to over 420 ppm today).</div>
+</div>
+
+<div class="question-card" id="q10">
+<div class="q-number">Question 10</div>
+<div class="q-text">Stratospheric ozone is destroyed catalytically by:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> CO₂</label></li>
+<li><label><input type="radio" name="q10" value="b"> Cl atoms (from CFCs)</label></li>
+<li><label><input type="radio" name="q10" value="c"> H₂O</label></li>
+<li><label><input type="radio" name="q10" value="d"> NaCl</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>UV-released Cl atoms from CFCs catalyze O₃ → O₂. One Cl can destroy thousands of O₃ molecules. Banned under the Montreal Protocol (1987).</div>
+</div>
+
+<div class="question-card" id="q11">
+<div class="q-number">Question 11</div>
+<div class="q-text">Major precursors to acid rain are:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q11" value="a"> CO₂ and H₂O</label></li>
+<li><label><input type="radio" name="q11" value="b"> SO₂ and NO_x</label></li>
+<li><label><input type="radio" name="q11" value="c"> CH₄ and N₂</label></li>
+<li><label><input type="radio" name="q11" value="d"> CFCs and Cl₂</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q11','b')">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>SO₂ (from coal/metal smelting) → H₂SO₄; NO_x (from combustion) → HNO₃.</div>
+</div>
+
+<div class="question-card" id="q12">
+<div class="q-number">Question 12</div>
+<div class="q-text">Atmospheric CO₂ is currently approximately:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q12" value="a"> 4 ppm</label></li>
+<li><label><input type="radio" name="q12" value="b"> 42 ppm</label></li>
+<li><label><input type="radio" name="q12" value="c"> 420 ppm</label></li>
+<li><label><input type="radio" name="q12" value="d"> 4200 ppm</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q12','c')">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>Pre-industrial ~280 ppm; today ~<strong>420 ppm</strong> (rising ~2.5 ppm/yr).</div>
+</div>
+</div>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand F: Gases &amp; Atmospheric Chemistry | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Not quite. See solution below.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<Math.max(0.1,Math.abs(c)*0.03)){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ The correct answer is ${c}. See solution below.`;}sl.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Modular Programming and Data Structures — Practice Quiz</title>
+<style>
+:root{--p:#059669;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#d1fae5;border:1px solid #6ee7b7;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128187; Unit 3: Modular Programming and Data Structures &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test your understanding of functions, parameters, scope, lists, and string methods. Instant feedback. Python 3 throughout.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 &mdash; Function output</div>
+<div class="qt">What does this print?
+<div class="code">def square(x):
+    return x * x
+
+print(square(7))</div>
+</div>
+<input type="text" id="q1-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q1','49')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div><code>square(7)</code> returns <code>7 * 7 = 49</code>. <code>print</code> shows <strong>49</strong>.</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 &mdash; <code>return</code> vs <code>print</code></div>
+<div class="qt">What does <code>x</code> contain afterwards?
+<div class="code">def greet(name):
+    print("Hello", name)
+
+x = greet("Ada")
+print(x)</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> "Hello Ada"</label></li>
+<li><label><input type="radio" name="q2" value="b"> None</label></li>
+<li><label><input type="radio" name="q2" value="c"> "Ada"</label></li>
+<li><label><input type="radio" name="q2" value="d"> A TypeError occurs.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>The function prints, but does NOT <code>return</code> anything. Python implicitly returns <code>None</code>, so <code>x = None</code>. Output: "Hello Ada" then <strong>None</strong>.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 &mdash; List indexing</div>
+<div class="qt">What is the value of <code>scores[-1]</code> when <code>scores = [80, 75, 92, 67]</code>?</div>
+<input type="text" id="q3-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q3','67')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>Negative indices count from the end. <code>scores[-1]</code> is the last element: <strong>67</strong>.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 &mdash; List slicing</div>
+<div class="qt">What is <code>nums[1:4]</code> when <code>nums = [10, 20, 30, 40, 50]</code>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> [10, 20, 30, 40]</label></li>
+<li><label><input type="radio" name="q4" value="b"> [20, 30, 40]</label></li>
+<li><label><input type="radio" name="q4" value="c"> [20, 30, 40, 50]</label></li>
+<li><label><input type="radio" name="q4" value="d"> [10, 20, 30]</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>Slice <code>[start:stop]</code> is start-inclusive, stop-exclusive. Indices 1, 2, 3 are 20, 30, 40. Answer: <strong>[20, 30, 40]</strong>.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 &mdash; Local vs global</div>
+<div class="qt">What is printed?
+<div class="code">x = 100
+def f():
+    x = 5
+    print(x)
+f()
+print(x)</div>
+</div>
+<input type="text" id="q5-in" placeholder="two numbers separated by space">
+<button class="btn btn-p" onclick="chkText('q5','5 100')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>Inside <code>f</code>, the assignment <code>x = 5</code> creates a LOCAL <code>x</code>, separate from the global. Prints <strong>5</strong> inside, then <strong>100</strong> outside.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 &mdash; List <code>append</code></div>
+<div class="qt">After <code>nums = [1, 2]; nums.append(3); print(nums)</code>, what is shown?</div>
+<input type="text" id="q6-in" placeholder="e.g. [1, 2, 3]">
+<button class="btn btn-p" onclick="chkText('q6','[1, 2, 3]')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div><code>.append(3)</code> adds 3 to the end. Output: <strong>[1, 2, 3]</strong>.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 &mdash; String method</div>
+<div class="qt">What does <code>"Hello World".lower().split()</code> return?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> ["hello", "world"]</label></li>
+<li><label><input type="radio" name="q7" value="b"> ["Hello", "World"]</label></li>
+<li><label><input type="radio" name="q7" value="c"> "hello world"</label></li>
+<li><label><input type="radio" name="q7" value="d"> "Hello World"</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','a')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div><code>.lower()</code> returns "hello world", then <code>.split()</code> with no argument splits on whitespace. Result: <strong>['hello', 'world']</strong>.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 &mdash; Default parameter</div>
+<div class="qt">What does <code>greet("Bob")</code> return?
+<div class="code">def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"</div>
+</div>
+<input type="text" id="q8-in" placeholder="exact string">
+<button class="btn btn-p" onclick="chkText('q8','Hello, Bob!')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Because no second argument is passed, <code>greeting</code> takes its default value <code>"Hello"</code>. Returns <strong>Hello, Bob!</strong>.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 &mdash; Aliasing trap</div>
+<div class="qt">What is printed?
+<div class="code">a = [1, 2, 3]
+b = a
+b.append(4)
+print(a)</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> [1, 2, 3]</label></li>
+<li><label><input type="radio" name="q9" value="b"> [1, 2, 3, 4]</label></li>
+<li><label><input type="radio" name="q9" value="c"> [4, 1, 2, 3]</label></li>
+<li><label><input type="radio" name="q9" value="d"> Error — b is not defined.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div><code>b = a</code> does NOT copy &mdash; both names refer to the same list. <code>b.append(4)</code> modifies the shared list, so <code>a</code> sees the change too: <strong>[1, 2, 3, 4]</strong>.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 &mdash; Multiple return</div>
+<div class="qt">What is printed?
+<div class="code">def stats(nums):
+    return min(nums), max(nums)
+
+lo, hi = stats([4, 9, 1, 6, 3])
+print(lo, hi)</div>
+</div>
+<input type="text" id="q10-in" placeholder="two numbers">
+<button class="btn btn-p" onclick="chkText('q10','1 9')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>The function returns a tuple <code>(1, 9)</code>. Unpacking sets <code>lo=1, hi=9</code>. Printed: <strong>1 9</strong>.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 &mdash; Write a function body</div>
+<div class="qt">Complete the function. (Type the missing single line.)
+<div class="code">def is_even(n):
+    ______________________</div>
+</div>
+<input type="text" id="q11-in" placeholder="return ...">
+<button class="btn btn-p" onclick="chkContains('q11',['return n%2==0','return n % 2 == 0','return not n%2'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div><code>return n % 2 == 0</code>. The function returns <code>True</code> if n is even, <code>False</code> otherwise.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 &mdash; List length</div>
+<div class="qt">What does <code>len([1, [2, 3], 4, 5])</code> return?</div>
+<input type="text" id="q12-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q12','4')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>The list has 4 top-level elements: <code>1</code>, the sublist <code>[2, 3]</code>, <code>4</code>, and <code>5</code>. <code>len</code> counts top-level elements only: <strong>4</strong>.</div></div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 3: Modular Programming and Data Structures | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector('input[name="'+q+'"]:checked');if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}if(sl)sl.classList.add('show');up();}
+function chkText(q,c){const v=document.getElementById(q+'-in').value.trim();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}if(sl)sl.classList.add('show');up();}
+function chkContains(q,acceptable){const v=document.getElementById(q+'-in').value.trim().toLowerCase();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;const norm=v.replace(/\s+/g,'');const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

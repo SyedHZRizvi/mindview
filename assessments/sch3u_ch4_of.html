@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 4: Solutions & Solubility — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 4: Solutions and Solubility</h1><div class="sub">Assessment OF Learning — Unit Test</div><div class="badge">✅ Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work. Solubility-rules card and periodic table permitted.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Classify each as soluble or insoluble in water at room temperature (use solubility rules): (a) NaCl; (b) AgCl; (c) BaSO₄; (d) KNO₃; (e) PbI₂; (f) CaCO₃.</div>
+<textarea placeholder="Classify each..."></textarea>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Concentration of a solution prepared by dissolving 4.00 g of NaOH (M=40.00) in water to make 500.0 mL of solution.</div>
+<input type="text" id="q2-in" placeholder="mol/L...">
+<button class="btn btn-p" onclick="chkNum('q2',0.200)">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>n = 4.00/40.00 = 0.100 mol; c = 0.100/0.500 = <strong>0.200 mol/L</strong>.</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Calculate the [H⁺] and pH of 0.025 mol/L HNO₃.</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A solution is prepared by dissolving 8.00 g of CaCl₂ (M=110.98) in enough water to make 250.0 mL. State its mass-volume percent and its molar concentration.</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Why does opening a warm bottle of soda fizz more than opening a cold one?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Cold gases are more soluble; warming forces CO₂ out</label></li>
+<li><label><input type="radio" name="q5" value="b"> Warm gas exerts more pressure on the closed bottle</label></li>
+<li><label><input type="radio" name="q5" value="c"> Both (a) and (b)</label></li>
+<li><label><input type="radio" name="q5" value="d"> Neither — temperature doesn't matter</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','c')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>(c) — both: (a) gas solubility drops with T; (b) gas pressure rises with T.</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Define: (a) saturated solution; (b) parts per million (ppm).</div>
+<textarea placeholder="Define..."></textarea>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [15 marks]</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A student titrates 20.00 mL of unknown HCl with 0.1500 mol/L NaOH. The endpoint is reached after delivering 17.85 mL of NaOH. Calculate (a) moles of HCl, (b) concentration of HCl, (c) pH of the unknown HCl.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Describe how to prepare 250.0 mL of 0.100 mol/L NaOH from solid pellets (M=40.00). Include the masses, volumes, glassware, and key safety precautions.</div>
+<textarea placeholder="Write the procedure..."></textarea>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Concentrated H₂SO₄ is 18.0 mol/L. Describe step-by-step how to prepare 500.0 mL of 1.00 mol/L H₂SO₄. List safety precautions explicitly.</div>
+<textarea placeholder="Write the procedure..."></textarea>
+</div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain the difference between "concentrated" and "saturated". Use an example.</div>
+<textarea placeholder="Write clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Sketch a typical solubility curve for KNO₃ in water. Mark a point representing an unsaturated, a saturated, and a supersaturated solution. Briefly explain each.</div>
+<textarea placeholder="Describe the curve..."></textarea>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Why does a strong-acid + strong-base titration produce a neutral salt + water mixture? Compare to a weak-acid + strong-base titration (e.g., CH₃COOH + NaOH), where the resulting solution is slightly basic. Explain the difference.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Why is "always add acid to water" a critical lab safety rule when diluting concentrated acids?</div>
+<textarea placeholder="Explain..."></textarea>
+</div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Lead concentrations in drinking water are sometimes reported as 0.010 ppm. Convert this to (a) μg/L; (b) mol/L (M(Pb)=207.2 g/mol).</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A drug dosage is 0.5 mg per kg body mass. A 65-kg adult takes the medication twice daily in 250-mL solutions. (a) What total mass of drug is taken daily? (b) What is the concentration in mg/L of each dose?</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A 25.00 mL sample of an unknown KOH solution requires 12.40 mL of 0.250 mol/L HCl to reach equivalence. Calculate the concentration of KOH and the mass of KOH that was dissolved (M=56.11).</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Acid rain has pH around 4.0. Compare its [H⁺] to that of normal rain (pH ~5.6). Discuss one environmental consequence.</div>
+<textarea placeholder="Compute and discuss..."></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<details style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
+<div class="sol show">
+<p><strong>Q1.</strong> Soluble: NaCl, KNO₃ (Group 1 / nitrates). Insoluble: AgCl, BaSO₄, PbI₂, CaCO₃.</p>
+<p><strong>Q2.</strong> 0.200 mol/L.</p>
+<p><strong>Q3.</strong> [H⁺] = 0.025 mol/L; pH = −log(0.025) = 1.60.</p>
+<p><strong>Q4.</strong> %m/v: 8.00/250 × 100 = 3.20%. Molar: n = 8.00/110.98 = 0.0721 mol; c = 0.0721/0.250 = 0.288 mol/L.</p>
+<p><strong>Q5.</strong> (c).</p>
+<p><strong>Q6.</strong> (a) Saturated = solution at maximum solubility for given T; in dynamic equilibrium with undissolved solid. (b) ppm = mg solute / kg solvent (or mg/L for dilute aq.).</p>
+<p><strong>Q7.</strong> n(NaOH) = 0.1500 × 0.01785 = 2.678×10⁻³ mol = n(HCl); c(HCl) = 2.678×10⁻³/0.02000 = 0.1339 mol/L; pH = −log(0.1339) = 0.873.</p>
+<p><strong>Q8.</strong> Mass NaOH = 0.250 L × 0.100 mol/L × 40.00 g/mol = 1.00 g. Weigh 1.00 g NaOH on analytical balance (wear gloves — corrosive). Transfer to 250.0 mL volumetric flask; add ~150 mL distilled water; swirl until dissolved; dilute to the etched mark; invert to mix. Safety: NaOH is caustic — goggles + gloves; never inhale dust.</p>
+<p><strong>Q9.</strong> V₁ = c₂V₂/c₁ = (1.00)(0.500)/18.0 = 0.0278 L = 27.8 mL. Procedure: Place ~300 mL distilled water in 500-mL volumetric flask. Wear goggles, gloves, lab coat. Slowly pipette 27.8 mL of 18.0 mol/L H₂SO₄ <em>into</em> the water (releases heat; never reverse). Swirl while adding. Cool, then dilute to mark. Safety: concentrated H₂SO₄ is highly corrosive and exothermic in water.</p>
+<p><strong>Q10.</strong> Concentrated = high solute concentration; saturated = at solubility limit. A 1 mol/L HCl is concentrated but unsaturated (HCl is very soluble). A 36 g/100 g NaCl is saturated but not very concentrated.</p>
+<p><strong>Q11.</strong> Curve slopes upward; KNO₃ ~32 g at 20 °C, ~110 g at 60 °C. Unsaturated: point BELOW curve. Saturated: point ON curve. Supersaturated: point ABOVE curve (prepared by cooling carefully).</p>
+<p><strong>Q12.</strong> SA+SB: resulting salt has neither H⁺ nor OH⁻ tendency → pH ≈ 7. WA+SB: salt of weak acid hydrolyzes (e.g., CH₃COO⁻ + H₂O ⇌ CH₃COOH + OH⁻) → solution slightly basic.</p>
+<p><strong>Q13.</strong> Acid dilution releases substantial heat; if water is added to acid, the dense acid pools below splashing droplets that flash-boil and spray. Adding acid to a larger volume of water dissipates heat safely.</p>
+<p><strong>Q14.</strong> (a) 0.010 ppm = 0.010 mg/L = 10 μg/L. (b) c = 0.010×10⁻³ g/L ÷ 207.2 g/mol = 4.8 × 10⁻⁸ mol/L.</p>
+<p><strong>Q15.</strong> Dose = 0.5 × 65 = 32.5 mg per dose. Daily = 65 mg. Each dose = 32.5 mg/0.250 L = 130 mg/L.</p>
+<p><strong>Q16.</strong> n(HCl) = 0.250 × 0.01240 = 3.10×10⁻³ mol = n(KOH). c(KOH) = 3.10×10⁻³/0.02500 = 0.124 mol/L. Mass dissolved = 3.10×10⁻³ × 56.11 = 0.174 g (in the 25.00 mL sample).</p>
+<p><strong>Q17.</strong> Acid rain [H⁺] = 10⁻⁴ = 1.0×10⁻⁴ mol/L. Normal rain [H⁺] = 10⁻⁵·⁶ ≈ 2.5×10⁻⁶ mol/L. Ratio ≈ 40×. Consequence: acidifies lakes (kills fish), leaches Al³⁺ from soil, damages forests, corrodes statues/buildings.</p>
+</div>
+</details>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand E: Solutions and Solubility | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(0.01,Math.abs(c)*0.03)){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+</script>
+</body>
+</html>

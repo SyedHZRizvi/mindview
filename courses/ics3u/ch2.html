@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS3U — Introduction to Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS3U Introduction to Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 11 University Preparation</div>
+    <h1>💻 ICS3U: Unit 2: Control Flow and Logic</h1>
+    <p>Comparison and logical operators, <code>if</code>/<code>elif</code>/<code>else</code>, <code>while</code> and <code>for</code> loops, nested constructs, Boolean expressions</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+            <h2>Unit 2: Control Flow and Logic</h2>
+            <p>Comparison and logical operators, <code>if</code>/<code>elif</code>/<code>else</code>, <code>while</code> and <code>for</code> loops, nested constructs, Boolean expressions</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand A2 (Control Structures) &middot; Strand A1 (Boolean)</span>
+                <span>&#9201;&#65039; ~24 hours</span>
+                <span>&#128221; 5 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 &mdash; Comparison Operators and Boolean Expressions</div>
+            <div class="topic-desc">The six comparison operators (<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>); how a comparison produces a <code>bool</code>; chained comparisons</div>
+            <div class="code-snip"><span class="com"># Every comparison evaluates to True or False</span>
+<span class="kw">print</span>(<span class="num">5</span> &gt; <span class="num">3</span>)         <span class="com"># True</span>
+<span class="kw">print</span>(<span class="num">10</span> == <span class="num">10.0</span>)    <span class="com"># True  — int and float compare by value</span>
+<span class="kw">print</span>(<span class="str">"abc"</span> &lt; <span class="str">"abd"</span>)  <span class="com"># True  — lexicographic order</span>
+<span class="kw">print</span>(<span class="num">1</span> &lt; <span class="num">5</span> &lt; <span class="num">10</span>)     <span class="com"># True  — Python allows chained comparisons</span>
+<span class="kw">print</span>(<span class="num">5</span> != <span class="num">6</span>)         <span class="com"># True</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>Boolean expression</strong> is any expression that evaluates to one of the two values <code>True</code> or <code>False</code>. Comparison operators are the most direct way to produce a Boolean. Python has six: <code>==</code> (equal), <code>!=</code> (not equal), <code>&lt;</code> (less than), <code>&lt;=</code> (less than or equal), <code>&gt;</code> (greater than), and <code>&gt;=</code> (greater than or equal). These look very similar to ordinary mathematics, with one critical difference: <code>=</code> alone is assignment, not comparison. A common beginner mistake is writing <code>if x = 5</code> when they meant <code>if x == 5</code>; Python flags this as a syntax error (some other languages, like C, silently turn it into a hidden bug).</p>
+                <p>Comparisons work on any types where comparison makes sense. Numbers compare by value: <code>5 == 5.0</code> is <code>True</code> even though one is an <code>int</code> and the other a <code>float</code>. Strings compare in <strong>lexicographic order</strong>, which is dictionary order based on Unicode code points: <code>"apple" &lt; "banana"</code> is <code>True</code>, and <code>"Z" &lt; "a"</code> is <code>True</code> because uppercase letters come before lowercase ones in Unicode. Comparing across unrelated types (a number and a string, for instance) raises a <code>TypeError</code> in Python 3.</p>
+                <p>Python supports a feature that many other languages do not: <strong>chained comparisons</strong>. <code>1 &lt; x &lt; 10</code> means "<code>x</code> is between 1 and 10 exclusively". This reads like mathematics and is equivalent to <code>1 &lt; x and x &lt; 10</code>, but the chained form is more concise and Python evaluates <code>x</code> only once. In Java or C, you must write the explicit <code>and</code> form. Chained comparisons compose: <code>a &lt; b &lt; c &lt; d</code> works as expected.</p>
+                <ul>
+                  <li><strong>Boolean expression</strong> &mdash; any expression that yields <code>True</code> or <code>False</code>.</li>
+                  <li><strong>Comparison operator</strong> &mdash; one of <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>.</li>
+                  <li><strong>Equality (<code>==</code>)</strong> &mdash; tests whether two values are equal.</li>
+                  <li><strong>Inequality (<code>!=</code>)</strong> &mdash; tests whether two values are unequal.</li>
+                  <li><strong>Lexicographic order</strong> &mdash; dictionary-style comparison based on character codes.</li>
+                  <li><strong>Chained comparison</strong> &mdash; combining multiple comparisons in one expression (Python-specific).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; evaluating Boolean expressions</p>
+<pre><code>x = 7
+y = 3
+
+print(x == y)        # False
+print(x != y)        # True
+print(x &gt;= y * 2)    # True  — 7 &gt;= 6
+print(0 &lt; x &lt; 10)    # True  — chained
+print("hi" == "Hi")  # False — case-sensitive</code></pre>
+                  <p>Each expression evaluates in O(1) time. Comparing strings is technically O(n) in the length of the shorter string, but the strings here are short. Notice that <code>"hi" == "Hi"</code> is <code>False</code>: string comparison is case-sensitive. If you want case-insensitive comparison, lowercase both sides first: <code>a.lower() == b.lower()</code>.</p>
+                </div>
+                <ul>
+                  <li>Using <code>=</code> instead of <code>==</code> in a condition &mdash; syntax error in Python, logic bug in C/Java.</li>
+                  <li>Comparing floats with <code>==</code> after arithmetic &mdash; rounding can make <code>0.1 + 0.2 == 0.3</code> evaluate to <code>False</code>. Use a tolerance.</li>
+                  <li>Comparing different types: <code>"5" &lt; 6</code> raises <code>TypeError</code> in Python 3.</li>
+                  <li>Forgetting case-sensitivity of string comparison.</li>
+                  <li>Confusing <code>!=</code> with <code>=!</code> (the second is not a valid operator).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 &mdash; "apply Boolean expressions (comparison and logical operators) to control program flow".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt6')"><span class="vid-icon">📖</span><span class="vid-title">Python Conditionals and Booleans &mdash; If, Else, and Elif Statements &mdash; Corey Schafer</span><span class="vid-duration">17:18</span><span class="vid-toggle" id="toggle-ics3-yt6">▶</span></div><div class="video-player" id="player-ics3-yt6"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/DZwmZ8Usvnk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=DZwmZ8Usvnk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 &mdash; Logical Operators: <code>and</code>, <code>or</code>, <code>not</code></div>
+            <div class="topic-desc">Combining Boolean expressions; truth tables; short-circuit evaluation; De Morgan's laws</div>
+            <div class="code-snip"><span class="com"># Combining Boolean expressions with and / or / not</span>
+<span class="kw">age</span>     = <span class="num">17</span>
+<span class="kw">has_id</span>  = <span class="kw">True</span>
+
+<span class="kw">can_vote</span>   = age &gt;= <span class="num">18</span> <span class="kw">and</span> has_id
+<span class="kw">teen</span>       = <span class="num">13</span> &lt;= age &lt;= <span class="num">19</span>
+<span class="kw">non_teen</span>   = <span class="kw">not</span> teen
+<span class="kw">need_help</span>  = age &lt; <span class="num">8</span> <span class="kw">or</span> age &gt;= <span class="num">80</span>
+
+<span class="kw">print</span>(can_vote, teen, non_teen, need_help)
+<span class="com"># False True False False</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Logical operators</strong> let you combine Boolean expressions to express more complex conditions. Python uses the keywords <code>and</code>, <code>or</code>, and <code>not</code> &mdash; in Java they are written as <code>&amp;&amp;</code>, <code>||</code>, and <code>!</code>. The behaviour is captured by a <strong>truth table</strong>: <code>A and B</code> is <code>True</code> only when both <code>A</code> and <code>B</code> are <code>True</code>; <code>A or B</code> is <code>True</code> when at least one is <code>True</code>; <code>not A</code> flips the value. These are the building blocks of every conditional in every program.</p>
+                <p>Python uses <strong>short-circuit evaluation</strong>: in <code>A and B</code>, if <code>A</code> is false, <code>B</code> is never evaluated; in <code>A or B</code>, if <code>A</code> is true, <code>B</code> is never evaluated. This is not just an optimisation; it lets you write guards like <code>if y != 0 and x / y &gt; 5</code> without crashing on division by zero when <code>y</code> is zero. Short-circuit evaluation also means the order of operands matters in subtle ways &mdash; put the cheap, deciding test first.</p>
+                <p><strong>De Morgan's laws</strong> are essential for simplifying negated compound conditions. They state: <code>not (A and B)</code> is equivalent to <code>(not A) or (not B)</code>; and <code>not (A or B)</code> is equivalent to <code>(not A) and (not B)</code>. So "not (full and clean)" becomes "empty or dirty". Applying De Morgan's laws by hand is a frequent topic on Grade-11 tests and a real skill in reading complex Boolean code.</p>
+                <ul>
+                  <li><strong>Logical operator</strong> &mdash; <code>and</code>, <code>or</code>, <code>not</code> &mdash; combine Booleans.</li>
+                  <li><strong>Truth table</strong> &mdash; a table listing the result for every combination of operand values.</li>
+                  <li><strong>Short-circuit evaluation</strong> &mdash; the second operand of <code>and</code>/<code>or</code> is skipped when the first determines the result.</li>
+                  <li><strong>De Morgan's laws</strong> &mdash; rules for distributing <code>not</code> across <code>and</code>/<code>or</code>.</li>
+                  <li><strong>Operator precedence</strong> &mdash; <code>not</code> binds tightest, then <code>and</code>, then <code>or</code>.</li>
+                  <li><strong>Truthy / falsy</strong> &mdash; non-Boolean values used in a Boolean context (e.g., <code>0</code>, <code>""</code>, <code>None</code>, <code>[]</code> are falsy; almost everything else is truthy).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; truth table for an admission-rules expression</p>
+<pre><code># "You may enter if you are at least 18, OR if you are at least 16 with a guardian."
+def can_enter(age, has_guardian):
+    return age &gt;= 18 or (age &gt;= 16 and has_guardian)
+
+print(can_enter(20, False))   # True  — 20 &gt;= 18
+print(can_enter(16, True))    # True  — 16+ with guardian
+print(can_enter(16, False))   # False
+print(can_enter(15, True))    # False — too young even with guardian</code></pre>
+                  <p>The parentheses around <code>age &gt;= 16 and has_guardian</code> are not strictly required because <code>and</code> binds tighter than <code>or</code>, but they make the intent obvious. Each call runs in O(1). Studying the four results above gives a small truth table that documents the rule.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; applying De Morgan's laws</p>
+<pre><code>raining = True
+windy   = False
+
+# Original
+print(not (raining and windy))    # True
+
+# After De Morgan's
+print((not raining) or (not windy))  # True — same answer</code></pre>
+                  <p>The two expressions are logically equivalent for <em>all</em> inputs. Knowing this lets you simplify conditions: <code>not (x &gt; 5 and y &gt; 5)</code> can be rewritten as <code>x &lt;= 5 or y &lt;= 5</code>, which some readers find clearer.</p>
+                </div>
+                <ul>
+                  <li>Writing <code>x == 1 or 2 or 3</code> meaning "x is 1, 2, or 3" &mdash; this is a serious bug. <code>2</code> on its own is truthy, so the whole expression is always <code>True</code>. Write <code>x == 1 or x == 2 or x == 3</code>, or better <code>x in (1, 2, 3)</code>.</li>
+                  <li>Forgetting precedence: <code>a or b and c</code> is <code>a or (b and c)</code>, not <code>(a or b) and c</code>. Use parentheses if unsure.</li>
+                  <li>Using <code>&amp;</code> or <code>|</code> (bitwise operators) instead of <code>and</code>/<code>or</code> &mdash; they sometimes give the same answer on plain Booleans but behave differently on numbers.</li>
+                  <li>Negating a complex condition without applying De Morgan's laws &mdash; easy to invert the wrong operator.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 &mdash; "apply Boolean expressions (comparison and logical operators) to control program flow, including short-circuit evaluation".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt7')"><span class="vid-icon">📖</span><span class="vid-title">Boolean Logic &amp; Logic Gates &mdash; Crash Course Computer Science #3</span><span class="vid-duration">10:07</span><span class="vid-toggle" id="toggle-ics3-yt7">▶</span></div><div class="video-player" id="player-ics3-yt7"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/gI-qXk7XojA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=gI-qXk7XojA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 &mdash; Selection: <code>if</code>, <code>elif</code>, <code>else</code></div>
+            <div class="topic-desc">One-branch <code>if</code>; two-branch <code>if</code>/<code>else</code>; multi-branch <code>if</code>/<code>elif</code>/<code>else</code>; indentation as syntax</div>
+            <div class="code-snip"><span class="com"># Letter-grade classifier (Ontario Achievement Chart)</span>
+<span class="kw">def</span> letter_grade(percent):
+    <span class="kw">if</span>   percent &gt;= <span class="num">80</span>: <span class="kw">return</span> <span class="str">"Level 4"</span>
+    <span class="kw">elif</span> percent &gt;= <span class="num">70</span>: <span class="kw">return</span> <span class="str">"Level 3"</span>
+    <span class="kw">elif</span> percent &gt;= <span class="num">60</span>: <span class="kw">return</span> <span class="str">"Level 2"</span>
+    <span class="kw">elif</span> percent &gt;= <span class="num">50</span>: <span class="kw">return</span> <span class="str">"Level 1"</span>
+    <span class="kw">else</span>:                <span class="kw">return</span> <span class="str">"R"</span>
+
+<span class="kw">print</span>(letter_grade(<span class="num">85</span>))   <span class="com"># Level 4</span>
+<span class="kw">print</span>(letter_grade(<span class="num">55</span>))   <span class="com"># Level 1</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Selection</strong> &mdash; choosing which branch of code to run &mdash; is one of the three pillars of structured programming alongside sequence and iteration. The simplest form is a one-branch <code>if</code>: "do this only if the condition is true". The <code>else</code> clause adds a fallback branch: "otherwise do this". The <code>elif</code> clause (short for "else if") chains additional conditions; an <code>if</code>/<code>elif</code>/<code>else</code> chain is <em>mutually exclusive</em>, meaning at most one branch executes, and they are checked top to bottom. Once a condition is true, the corresponding branch runs and the rest are skipped.</p>
+                <p>The <strong>order of conditions matters</strong>. In a letter-grade chain, you must check <code>&gt;= 80</code> before <code>&gt;= 70</code>: every grade of 85 also satisfies <code>&gt;= 70</code>, so if that branch came first every passing student would be classified as Level 3. Write the most restrictive condition first, or use disjoint conditions like <code>70 &lt;= percent &lt; 80</code>. Tracing through example inputs by hand is the easiest way to verify your chain is right.</p>
+                <p>In Python, the body of each branch is identified by <strong>indentation</strong>. Indenting a line by 4 spaces marks it as inside the <code>if</code>; outdenting marks the next statement as outside. This is not just convention &mdash; it is part of the language syntax. Java, C, and JavaScript use curly braces <code>{ }</code> for the same purpose. Either way, the principle is the same: a control structure has a <em>body</em>, and the body is grouped together.</p>
+                <ul>
+                  <li><strong>Selection</strong> &mdash; choosing among alternative code paths based on a condition.</li>
+                  <li><strong>If statement</strong> &mdash; runs its body when the condition is true.</li>
+                  <li><strong>Else clause</strong> &mdash; runs when the <code>if</code> condition is false.</li>
+                  <li><strong>Elif clause</strong> &mdash; chains another condition after a failed <code>if</code>.</li>
+                  <li><strong>Mutually exclusive</strong> &mdash; only one branch of the chain runs.</li>
+                  <li><strong>Block</strong> &mdash; the indented body of a control structure.</li>
+                  <li><strong>Nested if</strong> &mdash; an <code>if</code> inside another <code>if</code>'s body.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; classifying triangles</p>
+<pre><code>def triangle_type(a, b, c):
+    if a == b == c:
+        return "equilateral"
+    elif a == b or b == c or a == c:
+        return "isosceles"
+    else:
+        return "scalene"
+
+print(triangle_type(5, 5, 5))   # equilateral
+print(triangle_type(3, 4, 4))   # isosceles
+print(triangle_type(3, 4, 5))   # scalene</code></pre>
+                  <p>The chained comparison <code>a == b == c</code> is true only when all three are equal. The order of the chain is important: equilateral must come before isosceles, because every equilateral triangle is also (technically) isosceles. The function is O(1) regardless of the side lengths.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; input validation</p>
+<pre><code>age_str = input("Enter age: ")
+
+if not age_str.isdigit():
+    print("Error: age must be a non-negative whole number.")
+elif int(age_str) &gt; 130:
+    print("Error: that age is implausible.")
+else:
+    age = int(age_str)
+    print(f"You are {age} years old.")</code></pre>
+                  <p>The <code>elif</code> branch only runs when the first check passed, so we know <code>int(age_str)</code> will not crash. This is a good template for any program that takes user input: validate before computing.</p>
+                </div>
+                <ul>
+                  <li>Using <code>elif</code> when the conditions are not mutually exclusive &mdash; results in silently-skipped branches.</li>
+                  <li>Putting the most general condition first (<code>if percent &gt;= 50</code> before <code>if percent &gt;= 80</code>) &mdash; classic order bug.</li>
+                  <li>Forgetting the colon at the end of <code>if</code>/<code>elif</code>/<code>else</code> &mdash; <code>SyntaxError</code>.</li>
+                  <li>Mixing tabs and spaces &mdash; <code>IndentationError</code> or, worse, code that runs but does the wrong thing.</li>
+                  <li>Writing <code>if x == 1 or 2:</code> when you mean <code>if x == 1 or x == 2:</code> (the former is always true).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 &mdash; "use the three structured-programming control structures &mdash; sequence, selection, and iteration &mdash; to write modular code".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt8')"><span class="vid-icon">📖</span><span class="vid-title">Python for Beginners &mdash; If, Elif, Else &mdash; Programming with Mosh</span><span class="vid-duration">5:09</span><span class="vid-toggle" id="toggle-ics3-yt8">▶</span></div><div class="video-player" id="player-ics3-yt8"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/f4KOjWS_KZs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=f4KOjWS_KZs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 &mdash; Iteration: <code>while</code> and <code>for</code> Loops</div>
+            <div class="topic-desc">When to use each loop; <code>range()</code>; the accumulator pattern; sentinel-controlled loops; the <code>break</code> statement</div>
+            <div class="code-snip"><span class="com"># Two ways to sum the numbers 1..100</span>
+<span class="com"># Using a for loop with range</span>
+<span class="kw">total</span> = <span class="num">0</span>
+<span class="kw">for</span> i <span class="kw">in</span> range(<span class="num">1</span>, <span class="num">101</span>):
+    total += i
+<span class="kw">print</span>(total)        <span class="com"># 5050  (Gauss's sum)</span>
+
+<span class="com"># Using a while loop with an explicit counter</span>
+<span class="kw">total</span>, i = <span class="num">0</span>, <span class="num">1</span>
+<span class="kw">while</span> i &lt;= <span class="num">100</span>:
+    total += i
+    i += <span class="num">1</span>
+<span class="kw">print</span>(total)        <span class="com"># 5050</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Iteration</strong> &mdash; repeating a block of code &mdash; is what makes a computer dramatically more powerful than a calculator. Python has two main loop constructs: <code>for</code> and <code>while</code>. A <strong><code>for</code> loop</strong> iterates over a known sequence: a list, a string, a file, or a <code>range(start, stop, step)</code>. The loop variable takes on each value in turn. A <strong><code>while</code> loop</strong> continues as long as a Boolean condition remains true, and is used when you don't know in advance how many iterations are needed (reading user input until they type "quit", waiting for a network response, etc.).</p>
+                <p>The <strong>accumulator pattern</strong> is the most common loop idiom: initialise a result variable outside the loop, update it inside the loop, and use it after the loop. The accumulator may be a number (sum, product, count, max-so-far), a Boolean (any/all), a string, or a list. Recognising this pattern lets you translate plain-English questions ("how many students passed?") into code almost mechanically.</p>
+                <p>A <strong>sentinel-controlled loop</strong> is a <code>while</code> idiom where a special "stop" value (such as <code>"quit"</code>, <code>-1</code>, or empty string) ends the loop. The sentinel must be something that could not appear as legitimate data. The <code>break</code> statement exits the nearest enclosing loop immediately; it is useful for early exit when a search succeeds. Avoid <code>break</code> in deeply nested code &mdash; it can make the flow hard to follow.</p>
+                <ul>
+                  <li><strong>Loop</strong> &mdash; a control structure that repeats its body.</li>
+                  <li><strong>Loop body</strong> &mdash; the indented block that repeats.</li>
+                  <li><strong>Loop variable</strong> &mdash; the variable that changes each iteration.</li>
+                  <li><strong>Counter-controlled loop</strong> &mdash; a loop that runs a known number of times (<code>for i in range(...)</code>).</li>
+                  <li><strong>Conditional loop</strong> &mdash; a loop controlled by a Boolean test (<code>while</code>).</li>
+                  <li><strong>Accumulator pattern</strong> &mdash; a variable that builds up a result across iterations.</li>
+                  <li><strong>Sentinel</strong> &mdash; a special value that signals the end of input.</li>
+                  <li><strong>Off-by-one error</strong> &mdash; looping one too few or one too many times (<code>range(n)</code> vs <code>range(n+1)</code>).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; finding the largest number entered</p>
+<pre><code># Sentinel-controlled while loop using -1 to stop.
+largest = None
+
+while True:
+    s = input("Enter a positive number (-1 to finish): ")
+    n = int(s)
+    if n == -1:
+        break
+    if largest is None or n &gt; largest:
+        largest = n
+
+if largest is None:
+    print("No numbers entered.")
+else:
+    print(f"The largest was {largest}.")</code></pre>
+                  <p>The <code>while True</code> with a <code>break</code> is a common idiom for "loop until told to stop". The accumulator (<code>largest</code>) starts at <code>None</code> rather than 0 because we need to handle the case where no numbers are entered. Each iteration does O(1) work; the total runtime is O(n) where n is the number of values entered.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; counting vowels in a string</p>
+<pre><code>def count_vowels(text):
+    vowels = "aeiouAEIOU"
+    count = 0                       # accumulator initialised outside
+    for ch in text:                 # loop over each character
+        if ch in vowels:
+            count += 1
+    return count
+
+print(count_vowels("Programming Foundations"))  # 8</code></pre>
+                  <p>The <code>for ch in text</code> idiom iterates over the characters of the string in order. The <code>in</code> operator on a string tests substring membership, but on a single character against the <code>vowels</code> string it tests whether that character is one of the vowels. Total runtime is O(n) in the length of the text.</p>
+                </div>
+                <ul>
+                  <li>Off-by-one: <code>range(1, n)</code> goes 1 to n-1, not 1 to n. Use <code>range(1, n+1)</code> to include n.</li>
+                  <li>Infinite loops: a <code>while</code> whose condition never becomes false. Always make sure the loop variable changes inside the body.</li>
+                  <li>Initialising an accumulator <em>inside</em> the loop instead of outside &mdash; it resets every iteration.</li>
+                  <li>Forgetting that <code>for x in 10:</code> does not work &mdash; you must iterate over a sequence; use <code>range(10)</code>.</li>
+                  <li>Modifying a list while iterating over it &mdash; can skip or repeat elements.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 &mdash; "use the three structured-programming control structures &mdash; sequence, selection, and iteration &mdash; to write modular code".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt9')"><span class="vid-icon">📖</span><span class="vid-title">Python Loops and Iterations &mdash; For/While Loops &mdash; Corey Schafer</span><span class="vid-duration">21:34</span><span class="vid-toggle" id="toggle-ics3-yt9">▶</span></div><div class="video-player" id="player-ics3-yt9"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/6iF8Xb7Z3wQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=6iF8Xb7Z3wQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 &mdash; Nested Control Structures</div>
+            <div class="topic-desc">Loops inside loops, selections inside loops, selections inside selections; nested-loop tracing; complexity intuition</div>
+            <div class="code-snip"><span class="com"># Print a multiplication table 1..5</span>
+<span class="kw">for</span> i <span class="kw">in</span> range(<span class="num">1</span>, <span class="num">6</span>):
+    <span class="kw">for</span> j <span class="kw">in</span> range(<span class="num">1</span>, <span class="num">6</span>):
+        <span class="kw">print</span>(<span class="str">f"{i*j:4d}"</span>, end=<span class="str">""</span>)
+    <span class="kw">print</span>()    <span class="com"># newline after each row</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Once you understand selection and iteration on their own, you can combine them. A <strong>nested loop</strong> is a loop whose body contains another loop. A <strong>nested if</strong> is an <code>if</code> whose body contains another <code>if</code>. These compositions let you process two-dimensional data, validate complex conditions, and express algorithms that would not fit in a single linear loop. They also tend to be where bugs hide: each level of nesting adds another dimension that must be reasoned about.</p>
+                <p>The execution flow of nested loops is mechanical: the outer loop runs once, then the inner loop runs to completion, then the outer loop advances and the inner loop runs to completion again, and so on. If the outer loop runs <em>m</em> times and the inner loop runs <em>n</em> times each pass, the inner body executes a total of <em>m &times; n</em> times. This multiplication gives a first intuition for <strong>algorithm complexity</strong>: a doubly nested loop over a list of length <em>n</em> does about <em>n</em><sup>2</sup> work (we will call this O(n<sup>2</sup>) in ICS4U). For <em>n</em> = 1000 that is a million operations &mdash; still fast on a modern computer, but for <em>n</em> = 1 000 000 it would be a trillion, far too slow.</p>
+                <p>The most reliable way to verify nested code is <strong>tracing</strong> &mdash; making a small table that records the value of every variable at every iteration. Tracing exposes off-by-one errors, accumulators that reset too often, and conditions that always fire or never fire. The table is a small investment that saves hours of head-scratching later.</p>
+                <ul>
+                  <li><strong>Nested loop</strong> &mdash; a loop inside another loop.</li>
+                  <li><strong>Nested if</strong> &mdash; an <code>if</code> inside another <code>if</code>'s body.</li>
+                  <li><strong>Outer loop / inner loop</strong> &mdash; the enclosing and enclosed loops respectively.</li>
+                  <li><strong>Trace table</strong> &mdash; a pencil-and-paper table tracking variable values through execution.</li>
+                  <li><strong>Loop invariant</strong> &mdash; a property that holds at the start of every iteration.</li>
+                  <li><strong>Polynomial growth</strong> &mdash; n, n<sup>2</sup>, n<sup>3</sup> work; the exponent equals the number of nested loops over the data.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; counting pairs that sum to a target</p>
+<pre><code>def pair_count(nums, target):
+    count = 0
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):  # j &gt; i avoids duplicates
+            if nums[i] + nums[j] == target:
+                count += 1
+    return count
+
+print(pair_count([1, 9, 4, 6, 5, 5], 10))   # 3
+# pairs that sum to 10: (1,9), (4,6), (5,5)</code></pre>
+                  <p>The outer loop runs <em>n</em> times; the inner loop runs <em>n &minus; i &minus; 1</em> times for outer iteration <em>i</em>. Total comparisons is roughly <em>n(n&minus;1)/2</em>, which grows as <em>n</em><sup>2</sup>. For a list of 6 numbers we do 15 comparisons; for 60 numbers we do 1770. This O(n<sup>2</sup>) cost is the canonical price of "compare everything to everything".</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked example &mdash; tracing a small nested loop</p>
+<pre><code>for i in range(3):
+    for j in range(3):
+        if i == j:
+            print("*", end=" ")
+        else:
+            print(".", end=" ")
+    print()
+
+# Output:
+# * . .
+# . * .
+# . . *</code></pre>
+                  <p>The diagonal of a 3&times;3 grid. The inner <code>print(..., end=" ")</code> stays on the same line; the outer <code>print()</code> ends each row with a newline. Total iterations: 3 &times; 3 = 9 cells.</p>
+                </div>
+                <ul>
+                  <li>Reusing the same loop variable name for both outer and inner loops &mdash; the inner overwrites the outer.</li>
+                  <li>Forgetting that <code>break</code> only exits the <em>nearest</em> loop, not all enclosing loops.</li>
+                  <li>Mis-indentation that puts the inner loop's body outside the outer loop &mdash; usually causes a logic error, not a syntax error.</li>
+                  <li>Resetting an accumulator inside the inner loop when it should reset between outer iterations &mdash; or vice versa.</li>
+                  <li>Trying to write a triply nested loop over the same data &mdash; almost always there is a smarter algorithm.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 &mdash; "use nested control structures (e.g., a loop inside a loop, or selection inside a loop) to solve problems of moderate complexity".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt10')"><span class="vid-icon">📖</span><span class="vid-title">Python Tutorial: Debugging logic errors by hand-tracing your code</span><span class="vid-duration">11:31</span><span class="vid-toggle" id="toggle-ics3-yt10">▶</span></div><div class="video-player" id="player-ics3-yt10"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jq5ac_BNzHs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=Jq5ac_BNzHs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics3u/Unit2_Control_Flow_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics3u/Unit2_Control_Flow_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics3u/Unit2_Control_Flow_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS3U &mdash; Introduction to Computer Science, Grade 11 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

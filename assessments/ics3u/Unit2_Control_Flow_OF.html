@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Control Flow and Logic — Unit Test</title>
+<style>
+:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 2: Control Flow and Logic &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code-writing answers must be syntactically valid Python. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[3 marks]</span></div>
+<div class="qt">State the value of each Boolean expression.
+<ol style="margin-left:24px;">
+<li><code>(7 &gt; 3) and (4 &lt; 2)</code></li>
+<li><code>(7 &gt; 3) or (4 &lt; 2)</code></li>
+<li><code>not (5 == 5)</code></li>
+<li><code>1 &lt; 4 &lt; 10</code></li>
+</ol>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace this program. What is printed?
+<div class="code">x = 3
+if x &gt; 0:
+    if x &gt; 5:
+        print("big")
+    else:
+        print("small positive")
+else:
+    print("zero or negative")</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace this loop. What does it print?
+<div class="code">i = 1
+while i &lt;= 5:
+    print(i, end=" ")
+    i += 2</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[3 marks]</span></div>
+<div class="qt">Write an <code>if</code>/<code>elif</code> chain that prints "Child" if <code>age &lt; 13</code>, "Teen" if 13-19, "Adult" if 20-64, otherwise "Senior".</div>
+<textarea placeholder="if ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">What is the output of this nested loop?
+<div class="code">for i in range(3):
+    for j in range(2):
+        print(i, j)</div>
+</div>
+<textarea placeholder="all printed lines, in order..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find and fix the bugs. This function should return the sum of even numbers from 1 to n inclusive. There are <strong>three bugs</strong>. Rewrite it correctly.
+<div class="code">def sum_evens(n):
+    total = 1
+    for i in range(0, n):
+        if i % 2 = 0:
+            total + i
+    return Total</div>
+</div>
+<textarea placeholder="Corrected function..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Trace the following nested-loop program. List every line that <code>print</code> outputs, in order.
+<div class="code">for i in range(3):
+    for j in range(3):
+        if i == j:
+            print(f"({i},{j}) diagonal")
+        elif i &lt; j:
+            print(f"({i},{j}) above")
+        else:
+            print(f"({i},{j}) below")</div>
+</div>
+<textarea placeholder="(0,0) diagonal ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a Python program that asks the user to enter integers one at a time. The program stops when the user enters <code>0</code>, then prints (a) how many positive numbers were entered and (b) how many negative numbers were entered.</div>
+<textarea placeholder="pos = 0; neg = 0; ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Explain in your own words the difference between a <code>for</code> loop and a <code>while</code> loop. Include when each is most appropriate, what risks each has, and a one-line example of each.</div>
+<textarea placeholder="A for loop ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Below is a peer's check meant to test if <code>x</code> is one of 1, 2, or 3. List the specific bug and write a correct version. Briefly explain <em>why</em> the bug exists (what Python actually evaluates).
+<div class="code">if x == 1 or 2 or 3:
+    print("ok")</div>
+</div>
+<textarea placeholder="The bug: ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">Use De Morgan's laws to rewrite each expression so that <code>not</code> applies only to a single comparison (not a compound). Show your work.
+<ol style="margin-left:24px;">
+<li><code>not (a &gt; 0 and b &gt; 0)</code></li>
+<li><code>not (x == 5 or y == 5)</code></li>
+</ol>
+</div>
+<textarea placeholder="(1) ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a complete Python program that:
+<ol style="margin-left:24px;">
+<li>Asks the user for their hourly wage and the number of hours worked this week.</li>
+<li>Pays regular pay for the first 40 hours and time-and-a-half (1.5&times;) for hours over 40.</li>
+<li>Prints the total formatted to two decimal places.</li>
+</ol>
+If hours or wage is negative, print an error and stop.</div>
+<textarea placeholder="wage = float(input(...))" style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a Python program that prints the multiplication table up to 5 &times; 5, formatted as a 5-by-5 grid (with each entry in a column of width 4).
+<div class="code">Expected layout:
+   1   2   3   4   5
+   2   4   6   8  10
+   ...</div>
+</div>
+<textarea placeholder="for i in range(1, 6): ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a program that asks the user to enter test marks one at a time, ending with <code>-1</code>. The program then prints (a) the number of marks entered, (b) the average mark, and (c) the highest mark. (Hint: sentinel-controlled <code>while</code> loop.)</div>
+<textarea placeholder="largest = None; count = 0; total = 0 ..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness &mdash; partial credit</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness &mdash; significant errors</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 2: Control Flow and Logic &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

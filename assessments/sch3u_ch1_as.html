@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Matter, Trends & Bonding — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0d9488; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0d9488;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 1: Matter, Chemical Trends &amp; Bonding</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your understanding of periodic trends, ionic/covalent bonding, Lewis structures, VSEPR shapes, and intermolecular forces. Use results to identify topics needing review before the unit test.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Atomic Theory &amp; Periodic Trends</div>
+
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">Which scientist's gold-foil experiment provided evidence for a dense, positively charged atomic nucleus?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> Dalton</label></li>
+<li><label><input type="radio" name="q1" value="b"> Thomson</label></li>
+<li><label><input type="radio" name="q1" value="c"> Rutherford</label></li>
+<li><label><input type="radio" name="q1" value="d"> Bohr</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','c')">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Ernest Rutherford's 1911 gold-foil experiment showed most α-particles passed through but a small fraction were sharply deflected, indicating a small dense positive nucleus.</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">Across a period (left to right), atomic radius generally:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q2" value="a"> Increases</label></li>
+<li><label><input type="radio" name="q2" value="b"> Decreases</label></li>
+<li><label><input type="radio" name="q2" value="c"> Stays constant</label></li>
+<li><label><input type="radio" name="q2" value="d"> Increases then decreases</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Across a period, \(Z_{\text{eff}}\) increases without adding a new shell, pulling the electron cloud closer. Atomic radius <strong>decreases</strong>.</div>
+</div>
+
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">Arrange in order of <em>increasing</em> first ionization energy: K, Ca, F, Cl.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> K &lt; Ca &lt; F &lt; Cl</label></li>
+<li><label><input type="radio" name="q3" value="b"> K &lt; Ca &lt; Cl &lt; F</label></li>
+<li><label><input type="radio" name="q3" value="c"> F &lt; Cl &lt; Ca &lt; K</label></li>
+<li><label><input type="radio" name="q3" value="d"> Ca &lt; K &lt; Cl &lt; F</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','b')">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>IE increases up a group and across a period. K (group 1, period 4) lowest. Ca (group 2) higher. Cl (period 3, group 17) much higher. F (period 2, group 17) highest. <strong>K &lt; Ca &lt; Cl &lt; F</strong>.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Ionic &amp; Covalent Bonding</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">Predict the bond type in MgO using \(\Delta\text{EN}\): EN(Mg)=1.3, EN(O)=3.4.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q4" value="a"> Non-polar covalent</label></li>
+<li><label><input type="radio" name="q4" value="b"> Polar covalent</label></li>
+<li><label><input type="radio" name="q4" value="c"> Ionic</label></li>
+<li><label><input type="radio" name="q4" value="d"> Metallic</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q4','c')">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\(\Delta\text{EN} = 3.4 - 1.3 = 2.1 \gt 1.7\) → <strong>ionic</strong> (and Mg is a metal, O is a non-metal).</div>
+</div>
+
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">Write the formula for the ionic compound formed between aluminum and oxygen.</div>
+<div class="answer-area"><input type="text" id="q5-input" placeholder="e.g., AlO, Al2O3..."></div>
+<button class="btn btn-check" onclick="checkText('q5','Al2O3')">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Al³⁺ + O²⁻ → crossover gives <strong>Al₂O₃</strong>.</div>
+</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">Which compound is a polar molecule?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q6" value="a"> CO₂</label></li>
+<li><label><input type="radio" name="q6" value="b"> CCl₄</label></li>
+<li><label><input type="radio" name="q6" value="c"> H₂O</label></li>
+<li><label><input type="radio" name="q6" value="d"> CH₄</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q6','c')">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>CO₂ (linear), CCl₄ (tetrahedral), CH₄ (tetrahedral) are symmetric — bond dipoles cancel. <strong>H₂O</strong> is bent with two polar O–H bonds; dipoles add → polar molecule.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Lewis Structures &amp; VSEPR Shapes</div>
+
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">How many lone pairs are on the central atom in NH₃?</div>
+<div class="answer-area"><input type="text" id="q7-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q7', 1)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>N has 5 valence e⁻. Three N–H bonds use 6 electrons (3 from N + 3 from H). One lone pair remains on N. Answer: <strong>1</strong>.</div>
+</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">VSEPR shape of CH₄:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q8" value="a"> Linear</label></li>
+<li><label><input type="radio" name="q8" value="b"> Trigonal planar</label></li>
+<li><label><input type="radio" name="q8" value="c"> Tetrahedral</label></li>
+<li><label><input type="radio" name="q8" value="d"> Bent</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q8','c')">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>AX₄ (4 bonded atoms, 0 lone pairs) → <strong>tetrahedral</strong>, bond angle 109.5°.</div>
+</div>
+
+<div class="question-card" id="q9">
+<div class="q-number">Question 9</div>
+<div class="q-text">Approximate H–O–H bond angle in water?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q9" value="a"> 90°</label></li>
+<li><label><input type="radio" name="q9" value="b"> 104.5°</label></li>
+<li><label><input type="radio" name="q9" value="c"> 109.5°</label></li>
+<li><label><input type="radio" name="q9" value="d"> 120°</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q9','b')">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>AX₂E₂ (2 bonded, 2 lone pairs). Lone pairs compress the angle below 109.5° → <strong>~104.5°</strong>.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Intermolecular Forces</div>
+
+<div class="question-card" id="q10">
+<div class="q-number">Question 10</div>
+<div class="q-text">Which substance has hydrogen bonding?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> CH₄</label></li>
+<li><label><input type="radio" name="q10" value="b"> H₂S</label></li>
+<li><label><input type="radio" name="q10" value="c"> HF</label></li>
+<li><label><input type="radio" name="q10" value="d"> CH₃Cl</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>H-bonding requires H directly bonded to N, O, or F. Only <strong>HF</strong> qualifies. H₂S has H bonded to S (not strong enough); CH₃Cl has dipole-dipole but no H-bond.</div>
+</div>
+
+<div class="question-card" id="q11">
+<div class="q-number">Question 11</div>
+<div class="q-text">Which has the highest boiling point?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q11" value="a"> F₂</label></li>
+<li><label><input type="radio" name="q11" value="b"> Cl₂</label></li>
+<li><label><input type="radio" name="q11" value="c"> Br₂</label></li>
+<li><label><input type="radio" name="q11" value="d"> I₂</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q11','d')">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>All non-polar — only London dispersion forces. LDFs grow with molar mass / electron count. <strong>I₂</strong> (largest) has the highest b.p. (184 °C, a solid at room temperature).</div>
+</div>
+
+<div class="question-card" id="q12">
+<div class="q-number">Question 12</div>
+<div class="q-text">Why is the boiling point of H₂O (100 °C) much higher than H₂S (−60 °C), even though both are bent AX₂E₂ molecules?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q12" value="a"> H₂O has stronger covalent bonds</label></li>
+<li><label><input type="radio" name="q12" value="b"> H₂O has hydrogen bonding; H₂S does not</label></li>
+<li><label><input type="radio" name="q12" value="c"> H₂O is ionic; H₂S is covalent</label></li>
+<li><label><input type="radio" name="q12" value="d"> Oxygen is heavier than sulfur</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q12','b')">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>O is electronegative enough to form strong H-bonds; S is not (EN too low). <strong>Hydrogen bonding</strong> in H₂O raises the boiling point dramatically. Boiling breaks IMFs, not covalent bonds.</div>
+</div>
+</div>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand B: Matter, Trends &amp; Bonding | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Not quite. See solution below.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.01){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ The correct answer is ${c}. See solution below.`;}sl.classList.add('show');updateProgress();}
+function checkText(qid,c){const v=document.getElementById(qid+'-input').value.trim().toLowerCase();const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(v.replace(/\s/g,'').replace(/_/g,'')===c.toLowerCase().replace(/\s/g,'')){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ Expected: ${c}. See solution below.`;}sl.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

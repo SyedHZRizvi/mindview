@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS3U — Introduction to Computer Science | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #7c3aed; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../../">Home</a>
+            <a href="../../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #7c3aed; color: #fff; }
+.chnav-next:hover { background: #6d28d9; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg, #7c3aeddd, #6d28d9);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../ics3u.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (ICS3U Introduction to Computer Science)</a></div>
+    <div class="strand-tag">Computer Studies — Grade 11 University Preparation</div>
+    <h1>💻 ICS3U: Unit 5: Computer Environments and Society</h1>
+    <p>Hardware/software, operating systems, networking basics, ethics, privacy, cybersecurity, careers and education pathways</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg, #7c3aeddd, #6d28d9);">
+            <h2>Unit 5: Computer Environments and Society</h2>
+            <p>Hardware/software, operating systems, networking basics, ethics, privacy, cybersecurity, careers and education pathways</p>
+            <div class="unit-meta">
+                <span>&#128218; Strand C (Environments) &middot; Strand D (Topics in CS)</span>
+                <span>&#9201;&#65039; ~18 hours</span>
+                <span>&#128221; 6 topics</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 &mdash; Hardware, Software, and How a Computer Works</div>
+            <div class="topic-desc">CPU, RAM, storage, I/O; the fetch-execute cycle; binary and hexadecimal; bits and bytes</div>
+            <div class="code-snip"><span class="com"># Python sees binary natively with the 0b prefix.</span>
+<span class="com"># Convert between decimal, binary, and hexadecimal.</span>
+<span class="kw">print</span>(bin(<span class="num">42</span>))     <span class="com"># 0b101010</span>
+<span class="kw">print</span>(hex(<span class="num">255</span>))    <span class="com"># 0xff</span>
+<span class="kw">print</span>(int(<span class="str">"101010"</span>, <span class="num">2</span>))   <span class="com"># 42  — parse binary</span>
+<span class="kw">print</span>(int(<span class="str">"ff"</span>, <span class="num">16</span>))       <span class="com"># 255 — parse hex</span>
+</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A computer is a machine that performs calculations and stores results. Its <strong>hardware</strong> &mdash; the physical parts &mdash; consists of four broad categories. The <strong>CPU</strong> (central processing unit) executes the instructions of the running program. <strong>RAM</strong> (random-access memory) is fast but volatile working storage &mdash; everything in RAM disappears when the power is cut. <strong>Storage</strong> &mdash; hard disks or solid-state drives &mdash; holds data persistently. <strong>Input/output devices</strong> &mdash; keyboard, mouse, screen, speakers, network card &mdash; let the computer interact with the outside world. <strong>Software</strong> is the set of instructions that runs on the hardware: an operating system, applications, and the programs you write yourself.</p>
+                <p>At the lowest level, every value &mdash; numbers, letters, images, sound &mdash; is stored as a <strong>binary</strong> sequence of <strong>bits</strong> (0 or 1). Eight bits group into a <strong>byte</strong>, which can represent 256 distinct values (2<sup>8</sup>). Numbers use a place-value system just like decimal, but with base 2 instead of base 10: <code>1010</code> in binary means 1&middot;8 + 0&middot;4 + 1&middot;2 + 0&middot;1 = 10. Characters use an encoding such as <strong>ASCII</strong> (the letter 'A' is the byte 65) or <strong>Unicode UTF-8</strong> (which covers every writing system in the world). <strong>Hexadecimal</strong> (base 16) is a compact way to write binary: each hex digit represents exactly four bits.</p>
+                <p>The CPU operates in a continuous <strong>fetch-decode-execute</strong> cycle: fetch the next instruction from memory, decode what it means, execute it, and repeat. Modern CPUs run billions of these cycles per second (a 3 GHz CPU does 3 billion cycles per second). They contain many tricks &mdash; pipelines, caches, branch prediction, multiple cores &mdash; but the basic loop is the same as Babbage's Analytical Engine sketched in 1837.</p>
+                <ul>
+                  <li><strong>Hardware</strong> &mdash; the physical components of a computer.</li>
+                  <li><strong>Software</strong> &mdash; programs and data that direct the hardware.</li>
+                  <li><strong>CPU</strong> &mdash; central processing unit; the chip that executes instructions.</li>
+                  <li><strong>RAM</strong> &mdash; volatile working memory.</li>
+                  <li><strong>Storage</strong> &mdash; persistent storage (HDD, SSD).</li>
+                  <li><strong>Bit / byte</strong> &mdash; a binary digit / a group of 8 bits.</li>
+                  <li><strong>Binary</strong> &mdash; base 2 representation; only digits 0 and 1.</li>
+                  <li><strong>Hexadecimal</strong> &mdash; base 16 representation; digits 0&ndash;9 and A&ndash;F.</li>
+                  <li><strong>Fetch-decode-execute</strong> &mdash; the basic cycle of any CPU.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; converting numbers between bases</p>
+<pre><code># Decimal 42 to binary, by repeated division by 2 (read remainders bottom-up):
+# 42 / 2 = 21 r 0
+# 21 / 2 = 10 r 1
+# 10 / 2 = 5  r 0
+#  5 / 2 = 2  r 1
+#  2 / 2 = 1  r 0
+#  1 / 2 = 0  r 1
+# Reading remainders bottom-up: 101010
+
+# Binary to decimal: 101010
+# = 1*32 + 0*16 + 1*8 + 0*4 + 1*2 + 0*1 = 42
+
+# Hex shortcut: group binary into 4-bit nibbles from the right
+# 101010 -&gt; 0010 1010 -&gt; 2 A -&gt; 0x2A
+# In Python: hex(42) -&gt; '0x2a'</code></pre>
+                  <p>Memorise a few small powers of 2: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024. With those the conversion between decimal and binary becomes near-instant.</p>
+                </div>
+                <ul>
+                  <li>Confusing the <strong>CPU</strong> with the <strong>computer</strong> &mdash; the CPU is one part inside the case.</li>
+                  <li>Saying "memory" when you mean "storage" or vice versa &mdash; RAM is volatile working memory; disk is persistent storage.</li>
+                  <li>Forgetting that 1 KB is technically 1024 bytes, not 1000 &mdash; (the unit "kibibyte" exists for the strict 1024 form, but everyday usage is loose).</li>
+                  <li>Mixing bits and bytes &mdash; internet speeds are quoted in <em>bits</em> per second (b), but file sizes in <em>bytes</em> (B). 100 Mbps is 12.5 MB per second.</li>
+                  <li>Assuming software runs "on RAM" &mdash; it runs on the CPU; RAM holds it temporarily.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 &mdash; "identify the major hardware components of a computer system (CPU, RAM, storage, input/output devices) and describe the role of each".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt21')"><span class="vid-icon">📖</span><span class="vid-title">Early Computing &mdash; Crash Course Computer Science #1</span><span class="vid-duration">11:53</span><span class="vid-toggle" id="toggle-ics3-yt21">▶</span></div><div class="video-player" id="player-ics3-yt21"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/O5nskjZ_GoI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=O5nskjZ_GoI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 &mdash; Operating Systems and File Management</div>
+            <div class="topic-desc">What an OS does (processes, files, memory, devices); file systems and paths; common operating systems</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>An <strong>operating system</strong> (OS) is the program that manages all the other programs. Without an OS the hardware would do nothing useful &mdash; the OS provides the services that every application depends on. It manages <strong>processes</strong> (running programs), schedules them on the CPU so each gets its share, allocates and protects <strong>memory</strong>, organises long-term storage into a <strong>file system</strong>, provides a <strong>user interface</strong> (graphical or command-line), and talks to hardware <strong>devices</strong> through <strong>drivers</strong>. The major OSes today are Windows (Microsoft), macOS (Apple), Linux (free and open-source, with many distributions), Android (mobile, based on Linux), and iOS (mobile, by Apple).</p>
+                <p>The <strong>file system</strong> organises files into a tree of <strong>directories</strong> (also called folders). Every file has a <strong>path</strong> identifying where it lives: <code>C:\Users\ada\notes.txt</code> on Windows, <code>/home/ada/notes.txt</code> on Linux/macOS. An <strong>absolute path</strong> starts from the root; a <strong>relative path</strong> is interpreted from the current directory. Each file usually has an <strong>extension</strong> (the part after the last dot) such as <code>.py</code>, <code>.txt</code>, <code>.png</code>, or <code>.pdf</code>; the extension hints at the file's type but does not by itself determine its content.</p>
+                <p>The OS also enforces <strong>permissions</strong>: which users may read, write, or execute each file. This is the first line of defence against malware and accidental damage. On personal computers most students run as an administrative user, but on servers and shared systems unprivileged accounts cannot modify the system or other users' files. Understanding permissions &mdash; and the related distinction between user-mode and kernel-mode &mdash; will become important if you continue into systems programming or cybersecurity.</p>
+                <ul>
+                  <li><strong>Operating system</strong> &mdash; the program that manages hardware and runs other programs.</li>
+                  <li><strong>Process</strong> &mdash; a running program with its own memory.</li>
+                  <li><strong>Scheduler</strong> &mdash; the part of the OS that decides which process runs next.</li>
+                  <li><strong>File system</strong> &mdash; the organisation of files and directories on storage.</li>
+                  <li><strong>Path</strong> &mdash; the address of a file in the file system (absolute or relative).</li>
+                  <li><strong>Directory / folder</strong> &mdash; a container that holds files and other directories.</li>
+                  <li><strong>Driver</strong> &mdash; OS code that talks to a specific hardware device.</li>
+                  <li><strong>Shell / command line</strong> &mdash; a text interface to the OS for running commands.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; reading paths and navigating</p>
+<pre><code># A few common command-line operations:
+#
+# pwd               — print working directory (where am I?)
+# ls                — list files in current directory
+# cd notes          — change directory into "notes"
+# cd ..             — move up one level
+# mkdir week5       — make a new directory
+# cp a.py b.py      — copy
+# mv old.txt new.txt — rename / move
+# rm scratch.txt    — delete (no undo!)
+#
+# Path examples:
+#   ./marks.csv        relative, same dir
+#   ../shared/data.csv relative, parent's "shared" subdir
+#   /home/ada/marks.csv absolute (Linux/macOS)
+#   C:\Users\ada\marks.csv absolute (Windows)</code></pre>
+                  <p>The command-line is faster than the GUI for routine tasks once you learn a dozen commands. Every professional developer is comfortable in some form of shell (Bash, Zsh, PowerShell). Practising on your own machine pays dividends quickly.</p>
+                </div>
+                <ul>
+                  <li>Assuming a file's extension determines its content &mdash; renaming <code>.exe</code> to <code>.txt</code> does not make it text; the bytes are unchanged.</li>
+                  <li>Deleting files with <code>rm</code> at the terminal expecting them to land in the recycle bin &mdash; on most systems they are gone immediately.</li>
+                  <li>Hard-coding absolute paths in a program (<code>C:\Users\ada\...</code>) &mdash; the program will not run for any other user. Use relative paths.</li>
+                  <li>Forgetting that Windows uses <code>\</code> and Linux/macOS use <code>/</code> in paths. Python's <code>pathlib</code> module hides the difference.</li>
+                  <li>Running unknown executables without checking what they are &mdash; major source of malware infection.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.2 &mdash; "describe the function of an operating system (process management, file system, user interface, device drivers)".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt22')"><span class="vid-icon">📖</span><span class="vid-title">Operating Systems &mdash; Crash Course Computer Science #18</span><span class="vid-duration">14:09</span><span class="vid-toggle" id="toggle-ics3-yt22">▶</span></div><div class="video-player" id="player-ics3-yt22"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/26QPDBe-NB8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=26QPDBe-NB8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 &mdash; Networks and the Internet</div>
+            <div class="topic-desc">Local networks; the Internet; IP addresses, DNS, URLs; clients and servers; HTTPS; cloud computing at a high level</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>network</strong> is two or more computers connected so they can exchange information. A small home network might have a few devices connected through a router; the <strong>Internet</strong> is the global network of networks, connecting billions of devices. Computers on a network identify each other by <strong>IP address</strong> &mdash; a numeric label such as <code>142.250.65.46</code> (IPv4) or a longer hexadecimal form (IPv6). Because numbers are hard to remember, the <strong>Domain Name System</strong> (DNS) translates human-readable names like <code>mindview.pages.dev</code> into IP addresses behind the scenes. When you type a name into a browser, the browser asks a DNS server for the address, then connects to that address.</p>
+                <p>Most Internet traffic follows the <strong>client-server</strong> pattern. A <strong>client</strong> (your browser, a phone app, a Python script) sends a request to a <strong>server</strong> (a machine specifically configured to wait for and answer requests). The server processes the request and sends back a response. The most common protocol for web pages is <strong>HTTP</strong>, and its encrypted version <strong>HTTPS</strong>; the "S" stands for "Secure" and means the communication is encrypted with TLS so eavesdroppers on the network cannot read it. Look for the padlock icon in the browser address bar &mdash; it indicates HTTPS is in use and that the server's identity has been verified.</p>
+                <p>The popular term <strong>cloud computing</strong> means renting computing resources (servers, storage, databases) from a provider such as AWS, Google Cloud, Microsoft Azure, or Cloudflare. Instead of buying your own hardware, you pay only for what you use. Web apps like Gmail, Google Docs, or this very course site run on cloud infrastructure. The benefits are scalability (handle traffic spikes) and lower up-front cost; the trade-offs include dependency on the provider, data-locality issues, and privacy questions about where your information is physically stored.</p>
+                <ul>
+                  <li><strong>Network</strong> &mdash; computers connected to exchange data.</li>
+                  <li><strong>Internet</strong> &mdash; the global network of networks.</li>
+                  <li><strong>IP address</strong> &mdash; a numeric label uniquely identifying a device on a network.</li>
+                  <li><strong>DNS</strong> &mdash; the system that maps names to IP addresses.</li>
+                  <li><strong>URL</strong> &mdash; the address of a web resource (e.g., <code>https://example.com/page</code>).</li>
+                  <li><strong>Client / server</strong> &mdash; requesting program / responding program.</li>
+                  <li><strong>Protocol</strong> &mdash; a set of rules governing how two programs talk to each other (HTTP, HTTPS, FTP, SMTP).</li>
+                  <li><strong>HTTPS</strong> &mdash; HTTP over an encrypted TLS connection.</li>
+                  <li><strong>Cloud computing</strong> &mdash; renting computing resources from a remote provider.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; what happens when you load a web page</p>
+<pre><code>You type:  https://mindview.pages.dev/
+
+1. Browser checks its cache for the IP of mindview.pages.dev.
+2. If not cached, it asks a DNS server. DNS returns an IP.
+3. Browser opens a TCP connection to that IP on port 443 (HTTPS).
+4. Browser and server perform a TLS handshake to establish encryption.
+5. Browser sends an HTTPS GET request:  GET / HTTP/1.1
+6. Server responds with HTML, CSS, JavaScript, images.
+7. Browser parses the HTML and renders the page on screen.
+8. The page may request more resources, repeating steps 4-7.</code></pre>
+                  <p>Every step happens automatically and usually completes in under a second. Hundreds of layers of engineering go into making this seem effortless. If anything fails &mdash; DNS, TLS, the server &mdash; the browser shows an error page; understanding which step failed is the first skill of network troubleshooting.</p>
+                </div>
+                <ul>
+                  <li>Confusing the Internet with the Web. The Web (HTTP/HTTPS pages and links) is one service that uses the Internet; email, video calls, and online gaming are others.</li>
+                  <li>Believing "the cloud" is a single place &mdash; it is hundreds of data centres around the world.</li>
+                  <li>Trusting the padlock icon as proof of safety &mdash; it confirms encryption to the named server, not that the server itself is trustworthy.</li>
+                  <li>Assuming local IP addresses (like <code>192.168.x.x</code>) are visible on the Internet &mdash; they are private to your network, hidden behind your router's public address.</li>
+                  <li>Confusing <em>bandwidth</em> (megabits per second) with <em>latency</em> (round-trip delay) &mdash; the two have different effects on user experience.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.2 &mdash; "describe how a computer connects to a network and to the Internet (NIC, router, IP address, DNS) at a non-technical level".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt23')"><span class="vid-icon">📖</span><span class="vid-title">The Internet: How Search Works &mdash; Code.org</span><span class="vid-duration">5:13</span><span class="vid-toggle" id="toggle-ics3-yt23">▶</span></div><div class="video-player" id="player-ics3-yt23"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LVV_93mBfSU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=LVV_93mBfSU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.4 &mdash; Cybersecurity and Privacy</div>
+            <div class="topic-desc">Common attacks (phishing, malware, weak passwords, social engineering); defences (MFA, updates, password managers); privacy online; digital footprint</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Cybersecurity</strong> is the practice of protecting computers, networks, and data from unauthorised access, attack, or damage. The threats are real and growing: the average Ontario student will be the target of phishing attempts, password leaks, and other attacks many times per year. Understanding both the attacks and the defences is now essential digital literacy. The most common attacks are <strong>phishing</strong> (tricking the user into giving away credentials, usually via a fake email or web page), <strong>malware</strong> (malicious software installed on the user's device), <strong>password attacks</strong> (guessing or stealing passwords), and <strong>social engineering</strong> (manipulating people rather than software).</p>
+                <p>A small number of habits provide most of the protection. (1) Use <strong>strong, unique passwords</strong> for every site, ideally generated and stored by a password manager. A 16-character random password is essentially uncrackable; "Password123" is broken in seconds. (2) Turn on <strong>multi-factor authentication</strong> (MFA) wherever offered &mdash; even if your password leaks, the attacker still cannot log in without the second factor (phone code, security key, biometric). (3) Keep your operating system and applications <strong>up to date</strong>; security patches close holes that attackers actively use. (4) Be sceptical of unexpected messages asking you to click a link or open an attachment, especially if they create urgency ("Your account will be closed in 24 hours!"). (5) Back up important data so a ransomware attack or hardware failure does not erase your work.</p>
+                <p><strong>Privacy</strong> is related but distinct: the protection of personal information from misuse. Every site you visit, every app on your phone, every smart device in your home potentially collects data about you &mdash; your location, your contacts, your interests, your activity over time. This <strong>digital footprint</strong> is permanent and largely outside your control once shared. Practical privacy steps include reviewing app permissions, using a browser that blocks trackers, being thoughtful about what you post on social media, and reading privacy policies before signing up. Canada's <strong>Personal Information Protection and Electronic Documents Act</strong> (PIPEDA) and Ontario's privacy legislation give individuals some rights to access and correct their data held by organisations.</p>
+                <ul>
+                  <li><strong>Cybersecurity</strong> &mdash; protecting systems and data from attack.</li>
+                  <li><strong>Phishing</strong> &mdash; a fake message designed to trick the recipient into revealing credentials.</li>
+                  <li><strong>Malware</strong> &mdash; malicious software (viruses, worms, ransomware, spyware).</li>
+                  <li><strong>Password manager</strong> &mdash; a program that generates and stores strong, unique passwords for each site.</li>
+                  <li><strong>Multi-factor authentication (MFA)</strong> &mdash; requiring more than one proof of identity to log in.</li>
+                  <li><strong>Encryption</strong> &mdash; converting data into a form unreadable without the key.</li>
+                  <li><strong>Digital footprint</strong> &mdash; the trail of data you leave online.</li>
+                  <li><strong>Privacy policy</strong> &mdash; a statement of how an organisation handles personal information.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; recognising a phishing email</p>
+<pre><code>Subject: URGENT — Your school account will be suspended!
+From: support@scholl-board.com    ← misspelled domain
+"Click here within 24 hours to verify your password or
+ your account will be permanently deleted..."
+Link points to: http://verify-school.ru/login.html    ← strange host
+
+Red flags:
+ 1. Misspelled sender domain.
+ 2. Artificial urgency ("24 hours").
+ 3. Asks for password directly.
+ 4. Link uses HTTP (not HTTPS) and a strange domain.
+ 5. Generic greeting ("Dear student").
+
+Correct response:
+ 1. Do NOT click the link.
+ 2. Do NOT reply.
+ 3. Report it to your school's IT helpdesk.
+ 4. Delete the message.</code></pre>
+                  <p>Phishing has improved over the years &mdash; modern attempts can be very convincing &mdash; but the warning signs above appear in most cases. When in doubt, contact the alleged sender through a known channel (the school website, the bank's phone number on your card), <em>not</em> the contact information in the suspicious message.</p>
+                </div>
+                <ul>
+                  <li>Reusing the same password across multiple sites &mdash; a leak at one site compromises all of them.</li>
+                  <li>Trusting an email solely because it appears to come from a familiar sender &mdash; "From" lines can be forged.</li>
+                  <li>Believing a site is safe just because the URL contains the brand name &mdash; <code>microsoft-login.fake.ru</code> is not Microsoft.</li>
+                  <li>Sharing too much on social media &mdash; vacation photos with location data tell burglars you are not home.</li>
+                  <li>Ignoring software updates because they are inconvenient &mdash; the gap between a security patch and an exploit can be hours.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.2 &mdash; "describe what is meant by cybersecurity, and identify common attack types and basic defences".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt24')"><span class="vid-icon">📖</span><span class="vid-title">Cybersecurity: Crash Course Computer Science #31</span><span class="vid-duration">12:30</span><span class="vid-toggle" id="toggle-ics3-yt24">▶</span></div><div class="video-player" id="player-ics3-yt24"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bPVaOlJ6ln0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=bPVaOlJ6ln0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.5 &mdash; Ethics, AI, and Environmental Impact</div>
+            <div class="topic-desc">Programmers' ethical responsibilities; AI and machine learning at a high level; software licensing; environmental footprint of computing</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Software shapes daily life: it decides what you see in your social feed, how your bank approves loans, which job applicants get interviews. With this influence comes <strong>responsibility</strong>. Professional programmers operate under <strong>ethical codes</strong> (such as the ACM Code of Ethics) that require them to consider the impact of their work on users, on third parties, and on society. The core principles are familiar: be honest, do not harm, respect privacy, give credit, accept criticism, and continue learning. Although Grade 11 students are not yet professionals, beginning to think about these questions is the right first step.</p>
+                <p><strong>Artificial intelligence</strong> (AI) is software that performs tasks usually associated with human intelligence: recognising images, translating languages, holding conversations, playing games. Modern AI is dominated by <strong>machine learning</strong>, in which a computer learns patterns from large amounts of <strong>training data</strong> rather than being told the rules explicitly. <strong>Large language models</strong> (LLMs) like ChatGPT or Claude are trained on enormous text corpora and can produce fluent, useful text &mdash; but they also produce confident-sounding nonsense (hallucinations), reproduce biases present in training data, and can be used to mislead or deceive at scale. Treat AI output as a draft, not a source of truth, and always verify important facts.</p>
+                <p><strong>Software licensing</strong> determines what you may legally do with code others have written. <strong>Proprietary</strong> software (Microsoft Office, Photoshop) is owned by a company and used under restrictions. <strong>Open-source</strong> software (Python, Linux, Firefox) is released under a licence that lets you read, modify, and redistribute the code &mdash; with some conditions, such as keeping the original copyright notice or releasing your changes under the same licence. As a student, you should respect licences (do not pirate proprietary software; do not pass off open-source code as your own original work). Finally, the environmental footprint of computing is large: data centres consume a couple of percent of global electricity, the manufacture of devices produces e-waste and mining demand, and training large AI models takes huge amounts of energy. Choices like keeping devices longer, recycling electronics through proper channels, and questioning whether a problem really needs an AI solution are small ways to limit the impact.</p>
+                <ul>
+                  <li><strong>Ethics</strong> &mdash; principles distinguishing right from wrong conduct.</li>
+                  <li><strong>AI / Artificial Intelligence</strong> &mdash; software performing tasks normally associated with human intelligence.</li>
+                  <li><strong>Machine learning</strong> &mdash; learning patterns from data instead of following hand-written rules.</li>
+                  <li><strong>Training data</strong> &mdash; the examples a model is trained on.</li>
+                  <li><strong>Hallucination</strong> &mdash; confidently-incorrect output from an AI model.</li>
+                  <li><strong>Algorithmic bias</strong> &mdash; systematic unfairness in software due to biased data or design.</li>
+                  <li><strong>Proprietary software</strong> &mdash; code owned and licensed under restrictions.</li>
+                  <li><strong>Open-source software</strong> &mdash; code released under a licence that allows inspection and modification.</li>
+                  <li><strong>E-waste</strong> &mdash; discarded electronic equipment.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; algorithmic bias in a real system</p>
+<pre><code>Case: A US tool used in courts to predict recidivism (re-offending)
+was found in 2016 to flag Black defendants as "high risk" at almost
+twice the rate of white defendants for the same actual outcomes.
+
+Why does this happen?
+ - Training data reflected historic, biased arrest patterns.
+ - The model learned the bias without being explicitly told to.
+ - The score then influenced bail and sentencing — amplifying the bias.
+
+Mitigations:
+ - Audit training data for representation and accuracy.
+ - Test outputs across demographic groups, not just overall accuracy.
+ - Be transparent about the model's limits.
+ - Keep a human in the loop on consequential decisions.</code></pre>
+                  <p>This is the canonical example used in ethics discussions and is well documented in the ProPublica investigation. It shows that "the algorithm decided" is never a sufficient defence &mdash; humans built the algorithm and bear responsibility for it.</p>
+                </div>
+                <ul>
+                  <li>Treating AI output as authoritative without verification &mdash; LLMs invent confident answers.</li>
+                  <li>Copying code without checking its licence &mdash; even open-source code has terms (attribution, copyleft).</li>
+                  <li>Believing "the algorithm is neutral" &mdash; an algorithm is neutral only relative to the assumptions and data of its designers.</li>
+                  <li>Ignoring environmental impact ("it's just electricity") &mdash; small choices, multiplied by billions of users, become large effects.</li>
+                  <li>Conflating ethics with legality &mdash; many legal actions are unethical, and a few illegal actions (civil disobedience, whistle-blowing) may be ethical.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 &mdash; "distinguish open-source, free, and proprietary software licensing models, and the ethical responsibilities of programmers".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt25')"><span class="vid-icon">📖</span><span class="vid-title">Machine Learning &amp; Artificial Intelligence: Crash Course Computer Science #34</span><span class="vid-duration">11:51</span><span class="vid-toggle" id="toggle-ics3-yt25">▶</span></div><div class="video-player" id="player-ics3-yt25"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/z-EtmaFJieY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=z-EtmaFJieY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.6 &mdash; Careers, Postsecondary Pathways, and History of Computing</div>
+            <div class="topic-desc">CS pathways at Ontario universities and colleges; common career roles; landmark contributors including Canadians</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Computer science is one of the most flexible career launchpads. Graduates work in <strong>software development</strong> (web, mobile, desktop, embedded, game), <strong>data science &amp; machine learning</strong>, <strong>cybersecurity</strong>, <strong>cloud and devops</strong>, <strong>UX/UI design</strong>, <strong>IT support and administration</strong>, <strong>computing research</strong>, and <strong>computing education</strong>. The skills also transfer to adjacent fields: business analytics, journalism (data journalism), engineering, the arts (digital media), and the sciences (bioinformatics, computational physics, climate modelling). Salaries are typically above the median for any given level of education, and the work-from-home culture of the industry makes geographic flexibility unusually high.</p>
+                <p>In Ontario, two main paths after high school lead into computing. The <strong>university</strong> path (BSc Computer Science, BSc Software Engineering, BEng Computer Engineering) typically lasts four years and emphasises theory, mathematics, and a co-op work program at many schools. Strong programs include the University of Waterloo (renowned co-op), University of Toronto, McMaster, Western, Queen's, Carleton, York, Ottawa, and Guelph. The <strong>college</strong> path (diploma or advanced diploma) typically lasts two or three years, is more hands-on and industry-aligned, and includes programs such as Computer Programmer / Programmer-Analyst, Game Development, Cybersecurity, Mobile Development, and Web Development. Strong programs include Seneca, Centennial, Sheridan, Algonquin, Conestoga, George Brown, and Humber. Both paths have produced excellent practitioners; choose based on your learning style and goals.</p>
+                <p>Computing has a rich history. <strong>Charles Babbage</strong> and <strong>Ada Lovelace</strong> (1830s-40s) designed the Analytical Engine and wrote the first algorithm intended for a machine. <strong>Alan Turing</strong> (1930s-50s) defined the theoretical model of computation that bears his name and broke German wartime codes. <strong>Grace Hopper</strong> built the first compiler and championed COBOL. <strong>John von Neumann</strong> formalised the stored-program architecture used in nearly every computer today. Canadian contributors include <strong>Stephen Cook</strong> (University of Toronto, who introduced the concept of NP-completeness in 1971), <strong>Geoffrey Hinton</strong> (University of Toronto, pioneer of deep learning and Nobel laureate in physics, 2024), <strong>Yoshua Bengio</strong> (Universit&eacute; de Montr&eacute;al, another deep-learning pioneer), and <strong>Yann LeCun</strong> (Canadian-trained, currently at NYU and Meta). Understanding the lineage is more than trivia: it gives you a sense of how the field grew and where it might go.</p>
+                <ul>
+                  <li><strong>Software developer</strong> &mdash; builds software products.</li>
+                  <li><strong>Data scientist</strong> &mdash; extracts insights from data using statistics and machine learning.</li>
+                  <li><strong>Cybersecurity analyst</strong> &mdash; defends systems and investigates incidents.</li>
+                  <li><strong>UX/UI designer</strong> &mdash; designs how users interact with software.</li>
+                  <li><strong>Devops / SRE</strong> &mdash; keeps production systems running reliably.</li>
+                  <li><strong>Co-op</strong> &mdash; alternating school terms with paid work placements (common at U of Waterloo and others).</li>
+                  <li><strong>NP-complete</strong> &mdash; a class of problems that no known efficient algorithm solves; Cook's 1971 contribution.</li>
+                  <li><strong>Deep learning</strong> &mdash; neural networks with many layers; Hinton/Bengio/LeCun were jointly awarded the 2018 Turing Award.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked example &mdash; planning a postsecondary path</p>
+<pre><code>Goal: Become a software developer at a tech company.
+
+University route (4 years + co-op):
+ - Prerequisites: ICS3U, ICS4U, MHF4U, MCV4U or MDM4U, ENG4U.
+ - Sample programs: UWaterloo CS (co-op), UofT CompSci, McMaster CS,
+   Western SE, Queen's CompSci, Carleton CompSci.
+ - Strengths: strong theory, math, networking, often direct path to
+   internships and full-time at top companies.
+
+College route (2-3 years):
+ - Prerequisites: high-school diploma; specific programs may vary.
+ - Sample programs: Seneca Software Development, Sheridan Mobile Computing,
+   Algonquin Game Development, Conestoga Cybersecurity.
+ - Strengths: more hands-on, faster entry to the workforce, often easier
+   admission. Bridging programs let graduates continue to a university
+   degree if desired.
+
+Sample Day 1 to Day 1 timeline:
+ - Year 12 (this year): build a portfolio (GitHub) of small projects.
+ - Apply OUAC or OCAS in November.
+ - Decision letters in spring; reply by Ontario deadline.
+ - Co-op students may get a placement as early as semester 2.</code></pre>
+                  <p>Either path leads to a viable career. The "best" school is the one where you will work hard and finish; what you build outside class (a portfolio of projects on GitHub, contributions to open source, hackathon entries) matters as much to employers as the institution name.</p>
+                </div>
+                <ul>
+                  <li>Believing only graduates of the most famous schools succeed &mdash; college graduates and self-taught developers are common in the industry.</li>
+                  <li>Assuming you must specialise immediately &mdash; CS is broad; most graduates explore several roles before settling.</li>
+                  <li>Skipping the math prerequisites for university &mdash; admissions averages and degree requirements both depend on them.</li>
+                  <li>Treating a degree as the whole story &mdash; the portfolio, internship experience, and the ability to learn count for at least as much.</li>
+                  <li>Overlooking interdisciplinary paths &mdash; computing + biology = bioinformatics; computing + economics = quantitative finance; computing + art = digital media.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectations D3.1 and D4.1 &mdash; "identify at least three university programs and three college programs in Ontario related to computer science" and "identify at least three landmark contributions to computing".</p>
+              </div>
+            </details>
+            <div class="video-card"><div class="video-header" onclick="toggleVideo('ics3-yt26')"><span class="vid-icon">📖</span><span class="vid-title">The History of Computing &mdash; Crash Course Computer Science (compilation)</span><span class="vid-duration">12:36</span><span class="vid-toggle" id="toggle-ics3-yt26">▶</span></div><div class="video-player" id="player-ics3-yt26"><iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/3xdmEwTIsd0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe><a href="https://www.youtube.com/watch?v=3xdmEwTIsd0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a></div></div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">&#128202; Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/ics3u/Unit5_Environments_Society_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128260; Practice Quiz &mdash; Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/ics3u/Unit5_Environments_Society_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#128203; Diagnostic &mdash; Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/ics3u/Unit5_Environments_Society_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">&#9989; Unit Test &mdash; Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../ics3u.html" class="chnav-btn chnav-next chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS3U &mdash; Introduction to Computer Science, Grade 11 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

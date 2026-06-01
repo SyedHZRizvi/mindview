@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Software Development Process — Practice Quiz</title>
+<style>
+:root{--p:#d97706;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#d97706;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128187; Unit 4: Software Development Process &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test your understanding of the development process, IPO charts, pseudocode, debugging, testing, and file I/O. Instant feedback. Python 3 throughout.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 &mdash; SDLC order</div>
+<div class="qt">Which of these is the correct order of stages in the software-development process?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Code &rarr; Design &rarr; Test &rarr; Understand &rarr; Document</label></li>
+<li><label><input type="radio" name="q1" value="b"> Understand &rarr; Design &rarr; Code &rarr; Test &rarr; Document &rarr; Maintain</label></li>
+<li><label><input type="radio" name="q1" value="c"> Test &rarr; Code &rarr; Design &rarr; Document</label></li>
+<li><label><input type="radio" name="q1" value="d"> Design &rarr; Document &rarr; Code &rarr; Test</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>Understand &rarr; Design &rarr; Code &rarr; Test &rarr; Document &rarr; Maintain. You cannot solve a problem you have not understood, and you cannot test before code exists.</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 &mdash; IPO charts</div>
+<div class="qt">In an IPO chart, what goes in the "Process" column?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Values the user types in.</label></li>
+<li><label><input type="radio" name="q2" value="b"> The calculations and transformations the program performs.</label></li>
+<li><label><input type="radio" name="q2" value="c"> The text printed at the end.</label></li>
+<li><label><input type="radio" name="q2" value="d"> The name of the programmer.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>IPO = <strong>I</strong>nput &rarr; <strong>P</strong>rocess &rarr; <strong>O</strong>utput. The Process column lists the transformations turning Input into Output.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 &mdash; Error types</div>
+<div class="qt">Match the error type to the description. Which one is a LOGIC error?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Missing colon: <code>if x &gt; 5</code></label></li>
+<li><label><input type="radio" name="q3" value="b"> Dividing by zero at runtime</label></li>
+<li><label><input type="radio" name="q3" value="c"> A function returns the wrong answer (the code runs fine)</label></li>
+<li><label><input type="radio" name="q3" value="d"> Trying to index past the end of a list</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>Syntax errors prevent the program from starting; runtime errors crash it during execution; <strong>logic errors</strong> let it run but produce the wrong answer. (c) is the logic error.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 &mdash; Reading a traceback</div>
+<div class="qt">A program crashes with:
+<div class="code">Traceback (most recent call last):
+  File "demo.py", line 7, in &lt;module&gt;
+    print(scores[10])
+IndexError: list index out of range</div>
+What does this tell you?
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The file demo.py is missing.</label></li>
+<li><label><input type="radio" name="q4" value="b"> Line 7 tried to access index 10 in a list that has fewer than 11 elements.</label></li>
+<li><label><input type="radio" name="q4" value="c"> Line 10 contains a syntax error.</label></li>
+<li><label><input type="radio" name="q4" value="d"> The Python interpreter is corrupted.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>The traceback names the file and line and the precise exception. Line 7 accessed an index past the end of the list.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 &mdash; Test categories</div>
+<div class="qt">For a function <code>average(nums)</code> that averages a list of numbers, which input is the BEST <em>boundary case</em> to test?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> [10, 20, 30]</label></li>
+<li><label><input type="radio" name="q5" value="b"> [5.5, 4.2, 9.9, 7.0]</label></li>
+<li><label><input type="radio" name="q5" value="c"> []  (empty list)</label></li>
+<li><label><input type="radio" name="q5" value="d"> [100, 200, 300, 400, 500]</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>The empty list is the textbook <strong>boundary case</strong> for any function over a list. Most bugs hide here (division by zero, etc.).</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 &mdash; File mode</div>
+<div class="qt">Which mode does <code>open("data.txt", "w")</code> use, and what happens if <code>data.txt</code> already exists?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Read mode; existing file is left alone.</label></li>
+<li><label><input type="radio" name="q6" value="b"> Write mode; existing file is truncated to empty.</label></li>
+<li><label><input type="radio" name="q6" value="c"> Append mode; new data added at end.</label></li>
+<li><label><input type="radio" name="q6" value="d"> Backup mode; the file is renamed.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div><code>"w"</code> is write mode. <strong>The existing file is replaced (truncated to empty), then written.</strong> Use <code>"a"</code> for append.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 &mdash; <code>with</code> statement</div>
+<div class="qt">Why is <code>with open(...) as f:</code> preferred over <code>f = open(...); ...; f.close()</code>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> It is faster at runtime.</label></li>
+<li><label><input type="radio" name="q7" value="b"> It automatically closes the file even if an exception is raised.</label></li>
+<li><label><input type="radio" name="q7" value="c"> It only works in Python 2.</label></li>
+<li><label><input type="radio" name="q7" value="d"> It allows multiple programs to read the same file.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>The <code>with</code> statement is a context manager that guarantees <code>close()</code> is called, even if an exception happens inside the block.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 &mdash; Assertion check</div>
+<div class="qt">What does this do?
+<div class="code">assert max(3, 7) == 7</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Prints 7.</label></li>
+<li><label><input type="radio" name="q8" value="b"> Does nothing visible if the condition is True; raises AssertionError if False.</label></li>
+<li><label><input type="radio" name="q8" value="c"> Returns True.</label></li>
+<li><label><input type="radio" name="q8" value="d"> Compiles the program.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div><code>assert</code> is a sanity check. If the expression is True, nothing happens; if False, it raises <code>AssertionError</code>. It is the simplest form of unit test.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 &mdash; Translating pseudocode</div>
+<div class="qt">Which Python line corresponds to "SET count = count + 1"?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> <code>count + 1</code></label></li>
+<li><label><input type="radio" name="q9" value="b"> <code>count += 1</code></label></li>
+<li><label><input type="radio" name="q9" value="c"> <code>count = +1</code></label></li>
+<li><label><input type="radio" name="q9" value="d"> <code>count == count + 1</code></label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div><code>count += 1</code> is the shorthand for <code>count = count + 1</code>. Option (a) computes a new value but doesn't store it.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 &mdash; Reading a file</div>
+<div class="qt">After this code runs, what is in <code>total</code>?
+<div class="code"># scores.txt contains:
+# 10
+# 20
+# 30
+total = 0
+with open("scores.txt") as f:
+    for line in f:
+        total += int(line.strip())
+print(total)</div>
+</div>
+<input type="text" id="q10-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q10','60')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>Each line read is "10\n", "20\n", "30\n". <code>.strip()</code> removes newlines, <code>int(...)</code> parses. Total: 10+20+30 = <strong>60</strong>.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 &mdash; Docstring</div>
+<div class="qt">Where does a docstring appear in a function definition?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> On the same line as <code>def</code>.</label></li>
+<li><label><input type="radio" name="q11" value="b"> Immediately after the <code>def ...:</code> line, indented, as a triple-quoted string.</label></li>
+<li><label><input type="radio" name="q11" value="c"> After the <code>return</code> statement.</label></li>
+<li><label><input type="radio" name="q11" value="d"> Outside the function, before <code>def</code>.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q11','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div>A docstring is the first statement inside a function body &mdash; a triple-quoted string immediately after the <code>def ...:</code> line, indented.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 &mdash; Rubber-duck debugging</div>
+<div class="qt">What is "rubber-duck debugging"?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Throwing rubber ducks at the screen until the bug disappears.</label></li>
+<li><label><input type="radio" name="q12" value="b"> Explaining the code line-by-line to an inanimate object (or peer), which often surfaces the bug.</label></li>
+<li><label><input type="radio" name="q12" value="c"> A Python module called <code>duck</code>.</label></li>
+<li><label><input type="radio" name="q12" value="d"> Submitting the code to a chatbot.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>The act of forcing yourself to verbalise each line often reveals what you had been glossing over. Surprisingly effective.</div></div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 4: Software Development Process | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector('input[name="'+q+'"]:checked');if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}if(sl)sl.classList.add('show');up();}
+function chkText(q,c){const v=document.getElementById(q+'-in').value.trim();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}if(sl)sl.classList.add('show');up();}
+function chkContains(q,acceptable){const v=document.getElementById(q+'-in').value.trim().toLowerCase();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;const norm=v.replace(/\s+/g,'');const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

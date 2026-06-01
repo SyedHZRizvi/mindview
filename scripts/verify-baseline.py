@@ -27,6 +27,8 @@ COURSES_AND_CHAPTERS = [
     ("mcr3u", 8), ("mhf4u", 8), ("mcv4u", 9), ("mdm4u", 8),
     ("sph3u", 5), ("sph4u", 5), ("sch4u", 5), ("sbi4u", 5),
     ("ics4u", 5), ("eng4u", 6),
+    # Wave 2 Phase A: Grade 11 University Preparation additions
+    ("sbi3u", 5), ("sch3u", 5), ("ics3u", 5), ("eng3u", 6),
 ]
 COURSES = [c for c, _ in COURSES_AND_CHAPTERS]
 
@@ -294,19 +296,20 @@ def check_no_double_backslash_mathjax() -> None:
 
 
 def check_eng4u_citation_consistency() -> None:
-    """ENG4U citations had a class of bugs where the strand letter and the
-    expectation code's leading letter didn't match (e.g. 'Strand B,
-    Expectation A3'). Catch that going forward.
+    """ENG4U / ENG3U citations had a class of bugs where the strand letter
+    and the expectation code's leading letter didn't match (e.g. 'Strand B,
+    Expectation A3'). Catch that going forward across both English courses.
     """
     pat = re.compile(r'Strand\s+([A-D]),\s+Expectation\s+([A-Z])')
-    for p in sorted((ROOT / "courses/eng4u").glob("ch*.html")):
-        text = p.read_text()
-        for m in pat.finditer(text):
-            strand, code_letter = m.group(1), m.group(2)
-            if strand != code_letter:
-                fail(f"{p.relative_to(ROOT)}: citation 'Strand {strand}, "
-                     f"Expectation {code_letter}…' — strand letter and "
-                     "expectation code's first letter must match")
+    for course in ("eng4u", "eng3u"):
+        for p in sorted((ROOT / f"courses/{course}").glob("ch*.html")):
+            text = p.read_text()
+            for m in pat.finditer(text):
+                strand, code_letter = m.group(1), m.group(2)
+                if strand != code_letter:
+                    fail(f"{p.relative_to(ROOT)}: citation 'Strand {strand}, "
+                         f"Expectation {code_letter}…' — strand letter and "
+                         "expectation code's first letter must match")
 
 
 # ---------- Manage Users invariants ----------
@@ -322,7 +325,7 @@ def check_chapter_titles_use_h1() -> None:
         for p in sorted((ROOT / f"courses/{code}").glob("ch*.html")):
             text = p.read_text()
             # Match an <h1> containing a chapter or unit indicator.
-            if not re.search(r'<h1[^>]*>[^<]*(?:Chapter|Unit|MCR3U|MHF4U|MCV4U|MDM4U|SPH3U|SPH4U|SCH4U|SBI4U|ICS4U|ENG4U)', text):
+            if not re.search(r'<h1[^>]*>[^<]*(?:Chapter|Unit|MCR3U|MHF4U|MCV4U|MDM4U|SPH3U|SPH4U|SCH4U|SBI4U|ICS4U|ENG4U|ENG3U)', text):
                 fail(f"{p.relative_to(ROOT)}: chapter page is missing an "
                      "<h1> top-level chapter title")
 
@@ -375,7 +378,7 @@ def main() -> int:
         ("chapter pages well-formed",           check_chapter_pages_well_formed),
         ("chapter assessment links resolve",    check_chapter_assessment_links_resolve),
         ("MathJax delimiters & macros single-backslash", check_no_double_backslash_mathjax),
-        ("ENG4U citation strand/code letters match",   check_eng4u_citation_consistency),
+        ("ENG3U/ENG4U citation strand/code letters match", check_eng4u_citation_consistency),
         ("chapter titles use <h1>",             check_chapter_titles_use_h1),
         ("chapter-nav uses .chnav-btn",         check_chnav_btn_class),
         ("role matrix column order",            check_role_matrix_columns),

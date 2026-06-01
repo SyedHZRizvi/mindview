@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Control Flow and Logic — Pre-Unit Diagnostic</title>
+<style>
+:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#dbeafe;border:1px solid #93c5fd;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
+.fb-box h4{color:#92400e;margin-bottom:8px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128269; Unit 2: Control Flow and Logic &mdash; Pre-Unit Diagnostic</h1>
+<div class="sub">Assessment FOR Learning &mdash; Teacher Feedback</div>
+<div class="badge">&#128203; Not Graded &mdash; Descriptive Feedback Only</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Your teacher uses this to check your readiness for Unit 2 &mdash; whether you remember Unit 1 essentials and can reason about logic and repetition before we add formal Python control structures.</div>
+
+<div class="qc">
+<div class="qn">Question 1 &mdash; Unit 1 review (variables and I/O)</div>
+<div class="qt">In one sentence each, what does <code>input()</code> return, and why must we usually wrap it with <code>int()</code> or <code>float()</code>?</div>
+<textarea placeholder="input() returns ... and we wrap it because ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 2 &mdash; Truth table</div>
+<div class="qt">Fill in the truth table. Use <strong>T</strong> or <strong>F</strong>.
+<div class="code">A | B | (A and B) | (A or B) | (not A)
+T | T |    ?     |    ?     |    ?
+T | F |    ?     |    ?     |    ?
+F | T |    ?     |    ?     |    ?
+F | F |    ?     |    ?     |    ?</div>
+</div>
+<textarea placeholder="Row 1: ..., Row 2: ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 3 &mdash; English to logic</div>
+<div class="qt">A driver may take their full G licence test if (a) they are at least 18 years old, AND (b) they have held a G2 for at least 12 months OR have completed a Ministry-approved driving course. Write this rule in compact logical form using the variables <code>age</code>, <code>g2_months</code>, and <code>course</code>.</div>
+<textarea placeholder="(age &gt;= 18) and ((g2_months &gt;= 12) or course)"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 4 &mdash; Predict a repetition</div>
+<div class="qt">Without writing code, predict the result.<br>"Start with the number 1. Repeatedly double it. When does it first reach 1000?" State the number of doublings and the final value.</div>
+<textarea placeholder="1, 2, 4, 8, ... Answer: ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 5 &mdash; Decision tree</div>
+<div class="qt">A grocery checkout: 10% discount for orders over $100; 5% discount for orders $50&ndash;100; otherwise no discount. List the conditions in the order you would check them and explain why the order matters.</div>
+<textarea placeholder="Step 1: if order &gt; 100 ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 6 &mdash; Sketch a loop in English</div>
+<div class="qt">In plain English, describe a procedure that finds the largest of three numbers entered by the user. (No code yet.)</div>
+<textarea placeholder="Step 1: ask the user for the first number ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 7 &mdash; Spot the missing check</div>
+<div class="qt">A program asks for a "test mark" and uses it directly. What input values <em>should</em> be rejected before the program does any arithmetic? List as many edge cases as you can think of.</div>
+<textarea placeholder="negative numbers, marks above 100 ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 8 &mdash; Confidence check</div>
+<div class="qt">Rate your confidence (1=none, 5=expert) on each:
+<ul style="margin-left:22px;">
+<li>Writing an <code>if</code>/<code>else</code> with the right comparison</li>
+<li>Combining conditions with <code>and</code> / <code>or</code> / <code>not</code></li>
+<li>Tracing a loop on paper</li>
+<li>Choosing between <code>for</code> and <code>while</code></li>
+<li>Spotting a bug in someone else's code</li>
+</ul>
+</div>
+<textarea placeholder="(a) 3 &mdash; I get the basic idea but ..." style="min-height:100px;"></textarea>
+</div>
+
+<div class="fb-box">
+<h4>&#128221; Teacher Feedback (filled in by your teacher)</h4>
+<table style="width:100%;border-collapse:collapse;margin-top:8px;">
+<tr><th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Boolean Logic</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Conditionals</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Loops</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Reasoning</th></tr>
+<tr><td style="padding:8px;border:1px solid #fde68a;height:60px;vertical-align:top;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td></tr>
+</table>
+<p style="margin-top:12px;"><strong>Suggested next steps:</strong></p>
+<textarea placeholder="(Teacher: recommend specific practice or pre-reading.)"></textarea>
+</div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 2: Control Flow and Logic &mdash; FOR Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

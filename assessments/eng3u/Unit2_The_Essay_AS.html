@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: The Essay — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: The Essay — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of thesis development, paragraph structure, essay forms, and revision. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1 — Writing Process &amp; Thesis</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which of the following is a thesis, not a topic?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> "This essay is about <em>Macbeth</em>."</label></li>
+<li><label><input type="radio" name="q1" value="b"> "<em>Macbeth</em> is a tragedy."</label></li>
+<li><label><input type="radio" name="q1" value="c"> "Shakespeare presents ambition in <em>Macbeth</em> not as a character flaw but as a contagious idea that moves between the Macbeths depending on which of them is currently imagining the crime, so that the play studies one impulse passing between two people."</label></li>
+<li><label><input type="radio" name="q1" value="d"> "Macbeth was written around 1606."</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','c')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> A thesis makes a debatable, specific claim about the text. Choice (c) names a mechanism (ambition as contagious), specifies what evidence will appear (the alternation between the Macbeths), and gives the intellectual stakes. (a) is a topic, (b) is an obvious truth, (d) is biography.</p></div>
+</div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The writing process is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Strictly linear: pre-write, draft, edit, publish</label></li>
+<li><label><input type="radio" name="q2" value="b"> Recursive — drafting often loops back to revise the outline, the thesis, or the evidence</label></li>
+<li><label><input type="radio" name="q2" value="c"> Only useful for long essays</label></li>
+<li><label><input type="radio" name="q2" value="d"> The same as the editing process</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The writing process is recursive: a draft sentence exposes a flaw in the outline, a revision step reveals the thesis needs sharpening, an editing pass uncovers a logical gap. The linear diagram is a useful map, not the territory.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">When should you finalise your thesis?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Before any drafting begins</label></li>
+<li><label><input type="radio" name="q3" value="b"> Often after drafting one or two body paragraphs, because drafting reveals what you actually think</label></li>
+<li><label><input type="radio" name="q3" value="c"> After the essay is submitted</label></li>
+<li><label><input type="radio" name="q3" value="d"> Never — leave it implicit</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Strong writers often draft the thesis last, after a body section or two has revealed their actual argument. Locking in a vague thesis early and refusing to revise it is one of the most common reasons Grade 11 essays underperform.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Paragraph Structure (PEEL)</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">In PEEL, what is the function of the second "E" (Explain)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Restate the evidence in different words</label></li>
+<li><label><input type="radio" name="q4" value="b"> Interpret how the cited evidence supports the topic-sentence claim, by naming the device or technique and explaining why it produces this effect</label></li>
+<li><label><input type="radio" name="q4" value="c"> Add a second quotation</label></li>
+<li><label><input type="radio" name="q4" value="d"> Conclude the paragraph</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The Explain step is where analytical work happens. Without it, the paragraph is summary or paraphrase. Strong Explain sentences name a specific technique and show why it produces the effect the topic sentence claimed.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A reliable rule of thumb for the ratio of evidence to commentary in an analytical body paragraph is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Three quotations, two sentences of commentary</label></li>
+<li><label><input type="radio" name="q5" value="b"> Every quotation gets at least two sentences of your own commentary</label></li>
+<li><label><input type="radio" name="q5" value="c"> No commentary required if the quotation is strong</label></li>
+<li><label><input type="radio" name="q5" value="d"> Half the paragraph should be quotation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Each quotation requires at least two sentences of commentary. Stacking quotations without proportional commentary produces a paragraph in which the writer's own analytical voice is overwhelmed by source material — the opposite of analysis.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">A strong Link sentence at the end of a body paragraph should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Restate the topic sentence exactly</label></li>
+<li><label><input type="radio" name="q6" value="b"> Move the argument one step forward — either by connecting this paragraph back to the thesis or by setting up the next paragraph</label></li>
+<li><label><input type="radio" name="q6" value="c"> Introduce a brand-new claim</label></li>
+<li><label><input type="radio" name="q6" value="d"> Apologise to the reader</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The Link advances the argument. A weak Link restates the Point; a strong Link names what this paragraph's analysis contributes to the thesis or signals the move to the next paragraph.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Essay Forms</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">An <em>expository</em> essay primarily aims to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Argue an opinion</label></li>
+<li><label><input type="radio" name="q7" value="b"> Inform and explain</label></li>
+<li><label><input type="radio" name="q7" value="c"> Move the reader emotionally</label></li>
+<li><label><input type="radio" name="q7" value="d"> Tell a personal story</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Expository essays inform and explain. The burden of proof is accuracy and clarity. The writer's voice is steady; emotional appeals are rare. Persuasive essays add the argumentative move; personal essays add the reflective one.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Aristotle's three rhetorical appeals are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Logos, ethos, pathos (logic, credibility, emotion)</label></li>
+<li><label><input type="radio" name="q8" value="b"> Hook, thesis, conclusion</label></li>
+<li><label><input type="radio" name="q8" value="c"> Beginning, middle, end</label></li>
+<li><label><input type="radio" name="q8" value="d"> Subject, verb, object</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','a')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Aristotle named three classical appeals: <strong>logos</strong> (logic and evidence), <strong>ethos</strong> (credibility of the speaker), <strong>pathos</strong> (emotion of the audience). Strong persuasive writing combines at least two.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A <em>personal</em> essay is distinguished from a diary entry by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Being shorter</label></li>
+<li><label><input type="radio" name="q9" value="b"> Shaping private experience into an insight a stranger can share, through craft</label></li>
+<li><label><input type="radio" name="q9" value="c"> Avoiding the word "I"</label></li>
+<li><label><input type="radio" name="q9" value="d"> Containing no specific details</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> A personal essay shapes lived experience into something a stranger could find valuable. It uses specific detail and earned reflection; it is not raw self-expression. Strong personal essays often pivot from a small concrete moment to a larger insight.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Revising and Editing</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">What is a <em>comma splice</em>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> A comma used inside a quotation</label></li>
+<li><label><input type="radio" name="q10" value="b"> Two independent clauses joined only by a comma ("Macbeth hesitates, Lady Macbeth pushes him forward")</label></li>
+<li><label><input type="radio" name="q10" value="c"> Any sentence with more than two commas</label></li>
+<li><label><input type="radio" name="q10" value="d"> A British spelling rule</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> A comma splice joins two independent clauses with only a comma. Repair: replace the comma with a period or semicolon, add a coordinating conjunction (and, but, so), or subordinate one clause.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Revision and editing differ because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Revision is for poems; editing is for essays</label></li>
+<li><label><input type="radio" name="q11" value="b"> Revision works on argument, structure, and evidence; editing works on sentence-level conventions (grammar, mechanics)</label></li>
+<li><label><input type="radio" name="q11" value="c"> They are the same operation</label></li>
+<li><label><input type="radio" name="q11" value="d"> Editing must be done before revising</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Revision and editing are different operations. Revise first (cut paragraphs, sharpen thesis, find stronger evidence), then edit (commas, fragments, agreement). Editing a sentence you will later cut is wasted effort.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">The single most reliable editing technique for the final pass is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Spellcheck</label></li>
+<li><label><input type="radio" name="q12" value="b"> Reading the essay aloud — the mouth catches what the eye skips</label></li>
+<li><label><input type="radio" name="q12" value="c"> Asking a friend to read it once</label></li>
+<li><label><input type="radio" name="q12" value="d"> Skimming the first sentence of each paragraph</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Reading aloud reliably catches awkward phrasing, run-on sentences, missing words, and tense shifts that silent reading skips. The technique is free, takes ten minutes per 1,000 words, and catches errors no other method does.</div></div>
+
+</div>
+
+<footer>ENG3U — English, Grade 11 | Strand C: Writing | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

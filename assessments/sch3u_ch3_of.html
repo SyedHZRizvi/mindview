@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Quantities in Reactions — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#dc2626;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 3: Quantities in Chemical Reactions</h1><div class="sub">Assessment OF Learning — Unit Test</div><div class="badge">✅ Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work and pay attention to significant figures. Periodic table permitted.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Calculate the molar mass of Mg(NO₃)₂. (M: Mg = 24.31, N = 14.01, O = 16.00.)</div>
+<input type="text" id="q1-in" placeholder="g/mol...">
+<button class="btn btn-p" onclick="chkNum('q1',148.33)">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>24.31 + 2(14.01 + 3·16.00) = 24.31 + 2(62.01) = <strong>148.33 g/mol</strong>.</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">How many molecules in 36.0 g of water?</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Calculate the percent composition by mass of each element in ammonium sulfate, (NH₄)₂SO₄.</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A compound contains 26.6% K, 35.4% Cr, and 38.0% O. Find its empirical formula. (M: K=39.10, Cr=52.00, O=16.00.)</div>
+<textarea placeholder="Show all steps..."></textarea>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A hydrocarbon has empirical formula CH and molar mass 78.0 g/mol. Find its molecular formula.</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [15 marks]</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Combustion of 8.00 g of methane (CH₄, M=16.05) produces how many grams of CO₂? (Reaction: \(\text{CH}_4 + 2\text{O}_2 \rightarrow \text{CO}_2 + 2\text{H}_2\text{O}\); excess O₂.)</div>
+<textarea placeholder="Show all steps..."></textarea>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">5.00 g of zinc reacts with 25.0 mL of 1.50 mol/L HCl: \(\text{Zn} + 2\text{HCl} \rightarrow \text{ZnCl}_2 + \text{H}_2\). (a) Identify the limiting reactant. (b) Calculate the mass of H₂ produced.</div>
+<textarea placeholder="Show all steps..."></textarea>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">In a lab, 10.0 g of Mg burns in excess O₂ to give MgO. A student isolates 14.5 g of MgO. Calculate the theoretical yield and the percent yield. Suggest one source of error if percent yield is below 100%.</div>
+<textarea placeholder="Show all steps..."></textarea>
+</div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Define: (a) mole, (b) molar mass, (c) empirical formula, (d) percent yield.</div>
+<textarea placeholder="Write clear definitions..."></textarea>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain why a percent yield above 100% is physically impossible. Give two experimental reasons it might be reported anyway.</div>
+<textarea placeholder="Write clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain in your own words what a mole ratio is and how it relates to the coefficients in a balanced equation. Why can't you use mass ratios directly?</div>
+<textarea placeholder="Write clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Why is significant-figure accounting essential in stoichiometry? Use one example.</div>
+<textarea placeholder="Explain with example..."></textarea>
+</div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A 25.0 g sample of fertilizer is found to contain 8.45 g of nitrogen. (a) Calculate the percent nitrogen. (b) If the active ingredient is NH₄NO₃, calculate the mass of pure NH₄NO₃ that would supply this nitrogen.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Iron is produced industrially by reducing iron(III) oxide with carbon monoxide: \(\text{Fe}_2\text{O}_3 + 3\text{CO} \rightarrow 2\text{Fe} + 3\text{CO}_2\). What mass of iron can be produced from 1000 kg of Fe₂O₃ (M=159.69), assuming 92% yield?</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Sodium azide is used in vehicle airbags: \(2\text{NaN}_3 \rightarrow 2\text{Na} + 3\text{N}_2\). What mass of NaN₃ (M=65.01) is needed to produce 80.0 L of N₂ at STP (molar volume 22.4 L/mol)?</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A chemist analyzes a sample of an iron-oxide ore and finds it contains 52.0% Fe by mass. Predict whether the empirical formula is FeO (77.7% Fe) or Fe₂O₃ (69.9% Fe), and explain the discrepancy from the measured value.</div>
+<textarea placeholder="Show reasoning..."></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<details style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
+<div class="sol show">
+<p><strong>Q1.</strong> 148.33 g/mol.</p>
+<p><strong>Q2.</strong> n = 36.0/18.02 = 1.998 mol; N = n × N_A = 1.998 × 6.022×10²³ = <strong>1.20 × 10²⁴ molecules</strong>.</p>
+<p><strong>Q3.</strong> M = 132.15 g/mol. %N = 28.02/132.15 × 100 = 21.20%; %H = 8.08/132.15 × 100 = 6.11%; %S = 32.07/132.15 × 100 = 24.27%; %O = 64.00/132.15 × 100 = 48.43%.</p>
+<p><strong>Q4.</strong> In 100 g: K = 26.6/39.10 = 0.680 mol; Cr = 35.4/52.00 = 0.681 mol; O = 38.0/16.00 = 2.375 mol. Divide by smallest (0.680): K = 1.00; Cr = 1.00; O = 3.49 ≈ 3.5. Multiply by 2: K₂Cr₂O₇ → empirical formula <strong>K₂Cr₂O₇</strong> (potassium dichromate).</p>
+<p><strong>Q5.</strong> Empirical mass CH = 13.02 g/mol. 78.0/13.02 ≈ 6. Molecular formula = <strong>C₆H₆</strong> (benzene).</p>
+<p><strong>Q6.</strong> n(CH₄) = 8.00/16.05 = 0.4984 mol → n(CO₂) = 0.4984 mol → m(CO₂) = 0.4984 × 44.01 = <strong>21.9 g</strong>.</p>
+<p><strong>Q7.</strong> n(Zn) = 5.00/65.38 = 0.0765 mol; n(HCl) = 0.0250 × 1.50 = 0.0375 mol. Zn needs 2× HCl = 0.153 mol but only 0.0375 mol HCl available → <strong>HCl is limiting</strong>. n(H₂) = 0.0375/2 = 0.01875 mol; m(H₂) = 0.01875 × 2.016 = <strong>0.0378 g</strong>.</p>
+<p><strong>Q8.</strong> n(Mg) = 10.0/24.31 = 0.4114 mol → n(MgO) = 0.4114 mol → theoretical = 0.4114 × 40.31 = 16.58 g. Percent yield = 14.5/16.58 × 100 = <strong>87.5%</strong>. Loss possible during transfer; incomplete combustion; not all Mg oxidized.</p>
+<p><strong>Q9.</strong> Standard definitions; see lesson notes.</p>
+<p><strong>Q10.</strong> Mass is conserved → product mass ≤ reactant mass. Causes: (a) water/solvent not fully removed from product; (b) impurities/by-products counted as product.</p>
+<p><strong>Q11.</strong> Mole ratio = ratio of coefficients in balanced equation. Mass ratios fail because atoms of different elements have different masses (1 mol of H ≠ 1 mol of Cl in grams).</p>
+<p><strong>Q12.</strong> Final answer's precision limited by least precise input. E.g., 5.0 g / 18.02 g/mol = 0.28 mol (only 2 sig figs, not 0.27746).</p>
+<p><strong>Q13.</strong> (a) %N = 8.45/25.0 × 100 = 33.8%. (b) %N in NH₄NO₃ = 28.02/80.05 × 100 = 35.0%. Mass NH₄NO₃ providing 8.45 g N = 8.45/0.350 = 24.1 g.</p>
+<p><strong>Q14.</strong> n(Fe₂O₃) = 1.000×10⁶/159.69 = 6262 mol → n(Fe) = 2 × 6262 = 12 524 mol → m(Fe) theoretical = 12 524 × 55.85 = 6.99×10⁵ g = 699 kg. Actual = 0.92 × 699 = <strong>643 kg</strong>.</p>
+<p><strong>Q15.</strong> n(N₂) = 80.0/22.4 = 3.571 mol. From 2NaN₃ → 3N₂, mole ratio: n(NaN₃) = (2/3)(3.571) = 2.381 mol. Mass = 2.381 × 65.01 = <strong>155 g</strong>.</p>
+<p><strong>Q16.</strong> 52.0% is between FeO (77.7%) and Fe₂O₃ (69.9%). Both are too high — sample likely contains <em>Fe₃O₄</em> (72.4% Fe) plus non-iron mineral impurities (silica, etc.) that dilute the iron content below either pure-oxide value.</p>
+</div>
+</details>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand D: Quantities in Reactions | Assessment OF Learning</footer>
+</div>
+<script>
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(0.1,Math.abs(c)*0.02)){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+</script>
+</body>
+</html>

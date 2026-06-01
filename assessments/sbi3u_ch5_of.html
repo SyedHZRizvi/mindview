@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI3U Ch 5: Plants — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #65a30d; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#65a30d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sbi3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 5: Plants — Anatomy, Growth, and Function — Unit Test</h1><div class="sub">Assessment OF Learning · Strand F</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 70 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all work. Reveal answer keys only after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name the three plant tissue systems and state one function of each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Dermal</em>: outer covering — protection, prevention of water loss (cuticle), gas exchange through stomata, secretion of trichomes. (2) <em>Ground</em>: bulk of the plant — photosynthesis (parenchyma), flexible support (collenchyma), rigid support (sclerenchyma), storage. (3) <em>Vascular</em>: transport — xylem (water + minerals upward) and phloem (sugars source-to-sink).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which is the principal cell type of secondary xylem ("wood")?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Parenchyma</label></li>
+<li><label><input type="radio" name="q2"> Sieve-tube elements</label></li>
+<li><label><input type="radio" name="q2"> Tracheids and vessel elements</label></li>
+<li><label><input type="radio" name="q2"> Companion cells</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>C.</strong> Wood is secondary xylem made mostly of <em>tracheids</em> and <em>vessel elements</em> (and some xylem fibres/parenchyma). Sieve-tube elements and companion cells are in phloem.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">List two differences between monocots and eudicots, choosing from: leaf venation, flower part number, vascular bundle arrangement, cotyledon number.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Leaf venation</em>: monocots — parallel; eudicots — netted (reticulate). (2) <em>Flower parts</em>: monocots — multiples of 3; eudicots — multiples of 4 or 5. (3) <em>Vascular bundles</em>: monocots — scattered; eudicots — arranged in a ring. (4) <em>Cotyledons</em>: monocots — 1; eudicots — 2. (Any two.)</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Describe the cohesion-tension theory of water transport in xylem. Identify (a) the driving force, (b) the property of water that allows the column to remain continuous, (c) the cell type in xylem that conducts water.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Driving force: <em>transpiration</em> at the leaves — water evaporates from mesophyll cells and exits stomata, creating tension that pulls water up. (b) Water has strong <em>cohesion</em> (H-bonds between water molecules) and <em>adhesion</em> (H-bonds between water and cell-wall cellulose) — these keep the column intact and attached to xylem walls under tension. (c) <em>Tracheids</em> and <em>vessel elements</em> conduct water; both are dead at maturity, so they offer no cytoplasmic resistance.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which plant hormone is most closely associated with stomatal closure during drought?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> Auxin</label></li>
+<li><label><input type="radio" name="q5"> Ethylene</label></li>
+<li><label><input type="radio" name="q5"> Abscisic acid (ABA)</label></li>
+<li><label><input type="radio" name="q5"> Cytokinin</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>C (ABA).</strong> ABA is the "stress hormone" — under drought, ABA accumulates and triggers guard-cell solute efflux, closing the stomata and reducing water loss.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [12 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[4]</span>
+<div class="qtxt">A potometer is used to measure water uptake by a leafy shoot. Design an experiment to compare transpiration rates at three different humidities (20%, 50%, 80%). State the variables, replicates, and the predicted pattern.</div>
+<textarea placeholder="Your protocol..."></textarea>
+<details><summary>Answer Key</summary><p>IV: relative humidity (20%, 50%, 80% — achieved with a sealed chamber and a humidifier or dry desiccant). DV: water uptake rate (mm or mL per minute, recorded as the meniscus moves along the potometer's capillary). Replicates: at least 3 shoots per humidity, and at least 3 trials per shoot. Controlled variables: temperature, light intensity, air movement (no wind), leaf area, time of day. Predicted pattern: transpiration rate is highest at 20% humidity (steep gradient drives water vapour out) and lowest at 80% humidity (shallow gradient). Plot rate vs humidity; expect a negative correlation.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">A tree stump shows wider growth rings during one decade than in the surrounding decades. Suggest two possible biological or environmental reasons and explain how dendrochronology can be used to reconstruct climate.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Possible reasons for wider rings: (1) more favourable growing conditions — adequate rainfall, longer growing season, warmer temperatures; (2) reduced competition (a neighbouring tree fell, freeing light and nutrients); (3) fewer pests or pathogens during that decade; (4) increased atmospheric CO<sub>2</sub> in modern times accelerates growth. Dendrochronology reconstructs climate by collecting long ring-width time series from many trees of overlapping ages (cross-dated by matching distinctive rings). Where wider rings correlate with weather records, those rings record warmer/wetter years; the same correlation lets researchers infer climate centuries before instrumental records (e.g., the Medieval Warm Period and Little Ice Age have been confirmed by tree-ring data).</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">In a controlled experiment, a plant is grown horizontally (the stem laid sideways). After several days, the shoot tip curves upward while the roots curve downward. (a) Name the response. (b) Identify the hormone responsible and describe how it redistributes in each organ. (c) Why do shoots and roots respond differently to the same hormone?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) <em>Gravitropism</em> — shoots show negative gravitropism (away from gravity), roots show positive gravitropism (toward gravity). (b) <em>Auxin</em>. In a horizontal shoot, auxin accumulates on the lower side, elongating those cells more and curving the shoot upward. In a horizontal root, auxin also accumulates on the lower side, but in roots high auxin <em>inhibits</em> cell elongation, so the upper side elongates more and the root bends downward. The sensing mechanism uses <em>statoliths</em> (dense starch-filled organelles) that sediment in cells of the root cap. (c) Roots and shoots have different sensitivities to auxin: shoots elongate fastest at concentrations that already inhibit root elongation — so the same gradient produces opposite curvatures.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[4]</span>
+<div class="qtxt">Describe (with optional diagram) the structure of a typical flower. Include sepals, petals, stamens (filament + anther), and the carpel (stigma + style + ovary). State the role of each part.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>A typical flower consists of four whorls of modified leaves. <em>Sepals</em> (calyx): outermost; protect the bud. <em>Petals</em> (corolla): often coloured/scented; attract pollinators. <em>Stamens</em> (male reproductive parts): each has a filament topped by an <em>anther</em> where pollen (male gametophyte) is produced. <em>Carpel/pistil</em> (female): the stigma is the sticky upper surface that receives pollen; the style connects to the ovary below; the ovary contains one or more ovules; each ovule contains the embryo sac (female gametophyte) with the egg and polar nuclei. After pollination, fertilization within the ovule produces a seed; the surrounding ovary develops into a fruit.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Explain the pressure-flow model of phloem transport. Use the terms source, sink, sieve-tube element, companion cell, active loading, osmosis, and pressure gradient.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>At the <em>source</em> (e.g., a leaf actively photosynthesising), <em>companion cells</em> actively load sucrose into the adjacent <em>sieve-tube elements</em> using ATP. The high solute concentration draws water from neighbouring xylem into the phloem by <em>osmosis</em>, raising hydrostatic pressure. At the <em>sink</em> (e.g., a growing fruit or root), sucrose is actively unloaded into surrounding cells for use or storage; water exits the sieve tubes back into nearby xylem; pressure falls. The resulting <em>pressure gradient</em> (high at source, low at sink) drives bulk flow of phloem sap from source to sink. Because sources and sinks change with the season — leaves load to roots in summer; roots release to buds in spring — phloem transport is bidirectional over time, unlike xylem transport (always up).</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Compare and contrast sexual and asexual (vegetative) reproduction in plants. Include one example of each, and one advantage and one disadvantage of asexual reproduction.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><em>Sexual reproduction</em>: gametes from two parents combine to form genetically unique seeds (e.g., apple from cross-pollinated flower). Offspring are genetically diverse. <em>Asexual / vegetative reproduction</em>: offspring are clones of a single parent — strawberry runners (stolons), potato tubers, garlic bulbs, ginger rhizomes, rooted cuttings. Advantage of asexual: fast, predictable, preserves a successful genotype, no need for a mate or pollinator. Disadvantage: no genetic variation, so populations are vulnerable to new pests or pathogens (Irish potato famine, banana fungal disease). Most plants use both modes depending on conditions.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Application — Cacti and water:</strong> Desert cacti show characteristic adaptations for water conservation. Identify two such adaptations and explain how each reduces water loss without preventing photosynthesis altogether.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <em>Thick waxy cuticle</em>: minimises evaporation from epidermis. (2) <em>Stomata closed during the day, open at night</em> (CAM metabolism): CO<sub>2</sub> taken in cool, humid nights and stored as malate; photosynthesis uses stored CO<sub>2</sub> during the day with stomata closed → drastically reduced water loss for a given carbon gain. (3) <em>Reduced leaves (often spines)</em>: minimises surface area for transpiration; spines also deter herbivores and shade the stem. (4) <em>Photosynthesis in fleshy stems</em>: green stem replaces leaf as photosynthetic organ. (5) <em>Shallow extensive roots</em>: rapid absorption from light rains.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE — Crop rotation:</strong> A farmer alternates corn (a grass, heavy nitrogen user) with soybeans (a legume, nitrogen fixer) over successive years. Explain (a) the biological basis for this rotation and (b) two practical benefits.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Soybeans (and other legumes) form symbiotic root nodules with nitrogen-fixing <em>Rhizobium</em> bacteria. These bacteria convert atmospheric N<sub>2</sub> (unusable by plants) into NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup> (usable), enriching soil nitrogen for the next crop. Corn, in contrast, depletes nitrogen rapidly. Alternating the two replenishes nitrogen between corn crops. (b) Practical benefits: (1) reduced synthetic fertilizer needs — lower input cost and reduced run-off pollution; (2) interrupts pest and disease life cycles — pests adapted to corn cannot persist on soybeans, and vice versa, lowering pesticide need; (3) different root architecture improves soil structure and reduces erosion.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE — GM crops:</strong> Bt corn carries a bacterial gene that produces a toxin lethal to certain caterpillar pests. List one ecological benefit and one ecological concern for large-scale Bt corn deployment.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Benefit: reduced insecticide spraying because the corn produces its own pest-specific toxin → less off-target killing of pollinators and beneficial insects; lower pesticide exposure for farm workers; reduced agricultural run-off into waterways. Concern: insect populations can evolve resistance (directional selection on Bt-resistance alleles), making the toxin less effective over time; refuges of non-Bt corn must be planted to slow resistance. Other concerns: gene flow to wild relatives; potential effects on non-target Lepidoptera that consume corn pollen (e.g., monarch butterfly debate of the early 2000s — careful studies showed real-world risk is low but non-zero); market and patent issues for farmers.</p></details></div>
+
+<footer>SBI3U — Biology, Grade 11 | Strand F: Plants — Anatomy, Growth, and Function | Assessment OF Learning — Graded</footer>
+</div></body></html>

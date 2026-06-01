@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Software Development Process — Unit Test</title>
+<style>
+:root{--p:#d97706;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#d97706;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 4: Software Development Process &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code must be syntactically valid Python 3. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[3 marks]</span></div>
+<div class="qt">List the six stages of the software-development process in order.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Classify each as syntax, runtime, or logic error.
+<ol style="margin-left:24px;">
+<li><code>for i in range(10)  # missing colon</code></li>
+<li><code>print(1 / 0)</code></li>
+<li>A function that should sum 1..n but actually sums 1..(n-1)</li>
+<li><code>int("hello")</code></li>
+<li><code>print x</code>  (no parentheses)</li>
+</ol>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[3 marks]</span></div>
+<div class="qt">Explain in one sentence each:
+<ol style="margin-left:24px;">
+<li>What an IPO chart is for.</li>
+<li>What pseudocode is.</li>
+<li>Why we put planning before coding.</li>
+</ol>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[3 marks]</span></div>
+<div class="qt">Describe the difference between mode <code>"w"</code> and mode <code>"a"</code> in <code>open</code>. Give one situation where each is appropriate.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">Define each in one sentence:
+<ul style="margin-left:22px;">
+<li>Boundary case (in testing)</li>
+<li>Regression test</li>
+<li>Header comment</li>
+</ul>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[5 marks]</span></div>
+<div class="qt">Translate this pseudocode into valid Python.
+<div class="code">SET total = 0
+SET count = 0
+WHILE more input:
+    READ mark
+    IF mark &gt;= 0:
+        ADD mark to total
+        ADD 1 to count
+SET average = total / count
+PRINT average</div>
+You may use any reasonable sentinel for "more input".</div>
+<textarea placeholder="total = 0; count = 0; while ..." style="min-height:180px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find and fix the bugs. This program should write each of <code>nums</code> on its own line in <code>out.txt</code>. There are at least <strong>three bugs</strong>. Rewrite it correctly.
+<div class="code">nums = [10, 20, 30]
+f = open("out.txt", "r")
+for n in nums
+    f.write(n)
+f.close</div>
+</div>
+<textarea placeholder="Corrected code..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Design a test plan with at least <strong>five</strong> distinct test cases (input and expected output) for a function <code>letter_grade(percent)</code> that maps a percent (0-100) to Ontario achievement levels: Level 4 (80+), Level 3 (70-79), Level 2 (60-69), Level 1 (50-59), R (&lt;50). Cover normal, boundary, and invalid cases.</div>
+<textarea placeholder="Test 1: letter_grade(85) -&gt; 'Level 4' (normal)" style="min-height:180px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Build an IPO chart for the following problem: "Read student names and marks from a CSV file. Print the names of all students who scored above the class average." Show three columns.</div>
+<textarea placeholder="INPUT       | PROCESS       | OUTPUT" style="min-height:180px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Add a header comment, a docstring, and clear inline comments to this program so a future reader understands it. You may also rename variables.
+<div class="code">def x(a,b):
+    t=0
+    with open(a) as f:
+        for L in f:
+            t+=int(L.strip())
+    with open(b,"w") as g:
+        g.write(str(t))</div>
+</div>
+<textarea placeholder="# sum_file.py ..." style="min-height:180px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">A classmate insists that "testing is a waste of time &mdash; if the code looks right, it works". In 4-6 sentences, respectfully explain why testing is important, drawing on concepts from this unit.</div>
+<textarea style="min-height:160px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a complete Python program that asks the user for a filename, then reads that file and prints the number of lines, the number of words (whitespace-separated tokens), and the number of characters. Use the <code>with</code> idiom.</div>
+<textarea placeholder='path = input("filename: ")' style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a program that appends a line to a log file called <code>diary.txt</code> every time it is run. Each line should contain the date in the format <code>YYYY-MM-DD</code> followed by a user-typed message. Use the <code>datetime</code> module for the date.</div>
+<textarea placeholder="import datetime ..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">A CSV file <code>marks.csv</code> has lines of the form <code>name,mark</code>:
+<div class="code">Ada,85
+Bob,72
+Cay,91
+Dee,64</div>
+Write a complete program that reads this file and prints:
+<ul style="margin-left:22px;">
+<li>The number of students.</li>
+<li>The class average (1 decimal).</li>
+<li>The name of the highest-scoring student.</li>
+</ul>
+</div>
+<textarea placeholder='with open("marks.csv") as f:' style="min-height:240px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness &mdash; partial credit</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness &mdash; significant errors</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 4: Software Development Process &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

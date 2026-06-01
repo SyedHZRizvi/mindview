@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS3U — Introduction to Computer Science | MindView</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.code-snip { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px 18px; font-family:'Consolas','Monaco',monospace; font-size:13px; line-height:1.6; margin:10px 0; overflow-x:auto; }
+.code-snip .kw { color:#818cf8; font-weight:700; }
+.code-snip .str { color:#86efac; }
+.code-snip .com { color:#94a3b8; font-style:italic; }
+.code-snip .num { color:#fbbf24; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #6366f1; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body pre { background: #0f172a; color: #e2e8f0; padding: 12px 16px; border-radius: 8px; overflow-x: auto; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 13px; line-height: 1.5; margin: 12px 0; }
+.lesson-notes-body code { font-family: 'SF Mono', Consolas, Monaco, monospace; }
+.lesson-notes-body p code { background: #f1f5f9; color: #0f172a; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../">Home</a>
+            <a href="../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="chapter-hero" style="background:linear-gradient(135deg, #14b8a6dd 0%, #0d9488 100%);">
+    <div class="container">
+        <div class="strand-tag">Computer Studies — Grade 11 University Preparation</div>
+        <h1>&#128187; ICS3U: Introduction to Computer Science</h1>
+        <p>First programming course: variables, control flow, functions, simple data structures, the software-development process, and computers in society</p>
+        <p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours &middot; 5 units &middot; Recommended language: Python (Java optional) &middot; Prerequisite: None &middot; Pathway: ICS4U</p>
+    </div>
+</div>
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+    <!-- Quick navigation -->
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+        <a href="ics3u/ch1.html" style="padding:8px 16px;background:#ccfbf1;color:#115e59;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 1: Introduction to Programming</a>
+        <a href="ics3u/ch2.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 2: Control Flow &amp; Logic</a>
+        <a href="ics3u/ch3.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 3: Modular Programming &amp; Data Structures</a>
+        <a href="ics3u/ch4.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 4: Software Development Process</a>
+        <a href="ics3u/ch5.html" style="padding:8px 16px;background:#ede9fe;color:#5b21b6;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 5: Computer Environments &amp; Society</a>
+    </div>
+    <!-- =================== Course Resources & Final Evaluation =================== -->
+    <div class="unit-section" id="resources">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#1e293b);">
+            <h2>&#128203; Course Resources &amp; Final Evaluation</h2>
+            <p>Ministry curriculum overview and the comprehensive final exam (30% of course mark)</p>
+            <div class="unit-meta">
+                <span>&#128218; Ontario Curriculum 2008</span>
+                <span>&#128208; Growing Success (2010)</span>
+            </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+            <a href="ics3u_curriculum.html" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:5px solid #14b8a6;border-radius:10px;padding:18px 20px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,0.04);">
+                <div style="font-size:13px;color:#14b8a6;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">&#128203; Curriculum Document</div>
+                <div style="font-size:16px;font-weight:700;margin-bottom:4px;">ICS3U Curriculum Overview</div>
+                <div style="font-size:13px;color:#64748b;">Ministry curriculum overview: strands, computational-thinking practices, achievement chart, evaluation policy.</div>
+            </a>
+            <a href="../assessments/ics3u/Final_Exam.html" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:5px solid #14b8a6;border-radius:10px;padding:18px 20px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,0.04);">
+                <div style="font-size:13px;color:#14b8a6;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">&#127891; Final Exam (30%)</div>
+                <div style="font-size:16px;font-weight:700;margin-bottom:4px;">Cumulative Final Exam</div>
+                <div style="font-size:13px;color:#64748b;">2.5 hours &middot; 100 marks &middot; K/U 25 &middot; T 25 &middot; C 25 &middot; A 25 &middot; Covers all five units. Aligned with Growing Success (2010).</div>
+            </a>
+        </div>
+    </div>
+
+    <h2 style="font-size:20px;margin:36px 0 16px;color:#1e293b;">Chapters</h2>
+    <div class="chapter-cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:48px;">
+    <a href="ics3u/ch1.html" class="chapter-card" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:6px solid #14b8a6dd;border-radius:12px;padding:20px 22px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s;">
+      <div style="font-size:12px;color:#14b8a6dd;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Chapter 1</div>
+      <div style="font-size:17px;font-weight:700;margin-bottom:6px;">Unit 1: Introduction to Programming</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.45;">First Python programs, variables, primitive data types, arithmetic, input/output, console interaction, code style and commenting</div>
+    </a>
+    <a href="ics3u/ch2.html" class="chapter-card" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:6px solid #2563ebdd;border-radius:12px;padding:20px 22px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s;">
+      <div style="font-size:12px;color:#2563ebdd;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Chapter 2</div>
+      <div style="font-size:17px;font-weight:700;margin-bottom:6px;">Unit 2: Control Flow &amp; Logic</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.45;">Comparison &amp; logical operators, <code>if</code>/<code>elif</code>/<code>else</code>, <code>while</code> and <code>for</code> loops, nested constructs, Boolean expressions</div>
+    </a>
+    <a href="ics3u/ch3.html" class="chapter-card" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:6px solid #059669dd;border-radius:12px;padding:20px 22px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s;">
+      <div style="font-size:12px;color:#059669dd;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Chapter 3</div>
+      <div style="font-size:17px;font-weight:700;margin-bottom:6px;">Unit 3: Modular Programming &amp; Data Structures</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.45;">Functions, parameters &amp; return values, variable scope, 1-D lists/arrays, strings as sequences, simple algorithms</div>
+    </a>
+    <a href="ics3u/ch4.html" class="chapter-card" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:6px solid #d97706dd;border-radius:12px;padding:20px 22px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s;">
+      <div style="font-size:12px;color:#d97706dd;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Chapter 4</div>
+      <div style="font-size:17px;font-weight:700;margin-bottom:6px;">Unit 4: Software Development Process</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.45;">Problem-solving, IPO charts, pseudocode, debugging strategies, test cases, documentation, sequential file I/O</div>
+    </a>
+    <a href="ics3u/ch5.html" class="chapter-card" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:6px solid #7c3aeddd;border-radius:12px;padding:20px 22px;text-decoration:none;color:#1e293b;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s;">
+      <div style="font-size:12px;color:#7c3aeddd;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;">Chapter 5</div>
+      <div style="font-size:17px;font-weight:700;margin-bottom:6px;">Unit 5: Computer Environments &amp; Society</div>
+      <div style="font-size:13px;color:#64748b;line-height:1.45;">Hardware/software, operating systems, networking basics, ethics, privacy, cybersecurity, careers and education pathways</div>
+    </a>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> &middot; ICS3U &mdash; Introduction to Computer Science, Grade 11 &middot; Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+</body></html>

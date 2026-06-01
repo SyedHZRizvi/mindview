@@ -213,7 +213,8 @@ intact. Bypass with `FORCE=1 sh scripts/safe-deploy.sh` if absolutely needed.
 | SBI4U  | 5 |
 | ICS4U  | 5 |
 | ENG4U  | 6 |
-| **Total** | **64** |
+| ENG3U  | 6 |
+| **Total** | **70** |
 
 ---
 

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Matter, Trends & Bonding — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0d9488; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0d9488;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 1: Matter, Chemical Trends &amp; Bonding</h1><div class="sub">Assessment OF Learning — Unit Test</div><div class="badge">✅ Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work. Answers without supporting reasoning receive partial credit at best.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which scientist contributed the concept of quantized electron energy levels?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Dalton</label></li>
+<li><label><input type="radio" name="q1" value="b"> Thomson</label></li>
+<li><label><input type="radio" name="q1" value="c"> Rutherford</label></li>
+<li><label><input type="radio" name="q1" value="d"> Bohr</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','d')">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>Bohr (1913) proposed quantized electron orbits to explain hydrogen's line spectrum.</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Arrange in order of increasing electronegativity: Cs, C, F, Na.</div>
+<textarea placeholder="Show reasoning..."></textarea>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">For each pair, identify the bond type (ionic, polar covalent, or non-polar covalent): (a) K–Br; (b) C–O; (c) H–H.</div>
+<textarea placeholder="Show reasoning..."></textarea>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Draw the Lewis structure of CCl₄ and state the VSEPR shape.</div>
+<textarea placeholder="Describe in text or sketch on paper..."></textarea>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which intermolecular force is responsible for water's unusually high boiling point?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> London dispersion</label></li>
+<li><label><input type="radio" name="q5" value="b"> Dipole-dipole</label></li>
+<li><label><input type="radio" name="q5" value="c"> Hydrogen bonding</label></li>
+<li><label><input type="radio" name="q5" value="d"> Ionic bonding</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','c')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>O is electronegative and has lone pairs → strong H-bonds between water molecules.</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Write the chemical formula for the ionic compound formed between calcium and nitrogen.</div>
+<input type="text" id="q6-in" placeholder="Type formula...">
+<button class="btn btn-p" onclick="chkText('q6','Ca3N2')">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>Ca²⁺ and N³⁻ → crossover gives <strong>Ca₃N₂</strong> (calcium nitride).</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [15 marks]</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Predict and explain the order of first ionization energies for Mg, Al, and Si. (Hint: the trend across the period is not perfectly smooth.)</div>
+<textarea placeholder="Show all reasoning..."></textarea>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">For SO₂: (a) draw the Lewis structure; (b) determine the molecular shape using VSEPR; (c) state whether the molecule is polar. Justify each answer.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Pentane (C₅H₁₂, b.p. 36 °C) and 2,2-dimethylpropane (also C₅H₁₂, b.p. 10 °C) have the same molecular formula but different boiling points. Explain in terms of molecular shape and IMFs.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Ethanol (CH₃CH₂OH) and dimethyl ether (CH₃OCH₃) share formula C₂H₆O. Predict which has the higher boiling point and explain in terms of IMFs.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Define the following terms in your own words: (a) electronegativity; (b) ionization energy; (c) atomic radius; (d) polyatomic ion.</div>
+<textarea placeholder="Write clear definitions..."></textarea>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe the difference between intramolecular bonds and intermolecular forces. Give one example of each, and explain which one is broken when ice melts to liquid water.</div>
+<textarea placeholder="Write clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Explain in your own words why noble gases have very high first ionization energies but very low (essentially zero) electron affinities.</div>
+<textarea placeholder="Write clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe the experimental evidence that supported the rejection of Thomson's plum-pudding model and adoption of Rutherford's nuclear model.</div>
+<textarea placeholder="Write a clear historical-experimental account..."></textarea>
+</div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">DNA double helices are held together by hydrogen bonds between complementary base pairs. Identify the chemical groups on adenine, thymine, guanine, and cytosine that participate in H-bonding, and explain why this interaction is critical for biological function. (You may consult biology references.)</div>
+<textarea placeholder="Show all reasoning..."></textarea>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Why does sodium chloride dissolve readily in water but not in hexane? Explain in terms of bonding and "like dissolves like".</div>
+<textarea placeholder="Show all reasoning..."></textarea>
+</div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A consumer product label claims "all-natural, water-soluble vitamin C". Vitamin C (ascorbic acid, C₆H₈O₆) is in fact water-soluble. (a) Identify the IMFs between vitamin C and water. (b) Predict whether it would also dissolve in hexane and explain why.</div>
+<textarea placeholder="Show all reasoning..."></textarea>
+</div>
+
+<div class="qcard" id="q18">
+<div class="qnum">Question 18 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A student tests four unknown white solids and records the results. Solid W melts at 801 °C and conducts electricity when dissolved in water. Solid X melts at 0 °C and is a non-conductor. Identify the most likely bond type in each. Justify.</div>
+<textarea placeholder="Show all reasoning..."></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<details style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
+<div class="sol show">
+<p><strong>Q1.</strong> (d) Bohr.</p>
+<p><strong>Q2.</strong> Cs &lt; Na &lt; C &lt; F. (EN rises across, falls down.)</p>
+<p><strong>Q3.</strong> (a) K–Br: ΔEN ≈ 2.1 → ionic. (b) C–O: ΔEN ≈ 0.9 → polar covalent. (c) H–H: ΔEN = 0 → non-polar covalent.</p>
+<p><strong>Q4.</strong> C central, 4 C–Cl single bonds, each Cl has 3 lone pairs. AX₄ → tetrahedral, 109.5°.</p>
+<p><strong>Q5.</strong> (c) Hydrogen bonding.</p>
+<p><strong>Q6.</strong> Ca₃N₂.</p>
+<p><strong>Q7.</strong> Expected smooth: Mg &lt; Al &lt; Si. Actual: Al &lt; Mg &lt; Si — because removing an electron from Al's 3p subshell (above filled 3s²) is easier than removing one from Mg's filled 3s² subshell. The dip arises from the energy difference between subshells.</p>
+<p><strong>Q8.</strong> SO₂: S central with 1 lone pair and 2 S=O double bonds (resonance). AX₂E → bent (~119°). Bond dipoles do not cancel → polar molecule.</p>
+<p><strong>Q9.</strong> 2,2-dimethylpropane is more spherical and has less surface area than the elongated n-pentane → smaller LDFs → lower b.p.</p>
+<p><strong>Q10.</strong> Ethanol (b.p. 78 °C) &gt; dimethyl ether (b.p. −24 °C). Ethanol's O–H forms H-bonds with itself; ether has only weaker dipole-dipole because no O–H.</p>
+<p><strong>Q11.</strong> (a) Tendency of an atom to attract bonded electrons. (b) Energy to remove the outermost electron from a gaseous atom. (c) Distance from nucleus to outermost electron. (d) Covalently bonded group of atoms carrying a net charge (e.g., NO₃⁻).</p>
+<p><strong>Q12.</strong> Intramolecular bonds = within a molecule (covalent/ionic); intermolecular forces = between molecules (LDF, dipole-dipole, H-bond). Example: covalent O–H bonds vs. H-bonds between water molecules. When ice melts, H-bonds between water molecules weaken/rearrange — covalent bonds are not broken.</p>
+<p><strong>Q13.</strong> Noble gases already have a complete octet (filled valence shell). Removing an electron is very difficult (high IE); they have no driving force to gain another (essentially zero electron affinity).</p>
+<p><strong>Q14.</strong> Rutherford's gold-foil experiment: most α-particles passed straight through, but a small fraction were deflected at large angles. This was inconsistent with Thomson's "diffuse positive sphere with embedded electrons"; it required a small, dense, positive nucleus that occasionally repelled α-particles strongly.</p>
+<p><strong>Q15.</strong> A–T form 2 H-bonds; G–C form 3 H-bonds. The N–H groups serve as donors; carbonyl O and ring N as acceptors. These H-bonds are strong enough to hold the helix together but weak enough to be unzipped by polymerases during replication and transcription.</p>
+<p><strong>Q16.</strong> NaCl is ionic (highly polar Na⁺ + Cl⁻). Water is polar — ion–dipole interactions hydrate the ions, breaking the lattice. Hexane is non-polar — cannot stabilize ions → does not dissolve.</p>
+<p><strong>Q17.</strong> (a) H-bonding via –OH groups + dipole-dipole. (b) Hexane is non-polar and cannot H-bond → vitamin C would not dissolve well.</p>
+<p><strong>Q18.</strong> W: ionic (high m.p., conducts in solution). X: molecular non-polar (very low m.p., non-conductor).</p>
+</div>
+</details>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand B: Matter, Trends &amp; Bonding | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkText(q,c){const v=document.getElementById(q+'-in').value.trim().toLowerCase().replace(/\s/g,'');const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(v===c.toLowerCase().replace(/\s/g,'')){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Expected: '+c;}if(sl)sl.classList.add('show');}
+</script>
+</body>
+</html>

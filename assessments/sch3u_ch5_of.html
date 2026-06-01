@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Gases & Atmosphere — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #d97706; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#d97706;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/sch3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 5: Gases and Atmospheric Chemistry</h1><div class="sub">Assessment OF Learning — Unit Test</div><div class="badge">✅ Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work. \(R = 8.314\) L·kPa/(mol·K); molar volume 22.4 L/mol at STP, 24.8 L/mol at SATP. Periodic table permitted.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">List the five postulates of kinetic molecular theory of gases.</div>
+<textarea placeholder="List..."></textarea>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A sample of helium has V = 6.0 L at 27 °C. Calculate the volume at 127 °C, at constant P.</div>
+<input type="text" id="q2-in" placeholder="L...">
+<button class="btn btn-p" onclick="chkNum('q2',8.0)">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>T₁=300 K, T₂=400 K. V₂ = 6.0 × 400/300 = <strong>8.0 L</strong>.</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A 2.50 L container of N₂ at 101 kPa and 20 °C is compressed to 1.00 L while heated to 100 °C. Find the new pressure.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Use \(PV = nRT\) to find the volume of 0.500 mol O₂ at 30.0 °C and 95.0 kPa.</div>
+<textarea placeholder="Show work..."></textarea>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Stratospheric ozone is depleted by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> CO₂</label></li>
+<li><label><input type="radio" name="q5" value="b"> Chlorine atoms from CFCs</label></li>
+<li><label><input type="radio" name="q5" value="c"> Water vapour</label></li>
+<li><label><input type="radio" name="q5" value="d"> SO₂</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>(b) — CFC-derived Cl atoms catalytically destroy ozone.</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Define: (a) STP; (b) SATP; (c) molar volume.</div>
+<textarea placeholder="Define each..."></textarea>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [15 marks]</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Carbonate decomposition: \(\text{CaCO}_3(\text{s}) \rightarrow \text{CaO}(\text{s}) + \text{CO}_2(\text{g})\). What volume of CO₂ at STP is produced from 10.0 g of CaCO₃ (M=100.09)?</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A 0.500 g sample of magnesium is reacted with excess HCl. The H₂ gas evolved is collected over water at 22 °C; total pressure 99.5 kPa. Vapour pressure of water at 22 °C is 2.6 kPa. Find the volume of dry H₂ collected. (Eq: Mg + 2HCl → MgCl₂ + H₂.)</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A car-engine cylinder has volume 0.500 L at 27 °C and 101 kPa during intake. Compression reduces volume to 0.050 L; combustion raises T to 1727 °C and the cylinder is sealed. Find the new pressure.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain in your own words how kinetic molecular theory accounts for: (a) Boyle's law; (b) Charles's law. Give a microscopic-level reason for each.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe two ways real gases deviate from ideal-gas behaviour, and the conditions under which the deviation is largest. Explain in terms of KMT assumptions.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Distinguish between the "ozone layer" (stratospheric) and "ground-level ozone" (tropospheric). Which is beneficial? Which is harmful? Explain.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Describe one Canadian initiative or technological measure that has reduced acid-precipitation, ozone-depleting, or greenhouse-gas emissions.</div>
+<textarea placeholder="Describe..."></textarea>
+</div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Methane (CH₄) burns according to \(\text{CH}_4 + 2\text{O}_2 \rightarrow \text{CO}_2 + 2\text{H}_2\text{O}\). What mass of CO₂ is released for every 1000 L of CH₄ burned at SATP (24.8 L/mol)?</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A scuba tank contains 12.0 L of air at 200 atm and 22 °C. (a) What volume of air does this represent at the surface (1 atm, 22 °C)? (b) Explain why the diver must surface slowly, in terms of gas behaviour in body tissues.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Atmospheric CO₂ today is approximately 420 ppm; pre-industrial was 280 ppm. (a) Express the increase as a percentage of the pre-industrial value. (b) If the entire increase came from fossil-fuel CO₂ (a simplification), what mass of CO₂ has been added to a 5.0×10¹⁸ kg atmosphere? (CO₂ molar mass 44.01; air molar mass 28.97.)</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Use the ideal gas law to compute the density (g/L) of CO₂ at STP. Compare with the density of N₂ at the same conditions. Why is dry ice (solid CO₂) so good at displacing air in a beaker?</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<details style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
+<div class="sol show">
+<p><strong>Q1.</strong> Particles are tiny and far apart; constant random motion; elastic collisions; no intermolecular forces; KE ∝ T(K).</p>
+<p><strong>Q2.</strong> 8.0 L.</p>
+<p><strong>Q3.</strong> Combined gas law: P₂ = P₁(V₁/V₂)(T₂/T₁) = 101(2.50/1.00)(373/293) = 101 × 2.500 × 1.273 = <strong>321 kPa</strong>.</p>
+<p><strong>Q4.</strong> V = nRT/P = (0.500)(8.314)(303.15)/95.0 = 1260/95.0 = <strong>13.3 L</strong>.</p>
+<p><strong>Q5.</strong> (b).</p>
+<p><strong>Q6.</strong> STP = 0 °C, 101.325 kPa. SATP = 25 °C, 100 kPa. Molar volume = volume of 1 mol gas (22.4 L at STP, 24.8 L at SATP).</p>
+<p><strong>Q7.</strong> n(CaCO₃) = 10.0/100.09 = 0.0999 mol → n(CO₂) = 0.0999 mol → V at STP = 0.0999 × 22.4 = <strong>2.24 L</strong>.</p>
+<p><strong>Q8.</strong> P(H₂) = 99.5 − 2.6 = 96.9 kPa. n(Mg) = 0.500/24.31 = 0.02057 mol → n(H₂) = 0.02057 mol. V = nRT/P = (0.02057)(8.314)(295.15)/96.9 = 50.5/96.9 = <strong>0.521 L</strong>.</p>
+<p><strong>Q9.</strong> Combined gas law: P₂ = P₁(V₁/V₂)(T₂/T₁) = 101 × (0.500/0.050) × (2000/300) = 101 × 10 × 6.67 ≈ <strong>6730 kPa ≈ 66 atm</strong>.</p>
+<p><strong>Q10.</strong> (a) Compressing volume increases collision frequency per unit area → P rises. (b) Heating increases KE → faster, more energetic collisions per unit area → V must expand (at const P) so per-wall force stays constant.</p>
+<p><strong>Q11.</strong> (1) Particles do have volume — at high P, the "free" volume is less than container volume. (2) Particles do attract — at low T, attractions become significant. Worst deviation: low T, high P. KMT assumes negligible volume and zero attraction.</p>
+<p><strong>Q12.</strong> Stratospheric O₃ (15–35 km) absorbs UV-B, protects life — beneficial. Tropospheric O₃ (ground level) is a respiratory irritant and component of smog — harmful.</p>
+<p><strong>Q13.</strong> Acceptable answers: Eastern Canada Acid Rain Program (SO₂ scrubbers, low-S fuels); the Montreal Protocol commitment (CFC phase-out); federal carbon pricing (greenhouse gases); catalytic converters for NOₓ control.</p>
+<p><strong>Q14.</strong> n(CH₄) = 1000/24.8 = 40.32 mol → n(CO₂) = 40.32 mol → m(CO₂) = 40.32 × 44.01 = <strong>1.77 × 10³ g ≈ 1.77 kg</strong>.</p>
+<p><strong>Q15.</strong> (a) V₂ = V₁P₁/P₂ = 12.0 × 200/1 = <strong>2400 L</strong>. (b) Under pressure, more N₂/O₂ dissolves in body tissues (Henry's law); rapid surfacing → gas bubbles form in blood/joints (decompression sickness / "the bends"). Slow ascent allows controlled outgassing.</p>
+<p><strong>Q16.</strong> (a) (420 − 280)/280 × 100% = <strong>50%</strong> increase. (b) Moles of air ≈ 5.0×10²¹ g / 28.97 = 1.7×10²⁰ mol. ΔCO₂ as mol fraction = 140×10⁻⁶ × 1.7×10²⁰ = 2.4×10¹⁶ mol; mass CO₂ added ≈ 2.4×10¹⁶ × 44 = <strong>1.0 × 10¹⁸ g = 1.0 × 10¹⁵ kg ≈ 1000 Gt</strong>.</p>
+<p><strong>Q17.</strong> At STP, 1 mol CO₂ occupies 22.4 L; density = 44.01/22.4 = <strong>1.96 g/L</strong>. N₂: 28.02/22.4 = 1.25 g/L. CO₂ is ~57% denser than air → sinks and displaces it from below. Dry ice sublimes to CO₂ gas that fills containers from the bottom.</p>
+</div>
+</details>
+
+<footer>SCH3U — Chemistry, Grade 11 | Ontario Curriculum 2008 | Strand F: Gases &amp; Atmospheric Chemistry | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(0.1,Math.abs(c)*0.03)){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Computer Environments and Society — Practice Quiz</title>
+<style>
+:root{--p:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#ede9fe;border:1px solid #c4b5fd;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128187; Unit 5: Computer Environments and Society &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test your understanding of hardware, operating systems, networks, cybersecurity, ethics, and careers. Instant feedback.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 &mdash; Hardware vs software</div>
+<div class="qt">Which is software, not hardware?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> CPU</label></li>
+<li><label><input type="radio" name="q1" value="b"> RAM</label></li>
+<li><label><input type="radio" name="q1" value="c"> Web browser</label></li>
+<li><label><input type="radio" name="q1" value="d"> Keyboard</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>The CPU, RAM, and keyboard are physical (hardware). The web browser is a program (<strong>software</strong>).</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 &mdash; Binary conversion</div>
+<div class="qt">What is the decimal value of binary <code>1010</code>?</div>
+<input type="text" id="q2-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q2','10')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>1&middot;8 + 0&middot;4 + 1&middot;2 + 0&middot;1 = <strong>10</strong>.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 &mdash; Decimal to binary</div>
+<div class="qt">What is the binary representation of decimal 13?</div>
+<input type="text" id="q3-in" placeholder="binary digits, no prefix">
+<button class="btn btn-p" onclick="chkText('q3','1101')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>13 = 8 + 4 + 0 + 1 = 1&middot;8 + 1&middot;4 + 0&middot;2 + 1&middot;1 = <strong>1101</strong>.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 &mdash; RAM vs storage</div>
+<div class="qt">Which best describes RAM?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Fast, persistent storage; data survives a power-off.</label></li>
+<li><label><input type="radio" name="q4" value="b"> Fast, volatile working memory; data is lost on power-off.</label></li>
+<li><label><input type="radio" name="q4" value="c"> A type of network protocol.</label></li>
+<li><label><input type="radio" name="q4" value="d"> The chip that runs program instructions.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>RAM is <strong>volatile working memory</strong>. The hard drive / SSD is persistent storage. The CPU runs instructions.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 &mdash; OS responsibilities</div>
+<div class="qt">Which of these is NOT a job of the operating system?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Scheduling which process runs on the CPU.</label></li>
+<li><label><input type="radio" name="q5" value="b"> Managing the file system on storage.</label></li>
+<li><label><input type="radio" name="q5" value="c"> Writing your essay for you.</label></li>
+<li><label><input type="radio" name="q5" value="d"> Providing drivers that talk to hardware devices.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>The OS manages CPU scheduling, memory, file system, and devices. It does not write essays.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 &mdash; DNS</div>
+<div class="qt">What is the role of DNS on the Internet?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Encrypts traffic so eavesdroppers cannot read it.</label></li>
+<li><label><input type="radio" name="q6" value="b"> Translates human-readable names (mindview.pages.dev) into IP addresses.</label></li>
+<li><label><input type="radio" name="q6" value="c"> Stores all the web pages.</label></li>
+<li><label><input type="radio" name="q6" value="d"> Counts how many users visit a site.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>DNS is the global system that maps domain names to <strong>IP addresses</strong>.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 &mdash; HTTPS</div>
+<div class="qt">What does the "S" in HTTPS stand for, and what does it actually do?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> "Speed" — HTTPS is faster than HTTP.</label></li>
+<li><label><input type="radio" name="q7" value="b"> "Secure" — the connection is encrypted via TLS.</label></li>
+<li><label><input type="radio" name="q7" value="c"> "Standard" — it is the standard form.</label></li>
+<li><label><input type="radio" name="q7" value="d"> "Static" — the content does not change.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>"S" = <strong>Secure</strong>. HTTPS encrypts traffic so that someone on the network cannot read the contents.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 &mdash; Phishing red flags</div>
+<div class="qt">Which of these is the BEST single response to a suspicious email that asks you to click a link and "verify your account in 24 hours"?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Click the link, but only enter half your password.</label></li>
+<li><label><input type="radio" name="q8" value="b"> Reply asking who sent it.</label></li>
+<li><label><input type="radio" name="q8" value="c"> Do not click; verify by contacting the alleged sender through a known channel; delete or report.</label></li>
+<li><label><input type="radio" name="q8" value="d"> Forward it to all your contacts.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Never click; verify through a known channel (school helpdesk, the bank's number on your card); report and delete.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 &mdash; Strong passwords</div>
+<div class="qt">Which is the SAFEST password?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Password123</label></li>
+<li><label><input type="radio" name="q9" value="b"> Your dog's name</label></li>
+<li><label><input type="radio" name="q9" value="c"> A 16-character random password stored in a password manager, used only on one site, with MFA enabled.</label></li>
+<li><label><input type="radio" name="q9" value="d"> The same 8-letter word you use everywhere.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>Long, random, unique-per-site, with MFA. The other options are all breakable in seconds or minutes.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 &mdash; Open-source vs proprietary</div>
+<div class="qt">Which of these is OPEN-SOURCE software?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Microsoft Word</label></li>
+<li><label><input type="radio" name="q10" value="b"> Adobe Photoshop</label></li>
+<li><label><input type="radio" name="q10" value="c"> Python interpreter</label></li>
+<li><label><input type="radio" name="q10" value="d"> Apple iOS</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>The Python interpreter is open-source (PSF licence). The others are proprietary.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 &mdash; Canadian CS</div>
+<div class="qt">Which of these is a Canadian computer scientist known for foundational work in artificial intelligence (deep learning), at the University of Toronto?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Alan Turing</label></li>
+<li><label><input type="radio" name="q11" value="b"> Grace Hopper</label></li>
+<li><label><input type="radio" name="q11" value="c"> Geoffrey Hinton</label></li>
+<li><label><input type="radio" name="q11" value="d"> Tim Berners-Lee</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q11','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div>Geoffrey Hinton, University of Toronto, was awarded the 2018 ACM Turing Award (jointly with Bengio and LeCun) and the 2024 Nobel Prize in Physics for foundational work on deep learning.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 &mdash; Pathways</div>
+<div class="qt">If a student wants to study Computer Science with a strong co-op program at an Ontario university, which is the best-known example?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> University of Waterloo</label></li>
+<li><label><input type="radio" name="q12" value="b"> York University</label></li>
+<li><label><input type="radio" name="q12" value="c"> McGill University</label></li>
+<li><label><input type="radio" name="q12" value="d"> Western University</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','a')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>The University of <strong>Waterloo</strong> is internationally known for its CS co-op program (although the other Ontario universities listed also offer strong CS programs).</div></div>
+
+<footer>ICS3U &mdash; Introduction to Computer Science, Grade 11 | Unit 5: Computer Environments and Society | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector('input[name="'+q+'"]:checked');if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}if(sl)sl.classList.add('show');up();}
+function chkText(q,c){const v=document.getElementById(q+'-in').value.trim();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}if(sl)sl.classList.add('show');up();}
+function chkContains(q,acceptable){const v=document.getElementById(q+'-in').value.trim().toLowerCase();if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;const norm=v.replace(/\s+/g,'');const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>
