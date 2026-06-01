@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC2D — Science (Academic) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #7c3aed; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #7c3aed; }
+.video-player { padding: 0 14px 14px; display: none; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #7c3aed; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #6d28d9; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #7c3aed; color: #fff; }
+.chnav-next:hover { background: #6d28d9; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../snc2d.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SNC2D Science Academic)</a></div>
+    <div class="strand-tag">Science — Grade 10 Academic</div>
+    <h1>💡 SNC2D: Unit 4: Light &amp; Geometric Optics</h1>
+    <p>Electromagnetic spectrum, reflection, refraction, mirrors, lenses, the human eye, and optical devices</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+            <h2>Unit 4: Light &amp; Geometric Optics</h2>
+            <p>How light travels, reflects, refracts — and how mirrors, lenses, and eyes form images</p>
+            <div class="unit-meta">
+                <span>📚 Strand E: Light &amp; Geometric Optics</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+
+        <!-- Nature of Light -->
+        <div class="subsection-label">🌈 The Nature of Light &amp; the EM Spectrum</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Light is a form of <em>electromagnetic radiation</em>: an oscillating electric and magnetic field that propagates through space (and through transparent media) without needing a material medium. In vacuum, all electromagnetic waves travel at the same speed: \(c = 3.00 \times 10^8\) m/s, a value James Clerk Maxwell predicted theoretically in 1865 and which is one of the foundational constants of nature.</p>
+            <p>Every wave has three measurable properties. <em>Wavelength</em> (\(\lambda\), Greek lambda) is the distance between successive peaks, measured in metres or nanometres for light. <em>Frequency</em> (\(f\), measured in hertz, Hz = cycles per second) is the number of wave cycles passing a point per second. <em>Amplitude</em> is the height of the wave from its midline — for light, larger amplitude means brighter (more energy per second). The three are tied by one equation: \(c = \lambda f\). High-frequency light is short-wavelength and high-energy; low-frequency light is long-wavelength and low-energy.</p>
+            <p>The <em>electromagnetic spectrum</em> runs continuously from very long radio waves (\(\lambda\) of metres to kilometres) through microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays (\(\lambda\) shorter than 10⁻¹² m). Our eyes can detect only the <em>visible</em> portion, wavelengths between about 380 nm (violet) and 750 nm (red) — the same colours seen when sunlight passes through a prism: red, orange, yellow, green, blue, indigo, violet (ROY G BIV). White light is a mixture of all visible wavelengths.</p>
+            <p>Light interacts with matter in several ways: it can be <em>transmitted</em> through transparent materials (glass, water, air), <em>absorbed</em> by opaque materials (becoming thermal energy), <em>reflected</em> off surfaces, <em>refracted</em> when it crosses a boundary between media, <em>scattered</em> in many directions by small particles, and <em>diffracted</em> when it passes through narrow openings. The blue colour of the sky is a familiar example of scattering — short-wavelength blue light is scattered by air molecules more strongly than longer wavelengths, so the sky appears blue when we look away from the sun.</p>
+            <ul>
+              <li><strong>Electromagnetic wave</strong> — coupled oscillating electric and magnetic fields that travel at the speed of light.</li>
+              <li><strong>Wavelength (\(\lambda\))</strong> — distance between successive crests, measured in metres.</li>
+              <li><strong>Frequency (f)</strong> — cycles per second (hertz).</li>
+              <li><strong>Speed of light (c)</strong> — \(3.00 \times 10^8\) m/s in vacuum.</li>
+              <li><strong>Visible spectrum</strong> — 380–750 nm; the range our eyes detect.</li>
+              <li><strong>Wave equation</strong> — \(c = \lambda f\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Calculating frequency from wavelength</p>
+              <p>A red helium-neon laser emits light of wavelength 633 nm. Calculate its frequency.</p>
+              <p>Convert the wavelength to metres: \(633 \text{ nm} = 633 \times 10^{-9}\) m = \(6.33 \times 10^{-7}\) m. Apply \(c = \lambda f\) → \(f = c / \lambda\). \(f = (3.00 \times 10^8 \text{ m/s}) / (6.33 \times 10^{-7} \text{ m})\) = \(4.74 \times 10^{14}\) Hz. <strong>The red laser oscillates 474 trillion times per second.</strong> Note: the shorter the wavelength, the higher the frequency (and energy) — this is why ultraviolet light (shorter wavelength than visible) can damage skin while infrared (longer wavelength) just feels warm.</p>
+            </div>
+            <ul>
+              <li>Confusing wavelength with frequency — they are inversely related at constant speed.</li>
+              <li>Forgetting to convert nanometres to metres before applying \(c = \lambda f\).</li>
+              <li>Saying "light needs air to travel" — it propagates through vacuum (the only reason we see the sun).</li>
+              <li>Calling all electromagnetic radiation "light" — strictly, only the visible portion is "light"; the rest is just other parts of the EM spectrum.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.1 — "describe characteristics and properties of light (e.g., wavelength, frequency, amplitude, speed in vacuum), and the electromagnetic spectrum from radio waves to gamma rays."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Electromagnetic Spectrum — TED-Ed</span>
+                <span class="vid-duration">5:34</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/lwfJPc-rSXw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=lwfJPc-rSXw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Reflection -->
+        <div class="subsection-label">🪞 Reflection &amp; Plane Mirrors</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When a light ray strikes a smooth surface it bounces back according to the <em>laws of reflection</em>: (1) the angle of incidence equals the angle of reflection (\(\theta_i = \theta_r\)); (2) the incident ray, reflected ray, and normal (a line perpendicular to the surface at the point of contact) all lie in the same plane. Both angles are measured from the normal, not from the surface. This holds for every kind of reflection, from a mirror to a still pond to a polished tile.</p>
+            <p>There are two kinds of reflection. <em>Specular reflection</em> happens off smooth surfaces (mirrors, water, polished metal) — incoming parallel rays remain parallel after reflection, producing a clear image. <em>Diffuse reflection</em> happens off rough surfaces (paper, fabric, the wall) — the surface is microscopically irregular, so parallel incoming rays scatter in many directions, producing no image but allowing the surface itself to be seen. Almost every object you see is visible because of diffuse reflection.</p>
+            <p>A <em>plane mirror</em> is a flat reflective surface. The image it produces is <em>virtual</em> (light rays do not actually converge there — they only appear to), <em>upright</em>, the same size as the object, and located the same distance behind the mirror as the object is in front. The image is also <em>laterally inverted</em> — left and right are swapped, but top and bottom are not (look in a mirror: your raised right hand becomes the left hand of your mirror image). This counterintuitive fact arises because the mirror reverses front-back, not left-right; what we perceive as the reversal is really an illusion of orientation.</p>
+            <ul>
+              <li><strong>Incident / reflected ray</strong> — ray hitting / bouncing off a surface.</li>
+              <li><strong>Normal</strong> — line perpendicular to the surface at the point of incidence; reference for angles.</li>
+              <li><strong>Law of reflection</strong> — \(\theta_i = \theta_r\), both measured from the normal.</li>
+              <li><strong>Specular vs diffuse reflection</strong> — smooth surface gives clear image / rough surface scatters light.</li>
+              <li><strong>Virtual image</strong> — image that appears to be at a location where no light actually converges.</li>
+              <li><strong>Lateral inversion</strong> — apparent left-right swap of a mirror image.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Plane-mirror image properties</p>
+              <p>A student stands 1.5 m in front of a plane mirror, holding a 30 cm wide poster. (a) Where does the image appear? (b) What size is the image? (c) If the student steps back 0.5 m, how does the apparent distance between her and her image change?</p>
+              <p>(a) The image appears <strong>1.5 m behind the mirror</strong>, the same distance as the student is in front. (b) The image is <strong>30 cm wide</strong> — same size as the object; plane mirrors produce 1:1 images. (c) Stepping back 0.5 m moves the student to 2.0 m in front. The image moves to 2.0 m behind, so the gap between student and image grows from 3.0 m to <strong>4.0 m</strong> (twice the increased distance). For every step you take from a mirror, your image steps back twice the distance from you.</p>
+            </div>
+            <ul>
+              <li>Measuring angles from the surface rather than the normal — always from the normal.</li>
+              <li>Calling a mirror image "real" — it is virtual; light only appears to come from behind the mirror.</li>
+              <li>Saying mirrors reverse left and right — they reverse front and back; the apparent left-right swap is an illusion of orientation.</li>
+              <li>Forgetting that the image distance equals the object distance for a plane mirror.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.2 — "use the laws of reflection (angle of incidence = angle of reflection) to predict the location and characteristics of images formed by plane mirrors."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Reflection and Refraction of Light — FuseSchool</span>
+                <span class="vid-duration">3:48</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ON1QGqB6vxg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ON1QGqB6vxg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Curved Mirrors -->
+        <div class="subsection-label">🔄 Curved Mirrors &amp; Ray Diagrams</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <em>curved mirror</em> is a mirror whose surface is part of a sphere. <em>Concave</em> (converging) mirrors curve inward, like the inside of a bowl, and bring parallel rays to a focal point. <em>Convex</em> (diverging) mirrors curve outward and spread parallel rays apart — used as side-view mirrors and security mirrors because they give a wide field of view.</p>
+            <p>Three special points characterise a curved mirror: the <em>vertex</em> (V, the centre of the mirror), the <em>focal point</em> (F, where parallel rays cross or appear to diverge from), and the <em>centre of curvature</em> (C, the centre of the sphere from which the mirror was cut). The distance from V to F is the focal length \(f\); the distance from V to C is the radius of curvature \(R\), and for spherical mirrors \(R = 2f\). The line through V, F, and C is the <em>principal axis</em>.</p>
+            <p>To predict where an image forms, draw a <em>ray diagram</em> using two of three predictable rays. Ray 1: a ray parallel to the principal axis reflects through F (for concave) or appears to come from F (for convex). Ray 2: a ray through F reflects parallel to the axis. Ray 3: a ray through C reflects back along itself (it hits the mirror perpendicular). Where the reflected rays cross is the image. For algebraic precision, use the <em>mirror equation</em> \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\) and the <em>magnification equation</em> \(m = -\frac{d_i}{d_o} = \frac{h_i}{h_o}\), where \(d_o\) is object distance, \(d_i\) is image distance, \(h_i\) and \(h_o\) are heights. Sign convention: \(f\) positive for concave, negative for convex; \(d_i\) positive for real images (same side as the object), negative for virtual; \(m\) positive for upright images, negative for inverted.</p>
+            <p>Image properties for a concave mirror depend on where the object sits relative to F and C. Beyond C: real, inverted, smaller. At C: real, inverted, same size. Between C and F: real, inverted, larger (this is the position used in magnifying makeup mirrors and dental mirrors). At F: no image (rays parallel). Between F and the vertex: virtual, upright, larger (this is how a shaving mirror works when held close). Convex mirrors always produce a virtual, upright, smaller image.</p>
+            <ul>
+              <li><strong>Concave / convex mirror</strong> — converging / diverging curved mirror.</li>
+              <li><strong>Focal point (F)</strong> — point where parallel rays converge (concave) or appear to diverge from (convex).</li>
+              <li><strong>Centre of curvature (C)</strong> — centre of the sphere; \(R = 2f\).</li>
+              <li><strong>Principal axis</strong> — line through V, F, C.</li>
+              <li><strong>Mirror equation</strong> — \(1/f = 1/d_o + 1/d_i\).</li>
+              <li><strong>Magnification</strong> — \(m = -d_i/d_o = h_i/h_o\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Image formation by a concave mirror</p>
+              <p>An object 4.0 cm tall is placed 30 cm in front of a concave mirror with focal length 10 cm. (a) Where does the image form? (b) What is its height and orientation?</p>
+              <p>(a) Use the mirror equation: \(1/f = 1/d_o + 1/d_i\) → \(1/10 = 1/30 + 1/d_i\) → \(1/d_i = 1/10 - 1/30 = 3/30 - 1/30 = 2/30 = 1/15\). So \(d_i = 15\) cm. The image forms <strong>15 cm in front of the mirror</strong> (real image because \(d_i > 0\)). (b) Magnification: \(m = -d_i / d_o = -15/30 = -0.5\). Image height: \(h_i = m \cdot h_o = -0.5 \times 4.0 = -2.0\) cm. The image is <strong>2.0 cm tall, inverted</strong> (negative height), and <strong>half the size</strong> of the object. This matches the rule: when the object is beyond C (which is 20 cm here), the image is real, inverted, and smaller.</p>
+            </div>
+            <ul>
+              <li>Confusing the focal length \(f\) with the radius \(R\) — for a spherical mirror, \(R = 2f\).</li>
+              <li>Forgetting the sign convention — virtual images have negative \(d_i\); convex mirrors have negative \(f\).</li>
+              <li>Drawing all three rays carelessly — any two of the three predictable rays will give the image location; drawing all three is a useful check.</li>
+              <li>Treating the magnification formula as giving image size alone — its sign also tells you orientation.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "predict, using the mirror equation \(1/f = 1/d_o + 1/d_i\) and ray diagrams, the position, size, attitude, and type of image formed by plane, concave, and convex mirrors."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Geometric Optics: Crash Course Physics #38</span>
+                <span class="vid-duration">9:34</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Oh4m8Ees-3Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Oh4m8Ees-3Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Refraction -->
+        <div class="subsection-label">💧 Refraction &amp; Snell's Law</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When light crosses the boundary between two transparent media — say, from air into water — it changes speed. Because light slows down (or speeds up) at the boundary, its direction also changes. This bending is called <em>refraction</em>. It is what makes a pencil look broken when half-submerged in water, and it is the principle behind every lens, prism, and eye.</p>
+            <p>The <em>index of refraction</em> of a medium, symbol \(n\), is the ratio of the speed of light in vacuum to the speed in the medium: \(n = c/v\). Vacuum has \(n = 1\) exactly; air is so close to 1 that we usually treat it as 1.00; water is 1.33; glass typically 1.50; diamond 2.42 (which is why diamonds sparkle so brilliantly — light enters easily but is trapped inside by total internal reflection until it exits at a polished facet).</p>
+            <p><em>Snell's law</em> (Willebrord Snellius, 1621) governs the bending: \(n_1 \sin \theta_1 = n_2 \sin \theta_2\), where the angles are measured from the normal. The qualitative rule: light bends <em>toward</em> the normal when entering a denser medium (lower speed, larger \(n\)), and <em>away</em> from the normal when entering a less-dense medium.</p>
+            <p>When light goes from a denser to a less-dense medium (water to air, glass to air), it bends away from the normal. If the incidence angle is increased enough, the refracted ray bends to 90° — it slides along the surface. The angle at which this happens is the <em>critical angle</em>, \(\theta_c\), given by \(\sin \theta_c = n_2/n_1\) (when \(n_1 > n_2\)). For incidence beyond \(\theta_c\), no light escapes — all of it reflects back into the denser medium. This <em>total internal reflection</em> is the principle behind fibre-optic cables, which can carry signals over thousands of kilometres because light traveling along the fibre's core hits the cladding always above the critical angle, bouncing back and forth without escaping.</p>
+            <ul>
+              <li><strong>Refraction</strong> — bending of light when its speed changes at a boundary.</li>
+              <li><strong>Index of refraction (n)</strong> — \(c/v\); how much a medium slows light.</li>
+              <li><strong>Snell's law</strong> — \(n_1 \sin \theta_1 = n_2 \sin \theta_2\).</li>
+              <li><strong>Critical angle</strong> — angle of incidence above which total internal reflection occurs.</li>
+              <li><strong>Total internal reflection</strong> — full reflection when light cannot escape a denser medium.</li>
+              <li><strong>Dispersion</strong> — variation of \(n\) with wavelength, splitting white light into colours.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Applying Snell's law and finding the critical angle</p>
+              <p>A ray of light in water (\(n = 1.33\)) strikes the surface, going up toward air (\(n = 1.00\)), at an angle of 30° from the normal. (a) Find the angle of refraction in air. (b) Find the critical angle for the water-air interface.</p>
+              <p>(a) Snell's law: \(n_{water} \sin\theta_{water} = n_{air} \sin\theta_{air}\). \(1.33 \times \sin 30° = 1.00 \times \sin\theta_{air}\). \(1.33 \times 0.500 = \sin\theta_{air}\) → \(\sin\theta_{air} = 0.665\) → \(\theta_{air} = 41.7°\). The ray bends <strong>away from the normal</strong> as it enters the less-dense air, as expected. (b) The critical angle in water for the water-air interface: \(\sin\theta_c = n_{air}/n_{water} = 1.00/1.33 = 0.752\). So \(\theta_c = 48.8°\). If the ray in water hits the surface at any angle greater than ~49°, it undergoes total internal reflection and never reaches the air.</p>
+            </div>
+            <ul>
+              <li>Mixing up the direction of bending — light entering a denser medium bends <em>toward</em> the normal.</li>
+              <li>Forgetting Snell's law uses the sine of the angle, not the angle itself.</li>
+              <li>Confusing critical angle with the angle of total internal reflection — total internal reflection occurs <em>above</em> the critical angle.</li>
+              <li>Treating the index of refraction as a single value across the spectrum — it varies slightly with wavelength (dispersion); this is why prisms split white light into a spectrum.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.4 — "explain refraction of light using Snell's law (\(n_1 \sin \theta_1 = n_2 \sin \theta_2\)) and explain total internal reflection and its application in fibre optics."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Snell's Law &amp; Index of Refraction — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">14:01</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/y55tzg_jW9I?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=y55tzg_jW9I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Lenses -->
+        <div class="subsection-label">🔍 Lenses &amp; Image Formation</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <em>lens</em> is a piece of transparent material (usually glass or plastic) shaped to refract light in a predictable way. <em>Converging</em> lenses (also called convex lenses) are thicker in the middle and bring parallel rays to a focal point. <em>Diverging</em> lenses are thinner in the middle and spread parallel rays apart so they appear to come from a focal point on the same side as the incoming light.</p>
+            <p>Just as for mirrors, three principal rays let you build a ray diagram for a thin lens. Ray 1: a ray parallel to the principal axis refracts through F on the far side (converging) or appears to come from F on the near side (diverging). Ray 2: a ray through the optical centre passes straight through, undeviated. Ray 3: a ray through the near focal point exits parallel to the axis. Two rays are enough to locate the image. The <em>thin-lens equation</em> \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\) and the same magnification formula \(m = -d_i/d_o\) apply, with the convention that \(f > 0\) for converging, \(f < 0\) for diverging; \(d_i > 0\) for a real image on the far side; \(m > 0\) for upright.</p>
+            <p>Image properties for a converging lens depend on object position: object beyond \(2f\) — real, inverted, smaller (camera, eye); at \(2f\) — real, inverted, same size; between \(f\) and \(2f\) — real, inverted, larger (projector); at \(f\) — no image; closer than \(f\) — virtual, upright, larger (magnifying glass). A diverging lens always produces a virtual, upright, smaller image regardless of object distance.</p>
+            <p>The <em>power</em> of a lens, measured in dioptres (D, the inverse of focal length in metres), is what your optometrist prescribes. A lens with \(f = 0.5\) m has power \(P = 1/0.5 = 2.0\) D (typical reading glasses); negative power means a diverging lens used to correct myopia (short-sightedness).</p>
+            <ul>
+              <li><strong>Converging / diverging lens</strong> — thicker / thinner in the middle.</li>
+              <li><strong>Optical centre</strong> — geometric centre of the lens; rays through it are undeviated.</li>
+              <li><strong>Thin-lens equation</strong> — \(1/f = 1/d_o + 1/d_i\).</li>
+              <li><strong>Magnification</strong> — \(m = -d_i/d_o = h_i/h_o\).</li>
+              <li><strong>Power of a lens</strong> — \(P = 1/f\) in dioptres (m⁻¹).</li>
+              <li><strong>Real vs virtual image</strong> — light actually converges / only appears to converge.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Magnifier and projector positions</p>
+              <p>A converging lens has focal length 8.0 cm. (a) Where should a small object be placed to produce a magnified, upright image (used as a magnifier)? (b) Where should a 35 mm slide be placed to project an enlarged image on a screen 4.0 m away (used as a projector)?</p>
+              <p>(a) For a virtual, upright, magnified image the object must be inside the focal length. Place the object closer than 8.0 cm from the lens — for example, at 5.0 cm: \(1/8 = 1/5 + 1/d_i\) → \(1/d_i = 1/8 - 1/5 = -3/40\) → \(d_i = -13.3\) cm (negative = virtual). Magnification \(m = -(-13.3)/5 = +2.7\), upright and 2.7× larger. (b) The screen is at \(d_i = 400\) cm. Solve for \(d_o\): \(1/8 = 1/d_o + 1/400\) → \(1/d_o = 1/8 - 1/400 = 50/400 - 1/400 = 49/400\) → \(d_o = 8.16\) cm. Place the slide about <strong>8.2 cm from the lens</strong> — just slightly beyond \(f\). The magnification is \(-400/8.16 \approx -49×\), so the image is 49× larger and inverted (which is why slide projectors traditionally load slides upside down).</p>
+            </div>
+            <ul>
+              <li>Mixing up sign convention — for lenses, the object is always on the incoming-light side and \(d_o > 0\).</li>
+              <li>Putting the object exactly at the focal point and expecting an image — at \(f\), rays exit parallel and form no image.</li>
+              <li>Calling a magnifying glass image "real" — it is virtual; you cannot project it onto a screen.</li>
+              <li>Forgetting the units when calculating power — \(P = 1/f\) requires \(f\) in metres, not centimetres.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.3 — "predict, using the lens equation \(1/f = 1/d_o + 1/d_i\) and ray diagrams, the position, size, attitude, and type of image formed by converging and diverging lenses."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Convex Lenses, Ray Diagrams, and the Thin-Lens Equation — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">19:42</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/VKMswYSiyko?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=VKMswYSiyko" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Human Eye -->
+        <div class="subsection-label">👁️ The Human Eye &amp; Vision Correction</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The human eye is a biological optical instrument that forms a real, inverted image of the outside world on the <em>retina</em>, the light-sensitive lining of the back of the eye. Light enters through the <em>cornea</em> (the clear front surface, which does most of the focusing — about 70%), passes through the <em>pupil</em> (the opening whose size is adjusted by the <em>iris</em>, just like a camera aperture), then through the <em>lens</em> (which fine-tunes the focus through a process called <em>accommodation</em> — ciliary muscles change the lens shape, fatter for near objects, flatter for distant ones), and is focused on the retina. There, two types of photoreceptors transduce light into nerve signals: <em>rods</em> (about 120 million, for dim light and peripheral vision, no colour information) and <em>cones</em> (about 6 million, concentrated in the central <em>fovea</em>, for bright light and colour — three subtypes peak at roughly red, green, and blue). Signals leave the eye via the <em>optic nerve</em>; the spot where the nerve exits is the <em>blind spot</em> with no photoreceptors.</p>
+            <p>Common vision defects arise from a mismatch between the eye's optical power and the eyeball's length. <em>Myopia (short-sightedness)</em> means distant objects focus in front of the retina because the eyeball is too long or the cornea/lens is too strong; nearby objects can still be focused, but distant ones blur. Correction: a <em>diverging</em> (concave) lens, which pre-spreads the incoming rays so the eye then focuses them on the retina. <em>Hyperopia (far-sightedness)</em> is the opposite — distant objects focus behind the retina, often because the eyeball is too short. Correction: a <em>converging</em> (convex) lens. <em>Presbyopia</em> is the age-related stiffening of the lens that reduces accommodation, common after about age 40, and is corrected by reading glasses or bifocals. <em>Astigmatism</em> arises from a non-spherical cornea and is corrected with a cylindrical lens.</p>
+            <p>The eye's image is inverted, but our brain rights it — the visual cortex learns to interpret the inverted retinal image as a normally-oriented world. Sensory adaptation studies in the 1890s (George Stratton) had subjects wear inverting goggles for several days; after about a week, the brain reinterprets the input and the world appears right-side-up again, even through the goggles. Vision is as much about the brain as the eye.</p>
+            <ul>
+              <li><strong>Cornea / lens</strong> — front clear surface (~70% of focusing) / fine-tuning element behind iris.</li>
+              <li><strong>Retina</strong> — light-sensitive layer at the back of the eye.</li>
+              <li><strong>Rods / cones</strong> — photoreceptors for dim light &amp; periphery / bright light &amp; colour.</li>
+              <li><strong>Accommodation</strong> — change in lens shape to focus at different distances.</li>
+              <li><strong>Myopia / hyperopia</strong> — near-sightedness (corrected with diverging lens) / far-sightedness (corrected with converging lens).</li>
+              <li><strong>Presbyopia</strong> — age-related loss of accommodation, common after age 40.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Selecting a corrective lens for myopia</p>
+              <p>A patient cannot clearly see objects beyond 50 cm from her eyes (her <em>far point</em>). Determine the focal length of a corrective lens that will allow her to see distant objects clearly. (Assume the lens sits at her eye.)</p>
+              <p>To see distant objects clearly, the corrective lens must take light from infinity (\(d_o = \infty\)) and create a virtual image at her far point (50 cm in front of the lens, on the same side as the incoming light, so \(d_i = -50\) cm by sign convention). Apply the thin-lens equation: \(1/f = 1/d_o + 1/d_i = 0 + 1/(-50)\) → \(f = -50\) cm. The required lens is <strong>diverging with focal length 50 cm</strong>; equivalently, power \(P = 1/f = 1/(-0.50 \text{ m}) = -2.0\) dioptres. Optometrists write the prescription as "−2.0 D".</p>
+            </div>
+            <ul>
+              <li>Calling rods "the colour cells" — colour comes from cones; rods give monochrome but very sensitive vision.</li>
+              <li>Confusing the iris (coloured ring of muscle) with the pupil (the dark opening it controls).</li>
+              <li>Saying the lens does most of the focusing — actually the cornea does, the lens fine-tunes.</li>
+              <li>Getting the corrective lens type backwards — myopia uses diverging (−), hyperopia uses converging (+).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E3.5 — "describe image formation in the human eye and explain common vision defects (myopia, hyperopia, presbyopia, astigmatism) and how lenses are used to correct them."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">How Your Eyes Make Sense of the World — TED-Ed</span>
+                <span class="vid-duration">4:54</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/hsh2kPdgazo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=hsh2kPdgazo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Optical instruments -->
+        <div class="subsection-label">📷 Optical Instruments &amp; Applications</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Optical instruments combine mirrors, lenses, and apertures to extend what human vision can do. Every one is a worked example of the principles in the rest of this unit.</p>
+            <p>The <em>camera</em> is essentially an eye: a converging lens forms a real, inverted, reduced image on a light-sensitive surface (film or, today, a CMOS sensor). The lens-to-sensor distance is adjusted (focus) to keep the image sharp for different object distances. The <em>aperture</em> (controlled by an iris diaphragm, just like the eye's pupil) regulates how much light reaches the sensor; the shutter regulates how long. Wide aperture and fast shutter freeze motion in bright light; small aperture gives a larger depth of field.</p>
+            <p>The <em>compound microscope</em> uses two converging lenses in series. The <em>objective lens</em> (close to the specimen, very short \(f\)) produces a real, inverted, magnified image inside the tube; the <em>eyepiece lens</em> (close to the eye, like a magnifying glass) magnifies that image further to give a virtual final image. Total magnification = (objective magnification) × (eyepiece magnification), commonly 4× to 100× objectives × 10× eyepiece = 40× to 1000×.</p>
+            <p>The <em>refracting telescope</em> also uses two lenses: a long-focal-length objective gathers as much light as possible from a distant object (more light = brighter image, key for astronomy) and forms a real image; an eyepiece (short \(f\)) magnifies that image. Magnification = \(f_{obj}/f_{eye}\). Large objective diameters resolve finer detail. The <em>reflecting telescope</em> (Newton, 1668) uses a concave mirror instead of a large lens, which is lighter, cheaper, and free of chromatic aberration — the architecture of every major research telescope today.</p>
+            <p><em>Fibre optics</em> exploits total internal reflection. A flexible glass core surrounded by a lower-\(n\) cladding traps light by repeated total internal reflection. Light pulses encode digital data and travel kilometres with very little loss — the backbone of modern internet, telephone, and medical endoscopes. Other applications include <em>periscopes</em> (two plane mirrors at 45°), <em>binoculars</em> (refracting telescope optics + a prism to fold the path and right the image), and <em>laser-based devices</em> from CD readers to surgical scalpels to LIDAR sensors in self-driving cars. The <em>LED</em> (light-emitting diode) has displaced incandescent bulbs because it produces visible light directly from electricity at much higher efficiency.</p>
+            <ul>
+              <li><strong>Camera</strong> — converging lens forms a real, inverted image on a sensor.</li>
+              <li><strong>Compound microscope</strong> — objective lens + eyepiece lens for high magnification.</li>
+              <li><strong>Refracting / reflecting telescope</strong> — uses a lens / a curved mirror as the light-gathering element.</li>
+              <li><strong>Aperture</strong> — adjustable opening that controls light input.</li>
+              <li><strong>Fibre optics</strong> — total internal reflection in flexible glass strands carries optical signals.</li>
+              <li><strong>LED</strong> — semiconductor device emitting light directly from electrical current.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Telescope magnification</p>
+              <p>A simple refracting telescope has an objective lens with focal length 1.20 m and an eyepiece with focal length 25 mm. (a) Calculate the magnification. (b) Roughly how far apart should the two lenses be placed?</p>
+              <p>(a) Magnification = \(f_{obj}/f_{eye} = 1.20 \text{ m} / 0.025 \text{ m} = 48×\). The telescope makes Saturn 48 times larger in angular size than it would appear with the naked eye. (b) For a relaxed-eye view of a distant object, the eyepiece's near focal point coincides with the objective's far focal point — the tube length equals approximately \(f_{obj} + f_{eye} = 1.20 + 0.025 = 1.225\) m. A small adjustment around this point lets the observer focus on closer objects.</p>
+            </div>
+            <ul>
+              <li>Calling magnification "all that matters" in a telescope — light-gathering and resolution depend on objective diameter; magnification alone with a tiny aperture gives a dim, blurry image.</li>
+              <li>Saying microscopes "see molecules" — light microscopes resolve to about 200 nm, far above molecular sizes; only electron microscopes can resolve molecules.</li>
+              <li>Confusing reflecting (mirror) and refracting (lens) telescopes — most large research telescopes are reflecting because lenses sag under their own weight at large size.</li>
+              <li>Treating fibre optics as a kind of wire — they carry light, not electric current; the data is encoded in light pulses.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand E, Expectation E1.1 — "evaluate the effectiveness of technological devices and procedures designed to make use of light (e.g., cameras, microscopes, telescopes, lasers, fibre optics) and assess their social and environmental impacts."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">How Do Telescopes Work? — TED-Ed</span>
+                <span class="vid-duration">4:55</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mYhy7eaazIk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=mYhy7eaazIk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 4 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/snc2d/Unit4_Light_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/snc2d/Unit4_Light_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/snc2d/Unit4_Light_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SNC2D Science (Academic) · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

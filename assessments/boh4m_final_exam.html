@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOH4M Final Exam — Business Leadership: Management Fundamentals (OF Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #faf5ff; border: 1px solid #d8b4fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.section-hdr.ci { background: #fce7f3; color: #9d174d; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #faf5ff; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.ci-card { background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+.ci-card h4 { color: #9d174d; margin-bottom: 8px; font-size: 16px; }
+.rubric-grid { display: grid; grid-template-columns: 60px 1fr 1fr 1fr 1fr; gap: 0; margin: 12px 0 0; font-size: 13px; }
+.rubric-grid > div { padding: 10px; border: 1px solid var(--border); }
+.rubric-grid .head { background: #f1f5f9; font-weight: 700; }
+.rubric-grid .lvl { background: #f8fafc; font-weight: 700; text-align: center; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/boh4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>🎓 BOH4M Final Exam &amp; Culminating Case Study</h1>
+    <div class="sub">Comprehensive Final Evaluation — Chapters 1 through 5 plus Culminating Leadership Case Study (Strand D)</div>
+    <div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 3 hours (180 minutes) for the written exam &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+    <strong>Materials allowed:</strong> Standard scientific calculator, ruler, dictionary (paper). No phones, no internet.<br>
+    Answer all questions. Show your reasoning for written items.
+</div>
+
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+    <strong>Coverage:</strong> Ch 1 Foundations of Management · Ch 2 Leadership &amp; Motivation · Ch 3 Communication, Decision-Making &amp; Conflict · Ch 4 Planning, Organizing &amp; Staffing · Ch 5 Controlling, Ethics &amp; the Culminating Case Study.
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [25 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Which is NOT one of Fayol's four functions of management?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Planning</label></li>
+<li><label><input type="radio" name="q1" value="b"> Organizing</label></li>
+<li><label><input type="radio" name="q1" value="c"> Forecasting</label></li>
+<li><label><input type="radio" name="q1" value="d"> Controlling</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','c')">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>POLC: Planning, Organizing, Leading, Controlling.</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Mintzberg's "disturbance handler" role belongs to which category?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Interpersonal</label></li>
+<li><label><input type="radio" name="q2" value="b"> Informational</label></li>
+<li><label><input type="radio" name="q2" value="c"> Decisional</label></li>
+<li><label><input type="radio" name="q2" value="d"> Strategic</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','c')">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>Disturbance handler = <strong>decisional</strong>. Decisional roles: entrepreneur, disturbance handler, resource allocator, negotiator.</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">According to Katz, which skill matters most at the top of the organization?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Technical</label></li>
+<li><label><input type="radio" name="q3" value="b"> Human</label></li>
+<li><label><input type="radio" name="q3" value="c"> Conceptual</label></li>
+<li><label><input type="radio" name="q3" value="d"> Mathematical</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','c')">Check</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div><strong>Conceptual</strong>. Human is equally important at every level; technical declines.</div>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Frederick Taylor is most associated with:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Bureaucracy</label></li>
+<li><label><input type="radio" name="q4" value="b"> Scientific management</label></li>
+<li><label><input type="radio" name="q4" value="c"> The Hawthorne studies</label></li>
+<li><label><input type="radio" name="q4" value="d"> 14 principles of administration</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>Taylor: <strong>scientific management</strong> (1911).</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Lewin's three classic leadership styles are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Trait, behavioural, contingency</label></li>
+<li><label><input type="radio" name="q5" value="b"> Autocratic, democratic, laissez-faire</label></li>
+<li><label><input type="radio" name="q5" value="c"> Directing, coaching, supporting</label></li>
+<li><label><input type="radio" name="q5" value="d"> Transactional, transformational, servant</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>Lewin: <strong>autocratic, democratic, laissez-faire</strong>.</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Maslow's highest-level need is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Safety</label></li>
+<li><label><input type="radio" name="q6" value="b"> Esteem</label></li>
+<li><label><input type="radio" name="q6" value="c"> Self-actualization</label></li>
+<li><label><input type="radio" name="q6" value="d"> Belongingness</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','c')">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>Self-actualization sits at the top of Maslow's pyramid.</div>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">In Herzberg's two-factor theory, "supervision" is a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Motivator</label></li>
+<li><label><input type="radio" name="q7" value="b"> Hygiene factor</label></li>
+<li><label><input type="radio" name="q7" value="c"> Need for power</label></li>
+<li><label><input type="radio" name="q7" value="d"> Self-actualization need</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','b')">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>Supervision quality is a <strong>hygiene</strong> factor.</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Vroom's expectancy theory: Motivation =</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Expectancy + Instrumentality + Valence</label></li>
+<li><label><input type="radio" name="q8" value="b"> Expectancy × Instrumentality × Valence</label></li>
+<li><label><input type="radio" name="q8" value="c"> Need × Drive</label></li>
+<li><label><input type="radio" name="q8" value="d"> Effort × Reward</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','b')">Check</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>\( M = E \times I \times V \).</div>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Tuckman's stages of group development in order are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Forming, Storming, Norming, Performing, Adjourning</label></li>
+<li><label><input type="radio" name="q9" value="b"> Forming, Norming, Storming, Performing, Adjourning</label></li>
+<li><label><input type="radio" name="q9" value="c"> Norming, Forming, Storming, Performing, Adjourning</label></li>
+<li><label><input type="radio" name="q9" value="d"> Forming, Storming, Performing, Norming, Adjourning</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','a')">Check</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>Forming → Storming → Norming → Performing → Adjourning.</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Channel richness is highest in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Email</label></li>
+<li><label><input type="radio" name="q10" value="b"> Text message</label></li>
+<li><label><input type="radio" name="q10" value="c"> Face-to-face conversation</label></li>
+<li><label><input type="radio" name="q10" value="d"> Printed memo</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','c')">Check</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>Face-to-face: highest richness — multi-cue (tone, body language, immediate feedback).</div>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Janis's "groupthink" refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Healthy team consensus</label></li>
+<li><label><input type="radio" name="q11" value="b"> A cohesive group prioritizing harmony over honest analysis</label></li>
+<li><label><input type="radio" name="q11" value="c"> Anonymous expert input</label></li>
+<li><label><input type="radio" name="q11" value="d"> Brainstorming rules</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q11','b')">Check</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-lbl">Solution:</div>Cohesion + harmony &gt; analysis = <strong>groupthink</strong>.</div>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Thomas-Kilmann's "collaborating" style is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Low assertiveness, low cooperativeness</label></li>
+<li><label><input type="radio" name="q12" value="b"> High assertiveness, low cooperativeness</label></li>
+<li><label><input type="radio" name="q12" value="c"> High assertiveness, high cooperativeness</label></li>
+<li><label><input type="radio" name="q12" value="d"> Low assertiveness, high cooperativeness</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','c')">Check</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-lbl">Solution:</div>Collaborating = high/high (win/win).</div>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Kotter's first change step is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q13" value="a"> Create a vision</label></li>
+<li><label><input type="radio" name="q13" value="b"> Establish a sense of urgency</label></li>
+<li><label><input type="radio" name="q13" value="c"> Build a coalition</label></li>
+<li><label><input type="radio" name="q13" value="d"> Generate short-term wins</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q13','b')">Check</button>
+<div class="fb" id="q13-fb"></div>
+<div class="sol" id="q13-sl"><div class="sol-lbl">Solution:</div>Step 1 = <strong>establish urgency</strong>. Without it, people don't change.</div>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">"M" in SMART stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q14" value="a"> Measurable</label></li>
+<li><label><input type="radio" name="q14" value="b"> Motivated</label></li>
+<li><label><input type="radio" name="q14" value="c"> Modular</label></li>
+<li><label><input type="radio" name="q14" value="d"> Maximum</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q14','a')">Check</button>
+<div class="fb" id="q14-fb"></div>
+<div class="sol" id="q14-sl"><div class="sol-lbl">Solution:</div>Specific, <strong>Measurable</strong>, Achievable, Relevant, Time-bound.</div>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">In SWOT, "rising customer demand for plant-based products" is a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q15" value="a"> Strength</label></li>
+<li><label><input type="radio" name="q15" value="b"> Weakness</label></li>
+<li><label><input type="radio" name="q15" value="c"> Opportunity</label></li>
+<li><label><input type="radio" name="q15" value="d"> Threat</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q15','c')">Check</button>
+<div class="fb" id="q15-fb"></div>
+<div class="sol" id="q15-sl"><div class="sol-lbl">Solution:</div>External + favourable = <strong>opportunity</strong>.</div>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Dual reporting (function + product) describes a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q16" value="a"> Functional structure</label></li>
+<li><label><input type="radio" name="q16" value="b"> Divisional structure</label></li>
+<li><label><input type="radio" name="q16" value="c"> Matrix structure</label></li>
+<li><label><input type="radio" name="q16" value="d"> Network structure</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q16','c')">Check</button>
+<div class="fb" id="q16-fb"></div>
+<div class="sol" id="q16-sl"><div class="sol-lbl">Solution:</div>Dual reporting = <strong>matrix</strong>.</div>
+</div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Which interview question is FORBIDDEN under the Ontario Human Rights Code?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q17" value="a"> "What is your relevant experience?"</label></li>
+<li><label><input type="radio" name="q17" value="b"> "Are you legally eligible to work in Canada?"</label></li>
+<li><label><input type="radio" name="q17" value="c"> "What religion do you practice?"</label></li>
+<li><label><input type="radio" name="q17" value="d"> "Can you work weekends?"</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q17','c')">Check</button>
+<div class="fb" id="q17-fb"></div>
+<div class="sol" id="q17-sl"><div class="sol-lbl">Solution:</div>Creed (religion) is a protected ground; asking is illegal.</div>
+</div>
+
+<div class="qcard" id="q18">
+<div class="qnum">Question 18 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">In behavioural interviewing, STAR stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q18" value="a"> Situation, Task, Action, Result</label></li>
+<li><label><input type="radio" name="q18" value="b"> Strength, Talent, Achievement, Result</label></li>
+<li><label><input type="radio" name="q18" value="c"> Skill, Time, Action, Reward</label></li>
+<li><label><input type="radio" name="q18" value="d"> Setting, Tone, Approach, Reflection</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q18','a')">Check</button>
+<div class="fb" id="q18-fb"></div>
+<div class="sol" id="q18-sl"><div class="sol-lbl">Solution:</div>Situation, Task, Action, Result.</div>
+</div>
+
+<div class="qcard" id="q19">
+<div class="qnum">Question 19 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A firm has fixed costs of $20,000/month, sells units at $25, variable cost per unit $15. Monthly breakeven units?</div>
+<input type="text" id="q19-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q19',2000)">Check</button>
+<div class="fb" id="q19-fb"></div>
+<div class="sol" id="q19-sl"><div class="sol-lbl">Solution:</div>Contribution margin = $25 − $15 = $10. BE = $20000 / $10 = <strong>2000 units</strong>.</div>
+</div>
+
+<div class="qcard" id="q20">
+<div class="qnum">Question 20 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which is NOT one of the four Balanced-Scorecard perspectives?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q20" value="a"> Financial</label></li>
+<li><label><input type="radio" name="q20" value="b"> Customer</label></li>
+<li><label><input type="radio" name="q20" value="c"> Marketing</label></li>
+<li><label><input type="radio" name="q20" value="d"> Internal Process</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q20','c')">Check</button>
+<div class="fb" id="q20-fb"></div>
+<div class="sol" id="q20-sl"><div class="sol-lbl">Solution:</div>Four: Financial, Customer, Internal Process, Learning &amp; Growth. Marketing is not a scorecard perspective.</div>
+</div>
+
+<div class="qcard" id="q21">
+<div class="qnum">Question 21 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">"Greatest good for the greatest number" describes:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q21" value="a"> Utilitarian ethics</label></li>
+<li><label><input type="radio" name="q21" value="b"> Rights-based ethics</label></li>
+<li><label><input type="radio" name="q21" value="c"> Justice-based ethics</label></li>
+<li><label><input type="radio" name="q21" value="d"> Virtue ethics</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q21','a')">Check</button>
+<div class="fb" id="q21-fb"></div>
+<div class="sol" id="q21-sl"><div class="sol-lbl">Solution:</div>Greatest aggregate benefit = <strong>utilitarian</strong>.</div>
+</div>
+
+<div class="qcard" id="q22">
+<div class="qnum">Question 22 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The Triple Bottom Line is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q22" value="a"> Revenue, Cost, Profit</label></li>
+<li><label><input type="radio" name="q22" value="b"> People, Planet, Profit</label></li>
+<li><label><input type="radio" name="q22" value="c"> Past, Present, Future</label></li>
+<li><label><input type="radio" name="q22" value="d"> Mission, Vision, Values</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q22','b')">Check</button>
+<div class="fb" id="q22-fb"></div>
+<div class="sol" id="q22-sl"><div class="sol-lbl">Solution:</div>People, Planet, Profit (Elkington).</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 23 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt">A national restaurant chain is bleeding cash. The CEO calls all 200 store managers into a hotel ballroom and says: "Quarterly bonus is now $5,000 if your store posts a 25% sales increase. No questions." Diagnose the likely problems using Vroom's Expectancy theory AND Herzberg's two-factor theory. Recommend three changes.</div>
+<textarea placeholder="Multi-framework motivation diagnosis..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 24 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt">A 250-employee Canadian software firm wants to move from a functional structure to a matrix structure after launching its second product line. Identify three benefits and three risks of this move. Apply contingency thinking to recommend whether or not to proceed.</div>
+<textarea placeholder="Structural change analysis..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 25 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt">A Crown corporation must implement a major change: digitalization of all paper records over 18 months. Use Kotter's eight-step model to design the rollout. Where in the process is failure most likely, and what would you do to prevent it?</div>
+<textarea placeholder="Apply Kotter to a real change..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 26 <span class="qmarks">[7 marks]</span></div>
+<div class="qtxt"><strong>Ethical Dilemma:</strong> A senior buyer at a major Canadian retailer is offered cash gifts and luxury hotel stays by a textile supplier in exchange for choosing them over a competitor with equivalent quality.
+<br>(a) Apply all four ethical frameworks (Utilitarian, Rights, Justice, Virtue) to this situation.
+<br>(b) Recommend an action and explain which framework was most decisive.
+<br>(c) Identify two organizational policies that should be in place to prevent this dilemma from arising.</div>
+<textarea placeholder="Four-framework analysis with recommendations..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 27 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">In 6–8 sentences, write a clear professional explanation for a new team lead of "How to give effective feedback to a struggling employee." Integrate active-listening principles and at least one named framework from this course.</div>
+<textarea placeholder="Audience-appropriate explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 28 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Write a one-paragraph internal memo (8–10 sentences) from a department head to the team announcing a difficult change (e.g., a department restructure). Use Kotter's "create urgency" and "vision" elements, and active-listening principles in the way you anticipate concerns.</div>
+<textarea placeholder="Professional memo..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 29 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Compare and contrast transformational and transactional leadership in 6–8 sentences. Provide a Canadian or international example of each. Conclude with which approach you believe a Canadian university president should emphasize, and why.</div>
+<textarea placeholder="Compare-contrast with example..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 30 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Write a paragraph arguing for or against the claim: "Workplace stress is the employee's personal problem, not the manager's." Use the CSA-Z1003 framework and the concept of psychological safety as support.</div>
+<textarea placeholder="Argumentative paragraph with evidence..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 31 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A high-school graduate asks you: "What is the single most important thing you learned from your BOH4M course about being a good manager?" Write your reply in 6–8 sentences, citing at least two named theories or frameworks.</div>
+<textarea placeholder="Personal synthesis..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 32 <span class="qmarks">[8 marks]</span></div>
+<div class="qtxt"><strong>Comprehensive Case — "Northern Light Brewing":</strong>
+<br>Northern Light Brewing is a 40-person craft brewery in northern Ontario. The founder (CEO) sets all major decisions personally. In the past year, voluntary turnover has risen to 45%, exit interviews mention "pay is OK but I don't feel my ideas matter" and "boss yells when something goes wrong." Sales are flat. The CEO has just attended a leadership seminar and is considering changes.
+<br>(a) Identify three diagnostic frameworks from BOH4M that explain different parts of the problem (one each from Strands A, B, and C). [3 marks]
+<br>(b) For each framework, recommend one specific management action. [3 marks]
+<br>(c) Predict the most likely sequence of resistance to your recommendations and explain how to address it. [2 marks]</div>
+<textarea placeholder="Multi-strand integrated case analysis..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 33 <span class="qmarks">[8 marks]</span></div>
+<div class="qtxt"><strong>Comprehensive Case — "Lakeside Hospital":</strong>
+<br>A 250-bed Ontario community hospital has a chronic problem: emergency-room wait times average 9 hours, far above the Ontario benchmark of 4. The CEO has decided wait time will become the top priority.
+<br>(a) Design a six-step plan, drawing on at least one tool from each strand (A Foundations, B Leading, C Communication/Decision-Making, D Planning/Controlling). [4 marks]
+<br>(b) Build a small Balanced Scorecard with one metric for each of the four perspectives, all aligned to the wait-time priority. [4 marks]</div>
+<textarea placeholder="Integrated multi-strand application..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 34 <span class="qmarks">[9 marks]</span></div>
+<div class="qtxt"><strong>Comprehensive Case — "Trustworthy Apparel":</strong>
+<br>Trustworthy Apparel is a Canadian B Corp making ethically-sourced clothing. A new competitor copies their designs at lower prices, undermining sales. Trustworthy must choose between (i) cutting costs by switching to a non-certified supplier, or (ii) doubling down on ESG branding and accepting tighter margins.
+<br>(a) Apply Carroll's CSR pyramid and the Triple Bottom Line to evaluate each option. [4 marks]
+<br>(b) Apply one of the four ethical frameworks (Utilitarian/Rights/Justice/Virtue) to choose between the options. [3 marks]
+<br>(c) Recommend a third "creative" option that uses a course concept (e.g., transformational leadership, change management, stakeholder engagement) and explain how it would work. [2 marks]</div>
+<textarea placeholder="Strategic CSR/ethics case..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr ci">📚 Culminating Leadership Case Study Rubric (handed in separately, worth 15% of final mark)</div>
+
+<div class="ci-card">
+<h4>Culminating Investigation Overview</h4>
+<p style="font-size:14px;margin-bottom:10px;">The Culminating Leadership Case Study Investigation is a substantial integrative work completed over 4–6 weeks. It is submitted as a separate written report (3,000–4,500 words) AND an oral presentation (12–15 minutes). It is graded across all four achievement categories.</p>
+<p style="font-size:14px;"><strong>Components:</strong></p>
+<ul style="margin-left:24px;font-size:14px;line-height:1.7;">
+<li>Research question: focused on one organization and one tension</li>
+<li>Application of multiple frameworks from across Strands A–D</li>
+<li>8–12 credible varied sources with APA citations</li>
+<li>Coherent argument with evidence-based recommendations</li>
+<li>Professional written report</li>
+<li>Engaging oral presentation with visuals</li>
+</ul>
+</div>
+
+<div class="ci-card">
+<h4>Rubric: Achievement Chart Application</h4>
+<div class="rubric-grid">
+<div class="head"></div>
+<div class="head">Level 4 (80–100%)</div>
+<div class="head">Level 3 (70–79%)</div>
+<div class="head">Level 2 (60–69%)</div>
+<div class="head">Level 1 (50–59%)</div>
+
+<div class="lvl">K/U</div>
+<div>Accurate and sophisticated use of multiple management concepts across all strands</div>
+<div>Generally accurate use of management concepts from multiple strands</div>
+<div>Some use of management concepts; partial accuracy</div>
+<div>Limited use of concepts; significant errors</div>
+
+<div class="lvl">Thinking</div>
+<div>Insightful, original analysis; identifies non-obvious tensions; recommendations grounded in evidence</div>
+<div>Considerable analysis; identifies key issues; clear recommendations</div>
+<div>Some analysis; basic recommendations</div>
+<div>Limited analysis; recommendations weak or absent</div>
+
+<div class="lvl">Comm.</div>
+<div>Exceptional clarity in writing and oral presentation; professional voice; engaging visuals</div>
+<div>Clear writing and oral presentation; appropriate vocabulary; good visuals</div>
+<div>Some clarity; basic vocabulary; simple visuals</div>
+<div>Limited clarity; unclear oral presentation</div>
+
+<div class="lvl">Applic.</div>
+<div>Frameworks applied with sophistication to the specific organization; transfer evident</div>
+<div>Frameworks correctly applied with relevant examples</div>
+<div>Frameworks listed but applied superficially</div>
+<div>Frameworks not effectively applied</div>
+</div>
+</div>
+
+<div class="ci-card">
+<h4>Suggested Investigation Timeline</h4>
+<ul style="margin-left:24px;font-size:14px;line-height:1.7;">
+<li><strong>Week 1:</strong> Choose organization and tension; draft research question; identify frameworks.</li>
+<li><strong>Week 2:</strong> Gather sources (8–12); take notes.</li>
+<li><strong>Week 3:</strong> Apply frameworks; draft analysis.</li>
+<li><strong>Week 4:</strong> Write report; develop recommendations.</li>
+<li><strong>Week 5:</strong> Revise; create presentation visuals.</li>
+<li><strong>Week 6:</strong> Submit report; deliver oral presentation; peer feedback.</li>
+</ul>
+</div>
+
+<footer>BOH4M — Business Leadership: Management Fundamentals, Grade 12 | Ontario Curriculum 2006 (Business Studies) | Final Exam &amp; Culminating Case Study<br>
+Aligned with Growing Success (2010): 70% Term Work + 30% Final Evaluation (15% Final Exam + 15% Culminating Investigation)</footer>
+
+</div>
+<script>
+let score=0,answered=0;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.5){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

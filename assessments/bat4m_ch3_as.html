@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Financial Statement Analysis — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area { margin-top: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #6d28d9; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.reflect-item label { flex: 1; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bat4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 3: Financial Statement Analysis</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check after each topic. Topics: horizontal/vertical analysis, liquidity, solvency, profitability, market ratios, and limitations.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">11</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.1 — Horizontal &amp; Vertical Analysis</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">Sales went from \$ 400,000 to \$ 460,000. The percentage change (horizontal analysis) is:</div>
+    <div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a percentage..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q1', 15)">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution">
+        <div class="solution-label">Solution:</div>
+        \( (460{,}000 - 400{,}000) / 400{,}000 = 60{,}000 / 400{,}000 = 0.15 = 15\% \).
+    </div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">On a vertical (common-size) income statement, every line is expressed as a percentage of:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Net income</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Total assets</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Net sales</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Total equity</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','c')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution">
+        <div class="solution-label">Solution:</div>
+        On the income statement, the common-size base is Net Sales. On the balance sheet, the base is Total Assets.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.2 — Liquidity Ratios</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">Current assets \$ 240,000; current liabilities \$ 120,000. The current ratio is:</div>
+    <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q3', 2)">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution">
+        <div class="solution-label">Solution:</div>
+        \( 240{,}000 / 120{,}000 = 2.0 \). Healthy liquidity (most industries).
+    </div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Net credit sales \$ 600,000; average AR \$ 75,000. Days' sales in AR is approximately:</div>
+    <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter days..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q4', 45.6)">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution">
+        <div class="solution-label">Solution:</div>
+        Receivables turnover \( = 600{,}000/75{,}000 = 8.0 \) times. Days' AR \( = 365/8.0 = 45.6 \) days.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.3 — Solvency Ratios</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Total liabilities \$ 480,000; total assets \$ 800,000. The debt-to-assets ratio is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> 40%</label></li>
+        <li><label><input type="radio" name="q5" value="b"> 60%</label></li>
+        <li><label><input type="radio" name="q5" value="c"> 1.67</label></li>
+        <li><label><input type="radio" name="q5" value="d"> 0.40</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','b')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution">
+        <div class="solution-label">Solution:</div>
+        \( 480{,}000 / 800{,}000 = 0.60 = 60\% \). Creditors finance 60% of the firm's assets.
+    </div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">EBIT \$ 240,000; interest expense \$ 40,000. The times-interest-earned ratio is:</div>
+    <div class="answer-area"><input type="text" id="q6-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q6', 6)">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution">
+        <div class="solution-label">Solution:</div>
+        \( 240{,}000 / 40{,}000 = 6 \) times. The company comfortably covers interest 6× from operations.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.4 — Profitability Ratios</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Net income \$ 60,000; net sales \$ 800,000. Profit margin is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> 7.5%</label></li>
+        <li><label><input type="radio" name="q7" value="b"> 10%</label></li>
+        <li><label><input type="radio" name="q7" value="c"> 13.3%</label></li>
+        <li><label><input type="radio" name="q7" value="d"> 15%</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','a')">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution">
+        <div class="solution-label">Solution:</div>
+        \( 60{,}000 / 800{,}000 = 0.075 = 7.5\% \).
+    </div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">Net income \$ 84,000; preferred dividends \$ 4,000; average common equity \$ 400,000. ROE is:</div>
+    <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter percentage..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q8', 20)">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution">
+        <div class="solution-label">Solution:</div>
+        ROE \( = (84{,}000 - 4{,}000) / 400{,}000 = 80{,}000 / 400{,}000 = 20\% \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.5 — Market Ratios</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">EPS \$ 4.00; share price \$ 60. P/E ratio is:</div>
+    <div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q9', 15)">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution">
+        <div class="solution-label">Solution:</div>
+        \( 60 / 4.00 = 15.0 \). Investors pay \$ 15 for \$ 1 of trailing earnings.
+    </div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Annual dividend \$ 2.40; share price \$ 60. Dividend yield is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> 4.0%</label></li>
+        <li><label><input type="radio" name="q10" value="b"> 6.0%</label></li>
+        <li><label><input type="radio" name="q10" value="c"> 25%</label></li>
+        <li><label><input type="radio" name="q10" value="d"> 14.4%</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','a')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution">
+        <div class="solution-label">Solution:</div>
+        Yield \( = 2.40 / 60 = 0.04 = 4.0\% \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.6 — Limitations</div>
+
+<div class="question-card" id="q11">
+    <div class="q-number">Question 11</div>
+    <div class="q-text">"Window dressing" refers to:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q11" value="a"> Painting the building before year end</label></li>
+        <li><label><input type="radio" name="q11" value="b"> Timing transactions around year end to improve key ratios</label></li>
+        <li><label><input type="radio" name="q11" value="c"> Cleaning up the financial statements typography</label></li>
+        <li><label><input type="radio" name="q11" value="d"> Issuing a stock dividend</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q11','b')">Check Answer</button>
+    <div class="feedback" id="q11-feedback"></div>
+    <div class="solution" id="q11-solution">
+        <div class="solution-label">Solution:</div>
+        Window dressing = timing transactions around year end (e.g., paying suppliers a day before year end) to flatter the current ratio or other metrics — legal but misleading.
+    </div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.1 Horizontal &amp; Vertical Analysis</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.2 Liquidity Ratios</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.3 Solvency Ratios</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.4 Profitability Ratios</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.5 Market Ratios</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.6 Limitations of Ratio Analysis</label></div>
+</div>
+
+<footer>
+    BAT4M — Financial Accounting Principles, Grade 12 | Ontario Curriculum 2006 (Revised)<br>
+    Strand C: Financial Analysis &amp; Decision Making | Assessment AS Learning
+</footer>
+
+</div>
+
+<script>
+let score = 0;
+let answered = 0;
+const total = 11;
+
+function updateProgress() {
+    document.getElementById('totalScore').textContent = score;
+    document.getElementById('progressFill').style.width = (answered / total * 100) + '%';
+}
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = '❌ Not quite. See the solution below.';
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+function checkNumeric(qid, correct) {
+    const input = document.getElementById(qid + '-input');
+    const val = parseFloat(input.value.trim());
+    if (isNaN(val)) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (Math.abs(val - correct) < 0.2) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = `❌ The correct answer is ${correct}. See the solution below.`;
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+</script>
+</body>
+</html>

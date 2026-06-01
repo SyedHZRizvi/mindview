@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Local Food Systems — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #d97706; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/hfa4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Local Food Systems — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all work. Open answer keys after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [12 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Describe Canada's supply-management system. Name the three sectors involved and the three core mechanisms.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Supply management covers dairy, poultry (chicken, turkey), eggs. Mechanisms: (1) production quotas held by farmers; (2) import controls (tariffs above quota volumes); (3) administered pricing by provincial marketing boards. Aim: stable farmer income, consistent supply and quality; critics cite higher consumer prices.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which agency administers the Canada Organic Regime?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Statistics Canada</label></li>
+<li><label><input type="radio" name="q2"> Canadian Food Inspection Agency (CFIA)</label></li>
+<li><label><input type="radio" name="q2"> Environment and Climate Change Canada</label></li>
+<li><label><input type="radio" name="q2"> Health Canada</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> CFIA administers Canada Organic. Three-year transition from synthetic inputs, prohibition of GMOs and most synthetic pesticides.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Describe one benefit and one concern about GMO crops in Canada.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Benefits: reduced pesticide spraying (Bt corn/cotton); drought-tolerant varieties; vitamin enrichment (Golden Rice, vitamin A); higher yields preventing food loss. Concerns: corporate consolidation (few firms own most patented seeds); herbicide-resistant superweeds; ecological uncertainty; lack of mandatory GMO labelling in Canada limits consumer choice. Note: scientific consensus is that approved GM foods are safe to eat.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">In the NOVA classification, what does NOVA 4 describe?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> Unprocessed fresh fruit</label></li>
+<li><label><input type="radio" name="q4"> Salt and sugar (culinary ingredients)</label></li>
+<li><label><input type="radio" name="q4"> Ultra-processed food and drink products</label></li>
+<li><label><input type="radio" name="q4"> Canned vegetables</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>C.</strong> NOVA 4 = ultra-processed (UPF) — industrial formulations with ingredients rarely used in home kitchens; ~48% of Canadian energy on average.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Approximately what proportion of Canadian households experienced food insecurity in 2022 (PROOF)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> ~2%</label></li>
+<li><label><input type="radio" name="q5"> ~6%</label></li>
+<li><label><input type="radio" name="q5"> ~12%</label></li>
+<li><label><input type="radio" name="q5"> ~18%</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>D.</strong> About 18.4% in 2022 — the highest rate since national tracking began. Driven primarily by inadequate household income.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Label audit:</strong> Compare two granola bars per 30 g. Bar X: 130 kcal, 4 g sat fat (20% DV), 180 mg Na (8% DV), 11 g sugar (10 g added), 1 g fibre (4% DV), 2 g protein, first ingredient: sugar. Bar Y: 115 kcal, 1 g sat fat (5% DV), 65 mg Na (3% DV), 4 g sugar (2 g added), 4 g fibre (14% DV), 4 g protein, first ingredient: rolled oats. (a) Apply the 5%/15% DV rule. (b) Recommend one and justify with three label-specific reasons.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Bar X: sat fat 20% (a lot), sodium 8% (in between), fibre 4% (a little). Bar Y: sat fat 5% (a little), sodium 3% (a little), fibre 14% (close to a lot). (b) Recommend Bar Y because: (1) substantially less added sugar (2 g vs 10 g); (2) higher fibre (14% vs 4% DV — better satiety and gut health); (3) less saturated fat (5% vs 20% DV); plus first ingredient is oats (whole grain) not sugar — lower NOVA processing tier.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">Carbon-footprint comparison: in November in Toronto, you can buy local Ontario apples (~100 km transport, controlled-atmosphere storage 5 months) or fresh New Zealand apples (~14,000 km ocean shipping). Discuss the carbon footprint trade-offs and recommend a choice for a climate-conscious household. Mention the role of production method.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Storage in Ontario uses electricity (mostly low-carbon hydroelectric and nuclear in Ontario's grid). Ocean shipping is surprisingly efficient per kg (vs air freight) but adds emissions. Production method dominates — both apples grown conventionally with similar inputs. For a climate-conscious household: Ontario apples are likely the better choice given low-carbon Ontario grid + short transport. The bigger climate decisions are shifting away from beef/lamb, reducing food waste, and avoiding air-freighted out-of-season produce (asparagus, berries flown in February). Local-stored generally beats long-distance fresh.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Design an investigation to assess whether Grade 12 students can identify ultra-processed (NOVA 4) products from a shelf of 20 packaged foods. Identify variables and analysis.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Hypothesis: students with a brief NOVA tutorial identify NOVA 4 foods more accurately than untrained peers. Sample: 40 Grade 12 students randomly assigned to tutorial (intervention) vs no-tutorial control. IV: NOVA tutorial. DV: number of correct classifications out of 20 foods (10 NOVA 1–3, 10 NOVA 4 — independently scored by two dietitians for ground truth). Controlled: same foods, same time limit, individual completion. Ethics: voluntary, anonymous. Analysis: compare mean correct identifications and % accuracy with 95% CIs; independent t-test. Limitations: classifying borderline foods is hard; reliability of scoring; short-term effect.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">Write a paragraph (~150 words) explaining household food insecurity in Canada: what it is, who is most affected, why income is the main driver, and one policy lever that addresses it.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: PROOF definition — inadequate or insecure access due to financial constraints; severity range (marginal, moderate, severe); 2022 rate ~18.4% of households; populations at higher risk (lone-parent female-led, Black, Indigenous, renters, social-assistance recipients); nutritious diets cost more per kcal than ultra-processed; food charity (food banks) reaches only ~23% of food-insecure households; policy levers include indexed social-assistance rates, guaranteed minimum income (Ontario 2017–19 pilot), Canada Disability Benefit, National School Food Program, $15/hour living wage. Income transfers reduce food insecurity more than food charity.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Construct a 4-row table comparing conventional, organic, regenerative, and Indigenous-led agriculture. Columns: typical practices, certification or governance, one strength, one limitation.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Conventional: synthetic fertilisers/pesticides, GM seed where licensed, monoculture; CFIA/PMRA-regulated; highest yields; environmental and soil impacts. Organic: synthetic inputs prohibited, no GMO, IPM, crop rotation; Canada Organic (CFIA); lower pesticide residues, better pollinator habitat; lower yields (20–25%), more expensive. Regenerative: cover crops, no-till, rotational livestock, biodiversity; emerging certifications; rebuilds soil and sequesters carbon; data variable. Indigenous: place-based knowledge, polyculture (Three Sisters), country foods, community governance; community-led/treaty rights; supports food sovereignty, biodiversity, cultural continuity; small scale, requires policy support.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">In a labelled image or careful description, list the major sections of a Canadian Nutrition Facts table. Identify three pieces of information a careful shopper should compare.</div>
+<textarea placeholder="Your answer or description of your image..."></textarea>
+<details><summary>Answer Key</summary><p>Sections: Serving size; Calories; Fat (sat + trans); Carbohydrate (sugar incl. added, fibre); Protein; Vitamins and minerals; %DV column. Smart shopper compares per-100 g, sodium, added sugar, saturated fat, fibre, and the ingredient list (shorter, recognisable items, no sugar as first ingredient). Also notes priority-allergen statements and (mandatory from January 2026) the front-of-pack symbol for high sat fat/sodium/sugar.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[6]</span>
+<div class="qtxt"><strong>Case study — Northern Food Costs:</strong> A family in Iqaluit reports that a 2-litre carton of milk costs $8.99 and a head of broccoli costs $6.49. Their household income is below the federal poverty line. (a) Identify three factors that drive northern food costs. (b) Describe the Nutrition North Canada subsidy and one critique. (c) Outline how Indigenous food sovereignty would complement (not replace) southern-style food assistance.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Factors: long, complex transport (sea-lift in summer, air freight in winter); limited retail competition; high operating costs; short growing seasons; colonial supply-chain legacy; corporate concentration. (b) NNC is a federal subsidy on shipping costs for eligible perishable foods to isolated communities; criticised for opaque pass-through to consumers and uncertain price reductions. (c) Indigenous food sovereignty restores community-led harvesting (hunter-support programs), promotes traditional foods (caribou, seal, char, berries) and supports community freezers, language and intergenerational knowledge. Combines short-term subsidies with long-term self-determination and food security on culturally appropriate terms.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[6]</span>
+<div class="qtxt"><strong>STSE — Community fridge:</strong> A local NGO opens a community fridge in a high-food-insecurity neighbourhood, stocked by volunteers and surplus from grocery stores. (a) Identify two strengths and two limitations. (b) Evaluate it against the income-based root cause of food insecurity. (c) Recommend two policies that would tackle the root cause.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Strengths: immediate relief for acutely hungry; reduces food waste; builds community connection. Limitations: short-term supply (a few meals); inconsistent supply and quality; depends on volunteer labour; doesn't address income; can stigmatise (depending on design). (b) Community fridges do not address the income inadequacy that drives food insecurity; they are a stop-gap, not a solution. (c) Policies: (1) raise social-assistance rates so they cover actual cost of food + shelter; (2) guaranteed minimum income (e.g., expanded Canada Disability Benefit, GMI pilot continuation); (3) living-wage employment standards; (4) National School Food Program (2024) expansion. Income transfers consistently outperform charity on food-security outcomes.</p></details></div>
+
+<footer>HFA4M — Nutrition and Health Issues, Grade 12 | Strand D: Local &amp; Global Food Issues | Assessment OF Learning — Graded</footer>
+</div></body></html>

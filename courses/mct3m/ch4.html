@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Chapter 4: Measurement | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h1 { font-size: 26px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #16a34a; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #16a34a; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #16a34a; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #16a34a; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #16a34a; color: #fff; }
+.chnav-next:hover { background: #15803d; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mct3m.html" style="color:#ea580c;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCT3M Mathematics for College Technology)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit4">
+<div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+<h1>Chapter 4: Measurement</h1>
+<p>SI units, prefixes, conversions, accuracy and precision, surface area and volume of 3-D figures</p>
+<div class="unit-meta">
+<span>📚 Strand D: Measurement &amp; Geometry</span>
+<span>⏱️ ~20h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.1 &mdash; The SI System: Base Units and Prefixes</div>
+<div class="topic-desc">Identify the seven SI base units; use the metric prefixes (milli-, centi-, kilo-, mega-, etc.); convert between SI prefixes and between SI and imperial units.</div>
+<div class="summary-card">The seven <strong>SI base units</strong>: metre (m, length), kilogram (kg, mass), second (s, time), ampere (A, current), kelvin (K, temperature), mole (mol, amount), candela (cd, luminous intensity). Common prefixes: <strong>k</strong>ilo (×10³), <strong>m</strong>illi (×10⁻³), <strong>μ</strong> micro (×10⁻⁶), <strong>M</strong>ega (×10⁶). Conversions use the prefix exponents to scale.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The <strong>Système international d'unités (SI)</strong> is the modern form of the metric system, used by virtually every country (and every scientific and engineering field) worldwide. It is built on seven base units, from which all other units are derived.</p>
+
+<p><strong>The seven base units</strong>: metre (m) for length, kilogram (kg) for mass, second (s) for time, ampere (A) for electric current, kelvin (K) for thermodynamic temperature, mole (mol) for amount of substance, candela (cd) for luminous intensity. From these, every other unit is derived: newton (N = kg·m/s²) for force, joule (J = N·m) for energy, watt (W = J/s) for power, pascal (Pa = N/m²) for pressure, hertz (Hz = 1/s) for frequency, and so on.</p>
+
+<p><strong>Metric prefixes</strong> scale the base units by powers of 10. The common prefixes used in technology contexts:</p>
+<ul>
+<li><strong>Tera- (T)</strong> = \(10^{12}\) — trillions; e.g. terabyte.</li>
+<li><strong>Giga- (G)</strong> = \(10^9\) — billions; e.g. gigahertz, gigawatt.</li>
+<li><strong>Mega- (M)</strong> = \(10^6\) — millions; e.g. megapascal, megajoule.</li>
+<li><strong>kilo- (k)</strong> = \(10^3\) — thousands; e.g. kilometre, kilogram.</li>
+<li><strong>hecto- (h)</strong> = \(10^2\) — hundreds.</li>
+<li><strong>deca- (da)</strong> = \(10^1\) — tens.</li>
+<li>[base unit] = \(10^0 = 1\).</li>
+<li><strong>deci- (d)</strong> = \(10^{-1}\) — tenths.</li>
+<li><strong>centi- (c)</strong> = \(10^{-2}\) — hundredths; e.g. centimetre.</li>
+<li><strong>milli- (m)</strong> = \(10^{-3}\) — thousandths; e.g. millimetre, milliampere.</li>
+<li><strong>micro- (μ)</strong> = \(10^{-6}\) — millionths; e.g. microsecond, microfarad.</li>
+<li><strong>nano- (n)</strong> = \(10^{-9}\) — billionths; e.g. nanometre, nanofarad.</li>
+<li><strong>pico- (p)</strong> = \(10^{-12}\) — trillionths.</li>
+</ul>
+
+<p>To convert between SI prefixes, count the powers of 10 between them. From milli (10⁻³) to kilo (10³): you're climbing by 6 powers of 10, so divide the numerical value by \(10^6\). From metres to centimetres: down by 2 powers, so multiply by 100.</p>
+
+<p>Conversions between SI and imperial systems use stored conversion factors: 1 inch = 2.54 cm exactly; 1 foot = 0.3048 m; 1 mile = 1.609 km (approx); 1 lb = 0.4536 kg (approx); 1 US gallon = 3.785 L (approx).</p>
+
+<ul>
+<li><strong>SI base unit</strong> — one of seven internationally agreed fundamental units.</li>
+<li><strong>Derived unit</strong> — any unit expressed as a product/quotient of base units (e.g. m/s, m³, Pa).</li>
+<li><strong>Prefix</strong> — a multiplier (kilo, milli, etc.) attached to a unit to indicate a power of 10.</li>
+<li><strong>Conversion factor</strong> — a ratio of equivalent quantities used to convert between units (e.g. 1 in / 2.54 cm).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Convert 4.5 km to centimetres.</p>
+<p>1 km = \(10^3\) m = \(10^5\) cm. So 4.5 km = \(4.5 \times 10^5 = 450{,}000\) cm.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A capacitor is rated 0.47 μF. Express in farads and in nanofarads.</p>
+<p>μF = \(10^{-6}\) F, so 0.47 μF = \(0.47 \times 10^{-6} = 4.7 \times 10^{-7}\) F.</p>
+<p>nF = \(10^{-9}\) F, so 0.47 μF = \(0.47 \times 10^{-6} \div 10^{-9} = 0.47 \times 10^3 = 470\) nF.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A pipe is labeled 1.25 inches in diameter. Convert to millimetres.</p>
+<p>1 inch = 2.54 cm = 25.4 mm.</p>
+<p>1.25 inches \(\times\) 25.4 mm/in = 31.75 mm.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Conflating capital and lowercase prefix letters. <strong>M</strong> means mega- (\(10^6\)); <strong>m</strong> means milli- (\(10^{-3}\)). MJ is megajoules; mJ is millijoules.</li>
+<li>Mixing up volume scaling: 1 m³ ≠ 100 cm³. Actually, 1 m = 100 cm so 1 m³ = (100 cm)³ = \(10^6\) cm³.</li>
+<li>Confusing kg (mass) with kgf (force, kilogram-force, an older unit). In SI, force is the newton (N).</li>
+<li>Adding measurements with different prefixes without converting first. 5 mm + 3 cm = 5 mm + 30 mm = 35 mm, not 8.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "describe the SI system of measurement and the imperial system of measurement, and convert between SI and imperial measurements [e.g., between metres and feet, between millimetres and inches, between centimetres and inches], and between units within each system." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct4-yt1')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Metric System Basics — The Organic Chemistry Tutor</span>
+<span class="vid-duration">14:38</span>
+<span class="vid-toggle" id="toggle-mct4-yt1">▶</span>
+</div>
+<div class="video-player" id="player-mct4-yt1">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZNX-a-5jGeM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=ZNX-a-5jGeM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.2 &mdash; Accuracy, Precision, and Significant Figures</div>
+<div class="topic-desc">Distinguish accuracy from precision; identify significant figures in a measurement; apply rules for sig figs in addition, subtraction, multiplication, and division.</div>
+<div class="summary-card"><strong>Accuracy</strong>: how close a measurement is to the true value. <strong>Precision</strong>: how reproducible/repeatable a measurement is. <strong>Significant figures</strong> indicate measurement precision: 12.05 has 4 sig figs; 0.00250 has 3. For multiplication and division, the result has as many sig figs as the least-precise input; for addition and subtraction, as many decimal places as the least-precise input.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Every measurement has uncertainty. A ruler measures to roughly 1 mm; a digital caliper to 0.01 mm; a high-precision micrometer to 0.001 mm. The <em>precision</em> of a measurement is the smallest increment the instrument can reliably distinguish; the <em>accuracy</em> is how close that measurement is to the true value. Precision says "how reproducible"; accuracy says "how true." A clock that runs fast by exactly 5 minutes each day is highly <em>precise</em> (every read is consistent) but <em>not accurate</em> (always off by 5 minutes).</p>
+
+<p><strong>Significant figures</strong> are a written convention that conveys precision. The number 5.3 has 2 sig figs (claims precision to about 0.1); 5.30 has 3 sig figs (claims precision to 0.01); 5.300 has 4 sig figs (claims precision to 0.001). Trailing zeros to the right of the decimal are <em>significant</em> — they signal a deliberately measured zero. The rules:</p>
+<ul>
+<li>All non-zero digits are significant.</li>
+<li>Zeros between non-zero digits are significant (e.g. 105 has 3 sig figs).</li>
+<li>Leading zeros (before the first non-zero digit) are <em>not</em> significant (e.g. 0.0042 has 2 sig figs).</li>
+<li>Trailing zeros after a decimal point are significant (e.g. 1.20 has 3 sig figs).</li>
+<li>Trailing zeros in a whole number without a decimal are ambiguous (e.g. 1000 could be 1, 2, 3, or 4 sig figs). Use scientific notation: \(1.0 \times 10^3\) (2 sig figs) vs. \(1.000 \times 10^3\) (4 sig figs).</li>
+</ul>
+
+<p><strong>Arithmetic rules:</strong> For <em>multiplication and division</em>, the result has the same number of sig figs as the least-precise input. For <em>addition and subtraction</em>, the result has the same number of decimal places as the least-precise input. Round at the final answer, not in intermediate steps (carry one or two extra figures along the way).</p>
+
+<p>In technology contexts, sig figs are a language for honesty: if your measurement is accurate to only 2 sig figs, reporting an answer to 6 sig figs is misleading. Engineering drawings and specifications use tolerance notation: \(25.00 \pm 0.05\) mm means a value between 24.95 and 25.05.</p>
+
+<ul>
+<li><strong>Accuracy</strong> — closeness to true value.</li>
+<li><strong>Precision</strong> — reproducibility / smallest unit distinguished.</li>
+<li><strong>Significant figure</strong> — a digit that conveys actual measurement information.</li>
+<li><strong>Tolerance</strong> — the permissible deviation from a target dimension (e.g. \(\pm 0.05\) mm).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — How many sig figs in each number?</p>
+<p>(a) 0.00305 — 3 sig figs (leading zeros not counted; trailing 5 is counted).</p>
+<p>(b) 12.040 — 5 sig figs (trailing 0 after decimal is significant).</p>
+<p>(c) 5400 — ambiguous, 2–4 sig figs. Best written as \(5.4 \times 10^3\) (2) or \(5.400 \times 10^3\) (4).</p>
+<p>(d) \(7.20 \times 10^{-3}\) — 3 sig figs.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Compute \(12.5 \times 3.42\) and round to the correct number of sig figs.</p>
+<p>Product: \(12.5 \times 3.42 = 42.75\).</p>
+<p>Inputs: 12.5 has 3 sig figs; 3.42 has 3 sig figs. Least is 3.</p>
+<p>Report: 42.8 (rounded to 3 sig figs).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A length is measured at 12.4 cm and a piece 5.31 cm long is cut off. Report the remainder with appropriate precision.</p>
+<p>Subtraction: \(12.4 - 5.31 = 7.09\) cm.</p>
+<p>Rule: keep as many decimal places as the least-precise input. 12.4 has one decimal place; 5.31 has two. Least is one.</p>
+<p>Report: 7.1 cm.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing accuracy with precision. A measurement can be precise but inaccurate, or accurate but imprecise.</li>
+<li>Rounding intermediate values. Keep extra digits through the calculation; round only at the end.</li>
+<li>Ignoring leading zeros (correctly — they don't count) but also ignoring trailing zeros after a decimal (incorrectly — they do count).</li>
+<li>Treating exact constants (like \(\pi\), 2, conversion factors like 2.54 cm/in) as limiting precision. They are exact and have infinite sig figs; only measured values limit precision.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.2 — "solve multi-step problems involving accuracy and precision (e.g., representing measurement values to the correct number of significant digits, including in conversions between units within and between measurement systems)." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct4-yt2')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Significant Figures Made Easy! — Tyler DeWitt</span>
+<span class="vid-duration">15:08</span>
+<span class="vid-toggle" id="toggle-mct4-yt2">▶</span>
+</div>
+<div class="video-player" id="player-mct4-yt2">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/eCJ76hz7jPM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=eCJ76hz7jPM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.3 &mdash; Surface Area and Volume of Right Prisms, Cylinders, Cones, Pyramids, and Spheres</div>
+<div class="topic-desc">Compute surface area and volume of common 3-D figures using formulas; apply to packaging and material-cost problems.</div>
+<div class="summary-card">Formulas: cylinder \(V = \pi r^2 h\), \(SA = 2\pi r^2 + 2\pi r h\); cone \(V = \tfrac{1}{3}\pi r^2 h\), \(SA = \pi r^2 + \pi r s\) (where \(s\) is slant); sphere \(V = \tfrac{4}{3}\pi r^3\), \(SA = 4\pi r^2\); rectangular prism \(V = lwh\), \(SA = 2(lw + lh + wh)\); pyramid \(V = \tfrac{1}{3} B h\) (\(B\) base area). Always include units (m², m³).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Surface area and volume formulas are the workhorse of any technology context involving containers, packaging, structural design, manufacturing, or fluid handling. Memorising the formulas — and knowing where the formulas come from — is essential.</p>
+
+<p><strong>Rectangular prism (box).</strong> Volume \(V = lwh\) (length × width × height). Surface area is the sum of the six rectangular faces: top and bottom \(lw\), front and back \(lh\), left and right \(wh\). Total \(SA = 2(lw + lh + wh)\). For a cube of side \(s\): \(V = s^3\), \(SA = 6s^2\).</p>
+
+<p><strong>Cylinder.</strong> Volume = base area × height = \(\pi r^2 \cdot h\). For surface area, imagine unrolling the curved surface into a rectangle of width \(h\) and length equal to the circumference \(2\pi r\). So the curved area is \(2\pi r h\). The two circular ends contribute \(2 \cdot \pi r^2 = 2\pi r^2\). Total \(SA = 2\pi r^2 + 2\pi r h\). For an open-top cylinder (a tin can with no lid), \(SA = \pi r^2 + 2\pi r h\).</p>
+
+<p><strong>Cone.</strong> Volume \(V = \tfrac{1}{3} \pi r^2 h\) (one-third of the equivalent cylinder). Surface area requires the slant height \(s = \sqrt{r^2 + h^2}\) (use Pythagoras on the radius and the vertical height). Lateral surface: \(\pi r s\). With base: \(SA = \pi r^2 + \pi r s\).</p>
+
+<p><strong>Pyramid.</strong> Volume \(V = \tfrac{1}{3} B h\) where \(B\) is the base area and \(h\) is the perpendicular height from apex to base. The base can be any polygon. Surface area is the base plus the sum of the triangular faces, each computed using its slant height.</p>
+
+<p><strong>Sphere.</strong> Volume \(V = \tfrac{4}{3} \pi r^3\); surface area \(SA = 4\pi r^2\). Both formulas were originally found by Archimedes around 250 BC.</p>
+
+<p>In technology applications, you might be asked: how much sheet metal to make this cylindrical tank? how much concrete to pour this rectangular base? what is the volume of paint needed to cover this dome? Each reduces to picking the right formula(s) and substituting carefully.</p>
+
+<ul>
+<li><strong>Surface area (SA)</strong> — total area of all outer surfaces; units m², cm², etc.</li>
+<li><strong>Volume (V)</strong> — amount of space inside; units m³, cm³, L.</li>
+<li><strong>Slant height (cone)</strong> — distance from apex to base edge along the surface; \(s = \sqrt{r^2 + h^2}\).</li>
+<li><strong>Lateral surface area</strong> — surface area excluding bases (curved part of a cylinder, sloped part of a pyramid/cone).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A cylindrical water tank has radius 1.5 m and height 4 m. Find the volume in litres (1 m³ = 1000 L) and the outer surface area.</p>
+<p>Volume: \(V = \pi (1.5)^2 (4) = \pi (2.25)(4) = 9\pi \approx 28.27\) m³ \(\approx 28{,}270\) L.</p>
+<p>Surface area: \(SA = 2\pi (1.5)^2 + 2\pi (1.5)(4) = 4.5\pi + 12\pi = 16.5\pi \approx 51.84\) m².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A conical paper cup has radius 4 cm and height 9 cm. Find its volume in millilitres (1 cm³ = 1 mL) and the area of paper to make the cone (excluding the base).</p>
+<p>Volume: \(V = \tfrac{1}{3} \pi (4)^2 (9) = \tfrac{1}{3} \pi (16)(9) = 48\pi \approx 150.8\) cm³ \(\approx\) 150.8 mL.</p>
+<p>Slant height: \(s = \sqrt{16 + 81} = \sqrt{97} \approx 9.849\) cm.</p>
+<p>Lateral surface: \(\pi r s = \pi (4)(9.849) \approx 123.8\) cm².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A sphere of radius 5 cm has its volume divided into 8 identical cylindrical pucks. Find the volume of each puck.</p>
+<p>Sphere volume: \(V = \tfrac{4}{3} \pi (5)^3 = \tfrac{4}{3}\pi (125) = \dfrac{500\pi}{3} \approx 523.6\) cm³.</p>
+<p>Each puck: \(523.6 / 8 \approx 65.45\) cm³.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Mixing up radius and diameter. Most formulas use radius. A "10 cm pipe" usually means 10 cm in diameter, so \(r = 5\) cm.</li>
+<li>Mixing up height with slant height for cones and pyramids. The volume uses the perpendicular height; surface area uses the slant height.</li>
+<li>Forgetting units. Volume is cubic (m³, cm³, L), area is squared (m², cm²). State units in your final answer.</li>
+<li>Mixing units in a single calculation. Convert everything to consistent units before substituting.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "solve problems requiring the calculation of the surface area or volume of right pyramids, right cones, cylinders, and spheres [e.g., calculate the volume of a propane tank in the shape of a cylinder with hemispherical ends]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct4-yt3')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Volume and Surface Area of Solids — The Organic Chemistry Tutor</span>
+<span class="vid-duration">25:24</span>
+<span class="vid-toggle" id="toggle-mct4-yt3">▶</span>
+</div>
+<div class="video-player" id="player-mct4-yt3">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/aEpkAtf2L54?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=aEpkAtf2L54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.4 &mdash; Similar Figures: Linear, Area, and Volume Ratios</div>
+<div class="topic-desc">Apply the scaling laws: if linear scale factor is \(k\), areas scale by \(k^2\) and volumes by \(k^3\); use in design and modelling problems.</div>
+<div class="summary-card">Two figures are <strong>similar</strong> if one is a scaled copy of the other. If linear measurements are scaled by \(k\) (length, width, height), then <strong>areas scale by \(k^2\)</strong> and <strong>volumes scale by \(k^3\)</strong>. Example: a 1/2 scale model of a building has 1/4 the surface area and 1/8 the volume.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Two figures are <em>similar</em> if one is a scaled-up or scaled-down version of the other — same shape, different size. Every length on the bigger figure is a constant multiple \(k\) (the <em>scale factor</em>) of the corresponding length on the smaller. Angles in similar figures are equal.</p>
+
+<p>The remarkable property is what happens to area and volume. Suppose you double every length of a cube (so the scale factor is \(k = 2\)). The surface area of one face goes from \(s^2\) to \((2s)^2 = 4s^2\) — four times as large. The volume goes from \(s^3\) to \((2s)^3 = 8s^3\) — eight times as large. In general:</p>
+
+<p>\[ \text{If linear scale} = k, \text{ then area scale} = k^2 \text{ and volume scale} = k^3. \]</p>
+
+<p>This rule applies to any pair of similar figures, not just cubes. A scale-model car at 1/24 scale has linear dimensions 1/24 of the real car, but its painted surface area is \(1/24^2 = 1/576\) of the real car's, and its weight (if same material) is \(1/24^3 = 1/13{,}824\) of the real car's. Engineers exploit this constantly: a model bridge tested in a lab is built at 1/100 scale, weighs a million-millionth (10⁻⁶) of the real bridge.</p>
+
+<p>The scaling laws also explain why animals can't be infinitely big. Strength of bones scales with cross-sectional area (\(k^2\)) but weight scales with volume (\(k^3\)). Double the size of an animal and it has 4× the leg strength but 8× the weight — so it's <em>relatively</em> weaker. This is why large animals like elephants have proportionally thicker legs than small animals like mice.</p>
+
+<p>In packaging and manufacturing: a "family size" cereal box that's only 25% wider and taller may have over 50% more volume than the regular size — because volume scales by the cube. This is why bulk packs offer better value per gram.</p>
+
+<ul>
+<li><strong>Similar figures</strong> — same shape, different size; all linear ratios equal.</li>
+<li><strong>Scale factor</strong> — \(k = \dfrac{\text{linear measure on figure A}}{\text{linear measure on figure B}}\).</li>
+<li><strong>Area scale</strong> — \(k^2\). For \(k=3\), area is 9× larger.</li>
+<li><strong>Volume scale</strong> — \(k^3\). For \(k=3\), volume is 27× larger.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A scale model of a building is 1/50 the height of the actual building. Find the ratio of (a) painted surface area; (b) interior volume.</p>
+<p>Linear scale factor: \(k = 1/50\).</p>
+<p>Area scale: \(k^2 = 1/2500\). So 1 m² of model represents 2500 m² of actual.</p>
+<p>Volume scale: \(k^3 = 1/125{,}000\). So 1 m³ of model represents 125 000 m³ of actual.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Two similar cylindrical cans have heights 12 cm and 18 cm. The smaller can holds 600 mL of paint. How much does the larger can hold?</p>
+<p>Linear ratio: \(18/12 = 3/2\) (larger : smaller).</p>
+<p>Volume ratio: \((3/2)^3 = 27/8\).</p>
+<p>Larger volume: \(600 \times 27/8 = 600 \times 3.375 = 2025\) mL.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A toy car is built at 1/18 scale and uses 4.2 g of plastic for its body shell. How much plastic would be required for a full-size car body of the same shape and material? (Assume the body shell is the same thickness in both — so plastic mass scales with surface area, not volume.)</p>
+<p>Linear scale: \(k = 18\) (full to toy).</p>
+<p>Surface area scale: \(k^2 = 324\). So full-size body needs \(4.2 \times 324 = 1361\) g, or about 1.36 kg.</p>
+<p>(If the shell were proportionally thicker as the car got bigger, then mass would scale by \(k^3\) and we'd need 24.5 kg. The choice of which scaling depends on what you assume about thickness.)</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Applying linear scale (\(k\)) when you should be using \(k^2\) or \(k^3\). Always identify whether you're scaling a length, area, or volume.</li>
+<li>Mixing up which figure is the "scale" and which is the "real." Keep your ratio straight (larger to smaller, or vice versa).</li>
+<li>Not all related figures are similar. Two cones with different ratios of radius to height are <em>not</em> similar; the scaling laws only apply to similar figures.</li>
+<li>Forgetting the case \(k < 1\) means scaling down. For \(k = 1/3\): area is \(1/9\), volume is \(1/27\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.1 — "investigate, using calculators or dynamic geometry software, the relationships among the lengths, areas, and volumes of similar 2-D and 3-D figures, and generalise these relationships [e.g., if dimensions are doubled, area is multiplied by 4 and volume by 8]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct4-yt4')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Similar Solids — Area &amp; Volume Ratios — The Organic Chemistry Tutor</span>
+<span class="vid-duration">12:28</span>
+<span class="vid-toggle" id="toggle-mct4-yt4">▶</span>
+</div>
+<div class="video-player" id="player-mct4-yt4">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/67NpwggdTtM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=67NpwggdTtM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.5 &mdash; Three-Dimensional Trigonometry and the Pythagorean Theorem</div>
+<div class="topic-desc">Apply Pythagoras and primary trig ratios in 3-D figures: body diagonals of rectangular prisms, slant heights of pyramids and cones, paths through space.</div>
+<div class="summary-card">The 3-D extension of Pythagoras: the body diagonal of a box with sides \(a, b, c\) is \( d = \sqrt{a^2 + b^2 + c^2} \). For a pyramid or cone, use 2-D Pythagoras between height, slant height, and base dimension. Strategy: identify the right triangle(s) inside the 3-D figure, then apply the right tool.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Many real engineering problems involve measurements through 3-D space: the diagonal of a packing crate, the cable from a ceiling corner to the floor, the slant of a roof, the path of a tool through a workpiece. To find these, identify the right triangle(s) embedded in the 3-D figure and apply standard 2-D trig and Pythagoras.</p>
+
+<p><strong>Body diagonal of a rectangular prism.</strong> A box with sides \(a\), \(b\), \(c\) has a "body diagonal" from one corner to the opposite corner. To find it, first find the diagonal across the base: \(d_{\text{base}} = \sqrt{a^2 + b^2}\). Then form a right triangle with this base diagonal as one leg and the height \(c\) as the other leg; the body diagonal is the hypotenuse:</p>
+<p>\[ d_{\text{body}} = \sqrt{d_{\text{base}}^2 + c^2} = \sqrt{a^2 + b^2 + c^2} \]</p>
+<p>This is the 3-D Pythagorean theorem.</p>
+
+<p><strong>Slant height of a square pyramid.</strong> A pyramid with square base of side \(s\) and vertical height \(h\). The slant height \(\ell\) is the distance from the apex to the midpoint of a base edge. The right triangle has legs: half the base \(s/2\) and the vertical height \(h\). So \(\ell = \sqrt{(s/2)^2 + h^2}\).</p>
+
+<p>For the slant edge (apex to a base corner), the right triangle uses the half-diagonal of the base \((\sqrt{2}/2) \cdot s\) and the vertical height. So slant edge \(= \sqrt{s^2/2 + h^2}\).</p>
+
+<p><strong>Slant height of a right cone.</strong> Radius \(r\), height \(h\), slant height \(s\): \(s = \sqrt{r^2 + h^2}\). The right triangle is the cross-section through the axis.</p>
+
+<p>For angle calculations in 3-D, identify which right triangle contains the angle and apply SOH-CAH-TOA. For example, the angle between a body diagonal and the base of a box: use \(\tan\theta = h / d_{\text{base}}\), where \(d_{\text{base}}\) is the base diagonal.</p>
+
+<ul>
+<li><strong>Body diagonal</strong> — line segment from one corner of a 3-D figure to the farthest corner.</li>
+<li><strong>3-D Pythagoras</strong> — \(d = \sqrt{a^2 + b^2 + c^2}\) for the diagonal of a rectangular prism.</li>
+<li><strong>Slant height</strong> — surface distance from apex of pyramid/cone to base edge.</li>
+<li><strong>Slant edge</strong> — straight-line distance from apex of pyramid to a base vertex.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A shipping crate measures 1.2 m × 0.8 m × 0.5 m. Find the body diagonal.</p>
+<p>\(d = \sqrt{1.2^2 + 0.8^2 + 0.5^2} = \sqrt{1.44 + 0.64 + 0.25} = \sqrt{2.33} \approx 1.527\) m.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A square pyramid has base side 6 m and vertical height 4 m. Find (a) the slant height; (b) the angle between a face and the base.</p>
+<p>(a) Slant height \(\ell = \sqrt{(6/2)^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\) m.</p>
+<p>(b) The angle between a face and the base is the angle whose adjacent (in the right triangle) is \(s/2 = 3\) and opposite is \(h = 4\). So \(\tan\theta = 4/3 \Rightarrow \theta = \tan^{-1}(4/3) \approx 53.1°\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A 3-m tall ladder rests against a wall, 2 m from the base. A worker climbs to the top and reaches a horizontal arm's length of 0.8 m away from the wall. Find the straight-line distance from the worker's hand to the base of the wall.</p>
+<p>Ladder height: \(h = \sqrt{3^2 - 2^2} = \sqrt{5} \approx 2.236\) m above ground.</p>
+<p>Worker's position: 0.8 m horizontally from wall (so 2 - 0.8 = no, wait, the 2 m is the foot of the ladder; arm reaches 0.8 m from the wall, opposite from the ladder's base, so the worker's hand is at height 2.236 m, horizontal distance 0.8 m from wall).</p>
+<p>From the wall base, the hand is at: (horizontal) 0.8 m, (vertical) 2.236 m.</p>
+<p>Straight-line distance: \(\sqrt{0.8^2 + 2.236^2} = \sqrt{0.64 + 5} = \sqrt{5.64} \approx 2.375\) m.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing slant height (\(\ell\)) with vertical height (\(h\)) and slant edge (face-to-vertex line) — three different quantities in a pyramid.</li>
+<li>Forgetting to find the intermediate (base diagonal) before applying the second Pythagorean step.</li>
+<li>Mixing units. If sides are in mm and others in cm, convert.</li>
+<li>Drawing 3-D problems flat: always sketch the inside right triangle clearly with labels.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.3 — "solve problems involving the surface areas and volumes of three-dimensional figures, including the use of Pythagorean relationships and trigonometric ratios in 3-D situations." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct4-yt5')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Three Dimensional Trigonometry — The Organic Chemistry Tutor</span>
+<span class="vid-duration">10:42</span>
+<span class="vid-toggle" id="toggle-mct4-yt5">▶</span>
+</div>
+<div class="video-player" id="player-mct4-yt5">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/IxBR2WU0CF8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=IxBR2WU0CF8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 4 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mct3m_ch4_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mct3m_ch4_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mct3m_ch4_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch3.html" class="chnav-btn chnav-prev">← Chapter 3</a>
+  <a href="ch5.html" class="chnav-btn chnav-next">Chapter 5 →</a>
+</div></div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCT3M — Mathematics for College Technology, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

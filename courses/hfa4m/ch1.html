@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HFA4M — Nutrition and Health Issues | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #15803d; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #15803d; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #15803d; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #15803d; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #15803d; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #15803d; color: #fff; }
+.chnav-next:hover { background: #166534; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#15803ddd,#15803d);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../hfa4m.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (HFA4M Nutrition and Health Issues)</a></div>
+    <div class="strand-tag">Social Sciences &amp; Humanities — Grade 12 University/College Preparation</div>
+    <h1>🥦 HFA4M: Unit 1: Determinants of Nutritional Health</h1>
+    <p>Macronutrients, micronutrients, water, Dietary Reference Intakes, Canada's Food Guide, energy balance</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#15803ddd,#15803d);">
+            <h2>Unit 1: Determinants of Nutritional Health</h2>
+            <p>Factors that influence food choices, the six classes of nutrients, digestion and metabolism, Canadian nutritional guidelines, energy balance</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Determinants of Nutritional Health</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Factors Influencing Food Choices -->
+        <div class="subsection-label">🌍 Factors Influencing Food Choices</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Food is never just fuel. Every meal we eat reflects an interaction of biological, psychological, social, cultural, economic, and environmental forces. Understanding these <em>determinants of nutritional health</em> matters because it shifts the conversation from "people make bad choices" to "what conditions make healthful choices easier — or harder?" The Public Health Agency of Canada lists income, education, employment, social support, environment, and culture among the <em>social determinants of health</em>, and food intake sits at the intersection of nearly all of them.</p>
+            <p><strong>Biological factors</strong> include genetic taste sensitivity (e.g., PROP-tasters perceive bitterness more intensely), hormonal hunger and satiety cues (ghrelin, leptin, CCK, GLP-1), allergies and intolerances (lactase deficiency, celiac disease, peanut allergy), and life-stage needs (pregnancy, growth, ageing). <strong>Psychological factors</strong> include mood, stress, body image, food preferences shaped by repeated exposure, and the use of food for comfort or reward. <strong>Social and cultural factors</strong> include family traditions, religious laws (halal, kosher, lent fasting), ethnic foodways, and the company we eat with — people generally eat more in groups than alone.</p>
+            <p><strong>Economic factors</strong> matter enormously. PROOF (the University of Toronto's food-insecurity research team) reports that in 2022 about 18.4% of Canadian households experienced food insecurity, and the figure rises sharply in northern and Indigenous communities where shipping costs can triple grocery prices. <strong>Environmental factors</strong> include the <em>food environment</em> — what is sold within walking distance, advertising exposure (the average Canadian child sees thousands of food ads per year, the majority for low-nutrition products), school cafeteria choices, and what Brian Wansink's "mindless eating" research showed: plate size, package size, and product placement shape intake without conscious awareness. The concept of the <em>obesogenic environment</em> captures the cumulative effect.</p>
+            <ul>
+              <li><strong>Determinants of health</strong> — the conditions in which people are born, grow, live, work, and age that shape health outcomes.</li>
+              <li><strong>Food environment</strong> — the physical, economic, policy, and socio-cultural surroundings that influence food choices.</li>
+              <li><strong>Food insecurity</strong> — inadequate or insecure access to food due to financial constraints.</li>
+              <li><strong>Foodways</strong> — the cultural, social, and economic practices relating to the production and consumption of food.</li>
+              <li><strong>Obesogenic environment</strong> — an environment that promotes excess energy intake and discourages physical activity.</li>
+              <li><strong>Acculturation</strong> — the changes in food habits that occur when an individual or group adopts elements of a new culture.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Mapping determinants on a real case</p>
+              <p>A Grade 12 student living in a high-rise apartment in Scarborough eats fast food four times a week. Identify three determinants that may shape this pattern and propose one intervention for each.</p>
+              <p>(1) <strong>Economic:</strong> the closest grocery store is a 25-minute bus ride away while a fast-food outlet is 200 m from home and offers a $5 combo — intervention: subsidised transit passes or municipal fresh-food delivery. (2) <strong>Social:</strong> the student works evenings and eats dinner alone on a break — intervention: family meal planning that pre-prepares portable, refrigerator-ready dinners. (3) <strong>Environmental:</strong> 13 fast-food outlets but no grocery store within 1 km defines a "food swamp" — intervention: municipal zoning policy that requires a minimum number of food retailers per neighbourhood, or community-garden support.</p>
+            </div>
+            <ul>
+              <li>Calling food insecurity "starvation" — most food-insecure Canadians get enough kilocalories but lack high-quality foods (so they may be both food-insecure and overweight).</li>
+              <li>Assuming food choices are purely individual — most "choices" are shaped before the person sees the shelf.</li>
+              <li>Confusing food deserts (low retail access) with food swamps (high access to unhealthy options).</li>
+              <li>Forgetting cultural foods are healthful — the "healthy eating" stereotype shouldn't mean abandoning traditional cuisine.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "describe the biological, social, cultural, economic, and environmental factors that influence the food choices of individuals."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">What is the Social Ecological Model? — Sutter Health</span>
+                <span class="vid-duration">5:23</span>
+                <span class="vid-toggle" id="toggle-v1">▶</span>
+            </div>
+            <div class="video-player" id="player-v1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WhVoYYp45V0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=WhVoYYp45V0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Food Science &amp; Nutrition: Crash Course Engineering #38 — Crash Course</span>
+                <span class="vid-duration">11:50</span>
+                <span class="vid-toggle" id="toggle-v2">▶</span>
+            </div>
+            <div class="video-player" id="player-v2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fR3NxCR9z2U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=fR3NxCR9z2U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Macronutrients -->
+        <div class="subsection-label">🍞 Macronutrients — Carbohydrates, Lipids, Proteins</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The body relies on three energy-yielding macronutrients: <em>carbohydrates</em>, <em>lipids</em>, and <em>proteins</em>. Their energy yields per gram are central to nutrition arithmetic — carbohydrate and protein each provide \(4 \text{ kcal/g}\), fat provides \(9 \text{ kcal/g}\), and alcohol (not a nutrient but it is dietary) provides \(7 \text{ kcal/g}\). Health Canada's Acceptable Macronutrient Distribution Ranges (AMDRs) for adults set carbohydrate at 45–65% of daily energy, fat at 20–35%, and protein at 10–35%.</p>
+            <p><strong>Carbohydrates</strong> are the body's preferred energy source. <em>Simple carbohydrates</em> include monosaccharides (glucose, fructose, galactose) and disaccharides (sucrose, lactose, maltose). <em>Complex carbohydrates</em> are polysaccharides — starch (digestible, found in grains, potatoes, legumes), glycogen (the body's short-term storage form in liver and muscle), and dietary fibre (cellulose, hemicellulose, β-glucan, pectin, lignin), which humans cannot digest but which feeds the gut microbiome, lowers LDL cholesterol, and slows glucose absorption. Health Canada's adequate intake (AI) for fibre is 25 g/day for adult women and 38 g/day for adult men.</p>
+            <p><strong>Lipids</strong> are a heterogeneous group united by hydrophobicity. <em>Triglycerides</em> (glycerol + 3 fatty acids) are the body's main energy reserve. Fatty-acid chemistry matters: saturated fats (no C=C double bonds — animal fats, palm oil, coconut oil) raise LDL; <em>monounsaturated</em> fats (one C=C — olive oil, avocado) are heart-healthy; <em>polyunsaturated</em> fats include essential omega-3 (α-linolenic acid: flaxseed, walnuts, fatty fish) and omega-6 (linoleic acid: most vegetable oils). <em>Trans fats</em> from partial hydrogenation are now banned in Canada (2018) due to LDL-raising and HDL-lowering effects. Phospholipids form cell membranes; cholesterol is a precursor of bile salts, vitamin D, and steroid hormones.</p>
+            <p><strong>Proteins</strong> are polymers of 20 amino acids, 9 of which are <em>essential</em> (must come from the diet): histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine. A <em>complete protein</em> contains all 9 in adequate amounts (animal foods, soy, quinoa); <em>incomplete proteins</em> (most plant sources) lack one or more, but the limiting amino acid can be supplied by <em>complementary proteins</em> (rice + beans, hummus + pita). RDA for adults is \(0.8 \text{ g protein/kg body mass/day}\); athletes and older adults need more (~1.2–2.0 g/kg).</p>
+            <ul>
+              <li><strong>Essential nutrient</strong> — must be obtained from the diet because the body cannot make it (or cannot make enough).</li>
+              <li><strong>Glycemic index (GI)</strong> — a ranking of carbohydrate foods by their effect on blood glucose; low-GI foods (legumes, oats) produce gentler rises.</li>
+              <li><strong>Saturated / unsaturated fatty acid</strong> — no C=C double bonds / at least one C=C double bond.</li>
+              <li><strong>Essential fatty acid</strong> — linoleic acid (omega-6) and α-linolenic acid (omega-3); the body cannot synthesise them.</li>
+              <li><strong>Complete vs incomplete protein</strong> — provides all 9 essential amino acids in adequate amounts vs missing one or more.</li>
+              <li><strong>Protein complementation</strong> — combining incomplete proteins so that essential amino acids missing from one are supplied by the other.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Calculating macronutrient kilocalories from a label</p>
+              <p>A protein bar lists per serving: 22 g carbohydrate, 9 g fat, 18 g protein. Calculate the total kilocalories and the % energy from each macronutrient.</p>
+              <p>Carbohydrate: \(22 \times 4 = 88\) kcal. Fat: \(9 \times 9 = 81\) kcal. Protein: \(18 \times 4 = 72\) kcal. Total = \(88 + 81 + 72 = 241\) kcal. % energy from CHO = \(88/241 \approx 37\%\); fat = \(81/241 \approx 34\%\); protein = \(72/241 \approx 30\%\). The bar is roughly balanced, with fat at the top of the AMDR.</p>
+            </div>
+            <ul>
+              <li>Treating all fats as equally harmful — unsaturated and omega-3 fats are protective; only saturated and trans fats are concerning at high intakes.</li>
+              <li>Saying "carbs make you fat" — excess kilocalories from any macronutrient drive weight gain; CHO type and quantity matter more than the macronutrient class.</li>
+              <li>Believing plant proteins are inferior — properly combined plant proteins meet all essential amino-acid needs.</li>
+              <li>Counting fibre toward digestible carbohydrate kilocalories — most fibre is not metabolised; Canadian labels separate "fibre" within "total carbohydrate."</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "explain the structure and function of the six classes of nutrients (i.e., carbohydrates, fats, proteins, vitamins, minerals, water)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Carbohydrates &amp; Sugars — Crash Course Biochemistry</span>
+                <span class="vid-duration">12:08</span>
+                <span class="vid-toggle" id="toggle-v3">▶</span>
+            </div>
+            <div class="video-player" id="player-v3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/wxzc_2c6GMg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=wxzc_2c6GMg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Lipids — Crash Course Biochemistry</span>
+                <span class="vid-duration">9:46</span>
+                <span class="vid-toggle" id="toggle-v4">▶</span>
+            </div>
+            <div class="video-player" id="player-v4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/7dmoH5dAvpY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=7dmoH5dAvpY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Proteins — Amoeba Sisters</span>
+                <span class="vid-duration">8:24</span>
+                <span class="vid-toggle" id="toggle-v5">▶</span>
+            </div>
+            <div class="video-player" id="player-v5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2Jgb_DpaQhM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2Jgb_DpaQhM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Micronutrients -->
+        <div class="subsection-label">🥬 Micronutrients — Vitamins, Minerals &amp; Water</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Micronutrients are vitamins and minerals needed in milligram or microgram amounts, alongside water — the substance the body needs in the largest volume and which is also classified as a nutrient. They yield no energy themselves but enable hundreds of metabolic reactions.</p>
+            <p><strong>Vitamins</strong> are organic micronutrients grouped by solubility. <em>Fat-soluble vitamins</em> (A, D, E, K) are absorbed with dietary fat, stored in liver and adipose tissue, and can reach toxic levels if mega-dosed (UL exists). Vitamin A (retinol, β-carotene) supports vision and immune function; vitamin D supports calcium absorption and bone health (Canadians, especially north of 40 °N latitude, often need supplementation in winter); vitamin E is an antioxidant; vitamin K is essential for blood clotting and synthesised by gut bacteria. <em>Water-soluble vitamins</em> (C and the eight B vitamins) are not stored in significant amounts — excess is excreted in urine — so daily intake matters. The B vitamins act as coenzymes in energy metabolism: B1 (thiamine), B2 (riboflavin), B3 (niacin), B5 (pantothenic acid), B6 (pyridoxine), B7 (biotin), B9 (folate), B12 (cobalamin). Folate is critical pre-conception and during early pregnancy to prevent neural-tube defects; B12 is found almost exclusively in animal products, which is why vegans must supplement. Vitamin C (ascorbic acid) supports collagen synthesis and iron absorption.</p>
+            <p><strong>Minerals</strong> are inorganic. <em>Major minerals</em> (need ≥100 mg/day): calcium, phosphorus, magnesium, sodium, potassium, chloride, sulfur. Calcium and phosphorus build bone and teeth (98% of body calcium is in the skeleton); sodium and potassium are key electrolytes for nerve and muscle function; potassium-rich diets are protective against hypertension. <em>Trace minerals</em> (need &lt;100 mg/day): iron, zinc, iodine, selenium, copper, manganese, fluoride, chromium, molybdenum. Iron is required for haemoglobin — iron-deficiency anaemia is the world's most common nutrient deficiency, affecting roughly 1 in 4 people globally. Iodine prevents goitre (Canadian table salt has been iodised since 1949); fluoride strengthens enamel.</p>
+            <p><strong>Water</strong> makes up 50–70% of body mass and is required for digestion, temperature regulation, nutrient transport, and waste excretion. Health Canada's AI is roughly 3.7 L/day for adult men and 2.7 L/day for adult women (from all beverages and foods combined; about 20% of total water intake comes from food). Dehydration of even 2% body mass impairs cognitive and physical performance.</p>
+            <ul>
+              <li><strong>Fat-soluble vitamins (ADEK)</strong> — absorbed with dietary fat, stored in body fat and liver.</li>
+              <li><strong>Water-soluble vitamins (B, C)</strong> — not significantly stored; excess excreted in urine.</li>
+              <li><strong>Coenzyme</strong> — an organic helper molecule (often a B vitamin derivative) required for enzyme activity.</li>
+              <li><strong>Antioxidant</strong> — molecule that neutralises reactive oxygen species (vitamins C, E, β-carotene).</li>
+              <li><strong>Major vs trace mineral</strong> — needed at ≥100 mg/day vs &lt;100 mg/day.</li>
+              <li><strong>Electrolyte</strong> — mineral that carries an electric charge in solution (Na+, K+, Cl−, Ca²⁺); essential for nerve and muscle function.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting a deficiency syndrome</p>
+              <p>A 17-year-old vegan reports fatigue, tingling in her hands, and a smooth red tongue. Her diet includes legumes, leafy greens, tofu, fortified plant milk, but no supplements. Which deficiency is most likely?</p>
+              <p>Vitamin B12 deficiency. B12 is virtually absent from plant foods unless they are fortified. The classic signs are megaloblastic anaemia (fatigue), glossitis (smooth red tongue), and neurological symptoms (paresthesia). Treatment is a cobalamin supplement (cyanocobalamin or methylcobalamin), oral or by injection if absorption is impaired (e.g., pernicious anaemia). Folate deficiency can mimic the anaemia but does not cause the neurological signs.</p>
+            </div>
+            <ul>
+              <li>Saying "more vitamins are always better" — fat-soluble vitamins can build up to toxic levels (vitamin A teratogenicity, vitamin D hypercalcaemia).</li>
+              <li>Confusing minerals with elemental metals — dietary iron is mostly Fe²⁺/Fe³⁺ in organic compounds, not metallic iron filings.</li>
+              <li>Believing "natural" vitamin sources are always superior to fortification — fortified bread folate has dramatically reduced neural-tube defects in Canada.</li>
+              <li>Ignoring water as a nutrient — it is the body's most-needed nutrient by volume.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "explain the structure and function of the six classes of nutrients (i.e., carbohydrates, fats, proteins, vitamins, minerals, water)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Vitamins &amp; Minerals — Khan Academy</span>
+                <span class="vid-duration">10:31</span>
+                <span class="vid-toggle" id="toggle-v6">▶</span>
+            </div>
+            <div class="video-player" id="player-v6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xz7AZwgDDLs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=xz7AZwgDDLs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">What Are Vitamins? — TED-Ed</span>
+                <span class="vid-duration">4:50</span>
+                <span class="vid-toggle" id="toggle-v7">▶</span>
+            </div>
+            <div class="video-player" id="player-v7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ISZLTJH5lYg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ISZLTJH5lYg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Digestion & Metabolism -->
+        <div class="subsection-label">🧠 Digestion, Absorption &amp; Metabolism</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Digestion turns the food we eat into molecules the body can absorb. The gastrointestinal tract is a 7–9 m tube from mouth to anus, supported by accessory organs (salivary glands, liver, gallbladder, pancreas). Digestion is both <em>mechanical</em> (chewing, churning, segmentation) and <em>chemical</em> (enzymes and acid).</p>
+            <p>In the <strong>mouth</strong>, salivary amylase begins starch digestion; mechanical chewing fragments food. The <strong>stomach</strong> secretes hydrochloric acid (pH ~2) and pepsin (active proteolytic enzyme) that begins protein digestion; lipid digestion is minimal here. The <strong>small intestine</strong> (duodenum, jejunum, ileum — ~6 m) is the main site of digestion and absorption. The pancreas secretes pancreatic juice rich in amylase, lipase, and proteases (trypsin, chymotrypsin) along with bicarbonate that neutralises stomach acid; the liver makes bile (stored in the gallbladder) which emulsifies fats into micelles. Brush-border enzymes (lactase, sucrase, maltase, peptidases) complete digestion. Absorption happens across <em>villi</em> and <em>microvilli</em> that increase surface area to roughly 250 m². Monosaccharides and amino acids enter capillaries → hepatic portal vein → liver. Fatty acids and monoglycerides re-form into triglycerides inside enterocytes, are packaged into <em>chylomicrons</em>, and enter lymph (lacteals) before joining the bloodstream. The <strong>large intestine</strong> (colon) reclaims water and electrolytes, ferments dietary fibre via gut microbiota (producing short-chain fatty acids — acetate, propionate, butyrate), and forms feces.</p>
+            <p>Metabolism comprises <em>catabolism</em> (breakdown of nutrients, releasing energy stored as ATP) and <em>anabolism</em> (building macromolecules for growth and repair). Glucose enters glycolysis → pyruvate → acetyl-CoA → Krebs cycle → electron transport chain, yielding about 30–32 ATP per glucose under aerobic conditions. Fatty acids undergo β-oxidation → acetyl-CoA → Krebs/ETC, providing more than twice as much energy per gram. Amino acids may be deaminated (the amino group → urea via the liver) and the carbon skeleton enters glycolysis or Krebs, or they may build proteins. Hormones coordinate the switch between fed (insulin-dominant: glucose uptake and storage) and fasted (glucagon-dominant: glycogenolysis, gluconeogenesis, lipolysis) states.</p>
+            <ul>
+              <li><strong>Mechanical vs chemical digestion</strong> — physical fragmentation vs enzymatic hydrolysis.</li>
+              <li><strong>Bile</strong> — liver-produced emulsifier of dietary fat; stored in the gallbladder.</li>
+              <li><strong>Chylomicron</strong> — lipoprotein particle that carries dietary triglycerides from intestine via lymph.</li>
+              <li><strong>Villi / microvilli</strong> — finger-like and brush-border projections that vastly increase intestinal surface area.</li>
+              <li><strong>Gut microbiota</strong> — community of microorganisms in the colon; ferment fibre, synthesise vitamin K, modulate immunity.</li>
+              <li><strong>Basal metabolic rate (BMR)</strong> — energy used at complete rest for vital functions; ~60–70% of total daily energy expenditure.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracing a slice of pizza through the gut</p>
+              <p>A slice of pizza contains wheat-flour crust (starch + gluten), cheese (lipid + protein + calcium), and tomato sauce (fibre, vitamin C). Trace where each component is digested and absorbed.</p>
+              <p>Mouth: salivary amylase starts starch breakdown. Stomach: pepsin begins gluten/cheese-protein breakdown; lipid digestion still minimal. Small intestine: pancreatic amylase finishes starch → maltose → glucose (absorbed in jejunum); pancreatic lipase + bile emulsify cheese fat → fatty acids + monoglycerides absorbed by enterocytes and packaged into chylomicrons; trypsin/chymotrypsin/peptidases reduce gluten/cheese protein to amino acids (absorbed). Calcium absorbed in duodenum (vitamin D-dependent). Vitamin C absorbed in small intestine. Tomato fibre passes to colon, where microbiota ferment it.</p>
+            </div>
+            <ul>
+              <li>Saying "the stomach absorbs nutrients" — minimal absorption happens there (small amounts of water, alcohol, some drugs); the small intestine does most absorption.</li>
+              <li>Forgetting bile is stored, not made, in the gallbladder.</li>
+              <li>Mixing up the hepatic portal (carbohydrate and protein products) and lymphatic (fat products) routes.</li>
+              <li>Treating fibre as useless — it feeds the microbiome, regulates blood glucose, lowers LDL, and contributes to stool bulk.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "describe the process of digestion, absorption, transport, and metabolism of macronutrients."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Digestive System: CrashCourse Biology #28 — Crash Course</span>
+                <span class="vid-duration">12:34</span>
+                <span class="vid-toggle" id="toggle-v8">▶</span>
+            </div>
+            <div class="video-player" id="player-v8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/yIoTRGfcMqM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=yIoTRGfcMqM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">How Your Digestive System Works — TED-Ed</span>
+                <span class="vid-duration">5:11</span>
+                <span class="vid-toggle" id="toggle-v9">▶</span>
+            </div>
+            <div class="video-player" id="player-v9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Og5xAdC8EUI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Og5xAdC8EUI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Canadian Guidelines & Energy Balance -->
+        <div class="subsection-label">📋 Canada's Food Guide, DRIs &amp; Energy Balance</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Canada's Food Guide, last revised in 2019, replaced the four-food-group rainbow of earlier editions with a simpler image: a plate divided roughly into half vegetables and fruits, one-quarter whole grains, and one-quarter protein foods — with water as the drink of choice. The 2019 guide also added three behaviour-based recommendations: cook more often, eat meals with others, and be mindful of eating habits. Protein foods now include plant sources (legumes, tofu, nuts, seeds) alongside meat, poultry, fish, eggs, and dairy — recognising both nutritional and environmental considerations.</p>
+            <p><strong>Dietary Reference Intakes (DRIs)</strong> are a set of evidence-based nutrient reference values used in Canada and the United States. Four categories matter: <em>Recommended Dietary Allowance (RDA)</em> — meets the needs of 97–98% of healthy individuals of a given age/sex; <em>Adequate Intake (AI)</em> — used when an RDA cannot be calculated, an observed intake assumed adequate; <em>Estimated Average Requirement (EAR)</em> — meets the needs of 50% of the group, used to assess populations; <em>Tolerable Upper Intake Level (UL)</em> — the highest daily intake unlikely to pose a risk of adverse effects. RDAs and AIs apply to <em>healthy</em> people; pregnancy, lactation, and illness change requirements.</p>
+            <p><strong>Energy balance</strong> is the principle: \(\text{Energy in} = \text{Energy out}\) maintains body mass; positive balance stores excess as glycogen and fat; negative balance draws on stores. Energy out has three components: <em>BMR</em> (~60–70% — energy for basic functions), <em>thermic effect of food</em> (~10% — energy used to digest, absorb, and metabolise food; protein has the highest TEF at ~20–30%), and <em>physical activity</em> (15–30%, highly variable). Estimating BMR uses equations like Mifflin–St Jeor: for males, \(BMR = 10w + 6.25h - 5a + 5\); for females, \(BMR = 10w + 6.25h - 5a - 161\), where \(w\) is mass in kg, \(h\) is height in cm, \(a\) is age in years. Total daily energy expenditure (TDEE) multiplies BMR by an activity factor (1.2 sedentary to 1.9 very active).</p>
+            <ul>
+              <li><strong>Canada's Food Guide (2019)</strong> — plate-based visual emphasising vegetables/fruits (½), whole grains (¼), and proteins (¼).</li>
+              <li><strong>DRI</strong> — Dietary Reference Intakes; an umbrella term covering RDA, AI, EAR, UL.</li>
+              <li><strong>RDA vs AI</strong> — strong evidence vs observed adequate intake.</li>
+              <li><strong>BMR</strong> — basal metabolic rate; energy use at complete rest.</li>
+              <li><strong>TEF</strong> — thermic effect of food; energy required to digest food.</li>
+              <li><strong>TDEE</strong> — total daily energy expenditure = BMR × activity factor.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Estimating TDEE</p>
+              <p>A 17-year-old female student, 65 kg, 170 cm tall, moderately active (activity factor 1.55). Estimate her BMR and TDEE.</p>
+              <p>Mifflin–St Jeor (female): \(BMR = 10(65) + 6.25(170) - 5(17) - 161 = 650 + 1062.5 - 85 - 161 = 1466.5 \text{ kcal/day}\). TDEE = \(BMR \times 1.55 \approx 2273 \text{ kcal/day}\). To lose ~0.5 kg/week she would need a sustained \(-500\) kcal/day deficit (about 1773 kcal/day intake) combined with activity — although for adolescents, Health Canada cautions against energy restriction below growth needs.</p>
+            </div>
+            <ul>
+              <li>Treating "the Food Guide" as the 1992 four-group rainbow — that version is obsolete; the current guide is plate-based (2019).</li>
+              <li>Confusing RDA (covers 97–98%) with EAR (covers 50%) — using EAR for individual recommendation underestimates needs.</li>
+              <li>Believing BMR is constant — it falls with age, with weight loss, and during prolonged calorie restriction (adaptive thermogenesis).</li>
+              <li>Assuming "calories in = calories out" is simple — hormones (leptin, thyroid), genetics, gut microbiome, and behaviour all influence the equation.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe Canada's Food Guide and explain its application in planning for healthy eating across the lifespan."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">What Should You Eat? — TED-Ed</span>
+                <span class="vid-duration">5:08</span>
+                <span class="vid-toggle" id="toggle-v10">▶</span>
+            </div>
+            <div class="video-player" id="player-v10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/roB5Yyh37Uk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=roB5Yyh37Uk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/hfa4m/Unit1_Determinants_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/hfa4m/Unit1_Determinants_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/hfa4m/Unit1_Determinants_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../hfa4m.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · HFA4M Nutrition and Health Issues · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

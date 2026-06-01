@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Identity &amp; Diversity — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#dc2626;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/hsc4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Identity &amp; Diversity — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 80 minutes &nbsp;|&nbsp; <strong>Total:</strong> /55 marks &nbsp;|&nbsp; Show reasoning. Open answer keys after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/14</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/14</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/14</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [14 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define <em>primary socialization</em> and <em>secondary socialization</em>. Identify three agents of socialization with one example each of what they teach.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Primary socialization</strong> = early childhood learning, mostly from family — language, basic norms, emotional regulation, religion of origin. <strong>Secondary socialization</strong> = later learning from school, peers, media, workplace — professional skills, peer-group norms, civic identity. Agents: family (language, mealtime rules), school (academic discipline, citizenship), media (consumer values, fashion). 1 mark per part.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Charles Horton Cooley's "looking-glass self" describes the self as formed by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Independent biological development</label></li>
+<li><label><input type="radio" name="q2"> Imagining how others see us and feeling pride or shame accordingly</label></li>
+<li><label><input type="radio" name="q2"> Looking at oneself in a literal mirror</label></li>
+<li><label><input type="radio" name="q2"> Watching social-media reflections</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Cooley (1902): three components — imagining how we appear to others, imagining their judgment of that appearance, feeling pride or shame in response. The self is fundamentally social, formed in interaction.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Distinguish <em>sex</em>, <em>gender</em>, and <em>sexuality</em>. Give one example of how each varies across cultures.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Sex</strong> = biological / chromosomal / physiological. <strong>Gender</strong> = culturally-constructed roles and expressions; varies (Samoan fa'afafine, South Asian hijra, two-spirit). <strong>Sexuality</strong> = desire/orientation; varies in how it is named, recognised, and expected (heteronormative dominance is one cultural arrangement; many cultures recognise additional sexual identities). 1 mark per term + example.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">The contemporary social-science consensus on RACE includes which TWO complementary positions?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Biologically, race is NOT a natural kind — within-race genetic variation exceeds between-race variation; AAA statement, 1998. (2) Sociologically, race IS a real, powerful social fact with material consequences (housing, hiring, policing). The disciplined position holds both simultaneously: constructed AND real-in-its-effects. 1.5 marks per position.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define <em>intersectionality</em>, name its originator and the year, and identify ONE example of the kind of case it was designed to illuminate.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Intersectionality</strong> = analytical framework attending to multiple, simultaneous axes of identity and power (race × gender × class × sexuality × ability, etc.) and the specific configurations they produce. <strong>Coined:</strong> Kimberlé Crenshaw, 1989, in <em>"Demarginalizing the Intersection of Race and Sex"</em> (<em>University of Chicago Legal Forum</em>). <strong>Example case:</strong> Black women in U.S. employment-discrimination cases losing because the law treated race and sex as separate single-axis categories — companies could hire Black men (no race discrimination) and white women (no sex discrimination) and still systematically exclude Black women. 1 mark each.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [14 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="passage">"My friend Aisha goes to a Catholic school where she wears a uniform. At home she wears traditional Pakistani clothes for Eid. At her part-time job at H&amp;M she wears jeans. On TikTok she performs as a K-pop-influenced creator. When her uncle visits from Lahore, she switches into Urdu and the formal manners of a Pakistani niece. She is not 'inauthentic' — she is competent across multiple cultural frames."</div>
+<div class="qtxt">Analyse this scenario in 5–7 sentences. Use <em>code-switching</em>, <em>multiple socialization</em>, <em>hybrid identity</em>, and the looking-glass self. Argue whether Aisha's identity is "fragmented" or "competent."</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Strong answers: (1) Aisha demonstrates competent <em>code-switching</em> — adapting language, dress, manner to the social context, a high-order cultural skill. (2) Her experience reflects <em>multiple socialization</em> from primary (Pakistani family) and secondary (Catholic school, retail workplace, K-pop online community, extended-family visits) agents. (3) The looking-glass self operates differently in each context — what counts as "good girl" / "good employee" / "successful creator" / "respectful niece" differs by context. (4) Calling this "fragmented" misreads it — hybrid identity is the norm in diasporic and multicultural settings; Stuart Hall's work on diasporic identity stresses this. (5) Authenticity is not located in a single mode; it is located in skilful navigation across modes. Marks: 1 each for accurate use of three concepts; 1 for the fragmented/competent argument; 1 for synthesis.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">A Toronto tech company tracks "diversity" metrics: 30% women hired, 40% visible minorities. Both metrics look like progress. Apply <em>intersectionality</em> to critique this metric system and propose a more accurate audit.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Crenshaw's original 1989 example was exactly this: single-axis tracking can miss intersectional gaps. The company could be hiring mostly white women and mostly racialized men, leaving Black women, Indigenous women, racialized women with disabilities effectively absent. (2) Single-axis metrics treat "women" and "minorities" as separate populations rather than intersecting categories. (3) An intersectional audit would <em>disaggregate</em> by race × gender × disability × class background, revealing specific configurational gaps. (4) The fix involves recruitment, retention, and culture practices that systematically filter out specific configurations — not just adding another axis to track. (5) An intersectional audit converts "we are diverse" from a vague claim into precise empirical accountability. Marks: 1 each for: single-axis critique, configurational reading, disaggregation proposal, structural-fix recognition, synthesis.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">In 4–6 sentences, explain why Truth and Reconciliation Commission Calls to Action 62 and 63 (which require Indigenous content in K-12 curriculum) cannot be met by simply adding a "diversity unit" on Indigenous peoples. Use Unit 3 concepts.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong answers: (1) Indigenous peoples are not "one more cultural group" in the mosaic; they are nations with sovereign and treaty relationships predating Canadian Confederation. (2) "Diversity unit" framing treats Indigenous topics as ethnic culture rather than as nation-to-nation relationship and constitutionally-protected rights. (3) TRC Calls 62 and 63 (and others) require integration of Indigenous history, contemporary issues, and treaty knowledge ACROSS curriculum, not in a single tokenistic unit. (4) Calls 62, 63 specifically include teacher training (so non-Indigenous teachers can teach this content well) and resource development. (5) The deeper requirement is structural reform of how Canada is taught — including settler colonialism, residential schools, treaties, the Indian Act, MMIWG — not just adding Indigenous "content" to existing courses. Marks: 1 each for: nation-to-nation framing, critique of tokenism, integration across curriculum, structural reform, conceptual precision.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write a clear, well-structured paragraph (7–9 sentences) on: <em>"Cultural identity is performative — it is something we do, not something we have."</em> Refer to Judith Butler's framework and at least TWO specific cultural examples. Include a thesis, evidence, and a nuanced conclusion.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: (1) clear THESIS engaging Butler's performativity claim from <em>Gender Trouble</em> (1990) — gender (and by extension identity) is constituted through repeated stylised acts; (2) explanation of how this re-frames identity from "essence I have" to "patterned action I do"; (3) one specific gender example (e.g., daily practices of masculinity / femininity / gender-fluid expression; drag as exposure of performativity); (4) one ethnic-cultural example (e.g., Tamil-Canadian identity reinforced by Tamil-language Saturday school, Pongal observance, food practice — the identity is renewed by doing rather than by claiming); (5) nuanced conclusion: performativity does not mean unreal or inauthentic — it means identity is real-in-its-doing; the daily practices ARE the identity. Marks: 1 thesis, 2 each for two examples, 1 nuance, 1 conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[3]</span>
+<div class="qtxt">Convert this weak claim into a strong analytical thesis: <em>"Different people have different identities."</em></div>
+<textarea placeholder="Your strong thesis..."></textarea>
+<details><summary>Answer Key</summary><p>Sample: "Identity is intersectionally configured by axes of race, gender, class, sexuality, and ability that interact in specific ways for each person — producing structured experiences of advantage and disadvantage that cannot be reduced to any single axis." Mark for specificity, debatability, and theoretical grounding (1 each).</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">In one or two sentences each, distinguish: <em>cisgender</em>, <em>transgender</em>, <em>two-spirit</em>, <em>non-binary</em>. Use respectful, accurate definitions.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Cisgender</strong> — alignment between gender assigned at birth and lived gender identity. <strong>Transgender</strong> — non-alignment between assigned and lived gender; umbrella for many gender experiences. <strong>Two-spirit</strong> — pan-Indigenous umbrella term (coined 1990, Winnipeg) for traditional Indigenous gender/sexual roles outside colonial categories. <strong>Non-binary</strong> — identity that is not exclusively male or female; may be both, neither, or fluid. 1 mark each.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [14 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[6]</span>
+<div class="passage">"At a Toronto high school, the social-justice club organises a panel for Black History Month. The club's leadership includes white students, Asian students, and one Black student. The Black student is asked to speak about 'the Black experience' and to bring two friends to speak as well. The white students propose the readings; the Asian students design the posters."</div>
+<div class="qtxt">Analyse this scenario through intersectionality, tokenism, dominant culture, and racialization. Identify at least THREE problems and propose how the club could organise the event more effectively.</div>
+<textarea placeholder="Your analysis + proposal..."></textarea>
+<details><summary>Answer Key</summary><p>Problems: (1) <em>Tokenism</em> — the Black student is asked to be the spokesperson for 'the Black experience' as if there is a single one; this flattens internal diversity within Black-Canadian communities (Caribbean, African, African-American, multiple generations). (2) <em>Burden of representation</em> — the Black student is doing additional unpaid emotional labour for the event. (3) <em>Power dynamics within the club</em> — white students propose readings, Asian students design posters, Black students are the "performers" — replicating the very dominant-culture dynamics the event is meant to address. (4) The club is structuring the event from outside rather than from within Black-Canadian community / scholarship. <em>Better approach:</em> Black students should lead the event with white and Asian students supporting; consult with Toronto-area Black-Canadian organisations (BlackNorth, Federation of Black Canadians, OBHS); choose readings from a range of Black-Canadian scholars and authors (Lawrence Hill, Esi Edugyan, Robyn Maynard, Rinaldo Walcott); pay or recognise the labour of guest speakers; design event to address structural issues (anti-Black racism, intersectional positioning) rather than only celebrate. Marks: 2 each for three problems with concept names; 2 for the proposal; 2 for communication and specificity.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE / Real-world application:</strong> A First Nations community proposes that their treaty territory be co-managed with the Crown for forestry, with revenue shared and Indigenous laws applied alongside provincial laws. A local non-Indigenous mayor objects: "This is a divisive proposal. Everyone in Canada should be equal under one law."</div>
+<div class="qtxt">In 4–6 sentences, apply Unit 3 concepts to respond to the mayor's claim. Why does equality require recognising nation-to-nation relationship rather than treating Indigenous peoples as one more ethnic group?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong answers: (1) Indigenous nations are not "ethnic groups" in Canada — they are sovereign nations with treaty relationships predating Canadian Confederation (Section 35 of the Constitution Act, 1982 recognises Aboriginal and treaty rights). (2) "Equal under one law" assumes a single legal system, which is exactly the colonial imposition that erased pre-existing Indigenous legal orders. (3) Treaties are agreements between nations; their honour requires nation-to-nation relationship, not majoritarian "equality." (4) UNDRIP (UN Declaration on the Rights of Indigenous Peoples, 2007; Canada adopted 2021) affirms Indigenous self-determination and free, prior, and informed consent. (5) Genuine equality requires recognising historical injustice and ongoing rights, not abstract sameness — what Charles Taylor calls the politics of recognition. Marks: 1 each for: sovereignty distinction, critique of "equal-under-one-law," treaty framing, UNDRIP/Section-35 reference, synthesis.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[4]</span>
+<div class="qtxt">Take a position you are familiar with in your own life (a club, a sports team, a religious community, a school cohort, an online community). Apply <em>intersectionality</em> to identify ONE configurational gap your community has in who participates, holds leadership, or speaks. Propose one specific action your community could take to address it.</div>
+<textarea placeholder="Your community + intersectional analysis + action..."></textarea>
+<details><summary>Answer Key</summary><p>Marks: 1 for specific community identification; 1 for accurate use of intersectionality with at least 2 axes; 1 for identifying a specific configurational gap (not vague "more diversity"); 1 for a specific, realistic action. Sample response would identify, e.g., the school robotics team and note that "while we have many Asian and white boys, very few girls (any race) and very few BIPOC girls specifically — the configuration of (girl × racialized) is almost absent. Action: deliberate recruiting from Grade 9 BIPOC-girl outreach in feeder schools, plus revisiting team culture so that current members are aware of the social barriers."</p></details></div>
+
+<footer>HSC4M — World Cultures, Grade 12 | Strand D: Identity &amp; Globalization | Assessment OF Learning — Graded</footer>
+</div></body></html>

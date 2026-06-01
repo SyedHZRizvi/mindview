@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Biomes &amp; Ecosystems — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #0e7490; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#0e7490;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cgf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Biomes &amp; Ecosystems — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of biomes, energy flow, nutrient cycles, biodiversity, succession, and Canadian ecozones.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1–2.2 — Biomes &amp; Energy Flow</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which two variables most strongly determine the distribution of terrestrial biomes?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Elevation and longitude</label></li>
+<li><label><input type="radio" name="q1" value="b"> Mean annual temperature and mean annual precipitation</label></li>
+<li><label><input type="radio" name="q1" value="c"> Soil type and bedrock</label></li>
+<li><label><input type="radio" name="q1" value="d"> Day length and gravity</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Robert Whittaker's classic 1975 climate-vegetation diagram shows biomes occupying predictable envelopes of mean annual temperature and mean annual precipitation. Soils, elevation, and seasonality are important modifiers but temperature + precipitation are the master variables.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The boreal forest (taiga) is dominated by which type of trees?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Tropical hardwoods like teak and mahogany</label></li>
+<li><label><input type="radio" name="q2" value="b"> Deciduous broadleaves like oak and maple</label></li>
+<li><label><input type="radio" name="q2" value="c"> Cold-tolerant conifers like spruce, fir, jack pine, and tamarack</label></li>
+<li><label><input type="radio" name="q2" value="d"> Tropical palms</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The boreal forest, covering most of Canada and Russia, is dominated by needle-leaved evergreen conifers — black spruce, white spruce, jack pine, balsam fir — plus the deciduous conifer tamarack. Deciduous broadleaves (aspen, birch, poplar) are pioneer species after fire.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">If a meadow ecosystem fixes 10,000 kJ/m²/yr at the producer level, how much energy is available at the fourth trophic level (apex predator)?</div>
+<input type="text" id="q3-in" placeholder="Enter kJ/m²/yr (e.g., 10)">
+<button class="btn" onclick="cN('q3',10)">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Apply the 10% rule three times: 10,000 × 0.1 × 0.1 × 0.1 = <strong>10 kJ/m²/yr</strong>. This is why apex predators are rare and require vast home ranges.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Net primary productivity (NPP) is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Total solar energy reaching Earth's surface</label></li>
+<li><label><input type="radio" name="q4" value="b"> Gross primary productivity minus plant respiration; energy available to herbivores</label></li>
+<li><label><input type="radio" name="q4" value="c"> The number of species per hectare</label></li>
+<li><label><input type="radio" name="q4" value="d"> Energy released through decomposition</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> NPP = GPP − plant respiration. NPP is the energy plants make available to herbivores (and indirectly to higher trophic levels). Tropical rainforests have the highest NPP among terrestrial biomes (~2200 g C/m²/yr); deserts and tundra are lowest.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Nutrient Cycles</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">What is the Haber-Bosch process?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A way to remove CO₂ from the atmosphere</label></li>
+<li><label><input type="radio" name="q5" value="b"> Industrial fixation of atmospheric N₂ into ammonia (NH₃); basis of synthetic fertilizer</label></li>
+<li><label><input type="radio" name="q5" value="c"> A method for reading tree-ring climate data</label></li>
+<li><label><input type="radio" name="q5" value="d"> The process by which water moves between phases</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Haber-Bosch (1909) industrially fixes atmospheric N₂ to ammonia under high temperature and pressure. It now consumes ~1% of global energy and is responsible for roughly half the nitrogen in modern food production. Approximately half the protein in an average human's body contains nitrogen that passed through a Haber-Bosch reactor.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Atmospheric CO₂ has risen from approximately 280 ppm before 1750 to over 420 ppm today. What is the percentage increase?</div>
+<input type="text" id="q6-in" placeholder="Enter % (e.g., 50)">
+<button class="btn" onclick="cN('q6',50)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> (420 − 280) / 280 × 100% = 140/280 = <strong>50%</strong>. This 50% increase is the largest CO₂ shift in at least 800,000 years (the limit of the Antarctic ice-core record).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4–2.5 — Biodiversity &amp; Succession</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A keystone species is one that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Is the most abundant in an ecosystem</label></li>
+<li><label><input type="radio" name="q7" value="b"> Has disproportionate ecosystem effect relative to its abundance</label></li>
+<li><label><input type="radio" name="q7" value="c"> Is endemic to one geographic region</label></li>
+<li><label><input type="radio" name="q7" value="d"> Was introduced by humans</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Robert Paine (1966) coined the term for species like the predatory starfish Pisaster ochraceus whose removal caused a 15-species intertidal community to collapse to 8 species. Atlantic cod, wolves, and sea otters are well-known keystone species.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Calculate Simpson's diversity index D = 1 − Σ(pᵢ)² for a community of 4 species with abundances 25, 15, 7, 3 (total 50):</div>
+<input type="text" id="q8-in" placeholder="Enter D (e.g., 0.64)">
+<button class="btn" onclick="cN('q8',0.637)">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> p = 0.5, 0.3, 0.14, 0.06. Σ(p²) = 0.25 + 0.09 + 0.0196 + 0.0036 = 0.3632. D = 1 − 0.3632 = <strong>0.637</strong>. Higher values indicate more diversity (max ~1).</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Which is an example of primary succession?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Re-growth after a forest fire</label></li>
+<li><label><input type="radio" name="q9" value="b"> Re-colonisation after a glacier retreats, exposing bare rock</label></li>
+<li><label><input type="radio" name="q9" value="c"> A field abandoned after farming</label></li>
+<li><label><input type="radio" name="q9" value="d"> Recovery after a hurricane knocks down trees</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Primary succession occurs on substrates that lack soil — bare rock, fresh lava, post-glacial terrain. It is slow (centuries) because soil must form first. Secondary succession (a, c, d) occurs on disturbed substrates where soil and seed banks survive.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.6 — Canadian Ecozones</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Canada's largest terrestrial ecozone is the:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Mixedwood Plains (southern Ontario, St. Lawrence Lowlands)</label></li>
+<li><label><input type="radio" name="q10" value="b"> Boreal Shield (northern boreal forest on the Canadian Shield)</label></li>
+<li><label><input type="radio" name="q10" value="c"> Pacific Maritime (BC coast)</label></li>
+<li><label><input type="radio" name="q10" value="d"> Prairies</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> The Boreal Shield covers about 1.8 million km² (about 18% of Canada's land area), stretching from Labrador to northern Saskatchewan. The Mixedwood Plains is only about 175,000 km² but is home to half of Canada's population.</div></div>
+
+</div>
+
+<footer>CGF3M — Physical Geography, Grade 11 | Strand C: Biomes &amp; Ecosystems | Assessment AS Learning — Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(0.1,c*0.1)){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

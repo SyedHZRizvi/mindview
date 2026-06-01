@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBB4M Final Exam — International Business Fundamentals (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.section-hdr.ci { background: #fce7f3; color: #9d174d; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.ci-card { background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+.ci-card h4 { color: #9d174d; margin-bottom: 8px; font-size: 16px; }
+.rubric-grid { display: grid; grid-template-columns: 60px 1fr 1fr 1fr 1fr; gap: 0; margin: 12px 0 0; font-size: 13px; }
+.rubric-grid > div { padding: 10px; border: 1px solid var(--border); }
+.rubric-grid .head { background: #f1f5f9; font-weight: 700; }
+.rubric-grid .lvl { background: #f8fafc; font-weight: 700; text-align: center; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bbb4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>🎓 BBB4M Final Exam &amp; Culminating Country/Market Profile</h1>
+    <div class="sub">Comprehensive Final Evaluation — Chapters 1 through 5 plus Culminating Profile (Strand E)</div>
+    <div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 3 hours (180 minutes) for the written exam &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+    <strong>Materials allowed:</strong> Scientific calculator, currency conversion table (provided), one-page Incoterms reference sheet (provided).<br>
+    Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+    <strong>Coverage:</strong> Ch 1 The Global Business Environment · Ch 2 International Marketing · Ch 3 Sales, Production &amp; Distribution · Ch 4 Trade Documentation &amp; Finance · Ch 5 Working in International Business. The Culminating Country/Market Profile rubric is provided at the end.
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [25 marks]</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Approximately what trade-to-GDP ratio does Canada have today?</div>
+<ul class="mc"><li><label><input type="radio" name="q1" value="a"> ~10%</label></li><li><label><input type="radio" name="q1" value="b"> ~30%</label></li><li><label><input type="radio" name="q1" value="c"> ~65%</label></li><li><label><input type="radio" name="q1" value="d"> ~95%</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q1','c')">Check</button><div class="fb" id="q1-fb"></div><div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>Canada's trade-to-GDP ratio is around 60–65%, far higher than the US or Japan.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">CUSMA replaced NAFTA in:</div>
+<ul class="mc"><li><label><input type="radio" name="q2" value="a"> 2017</label></li><li><label><input type="radio" name="q2" value="b"> 2020</label></li><li><label><input type="radio" name="q2" value="c"> 2022</label></li><li><label><input type="radio" name="q2" value="d"> 1994</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div><div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>CUSMA/USMCA took effect on 1 July 2020.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Comparative advantage is measured by:</div>
+<ul class="mc"><li><label><input type="radio" name="q3" value="a"> Absolute productivity</label></li><li><label><input type="radio" name="q3" value="b"> Opportunity cost</label></li><li><label><input type="radio" name="q3" value="c"> Total exports</label></li><li><label><input type="radio" name="q3" value="d"> Trade balance</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div><div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>Comparative advantage = lower opportunity cost. Absolute advantage looks at raw productivity.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Hofstede's "individualism" dimension is HIGH in:</div>
+<ul class="mc"><li><label><input type="radio" name="q4" value="a"> Japan</label></li><li><label><input type="radio" name="q4" value="b"> Canada and the US</label></li><li><label><input type="radio" name="q4" value="c"> South Korea</label></li><li><label><input type="radio" name="q4" value="d"> Indonesia</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div><div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>Western Anglo cultures score highest on individualism. East Asian cultures lean collectivist.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">A free-trade area differs from a customs union in that the customs union ALSO has:</div>
+<ul class="mc"><li><label><input type="radio" name="q5" value="a"> A common currency</label></li><li><label><input type="radio" name="q5" value="b"> A common external tariff</label></li><li><label><input type="radio" name="q5" value="c"> Free movement of labour</label></li><li><label><input type="radio" name="q5" value="d"> A shared central bank</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div><div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>FTA removes internal tariffs. Customs union adds a common external tariff. Common market also has free factor movement. Economic union adds harmonized policy.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">"Glocalization" means:</div>
+<ul class="mc"><li><label><input type="radio" name="q6" value="a"> Global standardization only</label></li><li><label><input type="radio" name="q6" value="b"> Pure local adaptation</label></li><li><label><input type="radio" name="q6" value="c"> Combining a global brand and core with locally adapted elements</label></li><li><label><input type="radio" name="q6" value="d"> Selling only in one's home country</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q6','c')">Check</button><div class="fb" id="q6-fb"></div><div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>"Think global, act local". McDonald's, IKEA, and Coca-Cola are classic glocal firms.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Penetration pricing means:</div>
+<ul class="mc"><li><label><input type="radio" name="q7" value="a"> Setting a very high initial price to harvest premium customers</label></li><li><label><input type="radio" name="q7" value="b"> Setting a very low price to gain share quickly</label></li><li><label><input type="radio" name="q7" value="c"> Matching competitor prices exactly</label></li><li><label><input type="radio" name="q7" value="d"> Refusing to discount</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div><div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>Penetration = low introductory price for share. Skimming = high initial price.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Air freight handles approximately what share of world cargo BY VALUE?</div>
+<ul class="mc"><li><label><input type="radio" name="q8" value="a"> ~1%</label></li><li><label><input type="radio" name="q8" value="b"> ~10%</label></li><li><label><input type="radio" name="q8" value="c"> ~35%</label></li><li><label><input type="radio" name="q8" value="d"> ~80%</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q8','c')">Check</button><div class="fb" id="q8-fb"></div><div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>Air = ~1% by volume but ~35% by value (high-value, time-sensitive goods).</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Under FOB (Free On Board), risk transfers from seller to buyer when:</div>
+<ul class="mc"><li><label><input type="radio" name="q9" value="a"> Goods are loaded on the vessel at the origin port</label></li><li><label><input type="radio" name="q9" value="b"> Goods arrive at destination port</label></li><li><label><input type="radio" name="q9" value="c"> The buyer signs the invoice</label></li><li><label><input type="radio" name="q9" value="d"> The customs officer clears the cargo</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div><div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>Under FOB, risk passes once goods are on board the vessel at origin. FOB is only used for sea/inland-waterway transport.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Which Incoterm puts MAXIMUM responsibility on the BUYER?</div>
+<ul class="mc"><li><label><input type="radio" name="q10" value="a"> EXW</label></li><li><label><input type="radio" name="q10" value="b"> CIF</label></li><li><label><input type="radio" name="q10" value="c"> DAP</label></li><li><label><input type="radio" name="q10" value="d"> DDP</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q10','a')">Check</button><div class="fb" id="q10-fb"></div><div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>EXW (Ex Works) — the buyer does everything from the seller's premises onward.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Under a letter of credit, the "issuing bank" is the:</div>
+<ul class="mc"><li><label><input type="radio" name="q11" value="a"> Buyer's bank</label></li><li><label><input type="radio" name="q11" value="b"> Seller's bank</label></li><li><label><input type="radio" name="q11" value="c"> Customs authority's bank</label></li><li><label><input type="radio" name="q11" value="d"> The Bank of Canada</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q11','a')">Check</button><div class="fb" id="q11-fb"></div><div class="sol" id="q11-sl"><div class="sol-lbl">Solution:</div>The issuing bank acts on behalf of the buyer (applicant). The advising/confirming bank is on the seller's side.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">A 10% ad valorem tariff on a CIF value of \(C\$5{,}000\) is:</div>
+<input type="text" id="q12-in" placeholder="Enter a number (CAD)...">
+<button class="btn btn-p" onclick="chkNum('q12',500)">Check</button><div class="fb" id="q12-fb"></div><div class="sol" id="q12-sl"><div class="sol-lbl">Solution:</div>\(0.10 \times 5{,}000 = C\$500\).</div></div>
+
+<div class="qcard" id="q13"><div class="qnum">Question 13 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">EUR/CAD rate is 1.45. To pay EUR 10,000 in CAD costs:</div>
+<input type="text" id="q13-in" placeholder="Enter a number (CAD)...">
+<button class="btn btn-p" onclick="chkNum('q13',14500)">Check</button><div class="fb" id="q13-fb"></div><div class="sol" id="q13-sl"><div class="sol-lbl">Solution:</div>\(10{,}000 \times 1.45 = C\$14{,}500\).</div></div>
+
+<div class="qcard" id="q14"><div class="qnum">Question 14 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">A spot transaction settles in:</div>
+<ul class="mc"><li><label><input type="radio" name="q14" value="a"> 90 days</label></li><li><label><input type="radio" name="q14" value="b"> 1–2 business days</label></li><li><label><input type="radio" name="q14" value="c"> 1 year</label></li><li><label><input type="radio" name="q14" value="d"> Immediately at the close of the next quarter</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q14','b')">Check</button><div class="fb" id="q14-fb"></div><div class="sol" id="q14-sl"><div class="sol-lbl">Solution:</div>Spot FX trades settle T+1 or T+2 (one or two business days), not literally instantly.</div></div>
+
+<div class="qcard" id="q15"><div class="qnum">Question 15 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">EDC stands for:</div>
+<ul class="mc"><li><label><input type="radio" name="q15" value="a"> Economic Development Council</label></li><li><label><input type="radio" name="q15" value="b"> Export Development Canada</label></li><li><label><input type="radio" name="q15" value="c"> External Documents Commission</label></li><li><label><input type="radio" name="q15" value="d"> Embassy Direct Credit</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q15','b')">Check</button><div class="fb" id="q15-fb"></div><div class="sol" id="q15-sl"><div class="sol-lbl">Solution:</div>Export Development Canada — Canada's export-credit and political-risk insurer for Canadian exporters.</div></div>
+
+<div class="qcard" id="q16"><div class="qnum">Question 16 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Hofstede's "Power Distance Index" tends to be HIGH in:</div>
+<ul class="mc"><li><label><input type="radio" name="q16" value="a"> Mexico and Saudi Arabia</label></li><li><label><input type="radio" name="q16" value="b"> Canada and Denmark</label></li><li><label><input type="radio" name="q16" value="c"> Norway and Sweden</label></li><li><label><input type="radio" name="q16" value="d"> Israel</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q16','a')">Check</button><div class="fb" id="q16-fb"></div><div class="sol" id="q16-sl"><div class="sol-lbl">Solution:</div>High-PDI cultures (Mexico, Saudi, China) accept hierarchical authority more than low-PDI cultures (Scandinavia, Canada, Israel).</div></div>
+
+<div class="qcard" id="q17"><div class="qnum">Question 17 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">"FCPA" is the abbreviation for the:</div>
+<ul class="mc"><li><label><input type="radio" name="q17" value="a"> Federal Customs Protection Act</label></li><li><label><input type="radio" name="q17" value="b"> Foreign Corrupt Practices Act (US)</label></li><li><label><input type="radio" name="q17" value="c"> French Currency Pricing Agreement</label></li><li><label><input type="radio" name="q17" value="d"> Far-East Commerce Pact Authority</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q17','b')">Check</button><div class="fb" id="q17-fb"></div><div class="sol" id="q17-sl"><div class="sol-lbl">Solution:</div>FCPA = US Foreign Corrupt Practices Act, the US equivalent of Canada's CFPOA.</div></div>
+
+<div class="qcard" id="q18"><div class="qnum">Question 18 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">The triple bottom line measures performance on:</div>
+<ul class="mc"><li><label><input type="radio" name="q18" value="a"> Revenue, cost, profit</label></li><li><label><input type="radio" name="q18" value="b"> People, planet, profit</label></li><li><label><input type="radio" name="q18" value="c"> Past, present, future</label></li><li><label><input type="radio" name="q18" value="d"> Cash, accrual, hybrid</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q18','b')">Check</button><div class="fb" id="q18-fb"></div><div class="sol" id="q18-sl"><div class="sol-lbl">Solution:</div>John Elkington's three-dimensional view of corporate performance: social, environmental, financial.</div></div>
+
+<div class="qcard" id="q19"><div class="qnum">Question 19 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">The U-curve of cultural adjustment has its lowest point during:</div>
+<ul class="mc"><li><label><input type="radio" name="q19" value="a"> The honeymoon</label></li><li><label><input type="radio" name="q19" value="b"> Culture shock (~months 3–9)</label></li><li><label><input type="radio" name="q19" value="c"> Mastery</label></li><li><label><input type="radio" name="q19" value="d"> Re-entry</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q19','b')">Check</button><div class="fb" id="q19-fb"></div><div class="sol" id="q19-sl"><div class="sol-lbl">Solution:</div>The "dip" of the U-curve is culture shock, typically 3–9 months in.</div></div>
+
+<div class="qcard" id="q20"><div class="qnum">Question 20 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">CITP is awarded by:</div>
+<ul class="mc"><li><label><input type="radio" name="q20" value="a"> CPA Canada</label></li><li><label><input type="radio" name="q20" value="b"> The Forum for International Trade Training (FITT)</label></li><li><label><input type="radio" name="q20" value="c"> The CFA Institute</label></li><li><label><input type="radio" name="q20" value="d"> The Canadian Society of Customs Brokers</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q20','b')">Check</button><div class="fb" id="q20-fb"></div><div class="sol" id="q20-sl"><div class="sol-lbl">Solution:</div>FITT issues the CITP®|FIBP® designation for international trade professionals.</div></div>
+
+<div class="qcard" id="q21"><div class="qnum">Question 21 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Define <strong>foreign direct investment (FDI)</strong> in one sentence and give one example of Canadian FDI abroad.</div>
+<textarea placeholder="Definition: ... Example: ..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q22"><div class="qnum">Question 22 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">List FOUR documents typically required for an international shipment from Canada.</div>
+<textarea placeholder="1. ... 2. ... 3. ... 4. ..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q23"><div class="qnum">Question 23 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Name TWO common forms of non-tariff barriers (NTBs) and give one example of each.</div>
+<textarea placeholder="NTB 1 + example ... NTB 2 + example ..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr t">Part B: Thinking [25 marks]</div>
+
+<div class="qcard"><div class="qnum">Question 24 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">In one hour, Canada can produce 8 tonnes of grain OR 4 cars. Brazil can produce 3 tonnes of grain OR 3 cars. (a) Which country has the comparative advantage in grain? (b) Which in cars? Show opportunity-cost calculations. (c) Suggest a trade ratio (e.g., 1 car for X tonnes of grain) at which BOTH countries benefit.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 25 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A small Canadian craft-furniture maker wants to enter Japan. Available entry modes: (a) direct exporting via a Japanese distributor, (b) franchising the brand, (c) FDI by opening a Tokyo showroom, (d) e-commerce. Recommend ONE option for a low-capital, high-craft maker. Justify against capital, control, risk, and speed.</div>
+<textarea placeholder="Recommendation and justification..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 26 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian e-bike company sells in Germany. Spot EUR/CAD = 1.46; 6-month forward = 1.45. If the firm does NOT hedge and the EUR falls to 1.40, what is the FX LOSS on a EUR 500,000 receivable? Show all work.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 27 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">"A lean supply chain is always cheaper." Critique this statement in 4–5 sentences using lessons from the COVID-era supply disruptions or the Suez blockage.</div>
+<textarea placeholder="Your critique..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 28 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian manager working in Beijing is asked by a local distributor for an expensive gift on top of the contract. Walk through the ethical and legal analysis: (a) CFPOA implication, (b) cultural understanding, (c) a recommended action that preserves both the relationship and the firm's legal/ethical standing.</div>
+<textarea placeholder="Your full analysis..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr c">Part C: Communication [25 marks]</div>
+
+<div class="qcard"><div class="qnum">Question 29 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Write a 4–5 sentence explanation of how a confirmed irrevocable letter of credit works, naming and ordering at least four parties (applicant, beneficiary, issuing bank, advising/confirming bank).</div>
+<textarea placeholder="Your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 30 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Build a labelled comparison of three modes of transport — ocean, air, road — on speed, cost, and typical cargo. Present as a clear 3-column table.</div>
+<textarea placeholder="Build the comparison..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 31 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A friend says, "Why should our company hire local Brazilian workers when Canadian workers are more productive?" Write a balanced 4–5 sentence response that draws on comparative advantage, cultural fit, and labour-cost arguments.</div>
+<textarea placeholder="Your response..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 32 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Briefly define each of the following ten BBB4M terms in one sentence: globalization, comparative advantage, glocalization, segmentation, Incoterm, HS code, letter of credit, FX forward, triple bottom line, CITP.</div>
+<textarea placeholder="Ten one-sentence definitions..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 33 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Write a one-page memo (8–12 sentences) from a junior export coordinator to a CFO, recommending CIF Yokohama as the Incoterm for a Japanese order and a 60-day forward as the FX hedge. Use professional business tone.</div>
+<textarea placeholder="Memo here..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr a">Part D: Application [25 marks]</div>
+
+<div class="qcard"><div class="qnum">Question 34 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian olive-oil importer brings in 1,000 L from Tunisia. CIF Halifax = \(C\$8{,}000\). Duty 9.5%; GST 5% on (CIF + duty). (a) Calculate duty. (b) Calculate GST. (c) Calculate landed cost. (d) If the same shipment came from Spain (CETA: 0% duty), what is the landed-cost saving?</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 35 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian wine producer ships 200 cases (15 kg each) to Tokyo. Air freight: \(C\$2.50\)/kg, 24 h. Ocean reefer: \(C\$0.18\)/kg, 28 days. Each case retails at \(C\$50\). (a) Calculate total freight cost for each mode. (b) Calculate freight as % of total retail value. (c) Recommend a mode and justify.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 36 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian software firm signs a US\$300{,}000 SaaS contract with a buyer in Singapore. (a) Recommend a payment method with one-line justification. (b) Recommend an FX hedging step. (c) Suggest the Incoterm appropriate to a digital service (note: Incoterms apply to goods, not pure services — discuss how the contract handles this).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 37 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian apparel firm sources cotton T-shirts from Bangladesh and Vietnam. Identify ONE specific ESG risk in each location and ONE mitigation step for each. Reference real frameworks (UN Global Compact, Better Work program, SDGs) where useful.</div>
+<textarea placeholder="Bangladesh risk + mitigation ... Vietnam risk + mitigation ..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 38 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A vehicle assembled in Windsor uses 45% Canadian content, 30% US content, 10% Mexican content, 15% Chinese content. (a) Calculate North-American content. (b) Does this meet the CUSMA 75% threshold? (c) Suggest one specific change to push it over.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr ci">Part E: Culminating Country/Market Profile Rubric — for project assessment, NOT a written exam question</div>
+
+<div class="ci-card">
+<h4>📋 Culminating Country/Market Profile — Rubric (15% of Final Mark)</h4>
+<p style="font-size:13px;color:#475569;margin-bottom:12px;">A 12–18 page written profile plus 10–15 minute oral defence, integrating Strands A–D and centred on Strand E. Below is the four-level rubric used to assess each criterion.</p>
+<div class="rubric-grid">
+<div class="head">Criterion</div><div class="head">Level 4 (80–100)</div><div class="head">Level 3 (70–79)</div><div class="head">Level 2 (60–69)</div><div class="head">Level 1 (50–59)</div>
+<div class="lvl">Country &amp; Cultural Analysis (Strand A)</div><div>Thorough; uses multiple recent indicators (GDP, HDI, country risk); applies Hofstede &amp; Hall confidently.</div><div>Substantial; most indicators present; correct application of one cultural framework.</div><div>Some indicators present; partial cultural framework.</div><div>Limited; few indicators; little/no framework.</div>
+<div class="lvl">Marketing Strategy (Strand B)</div><div>STP + 4-Ps + standardization/adaptation reasoning, all supported by data.</div><div>STP + 4-Ps; some supporting evidence.</div><div>4-Ps listed; minimal evidence.</div><div>Marketing mix incomplete.</div>
+<div class="lvl">Entry &amp; Logistics (Strand C)</div><div>Entry mode + Incoterm + transport mode justified with cost/risk reasoning.</div><div>Entry mode + Incoterm correctly named; brief justification.</div><div>Entry mode listed; Incoterm vague.</div><div>Entry mode or Incoterm missing.</div>
+<div class="lvl">Documentation &amp; Finance (Strand D)</div><div>Sample document set, payment method, FX plan, tariff calculation all present.</div><div>Most documents listed; payment method correct; one calculation.</div><div>Payment method only.</div><div>Limited/incorrect docs and finance.</div>
+<div class="lvl">Ethics &amp; CSR (Strand E)</div><div>Identifies and mitigates 2+ real ethical/CSR risks with framework references.</div><div>Identifies and mitigates 1+ risk.</div><div>Ethics mentioned but generic.</div><div>Ethics ignored or superficial.</div>
+<div class="lvl">Communication &amp; Oral Defence</div><div>Polished writing, clear visuals, confident oral defence answering all questions.</div><div>Generally clear writing &amp; oral defence; minor gaps.</div><div>Communication uneven.</div><div>Communication unclear; defence not handled.</div>
+</div>
+</div>
+
+<div class="rubric"><h3 style="margin-bottom:12px;">Final-Exam Mark Conversion</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;"><tr><th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f1f5f9;">Total Raw</th><th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f1f5f9;">Percent</th><th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f1f5f9;">Level</th></tr>
+<tr><td style="padding:8px 12px;border:1px solid #e2e8f0;">80–100</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">80–100%</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">Level 4 — exceeds standard</td></tr>
+<tr><td style="padding:8px 12px;border:1px solid #e2e8f0;">70–79</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">70–79%</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">Level 3 — provincial standard</td></tr>
+<tr><td style="padding:8px 12px;border:1px solid #e2e8f0;">60–69</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">60–69%</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">Level 2 — approaching</td></tr>
+<tr><td style="padding:8px 12px;border:1px solid #e2e8f0;">50–59</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">50–59%</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">Level 1 — limited</td></tr>
+<tr><td style="padding:8px 12px;border:1px solid #e2e8f0;">&lt;50</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">&lt;50%</td><td style="padding:8px 12px;border:1px solid #e2e8f0;">R — insufficient</td></tr>
+</table></div>
+
+<footer>BBB4M — International Business Fundamentals, Grade 12 | Ontario Curriculum 2006 (Business Studies) | Comprehensive Final Evaluation (30% of Final Course Mark)</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<(Math.abs(c)*0.02+0.5)){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: International Marketing — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0e7490; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.reflect-item label { flex: 1; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0e7490;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bbb4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 2: International Marketing</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check your understanding of international marketing concepts. <strong>Not graded</strong>. Topics: market research, STP, the 4 Ps, standardization vs adaptation, pricing, branding.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Market Research &amp; STP</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">Statistics Canada's Trade Data Online and the UN Comtrade database are best classified as:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Primary research</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Secondary research</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Focus-group research</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Tertiary research</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Secondary research uses data already collected by another party. Primary research means data the firm gathers itself (surveys, interviews, focus groups).</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">"Health-conscious millennials" is an example of segmentation based primarily on:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Demographic only</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Geographic only</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Psychographic and demographic combined</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Behavioural only</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','c')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>"Health-conscious" is a value/lifestyle (psychographic); "millennials" is an age cohort (demographic). The segment is a blend of both.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">The 4 Ps in International Markets</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">A new product is launched in a foreign market at a LOW price to gain share quickly, accepting thin margins. This is BEST called:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Skimming pricing</label></li>
+        <li><label><input type="radio" name="q3" value="b"> Penetration pricing</label></li>
+        <li><label><input type="radio" name="q3" value="c"> Cost-plus pricing</label></li>
+        <li><label><input type="radio" name="q3" value="d"> Premium pricing</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','b')">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Penetration pricing sets a low introductory price to gain share. Skimming sets a high price to harvest premium customers first.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">A Canadian backpack costs \(C\$25\) at the factory. After packaging, freight, duties, and a 20% distributor markup the landed-plus-distributor cost is \(C\$45\). The retailer then takes a 40% gross margin. What is the shelf price?</div>
+    <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number (CAD)..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q4', 75)">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Retailer takes 40% gross margin, so retail = cost / (1 − 0.40) = \(45 / 0.6 = C\$75\).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Standardization vs Adaptation</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">McDonald's selling the Big Mac globally but offering the McAloo Tikki in India is an example of:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Pure standardization</label></li>
+        <li><label><input type="radio" name="q5" value="b"> Pure adaptation</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Glocalization</label></li>
+        <li><label><input type="radio" name="q5" value="d"> Franchising</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','c')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Glocalization means keeping a global core (brand, format, key products) while adapting locally (menu items, packaging, price).</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Which category of goods is MOST likely to benefit from standardization rather than adaptation?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> Snack foods</label></li>
+        <li><label><input type="radio" name="q6" value="b"> Industrial machinery and semiconductors</label></li>
+        <li><label><input type="radio" name="q6" value="c"> Personal-care products</label></li>
+        <li><label><input type="radio" name="q6" value="d"> Fashion apparel</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','b')">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Industrial goods like machinery and semiconductors tend to standardize globally because buyers value performance and interoperability, not local taste. Consumer goods adapt more.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Pricing &amp; Landed Cost</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">A product has factory cost \(C\$10\), shipping/insurance \(C\$2\), and a destination duty of 15% on CIF value. Calculate the landed cost.</div>
+    <div class="answer-area"><input type="text" id="q7-input" placeholder="Enter a number (CAD)..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q7', 13.8)">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>CIF = \(10 + 2 = 12\). Duty = \(0.15 \times 12 = 1.80\). Landed = \(12 + 1.80 = C\$13.80\).</div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">A grey market arises when:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> A product is sold without a label</label></li>
+        <li><label><input type="radio" name="q8" value="b"> The same product is priced very differently across countries, prompting unauthorized resellers</label></li>
+        <li><label><input type="radio" name="q8" value="c"> The same product is banned in one country</label></li>
+        <li><label><input type="radio" name="q8" value="d"> The currency is unstable</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Grey markets exploit cross-border price differences: buyers in cheaper markets resell in more expensive ones, bypassing the official channel.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Branding &amp; Promotion</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">In Japan, the colour WHITE often symbolizes:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Wealth</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Luck</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Mourning and funerals</label></li>
+        <li><label><input type="radio" name="q9" value="d"> Innovation</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','c')">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>In Japan (and much of East Asia) white is associated with mourning, not purity. In the West, white is associated with weddings/purity.</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Why is a "linguistic and cultural audit" important when launching a brand in a new country?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> It cuts marketing costs in half</label></li>
+        <li><label><input type="radio" name="q10" value="b"> It prevents the brand name, slogan, or imagery from carrying unintended or offensive meaning in the local language and culture</label></li>
+        <li><label><input type="radio" name="q10" value="c"> It is required by the WTO</label></li>
+        <li><label><input type="radio" name="q10" value="d"> It guarantees the firm a trademark</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Literal translations can become embarrassing or offensive (e.g., Chevy Nova in Spanish-speaking markets). The audit catches problems before launch.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.1 Market research</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.2 Segmentation/targeting/positioning</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.3 The 4 Ps internationally</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.4 Standardization vs adaptation</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.5 International pricing</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.6 Branding across cultures</label></div>
+</div>
+
+<footer>BBB4M — International Business Fundamentals, Grade 12 | Strand B: International Marketing | Assessment AS Learning</footer>
+</div>
+
+<script>
+let score = 0, answered = 0;
+const total = 10;
+function updateProgress() { document.getElementById('totalScore').textContent = score; document.getElementById('progressFill').style.width = (answered / total * 100) + '%'; }
+function checkMC(qid, correct) { const sel = document.querySelector(`input[name="${qid}"]:checked`); if (!sel) return; const card = document.getElementById(qid), fb = document.getElementById(qid + '-feedback'), sol = document.getElementById(qid + '-solution'); if (card.classList.contains('correct') || card.classList.contains('wrong')) return; answered++; if (sel.value === correct) { score++; card.classList.add('correct'); fb.className = 'feedback show correct'; fb.textContent = '✅ Correct!'; } else { card.classList.add('wrong'); fb.className = 'feedback show wrong'; fb.textContent = '❌ See solution below.'; } sol.classList.add('show'); updateProgress(); }
+function checkNumeric(qid, correct) { const v = parseFloat(document.getElementById(qid + '-input').value.trim()); if (isNaN(v)) return; const card = document.getElementById(qid), fb = document.getElementById(qid + '-feedback'), sol = document.getElementById(qid + '-solution'); if (card.classList.contains('correct') || card.classList.contains('wrong')) return; answered++; if (Math.abs(v - correct) < (Math.abs(correct) * 0.02 + 0.5)) { score++; card.classList.add('correct'); fb.className = 'feedback show correct'; fb.textContent = '✅ Correct!'; } else { card.classList.add('wrong'); fb.className = 'feedback show wrong'; fb.textContent = `❌ Answer: ${correct}`; } sol.classList.add('show'); updateProgress(); }
+</script>
+</body>
+</html>

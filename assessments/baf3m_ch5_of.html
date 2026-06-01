@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Internal Control &amp; Ethics — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #15803d; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0;padding:0;box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/baf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 5: Internal Control &amp; Ethics</h1>
+    <div class="sub">Assessment OF Learning — Unit Test</div>
+    <div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks. Show all work.</div>
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/13</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The three duties that should ALWAYS be segregated under good internal control are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of1" value="a"> Counting, ordering, paying</label></li>
+<li><label><input type="radio" name="of1" value="b"> Authorisation, custody, record-keeping</label></li>
+<li><label><input type="radio" name="of1" value="c"> Buying, selling, inventory</label></li>
+<li><label><input type="radio" name="of1" value="d"> Cash, cheques, credit cards</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of1','b')">Check</button>
+<div class="fb" id="of1-fb"></div>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>The classic split: authorise (manager), custody (cashier), record-keeping (bookkeeper).</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A deposit in transit is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of2" value="a"> Added to the bank balance</label></li>
+<li><label><input type="radio" name="of2" value="b"> Subtracted from the bank balance</label></li>
+<li><label><input type="radio" name="of2" value="c"> Added to the book balance</label></li>
+<li><label><input type="radio" name="of2" value="d"> No adjustment required</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of2','a')">Check</button>
+<div class="fb" id="of2-fb"></div>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>The company has recorded it; the bank has not. Add it on the bank side.</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Petty-cash fund \$300. Cash on hand \$72. Vouchers total \$226. The fund is over or short by:</div>
+<input type="text" id="of3-in" placeholder="Enter ± a number (negative if short)...">
+<button class="btn btn-p" onclick="chkNum('of3',-2)">Check</button>
+<div class="fb" id="of3-fb"></div>
+<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>Cash + vouchers = \(72 + 226 = 298\). Imprest = 300. Short by \$2 (cash shortage). Enter −2.</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The CPA Code's value that requires accountants to keep client information private is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of4" value="a"> Integrity</label></li>
+<li><label><input type="radio" name="of4" value="b"> Objectivity</label></li>
+<li><label><input type="radio" name="of4" value="c"> Confidentiality</label></li>
+<li><label><input type="radio" name="of4" value="d"> Due care</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of4','c')">Check</button>
+<div class="fb" id="of4-fb"></div>
+<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>Confidentiality is one of the five core values; client information must not be shared without authorisation.</div>
+</div>
+
+<div class="qcard" id="of5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">An <em>external</em> user that uses the balance sheet to assess collateral is the:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of5" value="a"> Production manager</label></li>
+<li><label><input type="radio" name="of5" value="b"> Marketing director</label></li>
+<li><label><input type="radio" name="of5" value="c"> Bank loan officer</label></li>
+<li><label><input type="radio" name="of5" value="d"> Owner</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of5','c')">Check</button>
+<div class="fb" id="of5-fb"></div>
+<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>The bank evaluates the assets that could secure the loan if the borrower defaults.</div>
+</div>
+
+<div class="qcard" id="of6">
+<div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">List the FIVE core values of the CPA Code of Professional Conduct.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">In a small business, the same employee opens the mail, records customer payments, deposits cheques in the bank, and prepares the bank reconciliation. Describe two specific fraud schemes this employee could perpetrate undetected. Recommend two specific changes the owner should make.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">An accountant is offered shares in a company that is about to become her client. Identify which CPA-Code value is at risk. Apply the five-step ethical decision model to recommend an action, briefly justifying each step.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A new cloud-accounting platform replaces the company's paper journal and ledger. Describe two internal-control risks that DECREASE and two that INCREASE as a result. For each new risk, suggest a specific mitigating control.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Compose a clear 5–7 sentence explanation of <em>why</em> bank reconciliations are performed. Reference timing differences, errors, and fraud detection.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Draft a brief written response (5–7 sentences) to a supervisor who asks you to "record this big order as December revenue even though we haven't shipped it yet — we need a strong year-end." Address GAAP, the CPA Code, and possible consequences.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe to a small-business owner (5–7 sentences) why information technology is changing the accountant's role from "doing arithmetic" to "designing and reviewing controls". Include one specific example.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [13 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[7 marks]</span></div>
+<div class="qtxt">Greenfield Sports' books show Cash \$11 600 Dr. on 30 June. The June bank statement shows \$12 250. Reconciling items: deposits in transit \$1 540; outstanding cheques #312 \$650, #318 \$900, #320 \$310; bank service charge \$22; NSF cheque from customer K. Reyes \$180; interest earned credited by bank \$32; the company recorded cheque #310 for \$590 (cleaning fees) in the books but the bank correctly debited \$650 (a transcription error in the books).<br>
+Prepare a two-column bank reconciliation showing both adjusted balances equal, then journalise all required adjusting entries to bring the books up to date.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt">"Maple Café" maintains a \$250 petty-cash fund. Transactions in May 2026: (a) 1 May — establish the fund. (b) 22 May — vouchers in the box: Postage \$45, Office Supplies \$80, Travel \$60, Misc \$15; cash on hand \$48. Replenish. (c) 1 June — increase the fund to \$400.<br>
+Prepare the THREE journal entries with full debits, credits, and short explanations.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="rubric"><h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>BAF3M — Financial Accounting Fundamentals, Grade 11 | Strands D &amp; E | Assessment OF Learning — Graded</footer>
+</div>
+<script>
+let score=0,answered=0;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.5){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

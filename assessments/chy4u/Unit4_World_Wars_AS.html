@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: World Wars — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #1e40af; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#1e40af;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/chy4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: World Wars &amp; Ideologies — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand E (1914–1945)</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of WWI, the Russian Revolution, Versailles, the rise of fascism and Nazism, WWII, and the Holocaust.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The short-term trigger for World War I was the assassination in Sarajevo on 28 June 1914 of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Tsar Nicholas II of Russia</label></li>
+<li><label><input type="radio" name="q1" value="b"> Archduke Franz Ferdinand of Austria-Hungary, heir to the Habsburg throne, by Gavrilo Princip</label></li>
+<li><label><input type="radio" name="q1" value="c"> Kaiser Wilhelm II of Germany</label></li>
+<li><label><input type="radio" name="q1" value="d"> President Woodrow Wilson</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The assassination triggered Austria-Hungary's ultimatum to Serbia; alliance commitments and German "blank check" support produced general war within five weeks.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Approximately how many soldiers died in the First World War?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> ~500,000</label></li>
+<li><label><input type="radio" name="q2" value="b"> ~9–11 million combatants, plus at least 7 million civilians</label></li>
+<li><label><input type="radio" name="q2" value="c"> ~1 million</label></li>
+<li><label><input type="radio" name="q2" value="d"> ~100 million</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> ~9-11 million combatant deaths, ~7-13 million civilians. The 1918-1920 influenza pandemic added perhaps 50-100 million.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">The Bolsheviks seized power in Petrograd in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> February 1917</label></li>
+<li><label><input type="radio" name="q3" value="b"> October-November 1917 (the "October Revolution"), overthrowing the Provisional Government</label></li>
+<li><label><input type="radio" name="q3" value="c"> 1905</label></li>
+<li><label><input type="radio" name="q3" value="d"> 1922</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> 25-26 October Old Style / 7-8 November New Style 1917. The February Revolution earlier the same year had overthrown the Tsar and established the Provisional Government.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The Holodomor of 1932–1933:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Was a natural famine in Ukraine</label></li>
+<li><label><input type="radio" name="q4" value="b"> Was a famine in Ukraine caused by Soviet grain requisitioning under Stalin's collectivisation; killed 3.5–7.5 million; recognised as genocide by Canada in 2008</label></li>
+<li><label><input type="radio" name="q4" value="c"> Was a Russian-Polish war</label></li>
+<li><label><input type="radio" name="q4" value="d"> Did not actually occur</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Soviet grain seizures during collectivisation produced famine concentrated in Ukraine; many historians and governments (including Canada in 2008) classify it as a genocide.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Article 231 of the Treaty of Versailles (1919) — the "war guilt clause" — assigned responsibility for the war to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Russia</label></li>
+<li><label><input type="radio" name="q5" value="b"> Germany and her allies</label></li>
+<li><label><input type="radio" name="q5" value="c"> France</label></li>
+<li><label><input type="radio" name="q5" value="d"> The United States</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Article 231 specified Germany and her allies' "responsibility for all the loss and damage." Reparations were initially set at 132 billion gold marks in 1921; the article was a political grievance the Weimar Republic could not shake.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Adolf Hitler was appointed German Chancellor on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> 30 January 1933 by President Hindenburg</label></li>
+<li><label><input type="radio" name="q6" value="b"> By election victory in 1932</label></li>
+<li><label><input type="radio" name="q6" value="c"> 9 November 1923 after the Beer Hall Putsch</label></li>
+<li><label><input type="radio" name="q6" value="d"> 1 September 1939</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Hindenburg appointed Hitler Chancellor in a coalition deal on 30 January 1933. The NSDAP had been the largest party since July 1932 but never won a majority in a free election; conservatives believed they could use Hitler as a front man.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Operation Barbarossa, launched 22 June 1941, was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The Allied D-Day invasion of Normandy</label></li>
+<li><label><input type="radio" name="q7" value="b"> The German invasion of the Soviet Union — the largest land operation in history</label></li>
+<li><label><input type="radio" name="q7" value="c"> The Soviet invasion of Germany</label></li>
+<li><label><input type="radio" name="q7" value="d"> The Pearl Harbor attack</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> 3.8 million Axis troops invaded the USSR; the war on the Eastern Front (1941–1945) killed perhaps 25 million Soviet citizens. Stalingrad (Aug 1942 – Feb 1943) was the turning point.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The Wannsee Conference (20 January 1942):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Established the United Nations</label></li>
+<li><label><input type="radio" name="q8" value="b"> Coordinated the bureaucratic implementation of the "Final Solution" — the genocide of European Jewry</label></li>
+<li><label><input type="radio" name="q8" value="c"> Was a peace conference</label></li>
+<li><label><input type="radio" name="q8" value="d"> Set German war aims for 1941</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Wannsee did not initiate the Holocaust (Einsatzgruppen mass-shootings of Soviet Jews began June 1941) but coordinated its industrial implementation across ministries. The minutes are an extraordinary primary source.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Approximately how many Jewish people were murdered in the Holocaust?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> ~300,000</label></li>
+<li><label><input type="radio" name="q9" value="b"> ~6 million Jews (plus at least 5 million non-Jewish victims — Roma, disabled, gay men, Polish elites, Soviet POWs)</label></li>
+<li><label><input type="radio" name="q9" value="c"> ~50 million</label></li>
+<li><label><input type="radio" name="q9" value="d"> Unknown — no records exist</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Approximately 6 million Jews murdered — two-thirds of European Jewry — plus 5+ million non-Jewish victims. Auschwitz-Birkenau alone killed ~1.1 million. The Holocaust is the most fully documented genocide in history.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Japan surrendered to end the Second World War on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> 8 May 1945</label></li>
+<li><label><input type="radio" name="q10" value="b"> 15 August 1945, after atomic bombings of Hiroshima (6 August) and Nagasaki (9 August) and Soviet declaration of war (8 August)</label></li>
+<li><label><input type="radio" name="q10" value="c"> 7 December 1941</label></li>
+<li><label><input type="radio" name="q10" value="d"> 1 September 1939</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Germany surrendered 8 May (V-E Day); Japan 15 August (V-J Day) after a week that included two atomic bombings and Soviet declaration of war. Formal surrender ceremony was on USS Missouri 2 September.</div></div>
+
+<footer>CHY4U — World History, Grade 12 | Strand E: 1914 to 1945 | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

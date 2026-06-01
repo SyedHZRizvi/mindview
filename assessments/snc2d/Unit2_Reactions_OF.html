@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Chemical Reactions — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #2563eb; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/snc2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Chemical Reactions — Unit Test</h1><div class="sub">Assessment OF Learning · Strand C</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all work. Use the periodic table.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[2]</span>
+<div class="qtxt">A neutral atom of sulfur has 16 protons and 17 neutrons. Its mass number A is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1"> 16</label></li>
+<li><label><input type="radio" name="q1"> 17</label></li>
+<li><label><input type="radio" name="q1"> 32</label></li>
+<li><label><input type="radio" name="q1"> 33</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>D. 33.</strong> Mass number = protons + neutrons = 16 + 17 = 33. The 32 isotope is more common, but this particular atom has 17 neutrons, giving \(^{33}S\).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[3]</span>
+<div class="qtxt">Write IUPAC names for: (a) MgCl₂, (b) FeO, (c) \(Cu(NO_3)_2\), (d) \(SO_3\).</div>
+<textarea placeholder="Your answers..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Magnesium chloride. (b) Iron(II) oxide — Fe must be +2 to balance one O²⁻. (c) Copper(II) nitrate — each \(NO_3^-\) is −1, two give −2, so Cu must be +2. (d) Sulfur trioxide — covalent, use Greek prefix "tri" for 3 oxygens (the leading element drops "mono").</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Write the chemical formulas for: (a) ammonium phosphate, (b) calcium hydroxide, (c) dinitrogen pentoxide.</div>
+<textarea placeholder="Your answers..."></textarea>
+<details><summary>Answer Key</summary><p>(a) \((NH_4)_3PO_4\) — \(NH_4^+\) (×3) balances \(PO_4^{3-}\). (b) \(Ca(OH)_2\) — \(Ca^{2+}\) balances two \(OH^-\). (c) \(N_2O_5\) — Greek prefixes give 2 N + 5 O.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">A solution has pH 11. Is it acidic, basic, or neutral? Estimate the \([H^+]\) concentration.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>pH 11 > 7 → <strong>basic</strong> (about the pH of household ammonia). \([H^+] = 10^{-pH} = 10^{-11}\) M, very low concentration of \(H^+\) compared to \([OH^-] = 10^{-3}\) M.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Identify the type of reaction: \(2HgO \rightarrow 2Hg + O_2\).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> Synthesis</label></li>
+<li><label><input type="radio" name="q5"> Decomposition</label></li>
+<li><label><input type="radio" name="q5"> Single displacement</label></li>
+<li><label><input type="radio" name="q5"> Double displacement</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B. Decomposition.</strong> One compound splits into two simpler substances; \(AB \rightarrow A + B\). This is the reaction Joseph Priestley used in 1774 to discover oxygen.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [12 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="qtxt">Balance the following equations: (a) \(\_C_4H_{10} + \_O_2 \rightarrow \_CO_2 + \_H_2O\) (combustion of butane). (b) \(\_Fe + \_O_2 \rightarrow \_Fe_2O_3\) (rusting). (c) \(\_AgNO_3 + \_CuCl_2 \rightarrow \_AgCl + \_Cu(NO_3)_2\).</div>
+<textarea placeholder="Your balanced equations..."></textarea>
+<details><summary>Answer Key</summary><p>(a) \(2C_4H_{10} + 13O_2 \rightarrow 8CO_2 + 10H_2O\). Carbon: 8 = 8 ✓; Hydrogen: 20 = 20 ✓; Oxygen: 26 = 26 ✓. (b) \(4Fe + 3O_2 \rightarrow 2Fe_2O_3\). Fe: 4 = 4 ✓; O: 6 = 6 ✓. (c) \(2AgNO_3 + CuCl_2 \rightarrow 2AgCl + Cu(NO_3)_2\). Ag: 2 = 2 ✓; N: 2 = 2 ✓; O: 6 = 6 ✓; Cu: 1 = 1 ✓; Cl: 2 = 2 ✓.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">Predict the products and balance: (a) \(K + Cl_2 \rightarrow ?\); (b) \(Pb(NO_3)_2 + KI \rightarrow ?\); (c) \(Mg + AgNO_3 \rightarrow ?\); (d) \(C_2H_6 + O_2 \rightarrow ?\).</div>
+<textarea placeholder="Your predictions..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Synthesis: \(2K + Cl_2 \rightarrow 2KCl\). (b) Double displacement: \(Pb(NO_3)_2 + 2KI \rightarrow PbI_2 + 2KNO_3\). \(PbI_2\) is the famous yellow precipitate. (c) Single displacement: \(Mg + 2AgNO_3 \rightarrow Mg(NO_3)_2 + 2Ag\); Mg is more reactive than Ag. (d) Combustion: \(2C_2H_6 + 7O_2 \rightarrow 4CO_2 + 6H_2O\).</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[3]</span>
+<div class="qtxt">Design an experiment to compare the activity of zinc, iron, and copper. Identify a suitable test, expected order of reactivity, and one controlled variable.</div>
+<textarea placeholder="Your design..."></textarea>
+<details><summary>Answer Key</summary><p>Test: place equal-sized strips of each metal in equal volumes of dilute HCl; observe bubbling (\(H_2\) evolution). Most reactive metal displaces hydrogen vigorously; least reactive shows no reaction. Expected order (from activity series): <strong>Zn &gt; Fe &gt; Cu</strong>. Cu does not react with HCl because it is below H in the activity series. Controlled: same HCl concentration and volume, same temperature, same surface area of metal (use strips of equal mass or area), same observation time. Replicate three times. Conclusion: rank by visible reaction rate.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">Draw and describe the Bohr–Rutherford diagrams for sodium (Na, Z = 11) and chlorine (Cl, Z = 17). Then describe how they combine to form NaCl.</div>
+<textarea placeholder="Your description..."></textarea>
+<details><summary>Answer Key</summary><p>Sodium: 11p in nucleus, 11 electrons in shells 2, 8, 1. Chlorine: 17p in nucleus, 17 electrons in shells 2, 8, 7. To reach octet stability, Na <em>loses</em> its single 3rd-shell electron, becoming \(Na^+\) with the noble-gas electron configuration of Ne. Cl <em>gains</em> that electron, becoming \(Cl^-\) with the noble-gas configuration of Ar. The opposite charges attract electrostatically: a 3-D ionic lattice forms, where each \(Na^+\) is surrounded by 6 \(Cl^-\) and vice versa. The result is a brittle crystalline solid with a high melting point (801 °C).</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Compare ionic and covalent bonding in a table. Include: type of atoms involved, electron behaviour, physical state at room temperature, melting point (high/low), electrical conductivity when molten.</div>
+<textarea placeholder="Your table..."></textarea>
+<details><summary>Answer Key</summary><p>Ionic: metal + non-metal; electrons transferred; usually crystalline solid; high melting point (often >500 °C); conducts when molten or dissolved (mobile ions). Covalent: non-metal + non-metal; electrons shared; often gas or liquid or low-melting solid at room T; low melting point (often <300 °C); usually does not conduct (no mobile charges) — exceptions: graphite, some acids in water.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Explain the meaning of pH in your own words. Why is the scale logarithmic, and why is that significant for biological and environmental systems?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>pH measures hydrogen-ion concentration: \(pH = -\log_{10}[H^+]\). Lower pH = more \(H^+\) = more acidic. The scale is logarithmic because biological and environmental \([H^+]\) spans many orders of magnitude — pure water \(10^{-7}\) M to stomach acid \(10^{-2}\) M is a factor of 100,000. A logarithmic scale (0–14) makes that range humanly readable. Significance: small pH numbers represent enormous concentration changes. A lake going from pH 7 to pH 5 (acid precipitation) means 100× more \(H^+\) — enough to kill fish eggs and many invertebrates. Body pH must stay near 7.4 ± 0.05; deviation of 0.4 units in either direction is medically critical.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case Study — Antacids:</strong> A patient takes calcium carbonate (\(CaCO_3\)) tablets for heartburn. Write the balanced neutralisation equation and explain how the products give relief from indigestion.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Stomach acid is HCl (about pH 1.5–2). Calcium carbonate is a weak base. Balanced reaction: <strong>\(CaCO_3 + 2HCl \rightarrow CaCl_2 + H_2O + CO_2\)</strong>. Products: \(CaCl_2\) (calcium chloride — water-soluble salt, absorbed or passed); \(H_2O\) (water); \(CO_2\) (carbon dioxide — burped out, which is why antacids sometimes cause burping). The reaction <em>neutralises</em> excess stomach acid by consuming \(H^+\), raising stomach pH toward 4–6 and relieving the burning sensation. Note: this is also a double-displacement reaction overall, with an immediate decomposition of the carbonate part producing \(CO_2\).</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE — Acid Precipitation:</strong> Sulfur dioxide and nitrogen oxides from coal-burning power plants form acidic compounds in the atmosphere. Identify the two acids produced, explain the impact on a freshwater lake, and describe one mitigation strategy.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>\(SO_2\) reacts with atmospheric water to form sulfurous acid then sulfuric acid (\(H_2SO_4\)). \(NO_x\) compounds form nitric acid (\(HNO_3\)). Acidic rain falls into lakes, lowering pH. As lake pH drops below ~5: fish eggs cannot hatch; many invertebrates die; aluminium leaches from soils into the water, becoming toxic; biodiversity collapses. Famous Canadian example: lakes around Sudbury, ON, were severely acidified by smelter emissions; recovery began with the construction of the 380 m Inco Superstack (1972) — which only spread the problem farther — and accelerated with the 1991 Canada-US Air Quality Agreement requiring \(SO_2\) reductions. Mitigation strategies: install flue-gas scrubbers (calcium hydroxide reacts with \(SO_2\)) on power plants; switch to lower-sulfur fuels or renewable energy; lime acidified lakes (adds \(CaCO_3\) to neutralise) for short-term recovery; international air-quality agreements; carbon pricing to discourage coal burning generally.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>WHMIS Application:</strong> A workplace label shows pictograms for "flame" and "exclamation mark", signal word "Danger". What hazards does the product likely have? List three safety precautions.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Flame pictogram: <strong>flammable</strong> liquid or solid. Exclamation mark: acute toxicity (less severe), irritant (skin, eye, respiratory). Signal word "Danger" indicates more severe end of the hazard category. Three precautions: (1) keep away from open flames, sparks, hot surfaces; store in a flammables cabinet. (2) Use PPE: chemical-resistant gloves, safety goggles, lab coat. (3) Work in a well-ventilated area or fume hood; have eyewash station and fire extinguisher accessible; consult the SDS before starting work. Dispose of properly in labelled containers.</p></details></div>
+
+<footer>SNC2D — Science (Academic), Grade 10 | Strand C: Chemical Reactions | Assessment OF Learning — Graded</footer>
+</div></body></html>

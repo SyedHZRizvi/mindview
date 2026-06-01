@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Modelling — Practice Quiz (AS Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #6366f1; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: #16a34a; background: #f0fdf4; }
+.question-card.wrong { border-color: #dc2626; background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #4f46e5; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 5: Modelling with Mathematics</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check before the culminating task.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / 8</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.1 — Choosing a Function Family</div>
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">Data has constant 2nd differences. What family is it?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> Linear</label></li>
+<li><label><input type="radio" name="q1" value="b"> Quadratic (polynomial degree 2)</label></li>
+<li><label><input type="radio" name="q1" value="c"> Exponential</label></li>
+<li><label><input type="radio" name="q1" value="d"> Sinusoidal</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','b')">Check</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Constant \( n \)-th differences ⇒ polynomial of degree \( n \). Here \( n=2 \): quadratic.</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">Data points have outputs \( 3, 6, 12, 24, 48 \) at equally spaced \( x \). Which family?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q2" value="a"> Linear</label></li>
+<li><label><input type="radio" name="q2" value="b"> Polynomial degree 2</label></li>
+<li><label><input type="radio" name="q2" value="c"> Exponential</label></li>
+<li><label><input type="radio" name="q2" value="d"> Sinusoidal</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q2','c')">Check</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Ratios \( 6/3, 12/6, 24/12, 48/24 \) all equal 2 ⇒ exponential, base 2.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.2 — Regression</div>
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">A linear regression has \( r^{2}=0.998 \). This means:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> The model explains about 99.8% of the variation — excellent fit</label></li>
+<li><label><input type="radio" name="q3" value="b"> The slope is 0.998</label></li>
+<li><label><input type="radio" name="q3" value="c"> The intercept is 0.998</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( r^{2} \) is the coefficient of determination — fraction of variation explained. 0.998 is excellent.</div>
+</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">Best practice for choosing a regression family is to:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q4" value="a"> Always start with the highest-degree polynomial available</label></li>
+<li><label><input type="radio" name="q4" value="b"> Plot the data first, then choose a family that visually matches</label></li>
+<li><label><input type="radio" name="q4" value="c"> Use linear regression first because it always works</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q4','b')">Check</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Always plot first. The scatter pattern strongly hints at the right family.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.3 — Significant Figures &amp; Error</div>
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">A measurement \( L=12.345 \) cm has 5 significant figures. Round to 3 sig figs.</div>
+<div class="answer-area"><input type="text" id="q5-input" placeholder="e.g. 12.3"></div>
+<button class="btn btn-check" onclick="checkNumeric('q5', 12.3)">Check</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>12.345 → 12.3 (3 sig figs).</div>
+</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">A part is specified at 10.00 mm; a measurement gives 10.04 mm. The percent error is:</div>
+<div class="answer-area"><input type="text" id="q6-input" placeholder="percent..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q6', 0.4)">Check</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( |10.04-10.00|/10.00 \times 100\% = 0.04/10 \times 100\% = 0.4\% \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.4 — Cross-Strand Problems</div>
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">Water drains from a tank with depth \( h(t)=6(0.9)^{t} \) (in metres, hours). When is the depth 3 m?</div>
+<div class="answer-area"><input type="text" id="q7-input" placeholder="round to 2 dp..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q7', 6.58)">Check</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\( 3=6(0.9)^{t} \Rightarrow (0.9)^{t}=0.5 \Rightarrow t=\log 0.5/\log 0.9 \approx -0.301/-0.0458 \approx 6.58 \) h.</div>
+</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">From 50 m away, the angle of elevation to a flag at the top of a tower is 35°. How tall is the tower?</div>
+<div class="answer-area"><input type="text" id="q8-input" placeholder="m, round to 1 dp..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q8', 35.0)">Check</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( h=50\tan 35°\approx 50(0.7002)\approx 35.0 \) m.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+<h3>📊 Self-Reflection</h3>
+<p style="margin-bottom:12px; color: var(--muted);">Rate your confidence (1=need help, 4=mastered):</p>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.1 Choosing a Function Family</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.2 Regression</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.3 Error &amp; Precision</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.4 Cross-Strand Problems</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.5 Culminating Performance Task</label></div>
+</div>
+
+<footer>MCT4M — Grade 12 College | Cross-Strand Modelling | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0, answered=0;
+function checkMC(qid, correct) {
+    const sel = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!sel) return;
+    const card = document.getElementById(qid);
+    if (card.classList.contains('correct')||card.classList.contains('wrong')) return;
+    const fb = document.getElementById(qid+'-feedback');
+    const sol = document.getElementById(qid+'-solution');
+    if (sel.value===correct) { score++; card.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ Correct!'; }
+    else { card.classList.add('wrong'); fb.className='feedback show wrong'; fb.textContent='❌ See solution.'; }
+    sol.classList.add('show');
+    document.getElementById('totalScore').textContent = score;
+}
+function checkNumeric(qid, correct) {
+    const v = parseFloat(document.getElementById(qid+'-input').value.trim());
+    if (isNaN(v)) return;
+    const card = document.getElementById(qid);
+    if (card.classList.contains('correct')||card.classList.contains('wrong')) return;
+    const fb = document.getElementById(qid+'-feedback');
+    const sol = document.getElementById(qid+'-solution');
+    if (Math.abs(v-correct)<0.5) { score++; card.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ Correct!'; }
+    else { card.classList.add('wrong'); fb.className='feedback show wrong'; fb.textContent=`❌ Answer: ${correct}`; }
+    sol.classList.add('show');
+    document.getElementById('totalScore').textContent = score;
+}
+</script>
+</body>
+</html>

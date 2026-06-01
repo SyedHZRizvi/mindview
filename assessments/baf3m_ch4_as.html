@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 4: Financial Statements — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #2563eb; --correct: #15803d; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0;padding:0;box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color:#fff; padding:24px; border-radius:12px; margin-bottom:24px; }
+header h1 { font-size: 22px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/baf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 4: Financial Statements</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your skill at preparing the income statement, statement of owner's equity, and classified balance sheet, computing working capital and the current ratio, and applying merchandising COGS.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.1 — Income Statement</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">Revenue \$8 500, Total Expenses \$6 200. Net Income =</div>
+    <div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q1', 2300)">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\(8\,500 - 6\,200 = 2\,300\). Net Income \$2 300.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">The heading of an income statement is best stated as:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> "As at 31 March 2026"</label></li>
+        <li><label><input type="radio" name="q2" value="b"> "For the month ended 31 March 2026"</label></li>
+        <li><label><input type="radio" name="q2" value="c"> "31 March 2026"</label></li>
+        <li><label><input type="radio" name="q2" value="d"> "Year ended"</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>The income statement covers a period of time, so the heading uses "for the period ended …". The balance sheet uses a single date.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.2 — Statement of Owner's Equity</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">Beginning Capital \$12 000, Net Income \$3 500, Drawings \$1 200, no additional investments. Ending Capital =</div>
+    <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q3', 14300)">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\(12\,000 + 3\,500 - 1\,200 = 14\,300\).</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">A business has Beginning Capital \$8 000, Net Loss \$1 500, and Additional Investment \$2 000. Drawings = 0. Ending Capital =</div>
+    <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q4', 8500)">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\(8\,000 - 1\,500 + 2\,000 = 8\,500\).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.3 — Balance Sheet</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Which is a current asset?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Land</label></li>
+        <li><label><input type="radio" name="q5" value="b"> Mortgage Payable</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Accounts Receivable</label></li>
+        <li><label><input type="radio" name="q5" value="d"> Owner's Capital</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','c')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>A/R is expected to be collected within 12 months — a current asset. Land is non-current, Mortgage is a liability, Capital is equity.</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Equipment cost \$8 000, accumulated depreciation \$2 400. Net book value shown on the balance sheet =</div>
+    <div class="answer-area"><input type="text" id="q6-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q6', 5600)">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\(NBV = 8\,000 - 2\,400 = 5\,600\).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.4 — Working Capital &amp; Current Ratio</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Current Assets \$15 000, Current Liabilities \$6 000. Working Capital =</div>
+    <div class="answer-area"><input type="text" id="q7-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q7', 9000)">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\(WC = CA - CL = 15\,000 - 6\,000 = 9\,000\).</div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">Current Assets \$24 000, Current Liabilities \$10 000. Current Ratio (to two decimals) =</div>
+    <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q8', 2.40)">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( \dfrac{24\,000}{10\,000} = 2.40 \). The ratio is healthily above the 2:1 benchmark.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.5 — Merchandising &amp; COGS</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Beginning Inventory \$5 000, Net Purchases \$32 000, Ending Inventory \$7 500. COGS =</div>
+    <div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q9', 29500)">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\(COGS = 5\,000 + 32\,000 - 7\,500 = 29\,500\).</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Net Sales \$60 000, COGS \$36 000. Gross Profit =</div>
+    <div class="answer-area"><input type="text" id="q10-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q10', 24000)">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\(GP = 60\,000 - 36\,000 = 24\,000\). The gross-profit ratio is \(24\,000 / 60\,000 = 40\%\).</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.1 Income Statement</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.2 Owner's Equity</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.3 Balance Sheet</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.4 Working Capital / Current Ratio</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.5 Merchandising / COGS</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.6 Accounting Cycle</label></div>
+</div>
+<footer>BAF3M — Financial Accounting Fundamentals, Grade 11 | Strand C: Financial Statements | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=10;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,correct){const sel=document.querySelector(`input[name="${qid}"]:checked`);if(!sel)return;const c=document.getElementById(qid),f=document.getElementById(qid+'-feedback'),s=document.getElementById(qid+'-solution');if(c.classList.contains('correct')||c.classList.contains('wrong'))return;answered++;if(sel.value===correct){score++;c.classList.add('correct');f.className='feedback show correct';f.textContent='✅ Correct!';}else{c.classList.add('wrong');f.className='feedback show wrong';f.textContent='❌ See solution.';}s.classList.add('show');updateProgress();}
+function checkNumeric(qid,correct){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const c=document.getElementById(qid),f=document.getElementById(qid+'-feedback'),s=document.getElementById(qid+'-solution');if(c.classList.contains('correct')||c.classList.contains('wrong'))return;answered++;const tol=Math.abs(correct)<5?0.02:0.5;if(Math.abs(v-correct)<tol){score++;c.classList.add('correct');f.className='feedback show correct';f.textContent='✅ Correct!';}else{c.classList.add('wrong');f.className='feedback show wrong';f.textContent=`❌ Answer: ${correct}.`;}s.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

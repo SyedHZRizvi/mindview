@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Knowing Yourself — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #059669; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/glc2o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Knowing Yourself — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand A</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of self-assessment, RIASEC, skills inventories, work values, personality, and growth mindset. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1–1.2 — Self-Assessment &amp; RIASEC</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">A "personal profile" in Career Studies is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> A psychological diagnosis</label></li>
+<li><label><input type="radio" name="q1" value="b"> A synthesised summary of interests, skills, values, and learning preferences used as a working hypothesis for career planning</label></li>
+<li><label><input type="radio" name="q1" value="c"> A list of universities you plan to apply to</label></li>
+<li><label><input type="radio" name="q1" value="d"> A high-school transcript</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The Ministry frames the personal profile as a synthesis of multiple self-assessments — interests, skills, values, learning style, personality — that you use as a working hypothesis. It is a starting point for planning, not a fixed diagnosis or label.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">In Holland's RIASEC framework, the letter <strong>I</strong> stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Independent</label></li>
+<li><label><input type="radio" name="q2" value="b"> Industrial</label></li>
+<li><label><input type="radio" name="q2" value="c"> Investigative — preference for analysing, researching, and solving problems</label></li>
+<li><label><input type="radio" name="q2" value="d"> Intuitive</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> RIASEC = <strong>R</strong>ealistic, <strong>I</strong>nvestigative, <strong>A</strong>rtistic, <strong>S</strong>ocial, <strong>E</strong>nterprising, <strong>C</strong>onventional. Investigative types prefer analytical and research-oriented work — biology, software development, statistics, medical research.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">Camila's RIASEC results return a top three code of <strong>SAI</strong> (Social, Artistic, Investigative). She is curious about which careers her code might point toward.</div>
+<div class="qtxt">A reasonable career hypothesis cluster for a Holland code of SAI is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Welder, machinist, truck driver</label></li>
+<li><label><input type="radio" name="q3" value="b"> Investment banker, sales manager, corporate lawyer</label></li>
+<li><label><input type="radio" name="q3" value="c"> Drama teacher, school counsellor with creative arts, health-education researcher</label></li>
+<li><label><input type="radio" name="q3" value="d"> Accountant, data-entry clerk, logistics analyst</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','c')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> SAI combines people-helping (S), creative self-expression (A), and analytical curiosity (I). Drama teacher, school counsellor with creative arts, or health-education researcher fit. Option (a) is RRR; (b) is EEE; (d) is CCC.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Skills &amp; Multiple Intelligences</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Which is the strongest example of a "skill statement with evidence"?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> "I'm a really good team player."</label></li>
+<li><label><input type="radio" name="q4" value="b"> "I have leadership skills."</label></li>
+<li><label><input type="radio" name="q4" value="c"> "Oral communication: planned and delivered a 5-minute presentation to a Grade 9 advisory class; teacher feedback: 'clear, well-organised, made eye contact, answered questions confidently.'"</label></li>
+<li><label><input type="radio" name="q4" value="d"> "Communication is one of my strongest skills."</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Option C names the skill (using OSP language), gives a specific example with audience and duration, and corroborates with external feedback. The others are unsupported claims that employers discount.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The Ontario Skills Passport (OSP) categorises employability into:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Two skills only — communication and teamwork</label></li>
+<li><label><input type="radio" name="q5" value="b"> Nine essential skills (reading, writing, numeracy, oral communication, digital, problem solving, working with others, finding information, continuous learning) plus three work habits</label></li>
+<li><label><input type="radio" name="q5" value="c"> A single intelligence score (IQ)</label></li>
+<li><label><input type="radio" name="q5" value="d"> Personality types only</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The Ontario Skills Passport uses 9 essential skills and 3 work habits (working safely, working independently, using initiative). It is the Ministry's common language for talking about employability across school and work.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Work Values</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The three families of work values commonly used in career counselling are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Cash, prizes, fame</label></li>
+<li><label><input type="radio" name="q6" value="b"> Intrinsic (the work itself), extrinsic (rewards), and lifestyle (how work fits the rest of life)</label></li>
+<li><label><input type="radio" name="q6" value="c"> Short-term, medium-term, long-term</label></li>
+<li><label><input type="radio" name="q6" value="d"> School values, work values, family values</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Intrinsic values are about the work itself (challenge, meaning, helping); extrinsic values are about the rewards (salary, status, security); lifestyle values are about fit with the rest of life (hours, location, flexibility). All three matter; the mix varies by person.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div>
+<div class="passage">Tomás values "balance" (time with family), "helping others," and "integrity" in his top three. He is offered a job at a high-paying investment bank that requires 70-hour weeks and approval of practices he finds questionable.</div>
+<div class="qtxt">A career counsellor would describe this situation as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> A perfect fit — high pay solves everything</label></li>
+<li><label><input type="radio" name="q7" value="b"> Value conflict — the work demands violate multiple deep values, predicting low job satisfaction over time</label></li>
+<li><label><input type="radio" name="q7" value="c"> Irrelevant — values don't apply to high-paying work</label></li>
+<li><label><input type="radio" name="q7" value="d"> Lifestyle alignment</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Value conflict is the technical term for a job whose daily demands violate a person's deeper values. Research finds that value conflict reliably predicts burnout and turnover, regardless of pay. Tomás's three values are all violated; he should weigh the offer very carefully.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5–1.6 — Personality &amp; Growth Mindset</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In the Big Five personality model (OCEAN), the trait most strongly linked to job performance across nearly every field is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Extraversion</label></li>
+<li><label><input type="radio" name="q8" value="b"> Openness</label></li>
+<li><label><input type="radio" name="q8" value="c"> Conscientiousness — planning, organisation, persistence</label></li>
+<li><label><input type="radio" name="q8" value="d"> Neuroticism</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','c')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Decades of meta-analyses find Conscientiousness predicts work performance across roles better than any other Big Five dimension. Students who score high on it tend to be reliable, well-organised, and persistent — exactly the qualities employers value.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Carol Dweck's "growth mindset" is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> The belief that you should always be positive</label></li>
+<li><label><input type="radio" name="q9" value="b"> The belief that ability is fixed at birth</label></li>
+<li><label><input type="radio" name="q9" value="c"> The belief that ability is developed through effort, strategy, and feedback</label></li>
+<li><label><input type="radio" name="q9" value="d"> The belief that grades don't matter</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','c')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Growth mindset = ability is developed (not fixed). It contrasts with fixed mindset (ability is innate). Growth mindset is not toxic positivity; it is a method — when you fail, you collect specific information about <em>what</em> you don't yet know and try a new strategy. The word "yet" is the key shift.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div>
+<div class="passage">Sara fails her first Grade 10 math test. She thinks: "I haven't mastered factoring <em>yet</em>. Let me figure out which questions I missed, and ask my teacher what study strategy would work better."</div>
+<div class="qtxt">Sara's response illustrates:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> A fixed mindset, since she focused on the failure</label></li>
+<li><label><input type="radio" name="q10" value="b"> A growth-mindset response — treating the result as diagnostic information and adjusting strategy</label></li>
+<li><label><input type="radio" name="q10" value="c"> Grit without effort</label></li>
+<li><label><input type="radio" name="q10" value="d"> Conscientiousness only</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Sara uses the word "yet," analyses what she missed (diagnostic), and seeks a new strategy. That is textbook growth-mindset action — turning a setback into a plan, rather than a verdict on identity.</div></div>
+
+</div>
+
+<footer>GLC2O — Career Studies, Grade 10 Open | Strand A: Knowing Yourself | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

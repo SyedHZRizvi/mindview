@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Trigonometric Functions — Practice Quiz (AS Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: #16a34a; background: #f0fdf4; }
+.question-card.wrong { border-color: #dc2626; background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #b91c1c; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#dc2626;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 3: Trigonometric Functions</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check after each topic. Not graded.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / 10</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.1 — Radian Measure</div>
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">Convert \( 60° \) to radians.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> \( \pi/6 \)</label></li>
+<li><label><input type="radio" name="q1" value="b"> \( \pi/3 \)</label></li>
+<li><label><input type="radio" name="q1" value="c"> \( \pi/2 \)</label></li>
+<li><label><input type="radio" name="q1" value="d"> \( 60\pi \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','b')">Check</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( 60 \cdot \pi/180 = \pi/3 \) rad.</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">A circle has radius 10 cm. What is the arc length subtended by an angle of \( \pi/4 \) rad?</div>
+<div class="answer-area"><input type="text" id="q2-input" placeholder="e.g. 7.85"></div>
+<button class="btn btn-check" onclick="checkNumeric('q2', 7.85)">Check</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( s = r\theta = 10 \cdot \pi/4 = 5\pi/2 \approx 7.85 \) cm.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.2 — Unit Circle</div>
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">Find the exact value of \( \sin(30°) \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> \( 1/2 \)</label></li>
+<li><label><input type="radio" name="q3" value="b"> \( \sqrt{2}/2 \)</label></li>
+<li><label><input type="radio" name="q3" value="c"> \( \sqrt{3}/2 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>From the unit circle / special triangles: \( \sin 30°=1/2 \).</div>
+</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">In which quadrant is \( \cos\theta > 0 \) and \( \sin\theta < 0 \)?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q4" value="a"> Q I</label></li>
+<li><label><input type="radio" name="q4" value="b"> Q II</label></li>
+<li><label><input type="radio" name="q4" value="c"> Q III</label></li>
+<li><label><input type="radio" name="q4" value="d"> Q IV</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q4','d')">Check</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>CAST rule: cos > 0 in Q I and Q IV; sin < 0 in Q III and Q IV. Intersection: Q IV.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.3 — Sine and Cosine Laws</div>
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">In \( \triangle ABC \), \( A=30° \), \( B=60° \), and \( a=5 \). Find \( b \).</div>
+<div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q5', 8.66)">Check</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Sine law: \( b/\sin 60° = 5/\sin 30° \). So \( b = 5\sin 60°/\sin 30° = 5(\sqrt{3}/2)/(1/2) = 5\sqrt{3} \approx 8.66 \).</div>
+</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">In \( \triangle ABC \), \( a=4 \), \( b=5 \), \( C=60° \). Find \( c \) (cosine law).</div>
+<div class="answer-area"><input type="text" id="q6-input" placeholder="Round to 2 decimals..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q6', 4.58)">Check</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( c^{2}=16+25-2(4)(5)(0.5)=41-20=21 \). \( c=\sqrt{21}\approx 4.58 \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.4 — Graphs of Sine and Cosine</div>
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">What is the amplitude of \( y=4\sin(2x)+1 \)?</div>
+<div class="answer-area"><input type="text" id="q7-input" placeholder="Enter amplitude..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q7', 4)">Check</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Amplitude is \( |a|=4 \).</div>
+</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">What is the period of \( y=\sin(3x) \)?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q8" value="a"> \( 3\pi \)</label></li>
+<li><label><input type="radio" name="q8" value="b"> \( \pi \)</label></li>
+<li><label><input type="radio" name="q8" value="c"> \( 2\pi/3 \)</label></li>
+<li><label><input type="radio" name="q8" value="d"> \( 6\pi \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q8','c')">Check</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Period \( = 2\pi/|k| = 2\pi/3 \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.6 — Identities</div>
+<div class="question-card" id="q9">
+<div class="q-number">Question 9</div>
+<div class="q-text">If \( \sin\theta=3/5 \) and \( \theta \) is in Q I, find \( \cos\theta \).</div>
+<div class="answer-area"><input type="text" id="q9-input" placeholder="e.g. 4/5 or 0.8"></div>
+<button class="btn btn-check" onclick="checkNumeric('q9', 0.8)">Check</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Pythagorean: \( \cos^{2}\theta = 1-(3/5)^{2}=1-9/25=16/25 \). In Q I, \( \cos\theta=4/5=0.8 \).</div>
+</div>
+
+<div class="question-card" id="q10">
+<div class="q-number">Question 10</div>
+<div class="q-text">Simplify \( \tan\theta \cdot \cos\theta \) using identities.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> \( \sin\theta \)</label></li>
+<li><label><input type="radio" name="q10" value="b"> \( \cos\theta \)</label></li>
+<li><label><input type="radio" name="q10" value="c"> \( 1 \)</label></li>
+<li><label><input type="radio" name="q10" value="d"> \( \sec\theta \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','a')">Check</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( \tan\theta = \sin\theta/\cos\theta \), so \( \tan\theta \cdot \cos\theta = \sin\theta \).</div>
+</div>
+</div>
+
+<div class="self-reflect">
+<h3>📊 Self-Reflection</h3>
+<p style="margin-bottom:12px; color: var(--muted);">Rate your confidence (1=need help, 4=mastered):</p>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.1 Radians</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.2 Unit Circle</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.3 Sine &amp; Cosine Laws</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.4 Graphing Sinusoids</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.5–3.6 Modelling &amp; Identities</label></div>
+</div>
+
+<footer>MCT4M — Grade 12 College | Strand C: Trigonometric Functions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0, answered=0;
+function checkMC(qid, correct) {
+    const sel = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!sel) return;
+    const card = document.getElementById(qid);
+    if (card.classList.contains('correct')||card.classList.contains('wrong')) return;
+    const fb = document.getElementById(qid+'-feedback');
+    const sol = document.getElementById(qid+'-solution');
+    if (sel.value===correct) { score++; card.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ Correct!'; }
+    else { card.classList.add('wrong'); fb.className='feedback show wrong'; fb.textContent='❌ See solution.'; }
+    sol.classList.add('show');
+    document.getElementById('totalScore').textContent = score;
+}
+function checkNumeric(qid, correct) {
+    const v = parseFloat(document.getElementById(qid+'-input').value.trim());
+    if (isNaN(v)) return;
+    const card = document.getElementById(qid);
+    if (card.classList.contains('correct')||card.classList.contains('wrong')) return;
+    const fb = document.getElementById(qid+'-feedback');
+    const sol = document.getElementById(qid+'-solution');
+    if (Math.abs(v-correct)<0.1) { score++; card.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ Correct!'; }
+    else { card.classList.add('wrong'); fb.className='feedback show wrong'; fb.textContent=`❌ Answer: ${correct}`; }
+    sol.classList.add('show');
+    document.getElementById('totalScore').textContent = score;
+}
+</script>
+</body>
+</html>

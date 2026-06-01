@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Chapter 1: Exponential Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h1 { font-size: 26px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #ea580c; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #ea580c; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #ea580c; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #ea580c; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #ea580c; color: #fff; }
+.chnav-next:hover { background: #c2410c; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mct3m.html" style="color:#ea580c;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCT3M Mathematics for College Technology)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit1">
+<div class="unit-header" style="background:linear-gradient(135deg,#ea580cdd,#ea580c);">
+<h1>Chapter 1: Exponential Functions</h1>
+<p>Exponent laws, rational exponents, graphing \(y=ab^x\), solving exponential equations, growth and decay applications</p>
+<div class="unit-meta">
+<span>📚 Strand A: Exponential Functions</span>
+<span>⏱️ ~22h</span>
+<span>📹 6 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.1 &mdash; Laws of Exponents with Integer and Rational Exponents</div>
+<div class="topic-desc">Apply the laws of exponents to simplify algebraic expressions; interpret negative and zero exponents; convert between radical and rational exponent form.</div>
+<div class="summary-card">The exponent laws — <strong>product</strong> \( a^m \cdot a^n = a^{m+n} \), <strong>quotient</strong> \( a^m / a^n = a^{m-n} \), <strong>power</strong> \( (a^m)^n = a^{mn} \), <strong>zero</strong> \( a^0 = 1 \), <strong>negative</strong> \( a^{-n} = 1/a^n \), and <strong>rational</strong> \( a^{m/n} = \sqrt[n]{a^m} \) — let you simplify any expression with the same base. Example: \( 27^{2/3} = (\sqrt[3]{27})^2 = 3^2 = 9 \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>An <em>exponent</em> is a shorthand for repeated multiplication: \(a^n\) means \(a\) multiplied by itself \(n\) times, for any positive whole number \(n\). The base \(a\) is what's being multiplied; \(n\) is the exponent. The two-line rule that anchors everything else is the <strong>product law</strong>: when you multiply two powers of the same base, you add the exponents. \(a^3 \cdot a^4 = (aaa)(aaaa) = a^7 = a^{3+4}\). From this single observation, the rest of the exponent laws fall out by simple arithmetic.</p>
+
+<p>The <strong>quotient law</strong> is the mirror: subtraction matches division. \(a^7 / a^3 = a^{7-3} = a^4\). The <strong>power-of-a-power law</strong> appears when you raise a power to another power: \( (a^3)^4 = a^3 \cdot a^3 \cdot a^3 \cdot a^3 = a^{12} \), so you multiply the exponents. The <strong>power-of-a-product</strong> rule says \( (ab)^n = a^n b^n \), and the <strong>power-of-a-quotient</strong> rule says \( (a/b)^n = a^n / b^n \) (with \(b \ne 0\)).</p>
+
+<p>Two surprising rules extend exponents beyond positive integers. The <strong>zero exponent</strong>: from the quotient law, \(a^n/a^n = a^{n-n} = a^0\); but a number divided by itself is 1, so \(a^0 = 1\) (for \(a \ne 0\)). The <strong>negative exponent</strong>: \(a^{-n}\) must equal \(1/a^n\), so that \(a^n \cdot a^{-n} = a^0 = 1\) holds.</p>
+
+<p>Finally, <strong>rational exponents</strong> connect powers to radicals. Define \(a^{1/n}\) as the \(n\)-th root of \(a\), \(\sqrt[n]{a}\). Then \(a^{m/n} = (a^{1/n})^m = (\sqrt[n]{a})^m\), or equivalently \(\sqrt[n]{a^m}\). Why does this make sense? Because raising \(a^{1/n}\) to the \(n\)-th power gives \(a^{n/n} = a^1 = a\) — which is exactly the defining property of the \(n\)-th root.</p>
+
+<ul>
+<li><strong>Base</strong> — the number being multiplied repeatedly (in \(2^5\), the base is 2).</li>
+<li><strong>Exponent</strong> — the number that counts the multiplications.</li>
+<li><strong>Power</strong> — the whole expression \(a^n\), or the value it equals.</li>
+<li><strong>Product law</strong> — \(a^m \cdot a^n = a^{m+n}\).</li>
+<li><strong>Quotient law</strong> — \(a^m / a^n = a^{m-n}\).</li>
+<li><strong>Zero exponent</strong> — \(a^0 = 1\) for \(a \ne 0\).</li>
+<li><strong>Negative exponent</strong> — \(a^{-n} = 1/a^n\).</li>
+<li><strong>Rational exponent</strong> — \(a^{m/n} = \sqrt[n]{a^m}\).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Simplify \( \dfrac{(2x^3 y^2)^4 \cdot (3 x^{-2} y)^2}{6 x^5 y^7} \).</p>
+<p>Apply power-of-a-product to each numerator term: \((2x^3 y^2)^4 = 16 x^{12} y^8\) and \((3 x^{-2} y)^2 = 9 x^{-4} y^2\).</p>
+<p>Multiply numerator: \(16 \cdot 9 \cdot x^{12 - 4} \cdot y^{8+2} = 144 x^8 y^{10}\).</p>
+<p>Divide by denominator: \(\dfrac{144 x^8 y^{10}}{6 x^5 y^7} = 24 x^{8-5} y^{10-7} = 24 x^3 y^3\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Evaluate \(32^{3/5}\) without a calculator.</p>
+<p>Rewrite as a root: \(32^{3/5} = (\sqrt[5]{32})^3\). Since \(2^5 = 32\), \(\sqrt[5]{32} = 2\).</p>
+<p>So \(32^{3/5} = 2^3 = 8\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Simplify \( \dfrac{x^{1/2} \cdot x^{-3/4}}{x^{1/4}} \).</p>
+<p>Numerator: \(x^{1/2 + (-3/4)} = x^{2/4 - 3/4} = x^{-1/4}\).</p>
+<p>Divide by \(x^{1/4}\): \(x^{-1/4 - 1/4} = x^{-1/2} = \dfrac{1}{\sqrt{x}}\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>\(-2^4\) versus \((-2)^4\). The first means \(-(2^4) = -16\); the second is \((-2)(-2)(-2)(-2) = 16\). Parentheses change the answer.</li>
+<li>\(a^0 = 1\) only when \(a \ne 0\). The expression \(0^0\) is left undefined.</li>
+<li>Forgetting that a negative exponent does not make the base negative — it makes the power a reciprocal. \(3^{-2} = \tfrac{1}{9}\), not \(-9\).</li>
+<li>Adding exponents when multiplying different bases. \(2^3 \cdot 3^4 \ne 6^7\). The product law requires the same base.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "simplify algebraic expressions containing integer and rational exponents [e.g., \( (x^3)^{1/2} / x^{1/2}, (x^{1/2}y^{-1/4})^4 \)] using the laws of exponents." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct1-yt1')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Rules of Exponents — The Organic Chemistry Tutor</span>
+<span class="vid-duration">13:45</span>
+<span class="vid-toggle" id="toggle-mct1-yt1">▶</span>
+</div>
+<div class="video-player" id="player-mct1-yt1">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LkhPRz7Hocg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=LkhPRz7Hocg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.2 &mdash; Rational Exponents and Radicals</div>
+<div class="topic-desc">Convert between rational exponent and radical form; evaluate rational exponent expressions; simplify radical expressions using rational exponents.</div>
+<div class="summary-card">The bridge between exponents and radicals is \( a^{m/n} = \sqrt[n]{a^m} \). Read it both ways: \( 8^{2/3} \) is the cube root of \(8\) squared, which is \( 2^2 = 4 \); equivalently, the cube root of \(64\) is also \(4\). Rational exponents let you simplify radical expressions algebraically — turning awkward roots into clean multiplications of exponents.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>A <em>rational exponent</em> is an exponent that's a fraction. The key idea is that \(a^{1/n}\) is the \(n\)-th root of \(a\). Why? Because the rules of exponents say \( (a^{1/n})^n = a^{n/n} = a^1 = a \); the only number that, when raised to the \(n\)-th power, returns \(a\), is the \(n\)-th root of \(a\). So we define \(a^{1/n} = \sqrt[n]{a}\). This single definition unlocks all of radical algebra.</p>
+
+<p>Extending: \(a^{m/n}\) means "the \(n\)-th root of \(a\), then raised to the \(m\)-th power" — or, equivalently, "\(a\) raised to the \(m\)-th power, then the \(n\)-th root." Symbolically:</p>
+
+<p>\[ a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m \]</p>
+
+<p>Both orderings give the same answer (when both make sense). Often one ordering is computationally easier. To compute \(64^{5/3}\), take the cube root first (\(\sqrt[3]{64} = 4\)), then raise to the 5th power (\(4^5 = 1024\)) — small intermediate numbers. Going the other way (\(64^5\) first, then cube root) makes you work with huge numbers.</p>
+
+<p>Technology contexts use rational exponents constantly. The half-life formula \(N(t) = N_0 (1/2)^{t/h}\) has a rational exponent whenever \(t\) is not a whole multiple of the half-life \(h\). The metric ratio for sound intensity per dB step uses \(10^{0.1}\), itself a rational exponent. Decibels, frequencies in music tuning, and pH all hinge on the same algebra.</p>
+
+<ul>
+<li><strong>Rational exponent</strong> — an exponent of the form \(m/n\) (where \(n \ne 0\)).</li>
+<li><strong>Principal root</strong> — for even \(n\), \(\sqrt[n]{a}\) returns the non-negative root (e.g. \(\sqrt{9} = 3\), not \(-3\)).</li>
+<li><strong>Radicand</strong> — the number under the radical symbol.</li>
+<li><strong>Index</strong> — the small number above the radical sign (the \(n\) in \(\sqrt[n]{\ }\)); when omitted, it's understood to be 2.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Rewrite \(\sqrt[3]{x^4}\) using a rational exponent and simplify.</p>
+<p>\(\sqrt[3]{x^4} = x^{4/3}\).</p>
+<p>If you wish, separate as \(x^{3/3 + 1/3} = x \cdot x^{1/3} = x\sqrt[3]{x}\). Both forms are equivalent.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Evaluate \( \left(\dfrac{16}{81}\right)^{3/4} \).</p>
+<p>Apply rational exponent: take the 4th root, then cube.</p>
+<p>\(\sqrt[4]{16/81} = \dfrac{\sqrt[4]{16}}{\sqrt[4]{81}} = \dfrac{2}{3}\).</p>
+<p>Cube: \(\left(\dfrac{2}{3}\right)^3 = \dfrac{8}{27}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Express \( (\sqrt{x})^5 \cdot \sqrt[3]{x^4} \) as a single power of \(x\).</p>
+<p>\((\sqrt{x})^5 = x^{5/2}\); \(\sqrt[3]{x^4} = x^{4/3}\).</p>
+<p>Multiply: \(x^{5/2} \cdot x^{4/3} = x^{5/2 + 4/3} = x^{15/6 + 8/6} = x^{23/6}\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>\(\sqrt[n]{a + b} \ne \sqrt[n]{a} + \sqrt[n]{b}\) — roots do not distribute over addition.</li>
+<li>Even roots of negatives are not real (e.g. \(\sqrt{-4}\) is not a real number); odd roots are fine (\(\sqrt[3]{-8} = -2\)).</li>
+<li>\((\sqrt{a})^2 = a\) only when \(a \ge 0\). Watch out when \(a\) is an expression that could be negative.</li>
+<li>Confusing \(a^{1/2}\) (means \(\sqrt{a}\)) with \(a^{-1/2}\) (means \(1/\sqrt{a}\)).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.1 — "simplify algebraic expressions containing integer and rational exponents using the laws of exponents." Rational exponents are explicitly named in the MCT3M expectation. Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised).</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct1-yt2')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Fractional Exponents — Khan Academy</span>
+<span class="vid-duration">7:08</span>
+<span class="vid-toggle" id="toggle-mct1-yt2">▶</span>
+</div>
+<div class="video-player" id="player-mct1-yt2">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GipavLCnke0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=GipavLCnke0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.3 &mdash; Graphing Exponential Functions \(y=ab^x\)</div>
+<div class="topic-desc">Sketch graphs of \( y = b^x \) and \( y = ab^x \); identify domain, range, intercepts, asymptote, and growth or decay behaviour.</div>
+<div class="summary-card">For \( y = b^x \) with \( b > 0, b \ne 1 \): domain is all reals; range is \( (0, \infty) \); horizontal asymptote \( y = 0 \); y-intercept \(1\); no x-intercept. If \( b > 1 \) the function grows, if \( 0 < b < 1 \) it decays. The constant \(a\) in \(y = ab^x\) sets the y-intercept (since \(y(0) = a\)) and vertically stretches the graph.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>An <em>exponential function</em> has the form \(f(x) = ab^x\), where \(a\) and \(b\) are constants, \(b > 0\), and \(b \ne 1\). The variable is in the exponent — that's what makes the function "exponential" (as opposed to polynomial, where the variable is in the base). This single placement difference produces dramatically different behaviour: exponential functions can outgrow any polynomial, or shrink toward zero faster than any polynomial.</p>
+
+<p>Start with the simplest case: \(y = b^x\). Plot a few values. For \(b = 2\): \(y(0) = 1\), \(y(1) = 2\), \(y(2) = 4\), \(y(3) = 8\); but also \(y(-1) = 1/2\), \(y(-2) = 1/4\). The values double every unit step right and halve every unit step left. The graph rises steeply to the right and approaches but never touches the \(x\)-axis on the left — the \(x\)-axis is a <em>horizontal asymptote</em>.</p>
+
+<p>The base \(b\) sets the shape. When \(b > 1\), the function is <em>exponential growth</em>: it rises to the right. When \(0 < b < 1\) (e.g. \(b = 1/2\)), the function is <em>exponential decay</em>: it falls to the right (and rises to the left). The case \(b = 1\) is degenerate — it gives \(y = 1\), a constant; and \(b \le 0\) is excluded because \(b^x\) wouldn't be defined for all real \(x\) (think \(b = -2\), \(x = 1/2\): \(\sqrt{-2}\) isn't real).</p>
+
+<p>The coefficient \(a\) in \(y = ab^x\) sets the \(y\)-intercept: \(y(0) = a \cdot b^0 = a\). So \(a\) is the initial value (the value at \(x = 0\)). It also vertically stretches or compresses the graph. Negative \(a\) reflects the graph in the \(x\)-axis (giving negative values throughout). The horizontal asymptote is still \(y = 0\) (because \(b^x \to 0\) as \(x \to -\infty\) for growth, or \(x \to +\infty\) for decay).</p>
+
+<ul>
+<li><strong>Exponential function</strong> — \(f(x) = ab^x\) with \(a \ne 0\), \(b > 0\), \(b \ne 1\).</li>
+<li><strong>Base</strong> — the constant \(b\); determines growth (\(b>1\)) or decay (\(0<b<1\)).</li>
+<li><strong>Initial value</strong> — the value \(a = f(0)\); always the \(y\)-intercept.</li>
+<li><strong>Horizontal asymptote</strong> — \(y = 0\) for the basic form \(y = ab^x\); the graph approaches but never crosses.</li>
+<li><strong>Growth factor</strong> — for \(b > 1\), each unit increase in \(x\) multiplies \(y\) by \(b\).</li>
+<li><strong>Decay factor</strong> — for \(0 < b < 1\), each unit increase in \(x\) multiplies \(y\) by \(b < 1\), reducing it.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Sketch \(f(x) = 2 \cdot 3^x\) and state its key features.</p>
+<p>Initial value \(a = 2\). Base \(b = 3 > 1\), so growth.</p>
+<p>Key points: \(f(-2) = 2/9 \approx 0.22\); \(f(-1) = 2/3 \approx 0.67\); \(f(0) = 2\); \(f(1) = 6\); \(f(2) = 18\).</p>
+<p>Domain: \(x \in \mathbb{R}\). Range: \(y > 0\). \(y\)-intercept: \((0, 2)\). Horizontal asymptote: \(y = 0\) (as \(x \to -\infty\)). No \(x\)-intercept.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Sketch \(g(x) = 100(0.5)^x\); model a decay scenario.</p>
+<p>Initial value \(a = 100\). Base \(b = 0.5 < 1\), so decay (halving every unit).</p>
+<p>\(g(0) = 100\); \(g(1) = 50\); \(g(2) = 25\); \(g(3) = 12.5\); \(g(-1) = 200\).</p>
+<p>Domain: \(x \in \mathbb{R}\). Range: \(y > 0\). \(y\)-intercept: \((0, 100)\). Asymptote: \(y = 0\) as \(x \to \infty\).</p>
+<p>In technology context: 100 g of a radioactive isotope with a 1-day half-life. After 3 days, 12.5 g remain.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Compare \(y = 2^x\) and \(y = (1/2)^x\) algebraically.</p>
+<p>\((1/2)^x = 2^{-x}\). So \(y = (1/2)^x\) is the reflection of \(y = 2^x\) in the \(y\)-axis. Where one grows, the other decays — same shape, mirror image.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing \(y = b^x\) (exponential) with \(y = x^b\) (power). The first has the variable in the exponent; the second has the variable in the base.</li>
+<li>Saying \(2^{-x}\) is "negative." It is positive: \(2^{-x} = 1/2^x > 0\) for every real \(x\).</li>
+<li>Drawing the asymptote as if the graph crosses it. The graph approaches \(y = 0\) but never reaches it.</li>
+<li>Reading \(y = ab^x\) as \(y = (ab)^x\). The exponent applies only to \(b\); \(a\) is just a multiplier.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "determine, through investigation with technology, and describe the impact of changing the base and changing the sign of the exponent on the graph of an exponential function." Also A1.4 — pose and solve problems based on real-world applications modelled by exponential functions. Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct1-yt3')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Graphing Exponential Functions — The Organic Chemistry Tutor</span>
+<span class="vid-duration">14:18</span>
+<span class="vid-toggle" id="toggle-mct1-yt3">▶</span>
+</div>
+<div class="video-player" id="player-mct1-yt3">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/vlSEpdWf2hQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=vlSEpdWf2hQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.4 &mdash; Solving Exponential Equations Using Common Bases</div>
+<div class="topic-desc">Solve exponential equations by expressing both sides as powers of a common base; apply exponent laws to isolate the variable.</div>
+<div class="summary-card">Strategy: rewrite both sides of \( b^{f(x)} = b^{g(x)} \) so they have the same base, then set the exponents equal: \( f(x) = g(x) \). Example: \( 4^{x+1} = 32 \) becomes \( (2^2)^{x+1} = 2^5 \), so \( 2^{2x+2} = 2^5 \), giving \( 2x+2 = 5 \), \( x = 3/2 \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>An <em>exponential equation</em> is an equation in which the unknown appears in an exponent. The cleanest technique to solve one — when it works — is the <strong>common-base method</strong>. The principle is simple: if \(b^A = b^B\) and \(b > 0, b \ne 1\), then \(A = B\). The exponential function is one-to-one (each input has a unique output), so two outputs that are equal must come from equal inputs.</p>
+
+<p>To use the method, rewrite both sides of the equation as powers of the <em>same base</em>. Common useful bases: 2, 3, 5, and 10 (and their reciprocals). For example, 4, 8, 16, 32, 64 are all powers of 2; 9, 27, 81 are powers of 3; 25, 125, 625 are powers of 5. Once both sides share a base, equate the exponents and solve the resulting linear (or sometimes quadratic) equation.</p>
+
+<p>When does the method fail? When the two sides can't be written with the same base — for example, \(2^x = 7\). The bases 2 and 7 share no common power; in such cases you need logarithms (Topic 1.5 below). But many exam-style and applied questions are designed so the common-base method applies.</p>
+
+<p>A subtle case: fractional or negative bases. \(\tfrac{1}{4} = 2^{-2}\), \(\sqrt{2} = 2^{1/2}\), \(\tfrac{1}{\sqrt{8}} = 2^{-3/2}\). Practise rewriting these in pure exponent form. Also, watch for terms like \(8^x \cdot 4^{x-1}\): apply exponent laws to gather into a single power before equating.</p>
+
+<ul>
+<li><strong>Common-base method</strong> — rewrite both sides of an exponential equation as powers of the same base, then equate exponents.</li>
+<li><strong>One-to-one property</strong> — for \(b > 0, b \ne 1\): \(b^A = b^B \implies A = B\). This is what justifies equating exponents.</li>
+<li><strong>Common useful bases</strong> — 2, 3, 5, 10 generate most powers seen in exam questions.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Solve \(4^{x+1} = 32\).</p>
+<p>Rewrite both as powers of 2: \(4 = 2^2\), \(32 = 2^5\). Equation becomes \((2^2)^{x+1} = 2^5\), i.e. \(2^{2(x+1)} = 2^5\).</p>
+<p>Equate exponents: \(2(x+1) = 5\). Solve: \(2x + 2 = 5\), \(2x = 3\), \(x = \tfrac{3}{2}\).</p>
+<p>Check: \(4^{3/2 + 1} = 4^{5/2} = (4^{1/2})^5 = 2^5 = 32\). ✓</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Solve \(9^{2x-1} = \dfrac{1}{27}\).</p>
+<p>Rewrite as powers of 3: \(9 = 3^2\), \(\tfrac{1}{27} = 3^{-3}\). Equation becomes \((3^2)^{2x-1} = 3^{-3}\), i.e. \(3^{4x-2} = 3^{-3}\).</p>
+<p>Equate exponents: \(4x - 2 = -3\). Solve: \(4x = -1\), \(x = -\tfrac{1}{4}\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Solve \(2^{x+1} \cdot 4^{x-2} = 64\).</p>
+<p>Rewrite all in base 2: \(2^{x+1} \cdot (2^2)^{x-2} = 2^6\).</p>
+<p>Simplify: \(2^{x+1} \cdot 2^{2x-4} = 2^6 \Rightarrow 2^{3x-3} = 2^6\).</p>
+<p>Equate exponents: \(3x - 3 = 6 \Rightarrow 3x = 9 \Rightarrow x = 3\).</p>
+<p>Check: \(2^4 \cdot 4^1 = 16 \cdot 4 = 64\). ✓</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Equating exponents when the bases don't match. \(2^x = 4^x\) is <em>not</em> "\(x = x\)" — it's \(2^x = (2^2)^x = 2^{2x}\), giving \(x = 2x\) so \(x = 0\).</li>
+<li>Forgetting to apply the distributive rule when expanding the inside of an exponent: \((2^2)^{x+1} = 2^{2(x+1)} = 2^{2x+2}\), not \(2^{2x+1}\).</li>
+<li>Treating \(2^x + 2^y\) as \(2^{x+y}\). Sums of powers do not simplify — only products with the same base do.</li>
+<li>Negative answers in growth/decay contexts. The algebraic solution may be valid, but a negative time often makes no physical sense in a word problem.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "solve exponential equations in one variable by determining a common base [e.g., solve \(4^{x+1} = 32\) by expressing each side as a power of 2]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct1-yt4')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Solving Exponential Equations With Different Bases — The Organic Chemistry Tutor</span>
+<span class="vid-duration">16:30</span>
+<span class="vid-toggle" id="toggle-mct1-yt4">▶</span>
+</div>
+<div class="video-player" id="player-mct1-yt4">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/oVUJMVR1JpA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=oVUJMVR1JpA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.5 &mdash; Solving Exponential Equations Using Logarithms</div>
+<div class="topic-desc">Apply the common (base-10) logarithm to solve exponential equations when a common base is impractical; round answers to appropriate accuracy.</div>
+<div class="summary-card">When the common-base method fails (e.g. \( 5 \cdot 1.08^x = 25 \)), take \( \log \) of both sides and use the power rule \( \log(b^x) = x \log b \). For \( 1.08^x = 5 \): \( x \log 1.08 = \log 5 \), giving \( x = \log 5 / \log 1.08 \approx 20.9 \).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The common-base method only works when both sides of an exponential equation can be written with the same base. In real-world problems — interest at 1.08, half-life at 0.5 but a base time of 1 year, dB calculations — the numbers rarely cooperate. We need a more general method, and that method is <em>logarithms</em>.</p>
+
+<p>A <strong>logarithm</strong> is the inverse of an exponent. The statement \(\log_b x = y\) means "the power to which you must raise \(b\) to get \(x\) is \(y\)" — that is, \(b^y = x\). In MCT3M we use mainly the common (base-10) logarithm, written simply \(\log\), available on every scientific calculator.</p>
+
+<p>The crucial property for solving exponential equations is the <strong>power rule</strong> of logarithms:</p>
+
+<p>\[ \log(b^x) = x \log b \]</p>
+
+<p>This says the logarithm of a power is the exponent times the logarithm of the base. The exponent "comes down" out of the function. To solve any exponential equation \(b^x = c\): take \(\log\) of both sides, apply the power rule to get \(x \log b = \log c\), then divide to isolate \(x\):</p>
+
+<p>\[ x = \frac{\log c}{\log b} \]</p>
+
+<p>You can then evaluate the numerator and denominator separately on a calculator and divide. The change-of-base formula \(\log_b c = \tfrac{\log c}{\log b}\) is exactly this same calculation.</p>
+
+<ul>
+<li><strong>Logarithm</strong> — \(\log_b x\) is the exponent \(y\) such that \(b^y = x\). In MCT3M, \(\log x\) means \(\log_{10} x\).</li>
+<li><strong>Power rule</strong> — \(\log(b^x) = x \log b\).</li>
+<li><strong>Inverse property</strong> — \(\log(10^x) = x\) and \(10^{\log x} = x\) (for \(x > 0\)).</li>
+<li><strong>Change of base</strong> — \(\log_b c = \dfrac{\log c}{\log b}\); the calculator's \(\log\) button gives base 10.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Solve \(1.08^x = 2\). (Time to double an investment at 8% annual compound interest.)</p>
+<p>Take \(\log\) of both sides: \(\log(1.08^x) = \log 2\).</p>
+<p>Power rule: \(x \log 1.08 = \log 2\).</p>
+<p>Divide: \(x = \dfrac{\log 2}{\log 1.08} = \dfrac{0.30103}{0.033424} \approx 9.0065\).</p>
+<p>So it takes about 9 years to double — consistent with the rule-of-72 estimate (\(72/8 = 9\)).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A capacitor discharges per \(V(t) = 12 \cdot 0.9^t\) (volts, seconds). When will the voltage first drop below 4 V?</p>
+<p>Solve \(12 \cdot 0.9^t = 4\): \(0.9^t = \tfrac{1}{3}\).</p>
+<p>Take \(\log\): \(t \log 0.9 = \log(1/3)\).</p>
+<p>\(\log 0.9 \approx -0.04576\); \(\log(1/3) \approx -0.4771\).</p>
+<p>\(t = \dfrac{-0.4771}{-0.04576} \approx 10.43\) s.</p>
+<p>So after about 10.4 s, the voltage first reaches 4 V; after that it stays below.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Solve \(3^{2x+1} = 7\).</p>
+<p>Take \(\log\): \((2x+1) \log 3 = \log 7\).</p>
+<p>Divide: \(2x + 1 = \dfrac{\log 7}{\log 3} = \dfrac{0.8451}{0.4771} \approx 1.7712\).</p>
+<p>Solve: \(2x = 0.7712\), \(x \approx 0.386\).</p>
+<p>Check: \(3^{2(0.386)+1} = 3^{1.7712} \approx 7\). ✓</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>\(\log(a+b) \ne \log a + \log b\) — logarithms do not distribute over addition.</li>
+<li>\(\log(a/b) = \log a - \log b\) is correct; don't confuse with \((\log a)/(\log b)\), which is the change-of-base formula.</li>
+<li>Forgetting that \(\log 0\) and \(\log\) of a negative number are undefined — only positive arguments work.</li>
+<li>Rounding too early. Carry at least 4 decimal places for intermediate calculator values, then round to 1–3 sig figs at the end.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.3 — "solve simple exponential equations using logarithms in base 10 with a scientific calculator [e.g., solve \(1.05^x = 2\), giving \(x = \log 2 / \log 1.05\)]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct1-yt5')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Solving Exponential Equations Using Logarithms — The Organic Chemistry Tutor</span>
+<span class="vid-duration">11:50</span>
+<span class="vid-toggle" id="toggle-mct1-yt5">▶</span>
+</div>
+<div class="video-player" id="player-mct1-yt5">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Kv2iHde7Xgw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=Kv2iHde7Xgw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.6 &mdash; Exponential Growth, Decay, and Half-Life Applications</div>
+<div class="topic-desc">Set up and solve exponential models in technology contexts: population growth, radioactive decay, compound interest, and capacitor/RC circuits.</div>
+<div class="summary-card">Growth/decay form: \( A(t) = A_0 \, b^{t/T} \), where \(A_0\) is the initial amount, \(b\) is the multiplier per period \(T\). For doubling, \(b = 2\); for half-life, \(b = 1/2\). Compound interest: \(A = P(1 + i)^n\). Combining algebraic and graphical methods is essential.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Exponential models appear all over college-technology contexts. Voltage on a discharging capacitor falls exponentially. Bacteria populations double on a fixed schedule. Radioactive isotopes decay by half-life. Money in a compound-interest account grows by a fixed percentage each period. In every case, the same template applies:</p>
+
+<p>\[ A(t) = A_0 \cdot b^{t/T} \]</p>
+
+<p>Here \(A_0\) is the <em>initial amount</em> (at \(t = 0\)), \(T\) is the <em>characteristic time</em> (the time for one application of the growth or decay factor), and \(b\) is the <em>growth or decay factor</em> per period. For population that doubles every 4 hours, \(b = 2\) and \(T = 4\) h. For an isotope with half-life 30 years, \(b = 1/2\) and \(T = 30\) yr. For compound interest, the time-step form is \(A = P(1 + i)^n\), where \(i\) is the interest rate per compounding period and \(n\) is the number of periods.</p>
+
+<p>The workflow is consistent: <strong>(1)</strong> identify \(A_0\), \(b\), \(T\) from the wording; <strong>(2)</strong> write the model; <strong>(3)</strong> for a specific time, substitute and compute; <strong>(4)</strong> for "when does \(A\) equal something," solve the exponential equation using common bases or logarithms (Topic 1.4 or 1.5).</p>
+
+<p>A key pitfall in technology problems is unit consistency. If the half-life is given in days and the question asks about hours, convert before substituting. Similarly, in compound interest at "12% per year compounded monthly," the periodic rate is \(0.12/12 = 0.01\) per month, and \(n\) is the number of months — not years.</p>
+
+<ul>
+<li><strong>Exponential growth model</strong> — \(A(t) = A_0 b^{t/T}\) with \(b > 1\); rate increases with current value.</li>
+<li><strong>Exponential decay model</strong> — \(A(t) = A_0 b^{t/T}\) with \(0 < b < 1\); rate decreases with current value.</li>
+<li><strong>Half-life</strong> — the time \(T\) for an exponentially decaying quantity to drop to half its current value.</li>
+<li><strong>Doubling time</strong> — the time \(T\) for an exponentially growing quantity to double.</li>
+<li><strong>Compound interest</strong> — \(A = P(1 + i)^n\) where \(i\) is the periodic rate and \(n\) the number of compounding periods.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Bacteria population. A culture starts with 500 cells and doubles every 3 hours. Find the population after 12 hours. When will it reach 10 000?</p>
+<p>Model: \(P(t) = 500 \cdot 2^{t/3}\).</p>
+<p>After 12 hours: \(P(12) = 500 \cdot 2^{12/3} = 500 \cdot 2^4 = 500 \cdot 16 = 8000\) cells.</p>
+<p>Reach 10 000: \(500 \cdot 2^{t/3} = 10{,}000\), so \(2^{t/3} = 20\).</p>
+<p>Take \(\log\): \(\tfrac{t}{3} \log 2 = \log 20\), so \(\tfrac{t}{3} = \tfrac{\log 20}{\log 2} = \tfrac{1.3010}{0.30103} \approx 4.322\), giving \(t \approx 12.97\) h.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Radioactive isotope. Iodine-131 has a half-life of 8 days. A sample of 100 mg is left to decay; how much remains after 30 days?</p>
+<p>Model: \(M(t) = 100 \cdot (0.5)^{t/8}\) (mg).</p>
+<p>At \(t = 30\): \(M(30) = 100 \cdot 0.5^{30/8} = 100 \cdot 0.5^{3.75}\).</p>
+<p>\(0.5^{3.75} = 1/2^{3.75} \approx 1/13.45 \approx 0.0743\).</p>
+<p>So \(M(30) \approx 7.43\) mg remains.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Compound interest. \$2 500 is invested at 6% per year compounded quarterly. What is the value after 8 years?</p>
+<p>Periodic rate: \(i = 0.06/4 = 0.015\). Periods: \(n = 4 \cdot 8 = 32\).</p>
+<p>\(A = 2500 (1.015)^{32}\).</p>
+<p>\((1.015)^{32}\): compute as \(10^{32 \log 1.015} = 10^{32 \cdot 0.006466} = 10^{0.20691} \approx 1.6103\).</p>
+<p>\(A \approx 2500 \cdot 1.6103 \approx \$4{,}025.74\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Mixing the exponent and the time. The exponent in a half-life model is \(t/T\), not \(t \cdot T\). For a 4-hour half-life and \(t = 8\) h, the exponent is \(8/4 = 2\), so two halvings occur — not 8 × 4 = 32.</li>
+<li>Forgetting the unit for the periodic rate in compound interest. "8% per year compounded monthly" means \(i = 0.08/12 \approx 0.00667\), not 0.08.</li>
+<li>Confusing nominal annual rate with effective annual rate. At 8% nominal compounded monthly, the effective annual rate is \((1.00667)^{12} - 1 \approx 8.30\%\).</li>
+<li>Negative answers in time. \(t \ge 0\) in physical decay models; reject negative times.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.4 — "pose problems based on applications involving an exponential function (e.g., the spread of an infectious disease, the cooling of a hot object, the growth of an investment), and solve these and other such problems by using a given graph or a graph generated with technology from a table of values or its equation." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct1-yt6')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Exponential Growth and Decay Word Problems — The Organic Chemistry Tutor</span>
+<span class="vid-duration">14:55</span>
+<span class="vid-toggle" id="toggle-mct1-yt6">▶</span>
+</div>
+<div class="video-player" id="player-mct1-yt6">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/e5nwJKUc3bA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=e5nwJKUc3bA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 1 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mct3m_ch1_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mct3m_ch1_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mct3m_ch1_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../mct3m.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div></div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCT3M — Mathematics for College Technology, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

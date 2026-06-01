@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Light &amp; Geometric Optics — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/snc2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Light &amp; Geometric Optics — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand E</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check on the electromagnetic spectrum, reflection, refraction, mirrors, and lenses.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.1 — Nature of Light &amp; EM Spectrum</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The speed of light in vacuum is approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> \(3.00 \times 10^5\) m/s</label></li>
+<li><label><input type="radio" name="q1" value="b"> \(3.00 \times 10^8\) m/s</label></li>
+<li><label><input type="radio" name="q1" value="c"> \(3.00 \times 10^{10}\) m/s</label></li>
+<li><label><input type="radio" name="q1" value="d"> \(3.00 \times 10^{12}\) m/s</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> \(c = 3.00 \times 10^8\) m/s in vacuum. Light slows in other media: ~\(2.25 \times 10^8\) m/s in water; ~\(2.00 \times 10^8\) m/s in glass.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Calculate the frequency of yellow light with wavelength 580 nm.</div>
+<input type="text" id="q2-in" placeholder="Enter Hz (scientific notation, e.g. 5.17e14)">
+<button class="btn" onclick="cN('q2',5.17e14)">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> \(f = c/\lambda = (3.00 \times 10^8) / (580 \times 10^{-9})\) = \(5.17 \times 10^{14}\) Hz. Yellow light oscillates 517 trillion times per second.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Which wavelength is shortest?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Radio waves</label></li>
+<li><label><input type="radio" name="q3" value="b"> Infrared</label></li>
+<li><label><input type="radio" name="q3" value="c"> Visible light</label></li>
+<li><label><input type="radio" name="q3" value="d"> Gamma rays</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','d')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Gamma rays have the shortest wavelength (and highest frequency, highest energy) of the EM spectrum, less than \(10^{-12}\) m. Radio waves (a) have the longest.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.2 — Reflection &amp; Mirrors</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">An incident ray strikes a plane mirror at 35° from the normal. The angle of reflection is:</div>
+<input type="text" id="q4-in" placeholder="Enter degrees">
+<button class="btn" onclick="cN('q4',35)">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Law of reflection: \(\theta_i = \theta_r = \textbf{35°}\). Both angles are measured from the normal (not from the surface!).</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">An image in a plane mirror is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Real, inverted, same size</label></li>
+<li><label><input type="radio" name="q5" value="b"> Virtual, upright, same size</label></li>
+<li><label><input type="radio" name="q5" value="c"> Real, upright, magnified</label></li>
+<li><label><input type="radio" name="q5" value="d"> Virtual, inverted, smaller</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Plane mirrors always give virtual (light doesn't actually converge behind the mirror), upright (top stays top), same-size images. Lateral inversion (apparent left-right swap) does not change "upright".</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">An object 20 cm from a concave mirror with focal length 8 cm. Find image distance.</div>
+<input type="text" id="q6-in" placeholder="Enter cm">
+<button class="btn" onclick="cN('q6',13.33)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> \(1/f = 1/d_o + 1/d_i\) → \(1/8 = 1/20 + 1/d_i\) → \(1/d_i = 1/8 - 1/20 = 5/40 - 2/40 = 3/40\) → \(d_i = 40/3 \approx \textbf{13.3 cm}\) (real, in front).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.3 — Refraction &amp; Lenses</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A light ray travels from air (\(n=1.00\)) into water (\(n=1.33\)). The ray:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Bends toward the normal (slows down)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Bends away from the normal (speeds up)</label></li>
+<li><label><input type="radio" name="q7" value="c"> Continues straight</label></li>
+<li><label><input type="radio" name="q7" value="d"> Reflects off completely</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Entering a denser medium (higher \(n\)), light slows and bends <strong>toward the normal</strong>. Going the other way (water → air), it bends away from the normal.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Snell's law: \(n_1 \sin\theta_1 = n_2 \sin\theta_2\). Light in air strikes glass (\(n=1.50\)) at \(\theta_1 = 30°\). Find \(\theta_2\) in glass.</div>
+<input type="text" id="q8-in" placeholder="Enter degrees">
+<button class="btn" onclick="cN('q8',19.47)">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> \(1.00 \sin 30° = 1.50 \sin\theta_2\) → \(\sin\theta_2 = 0.500/1.50 = 0.333\) → \(\theta_2 = \arcsin(0.333) = \textbf{19.5°}\). Ray bent toward the normal in the denser glass.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A converging lens has focal length 10 cm. An object 30 cm away produces an image at:</div>
+<input type="text" id="q9-in" placeholder="Enter cm">
+<button class="btn" onclick="cN('q9',15)">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> \(1/f = 1/d_o + 1/d_i\) → \(1/10 = 1/30 + 1/d_i\) → \(1/d_i = 3/30 - 1/30 = 2/30 = 1/15\) → \(d_i = \textbf{15 cm}\) (real, inverted, smaller).</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">A magnifying glass uses what kind of lens, and how must the object be positioned?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Diverging lens, object beyond focal point</label></li>
+<li><label><input type="radio" name="q10" value="b"> Converging lens, object inside focal length (closer than f)</label></li>
+<li><label><input type="radio" name="q10" value="c"> Converging lens, object exactly at focal point</label></li>
+<li><label><input type="radio" name="q10" value="d"> Diverging lens, object at any distance</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> A magnifier uses a converging (convex) lens with the object placed closer than the focal length. This produces a virtual, upright, magnified image.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Myopia (nearsightedness) is corrected with:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A converging lens of positive focal length</label></li>
+<li><label><input type="radio" name="q11" value="b"> A diverging lens of negative focal length</label></li>
+<li><label><input type="radio" name="q11" value="c"> A pair of cylindrical lenses</label></li>
+<li><label><input type="radio" name="q11" value="d"> No lens — just stronger reading lights</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> In myopia, the image of distant objects forms in front of the retina. A diverging lens spreads incoming parallel rays before they enter the eye, shifting the image back onto the retina. The optometrist's prescription has negative power (e.g., −2.0 D).</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">A telescope uses an objective with focal length 1.0 m and an eyepiece with focal length 25 mm. Calculate magnification.</div>
+<input type="text" id="q12-in" placeholder="Enter number (no units)">
+<button class="btn" onclick="cN('q12',40)">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Magnification = \(f_{obj}/f_{eye}\) = 1000 mm / 25 mm = <strong>40×</strong> (or 1.0 m / 0.025 m = 40). Higher magnification requires shorter eyepiece focal length.</div></div>
+
+</div>
+
+<footer>SNC2D — Science (Academic), Grade 10 | Strand E: Light &amp; Geometric Optics | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;const tol=Math.max(Math.abs(c)*0.05,0.5);if(Math.abs(v-c)<tol){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

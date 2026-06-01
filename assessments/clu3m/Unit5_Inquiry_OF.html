@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5: Legal Inquiry — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #d97706; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #fef3c7; color: #92400e; }
+.section-hdr.t { background: #dbeafe; color: #1e40af; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#d97706;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/clu3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 5: Legal Inquiry &amp; Citizenship — Unit Test</h1><div class="sub">Assessment OF Learning · Strand A</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks</div>
+<div class="chart">
+<div class="chart-item" style="background:#fef3c7;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">List and briefly define the four steps of the IRAC framework.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Issue:</strong> the legal question, phrased precisely. <strong>Rule:</strong> the controlling legal principle with its source (statute section, leading case). <strong>Application:</strong> apply the rule's elements to the specific facts; weigh competing arguments. <strong>Conclusion:</strong> the answer to the issue that follows from the application.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[3]</span>
+<div class="qtxt">List the standard parts of a Canadian case brief in order.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Citation; (2) parties &amp; procedural history; (3) material facts; (4) issue(s); (5) holding / judgment; (6) ratio decidendi; (7) obiter dicta; (8) reasoning; (9) significance / commentary. Marks: 1 per group with full list earning 3.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">State Driedger's "modern principle" of statutory interpretation and identify its three components.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>"The words of an Act are to be read in their entire context and in their grammatical and ordinary sense harmoniously with the scheme of the Act, the object of the Act, and the intention of Parliament" — quoted in <em>Rizzo &amp; Rizzo Shoes</em> [1998]. Three components: (1) <strong>text</strong> — ordinary meaning of words; (2) <strong>context</strong> — relationship to surrounding sections, definitions, scheme; (3) <strong>purpose</strong> — what Parliament was trying to achieve. All three read together.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">Define <em>ratio decidendi</em> and <em>obiter dicta</em> and identify which is binding on lower courts.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Ratio decidendi</strong> = the binding legal principle of a case (the rule the court actually applied). <strong>Obiter dicta</strong> = remarks made in passing; persuasive only. Only the ratio binds lower courts via stare decisis. Distinguishing the two is one of the most useful and difficult skills in legal analysis.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Match each canon of statutory interpretation with its Latin meaning: (a) <em>ejusdem generis</em>; (b) <em>noscitur a sociis</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) <em>ejusdem generis</em> = "of the same kind" — a general word following a list is read in light of the class of the listed examples ("cars, motorcycles, and other vehicles" — likely means motorised conveyances). (b) <em>noscitur a sociis</em> = "known by its associates" — words take on meaning from surrounding words.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[6]</span>
+<div class="passage">Constable Cho stops Marcus walking in a high-crime neighbourhood at 11 pm. There is no specific tip or suspicious behaviour. The officer pats Marcus down and finds a bag of cannabis.</div>
+<div class="qtxt">Apply IRAC to this scenario. Identify the issue(s), the rule (with sections and a leading case), application, and conclusion.</div>
+<textarea style="min-height:200px;" placeholder="Your IRAC analysis..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Issue:</strong> Did the detention and pat-down of Marcus violate sections 8 and 9 of the Charter? <strong>Rule:</strong> Section 9 prohibits arbitrary detention; <em>R v Mann</em> [2004] 3 SCR 59 requires reasonable suspicion of connection to a particular crime under investigation. Section 8 prohibits unreasonable search; <em>Mann</em> further requires reasonable safety concerns to justify a pat-down during investigative detention. <em>R v Le</em> [2019] confirms that mere presence in a high-crime area is insufficient. <strong>Application:</strong> Constable Cho lacks specific suspicion (no tip, no observed behaviour); detention is arbitrary; pat-down has no safety basis (no observation of weapon or threat). Both ss. 9 and 8 breached. <strong>Conclusion:</strong> Charter breaches established; cannabis likely excluded under s. 24(2) <em>Grant</em> framework (seriousness of breach high; impact significant; offence minor). Marks: 1 issue, 2 rule (sections + Mann), 2 application, 1 conclusion.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="passage">A municipal regulation reads: "It is an offence to bring a 'pet' onto public transit, except for a service animal." Three people are charged: (a) someone with a small dog in a carrier; (b) someone carrying a snake; (c) someone with a goldfish in a sealed bag of water.</div>
+<div class="qtxt">Apply Driedger's modern principle of statutory interpretation. For each of (a), (b), and (c), is the person guilty? Why?</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Text: "pet" — ordinarily means a tame animal kept for companionship. Dictionaries support a broad reading. Context: the regulation has an exception for "service animal," suggesting "pet" is meant in a broad sense covering all non-working animals on transit. Purpose: likely safety, hygiene, comfort of other passengers. Application: (a) small dog in carrier — clearly a pet; the carrier mitigates safety but does not change the classification; likely guilty (no service-animal exception applies). (b) snake — falls within "pet" (a kept animal for companionship); may be guilty depending on transit's specific safety rules. (c) goldfish in sealed bag — arguably a "pet" by text but raises no safety/hygiene concern (purpose); a court might read down to exclude. The case shows how text, context, and purpose interact. Marks: 1 framework set up, 1 each application (a)(b)(c).</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[3]</span>
+<div class="qtxt">A trial-court judge in 2024 is bound by a 2018 Court of Appeal decision on a Charter-section 9 issue. Apply stare decisis. Could the trial judge depart from the 2018 decision? Under what circumstances?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Stare decisis requires the trial court to follow the Court of Appeal on the same point of law. The trial judge can: (1) distinguish — show that the present case differs materially in fact from the 2018 case; (2) note that the Supreme Court of Canada (which sits above the Court of Appeal) has subsequently overruled or modified the 2018 reasoning, in which case the SCC ruling controls; (3) follow under protest while noting disagreement (sometimes done to invite appellate reconsideration). The trial judge cannot simply ignore or reject the 2018 ruling on the same point. Marks: 1 binding statement, 1 distinguishing, 1 SCC overruling or subsequent change.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[8]</span>
+<div class="qtxt">Write a complete case brief (300–500 words) of <em>R v Oakes</em> [1986] 1 SCR 103. Include all standard sections: citation, facts, issue, holding, ratio, significance.</div>
+<textarea style="min-height:250px;" placeholder="Your case brief..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Citation:</strong> <em>R v Oakes</em>, [1986] 1 SCR 103. <strong>Facts:</strong> David Oakes was charged under s. 4 of the Narcotic Control Act with possession of 8 vials of hash oil. Section 8 of the NCA reverse-onus: once Crown proves possession, accused must prove not for the purpose of trafficking. <strong>Issue:</strong> Is the reverse-onus provision a violation of s. 11(d) presumption of innocence; if so, is it justified under s. 1? <strong>Holding:</strong> Yes, s. 8 NCA violates s. 11(d); not justified under s. 1; struck down. <strong>Ratio:</strong> Section 1 limits are justified only where (1) prescribed by law, (2) pursue a pressing and substantial objective, (3) means rationally connected to objective, (4) minimal impairment, (5) salutary effects outweigh deleterious. Reverse-onus provisions presumptively violate s. 11(d) and must clear full Oakes analysis. <strong>Significance:</strong> the foundational s. 1 case; the test has been applied in nearly every Charter case since 1986; influenced proportionality doctrine in other common-law countries. Marks: 1 citation, 1 facts, 1 issue, 1 holding, 3 ratio (Oakes steps), 1 significance.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Write the opening 4–5 sentences of an oral moot submission for the Crown in an appeal where the lower court excluded evidence under s. 24(2) Charter following a search-warrant breach. Include a roadmap of two arguments.</div>
+<textarea placeholder="Your opening..."></textarea>
+<details><summary>Marking Rubric</summary><p>Look for: (1) appellate register — "My Lords," "in my respectful submission"; (2) decline to recapitulate facts the bench has read; (3) statement of the precise legal issue (exclusion of evidence; standard of review); (4) explicit roadmap ("I will address two arguments today: first … second …"); (5) citation of leading authority (<em>Grant</em>, <em>Vu</em>, <em>Hunter v Southam</em>). Marks: 1 register, 1 roadmap, 1 issue, 1 authority.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[6]</span>
+<div class="passage">Yusra, a recent immigrant, works as a personal-support worker earning $34,000. She is wrongfully dismissed without notice or pay. She speaks limited English.</div>
+<div class="qtxt"><strong>Apply</strong> access-to-justice options. List at least four pathways or institutions she could use, with a brief description of how each would help.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) <strong>Ontario Ministry of Labour — Employment Standards complaint</strong> for statutory notice and severance under the ESA (no-cost; 2-year limitation). (2) <strong>Community legal clinic</strong> — many specialise in employment matters for low-income clients; clinics often handle the case at no cost or refer to clinic with employment expertise. (3) <strong>Legal Aid Ontario</strong> — limited eligibility for employment matters but some certificates issued. (4) <strong>Small Claims Court</strong> (up to $35,000) — no lawyer required, simplified procedure; can hire paralegal for $1,000–$3,000. (5) <strong>Pro Bono Ontario</strong> — volunteer-lawyer advice and sometimes representation. (6) <strong>Interpretation services</strong> — most clinics and courts arrange interpretation. Marks: 4 pathways × 1.5 each = 6.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[6]</span>
+<div class="qtxt"><strong>STSE / Real-World Application:</strong> Choose ONE current Canadian legal issue (e.g., bail reform, Indigenous-rights litigation, judicial appointments, court delays, AI in legal services, access to justice). In 6–8 sentences, identify the issue, frame two specific legal questions you would investigate using the legal-studies inquiry process, and identify one primary source and one secondary source you would consult.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Marking Rubric</summary><p>Strong responses: (1) chosen issue is specific and current; (2) two legal questions are framed precisely (not "is this fair?" but e.g., "Does the 2019 bail-reform legislation comply with section 11(e) of the Charter?"); (3) one primary source identified by name (a statute, regulation, or case); (4) one secondary source identified (a textbook, journal article, government report, or reputable news investigation); (5) the concepts of legal thinking (significance/continuity/cause/perspective) implicitly inform the framing. Marks: 1 issue identification, 2 legal questions, 1 primary source, 1 secondary source, 1 communication.</p></details></div>
+
+<footer>CLU3M — Understanding Canadian Law, Grade 11 | Strand A: Legal Inquiry and Citizenship Skills | Assessment OF Learning — Graded</footer>
+</div></body></html>

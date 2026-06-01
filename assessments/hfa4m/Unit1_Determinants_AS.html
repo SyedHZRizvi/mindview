@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Determinants of Nutritional Health — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/hfa4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Determinants of Nutritional Health — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of nutrient classes, digestion, Canadian dietary guidelines, and energy balance. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1 — Determinants of Food Choice</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which is the BEST example of an environmental determinant of food choice?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> A person's lactose intolerance</label></li>
+<li><label><input type="radio" name="q1" value="b"> Living in a neighbourhood with 12 fast-food outlets but no grocery store within 1 km</label></li>
+<li><label><input type="radio" name="q1" value="c"> Choosing food based on family tradition</label></li>
+<li><label><input type="radio" name="q1" value="d"> Eating less when stressed</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> (b) is the food environment — physical proximity of unhealthy vs healthy retail. (a) biological; (c) cultural; (d) psychological. The "food swamp" pattern (high access to unhealthy options) is a well-documented environmental determinant.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">PROOF (University of Toronto) reported approximately what percentage of Canadian households experienced food insecurity in 2022?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> 4%</label></li>
+<li><label><input type="radio" name="q2" value="b"> 9%</label></li>
+<li><label><input type="radio" name="q2" value="c"> 18%</label></li>
+<li><label><input type="radio" name="q2" value="d"> 35%</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> About 18.4% of Canadian households were food-insecure in 2022 — the highest rate since national tracking began. PROOF distinguishes marginal, moderate, and severe insecurity.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Macronutrients</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">A nutrition label lists 30 g carbohydrate, 12 g protein, 8 g fat. Calculate the total kilocalories.</div>
+<input type="text" id="q3-in" placeholder="Enter kcal">
+<button class="btn" onclick="cN('q3',240)">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> CHO: 30×4 = 120 kcal. Protein: 12×4 = 48 kcal. Fat: 8×9 = 72 kcal. Total = 120 + 48 + 72 = <strong>240 kcal</strong>.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Which fat is most consistently associated with raising LDL ("bad") cholesterol?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Monounsaturated fat (olive oil)</label></li>
+<li><label><input type="radio" name="q4" value="b"> Polyunsaturated omega-3 (salmon, flax)</label></li>
+<li><label><input type="radio" name="q4" value="c"> Saturated and trans fats</label></li>
+<li><label><input type="radio" name="q4" value="d"> Dietary cholesterol from eggs</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Saturated fats (animal fats, palm/coconut oil) and trans fats (industrially partially hydrogenated, now banned in Canada) raise LDL. Mono- and poly-unsaturated fats lower LDL. Dietary cholesterol has a smaller effect than saturated fat on most healthy adults.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A complete protein supplies all nine essential amino acids in adequate amounts. Which combination is best described as "complementary proteins"?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Rice + beans</label></li>
+<li><label><input type="radio" name="q5" value="b"> Salmon + olive oil</label></li>
+<li><label><input type="radio" name="q5" value="c"> Spinach + iron supplement</label></li>
+<li><label><input type="radio" name="q5" value="d"> Bread + butter</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','a')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Grains (rice) are limited in lysine but rich in methionine; legumes (beans) are limited in methionine but rich in lysine. Combined, they supply all nine essential amino acids — a classic complementary protein pair.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Micronutrients</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Which vitamin is fat-soluble and produced in skin from cholesterol when exposed to UVB?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Vitamin B12</label></li>
+<li><label><input type="radio" name="q6" value="b"> Vitamin C</label></li>
+<li><label><input type="radio" name="q6" value="c"> Vitamin D</label></li>
+<li><label><input type="radio" name="q6" value="d"> Folate</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','c')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Vitamin D is the fat-soluble vitamin synthesised from 7-dehydrocholesterol in skin under UVB exposure. In Canada (north of 40° N), winter synthesis is essentially zero — supplementation is widely recommended.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A strict vegan with no supplement use is MOST at risk for deficiency of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Vitamin C</label></li>
+<li><label><input type="radio" name="q7" value="b"> Vitamin B12</label></li>
+<li><label><input type="radio" name="q7" value="c"> Folate</label></li>
+<li><label><input type="radio" name="q7" value="d"> Fibre</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Vitamin B12 is virtually absent from plant foods unless they are fortified. Untreated deficiency causes megaloblastic anaemia and neurological symptoms. Vegans must consume fortified foods or supplements.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Digestion &amp; Energy Balance</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Most of the absorption of nutrients takes place in the:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Stomach</label></li>
+<li><label><input type="radio" name="q8" value="b"> Small intestine (jejunum + ileum)</label></li>
+<li><label><input type="radio" name="q8" value="c"> Large intestine</label></li>
+<li><label><input type="radio" name="q8" value="d"> Liver</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Villi and microvilli in the small intestine give roughly 250 m² of absorptive surface — most amino acids, monosaccharides, fatty acids, vitamins, and minerals are absorbed here.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Estimate BMR using Mifflin–St Jeor (female): 60 kg, 165 cm, 16 years old. (BMR = 10w + 6.25h − 5a − 161)</div>
+<input type="text" id="q9-in" placeholder="Enter BMR in kcal/day">
+<button class="btn" onclick="cN('q9',1390)">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> BMR = 10(60) + 6.25(165) − 5(16) − 161 = 600 + 1031.25 − 80 − 161 = <strong>1390.25 kcal/day</strong>. Multiply by an activity factor (1.2–1.9) to estimate TDEE.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Canada's Food Guide (2019) recommends what proportion of the plate be vegetables and fruits?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> One-quarter</label></li>
+<li><label><input type="radio" name="q10" value="b"> One-third</label></li>
+<li><label><input type="radio" name="q10" value="c"> One-half</label></li>
+<li><label><input type="radio" name="q10" value="d"> Two-thirds</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','c')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Health Canada (2019) replaced the four-food-group rainbow with a plate: ½ vegetables and fruits, ¼ whole grains, ¼ protein foods (including plant proteins), with water as the recommended drink.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Which Dietary Reference Intake (DRI) represents the highest daily intake unlikely to pose a risk of adverse effects?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> RDA</label></li>
+<li><label><input type="radio" name="q11" value="b"> AI</label></li>
+<li><label><input type="radio" name="q11" value="c"> EAR</label></li>
+<li><label><input type="radio" name="q11" value="d"> UL</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','d')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> UL = Tolerable Upper Intake Level. RDA meets needs of 97–98%; AI is used when an RDA cannot be set; EAR meets the needs of 50%.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Approximate Acceptable Macronutrient Distribution Range (AMDR) for fat (% of daily kilocalories) for adults?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> 5–15%</label></li>
+<li><label><input type="radio" name="q12" value="b"> 20–35%</label></li>
+<li><label><input type="radio" name="q12" value="c"> 45–55%</label></li>
+<li><label><input type="radio" name="q12" value="d"> 60–70%</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> AMDR for adults: carbohydrate 45–65%, fat 20–35%, protein 10–35%. Below 20% fat risks essential-fatty-acid deficiency; above 35% may displace fibre-rich carbohydrate.</div></div>
+
+</div>
+
+<footer>HFA4M — Nutrition and Health Issues, Grade 12 | Strand B: Determinants of Nutritional Health | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<5){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

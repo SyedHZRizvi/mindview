@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC2D — Science (Academic) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #1e40af; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../snc2d.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SNC2D Science Academic)</a></div>
+    <div class="strand-tag">Science — Grade 10 Academic</div>
+    <h1>⚗️ SNC2D: Unit 2: Chemical Reactions</h1>
+    <p>Atomic structure, ionic and covalent bonding, nomenclature, balancing equations, reaction types, acids and bases</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+            <h2>Unit 2: Chemical Reactions</h2>
+            <p>From atoms to balanced chemical equations and acid-base chemistry</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Chemical Reactions</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Atomic Structure -->
+        <div class="subsection-label">⚛️ Atomic Theory &amp; Bohr–Rutherford Diagrams</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The modern picture of the atom is the product of three centuries of model-building. John Dalton (1803) proposed atoms as indivisible "billiard balls". J. J. Thomson (1897) discovered the electron and proposed the "plum-pudding" model: a positive sphere with electrons embedded in it. Ernest Rutherford (1911) directed alpha particles at thin gold foil and observed a few bouncing back, leading him to propose a tiny dense positive <em>nucleus</em> with electrons orbiting at a distance. Niels Bohr (1913) refined this by placing electrons in <em>fixed energy levels</em> (shells) so that the atom could only emit or absorb specific quanta of energy — explaining the line spectra of hydrogen.</p>
+            <p>Every atom contains three subatomic particles: <em>protons</em> (positive, in the nucleus, mass ≈ 1 amu), <em>neutrons</em> (neutral, in the nucleus, mass ≈ 1 amu), and <em>electrons</em> (negative, in shells, mass ≈ 1/1836 amu — negligible for our purposes). The <em>atomic number</em> Z equals the number of protons and uniquely identifies the element; the <em>mass number</em> A equals protons + neutrons. Isotopes are atoms with the same Z but different numbers of neutrons (e.g., \(^{12}C\) and \(^{14}C\) both have 6 protons but 6 vs 8 neutrons). A neutral atom has equal numbers of protons and electrons.</p>
+            <p>For the first 20 elements, electrons fill shells from the inside out: the first shell holds up to 2 electrons, the second and third up to 8 each, the fourth up to 18. The outermost shell is the <em>valence shell</em>; its electrons are what react. A <em>Bohr–Rutherford diagram</em> shows the nucleus labelled with protons and neutrons surrounded by concentric circles representing shells, with dots representing electrons. The Periodic Table is organised so that elements in the same group (column) have the same number of valence electrons and therefore similar chemistry — the noble gases (Group 18) have full valence shells and are essentially unreactive, while the alkali metals (Group 1) have one valence electron and are extremely reactive.</p>
+            <ul>
+              <li><strong>Proton / neutron / electron</strong> — positive / neutral / negative subatomic particles.</li>
+              <li><strong>Atomic number (Z)</strong> — number of protons; defines the element.</li>
+              <li><strong>Mass number (A)</strong> — protons + neutrons.</li>
+              <li><strong>Isotope</strong> — atom of the same element with a different number of neutrons.</li>
+              <li><strong>Valence shell / electrons</strong> — outermost shell and the electrons it holds.</li>
+              <li><strong>Octet rule</strong> — atoms tend to gain, lose, or share electrons to obtain 8 valence electrons.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Drawing a Bohr–Rutherford diagram</p>
+              <p>Draw the Bohr–Rutherford diagram for chlorine (Cl), which has Z = 17 and A = 35. State the number of valence electrons.</p>
+              <p>Number of protons = 17; neutrons = A − Z = 35 − 17 = 18; electrons (neutral atom) = 17. Fill shells from inside out: shell 1 = 2; shell 2 = 8; shell 3 = 17 − 2 − 8 = 7. Diagram: a nucleus labelled "17p, 18n" surrounded by three rings carrying 2, 8, 7 dots respectively. <strong>Valence electrons = 7</strong>, which is why Cl reacts strongly to gain one electron and complete an octet, forming \(Cl^-\) (chloride ion).</p>
+            </div>
+            <ul>
+              <li>Forgetting that the atomic number always equals the number of protons (not electrons unless the atom is neutral).</li>
+              <li>Drawing all electrons in one shell — fill shell 1 (max 2) before shell 2 (max 8).</li>
+              <li>Confusing mass number (A, an integer) with atomic mass (an average over isotopes, e.g., chlorine 35.45).</li>
+              <li>Saying isotopes are different elements — they are the same element with different neutron counts.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.1 — "describe the historical development of atomic theory and use the Bohr–Rutherford model to explain the structure of atoms of the first 20 elements."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Atomic Model — TED-Ed</span>
+                <span class="vid-duration">5:13</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/thnDxFdkzZs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=thnDxFdkzZs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Bohr Model of the Atom Explained — Tyler DeWitt</span>
+                <span class="vid-duration">8:11</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/au2HCVn9IJI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=au2HCVn9IJI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Ionic Bonding -->
+        <div class="subsection-label">🧂 Ionic Bonding &amp; Naming</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Atoms form chemical bonds to reach a stable octet of valence electrons. <em>Ionic bonds</em> form between metals (Groups 1, 2, 13 + transition metals) and non-metals (Groups 15–17): the metal <em>loses</em> one or more electrons to become a positive ion (a <em>cation</em>); the non-metal <em>gains</em> them to become a negative ion (an <em>anion</em>). The opposite charges attract electrostatically, locking the ions into a three-dimensional <em>crystal lattice</em>. This is why solid table salt (NaCl) is a hard, brittle crystal: each \(Na^+\) is surrounded by six \(Cl^-\) and vice versa.</p>
+            <p>To predict ion charges for representative-group elements, use the group number. Group 1: +1 (lose 1 electron); Group 2: +2; Group 13: +3; Group 15: −3; Group 16: −2; Group 17: −1. Group 18 atoms are stable as neutral atoms and do not form ions. Many transition metals (Groups 3–12) have <em>multiple</em> possible charges — iron is Fe²⁺ (iron(II)) or Fe³⁺ (iron(III)); copper is Cu⁺ or Cu²⁺; the Roman numeral in the name tells you which charge.</p>
+            <p>To write the chemical formula of a binary ionic compound, balance positive and negative charges by crisscrossing — write the cation's charge as the anion's subscript and vice versa, then reduce to lowest terms. Example: \(Al^{3+}\) and \(O^{2-}\) → \(Al_2O_3\), aluminium oxide. To name a binary ionic compound, name the cation (with Roman numeral charge if needed), then the anion with the suffix "-ide" (Cl⁻ = chloride, O²⁻ = oxide, N³⁻ = nitride). <em>Polyatomic ions</em> are groups of atoms with a net charge that travel together: sulfate \(SO_4^{2-}\), nitrate \(NO_3^-\), carbonate \(CO_3^{2-}\), hydroxide \(OH^-\), ammonium \(NH_4^+\), phosphate \(PO_4^{3-}\), bicarbonate \(HCO_3^-\). Polyatomic ions keep their own names in compounds.</p>
+            <ul>
+              <li><strong>Cation / anion</strong> — positive / negative ion.</li>
+              <li><strong>Ionic bond</strong> — electrostatic attraction between cation and anion.</li>
+              <li><strong>Crystal lattice</strong> — repeating 3-D arrangement of ions.</li>
+              <li><strong>Polyatomic ion</strong> — covalently bonded group of atoms with a net charge (e.g., \(SO_4^{2-}\)).</li>
+              <li><strong>Multivalent metal</strong> — transition metal with more than one possible ion charge (use Roman numeral).</li>
+              <li><strong>Crisscross method</strong> — shortcut for balancing ionic-compound formulae.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Writing and naming an ionic formula</p>
+              <p>(a) Write the formula for calcium nitrate. (b) Name the compound \(Fe_2O_3\).</p>
+              <p>(a) Calcium is in Group 2 → \(Ca^{2+}\). Nitrate is a polyatomic ion \(NO_3^-\). Crisscross: charges 2 and 1 give subscripts 1 and 2 → one Ca and two nitrates. Put the polyatomic in parentheses because it appears more than once: <strong>\(Ca(NO_3)_2\)</strong>. (b) Two iron atoms and three oxide ions. Each O²⁻ contributes a total charge of −6, so each Fe must be +3 to balance — iron(III). Name: <strong>iron(III) oxide</strong> (the mineral hematite, common rust).</p>
+            </div>
+            <ul>
+              <li>Forgetting parentheses around polyatomic ions when the subscript is greater than 1 — \(Ca(NO_3)_2\) is correct, \(CaNO_{32}\) is nonsense.</li>
+              <li>Leaving the Roman numeral off multivalent metals — "iron oxide" is ambiguous; "iron(III) oxide" is specific.</li>
+              <li>Using "-ide" for polyatomic ions — sulfate keeps the name "sulfate", not "sulfide" (which is just S²⁻).</li>
+              <li>Treating the crisscross subscripts as the literal charges — they are subscripts in the formula, not charges in the name.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "describe how electrons are transferred and how ions are formed in ionic bonding" and C3.3 — "write the names and formulae of common ionic and molecular compounds using the IUPAC naming system."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Ionic and Covalent Bonding — Tyler DeWitt</span>
+                <span class="vid-duration">9:16</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/PVL24HAesnc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=PVL24HAesnc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Naming Ionic Compounds with Polyatomic Ions — Tyler DeWitt</span>
+                <span class="vid-duration">12:25</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/eM5mDnQX0k8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=eM5mDnQX0k8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Covalent / Molecular -->
+        <div class="subsection-label">🧪 Covalent Bonding &amp; Molecular Compounds</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>When two non-metals combine, neither can easily give up electrons, so they instead <em>share</em> them in a <em>covalent bond</em>. A shared pair of electrons forms a single bond, two shared pairs a double bond (as in \(O_2\)), and three shared pairs a triple bond (as in \(N_2\), the strong reason nitrogen gas is unreactive). The resulting unit is a discrete molecule, not an extended lattice. Because molecules are held together internally by strong covalent bonds but only weakly to each other, most molecular compounds have low melting and boiling points (water 100 °C, methane −161 °C) compared to ionic compounds (table salt 801 °C).</p>
+            <p>Covalent compounds use a different naming system because we cannot simply use crisscross — the atoms in a covalent molecule are not driven by charge balance. Instead, IUPAC uses <em>Greek prefixes</em> to indicate the number of each atom: mono (1), di (2), tri (3), tetra (4), penta (5), hexa (6), hepta (7), octa (8). The first element keeps its full name (and we drop "mono-" on the first element); the second element ends in "-ide" with its prefix. Examples: \(CO\) carbon monoxide, \(CO_2\) carbon dioxide, \(N_2O_4\) dinitrogen tetroxide, \(P_2O_5\) diphosphorus pentoxide, \(SF_6\) sulfur hexafluoride. The "a" or "o" at the end of a prefix is dropped when followed by a vowel — "tetraoxide" becomes "tetroxide".</p>
+            <p>Some molecules form because the atoms differ in <em>electronegativity</em> (how strongly an atom pulls shared electrons toward itself). When the pull is equal (e.g., \(O_2\), \(H_2\)), the bond is non-polar covalent. When one atom pulls harder (O in \(H_2O\), Cl in HCl), the shared electron pair sits closer to that atom, creating a polar covalent bond with partial positive and negative ends. Water's polarity explains many of its remarkable properties: high boiling point (hydrogen bonding), surface tension, ability to dissolve ionic compounds, and the cohesion that pulls sap up trees.</p>
+            <ul>
+              <li><strong>Covalent bond</strong> — bond formed by sharing a pair of valence electrons.</li>
+              <li><strong>Molecule</strong> — discrete unit of two or more atoms covalently bonded.</li>
+              <li><strong>Single / double / triple bond</strong> — 1 / 2 / 3 shared pairs of electrons.</li>
+              <li><strong>Diatomic element</strong> — exists naturally as \(X_2\): \(H_2, N_2, O_2, F_2, Cl_2, Br_2, I_2\).</li>
+              <li><strong>Greek prefix</strong> — number indicator used in molecular nomenclature.</li>
+              <li><strong>Electronegativity</strong> — measure of an atom's pull on shared electrons.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Naming and formula-writing for covalent compounds</p>
+              <p>(a) Name the compound \(N_2O_5\). (b) Write the formula for carbon tetrachloride.</p>
+              <p>(a) Two nitrogens → "dinitrogen". Five oxygens → "pentoxide" (drop the "a" of penta before the "o" of oxide). Full name: <strong>dinitrogen pentoxide</strong>. (b) "Carbon" with no prefix means one carbon (no "mono" on the first element); "tetrachloride" means four chlorines. Formula: <strong>\(CCl_4\)</strong> — historically used as a dry-cleaning solvent until its environmental hazards were recognised.</p>
+            </div>
+            <ul>
+              <li>Using "mono-" on the first element — never write "monocarbon dioxide", just "carbon dioxide".</li>
+              <li>Using Greek prefixes for ionic compounds — they are only for molecular (non-metal + non-metal) compounds.</li>
+              <li>Forgetting the seven diatomic elements (a useful mnemonic: "Have No Fear Of Ice Cold Beer" — H, N, F, O, I, Cl, Br).</li>
+              <li>Saying water is ionic because oxygen pulls hard — it is polar covalent. The electrons are unequally shared, not transferred.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "describe how atoms share electrons in covalent bonding" and C3.3 — "write the IUPAC names and formulae of binary molecular compounds using Greek prefixes."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Atomic Hook-Ups — Types of Chemical Bonds: Crash Course Chemistry #22</span>
+                <span class="vid-duration">9:51</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/QXT4OVM4vXI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=QXT4OVM4vXI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Balancing -->
+        <div class="subsection-label">⚖️ Balancing Chemical Equations</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>law of conservation of mass</em>, first established quantitatively by Antoine Lavoisier in 1789, states that matter is neither created nor destroyed in a chemical reaction. The atoms are simply rearranged — every atom on the reactant side must appear somewhere on the product side. This is the entire reason we balance equations.</p>
+            <p>A chemical equation has reactants on the left, products on the right, and an arrow between them (use ↔ for reversible reactions, → for forward reactions, an upward arrow ↑ for a gaseous product escaping the reaction mixture, a downward arrow ↓ for a precipitate). State symbols clarify physical state: (s) solid, (l) liquid, (g) gas, (aq) aqueous. The <em>coefficient</em> placed in front of each formula tells how many units of that substance participate. Coefficients are integers (whole numbers) and should be reduced to lowest terms.</p>
+            <p>To balance an equation, follow a systematic procedure: (1) write the correct formulae for all reactants and products (these are fixed by chemistry — never change subscripts!); (2) count atoms of each element on each side; (3) adjust <em>only the coefficients</em> to make atom counts match; (4) start with the most complex molecule or an element that appears in only one reactant and one product; (5) balance polyatomic ions as a unit when they survive the reaction; (6) leave H and O for last in many cases; (7) check your work and simplify if needed. With practice the procedure becomes automatic.</p>
+            <ul>
+              <li><strong>Conservation of mass</strong> — total mass of reactants = total mass of products.</li>
+              <li><strong>Reactant / product</strong> — substance entering / leaving a chemical reaction.</li>
+              <li><strong>Coefficient / subscript</strong> — number in front of / inside a chemical formula.</li>
+              <li><strong>State symbols</strong> — (s), (l), (g), (aq) showing physical state.</li>
+              <li><strong>Skeleton equation</strong> — unbalanced equation showing only reactants and products.</li>
+              <li><strong>Balanced equation</strong> — equal numbers of each atom on both sides.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Balancing a combustion equation</p>
+              <p>Balance the equation for the combustion of propane: \(C_3H_8 + O_2 \rightarrow CO_2 + H_2O\).</p>
+              <p>Start with carbon: 3 C on the left, so put a 3 in front of \(CO_2\). Now hydrogen: 8 H on the left, so put a 4 in front of \(H_2O\) (since each water has 2 H). Now oxygen: right side has 3·2 + 4·1 = 10 O atoms; left side has only \(O_2\), so coefficient must be 5: \(5O_2\) gives 10 O. Final balanced equation: <strong>\(C_3H_8 + 5O_2 \rightarrow 3CO_2 + 4H_2O\)</strong>. Check: C 3 = 3 ✓, H 8 = 8 ✓, O 10 = 10 ✓.</p>
+            </div>
+            <ul>
+              <li>Changing subscripts to balance — never do this. Subscripts are part of the formula. Only change coefficients.</li>
+              <li>Forgetting to count the coefficient times the subscript — \(3H_2O\) has 6 H, not 2.</li>
+              <li>Leaving fractional coefficients — multiply through by the denominator to get integers.</li>
+              <li>Balancing oxygen first when it appears in many products — leave it for last.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.4 — "explain the law of conservation of mass and demonstrate it by balancing chemical equations using the lowest whole-number coefficients."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Balancing Chemical Equations Practice Problems — Tyler DeWitt</span>
+                <span class="vid-duration">11:36</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RnGu3xO2h74?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=RnGu3xO2h74" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Reaction Types -->
+        <div class="subsection-label">🔥 Types of Chemical Reactions</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Most chemical reactions you will meet in Grade 10 fit one of five categories. Recognising the type lets you predict products before you ever see the equation, and is an essential first step in deciding which reactions can occur.</p>
+            <p>1. <em>Synthesis (combination)</em>: two or more reactants combine to form a single product, \(A + B \rightarrow AB\). Example: \(2Na + Cl_2 \rightarrow 2NaCl\). The reverse — 2. <em>Decomposition</em> — splits one compound into two or more simpler substances, \(AB \rightarrow A + B\). Example: \(2H_2O_2 \rightarrow 2H_2O + O_2\) (hydrogen peroxide breaks down, sped up by catalase or MnO₂). 3. <em>Single displacement</em>: one element replaces another in a compound, \(A + BC \rightarrow AC + B\). Whether the reaction happens depends on the <em>activity series</em> — a more reactive metal (or halogen) displaces a less reactive one. Example: \(Zn + 2HCl \rightarrow ZnCl_2 + H_2\) (zinc displaces hydrogen). 4. <em>Double displacement (metathesis)</em>: the cations and anions of two ionic compounds swap partners, \(AB + CD \rightarrow AD + CB\). One product is usually a precipitate, a gas, or water. Example: \(AgNO_3(aq) + NaCl(aq) \rightarrow AgCl(s) + NaNO_3(aq)\) — silver chloride precipitates. 5. <em>Combustion</em>: a hydrocarbon or other fuel reacts with \(O_2\), producing \(CO_2\) and \(H_2O\) (complete combustion) or also CO and soot (incomplete combustion when oxygen is limited).</p>
+            <p>A special case of double displacement is <em>neutralisation</em>: acid + base → salt + water, e.g., \(HCl + NaOH \rightarrow NaCl + H_2O\). Several reaction categories overlap with broader classifications: many synthesis and decomposition reactions are also <em>redox</em> reactions (involving electron transfer); all combustion is redox. Reactions are also classified as <em>exothermic</em> (release energy as heat, the surroundings warm) or <em>endothermic</em> (absorb energy, the surroundings cool). The burning of propane is highly exothermic; the dissolution of ammonium nitrate in water is endothermic — used in instant cold packs.</p>
+            <ul>
+              <li><strong>Synthesis</strong> — \(A + B \rightarrow AB\) (combination).</li>
+              <li><strong>Decomposition</strong> — \(AB \rightarrow A + B\).</li>
+              <li><strong>Single displacement</strong> — \(A + BC \rightarrow AC + B\).</li>
+              <li><strong>Double displacement</strong> — \(AB + CD \rightarrow AD + CB\).</li>
+              <li><strong>Combustion</strong> — fuel + \(O_2\) → \(CO_2 + H_2O\) (+ heat).</li>
+              <li><strong>Exothermic / endothermic</strong> — releases heat / absorbs heat.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting products and classifying reactions</p>
+              <p>Predict the products and classify the type of reaction: (a) \(Mg + O_2 \rightarrow ?\); (b) \(CuSO_4(aq) + Fe(s) \rightarrow ?\); (c) \(CaCO_3 \xrightarrow{\Delta} ?\).</p>
+              <p>(a) <strong>Synthesis</strong>: Mg has charge +2, O has charge −2 → \(MgO\). Balanced: \(2Mg + O_2 \rightarrow 2MgO\). The bright white flash of a magnesium ribbon burning. (b) <strong>Single displacement</strong>: iron is more reactive than copper in the activity series, so Fe displaces Cu from copper sulfate. Products: \(FeSO_4(aq) + Cu(s)\). Balanced: \(CuSO_4 + Fe \rightarrow FeSO_4 + Cu\). The blue solution fades and a reddish copper deposit appears. (c) <strong>Decomposition</strong>: heating limestone produces lime + carbon dioxide. \(CaCO_3 \rightarrow CaO + CO_2\) — the chemistry behind cement manufacture and a major industrial source of atmospheric CO₂.</p>
+            </div>
+            <ul>
+              <li>Confusing synthesis with addition of any kind — synthesis specifically means smaller reactants making one larger product.</li>
+              <li>Calling any reaction with oxygen a combustion — synthesis of \(MgO\) uses oxygen but is not a hydrocarbon burning.</li>
+              <li>Forgetting to check the activity series for single-displacement reactions — a less reactive metal cannot displace a more reactive one.</li>
+              <li>Drawing a single displacement when the reactants are two ionic compounds — that is double displacement.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.5 — "investigate the five major types of chemical reactions (synthesis, decomposition, single displacement, double displacement, combustion) and predict the products of each."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Types of Chemical Reactions — Tyler DeWitt</span>
+                <span class="vid-duration">10:30</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iIJD8RNLpS0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iIJD8RNLpS0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Acids & Bases -->
+        <div class="subsection-label">💧 Acids, Bases &amp; the pH Scale</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <em>acid</em> is a substance that produces hydrogen ions (\(H^+\), really hydronium \(H_3O^+\)) when dissolved in water. A <em>base</em> produces hydroxide ions (\(OH^-\)). Acids taste sour (lemon juice, vinegar), turn blue litmus red, conduct electricity, react with active metals to release \(H_2\) gas, and react with carbonates to release \(CO_2\). Bases taste bitter (soap), feel slippery, turn red litmus blue, and conduct electricity. Strong acids (\(HCl, HNO_3, H_2SO_4\)) and strong bases (\(NaOH, KOH\)) ionise completely in water; weak acids (acetic acid, citric acid) and weak bases (ammonia) ionise only partially.</p>
+            <p>The <em>pH scale</em> measures the concentration of hydrogen ions logarithmically. \(pH = -\log_{10}[H^+]\). A solution with \([H^+] = 10^{-3}\) M has pH 3 (acidic); \([H^+] = 10^{-7}\) M has pH 7 (neutral, pure water at 25 °C); \([H^+] = 10^{-12}\) M has pH 12 (basic). Each pH unit represents a tenfold change in \(H^+\) — a solution at pH 4 has ten times more \(H^+\) than one at pH 5. Many indicators change colour over a specific pH range: litmus (red below 5, blue above 8), phenolphthalein (colourless in acid, pink above 8.3), bromothymol blue (yellow in acid, blue in base, green around neutral). A universal indicator is a mixture that gives a continuous colour spectrum from red (very acidic) through green (neutral) to violet (very basic).</p>
+            <p>The most important acid-base reaction is <em>neutralisation</em>: acid + base → salt + water. Example: \(HCl + NaOH \rightarrow NaCl + H_2O\) (stomach antacids work this way). Acid precipitation forms when sulfur dioxide and nitrogen oxides from burning fossil fuels combine with atmospheric water to produce sulfuric and nitric acid. Rain of pH less than about 5.0 acidifies lakes, leaches nutrients from soils, dissolves stone monuments, and damages forests. Solutions include scrubbing power-plant exhaust gases, switching to lower-sulfur fuels, and adding lime to acidified lakes — but the long-term answer is reducing emissions.</p>
+            <ul>
+              <li><strong>Acid / base</strong> — \(H^+\)-donor / \(OH^-\)-donor in water.</li>
+              <li><strong>Strong vs weak</strong> — completely vs partially ionised in water.</li>
+              <li><strong>pH = \(-\log[H^+]\)</strong> — logarithmic measure of acidity.</li>
+              <li><strong>Neutralisation</strong> — acid + base → salt + water.</li>
+              <li><strong>Indicator</strong> — substance that changes colour at a specific pH range.</li>
+              <li><strong>Acid precipitation</strong> — rain or snow with pH below ~5 due to \(SO_2\) and \(NO_x\) pollution.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting pH and writing a neutralisation equation</p>
+              <p>(a) Stomach acid has \([H^+] = 10^{-2}\) M; what is its pH? How many times more acidic is it than blood at pH 7.4? (b) Write the balanced neutralisation reaction for sulfuric acid with potassium hydroxide.</p>
+              <p>(a) \(pH = -\log(10^{-2}) = 2\). The pH difference is \(7.4 - 2 = 5.4\) units, so stomach acid has \(10^{5.4} \approx 250{,}000\) times more \(H^+\) than blood. This is why even a brief reflux of stomach contents into the oesophagus is so damaging. (b) Sulfuric acid: \(H_2SO_4\); potassium hydroxide: KOH; products are potassium sulfate and water. Balanced: <strong>\(H_2SO_4 + 2KOH \rightarrow K_2SO_4 + 2H_2O\)</strong>. The "2" accounts for sulfuric acid being diprotic — releasing two protons per molecule.</p>
+            </div>
+            <ul>
+              <li>Treating pH like a linear scale — it is logarithmic. pH 3 vs pH 5 means a 100× difference in \(H^+\), not 2×.</li>
+              <li>Calling pure water "neutral because it has no \(H^+\)" — pure water has \([H^+] = [OH^-] = 10^{-7}\) M, and pH 7 means equal amounts, not zero.</li>
+              <li>Confusing strong/weak with concentrated/dilute — a strong acid can be dilute; a weak acid can be concentrated.</li>
+              <li>Forgetting that neutralisation always produces water — even if you don't see it, water is one of the products.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.5 — "describe the physical and chemical properties of acids and bases, including pH, indicators, and neutralisation reactions."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Acid-Base Reactions in Solution: Crash Course Chemistry #8</span>
+                <span class="vid-duration">11:21</span>
+                <span class="vid-toggle" id="toggle-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ANi709MYnWg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ANi709MYnWg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/snc2d/Unit2_Reactions_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/snc2d/Unit2_Reactions_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/snc2d/Unit2_Reactions_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SNC2D Science (Academic) · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

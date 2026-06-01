@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT4M — Mathematics for College Technology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-card iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; }
+.yt-fallback { display: block; text-align: center; font-size: 12px; color: #64748b; padding: 8px; background: #f8fafc; text-decoration: none; }
+.yt-fallback:hover { background: #f1f5f9; color: #6366f1; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #6366f1; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #6366f1; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #4f46e5; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #6366f1; color: #fff; }
+.chnav-next:hover { background: #4f46e5; }
+.chnav-finish { background: #16a34a; color: #fff; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mct4m.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCT4M Mathematics for College Technology)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 College Preparation</div>
+<h1>📐 MCT4M: Chapter 5: Modelling with Mathematics</h1>
+<p>Choosing function families, regression and curve-fitting, error and precision, technical-design culminating tasks</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+            <h2>Chapter 5: Modelling with Mathematics</h2>
+            <p>Choosing function families, regression and curve-fitting, error and precision, technical-design culminating tasks</p>
+            <div class="unit-meta">
+                <span>📚 Cross-Strand: A, B, C, D</span>
+                <span>⏱️ ~14h</span>
+                <span>📹 5 topic videos</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 — Choosing the Right Function Family</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>When you face a real data set in college technology — current versus voltage, decibel versus power, depth versus time — your first decision is: what <strong>function family</strong> should I fit? The four families you have mastered are: <strong>linear</strong> (constant first differences), <strong>polynomial</strong> (constant higher-order differences), <strong>exponential</strong> (constant ratio of consecutive outputs), and <strong>sinusoidal</strong> (periodic). Choosing correctly is more important than choosing accurately — a beautifully-fitted wrong family is worse than a roughly-fitted right one.</p>
+                <p>The diagnostic tests are: First differences constant ⇒ linear. \(n\)-th differences constant ⇒ polynomial of degree \(n\). Constant ratio of successive outputs (when \(x\) increases by a fixed step) ⇒ exponential. Data that visibly oscillates with a fixed period ⇒ sinusoidal. If none of these patterns hold cleanly, the relationship may be combined (e.g., damped sinusoid) or require fitting a piecewise model.</p>
+                <p>Once you have chosen a family, the next step is to determine the parameters. For linear and exponential models you can compute the parameters from any two well-chosen data points. For polynomial models you can use finite differences or simultaneous equations. For sinusoidal models you read amplitude, period, axis, and shift from the data as discussed in Chapter 3.</p>
+                <ul>
+                  <li><strong>Linear model</strong> — \(y=mx+b\); constant first differences.</li>
+                  <li><strong>Polynomial model</strong> — \(y=a_{n}x^{n}+\dots+a_{0}\); constant \(n\)-th differences.</li>
+                  <li><strong>Exponential model</strong> — \(y = a\cdot b^{x}\); constant ratio of successive outputs.</li>
+                  <li><strong>Sinusoidal model</strong> — \(y=a\sin(k(x-d))+c\); recognized by periodic oscillation.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Diagnosing function type</p>
+                  <p>Data: \(x=0,1,2,3,4\), \(y=2, 6, 18, 54, 162\). Which family fits?</p>
+                  <p>Step 1. Compute first differences: \(4, 12, 36, 108\). Not constant — so not linear.</p>
+                  <p>Step 2. Compute ratios of successive outputs: \(6/2=3, 18/6=3, 54/18=3, 162/54=3\). All equal to 3.</p>
+                  <p>Step 3. Conclusion: exponential. With \(b=3\) and \(y(0)=2\), the model is \(y=2\cdot 3^{x}\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Diagnosing polynomial degree</p>
+                  <p>Data: \(x=1,2,3,4,5\), \(y=1, 8, 27, 64, 125\). Which family and degree?</p>
+                  <p>Step 1. First differences: \(7, 19, 37, 61\). Second: \(12, 18, 24\). Third: \(6, 6\). Constant at third level.</p>
+                  <p>Step 2. Constant third differences ⇒ cubic polynomial. Leading coefficient \(a_{3}=\Delta_{3}/(3!\cdot h^{3})=6/(6\cdot 1)=1\).</p>
+                  <p>Step 3. With leading coefficient 1 and \(y(1)=1\), recognize \(y=x^{3}\).</p>
+                </div>
+                <ul>
+                  <li>If first differences are constant the data is linear — do not over-fit with a higher-degree polynomial.</li>
+                  <li>Always test for exponential before high-degree polynomial; exponentials produce ever-increasing finite differences and can be mistaken for high-degree polynomials.</li>
+                  <li>Plot the data — a quick scatter plot reveals oscillation (sinusoid) or asymptotic curves (exponential) that finite differences sometimes miss.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "determine the family of polynomial equations whose graphs share given zeros, and determine the specific member of the family given additional data points."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/HyDTdzEc6mA" title="Choosing function models for data — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=HyDTdzEc6mA" target="_blank" rel="noopener">📺 Watch on YouTube — Modelling Data with Functions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 — Regression and Curve-Fitting with Technology</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Real measurements are noisy. A graphing calculator or spreadsheet does not just connect-the-dots — it performs <strong>regression</strong>, which finds the curve that best fits the data in the least-squares sense. For technology students, the most common regressions are <strong>linear regression</strong>, <strong>polynomial regression</strong>, and <strong>exponential regression</strong>. Each returns the parameters of the chosen family along with a goodness-of-fit measure (typically \(r^{2}\)).</p>
+                <p>The number \(r^{2}\) (called the <em>coefficient of determination</em>) lies between 0 and 1; a value close to 1 means most of the variation in the data is "explained" by the model. As a rule of thumb, \(r^{2} > 0.95\) is excellent for engineering data, \(r^{2}\) between 0.8 and 0.95 is decent, and lower values suggest the model is the wrong family or the data is genuinely noisy. Always pair \(r^{2}\) with a visual check: a high \(r^{2}\) on the wrong family can still look bad on a graph.</p>
+                <p>Tools you will use: TI-83/84 STAT menu, Desmos regression command \(y_{1}\sim a + b x_{1}\), Excel scatter plot with trendline option, GeoGebra's <code>FitPoly</code> and <code>FitExp</code> functions. The mechanics differ but the principles are identical — input the data, choose the model family, read the parameters and \(r^{2}\).</p>
+                <ul>
+                  <li><strong>Regression</strong> — the process of finding the best-fit curve of a given family for a data set.</li>
+                  <li><strong>Coefficient of determination \(r^{2}\)</strong> — fraction of variation explained by the model; \(r^{2}=1\) is perfect.</li>
+                  <li><strong>Residual</strong> — difference between observed and predicted value at a data point; small residuals across the data set indicates a good fit.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Linear regression with Desmos</p>
+                  <p>A thermistor's resistance \(R\) (kΩ) versus temperature \(T\) (°C): \((10, 25), (20, 18), (30, 13), (40, 9.5), (50, 7)\). Find the best linear model.</p>
+                  <p>Step 1. Enter the data in a Desmos table; create a fresh equation line \(y_{1}\sim m x_{1} + b\).</p>
+                  <p>Step 2. Desmos returns \(m \approx -0.44\), \(b \approx 27.6\), \(r^{2} \approx 0.95\). Model: \(R \approx -0.44T + 27.6\).</p>
+                  <p>Step 3. The \(r^{2}\) is high but the residuals show a curve — the data is closer to exponential. Try exponential regression next.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Exponential regression</p>
+                  <p>Same thermistor data. Fit an exponential model \(R = a \cdot b^{T}\).</p>
+                  <p>Step 1. In Desmos, fit \(y_{1}\sim a \cdot b^{x_{1}}\).</p>
+                  <p>Step 2. Desmos returns \(a \approx 31.6, b \approx 0.970\), \(r^{2} \approx 0.999\). Far better than linear.</p>
+                  <p>Step 3. The model \(R \approx 31.6(0.970)^{T}\) predicts the data with \(r^{2}\) very close to 1 — an excellent fit.</p>
+                </div>
+                <ul>
+                  <li>Always plot data <em>before</em> running a regression — the shape tells you which family to try first.</li>
+                  <li>A high \(r^{2}\) for a wrong family can hide systematic errors; look at the residuals to confirm.</li>
+                  <li>Document the units of the model parameters; "\(R = 31.6\)" alone is useless without "kΩ at 0°C".</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.4 — "pose and solve problems involving exponential growth and decay, using technology to determine the parameters of the model from experimental data."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/UwLR9TUMUD4" title="Linear regression on the TI-84 — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=UwLR9TUMUD4" target="_blank" rel="noopener">📺 Watch on YouTube — Linear Regression on TI-84</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 — Error, Precision, and Significant Figures</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>Every measurement carries uncertainty. The job of a technology mathematician is not to pretend the uncertainty does not exist, but to <em>quantify</em> it. Two concepts underpin everything: <strong>precision</strong> (how repeatable a measurement is) and <strong>accuracy</strong> (how close it is to the true value). A scale that always reads 5 g over reads <em>precisely</em> but not <em>accurately</em>; a scale that scatters around the true mean is the reverse.</p>
+                <p>To communicate the precision of a value, use <strong>significant figures</strong>. The rules: every non-zero digit is significant; zeros between non-zero digits are significant; trailing zeros after a decimal point are significant; trailing zeros in a whole number are ambiguous unless a decimal point is shown. When multiplying or dividing, round the answer to the fewest significant figures of any input; when adding or subtracting, round to the fewest decimal places.</p>
+                <p>For technology problems you will also encounter <strong>relative error</strong> (\(\Delta x / x\)) and <strong>percent error</strong> (\(100\cdot \Delta x / x\)). These are scale-free — a 0.1 cm error on a 1 cm part is 10% (terrible) but on a 10 m beam is 0.001% (excellent). Use percent error to talk about tolerance and quality.</p>
+                <ul>
+                  <li><strong>Precision</strong> — repeatability of a measurement; how tightly clustered repeated readings are.</li>
+                  <li><strong>Accuracy</strong> — closeness to the true value; small bias.</li>
+                  <li><strong>Significant figures</strong> — digits that carry information about the measurement's precision.</li>
+                  <li><strong>Percent error</strong> — \(100\cdot|\text{measured}-\text{true}|/|\text{true}|\); used to express tolerance.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Significant figures in calculation</p>
+                  <p>Compute the volume of a cylinder of radius 3.2 cm and height 8.45 cm to the correct number of significant figures.</p>
+                  <p>Step 1. \(V = \pi r^{2} h = \pi (3.2)^{2}(8.45) = \pi (10.24)(8.45) = 86.528\pi \approx 271.85\) cm³.</p>
+                  <p>Step 2. The radius (3.2) has 2 significant figures; height (8.45) has 3. Multiplication rule: round to the fewer count = 2 sig figs.</p>
+                  <p>Step 3. Reported answer: \(V \approx 270\) cm³ (two significant figures).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Percent error in machining</p>
+                  <p>A shaft is specified to be 25.00 mm in diameter; a machinist measures 25.07 mm. What is the percent error?</p>
+                  <p>Step 1. Absolute error: \(|25.07-25.00| = 0.07\) mm.</p>
+                  <p>Step 2. Percent error: \((0.07/25.00)\cdot 100\% = 0.28\%\).</p>
+                  <p>Step 3. Compare to industry tolerance (often \(\pm 0.1\%\) for precision machining); 0.28% is out of tolerance.</p>
+                </div>
+                <ul>
+                  <li>Carry extra digits during intermediate steps; round only at the final answer.</li>
+                  <li>Always state the units and the appropriate number of significant figures with every reported result.</li>
+                  <li>A high \(r^{2}\) does not eliminate measurement error — propagate uncertainty through the regression-derived parameters when high precision is required.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "solve problems involving the optimization of perimeter, area, surface area, and volume in real-world contexts, including verifying solutions and reporting precision appropriate to context."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/eCJ76hz7jPM" title="Significant figures and error analysis — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=eCJ76hz7jPM" target="_blank" rel="noopener">📺 Watch on YouTube — Significant Figures &amp; Error</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.4 — Cross-Strand Modelling Problems</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The most authentic technology problems do not fit neatly into one strand. A real engineering question often combines exponential decay (for instance, of a chemical concentration), polynomial geometry (for a tank's volume), trigonometry (for the orientation of a sensor), and vector arithmetic (for the resultant of fluid forces). Your job in cross-strand modelling is to identify which strand-specific tool each sub-problem requires and chain them together.</p>
+                <p>A useful heuristic: read the problem twice, then list every <em>quantity</em> mentioned, label whether it is a scalar or vector, and note whether it is changing in time (suggesting an exponential or trigonometric model). Draw a sketch. Set up each relationship as either an equation, an inequality, or a function. Solve the simplest piece first; substitute results into the next piece; iterate until you reach the asked quantity.</p>
+                <p>Communication matters. In a culminating performance task, the markers look not only at the right answer but also at clear definitions, labelled diagrams, justified steps, and a coherent explanation of why each technique was chosen. Show your reasoning — the assumption that the markers can "see" what you mean is the single biggest mistake on culminating tasks.</p>
+                <ul>
+                  <li><strong>Cross-strand problem</strong> — one whose solution involves techniques from two or more strands (A, B, C, D).</li>
+                  <li><strong>Decomposition strategy</strong> — split the problem into single-strand sub-problems, solve, then re-combine.</li>
+                  <li><strong>Justification</strong> — written reasoning for each step; required for full marks on culminating tasks.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Tank-draining problem (cross-strand)</p>
+                  <p>A cylindrical tank of radius 1 m is filled to a depth of 4 m. Water drains so the depth \(h(t)\) (in metres) follows an exponential decay \(h(t) = 4(0.8)^{t}\), where \(t\) is in hours. (a) When does the depth reach 1 m? (b) How much water has drained?</p>
+                  <p>Step 1. Equation: \(1 = 4(0.8)^{t}\). Divide: \((0.8)^{t} = 0.25\).</p>
+                  <p>Step 2. Take log: \(t = \log 0.25 / \log 0.8 \approx -0.602/-0.097 \approx 6.21\) hours.</p>
+                  <p>Step 3. Volume drained = \(\pi r^{2} \Delta h = \pi(1)^{2}(4-1) = 3\pi \approx 9.42\) m³.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Wind-and-tower problem</p>
+                  <p>A surveyor stands 60 m from the base of a vertical tower. Wind tilts a flag at the top by 5° from vertical. If the angle of elevation to the flag is 35°, find the tower's height and the offset of the flag from vertical.</p>
+                  <p>Step 1. Tower height: \(\tan 35° = h/60\), so \(h = 60\tan 35° \approx 42.01\) m.</p>
+                  <p>Step 2. Flag offset due to tilt: \(d = h\tan 5° \approx 42.01(0.0875) \approx 3.67\) m.</p>
+                  <p>Step 3. Conclusion: the tower is about 42 m tall and the flag is displaced about 3.7 m from vertical above the base.</p>
+                </div>
+                <ul>
+                  <li>Always identify variables and units up front; mixed units (cm vs m) cause silent disasters.</li>
+                  <li>Draw a labelled diagram for any geometric problem — even a rough sketch — before computing.</li>
+                  <li>If a problem feels unmanageable, decompose: solve the smallest sub-problem completely, then move on.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.4 — "pose and solve problems based on applications involving sinusoidal functions arising from real-world contexts, integrating other tools (vectors, polynomials, exponentials) where appropriate."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/A05n32Bl0aY" title="Multi-step modelling problems — Khan Academy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=A05n32Bl0aY" target="_blank" rel="noopener">📺 Watch on YouTube — Vector Word Problems (Khan Academy)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.5 — Culminating Performance Task</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The MCT4M <strong>culminating performance task</strong> is a multi-part technical-design problem worth roughly 5% of your final mark. It pulls together every strand — exponential and logarithmic functions, polynomials, trigonometry, and geometry — into one extended investigation. Typical tasks: design a water-storage facility (volume, surface area, exponential leak rate), model a roller-coaster section (polynomial track plus trigonometry of slopes), engineer a solar panel array (sinusoidal sun angle, vector force on supports), or analyse a manufacturing tolerance chain.</p>
+                <p>The marking rubric follows the achievement chart: K/U (correct formulas, correct calculations), Thinking (problem decomposition, choice of model, justification), Communication (labelled diagrams, units, clear explanations), and Application (transfer to a realistic engineering context). Strong submissions earn marks in all four categories; weak submissions are typically heavy on K/U but light on Communication and Application.</p>
+                <p>Practical tips for high scores: spend the first 20% of the time understanding the problem; use the next 50% generating the model and solving; use the final 30% on communication — labelled diagrams, conclusion paragraph, units, sig-figs, and a brief reflection on assumptions or limitations of your model. Avoid jumping straight to formulas; the rubric rewards the path more than the destination.</p>
+                <ul>
+                  <li><strong>Culminating task</strong> — a multi-strand, multi-step design problem assessed across all four achievement categories.</li>
+                  <li><strong>Rubric</strong> — explicit criteria for each level (1–4) in each category.</li>
+                  <li><strong>Reflection</strong> — brief discussion of model limitations, assumptions, and possible improvements; often a designated rubric item.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Sample task outline</p>
+                  <p>"Design a cylindrical water tank for a small farm. Volume requirement: 20 m³. Material cost is proportional to surface area. Find the radius and height that minimise material; estimate cost at $80 per m² of steel; consider how the design changes if the daily drainage follows \(V(t)=V_{0}(0.95)^{t}\) until refilled."</p>
+                  <p>Step 1. Constraint: \(\pi r^{2}h = 20 \Rightarrow h = 20/(\pi r^{2})\). Objective: \(SA = 2\pi r^{2} + 2\pi r h\). Substitute: \(SA(r) = 2\pi r^{2} + 40/r\).</p>
+                  <p>Step 2. Optimise numerically: compute \(SA(1)\approx 46.28\), \(SA(1.5)\approx 40.80\), \(SA(2)\approx 45.13\). Minimum is near \(r\approx 1.47\) m; refine to \(r\approx 1.47, h\approx 2.95\) (so \(h\approx 2r\), confirming the "diameter = height" rule).</p>
+                  <p>Step 3. Cost: \(SA \approx 40.71\) m² \(\times\) $80 = $3257. Address exponential drainage: tank refills daily; design accommodates worst-case 5% loss per day.</p>
+                </div>
+                <ul>
+                  <li>Document assumptions explicitly: "I assume the tank is full at \(t=0\) and refills nightly."</li>
+                  <li>Show at least one sanity check — comparing your answer to a known rule or rough estimate.</li>
+                  <li>Submit a sketch even if the question does not demand one; markers love diagrams.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D2.2 — "solve problems involving the optimization of perimeter, area, surface area, and volume in real-world contexts; integrate with modelling and communication across the achievement chart."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/Uvh4y5icddo" title="Optimization word problems — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=Uvh4y5icddo" target="_blank" rel="noopener">📺 Watch on YouTube — Optimization Problems</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mct4m_ch5_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mct4m_ch5_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mct4m_ch5_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Ch 4</a>
+  <a href="../mct4m.html" class="chnav-btn chnav-finish">↑ Back to course</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCT4M Mathematics for College Technology · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

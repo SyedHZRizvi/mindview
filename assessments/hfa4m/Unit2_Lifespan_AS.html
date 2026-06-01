@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Nutrition Through the Lifespan — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/hfa4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Nutrition Through the Lifespan — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of pregnancy and lactation, infant and child nutrition, adolescent and adult needs, older-adult care, and eating disorders.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1 — Pregnancy &amp; Infant Nutrition</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Folic acid supplementation BEFORE conception reduces the risk of which condition by about 70%?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Gestational diabetes</label></li>
+<li><label><input type="radio" name="q1" value="b"> Neural-tube defects (spina bifida, anencephaly)</label></li>
+<li><label><input type="radio" name="q1" value="c"> Hyperemesis gravidarum</label></li>
+<li><label><input type="radio" name="q1" value="d"> Maternal iron-deficiency anaemia</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Adequate folate around conception reduces NTDs by ~70%. The neural tube closes by ~day 28; Health Canada recommends 0.4 mg folic acid daily for anyone who could become pregnant.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The WHO recommends exclusive breastfeeding for the first:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> 4 weeks</label></li>
+<li><label><input type="radio" name="q2" value="b"> 3 months</label></li>
+<li><label><input type="radio" name="q2" value="c"> 6 months</label></li>
+<li><label><input type="radio" name="q2" value="d"> 12 months</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The WHO, Health Canada, and Canadian Paediatric Society recommend exclusive breastfeeding for 6 months, with continued breastfeeding alongside complementary foods to at least 2 years.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Why should honey NOT be given to an infant under 12 months?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> It is too sweet for developing taste buds</label></li>
+<li><label><input type="radio" name="q3" value="b"> It may contain Clostridium botulinum spores; infant gut cannot prevent botulism</label></li>
+<li><label><input type="radio" name="q3" value="c"> It contains gluten</label></li>
+<li><label><input type="radio" name="q3" value="d"> It causes early diabetes</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Infants under 12 months have immature gut flora that cannot prevent Clostridium botulinum spores from germinating and producing toxin — risk of infant botulism. Avoid honey, including raw or pasteurised, before first birthday.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Adolescent &amp; Adult Nutrition</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Approximate calcium RDA during adolescence (9–18 years):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> 500 mg/day</label></li>
+<li><label><input type="radio" name="q4" value="b"> 800 mg/day</label></li>
+<li><label><input type="radio" name="q4" value="c"> 1300 mg/day</label></li>
+<li><label><input type="radio" name="q4" value="d"> 2000 mg/day</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Calcium RDA peaks at 1300 mg/day in adolescents (9–18) to support peak bone-mass accretion. ~90% of peak bone mass is reached by age 18.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A 14-year-old athlete drinks energy drinks daily. The Canadian Paediatric Society recommends an adolescent's caffeine intake stay below approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> 25 mg/day</label></li>
+<li><label><input type="radio" name="q5" value="b"> 100 mg/day</label></li>
+<li><label><input type="radio" name="q5" value="c"> 400 mg/day</label></li>
+<li><label><input type="radio" name="q5" value="d"> Unlimited</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The Canadian Paediatric Society advises adolescents stay under 100 mg/day — about one cup of brewed coffee or ~2.5 mg per kg body weight. Energy drinks vary widely (some exceed 200 mg per can).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Older Adults &amp; Eating Disorders</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Sarcopenia in older adults refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Loss of vision with age</label></li>
+<li><label><input type="radio" name="q6" value="b"> Progressive age-related loss of muscle mass, strength, and function</label></li>
+<li><label><input type="radio" name="q6" value="c"> Bone-density loss</label></li>
+<li><label><input type="radio" name="q6" value="d"> Loss of taste sensation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Sarcopenia = age-related loss of muscle. Slowed by resistance exercise and adequate protein (1.0–1.2 g/kg/day for older adults — higher than the 0.8 g/kg RDA for younger adults).</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Why is vitamin D supplementation often recommended for older adults in Canada?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Sun synthesis declines with age, skin synthesis is reduced, and northern latitudes limit UVB in winter</label></li>
+<li><label><input type="radio" name="q7" value="b"> Vitamin D is a stimulant</label></li>
+<li><label><input type="radio" name="q7" value="c"> It lowers blood pressure dramatically</label></li>
+<li><label><input type="radio" name="q7" value="d"> It is required only for older men</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Reduced skin synthesis with age + Canada's northern latitudes + indoor lifestyle = low vitamin D status. Health Canada recommends a 400 IU/day supplement for everyone over 50.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Which eating disorder is characterised by recurrent binges followed by compensatory behaviours like self-induced vomiting?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Anorexia nervosa</label></li>
+<li><label><input type="radio" name="q8" value="b"> Bulimia nervosa</label></li>
+<li><label><input type="radio" name="q8" value="c"> Binge-eating disorder</label></li>
+<li><label><input type="radio" name="q8" value="d"> ARFID</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Bulimia nervosa = binge + compensatory behaviour. Anorexia = restriction + low weight. BED = binges without regular compensatory behaviour. ARFID = avoidance not driven by body-image concerns.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A pregnant woman in the second trimester needs approximately how many additional kilocalories per day compared to her pre-pregnancy needs?</div>
+<input type="text" id="q9-in" placeholder="kcal/day">
+<button class="btn" onclick="cN('q9',340)">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> ~+340 kcal/day in the 2nd trimester (and +452 in the 3rd). "Eating for two" overstates the need; quality and specific nutrients (folate, iron, iodine, DHA) matter more than total calories.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Refeeding syndrome — a potentially fatal electrolyte shift — is most associated with which intervention?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Switching from breast milk to formula</label></li>
+<li><label><input type="radio" name="q10" value="b"> Rapid reintroduction of carbohydrate-rich food to a severely malnourished patient</label></li>
+<li><label><input type="radio" name="q10" value="c"> Starting a low-fat diet</label></li>
+<li><label><input type="radio" name="q10" value="d"> Beginning a vitamin C supplement</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Refeeding syndrome occurs when carbohydrate is reintroduced quickly to a malnourished patient, causing dangerous shifts in phosphate, potassium, magnesium. Refeeding must start at low energy and be monitored medically.</div></div>
+
+</div>
+
+<footer>HFA4M — Nutrition and Health Issues, Grade 12 | Strand C: Nutritional Issues Across the Lifespan | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<20){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

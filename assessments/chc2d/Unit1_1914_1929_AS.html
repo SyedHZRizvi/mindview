@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Canada 1914–1929 — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#dc2626;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/chc2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Canada 1914–1929 — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of WWI, the conscription crisis, the Halifax Explosion, women's suffrage, the Persons Case, and the Winnipeg General Strike. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1–1.2 — The Great War and Vimy</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">When Britain declared war on Germany on 4 August 1914, Canada was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Free to choose; Parliament decided to declare war after a debate</label></li>
+<li><label><input type="radio" name="q1" value="b"> Automatically at war as a British dominion under the BNA Act</label></li>
+<li><label><input type="radio" name="q1" value="c"> Neutral until the Halifax Explosion forced a response</label></li>
+<li><label><input type="radio" name="q1" value="d"> Already an independent foreign-policy nation under the Statute of Westminster</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Canada was automatically at war when Britain declared war. The Statute of Westminster came in 1931, so by 1939 Canada chose to declare war. In 1914 the BNA Act governed, and Canadian foreign policy was made in London.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The Battle of Vimy Ridge (9–12 April 1917):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Was won by all four Canadian divisions fighting together under a unified command for the first time</label></li>
+<li><label><input type="radio" name="q2" value="b"> Was a decisive battle that ended the war on the Western Front</label></li>
+<li><label><input type="radio" name="q2" value="c"> Featured a Canadian-only command structure with no British involvement</label></li>
+<li><label><input type="radio" name="q2" value="d"> Resulted in fewer than 1,000 Canadian casualties</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','a')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The four Canadian divisions fought together at Vimy under British Lt-Gen Julian Byng's command. Canadian casualties were 10,602 in four days, including 3,598 dead. The war continued for another 19 months.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">"In all earnestness and sincerity I plead with you in the name of all that is dear to a Canadian … to give the man at the front a fighting chance."</div>
+<div class="qtxt">This 1917 appeal by Prime Minister Robert Borden was part of his case for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Establishing peacekeeping operations</label></li>
+<li><label><input type="radio" name="q3" value="b"> Conscription via the Military Service Act</label></li>
+<li><label><input type="radio" name="q3" value="c"> Joining the League of Nations</label></li>
+<li><label><input type="radio" name="q3" value="d"> Ending British control of Canadian foreign policy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Borden's 1917 plea was for the Military Service Act, which received Royal Assent on 29 August 1917 — the source of the conscription crisis. The League of Nations followed Versailles in 1919; foreign-policy independence came with the Statute of Westminster in 1931.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — The Conscription Crisis</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The Wartime Elections Act (1917):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Gave the federal vote to all Canadian women on the same terms as men</label></li>
+<li><label><input type="radio" name="q4" value="b"> Gave the federal vote to female relatives of soldiers, while disenfranchising naturalised citizens from "enemy" countries</label></li>
+<li><label><input type="radio" name="q4" value="c"> Granted Indigenous Canadians the federal vote</label></li>
+<li><label><input type="radio" name="q4" value="d"> Established Quebec's right to opt out of federal conscription</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The Wartime Elections Act enfranchised soldiers' female relatives to support conscription, while removing the vote from naturalised citizens from enemy countries. Full federal female enfranchisement came in 1918; Status Indians received the federal vote only in 1960.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Henri Bourassa, editor of <em>Le Devoir</em>, opposed conscription on the grounds that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Germany was being unfairly blamed for the war</label></li>
+<li><label><input type="radio" name="q5" value="b"> The British Empire was not Quebec's empire, and Regulation 17 had shown Anglo-Canada's hostility to French education</label></li>
+<li><label><input type="radio" name="q5" value="c"> Conscription would unfairly target English-speaking Protestants</label></li>
+<li><label><input type="radio" name="q5" value="d"> French Canadians were already over-represented in the CEF</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Bourassa's argument was structural: Canada was being asked to fight a British imperial war for a state whose Anglo-Protestant majority had already attacked French-language rights (Regulation 17, 1912). This was not pro-German sentiment but a critique of imperial loyalty.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4–1.5 — Halifax Explosion and Women's Suffrage</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The Halifax Explosion of 6 December 1917 resulted when:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> The German U-boat sank a munitions ship in the Halifax harbour</label></li>
+<li><label><input type="radio" name="q6" value="b"> Two ships — the SS <em>Imo</em> and the munitions-laden SS <em>Mont-Blanc</em> — collided, igniting cargo of 2,653 tonnes of explosives</label></li>
+<li><label><input type="radio" name="q6" value="c"> Lightning struck the Halifax explosives depot during a storm</label></li>
+<li><label><input type="radio" name="q6" value="d"> A factory explosion triggered a chain reaction in the harbour</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The SS <em>Mont-Blanc</em>, carrying TNT, picric acid, benzol, and guncotton, collided with the empty SS <em>Imo</em>. The resulting explosion equalled about 2.9 kilotonnes of TNT — the largest human-made explosion before Hiroshima. About 1,782 died instantly; 600 were blinded by flying glass.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">In the 1929 Persons Case (<em>Edwards v. AG Canada</em>), the JCPC's "living tree" doctrine established that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The Constitution must be interpreted exactly as it was understood in 1867</label></li>
+<li><label><input type="radio" name="q7" value="b"> Canadian constitutional language should be interpreted in light of evolving social understandings, not fixed to 1867 meanings</label></li>
+<li><label><input type="radio" name="q7" value="c"> The Supreme Court of Canada is the final court of appeal</label></li>
+<li><label><input type="radio" name="q7" value="d"> Provinces have unlimited residual constitutional power</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Lord Sankey's landmark judgment used the "living tree" metaphor to interpret "persons" in the BNA Act to include women, by then a socially-evolved meaning. The doctrine later supported Charter interpretations extending rights to LGBTQ Canadians and others.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — Winnipeg General Strike</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">"Bloody Saturday" — 21 June 1919 — refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> A Conservative-Liberal political crisis in Manitoba</label></li>
+<li><label><input type="radio" name="q8" value="b"> The Royal North-West Mounted Police charge on a peaceful crowd in Winnipeg that killed two strikers</label></li>
+<li><label><input type="radio" name="q8" value="c"> The destruction of the Avro Arrow prototypes</label></li>
+<li><label><input type="radio" name="q8" value="d"> The 1942 Dieppe Raid casualties</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> On Bloody Saturday, the RNWMP charged a peaceful crowd on Main Street; two strikers — Mike Sokolowski and Steve Schezerbanowicz — were killed. The strike was broken three days later. Federal Cabinet had also amended the Immigration Act to deport British-born "agitators" without trial.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Winnipeg General Strike's most significant long-term political consequence was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> The immediate adoption of the eight-hour workday across Canada</label></li>
+<li><label><input type="radio" name="q9" value="b"> The election of strike leaders (notably J. S. Woodsworth) to Parliament, leading to the founding of the CCF in 1932 and eventually the NDP</label></li>
+<li><label><input type="radio" name="q9" value="c"> The recognition of the One Big Union as the official federal labour body</label></li>
+<li><label><input type="radio" name="q9" value="d"> Universal recognition of the right to strike</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> The strike collapsed without immediate gains, but Woodsworth went to Parliament in 1921 and founded the CCF in 1932 — the direct ancestor of today's NDP (1961). The institutional consequence of 1919 unfolded over decades.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Short answer: In 2–3 sentences, explain how the conscription crisis of 1917 changed Canadian federal politics in Quebec for decades afterward.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q10')">Reveal Sample</button><div class="sol" id="q10-sl"><span class="sol-lbl">Sample:</span> The Union Government's 1917 election crushed the Quebec-based Laurier Liberals (62 of 82 anti-conscription seats were in Quebec) and tied the federal Conservative party to Anglo-imperial loyalism. Quebec voted Liberal in nearly every federal election from 1917 to 1984 — six and a half decades of alignment shaped by the conscription betrayal. The Quebec memory of forced military service became a touchstone for the 1942 plebiscite, the FLQ era, and the modern PQ.</div></div>
+
+</div>
+
+<footer>CHC2D — Canadian History since World War I, Grade 10 | Strand B: Canada 1914–1929 | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Earth Systems — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #0e7490; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#0e7490;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cgf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Earth Systems — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of Earth's four spheres, plate tectonics, weathering, atmospheric circulation, the water cycle, and soils. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1 — The Four Spheres &amp; Energy Balance</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Earth's natural greenhouse effect is essential for life because it:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Reflects sunlight back to space</label></li>
+<li><label><input type="radio" name="q1" value="b"> Raises mean surface temperature from about −18 °C to about +15 °C</label></li>
+<li><label><input type="radio" name="q1" value="c"> Removes CO₂ from the atmosphere</label></li>
+<li><label><input type="radio" name="q1" value="d"> Causes the seasons</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Without the greenhouse effect, Earth's effective blackbody temperature would be about −18 °C. Water vapour and CO₂ absorb outgoing longwave radiation and re-radiate some downward, warming the surface by about 33 °C to the observed +15 °C. The natural effect is essential; the anthropogenic enhancement is the modern problem.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Which surface has the highest albedo?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Open ocean</label></li>
+<li><label><input type="radio" name="q2" value="b"> Boreal forest</label></li>
+<li><label><input type="radio" name="q2" value="c"> Fresh snow</label></li>
+<li><label><input type="radio" name="q2" value="d"> Asphalt parking lot</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Fresh snow has albedo around 0.9 (reflects 90% of incoming sunlight). Open ocean is about 0.06, forests 0.10–0.15, asphalt 0.04. This is why Arctic ice loss is a strong positive feedback for climate warming.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">If the solar constant is 1361 W/m² and Earth's albedo is 0.30, what is the average solar power absorbed per square metre of Earth's surface?</div>
+<input type="text" id="q3-in" placeholder="Enter W/m² (e.g., 200)">
+<button class="btn" onclick="cN('q3',238)">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> The Earth intercepts the solar constant over its cross-sectional area πr² but distributes that energy over its full surface area 4πr², so the average input is 1361/4 = 340.25 W/m². Absorbed = (1 − 0.30) × 340.25 = <strong>238 W/m²</strong>.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Plate Tectonics</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The Mid-Atlantic Ridge is an example of a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Convergent oceanic-continental boundary</label></li>
+<li><label><input type="radio" name="q4" value="b"> Transform boundary</label></li>
+<li><label><input type="radio" name="q4" value="c"> Divergent boundary where new oceanic crust forms</label></li>
+<li><label><input type="radio" name="q4" value="d"> Hotspot</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The Mid-Atlantic Ridge is a divergent boundary where the North American and Eurasian plates (north) and South American and African plates (south) are spreading apart, creating new oceanic crust. Iceland sits astride the ridge — one of the few places on land where you can stand between two plates.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Volcanoes are most common at all of the following boundaries EXCEPT:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Subduction zones (convergent ocean-continent)</label></li>
+<li><label><input type="radio" name="q5" value="b"> Mid-ocean ridges (divergent)</label></li>
+<li><label><input type="radio" name="q5" value="c"> Transform boundaries</label></li>
+<li><label><input type="radio" name="q5" value="d"> Hotspots</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','c')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Transform boundaries (like the San Andreas Fault) involve plates sliding past each other horizontally; there is no upwelling magma and no subduction, so volcanism is typically absent. Volcanoes cluster at convergent boundaries, divergent ridges, and hotspots.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Weathering &amp; Glacial Landforms</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Frost wedging is a form of physical weathering driven by which property of water?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Its ability to dissolve carbonate rocks</label></li>
+<li><label><input type="radio" name="q6" value="b"> Its 9% volume expansion when freezing</label></li>
+<li><label><input type="radio" name="q6" value="c"> Its high heat capacity</label></li>
+<li><label><input type="radio" name="q6" value="d"> Its low density relative to ice</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Water expands about 9% when it freezes. Water that infiltrates a crack and freezes exerts pressure on the surrounding rock, slowly levering it apart. This is one of the most important physical weathering processes in Canadian latitudes.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A drumlin is a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Ridge of debris at the edge of a glacier (moraine)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Boulder transported far from its source rock by ice</label></li>
+<li><label><input type="radio" name="q7" value="c"> Elongated whaleback hill streamlined by glacial flow</label></li>
+<li><label><input type="radio" name="q7" value="d"> Mineral grain formed at the glacier base</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','c')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> A drumlin is an elongated hill of glacial till, streamlined in the direction of ice flow (steep upstream, gentle downstream). The Peterborough drumlin field, north of Lake Ontario, contains thousands of well-preserved drumlins from the last Wisconsinan glaciation.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Atmospheric Circulation</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The world's hot deserts cluster around 30° N and 30° S because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> They are closest to the equator</label></li>
+<li><label><input type="radio" name="q8" value="b"> Cold ocean currents make the coasts dry</label></li>
+<li><label><input type="radio" name="q8" value="c"> Descending dry air of the Hadley cell warms and inhibits precipitation</label></li>
+<li><label><input type="radio" name="q8" value="d"> The Coriolis effect pushes moisture away from these latitudes</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','c')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Subtropical highs (30° N/S) lie under the descending limb of the Hadley cell. Descending air warms adiabatically, increasing its capacity to hold water vapour — so the descending air is dry. This produces the Sahara, Arabian, Kalahari, Atacama, Australian outback, and Mojave-Sonoran deserts.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Coriolis effect deflects moving air:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Always to the right</label></li>
+<li><label><input type="radio" name="q9" value="b"> Always to the left</label></li>
+<li><label><input type="radio" name="q9" value="c"> To the right in the Northern Hemisphere and to the left in the Southern</label></li>
+<li><label><input type="radio" name="q9" value="d"> Toward low pressure</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','c')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Earth's rotation produces an apparent deflection of free-moving objects — to the right in the Northern Hemisphere, to the left in the Southern. This is why Northern Hemisphere hurricanes rotate counterclockwise and Southern Hemisphere cyclones rotate clockwise.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — Hydrologic Cycle</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Which water reservoir holds the largest share of Earth's fresh water?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Lakes and rivers</label></li>
+<li><label><input type="radio" name="q10" value="b"> Atmospheric water vapour</label></li>
+<li><label><input type="radio" name="q10" value="c"> Glaciers and ice caps</label></li>
+<li><label><input type="radio" name="q10" value="d"> Soil moisture</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','c')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Of Earth's 2.5% freshwater, glaciers and ice caps hold about 1.74% (about 70% of total fresh water). Groundwater is the next-largest reservoir; lakes, rivers, soil moisture, and atmospheric water vapour each hold less than 1% of total fresh water.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">If Lake Erie has volume 484 km³ and outflow 175 km³/yr, what is its residence time?</div>
+<input type="text" id="q11-in" placeholder="Enter years (e.g., 2.8)">
+<button class="btn" onclick="cN('q11',2.77)">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Residence time τ = V/Q = 484 / 175 ≈ 2.77 years. Compare with Lake Superior (12,100 km³ / 66 km³/yr ≈ 183 years). Shorter residence times mean faster pollutant flushing.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — Soils</div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">The five soil-forming factors (CLORPT) include:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Climate, organisms, relief, parent material, time</label></li>
+<li><label><input type="radio" name="q12" value="b"> Carbon, lithology, oxygen, rocks, plant matter</label></li>
+<li><label><input type="radio" name="q12" value="c"> Coriolis, latitude, orogeny, rainfall, plate motion</label></li>
+<li><label><input type="radio" name="q12" value="d"> Chlorophyll, leaf, oak, root, plant transpiration</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','a')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Hans Jenny's 1941 framework: Climate, Organisms (vegetation and fauna), Relief (slope and topography), Parent material (the underlying rock or sediment), and Time. Each factor shapes soil profile differently; together they explain the global soil map.</div></div>
+
+</div>
+
+<footer>CGF3M — Physical Geography, Grade 11 | Strand B: Physical Processes | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<1.5){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

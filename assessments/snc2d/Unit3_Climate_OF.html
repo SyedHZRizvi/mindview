@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Climate Change — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #d97706; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/snc2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Climate Change — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all work. Use the periodic table.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which statement best describes the difference between weather and climate?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1"> Weather and climate are synonyms</label></li>
+<li><label><input type="radio" name="q1"> Weather is hours-to-days; climate is decades-to-centuries</label></li>
+<li><label><input type="radio" name="q1"> Weather is global; climate is local</label></li>
+<li><label><input type="radio" name="q1"> Climate has no scientific definition</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Weather is the state of the atmosphere at a particular time (hours/days). Climate is the long-term average and range over decades (≥30 years per WMO standard).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[3]</span>
+<div class="qtxt">List three greenhouse gases and rank them by approximate global warming potential (GWP) over 100 years from highest to lowest. Why is \(CO_2\) the dominant concern despite not having the highest GWP?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>By GWP-100, roughly: CFCs and halocarbons (thousands) &gt; \(N_2O\) (~273) &gt; \(CH_4\) (~28) &gt; \(CO_2\) (1, reference). \(CO_2\) is the dominant concern because there is far more of it being emitted (over 35 Gt/yr globally) and it has a very long atmospheric lifetime (centuries to millennia). The product of mass × GWP × lifetime makes \(CO_2\) the largest single contributor to current warming.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Explain the carbon cycle. Identify three processes that <em>release</em> \(CO_2\) and two processes that <em>remove</em> \(CO_2\).</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>The carbon cycle moves carbon among atmosphere, hydrosphere (oceans), biosphere, and lithosphere. Releases (sources): cellular respiration; combustion (fossil fuels, wildfires); decomposition; ocean outgassing (in warming regions). Removals (sinks): photosynthesis (terrestrial and oceanic); ocean uptake (cool surface waters); long-term: weathering of silicate rocks; formation of carbonate sediments and fossil fuels.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">State three lines of evidence for anthropogenic (human-caused) climate change. For each, briefly explain what it shows.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Direct temperature record: global mean surface temp up about 1.1–1.2 °C since 1880; 5 hottest years all in the most recent decade. (2) Atmospheric \(CO_2\): Keeling Curve at Mauna Loa shows rise from 315 to 420+ ppm since 1958; ice cores extend the record 800,000 years showing today's \(CO_2\) is unprecedented. (3) Isotope fingerprint: \(^{13}C\) ratio of atmospheric \(CO_2\) is becoming more like that of fossil fuels — uniquely identifies fossil-fuel burning, not volcanoes, as the dominant source. Other valid: shrinking glaciers and Arctic sea ice; sea-level rise; ocean acidification; range shifts of species and earlier phenology.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which is an example of a positive feedback in the climate system?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> Increased emission of infrared radiation as a surface warms</label></li>
+<li><label><input type="radio" name="q5"> Melting Arctic sea ice exposing darker water that absorbs more sunlight</label></li>
+<li><label><input type="radio" name="q5"> Volcanic aerosols reflecting sunlight</label></li>
+<li><label><input type="radio" name="q5"> Trees absorbing more \(CO_2\) as they grow</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> The ice-albedo feedback: warming melts ice → exposes darker surfaces → more sunlight absorbed → more warming. (A) is the Planck feedback (negative); (C) and (D) are partial negative feedbacks.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [12 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[4]</span>
+<div class="qtxt">A natural-gas leak emits 8 tonnes of methane. Methane's 100-year global warming potential is 28; its 20-year GWP is 85. Calculate the \(CO_2\)-equivalent emissions on both timescales. Why do the two values differ so much?</div>
+<textarea placeholder="Show your work..."></textarea>
+<details><summary>Answer Key</summary><p>100-year CO₂-eq = 8 × 28 = <strong>224 tonnes</strong>. 20-year CO₂-eq = 8 × 85 = <strong>680 tonnes</strong>. The two values differ because methane has a relatively short atmospheric lifetime (~12 years). Over 100 years, much of it has already broken down, so its averaged effect is smaller. Over 20 years, the methane is still in the atmosphere actively warming. The choice of timescale matters for policy: focusing on 20-year GWP emphasises near-term action to limit peak warming; 100-year focuses on long-term equilibrium temperatures.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">Design a controlled experiment (using a model, not real climate) to investigate how the concentration of \(CO_2\) in a sealed container affects internal temperature when illuminated by a heat lamp. Identify variables, controls, and predicted results.</div>
+<textarea placeholder="Your design..."></textarea>
+<details><summary>Answer Key</summary><p>Setup: three identical sealed transparent jars with thermometers; one filled with ambient air, one with elevated \(CO_2\) (use baking soda + vinegar reaction inside or compressed \(CO_2\) from a small canister), one with pure \(CO_2\) if available. Place each at the same distance from a heat lamp. IV: \(CO_2\) concentration. DV: temperature inside the jar over time (record every minute for 30 min). Controlled: jar size, jar material, distance to lamp, lamp wattage, initial temperature, ambient room temperature, duration. Replicate three trials. Predicted result: jars with more \(CO_2\) reach higher final temperatures because \(CO_2\) absorbs infrared re-emitted from the interior. Plot temperature vs time and rank by \(CO_2\) concentration. (Note: real model limitations include very different scales from the actual atmosphere; this is a teaching demonstration of the principle, not a quantitative climate simulation.)</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">A region's annual mean temperature has risen 1.5 °C in 80 years. Calculate the average warming rate per decade. How does this compare to natural climate change rates (e.g., the end of the last ice age, which took ~10,000 years to warm by ~4 °C)?</div>
+<textarea placeholder="Show your calculations and analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Modern rate: 1.5 °C / 80 yr × 10 yr/decade = <strong>0.19 °C per decade</strong> (or 1.9 °C per century). Ice-age recovery rate: 4 °C / 10,000 yr = 0.04 °C per century = 0.004 °C per decade. <strong>Modern warming is roughly 50 × faster than the natural rate</strong> at the end of the last ice age. This rate of change is the central concern: ecosystems and species that adapted to climates over millennia must now adjust in decades, and many cannot.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">Explain the natural greenhouse effect step by step. Include: incoming solar radiation, absorption by Earth's surface, re-emission as infrared, role of greenhouse gases, and back-radiation. Be specific about wavelengths and what happens to energy at each stage.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Short-wavelength visible and UV solar radiation reaches Earth. About 30% is reflected (clouds, ice, deserts — the albedo); the remaining ~70% is absorbed by atmosphere and surface. (2) Earth's surface heats up. (3) Like every warm body, Earth re-emits this energy at much longer wavelengths — peak in the infrared (around 10 µm) because Earth is cool (~288 K). (4) Greenhouse gases (\(H_2O\), \(CO_2\), \(CH_4\), \(N_2O\)) have molecular vibrational modes that absorb IR strongly at specific wavelengths. They re-emit IR in all directions, including back toward the surface. (5) The result is a warmer surface than would otherwise occur (about 33 °C warmer). Without this natural greenhouse effect, Earth's average surface temperature would be about −18 °C and oceans would be frozen. Adding more greenhouse gases enhances the effect, raising temperatures further.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Construct a flow diagram (verbal description acceptable) of the carbon cycle showing the main carbon reservoirs and the processes moving carbon between them.</div>
+<textarea placeholder="Your description..."></textarea>
+<details><summary>Answer Key</summary><p>Reservoirs: atmosphere (\(CO_2\)); ocean (dissolved \(CO_2\), bicarbonate, marine biomass); land biosphere (plants, soils, animals); lithosphere (carbonate rocks, fossil fuels). Processes (arrows): atmosphere → land biosphere (photosynthesis); land biosphere → atmosphere (respiration, decomposition, fire, fossil-fuel combustion); atmosphere ↔ ocean (gas exchange); ocean → marine biosphere → ocean sediments (biological pump; carbonate skeletons sink); ocean ↔ lithosphere (very slow weathering / sedimentation); lithosphere → atmosphere (volcanic outgassing on geological timescales, fossil-fuel extraction + combustion on human timescales). Human perturbation: fossil-fuel combustion + deforestation add ~10 Gt C/year to the atmosphere; about half remains, ~25% is absorbed by oceans (causing acidification), ~25% by land plants.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Compare and contrast mitigation and adaptation strategies. Give one example of each from a Canadian context, and explain why both are needed.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Mitigation reduces the cause (cuts greenhouse-gas emissions). Adaptation prepares for impacts we cannot avoid. Canadian mitigation examples: federal carbon-pricing system; provincial cap-and-trade (Quebec); investment in hydropower, wind, and nuclear electricity; methane-reduction targets in oil and gas; building-code retrofits for energy efficiency; EV incentives. Canadian adaptation examples: redesigning municipal storm sewers for more intense rainfall (Toronto, Calgary); raising bridges and infrastructure for permafrost thaw (Yukon, NWT); shifting agricultural seeding zones; rebuilding wildfire-resilient communities (BC, Alberta); creating climate refugia and Indigenous-led conservation areas. Why both: even if all emissions stopped today, warming would continue for decades and sea level would rise for centuries — adaptation is mandatory for impacts already in the pipeline. But adaptation alone is not enough: at warming above 2–3 °C, impacts become very difficult or impossible to adapt to, so mitigation is essential to keep adaptation tractable.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case Study — Polar Bear and Sea Ice:</strong> Polar bears (Ursus maritimus) rely on Arctic sea ice for hunting seals. Sea-ice extent in September has declined about 13% per decade since 1979. Explain (a) the mechanism linking sea-ice loss to climate change, (b) the impact on polar-bear populations, (c) one indirect impact on Inuit communities.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Warming air and water temperatures cause Arctic sea ice to melt earlier in spring and form later in autumn, shrinking the open-ice season. Ice-albedo feedback amplifies this: melt → darker open water → more solar absorption → more warming → more melt. Arctic amplification means the Arctic warms 3–4× the global average. (b) Polar bears hunt seals from sea ice; with less ice, they must swim longer distances, fast longer through summer, and lose body condition. Reproductive success declines; cubs starve; populations in some regions (western Hudson Bay) have dropped significantly. The IUCN lists the polar bear as vulnerable, with climate change the primary threat. (c) Inuit communities depend on the same sea ice for travel, hunting (seals, beluga, narwhal), and food security. Thinner ice and changing wildlife patterns mean traditional hunting routes are unsafe (drownings have increased), traditional foods are less available, and Inuit knowledge accumulated over centuries no longer perfectly predicts conditions. These impacts on Indigenous ways of life are compounded by climate-driven coastal erosion and permafrost thaw that damage infrastructure in northern communities.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE — Carbon Pricing:</strong> Canada has a federal carbon-pricing system. Argue for or against carbon pricing as a climate-mitigation policy. Address one strength (economic, scientific, or political) and one weakness, plus one equity consideration.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(Either side is defensible if well-argued.) Sample <strong>for</strong>: Strength — economics-101 logic: when a behaviour is harmful, taxing it discourages it; carbon pricing internalises the externality of greenhouse-gas pollution. Empirically, BC's carbon tax (2008) cut per-capita emissions while the BC economy grew. Weakness — carbon pricing alone is rarely sufficient; complementary regulations (building codes, EV mandates, methane rules) are also needed. Equity — carbon prices are regressive (lower-income households spend more of their income on energy) unless paired with rebates. Canada's federal "Climate Action Incentive" rebate returns revenue to households, with most low- and middle-income families coming out ahead. Sample <strong>against</strong>: Strength — argument that prices can be effective. Weakness — political backlash and effectiveness depends on price level (Canada's price ramps to \$170/tonne by 2030, but some studies say much higher is needed for Paris targets). Equity — even with rebates, energy-intensive rural and remote communities (often Indigenous) face disproportionate costs without comparable transit/heating alternatives.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>Personal Action:</strong> A student wants to reduce her own carbon footprint. Rank the following actions by impact and explain: (i) switching to a vegetarian diet, (ii) replacing a gas furnace with a heat pump, (iii) recycling more household waste.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>By annual \(CO_2\) reduction (typical Canadian household): <strong>(ii) Heat pump &gt; (i) Vegetarian diet &gt; (iii) Recycling.</strong> A heat-pump conversion can eliminate 2–4 tonnes of \(CO_2\) per year (replacing natural-gas combustion entirely). A vegetarian diet saves roughly 0.5–1 tonne per person per year (less beef and dairy). Recycling saves roughly 0.1–0.2 tonne per year per household. So while all three help, the heat pump is the biggest single lever. The student should also consider transportation (an EV instead of a gas car can cut 2+ tonnes/yr in Ontario where the grid is mostly clean) and air travel (one transatlantic round-trip flight ≈ 1 tonne of \(CO_2\)). Pairing infrastructure investments with daily lifestyle choices and political/civic engagement (voting for climate policy, advocating for transit) gives the largest overall impact.</p></details></div>
+
+<footer>SNC2D — Science (Academic), Grade 10 | Strand D: Climate Change | Assessment OF Learning — Graded</footer>
+</div></body></html>

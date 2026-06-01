@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Working in International Business — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #db2777; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#db2777;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bbb4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 5: Working in International Business</h1>
+    <div class="sub">Assessment OF Learning — Unit Test</div>
+    <div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks</div>
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/13</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">FITT's CITP designation is issued to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of1" value="a"> Customs specialists</label></li>
+<li><label><input type="radio" name="of1" value="b"> Certified International Trade Professionals</label></li>
+<li><label><input type="radio" name="of1" value="c"> Chartered Financial Analysts</label></li>
+<li><label><input type="radio" name="of1" value="d"> Chartered Professional Accountants</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of1','b')">Check</button>
+<div class="fb" id="of1-fb"></div>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>FITT (Forum for International Trade Training) issues the Certified International Trade Professional (CITP®|FIBP®) designation.</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Hofstede's "long-term orientation" dimension measures:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of2" value="a"> How long meetings tend to last</label></li>
+<li><label><input type="radio" name="of2" value="b"> Whether a culture focuses on future rewards (persistence, thrift) vs short-term tradition</label></li>
+<li><label><input type="radio" name="of2" value="c"> The lifespan of products</label></li>
+<li><label><input type="radio" name="of2" value="d"> The duration of trade agreements</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of2','b')">Check</button>
+<div class="fb" id="of2-fb"></div>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>Long-term orientation (LTO) measures a culture's focus on future rewards — persistence, thrift, perseverance. China and South Korea score high; the US and Australia lower.</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">CFPOA stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of3" value="a"> Canada Foreign Policy Office Authority</label></li>
+<li><label><input type="radio" name="of3" value="b"> Corruption of Foreign Public Officials Act</label></li>
+<li><label><input type="radio" name="of3" value="c"> Canada Free-Port Operating Agreement</label></li>
+<li><label><input type="radio" name="of3" value="d"> Customs Forwarding and Public-Order Agreement</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of3','b')">Check</button>
+<div class="fb" id="of3-fb"></div>
+<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>CFPOA is Canada's anti-bribery law for transactions involving foreign public officials.</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">"ESG" reporting refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of4" value="a"> Earnings, Sales, Growth</label></li>
+<li><label><input type="radio" name="of4" value="b"> Environmental, Social, Governance</label></li>
+<li><label><input type="radio" name="of4" value="c"> Exchange, Spot, Gold</label></li>
+<li><label><input type="radio" name="of4" value="d"> Exports, Services, Goods</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of4','b')">Check</button>
+<div class="fb" id="of4-fb"></div>
+<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>ESG = Environmental, Social, Governance — increasingly used by investors, regulators, and rating agencies to assess corporate responsibility.</div>
+</div>
+
+<div class="qcard" id="of5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The "honeymoon" stage of the U-curve typically lasts:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of5" value="a"> Roughly the first 0–3 months</label></li>
+<li><label><input type="radio" name="of5" value="b"> Roughly 1–2 years</label></li>
+<li><label><input type="radio" name="of5" value="c"> The whole assignment</label></li>
+<li><label><input type="radio" name="of5" value="d"> Never</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of5','a')">Check</button>
+<div class="fb" id="of5-fb"></div>
+<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>The honeymoon is the initial excitement of arrival, typically 0–3 months, before culture shock sets in.</div>
+</div>
+
+<div class="qcard" id="of6">
+<div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">An expat's base salary is \(C\$120{,}000\). The firm adds a hardship premium of 15%, a housing allowance of \(C\$30{,}000\), and an education allowance of \(C\$25{,}000\). What is the total annual compensation package (gross)?</div>
+<input type="text" id="of6-in" placeholder="Enter a number (CAD)...">
+<button class="btn btn-p" onclick="chkNum('of6',193000)">Check</button>
+<div class="fb" id="of6-fb"></div>
+<div class="sol" id="of6-sl"><div class="sol-lbl">Solution:</div>Hardship = \(0.15 \times 120{,}000 = 18{,}000\). Total = \(120{,}000 + 18{,}000 + 30{,}000 + 25{,}000 = C\$193{,}000\).</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A Canadian engineer is offered a 3-year posting to São Paulo. Identify TWO benefits and TWO risks of accepting this expat assignment. Briefly explain each.</div>
+<textarea placeholder="Benefits 1, 2 — Risks 1, 2"></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A Canadian construction firm's container is held by a foreign customs official who hints that a \(\$200\) "facilitation payment" would release it. Walk through how the manager should think about (a) legality under Canadian law, (b) the ethical issue, (c) practical impact on operations. Recommend an action.</div>
+<textarea placeholder="(a) legality ... (b) ethics ... (c) practical ... recommendation ..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">"CSR is just public relations." Argue against this view in a short paragraph using ONE specific company example.</div>
+<textarea placeholder="Your argument..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">In 3–4 sentences, explain "the triple bottom line" to someone who has never studied business. Give ONE example of a real action a company takes in each dimension.</div>
+<textarea placeholder="Explanation + 3 examples..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Compare TWO career paths in international business that interest you (e.g., trade commissioner, export sales manager, customs broker, FX trader, logistics analyst). For each, list one typical task, one needed skill, and one credential.</div>
+<textarea placeholder="Career 1: ... Career 2: ..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Write a respectful but clear message (3–4 sentences) advising a Canadian colleague preparing to negotiate in Tokyo for the first time. Reference at least two cross-cultural concepts (high/low context, monochronic/polychronic, PDI, gift-giving, business cards, silence).</div>
+<textarea placeholder="Your message..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [13 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Sketch the OUTLINE (one page in bullet form) of your Culminating Country/Market Profile for a chosen product and country. Include sections for: country analysis, marketing mix, entry mode, payment method, ethics consideration.</div>
+<textarea placeholder="Product: ... Country: ...&#10;Country analysis: ...&#10;Marketing mix: ...&#10;Entry mode: ...&#10;Payment: ...&#10;Ethics: ..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A Canadian apparel firm sources from Bangladesh. Identify TWO specific ESG/CSR risks AND a mitigation step for each. Reference real frameworks (e.g., UN Global Compact, Better Work, SDGs) where useful.</div>
+<textarea placeholder="Risk 1 + mitigation ... Risk 2 + mitigation ..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Canadian organic maple-syrup producer is exporting to Japan. Build a one-page summary that integrates everything you've learned in BBB4M: (a) country reason in 1 sentence (Strand A), (b) one marketing-mix adaptation (Strand B), (c) entry mode and Incoterm (Strand C), (d) payment method (Strand D), (e) ONE ethics/CSR consideration (Strand E).</div>
+<textarea placeholder="Build the integrated plan..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>BBB4M — International Business Fundamentals, Grade 12 | Strand E: Working in International Business | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<(Math.abs(c)*0.02+0.5)){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

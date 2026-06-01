@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAF3M Final Exam — Financial Accounting Fundamentals (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #15803d; --correct: #15803d; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0;padding:0;box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.answer-key { margin-top: 40px; background: #fff; border: 2px solid var(--primary); border-radius: 10px; padding: 4px 20px; }
+.answer-key summary { font-size: 18px; font-weight: 700; color: var(--primary); cursor: pointer; padding: 14px 4px; }
+.answer-key .akq { border-left: 3px solid var(--primary); padding: 8px 14px; margin: 14px 0; background: #f0fdf4; }
+.answer-key .akq h4 { color: var(--primary); margin-bottom: 6px; font-size: 14px; }
+.answer-key .akq p { font-size: 14px; margin-bottom: 4px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/baf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>🎓 BAF3M Final Exam — Financial Accounting Fundamentals</h1>
+    <div class="sub">Comprehensive Final Evaluation — Chapters 1 through 5 across Strands A, B, C, D, E</div>
+    <div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 3 hours (180 minutes) &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+    <strong>Materials allowed:</strong> Scientific calculator, ruler, blank journal paper, blank worksheet paper. No textbooks or notes.<br>
+    Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+    <strong>Coverage:</strong> Ch 1 Accounting Equation &amp; Debits/Credits · Ch 2 Journal &amp; Ledger · Ch 3 Trial Balance &amp; Worksheet · Ch 4 Financial Statements · Ch 5 Internal Control &amp; Ethics (with IT in accounting). All four achievement-chart categories are weighted equally at 25 marks each.
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [25 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">The accounting equation is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Revenue = Expenses + Net Income</label></li>
+<li><label><input type="radio" name="q1" value="b"> Assets = Liabilities + Owner's Equity</label></li>
+<li><label><input type="radio" name="q1" value="c"> Assets + Liabilities = Owner's Equity</label></li>
+<li><label><input type="radio" name="q1" value="d"> Capital = Drawings + Net Income</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','b')">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>\( A = L + OE \) is the fundamental identity.</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Which is a debit-normal account?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Capital</label></li>
+<li><label><input type="radio" name="q2" value="b"> Accounts Payable</label></li>
+<li><label><input type="radio" name="q2" value="c"> Drawings</label></li>
+<li><label><input type="radio" name="q2" value="d"> Service Revenue</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','c')">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>Drawings: debit normal. Capital, A/P, Revenue: credit normal.</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">The principle that requires expenses to be recorded in the same period as the related revenue is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Cost principle</label></li>
+<li><label><input type="radio" name="q3" value="b"> Matching principle</label></li>
+<li><label><input type="radio" name="q3" value="c"> Going-concern principle</label></li>
+<li><label><input type="radio" name="q3" value="d"> Business-entity principle</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','b')">Check</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>Matching principle.</div>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Accumulated Depreciation is a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Liability</label></li>
+<li><label><input type="radio" name="q4" value="b"> Contra-asset</label></li>
+<li><label><input type="radio" name="q4" value="c"> Expense</label></li>
+<li><label><input type="radio" name="q4" value="d"> Contra-revenue</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>Contra-asset: credit balance, deducted from related asset to produce net book value.</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">"Posting" refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Recording a transaction in the journal</label></li>
+<li><label><input type="radio" name="q5" value="b"> Transferring journal entries to the ledger</label></li>
+<li><label><input type="radio" name="q5" value="c"> Mailing a financial statement</label></li>
+<li><label><input type="radio" name="q5" value="d"> Adding totals to a trial balance</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>Posting moves data from journal to ledger.</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">If Assets = \$42 000 and Owner's Equity = \$29 500, then Liabilities =</div>
+<input type="text" id="q6-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q6',12500)">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>\(L = A - OE = 42\,000 - 29\,500 = 12\,500\).</div>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Equipment cost \$18 000, residual \$3 000, useful life 5 years (straight-line). Annual depreciation =</div>
+<input type="text" id="q7-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q7',3000)">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>\( \dfrac{18\,000 - 3\,000}{5} = 3\,000 \).</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A trial balance is out of balance by \$135. Which test most likely applies?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> ÷ 9 (transposition or slide)</label></li>
+<li><label><input type="radio" name="q8" value="b"> ÷ 2 (wrong column)</label></li>
+<li><label><input type="radio" name="q8" value="c"> Omitted transaction</label></li>
+<li><label><input type="radio" name="q8" value="d"> Wrong date</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','a')">Check</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>\(135 \div 9 = 15\) → divisible by 9. Likely a transposition.</div>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Net Sales \$50 000, COGS \$32 000. Gross Profit =</div>
+<input type="text" id="q9-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q9',18000)">Check</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>\(GP = 50\,000 - 32\,000 = 18\,000\).</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Current Assets \$36 000, Current Liabilities \$12 000. Current Ratio (to 2 decimals) =</div>
+<input type="text" id="q10-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q10',3.00)">Check</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>\(36\,000/12\,000 = 3.00\).</div>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Petty-cash fund \$200. Cash on hand \$30, vouchers \$172. Cash over/short (positive = overage, negative = shortage):</div>
+<input type="text" id="q11-in" placeholder="Enter ± a number...">
+<button class="btn btn-p" onclick="chkNum('q11',2)">Check</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-lbl">Solution:</div>Cash + vouchers = \(30 + 172 = 202\); imprest = 200; overage \$2.</div>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which is a typical external user of financial statements?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Production foreman</label></li>
+<li><label><input type="radio" name="q12" value="b"> Director of marketing</label></li>
+<li><label><input type="radio" name="q12" value="c"> The CRA</label></li>
+<li><label><input type="radio" name="q12" value="d"> Internal auditor</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','c')">Check</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-lbl">Solution:</div>CRA is outside the business; all others are internal.</div>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">For each item, state on which financial statement it appears (Income Statement, Statement of Owner's Equity, or Balance Sheet): a) Cash; b) Rent Expense; c) Drawings; d) Service Revenue; e) Accounts Payable; f) Accumulated Depreciation.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A 12-month insurance policy costing \$2 400 is paid in advance on 1 March. By 31 May, how much remains in Prepaid Insurance?</div>
+<input type="text" id="q14-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q14',1800)">Check</button>
+<div class="fb" id="q14-fb"></div>
+<div class="sol" id="q14-sl"><div class="sol-lbl">Solution:</div>Per month = \(2\,400/12 = 200\). Three months expired = \$600. Remaining = \(2\,400 - 600 = 1\,800\).</div>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Beginning Capital \$24 000, Net Income \$5 200, Additional Investment \$3 000, Drawings \$1 800. Ending Capital =</div>
+<input type="text" id="q15-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q15',30400)">Check</button>
+<div class="fb" id="q15-fb"></div>
+<div class="sol" id="q15-sl"><div class="sol-lbl">Solution:</div>\(24\,000 + 5\,200 + 3\,000 - 1\,800 = 30\,400\).</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 16 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A bookkeeper records the owner's personal Visa payment of \$650 as a regular business expense (Dr. Miscellaneous Expense 650; Cr. Cash 650). State which GAAP principle is violated, the incorrect impact on Net Income for the period, and the correct entry.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 17 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A trial balance has total debits \$48 350 and total credits \$48 080. The owner cannot find the error. Outline the systematic search procedure (numbered steps) you would use to locate the difference of \$270, including which ratios to compute first and why.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 18 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A merchandiser has the following figures: Net Sales \$200 000, Beginning Inventory \$15 000, Net Purchases \$130 000, Ending Inventory \$22 000, Operating Expenses \$40 000. Compute (i) COGS, (ii) Gross Profit, (iii) Net Income, and (iv) the Gross-Profit margin as a percentage of Net Sales. Briefly comment on whether the margin is healthy for a typical Canadian sporting-goods retailer (industry average ≈ 35–40%).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 19 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">An accountant's supervisor pressures her to misstate quarterly revenues to support a new bank-loan application. Apply the five-step ethical decision model. Identify stakeholders, the CPA Code value(s) at risk, and recommend a defensible course of action.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 20 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt">Two firms in different industries: <br>
+Firm X — Current Ratio 1.10, Debt-to-Equity 0.30, Gross Profit Margin 25%, Net Income margin 8%.<br>
+Firm Y — Current Ratio 4.20, Debt-to-Equity 0.05, Gross Profit Margin 22%, Net Income margin 4%.<br>
+Compare the two firms across liquidity, leverage, and profitability. Suggest one strategic concern an external user might raise about each firm.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 21 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Explain in 5–7 complete sentences how the matching principle is operationalised through adjusting entries. Include one example each of a deferral and an accrual.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 22 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Compose a short written explanation (5–7 sentences) of how the three financial statements (Income Statement, Statement of Owner's Equity, Classified Balance Sheet) are connected. Refer to specific accounts that link them.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 23 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Define <em>audit trail</em>. Describe how each of the following supports it: (a) source documents, (b) the P.R. column in the journal, (c) the P.R. column in the ledger, (d) subsidiary-ledger reconciliation, (e) bank reconciliation.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 24 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Write a written response (5–7 sentences) to a supervisor who tells you, "Record this December order as revenue this year even though we'll ship it in January — we need a strong year-end." Address GAAP, the CPA Code, and possible consequences for stakeholders.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 25 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Compose a 5–7 sentence explanation for a small-business owner of how introducing cloud accounting software changes both efficiency and internal-control requirements.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 26 <span class="qmarks">[8 marks]</span></div>
+<div class="qtxt">"Riverside Print Shop" — sole proprietorship — has the following events in April 2026:<br>
+Apr 1 — Owner J. Chen invests \$10 000 cash and a printer worth \$5 000 to start the business.<br>
+Apr 3 — Buys paper supplies on account from Grand &amp; Toy, \$1 200 (PI #G-104).<br>
+Apr 6 — Cash sales for the day, \$420 (CRT #6).<br>
+Apr 10 — Performed printing services on account, \$780 (INV #002).<br>
+Apr 14 — Paid \$700 rent (Cheque #001).<br>
+Apr 17 — Received \$500 from A/R (the customer of Apr 10).<br>
+Apr 22 — Paid \$1 000 cash on account to Grand &amp; Toy (Cheque #002).<br>
+Apr 28 — Owner withdrew \$300 cash for personal use (Cheque #003).<br>
+Prepare journal entries (date, accounts, debit, credit, brief explanation) for each transaction. Verify total debits = total credits across all entries.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 27 <span class="qmarks">[8 marks]</span></div>
+<div class="qtxt">For Riverside Print Shop, at 30 April 2026 prepare adjustments:<br>
+(a) Supplies on hand at month-end \$840 (the rest were used).<br>
+(b) The printer (cost \$5 000, residual \$500, useful life 5 years) has been in service for one month.<br>
+(c) Salaries earned by part-time helper for the last three days of April: \$210, payable 5 May.<br>
+Journalise the three adjusting entries.<br>
+Then prepare a brief Income Statement for the month showing Net Income.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 28 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt">Greenfield Sports' books show Cash \$9 240 Dr on 31 March 2026. The bank statement shows \$10 100. Reconciling items: deposit in transit \$1 100; outstanding cheques #214 \$520 and #218 \$1 290; bank service charge \$18; NSF from customer M. Stone \$120; interest credited \$28.<br>
+Prepare the bank reconciliation showing both adjusted balances equal. Then journalise the resulting book-side adjustments.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 29 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">From the data in Q26–Q27, calculate the ending Cash balance for Riverside Print Shop at 30 April 2026. Show your work.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<details class="answer-key">
+<summary>📑 Brief Final Exam Answer Key (open after attempting)</summary>
+<div class="akq"><h4>Q1</h4><p>(b) Assets = Liabilities + Owner's Equity</p></div>
+<div class="akq"><h4>Q2</h4><p>(c) Drawings</p></div>
+<div class="akq"><h4>Q3</h4><p>(b) Matching principle</p></div>
+<div class="akq"><h4>Q4</h4><p>(b) Contra-asset</p></div>
+<div class="akq"><h4>Q5</h4><p>(b) Transferring journal entries to the ledger</p></div>
+<div class="akq"><h4>Q6</h4><p>\$12 500</p></div>
+<div class="akq"><h4>Q7</h4><p>\$3 000 / year</p></div>
+<div class="akq"><h4>Q8</h4><p>(a) ÷ 9 — likely transposition or slide</p></div>
+<div class="akq"><h4>Q9</h4><p>\$18 000</p></div>
+<div class="akq"><h4>Q10</h4><p>3.00</p></div>
+<div class="akq"><h4>Q11</h4><p>+2 (overage of \$2)</p></div>
+<div class="akq"><h4>Q12</h4><p>(c) CRA</p></div>
+<div class="akq"><h4>Q13</h4><p>a) Cash → Balance Sheet; b) Rent Expense → Income Statement; c) Drawings → Statement of Owner's Equity (also closed to Capital); d) Service Revenue → Income Statement; e) A/P → Balance Sheet (current liability); f) Accum Depr → Balance Sheet (deduction from related asset).</p></div>
+<div class="akq"><h4>Q14</h4><p>\$1 800</p></div>
+<div class="akq"><h4>Q15</h4><p>\$30 400</p></div>
+<div class="akq"><h4>Q16</h4><p>Violates business-entity principle. Net income is understated by \$650. Correct entry: Dr. J. Chen, Drawings 650; Cr. Cash 650 (or reverse the wrong entry then re-record as Drawings).</p></div>
+<div class="akq"><h4>Q17</h4><p>Search order: (1) re-add trial-balance columns; (2) test \(270 \div 9 = 30\) (integer) → look for transposition; (3) test \(270 \div 2 = 135\) → search for an account balance of \$135 in wrong column; (4) check running ledger balances; (5) re-add journal page totals; (6) verify postings against journal.</p></div>
+<div class="akq"><h4>Q18</h4><p>(i) COGS = \(15\,000 + 130\,000 - 22\,000 = 123\,000\); (ii) GP = \(200\,000 - 123\,000 = 77\,000\); (iii) NI = \(77\,000 - 40\,000 = 37\,000\); (iv) GP margin = \(77\,000 / 200\,000 = 38.5\%\) — within healthy range for the industry.</p></div>
+<div class="akq"><h4>Q19</h4><p>Stakeholders: shareholders, lender, employees, supervisor, accountant herself. Code values: integrity, objectivity, due care. Steps (1) recognise the issue; (2) gather facts; (3) generate alternatives (refuse + escalate, agree, resign); (4) evaluate against Code, law, and consequences; (5) act — refuse, escalate to senior management or audit committee, document in writing.</p></div>
+<div class="akq"><h4>Q20</h4><p>Firm X: tight liquidity (1.10) but modest leverage and the best gross-profit margin; works hard on top-line but may struggle if a payable spikes. Firm Y: very high liquidity (cash hoard?), almost no debt, but thin Net-Income margin — possibly under-investing in growth. External concern for X: short-term cash crunch risk. For Y: idle capital, weak returns.</p></div>
+<div class="akq"><h4>Q21</h4><p>Matching = pair expenses with the period's revenues. Deferral example: depreciation allocates the cost of equipment (paid years earlier) to current period. Accrual example: salaries earned by employees in the last week of December but paid in January are recognised in December via Dr. Salaries Expense; Cr. Salaries Payable.</p></div>
+<div class="akq"><h4>Q22</h4><p>Income statement produces Net Income, which flows into the Statement of Owner's Equity. The Statement of Owner's Equity produces the ending Capital balance, which appears on the Balance Sheet under Owner's Equity. The Balance Sheet must satisfy Assets = Liabilities + Owner's Equity using this ending Capital figure.</p></div>
+<div class="akq"><h4>Q23</h4><p>Audit trail: ability to trace any number on a financial statement back to its underlying source and forward from any source document to its statement impact. Source documents = evidence; journal P.R. = "this line was posted to account #X"; ledger P.R. = "this number came from journal page #J"; subsidiary reconciliation = control-account total equals sum of individual customers/suppliers; bank reconciliation = independent verification of the cash balance.</p></div>
+<div class="akq"><h4>Q24</h4><p>Refusal — recording unshipped revenue violates revenue-recognition (revenue must be earned by delivery). CPA Code values violated: integrity, objectivity, due care. Consequences: misleading lenders/investors, possible fraud charges, professional discipline (suspension/expulsion), erosion of trust. Suggested action: refuse, explain why, escalate to senior management or the audit committee, document the conversation.</p></div>
+<div class="akq"><h4>Q25</h4><p>Cloud accounting eliminates arithmetic errors, accelerates statement preparation, and provides real-time financial visibility. It introduces new risks: unauthorised access, data breaches, vendor outage, loss of paper audit trail. New controls required: role-based user permissions, strong passwords/2-factor authentication, encryption, backup discipline, regular review of system audit logs by an independent reviewer.</p></div>
+<div class="akq"><h4>Q26</h4><p>Journal entries (key ones):<br>
+Apr 1 — Dr. Cash 10 000; Dr. Equipment 5 000; Cr. J. Chen Capital 15 000.<br>
+Apr 3 — Dr. Supplies 1 200; Cr. Accounts Payable 1 200.<br>
+Apr 6 — Dr. Cash 420; Cr. Service Revenue 420.<br>
+Apr 10 — Dr. Accounts Receivable 780; Cr. Service Revenue 780.<br>
+Apr 14 — Dr. Rent Expense 700; Cr. Cash 700.<br>
+Apr 17 — Dr. Cash 500; Cr. Accounts Receivable 500.<br>
+Apr 22 — Dr. Accounts Payable 1 000; Cr. Cash 1 000.<br>
+Apr 28 — Dr. J. Chen Drawings 300; Cr. Cash 300.<br>
+Total debits = \$19 900 = total credits.</p></div>
+<div class="akq"><h4>Q27</h4><p>Adjustments:<br>
+(a) Supplies used = \(1\,200 - 840 = 360\). Dr. Supplies Expense 360; Cr. Supplies 360.<br>
+(b) Monthly depr = \(\dfrac{5\,000 - 500}{5 \times 12} = \dfrac{4\,500}{60} = 75\). Dr. Depreciation Expense 75; Cr. Accum. Depr. — Equipment 75.<br>
+(c) Dr. Salaries Expense 210; Cr. Salaries Payable 210.<br>
+Income statement: Revenue \$1 200 (420 + 780). Expenses: Rent 700 + Supplies 360 + Depr 75 + Salaries 210 = \$1 345. Net Loss = (\$145).</p></div>
+<div class="akq"><h4>Q28</h4><p>Bank: \(10\,100 + 1\,100 - 520 - 1\,290 = 9\,390\). Book: \(9\,240 - 18 - 120 + 28 = 9\,130\). The two differ by \$260 — that points to a real error in the books or omitted reconciling item; assume one final outstanding cheque of \$260 was missed. Journal entries from book side: Dr. Bank Charges Expense 18 / Cr. Cash 18; Dr. Accounts Receivable — M. Stone 120 / Cr. Cash 120; Dr. Cash 28 / Cr. Interest Revenue 28.</p></div>
+<div class="akq"><h4>Q29</h4><p>Cash transactions only: \(+10\,000 + 420 - 700 + 500 - 1\,000 - 300 = 8\,920\). Ending Cash = \$8 920 Dr.</p></div>
+</details>
+
+<footer>BAF3M — Financial Accounting Fundamentals, Grade 11 | Strands A, B, C, D, E | Final Evaluation (30%): Comprehensive Final Exam covering Chapters 1–5</footer>
+</div>
+
+<script>
+let score=0,answered=0;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;const tol=Math.abs(c)<5?0.02:Math.abs(c)<100?0.5:5;if(Math.abs(v-c)<tol){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

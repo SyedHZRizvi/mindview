@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC2D — Science (Academic) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #dc2626; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #dc2626; }
+.video-player { padding: 0 14px 14px; display: none; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #dc2626; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #991b1b; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #dc2626; color: #fff; }
+.chnav-next:hover { background: #b91c1c; }
+.chnav-finish { background: #16a34a; color: #fff; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../snc2d.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SNC2D Science Academic)</a></div>
+    <div class="strand-tag">Science — Grade 10 Academic</div>
+    <h1>🧪 SNC2D: Unit 5: Integration &amp; Skills</h1>
+    <p>Scientific method, experimental design, lab safety, data analysis, STSE issues, and careers in science</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+            <h2>Unit 5: Integration &amp; Skills</h2>
+            <p>The investigation skills, safety knowledge, and STSE perspectives that thread through every other unit</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Scientific Investigation Skills &amp; Career Exploration</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+
+        <!-- Scientific Method -->
+        <div class="subsection-label">🔬 Scientific Method &amp; Experimental Design</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>scientific method</em> is not a single recipe — different sciences proceed in different ways — but a shared set of habits ties them all together. The classical sequence runs: <em>observation → question → research → hypothesis → controlled experiment → analysis of results → conclusion → communication</em>. New questions emerge from every conclusion, so the process loops. A <em>hypothesis</em> is a testable, falsifiable explanation, written in "if … then … because …" form so that experimental conditions and expected outcomes are both specified. A hypothesis must be capable of being shown wrong — claims that cannot in principle be tested are outside the domain of science.</p>
+            <p>A well-designed <em>controlled experiment</em> has clearly defined variables. The <em>independent variable</em> (IV) is the one factor you change deliberately; the <em>dependent variable</em> (DV) is what you measure to see the effect. <em>Controlled variables</em> (also called constants) are everything else, kept the same so that observed changes in the DV can be attributed to the IV. A <em>control group</em> receives no treatment (or the standard treatment) and provides a baseline for comparison with the experimental group(s). Without proper controls, you cannot tell whether the IV caused the change or whether something else did.</p>
+            <p>Two principles strengthen any experiment. <em>Replication</em> — repeating each condition several times (at least three trials) — reduces the effect of random variation and lets you estimate uncertainty by averaging. <em>Sample size</em> — using many subjects per condition — applies the same logic to studies with biological variability (different plants respond differently, different students react differently). A single trial may give a result by chance; repeated trials with a large sample give results you can believe.</p>
+            <p>Two kinds of errors threaten conclusions. <em>Random errors</em> arise from limits of measurement precision and from inherent biological variability; they cause scatter around the true value and average out over many trials. <em>Systematic errors</em> are biases that consistently shift results in one direction (a thermometer reading 2 °C too high, a stopwatch started early, an unobserved confounding variable); they cannot be reduced by averaging — only by careful design. Acknowledging both kinds in a lab report is a sign of scientific maturity.</p>
+            <ul>
+              <li><strong>Hypothesis</strong> — testable, falsifiable explanation written in "if … then … because …" form.</li>
+              <li><strong>Independent / dependent / controlled variable</strong> — change / measure / keep constant.</li>
+              <li><strong>Control group</strong> — group not receiving the experimental treatment, used for comparison.</li>
+              <li><strong>Replication</strong> — repeating each condition to reduce random error.</li>
+              <li><strong>Random vs systematic error</strong> — scatter from limits of precision / consistent bias from a design flaw.</li>
+              <li><strong>Falsifiability</strong> — the requirement that a hypothesis could in principle be shown wrong.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Designing a controlled experiment</p>
+              <p>Design a controlled experiment to test whether the colour of light affects the rate of photosynthesis in pondweed (Elodea).</p>
+              <p>Hypothesis: <em>If pondweed receives red or blue light rather than green light, then the rate of photosynthesis will be higher in red/blue, because chlorophyll absorbs red and blue strongly but reflects green.</em> Variables — IV: colour of light (red, blue, green, white as control). DV: rate of photosynthesis, measured as bubbles of \(O_2\) released per minute (or volume collected in a graduated tube over 5 min). Controlled: same length of Elodea (e.g., 8 cm), same water temperature (20 °C, monitored), same dissolved-CO₂ source (e.g., 1% NaHCO₃ buffer), same light intensity (same wattage bulb at the same 30 cm distance with coloured cellophane filters), same duration (5 min). Replication: three independent pondweed pieces per colour, and repeat the whole set on three separate days. Analysis: compare mean \(O_2\) production across colours; check that error bars (standard deviation across trials) do not overlap for a strong claim. Conclusion: state whether the data support, refute, or are inconclusive about the hypothesis.</p>
+            </div>
+            <ul>
+              <li>Writing a hypothesis as a question or a wish — it must be a testable statement.</li>
+              <li>Changing more than one variable at a time — this confounds the result and you cannot tell which change caused what.</li>
+              <li>Treating one trial as proof — replication is essential.</li>
+              <li>Calling agreement with the hypothesis "proof" — science accumulates evidence; theories are never "proved" beyond doubt.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 — "formulate scientific questions and testable hypotheses" and A1.2 — "plan controlled experiments with independent, dependent, and controlled variables."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Scientific Method: Steps, Examples, Tips &amp; Exercise — Scribbr</span>
+                <span class="vid-duration">8:14</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/yi0hwFDQTSQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=yi0hwFDQTSQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Lab Safety -->
+        <div class="subsection-label">⚠️ Lab Safety &amp; WHMIS</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Laboratory safety is the first prerequisite for any investigation. In Canadian schools and workplaces it is governed by <em>WHMIS</em> — the Workplace Hazardous Materials Information System — administered nationally and reflecting the global GHS (Globally Harmonised System of Classification and Labelling of Chemicals). WHMIS requires that hazardous products carry standard labels, be accompanied by <em>Safety Data Sheets (SDS)</em>, and that all workers (including students) be trained to interpret them.</p>
+            <p>Every hazardous product has a label in two formats. A <em>supplier label</em> includes a product identifier, hazard pictograms, signal word (Danger or Warning), hazard statements, precautionary statements, supplier identifier, and supplementary information. A <em>workplace label</em> may be simpler (product name, safe-handling info, reference to SDS) but must still convey the essential hazards. WHMIS pictograms are diamond-shaped with black symbols on white backgrounds in red borders. Key pictograms students must recognise: flame (flammable); flame over circle (oxidising — feeds fires); exploding bomb (explosive); skull and crossbones (acutely toxic); corrosion (skin or metal corrosion — concentrated acids, bases); health hazard (carcinogenic, mutagenic, reproductive toxicity); exclamation mark (less severe acute toxicity, irritant); gas cylinder (gases under pressure); environment (aquatic toxicity).</p>
+            <p>General rules in every lab: read the procedure before starting; wear safety glasses, closed-toe shoes, and a lab coat; tie back long hair; never eat, drink, or chew gum; know the location of the eyewash station, safety shower, fire extinguisher, fume hood, and emergency exits; never taste anything; smell a substance only by wafting (not inhaling directly); add acid to water, never water to acid (the latter can spit); use a fume hood for volatile or toxic chemicals; dispose of chemicals in designated waste containers (not the sink); clean up spills promptly; report all accidents — even small ones — to the teacher; wash hands at the end. Glassware is replaced cheaply; eyes and skin are not.</p>
+            <ul>
+              <li><strong>WHMIS</strong> — Workplace Hazardous Materials Information System, Canada's hazardous-products regime.</li>
+              <li><strong>SDS</strong> — Safety Data Sheet; 16-section document for every hazardous product.</li>
+              <li><strong>Pictogram</strong> — standardised symbol indicating a hazard category.</li>
+              <li><strong>PPE</strong> — Personal Protective Equipment (safety glasses, gloves, lab coat).</li>
+              <li><strong>Fume hood</strong> — ventilated cabinet for handling volatile or toxic chemicals.</li>
+              <li><strong>Eyewash station</strong> — emergency rinsing device for chemical splashes to the eyes.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Interpreting a WHMIS label</p>
+              <p>You find a bottle labelled "Hydrochloric Acid, 6 mol/L" carrying pictograms of corrosion and an exclamation mark, signal word "Danger", and hazard statement "Causes severe skin burns and eye damage". What practical safety steps must you take before using it in a titration lab?</p>
+              <p>Hazards identified: <strong>corrosive</strong> (can burn skin and eyes) and <strong>acute irritant</strong> (respiratory irritation likely). Safety steps: (1) read the corresponding section of the SDS before starting; (2) wear safety goggles (chemical splash type), lab coat, and nitrile gloves; (3) work in a well-ventilated area or under a fume hood if pouring large volumes; (4) carry the bottle with two hands, supporting the base; (5) dilute by adding acid to water in a beaker, swirling gently, never water to concentrated acid (heat release); (6) keep eyewash station and safety shower locations confirmed; (7) dispose of all neutralised waste in the labeled acid-waste container; (8) wash hands and exposed skin at the end. Treat every chemical as if you might accidentally splash it on your face.</p>
+            </div>
+            <ul>
+              <li>Ignoring "small" amounts — even drops of concentrated acid can permanently scar eyes.</li>
+              <li>Reading the label as advisory — WHMIS labels are legally required information about real hazards.</li>
+              <li>Pouring water into concentrated acid — heat release can boil the mixture and spit acid out.</li>
+              <li>Disposing of chemicals in the sink "because it's just a little" — many municipalities have strict rules about hazardous waste; school labs use dedicated waste containers.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A2.2 — "use appropriate laboratory apparatus and personal protective equipment, and follow WHMIS protocols when working with hazardous materials."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Lab Safety: An Introduction — Amoeba Sisters</span>
+                <span class="vid-duration">5:54</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/MEIXRLcC6RA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=MEIXRLcC6RA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Data Analysis -->
+        <div class="subsection-label">📈 Data, Graphs &amp; Error Analysis</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Once a controlled experiment is performed, raw measurements must be turned into meaningful results. <em>Data</em> are the values you record; <em>information</em> is what those data tell you when organised, analysed, and interpreted. Good practice begins with a well-designed data table: rows for each trial, columns for each variable, with units in the column heading rather than repeated in every cell. Record what you actually measure (e.g., "time for one drop of indicator to change colour, s") rather than calculated values, so the original measurements remain available for re-analysis.</p>
+            <p>Calculations should preserve <em>significant figures</em>. The result of multiplication or division has the same number of significant figures as the input with the fewest. The result of addition or subtraction has the same number of decimal places as the input with the fewest decimal places. Reporting too many digits implies false precision (e.g., quoting "g = 9.81243 m/s² ± 0.5" is meaningless because the 1 in the second decimal place is uncertain). Express very large or very small numbers in scientific notation (\(6.02 \times 10^{23}\)).</p>
+            <p>The right kind of <em>graph</em> depends on the data. A <em>line graph</em> shows how a continuous DV changes with a continuous IV (e.g., temperature vs time as a substance cools). A <em>bar graph</em> compares categories (e.g., absorbance for different wavelengths in a photosynthesis experiment). A <em>scatter plot</em> displays paired measurements (e.g., dose vs response in a drug study) and can reveal correlations. Best practices: clear, descriptive title; axes labeled with quantity and unit; sensible scales; a line of best fit drawn through the data when appropriate (not connecting each point in a zigzag); error bars representing measurement uncertainty.</p>
+            <p><em>Uncertainty</em> in a single measurement equals half the smallest division on the instrument. A graduated cylinder with 1 mL markings gives ± 0.5 mL on a single reading. For repeated trials, the standard deviation of the trials estimates the random uncertainty. <em>Percent error</em> = |experimental − accepted| / accepted × 100% is a common quick check against a known reference value. Small percent error (under ~5%) suggests good technique; larger error invites investigation of possible systematic errors before re-running the experiment.</p>
+            <ul>
+              <li><strong>Significant figures</strong> — digits in a measurement that are reliable.</li>
+              <li><strong>Scientific notation</strong> — \(N \times 10^x\) for very large or small numbers.</li>
+              <li><strong>Line graph / bar graph / scatter plot</strong> — best for continuous vs continuous / categorical / paired data.</li>
+              <li><strong>Line of best fit</strong> — single straight or smooth curve through the trend in the data.</li>
+              <li><strong>Uncertainty</strong> — estimated range within which the true value lies.</li>
+              <li><strong>Percent error</strong> — |experimental − accepted| / accepted × 100%.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Calculating uncertainty and percent error</p>
+              <p>A student measures the boiling point of water in three trials: 99.4, 100.2, 99.8 °C. (a) Calculate the mean and the range. (b) State the result with appropriate uncertainty. (c) Compare to the accepted value 100.0 °C and compute the percent error.</p>
+              <p>(a) Mean = (99.4 + 100.2 + 99.8) / 3 = <strong>99.8 °C</strong>. Range = 100.2 − 99.4 = 0.8 °C. (b) A reasonable uncertainty for three trials is half the range, ± 0.4 °C, so the boiling point is reported as <strong>(99.8 ± 0.4) °C</strong>. The accepted value (100.0 °C) falls within this uncertainty, so the experiment is consistent with the accepted boiling point. (c) Percent error = |99.8 − 100.0| / 100.0 × 100% = <strong>0.2%</strong>, very small. Possible sources of systematic error: thermometer calibration; atmospheric pressure (water boils at 99.6 °C at 980 hPa, lower than 100.0 °C at standard 1013 hPa); dissolved minerals raising the boiling point slightly.</p>
+            </div>
+            <ul>
+              <li>Connecting every point in a zigzag instead of drawing a line of best fit.</li>
+              <li>Quoting numbers with more decimal places than the measurement supports.</li>
+              <li>Forgetting units on axes — a graph without units is meaningless.</li>
+              <li>Treating percent error as the only sign of quality — a good experiment also has small uncertainty and clear control of variables.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A3.1 — "analyse data using mathematical and graphical tools, including identifying patterns, calculating uncertainty, and evaluating sources of error."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Significant Figures Made Easy! — Tyler DeWitt</span>
+                <span class="vid-duration">10:53</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9WFxkxFXb20?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=9WFxkxFXb20" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- STSE -->
+        <div class="subsection-label">🌐 STSE — Science, Technology, Society &amp; the Environment</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>STSE — <em>Science, Technology, Society, and Environment</em> — is the Ontario curriculum's term for the deep connections between scientific knowledge and the broader world. It is not an add-on; it is woven through every strand. Studying organ donation is not just about anatomy; it includes ethical, religious, legal, and equity dimensions. Studying chemical reactions is not just balancing equations; it includes asking which reactions are essential to modern life, which create environmental harms, and how green chemistry might minimise those harms. Studying climate change is inseparable from policy and Indigenous knowledge. Studying optical technology asks who has access to corrective lenses worldwide.</p>
+            <p>STSE issues are <em>complex</em> in a particular way. They almost always involve trade-offs (cost vs benefit, individual vs collective, short-term vs long-term), uncertainty in the science (climate sensitivity, precise dose-response curves), value judgements about what should be prioritised, and unequal distribution of benefits and harms. A well-constructed STSE argument lays out the relevant scientific evidence, identifies the stakeholders involved, names the values in tension, and proposes a position with reasons. It does not pretend that science alone "decides" — but it does insist that policy ignoring the science is bad policy.</p>
+            <p>Examples from each SNC2D strand illustrate the range. <em>Biology:</em> who can ethically be a stem-cell donor? Should opt-out organ donation be the default? How do we balance individual privacy with public-health surveillance during epidemics? <em>Chemistry:</em> acid precipitation from coal-burning power plants damages lakes far from the source — what international cooperation is needed? How do we manage the legacy of chemicals like asbestos and lead, used widely before their hazards were understood? <em>Earth &amp; Space:</em> Canada has both significant fossil-fuel resources and binding emissions-reduction commitments under the Paris Agreement; how should provinces with petroleum economies transition? What does climate justice require of wealthy countries who emitted historically? <em>Physics &amp; Optics:</em> laser pointers can damage eyes; what regulation is needed? Fibre optics enabled the internet — what does universal access look like in rural and remote communities, including First Nations?</p>
+            <p>One vital perspective often historically excluded is <em>Indigenous knowledge</em> — knowledge developed over millennia by First Nations, Inuit, and Métis peoples through observation, experimentation, and oral tradition. Indigenous knowledge is increasingly recognised by Western science as essential for understanding ecosystems, climate adaptation, sustainable resource use, and many medical applications. Ethical STSE work in Canada must engage seriously with this body of knowledge rather than dismissing or appropriating it.</p>
+            <ul>
+              <li><strong>STSE</strong> — Science, Technology, Society, Environment: the intersection of scientific knowledge and human values.</li>
+              <li><strong>Stakeholder</strong> — anyone affected by or with a stake in a decision (citizens, governments, corporations, communities).</li>
+              <li><strong>Trade-off</strong> — accepting a cost in one dimension to gain a benefit in another.</li>
+              <li><strong>Precautionary principle</strong> — taking protective action despite scientific uncertainty when potential harm is serious.</li>
+              <li><strong>Green chemistry</strong> — designing chemical processes to minimise waste, energy use, and toxic by-products.</li>
+              <li><strong>Indigenous knowledge</strong> — knowledge systems developed by First Nations, Inuit, and Métis peoples.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Analysing an STSE issue</p>
+              <p>A coal-fired power plant in your community is being considered for replacement by either (i) a natural-gas plant or (ii) a wind-farm + battery-storage combination. Use STSE thinking to analyse the choice in 4 dimensions.</p>
+              <p><em>Science:</em> Natural gas reduces \(CO_2\) emissions per kWh by about 50% versus coal, but methane leakage offsets some of this. Wind + storage is essentially zero-emission once built; emissions from manufacturing are paid back within months. <em>Technology:</em> Gas plants are dispatchable (always on); wind is variable and needs battery or grid backup. Both are mature technologies, but battery costs are dropping rapidly. <em>Society:</em> Gas plants employ similar numbers of workers as coal plants. Wind+storage creates installation jobs but fewer permanent ones; reskilling supports may be needed. Local property tax base, community benefit agreements, and Indigenous land-rights consultation all matter. <em>Environment:</em> Gas keeps emissions going for the plant's 30+ year life; wind+storage cuts them sharply. Wind has localised impacts on birds, bats, and viewshed; gas has continuing risks from leaks and spills. A defensible STSE position weighs urgent climate action (favouring wind+storage), local employment realities, capital cost, and Indigenous consultation; it does not pretend the science settles the question alone.</p>
+            </div>
+            <ul>
+              <li>Treating STSE issues as if science alone gives the answer — values inform every policy choice.</li>
+              <li>Confusing "we don't know yet exactly" with "we don't know at all" — uncertainty does not justify inaction on issues with large potential harms.</li>
+              <li>Ignoring stakeholders who are not loud — vulnerable populations often bear environmental harm disproportionately.</li>
+              <li>Treating Indigenous knowledge as folklore — it is a rigorous body of empirical knowledge developed over generations.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A, Expectation A1.1 / B1.1 / C1.1 / D1.1 / E1.1 — across all strands, "analyse current social, technological, and environmental issues related to the field of study, including ethical considerations and the perspectives of affected stakeholders, including Indigenous communities."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">What Is Indigenous Knowledge? — TED-Ed</span>
+                <span class="vid-duration">5:01</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/QARCfqaLYNE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=QARCfqaLYNE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Careers -->
+        <div class="subsection-label">🎓 Career Pathways in Science</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>One of the explicit goals of the Ontario science curriculum is helping students see where their interest in science could lead. <em>Career exploration</em> is built into Strand A across every grade. Science underpins an extraordinary range of careers — far beyond the white-lab-coat researcher most students picture first.</p>
+            <p>From <em>Biology — Tissues, Organs &amp; Systems</em>: physician, nurse, paramedic, midwife, dentist, pharmacist, physiotherapist, occupational therapist, medical laboratory technologist, biomedical engineer, public-health analyst, surgical technologist, sonographer, radiation therapist, veterinarian, dental hygienist. Biology training also feeds research careers in genetics, immunology, microbiology, and developmental biology; clinical-trials coordinators and regulatory affairs specialists; and patient-care roles in counselling and social work.</p>
+            <p>From <em>Chemistry — Chemical Reactions</em>: chemist (analytical, organic, physical, inorganic), chemical engineer, materials scientist, forensic scientist, environmental compliance officer, water-treatment technician, pharmacist and pharmacology researcher, food scientist, brewery and winery chemist, polymer specialist, art conservator, science teacher. Chemistry training also feeds patent law and intellectual-property work, science writing, and policy roles in agencies like Health Canada and Environment Canada.</p>
+            <p>From <em>Earth &amp; Space — Climate Change</em>: climatologist, meteorologist, oceanographer, geologist, geophysicist, environmental engineer, conservation officer, sustainability consultant, ESG (environmental, social, governance) analyst, renewable-energy engineer, carbon-accounting specialist, energy auditor, urban planner, Indigenous environmental coordinator. The transition to a low-carbon economy is generating hundreds of thousands of new jobs in Canada alone.</p>
+            <p>From <em>Physics — Light &amp; Geometric Optics</em>: physicist, photonics technician, fibre-optic technician, optometrist, ophthalmologist, optician, medical imaging technologist (X-ray, CT, MRI, ultrasound), telecommunications engineer, laser-safety officer, astronomy and astrophysics researcher, electronics engineer, computer-vision developer, lighting designer. Optics underpins much of modern technology, from smartphone cameras to LiDAR sensors in autonomous vehicles.</p>
+            <p>Most science careers require post-secondary credentials — college diplomas for many technician roles, undergraduate degrees for engineering and laboratory science, graduate degrees for research and clinical specialisation. Pathways are flexible: SNC2D feeds Grade 11 university-preparation courses (SBI3U, SCH3U, SPH3U, SES4U), which lead to university programs. Applied SNC2P leads to college-preparation Grade 11 courses, then to college diploma programs. Both pathways open doors to long, rewarding careers.</p>
+            <ul>
+              <li><strong>Career pathway</strong> — sequence of courses, programs, and credentials leading to a career.</li>
+              <li><strong>University-preparation course (U)</strong> — Grade 11/12 course feeding direct-entry university programs.</li>
+              <li><strong>College-preparation course (C)</strong> — Grade 11/12 course feeding college diploma programs.</li>
+              <li><strong>Mixed (M)</strong> — course satisfying either university or college admission requirements.</li>
+              <li><strong>STEM</strong> — Science, Technology, Engineering, Mathematics; broad umbrella for many science-based careers.</li>
+              <li><strong>Trades pathway</strong> — apprenticeship-based careers including electrician, plumber, optician, machinist; all involve applied science.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Mapping interests to careers</p>
+              <p>A student loves the biology unit but is intimidated by the math demands of physics. She is interested in helping people and likes working with her hands. Map at least three career pathways she could explore.</p>
+              <p>Pathway 1: Health-care professions — registered nurse (BScN, 4 years), paramedic (2-year college program), respiratory therapist (3-year college program), dental hygienist (3-year college program). All require Grade 11 and 12 biology (SBI3U + SBI4U or equivalent) and high-school chemistry; most also benefit from human anatomy or psychology. Pathway 2: Lab-based health science — medical laboratory technologist (3-year college diploma), pharmacy technician (2-year diploma), genetic counsellor (master's-level professional). These reward biology background and detail-oriented hands-on work. Pathway 3: Allied therapy — physiotherapist (master's level, requires undergraduate kinesiology/biology), occupational therapist (similar), athletic therapist (4-year degree). These professions combine biology with human-movement science and direct patient interaction. The student should consult her school counsellor, explore Ontario Universities' Application Centre and Ontario Colleges, and look for high-school co-op or volunteer placements in health-care settings to test her interests in real environments.</p>
+            </div>
+            <ul>
+              <li>Treating "scientist" as one job — there are thousands of science-based careers across academic, industry, government, and clinical settings.</li>
+              <li>Assuming university is the only route — many rewarding science careers come through college and trades pathways.</li>
+              <li>Worrying that Grade 10 is too early to think about careers — exploring early lets you choose appropriate Grade 11/12 courses with intent.</li>
+              <li>Ignoring transferable skills — communication, teamwork, problem-solving and ethical reasoning are valued in every career and are deliberately developed in every science class.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — career-exploration overall expectation embedded in A1–A4 across all strands: "identify careers in which science plays a central role and explore the pathways (Grade 11–12 course choices, post-secondary programs) that lead to them."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">How to Choose the Right Career Path in 7 Simple Steps — TED-Ed style overview</span>
+                <span class="vid-duration">9:01</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/kM0e27wEEzw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=kM0e27wEEzw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 5 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/snc2d/Unit5_Skills_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/snc2d/Unit5_Skills_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/snc2d/Unit5_Skills_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../snc2d.html" class="chnav-btn chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SNC2D Science (Academic) · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

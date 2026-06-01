@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HFN3M — Nutrition and Health | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #2563eb; color: #fff; }
+.chnav-next:hover { background: #1d4ed8; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#0d9488dd,#0d9488);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../hfn3m.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (HFN3M Nutrition and Health)</a></div>
+    <div class="strand-tag">Social Sciences &amp; Humanities — Grade 11 University/College Preparation</div>
+    <h1>🥗 HFN3M: Chapter 2: Digestion &amp; Metabolism</h1>
+    <p>The journey of food from mouth to cell — mechanical &amp; chemical digestion, GI anatomy, absorption, ATP production, BMR &amp; total daily energy expenditure</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0d9488dd,#0d9488);">
+        <h2>Chapter 2: Digestion &amp; Metabolism</h2>
+        <p>Mechanical and chemical digestion, the GI tract, enzymes, absorption, ATP and energy metabolism, BMR &amp; total daily energy expenditure</p>
+        <div class="unit-meta">
+            <span>📚 Strand B: Nutrition &amp; Health</span>
+            <span>⏱️ ~22h</span>
+            <span>🎯 B2.1–B2.3</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.1 — Overview of the Digestive System</div>
+        <div class="topic-desc">The path of food from mouth to anus, mechanical vs chemical digestion, the role of accessory organs (liver, gallbladder, pancreas).</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p><strong>Digestion</strong> is the breakdown of food into molecules small enough to be absorbed into the bloodstream. It happens in two distinct ways. <em>Mechanical digestion</em> is physical fragmentation — chewing in the mouth, churning by the stomach, and segmentation contractions in the small intestine — which increases surface area for enzymes to attack. <em>Chemical digestion</em> is the enzyme-catalysed hydrolysis of macromolecules into their absorbable monomers: starch and disaccharides into monosaccharides, proteins into amino acids, and triglycerides into monoglycerides and free fatty acids. Both forms of digestion happen simultaneously throughout most of the GI tract.</p>
+            <p>The <strong>gastrointestinal (GI) tract</strong> is a single continuous tube about 9 m long from mouth to anus. Its stations are <em>mouth → pharynx → oesophagus → stomach → small intestine (duodenum, jejunum, ileum) → large intestine (cecum, colon, rectum) → anus</em>. Surrounding <strong>accessory organs</strong> do not contact food directly but secrete digestive juices into the tract: the <em>salivary glands</em> deliver saliva (with the enzyme amylase) to the mouth; the <em>liver</em> manufactures bile, stored and concentrated in the <em>gallbladder</em> until it is released into the duodenum to emulsify fats; the <em>pancreas</em> sends a cocktail of enzymes (pancreatic amylase, lipase, trypsin, chymotrypsin) and bicarbonate ions into the duodenum to neutralise acid arriving from the stomach.</p>
+            <p>Three integrated functions occur along the tract: <em>digestion</em> (mechanical + chemical breakdown), <em>absorption</em> (transfer of nutrients across the gut wall into blood or lymph), and <em>elimination</em> (removal of indigestible residue as faeces). Food spends roughly 30 seconds in the mouth, 2–4 hours in the stomach, 3–6 hours in the small intestine, and 12–48 hours in the large intestine.</p>
+            <ul>
+              <li><strong>Mechanical digestion</strong> — physical fragmentation (chewing, churning, segmentation).</li>
+              <li><strong>Chemical digestion</strong> — enzymatic hydrolysis of macromolecules.</li>
+              <li><strong>GI tract</strong> — continuous tube from mouth to anus, ~9 m long.</li>
+              <li><strong>Accessory organ</strong> — produces digestive juices but is not part of the tube (salivary glands, liver, gallbladder, pancreas).</li>
+              <li><strong>Bile</strong> — emulsifies dietary fat in the duodenum (made in liver, stored in gallbladder).</li>
+              <li><strong>Peristalsis</strong> — wave-like smooth-muscle contraction that propels food along the tract.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracking a slice of whole-wheat toast</p>
+              <p>Trace what happens to a piece of whole-wheat toast at every stage of the GI tract over the first six hours after eating, identifying the digestion type at each stage.</p>
+              <p>0–30 sec, mouth: <em>mechanical</em> — incisors and molars fragment the toast; <em>chemical</em> — salivary amylase hydrolyses some starch to maltose. 30 sec, oesophagus: peristalsis propels the bolus to the stomach (~10 sec). 30 min–3 h, stomach: <em>mechanical</em> churning mixes bolus with gastric juice; <em>chemical</em> — HCl denatures wheat protein and pepsin begins protein hydrolysis. Starch hydrolysis stops because amylase is inactivated by acid. 3–6 h, small intestine: bile from the gallbladder emulsifies any spread butter; pancreatic amylase resumes starch digestion; pancreatic lipase digests fat; trypsin and chymotrypsin digest the protein in the wheat. Maltose, glucose, amino acids, and fatty acids are absorbed across the villi into the hepatic-portal blood and lymph.</p>
+            </div>
+            <ul>
+              <li>Treating "digestion" as just chemical — chewing and churning are essential mechanical steps.</li>
+              <li>Saying "the liver secretes bile into the stomach" — bile enters the duodenum, not the stomach.</li>
+              <li>Forgetting that accessory organs (liver, pancreas) are not part of the tube; they only contribute secretions.</li>
+              <li>Confusing the GI tract sections — the small intestine has three parts (duodenum, jejunum, ileum), the large intestine three (cecum, colon, rectum) plus the appendix.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "trace the path of food through the gastrointestinal tract; describe the roles of mechanical and chemical digestion and the contributions of the accessory organs."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('hfn-yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Digestive System: Crash Course Anatomy &amp; Physiology #33</span>
+                <span class="vid-duration">10:09</span>
+                <span class="vid-toggle" id="toggle-hfn-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-hfn-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/yIoTRGfcMqM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=yIoTRGfcMqM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.2 — Mouth, Stomach, and the First Phase of Digestion</div>
+        <div class="topic-desc">Saliva &amp; amylase, swallowing reflex, gastric HCl &amp; pepsin, the role of intrinsic factor and the mucus layer.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Digestion begins in the <strong>mouth</strong>. Teeth (incisors for cutting, canines for tearing, premolars and molars for grinding) physically reduce food to a paste. The salivary glands — parotid, submandibular, and sublingual — secrete about 1.5 L of <strong>saliva</strong> per day. Saliva contains mucin to lubricate the bolus, lysozyme to begin microbial defence, bicarbonate to neutralise acid, and <em>salivary amylase</em> (formerly ptyalin), which begins to hydrolyse cooked starch into shorter dextrins and the disaccharide maltose. The tongue compacts the bolus and triggers the involuntary <em>swallowing reflex</em>: the soft palate elevates to close the nasopharynx, the epiglottis flips to seal the trachea, and the bolus is delivered to the oesophagus, which then carries it to the stomach by peristalsis in roughly 10 seconds.</p>
+            <p>The <strong>stomach</strong> is a J-shaped, muscular reservoir that holds 1–2 L of contents. Its lining contains specialised cells: <em>parietal cells</em> secrete hydrochloric acid (HCl) that drops the gastric pH to 1.5–2.0; <em>chief cells</em> secrete pepsinogen, which is converted by the acid to the active enzyme <strong>pepsin</strong>, the principal stomach protease. Parietal cells also produce <strong>intrinsic factor</strong>, a glycoprotein required for vitamin B12 absorption in the ileum — its lack causes pernicious anaemia. <em>Goblet cells</em> and <em>surface mucous cells</em> secrete a thick alkaline mucus that coats the stomach wall and prevents auto-digestion. The strong acid kills most ingested bacteria, denatures dietary protein, and provides the low pH that pepsin requires for activity.</p>
+            <p>The stomach churns the contents into a soup-like fluid called <strong>chyme</strong>. The pyloric sphincter at the lower stomach exit releases small jets of chyme into the duodenum every minute or two — fatty meals delay gastric emptying via the hormone cholecystokinin, while liquid meals empty in less than an hour. Carbohydrate digestion essentially pauses in the stomach because amylase is denatured by the acid; only protein digestion (by pepsin) and a small amount of triglyceride digestion (by gastric lipase) make meaningful progress here.</p>
+            <ul>
+              <li><strong>Salivary amylase</strong> — starts starch digestion in the mouth.</li>
+              <li><strong>Swallowing reflex</strong> — involuntary; closes nasopharynx and trachea, opens oesophagus.</li>
+              <li><strong>HCl</strong> — gastric acid, pH 1.5–2.0; denatures protein, kills microbes.</li>
+              <li><strong>Pepsin</strong> — stomach protease; cleaves peptide bonds inside proteins.</li>
+              <li><strong>Intrinsic factor</strong> — gastric glycoprotein required for B12 absorption in the ileum.</li>
+              <li><strong>Chyme</strong> — semi-liquid mixture of partially digested food, acid, and enzymes.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Why pepsin is active in the stomach but inactive in the small intestine</p>
+              <p>Pepsin is a globular protein with an active site optimised for binding peptide bonds at pH ≈ 2. Predict what happens to pepsin once chyme passes into the duodenum and is mixed with pancreatic bicarbonate that raises pH to ~7.5.</p>
+              <p>At pH 7.5, the ionisation state of pepsin's active-site amino acids changes, the enzyme undergoes partial denaturation, and its catalytic activity falls essentially to zero — exactly what the body needs, because protein digestion in the small intestine is taken over by trypsin and chymotrypsin (pancreatic enzymes with neutral-pH optima). This compartmentalisation explains why several pH-distinct proteases are needed for a single protein meal: pepsin gets pepsin's pH zone; trypsin gets trypsin's.</p>
+            </div>
+            <ul>
+              <li>Believing the stomach digests all food. Carbohydrate digestion pauses in the stomach; most absorption happens later in the small intestine.</li>
+              <li>Treating gastric HCl as "produced as needed" only — even between meals there is some basal secretion.</li>
+              <li>Confusing the swallowing reflex (closes airway) with the gag reflex (protects against foreign objects).</li>
+              <li>Forgetting that pernicious anaemia (B12 deficiency) is often caused by autoimmune destruction of parietal cells, not by dietary lack.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "identify mechanical and chemical digestion at each stage of the GI tract, including the roles of saliva, HCl, pepsin, intrinsic factor, and the gastric mucus layer."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('hfn-yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Digestive System Part 1 — Crash Course A&amp;P #33</span>
+                <span class="vid-duration">9:23</span>
+                <span class="vid-toggle" id="toggle-hfn-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-hfn-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jGme7BRkpuQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=jGme7BRkpuQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.3 — Small Intestine, Pancreas, and Bile</div>
+        <div class="topic-desc">Duodenum chemistry, pancreatic juice composition, bile emulsification, villi &amp; microvilli, brush-border enzymes.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>small intestine</strong> is where the majority of digestion is completed and almost all absorption occurs. It is divided into the <em>duodenum</em> (first 25 cm), <em>jejunum</em> (~2.5 m), and <em>ileum</em> (~3.5 m). The duodenum is the chemical workshop: as acidic chyme arrives, the hormones <em>secretin</em> and <em>cholecystokinin (CCK)</em> are released into the blood by intestinal cells. Secretin triggers the pancreas to release bicarbonate-rich fluid that neutralises the acid (raising pH to ~7.5–8.0). CCK triggers the pancreas to release its enzyme cocktail and the gallbladder to contract and release bile.</p>
+            <p><strong>Pancreatic juice</strong> contains four major enzymes: <em>pancreatic amylase</em> (completes starch → maltose), <em>pancreatic lipase</em> (triglycerides → monoglycerides + fatty acids, assisted by bile salts), <em>trypsin and chymotrypsin</em> (cleave protein into shorter peptides). Importantly, trypsin is secreted as inactive trypsinogen and is activated in the duodenum by the brush-border enzyme enteropeptidase — this prevents the pancreas from digesting itself.</p>
+            <p><strong>Bile</strong>, produced by hepatocytes in the liver and concentrated in the gallbladder, contains bile salts (cholesterol-derived emulsifiers), phospholipids, cholesterol, and bilirubin (a waste from haemoglobin breakdown). Bile salts <em>emulsify</em> dietary fat — they coat large droplets and break them into tiny micelles, increasing surface area 1000-fold and giving lipase room to work. Bile is not an enzyme; it is a detergent. After fat absorption, ~95% of bile salts are reabsorbed in the ileum and recycled to the liver (the enterohepatic circulation).</p>
+            <p>The intestinal wall is folded into <em>circular folds</em>, covered with finger-like <em>villi</em> (~1 mm tall), each villus carpeted with <em>microvilli</em> (the "brush border"). Together they expand the absorptive surface area to roughly 250 m² — about the size of a tennis court. <strong>Brush-border enzymes</strong> (maltase, sucrase, lactase, peptidases) complete the final digestion as nutrients arrive. Monosaccharides and amino acids enter the blood capillary inside each villus and flow via the hepatic portal vein to the liver. Long-chain fatty acids are repackaged into chylomicrons that enter the central lymphatic lacteal and bypass the liver until the chylomicrons reach the bloodstream via the thoracic duct.</p>
+            <ul>
+              <li><strong>Duodenum / jejunum / ileum</strong> — three regions of the small intestine.</li>
+              <li><strong>Secretin / CCK</strong> — duodenal hormones that orchestrate pancreatic and bile release.</li>
+              <li><strong>Pancreatic juice</strong> — amylase, lipase, trypsin, chymotrypsin + bicarbonate.</li>
+              <li><strong>Bile</strong> — liver-made emulsifier; not an enzyme; recycled by enterohepatic circulation.</li>
+              <li><strong>Villi / microvilli</strong> — folds and protrusions that maximise absorptive surface area.</li>
+              <li><strong>Brush-border enzyme</strong> — final-stage enzymes embedded in microvillar membrane (maltase, sucrase, lactase).</li>
+              <li><strong>Chylomicron</strong> — lipoprotein that carries long-chain fats from gut into lymph.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Why removing the gallbladder usually does not stop fat digestion</p>
+              <p>A patient has her gallbladder removed (cholecystectomy) because of gallstones. Predict whether she can still digest a normal-fat meal afterwards, and what dietary adjustments she may have to make.</p>
+              <p>The liver still makes bile; the gallbladder was only the storage and concentration site. After surgery, bile drips continuously into the duodenum rather than arriving in large pulses on demand. Small or moderate-fat meals are usually digested without problem. However, very high-fat meals (e.g., a single deep-fried meal) can overwhelm the trickling bile flow, producing temporary fatty diarrhoea (steatorrhoea). Dietary advice: spread fat across several smaller meals and prefer moderate-fat foods until enterohepatic recycling adapts (usually within weeks).</p>
+            </div>
+            <ul>
+              <li>Calling bile "an enzyme" — bile is a detergent that emulsifies; pancreatic lipase is the enzyme.</li>
+              <li>Forgetting that trypsin is secreted as an inactive zymogen (trypsinogen) to protect the pancreas from self-digestion.</li>
+              <li>Treating the surface area of the small intestine as a smooth tube — folds, villi, and microvilli expand it to ~250 m².</li>
+              <li>Believing that fat enters the bloodstream directly — long-chain fats enter the lymphatic system as chylomicrons first.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.1 — "describe the structure and function of the small intestine, the contributions of the pancreas and liver/gallbladder, and the role of villi and microvilli in nutrient absorption."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('hfn-yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Digestive System Part 2 — Crash Course A&amp;P #34</span>
+                <span class="vid-duration">10:07</span>
+                <span class="vid-toggle" id="toggle-hfn-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-hfn-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/pqgcEIaXGME?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=pqgcEIaXGME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.4 — Large Intestine, Microbiome, and Elimination</div>
+        <div class="topic-desc">Water reabsorption, the colon microbiome, short-chain fatty acids, vitamin K, transit time and constipation/diarrhoea.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>By the time chyme reaches the <strong>large intestine</strong> (colon), the body has already absorbed almost all of the digestible macromolecules. Roughly 1.5 L of liquid residue enters the cecum each day; the colon recovers most of that water and electrolytes, producing a semi-solid stool of ~150 g. The colon's stations are <em>cecum (with appendix) → ascending colon → transverse colon → descending colon → sigmoid colon → rectum → anus</em>. Compared with the small intestine, the colon has no villi but still relies on a single layer of epithelial cells with abundant goblet cells that secrete the mucus that lubricates faeces.</p>
+            <p>The colon hosts a dense community of microbes — the <strong>gut microbiome</strong>. An adult colon contains roughly \(10^{14}\) bacterial cells, comparable in number to total human cells. Dominant phyla include Bacteroidetes and Firmicutes. The microbiome <em>ferments</em> dietary fibre and resistant starch into short-chain fatty acids (SCFAs) — acetate, propionate, and butyrate — which provide ~10% of daily energy in adults and feed colonocytes (especially butyrate). The microbiome also <em>synthesises vitamin K, biotin, and small amounts of B12</em>, although these contributions are modest compared with dietary sources. Disturbed microbiome composition (dysbiosis) is associated with irritable bowel syndrome, inflammatory bowel disease, and possibly obesity.</p>
+            <p><strong>Transit time</strong> through the colon is normally 12–48 hours. Adequate fibre and water keep stools soft and prevent <em>constipation</em>; conversely, food poisoning, viral infections, or excess osmotic load (sugar alcohols, lactose intolerance) cause <em>diarrhoea</em>. Faeces consist mostly of water (75%), bacteria, dead epithelial cells, and indigestible residues. Defecation is initiated by the gastrocolic reflex (eating triggers mass movements) and completed by voluntary control of the external anal sphincter.</p>
+            <ul>
+              <li><strong>Large intestine</strong> — cecum, colon (ascending, transverse, descending, sigmoid), rectum.</li>
+              <li><strong>Gut microbiome</strong> — ~\(10^{14}\) bacteria; ferments fibre, synthesises K and biotin.</li>
+              <li><strong>Short-chain fatty acid (SCFA)</strong> — acetate, propionate, butyrate from fibre fermentation.</li>
+              <li><strong>Transit time</strong> — typical 12–48 h for colon; reduced by fibre; total GI transit ~24–72 h.</li>
+              <li><strong>Constipation / diarrhoea</strong> — &lt;3 stools/week / &gt;3 loose stools/day.</li>
+              <li><strong>Probiotic / prebiotic</strong> — live beneficial microbes / fibres that feed them.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Designing dietary advice for chronic constipation</p>
+              <p>A 60-year-old reports passing hard, dry stools fewer than three times per week. His current fibre intake is ≈10 g/day, his water intake ≈800 mL/day, and he is sedentary. List specific changes that should resolve most cases.</p>
+              <p>(1) Increase fibre to ~30 g/day by adding ½ cup oat bran, a pear, ½ cup lentils, and 1 cup broccoli; soluble fibre softens stools and insoluble fibre adds bulk. (2) Increase total fluid to ≥2 L/day; without water, extra fibre worsens constipation. (3) Add 30 minutes of moderate walking 5×/week; exercise stimulates intestinal motility. (4) Consider a daily serving of yogurt with live cultures or a kefir as a probiotic. Re-evaluate at 4 weeks; only after these measures fail should osmotic laxatives (e.g., PEG) be added.</p>
+            </div>
+            <ul>
+              <li>Believing the appendix is functionless. It harbours a microbiome reservoir that re-seeds the colon after diarrhoea.</li>
+              <li>Treating "regular" bowel movements as "once a day" universally — anywhere from 3×/day to 3×/week is normal.</li>
+              <li>Recommending probiotics for every digestive issue — current evidence supports specific strains for specific indications (e.g., antibiotic-associated diarrhoea), not a universal benefit.</li>
+              <li>Forgetting that prolonged use of stimulant laxatives can damage colonic nerves.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "describe the structure and function of the large intestine, the role of the gut microbiome in digestion and immunity, and the conditions of constipation and diarrhoea."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('hfn-yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Gut Microbiome — Heimler's History — Bozeman Science</span>
+                <span class="vid-duration">7:11</span>
+                <span class="vid-toggle" id="toggle-hfn-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-hfn-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/VzPD009qTN4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=VzPD009qTN4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.5 — Cellular Respiration and ATP</div>
+        <div class="topic-desc">Glycolysis, citric-acid cycle, electron transport chain, the ATP yield of glucose, and the role of mitochondria.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Once monomers are absorbed, energy must be released from them inside cells. <strong>Cellular respiration</strong> is the controlled, stepwise oxidation of glucose (or fats or proteins) that liberates energy and stores it in molecules of <strong>adenosine triphosphate (ATP)</strong>. ATP is the universal energy currency: hydrolysis of its terminal phosphate bond releases ≈ 30.5 kJ/mol, used to power muscle contraction, active transport, and biosynthesis. The overall equation for aerobic respiration of glucose is</p>
+            <p>\[ C_6H_{12}O_6 + 6\,O_2 \rightarrow 6\,CO_2 + 6\,H_2O + \text{energy (≈ 30 ATP)} \]</p>
+            <p>The process has three stages. <em>Glycolysis</em> occurs in the cytoplasm and splits one glucose (6 C) into two pyruvate (3 C) molecules, netting 2 ATP and 2 NADH. <em>Pyruvate oxidation + the citric-acid cycle</em> (also called the Krebs cycle) occurs in the mitochondrial matrix; per glucose it produces 6 \(CO_2\), 2 ATP, 6 NADH, and 2 FADH₂. <em>The electron transport chain (ETC) plus chemiosmosis</em> is embedded in the inner mitochondrial membrane: electrons from NADH and FADH₂ are passed down a chain of protein complexes, pumping protons across the membrane; protons flow back through ATP synthase, generating ≈ 26 ATP. Oxygen acts as the final electron acceptor, forming water.</p>
+            <p>Total ATP yield per glucose is ≈ 30 ATP (older textbooks state 36–38). Without oxygen, glycolysis still runs but pyruvate is converted to lactic acid in muscle (or ethanol + \(CO_2\) in yeast) to regenerate NAD⁺; this <em>anaerobic</em> route produces only 2 ATP per glucose — enough for short, intense bursts of activity but not sustainable. Fats and proteins enter the same machinery: fatty acids are broken down into acetyl-CoA by β-oxidation and feed directly into the citric-acid cycle, yielding far more ATP per molecule than carbohydrate.</p>
+            <ul>
+              <li><strong>ATP</strong> — adenosine triphosphate; the cellular energy currency.</li>
+              <li><strong>Glycolysis</strong> — cytoplasmic; glucose → 2 pyruvate; net 2 ATP + 2 NADH.</li>
+              <li><strong>Citric-acid (Krebs) cycle</strong> — mitochondrial matrix; per glucose, 2 ATP, 6 NADH, 2 FADH₂.</li>
+              <li><strong>Electron transport chain</strong> — inner mitochondrial membrane; ~26 ATP; \(O_2\) = final electron acceptor.</li>
+              <li><strong>Aerobic</strong> — with oxygen; ~30 ATP per glucose.</li>
+              <li><strong>Anaerobic fermentation</strong> — without oxygen; 2 ATP per glucose; yields lactate in muscle.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Why fat yields more ATP per gram than carbohydrate</p>
+              <p>A 9 g cube of butter (almost pure fat) and a 9 g cube of pure glucose (carbohydrate) are completely oxidised. Compare their energy and ATP yields.</p>
+              <p>Energy: butter \(9 \text{ g} \times 9 \text{ kcal/g} = 81\) kcal; glucose \(9 \text{ g} \times 4 \text{ kcal/g} = 36\) kcal. Butter therefore delivers more than twice the energy. ATP: 1 mole glucose (180 g) yields ~30 ATP. 1 mole tristearin (the dominant fat in butter; 891 g) yields ~458 ATP. Normalised per gram: glucose \(30 \div 180 \approx 0.17\) mol-ATP/g; tristearin \(458 \div 891 \approx 0.51\) mol-ATP/g — three times more. The reason: the carbon atoms of fat are highly reduced (rich in C–H bonds), and each oxidation step gives back energy in the form of NADH and FADH₂.</p>
+            </div>
+            <ul>
+              <li>Writing the photosynthesis equation by accident — cellular respiration is the reverse direction.</li>
+              <li>Saying "fermentation produces ATP from the ETC" — fermentation does <em>not</em> use the ETC; it only regenerates NAD⁺ for glycolysis.</li>
+              <li>Treating ATP as a "fuel that is burned" — ATP is a high-energy intermediate, not a fuel source itself.</li>
+              <li>Confusing lactic acid in muscle (anaerobic) with the citric-acid cycle (aerobic — also called the Krebs cycle).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "describe cellular respiration (glycolysis, citric-acid cycle, electron transport chain) and the role of ATP as the energy currency that powers physiological processes."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('hfn-yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cellular Respiration — Bozeman Science</span>
+                <span class="vid-duration">12:19</span>
+                <span class="vid-toggle" id="toggle-hfn-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-hfn-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/00jbG_cfGuQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=00jbG_cfGuQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.6 — Energy Balance: BMR, TEE, and Body Composition</div>
+        <div class="topic-desc">Basal metabolic rate, the thermic effect of food, physical-activity energy expenditure, total daily energy expenditure, energy balance equation.</div>
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <strong>energy balance equation</strong> says simply: <em>change in body energy stores = energy in (food) − energy out (expenditure)</em>. A positive balance produces fat gain; a negative balance produces fat (and some lean) loss. The "energy out" side has three components.</p>
+            <p><strong>Basal metabolic rate (BMR)</strong> is the energy used to keep a fasting, awake, resting body alive at thermal neutrality — for breathing, heart-beat, brain activity, ion gradients, and cell repair. BMR accounts for 60–75% of total daily energy expenditure (TDEE) in sedentary adults. A common estimator is the Mifflin–St Jeor equation:</p>
+            <p>\[ \text{BMR}_{\text{men}} = 10W + 6.25H - 5A + 5 \]</p>
+            <p>\[ \text{BMR}_{\text{women}} = 10W + 6.25H - 5A - 161 \]</p>
+            <p>where \(W\) is body weight in kg, \(H\) is height in cm, and \(A\) is age in years. Lean mass burns more energy than fat mass, so two people of the same body weight may differ by 10–15% in BMR depending on muscularity.</p>
+            <p>The <strong>thermic effect of food (TEF)</strong> is the energy cost of digesting, absorbing, and storing nutrients — about 10% of intake for a mixed diet (carbohydrate and fat ~5%, protein ~25%). High-protein diets feel "more satiating" partly because of higher TEF. <strong>Physical-activity energy expenditure (PAEE)</strong> covers everything from formal exercise to fidgeting (NEAT — non-exercise activity thermogenesis); it ranges from 15% of TDEE in sedentary people to 30–40% in athletes. <strong>Total daily energy expenditure (TDEE)</strong> = BMR + TEF + PAEE. Activity factors multiply BMR by 1.2 (sedentary), 1.55 (moderate), or 1.9 (very active).</p>
+            <p>Body composition matters more than weight alone. Two body-composition measures are common: <em>body mass index (BMI = \(\frac{W}{H^2}\) in kg/m²)</em> — easy but coarse, misclassifying muscular athletes; and <em>waist-to-hip ratio</em> — a stronger predictor of metabolic disease risk because abdominal (visceral) fat is more metabolically active than subcutaneous fat.</p>
+            <ul>
+              <li><strong>BMR</strong> — energy to keep a fasting resting body alive; 60–75% of TDEE.</li>
+              <li><strong>TEF</strong> — thermic effect of food; ~10% of intake.</li>
+              <li><strong>PAEE / NEAT</strong> — energy for activity, including fidgeting; varies widely.</li>
+              <li><strong>TDEE</strong> — total daily energy expenditure = BMR + TEF + PAEE.</li>
+              <li><strong>Energy balance</strong> — energy in vs energy out; positive = gain, negative = loss.</li>
+              <li><strong>BMI</strong> — kg/m²; underweight &lt;18.5; normal 18.5–24.9; overweight 25–29.9; obesity ≥30.</li>
+              <li><strong>Waist-to-hip ratio</strong> — abdominal fat indicator; men &gt;0.9 or women &gt;0.85 = elevated risk.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Calculating TDEE for a teenage student</p>
+              <p>A 16-year-old female student weighs 60 kg, is 165 cm tall, and trains soccer 5×/week (moderately active, activity factor 1.55). Use Mifflin–St Jeor to estimate her TDEE.</p>
+              <p>Step 1 — BMR: \(10(60) + 6.25(165) - 5(16) - 161 = 600 + 1\,031.25 - 80 - 161 = 1\,390\) kcal/day. Step 2 — TDEE: \(1\,390 \times 1.55 \approx 2\,155\) kcal/day. (TEF is built into the activity factor multiplier in this version of the equation.) To maintain weight she should consume ~2 150 kcal/day; to gain ½ kg of muscle per week (about 500 kcal/day surplus) she should aim for ~2 650 kcal/day with adequate protein (1.2–1.6 g/kg = 72–96 g/day).</p>
+            </div>
+            <ul>
+              <li>Treating BMR as a fixed number — it falls with weight loss (adaptive thermogenesis) and during prolonged dieting.</li>
+              <li>Using BMI alone for adolescents — Health Canada uses age- and sex-specific BMI-for-age percentiles instead.</li>
+              <li>Believing "muscle weighs more than fat" — equal volumes of muscle weigh ~15% more, but a kilogram is a kilogram.</li>
+              <li>Eating very low-calorie diets (&lt;1 200 kcal/day) without medical supervision — risk of muscle loss, micronutrient deficiency, and metabolic adaptation.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "explain basal metabolic rate, the thermic effect of food, physical-activity energy expenditure, and total daily energy expenditure, and apply the energy-balance equation to weight maintenance, loss, and gain."</p>
+          </div>
+        </details>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('hfn-yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Metabolism &amp; Nutrition, part 1: Crash Course A&amp;P #36</span>
+                <span class="vid-duration">10:01</span>
+                <span class="vid-toggle" id="toggle-hfn-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-hfn-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fR3NxCR9z2U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=fR3NxCR9z2U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 2 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/hfn3m_ch2_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/hfn3m_ch2_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/hfn3m_ch2_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · HFN3M — Nutrition and Health, Grade 11 · Ontario Curriculum 2013 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

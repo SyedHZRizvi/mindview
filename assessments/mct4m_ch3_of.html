@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Trigonometric Functions — Unit Test (OF Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: #16a34a; background: #f0fdf4; }
+.qcard.wrong { border-color: #dc2626; background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.desmos-link { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #1e293b; color: #fff; border-radius: 6px; text-decoration: none; font-size: 13px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#dc2626;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 3: Trigonometric Functions</h1>
+<div class="sub">Assessment OF Learning — Unit Test</div>
+<div class="badge">✅ Graded — Counts Toward Term Mark</div>
+</header>
+<div class="warn"><strong>⏱️ Duration:</strong> 80 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks<br>Show all work.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/13</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Convert \( 225° \) to radians (exact form).</div>
+<input type="text" id="of1-in" placeholder="e.g. 5pi/4">
+<button class="btn btn-p" onclick="document.getElementById('of1-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>\( 225 \cdot \pi/180 = 225\pi/180 = 5\pi/4 \).</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Evaluate \( \cos 150° \) exactly.</div>
+<input type="text" id="of2-in" placeholder="e.g. -sqrt(3)/2 or -0.866">
+<button class="btn btn-p" onclick="document.getElementById('of2-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>Reference 30°; Q II ⇒ cos negative. \( \cos 150° = -\sqrt{3}/2 \approx -0.866 \).</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Find the arc length on a circle of radius 12 cm subtended by an angle of 90°.</div>
+<input type="text" id="of3-in" placeholder="Enter cm...">
+<button class="btn btn-p" onclick="chkNum('of3', 18.85)">Check</button>
+<div class="fb" id="of3-fb"></div>
+<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>\( \theta = \pi/2 \) rad; \( s = r\theta = 12(\pi/2) = 6\pi \approx 18.85 \) cm.</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">If \( \cos\theta = -1/2 \) and \( \theta \in [0°, 360°) \), find all values.</div>
+<ul class="mc">
+<li><label><input type="radio" name="of4" value="a"> 60° and 300°</label></li>
+<li><label><input type="radio" name="of4" value="b"> 120° and 240°</label></li>
+<li><label><input type="radio" name="of4" value="c"> 60° and 120°</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of4','b')">Check</button>
+<div class="fb" id="of4-fb"></div>
+<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>Reference 60°; cos negative in Q II and Q III. So 120° and 240°.</div>
+</div>
+
+<div class="qcard" id="of5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">What is the period of \( y=3\sin(\pi x) \)?</div>
+<input type="text" id="of5-in" placeholder="Enter period...">
+<button class="btn btn-p" onclick="chkNum('of5', 2)">Check</button>
+<div class="fb" id="of5-fb"></div>
+<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>Period \( = 2\pi/|k| = 2\pi/\pi = 2 \).</div>
+</div>
+
+<div class="qcard" id="of6">
+<div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">In \( \triangle ABC \), \( A=45° \), \( B=60° \), \( c=10 \). Find \( a \) (round to 2 dp).</div>
+<input type="text" id="of6-in" placeholder="Enter a...">
+<button class="btn btn-p" onclick="chkNum('of6', 7.32)">Check</button>
+<div class="fb" id="of6-fb"></div>
+<div class="sol" id="of6-sl"><div class="sol-lbl">Solution:</div>\( C=180-45-60=75° \). \( a/\sin 45° = 10/\sin 75° \). \( a = 10\sin 45°/\sin 75° \approx 10(0.7071)/(0.9659) \approx 7.32 \).</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A triangular plot has sides 14 m, 18 m, and 22 m. Find the largest angle (round to nearest degree).</div>
+<textarea placeholder="Use cosine law..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A sinusoidal function has maximum 12, minimum -4, period 8, and a maximum at \( x=2 \). Write a sine equation and verify by checking your function at \( x=2 \).</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Desmos</a><br>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Prove the identity \( \dfrac{\sin\theta}{1-\cos\theta} + \dfrac{\sin\theta}{1+\cos\theta} = \dfrac{2}{\sin\theta} \). (Use only Pythagorean and reciprocal identities.)</div>
+<textarea placeholder="Show steps..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A classmate confuses degree mode and radian mode on the calculator. Explain how to tell which mode to use for a given problem and what kind of error appears if the wrong mode is selected.</div>
+<textarea placeholder="Explain..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe step-by-step how to recognise whether a problem requires the sine law or the cosine law. Include the SSA "ambiguous case" in your explanation.</div>
+<textarea placeholder="Explain..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Sketch one full cycle of \( y = 2\cos(\tfrac{\pi}{2}(x-1))-1 \). Label amplitude, period, equation of axis, and one maximum. State the range.</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Desmos</a><br>
+<textarea placeholder="Describe sketch..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [13 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">The depth of water at a dock cycles between a high of 6 m at 2 a.m. and a low of 2 m at 8 a.m. Find a sinusoidal model \( D(t) \) where \( t \) is hours after midnight.</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Desmos</a><br>
+<textarea placeholder="Show parameter derivation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Two cell-phone towers are 4 km apart along a road. A user's phone reports signals from both towers; angles to her location from each are 70° and 50° (measured from the line of towers). Find her distance from the closer tower.</div>
+<textarea placeholder="Set up diagram and use sine law..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A 12 m ladder leans against a wall with its base 5 m from the wall. Find the angle the ladder makes with the ground; then find the height it reaches on the wall.</div>
+<textarea placeholder="Solve using trig ratios..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric" style="margin-top:32px;">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (standard)</td><td>70-79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr>
+</table>
+</div>
+
+<footer>MCT4M — Mathematics for College Technology | Strand C: Trigonometric Functions | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){
+    const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}
+    if(sl)sl.classList.add('show');
+}
+function chkNum(q,c){
+    const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(Math.abs(v-c)<0.2){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}
+    if(sl)sl.classList.add('show');
+}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

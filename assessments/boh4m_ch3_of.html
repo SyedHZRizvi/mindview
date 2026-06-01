@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOH4M Ch 3: Communication, Decision-Making &amp; Conflict — Unit Test (OF Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #faf5ff; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/boh4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 3: Communication, Decision-Making &amp; Conflict</h1>
+    <div class="sub">Assessment OF Learning — Unit Test</div>
+    <div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks
+</div>
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The "grapevine" in an organization refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of1" value="a"> Formal upward communication</label></li>
+<li><label><input type="radio" name="of1" value="b"> Informal communication network (gossip and rumour)</label></li>
+<li><label><input type="radio" name="of1" value="c"> Official internal newsletter</label></li>
+<li><label><input type="radio" name="of1" value="d"> An HR system for complaints</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of1','b')">Check</button>
+<div class="fb" id="of1-fb"></div>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>The <strong>grapevine</strong> = informal network. Research shows it is 70–90% accurate but rumour spreads fastest when leadership is silent.</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A manager prefers face-to-face conversation when delivering bad news, instead of email. The choice is based on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of2" value="a"> Channel richness — face-to-face is the richest medium</label></li>
+<li><label><input type="radio" name="of2" value="b"> Cost — email is more expensive</label></li>
+<li><label><input type="radio" name="of2" value="c"> Speed — face-to-face is faster</label></li>
+<li><label><input type="radio" name="of2" value="d"> Recordkeeping — email leaves a paper trail</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of2','a')">Check</button>
+<div class="fb" id="of2-fb"></div>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>Richer messages (bad news, complex change) need richer channels (face-to-face).</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">"Anchoring" is a cognitive bias where:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of3" value="a"> We over-weight the first piece of information we receive</label></li>
+<li><label><input type="radio" name="of3" value="b"> We forget important data</label></li>
+<li><label><input type="radio" name="of3" value="c"> We avoid making any decision</label></li>
+<li><label><input type="radio" name="of3" value="d"> We over-prepare for meetings</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of3','a')">Check</button>
+<div class="fb" id="of3-fb"></div>
+<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>Anchoring = over-weighting first information; classic example is the first number quoted in a negotiation.</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which is NOT a Thomas-Kilmann conflict style?</div>
+<ul class="mc">
+<li><label><input type="radio" name="of4" value="a"> Competing</label></li>
+<li><label><input type="radio" name="of4" value="b"> Collaborating</label></li>
+<li><label><input type="radio" name="of4" value="c"> Coaching</label></li>
+<li><label><input type="radio" name="of4" value="d"> Avoiding</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of4','c')">Check</button>
+<div class="fb" id="of4-fb"></div>
+<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>Five styles: <strong>Competing, Collaborating, Compromising, Avoiding, Accommodating</strong>. Coaching is a leadership style, not a conflict one.</div>
+</div>
+
+<div class="qcard" id="of5">
+<div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">List the eight steps of Kotter's change model in order (one or two words each, comma-separated).</div>
+<input type="text" id="of5-in" placeholder="urgency, coalition, ...">
+<button class="btn btn-p" onclick="chkText('of5','urgency,coalition,vision,army,enable,wins,accelerate,anchor')">Check</button>
+<div class="fb" id="of5-fb"></div>
+<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>(1) Urgency, (2) Coalition, (3) Vision, (4) Army, (5) Enable, (6) Wins, (7) Accelerate, (8) Anchor.</div>
+</div>
+
+<div class="qcard" id="of6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The 8-step rational decision-making model begins with:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of6" value="a"> Generating alternatives</label></li>
+<li><label><input type="radio" name="of6" value="b"> Identifying and defining the problem</label></li>
+<li><label><input type="radio" name="of6" value="c"> Choosing the best option</label></li>
+<li><label><input type="radio" name="of6" value="d"> Implementing the decision</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of6','b')">Check</button>
+<div class="fb" id="of6-fb"></div>
+<div class="sol" id="of6-sl"><div class="sol-lbl">Solution:</div>Step 1: <strong>identify and define the problem</strong>. Most bad decisions are answers to the wrong question.</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [13 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A large public-sector committee is debating whether to adopt a new performance-management system. The CEO favours it, the room is large, and several "loud" voices speak first. Predict three risks of groupthink in this setting, and recommend three structural changes the chair could make to prevent groupthink.</div>
+<textarea placeholder="Apply Janis's groupthink framework..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A retail company is planning a major change from in-store to omnichannel sales. Many long-tenured employees are anxious. Using Lewin's three-step model, describe one specific action management should take at each step (unfreeze, change, refreeze) to support a successful transition.</div>
+<textarea placeholder="Apply Lewin's model..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">"Email is the most efficient channel for managing remote teams." Critique this claim using the channel-richness concept and at least two specific situations where email would be inappropriate.</div>
+<textarea placeholder="Critique the claim with examples..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">In 4–6 sentences, explain to a high-school peer how to use the rational decision-making model to choose a post-secondary program. Be specific about the steps.</div>
+<textarea placeholder="Audience-appropriate explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Write a short professional email (5–8 sentences) from a department head to staff explaining a difficult change (e.g., a layoff or a new policy). Use active-listening principles and at least one element from Kotter's change framework.</div>
+<textarea placeholder="Draft a real-world email..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Compare and contrast "Competing" and "Collaborating" as Thomas-Kilmann conflict styles. Provide one workplace situation in which each is the best choice.</div>
+<textarea placeholder="Contrast styles with examples..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt"><strong>Case:</strong> Three coworkers are in conflict. Anna (project lead) wants to launch by end of quarter regardless of polish. Ben (engineer) wants two more weeks to fix bugs. Carla (marketing) wants the launch delayed until after a major industry conference next month.
+<br>(a) Identify the type of conflict (task / relationship / process / value) and justify.
+<br>(b) Recommend which Thomas-Kilmann style the project sponsor should use.
+<br>(c) Sketch a 4-step plan to resolve the conflict using your chosen style.</div>
+<textarea placeholder="Diagnose and resolve..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[6 marks]</span></div>
+<div class="qtxt"><strong>Case:</strong> A bank manager notices that one teller has been arriving late, becoming short with colleagues, and making errors in the last month. The teller has been a high performer for three years.
+<br>(a) Identify three possible causes of workplace stress this person may be experiencing.
+<br>(b) Apply the CSA-Z1003 Psychological Health framework: recommend three specific actions the manager could take, ranked from most to least urgent.
+<br>(c) Explain why the manager should not simply ignore the change or threaten disciplinary action.</div>
+<textarea placeholder="Apply the stress and psychological-safety framework..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>BOH4M — Business Leadership: Management Fundamentals, Grade 12 | C. Management Challenges | Assessment OF Learning — Graded</footer>
+</div>
+<script>
+let score=0,answered=0;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkText(q,c){const v=document.getElementById(q+'-in').value.trim().toLowerCase().replace(/\s+/g,'');const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(v===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

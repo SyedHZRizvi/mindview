@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Canada 1982–Present — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/chc2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Canada 1982–Present — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand E</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of patriation, the Charter, Meech and Charlottetown, the 1995 referendum, Oka, NAFTA, 9/11 and Afghanistan, and the Truth and Reconciliation Commission. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.1 — Patriation and the Charter</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Patriation (Constitution Act, 1982) means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Adopting French as Canada's only official language</label></li>
+<li><label><input type="radio" name="q1" value="b"> Bringing the Canadian Constitution under exclusive Canadian legal authority — ending UK amendment power — and entrenching the Charter of Rights and Freedoms</label></li>
+<li><label><input type="radio" name="q1" value="c"> Separating Quebec from Canada</label></li>
+<li><label><input type="radio" name="q1" value="d"> Joining the Commonwealth</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Patriation ended the BNA Act's status as a UK statute and added the Charter (sections 1–34) plus section 35 (Aboriginal rights). The Constitution Act, 1982 took effect 17 April 1982. Quebec has never signed.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Section 33 of the Charter (the "notwithstanding clause"):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Permits federal or provincial legislatures to enact legislation despite a Charter conflict with sections 2 or 7–15, for renewable 5-year periods</label></li>
+<li><label><input type="radio" name="q2" value="b"> Was struck down by the Supreme Court in 1986</label></li>
+<li><label><input type="radio" name="q2" value="c"> Only applies to federal legislation</label></li>
+<li><label><input type="radio" name="q2" value="d"> Was added to the Charter in 2005</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','a')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The notwithstanding clause was Romanow's concession at the Kitchen Accord (Nov 1981). For decades it was rarely used; since ~2017 use has accelerated (Saskatchewan, Quebec Bills 21 and 96, Ontario), prompting debate about whether the clause's exceptional use has been normalised.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.2 — Meech, Charlottetown, 1995 Referendum</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">The Meech Lake Accord (1987–90) collapsed because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> The federal government refused to ratify it</label></li>
+<li><label><input type="radio" name="q3" value="b"> Manitoba's MLA Elijah Harper (Cree) blocked unanimous consent on procedural grounds because Indigenous concerns had been excluded; Newfoundland's Wells refused to bring it to a vote</label></li>
+<li><label><input type="radio" name="q3" value="c"> Quebec rejected it in a referendum</label></li>
+<li><label><input type="radio" name="q3" value="d"> The Supreme Court ruled it unconstitutional</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Both Harper's procedural refusal in the Manitoba Legislature and Wells's stance in Newfoundland prevented unanimous provincial ratification by the June 1990 deadline. Harper's eagle feather is preserved in the Canadian Museum of History. The Bloc Québécois was founded immediately afterward.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The 1995 Quebec referendum on sovereignty-association produced:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> A clear majority for Yes</label></li>
+<li><label><input type="radio" name="q4" value="b"> 50.58% No and 49.42% Yes — a margin of 54,288 votes out of 4.7 million</label></li>
+<li><label><input type="radio" name="q4" value="c"> A 75% No majority</label></li>
+<li><label><input type="radio" name="q4" value="d"> A boycott by sovereigntists</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The closest separation result in Canadian history. Parizeau's concession speech reference to "money and the ethnic vote" precipitated his resignation; Lucien Bouchard succeeded him. The Clarity Act (2000) defined requirements for any future Quebec secession referendum.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.3 — Oka, Nisga'a, and Reconciliation</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The Oka Crisis (11 July – 26 September 1990):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Was a 78-day armed standoff between the Mohawk community of Kanesatake, the SQ, RCMP, and ultimately ~4,500 Canadian Forces troops, triggered by golf-course expansion onto a Mohawk burial ground</label></li>
+<li><label><input type="radio" name="q5" value="b"> Was a 1990 federal election</label></li>
+<li><label><input type="radio" name="q5" value="c"> Was the Charlottetown Accord referendum</label></li>
+<li><label><input type="radio" name="q5" value="d"> Was a Quebec-only labour dispute</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','a')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Oka was the most televised Indigenous confrontation in Canadian history to that point. SQ Corporal Marcel Lemay was killed in the 11 July assault on the Mohawk barricade. The Royal Commission on Aboriginal Peoples (RCAP) was established in response; its 4,000-page 1996 report largely went unimplemented.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The Truth and Reconciliation Commission (2008–2015):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Was chaired by Justice Murray Sinclair; received testimony from 6,750+ survivors; issued the 2015 Final Report with 94 Calls to Action</label></li>
+<li><label><input type="radio" name="q6" value="b"> Was a Conservative-only commission</label></li>
+<li><label><input type="radio" name="q6" value="c"> Issued the 1969 White Paper</label></li>
+<li><label><input type="radio" name="q6" value="d"> Was Quebec-specific</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','a')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The TRC was established under the 2007 Indian Residential Schools Settlement Agreement (~$5 billion compensation). Harper's 2008 House of Commons apology preceded it; Pope Francis's 2022 apology at Maskwacis answered TRC Call to Action #58. As of 2024, ~13 of the 94 Calls are fully implemented.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.4–4.5 — NAFTA and Post-9/11</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The 1988 federal election was effectively a referendum on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The Charter</label></li>
+<li><label><input type="radio" name="q7" value="b"> The Canada-U.S. Free Trade Agreement (CUSFTA, 1989), which Mulroney's Conservatives campaigned on; Liberals (Turner) and NDP (Broadbent) opposed</label></li>
+<li><label><input type="radio" name="q7" value="c"> Quebec sovereignty</label></li>
+<li><label><input type="radio" name="q7" value="d"> Patriation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Turner's "you've sold us out" attack in the leaders' debate made CUSFTA the defining issue. Mulroney's PC majority was reduced (169→ majority) but maintained; CUSFTA took effect 1 Jan 1989. NAFTA followed 1 Jan 1994; USMCA replaced it 1 July 2020.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Canadian forces' main combat deployment after 9/11 was to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Iraq, 2003</label></li>
+<li><label><input type="radio" name="q8" value="b"> Afghanistan (Operation Athena), 2001–2014, especially Kandahar Province from 2005</label></li>
+<li><label><input type="radio" name="q8" value="c"> Yemen</label></li>
+<li><label><input type="radio" name="q8" value="d"> Syria</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> ~40,000 Canadians served in Afghanistan over the 2001–2014 deployment. 158 military died; the combat mission ended July 2011 and the training mission March 2014. Canada did <em>not</em> join the 2003 Iraq invasion — Chrétien's House of Commons announcement of 17 March 2003 cited the lack of UN authorisation.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Maher Arar case (2002–06):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Resulted in a Canadian apology and $10.5M settlement after a dual citizen was wrongfully rendered to Syria for torture based on faulty RCMP information</label></li>
+<li><label><input type="radio" name="q9" value="b"> Was a federal-provincial trade dispute</label></li>
+<li><label><input type="radio" name="q9" value="c"> Resulted in changes to the Charter</label></li>
+<li><label><input type="radio" name="q9" value="d"> Was a Quebec sovereignty case</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Maher Arar, a dual Canadian-Syrian citizen, was detained in New York in 2002, rendered to Syria, and tortured. The 2006 O'Connor Inquiry exposed the case; Canada apologised and paid $10.5M settlement. The case exposed the civil-liberties costs of post-9/11 security cooperation.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Short answer: In 3 sentences, explain why the Constitution Act, 1982 had both an immediate effect (the Charter operating from April 1982) and a continuing political effect (the Quebec non-signature). What does the dual reading reveal about Canadian federalism?</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q10')">Reveal Sample</button><div class="sol" id="q10-sl"><span class="sol-lbl">Sample:</span> The Charter became the operating constitutional law in April 1982 — Charter jurisprudence (Oakes 1986, Morgentaler 1988, Vriend 1998) has since shaped every area of Canadian law. The Quebec non-signature, however, remains an unresolved political fact: Quebec has never formally consented to the Constitution Act, 1982, which is why Meech (1990) and Charlottetown (1992) attempted to bring Quebec in, and why the 1995 referendum and 2006 nation-recognition motion remain part of the same long conversation. Canadian federalism therefore lives a dual reality: the Charter is operative law everywhere, but Quebec's standing within the federation is, structurally, still pending.</div></div>
+
+</div>
+
+<footer>CHC2D — Canadian History since World War I, Grade 10 | Strand E: Canada 1982–Present | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

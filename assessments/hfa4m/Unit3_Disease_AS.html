@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Nutrition and Disease — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/hfa4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Nutrition and Disease — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of diet-related chronic disease (CVD, T2DM, cancer, obesity, osteoporosis) and foodborne illness prevention.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.1 — Cardiovascular Disease</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which lipoprotein is commonly called "bad cholesterol" because it delivers cholesterol to artery walls?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> LDL</label></li>
+<li><label><input type="radio" name="q1" value="b"> HDL</label></li>
+<li><label><input type="radio" name="q1" value="c"> Chylomicron</label></li>
+<li><label><input type="radio" name="q1" value="d"> VLDL</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','a')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> LDL = low-density lipoprotein, delivers cholesterol to tissues; oxidised LDL is the precursor of atherosclerotic plaque. HDL retrieves cholesterol from tissues.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The DASH diet was specifically designed to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Treat type 2 diabetes</label></li>
+<li><label><input type="radio" name="q2" value="b"> Lower blood pressure</label></li>
+<li><label><input type="radio" name="q2" value="c"> Cure cancer</label></li>
+<li><label><input type="radio" name="q2" value="d"> Reverse osteoporosis</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> DASH = Dietary Approaches to Stop Hypertension. Emphasises vegetables, fruit, whole grains, low-fat dairy, lean protein; limits sodium. Reduces systolic BP by ~11 mm Hg in trials.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">What is the chronic-disease-risk-reduction sodium intake target in Canada?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> 500 mg/day</label></li>
+<li><label><input type="radio" name="q3" value="b"> 2300 mg/day</label></li>
+<li><label><input type="radio" name="q3" value="c"> 4000 mg/day</label></li>
+<li><label><input type="radio" name="q3" value="d"> Unlimited</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Health Canada / DRI: AI = 1500 mg/day; chronic-disease-risk-reduction value = 2300 mg/day. Canadians average ~2760 mg/day.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.2 — Type 2 Diabetes</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The fundamental problem in type 2 diabetes is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Autoimmune destruction of pancreatic β-cells</label></li>
+<li><label><input type="radio" name="q4" value="b"> Insulin resistance combined with eventual β-cell decline</label></li>
+<li><label><input type="radio" name="q4" value="c"> Inability to digest sugar</label></li>
+<li><label><input type="radio" name="q4" value="d"> Allergy to insulin</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Type 2: insulin resistance + eventual β-cell failure. Type 1 is autoimmune destruction of β-cells requiring lifelong insulin.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A patient's A1C is 6.5%. This indicates:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Normal glucose</label></li>
+<li><label><input type="radio" name="q5" value="b"> Prediabetes</label></li>
+<li><label><input type="radio" name="q5" value="c"> Diabetes diagnosis threshold</label></li>
+<li><label><input type="radio" name="q5" value="d"> Diabetes well-controlled</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','c')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Diabetes Canada: A1C ≥6.5% is the diagnostic threshold. Prediabetes = 6.0–6.4%. A1C represents average glucose over ~2–3 months.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.3 — Cancer &amp; Obesity</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The IARC (2015) classified which food as a Group 1 carcinogen (causes cancer in humans)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Coffee</label></li>
+<li><label><input type="radio" name="q6" value="b"> Red meat (unprocessed)</label></li>
+<li><label><input type="radio" name="q6" value="c"> Processed meat (sausage, ham, bacon)</label></li>
+<li><label><input type="radio" name="q6" value="d"> Cooked broccoli</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','c')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Processed meat is Group 1 (carcinogenic to humans), increasing colorectal cancer risk ~18% per 50 g/day. Red meat is 2A (probable). Alcohol is also Group 1.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A 30-year-old adult is 1.70 m tall and weighs 92 kg. Calculate BMI to one decimal.</div>
+<input type="text" id="q7-in" placeholder="kg/m²">
+<button class="btn" onclick="cN('q7',31.8)">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> BMI = 92 / (1.70²) = 92 / 2.89 = <strong>31.8 kg/m²</strong> — within the "obesity" range. BMI is a screening tool; clinical assessment of overall health matters more than the single number.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Which dietary factor is MOST protective against osteoporosis?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> High caffeine</label></li>
+<li><label><input type="radio" name="q8" value="b"> Adequate calcium and vitamin D plus weight-bearing exercise</label></li>
+<li><label><input type="radio" name="q8" value="c"> Low protein</label></li>
+<li><label><input type="radio" name="q8" value="d"> Avoiding all dairy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Calcium + vitamin D (for absorption) + weight-bearing/resistance exercise build and maintain bone. Protein, vitamin K, magnesium also matter; smoking, excess alcohol, sedentary behaviour increase risk.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.4 — Foodborne Illness</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The temperature "danger zone" for food safety is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> 0–4 °C</label></li>
+<li><label><input type="radio" name="q9" value="b"> 4–60 °C</label></li>
+<li><label><input type="radio" name="q9" value="c"> 60–100 °C</label></li>
+<li><label><input type="radio" name="q9" value="d"> Above 100 °C</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> 4–60 °C is the range where most pathogenic bacteria multiply rapidly. Keep cold foods ≤4 °C and hot foods ≥60 °C.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Safe minimum internal cooking temperature for poultry:</div>
+<input type="text" id="q10-in" placeholder="°C">
+<button class="btn" onclick="cN('q10',74)">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Poultry: 74 °C (165 °F) — to inactivate Salmonella and Campylobacter. Ground beef 71 °C; whole cuts 63 °C with rest; reheated leftovers 74 °C.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">HACCP stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Health and Cooking Certification Program</label></li>
+<li><label><input type="radio" name="q11" value="b"> Hazard Analysis and Critical Control Points</label></li>
+<li><label><input type="radio" name="q11" value="c"> High-Altitude Cooking Carbon Plan</label></li>
+<li><label><input type="radio" name="q11" value="d"> Healthy Action for Cancer Prevention</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> HACCP is the systematic food-safety framework that identifies biological/chemical/physical hazards and sets critical control points throughout production.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Which is the SINGLE most effective preventive action against foodborne illness?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Adding salt</label></li>
+<li><label><input type="radio" name="q12" value="b"> Hand-washing for 20 seconds before and after handling food</label></li>
+<li><label><input type="radio" name="q12" value="c"> Buying organic</label></li>
+<li><label><input type="radio" name="q12" value="d"> Refrigerating after 4 hours</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Hand-washing breaks the fecal-oral and cross-contamination routes responsible for most foodborne illness. Cook, chill, separate are the next steps.</div></div>
+
+</div>
+
+<footer>HFA4M — Nutrition and Health Issues, Grade 12 | Strand C: Nutritional Issues Across the Lifespan | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<0.5){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

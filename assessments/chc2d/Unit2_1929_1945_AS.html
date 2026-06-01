@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Canada 1929–1945 — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #ea580c; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#ea580c;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/chc2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Canada 1929–1945 — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the Great Depression, the road to war, Dieppe, the home front, Japanese-Canadian internment, the Holocaust, and Canada's WWII role. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1 — The Great Depression</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The Great Depression's effect on Canada was particularly severe because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Canada had borrowed heavily from European banks</label></li>
+<li><label><input type="radio" name="q1" value="b"> The Canadian economy was disproportionately exposed to commodity exports — wheat prices collapsed from $1.78/bushel in 1929 to $0.34 in 1932</label></li>
+<li><label><input type="radio" name="q1" value="c"> Canadian banks failed in 1931, like American banks</label></li>
+<li><label><input type="radio" name="q1" value="d"> Canada had imposed retaliatory tariffs against the US</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Canada's heavy exposure to commodity exports — wheat especially — meant the global price collapse hit Canada hard. The 1930 Smoot-Hawley US tariff cut Canadian exports in half. Canadian banks did not fail; the federal regulatory system protected them.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The On-to-Ottawa Trek of 1935 was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> A march of First Nations chiefs demanding treaty enforcement</label></li>
+<li><label><input type="radio" name="q2" value="b"> A mass protest by men in federal relief camps that ended in the Regina Riot of 1 July 1935</label></li>
+<li><label><input type="radio" name="q2" value="c"> A Quebec sovereigntist protest against federal taxation</label></li>
+<li><label><input type="radio" name="q2" value="d"> A women's suffrage demonstration</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> About 1,500 men in B.C. relief camps walked off and boarded freight trains east in April 1935; they were stopped at Regina under Bennett's orders. The 1 July Regina Riot killed two (one police officer, one trekker). The trekkers' demands — improved camp wages, the franchise, work programmes — were materially modest.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Road to War</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Why did Canada wait seven days after Britain's declaration of war on 3 September 1939 to declare war itself?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> The cabinet was on summer recess</label></li>
+<li><label><input type="radio" name="q3" value="b"> Under the Statute of Westminster 1931, Canada now had to formally and independently declare war, and King wanted to mark the moment as visibly Canadian</label></li>
+<li><label><input type="radio" name="q3" value="c"> Canada needed to ratify a separate treaty with Germany first</label></li>
+<li><label><input type="radio" name="q3" value="d"> Quebec opposition delayed the declaration by a week</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Under the Statute of Westminster, Canada had full foreign-policy sovereignty. Parliament debated for a week; Canada declared war on 10 September 1939. The seven-day gap was the visible mark of Canadian independence — and was deliberate.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div>
+<div class="passage">"None is too many." — Director of Immigration Frederick Charles Blair, on Jewish refugees, late 1930s</div>
+<div class="qtxt">This phrase, attributed to F.C. Blair, encapsulates the Canadian government's policy that resulted in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The internment of Italian Canadians during WWII</label></li>
+<li><label><input type="radio" name="q4" value="b"> The 1939 refusal of the MS <em>St. Louis</em>, carrying 907 Jewish refugees, who returned to Europe; 254 ultimately died in the Holocaust</label></li>
+<li><label><input type="radio" name="q4" value="c"> The dismissal of Canadian Jews from the federal civil service</label></li>
+<li><label><input type="radio" name="q4" value="d"> The deportation of Canadian-born Jews to Britain</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Canada admitted only about 5,000 Jewish refugees between 1933 and 1948 — fewer per capita than any Allied nation. The MS <em>St. Louis</em> episode of June 1939 is the most pointed illustration; the federal government issued a formal apology in 2018.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3–2.4 — WWII Combat and Home Front</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The Dieppe Raid (19 August 1942):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Was a decisive Allied victory that opened the way to Berlin</label></li>
+<li><label><input type="radio" name="q5" value="b"> Resulted in 916 Canadian dead and 1,946 captured in 9 hours — a costly raid whose tactical lessons informed D-Day</label></li>
+<li><label><input type="radio" name="q5" value="c"> Featured the first use of atomic weapons</label></li>
+<li><label><input type="radio" name="q5" value="d"> Was a Canadian-led naval operation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Dieppe was a disastrous raid on the French coast — about 60% of Allied troops became casualties. Of nearly 5,000 Canadians involved, 916 died and 1,946 were captured. The "lessons learned" — preliminary bombardment, deception, specialised armour, open beach over port — shaped D-Day's success.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The 1944 Family Allowance was significant because it was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Canada's first universal cash-transfer programme (paid to mothers)</label></li>
+<li><label><input type="radio" name="q6" value="b"> Restricted to Anglo-Protestant families only</label></li>
+<li><label><input type="radio" name="q6" value="c"> Available only to families with two or more children</label></li>
+<li><label><input type="radio" name="q6" value="d"> A wartime tax credit, not a cash transfer</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','a')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The Family Allowance ("baby bonus") was universal — paid to all eligible mothers without means testing — and established the political legitimacy of universal social programmes that paved the way for OAS (1951), CPP (1965), Medicare (1966).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.5–2.6 — Internment and Holocaust</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Japanese-Canadian internment (1942) involved:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The detention of about 22,000 people, 75% of them Canadian-born or naturalised citizens, ordered by Order-in-Council without individual trials</label></li>
+<li><label><input type="radio" name="q7" value="b"> Only the 5,000 Japanese-born immigrants in B.C.</label></li>
+<li><label><input type="radio" name="q7" value="c"> The same conditions and process as U.S. internment</label></li>
+<li><label><input type="radio" name="q7" value="d"> A 1939 measure ended by 1942</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Federal Order-in-Council P.C. 1486 (24 Feb 1942) ordered removal of all persons of Japanese ancestry from a 100-mile coastal zone. The RCMP's own assessment had found no security threat. The Custodian of Enemy Alien Property confiscated property and sold it below market to fund the internment. Coastal exclusion lasted until 1949.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The 1988 redress agreement for Japanese-Canadian internment:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Was signed by Pearson in the 1970s</label></li>
+<li><label><input type="radio" name="q8" value="b"> Was announced in Parliament by Brian Mulroney on 22 September 1988 — $21,000 per affected individual still living, plus $36M to community and race-relations foundation</label></li>
+<li><label><input type="radio" name="q8" value="c"> Restored only Japanese-Canadian veterans' pensions</label></li>
+<li><label><input type="radio" name="q8" value="d"> Was rejected by Parliament</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Mulroney's 1988 redress agreement was the model that influenced later apologies (Chinese Head Tax 2006, Komagata Maru 2016, residential schools 2008). The same day, the <em>Emergencies Act</em> replaced the <em>War Measures Act</em> with stricter parliamentary oversight.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Canadian troops who entered the Westerbork transit camp in the eastern Netherlands on 12 April 1945:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Liberated Auschwitz-Birkenau</label></li>
+<li><label><input type="radio" name="q9" value="b"> Were the first Canadian forces to encounter a Nazi camp; Westerbork had been the transit point from which Anne Frank was deported to Auschwitz in September 1944</label></li>
+<li><label><input type="radio" name="q9" value="c"> Captured the architects of the Final Solution</label></li>
+<li><label><input type="radio" name="q9" value="d"> Liberated Bergen-Belsen</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Auschwitz-Birkenau was liberated by Soviet forces 27 January 1945; Bergen-Belsen by British forces 15 April 1945. Canadian troops did liberate Westerbork on 12 April 1945 — the transit point for some 107,000 Jews deported east, including Anne Frank and her family.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Short answer: In 3 sentences, explain how the 1942 internment of Japanese Canadians used the same legal mechanism (the <em>War Measures Act</em>) as the 1914 internment of Ukrainian Canadians. What does this continuity reveal?</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q10')">Reveal Sample</button><div class="sol" id="q10-sl"><span class="sol-lbl">Sample:</span> Both internments used the WMA's emergency executive powers to detain Canadian residents without trial on ancestry grounds — Ukrainians and other "enemy aliens" in 1914, Japanese Canadians in 1942. In both cases, the RCMP's own assessments found no security threat; in both cases, political and economic pressure (Anglo-Canadian Western Canadian business, organised labour) shaped the decision. The continuity reveals that "wartime necessity" can be a moral cover for prior racial politics — the lesson that drove the 1988 reform replacing the WMA with the <em>Emergencies Act</em>.</div></div>
+
+</div>
+
+<footer>CHC2D — Canadian History since World War I, Grade 10 | Strand C: Canada 1929–1945 | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

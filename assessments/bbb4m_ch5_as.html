@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Working in International Business — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #db2777; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#db2777;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bbb4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 5: Working in International Business</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check on careers, cross-cultural skills, ethics, CSR, expatriate experience, and the culminating profile. Not graded.
+</div>
+
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Careers</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">The Canadian professional designation specifically for international-trade competence is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> CFA — Chartered Financial Analyst</label></li>
+        <li><label><input type="radio" name="q1" value="b"> CITP — Certified International Trade Professional (FITT)</label></li>
+        <li><label><input type="radio" name="q1" value="c"> CPA — Chartered Professional Accountant</label></li>
+        <li><label><input type="radio" name="q1" value="d"> MBA — Master of Business Administration</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>CITP (Certified International Trade Professional), granted by FITT, is Canada's main international-trade designation. CCS is the customs-specialist credential.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">A Trade Commissioner works for:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> The Royal Bank</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Global Affairs Canada (Canadian missions abroad)</label></li>
+        <li><label><input type="radio" name="q2" value="c"> The World Trade Organization</label></li>
+        <li><label><input type="radio" name="q2" value="d"> A private logistics firm</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Trade Commissioners are Canadian federal employees posted at embassies and consulates abroad, supporting Canadian businesses entering local markets.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Cross-Cultural Communication</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">In a "monochronic" culture (e.g., Germany, Switzerland), time is typically treated as:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Flexible — meetings start late, schedules slip</label></li>
+        <li><label><input type="radio" name="q3" value="b"> Linear and finite — meetings start on time, one topic at a time</label></li>
+        <li><label><input type="radio" name="q3" value="c"> Cyclical and seasonal</label></li>
+        <li><label><input type="radio" name="q3" value="d"> Unimportant</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','b')">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Monochronic cultures treat time linearly — punctuality and one-topic-at-a-time. Polychronic cultures (Latin America, Middle East) are more flexible.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">In high-context cultures, long silences during a negotiation often mean:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> The other side has lost interest</label></li>
+        <li><label><input type="radio" name="q4" value="b"> Reflection or consideration — pressing harder is usually counter-productive</label></li>
+        <li><label><input type="radio" name="q4" value="c"> The negotiation has failed</label></li>
+        <li><label><input type="radio" name="q4" value="d"> The other side needs a coffee break</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Silence in high-context cultures (Japan, Korea, much of East Asia) typically signals thoughtful consideration. Filling the silence too quickly is read as impatience.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Ethics &amp; CSR</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">The "triple bottom line" measures performance on three dimensions:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Revenue, Cost, Profit</label></li>
+        <li><label><input type="radio" name="q5" value="b"> People, Planet, Profit</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Past, Present, Future</label></li>
+        <li><label><input type="radio" name="q5" value="d"> Local, Regional, Global</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','b')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>John Elkington's triple bottom line: People (social), Planet (environment), Profit (financial). Coined in 1994.</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Canada's main law against bribery of foreign public officials is the:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> Foreign Corrupt Practices Act (FCPA)</label></li>
+        <li><label><input type="radio" name="q6" value="b"> Corruption of Foreign Public Officials Act (CFPOA)</label></li>
+        <li><label><input type="radio" name="q6" value="c"> UK Bribery Act</label></li>
+        <li><label><input type="radio" name="q6" value="d"> Income Tax Act</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','b')">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>CFPOA is the Canadian law. FCPA is the US law; UK Bribery Act is the UK's. All three criminalize bribing foreign officials.</div>
+</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">The 2013 Rana Plaza disaster, in which 1,134 garment workers died, took place in:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> Vietnam</label></li>
+        <li><label><input type="radio" name="q7" value="b"> Bangladesh</label></li>
+        <li><label><input type="radio" name="q7" value="c"> India</label></li>
+        <li><label><input type="radio" name="q7" value="d"> Indonesia</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','b')">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Rana Plaza was an 8-story garment factory building in Savar, Bangladesh. Its collapse on 24 April 2013 led to lasting reforms in garment-supply-chain ethics.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Working Abroad &amp; Culminating Profile</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">The "U-curve" of cultural adjustment typically begins with:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> Severe culture shock from day one</label></li>
+        <li><label><input type="radio" name="q8" value="b"> A "honeymoon" period of excitement, before culture shock sets in</label></li>
+        <li><label><input type="radio" name="q8" value="c"> Mastery</label></li>
+        <li><label><input type="radio" name="q8" value="d"> Repatriation</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>The classic U-curve: honeymoon → culture shock → adjustment → mastery → re-entry. The dip is in the middle, hence "U-curve".</div>
+</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Many expatriates leave their employer within 18 months of returning home. The single most cited cause is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Lower salary back home</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Lack of a planned career role and use of their international experience upon return</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Bad weather</label></li>
+        <li><label><input type="radio" name="q9" value="d"> Tax problems</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','b')">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Repatriation failure is overwhelmingly about career — returning expats want a role that uses their international experience. Without that, they leave for an employer that values it.</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">The BBB4M Culminating Country/Market Profile is worth approximately what percentage of the final course mark?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> 5%</label></li>
+        <li><label><input type="radio" name="q10" value="b"> 15%</label></li>
+        <li><label><input type="radio" name="q10" value="c"> 30%</label></li>
+        <li><label><input type="radio" name="q10" value="d"> 50%</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>The culminating profile is 15% of the final mark (half of the 30% Final Evaluation). The other half is the written final exam.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.1 Careers in international business</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.2 Cross-cultural communication</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.3 Ethics in international business</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.4 CSR and triple bottom line</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.5 Working abroad / expat</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.6 Culminating profile</label></div>
+</div>
+
+<footer>BBB4M — International Business Fundamentals, Grade 12 | Strand E: Working in International Business | Assessment AS Learning</footer>
+</div>
+
+<script>
+let score = 0, answered = 0;
+const total = 10;
+function updateProgress() { document.getElementById('totalScore').textContent = score; document.getElementById('progressFill').style.width = (answered / total * 100) + '%'; }
+function checkMC(qid, correct) { const sel = document.querySelector(`input[name="${qid}"]:checked`); if (!sel) return; const card = document.getElementById(qid), fb = document.getElementById(qid + '-feedback'), sol = document.getElementById(qid + '-solution'); if (card.classList.contains('correct') || card.classList.contains('wrong')) return; answered++; if (sel.value === correct) { score++; card.classList.add('correct'); fb.className = 'feedback show correct'; fb.textContent = '✅ Correct!'; } else { card.classList.add('wrong'); fb.className = 'feedback show wrong'; fb.textContent = '❌ See solution below.'; } sol.classList.add('show'); updateProgress(); }
+</script>
+</body>
+</html>

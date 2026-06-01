@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Ch 1: Exponential Functions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #ea580c; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#ea580c;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 1: Exponential Functions</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your understanding of exponent laws, graphing exponentials, and solving exponential equations. Use results to identify topics needing review before the unit test.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.1–1.2 — Exponent Laws &amp; Rational Exponents</div>
+
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">Simplify \( x^7 \cdot x^{-3} \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> \( x^{-21} \)</label></li>
+<li><label><input type="radio" name="q1" value="b"> \( x^4 \)</label></li>
+<li><label><input type="radio" name="q1" value="c"> \( x^{10} \)</label></li>
+<li><label><input type="radio" name="q1" value="d"> \( x^{-10} \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Apply product law: \( x^7 \cdot x^{-3} = x^{7+(-3)} = x^4 \).</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">Evaluate \( 16^{3/4} \).</div>
+<div class="answer-area"><input type="text" id="q2-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q2', 8)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( 16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = 8 \).</div>
+</div>
+
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">Evaluate \( 27^{-2/3} \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> \( \dfrac{1}{9} \)</label></li>
+<li><label><input type="radio" name="q3" value="b"> \( 9 \)</label></li>
+<li><label><input type="radio" name="q3" value="c"> \( -\dfrac{1}{9} \)</label></li>
+<li><label><input type="radio" name="q3" value="d"> \( -9 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( 27^{-2/3} = \dfrac{1}{27^{2/3}} = \dfrac{1}{(\sqrt[3]{27})^2} = \dfrac{1}{3^2} = \dfrac{1}{9} \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.3 — Graphing Exponential Functions</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">For \( y = 5 \cdot 2^x \), what is the y-intercept?</div>
+<div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q4', 5)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Set \( x = 0 \): \( y = 5 \cdot 2^0 = 5 \cdot 1 = 5 \).</div>
+</div>
+
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">Which describes the function \( y = 100(0.7)^x \)?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q5" value="a"> Exponential growth</label></li>
+<li><label><input type="radio" name="q5" value="b"> Exponential decay</label></li>
+<li><label><input type="radio" name="q5" value="c"> Linear growth</label></li>
+<li><label><input type="radio" name="q5" value="d"> Constant function</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q5','b')">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Base \( b = 0.7 < 1 \), so exponential decay.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.4 — Solving Exponential Equations (Common Base)</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">Solve \( 2^{x+1} = 32 \).</div>
+<div class="answer-area"><input type="text" id="q6-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q6', 4)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( 32 = 2^5 \), so \( 2^{x+1} = 2^5 \). Equate: \( x + 1 = 5 \), so \( x = 4 \).</div>
+</div>
+
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">Solve \( 9^{2x-1} = 27 \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q7" value="a"> \( x = 1 \)</label></li>
+<li><label><input type="radio" name="q7" value="b"> \( x = 5/4 \)</label></li>
+<li><label><input type="radio" name="q7" value="c"> \( x = 3/2 \)</label></li>
+<li><label><input type="radio" name="q7" value="d"> \( x = 2 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q7','b')">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Rewrite both in base 3: \( (3^2)^{2x-1} = 3^3 \Rightarrow 3^{4x-2} = 3^3 \Rightarrow 4x - 2 = 3 \Rightarrow x = 5/4 \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.5 — Solving Exponential Equations (Logarithms)</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">Solve \( 1.05^x = 2 \). Round to 1 decimal place. (Hint: \( \log 2 \approx 0.301 \), \( \log 1.05 \approx 0.0212 \).)</div>
+<div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q8', 14.2)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Take \( \log \): \( x \log 1.05 = \log 2 \Rightarrow x = \dfrac{0.301}{0.0212} \approx 14.2 \).</div>
+</div>
+
+<div class="question-card" id="q9">
+<div class="q-number">Question 9</div>
+<div class="q-text">Solve \( 3^{x} = 20 \). Round to 2 decimal places. (Hint: \( \log 20 \approx 1.301 \), \( \log 3 \approx 0.477 \).)</div>
+<div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q9', 2.73)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( x = \dfrac{\log 20}{\log 3} = \dfrac{1.301}{0.477} \approx 2.73 \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.6 — Growth, Decay, Half-Life</div>
+
+<div class="question-card" id="q10">
+<div class="q-number">Question 10</div>
+<div class="q-text">A bacterial culture doubles every 5 hours. Starting at 200 cells, how many cells after 20 hours?</div>
+<div class="answer-area"><input type="text" id="q10-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q10', 3200)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( P(20) = 200 \cdot 2^{20/5} = 200 \cdot 2^4 = 200 \cdot 16 = 3200 \) cells.</div>
+</div>
+
+<div class="question-card" id="q11">
+<div class="q-number">Question 11</div>
+<div class="q-text">A radioactive isotope has a half-life of 10 days. What fraction of an initial 80 g remains after 30 days?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q11" value="a"> 40 g</label></li>
+<li><label><input type="radio" name="q11" value="b"> 20 g</label></li>
+<li><label><input type="radio" name="q11" value="c"> 10 g</label></li>
+<li><label><input type="radio" name="q11" value="d"> 5 g</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q11','c')">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>30 days = 3 half-lives. \( 80 \cdot (1/2)^3 = 80/8 = 10 \) g.</div>
+</div>
+
+<div class="question-card" id="q12">
+<div class="q-number">Question 12</div>
+<div class="q-text">\$1000 invested at 5% per year compounded annually. Find the value after 3 years. (Round to nearest cent.)</div>
+<div class="answer-area"><input type="text" id="q12-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q12', 1157.63)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\( A = 1000(1.05)^3 = 1000(1.157625) = \$1157.63 \).</div>
+</div>
+</div>
+
+<footer>MCT3M — Mathematics for College Technology, Grade 11 | Strand A: Exponential Functions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Not quite. See solution below.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.5){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ The correct answer is ${c}. See solution below.`;}sl.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

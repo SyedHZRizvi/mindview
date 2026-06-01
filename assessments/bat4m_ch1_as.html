@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Specific Accounts — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #166534; --correct: #166534; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area { margin-top: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #14532d; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.reflect-item label { flex: 1; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#166534;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bat4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 1: Specific Accounts</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check your understanding after each topic. This quiz is <strong>not graded</strong>.
+    Topics covered: bank reconciliation, accounts receivable &amp; bad debts, short-term investments, inventory cost flow, capital assets and amortization.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.1 — Cash Controls &amp; Bank Reconciliation</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A bank statement shows a balance of \$ 5,200. There is an outstanding cheque of \$ 400 and a deposit in transit of \$ 600. What is the adjusted bank balance?</div>
+    <div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q1', 5400)">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution">
+        <div class="solution-label">Solution:</div>
+        Adjusted bank balance \( = 5{,}200 - 400 + 600 = \$ 5{,}400 \).
+    </div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">An NSF cheque returned by the bank should be:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Added to the bank balance</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Subtracted from the book balance</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Ignored — the bank will fix it</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Subtracted from the bank balance</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution">
+        <div class="solution-label">Solution:</div>
+        The bank knows about the NSF (it has already reversed the deposit). The book balance does not — so the company must subtract the NSF amount from the book balance and journalize it.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.2 — Accounts Receivable &amp; Bad Debts</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">Net credit sales \$ 500,000. Bad-debt rate (percentage-of-sales method) is 1.5%. What is the bad-debt expense for the year?</div>
+    <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q3', 7500)">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution">
+        <div class="solution-label">Solution:</div>
+        Bad-debt expense \( = 500{,}000 \times 0.015 = \$ 7{,}500 \). The existing allowance balance is ignored under the percentage-of-sales method.
+    </div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Aging schedule gives a target Allowance for Doubtful Accounts of \$ 9,000. The unadjusted balance is a credit of \$ 2,400. The year-end adjusting entry is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> Debit Bad Debt Expense \$ 9,000; Credit Allowance \$ 9,000</label></li>
+        <li><label><input type="radio" name="q4" value="b"> Debit Bad Debt Expense \$ 6,600; Credit Allowance \$ 6,600</label></li>
+        <li><label><input type="radio" name="q4" value="c"> Debit Allowance \$ 2,400; Credit Bad Debt Expense \$ 2,400</label></li>
+        <li><label><input type="radio" name="q4" value="d"> No entry — allowance already exists</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution">
+        <div class="solution-label">Solution:</div>
+        Under aging, the entry brings the Allowance balance to the target. Required \( = 9{,}000 - 2{,}400 = \$ 6{,}600 \). Debit Bad Debt Expense and credit Allowance for \$ 6,600.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.3 — Short-Term Investments</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">A trading security carried at \$ 12,000 has a year-end fair value of \$ 13,500. The journal entry is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Debit Investment \$ 1,500; Credit Unrealized Gain \$ 1,500</label></li>
+        <li><label><input type="radio" name="q5" value="b"> Debit Cash \$ 1,500; Credit Investment \$ 1,500</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Debit Realized Gain \$ 1,500; Credit Investment \$ 1,500</label></li>
+        <li><label><input type="radio" name="q5" value="d"> No entry — gain is recognized only at sale</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','a')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution">
+        <div class="solution-label">Solution:</div>
+        FVTPL securities are revalued each period. Debit Investment for the \$ 1,500 increase; credit Unrealized Gain (an income-statement account).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.4 — Inventory Cost Flow</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Under FIFO during rising prices, ending inventory is valued at:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> The oldest costs</label></li>
+        <li><label><input type="radio" name="q6" value="b"> An average of all costs</label></li>
+        <li><label><input type="radio" name="q6" value="c"> The most recent costs</label></li>
+        <li><label><input type="radio" name="q6" value="d"> The lowest unit cost during the period</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','c')">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution">
+        <div class="solution-label">Solution:</div>
+        FIFO sends the oldest costs to COGS, leaving the most recent (and during rising prices, highest) costs in ending inventory.
+    </div>
+</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Beginning inventory 20 units @ \$ 10. Purchase 30 units @ \$ 12. Sale 25 units. Using weighted-average (periodic), what is the cost per unit?</div>
+    <div class="answer-area"><input type="text" id="q7-input" placeholder="Enter dollars and cents..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q7', 11.20)">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution">
+        <div class="solution-label">Solution:</div>
+        Total cost \( = 20(10) + 30(12) = 200 + 360 = \$ 560 \). Total units = 50. Cost/unit \( = 560/50 = \$ 11.20 \).
+    </div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">Inventory cost is \$ 8,000; net realizable value is \$ 7,200. Under LCNRV, what value appears on the balance sheet?</div>
+    <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q8', 7200)">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution">
+        <div class="solution-label">Solution:</div>
+        Lower of cost (\$ 8,000) and NRV (\$ 7,200) = \$ 7,200. A \$ 800 write-down is recorded.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.5 — Capital Assets &amp; Amortization</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Equipment cost \$ 50,000, residual \$ 5,000, useful life 5 years. Annual straight-line amortization is:</div>
+    <div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q9', 9000)">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution">
+        <div class="solution-label">Solution:</div>
+        \( (50{,}000 - 5{,}000)/5 = 45{,}000/5 = \$ 9{,}000 \) per year.
+    </div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Equipment cost \$ 60,000, 10-year life. Year-1 double-declining-balance amortization is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> \$ 6,000</label></li>
+        <li><label><input type="radio" name="q10" value="b"> \$ 12,000</label></li>
+        <li><label><input type="radio" name="q10" value="c"> \$ 24,000</label></li>
+        <li><label><input type="radio" name="q10" value="d"> \$ 30,000</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution">
+        <div class="solution-label">Solution:</div>
+        Rate \( = 2/10 = 20\% \). Year-1 expense \( = 60{,}000 \times 0.20 = \$ 12{,}000 \). DDB is applied to the full cost, ignoring residual until the final year.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.6 — Disposal of Capital Assets</div>
+
+<div class="question-card" id="q11">
+    <div class="q-number">Question 11</div>
+    <div class="q-text">A machine cost \$ 30,000 with accumulated amortization of \$ 25,000 is sold for \$ 8,000. The gain or loss on disposal is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q11" value="a"> Gain of \$ 3,000</label></li>
+        <li><label><input type="radio" name="q11" value="b"> Loss of \$ 3,000</label></li>
+        <li><label><input type="radio" name="q11" value="c"> Gain of \$ 8,000</label></li>
+        <li><label><input type="radio" name="q11" value="d"> No gain or loss</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q11','a')">Check Answer</button>
+    <div class="feedback" id="q11-feedback"></div>
+    <div class="solution" id="q11-solution">
+        <div class="solution-label">Solution:</div>
+        Carrying value \( = 30{,}000 - 25{,}000 = \$ 5{,}000 \). Proceeds \$ 8,000. Gain \( = 8{,}000 - 5{,}000 = \$ 3{,}000 \).
+    </div>
+</div>
+
+<div class="question-card" id="q12">
+    <div class="q-number">Question 12</div>
+    <div class="q-text">A truck (cost \$ 40,000, accumulated amortization \$ 35,000) is scrapped for zero proceeds. The journal entry includes a loss of:</div>
+    <div class="answer-area"><input type="text" id="q12-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q12', 5000)">Check Answer</button>
+    <div class="feedback" id="q12-feedback"></div>
+    <div class="solution" id="q12-solution">
+        <div class="solution-label">Solution:</div>
+        Carrying value \( = 40{,}000 - 35{,}000 = \$ 5{,}000 \). With zero proceeds, the entire carrying value is a loss.
+    </div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.1 Cash Controls &amp; Bank Reconciliation</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.2 Accounts Receivable &amp; Bad Debts</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.3 Short-Term Investments</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.4 Inventory Cost Flow (FIFO, Avg, LCNRV)</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.5 Capital Assets &amp; Amortization</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.6 Disposal of Capital Assets</label></div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);"><strong>Topics rated 1 or 2:</strong> Re-watch the corresponding video lectures and re-attempt those questions.</p>
+</div>
+
+<footer>
+    BAT4M — Financial Accounting Principles, Grade 12 | Ontario Curriculum 2006 (Revised)<br>
+    Strand A: Specific Accounts | Assessment AS Learning — Self-Directed, Not Graded
+</footer>
+
+</div>
+
+<script>
+let score = 0;
+let answered = 0;
+const total = 12;
+
+function updateProgress() {
+    document.getElementById('totalScore').textContent = score;
+    document.getElementById('progressFill').style.width = (answered / total * 100) + '%';
+}
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = '❌ Not quite. See the solution below.';
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+function checkNumeric(qid, correct) {
+    const input = document.getElementById(qid + '-input');
+    const val = parseFloat(input.value.trim());
+    if (isNaN(val)) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (Math.abs(val - correct) < 0.05) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = `❌ The correct answer is ${correct}. See the solution below.`;
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+</script>
+</body>
+</html>

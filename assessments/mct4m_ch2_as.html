@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: Polynomial Equations &amp; Inequalities — Practice Quiz (AS Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ede9fe; border: 1px solid #c4b5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #5b21b6; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 2: Polynomial Equations and Inequalities</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check after each topic. Not graded — try multiple times!</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.1 — Expanding</div>
+<div class="question-card" id="q1">
+<div class="q-number">Question 1</div>
+<div class="q-text">Expand \( (x+3)(x-5) \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> \( x^{2}+2x-15 \)</label></li>
+<li><label><input type="radio" name="q1" value="b"> \( x^{2}-2x-15 \)</label></li>
+<li><label><input type="radio" name="q1" value="c"> \( x^{2}+8x-15 \)</label></li>
+<li><label><input type="radio" name="q1" value="d"> \( x^{2}-8x+15 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','b')">Check</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>FOIL: \( x^{2} -5x + 3x - 15 = x^{2}-2x-15 \).</div>
+</div>
+
+<div class="question-card" id="q2">
+<div class="q-number">Question 2</div>
+<div class="q-text">Expand \( (2x-3)^{2} \).</div>
+<div class="answer-area"><input type="text" id="q2-input" placeholder="e.g. 4x^2 - 12x + 9"></div>
+<button class="btn btn-check" onclick="document.getElementById('q2-solution').classList.add('show')">Reveal</button>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( (a-b)^{2}=a^{2}-2ab+b^{2} \) with \( a=2x, b=3 \): \( 4x^{2}-12x+9 \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.2 — Factoring</div>
+<div class="question-card" id="q3">
+<div class="q-number">Question 3</div>
+<div class="q-text">Factor \( x^{2}-7x+12 \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> \( (x-3)(x-4) \)</label></li>
+<li><label><input type="radio" name="q3" value="b"> \( (x+3)(x+4) \)</label></li>
+<li><label><input type="radio" name="q3" value="c"> \( (x-2)(x-6) \)</label></li>
+<li><label><input type="radio" name="q3" value="d"> \( (x+2)(x-6) \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Find two numbers multiplying to 12, summing to -7: -3 and -4. So \( (x-3)(x-4) \).</div>
+</div>
+
+<div class="question-card" id="q4">
+<div class="q-number">Question 4</div>
+<div class="q-text">Factor \( x^{3}-27 \) (difference of cubes).</div>
+<div class="answer-area"><input type="text" id="q4-input" placeholder="Enter factored form..."></div>
+<button class="btn btn-check" onclick="document.getElementById('q4-solution').classList.add('show')">Reveal</button>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2}) \) with \( a=x, b=3 \): \( (x-3)(x^{2}+3x+9) \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.3 — Remainder Theorem</div>
+<div class="question-card" id="q5">
+<div class="q-number">Question 5</div>
+<div class="q-text">Find the remainder when \( f(x)=x^{3}-2x^{2}+x-5 \) is divided by \( x-3 \).</div>
+<div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q5', 7)">Check</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>By Remainder Theorem, \( R=f(3)=27-18+3-5=7 \).</div>
+</div>
+
+<div class="question-card" id="q6">
+<div class="q-number">Question 6</div>
+<div class="q-text">If \( f(2)=0 \), then which of the following is a factor of \( f(x) \)?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q6" value="a"> \( x+2 \)</label></li>
+<li><label><input type="radio" name="q6" value="b"> \( x-2 \)</label></li>
+<li><label><input type="radio" name="q6" value="c"> \( 2x \)</label></li>
+<li><label><input type="radio" name="q6" value="d"> \( x \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q6','b')">Check</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Factor theorem: \( f(a)=0 \Leftrightarrow x-a \) is a factor. So \( x-2 \).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.4 — Solving Polynomial Equations</div>
+<div class="question-card" id="q7">
+<div class="q-number">Question 7</div>
+<div class="q-text">List the rational candidates for roots of \( 2x^{3}+x^{2}-7x-6=0 \) (positive only).</div>
+<div class="answer-area"><input type="text" id="q7-input" placeholder="e.g. 1, 2, 3, 6, 1/2, 3/2"></div>
+<button class="btn btn-check" onclick="document.getElementById('q7-solution').classList.add('show')">Reveal</button>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Factors of 6 over factors of 2: \( 1, 2, 3, 6, 1/2, 3/2 \).</div>
+</div>
+
+<div class="question-card" id="q8">
+<div class="q-number">Question 8</div>
+<div class="q-text">Solve \( x^{3}-x = 0 \). How many distinct real roots?</div>
+<div class="answer-area"><input type="text" id="q8-input" placeholder="Enter number of roots..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q8', 3)">Check</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( x(x-1)(x+1)=0 \Rightarrow x=-1, 0, 1 \) — three distinct real roots.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.5 — Polynomial Inequalities</div>
+<div class="question-card" id="q9">
+<div class="q-number">Question 9</div>
+<div class="q-text">For \( (x-1)(x+2) > 0 \), the solution is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q9" value="a"> \( x>1 \) only</label></li>
+<li><label><input type="radio" name="q9" value="b"> \( -2<x<1 \)</label></li>
+<li><label><input type="radio" name="q9" value="c"> \( x<-2 \) or \( x>1 \)</label></li>
+<li><label><input type="radio" name="q9" value="d"> \( x>-2 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q9','c')">Check</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Product is positive when both factors share signs: both \( + \) means \( x>1 \); both \( - \) means \( x<-2 \).</div>
+</div>
+
+<div class="question-card" id="q10">
+<div class="q-number">Question 10</div>
+<div class="q-text">At a zero of even multiplicity, the polynomial graph does which of the following?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> Crosses the \( x \)-axis (sign changes)</label></li>
+<li><label><input type="radio" name="q10" value="b"> Bounces off (no sign change)</label></li>
+<li><label><input type="radio" name="q10" value="c"> Has a vertical asymptote</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','b')">Check</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Even multiplicity ⇒ bounce; odd ⇒ cross.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+<h3>📊 Self-Reflection</h3>
+<p style="margin-bottom:12px; color: var(--muted);">Rate your confidence (1=need help, 4=mastered):</p>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.1 Expanding</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.2 Factoring</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.3 Remainder Theorem</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.4 Solving Polynomial Equations</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.5 Polynomial Inequalities</label></div>
+</div>
+
+<footer>MCT4M — Grade 12 College | Strand B: Polynomial Equations and Inequalities | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0, answered=0;
+function checkMC(qid, correct) {
+    const sel = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!sel) return;
+    const card = document.getElementById(qid);
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    const fb = document.getElementById(qid+'-feedback');
+    const sol = document.getElementById(qid+'-solution');
+    answered++;
+    if (sel.value === correct) { score++; card.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ Correct!'; }
+    else { card.classList.add('wrong'); fb.className='feedback show wrong'; fb.textContent='❌ See solution.'; }
+    sol.classList.add('show');
+    document.getElementById('totalScore').textContent = score;
+}
+function checkNumeric(qid, correct) {
+    const v = parseFloat(document.getElementById(qid+'-input').value.trim());
+    if (isNaN(v)) return;
+    const card = document.getElementById(qid);
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    const fb = document.getElementById(qid+'-feedback');
+    const sol = document.getElementById(qid+'-solution');
+    answered++;
+    if (Math.abs(v-correct)<0.05) { score++; card.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ Correct!'; }
+    else { card.classList.add('wrong'); fb.className='feedback show wrong'; fb.textContent=`❌ Answer: ${correct}`; }
+    sol.classList.add('show');
+    document.getElementById('totalScore').textContent = score;
+}
+</script>
+</body>
+</html>

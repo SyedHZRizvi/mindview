@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: The Essay — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#16a34a;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: The Essay — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the writing process, paragraph structures, essay forms, persuasive appeals, and MLA citation.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1 — The Writing Process</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which of the following is the correct order for the five stages of the writing process?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Editing → Drafting → Prewriting → Revising → Publishing</label></li>
+<li><label><input type="radio" name="q1" value="b"> Prewriting → Drafting → Revising → Editing → Publishing</label></li>
+<li><label><input type="radio" name="q1" value="c"> Publishing → Editing → Drafting → Revising → Prewriting</label></li>
+<li><label><input type="radio" name="q1" value="d"> Revising → Prewriting → Editing → Drafting → Publishing</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The conventional sequence is Prewriting (generate ideas), Drafting (rough version), Revising (large-scale rethinking), Editing (sentence-level fixes), Publishing (final presentation). The process is recursive — you can return to earlier stages — but this is the standard order.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Revision differs from editing because it focuses on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Spelling and punctuation</label></li>
+<li><label><input type="radio" name="q2" value="b"> Large-scale choices: thesis, argument, paragraph order, evidence selection</label></li>
+<li><label><input type="radio" name="q2" value="c"> Margins and font</label></li>
+<li><label><input type="radio" name="q2" value="d"> Citation format</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Revision ("re-vision") tackles structural and argumentative choices. Editing addresses sentence-level grammar, mechanics, and word choice. Revise first; edit second.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Paragraph Structure</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">In a PEEL paragraph, the order of the four moves is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Evidence → Point → Explain → Link</label></li>
+<li><label><input type="radio" name="q3" value="b"> Point → Evidence → Explain → Link</label></li>
+<li><label><input type="radio" name="q3" value="c"> Link → Point → Evidence → Explain</label></li>
+<li><label><input type="radio" name="q3" value="d"> Point → Link → Evidence → Explain</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> P-E-E-L: Point (topic sentence), Evidence (quotation), Explain (analysis of how the evidence proves the point), Link (transition to next paragraph or back to thesis).</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">In a well-built PEEL paragraph, the longest part should usually be:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The Point (topic sentence)</label></li>
+<li><label><input type="radio" name="q4" value="b"> The Evidence (the quotation itself)</label></li>
+<li><label><input type="radio" name="q4" value="c"> The Explain (analysis)</label></li>
+<li><label><input type="radio" name="q4" value="d"> The Link (transition)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The Explain step is where the analytical work happens. A paragraph where the quotation is longer than the analysis is summarising, not analysing. The longest part should be your interpretation.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — The Literary-Analysis Essay</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">In a literary-analysis essay, the correct verb tense for describing what happens in the text is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Past tense ("Romeo saw Juliet at the ball")</label></li>
+<li><label><input type="radio" name="q5" value="b"> Present tense ("Romeo sees Juliet at the ball") — the literary present</label></li>
+<li><label><input type="radio" name="q5" value="c"> Future tense ("Romeo will see Juliet at the ball")</label></li>
+<li><label><input type="radio" name="q5" value="d"> Whichever is most comfortable</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The literary present tense reflects the convention that the text is always happening, every time it is read. Use the past tense only for historical facts (Shakespeare wrote, the Globe burned).</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">In a formal literary-analysis essay, which of these voices is most appropriate?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> First-person ("I think the play is sad …")</label></li>
+<li><label><input type="radio" name="q6" value="b"> Second-person ("You can see that …")</label></li>
+<li><label><input type="radio" name="q6" value="c"> Third-person ("Shakespeare frames the lovers' tragedy …")</label></li>
+<li><label><input type="radio" name="q6" value="d"> Mixed first and second person</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','c')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Formal literary analysis uses third-person with confident analytical verbs (argues, reveals, frames, critiques). First and second person make the writer's claim sound tentative and shift focus from the text to the writer.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Persuasive Essay &amp; Appeals</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">An appeal based on the speaker's credibility, expertise, or trustworthiness is called:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Logos</label></li>
+<li><label><input type="radio" name="q7" value="b"> Pathos</label></li>
+<li><label><input type="radio" name="q7" value="c"> Ethos</label></li>
+<li><label><input type="radio" name="q7" value="d"> Bathos</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','c')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Ethos = credibility/character. Logos = logic/evidence. Pathos = emotion. Aristotle's three classical appeals; strong persuasive writing usually combines all three.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">A persuasive essay's counterargument paragraph should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Be skipped — counterarguments weaken the essay</label></li>
+<li><label><input type="radio" name="q8" value="b"> State the strongest opposing view fairly, then refute it</label></li>
+<li><label><input type="radio" name="q8" value="c"> Strawman the opposing view to make it easier to dismiss</label></li>
+<li><label><input type="radio" name="q8" value="d"> Apologise for the writer's position</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Acknowledging the strongest opposing view shows fairness (an ethos move) and lets you refute the strongest objection rather than a strawman (a logos move). Both make your case more persuasive.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.5 — MLA Citation</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The correct MLA-9 in-text citation for a quotation from Act 2, Scene 2, line 33 of <em>Romeo and Juliet</em> is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> (Shakespeare 33)</label></li>
+<li><label><input type="radio" name="q9" value="b"> (2.2.33)</label></li>
+<li><label><input type="radio" name="q9" value="c"> (page 33)</label></li>
+<li><label><input type="radio" name="q9" value="d"> (Romeo and Juliet, scene 2, line 33)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> For plays, MLA uses act.scene.line separated by periods. The author's name is not usually needed if the play has been identified in the surrounding text. For other works, the standard form is (Author lastname pagenumber).</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">"Patchwriting" is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Writing your essay one paragraph at a time</label></li>
+<li><label><input type="radio" name="q10" value="b"> Copying a source's sentence and changing only a few words; counts as plagiarism even with citation</label></li>
+<li><label><input type="radio" name="q10" value="c"> Adding patches of evidence to your draft</label></li>
+<li><label><input type="radio" name="q10" value="d"> A required step in the revision process</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Patchwriting keeps the original author's voice and structure with only small substitutions; it is a form of plagiarism even when cited. A true paraphrase rewrites the idea in your own words and sentence structure — and still requires citation.</div></div>
+
+</div>
+
+<footer>ENG2D — English (Academic), Grade 10 | Strand C: Writing | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

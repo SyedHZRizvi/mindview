@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOH4M Ch 4: Planning, Organizing &amp; Staffing — Practice Quiz (AS Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #faf5ff; border: 1px solid #d8b4fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #faf5ff; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/boh4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 4: Planning, Organizing &amp; Staffing</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check after each topic. <strong>Not graded.</strong>
+    Topics: plan types, SWOT/SMART, organizational structures, recruitment, onboarding/training, performance appraisal.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.1 — Plan Types</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A 5-year roadmap for entering the electric-vehicle market is best classified as a:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Tactical plan</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Operational plan</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Strategic plan</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Standing plan</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','c')">Check</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Long-term, set by top management, fundamental direction = <strong>strategic plan</strong>.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">A "no shoes, no service" rule is an example of a:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Single-use plan</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Standing plan</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Strategic plan</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Contingency plan</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Recurring rule = <strong>standing plan</strong>. Programs and budgets = single-use plans.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.2 — SWOT &amp; SMART</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">In a SWOT analysis, "rising consumer interest in plant-based food" is classified as:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Strength</label></li>
+        <li><label><input type="radio" name="q3" value="b"> Weakness</label></li>
+        <li><label><input type="radio" name="q3" value="c"> Opportunity</label></li>
+        <li><label><input type="radio" name="q3" value="d"> Threat</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','c')">Check</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>External + favourable = <strong>opportunity</strong>. Internal factors are strengths or weaknesses.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Which of the following is NOT a SMART goal?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> Increase Q3 sales by 12% by August 31 using a $40K marketing budget</label></li>
+        <li><label><input type="radio" name="q4" value="b"> Be the best company in the industry</label></li>
+        <li><label><input type="radio" name="q4" value="c"> Launch the new mobile app to 1,000 paying users by Dec 31</label></li>
+        <li><label><input type="radio" name="q4" value="d"> Reduce customer complaints from 8% to 3% within six months</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','b')">Check</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>"Be the best" lacks Specific, Measurable, Time-bound criteria — not a SMART goal.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.3 — Structures</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">An organization where each employee belongs to a function (e.g., engineering) AND a product team simultaneously, with two bosses, is using a:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Functional structure</label></li>
+        <li><label><input type="radio" name="q5" value="b"> Divisional structure</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Matrix structure</label></li>
+        <li><label><input type="radio" name="q5" value="d"> Network structure</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','c')">Check</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="sol-lbl">Solution:</div>Dual reporting = <strong>matrix structure</strong>. Common in aerospace and professional services.</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">"Span of control" refers to:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> The level of decentralization</label></li>
+        <li><label><input type="radio" name="q6" value="b"> The number of direct reports a manager has</label></li>
+        <li><label><input type="radio" name="q6" value="c"> The geographic scope of the business</label></li>
+        <li><label><input type="radio" name="q6" value="d"> The size of the marketing budget</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','b')">Check</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Span of control = number of direct reports to one manager.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.4–4.6 — Hiring, Training, Appraisal</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Which interview format generally has the highest predictive validity?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> Unstructured interview</label></li>
+        <li><label><input type="radio" name="q7" value="b"> Structured behavioural interview with a rubric</label></li>
+        <li><label><input type="radio" name="q7" value="c"> Stress interview</label></li>
+        <li><label><input type="radio" name="q7" value="d"> Lunch interview</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','b')">Check</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Structured behavioural interviews with rubric (STAR method) double or triple predictive validity vs. unstructured.</div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">Which question would be ILLEGAL under the Ontario Human Rights Code?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> "What is your experience with customer service?"</label></li>
+        <li><label><input type="radio" name="q8" value="b"> "Are you available evenings and weekends?"</label></li>
+        <li><label><input type="radio" name="q8" value="c"> "Do you plan to have children soon?"</label></li>
+        <li><label><input type="radio" name="q8" value="d"> "Can you lift 15 kg as part of this role?"</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','c')">Check</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Family status is a protected ground. Asking about plans for children is forbidden regardless of intent.</div>
+</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">The 70-20-10 development model says that adults learn:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> 70% from formal training</label></li>
+        <li><label><input type="radio" name="q9" value="b"> 70% on the job, 20% from others, 10% from formal training</label></li>
+        <li><label><input type="radio" name="q9" value="c"> 70% from peers, 20% from books</label></li>
+        <li><label><input type="radio" name="q9" value="d"> Equally from all three sources</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','b')">Check</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>70-20-10: 70% on the job (experience), 20% from others (mentor, coach), 10% formal training.</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">In a 360-degree feedback process, ratings come from:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> The manager only</label></li>
+        <li><label><input type="radio" name="q10" value="b"> The employee's manager, peers, direct reports, and sometimes customers</label></li>
+        <li><label><input type="radio" name="q10" value="c"> An external auditor only</label></li>
+        <li><label><input type="radio" name="q10" value="d"> Anonymous shareholders</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>360-degree = all directions: manager + peers + direct reports + (often) customers.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.1 Types of plans</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.2 SWOT &amp; SMART goals</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.3 Organizational structures</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.4 Recruitment &amp; the Ontario Human Rights Code</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.5 Training methods</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.6 Performance appraisal</label></div>
+</div>
+
+<footer>BOH4M — Business Leadership: Management Fundamentals, Grade 12 | D. Planning and Controlling | Assessment AS Learning</footer>
+</div>
+<script>
+let score = 0, answered = 0; const total = 10;
+function updateProgress() { document.getElementById('totalScore').textContent = score; document.getElementById('progressFill').style.width = (answered / total * 100) + '%'; }
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) { score++; card.classList.add('correct'); feedback.className = 'feedback show correct'; feedback.textContent = '✅ Correct!'; }
+    else { card.classList.add('wrong'); feedback.className = 'feedback show wrong'; feedback.textContent = '❌ See solution below.'; }
+    solution.classList.add('show'); updateProgress();
+}
+</script>
+</body>
+</html>

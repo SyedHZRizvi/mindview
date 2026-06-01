@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOH4M Ch 5: Controlling, Ethics &amp; Case Study — Practice Quiz (AS Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #faf5ff; border: 1px solid #d8b4fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #faf5ff; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/boh4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 5: Controlling, Ethics &amp; Case Study</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check the controlling and ethics material. <strong>Not graded.</strong>
+    Topics: control process, financial &amp; operational controls, balanced scorecard, ethics frameworks, CSR/TBL, culminating case study.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.1 — The Control Process</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">The four steps of the control process are:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Plan, Do, Check, Act</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Establish standards, measure performance, compare, take corrective action</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Forming, Storming, Norming, Performing</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Unfreeze, Change, Refreeze, Communicate</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>(1) Set standards (2) Measure (3) Compare (4) Take corrective action.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">A preflight checklist used by an airline pilot is best classified as:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Feed-forward control</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Concurrent control</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Feedback control</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Standing plan</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','a')">Check</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Used BEFORE the work to prevent problems = <strong>feed-forward (preventive) control</strong>.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.2 — Financial &amp; Operational Controls</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">Fixed costs $5,000/month; Price $12; Variable cost $7. What is the monthly breakeven volume?</div>
+    <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter number of units..."></div>
+    <button class="btn btn-check" onclick="checkNum('q3', 1000)">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Contribution margin = $12 − $7 = $5. Breakeven = $5000 ÷ $5 = <strong>1000 units</strong>.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Which is NOT a quality-management standard or framework?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> Total Quality Management (TQM)</label></li>
+        <li><label><input type="radio" name="q4" value="b"> Six Sigma (DMAIC)</label></li>
+        <li><label><input type="radio" name="q4" value="c"> ISO 9000</label></li>
+        <li><label><input type="radio" name="q4" value="d"> PESTLE</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','d')">Check</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>PESTLE is an environmental-scanning framework, not a quality-management standard.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.3 — Balanced Scorecard</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Which is NOT one of the four Balanced Scorecard perspectives?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Financial</label></li>
+        <li><label><input type="radio" name="q5" value="b"> Customer</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Marketing</label></li>
+        <li><label><input type="radio" name="q5" value="d"> Learning &amp; Growth</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','c')">Check</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Kaplan &amp; Norton's four: Financial, Customer, Internal Process, Learning &amp; Growth.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.4 — Ethics</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">"Greatest good for the greatest number" describes which ethical framework?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> Utilitarian</label></li>
+        <li><label><input type="radio" name="q6" value="b"> Rights-based (Kant)</label></li>
+        <li><label><input type="radio" name="q6" value="c"> Justice-based (Rawls)</label></li>
+        <li><label><input type="radio" name="q6" value="d"> Virtue ethics (Aristotle)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','a')">Check</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Greatest aggregate benefit = <strong>utilitarian</strong>.</div>
+</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">A code of ethics typically states:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> Specific behaviour rules</label></li>
+        <li><label><input type="radio" name="q7" value="b"> Broad principles and values</label></li>
+        <li><label><input type="radio" name="q7" value="c"> Customer prices</label></li>
+        <li><label><input type="radio" name="q7" value="d"> Annual revenue targets</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','b')">Check</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Code of <strong>ethics</strong> = principles/values. Code of <strong>conduct</strong> = specific behavioural rules.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.5 — CSR &amp; Triple Bottom Line</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">The "Triple Bottom Line" (Elkington) is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> Revenue, expenses, profit</label></li>
+        <li><label><input type="radio" name="q8" value="b"> People, Planet, Profit</label></li>
+        <li><label><input type="radio" name="q8" value="c"> Past, Present, Future</label></li>
+        <li><label><input type="radio" name="q8" value="d"> Plan, Process, Performance</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>TBL = <strong>People, Planet, Profit</strong>.</div>
+</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">In Carroll's CSR pyramid, which responsibility is at the base?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Economic</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Philanthropic</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Ethical</label></li>
+        <li><label><input type="radio" name="q9" value="d"> Legal</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','a')">Check</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Carroll's pyramid (base to top): <strong>Economic → Legal → Ethical → Philanthropic</strong>.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.6 — Culminating Case Study</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">A strong culminating-investigation research question should:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> Cover many companies and topics broadly</label></li>
+        <li><label><input type="radio" name="q10" value="b"> Focus on one organization and one specific tension or phenomenon</label></li>
+        <li><label><input type="radio" name="q10" value="c"> Be answerable by reading the company's marketing site only</label></li>
+        <li><label><input type="radio" name="q10" value="d"> Have a yes/no answer</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Narrow focus = stronger analysis. One organization, one tension, one thesis.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.1 Control process</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.2 Financial &amp; operational controls</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.3 Balanced scorecard</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.4 Business ethics frameworks</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.5 CSR &amp; Triple Bottom Line</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.6 Culminating case study process</label></div>
+</div>
+
+<footer>BOH4M — Business Leadership: Management Fundamentals, Grade 12 | D. Planning and Controlling | Assessment AS Learning</footer>
+</div>
+<script>
+let score = 0, answered = 0; const total = 10;
+function updateProgress() { document.getElementById('totalScore').textContent = score; document.getElementById('progressFill').style.width = (answered / total * 100) + '%'; }
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) { score++; card.classList.add('correct'); feedback.className = 'feedback show correct'; feedback.textContent = '✅ Correct!'; }
+    else { card.classList.add('wrong'); feedback.className = 'feedback show wrong'; feedback.textContent = '❌ See solution below.'; }
+    solution.classList.add('show'); updateProgress();
+}
+function checkNum(qid, correct) {
+    const v = parseFloat(document.getElementById(qid + '-input').value.trim());
+    if (isNaN(v)) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (Math.abs(v - correct) < 0.5) { score++; card.classList.add('correct'); feedback.className = 'feedback show correct'; feedback.textContent = '✅ Correct!'; }
+    else { card.classList.add('wrong'); feedback.className = 'feedback show wrong'; feedback.textContent = '❌ The correct answer is ' + correct + '. See solution below.'; }
+    solution.classList.add('show'); updateProgress();
+}
+</script>
+</body>
+</html>

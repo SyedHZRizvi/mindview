@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Computerized Accounting &amp; Ethics — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #d97706; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#d97706;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bat4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 5: Computerized Accounting &amp; Professional Ethics</h1>
+    <div class="sub">Assessment OF Learning — Unit Test</div>
+    <div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks<br>
+    For ethical scenarios, use the structured framework (recognize, identify stakeholders, alternatives, evaluate, decide).
+</div>
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/13</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The Royal Bank of Canada (TSX-listed) prepares financial statements under:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of1" value="a"> ASPE</label></li>
+<li><label><input type="radio" name="of1" value="b"> IFRS</label></li>
+<li><label><input type="radio" name="of1" value="c"> ASNPO</label></li>
+<li><label><input type="radio" name="of1" value="d"> PSAS</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of1','b')">Check</button>
+<div class="fb" id="of1-fb"></div>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>Publicly accountable enterprises (including all TSX-listed banks) must use IFRS in Canada.</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">"Tone at the top" is part of which COSO component?</div>
+<ul class="mc">
+<li><label><input type="radio" name="of2" value="a"> Control environment</label></li>
+<li><label><input type="radio" name="of2" value="b"> Risk assessment</label></li>
+<li><label><input type="radio" name="of2" value="c"> Monitoring</label></li>
+<li><label><input type="radio" name="of2" value="d"> Control activities</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of2','a')">Check</button>
+<div class="fb" id="of2-fb"></div>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>The control environment encompasses the ethical climate, integrity, and competence values set by senior leadership.</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The "five fundamental principles" of the CPA Code do NOT include:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of3" value="a"> Integrity</label></li>
+<li><label><input type="radio" name="of3" value="b"> Profitability</label></li>
+<li><label><input type="radio" name="of3" value="c"> Confidentiality</label></li>
+<li><label><input type="radio" name="of3" value="d"> Objectivity</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of3','b')">Check</button>
+<div class="fb" id="of3-fb"></div>
+<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>The five principles are integrity, objectivity, professional competence &amp; due care, confidentiality, professional behaviour. Profitability is not one.</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A CPA auditing a company where her brother is the CEO faces what threat?</div>
+<ul class="mc">
+<li><label><input type="radio" name="of4" value="a"> Self-interest</label></li>
+<li><label><input type="radio" name="of4" value="b"> Familiarity</label></li>
+<li><label><input type="radio" name="of4" value="c"> Intimidation</label></li>
+<li><label><input type="radio" name="of4" value="d"> Advocacy</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of4','b')">Check</button>
+<div class="fb" id="of4-fb"></div>
+<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>Familiarity threat — close family relationship compromises objectivity.</div>
+</div>
+
+<div class="qcard" id="of5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">In a 2-for-1 stock split:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of5" value="a"> The total share capital doubles</label></li>
+<li><label><input type="radio" name="of5" value="b"> No journal entry is required — only a memo</label></li>
+<li><label><input type="radio" name="of5" value="c"> Cash is debited</label></li>
+<li><label><input type="radio" name="of5" value="d"> Total equity halves</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of5','b')">Check</button>
+<div class="fb" id="of5-fb"></div>
+<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>A stock split changes only the number of shares — total share capital and total equity are unchanged.</div>
+</div>
+
+<div class="qcard" id="of6">
+<div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">The Enron scandal involved:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of6" value="a"> A small accounting firm in Toronto</label></li>
+<li><label><input type="radio" name="of6" value="b"> Off-balance-sheet special-purpose entities to hide debt</label></li>
+<li><label><input type="radio" name="of6" value="c"> Counterfeit currency in a bank vault</label></li>
+<li><label><input type="radio" name="of6" value="d"> A pharmaceutical patent dispute</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of6','b')">Check</button>
+<div class="fb" id="of6-fb"></div>
+<div class="sol" id="of6-sl"><div class="sol-lbl">Solution:</div>Enron used special-purpose entities (SPEs) to keep debt off the balance sheet. Its collapse led to Sarbanes-Oxley in 2002.</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Birchwood Inc.'s CFO instructs the accountant to record \$ 150,000 of December warranty expense in January 2026 "so we hit our Q4 target." Apply the five-step ethical-decision framework: identify (a) the issue, (b) the stakeholders, (c) two alternatives, (d) the recommended action.</div>
+<textarea placeholder="Show all five steps..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A Canadian private manufacturing company has been considering whether to switch from ASPE to IFRS. List two advantages and two disadvantages of voluntary IFRS adoption.</div>
+<textarea placeholder="Show your analysis..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A small NGO is hit by ransomware that locks the donor-management database. List four steps the executive director should take, in order.</div>
+<textarea placeholder="Show your plan..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain in your own words the difference between a "stock dividend" and a "cash dividend." Why might a corporation choose one over the other?</div>
+<textarea placeholder="Show explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Write a 4–6-sentence professional response to a friend who says: "AI will replace accountants in 10 years — what's the point of studying this?"</div>
+<textarea placeholder="Show your response..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Define and contrast the three principles of the CPA Code most relevant to the audit profession: independence (objectivity), competence, and confidentiality. Give a one-sentence example of a violation of each.</div>
+<textarea placeholder="Show your contrast..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [13 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Design an IT-control policy for a 20-employee accounting firm migrating to a cloud accounting platform. Address: (a) user-access controls, (b) password and MFA requirements, (c) backup and recovery procedures, (d) employee training, (e) breach-response plan.</div>
+<textarea placeholder="Show your policy..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A small Canadian SaaS company's controller is offered a 5% commission by an investment-banking advisor for "recommending" the firm for the upcoming IPO. Apply the CPA Code: identify the principle violated, the threat type, and what the controller should do.</div>
+<textarea placeholder="Show your analysis..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">"Continuous auditing using AI" is increasingly being deployed at Big Four firms. Describe (a) what continuous auditing is, (b) two benefits, (c) two challenges or risks of using AI in this role.</div>
+<textarea placeholder="Show your description..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>BAT4M — Financial Accounting Principles, Grade 12 | E. Ethics, Issues, &amp; the Accounting Profession | Assessment OF Learning — Graded</footer>
+</div>
+<script>
+let score=0,answered=0;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.1){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

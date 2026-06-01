@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC2D — Science (Academic) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #0891b2; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #0891b2; }
+.video-player { padding: 0 14px 14px; display: none; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #0e7490; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #0891b2; color: #fff; }
+.chnav-next:hover { background: #0e7490; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../snc2d.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SNC2D Science Academic)</a></div>
+    <div class="strand-tag">Science — Grade 10 Academic</div>
+    <h1>🧬 SNC2D: Unit 1: Tissues, Organs &amp; Systems</h1>
+    <p>Cell theory, mitosis and the cell cycle, plant and animal tissues, organ systems, stem cells, and cancer</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+            <h2>Unit 1: Tissues, Organs &amp; Systems</h2>
+            <p>From a single cell to integrated organ systems — the hierarchical organisation of life</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Tissues, Organs &amp; Systems</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Cell Theory & Microscopy -->
+        <div class="subsection-label">🔬 Cell Theory &amp; Microscopy</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>cell theory</em> is one of the unifying ideas of biology. It was assembled over two centuries from many observations and is summarised in three statements: (1) all living things are made of one or more cells; (2) the cell is the basic structural and functional unit of life; (3) every cell comes from a pre-existing cell. The English microscopist Robert Hooke gave us the word "cell" in 1665 after observing the box-like compartments of cork; Antonie van Leeuwenhoek soon after saw single-celled "animalcules"; Schleiden, Schwann, and Virchow completed the theory in the 1830s–50s.</p>
+            <p>Two grand cell types exist. <em>Prokaryotic</em> cells (bacteria and archaea) are smaller, have no membrane-bound nucleus, and store DNA as a single circular chromosome in the cytoplasm. <em>Eukaryotic</em> cells (animals, plants, fungi, protists) are larger, contain a true nucleus, and possess membrane-bound organelles — mitochondria for cellular respiration, the endoplasmic reticulum and Golgi apparatus for protein processing and packaging, lysosomes for digestion, and (in plants) chloroplasts for photosynthesis and a rigid cellulose cell wall. Plant cells also have a large central vacuole that helps maintain turgor pressure.</p>
+            <p>Microscopes are how biologists see what is otherwise invisible. The <em>compound light microscope</em> uses two lenses (eyepiece and objective) and visible light to magnify specimens up to about 1000×, limited by the wavelength of light. <em>Total magnification</em> = eyepiece magnification × objective magnification. <em>Resolution</em>, the ability to distinguish two close points as separate, is also limited — about 0.2 µm for light microscopes. Electron microscopes (TEM, SEM) use beams of electrons and can resolve details below 1 nm.</p>
+            <ul>
+              <li><strong>Cell</strong> — smallest unit of life capable of independent functioning.</li>
+              <li><strong>Prokaryote / eukaryote</strong> — cell without / with a membrane-bound nucleus.</li>
+              <li><strong>Organelle</strong> — specialised subcellular structure with a specific function.</li>
+              <li><strong>Magnification</strong> — apparent increase in size produced by a lens system.</li>
+              <li><strong>Resolution</strong> — minimum distance between two points that can be seen as separate.</li>
+              <li><strong>Field of view</strong> — circular area visible through the eyepiece at a given magnification.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Calculating microscope magnification and field of view</p>
+              <p>A compound microscope has a 10× eyepiece and three objectives: 4×, 10×, 40×. The field of view at 4× is 4.0 mm wide. (a) Calculate the total magnification at each setting. (b) Determine the field of view at 40×.</p>
+              <p>(a) Total magnification = eyepiece × objective. At 4× objective: \(10 \times 4 = 40\times\). At 10×: \(10 \times 10 = 100\times\). At 40×: \(10 \times 40 = 400\times\). (b) Field of view is inversely proportional to magnification. Ratio of objectives: \(40 / 4 = 10\). Field at 40× = \(4.0 \text{ mm} \div 10 = 0.4\) mm (400 µm). The image is 10× larger, so we see 10× less of the slide.</p>
+            </div>
+            <ul>
+              <li>Forgetting that magnification means apparent size, not real size — a 1 µm bacterium magnified 1000× looks 1 mm wide but is still 1 µm.</li>
+              <li>Confusing magnification with resolution — you can keep magnifying a blurry image, but no new detail will appear above the resolution limit.</li>
+              <li>Calling viruses "cells" — viruses lack the metabolic machinery of cells and are not included in the cell theory.</li>
+              <li>Saying prokaryotes have "no DNA" — they have DNA, just no nuclear envelope around it.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe the cell cycle in animal cells, including the changes within the nucleus and cytoplasm" and B2.2 — "use a microscope properly to observe and identify cells and cell structures."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to Cells: The Grand Cell Tour — Amoeba Sisters</span>
+                <span class="vid-duration">8:55</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8IlzKri08kk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=8IlzKri08kk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Eukaryopolis — The City of Animal Cells: Crash Course Biology #4</span>
+                <span class="vid-duration">10:30</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cj8dDTHGJBY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=cj8dDTHGJBY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Mitosis & Cell Cycle -->
+        <div class="subsection-label">🔁 Mitosis &amp; the Cell Cycle</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Multicellular organisms grow and repair tissues by producing genetically identical daughter cells. This is the role of the <em>cell cycle</em>, an orderly sequence of events that takes a cell from one division to the next. Roughly 90% of the cycle is <em>interphase</em>, divided into three sub-phases: G1 (cell growth), S (DNA synthesis — every chromosome is duplicated to form two sister chromatids joined at a centromere), and G2 (further growth and preparation for division). The remaining 10% is <em>mitosis</em> (nuclear division) followed by <em>cytokinesis</em> (cytoplasmic division). Strict checkpoints at G1/S and G2/M ensure that DNA is undamaged before replication and that replication is complete before mitosis.</p>
+            <p>Mitosis has four classic phases. In <em>prophase</em>, chromatin condenses into visible chromosomes, the nuclear envelope breaks down, and the mitotic spindle forms from centrosomes. In <em>metaphase</em>, chromosomes align along the cell's equator (the metaphase plate) with spindle fibres attached at the centromeres. In <em>anaphase</em>, the sister chromatids separate and are pulled to opposite poles by shortening spindle microtubules. In <em>telophase</em>, chromosomes decondense, new nuclear envelopes form, and the cell prepares to divide. <em>Cytokinesis</em> then physically splits the cell — by a cleavage furrow in animal cells and by a cell plate in plant cells. The result is two diploid daughter cells, each with the same chromosome number and genetic content as the parent.</p>
+            <p>When checkpoints fail, cells may divide uncontrollably and form a <em>tumour</em>. Benign tumours stay put; <em>malignant</em> tumours invade nearby tissue and may <em>metastasise</em> to distant sites via the bloodstream or lymphatic system. Most cancers arise from mutations in genes that regulate the cell cycle — <em>proto-oncogenes</em> that normally accelerate the cycle, and <em>tumour-suppressor genes</em> (e.g., p53, the "guardian of the genome") that normally restrain it. Cigarette smoke, UV radiation, certain viruses, and some chemicals are all <em>carcinogens</em> because they cause such mutations.</p>
+            <ul>
+              <li><strong>Chromosome</strong> — condensed DNA + protein structure visible during mitosis.</li>
+              <li><strong>Sister chromatids</strong> — two identical copies of a chromosome joined at the centromere after S phase.</li>
+              <li><strong>Spindle fibres</strong> — microtubule tracks that separate chromosomes during mitosis.</li>
+              <li><strong>Cytokinesis</strong> — division of the cytoplasm completing cell division.</li>
+              <li><strong>Diploid (2n)</strong> — having two of each chromosome (humans 2n = 46).</li>
+              <li><strong>Carcinogen</strong> — agent that promotes cancer by causing mutations.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Identifying mitotic phase from an onion-root tip slide</p>
+              <p>You observe four cells on an onion-root tip slide. Cell A has dispersed chromatin and a visible nucleus. Cell B has chromosomes lined up across the cell's middle. Cell C has chromosomes moving toward opposite ends. Cell D has a forming cell plate across the middle. Identify the stage of each cell.</p>
+              <p>Cell A: <strong>interphase</strong> — chromatin is not condensed, a clear nucleolus is often visible. Cell B: <strong>metaphase</strong> — alignment at the equatorial plate. Cell C: <strong>anaphase</strong> — sister chromatids being pulled apart. Cell D: <strong>cytokinesis (telophase end)</strong> — a cell plate is the plant-cell-specific division feature. In an actively dividing tissue, ~90% of cells appear in interphase because it occupies most of the cycle.</p>
+            </div>
+            <ul>
+              <li>Confusing chromosomes (condensed) with chromatin (uncondensed) — same DNA, different packaging.</li>
+              <li>Calling sister chromatids "homologous chromosomes" — sister chromatids are identical copies; homologous chromosomes are one maternal and one paternal copy of the same gene set.</li>
+              <li>Saying mitosis produces 4 daughter cells — that is meiosis. Mitosis produces 2 identical diploid cells.</li>
+              <li>Drawing a cleavage furrow in plant cells — plants use a cell plate because the cell wall cannot constrict.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "describe the cell cycle in animal cells (interphase, mitosis, cytokinesis) and the events that occur in each phase" and B2.2 — "use a microscope to identify mitotic phases in onion-root or whitefish-blastula preparations."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mitosis: The Amazing Cell Process that Uses Division to Multiply — Amoeba Sisters</span>
+                <span class="vid-duration">7:01</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/f-ldPgEfAHI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=f-ldPgEfAHI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mitosis: Splitting Up is Complicated — Crash Course Biology #12</span>
+                <span class="vid-duration">10:47</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/L0k-enzoeOM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=L0k-enzoeOM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Animal Tissues -->
+        <div class="subsection-label">🩸 Animal Tissues</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <em>animal tissue</em> is a group of similar cells, together with their extracellular environment, that performs a shared function. The human body uses four primary tissue families, and every organ is built from some combination of them.</p>
+            <p><em>Epithelial tissue</em> covers external surfaces and lines internal cavities and organs. Its cells are tightly packed with very little extracellular matrix, allowing them to function as a barrier and as a regulated entry point for absorption and secretion. Epithelial sheets are classified by shape (squamous = flat, cuboidal = cube-shaped, columnar = column-shaped) and number of layers (simple = one, stratified = many). For example, the skin's outer layer is stratified squamous epithelium for protection; the small intestine is lined with simple columnar epithelium with microvilli for nutrient absorption. Mucus-secreting goblet cells are scattered through respiratory and digestive epithelia.</p>
+            <p><em>Connective tissue</em> binds, supports, and protects. Unlike epithelium, its defining feature is an abundant <em>extracellular matrix</em> of fibres (collagen, elastin, reticular) embedded in a ground substance. Variations in matrix composition produce dramatically different tissues: <em>loose areolar</em> connective tissue cushions organs; <em>dense regular</em> forms tendons and ligaments; <em>adipose</em> stores fat; <em>cartilage</em> is firm yet flexible (joints, ear, nose); <em>bone</em> is hard, calcium-rich, and continually remodelled; <em>blood</em> is connective tissue with a liquid matrix (plasma).</p>
+            <p><em>Muscle tissue</em> generates movement through contraction. <em>Skeletal muscle</em> (striated, voluntary, multi-nucleated) moves bones; <em>cardiac muscle</em> (striated, involuntary, branched, intercalated discs) pumps the heart; <em>smooth muscle</em> (non-striated, involuntary, single-nucleus) lines blood vessels and digestive organs.</p>
+            <p><em>Nervous tissue</em> conducts electrical impulses for rapid communication. <em>Neurons</em> have a cell body, dendrites that receive signals, and an axon that transmits signals. <em>Glial cells</em> (Schwann cells, oligodendrocytes, astrocytes) support and insulate neurons, often with a fatty myelin sheath that speeds conduction.</p>
+            <ul>
+              <li><strong>Tissue</strong> — group of similar cells + extracellular material performing one function.</li>
+              <li><strong>Extracellular matrix (ECM)</strong> — non-cellular material (fibres, ground substance) surrounding cells.</li>
+              <li><strong>Striations</strong> — banding pattern from organised actin and myosin in skeletal/cardiac muscle.</li>
+              <li><strong>Neuron / glial cell</strong> — signal-conducting / support cell of the nervous system.</li>
+              <li><strong>Goblet cell</strong> — mucus-secreting epithelial cell.</li>
+              <li><strong>Myelin sheath</strong> — fatty insulator around axons that speeds impulse conduction.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Matching tissue to organ function</p>
+              <p>For each organ structure, identify the dominant tissue family and justify the match: (a) the inner lining of the small intestine; (b) the wall of the heart; (c) a tendon attaching biceps to bone; (d) the optic nerve.</p>
+              <p>(a) Simple columnar <strong>epithelial</strong> tissue with microvilli — absorption requires a thin, sheet-like barrier maximising surface area. (b) Cardiac <strong>muscle</strong> — striated, involuntary, branched cells with intercalated discs allow synchronised, fatigue-resistant pumping. (c) Dense regular <strong>connective</strong> tissue — parallel collagen bundles maximise tensile strength along the line of pull. (d) <strong>Nervous</strong> tissue — bundles of neuron axons conduct visual signals from retina to brain.</p>
+            </div>
+            <ul>
+              <li>Calling blood a "fluid" rather than a connective tissue — its plasma is a liquid matrix, qualifying it as connective tissue.</li>
+              <li>Confusing simple and stratified — simple is one layer of cells, stratified is many layers.</li>
+              <li>Saying all muscle is voluntary — only skeletal muscle is voluntary; cardiac and smooth are involuntary.</li>
+              <li>Drawing tendons and ligaments as the same thing — tendons attach muscle to bone; ligaments attach bone to bone.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.3 — "describe the four primary types of animal tissues (epithelial, connective, muscle, nervous) and explain their general functions, using examples."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Tissues, Part 1: Crash Course Anatomy &amp; Physiology #2</span>
+                <span class="vid-duration">10:13</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/i5tR3csCWYo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=i5tR3csCWYo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Plant Tissues -->
+        <div class="subsection-label">🌱 Plant Tissues</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Plants are organised into three <em>tissue systems</em> that extend continuously through the roots, stems, and leaves. Each system reflects an adaptation to the very different problem plants face compared with animals: they cannot move, they make their own food by photosynthesis, and they must transport water from soil to leaf against gravity.</p>
+            <p>The <em>dermal tissue system</em> is the plant's outer covering. In young plants it is the <em>epidermis</em>, usually a single layer of cells often coated by a waxy <em>cuticle</em> that limits water loss. The epidermis contains <em>stomata</em> — pores flanked by two guard cells — that open to let \(CO_2\) in and close to retain water. In woody plants, the epidermis is replaced by <em>periderm</em>, including the bark we recognise on tree trunks.</p>
+            <p>The <em>ground tissue system</em> fills space between dermal and vascular tissues and performs photosynthesis, storage, and support. It contains three cell types: <em>parenchyma</em> (general-purpose, thin-walled, photosynthetic in leaves, storage in roots and tubers), <em>collenchyma</em> (flexible support — the "strings" of celery), and <em>sclerenchyma</em> (rigid support with thick, lignified walls; includes fibres and stone cells).</p>
+            <p>The <em>vascular tissue system</em> is the plant's plumbing. <em>Xylem</em> conducts water and dissolved minerals upward from roots to leaves through dead, hollow cells (tracheids and vessel elements) with lignified walls; the cohesion-tension mechanism — water's hydrogen bonding combined with transpirational pull at the leaf — drives this flow. <em>Phloem</em> conducts dissolved sugars (mostly sucrose) from "sources" (photosynthesising leaves) to "sinks" (growing tissue, fruits, roots) through living sieve-tube elements aided by companion cells. The mature stem of a dicot has xylem and phloem arranged in vascular bundles, separated by a layer of dividing cells called the <em>cambium</em> that adds new vascular tissue each season — this is what we see as annual growth rings.</p>
+            <ul>
+              <li><strong>Dermal / ground / vascular tissue system</strong> — outer protection / filler &amp; storage / transport.</li>
+              <li><strong>Epidermis</strong> — outermost layer of cells in a young plant.</li>
+              <li><strong>Stomata</strong> — pores bordered by guard cells, regulate gas exchange and water loss.</li>
+              <li><strong>Xylem</strong> — vascular tissue carrying water and minerals upward.</li>
+              <li><strong>Phloem</strong> — vascular tissue carrying sugars from sources to sinks.</li>
+              <li><strong>Transpiration</strong> — evaporation of water from leaves; the pulling force for xylem flow.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracing a water molecule through a plant</p>
+              <p>A water molecule enters a tomato plant from the soil. List, in order, the tissues and structures it passes through to reach the air outside a leaf.</p>
+              <p>Soil → <strong>root hair cell</strong> (epidermis with a tubular extension that maximises surface area) → root cortex (parenchyma) → endodermis (Casparian strip selectively filters) → <strong>xylem</strong> of root → xylem of stem → xylem of leaf vein → mesophyll cell → evaporates into the leaf air space → diffuses out through a <strong>stoma</strong> to the atmosphere. The whole journey is driven by <strong>transpiration</strong>: as water evaporates at the leaf, the hydrogen-bonded water column is pulled up the xylem like sap through a continuous straw.</p>
+            </div>
+            <ul>
+              <li>Confusing xylem (water, dead cells) with phloem (sugar, living cells).</li>
+              <li>Saying xylem "pumps" water — it does not pump; transpirational pull pulls water through dead, hollow tubes.</li>
+              <li>Drawing stomata as a single cell — each stoma is the gap between two guard cells.</li>
+              <li>Treating plant tissues as "the same" as animal tissues — plants have three tissue systems, not four primary tissues.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.4 — "describe the structures and functions of plant tissue systems (e.g., dermal, vascular, ground)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Vascular Plants = Winning! — Crash Course Biology #37</span>
+                <span class="vid-duration">12:51</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/h9oDTMXM7M8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=h9oDTMXM7M8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Human Organ Systems -->
+        <div class="subsection-label">🫁 Human Organ Systems</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>An <em>organ</em> is a structure made of two or more tissue types that works as a functional unit; an <em>organ system</em> is a group of organs that cooperate to accomplish a broad task. Humans have eleven organ systems, but four are emphasised in Grade 10: digestive, respiratory, circulatory, and (in the context of the immune response) lymphatic.</p>
+            <p>The <em>digestive system</em> breaks food into absorbable molecules. Food travels mouth → oesophagus → stomach → small intestine → large intestine → rectum → anus. The stomach mixes chyme with hydrochloric acid and pepsin (protein digestion). Most digestion and absorption occur in the small intestine: pancreatic enzymes (trypsin, amylase, lipase) digest macromolecules, and the highly folded villi and microvilli of the intestinal wall create enormous surface area for absorbing simple sugars, amino acids, and fatty acids into the bloodstream and lacteals. The large intestine reabsorbs water and houses the gut microbiome.</p>
+            <p>The <em>respiratory system</em> exchanges \(O_2\) and \(CO_2\) with the environment. Air enters via the nose or mouth, is filtered and warmed in the trachea, then branches through bronchi and bronchioles into approximately 300 million <em>alveoli</em>. Their walls are a single squamous epithelial cell thick — fast diffusion of gases is possible because oxygen has only this short distance to reach the capillary blood inside.</p>
+            <p>The <em>circulatory (cardiovascular) system</em> is a closed transport network: a four-chambered heart drives blood through arteries (away from heart), capillaries (exchange vessels), and veins (back to heart). The pulmonary circuit carries deoxygenated blood from the right ventricle to the lungs and oxygen-rich blood back to the left atrium; the systemic circuit pushes oxygen-rich blood from the left ventricle to body tissues and returns deoxygenated blood to the right atrium. Blood plasma carries dissolved gases, nutrients, wastes, hormones, and antibodies; red blood cells transport oxygen bound to haemoglobin; white blood cells defend; platelets clot.</p>
+            <p>These systems are deeply <em>interdependent</em>. The respiratory system supplies the oxygen the circulatory system delivers; the digestive system supplies the glucose; the cells of every system use those resources to make ATP via cellular respiration; the circulatory system clears the carbon dioxide back to the lungs.</p>
+            <ul>
+              <li><strong>Organ</strong> — multi-tissue structure with a defined function.</li>
+              <li><strong>Organ system</strong> — group of organs cooperating on a broad task.</li>
+              <li><strong>Villi / microvilli</strong> — finger-like folds increasing intestinal absorptive surface area.</li>
+              <li><strong>Alveolus</strong> — single-cell-thick air sac where gas exchange occurs.</li>
+              <li><strong>Pulmonary / systemic circuit</strong> — heart-to-lungs / heart-to-body blood loop.</li>
+              <li><strong>Haemoglobin</strong> — iron-containing protein in RBCs that binds and releases oxygen.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracing the path of an oxygen molecule</p>
+              <p>You inhale an oxygen molecule in a classroom. Trace its path until it is used by a muscle cell in your bicep, naming each major structure.</p>
+              <p>Nose/mouth → <strong>trachea</strong> → bronchus → bronchiole → <strong>alveolus</strong> → diffuses across alveolar wall + capillary wall → enters a capillary → binds <strong>haemoglobin</strong> in a red blood cell → flows via pulmonary vein → <strong>left atrium → left ventricle</strong> → aorta → systemic arteries → brachial artery → arteriole → capillary in bicep muscle → diffuses into a muscle cell → enters a <strong>mitochondrion</strong> to accept electrons at the end of the electron transport chain, forming water and enabling ATP synthesis.</p>
+            </div>
+            <ul>
+              <li>Calling arteries "vessels carrying oxygenated blood" — the pulmonary artery carries deoxygenated blood; arteries are defined by direction (away from heart), not oxygenation.</li>
+              <li>Forgetting that gas exchange occurs by diffusion, not active transport — driven by partial pressure differences.</li>
+              <li>Saying digestion happens in the stomach — most digestion and absorption are in the small intestine.</li>
+              <li>Putting only one circuit in the human heart — there are two (pulmonary + systemic).</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.5 — "explain the interactions between the various systems (e.g., circulatory, digestive, respiratory) in the human body and identify the structural and functional adaptations that support those interactions."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Heart, Part 1 — Under Pressure: Crash Course Anatomy &amp; Physiology #25</span>
+                <span class="vid-duration">9:33</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/X9ZZ6tcxArI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=X9ZZ6tcxArI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Respiratory System — Crash Course Anatomy &amp; Physiology #31</span>
+                <span class="vid-duration">9:35</span>
+                <span class="vid-toggle" id="toggle-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bHZsvBdUC2I?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=bHZsvBdUC2I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Stem Cells & Cancer -->
+        <div class="subsection-label">🧪 Stem Cells, Cancer &amp; Medical Technology</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>A <em>stem cell</em> is an unspecialised cell that can self-renew through cell division and can differentiate into specialised cell types. Stem cells are classified by their <em>potency</em> — the range of cell types they can become. <em>Totipotent</em> cells (a fertilised egg and its earliest descendants) can form every cell type, including extra-embryonic tissues such as the placenta. <em>Pluripotent</em> cells (embryonic stem cells from the inner cell mass of a blastocyst) can form any cell of the body but not extra-embryonic tissues. <em>Multipotent</em> cells (adult stem cells such as bone-marrow hematopoietic stem cells) form a restricted set of cell types — in this case, all blood-cell lineages.</p>
+            <p>Stem-cell therapy is already routine in some areas (bone-marrow transplants to treat leukaemia) and is being studied in many others (spinal-cord injury, Parkinson's disease, type-1 diabetes, age-related macular degeneration). Because adult stem cells are limited in potency, scientists have learned to reprogram ordinary adult cells back to a pluripotent state — <em>induced pluripotent stem cells (iPSCs)</em>, discovered by Shinya Yamanaka in 2006. iPSCs sidestep many of the ethical concerns of embryonic stem cells because no embryo is destroyed; they also allow patient-specific therapies that should not be rejected by the immune system.</p>
+            <p><em>Cancer</em> is the breakdown of cell-cycle control. Mutations in proto-oncogenes (which normally accelerate division) or tumour-suppressor genes (which normally restrain it) accumulate over time. A typical cancer requires multiple mutations — explaining why most cancers are diseases of older adults. Detection technologies include mammography (X-ray), endoscopy, MRI, CT, and PET scans, and blood tests for circulating tumour DNA. Treatments include surgery, chemotherapy, radiation, hormone therapy, targeted therapies, and immunotherapy (CAR-T cells, checkpoint inhibitors). Lifestyle factors — not smoking, limiting alcohol, healthy diet, sun protection, vaccination against HPV and hepatitis B — substantially reduce cancer risk.</p>
+            <ul>
+              <li><strong>Stem cell</strong> — undifferentiated cell that self-renews and can differentiate.</li>
+              <li><strong>Pluripotent / multipotent</strong> — can form any body cell / only a subset of cell types.</li>
+              <li><strong>iPSC</strong> — induced pluripotent stem cell, reprogrammed from an adult cell.</li>
+              <li><strong>Carcinogen</strong> — agent (chemical, radiation, virus) that increases cancer risk.</li>
+              <li><strong>Metastasis</strong> — spread of cancer cells from the original tumour to distant sites.</li>
+              <li><strong>Tumour suppressor / proto-oncogene</strong> — genes that brake / accelerate the cell cycle.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Evaluating an ethical dilemma in stem-cell research</p>
+              <p>A research team proposes deriving new stem-cell lines from leftover IVF embryos that would otherwise be discarded. List two arguments in favour and two against, then suggest one technology that could potentially make the debate moot.</p>
+              <p>In favour: (1) embryos would be destroyed anyway, so research offers some benefit; (2) pluripotent ES cells could enable treatments for currently incurable diseases. Against: (1) some hold that a blastocyst-stage embryo deserves the moral status of a person, making any destruction unethical; (2) consent issues — donors may not have anticipated research use. Technology that may resolve it: <strong>induced pluripotent stem cells (iPSCs)</strong>, which deliver pluripotency from an adult cell and require no embryo.</p>
+            </div>
+            <ul>
+              <li>Calling all stem cells "embryonic" — adult tissues contain multipotent stem cells, and iPSCs are derived without an embryo.</li>
+              <li>Saying cancer is "one disease" — it is hundreds of distinct diseases sharing uncontrolled cell division.</li>
+              <li>Confusing tumour and cancer — a benign tumour stays localised; cancer is malignant (invades and metastasises).</li>
+              <li>Treating "early detection" as a cure — early detection improves outcomes but is not itself a treatment.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "analyse, on the basis of research, ethical issues related to a technological development in the field of systems biology (e.g., stem-cell research, organ transplantation, blood transfusion)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">What Exactly is Cancer? — TED-Ed</span>
+                <span class="vid-duration">4:30</span>
+                <span class="vid-toggle" id="toggle-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/BmFEoCFDi-w?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=BmFEoCFDi-w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 1 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/snc2d/Unit1_Tissues_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/snc2d/Unit1_Tissues_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/snc2d/Unit1_Tissues_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../snc2d.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SNC2D Science (Academic) · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

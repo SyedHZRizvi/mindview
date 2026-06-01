@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 4: Applications of Geometry — Unit Test (OF Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #059669; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: #16a34a; background: #f0fdf4; }
+.qcard.wrong { border-color: #dc2626; background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.desmos-link { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #1e293b; color: #fff; border-radius: 6px; text-decoration: none; font-size: 13px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 4: Applications of Geometry</h1>
+<div class="sub">Assessment OF Learning — Unit Test</div>
+<div class="badge">✅ Graded — Counts Toward Term Mark</div>
+</header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks<br>Show all work.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/14</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [12 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A force of 80 N acts at 35° above horizontal. Find the horizontal component (round to 1 dp).</div>
+<input type="text" id="of1-in" placeholder="Enter N...">
+<button class="btn btn-p" onclick="chkNum('of1', 65.5)">Check</button>
+<div class="fb" id="of1-fb"></div>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>\( F_{x}=80\cos 35°\approx 80(0.8192)\approx 65.5 \) N.</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Vector \( \vec{v} \) has components \( (-5, 12) \). Find its magnitude.</div>
+<input type="text" id="of2-in" placeholder="Enter magnitude...">
+<button class="btn btn-p" onclick="chkNum('of2', 13)">Check</button>
+<div class="fb" id="of2-fb"></div>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>\( |\vec{v}|=\sqrt{25+144}=\sqrt{169}=13 \).</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Find the volume of a cylinder of radius 4 cm and height 10 cm. Use \( \pi \approx 3.14 \), round to nearest whole.</div>
+<input type="text" id="of3-in" placeholder="cm³...">
+<button class="btn btn-p" onclick="chkNum('of3', 502)">Check</button>
+<div class="fb" id="of3-fb"></div>
+<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>\( V=\pi r^{2}h=16\pi(10)=160\pi\approx 502.65 \approx 503 \) cm³ (accept 502–503).</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[1 mark]</span></div>
+<div class="qtxt">Two perpendicular vectors of magnitudes 6 and 8 are added. The resultant has magnitude:</div>
+<ul class="mc">
+<li><label><input type="radio" name="of4" value="a"> 14</label></li>
+<li><label><input type="radio" name="of4" value="b"> 10</label></li>
+<li><label><input type="radio" name="of4" value="c"> 2</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of4','b')">Check</button>
+<div class="fb" id="of4-fb"></div>
+<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>\( \sqrt{6^{2}+8^{2}}=10 \).</div>
+</div>
+
+<div class="qcard" id="of5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">An inscribed angle in a circle subtends an arc of 140° (central). The inscribed angle is:</div>
+<input type="text" id="of5-in" placeholder="degrees...">
+<button class="btn btn-p" onclick="chkNum('of5', 70)">Check</button>
+<div class="fb" id="of5-fb"></div>
+<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>Inscribed = (1/2)(140°) = 70°.</div>
+</div>
+
+<div class="qcard" id="of6">
+<div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A cone has base radius 7 cm and height 24 cm. Find its slant height and total surface area (including base; round to nearest cm²).</div>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Three forces act at a point: 50 N due east, 30 N due north, and 40 N at 30° west of north (i.e., 120° from positive \( x \)-axis). Find the magnitude and direction of the resultant.</div>
+<textarea placeholder="Use components..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A spherical fuel tank must hold 10 m³. Find the radius (round to 2 dp). Then determine the surface area of metal required.</div>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A box (no top) is made from a 24 cm × 36 cm sheet by cutting equal squares from each corner and folding up. Express the volume \( V(x) \) and use Desmos to find the \( x \) that maximizes \( V \). State approximate maximum volume.</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Desmos</a><br>
+<textarea placeholder="Show work + Desmos description..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain in words the difference between adding vectors using the "triangle method" and adding them using "components". Which method do you prefer for a problem with three or more vectors? Justify.</div>
+<textarea placeholder="Explain..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe a strategy for setting up and solving an optimization problem with a fixed perimeter or surface area. Include sketch, variables, objective, constraint, and verification.</div>
+<textarea placeholder="Describe..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A pulley belt is shared between two pulleys of radii 4 cm and 10 cm. Explain the relationship between their angular velocities. If the small pulley rotates at 200 rpm, what is the rotation rate of the large pulley? Justify with the equation \( v=r\omega \).</div>
+<textarea placeholder="Explain..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [14 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A 1500 kg car is on a hill inclined 15° from horizontal. Find the component of gravitational force pulling the car down the slope (use g = 9.8 m/s², so weight = 14700 N).</div>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A water tank consists of a cylinder of radius 1.5 m and height 4 m, topped by a hemisphere of the same radius. Find the total volume in m³ and the total surface area (excluding the base) in m².</div>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A circular flower bed has diameter 6 m. The owner wants to add a rectangular concrete walking path 0.5 m wide around it (tangent to the circle on four sides). Find the area of the path.</div>
+<a class="desmos-link" href="https://www.geogebra.org/" target="_blank">📊 GeoGebra</a><br>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric" style="margin-top:32px;">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (standard)</td><td>70-79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr>
+</table>
+</div>
+
+<footer>MCT4M — Mathematics for College Technology | Strand D: Applications of Geometry | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){
+    const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}
+    if(sl)sl.classList.add('show');
+}
+function chkNum(q,c){
+    const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(Math.abs(v-c)<2){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}
+    if(sl)sl.classList.add('show');
+}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Romeo and Juliet — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ede9fe; border: 1px solid #c4b5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Romeo and Juliet — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of Elizabethan context, dramatic conventions, the play's structure, and Shakespeare's language.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.1 — Elizabethan Context</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Shakespeare's company performed <em>Romeo and Juliet</em> primarily at:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> The Royal Court in Windsor</label></li>
+<li><label><input type="radio" name="q1" value="b"> Open-air playhouses (the Theatre, then the Globe) with daylight performances</label></li>
+<li><label><input type="radio" name="q1" value="c"> Indoor candle-lit halls only</label></li>
+<li><label><input type="radio" name="q1" value="d"> Touring rural villages</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Elizabethan public theatre was open-air and depended on daylight. The Globe (built 1599) was Shakespeare's company's most famous venue. There were no spotlights, very little scenery, and no curtain.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">In Shakespeare's plays, who typically speaks in prose rather than verse?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Kings and queens at all times</label></li>
+<li><label><input type="radio" name="q2" value="b"> Servants, low-comedy characters, or characters in madness</label></li>
+<li><label><input type="radio" name="q2" value="c"> All characters speak in prose</label></li>
+<li><label><input type="radio" name="q2" value="d"> Only the Chorus</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Verse (especially blank verse) is for noble or serious speech. Prose is reserved for servants, low comedy (like Sampson and Gregory in 1.1), and the disordered speech of madness. Shakespeare's register shifts are themselves character markers.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.2 — The Prologue &amp; Act 1</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">The opening prologue of <em>Romeo and Juliet</em> is structured as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> A Shakespearean sonnet (14 lines, ABAB CDCD EFEF GG)</label></li>
+<li><label><input type="radio" name="q3" value="b"> A villanelle</label></li>
+<li><label><input type="radio" name="q3" value="c"> A pair of rhyming couplets</label></li>
+<li><label><input type="radio" name="q3" value="d"> Free verse</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','a')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Shakespeare opens the play with a 14-line sonnet — traditionally a love-poem form, here announcing a tragedy. The form itself begins the play's tension between love and death.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div>
+<div class="passage">"Two households, both alike in dignity, / In fair Verona, where we lay our scene, / From ancient grudge break to new mutiny, / Where civil blood makes civil hands unclean." — Prologue, lines 1–4</div>
+<div class="qtxt">The prologue's phrase "From ancient grudge break to new mutiny" tells the audience that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The feud is a recent disagreement</label></li>
+<li><label><input type="radio" name="q4" value="b"> The feud is old but the present-day violence is fresh</label></li>
+<li><label><input type="radio" name="q4" value="c"> The play takes place during a war</label></li>
+<li><label><input type="radio" name="q4" value="d"> The two families are reconciled at the start</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> "Ancient grudge" tells us the feud is generations old; "break to new mutiny" tells us the violence is currently fresh. The prologue frames the feud as an inherited grievance still claiming new victims — which the play then dramatises.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.3 — The Balcony Scene</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div>
+<div class="passage">"O Romeo, Romeo! wherefore art thou Romeo?" — Juliet, 2.2.33</div>
+<div class="qtxt">In Shakespeare's English, "wherefore" means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Where</label></li>
+<li><label><input type="radio" name="q5" value="b"> Why</label></li>
+<li><label><input type="radio" name="q5" value="c"> When</label></li>
+<li><label><input type="radio" name="q5" value="d"> How</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> "Wherefore" = "why" (compare "therefore" = "for that"). Juliet is asking why Romeo has to be Romeo (a Montague), not where he is. This is one of the most frequently misread lines in English literature.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div>
+<div class="passage">"What's in a name? that which we call a rose / By any other name would smell as sweet." — Juliet, 2.2.43–4</div>
+<div class="qtxt">Juliet's argument here is that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Roses are her favourite flower</label></li>
+<li><label><input type="radio" name="q6" value="b"> Names are arbitrary labels — the essence of a thing does not depend on what it is called</label></li>
+<li><label><input type="radio" name="q6" value="c"> Romeo should change his name to Capulet</label></li>
+<li><label><input type="radio" name="q6" value="d"> She does not love Romeo</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Juliet argues that names are arbitrary — Romeo's essence is not tied to "Montague." The play's tragedy will prove her wrong: the names carry real social consequences that her romantic argument cannot defeat.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.4 — Act 3, the Turning Point</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">In Act 3, Scene 1, Mercutio is killed by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Romeo</label></li>
+<li><label><input type="radio" name="q7" value="b"> Tybalt</label></li>
+<li><label><input type="radio" name="q7" value="c"> Paris</label></li>
+<li><label><input type="radio" name="q7" value="d"> Prince Escalus</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Tybalt kills Mercutio (under Romeo's arm, when Romeo tries to break up the fight). Romeo then kills Tybalt in grief and rage. Mercutio's dying line — "A plague o' both your houses!" — names the feud as the cause.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Romeo's punishment for killing Tybalt is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Death by hanging</label></li>
+<li><label><input type="radio" name="q8" value="b"> Imprisonment in Verona</label></li>
+<li><label><input type="radio" name="q8" value="c"> Banishment to Mantua</label></li>
+<li><label><input type="radio" name="q8" value="d"> Acquittal — no punishment</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','c')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Prince Escalus banishes Romeo to Mantua, sparing his life. This partial mercy creates the geographical distance that makes the Friar's letter critical — and its failure to arrive catastrophic.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.5 — The Tragic Ending</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Friar's plan fails primarily because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> The sleeping potion does not work</label></li>
+<li><label><input type="radio" name="q9" value="b"> Friar John is quarantined in a plague-house and the letter never reaches Romeo</label></li>
+<li><label><input type="radio" name="q9" value="c"> Juliet refuses to drink the potion</label></li>
+<li><label><input type="radio" name="q9" value="d"> Romeo refuses to leave Verona</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> The plague quarantine prevents Friar John from delivering the letter explaining the plan. Romeo learns of Juliet's "death" from Balthasar instead. One bureaucratic / public-health failure kills both lovers.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">The play's closing rhymed couplet is spoken by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> The Chorus</label></li>
+<li><label><input type="radio" name="q10" value="b"> Prince Escalus</label></li>
+<li><label><input type="radio" name="q10" value="c"> Friar Lawrence</label></li>
+<li><label><input type="radio" name="q10" value="d"> Lord Capulet</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Prince Escalus delivers the closing couplet: "For never was a story of more woe / Than this of Juliet and her Romeo" (5.3.309–10). His role bookends the play — he silenced the brawl in Act 1; he names the tragedy in Act 5.</div></div>
+
+</div>
+
+<footer>ENG2D — English (Academic), Grade 10 | Strand B: Reading and Literature Studies | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

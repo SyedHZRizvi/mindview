@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Modelling — Unit Test (OF Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #6366f1; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: #16a34a; background: #f0fdf4; }
+.qcard.wrong { border-color: #dc2626; background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.desmos-link { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #1e293b; color: #fff; border-radius: 6px; text-decoration: none; font-size: 13px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 5: Modelling with Mathematics</h1>
+<div class="sub">Assessment OF Learning — Cross-Strand Unit Test</div>
+<div class="badge">✅ Graded — Counts Toward Term Mark</div>
+</header>
+<div class="warn"><strong>⏱️ Duration:</strong> 70 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks<br>Show all work, including which strand technique each problem uses.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/10</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [10 marks]</div>
+
+<div class="qcard" id="of1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Identify the most likely family: \( y = 4, 7, 10, 13, 16 \) at \( x=0,1,2,3,4 \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="of1" value="a"> Linear (constant 1st differences)</label></li>
+<li><label><input type="radio" name="of1" value="b"> Quadratic</label></li>
+<li><label><input type="radio" name="of1" value="c"> Exponential</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('of1','a')">Check</button>
+<div class="fb" id="of1-fb"></div>
+<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>First differences: 3, 3, 3, 3 — constant. Linear.</div>
+</div>
+
+<div class="qcard" id="of2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A regression line has \( y = 2.5x + 1.2 \) with \( r^{2} = 0.88 \). Predict \( y \) at \( x=10 \).</div>
+<input type="text" id="of2-in" placeholder="Enter y...">
+<button class="btn btn-p" onclick="chkNum('of2', 26.2)">Check</button>
+<div class="fb" id="of2-fb"></div>
+<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>\( y=2.5(10)+1.2=26.2 \).</div>
+</div>
+
+<div class="qcard" id="of3">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A measurement reads \( 23.47 \pm 0.05 \) cm. State: (a) the value, (b) the absolute error, (c) the percent error.</div>
+<textarea placeholder="Compute..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="of4">
+<div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Round to 3 significant figures: (a) 0.001234, (b) 9876, (c) 0.0998. Show your reasoning.</div>
+<textarea placeholder="Round each..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking [13 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 5 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A coffee cools according to \( T(t) = 22 + 60(0.9)^{t} \), where \( T \) is °C and \( t \) is minutes. (a) What is the room temperature? (b) Initial coffee temperature? (c) After how many minutes does \( T = 50°C \)?</div>
+<textarea placeholder="Show work for each..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 6 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Data: \( (1, 2.1), (2, 5.0), (3, 12.5), (4, 30.4), (5, 75.0) \). Use Desmos to fit an exponential regression \( y = a \cdot b^{x} \). Report \( a, b, r^{2} \) and use the model to estimate \( y(7) \).</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Desmos</a><br>
+<textarea placeholder="Report parameters + prediction..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A spotlight is mounted 12 m up on a wall. It shines at the floor with the beam making a 30° angle to the wall. Find how far along the floor (from the wall) the beam lands.</div>
+<textarea placeholder="Set up + solve..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain in your own words how you would decide between a polynomial regression and an exponential regression when given a real data set. Include the diagnostic tests.</div>
+<textarea placeholder="Explain..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A classmate says "a high \( r^{2} \) always means the model is correct." Is this right? Discuss with an example or counter-example.</div>
+<textarea placeholder="Discuss..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe a strategy for tackling a multi-strand modelling problem. Include sketch, variables, model choice, computation, and verification steps.</div>
+<textarea placeholder="Strategy..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Design a cylindrical can to hold 750 mL. Find the radius and height that minimize the metal used (surface area). Justify your steps. (Recall: 1 mL = 1 cm³).</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Desmos</a><br>
+<textarea placeholder="Set up + optimize..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A radio antenna is anchored at one end of a cable that is 100 m long. The cable makes an angle of 35° with the ground. (a) How tall is the antenna? (b) How far is the anchor point from the base of the antenna? (c) If a wind tilts the antenna by 5°, by how much does the cable end displace?</div>
+<textarea placeholder="Show work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A factory produces lightbulbs. The mean life of bulbs follows \( L(T) = 1000 e^{-0.05(T-20)} \) hours, where \( T \) is operating temperature in °C. Find: (a) life at \( T=20°C \); (b) life at \( T=40°C \); (c) temperature when life is half the rated 1000 h. Comment on engineering implication.</div>
+<textarea placeholder="Show work + interpret..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric" style="margin-top:32px;">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, integrates strands smoothly</td><td>80-100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (standard)</td><td>70-79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr>
+</table>
+</div>
+
+<footer>MCT4M — Mathematics for College Technology | Cross-Strand Modelling | Assessment OF Learning</footer>
+</div>
+<script>
+function chkMC(q,c){
+    const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}
+    if(sl)sl.classList.add('show');
+}
+function chkNum(q,c){
+    const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(Math.abs(v-c)<0.5){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}
+    if(sl)sl.classList.add('show');
+}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

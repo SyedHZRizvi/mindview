@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HFN3M Chapter 1: Nutrition Basics — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../courses/hfn3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>HFN3M Chapter 1: Nutrition Basics — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the six classes of nutrients, macronutrient kcal/g values, fibre, fat classification, amino acids, vitamins, and minerals.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1–1.3 — Six Nutrients, Carbohydrates, Lipids</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which of the following is NOT one of the six classes of nutrients?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Carbohydrates</label></li>
+<li><label><input type="radio" name="q1" value="b"> Fibre</label></li>
+<li><label><input type="radio" name="q1" value="c"> Vitamins</label></li>
+<li><label><input type="radio" name="q1" value="d"> Water</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The six classes are carbohydrates, lipids, proteins, vitamins, minerals, and water. Fibre is a sub-category of carbohydrate (indigestible plant carbohydrate), not a separate class of nutrient.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">A food contains 25 g carbohydrate, 5 g protein, and 8 g fat. How many kilocalories does it provide?</div>
+<input type="text" id="q2-in" placeholder="Enter kilocalories">
+<button class="btn" onclick="cN('q2',192)">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Carb 25 × 4 = 100, protein 5 × 4 = 20, fat 8 × 9 = 72. Total = 100 + 20 + 72 = <strong>192 kcal</strong>.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Which carbohydrate class is glucose?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Monosaccharide</label></li>
+<li><label><input type="radio" name="q3" value="b"> Disaccharide</label></li>
+<li><label><input type="radio" name="q3" value="c"> Polysaccharide</label></li>
+<li><label><input type="radio" name="q3" value="d"> Fibre</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','a')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Glucose is a single-sugar unit — a monosaccharide. Sucrose is the disaccharide (glucose + fructose); starch and glycogen are polysaccharides.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Which describes a trans-fat best?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> A naturally occurring fat that lowers LDL cholesterol</label></li>
+<li><label><input type="radio" name="q4" value="b"> An industrially partially hydrogenated fat banned in Canada in 2018 that raises LDL and lowers HDL</label></li>
+<li><label><input type="radio" name="q4" value="c"> A short-chain fatty acid produced by gut bacteria</label></li>
+<li><label><input type="radio" name="q4" value="d"> A type of omega-3 essential fatty acid</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Trans-fats are produced by partial hydrogenation of vegetable oils. Health Canada banned partially hydrogenated oils on 17 September 2018. They are uniquely harmful because they raise LDL and lower HDL.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4–1.5 — Proteins, Vitamins, Minerals</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">How many amino acids are essential for adults?</div>
+<input type="text" id="q5-in" placeholder="Number">
+<button class="btn" onclick="cN('q5',9)">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> <strong>9</strong> essential amino acids in adults: histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine. Arginine is conditionally essential in infants.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">An adult weighs 70 kg. What is her baseline protein RDA (g/day)?</div>
+<input type="text" id="q6-in" placeholder="Grams">
+<button class="btn" onclick="cN('q6',56)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> RDA = 0.8 g/kg × 70 kg = <strong>56 g/day</strong>. Athletes and pregnant women have higher needs.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Which combination is a classic example of protein complementation?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Beef + potatoes</label></li>
+<li><label><input type="radio" name="q7" value="b"> Rice + beans</label></li>
+<li><label><input type="radio" name="q7" value="c"> Milk + bread</label></li>
+<li><label><input type="radio" name="q7" value="d"> Eggs + butter</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Rice is limited in lysine; beans are limited in methionine. Combining them produces a complete amino-acid profile. The other choices already include a complete protein (beef, milk, eggs).</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Which vitamin is fat-soluble?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Vitamin C</label></li>
+<li><label><input type="radio" name="q8" value="b"> Folate (B9)</label></li>
+<li><label><input type="radio" name="q8" value="c"> Vitamin D</label></li>
+<li><label><input type="radio" name="q8" value="d"> Vitamin B12</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','c')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> A, D, E, K are fat-soluble. B-complex vitamins (B9 folate, B12 cobalamin) and C (ascorbic acid) are water-soluble.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Why is Vitamin D often recommended as a supplement for Canadians in winter?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> It is destroyed by cooking</label></li>
+<li><label><input type="radio" name="q9" value="b"> UV-B radiation is too weak at Canadian latitudes from October to April to allow skin synthesis</label></li>
+<li><label><input type="radio" name="q9" value="c"> Dairy is being removed from Canada's Food Guide</label></li>
+<li><label><input type="radio" name="q9" value="d"> Vitamin D blocks calcium absorption</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Vitamin D is synthesised in skin from UV-B; at Canadian latitudes the sun's angle is too low in winter to produce meaningful amounts. Health Canada recommends a daily 400–600 IU supplement.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — Minerals &amp; Water</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">What is the calcium RDA for a teenager (ages 9–18) in mg/day?</div>
+<input type="text" id="q10-in" placeholder="mg">
+<button class="btn" onclick="cN('q10',1300)">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> <strong>1 300 mg/day</strong> for ages 9–18 to support peak-bone-mass acquisition. Adult RDA falls to 1 000 mg/day at 19–50.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">A meal contains 760 mg + 640 mg + 220 mg of sodium. What percentage of the 2 300 mg upper-intake-level does this represent?</div>
+<input type="text" id="q11-in" placeholder="Percent">
+<button class="btn" onclick="cN('q11',70)">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Total Na = 760 + 640 + 220 = 1 620 mg. \(\frac{1620}{2300} \times 100 \approx 70\%\) of the UL in one meal.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Heme iron is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Iron from plant sources, absorbed at ~5–15%</label></li>
+<li><label><input type="radio" name="q12" value="b"> Iron from animal sources, absorbed at ~25%</label></li>
+<li><label><input type="radio" name="q12" value="c"> An iron-binding protein that prevents absorption</label></li>
+<li><label><input type="radio" name="q12" value="d"> A fortified form of synthetic iron</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Heme iron is bound in haemoglobin/myoglobin in animal flesh and has ~25% bioavailability. Non-heme iron (plants, fortified foods) has only ~5–15%, but pairing with vitamin C raises absorption.</div></div>
+
+</div>
+
+<footer>HFN3M — Nutrition and Health, Grade 11 | Strand B: Nutrition &amp; Health | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(0.05,Math.abs(c)*0.02)){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

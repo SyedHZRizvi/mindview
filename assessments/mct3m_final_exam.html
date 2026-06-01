@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Final Exam — Mathematics for College Technology, Grade 11 (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #ea580c; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.answer-key { margin-top: 40px; background: #fff; border: 2px solid var(--primary); border-radius: 10px; padding: 4px 20px; }
+.answer-key summary { font-size: 18px; font-weight: 700; color: var(--primary); cursor: pointer; padding: 14px 4px; }
+.answer-key .akq { border-left: 3px solid var(--primary); padding: 8px 14px; margin: 14px 0; background: #f8fafc; }
+.answer-key .akq h4 { color: var(--primary); margin-bottom: 6px; font-size: 14px; }
+.answer-key .akq p { font-size: 14px; margin-bottom: 4px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#ea580c;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+<h1>🎓 MCT3M Final Exam</h1>
+<div class="sub">Comprehensive Final Evaluation — Chapters 1 through 5</div>
+<div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+<strong>⏱️ Duration:</strong> 3 hours (180 minutes) &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+<strong>Materials allowed:</strong> Scientific calculator, ruler. No graphing technology during the exam.<br>
+Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+<strong>Coverage:</strong> Ch 1 Exponential Functions · Ch 2 Polynomial Functions · Ch 3 Trigonometric Ratios &amp; Functions · Ch 4 Measurement · Ch 5 Geometric Modelling.
+</div>
+
+<!-- PART A: KNOWLEDGE & UNDERSTANDING [25 marks] -->
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Evaluate \( 81^{3/4} \).</div>
+<input type="text" id="q1-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q1',27)">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>\( 81^{3/4} = (\sqrt[4]{81})^3 = 3^3 = 27 \).</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Solve \( 4^{x+1} = 64 \) for \( x \).</div>
+<input type="text" id="q2-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q2',2)">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>\( 64 = 4^3 \). \( x + 1 = 3 \Rightarrow x = 2 \).</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For \( y = 2(x - 4)^2 + 5 \), state the vertex.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> \( (4, 5) \)</label></li>
+<li><label><input type="radio" name="q3" value="b"> \( (-4, 5) \)</label></li>
+<li><label><input type="radio" name="q3" value="c"> \( (4, -5) \)</label></li>
+<li><label><input type="radio" name="q3" value="d"> \( (-4, -5) \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','a')">Check</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>Vertex \( (h, k) = (4, 5) \).</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Solve \( x^2 - 6x + 8 = 0 \). The smaller root is:</div>
+<input type="text" id="q4-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q4',2)">Check</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>\( (x-2)(x-4) = 0 \). Roots: 2 and 4. Smaller is 2.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Factor \( x^3 + 64 \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> \( (x + 4)(x^2 - 4x + 16) \)</label></li>
+<li><label><input type="radio" name="q5" value="b"> \( (x - 4)(x^2 + 4x + 16) \)</label></li>
+<li><label><input type="radio" name="q5" value="c"> \( (x + 4)(x^2 + 4x + 16) \)</label></li>
+<li><label><input type="radio" name="q5" value="d"> \( (x + 4)^3 \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','a')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>Sum of cubes with \( a = x, b = 4 \): \( (x + 4)(x^2 - 4x + 16) \).</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The exact value of \( \sin 30° \) is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> \( \dfrac{1}{2} \)</label></li>
+<li><label><input type="radio" name="q6" value="b"> \( \dfrac{\sqrt{2}}{2} \)</label></li>
+<li><label><input type="radio" name="q6" value="c"> \( \dfrac{\sqrt{3}}{2} \)</label></li>
+<li><label><input type="radio" name="q6" value="d"> 1</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','a')">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>From 30-60-90 triangle: \( \sin 30° = 1/2 \).</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Convert \( 5\pi/4 \) radians to degrees.</div>
+<input type="text" id="q7-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q7',225)">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>\( 5\pi/4 \times 180/\pi = 5 \times 45 = 225° \).</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A cylinder has radius 4 cm and height 10 cm. Find its volume (round to nearest integer cm³).</div>
+<input type="text" id="q8-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q8',503)">Check</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>\( V = \pi(16)(10) = 160\pi \approx 503 \) cm³.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Convert 0.045 m to mm.</div>
+<input type="text" id="q9-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q9',45)">Check</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>1 m = 1000 mm. \( 0.045 \times 1000 = 45 \) mm.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Two similar cubes have side ratio 1:3. The ratio of their volumes is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> 1:3</label></li>
+<li><label><input type="radio" name="q10" value="b"> 1:6</label></li>
+<li><label><input type="radio" name="q10" value="c"> 1:9</label></li>
+<li><label><input type="radio" name="q10" value="d"> 1:27</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','d')">Check</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>Volume ratio = \( (1/3)^3 = 1/27 \). So 1:27.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For \( y = 5 \sin(2x) + 3 \), the period (in degrees) is:</div>
+<input type="text" id="q11-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q11',180)">Check</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-lbl">Solution:</div>Period = \( 360°/k = 360°/2 = 180° \).</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A sphere has radius 6 cm. Find its surface area (round to nearest integer cm²).</div>
+<input type="text" id="q12-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q12',452)">Check</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-lbl">Solution:</div>\( SA = 4\pi r^2 = 4\pi(36) = 144\pi \approx 452 \) cm².</div></div>
+
+<!-- PART B: THINKING & INQUIRY [25 marks] -->
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry <span>[25 marks]</span></div>
+
+<div class="qcard" id="q13"><div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Solve \( 9^{2x-1} = 27^{x+1} \) for \( x \), using common bases.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q14"><div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Solve \( 1.08^x = 3 \). Round to 2 decimal places. (Hint: \( \log 3 \approx 0.4771 \), \( \log 1.08 \approx 0.0334 \).)</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q15"><div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Solve \( 3x^2 - 7x + 2 = 0 \) by factoring or the quadratic formula. Verify by substituting one root.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q16"><div class="qnum">Question 16 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Factor \( x^3 - 7x - 6 \) completely. (Hint: try \( x = -1 \).)</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q17"><div class="qnum">Question 17 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Solve a triangle: \( a = 9 \), \( b = 11 \), \( A = 40° \). Use the sine law and identify the ambiguous case (state the number of triangles).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q18"><div class="qnum">Question 18 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A closed cylinder of volume 1000 cm³ has the optimum shape (h = 2r). Find (a) the radius (round to 2 dp); (b) the height; (c) the minimum surface area (round to 1 dp).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<!-- PART C: COMMUNICATION [25 marks] -->
+<div class="section-hdr c">Part C: Communication <span>[25 marks]</span></div>
+
+<div class="qcard" id="q19"><div class="qnum">Question 19 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain why \( a^0 = 1 \) for \( a \ne 0 \), using the quotient law of exponents in your explanation.</div>
+<textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q20"><div class="qnum">Question 20 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Compare and contrast the three forms of a quadratic (standard, factored, vertex). State which feature of the graph each form makes easiest to read.</div>
+<textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q21"><div class="qnum">Question 21 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain when to use the sine law and when to use the cosine law. Discuss the ambiguous case for SSA.</div>
+<textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q22"><div class="qnum">Question 22 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe each transformation in \( y = 3\cos(2(x - 45°)) - 1 \) compared to \( y = \cos x \). State the order of application.</div>
+<textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q23"><div class="qnum">Question 23 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain why the cube minimises surface area among all closed rectangular boxes of a given volume. Why might real packaging not use a cube?</div>
+<textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q24"><div class="qnum">Question 24 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A scale model of an aircraft is 1:48. Explain how the area and volume of the model relate to those of the actual aircraft. Justify your scaling factors using the linear-area-volume relations.</div>
+<textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<!-- PART D: APPLICATION [25 marks] -->
+<div class="section-hdr a">Part D: Application <span>[25 marks]</span></div>
+
+<div class="qcard" id="q25"><div class="qnum">Question 25 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A radioactive sample of 200 g has a half-life of 12 years. (a) Write a function \( M(t) \). (b) Find the amount remaining after 25 years. (c) After how many years does only 12.5 g remain?</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q26"><div class="qnum">Question 26 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A ball is launched from a 1.5 m platform with vertical velocity 25 m/s. Height (m): \( h(t) = -5t^2 + 25t + 1.5 \). Find (a) maximum height; (b) time of ground impact (round to 2 dp); (c) times when \( h = 30 \) m.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q27"><div class="qnum">Question 27 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Two surveyors stand 200 m apart on level ground. They measure the angles of elevation to the top of a tower located along their line: nearer surveyor 55°, farther surveyor 30°. Find the height of the tower and its horizontal distance from the nearer surveyor. Round to nearest metre.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q28"><div class="qnum">Question 28 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">An AC voltage source produces \( V(t) = 170 \sin(120\pi t) \) (V, s). (a) Find amplitude. (b) Find period and frequency. (c) When is \( V = 100 \) V first reached after \( t = 0 \)?</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q29"><div class="qnum">Question 29 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A grain silo is a cylinder of radius 2.5 m and cylindrical height 10 m, topped with a hemisphere of radius 2.5 m. Find (a) total volume in m³; (b) total volume in litres.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q30"><div class="qnum">Question 30 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A scale drawing has scale 1:75. A room measures 5 cm × 8 cm on the drawing. Find (a) actual length and width in m; (b) actual floor area in m²; (c) if 0.1 L of paint per m² is needed, total paint to paint the floor.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<details class="answer-key">
+<summary>📑 Answer Key &mdash; Click to Expand (After You're Done!)</summary>
+<div class="akq"><h4>Q1</h4><p>\( 81^{3/4} = 27 \).</p></div>
+<div class="akq"><h4>Q2</h4><p>\( x = 2 \).</p></div>
+<div class="akq"><h4>Q3</h4><p>Vertex (4, 5).</p></div>
+<div class="akq"><h4>Q4</h4><p>Roots 2 and 4; smaller is 2.</p></div>
+<div class="akq"><h4>Q5</h4><p>(a) \( (x + 4)(x^2 - 4x + 16) \).</p></div>
+<div class="akq"><h4>Q6</h4><p>\( \sin 30° = 1/2 \).</p></div>
+<div class="akq"><h4>Q7</h4><p>225°.</p></div>
+<div class="akq"><h4>Q8</h4><p>\( 160\pi \approx 503 \) cm³.</p></div>
+<div class="akq"><h4>Q9</h4><p>45 mm.</p></div>
+<div class="akq"><h4>Q10</h4><p>(d) 1:27.</p></div>
+<div class="akq"><h4>Q11</h4><p>Period = 180°.</p></div>
+<div class="akq"><h4>Q12</h4><p>\( 144\pi \approx 452 \) cm².</p></div>
+<div class="akq"><h4>Q13</h4><p>\( 9^{2x-1} = 3^{4x-2} \) and \( 27^{x+1} = 3^{3x+3} \). Equate exponents: \( 4x - 2 = 3x + 3 \Rightarrow x = 5 \).</p></div>
+<div class="akq"><h4>Q14</h4><p>\( x = \log 3 / \log 1.08 \approx 0.4771/0.0334 \approx 14.28 \).</p></div>
+<div class="akq"><h4>Q15</h4><p>\( 3x^2 - 7x + 2 = (3x - 1)(x - 2) = 0 \). Roots: \( x = 1/3, x = 2 \). Verify \( x = 2 \): \( 3(4) - 14 + 2 = 0 \). ✓</p></div>
+<div class="akq"><h4>Q16</h4><p>\( P(-1) = -1 + 7 - 6 = 0 \). So \( (x + 1) \) is a factor. Divide: \( x^3 - 7x - 6 = (x + 1)(x^2 - x - 6) = (x + 1)(x - 3)(x + 2) \).</p></div>
+<div class="akq"><h4>Q17</h4><p>Sine law: \( \sin B = 11 \sin 40° / 9 = 11(0.6428)/9 \approx 0.786 \). Candidates: \( B \approx 51.8° \) or \( 128.2° \). With \( A = 40° \) and \( B = 51.8° \), sum 91.8° < 180° OK. With \( B = 128.2° \), sum 168.2° < 180° OK. Two triangles.</p></div>
+<div class="akq"><h4>Q18</h4><p>(a) \( 2\pi r^3 = 1000 \Rightarrow r^3 = 500/\pi \approx 159.15 \Rightarrow r \approx 5.42 \) cm. (b) \( h = 2r \approx 10.85 \) cm. (c) \( SA = 2\pi r^2 + 2\pi r h = 6\pi r^2 \approx 6\pi(29.4) \approx 553.6 \) cm².</p></div>
+<div class="akq"><h4>Q19–Q24</h4><p>Communication/explanation questions — assess against rubric.</p></div>
+<div class="akq"><h4>Q25</h4><p>(a) \( M(t) = 200(0.5)^{t/12} \). (b) \( M(25) = 200(0.5)^{25/12} \approx 200(0.5)^{2.083} \approx 200(0.2362) \approx 47.2 \) g. (c) Need \( 200(0.5)^{t/12} = 12.5 \Rightarrow (0.5)^{t/12} = 0.0625 = (0.5)^4 \Rightarrow t/12 = 4 \Rightarrow t = 48 \) years.</p></div>
+<div class="akq"><h4>Q26</h4><p>(a) Vertex at \( t = 25/10 = 2.5 \) s. \( h(2.5) = -5(6.25) + 25(2.5) + 1.5 = -31.25 + 62.5 + 1.5 = 32.75 \) m. (b) Solve \( -5t^2 + 25t + 1.5 = 0 \Rightarrow t = \dfrac{-25 \pm \sqrt{625 + 30}}{-10} = \dfrac{-25 \pm \sqrt{655}}{-10} \). \( \sqrt{655} \approx 25.59 \). Positive root: \( t \approx 5.06 \) s. (c) \( -5t^2 + 25t + 1.5 = 30 \Rightarrow -5t^2 + 25t - 28.5 = 0 \Rightarrow 5t^2 - 25t + 28.5 = 0 \). \( D = 625 - 570 = 55 \). \( t = (25 \pm \sqrt{55})/10 \approx (25 \pm 7.42)/10 \). So \( t \approx 1.76 \) or \( 3.24 \) s.</p></div>
+<div class="akq"><h4>Q27</h4><p>Set up triangle: tower height \( h \), distance from nearer surveyor \( x \). Then \( \tan 55° = h/x \) and \( \tan 30° = h/(x + 200) \). From first: \( h = x \tan 55° \). Sub: \( x \tan 55° = (x + 200)\tan 30° \). \( x(1.428) = (x + 200)(0.5774) \). \( 1.428x - 0.5774x = 115.47 \). \( 0.8506x = 115.47 \). \( x \approx 135.8 \) m. \( h = 135.8 \times 1.428 \approx 194 \) m.</p></div>
+<div class="akq"><h4>Q28</h4><p>(a) Amplitude 170 V. (b) Period \( = 2\pi/(120\pi) = 1/60 \) s; frequency 60 Hz. (c) \( 170\sin(120\pi t) = 100 \Rightarrow \sin(120\pi t) = 0.5882 \Rightarrow 120\pi t = \sin^{-1}(0.5882) \approx 0.6289 \) rad \( \Rightarrow t \approx 0.001668 \) s ≈ 1.67 ms.</p></div>
+<div class="akq"><h4>Q29</h4><p>Cylinder: \( \pi (2.5)^2 (10) = 62.5\pi \approx 196.35 \) m³. Hemisphere: \( \tfrac{1}{2} \cdot \tfrac{4}{3}\pi (2.5)^3 = \tfrac{125\pi}{12} \approx 32.72 \) m³. Total \( \approx 229.1 \) m³ = 229 100 L.</p></div>
+<div class="akq"><h4>Q30</h4><p>(a) Length: \( 5 \times 75 = 375 \) cm = 3.75 m. Width: \( 8 \times 75 = 600 \) cm = 6 m. (b) Area = 3.75 × 6 = 22.5 m². (c) Paint = 22.5 × 0.1 = 2.25 L.</p></div>
+</details>
+
+<footer>MCT3M — Mathematics for College Technology, Grade 11 | Ontario Curriculum 2007 (Revised) | Final Exam — 30% of Final Course Mark</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(0.5, c*0.01)){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body></html>

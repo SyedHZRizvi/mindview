@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Chapter 3: Trigonometric Ratios &amp; Functions | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h1 { font-size: 26px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #7c3aed; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #7c3aed; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #7c3aed; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #7c3aed; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #7c3aed; color: #fff; }
+.chnav-next:hover { background: #6d28d9; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mct3m.html" style="color:#ea580c;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCT3M Mathematics for College Technology)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit3">
+<div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<h1>Chapter 3: Trigonometric Ratios &amp; Functions</h1>
+<p>Right-triangle trigonometry, sine and cosine laws, radian measure, and sinusoidal graphs for modelling periodic phenomena</p>
+<div class="unit-meta">
+<span>📚 Strand C: Trigonometric Functions</span>
+<span>⏱️ ~24h</span>
+<span>📹 6 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.1 &mdash; Primary Trigonometric Ratios and Special Angles</div>
+<div class="topic-desc">Define sine, cosine, tangent in a right triangle; find exact values for 0°, 30°, 45°, 60°, 90° from special right triangles.</div>
+<div class="summary-card">In a right triangle: \( \sin\theta = \dfrac{\text{opp}}{\text{hyp}} \), \( \cos\theta = \dfrac{\text{adj}}{\text{hyp}} \), \( \tan\theta = \dfrac{\text{opp}}{\text{adj}} \) (SOH-CAH-TOA). Exact values: from a 45-45-90 triangle, \(\sin 45° = \cos 45° = \dfrac{\sqrt{2}}{2}\); from a 30-60-90, \(\sin 30° = \cos 60° = \dfrac{1}{2}\), \(\sin 60° = \cos 30° = \dfrac{\sqrt{3}}{2}\), \(\tan 30° = \dfrac{1}{\sqrt{3}}\), \(\tan 60° = \sqrt{3}\).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Trigonometry is the study of relationships among the angles and sides of triangles. The <em>primary trigonometric ratios</em> sine, cosine, and tangent are defined for any acute angle \(\theta\) in a right triangle:</p>
+
+<p>\[ \sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}, \quad \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}, \quad \tan\theta = \frac{\text{opposite}}{\text{adjacent}} \]</p>
+
+<p>The mnemonic <strong>SOH-CAH-TOA</strong> captures all three: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent. "Opposite" and "adjacent" refer to the sides relative to the angle \(\theta\) (not the right angle).</p>
+
+<p>Two special right triangles give <em>exact</em> values for common angles, avoiding calculator rounding errors. The <strong>45-45-90 triangle</strong>: pick legs of length 1; by Pythagoras, hypotenuse \(=\sqrt{2}\). So \(\sin 45° = 1/\sqrt{2} = \sqrt{2}/2\), \(\cos 45° = 1/\sqrt{2} = \sqrt{2}/2\), \(\tan 45° = 1\). The <strong>30-60-90 triangle</strong>: take an equilateral triangle of side 2 and drop an altitude. The two halves are 30-60-90 with sides 1, \(\sqrt{3}\), 2. Reading off ratios: \(\sin 30° = 1/2\), \(\cos 30° = \sqrt{3}/2\), \(\tan 30° = 1/\sqrt{3} = \sqrt{3}/3\); \(\sin 60° = \sqrt{3}/2\), \(\cos 60° = 1/2\), \(\tan 60° = \sqrt{3}\).</p>
+
+<p>Memorising these exact values is essential — they appear in every technology context that involves clean angles (35° here, 25° there, 60° on a bridge truss). For other angles, a scientific calculator gives decimal approximations to several places.</p>
+
+<ul>
+<li><strong>Hypotenuse</strong> — the side opposite the right angle; always the longest side.</li>
+<li><strong>Opposite</strong> — the side across from the angle \(\theta\).</li>
+<li><strong>Adjacent</strong> — the leg next to angle \(\theta\) (other than the hypotenuse).</li>
+<li><strong>Special triangles</strong> — 45-45-90 (sides \(1:1:\sqrt{2}\)) and 30-60-90 (sides \(1:\sqrt{3}:2\)).</li>
+<li><strong>Exact values</strong> — values expressed using radicals (e.g. \(\sqrt{3}/2\)), not decimal approximations.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — In a right triangle, the side opposite \(\theta\) is 5 cm and the hypotenuse is 13 cm. Find \(\sin\theta\), \(\cos\theta\), \(\tan\theta\).</p>
+<p>Adjacent: by Pythagoras, \(\sqrt{13^2 - 5^2} = \sqrt{144} = 12\) cm.</p>
+<p>\(\sin\theta = 5/13\), \(\cos\theta = 12/13\), \(\tan\theta = 5/12\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Compute \(2\sin 30° \cos 60° + \tan 45°\) using exact values.</p>
+<p>\(\sin 30° = 1/2\), \(\cos 60° = 1/2\), \(\tan 45° = 1\).</p>
+<p>\(2(1/2)(1/2) + 1 = 1/2 + 1 = 3/2\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A ramp is built on a 30° incline; its horizontal length is 5 m. Find the height of the ramp and its slope length.</p>
+<p>Vertical (opposite to 30°): \(\tan 30° = h/5 \Rightarrow h = 5 \tan 30° = 5/\sqrt{3} \approx 2.89\) m.</p>
+<p>Slope length (hypotenuse): \(\cos 30° = 5/s \Rightarrow s = 5/\cos 30° = 5 \cdot 2/\sqrt{3} = 10/\sqrt{3} \approx 5.77\) m.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Calculator in the wrong mode. For degree calculations, the calculator must be in "DEG" mode (not "RAD" or "GRAD"). \(\sin 30°\) in DEG is 0.5; in RAD it's about -0.988.</li>
+<li>Confusing "opposite" and "adjacent" — they swap depending on which acute angle you're using.</li>
+<li>Approximating \(\sqrt{2}, \sqrt{3}\) too early. For exact answers, leave them as radicals through the calculation.</li>
+<li>Confusing \(\sin^{-1}\) (the inverse sine, used to find an angle from a ratio) with \(\dfrac{1}{\sin}\) (the reciprocal). These are different functions.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.1 — "determine the exact values of the primary trigonometric ratios for the special angles 30°, 45°, and 60° (e.g., by using the side relationships in a 30°-60°-90° triangle, in a 45°-45°-90° triangle)." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct3-yt1')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">SOHCAHTOA: Sine, Cosine, Tangent — The Organic Chemistry Tutor</span>
+<span class="vid-duration">10:42</span>
+<span class="vid-toggle" id="toggle-mct3-yt1">▶</span>
+</div>
+<div class="video-player" id="player-mct3-yt1">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jsiy4TxgIME?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=Jsiy4TxgIME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.2 &mdash; The CAST Rule: Trig Ratios from 0° to 360°</div>
+<div class="topic-desc">Use the CAST rule (or unit circle) to find trig ratios for angles in any quadrant; identify reference angles.</div>
+<div class="summary-card">The <strong>CAST rule</strong> labels which ratios are positive in each quadrant: <strong>C</strong>osine in Q4, <strong>A</strong>ll in Q1, <strong>S</strong>ine in Q2, <strong>T</strong>angent in Q3 (reading counter-clockwise from Q4). For angles between 0° and 360°, find the reference angle (acute angle to the x-axis), look up its ratio, then attach the right sign by CAST.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>To extend trig ratios beyond acute angles (0° to 90°), we use the <em>unit circle</em>: a circle of radius 1 centred at the origin. For any angle \(\theta\) measured counter-clockwise from the positive \(x\)-axis, the terminal point on the circle has coordinates \((\cos\theta, \sin\theta)\). This single definition extends sine and cosine to <em>every</em> angle — acute, obtuse, reflex, negative, or beyond \(360°\).</p>
+
+<p>For angles in standard position (vertex at origin, initial arm along positive \(x\)-axis), the terminal arm can land in any of four quadrants:</p>
+<ul>
+<li><strong>Quadrant I</strong> (\(0°\)–\(90°\)): both \(x\) and \(y\) positive. All three primary ratios are positive.</li>
+<li><strong>Quadrant II</strong> (\(90°\)–\(180°\)): \(x\) negative, \(y\) positive. Sine positive; cosine and tangent negative.</li>
+<li><strong>Quadrant III</strong> (\(180°\)–\(270°\)): both \(x\) and \(y\) negative. Tangent positive (negative ÷ negative); sine and cosine negative.</li>
+<li><strong>Quadrant IV</strong> (\(270°\)–\(360°\)): \(x\) positive, \(y\) negative. Cosine positive; sine and tangent negative.</li>
+</ul>
+
+<p>The <strong>CAST rule</strong> packages this: Cosine positive in Q4, All positive in Q1, Sine positive in Q2, Tangent positive in Q3 — read counter-clockwise from the bottom-right. (Mnemonic: "All Students Take Calculus" starting from Q1 counterclockwise.)</p>
+
+<p>The <strong>reference angle</strong> \(\theta_r\) is the acute angle between the terminal arm and the \(x\)-axis. For any \(\theta\), \(\theta_r\) is given by: Q1: \(\theta_r = \theta\); Q2: \(\theta_r = 180° - \theta\); Q3: \(\theta_r = \theta - 180°\); Q4: \(\theta_r = 360° - \theta\). Then \(|\sin\theta| = \sin\theta_r\), \(|\cos\theta| = \cos\theta_r\), \(|\tan\theta| = \tan\theta_r\), and the sign comes from CAST.</p>
+
+<p>So to compute, say, \(\sin 210°\): the angle is in Q3; reference angle \(\theta_r = 210° - 180° = 30°\); \(\sin 30° = 1/2\); but Q3 has sine negative; so \(\sin 210° = -1/2\).</p>
+
+<ul>
+<li><strong>Standard position</strong> — angle drawn with vertex at origin and initial arm along positive \(x\)-axis.</li>
+<li><strong>Terminal arm</strong> — the ray you rotate to (counterclockwise for positive angles).</li>
+<li><strong>Reference angle</strong> — acute angle between terminal arm and the closer \(x\)-axis direction.</li>
+<li><strong>CAST rule</strong> — quadrant labels for positive ratios: Q1=All, Q2=Sine, Q3=Tangent, Q4=Cosine.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Find the exact value of \(\cos 240°\).</p>
+<p>\(240°\) is in Q3 (between 180° and 270°). Cosine is negative in Q3.</p>
+<p>Reference angle: \(240° - 180° = 60°\).</p>
+<p>\(|\cos 240°| = \cos 60° = 1/2\). With sign: \(\cos 240° = -1/2\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Find the exact value of \(\sin 315°\) and \(\tan 315°\).</p>
+<p>\(315°\) is in Q4 (between 270° and 360°). Sine negative, tangent negative.</p>
+<p>Reference angle: \(360° - 315° = 45°\).</p>
+<p>\(\sin 315° = -\sin 45° = -\sqrt{2}/2\).</p>
+<p>\(\tan 315° = -\tan 45° = -1\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — \(\sin \theta = 0.5\) where \(0° \le \theta < 360°\). Find all values of \(\theta\).</p>
+<p>Sine is positive in Q1 and Q2.</p>
+<p>Reference angle: \(\sin^{-1}(0.5) = 30°\).</p>
+<p>Q1 angle: \(\theta = 30°\).</p>
+<p>Q2 angle: \(\theta = 180° - 30° = 150°\).</p>
+<p>Two solutions: \(\theta = 30°, 150°\).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting to attach the right sign from CAST after looking up the reference angle's ratio.</li>
+<li>Confusing the reference angle (always acute, always positive) with the original angle (which can be anywhere from 0° to 360°).</li>
+<li>Forgetting that there are usually two solutions for \(\sin\theta = c\) (or \(\cos\theta = c\), or \(\tan\theta = c\)) on \([0°, 360°)\): one in the first matching quadrant, one in the second.</li>
+<li>Misreading the CAST diagram. Q1 is upper-right; Q2 upper-left; Q3 lower-left; Q4 lower-right.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C1.2 — "determine the values of the primary trigonometric ratios of angles from 0° to 360°, using the unit circle and the CAST rule, and recognise that there are two angles between 0° and 360° with the same sine, cosine, or tangent." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct3-yt2')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Reference Angles &amp; Trigonometric Functions of Any Angle — The Organic Chemistry Tutor</span>
+<span class="vid-duration">19:18</span>
+<span class="vid-toggle" id="toggle-mct3-yt2">▶</span>
+</div>
+<div class="video-player" id="player-mct3-yt2">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/V8LEHEzdU2U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=V8LEHEzdU2U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.3 &mdash; Sine Law, Cosine Law, and the Ambiguous Case</div>
+<div class="topic-desc">Apply the sine law and cosine law to solve oblique (non-right) triangles in 2-D contexts; recognise and handle the ambiguous case.</div>
+<div class="summary-card">For any triangle with angles \(A, B, C\) opposite sides \(a, b, c\): <strong>Sine law</strong> \( \dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} \) (use when you have ASA, AAS, or SSA); <strong>Cosine law</strong> \( c^2 = a^2 + b^2 - 2ab \cos C \) (use when you have SAS or SSS). Ambiguous case: given SSA, check if the supplementary angle also works.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Most real triangles in technology aren't right triangles. To solve them — finding all sides and angles — we use two extensions of the primary trig ratios that work for any triangle.</p>
+
+<p>The <strong>sine law</strong> relates each angle to the opposite side: for a triangle with angles \(A, B, C\) opposite sides \(a, b, c\):</p>
+<p>\[ \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} \]</p>
+<p>Use the sine law when you know two angles and any side (AAS or ASA), or two sides and an angle opposite one of them (SSA).</p>
+
+<p>The <strong>cosine law</strong> is a generalisation of the Pythagorean theorem:</p>
+<p>\[ c^2 = a^2 + b^2 - 2ab \cos C \]</p>
+<p>(The angle \(C\) is opposite the side \(c\). Cyclic versions: \(a^2 = b^2 + c^2 - 2bc \cos A\), etc.) When \(C = 90°\), \(\cos C = 0\) and we recover Pythagoras: \(c^2 = a^2 + b^2\). Use the cosine law when you know two sides and the included angle (SAS) or all three sides (SSS).</p>
+
+<p>The <strong>ambiguous case</strong> arises with SSA — given two sides and a non-included angle. Depending on the data, there may be no triangle, one triangle, or two triangles. Use the sine law to find the second angle. If \(\sin\theta = k\) with \(0 < k < 1\), then \(\theta = \sin^{-1} k\) or \(\theta = 180° - \sin^{-1} k\). Both are candidates; check whether each is consistent with the angle sum being less than 180°. If both work, there are two triangles. If only one works, one triangle. If neither (e.g. \(\sin\theta > 1\)), no triangle.</p>
+
+<p>In college-tech contexts, the cosine law appears in surveying (distances between points with measured angles), navigation (bearing problems), and structural engineering (force triangles, truss geometry). The sine law shows up in any "indirect measurement" of inaccessible heights or distances.</p>
+
+<ul>
+<li><strong>Oblique triangle</strong> — any triangle without a right angle.</li>
+<li><strong>Sine law</strong> — \(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}\); use with AAS, ASA, SSA.</li>
+<li><strong>Cosine law</strong> — \(c^2 = a^2 + b^2 - 2ab\cos C\); use with SAS, SSS.</li>
+<li><strong>Ambiguous case</strong> — SSA can yield 0, 1, or 2 triangles depending on the values.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Triangle ABC has \(A = 35°\), \(B = 70°\), and \(a = 8\) cm. Find side \(b\).</p>
+<p>Use sine law: \(\dfrac{8}{\sin 35°} = \dfrac{b}{\sin 70°}\).</p>
+<p>\(b = \dfrac{8 \sin 70°}{\sin 35°} = \dfrac{8(0.9397)}{0.5736} = \dfrac{7.518}{0.5736} \approx 13.10\) cm.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — In a triangle, \(a = 5\), \(b = 7\), \(C = 50°\). Find side \(c\) using cosine law.</p>
+<p>\(c^2 = 5^2 + 7^2 - 2(5)(7)\cos 50° = 25 + 49 - 70(0.6428) = 74 - 45.0 = 29.0\).</p>
+<p>\(c \approx 5.39\) units.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Ambiguous case. In triangle ABC, \(a = 8\), \(b = 12\), \(A = 35°\). Find angle \(B\).</p>
+<p>Sine law: \(\dfrac{8}{\sin 35°} = \dfrac{12}{\sin B}\), so \(\sin B = \dfrac{12 \sin 35°}{8} = \dfrac{12(0.5736)}{8} = 0.8604\).</p>
+<p>Two candidates: \(B = \sin^{-1}(0.8604) \approx 59.4°\), or \(B = 180° - 59.4° = 120.6°\).</p>
+<p>Check both: with \(A = 35°\) and \(B = 59.4°\), sum is 94.4° < 180° — OK, \(C = 85.6°\).</p>
+<p>With \(A = 35°\) and \(B = 120.6°\), sum is 155.6° < 180° — also OK, \(C = 24.4°\).</p>
+<p>Two triangles exist.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Forgetting the second possibility in SSA. Always test \(180° - \theta\) as an alternate angle.</li>
+<li>Using the sine law for SAS or SSS — those cases need the cosine law (one missing piece on each side of the sine ratio prevents solving).</li>
+<li>Cosine law has a minus sign: \(c^2 = a^2 + b^2 - 2ab\cos C\). For \(C > 90°\), \(\cos C < 0\), so the third term is positive, and \(c > \sqrt{a^2+b^2}\) — bigger than the Pythagoras case.</li>
+<li>Calculator in radian mode for degree calculations.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C2.1 — "solve problems requiring the use of the sine law (including the ambiguous case) and the cosine law in oblique triangles, arising from real-world applications [e.g., surveying, navigation, forces in structural elements]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct3-yt3')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Law of Sines, Law of Cosines, and Bearings — The Organic Chemistry Tutor</span>
+<span class="vid-duration">37:22</span>
+<span class="vid-toggle" id="toggle-mct3-yt3">▶</span>
+</div>
+<div class="video-player" id="player-mct3-yt3">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9CGY0s-uCUE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=9CGY0s-uCUE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.4 &mdash; Radian Measure and Conversion</div>
+<div class="topic-desc">Define the radian as the central angle subtended by an arc length equal to the radius; convert between degrees and radians.</div>
+<div class="summary-card">A <strong>radian</strong> is the angle at the centre of a circle subtended by an arc of length equal to the radius. Since the circumference is \(2\pi r\), there are \(2\pi\) radians in a full circle. Conversion: \(180° = \pi\) rad, so to convert: <strong>degrees to radians</strong>, multiply by \(\pi/180\); <strong>radians to degrees</strong>, multiply by \(180/\pi\).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The degree is a human invention — splitting the circle into 360 parts, probably because the Babylonians had a base-60 number system. The <em>radian</em> is a more natural mathematical unit. Imagine wrapping a piece of string around a circle, measuring an arc length equal to the radius; the angle that arc subtends at the centre is exactly one radian.</p>
+
+<p>Because the circumference is \(2\pi r\), going all the way around uses \(2\pi r\) units of arc length, hence \(2\pi\) radians. Setting that equal to the 360° turn:</p>
+<p>\[ 2\pi \text{ rad} = 360°, \quad \text{so} \quad \pi \text{ rad} = 180°, \quad 1 \text{ rad} = \frac{180°}{\pi} \approx 57.3° \]</p>
+
+<p>Conversion is straightforward: multiply degrees by \(\pi/180\) to get radians; multiply radians by \(180/\pi\) to get degrees. Common landmarks: \(30° = \pi/6\), \(45° = \pi/4\), \(60° = \pi/3\), \(90° = \pi/2\), \(180° = \pi\), \(270° = 3\pi/2\), \(360° = 2\pi\).</p>
+
+<p>Why use radians at all? Because in calculus, physics, and most engineering equations, the radian is the unit that makes formulas clean. The arc-length formula \(s = r\theta\) only works when \(\theta\) is in radians. The angular velocity \(\omega\) in motor design, the frequency \(\omega\) of an AC signal, and the phase of a sinusoidal wave are all in radians per second. Calculator graphs of \(y = \sin x\) using \(x\) in radians have a natural period of \(2\pi \approx 6.28\); in degree mode, the period is \(360\).</p>
+
+<p>For MCT3M, the conversion skill is essential because some applications (especially electrical engineering with AC waveforms) use radians and others (surveying, navigation) use degrees. Both must be fluent.</p>
+
+<ul>
+<li><strong>Radian</strong> — central angle subtended by an arc of length equal to the radius.</li>
+<li><strong>Full circle</strong> — \(2\pi\) radians = 360°.</li>
+<li><strong>Conversion to radians</strong> — multiply degrees by \(\pi/180\).</li>
+<li><strong>Conversion to degrees</strong> — multiply radians by \(180/\pi\).</li>
+<li><strong>Arc length</strong> — \(s = r\theta\) (with \(\theta\) in radians).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Convert 75° to radians.</p>
+<p>\(75° \times \dfrac{\pi}{180} = \dfrac{75\pi}{180} = \dfrac{5\pi}{12}\) rad.</p>
+<p>As a decimal: \(\dfrac{5\pi}{12} \approx \dfrac{5(3.1416)}{12} \approx 1.309\) rad.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Convert \(\dfrac{7\pi}{6}\) rad to degrees.</p>
+<p>\(\dfrac{7\pi}{6} \times \dfrac{180}{\pi} = \dfrac{7 \times 180}{6} = \dfrac{1260}{6} = 210°\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Arc length and angular velocity. A wheel of radius 25 cm rotates at 120 revolutions per minute. Find (a) the angular velocity in rad/s; (b) the linear speed of a point on the rim.</p>
+<p>(a) 120 rev/min × (2π rad/rev) × (1 min / 60 s) = 4π rad/s ≈ 12.57 rad/s.</p>
+<p>(b) \(v = r \omega = 0.25 \cdot 4\pi \approx 3.14\) m/s.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Calculator in the wrong angle mode. Switch between DEG and RAD as needed; getting it wrong gives nonsense answers.</li>
+<li>The arc length formula \(s = r\theta\) requires \(\theta\) in <em>radians</em>. If \(\theta\) is given in degrees, convert first.</li>
+<li>Don't write \(\pi\) when you mean the number 3.14159… in a conversion. \(45° = \pi/4 \approx 0.785\) rad; don't write \(45° = \pi\).</li>
+<li>Don't confuse \(\pi\) (the constant) with \(180\) — \(\pi \text{ rad} = 180°\), not \(\pi = 180\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.1 — "describe the relationship between degree and radian measure, and represent radian measure in terms of \(\pi\) (e.g., \(2\pi\) radians = 360°, \(\pi/4\) radians = 45°) and as a rational number (e.g., 0.785 radians)." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct3-yt4')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Radian Measure — The Organic Chemistry Tutor</span>
+<span class="vid-duration">16:50</span>
+<span class="vid-toggle" id="toggle-mct3-yt4">▶</span>
+</div>
+<div class="video-player" id="player-mct3-yt4">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cgPYLJ-s5II?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=cgPYLJ-s5II" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.5 &mdash; Graphs of Sine and Cosine Functions</div>
+<div class="topic-desc">Sketch and analyse the basic graphs of \(y = \sin x\) and \(y = \cos x\); identify period, amplitude, midline, intercepts, and extrema.</div>
+<div class="summary-card">Both \(y = \sin x\) and \(y = \cos x\) have period \(360°\) (or \(2\pi\) rad), amplitude \(1\), and range \([-1, 1]\). Sine starts at the origin and goes up; cosine starts at \((0, 1)\) and goes down. Both functions are <strong>periodic</strong>: the same pattern repeats every period. They model any oscillation: AC current, mechanical vibration, tides, sound, light.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The graphs of \(y = \sin x\) and \(y = \cos x\) are the most important functions in college technology, because they describe every periodic phenomenon: vibrations, AC voltage and current, sound and light waves, alternating signals in electronics, rotating shafts, and tidal motion.</p>
+
+<p><strong>Basic features.</strong> Both \(y = \sin x\) and \(y = \cos x\) have:</p>
+<ul>
+<li><strong>Domain</strong>: all real numbers (the angle can be anything).</li>
+<li><strong>Range</strong>: \([-1, 1]\) (sine and cosine of any angle are between \(-1\) and \(1\)).</li>
+<li><strong>Period</strong>: \(360°\) (or \(2\pi\) rad). The pattern repeats every \(360°\).</li>
+<li><strong>Amplitude</strong>: 1 (half the distance between max and min).</li>
+<li><strong>Midline</strong>: the line \(y = 0\) (halfway between max and min).</li>
+</ul>
+
+<p><strong>Sine graph</strong>: starts at \((0, 0)\), rises to maximum \((90°, 1)\), back to zero at \((180°, 0)\), down to minimum \((270°, -1)\), back to zero at \((360°, 0)\). It crosses the midline going up at \(0°, 360°\), going down at \(180°\).</p>
+
+<p><strong>Cosine graph</strong>: starts at maximum \((0, 1)\), drops to zero at \((90°, 0)\), to minimum \((180°, -1)\), back to zero at \((270°, 0)\), back to maximum at \((360°, 1)\). It crosses the midline going down at \(90°\), going up at \(270°\).</p>
+
+<p>Note that \(\cos x = \sin(x + 90°)\): cosine is just sine shifted left by 90°. Either function can model any sinusoidal phenomenon; the choice is a matter of convention.</p>
+
+<p>The graphs have important symmetries: \(y = \sin x\) is <em>odd</em> (rotational symmetry about the origin); \(y = \cos x\) is <em>even</em> (mirror symmetry about the \(y\)-axis). These properties translate to identities: \(\sin(-x) = -\sin x\), \(\cos(-x) = \cos x\).</p>
+
+<ul>
+<li><strong>Periodic function</strong> — a function whose graph repeats at regular intervals.</li>
+<li><strong>Period</strong> — the smallest positive horizontal distance over which the graph repeats.</li>
+<li><strong>Amplitude</strong> — half the vertical distance between max and min.</li>
+<li><strong>Midline</strong> — horizontal line halfway between max and min values.</li>
+<li><strong>Sinusoidal</strong> — having the shape of a sine wave.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Sketch \(y = \sin x\) for \(0° \le x \le 720°\). State period and amplitude.</p>
+<p>Plot one period from \(0°\) to \(360°\): \((0, 0), (90°, 1), (180°, 0), (270°, -1), (360°, 0)\).</p>
+<p>Repeat for the second period \(360°\) to \(720°\): same pattern shifted.</p>
+<p>Period: \(360°\). Amplitude: 1. Range: \([-1, 1]\). The wave makes two complete oscillations.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Use the cosine graph to evaluate \(\cos 90°\), \(\cos 180°\), \(\cos 270°\), \(\cos 360°\).</p>
+<p>From the graph: \(\cos 90° = 0\); \(\cos 180° = -1\); \(\cos 270° = 0\); \(\cos 360° = 1\).</p>
+<p>(These match the unit-circle definitions.)</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — An AC voltage source produces \(V(t) = 170 \sin(120\pi t)\), where \(t\) is in seconds and \(V\) is in volts. Find the period, amplitude, and frequency.</p>
+<p>Compare to \(V = a \sin(kt)\): \(a = 170\) (amplitude). Period \(= 2\pi / k = 2\pi / (120\pi) = 1/60\) s.</p>
+<p>Frequency: \(f = 1/\text{period} = 60\) Hz — North American household AC.</p>
+<p>So 60 cycles per second; peak voltage 170 V (RMS voltage 120 V).</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Mixing up period and amplitude. Period is horizontal (the length of one cycle); amplitude is vertical (half the max-min range).</li>
+<li>Forgetting that the cosine graph starts at its maximum, not at zero.</li>
+<li>Confusing the angle (input) with the value of the function (output). The graph plots output vs. input.</li>
+<li>For graphs in radian mode, the natural axis labels are \(\pi/2, \pi, 3\pi/2, 2\pi\), not \(90°, 180°, 270°, 360°\).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.2 — "sketch the graphs of \(y = \sin x\) and \(y = \cos x\) for angle measures expressed in degrees and in radians, and determine and describe their key properties [i.e., domain, range, intercepts, amplitude, period, maximum and minimum values, increasing/decreasing intervals]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct3-yt5')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Graphing Sine and Cosine Functions — The Organic Chemistry Tutor</span>
+<span class="vid-duration">22:40</span>
+<span class="vid-toggle" id="toggle-mct3-yt5">▶</span>
+</div>
+<div class="video-player" id="player-mct3-yt5">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Vw-RwPBWS8g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=Vw-RwPBWS8g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.6 &mdash; Sinusoidal Transformations and Modelling</div>
+<div class="topic-desc">Apply the four parameters \(a, k, d, c\) in \(y = a \sin(k(x - d)) + c\) to model periodic phenomena: AC waveforms, tides, vibrations, sound waves.</div>
+<div class="summary-card">In \(y = a \sin(k(x - d)) + c\): <strong>\(|a|\) = amplitude</strong> (vertical stretch); <strong>\(k\) = \(360°\)/period</strong> (horizontal compression); <strong>\(d\) = phase shift</strong> (horizontal translation); <strong>\(c\) = vertical shift</strong> (midline at \(y = c\)). For a sinusoid with max \(M\) and min \(m\): \(c = (M+m)/2\); \(|a| = (M-m)/2\). Then \(k = 360°/\text{period}\).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The transformed sine function \(y = a \sin(k(x - d)) + c\) (and the analogous cosine version) can model essentially any periodic phenomenon. Each of the four parameters has a clean interpretation:</p>
+
+<ul>
+<li><strong>\(a\)</strong> — amplitude. Vertical stretch; the maximum is \(c + |a|\), the minimum is \(c - |a|\). If \(a < 0\), the graph is reflected in the midline.</li>
+<li><strong>\(k\)</strong> — horizontal compression. Period \(=\dfrac{360°}{|k|}\) (degrees) or \(\dfrac{2\pi}{|k|}\) (radians). Larger \(k\) means more cycles per unit; smaller \(k\) means slower oscillation.</li>
+<li><strong>\(d\)</strong> — phase shift. Horizontal translation. Positive \(d\) shifts the graph right; the sine wave's starting point at \(x = d\) (midline going up).</li>
+<li><strong>\(c\)</strong> — vertical shift. The midline becomes \(y = c\). Max value \(c + |a|\); min \(c - |a|\).</li>
+</ul>
+
+<p>To <strong>build a sinusoidal model</strong> from a real-world description: start from the maximum value \(M\) and the minimum value \(m\). Compute the midline \(c = (M + m)/2\) and the amplitude \(|a| = (M - m)/2\). Find the period \(T\) (the time for one complete cycle) and compute \(k = 360°/T\). Decide whether to use sine or cosine; choose \(d\) so the function matches at \(x = 0\) (or wherever you have a reference).</p>
+
+<p>Sinusoidal modelling is central to college technology. Examples: an AC voltage source \(V(t) = 170 \sin(120 \pi t)\) V (60 Hz, 170 V peak); a tidal model \(h(t) = 1.5 \sin(\tfrac{2\pi}{12.4} t) + 3\) (height in m, period 12.4 h); a vibrating spring \(x(t) = 0.05 \cos(20\pi t)\) (amplitude 5 cm, frequency 10 Hz); a piston in an engine \(y(t) = 3 \sin(8\pi t)\) cm (cycle 0.25 s).</p>
+
+<p>Once you have a model, you can answer questions: when is the voltage maximum? when does the tide first reach 4 m? what is the angular position 0.1 s into the cycle?</p>
+
+<ul>
+<li><strong>Amplitude</strong> — \(|a|\) in the formula; half the vertical range.</li>
+<li><strong>Period</strong> — \(360°/|k|\) (degrees) or \(2\pi/|k|\) (radians).</li>
+<li><strong>Phase shift</strong> — \(d\); a horizontal translation.</li>
+<li><strong>Vertical shift</strong> — \(c\); shifts the midline up or down.</li>
+<li><strong>Frequency</strong> — \(f = 1/T\); cycles per unit time. \(\omega = 2\pi f\) is the angular frequency.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — Describe transformations in \(y = 3 \sin(2(x - 30°)) + 5\) compared to \(y = \sin x\).</p>
+<p>\(a = 3\): vertical stretch by 3; amplitude 3.</p>
+<p>\(k = 2\): horizontal compression by factor 2; period \(360°/2 = 180°\).</p>
+<p>\(d = 30°\): translate right 30°.</p>
+<p>\(c = 5\): translate up 5; midline \(y = 5\).</p>
+<p>Max: \(5 + 3 = 8\). Min: \(5 - 3 = 2\). Range: \([2, 8]\).</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Tide model. At a coastal port, high tide is 4 m and low tide is 0.5 m. The time between consecutive high tides is 12.4 hours. High tide occurred at 2:00 AM. Write a sinusoidal model for tide height \(h\) (m) at time \(t\) (hours after midnight).</p>
+<p>Midline: \(c = (4 + 0.5)/2 = 2.25\). Amplitude: \(|a| = (4 - 0.5)/2 = 1.75\).</p>
+<p>Period: \(T = 12.4\) h, so \(k = 360°/12.4 \approx 29.03°/h\).</p>
+<p>Use cosine (peak at \(t = 2\)): \(h(t) = 1.75 \cos(29.03°(t - 2)) + 2.25\).</p>
+<p>Check: \(h(2) = 1.75(1) + 2.25 = 4\). ✓</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A Ferris wheel of diameter 30 m has its bottom 2 m above ground. It rotates once every 60 s. A rider starts at the bottom at \(t = 0\). Write the rider's height as a function of \(t\).</p>
+<p>Centre of wheel: 2 + 15 = 17 m above ground. So midline \(c = 17\).</p>
+<p>Amplitude (radius): 15. Period: 60 s, so \(k = 360°/60 = 6°/\)s.</p>
+<p>Starts at bottom — minimum of cosine, so use \(-\cos\): \(h(t) = -15 \cos(6° t) + 17\).</p>
+<p>Check: \(h(0) = -15(1) + 17 = 2\) m. ✓ Maximum at \(t = 30\) s: \(h(30) = -15\cos(180°) + 17 = 15 + 17 = 32\) m. ✓</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Sign of \(d\). \(y = \sin(x - 30°)\) is shifted right 30°. The minus sign in the formula is built in.</li>
+<li>Factor \(k\) out of the bracket first: \(\sin(2x - 60°) = \sin(2(x - 30°))\), so \(d = 30°\), not 60°.</li>
+<li>For a wave starting at the bottom (minimum), use \(-\cos\) (or shifted sine), not bare cosine.</li>
+<li>Mixing degree and radian arguments. If \(k\) is in degrees per unit, evaluate \(\sin(kt)\) with the calculator in DEG mode.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand C, Expectation C3.3 — "determine, through investigation, the roles of the parameters \(a\), \(k\), \(d\), \(c\) in functions of the form \(y = af(k(x - d)) + c\), where \(f(x) = \sin x\) or \(f(x) = \cos x\), and describe these roles in terms of transformations on the graphs of \(f(x) = \sin x\) and \(f(x) = \cos x\)." Also C3.4 — model real-world sinusoidal phenomena. Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct3-yt6')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Graphing Sine and Cosine Trig Functions With Transformations — The Organic Chemistry Tutor</span>
+<span class="vid-duration">37:48</span>
+<span class="vid-toggle" id="toggle-mct3-yt6">▶</span>
+</div>
+<div class="video-player" id="player-mct3-yt6">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bm8oYKKlCXI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=bm8oYKKlCXI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 3 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mct3m_ch3_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mct3m_ch3_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mct3m_ch3_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div></div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCT3M — Mathematics for College Technology, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

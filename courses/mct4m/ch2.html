@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT4M — Mathematics for College Technology | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-card iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; }
+.yt-fallback { display: block; text-align: center; font-size: 12px; color: #64748b; padding: 8px; background: #f8fafc; text-decoration: none; }
+.yt-fallback:hover { background: #f1f5f9; color: #7c3aed; }
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #7c3aed; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #7c3aed; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #5b21b6; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #7c3aed; color: #fff; }
+.chnav-next:hover { background: #5b21b6; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<div class="container">
+<div style="margin-bottom:10px;"><a href="../mct4m.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (MCT4M Mathematics for College Technology)</a></div>
+<div class="strand-tag">Mathematics — Grade 12 College Preparation</div>
+<h1>📐 MCT4M: Chapter 2: Polynomial Equations and Inequalities</h1>
+<p>Polynomial operations, factoring, remainder and factor theorems, solving polynomial equations and inequalities</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+    <div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+            <h2>Chapter 2: Polynomial Equations and Inequalities</h2>
+            <p>Polynomial operations, factoring, remainder and factor theorems, solving polynomial equations and inequalities</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Polynomial Equations &amp; Inequalities</span>
+                <span>⏱️ ~24h</span>
+                <span>📹 6 topic videos</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 — Expanding and Simplifying Polynomial Expressions</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>polynomial</strong> in one variable is a finite sum of terms of the form \(a_{k}x^{k}\), where each \(a_{k}\) is a real number and \(k\) is a non-negative integer. Polynomials appear everywhere in technology: signal processing, stress analysis, control systems, and computer graphics all rely on polynomial models. Before you can solve polynomial equations, you must be fluent at <em>expanding</em> products of polynomials and <em>simplifying</em> the result.</p>
+                <p>The two main techniques are the <strong>distributive property</strong> (every term in one factor multiplies every term in the other) and the <strong>FOIL method</strong> for binomials. For more than two binomial factors, expand two at a time; trying to do all three in one pass is the most common source of arithmetic mistakes.</p>
+                <p>You should also memorize a small library of special products: \((a+b)^{2}=a^{2}+2ab+b^{2}\), \((a-b)^{2}=a^{2}-2ab+b^{2}\), and \((a+b)(a-b)=a^{2}-b^{2}\). Recognizing these on sight saves time on tests and reduces sign errors. After expanding, always combine like terms and arrange them in descending order of degree — this is the conventional way to write a polynomial.</p>
+                <ul>
+                  <li><strong>Polynomial</strong> — a sum \(a_{n}x^{n}+a_{n-1}x^{n-1}+\dots+a_{0}\) with non-negative integer exponents.</li>
+                  <li><strong>Degree</strong> — the highest exponent appearing; \(a_{n}\) is the leading coefficient.</li>
+                  <li><strong>Like terms</strong> — terms with the same variable raised to the same power; only like terms combine.</li>
+                  <li><strong>Standard form</strong> — written with terms in descending order of degree.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Expanding a product of three binomials</p>
+                  <p>Expand \((x-2)(x+3)(2x-1)\) and write in standard form.</p>
+                  <p>Step 1. Expand the first two factors: \((x-2)(x+3) = x^{2}+3x-2x-6 = x^{2}+x-6\).</p>
+                  <p>Step 2. Multiply by the third: \((x^{2}+x-6)(2x-1)\). Distribute each term: \(2x^{3}-x^{2}+2x^{2}-x-12x+6\).</p>
+                  <p>Step 3. Combine like terms: \(2x^{3}+x^{2}-13x+6\). Verify: degree 3, leading coefficient 2, constant term 6.</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Using a special product</p>
+                  <p>Expand \((3x-4)^{2}\).</p>
+                  <p>Step 1. Apply \((a-b)^{2}=a^{2}-2ab+b^{2}\) with \(a=3x\) and \(b=4\).</p>
+                  <p>Step 2. Compute each term: \(a^{2}=9x^{2}\); \(2ab=2(3x)(4)=24x\); \(b^{2}=16\).</p>
+                  <p>Step 3. Combine: \(9x^{2}-24x+16\).</p>
+                </div>
+                <ul>
+                  <li>The middle term in \((a\pm b)^{2}\) is \(2ab\), not \(ab\) — forgetting the 2 is a top student error.</li>
+                  <li>Sign matters when expanding: \((-)(-)=+\) and \((-)(+)=-\); track every sign carefully.</li>
+                  <li>Always combine like terms at the end; an answer is not "simplified" until you have.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.1 — "expand and simplify polynomial expressions involving one variable."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/cxoNcZ72sMU" title="Multiplying polynomials — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=cxoNcZ72sMU" target="_blank" rel="noopener">📺 Watch on YouTube — Multiplying Polynomials</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 — Factoring Polynomials</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p><strong>Factoring</strong> is the reverse of expanding: given a polynomial, write it as a product of simpler polynomials. Factoring is the gateway to solving polynomial equations because once a polynomial is in product form, the zero-product property gives the roots almost for free. Master four techniques and you can factor every polynomial you will meet in MCT4M.</p>
+                <p>The four core techniques are: <strong>common factoring</strong> (pull out a GCF), <strong>grouping</strong> (pair terms and factor each pair), <strong>trinomial factoring</strong> (\(x^{2}+bx+c\) by finding two integers whose product is \(c\) and sum is \(b\); for \(ax^{2}+bx+c\), use the AC-method or decomposition), and the <strong>special patterns</strong> \(a^{2}-b^{2}=(a-b)(a+b)\) (difference of squares) and \(a^{3}\pm b^{3}=(a\pm b)(a^{2}\mp ab+b^{2})\) (sum/difference of cubes).</p>
+                <p>The right order of attack: (1) always factor out the GCF first; (2) count terms — two terms suggest a special pattern, three terms suggest trinomial factoring, four terms suggest grouping; (3) repeat until each factor cannot be factored further over the integers. A fully factored answer is unique up to ordering and signs.</p>
+                <ul>
+                  <li><strong>Greatest common factor (GCF)</strong> — the largest factor common to every term in the polynomial.</li>
+                  <li><strong>Difference of squares</strong> — \(a^{2}-b^{2}=(a-b)(a+b)\); note there is no sum of squares factorization over the reals.</li>
+                  <li><strong>Sum / difference of cubes</strong> — \(a^{3}+b^{3}=(a+b)(a^{2}-ab+b^{2})\); \(a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2})\).</li>
+                  <li><strong>Decomposition (AC-method)</strong> — for \(ax^{2}+bx+c\), find two integers whose product is \(ac\) and sum is \(b\); split the middle term and factor by grouping.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Trinomial factoring</p>
+                  <p>Factor \(6x^{2}+5x-6\).</p>
+                  <p>Step 1. \(ac = 6\cdot(-6)=-36\). Find two integers whose product is \(-36\) and sum is \(5\): they are \(9\) and \(-4\).</p>
+                  <p>Step 2. Split the middle term: \(6x^{2}+9x-4x-6\).</p>
+                  <p>Step 3. Group: \(3x(2x+3)-2(2x+3) = (3x-2)(2x+3)\).</p>
+                  <p>Check by expanding: \((3x-2)(2x+3)=6x^{2}+9x-4x-6 = 6x^{2}+5x-6\). ✓</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Difference of cubes</p>
+                  <p>Factor \(8x^{3}-27\).</p>
+                  <p>Step 1. Recognize as a difference of cubes: \(8x^{3}=(2x)^{3}\) and \(27=3^{3}\).</p>
+                  <p>Step 2. Apply the formula with \(a=2x\), \(b=3\): \((2x-3)((2x)^{2}+(2x)(3)+3^{2})\).</p>
+                  <p>Step 3. Simplify: \((2x-3)(4x^{2}+6x+9)\). The quadratic factor does not factor further over the reals.</p>
+                </div>
+                <ul>
+                  <li>If you forget the GCF first, you may not realize a "stubborn" trinomial is actually 3 times a simpler one.</li>
+                  <li>Sum/difference of cubes formulas have a specific sign pattern — memorize them carefully.</li>
+                  <li>Always check by expanding; a quick check saves you from sign-flip errors.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.2 — "factor polynomial expressions involving common factoring, trinomial factoring, and the difference of squares; identify and factor sum and difference of cubes."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/H0q9Fqb8YT4" title="Factoring polynomials — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=H0q9Fqb8YT4" target="_blank" rel="noopener">📺 Watch on YouTube — Factoring Polynomials</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 — Polynomial Division and the Remainder Theorem</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>To factor cubics and quartics you need a way to test candidate factors. Polynomial long division and the <strong>remainder theorem</strong> together give a clean and fast workflow. The remainder theorem states: when a polynomial \(f(x)\) is divided by a linear divisor \(x-a\), the remainder equals \(f(a)\). In other words, you can compute the remainder without doing the division — just evaluate \(f\) at \(a\).</p>
+                <p>This single result is enormously useful. If you suspect that \(x-a\) is a factor, simply compute \(f(a)\). If you get \(0\), then \(x-a\) divides \(f(x)\) exactly (factor theorem, next section). If you do not, the value \(f(a)\) is the remainder and tells you how much "off" you were. The combination of remainder and factor theorems is the standard tool kit for factoring higher-degree polynomials.</p>
+                <p>For the division itself, two methods compete. <strong>Polynomial long division</strong> resembles the long-division algorithm from arithmetic and works for any divisor. <strong>Synthetic division</strong> is a faster shortcut that works only for linear divisors of the form \(x-a\). Both yield the quotient and the remainder; pick whichever you find more reliable.</p>
+                <ul>
+                  <li><strong>Division algorithm</strong> — \(f(x) = (x-a)Q(x) + R\), where \(Q\) is the quotient and \(R\) is the (constant) remainder.</li>
+                  <li><strong>Remainder theorem</strong> — \(R = f(a)\). Evaluate at \(x=a\) to find the remainder.</li>
+                  <li><strong>Synthetic division</strong> — a tabular shortcut for dividing by \(x-a\); useful when the divisor is linear with leading coefficient 1.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Remainder theorem on a cubic</p>
+                  <p>Find the remainder when \(f(x)=2x^{3}-3x^{2}+x-5\) is divided by \(x-2\).</p>
+                  <p>Step 1. By the remainder theorem, \(R=f(2)\).</p>
+                  <p>Step 2. Compute: \(f(2)=2(8)-3(4)+2-5 = 16-12+2-5 = 1\).</p>
+                  <p>Conclusion: the remainder is \(1\). Equivalently, \(2x^{3}-3x^{2}+x-5 = (x-2)Q(x)+1\) for some quadratic \(Q\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Synthetic division</p>
+                  <p>Divide \(x^{3}+4x^{2}-x-4\) by \(x+1\). (So \(a=-1\).)</p>
+                  <p>Step 1. Set up synthetic division with coefficients \(1, 4, -1, -4\) and use \(-1\) on the left.</p>
+                  <p>Step 2. Bring down 1. Multiply by \(-1\): \(-1\). Add to 4: \(3\). Multiply by \(-1\): \(-3\). Add to \(-1\): \(-4\). Multiply by \(-1\): \(4\). Add to \(-4\): \(0\).</p>
+                  <p>Step 3. Quotient: \(x^{2}+3x-4\); remainder: \(0\). Verify by expanding: \((x+1)(x^{2}+3x-4)=x^{3}+3x^{2}-4x+x^{2}+3x-4=x^{3}+4x^{2}-x-4\). ✓</p>
+                </div>
+                <ul>
+                  <li>To evaluate \(f\) at \(x=a\) when the divisor is \(x-a\), use the same \(a\) — the sign is critical.</li>
+                  <li>When dividing by \(x+a\), use \(-a\) in the remainder theorem (because \(x+a=x-(-a)\)).</li>
+                  <li>Synthetic division does not work for non-linear divisors; switch to long division if the divisor is quadratic.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B1.4 — "verify, through investigation, the remainder theorem; determine, through investigation, the remainder when a polynomial is divided by a linear divisor of the form \(x-a\)."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/sNQT-jmcYJs" title="Synthetic division and the remainder theorem — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=sNQT-jmcYJs" target="_blank" rel="noopener">📺 Watch on YouTube — Synthetic Division &amp; Remainder Theorem</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 — The Factor Theorem and Solving Polynomial Equations</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>The <strong>factor theorem</strong> is the corollary of the remainder theorem that does the real work: \(x-a\) is a factor of \(f(x)\) if and only if \(f(a)=0\). Combined with the <strong>rational zero theorem</strong> — which says any rational root \(p/q\) (in lowest terms) of \(a_{n}x^{n}+\dots+a_{0}\) must have \(p\) dividing \(a_{0}\) and \(q\) dividing \(a_{n}\) — you have a finite list of candidates to test for cubics and quartics with integer coefficients.</p>
+                <p>The standard solving strategy is: list rational candidates from the constant and leading coefficient, test each by evaluating \(f\), keep going until you hit a root, then use synthetic division to drop the polynomial by one degree. Repeat on the quotient. By the time the quotient is quadratic, you can finish with factoring or the quadratic formula.</p>
+                <p>By the <strong>fundamental theorem of algebra</strong>, a polynomial of degree \(n\) has exactly \(n\) roots in the complex numbers (counted with multiplicity). For MCT4M we focus on real roots, so a cubic has 1 or 3 real roots, a quartic has 0, 2, or 4. Use a sketch or sign analysis to anticipate how many you expect before solving.</p>
+                <ul>
+                  <li><strong>Factor theorem</strong> — \(x-a\) is a factor of \(f(x)\) \(\Leftrightarrow\) \(f(a)=0\).</li>
+                  <li><strong>Rational zero theorem</strong> — any rational root \(p/q\) (in lowest terms) of a polynomial with integer coefficients satisfies \(p\mid a_{0}\) and \(q\mid a_{n}\).</li>
+                  <li><strong>Zero-product property</strong> — if \(AB=0\) then \(A=0\) or \(B=0\); the engine of solving factored equations.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Solving a cubic equation</p>
+                  <p>Solve \(x^{3}-4x^{2}+x+6=0\).</p>
+                  <p>Step 1. Rational candidates: \(\pm 1, \pm 2, \pm 3, \pm 6\) (divisors of constant 6 over leading coefficient 1).</p>
+                  <p>Step 2. Test \(x=-1\): \((-1)^{3}-4(-1)^{2}+(-1)+6 = -1-4-1+6 = 0\). So \(x+1\) is a factor.</p>
+                  <p>Step 3. Synthetic-divide \(x^{3}-4x^{2}+x+6\) by \(x+1\): quotient is \(x^{2}-5x+6\). Factor: \((x-2)(x-3)\).</p>
+                  <p>Step 4. Set each factor to zero: \(x=-1, 2, 3\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Using the rational zero theorem on a quartic</p>
+                  <p>Solve \(2x^{4}-x^{3}-9x^{2}+4x+4=0\).</p>
+                  <p>Step 1. Rational candidates: \(\pm 1, \pm 2, \pm 4, \pm 1/2\) (factors of 4 over factors of 2).</p>
+                  <p>Step 2. Test \(x=2\): \(2(16)-8-36+8+4 = 32-8-36+8+4 = 0\). ✓ So \(x-2\) is a factor.</p>
+                  <p>Step 3. Synthetic-divide to get quotient \(2x^{3}+3x^{2}-3x-2\). Test \(x=-2\): \(2(-8)+3(4)-3(-2)-2 = -16+12+6-2 = 0\). ✓ So \(x+2\) is also a factor.</p>
+                  <p>Step 4. Divide again to get \(2x^{2}-x-1 = (2x+1)(x-1)\). Solutions: \(x = -2, -1/2, 1, 2\).</p>
+                </div>
+                <ul>
+                  <li>Test the simplest candidates first (\(\pm 1\), then \(\pm 2\)); save fractions like \(1/2\) for last.</li>
+                  <li>If no rational root exists, your polynomial may need numerical or graphical solution.</li>
+                  <li>After dropping degree, do not forget to factor the resulting quadratic or apply the quadratic formula.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.2 — "determine, by factoring, the real roots of polynomial equations of degree no higher than four."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/q1MeVdBU8D0" title="Factor theorem and solving polynomial equations — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=q1MeVdBU8D0" target="_blank" rel="noopener">📺 Watch on YouTube — Factor Theorem &amp; Polynomial Equations</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 — Polynomial Inequalities</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>polynomial inequality</strong> asks where a polynomial is positive (or negative, or non-negative, etc.). The strategy is always the same: rewrite the inequality so that one side is zero, factor the polynomial, find its zeros, and then use a <strong>sign chart</strong> to determine the sign of the polynomial in each interval between the zeros. The intervals where the sign matches the inequality are the solution.</p>
+                <p>The sign chart works because a polynomial can only change sign at a zero. Between zeros, the polynomial keeps a constant sign — so testing one number from each interval tells you the sign everywhere in that interval. Be careful with even multiplicities: a zero of even multiplicity is a "bounce", meaning the polynomial touches zero but does <em>not</em> change sign there.</p>
+                <p>Pay attention to whether the inequality is strict (\(<,>\)) or non-strict (\(\le,\ge\)). Strict inequalities exclude the zeros from the solution; non-strict include them. Always write your final answer in interval notation, using \(\cup\) to combine disjoint pieces.</p>
+                <ul>
+                  <li><strong>Sign chart</strong> — a number line marking the zeros and the sign of the polynomial in each interval.</li>
+                  <li><strong>Critical numbers</strong> — the zeros of the polynomial; the candidates where sign can change.</li>
+                  <li><strong>Multiplicity</strong> — the exponent on a factor; even multiplicity means a bounce (no sign change), odd means a cross (sign change).</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Cubic inequality</p>
+                  <p>Solve \(x^{3}-4x \ge 0\).</p>
+                  <p>Step 1. Factor: \(x(x^{2}-4) = x(x-2)(x+2)\). Zeros: \(x = -2, 0, 2\).</p>
+                  <p>Step 2. Build the sign chart on the intervals \((-\infty,-2)\), \((-2,0)\), \((0,2)\), \((2,\infty)\).</p>
+                  <p>Step 3. Test points: \(x=-3\to(-3)(-5)(-1)=-15<0\); \(x=-1\to(-1)(-3)(1)=3>0\); \(x=1\to(1)(-1)(3)=-3<0\); \(x=3\to(3)(1)(5)=15>0\).</p>
+                  <p>Step 4. The polynomial is \(\ge 0\) on \([-2,0]\cup[2,\infty)\) (including zeros because the inequality is non-strict).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Inequality with a bounce</p>
+                  <p>Solve \((x-1)^{2}(x+3)<0\).</p>
+                  <p>Step 1. Zeros: \(x=1\) (multiplicity 2, bounce) and \(x=-3\) (multiplicity 1, cross).</p>
+                  <p>Step 2. Test \(x=-4\): \((-5)^{2}(-1)=-25<0\). Test \(x=0\): \((-1)^{2}(3)=3>0\). Test \(x=2\): \((1)^{2}(5)=5>0\).</p>
+                  <p>Step 3. Polynomial is negative only on \((-\infty,-3)\). Since the inequality is strict, the zeros are excluded.</p>
+                </div>
+                <ul>
+                  <li>Move everything to one side first; never "divide both sides" by an expression that could be negative or zero.</li>
+                  <li>A zero of even multiplicity does <em>not</em> separate sign intervals — the polynomial touches zero and bounces back.</li>
+                  <li>Use square brackets for non-strict inequalities (\(\le,\ge\)) and round brackets for strict ones (\(<,>\)).</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B3.1 — "solve linear and polynomial inequalities of degree no higher than three, both algebraically and graphically; represent the solution set on a number line and in interval notation."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/9B2Xt7nwqNE" title="Polynomial inequalities — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=9B2Xt7nwqNE" target="_blank" rel="noopener">📺 Watch on YouTube — Polynomial Inequalities</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.6 — Families of Polynomials and Real-World Applications</div>
+            <details class="lesson-notes">
+              <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+              <div class="lesson-notes-body">
+                <p>A <strong>family of polynomial functions</strong> is the set of all polynomials with a given list of zeros. Every member has the same factored form \(f(x)=a(x-r_{1})(x-r_{2})\dots(x-r_{n})\) and differs only in the leading coefficient \(a\). To pin down a specific polynomial in the family, you need one additional piece of information — typically a known point like the \(y\)-intercept.</p>
+                <p>This idea makes polynomial modelling practical for college technology students. A roller-coaster designer knows the track must meet the ground at certain points; a manufacturing engineer knows the profit function must cross break-even at certain output levels. In each case the zeros are given (by physical or business constraints) and a single extra data point determines the model.</p>
+                <p>Once you have the model, you can answer the engineering questions: where is profit positive (an inequality), what is the maximum profit (calculus, foreshadowed by sign analysis), what production level matches a target profit (a polynomial equation). The same factor-then-test workflow you have learned solves all of these.</p>
+                <ul>
+                  <li><strong>Family of polynomials</strong> — \(f(x)=a(x-r_{1})\dots(x-r_{n})\) for varying \(a\), all sharing the same zeros.</li>
+                  <li><strong>Anchor point</strong> — the extra known value (often \(y\)-intercept) used to determine \(a\) uniquely.</li>
+                  <li><strong>Break-even point</strong> — a zero of a profit polynomial; revenue equals cost.</li>
+                </ul>
+                <div class="worked-example">
+                  <p>Worked Example — Finding the family member</p>
+                  <p>A cubic has zeros at \(x=-1, 2, 4\) and passes through \((0, 8)\). Find the equation.</p>
+                  <p>Step 1. Factored form: \(f(x) = a(x+1)(x-2)(x-4)\).</p>
+                  <p>Step 2. Use the anchor: \(f(0) = a(1)(-2)(-4) = 8a = 8\), so \(a=1\).</p>
+                  <p>Step 3. Equation: \(f(x) = (x+1)(x-2)(x-4)\). Expanded: \(x^{3}-5x^{2}+2x+8\).</p>
+                </div>
+                <div class="worked-example">
+                  <p>Worked Example — Manufacturing profit</p>
+                  <p>A factory's weekly profit (in thousands of dollars) is modelled by \(P(x) = -0.5(x-2)(x-8)(x-14)\), where \(x\) is the number of units (in hundreds) produced. For which production levels is the business profitable?</p>
+                  <p>Step 1. Profitable means \(P(x) > 0\). Zeros: \(x = 2, 8, 14\). Leading coefficient is \(-0.5\), so the cubic falls overall.</p>
+                  <p>Step 2. Sign analysis: \(P\) is negative on \((-\infty,2)\), positive on \((2,8)\), negative on \((8,14)\), positive on \((14,\infty)\). But large-\(x\) is unrealistic for capacity reasons.</p>
+                  <p>Step 3. Within realistic production limits, the company is profitable on \(2<x<8\) and \(x>14\); break-even at the three zeros.</p>
+                </div>
+                <ul>
+                  <li>Always anchor the family with a real data point before reporting the equation — without \(a\), the model is incomplete.</li>
+                  <li>Interpret zeros in context: they may represent break-even, equilibrium, or ground level.</li>
+                  <li>Sign analysis converts an algebraic inequality into a business or engineering recommendation.</li>
+                </ul>
+                <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B, Expectation B2.3 — "determine the family of polynomial equations whose graphs share given zeros, and determine the specific member of the family given an additional point."</p>
+              </div>
+            </details>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lesson</div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube-nocookie.com/embed/XbBPsx9HJGs" title="Graphing polynomials in factored form — The Organic Chemistry Tutor" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a class="yt-fallback" href="https://www.youtube.com/watch?v=XbBPsx9HJGs" target="_blank" rel="noopener">📺 Watch on YouTube — Graphing Polynomials (Factored Form)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 2 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/mct4m_ch2_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/mct4m_ch2_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/mct4m_ch2_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Ch 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Ch 3 →</a>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCT4M Mathematics for College Technology · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>

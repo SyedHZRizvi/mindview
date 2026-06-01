@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Quality of Life — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #155e75; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cgw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 1: Quality of Life — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of quality-of-life measurement, the Gini coefficient, the demographic transition model, urbanization, and the SDGs. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1 — Measuring Quality of Life</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which of the following is NOT a component of the Human Development Index (HDI)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Life expectancy at birth</label></li>
+<li><label><input type="radio" name="q1" value="b"> Mean and expected years of schooling</label></li>
+<li><label><input type="radio" name="q1" value="c"> Gross National Income per capita (PPP)</label></li>
+<li><label><input type="radio" name="q1" value="d"> Carbon dioxide emissions per capita</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','d')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The HDI uses three dimensions: long and healthy life (life expectancy), knowledge (schooling), and decent standard of living (GNI per capita). CO₂ emissions are tracked separately and appear in the Happy Planet Index, not HDI.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Why is PPP (purchasing power parity) adjustment important when comparing GDP per capita between countries?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> It controls for inflation across years</label></li>
+<li><label><input type="radio" name="q2" value="b"> It standardises the cost of a comparable basket of goods, so incomes reflect real purchasing power</label></li>
+<li><label><input type="radio" name="q2" value="c"> It converts all currencies to US dollars at market exchange rates</label></li>
+<li><label><input type="radio" name="q2" value="d"> It excludes the informal economy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> PPP allows comparison of living standards across countries by accounting for differences in the local cost of goods. Market exchange rates can mislead because non-traded goods (haircuts, housing) cost very different amounts in different economies.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Calculate: A country has life-expectancy index 0.80, education index 0.70, and income index 0.65. What is its HDI (geometric mean, to two decimals)?</div>
+<input type="text" id="q3-in" placeholder="Enter HDI value (e.g., 0.72)">
+<button class="btn" onclick="cN('q3',0.71)">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> HDI = ∛(0.80 × 0.70 × 0.65) = ∛0.364 ≈ 0.714, rounded to 0.71. Geometric means penalise weakness in any one dimension more than arithmetic means do.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Inequality &amp; the Gini Coefficient</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">A Gini coefficient of 0 represents:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Perfect inequality, with one person holding all income</label></li>
+<li><label><input type="radio" name="q4" value="b"> Perfect equality, with everyone earning the same amount</label></li>
+<li><label><input type="radio" name="q4" value="c"> Zero unemployment</label></li>
+<li><label><input type="radio" name="q4" value="d"> Zero economic growth</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The Gini coefficient ranges from 0 (perfect equality — Lorenz curve coincides with the line of equality) to 1 (perfect inequality — one person holds all income). Real countries cluster between 0.25 (Nordic) and 0.63 (South Africa).</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Wealth inequality is typically larger than income inequality because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Wealth is taxed more heavily</label></li>
+<li><label><input type="radio" name="q5" value="b"> Wealth accumulates over time and compounds, while income is an annual flow</label></li>
+<li><label><input type="radio" name="q5" value="c"> Wealth excludes housing</label></li>
+<li><label><input type="radio" name="q5" value="d"> Wealth is measured pre-tax</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Wealth is a stock; even small differences in saving rates and investment returns compound over decades. Canadian wealth Gini ~0.72 vs income Gini ~0.31. Inheritance also concentrates wealth across generations.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Calculate: In a village of 4 households earning $5, $15, $30, $50 (total $100), what is the cumulative income share of the bottom 50% of households?</div>
+<input type="text" id="q6-in" placeholder="Enter percent (e.g., 20)">
+<button class="btn" onclick="cN('q6',20)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Bottom 50% of households = poorest 2 (earning $5 and $15). Their combined income = $20. Cumulative share = 20/100 = 20%. The line of equality would put them at 50%; the gap reflects inequality.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Demographic Transition</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A country has CBR = 35, CDR = 8, TFR = 4.5, and a wide-based population pyramid. It is most likely in DTM:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Stage 1 (pre-industrial)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Stage 2 or early Stage 3 (rapid growth)</label></li>
+<li><label><input type="radio" name="q7" value="c"> Stage 4 (low/low)</label></li>
+<li><label><input type="radio" name="q7" value="d"> Stage 5 (decline)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> High CBR, falling CDR, high TFR, and a youth-heavy pyramid signal Stage 2 / early Stage 3. Natural increase = (35 − 8)/1000 = 2.7%/year, doubling in ~26 years.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Replacement-level fertility (assuming no migration) is approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> 1.0 children per woman</label></li>
+<li><label><input type="radio" name="q8" value="b"> 2.1 children per woman</label></li>
+<li><label><input type="radio" name="q8" value="c"> 3.5 children per woman</label></li>
+<li><label><input type="radio" name="q8" value="d"> 5.0 children per woman</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> About 2.1 — two to replace parents plus a small margin to compensate for mortality before reproductive age. Canada's TFR is ~1.4; the population grows mainly through immigration.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Gender, Education, &amp; Urbanization</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Gender Inequality Index (GII) reflects three dimensions: reproductive health, empowerment, and ___.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Religious freedom</label></li>
+<li><label><input type="radio" name="q9" value="b"> Labour market participation</label></li>
+<li><label><input type="radio" name="q9" value="c"> Internet access</label></li>
+<li><label><input type="radio" name="q9" value="d"> Property ownership</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> The GII captures three dimensions: reproductive health (maternal mortality, adolescent birth rate), empowerment (parliamentary seats, secondary education by sex), and labour-market participation. The three dimensions are combined into a single index for cross-country comparison.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">A mega-city is conventionally defined as having a population of at least:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> 1 million</label></li>
+<li><label><input type="radio" name="q10" value="b"> 5 million</label></li>
+<li><label><input type="radio" name="q10" value="c"> 10 million</label></li>
+<li><label><input type="radio" name="q10" value="d"> 25 million</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','c')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> 10 million is the conventional UN threshold. Tokyo's metropolitan area has about 37 million, the largest. Other mega-cities include Delhi, Shanghai, São Paulo, Lagos.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — SDGs</div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">The Sustainable Development Goals (SDGs) consist of how many goals adopted in 2015?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> 8 goals (the MDGs continued)</label></li>
+<li><label><input type="radio" name="q11" value="b"> 17 goals applying to all countries</label></li>
+<li><label><input type="radio" name="q11" value="c"> 25 goals split between rich and poor countries</label></li>
+<li><label><input type="radio" name="q11" value="d"> 40 specific country-level targets</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The 2030 Agenda contains 17 SDGs with 169 targets. They succeeded the 8 Millennium Development Goals (2000–2015) and apply universally to all 193 UN member states.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Calculate: If a city of 4.0 million in 2010 grew to 6.5 million in 2020, what was the average annual percentage growth rate (use exponential growth, round to one decimal)?</div>
+<input type="text" id="q12-in" placeholder="Enter % per year (e.g., 4.5)">
+<button class="btn" onclick="cN('q12',4.9)">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Using N_t = N₀e^(rt): r = (1/10) × ln(6.5/4.0) = (1/10) × ln(1.625) = (1/10) × 0.486 = 0.0486 ≈ 4.9% per year. Doubling time ≈ 70/4.9 ≈ 14 years.</div></div>
+
+</div>
+
+<footer>CGW4U — World Issues, Grade 12 | Strand B: Quality of Life | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<0.15){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

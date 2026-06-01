@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC2D — Science (Academic) | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #d97706; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #d97706; }
+.video-player { padding: 0 14px 14px; display: none; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #0e7490; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #d97706; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #92400e; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #d97706; color: #fff; }
+.chnav-next:hover { background: #b45309; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../snc2d.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (SNC2D Science Academic)</a></div>
+    <div class="strand-tag">Science — Grade 10 Academic</div>
+    <h1>🌍 SNC2D: Unit 3: Climate Change</h1>
+    <p>Weather vs climate, greenhouse effect, carbon cycle, evidence for anthropogenic climate change, impacts, and mitigation</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+            <h2>Unit 3: Climate Change</h2>
+            <p>From the greenhouse effect to the Paris Agreement — understanding a planetary system in flux</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Climate Change</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+
+        <!-- Weather vs Climate -->
+        <div class="subsection-label">☁️ Weather vs Climate &amp; Earth's Climate System</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The distinction between <em>weather</em> and <em>climate</em> is essential but often muddled in everyday conversation. <em>Weather</em> describes the conditions of the atmosphere at a particular place and time — temperature, humidity, precipitation, wind, cloud cover, atmospheric pressure — and changes hour to hour or day to day. <em>Climate</em> describes the average and the range of weather conditions over a long time period (typically at least 30 years) and across a region. The classic line: "climate is what you expect, weather is what you get." A snowstorm in April does not falsify global warming any more than a hot afternoon in October proves it; both are weather. The climate signal emerges only when you look at multi-decade averages.</p>
+            <p>Earth's climate system is the interaction of five components called <em>spheres</em>. The <em>atmosphere</em> is the gaseous envelope; the <em>hydrosphere</em> includes all liquid water (oceans, lakes, rivers, groundwater); the <em>cryosphere</em> includes all frozen water (glaciers, ice sheets, sea ice, permafrost); the <em>lithosphere</em> is the solid Earth (rocks, soils); and the <em>biosphere</em> is the totality of living things. Climate emerges from the energy flows and matter cycles among these spheres, driven ultimately by sunlight. About 30% of incoming solar radiation is reflected back to space (Earth's <em>albedo</em>); 70% is absorbed and re-emitted as infrared radiation. Energy balance — incoming = outgoing — sets Earth's average temperature.</p>
+            <p>Multiple factors shape regional climate. <em>Latitude</em> determines the angle of the sun and the length of day (tropics warm, poles cold). <em>Elevation</em> lowers temperature (~6.5 °C per kilometre). <em>Proximity to large bodies of water</em> moderates seasonal swings (maritime climates have cool summers, mild winters; continental climates have hot summers, cold winters). <em>Ocean currents</em> redistribute heat (the Gulf Stream warms Northwest Europe). <em>Mountain ranges</em> create rain shadows on their leeward side. <em>Prevailing winds</em>, <em>vegetation cover</em>, and even <em>urban heat-island</em> effects all contribute.</p>
+            <ul>
+              <li><strong>Weather</strong> — short-term atmospheric conditions (hours to days).</li>
+              <li><strong>Climate</strong> — long-term average and range of weather (decades to centuries).</li>
+              <li><strong>Atmosphere / hydrosphere / cryosphere / lithosphere / biosphere</strong> — the five interacting components of the climate system.</li>
+              <li><strong>Albedo</strong> — fraction of incoming sunlight reflected back to space.</li>
+              <li><strong>Latitude effect</strong> — sunlight strikes at a steeper angle near the equator, more obliquely near the poles.</li>
+              <li><strong>Maritime / continental climate</strong> — moderated by water / characterised by extreme seasons.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Predicting climate from latitude and location</p>
+              <p>Compare the climates of Vancouver (49° N, on the Pacific Ocean) and Winnipeg (50° N, in the interior). Why are their climates so different despite nearly identical latitude?</p>
+              <p>Both cities are at similar latitudes, so the angle of solar radiation is comparable. The decisive difference is proximity to a large body of water. <strong>Vancouver</strong> sits on the Pacific Ocean; the high heat capacity of water moderates temperature swings, producing mild, wet winters (rarely below 0 °C) and cool summers (rarely above 25 °C). <strong>Winnipeg</strong> is deep in the continental interior; land heats and cools quickly, producing very cold winters (often below −30 °C) and hot summers (often above 30 °C). Vancouver also benefits from prevailing westerly winds carrying moist Pacific air, while Winnipeg's prairies dry out in the rain shadow of the Rocky Mountains.</p>
+            </div>
+            <ul>
+              <li>Mistaking a cold winter for evidence against climate change — climate is about long-term averages, not individual events.</li>
+              <li>Forgetting that latitude effect comes from the angle of sunlight, not from distance to the sun (which barely varies).</li>
+              <li>Calling Earth's atmosphere "thick" — it is a thin shell relative to the planet's radius (most weather happens in the lowest ~10 km).</li>
+              <li>Treating the climate system as if only the atmosphere matters — oceans, ice, land, and life all play major roles.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "distinguish between weather and climate, and explain how various natural factors (latitude, elevation, proximity to large bodies of water, ocean currents, prevailing winds) influence climate."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Weather vs. Climate: Crash Course Kids #28.1</span>
+                <span class="vid-duration">4:00</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/YbAWny7FV3w?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=YbAWny7FV3w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Greenhouse Effect -->
+        <div class="subsection-label">🔥 The Greenhouse Effect</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>greenhouse effect</em> is the natural process that keeps Earth's surface about 33 °C warmer than it would be otherwise — without it, the average surface temperature would be about −18 °C and oceans would be frozen solid. The mechanism, first proposed by Joseph Fourier in 1824 and quantitatively modelled by Svante Arrhenius in 1896, works like this: short-wavelength visible and ultraviolet sunlight passes through the atmosphere and is absorbed by Earth's surface, warming it. Earth then re-radiates this energy as longer-wavelength <em>infrared</em> radiation. Certain gases in the atmosphere — <em>greenhouse gases</em> — absorb infrared radiation, vibrate, and re-emit it in all directions, including back toward the surface. The result is more energy near the surface than incoming sunlight alone would provide.</p>
+            <p>The most important greenhouse gases on Earth, in roughly decreasing order of total warming effect, are <em>water vapour</em> (\(H_2O\)), <em>carbon dioxide</em> (\(CO_2\)), <em>methane</em> (\(CH_4\)), <em>nitrous oxide</em> (\(N_2O\)), <em>ozone</em> (\(O_3\), in the troposphere), and the synthetic halocarbons such as CFCs and HFCs. Each gas absorbs at specific infrared wavelengths because of its molecular vibrational modes — symmetric diatomic molecules like \(O_2\) and \(N_2\) are not greenhouse gases because they lack the appropriate vibration modes. Molecule-for-molecule, methane is about 25 times more potent than \(CO_2\) over 100 years; nitrous oxide about 300 times; many CFCs thousands of times. But \(CO_2\) dominates the long-term picture because there is so much of it, it lasts in the atmosphere for centuries, and human activity is adding it at an unprecedented rate.</p>
+            <p>It is critical to distinguish the <em>natural</em> greenhouse effect (good — keeps Earth liveable) from the <em>enhanced</em> greenhouse effect (concerning — extra warming from human-caused increases in greenhouse gas concentrations). Since the Industrial Revolution began about 1850, atmospheric \(CO_2\) has risen from about 280 ppm to over 420 ppm (2024) — a level not seen on Earth for at least 3 million years. The corresponding increase in absorbed long-wave radiation explains the observed rise of global mean surface temperature of about 1.1–1.2 °C since pre-industrial times.</p>
+            <ul>
+              <li><strong>Greenhouse effect</strong> — atmospheric warming from absorption and re-emission of infrared radiation by greenhouse gases.</li>
+              <li><strong>Greenhouse gas (GHG)</strong> — gas that absorbs infrared (e.g., \(H_2O\), \(CO_2\), \(CH_4\), \(N_2O\)).</li>
+              <li><strong>Short-wave / long-wave radiation</strong> — incoming visible &amp; UV / outgoing infrared.</li>
+              <li><strong>Global warming potential (GWP)</strong> — warming effect of a gas relative to \(CO_2\) over a time horizon.</li>
+              <li><strong>Parts per million (ppm)</strong> — number of molecules per million air molecules.</li>
+              <li><strong>Enhanced greenhouse effect</strong> — additional warming from human emissions on top of the natural baseline.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Estimating warming from a methane leak</p>
+              <p>A natural-gas pipeline leaks 10 tonnes of methane to the atmosphere. The 100-year global warming potential (GWP-100) of methane is 28. How much \(CO_2\) would have an equivalent warming effect over a century?</p>
+              <p>CO₂-equivalent = mass × GWP = 10 tonnes × 28 = <strong>280 tonnes of \(CO_2\)-equivalent</strong>. This is why even small methane leaks matter: a relatively modest quantity of methane has the same century-long warming punch as a much larger mass of carbon dioxide. Over a 20-year horizon the multiplier is even larger (GWP-20 ≈ 85), making aggressive methane-leak reduction one of the quickest ways to slow short-term warming.</p>
+            </div>
+            <ul>
+              <li>Treating the greenhouse effect as inherently bad — without it, Earth would be frozen. Only the <em>enhanced</em> effect is the concern.</li>
+              <li>Forgetting that \(O_2\) and \(N_2\) are <em>not</em> greenhouse gases despite making up 99% of the atmosphere.</li>
+              <li>Calling the ozone layer (stratosphere) and ozone as a greenhouse gas (troposphere) the same problem — they are different layers and different issues.</li>
+              <li>Confusing weather greenhouse with literal glass greenhouses — the analogy is loose; literal greenhouses retain heat mainly by blocking convection.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.2 — "explain the natural greenhouse effect, the role of various greenhouse gases (e.g., water vapour, carbon dioxide, methane), and the difference between the natural and the enhanced greenhouse effect."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Greenhouse Effect Explained — TED-Ed</span>
+                <span class="vid-duration">3:56</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/SN5-DnOHQmE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=SN5-DnOHQmE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Carbon Cycle -->
+        <div class="subsection-label">♻️ The Carbon Cycle</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>Carbon is the backbone of all known life and a key controller of Earth's climate. The <em>carbon cycle</em> is the continual movement of carbon among Earth's reservoirs: the atmosphere (mostly as \(CO_2\)), the oceans (dissolved \(CO_2\), bicarbonate, and the carbon in marine life), the land biosphere (plants, soils, animals), and the lithosphere (carbonate rocks, coal, oil, and natural gas).</p>
+            <p>Several key processes move carbon between these reservoirs. <em>Photosynthesis</em> removes \(CO_2\) from the atmosphere and locks it into plant tissue: \(6CO_2 + 6H_2O \rightarrow C_6H_{12}O_6 + 6O_2\). <em>Cellular respiration</em> by plants, animals, and microbes returns \(CO_2\) to the atmosphere: \(C_6H_{12}O_6 + 6O_2 \rightarrow 6CO_2 + 6H_2O\) + ATP. <em>Decomposition</em> releases carbon from dead organisms back to soil and atmosphere. <em>Combustion</em> burns organic material (wood, fossil fuels) and produces \(CO_2\). <em>Ocean exchange</em> dissolves atmospheric \(CO_2\) into surface waters, where some is taken up by photosynthetic phytoplankton, some forms shells (\(CaCO_3\)), and some sinks into the deep ocean. Over geological time, organic remains can become fossil fuels (coal, oil, natural gas) or sedimentary carbonate rocks (limestone) — locking carbon away from the active cycle for millions of years.</p>
+            <p>The cycle was approximately balanced for millennia, with photosynthesis and respiration adding and removing roughly equal amounts each year. Since about 1850, however, humans have dramatically perturbed it by burning fossil fuels and clearing forests. We are extracting carbon that took 100+ million years to form and releasing it as \(CO_2\) in just a few centuries. Roughly half of human \(CO_2\) emissions end up in the atmosphere (where they warm the climate); about a quarter is taken up by plants on land; about a quarter dissolves in the oceans (where it acidifies seawater). The result is rising atmospheric \(CO_2\), measurable, undeniable, and continuing.</p>
+            <ul>
+              <li><strong>Reservoir / sink / source</strong> — place where carbon is stored / takes up more than it releases / releases more than it takes up.</li>
+              <li><strong>Photosynthesis</strong> — removes atmospheric \(CO_2\), stores as plant biomass.</li>
+              <li><strong>Cellular respiration</strong> — releases \(CO_2\) as cells convert glucose to ATP.</li>
+              <li><strong>Decomposition</strong> — microbes break down dead matter, releasing \(CO_2\).</li>
+              <li><strong>Combustion</strong> — burning fuels releases \(CO_2\).</li>
+              <li><strong>Ocean acidification</strong> — drop in seawater pH from dissolved \(CO_2\) forming carbonic acid.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Tracking a carbon atom through the cycle</p>
+              <p>A carbon atom is released from a coal-fired power plant in 2024. Outline a plausible path it might take through the carbon cycle over the next 50 years.</p>
+              <p>The atom leaves the smokestack as \(CO_2\). Some of the molecule is absorbed by surface ocean water (in carbon-cycle accounting, roughly 25% of human emissions go this way), forming bicarbonate. From there it might be taken up by a phytoplankton during photosynthesis and fixed into organic carbon. When that phytoplankton is eaten by a copepod and the copepod is eaten by a fish, the carbon flows through the marine food web. Eventually the fish exhales the carbon as \(CO_2\) in respiration — perhaps after a few years — and the molecule returns to the upper ocean or atmosphere. About half the molecule's siblings remain in the atmosphere for many centuries, gradually being absorbed by oceans or weathering reactions with silicate rocks. This long residence time is why climate effects of today's emissions will be felt for generations.</p>
+            </div>
+            <ul>
+              <li>Saying "carbon dioxide is pollution" without qualification — \(CO_2\) is essential to life; the issue is the abnormally rapid increase in concentration.</li>
+              <li>Confusing photosynthesis and respiration directions — plants do both: net carbon uptake (when sun is up) and net carbon release (at night).</li>
+              <li>Forgetting that oceans are both a sink (absorbing \(CO_2\)) and a source (warming releases dissolved gas) — net direction depends on conditions.</li>
+              <li>Treating fossil fuels as separate from the carbon cycle — they are slow-cycle reservoirs that human extraction has connected to the fast cycle.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "explain the carbon cycle (including photosynthesis, respiration, decomposition, ocean exchange, and combustion of fossil fuels) and how human activity has perturbed it."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Carbon Cycle — Crash Course #1.6</span>
+                <span class="vid-duration">11:25</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/A4cPmHGegKI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=A4cPmHGegKI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Evidence -->
+        <div class="subsection-label">📊 Evidence for Anthropogenic Climate Change</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The scientific evidence that humans are causing climate change comes from multiple independent lines of investigation, all pointing the same way. The conclusion is one of the most thoroughly tested in modern science.</p>
+            <p>1. <em>The instrumental temperature record</em>. Direct thermometer measurements show that global mean surface temperature has risen by about 1.1–1.2 °C since the late 1800s, with the rise accelerating since 1970. The five hottest years on record are all in the most recent decade. 2. <em>Atmospheric \(CO_2\)</em>. The Keeling Curve, recorded continuously at Mauna Loa Observatory since 1958, shows the seasonal sawtooth of northern-hemisphere plant growth superimposed on a steady upward trend, from 315 ppm in 1958 to over 420 ppm today. Air bubbles trapped in Antarctic ice cores extend the record back 800,000 years and show that current \(CO_2\) levels are unprecedented over that interval. 3. <em>Ice cores and isotopes</em>. The carbon isotope ratio of atmospheric \(CO_2\) is becoming more like that of fossil fuels (depleted in \(^{13}C\)) and the \(O_2\) concentration is dropping by the right amount to match combustion — a "fingerprint" that ties the increase to fossil-fuel burning, not volcanoes or other natural sources. 4. <em>The cryosphere</em>. Arctic sea-ice extent has declined by about 13% per decade since 1979. Mountain glaciers worldwide are retreating, and the Greenland and Antarctic ice sheets are losing mass at accelerating rates. 5. <em>Sea-level rise</em>. Sea level has risen about 20 cm since 1900 — partly from thermal expansion of warming oceans, partly from melting ice — and the rate of rise is increasing. 6. <em>Ocean changes</em>. Oceans are warming, and surface seawater pH has fallen by about 0.1 (a 26% increase in hydrogen-ion concentration) — measurable ocean acidification. 7. <em>Biological responses</em>. Plant flowering, bird migration, and species range shifts toward the poles or higher elevations all reflect a warming climate.</p>
+            <p>Scientific organisations including NASA, NOAA, the Royal Society, the American Meteorological Society, Environment and Climate Change Canada, and the Intergovernmental Panel on Climate Change (IPCC) — which assesses thousands of peer-reviewed studies — agree: human activities are the dominant cause of the observed warming since the mid-20th century.</p>
+            <ul>
+              <li><strong>Instrumental record</strong> — direct measurements with thermometers and other instruments.</li>
+              <li><strong>Keeling Curve</strong> — continuous \(CO_2\) record at Mauna Loa beginning 1958.</li>
+              <li><strong>Ice core</strong> — cylindrical sample of glacial ice preserving ancient air bubbles and isotopic data.</li>
+              <li><strong>Isotope fingerprint</strong> — \(^{12}C\) / \(^{13}C\) ratio identifies the source of \(CO_2\).</li>
+              <li><strong>Sea-level rise</strong> — increase in global mean ocean level from thermal expansion + melted ice.</li>
+              <li><strong>IPCC</strong> — Intergovernmental Panel on Climate Change, the United Nations climate-science body.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Interpreting an ice-core CO₂ record</p>
+              <p>The EPICA Dome C ice core in Antarctica records atmospheric \(CO_2\) from 800,000 years ago to about 1800 CE. The data show \(CO_2\) oscillating between ~180 ppm during glacial periods and ~280 ppm during interglacials. Today's \(CO_2\) is over 420 ppm. (a) How does today's value compare to the ice-core range? (b) Why is the rate of change relevant, not just the level?</p>
+              <p>(a) The pre-industrial range was 180–280 ppm — a 100 ppm swing between ice ages and warm periods, on timescales of about 10,000 years. Today's 420+ ppm is <strong>nearly 50% above the pre-industrial maximum</strong>, putting Earth in territory not seen in the entire 800,000-year ice-core record (and likely 3+ million years from other proxies). (b) The rate matters because ecosystems and species can adapt to slow change. The natural transition out of an ice age took about 10,000 years to add ~100 ppm; humans have added the same amount in roughly 60 years — a rate about 100× faster. Many species cannot evolve fast enough; some ecosystems are already showing the strain.</p>
+            </div>
+            <ul>
+              <li>Treating "natural variability" and "human-caused change" as mutually exclusive — both occur; today's warming has the fingerprint of human activity superimposed on smaller natural cycles.</li>
+              <li>Forgetting the difference between weather (regional, short-term) and climate (global, long-term).</li>
+              <li>Saying "climate has always changed" to dismiss concern — true, but past changes happened far more slowly than today's, and human civilisation developed during an unusually stable climate.</li>
+              <li>Mixing the ozone layer (stratospheric \(O_3\) loss from CFCs) with climate change (greenhouse warming from \(CO_2\)) — they share some chemistry but are distinct problems.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.4 — "describe the major lines of evidence for anthropogenic (human-caused) climate change, including the instrumental temperature record, atmospheric carbon dioxide concentrations, and ice-core data."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Climate Science: What You Need to Know — It's Okay To Be Smart / Crash Course</span>
+                <span class="vid-duration">11:55</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ffjIyms1BX4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ffjIyms1BX4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Feedbacks -->
+        <div class="subsection-label">🔄 Climate Feedback Loops</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The climate system is full of <em>feedback loops</em> — processes where a change feeds back to either amplify (positive feedback) or dampen (negative feedback) the original change. Feedbacks make the climate sensitive to small perturbations and explain why a relatively modest direct warming from added \(CO_2\) translates into a much larger ultimate response.</p>
+            <p><em>Positive feedbacks</em> amplify warming. The most important are: (1) the <em>ice-albedo feedback</em>: warming melts reflective ice and snow, exposing darker land and ocean below, which absorb more sunlight and warm further; (2) the <em>water-vapour feedback</em>: warmer air holds more water vapour, and water vapour is itself a powerful greenhouse gas, so initial warming creates more warming; (3) the <em>permafrost feedback</em>: Arctic permafrost contains huge amounts of frozen organic matter; as it thaws, microbes decompose it and release \(CO_2\) and methane, adding to atmospheric greenhouse gases; (4) <em>forest fires</em>: warming dries forests, increases fire frequency, releases stored carbon and creates more warming; (5) <em>methane clathrates</em>: methane locked in undersea sediments could be released by warming oceans (a tail risk that worries climate scientists).</p>
+            <p><em>Negative feedbacks</em> dampen warming. The most important is the <em>Planck feedback</em>: a warmer surface radiates more energy to space (Stefan–Boltzmann law: emitted radiation ∝ \(T^4\)), so warming tends to limit itself. Cloud feedbacks have both positive and negative components — high cirrus clouds trap heat (warming) while low stratocumulus clouds reflect sunlight (cooling) — and their net effect is one of the largest remaining uncertainties in climate models. Some weathering reactions consume \(CO_2\) on million-year timescales, but they are too slow to matter for decadal climate change.</p>
+            <p>The net effect of all feedbacks determines <em>climate sensitivity</em> — how much warming you get from a doubling of \(CO_2\). The IPCC's best estimate is about 3 °C of warming (likely range 2.5–4 °C). Without positive feedbacks the direct effect of \(CO_2\) doubling would be only about 1 °C; feedbacks roughly triple it.</p>
+            <ul>
+              <li><strong>Feedback loop</strong> — process where output of a system feeds back into the input.</li>
+              <li><strong>Positive feedback</strong> — amplifies the original change.</li>
+              <li><strong>Negative feedback</strong> — dampens the original change.</li>
+              <li><strong>Ice-albedo feedback</strong> — melting ice exposes darker surfaces that absorb more sunlight.</li>
+              <li><strong>Water-vapour feedback</strong> — warmer air holds more water vapour (a greenhouse gas).</li>
+              <li><strong>Climate sensitivity</strong> — equilibrium warming from a doubling of \(CO_2\).</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Identifying feedback loops in a scenario</p>
+              <p>For each scenario, identify whether the loop is positive or negative feedback and explain briefly: (a) Spring snow melts earlier, leaving dark soil exposed, which absorbs more sunlight, warming the air, melting more snow. (b) A wildfire releases \(CO_2\), warming the climate, drying forests, increasing fire risk. (c) A warming surface emits more infrared radiation to space, reducing the rate of warming.</p>
+              <p>(a) <strong>Positive (ice-albedo) feedback</strong> — initial melt amplifies more melt. (b) <strong>Positive feedback</strong> — fires beget fires through the climate. (c) <strong>Negative (Planck) feedback</strong> — Earth's response to warming is to radiate more heat, a stabilising effect that prevents runaway warming on a human-timescale Earth.</p>
+            </div>
+            <ul>
+              <li>Confusing positive feedback (amplifying) with "good" — positive feedbacks make warming worse.</li>
+              <li>Calling clouds simply a "feedback" — they involve both positive and negative components; the net is uncertain.</li>
+              <li>Treating climate sensitivity as if it includes only \(CO_2\)'s direct effect — feedbacks roughly triple the response.</li>
+              <li>Assuming negative feedbacks will save us — the Planck feedback prevents runaway warming, but it does not prevent the multi-degree warming we are already committed to.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.5 — "describe positive and negative feedback loops in the climate system (e.g., ice-albedo, water vapour, permafrost) and explain their role in amplifying or dampening climate change."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Climate Change: Earth's Giant Game of Tetris — TED-Ed</span>
+                <span class="vid-duration">3:23</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ztWHqUFJRTs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ztWHqUFJRTs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Impacts and Mitigation -->
+        <div class="subsection-label">🌱 Impacts &amp; Mitigation</div>
+
+        <details class="lesson-notes">
+          <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+          <div class="lesson-notes-body">
+            <p>The <em>impacts</em> of climate change are global, but they are felt unevenly. Warming hits the Arctic three to four times faster than the global average (a phenomenon called <em>Arctic amplification</em>), threatening Inuit communities whose hunting and travel depend on sea ice and permafrost. Heat waves intensify in cities and farming regions. Drought patterns shift, threatening agricultural breadbaskets such as the Canadian Prairies and the U.S. Midwest. Heavier precipitation events cause more frequent flooding in some regions. Wildfire seasons in Canada have lengthened by about a month since 1980 and have produced record-breaking burned area in the 2020s. Sea-level rise threatens coastal cities and low-lying island nations. Ocean acidification damages coral reefs and shell-forming organisms at the base of marine food webs. Species are shifting their ranges poleward and to higher elevations, but many cannot move fast enough.</p>
+            <p><em>Mitigation</em> means reducing the cause — cutting greenhouse-gas emissions. <em>Adaptation</em> means preparing for impacts we cannot avoid. Most national strategies require both. Mitigation pathways include: (1) <em>energy efficiency</em> — using less to do the same work (LED lighting, heat pumps, insulation); (2) <em>electrification</em> — replacing fossil-fuel uses with electric ones (EVs, electric heating); (3) <em>decarbonising electricity</em> — wind, solar, hydro, nuclear; (4) <em>carbon pricing</em> — taxes or cap-and-trade systems that put a price on emissions; (5) <em>nature-based solutions</em> — protecting and restoring forests, wetlands, and grasslands that absorb \(CO_2\); (6) <em>industrial carbon capture and storage</em> for hard-to-decarbonise sectors like cement and steel; (7) <em>methane reduction</em> from oil and gas, livestock, and landfills.</p>
+            <p>Major international agreements have shaped global response. The 1997 <em>Kyoto Protocol</em> set binding targets for developed countries. The 2015 <em>Paris Agreement</em>, signed by 195 parties, commits countries to keep global warming "well below 2 °C" and to pursue efforts to limit it to 1.5 °C, through nationally-determined contributions that ratchet up over time. Canada's federal carbon pricing applies to provinces without equivalent systems; many provinces have additional measures. Individual actions — energy-efficient choices, lower-carbon diets, reduced flying, voting and civic engagement — also matter, especially when scaled across populations. <em>Indigenous knowledge</em> is increasingly recognised as essential for adaptation, drawing on millennia of observation and stewardship of local ecosystems.</p>
+            <ul>
+              <li><strong>Mitigation</strong> — reducing greenhouse-gas emissions and removing \(CO_2\) from the atmosphere.</li>
+              <li><strong>Adaptation</strong> — adjusting human and natural systems to unavoidable impacts.</li>
+              <li><strong>Carbon pricing</strong> — tax or cap-and-trade system that puts a financial cost on emissions.</li>
+              <li><strong>Renewable energy</strong> — naturally replenished sources (solar, wind, hydro, geothermal, sustainable biomass).</li>
+              <li><strong>Paris Agreement</strong> — 2015 UN climate accord aiming to limit warming to well below 2 °C, ideally 1.5 °C.</li>
+              <li><strong>Just transition</strong> — managing shift away from fossil fuels with attention to affected workers and communities.</li>
+            </ul>
+            <div class="worked-example">
+              <p>Worked example — Comparing two mitigation choices</p>
+              <p>A family wants to cut household emissions. Option A: install a heat pump (\$10,000 capital, eliminates ~3 tonnes \(CO_2\)/year). Option B: switch from a beef-heavy diet to vegetarian (no capital cost, eliminates ~1 tonne \(CO_2\)/year per person). (a) Rank by absolute emissions cut. (b) Discuss why both can be part of a sensible plan.</p>
+              <p>(a) The <strong>heat pump cuts about 3× more emissions per year</strong> than the diet change for a single person, so on absolute emissions it is the bigger lever. (b) Both matter. Dietary choices are immediate, require no capital, and add up across population (1 tonne × 30 million Canadians = 30 megatonnes if all switched). Heat pumps require capital but lock in large emissions cuts for decades. A complete household plan combines big infrastructure investments (heat pump, EV) with everyday behaviour (diet, transit, energy use). Policy levers (carbon pricing, building codes, EV incentives) are needed because individual actions alone cannot reach net-zero — but individual signals shape both market demand and political will.</p>
+            </div>
+            <ul>
+              <li>Treating climate action as either-or — mitigation and adaptation are both necessary; individual and systemic action are both needed.</li>
+              <li>Calling all renewable energy "carbon-free" — manufacturing solar panels and wind turbines has emissions, but lifetime emissions are far below fossil fuels.</li>
+              <li>Confusing the Paris Agreement targets (1.5 °C, 2 °C) with current trajectory — current pledges, if all kept, are estimated to give ~2.5–3 °C of warming.</li>
+              <li>Forgetting that some impacts are already locked in — even if emissions stopped today, the planet would continue warming for decades and sea level would continue rising for centuries.</li>
+            </ul>
+            <p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D1.1 — "analyse current and potential effects of climate change on human activities and natural systems, and evaluate the effectiveness of initiatives that attempt to address the issue (e.g., the Paris Agreement, carbon pricing, renewable-energy transitions)."</p>
+          </div>
+        </details>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Climate Change — A Race We Can Win — TED-Ed</span>
+                <span class="vid-duration">4:42</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/G4H1N_yXBiA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=G4H1N_yXBiA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+            <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Unit 3 Assessments</div>
+            <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                <a class="assessment-strip-card assessment-strip-as" href="../../assessments/snc2d/Unit3_Climate_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                    <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                    <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-for" href="../../assessments/snc2d/Unit3_Climate_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                    <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                    <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+                </a>
+                <a class="assessment-strip-card assessment-strip-of" href="../../assessments/snc2d/Unit3_Climate_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                    <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                    <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                    <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="ch4.html" class="chnav-btn chnav-next">Chapter 4 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · SNC2D Science (Academic) · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

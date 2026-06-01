@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT4M Final Exam — Mathematics for College Technology (OF Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #c2410c; --accent: #6366f1; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 18px; margin-bottom: 14px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 14px; }
+.qmarks { float: right; font-size: 12px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 6px 0 10px; font-size: 14px; }
+input[type="text"], textarea { width: 100%; padding: 8px 12px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 80px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 6px 0; }
+.mc li { margin-bottom: 4px; }
+.mc label { display: flex; align-items: flex-start; gap: 6px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 13px; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; margin-top: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 8px; padding: 8px; border-radius: 6px; font-size: 12px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 8px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.answer-key { margin-top: 40px; background: #fff; border: 2px solid var(--primary); border-radius: 10px; padding: 4px 20px; }
+.answer-key summary { font-size: 18px; font-weight: 700; color: var(--primary); cursor: pointer; padding: 14px 4px; }
+.answer-key .akq { border-left: 3px solid var(--primary); padding: 8px 14px; margin: 14px 0; background: #f8fafc; }
+.answer-key .akq h4 { color: var(--primary); margin-bottom: 6px; font-size: 14px; }
+.answer-key .akq p { font-size: 13px; margin-bottom: 4px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+.word-count { text-align: right; font-size: 11px; color: var(--muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#c2410c;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+<h1>🎓 MCT4M Final Exam</h1>
+<div class="sub">Comprehensive Final Evaluation — Chapters 1 through 5</div>
+<div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+<strong>⏱️ Duration:</strong> 3 hours (180 minutes) &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+<strong>Materials allowed:</strong> Scientific calculator, ruler, formula sheet. No graphing technology during the exam.<br>
+Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+<strong>Coverage:</strong> Ch 1 Exponential &amp; Logarithmic Functions · Ch 2 Polynomial Equations &amp; Inequalities · Ch 3 Trigonometric Functions · Ch 4 Applications of Geometry · Ch 5 Modelling.
+</div>
+
+<!-- ===== Part A: K/U ===== -->
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [25 marks]</div>
+
+<div class="qcard" id="q1"><div class="qnum">Q1 <span class="qmarks">[1]</span></div>
+<div class="qtxt">Evaluate \( 32^{2/5} \).</div>
+<input type="text" id="q1-in"><button class="btn btn-p" onclick="chkNum('q1', 4)">Check</button>
+<div class="fb" id="q1-fb"></div><div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>\( (\sqrt[5]{32})^{2}=2^{2}=4 \).</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Q2 <span class="qmarks">[1]</span></div>
+<div class="qtxt">\( \log_{2} 16 = \) ?</div>
+<input type="text" id="q2-in"><button class="btn btn-p" onclick="chkNum('q2', 4)">Check</button>
+<div class="fb" id="q2-fb"></div><div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>\( 2^{4}=16 \), so \( \log_{2} 16 = 4 \).</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Q3 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Simplify \( \log 5 + \log 20 \).</div>
+<input type="text" id="q3-in"><button class="btn btn-p" onclick="chkNum('q3', 2)">Check</button>
+<div class="fb" id="q3-fb"></div><div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>\( \log(5\cdot 20)=\log 100=2 \).</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Q4 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Solve \( 3^{x}=27 \).</div>
+<input type="text" id="q4-in"><button class="btn btn-p" onclick="chkNum('q4', 3)">Check</button>
+<div class="fb" id="q4-fb"></div><div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>\( 27=3^{3} \), so \( x=3 \).</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Q5 <span class="qmarks">[1]</span></div>
+<div class="qtxt">Expand \( (x+4)(x-4) \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> \( x^{2}-16 \)</label></li>
+<li><label><input type="radio" name="q5" value="b"> \( x^{2}+16 \)</label></li>
+<li><label><input type="radio" name="q5" value="c"> \( x^{2}-8x+16 \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','a')">Check</button>
+<div class="fb" id="q5-fb"></div><div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>Difference of squares: \( x^{2}-16 \).</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Q6 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Factor: \( x^{2}+5x-14 \).</div>
+<input type="text" id="q6-in" placeholder="(x+a)(x+b)"><button class="btn btn-p" onclick="document.getElementById('q6-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>Two numbers multiplying to -14, summing to 5: 7, -2. So \( (x+7)(x-2) \).</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Q7 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Remainder when \( f(x)=x^{3}+2x-4 \) is divided by \( x-2 \).</div>
+<input type="text" id="q7-in"><button class="btn btn-p" onclick="chkNum('q7', 8)">Check</button>
+<div class="fb" id="q7-fb"></div><div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>\( f(2)=8+4-4=8 \).</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Q8 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Convert \( 135° \) to radians (exact).</div>
+<input type="text" id="q8-in" placeholder="e.g. 3pi/4"><button class="btn btn-p" onclick="document.getElementById('q8-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>\( 135\pi/180=3\pi/4 \) rad.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Q9 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Find \( \sin(120°) \) exactly.</div>
+<input type="text" id="q9-in" placeholder="e.g. sqrt(3)/2 or 0.866"><button class="btn btn-p" onclick="document.getElementById('q9-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>Reference 60°; Q II ⇒ sine positive. \( \sin 120°=\sqrt{3}/2 \approx 0.866 \).</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Q10 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Period of \( y=2\sin(\pi x/3) \)?</div>
+<input type="text" id="q10-in"><button class="btn btn-p" onclick="chkNum('q10', 6)">Check</button>
+<div class="fb" id="q10-fb"></div><div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>\( T=2\pi/|k|=2\pi/(\pi/3)=6 \).</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Q11 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Magnitude of vector \( (8, 6) \).</div>
+<input type="text" id="q11-in"><button class="btn btn-p" onclick="chkNum('q11', 10)">Check</button>
+<div class="fb" id="q11-fb"></div><div class="sol" id="q11-sl"><div class="sol-lbl">Solution:</div>\( \sqrt{64+36}=\sqrt{100}=10 \).</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Q12 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Volume of a sphere of radius 6 cm (use \( \pi \approx 3.14 \), round to nearest whole).</div>
+<input type="text" id="q12-in"><button class="btn btn-p" onclick="chkNum('q12', 904)">Check</button>
+<div class="fb" id="q12-fb"></div><div class="sol" id="q12-sl"><div class="sol-lbl">Solution:</div>\( V=(4/3)\pi r^{3}=(4/3)(3.14)(216)\approx 904 \) cm³.</div></div>
+
+<div class="qcard" id="q13"><div class="qnum">Q13 <span class="qmarks">[2]</span></div>
+<div class="qtxt">An inscribed angle subtends an arc of central angle 90°. Inscribed angle = ?</div>
+<input type="text" id="q13-in" placeholder="degrees"><button class="btn btn-p" onclick="chkNum('q13', 45)">Check</button>
+<div class="fb" id="q13-fb"></div><div class="sol" id="q13-sl"><div class="sol-lbl">Solution:</div>Inscribed = (1/2)(90°) = 45°.</div></div>
+
+<div class="qcard" id="q14"><div class="qnum">Q14 <span class="qmarks">[2]</span></div>
+<div class="qtxt">Identify the family: \( y=2, 6, 18, 54 \) at equally spaced \( x \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q14" value="a"> Linear</label></li>
+<li><label><input type="radio" name="q14" value="b"> Quadratic</label></li>
+<li><label><input type="radio" name="q14" value="c"> Exponential (base 3)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q14','c')">Check</button>
+<div class="fb" id="q14-fb"></div><div class="sol" id="q14-sl"><div class="sol-lbl">Solution:</div>Ratios all 3 ⇒ exponential.</div></div>
+
+<!-- ===== Part B: Thinking ===== -->
+<div class="section-hdr t">Part B: Thinking [25 marks]</div>
+
+<div class="qcard"><div class="qnum">Q15 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Solve \( 2^{x+1}=5^{x-2} \). Round to 2 decimals.</div>
+<textarea placeholder="Apply log to both sides..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q16 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Solve the polynomial equation \( x^{3}-7x+6=0 \) completely. Show factor theorem reasoning and synthetic division.</div>
+<textarea placeholder="Show all steps..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q17 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Solve \( x^{4}-13x^{2}+36 \le 0 \). Show your sign chart and state the solution in interval notation.</div>
+<textarea placeholder="Sign chart + intervals..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q18 <span class="qmarks">[4]</span></div>
+<div class="qtxt">A triangle has sides 8, 11, and 13. Find the smallest angle (round to nearest degree) using the cosine law.</div>
+<textarea placeholder="Apply cosine law..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q19 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Prove the identity: \( \dfrac{1-\cos^{2}\theta}{\sin\theta\cos\theta} = \tan\theta \). Justify each step.</div>
+<textarea placeholder="Use Pythagorean + quotient..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q20 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Three forces at one point: 40 N at 0° (positive \( x \)), 50 N at 90° (positive \( y \)), and 30 N at 135°. Find the resultant magnitude (round to 1 dp) and direction from positive \( x \).</div>
+<textarea placeholder="Use components..."></textarea><div class="word-count">0 words</div></div>
+
+<!-- ===== Part C: Communication ===== -->
+<div class="section-hdr c">Part C: Communication [25 marks]</div>
+
+<div class="qcard"><div class="qnum">Q21 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Explain in your own words why \( \log_{b}(MN)=\log_{b} M + \log_{b} N \) but \( \log_{b}(M+N) \) cannot be simplified. Give a worked example.</div>
+<textarea placeholder="Explain..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q22 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Describe step-by-step how to factor a cubic polynomial with integer coefficients. Include the Rational Zero Theorem and verification.</div>
+<textarea placeholder="Method..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q23 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Explain how the parameters \( a, k, d, c \) in \( y=a\sin(k(x-d))+c \) control the shape of the sinusoid. Sketch a quick example using \( a=3, k=2, d=1, c=-1 \).</div>
+<textarea placeholder="Describe sketch + role of each parameter..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q24 <span class="qmarks">[4]</span></div>
+<div class="qtxt">When should you use the Sine Law vs the Cosine Law? Include the ambiguous case (SSA). Give a 2-sentence example for each.</div>
+<textarea placeholder="Distinguish..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q25 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Compare and contrast the triangle method vs the component method for adding vectors. When is each more useful?</div>
+<textarea placeholder="Compare..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q26 <span class="qmarks">[5]</span></div>
+<div class="qtxt">A classmate insists "If my regression has \( r^{2}=0.97 \), the model is definitely right." Critically evaluate this claim, with reference to function family selection and residual analysis.</div>
+<textarea placeholder="Critique..."></textarea><div class="word-count">0 words</div></div>
+
+<!-- ===== Part D: Application ===== -->
+<div class="section-hdr a">Part D: Application [25 marks]</div>
+
+<div class="qcard"><div class="qnum">Q27 <span class="qmarks">[5]</span></div>
+<div class="qtxt">$8000 is invested at 5.4% annual interest compounded monthly. (a) Write the formula. (b) Calculate the balance after 6 years. (c) How long does it take to double?</div>
+<textarea placeholder="Show work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q28 <span class="qmarks">[5]</span></div>
+<div class="qtxt">A 10 m ladder leans against a vertical wall. The base is 4 m from the wall. (a) Find the angle the ladder makes with the ground. (b) Find the height it reaches on the wall. (c) If the base slides out by 1 m, by how much does the top drop?</div>
+<textarea placeholder="Show work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q29 <span class="qmarks">[5]</span></div>
+<div class="qtxt">A water tank is a cylinder (radius 1 m, height 3 m) topped by a hemisphere (radius 1 m). (a) Total volume in m³? (b) Total surface area (excluding the base) in m²? (c) If steel costs $80/m², estimate construction cost.</div>
+<textarea placeholder="Show work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q30 <span class="qmarks">[5]</span></div>
+<div class="qtxt">The depth of water in a harbour varies sinusoidally. High tide of 12 m occurs at 6 a.m.; low tide of 4 m occurs at 12 noon. (a) Period? (b) Sinusoidal model \( D(t) \) with \( t \) hours past midnight. (c) When does the depth first equal 10 m?</div>
+<textarea placeholder="Show work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Q31 <span class="qmarks">[5]</span></div>
+<div class="qtxt">A factory profit (thousands of $) per week is \( P(x)=-2x^{3}+24x^{2}-72x \), where \( x \) is units (in hundreds). (a) Factor and find break-even outputs. (b) Sign chart: for what \( x \) is profit positive? (c) Compute \( P \) at \( x=4 \). (d) Recommend optimal production from your analysis.</div>
+<textarea placeholder="Show work..."></textarea><div class="word-count">0 words</div></div>
+
+<details class="answer-key">
+<summary>📖 Answer Key &amp; Selected Solutions (click to expand)</summary>
+
+<div class="akq"><h4>Q15 Solution</h4>
+<p>Take \( \log \) of both sides: \( (x+1)\log 2 = (x-2)\log 5 \). Distribute: \( x\log 2 + \log 2 = x\log 5 - 2\log 5 \). Group \( x \) terms: \( x(\log 2 - \log 5) = -2\log 5 - \log 2 \). So \( x = \dfrac{-2\log 5 - \log 2}{\log 2 - \log 5} \approx \dfrac{-1.398 - 0.301}{-0.398} \approx 4.27 \).</p></div>
+
+<div class="akq"><h4>Q16 Solution</h4>
+<p>Rational candidates: \( \pm 1, \pm 2, \pm 3, \pm 6 \). Try \( x=1 \): \( 1-7+6 = 0 \). ✓ So \( x-1 \) is a factor. Synthetic-divide: quotient \( x^{2}+x-6 = (x+3)(x-2) \). Solutions: \( x=-3, 1, 2 \).</p></div>
+
+<div class="akq"><h4>Q17 Solution</h4>
+<p>Let \( u=x^{2} \): \( u^{2}-13u+36 \le 0 \). Factor: \( (u-4)(u-9) \le 0 \), so \( 4 \le u \le 9 \), giving \( 4 \le x^{2} \le 9 \). Solution: \( x \in [-3,-2]\cup[2,3] \).</p></div>
+
+<div class="akq"><h4>Q18 Solution</h4>
+<p>Smallest angle is opposite shortest side (8). Use cosine law with \( a=8, b=11, c=13 \): \( \cos A = (11^{2}+13^{2}-8^{2})/(2\cdot 11\cdot 13) = (121+169-64)/286 = 226/286 \approx 0.790 \). \( A = \cos^{-1}(0.790) \approx 38° \).</p></div>
+
+<div class="akq"><h4>Q19 Solution</h4>
+<p>LHS = \( (1-\cos^{2}\theta)/(\sin\theta\cos\theta) = \sin^{2}\theta/(\sin\theta\cos\theta) = \sin\theta/\cos\theta = \tan\theta \). ∎</p></div>
+
+<div class="akq"><h4>Q20 Solution</h4>
+<p>Components of 30 N at 135°: \( (30\cos 135°, 30\sin 135°) = (-21.21, 21.21) \). Sum components: \( R_x = 40+0-21.21 = 18.79 \); \( R_y = 0+50+21.21 = 71.21 \). Magnitude \( |\vec{R}|=\sqrt{18.79^{2}+71.21^{2}} \approx \sqrt{353+5071} \approx 73.6 \) N. Angle \( \tan^{-1}(71.21/18.79) \approx 75.2° \) from positive \( x \).</p></div>
+
+<div class="akq"><h4>Q27 Solution</h4>
+<p>(a) \( A=8000(1+0.054/12)^{12t} \). (b) At \( t=6 \): \( A=8000(1.0045)^{72} \approx 8000(1.3825) \approx \$11{,}060 \). (c) Set \( A=16000 \): \( 2 = (1.0045)^{12t} \). \( t = \log 2/(12\log 1.0045) \approx 0.301/(12 \cdot 0.001951) \approx 12.86 \) years.</p></div>
+
+<div class="akq"><h4>Q28 Solution</h4>
+<p>(a) \( \cos\theta=4/10 \), so \( \theta=\cos^{-1}(0.4) \approx 66.4° \). (b) \( h=\sqrt{10^{2}-4^{2}}=\sqrt{84} \approx 9.17 \) m. (c) New base 5 m, new height \( \sqrt{100-25}=\sqrt{75} \approx 8.66 \) m. Top drops by \( 9.17-8.66 \approx 0.51 \) m.</p></div>
+
+<div class="akq"><h4>Q29 Solution</h4>
+<p>(a) \( V_{cyl}=\pi (1)^{2}(3)=3\pi; V_{hem}=(2/3)\pi=2\pi/3 \). Total \( = 11\pi/3 \approx 11.52 \) m³. (b) Lateral cylinder \( = 2\pi(1)(3) = 6\pi \). Hemisphere surface \( = 2\pi(1)^{2}=2\pi \). Total \( = 8\pi \approx 25.13 \) m². (c) Cost \( \approx 25.13 \times \$80 \approx \$2010 \).</p></div>
+
+<div class="akq"><h4>Q30 Solution</h4>
+<p>(a) Period = 2(6 hours from high to low) = 12 h. (b) Amplitude \( a=(12-4)/2=4 \); axis \( c=8 \); \( k=2\pi/12=\pi/6 \). Cosine works with max at 6 a.m.: \( D(t) = 4\cos(\tfrac{\pi}{6}(t-6))+8 \). (c) \( 10 = 4\cos(\tfrac{\pi}{6}(t-6))+8 \Rightarrow \cos(\tfrac{\pi}{6}(t-6))=0.5 \Rightarrow \tfrac{\pi}{6}(t-6)=\pi/3 \Rightarrow t-6=2 \Rightarrow t=8 \) a.m. (first time after 6 a.m.).</p></div>
+
+<div class="akq"><h4>Q31 Solution</h4>
+<p>(a) Factor: \( P(x) = -2x(x^{2}-12x+36) = -2x(x-6)^{2} \). Zeros: \( x=0 \) (single) and \( x=6 \) (double). (b) Sign analysis: \( P(x)>0 \) only when \( -2x \) is positive and \( (x-6)^{2} \) is positive, i.e. \( x<0 \). But \( x \) represents production so \( x \ge 0 \) ⇒ \( P(x) \le 0 \) for all realistic \( x \). So the factory is never profitable with this model — recommend reviewing cost structure. (c) \( P(4) = -2(4)(4-6)^{2} = -8(4) = -32 \) (thousand $) loss. (d) Conclusion: avoid production at 400-unit batches; redesign.</p></div>
+
+</details>
+
+<footer>MCT4M — Mathematics for College Technology, Grade 12 College | Ontario Curriculum 2007 (Revised) | Final Exam, 30% of final mark</footer>
+</div>
+<script>
+function chkMC(q,c){
+    const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}
+    if(sl)sl.classList.add('show');
+}
+function chkNum(q,c){
+    const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+    const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(Math.abs(v-c)<0.5){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}
+    if(sl)sl.classList.add('show');
+}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

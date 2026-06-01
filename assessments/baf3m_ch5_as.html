@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Internal Control &amp; Ethics — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #15803d; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0;padding:0;box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color:#fff; padding:24px; border-radius:12px; margin-bottom:24px; }
+header h1 { font-size: 22px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/baf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 5: Internal Control &amp; Ethics</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your knowledge of internal-control principles, bank reconciliation, petty cash, the CPA Code of Conduct, financial-statement users, and information technology in accounting.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.1 — Internal Control</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">"Segregation of duties" means:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> One person handles all aspects of a transaction</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Different people perform authorisation, custody, and record-keeping</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Tasks are rotated daily among employees</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Multiple managers approve every transaction</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>The three functions (authorise / custody / record) must be in different hands so no single employee can both commit and conceal an error or fraud.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">Which is an example of a <em>physical</em> internal control?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Pre-numbered invoices</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Mandatory vacation policy</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Locked safes and alarm systems</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Independent bank reconciliation</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','c')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Physical controls include safes, locks, alarms, and security cameras — devices that protect physical assets.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.2 — Bank Reconciliation</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">An outstanding cheque is added to or subtracted from which balance?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Added to the book balance</label></li>
+        <li><label><input type="radio" name="q3" value="b"> Subtracted from the book balance</label></li>
+        <li><label><input type="radio" name="q3" value="c"> Added to the bank balance</label></li>
+        <li><label><input type="radio" name="q3" value="d"> Subtracted from the bank balance</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','d')">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Outstanding cheques have not yet been processed by the bank, so the bank balance is too high. Subtract them on the bank side.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">A \$15 bank service charge appears on the bank statement but has not been recorded by the company. After reconciliation, the company's journal entry is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> Dr. Cash 15; Cr. Bank Charges Expense 15</label></li>
+        <li><label><input type="radio" name="q4" value="b"> Dr. Bank Charges Expense 15; Cr. Cash 15</label></li>
+        <li><label><input type="radio" name="q4" value="c"> No entry needed</label></li>
+        <li><label><input type="radio" name="q4" value="d"> Dr. Accounts Payable 15; Cr. Cash 15</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Service charge is an expense; cash decreased.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.3 — Petty Cash</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Petty-cash fund \$150. At month-end, vouchers total \$110 and cash on hand is \$40. The replenishment cheque is for:</div>
+    <div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q5', 110)">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Cheque brings cash from \$40 back to \$150, so cheque = \$110. The Dr. is to the expense accounts on the vouchers; the Cr. is to Cash (the bank).</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">During replenishment, the Petty Cash account is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> Debited for the replenishment amount</label></li>
+        <li><label><input type="radio" name="q6" value="b"> Credited for the replenishment amount</label></li>
+        <li><label><input type="radio" name="q6" value="c"> Not touched at all</label></li>
+        <li><label><input type="radio" name="q6" value="d"> Closed to Income Summary</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','c')">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>The Petty Cash asset account changes only when establishing, increasing, or decreasing the fund. Replenishment debits expenses and credits Cash.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.4 — Ethics &amp; the CPA Code</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Which is NOT one of the five core values of the CPA Code of Professional Conduct?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> Integrity</label></li>
+        <li><label><input type="radio" name="q7" value="b"> Objectivity</label></li>
+        <li><label><input type="radio" name="q7" value="c"> Profitability</label></li>
+        <li><label><input type="radio" name="q7" value="d"> Confidentiality</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','c')">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>The five core values are <em>integrity, due care, objectivity, professional competence, confidentiality</em>. Profitability is a business goal, not a CPA-Code value.</div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">An accountant's supervisor instructs her to record some delivery orders as revenue before the goods ship. Which GAAP and/or CPA-Code value is being violated?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> Cost principle only</label></li>
+        <li><label><input type="radio" name="q8" value="b"> Revenue-recognition principle and the integrity value</label></li>
+        <li><label><input type="radio" name="q8" value="c"> Confidentiality only</label></li>
+        <li><label><input type="radio" name="q8" value="d"> Going-concern principle</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Revenue must be earned (delivery) before recognition; reporting prematurely violates revenue-recognition. Deliberately doing so violates integrity and objectivity.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 5.5–5.6 — Users &amp; IT</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Which of the following is an <em>external</em> user of financial information?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Production manager</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Marketing director</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Bank loan officer</label></li>
+        <li><label><input type="radio" name="q9" value="d"> Owner</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','c')">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>The bank is outside the business. Production manager, marketing director, and owner are inside.</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">A new internal-control risk introduced by computerised accounting (compared with manual accounting) is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> Arithmetic errors</label></li>
+        <li><label><input type="radio" name="q10" value="b"> Slow processing</label></li>
+        <li><label><input type="radio" name="q10" value="c"> Unauthorised access &amp; data breaches</label></li>
+        <li><label><input type="radio" name="q10" value="d"> Inability to produce statements</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Computerised systems eliminate arithmetic errors but introduce hacking, ransomware, and unauthorised-access risks.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.1 Internal Control</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.2 Bank Reconciliation</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.3 Petty Cash</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.4 Ethics / CPA Code</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.5 Users</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>5.6 IT in Accounting</label></div>
+</div>
+<footer>BAF3M — Financial Accounting Fundamentals, Grade 11 | Strands D &amp; E | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=10;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,correct){const sel=document.querySelector(`input[name="${qid}"]:checked`);if(!sel)return;const c=document.getElementById(qid),f=document.getElementById(qid+'-feedback'),s=document.getElementById(qid+'-solution');if(c.classList.contains('correct')||c.classList.contains('wrong'))return;answered++;if(sel.value===correct){score++;c.classList.add('correct');f.className='feedback show correct';f.textContent='✅ Correct!';}else{c.classList.add('wrong');f.className='feedback show wrong';f.textContent='❌ See solution.';}s.classList.add('show');updateProgress();}
+function checkNumeric(qid,correct){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const c=document.getElementById(qid),f=document.getElementById(qid+'-feedback'),s=document.getElementById(qid+'-solution');if(c.classList.contains('correct')||c.classList.contains('wrong'))return;answered++;if(Math.abs(v-correct)<0.5){score++;c.classList.add('correct');f.className='feedback show correct';f.textContent='✅ Correct!';}else{c.classList.add('wrong');f.className='feedback show wrong';f.textContent=`❌ Answer: ${correct}.`;}s.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

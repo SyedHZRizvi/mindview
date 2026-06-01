@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOH4M Ch 3: Communication, Decision-Making &amp; Conflict — Practice Quiz (AS Learning)</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #faf5ff; border: 1px solid #d8b4fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #faf5ff; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/boh4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 3: Communication, Decision-Making &amp; Conflict</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check after each topic. <strong>Not graded.</strong>
+    Topics: communication process, channels, active listening, decision-making, group decisions, conflict styles, stress, change models.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.1–3.2 — Communication Process &amp; Channels</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">Which is NOT a component of the Shannon-Weaver communication model?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Encoding</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Channel</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Profit margin</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Feedback</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','c')">Check</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Components: sender, encoding, channel, receiver, decoding, feedback, noise. Profit margin is not part of the model.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">Communication that flows between coworkers at the same level is called:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Upward</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Downward</label></li>
+        <li><label><input type="radio" name="q2" value="c"> Horizontal (lateral)</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Diagonal</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','c')">Check</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Peer-to-peer = <strong>horizontal (lateral)</strong>.</div>
+</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">Which is the strongest predictor of "good listening"?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Speaking less in meetings</label></li>
+        <li><label><input type="radio" name="q3" value="b"> Nodding frequently</label></li>
+        <li><label><input type="radio" name="q3" value="c"> Paraphrasing what was said to confirm understanding</label></li>
+        <li><label><input type="radio" name="q3" value="d"> Taking detailed notes</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','c')">Check</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Active listening centres on <strong>paraphrasing / reflection</strong> to verify understanding.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.3–3.4 — Decision-Making</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Herbert Simon's concept of "bounded rationality" says that real-world decision-makers:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> Always find the optimal solution</label></li>
+        <li><label><input type="radio" name="q4" value="b"> Have limited time and information, so they "satisfice"</label></li>
+        <li><label><input type="radio" name="q4" value="c"> Are completely irrational</label></li>
+        <li><label><input type="radio" name="q4" value="d"> Decide only by group consensus</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','b')">Check</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Simon: limited cognition + time + information → <strong>satisficing</strong> (good-enough decisions).</div>
+</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Irving Janis's "groupthink" describes:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> Healthy team consensus</label></li>
+        <li><label><input type="radio" name="q5" value="b"> A cohesive group prioritizing harmony over honest analysis</label></li>
+        <li><label><input type="radio" name="q5" value="c"> Anonymous expert input</label></li>
+        <li><label><input type="radio" name="q5" value="d"> Brainstorming rules</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','b')">Check</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Groupthink = cohesive group prizes harmony over reality; symptoms include illusion of invulnerability, self-censorship.</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Which technique uses anonymous, iterative rounds of expert opinion to converge on a forecast?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> Brainstorming</label></li>
+        <li><label><input type="radio" name="q6" value="b"> Delphi technique</label></li>
+        <li><label><input type="radio" name="q6" value="c"> Nominal Group Technique</label></li>
+        <li><label><input type="radio" name="q6" value="d"> Force-field analysis</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','b')">Check</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div><strong>Delphi technique</strong>: anonymous, iterative; removes status effects.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.5 — Conflict</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Thomas-Kilmann's "collaborating" style is characterized by:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> Low assertiveness, low cooperativeness</label></li>
+        <li><label><input type="radio" name="q7" value="b"> High assertiveness, low cooperativeness</label></li>
+        <li><label><input type="radio" name="q7" value="c"> Low assertiveness, high cooperativeness</label></li>
+        <li><label><input type="radio" name="q7" value="d"> High assertiveness, high cooperativeness</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','d')">Check</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Collaborating = high/high — win/win, ideal for important issues with time.</div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">A staff member yells at a customer (safety/ethics issue). Which Thomas-Kilmann style is the best initial response?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> Avoiding</label></li>
+        <li><label><input type="radio" name="q8" value="b"> Competing</label></li>
+        <li><label><input type="radio" name="q8" value="c"> Accommodating</label></li>
+        <li><label><input type="radio" name="q8" value="d"> Compromising</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Safety / ethical violation: <strong>competing</strong> — assertive intervention, no negotiation. Coaching happens later.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.6–3.7 — Stress &amp; Change</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Kurt Lewin's three-step change model is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Plan, Do, Check</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Unfreeze, Change, Refreeze</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Urgency, Coalition, Vision</label></li>
+        <li><label><input type="radio" name="q9" value="d"> Forming, Storming, Norming</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','b')">Check</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Lewin: <strong>Unfreeze → Change → Refreeze</strong>.</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Amy Edmondson's "psychological safety" is best defined as:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> A comfortable office</label></li>
+        <li><label><input type="radio" name="q10" value="b"> Feeling safe to speak up, admit mistakes, and ask questions</label></li>
+        <li><label><input type="radio" name="q10" value="c"> Avoiding all conflict</label></li>
+        <li><label><input type="radio" name="q10" value="d"> Being protected from termination</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Edmondson: psychological safety = feeling safe to speak up, ask questions, admit mistakes without retaliation.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.1 Communication process &amp; barriers</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.2 Channels &amp; active listening</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.3 Rational decision-making</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.4 Group decisions &amp; groupthink</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.5 Thomas-Kilmann conflict styles</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.6 Stress &amp; psychological safety</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.7 Lewin &amp; Kotter change models</label></div>
+</div>
+
+<footer>BOH4M — Business Leadership: Management Fundamentals, Grade 12 | C. Management Challenges | Assessment AS Learning</footer>
+</div>
+<script>
+let score = 0, answered = 0; const total = 10;
+function updateProgress() { document.getElementById('totalScore').textContent = score; document.getElementById('progressFill').style.width = (answered / total * 100) + '%'; }
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) { score++; card.classList.add('correct'); feedback.className = 'feedback show correct'; feedback.textContent = '✅ Correct!'; }
+    else { card.classList.add('wrong'); feedback.className = 'feedback show wrong'; feedback.textContent = '❌ See solution below.'; }
+    solution.classList.add('show'); updateProgress();
+}
+</script>
+</body>
+</html>

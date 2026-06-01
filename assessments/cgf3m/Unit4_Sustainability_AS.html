@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Sustainability — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin: 20px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cgf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Sustainability — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand D</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of sustainability concepts, forestry and fisheries, energy transitions, water management, Indigenous stewardship, and the circular economy.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The Brundtland Report (1987) defined sustainable development as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Economic growth without environmental constraint</label></li>
+<li><label><input type="radio" name="q1" value="b"> Meeting present needs without compromising future generations' ability to meet their own needs</label></li>
+<li><label><input type="radio" name="q1" value="c"> Eliminating all carbon emissions immediately</label></li>
+<li><label><input type="radio" name="q1" value="d"> Banning resource extraction</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Gro Harlem Brundtland's 1987 report Our Common Future is the source of the canonical definition, ratified by every major UN sustainability process since.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Kate Raworth's "doughnut" model identifies sustainability as the space:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Above the planetary ceiling and below social floor</label></li>
+<li><label><input type="radio" name="q2" value="b"> Above the social floor and below the ecological ceiling</label></li>
+<li><label><input type="radio" name="q2" value="c"> Inside the ecological ceiling only</label></li>
+<li><label><input type="radio" name="q2" value="d"> Where GDP grows at 3% per year</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The doughnut defines a safe and just operating space — above a social foundation (food, water, health, education, voice) and below the ecological ceiling defined by the nine planetary boundaries.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">The Atlantic cod moratorium was imposed in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> 1962 (after the Walkerton crisis)</label></li>
+<li><label><input type="radio" name="q3" value="b"> 1992 (after stocks had collapsed 99%)</label></li>
+<li><label><input type="radio" name="q3" value="c"> 2002 (after the Mount Polley dam failure)</label></li>
+<li><label><input type="radio" name="q3" value="d"> 2012 (after Fort McMurray fire)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> The 1992 Northern Cod moratorium cost 35,000 fishery jobs and remains the largest single mass layoff in Canadian history. The food-web disruption proved so severe that the stock has only partly recovered three decades later.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">From 2010 to 2024, utility-scale solar electricity cost (LCOE) fell approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> 10%</label></li>
+<li><label><input type="radio" name="q4" value="b"> 30%</label></li>
+<li><label><input type="radio" name="q4" value="c"> 90%</label></li>
+<li><label><input type="radio" name="q4" value="d"> Solar cost rose over this period</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Utility-scale solar LCOE fell from about $380/MWh in 2010 to $33/MWh in 2024 — approximately a 91% drop. Onshore wind fell about 70%. Both are now cheaper than new fossil-fuel generation in most markets.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">If a Toronto home consumes 9,000 kWh/year and rooftop solar in Toronto produces 240 kWh/m²/yr at 20% panel efficiency (1200 kWh/m² annual irradiance), what panel area is needed?</div>
+<input type="text" id="q5-in" placeholder="Enter m² (e.g., 38)">
+<button class="btn" onclick="cN('q5',37.5)">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Area = 9,000 / 240 = <strong>37.5 m²</strong>. About 22 typical 1.7-m² panels = ~8.8 kW system. Capital cost ~$22,000 at $2.50/W; simple payback ~16 years.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Canada's electricity grid is approximately what percentage non-emitting (hydro + nuclear + renewables)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> 20%</label></li>
+<li><label><input type="radio" name="q6" value="b"> 50%</label></li>
+<li><label><input type="radio" name="q6" value="c"> 84%</label></li>
+<li><label><input type="radio" name="q6" value="d"> 100% in all provinces</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','c')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> About 84% of Canadian electricity is non-emitting (60% hydro, 13% nuclear, 11% wind/solar/biomass). But the mix varies enormously by province — Quebec/Manitoba/BC are mostly hydro; Alberta/Saskatchewan are still gas-and-coal dominant though transitioning.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">As of late 2024, Canada had approximately how many long-term drinking-water advisories on First Nations reserves?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> 0 (all resolved)</label></li>
+<li><label><input type="radio" name="q7" value="b"> About 28 still in place</label></li>
+<li><label><input type="radio" name="q7" value="c"> About 500</label></li>
+<li><label><input type="radio" name="q7" value="d"> Cannot be determined</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> The federal government committed in 2015 to end all long-term advisories by 2021, but progress has slipped; about 28 long-term advisories on First Nations reserves remained as of late 2024. This is both a sustainability and a human-rights issue.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Tallurutiup Imanga (Nunavut, 2019) is Canada's largest:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Hydroelectric reservoir</label></li>
+<li><label><input type="radio" name="q8" value="b"> Marine protected area (108,000 km² Inuit-led IPCA)</label></li>
+<li><label><input type="radio" name="q8" value="c"> Coal mine</label></li>
+<li><label><input type="radio" name="q8" value="d"> Wind farm</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Tallurutiup Imanga (Lancaster Sound), established 2019, is Canada's largest marine protected area (108,000 km², roughly the area of New Brunswick) and is co-managed with the Qikiqtani Inuit Association. It is part of Canada's 30 by 30 marine commitment.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The R-hierarchy ranks waste strategies from most to least preferred as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Recycle > Reuse > Reduce > Refuse</label></li>
+<li><label><input type="radio" name="q9" value="b"> Refuse > Reduce > Reuse > Repair > Recycle > Recover</label></li>
+<li><label><input type="radio" name="q9" value="c"> Recover > Recycle > Refuse</label></li>
+<li><label><input type="radio" name="q9" value="d"> All R-strategies are equally good</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> The R-hierarchy is: refuse (don't acquire) > reduce > reuse > repair > refurbish > remanufacture > repurpose > recycle > recover energy. The earlier strategies eliminate impact; the later ones merely lessen it.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Canada's 2022 federal ban on single-use plastics covers which six items?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> All plastic packaging</label></li>
+<li><label><input type="radio" name="q10" value="b"> Checkout bags, cutlery, foodservice ware made of problematic plastics, ring carriers, stir sticks, straws</label></li>
+<li><label><input type="radio" name="q10" value="c"> Plastic bottles and bottle caps only</label></li>
+<li><label><input type="radio" name="q10" value="d"> No federal plastics ban exists</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Canada's six banned single-use plastics: checkout bags, cutlery, foodservice ware made of problematic plastics (e.g., polystyrene), ring carriers, stir sticks, and straws. Full implementation phased through 2025.</div></div>
+
+<footer>CGF3M — Physical Geography, Grade 11 | Strand D: Sustainability | Assessment AS Learning — Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<Math.max(1,c*0.1)){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: Subsidiary Ledgers — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area { margin-top: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #0e7490; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.reflect-item label { flex: 1; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/bat4m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 2: Subsidiary Ledgers &amp; Special Journals</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check after each topic. Not graded. Topics: special journals, subsidiary ledgers, perpetual vs periodic, partnerships, corporations, payroll.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.1 — Special Journals</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A cash sale of merchandise should be recorded in which special journal?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Sales journal</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Cash receipts journal</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Purchases journal</label></li>
+        <li><label><input type="radio" name="q1" value="d"> General journal</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution">
+        <div class="solution-label">Solution:</div>
+        The sales journal records <em>credit</em> sales only. Cash sales go in the cash receipts journal because they involve a cash inflow.
+    </div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">Terms 2/10 n/30 mean:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> 2% discount if paid within 10 days; full amount due in 30 days</label></li>
+        <li><label><input type="radio" name="q2" value="b"> 2 days of credit and 10-day payment</label></li>
+        <li><label><input type="radio" name="q2" value="c"> 10% discount if paid within 2 days</label></li>
+        <li><label><input type="radio" name="q2" value="d"> Net 2/10/30 payment plan</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','a')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution">
+        <div class="solution-label">Solution:</div>
+        "2/10 n/30" = "2 percent discount if paid in 10 days; net (full) amount due in 30 days."
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.2 — Subsidiary Ledgers</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">The AR control account shows \$ 25,000. The schedule of accounts receivable totals \$ 24,500. This means:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> The schedule is correct; the control is wrong</label></li>
+        <li><label><input type="radio" name="q3" value="b"> The control is correct; the schedule is wrong</label></li>
+        <li><label><input type="radio" name="q3" value="c"> There is a \$ 500 posting error to be located</label></li>
+        <li><label><input type="radio" name="q3" value="d"> No action is required; the difference is immaterial</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','c')">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution">
+        <div class="solution-label">Solution:</div>
+        The sum of subsidiary balances must equal the control account. A \$ 500 difference is a posting error that must be traced and fixed.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.3 — Perpetual vs Periodic Inventory</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Beginning inventory \$ 10,000; net purchases \$ 65,000; ending inventory \$ 14,000. Compute COGS under the periodic system.</div>
+    <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q4', 61000)">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution">
+        <div class="solution-label">Solution:</div>
+        \( \text{COGS} = \text{BI} + \text{Net Purchases} - \text{EI} = 10{,}000 + 65{,}000 - 14{,}000 = \$ 61{,}000 \).
+    </div>
+</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Under the perpetual system, when 5 units are sold at \$ 50 each (cost \$ 30 each):</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> One entry: debit Cash, credit Sales</label></li>
+        <li><label><input type="radio" name="q5" value="b"> Two entries: revenue entry AND debit COGS, credit Inventory</label></li>
+        <li><label><input type="radio" name="q5" value="c"> One entry: debit COGS, credit Inventory</label></li>
+        <li><label><input type="radio" name="q5" value="d"> No entry — adjust at year end</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','b')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution">
+        <div class="solution-label">Solution:</div>
+        Perpetual records (1) Cash/AR debit and Sales credit; (2) COGS debit and Inventory credit (at cost).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.4 — Partnerships</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Net income \$ 100,000. Partners A and B share in a 3:2 ratio. A's allocation is:</div>
+    <div class="answer-area"><input type="text" id="q6-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q6', 60000)">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution">
+        <div class="solution-label">Solution:</div>
+        A receives \( \dfrac{3}{5} \times 100{,}000 = \$ 60{,}000 \) and B receives \( \dfrac{2}{5} \times 100{,}000 = \$ 40{,}000 \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.5 — Corporations</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">A 2-for-1 stock split requires:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> A journal entry — debit Retained Earnings</label></li>
+        <li><label><input type="radio" name="q7" value="b"> A journal entry — debit Common Shares</label></li>
+        <li><label><input type="radio" name="q7" value="c"> No journal entry — only a memo</label></li>
+        <li><label><input type="radio" name="q7" value="d"> A debit to Cash</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','c')">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution">
+        <div class="solution-label">Solution:</div>
+        A stock split changes only the number of shares — total share capital is unchanged. Only a memo entry is required.
+    </div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">A company has 50,000 common shares outstanding. The Board declares a \$ 0.40 per share dividend. Total dividend declared:</div>
+    <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q8', 20000)">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution">
+        <div class="solution-label">Solution:</div>
+        \( 50{,}000 \times 0.40 = \$ 20{,}000 \). Entry on declaration date: debit Cash Dividends Declared, credit Dividends Payable.
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.6 — Payroll</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Employee gross pay \$ 2,000. Deductions: CPP \$ 119, EI \$ 33.20, income tax \$ 260. Net pay is:</div>
+    <div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q9', 1587.80)">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution">
+        <div class="solution-label">Solution:</div>
+        Total deductions \( = 119 + 33.20 + 260 = \$ 412.20 \). Net pay \( = 2{,}000 - 412.20 = \$ 1{,}587.80 \).
+    </div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">If the employee EI deduction is \$ 33.20, the employer's matched EI contribution is:</div>
+    <div class="answer-area"><input type="text" id="q10-input" placeholder="Enter dollars and cents..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q10', 46.48)">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution">
+        <div class="solution-label">Solution:</div>
+        Employer EI = 1.4× employee. \( 33.20 \times 1.4 = \$ 46.48 \).
+    </div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.1 Special Journals</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.2 Subsidiary Ledgers &amp; Control Accounts</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.3 Perpetual vs Periodic Inventory</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.4 Partnerships</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.5 Corporations &amp; Dividends</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.6 Payroll Accounting</label></div>
+</div>
+
+<footer>
+    BAT4M — Financial Accounting Principles, Grade 12 | Ontario Curriculum 2006 (Revised)<br>
+    Strand B: Tools &amp; Procedures of Accounting | Assessment AS Learning — Self-Directed, Not Graded
+</footer>
+
+</div>
+
+<script>
+let score = 0;
+let answered = 0;
+const total = 10;
+
+function updateProgress() {
+    document.getElementById('totalScore').textContent = score;
+    document.getElementById('progressFill').style.width = (answered / total * 100) + '%';
+}
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = '❌ Not quite. See the solution below.';
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+function checkNumeric(qid, correct) {
+    const input = document.getElementById(qid + '-input');
+    const val = parseFloat(input.value.trim());
+    if (isNaN(val)) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (Math.abs(val - correct) < 0.05) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = `❌ The correct answer is ${correct}. See the solution below.`;
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: Journal &amp; Ledger — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0d9488; --correct: #15803d; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color:#fff; padding:24px; border-radius:12px; margin-bottom:24px; }
+header h1 { font-size: 22px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0d9488;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/baf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 2: The Journal &amp; the Ledger</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check your understanding of source documents, two-column general journal, ledger posting, cross-referencing, and subsidiary ledgers.
+</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.1 — Source Documents</div>
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A duplicate sales invoice supports which side of a journal entry?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Credit to Cash</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Debit to Accounts Receivable</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Debit to Purchases</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Debit to Supplies</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>A sales invoice is issued when the company sells on account; the company will receive cash later, so Accounts Receivable is debited (asset, ↑).</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">A bank service charge is documented by:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> A purchase invoice</label></li>
+        <li><label><input type="radio" name="q2" value="b"> A bank debit memo</label></li>
+        <li><label><input type="radio" name="q2" value="c"> A petty-cash voucher</label></li>
+        <li><label><input type="radio" name="q2" value="d"> A cash-register tape</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>The bank issues a debit memo to inform the depositor that the account has been debited for a service charge.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.2 — General Journal Format</div>
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">In a two-column general journal, the credited account is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Written flush left</label></li>
+        <li><label><input type="radio" name="q3" value="b"> Indented about one centimetre</label></li>
+        <li><label><input type="radio" name="q3" value="c"> In a separate column</label></li>
+        <li><label><input type="radio" name="q3" value="d"> Underlined</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','b')">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Convention: debited account flush left, credited account indented one centimetre. The explanation is indented further.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">When is the Posting Reference (P.R.) column filled in for a journal line?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> Before the entry is made</label></li>
+        <li><label><input type="radio" name="q4" value="b"> While the entry is being made</label></li>
+        <li><label><input type="radio" name="q4" value="c"> After the line has been posted to the ledger</label></li>
+        <li><label><input type="radio" name="q4" value="d"> Never — only the date matters</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','c')">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>P.R. is filled in <em>after</em> posting so that an empty P.R. always reveals an unposted line.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.3 — Compound Entries</div>
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">The owner invests \$3 000 cash and \$1 200 of office equipment to start a business. Total debits in the opening entry equal:</div>
+    <div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q5', 4200)">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Dr. Cash 3 000; Dr. Office Equipment 1 200; Cr. Capital 4 200. Total Dr = 4 200.</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">A sale of \$900 is half cash, half on account. Which entry is correct?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> Dr. Cash 900; Cr. Sales 900</label></li>
+        <li><label><input type="radio" name="q6" value="b"> Dr. Cash 450; Dr. Accounts Receivable 450; Cr. Sales 900</label></li>
+        <li><label><input type="radio" name="q6" value="c"> Dr. Accounts Receivable 900; Cr. Sales 900</label></li>
+        <li><label><input type="radio" name="q6" value="d"> Dr. Sales 900; Cr. Cash 450; Cr. Accounts Receivable 450</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','b')">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Cash (asset, ↑ \$450), A/R (asset, ↑ \$450), Sales Revenue (Cr ↑ \$900).</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.4 — Chart of Accounts &amp; Ledger</div>
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Which range of account numbers is typically reserved for liability accounts?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> 100–199</label></li>
+        <li><label><input type="radio" name="q7" value="b"> 200–299</label></li>
+        <li><label><input type="radio" name="q7" value="c"> 300–399</label></li>
+        <li><label><input type="radio" name="q7" value="d"> 400–499</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','b')">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>100s assets; 200s liabilities; 300s equity; 400s revenue; 500s expenses.</div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">A three-column ledger account has a Debit column, a Credit column, and a:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> Description column</label></li>
+        <li><label><input type="radio" name="q8" value="b"> Running Balance column</label></li>
+        <li><label><input type="radio" name="q8" value="c"> Account-number column</label></li>
+        <li><label><input type="radio" name="q8" value="d"> Tax column</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>The third column is the running Balance, recomputed after every posting.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 2.5 &amp; 2.6 — Posting &amp; Subsidiary Ledgers</div>
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">The A/R control account shows \$5 200 Dr. The subsidiary ledger totals: A. Tan \$1 800; B. Singh \$1 600; C. Lee \$1 700. Difference between control and subsidiary total:</div>
+    <div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q9', 100)">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Subsidiary total: \(1\,800 + 1\,600 + 1\,700 = 5\,100\). Control: \$5 200. Difference \(5\,200 - 5\,100 = 100\). The bookkeeper must locate a \$100 posting that updated only one of the two ledgers.</div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">When a customer payment is received, which two ledgers are affected?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> General ledger only</label></li>
+        <li><label><input type="radio" name="q10" value="b"> Subsidiary ledger only</label></li>
+        <li><label><input type="radio" name="q10" value="c"> Both the general ledger (A/R control) and the customer's subsidiary-ledger card</label></li>
+        <li><label><input type="radio" name="q10" value="d"> Neither — only the journal</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>The general-ledger A/R control is reduced and the specific customer's card in the subsidiary ledger is reduced, keeping the reconciliation intact.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.1 Source Documents</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.2 General Journal</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.3 Compound Entries</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.4 Chart of Accounts &amp; Ledger</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.5 Posting / Cross-reference</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>2.6 Subsidiary Ledgers</label></div>
+</div>
+<footer>BAF3M — Financial Accounting Fundamentals, Grade 11 | Strand B: Accounting Practices for a Service Business | Assessment AS Learning — Self-Directed</footer>
+</div>
+<script>
+let score=0,answered=0;const total=10;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,correct){const selected=document.querySelector(`input[name="${qid}"]:checked`);if(!selected)return;const card=document.getElementById(qid),feedback=document.getElementById(qid+'-feedback'),solution=document.getElementById(qid+'-solution');if(card.classList.contains('correct')||card.classList.contains('wrong'))return;answered++;if(selected.value===correct){score++;card.classList.add('correct');feedback.className='feedback show correct';feedback.textContent='✅ Correct!';}else{card.classList.add('wrong');feedback.className='feedback show wrong';feedback.textContent='❌ Not quite. See the solution below.';}solution.classList.add('show');updateProgress();}
+function checkNumeric(qid,correct){const input=document.getElementById(qid+'-input'),val=parseFloat(input.value.trim());if(isNaN(val))return;const card=document.getElementById(qid),feedback=document.getElementById(qid+'-feedback'),solution=document.getElementById(qid+'-solution');if(card.classList.contains('correct')||card.classList.contains('wrong'))return;answered++;if(Math.abs(val-correct)<0.5){score++;card.classList.add('correct');feedback.className='feedback show correct';feedback.textContent='✅ Correct!';}else{card.classList.add('wrong');feedback.className='feedback show wrong';feedback.textContent=`❌ Answer: ${correct}.`;}solution.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Ch 4: Measurement — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #ea580c; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#ea580c;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mct3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 4: Measurement</h1>
+<div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check on SI units, conversions, significant figures, surface area, volume, and scaling.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.1–4.2 — SI Units &amp; Precision</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div>
+<div class="q-text">Convert 3.5 km to centimetres.</div>
+<div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q1', 350000)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>1 km = 10⁵ cm. So 3.5 km = 3.5 × 10⁵ = 350 000 cm.</div>
+</div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div>
+<div class="q-text">How many significant figures in 0.0420?</div>
+<div class="answer-area"><input type="text" id="q2-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q2', 3)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Leading zeros not significant. Three sig figs: 4, 2, and trailing 0 (after the decimal).</div>
+</div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div>
+<div class="q-text">Convert 250 mg to kg.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> 0.000 25 kg</label></li>
+<li><label><input type="radio" name="q3" value="b"> 0.0025 kg</label></li>
+<li><label><input type="radio" name="q3" value="c"> 0.025 kg</label></li>
+<li><label><input type="radio" name="q3" value="d"> 0.25 kg</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>1 kg = 10⁶ mg. 250 mg ÷ 10⁶ = 2.5 × 10⁻⁴ = 0.000 25 kg.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.3 — Surface Area &amp; Volume</div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div>
+<div class="q-text">A cylinder has radius 5 cm and height 12 cm. Find its volume (round to nearest integer).</div>
+<div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q4', 942)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( V = \pi r^2 h = \pi (25)(12) = 300\pi \approx 942 \) cm³.</div>
+</div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div>
+<div class="q-text">A sphere has radius 3 m. Find its volume (round to nearest integer).</div>
+<div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q5', 113)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\( V = \tfrac{4}{3}\pi r^3 = \tfrac{4}{3}\pi (27) = 36\pi \approx 113 \) m³.</div>
+</div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div>
+<div class="q-text">A cone has radius 4 cm and slant height 5 cm. Find its lateral surface area (round to 1 dp).</div>
+<div class="answer-area"><input type="text" id="q6-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q6', 62.8)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Lateral SA = \( \pi r s = \pi(4)(5) = 20\pi \approx 62.8 \) cm².</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.4 — Similar Figures</div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div>
+<div class="q-text">Two similar cubes have side lengths in the ratio 2:5. The ratio of their volumes is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q7" value="a"> 2:5</label></li>
+<li><label><input type="radio" name="q7" value="b"> 4:25</label></li>
+<li><label><input type="radio" name="q7" value="c"> 8:125</label></li>
+<li><label><input type="radio" name="q7" value="d"> 25:8</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q7','c')">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Volume ratio = (linear ratio)³ = \( (2/5)^3 = 8/125 \).</div>
+</div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div>
+<div class="q-text">A scale model is 1/100 the size of an actual building. If 0.5 m² of surface area on the model is painted, find the equivalent area on the actual building.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q8" value="a"> 5 m²</label></li>
+<li><label><input type="radio" name="q8" value="b"> 50 m²</label></li>
+<li><label><input type="radio" name="q8" value="c"> 500 m²</label></li>
+<li><label><input type="radio" name="q8" value="d"> 5000 m²</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q8','d')">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Area scale = 100² = 10 000. 0.5 × 10 000 = 5000 m².</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 4.5 — 3-D Trigonometry</div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div>
+<div class="q-text">A box has dimensions 3 × 4 × 12. Find the body diagonal.</div>
+<div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q9', 13)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( d = \sqrt{3^2 + 4^2 + 12^2} = \sqrt{9 + 16 + 144} = \sqrt{169} = 13 \).</div>
+</div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div>
+<div class="q-text">A square-based pyramid has base side 8 m and slant height 5 m. Find its vertical height.</div>
+<div class="answer-area"><input type="text" id="q10-input" placeholder="Enter a number..."></div>
+<button class="btn btn-check" onclick="checkNumeric('q10', 3)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Half-base = 4. Slant 5, half-base 4, height \( h \): \( h = \sqrt{5^2 - 4^2} = \sqrt{25 - 16} = 3 \).</div>
+</div>
+</div>
+
+<footer>MCT3M — Mathematics for College Technology, Grade 11 | Strand D: Measurement &amp; Geometry | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=10;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Not quite. See solution below.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<Math.max(0.5, c*0.01)){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ The correct answer is ${c}. See solution below.`;}sl.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

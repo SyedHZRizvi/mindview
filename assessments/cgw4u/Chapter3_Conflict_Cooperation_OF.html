@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3: Conflict &amp; Cooperation — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cgw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 3: Conflict &amp; Cooperation — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /52 marks &nbsp;|&nbsp; Show all work.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/13</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">List the six principal organs of the United Nations and state one main function of each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>General Assembly (deliberation, one vote per state). Security Council (peace and security; P5 + 10 elected). ICJ (disputes between states; The Hague). Secretariat (UN civil service, led by Secretary-General). ECOSOC (coordinates social and development work). Trusteeship Council (formerly oversaw decolonisation; largely inactive).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">A refugee differs from an internally displaced person (IDP) primarily because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Refugees are wealthier</label></li>
+<li><label><input type="radio" name="q2"> Refugees have crossed an international border; IDPs have not</label></li>
+<li><label><input type="radio" name="q2"> IDPs are protected by treaty; refugees are not</label></li>
+<li><label><input type="radio" name="q2"> Refugees include climate migrants; IDPs do not</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> The 1951 Convention's refugee definition requires crossing an international border with well-founded fear of persecution. IDPs are protected primarily by national governments (under the 1998 UN Guiding Principles on Internal Displacement, non-binding).</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Describe the three pillars of the Responsibility to Protect doctrine.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Pillar 1: each state has primary responsibility to protect its population from genocide, war crimes, crimes against humanity, and ethnic cleansing. Pillar 2: international community has responsibility to assist states in meeting that responsibility. Pillar 3: if a state is manifestly failing, international community has responsibility to take timely and decisive action (diplomatic, humanitarian, and, as last resort, military force authorised by the Security Council).</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name three Canadian contributions to global peace and cooperation, with one example for each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Modern UN peacekeeping: Pearson's 1956 Suez proposal; Nobel Peace Prize 1957. (2) Treaty leadership: Ottawa Treaty banning anti-personnel landmines (1997); ICC Rome Statute (1998); R2P doctrine (2005). (3) NATO and NORAD: founding NATO member; co-founded NORAD 1958. (4) Diplomatic mediation: Suez, Cyprus, Sinai, and the seven Security Council terms.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">The Geneva Conventions (1949) primarily govern:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> International trade</label></li>
+<li><label><input type="radio" name="q5"> The laws of armed conflict (treatment of wounded soldiers, POWs, civilians)</label></li>
+<li><label><input type="radio" name="q5"> Maritime boundaries</label></li>
+<li><label><input type="radio" name="q5"> Climate cooperation</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Four Geneva Conventions (1949) and three additional Protocols (1977, 2005) form the core of international humanitarian law, regulating conduct in armed conflict.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="qtxt">In 2024 Lebanon (population 5.5 million) hosted ~1.5 million refugees; Germany (population 84 million) hosted ~1.2 million; the United States (population 335 million) accepted ~125 000 refugees that year. Compute per-1000-residents burden for each. Discuss what these numbers reveal about global responsibility sharing.</div>
+<textarea placeholder="Show calculations..."></textarea>
+<details><summary>Answer Key</summary><p>Lebanon: 1 500 000/5 500 000 × 1000 ≈ 273/1000. Germany: 1 200 000/84 000 000 × 1000 ≈ 14/1000. US: 125 000/335 000 000 × 1000 ≈ 0.37/1000. Lebanon's burden is ~735× the US's and ~19× Germany's. Most refugees are hosted by low- or middle-income countries adjacent to crisis. Equitable responsibility sharing would require resettlement quotas, financial transfers, and capacity support to host countries. Strong answers reference UN Refugee Compact (2018).</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">A hypothetical state begins systematic attacks on a minority ethnic group, with credible reports of mass killings. Apply the three R2P pillars to identify what international actors should do at each stage, and identify two political obstacles to implementation.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Pillar 1: state is failing — primary responsibility unmet. Pillar 2: international actors offer diplomacy (Secretary-General good offices, regional mediation), humanitarian access, ICRC engagement, sanctions targeting perpetrators. Pillar 3: Security Council considers Chapter VII action — arms embargoes, ICC referral, last-resort use of force. Obstacles: (1) P5 veto when permanent members have strategic interest (Syria 2011–present); (2) lessons from Libya 2011 (mission creep concerns); (3) lack of follow-on stabilisation funding; (4) state-sovereignty resistance; (5) intelligence credibility disputes.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">From 1990 to 2023, approximately 40 vetoes were cast in the Security Council out of about 1500 resolution votes. Compute the rough share of votes vetoed. Then explain why this small percentage has an outsized geopolitical effect.</div>
+<textarea placeholder="Show calculations..."></textarea>
+<details><summary>Answer Key</summary><p>Vetoes ≈ 40/1500 ≈ 2.7%. Effect is outsized because vetoes are concentrated on the most consequential resolutions — Syria, Israel-Palestine, Ukraine, the DPRK — where binding Chapter VII action is most needed. A single veto can block authorised force, sanctions, or referrals to the ICC for years. The structural power of the veto thus exceeds its statistical frequency.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">In 250–350 words, explain how geographic factors have contributed to a current conflict of your choice (Russia–Ukraine, Israel–Palestine, Sudan, Yemen, Myanmar, DRC). Address at least three factors (resources, borders, ethnic distribution, climate, governance).</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Answers vary. Example — Russia-Ukraine: borders (Crimea, Donbas, NATO eastward expansion); resources (Black Sea grain exports, gas pipelines, critical minerals); ethnicity (Russian-speaking populations in eastern Ukraine); governance (Maidan 2014 and competing influence spheres); climate (longer-term effects on agriculture and northern shipping routes). Strong answers integrate factors rather than listing them, cite specific dates (24 Feb 2022 invasion), and acknowledge multiple perspectives. Weak answers offer a single-cause narrative.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Construct a 4-row table comparing the UN, NATO, the African Union, and the OSCE. Columns: Founded, Headquarters, Membership, Primary mandate.</div>
+<textarea placeholder="Build your table..."></textarea>
+<details><summary>Answer Key</summary><p>UN: 1945 / New York / 193 / international peace, security, development. NATO: 1949 / Brussels / 32 / collective defence (Article 5). AU: 2002 (succeeded OAU 1963) / Addis Ababa / 55 / continental peace, integration, development. OSCE: 1995 (succeeded CSCE 1975) / Vienna / 57 / comprehensive security including human rights and elections.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Sketch or describe a labelled diagram showing the relationship between refugees, IDPs, asylum seekers, and the principle of non-refoulement.</div>
+<textarea placeholder="Describe your diagram..."></textarea>
+<details><summary>Answer Key</summary><p>Diagram should show: person displaced → if crossed border &amp; well-founded fear → asylum seeker (pending) → recognised → refugee under UNHCR mandate, protected by non-refoulement. If not crossed border → IDP, under home-state protection (and 1998 UN Guiding Principles). Durable solutions branch from refugee status: repatriation, integration, resettlement. Climate-displaced persons currently fall outside refugee definition.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [13 marks]</div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case study — Canadian resettlement of Syrians:</strong> Canada resettled ~40 000 Syrians between November 2015 and early 2016. Identify two strengths and two limitations of this model.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strengths: (1) Private Sponsorship of Refugees Program — pioneered by Canada in 1979 — engages civil society and accelerates integration; (2) point-of-arrival settlement support, including language, health, and housing; (3) public legitimacy from PM-level political commitment; (4) faster economic and social integration than many comparable programs. Limitations: (1) housing affordability and labour-market credentialing gaps; (2) family-reunification backlogs; (3) inconsistent provincial settlement services; (4) limited capacity to scale during Ukraine 2022 and Afghanistan 2021 simultaneously. Strong answers note the trade-off between speed and depth of integration.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Case study — Nile water sharing:</strong> Ethiopia's Grand Ethiopian Renaissance Dam (GERD) on the Blue Nile became operational in stages from 2020. Egypt depends on Nile waters for ~97% of its fresh water. Identify two geographic factors creating tension and two cooperative mechanisms that could reduce risk.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Factors: upstream (Ethiopia) controls flow during dam filling; downstream (Egypt, Sudan) depends on existing flow allocations from 1959 bilateral agreement. Other: variable rainfall, growing populations, climate change, sediment displacement, and lack of an agreed legal framework covering all 11 riparians. Cooperative mechanisms: Nile Basin Initiative (1999) and ongoing AU-mediated talks; agreed coordinated filling schedule; data sharing on river flows; mutual hydroelectric exchange (Ethiopian power to Sudan and Egypt); third-party mediation by international agencies.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Issue-rich focus — Conflict minerals:</strong> Cobalt for EV batteries is concentrated in the Democratic Republic of the Congo (~70% of global mining), with documented child-labour and armed-group financing. Identify two roles for Canadian/EU policy and two roles for industry to reduce harm.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Policy: (1) due-diligence regulations (EU Conflict Minerals Regulation 2021; Canadian Modern Slavery Act 2024); (2) public procurement criteria privileging certified sources; (3) DRC capacity-building and ASM (artisanal/small-scale mining) formalisation. Industry: (1) Initiative for Responsible Mining Assurance (IRMA) third-party certification; (2) supplier audits and traceability (blockchain pilots); (3) investment in non-DRC supply (Canadian cobalt in Ontario's Cobalt Camp, recycling, sodium-ion battery R&amp;D); (4) on-site community benefit agreements. Trade-offs: reducing harm without an outright boycott of legitimate DRC livelihoods.</p></details></div>
+
+<footer>CGW4U — World Issues, Grade 12 | Strand D: Conflict &amp; Cooperation | Assessment OF Learning — Graded</footer>
+</div></body></html>

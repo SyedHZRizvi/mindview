@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Romeo and Juliet — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #7c3aed; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Romeo and Juliet — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 90 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Open answer keys after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [12 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each character and their role in the play: (a) Friar Lawrence, (b) Tybalt, (c) Mercutio.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) <strong>Friar Lawrence</strong> — Franciscan friar who secretly marries Romeo and Juliet, hoping the union will end the feud; later gives Juliet the sleeping potion. (b) <strong>Tybalt</strong> — Juliet's hot-headed cousin (Capulet); kills Mercutio; killed by Romeo. (c) <strong>Mercutio</strong> — Romeo's friend, neither Capulet nor Montague; delivers the Queen Mab speech (1.4); dies with the curse "A plague o' both your houses!" (3.1).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Identify the verse form used in most of <em>Romeo and Juliet</em>:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Rhymed couplets</label></li>
+<li><label><input type="radio" name="q2"> Blank verse (unrhymed iambic pentameter)</label></li>
+<li><label><input type="radio" name="q2"> Free verse</label></li>
+<li><label><input type="radio" name="q2"> Trochaic tetrameter</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Blank verse — unrhymed iambic pentameter — is Shakespeare's standard for noble or serious speech. Servants and low-comedy characters speak in prose; rhymed couplets appear at scene-ends and for specific effects.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Place these events in correct chronological order: (a) Romeo kills Tybalt; (b) the Capulet feast; (c) the balcony scene; (d) the deaths in the tomb; (e) the secret wedding.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Correct order: (b) feast → (c) balcony → (e) wedding → (a) Romeo kills Tybalt → (d) tomb deaths. All five events occur within roughly four days of fictional time.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">In Shakespeare's English, "wherefore" means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> where</label></li>
+<li><label><input type="radio" name="q4"> why</label></li>
+<li><label><input type="radio" name="q4"> when</label></li>
+<li><label><input type="radio" name="q4"> how</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> "Wherefore art thou Romeo?" means "Why are you named Romeo (and therefore a Montague)?" — not "where are you?"</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Match each term to its definition:<br>
+(i) Soliloquy<br>
+(ii) Aside<br>
+(iii) Dramatic irony<br>
+<br>
+(A) Audience knows what a character does not.<br>
+(B) A brief remark heard by audience but not other characters.<br>
+(C) A speech delivered alone on stage, voicing inner thought.</div>
+<textarea placeholder="Your matches..."></textarea>
+<details><summary>Answer Key</summary><p>(i) → (C); (ii) → (B); (iii) → (A). Soliloquy: speech to oneself (audience listens). Aside: brief remark only the audience hears. Dramatic irony: audience knows something a character does not.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[6]</span>
+<div class="passage">"But, soft! what light through yonder window breaks? / It is the east, and Juliet is the sun. / Arise, fair sun, and kill the envious moon, / Who is already sick and pale with grief, / That thou her maid art far more fair than she." — Romeo, 2.2.2–6</div>
+<div class="qtxt">Analyse this speech. Identify two literary devices, explain what each contributes to characterising Romeo's feelings, and explain how the imagery foreshadows the play's outcome.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Possible devices: (1) <strong>Extended metaphor</strong> — Juliet = sun, moon = (probably Rosaline or Diana, goddess of chastity); Romeo's feelings are placed on a cosmic scale, suggesting totality. (2) <strong>Personification</strong> — moon is "envious," "sick," "pale"; Romeo casts the natural world as emotionally responsive. (3) <strong>Hyperbole</strong> — Juliet "kills" the moon; love is presented as transformative violence. Foreshadowing: dawn imagery is also imagery of endings (the night the lovers stole is now ending); "kill" in line 4 prefigures literal killing. Marks: 2 devices, 2 character analysis, 2 foreshadowing.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="passage">"A plague o' both your houses! / They have made worms' meat of me." — Mercutio, 3.1.99</div>
+<div class="qtxt">Analyse Mercutio's dying line in 4–6 sentences. Why does the line matter for the play's moral argument? Why is it repeated three times?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Mercutio's curse explicitly blames the feud — and the houses on <em>both</em> sides equally. His refusal to take sides is the play's clearest moral verdict: the feud kills people who never chose it. The repetition (Shakespeare repeats the line three times) gives it ritual / curse force. "Worms' meat" dehumanises the speaker, stripping his earlier wit. The line's force resonates through every subsequent death in the play. Marks: 1 identification of the curse, 1 the "both" / neutrality, 1 the repetition's effect, 1 connection to the play's larger argument.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[3]</span>
+<div class="qtxt">Construct a debatable thesis for an essay on the question: <em>"Is the tragedy of <em>Romeo and Juliet</em> caused primarily by fate, by adult failure, or by the lovers themselves?"</em></div>
+<textarea placeholder="Your thesis..."></textarea>
+<details><summary>Answer Key</summary><p>Sample: "Shakespeare frames the lovers as 'star-crossed' in the prologue but consistently shows the audience that the play's tragedy is produced not by stars but by adult failure — a feud sustained by Capulet and Montague, a marriage rushed by Friar Lawrence, and a postal failure caused by plague-quarantine." Look for: a specific, debatable claim (1); textual reference (1); precise analytical verb (1).</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [13 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[8]</span>
+<div class="qtxt"><strong>Major Task — Literary-Analysis Body Paragraph</strong><br><br>
+Write ONE complete literary-analysis body paragraph (PEEL, 8–12 sentences) on the following claim:<br><br>
+<em>"In <em>Romeo and Juliet</em>, Shakespeare uses the sonnet form structurally — in the prologue and in the lovers' first meeting (1.5.92–105) — to set up romantic expectations that the play will then frustrate."</em><br><br>
+Include: clear topic sentence; at least one embedded quotation with citation; analysis of the device (sonnet form); a closing link sentence.</div>
+<textarea style="min-height:200px;" placeholder="Your paragraph..."></textarea>
+<details><summary>Marking Rubric</summary><p>P (1): clear topic sentence asserting the structural function of the sonnet form. E (2): embedded quotation from the prologue ("From forth the fatal loins of these two foes / A pair of star-cross'd lovers take their life") or from the shared sonnet at the ball ("If I profane with my unworthiest hand …"). Both with proper citation. E (4): explanation of how the sonnet is traditionally a love-poem form; how it appears here for the lovers; how its interruption (second sonnet at the ball broken off by the Nurse) anticipates the broken love-completion. L (1): connection back to thesis. Conventions and voice: literary present, third-person.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Identify and correct each error in the following passage from a student essay:<br><br>
+<em>"Shakespeare's play Romeo and Juliet was about two teenagers which falls in love at a ball. The two lovers belongs to different familys, and they're parents has been fighting for years. The Friar marry them in secret, but then a series of events happens leading to they're deaths."</em></div>
+<textarea placeholder="Your corrections..."></textarea>
+<details><summary>Answer Key</summary><p>Corrections: (1) "<em>Romeo and Juliet</em>" should be italicised (correct in print, mark for italics in HTML). (2) "was about" → "is about" (literary present tense). (3) "two teenagers <strong>who fall</strong>" (relative pronoun for people = "who"; plural agreement = "fall"). (4) "two lovers <strong>belong</strong>" (plural verb). (5) "different <strong>families</strong>" (plural of "family"). (6) "<strong>their</strong> parents have been fighting" ("their" possessive; plural "have"). (7) "The Friar <strong>marries</strong> them" (third-person singular). (8) "<strong>their</strong> deaths" (possessive). Marks: 0.5 per correctly identified and corrected error.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[6]</span>
+<div class="qtxt"><strong>Apply</strong> close-reading skills to the following passage (a different scene). In 6–8 sentences, analyse two devices Shakespeare uses and explain what each contributes to the moment.</div>
+<div class="passage">"O, then, I see Queen Mab hath been with you. / She is the fairies' midwife, and she comes / In shape no bigger than an agate-stone / On the forefinger of an alderman, / Drawn with a team of little atomies / Athwart men's noses as they lie asleep." — Mercutio, 1.4.53–58</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Possible devices: (1) <strong>Personification</strong> — Queen Mab is treated as a literal small being. (2) <strong>Hyperbolic miniature imagery</strong> — "no bigger than an agate-stone" makes the dream-bringer comically tiny. (3) <strong>Alliteration</strong> — "draws," "drawn," "athwart" (variable depending on edition). (4) <strong>Conceit / extended metaphor</strong> — the speech extends the Queen Mab idea across many lines. Effects: characterises Mercutio as inventive and skeptical; warns Romeo against believing in dreams; shifts the play's tonal register before the tragedy proper begins. Marks: 2 device identification, 2 explanation, 2 connection to the moment in the play.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>Apply</strong> the play to contemporary contexts. In 3–4 sentences, identify one way <em>Romeo and Juliet</em>'s argument about adult-versus-youth communication still applies in 2026. Be specific (mention a real social/cultural context).</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: a specific 21st-century parallel (mental-health stigma, parents not believing teen anxiety, social-media misinterpretation, generational politics, the slowness of formal channels vs the speed of teen experience). 1 mark for specificity, 1 for connection to the play, 1 for thoughtful analysis.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>STSE / Cross-curricular:</strong> What does the play's reliance on Friar John's letter (and the plague quarantine that stops it) tell us about how individuals depend on functioning institutions? In 3–4 sentences, connect this to a modern parallel — a postal system, a public-health response, a court process, or another institutional system you have observed.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses identify the play's argument that private love depends on public infrastructure — and that one breakdown can produce catastrophic personal consequences. Acceptable parallels: COVID-19 mail delays, court backlogs, slow public-health responses, broken international communication during crises. Marks: 1 understanding of the play's mechanism, 1 modern parallel, 1 thoughtful comparison.</p></details></div>
+
+<footer>ENG2D — English (Academic), Grade 10 | Strand B: Reading and Literature Studies | Assessment OF Learning — Graded</footer>
+</div></body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Interactions &amp; Inquiry — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #0891b2; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #cffafe; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/chw3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 5: Interactions &amp; Inquiry — Unit Test</h1><div class="sub">Assessment OF Learning · Strands E + A</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all reasoning.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/14</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [14 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">What were the Silk Roads? Identify three goods that travelled along them and one religion that spread.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>A long-evolving network of overland trade routes (c. 200 BCE–c. 1500 CE) linking China through Central Asia, Persia, and the Mediterranean. Goods: silk, tea, porcelain, lacquerware (Chinese); spices, gems, cotton (Indian); horses, glass (Persian / Byzantine). Religions: Buddhism (India to China by 1st c. CE), Manichaeism, Nestorian Christianity, Islam. Marks: 1 description, 1 goods, 1 religion.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Zheng He's seven Ming-era Indian Ocean voyages took place in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> 1300–1330 CE</label></li>
+<li><label><input type="radio" name="q2"> 1405–1433 CE</label></li>
+<li><label><input type="radio" name="q2"> 1492–1500 CE</label></li>
+<li><label><input type="radio" name="q2"> 1600–1620 CE</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> The seven voyages (1405–33) reached Calicut, Hormuz, Aden, Mogadishu, and Kilwa. The expeditions ended in 1433 — sixty years before Vasco da Gama reached Calicut.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify the FIVE STAGES of the Ontario Strand A historical-inquiry process.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Formulating questions. (2) Gathering and organising evidence (primary and secondary sources). (3) Interpreting and analysing evidence (sourcing, contextualising, corroborating). (4) Evaluating and drawing conclusions (framing a defensible argument). (5) Communicating findings in an appropriate format. Marks: 0.5 each + 0.5 framing.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">A <em>primary source</em> is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> Always more important than a secondary source</label></li>
+<li><label><input type="radio" name="q4"> A document, object, or testimony produced in the period being studied by participants or contemporaries</label></li>
+<li><label><input type="radio" name="q4"> A modern textbook</label></li>
+<li><label><input type="radio" name="q4"> A 21st-century scholarly article</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Primary sources are period material; secondary sources are later analytical works. Both are essential to historical research.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Define <em>historiography</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Historiography is the history of historical writing — how interpretations of the past have changed across generations of historians. It is the discipline's awareness of its own evolution. Marks: 2 (definition).</p></details></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[2]</span>
+<div class="qtxt">The "Columbian Exchange" refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6"> Columbus's personal voyages only</label></li>
+<li><label><input type="radio" name="q6"> The post-1492 transfer of plants, animals, microbes, and human populations between the Americas and the rest of the world</label></li>
+<li><label><input type="radio" name="q6"> A Spanish coin minting system</label></li>
+<li><label><input type="radio" name="q6"> An 18th-century commercial treaty</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> The Columbian Exchange transformed agriculture on both sides and brought catastrophic disease (smallpox, measles, influenza) to the Americas, killing perhaps 50–90% of indigenous populations within a century.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [12 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="passage">"From Nanai-vandak to Varzakk, in Samarkand. I write to inform you that we have just had bad news from inside [China]. The Huns have invaded; the emperor has fled; Luoyang and Yecheng have been burnt; we three brothers and our families are still at Jincheng. From here to Dunhuang is dangerous. We do not know if we will be able to make it home. May the gods preserve you." — Sogdian Ancient Letter II, c. 313 CE</div>
+<div class="qtxt">Apply SOURCING and CRITICAL INFERENCE. (a) What kind of source is this? (b) Why is its survival accidental? (c) What does it tell us that Chinese imperial chronicles cannot? (d) What is one LIMIT of using such letters as historical evidence?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) A private mercantile letter, in Sogdian (an Iranian language), from c. 313 CE; undelivered. (b) It survived because it never reached its destination — instead lay in dry sand at the abandoned Dunhuang watchtower for 16 centuries until found by Aurel Stein in 1907. (c) It gives a first-person Sogdian merchant's view of the chaos of fourth-century North China — confirming that Sogdian commercial networks reached deep into China and that a single Hun raid could disrupt trade for years. Chinese imperial sources record the events (fall of Luoyang to Xiongnu raiders in 311 CE) but from the centre, not from a merchant's perspective. (d) Limits: only a tiny number of Sogdian letters survive; the corpus is biased toward merchants writing to commercial partners; women's voices, peasants' voices, and slaves' voices are entirely absent. Marks: 1 each.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Why did the Ming abandon Zheng He's voyages after 1433, despite their evident success? Identify THREE distinct factors.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) Bureaucratic-Confucian opposition — court Confucians treated mercantile activity as morally low; the eunuch faction that championed Zheng He lost the factional war after 1433. (2) Fiscal cost — each fleet cost millions of taels; the treasury was under strain from rebuilding the Grand Canal and defending the Mongol frontier. (3) Mongol threat — the Northern Yuan and Oirat khanates pressed the Ming frontier; the 1449 Tumu Crisis (Oirat capture of the Ming emperor) confirmed that land defence had to come first. (4) Diminishing returns — tribute missions produced no net revenue. (5) Strategic conception — Ming China saw itself as the centre of a world order in which others should come; outward fleets were the opposite of the proper relationship. Marks: 1 each (any 3) + 1 synthesis.</p></details></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[4]</span>
+<div class="qtxt">Take any topic from CHW3M and identify whose voices are PRESENT in the available source record and whose voices are ABSENT or MUTED. Then propose two strategies for partially recovering muted voices.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Example — the Crusades: Present voices = Latin Christian chroniclers (Fulcher of Chartres, Robert the Monk), papal letters, Arabic chronicles (Ibn al-Athir), Hebrew memorial books (<em>Sefer Zekhirah</em>). Muted = peasant participants, women, the conquered city populations, enslaved war captives. Strategies: (1) Triangulate across the available sources — Hebrew, Arabic, and Latin together give a richer picture than any one alone. (2) Use archaeology and material culture — what people built and consumed often tells us what their words don't preserve. (3) Read elite sources for what they unintentionally reveal about the silenced (e.g., chronicler complaints about peasant motives). (4) Acknowledge silences as historical facts requiring naming, not flaws to hide. Marks: 2 present / absent, 2 strategies.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Construct a STRONG research question for the culminating-inquiry project. Then justify why it meets the three criteria: researchable, debatable, significant.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Sample: "How do Marco Polo, Rashid al-Din, and the <em>Mongol Secret History</em> diverge on whether Mongol governance under Pax Mongolica produced cultural enrichment or only commercial advantage?" Justification: <em>Researchable</em> — three named contemporary primary sources exist in modern translation; a substantial secondary literature exists. <em>Debatable</em> — modern historians divide; multiple defensible interpretations of these sources are possible. <em>Significant</em> — the question bears on a major historiographical question (the value of Pax Mongolica) and on the broader methodological question of how cross-cultural comparison works. Marks: 1 question, 3 justifications.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">In one paragraph (5–7 sentences), distinguish a <em>thesis</em> from a <em>topic</em>. Provide one example of each on a CHW3M-relevant subject.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>A <em>topic</em> is a subject area you intend to research — broad, often a noun phrase. A <em>thesis</em> is a debatable, specific, supportable claim about a topic that organises your inquiry. The thesis answers a question; the topic is what the question is about. Example topic: "The Mongol Empire." Example thesis: "Comparing Marco Polo, Rashid al-Din, and the <em>Mongol Secret History</em> reveals that contemporaries' assessment of Pax Mongolica depended on their relationship to Mongol commerce — those who profited praised it; those who farmed under Mongol taxation did not." A strong inquiry essay is organised around its thesis, not around the chronology of its topic. Marks: 1 topic definition, 1 thesis definition, 1 each example.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt">"Historiography matters." Explain why understanding how historical interpretations have changed across the centuries is part of understanding history. Use the Crusades as your worked example. Aim for 5–7 sentences.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>The same events get re-narrated by different generations of historians, often with strikingly different judgements about cause, significance, and consequence. For the Crusades: in Gibbon (1776–88) they appeared as bizarre medieval superstition; in 19th-century imperial Britain they appeared as heroic chivalric adventure; in Runciman (1951–54) they appeared as Christian-on-Christian and Christian-on-Jewish brutality; in Riley-Smith (1980s onward) they appeared as a serious religious project that historians must take on its own terms; post-2001 they reappeared as politically charged terms in 21st-century geopolitical conflict. None of these is "the right answer." Each illuminates what its era found significant. To do history well requires reading not just primary sources but also the historiographic conversation — what counts as evidence, what counts as significance, has itself a history. Marks: 1 thesis, 3 stages of Crusades historiography, 1 conventions.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Apply</strong> Seixas's SIX HISTORICAL-THINKING CONCEPTS to the date 1492. Identify what each concept invites you to ask.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) HISTORICAL SIGNIFICANCE — significant in retrospect because of Atlantic transformations; not significant by Ming Chinese or Songhai standards. (2) CAUSE / CONSEQUENCE — caused by Portuguese maritime experiments + Castilian Reconquista; consequences include Columbian Exchange, Atlantic empires, Industrial Revolution. (3) CONTINUITY / CHANGE — for Mediterranean and Asian networks, 1492 changed almost nothing immediately; for Americas, catastrophic population collapse began. (4) HISTORICAL PERSPECTIVE — Columbus thought he had reached Asia; Native Americans had no way to know consequences; Ming Chinese had no awareness of 1492 for a century. (5) ETHICAL DIMENSION — the encounter began three centuries of conquest, slavery, and disease recognised today as genocide; modern Columbus Day vs Indigenous Peoples' Day disputes inherit this question. (6) EVIDENCE — primary sources include Columbus's journal (curated by Las Casas), Taíno oral memory (suppressed but partly recoverable), Spanish royal correspondence. Marks: 0.5 per concept + 1 synthesis.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Apply</strong> source-criticism to a hypothetical Marco Polo passage in which he describes Khubilai Khan's palace. Identify FOUR questions a careful historian should ask before treating the passage as straightforward eyewitness reporting.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(1) SOURCING — Who wrote it, when? (Polo dictated <em>Il Milione</em> in Genoese prison c. 1298 to fellow prisoner Rustichello da Pisa, a romance writer.) (2) CONTEXTUALISING — Polo's audience was European; the text would impress them, not Chinese readers. (3) CORROBORATING — Do Yuan-era Chinese sources confirm specific claims? (Some yes; some no.) (4) AUTHORIAL AGENDA — Polo and Rustichello may have inflated details to make the book sell. (5) LITERARY FORM — <em>Il Milione</em> mixes travel report with romance conventions, including some episodes Polo could not have witnessed. (6) ABSENCE — Polo mentions neither the Great Wall, foot-binding, nor tea — strange omissions for a 24-year resident. Marks: 1 each (any 4).</p></details></div>
+
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>STSE Application:</strong> Consider how the historical-inquiry skills developed in CHW3M apply OUTSIDE history class. In 5–7 sentences, choose ONE 2026-era information context (news headlines, social-media posts, political rhetoric, scientific controversy) and explain how source-criticism, multi-source corroboration, and ethical-dimension thinking help you evaluate it.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Sample (news headlines about a contested event): Source-criticism asks who produced the headline, for whom, with what editorial pressures (a state-owned outlet has different incentives than an independent one). Multi-source corroboration asks whether the same claim appears in outlets with different political stances (cross-spectrum agreement is stronger evidence than within-bubble agreement). Ethical-dimension thinking asks whose perspective is centred and whose is marginalised in the framing (e.g., "civilian casualties" vs "collateral damage" — the choice of phrase is itself an ethical and political act). These are the same disciplines a historian applies to a Crusader chronicle or a Mongol-era account. The lesson: doing history is doing critical citizenship; the skills transfer to any moment in which evidence must be weighed in the face of competing claims. Marks: 1 context choice, 3 skill applications, 0–1 communication.</p></details></div>
+
+<footer>CHW3M — World History, Grade 11 | Strands E + A | Assessment OF Learning — Graded</footer>
+</div></body></html>

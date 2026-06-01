@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Critical Reading — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #1e40af; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#1e40af;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng2d.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Critical Reading — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of literary devices, close reading, poetry, and thesis-building. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 10</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1 — Literary Devices</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div>
+<div class="passage">"Life for me ain't been no crystal stair." — Langston Hughes, "Mother to Son"</div>
+<div class="qtxt">The literary device most clearly at work in this line is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Personification</label></li>
+<li><label><input type="radio" name="q1" value="b"> Metaphor (life compared directly to a stair)</label></li>
+<li><label><input type="radio" name="q1" value="c"> Onomatopoeia</label></li>
+<li><label><input type="radio" name="q1" value="d"> Hyperbole</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The speaker says life has not <em>been</em> a crystal stair — directly comparing life to a stair (without "like" or "as"). That is a metaphor. Hughes extends the metaphor across the whole poem with tacks, splinters, and torn-up boards.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div>
+<div class="passage">"The wind whispered through the trees." </div>
+<div class="qtxt">The device at work in this sentence is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Simile</label></li>
+<li><label><input type="radio" name="q2" value="b"> Personification (giving the wind the human ability to whisper)</label></li>
+<li><label><input type="radio" name="q2" value="c"> Hyperbole</label></li>
+<li><label><input type="radio" name="q2" value="d"> Irony</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Wind cannot literally whisper — only humans can. Giving a non-human thing a human ability is personification.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">In a story where the audience knows Juliet is only sleeping but Romeo believes she is dead, the irony is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Verbal irony</label></li>
+<li><label><input type="radio" name="q3" value="b"> Dramatic irony (the audience knows what the character does not)</label></li>
+<li><label><input type="radio" name="q3" value="c"> Situational irony</label></li>
+<li><label><input type="radio" name="q3" value="d"> Not irony at all</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Dramatic irony — there is a gap between what the audience knows and what Romeo knows. Verbal irony would be a character saying the opposite of what they mean; situational irony would be an unexpected outcome.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Close Reading</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div>
+<div class="passage">"TRUE!—nervous—very, very dreadfully nervous I had been and am! but why will you say that I am mad?" — Edgar Allan Poe, "The Tell-Tale Heart"</div>
+<div class="qtxt">The narrator's opening sentence most clearly signals that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The narrator is calm and reliable</label></li>
+<li><label><input type="radio" name="q4" value="b"> The narrator is unreliable — his protests of sanity invite the reader to doubt him</label></li>
+<li><label><input type="radio" name="q4" value="c"> The narrator is the victim of a crime</label></li>
+<li><label><input type="radio" name="q4" value="d"> The story will be a comedy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The all-caps "TRUE!", the stutters ("very, very"), and the rhetorical question "why will you say that I am mad?" together create an unreliable narrator. He insists on his sanity so insistently that the reader doubts him.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A theme statement is best understood as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A single word ("love," "death," "fear")</label></li>
+<li><label><input type="radio" name="q5" value="b"> A defensible claim about a topic that the text develops</label></li>
+<li><label><input type="radio" name="q5" value="c"> A summary of the plot</label></li>
+<li><label><input type="radio" name="q5" value="d"> The author's biography</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> A theme is a claim — a complete sentence asserting how the text sees a topic — not a single word. "Love" is a topic; "Hughes's poem argues that love takes the form of instruction, not promises" is a theme.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Reading Poetry</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div>
+<div class="passage">"Shall I compare thee to a summer's day? / Thou art more lovely and more temperate." — Shakespeare, Sonnet 18</div>
+<div class="qtxt">The dominant metre of these lines is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Trochaic tetrameter</label></li>
+<li><label><input type="radio" name="q6" value="b"> Iambic pentameter (five iambs per line)</label></li>
+<li><label><input type="radio" name="q6" value="c"> Anapestic trimeter</label></li>
+<li><label><input type="radio" name="q6" value="d"> Free verse</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Scan: "Shall I / com-PARE / thee TO / a SUM- / mer's DAY?" — five iambs. Iambic pentameter is Shakespeare's standard verse.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The Shakespearean sonnet is structured as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Octave + sestet, rhymed ABBAABBA CDECDE (Petrarchan structure)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Three quatrains and a final couplet, rhymed ABAB CDCD EFEF GG</label></li>
+<li><label><input type="radio" name="q7" value="c"> Two tercets and an octet</label></li>
+<li><label><input type="radio" name="q7" value="d"> Unrhymed lines of any length</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> The Shakespearean (English) sonnet has 14 lines in three quatrains (ABAB CDCD EFEF) and a final couplet (GG) — typically delivering a turn or resolution. Choice (a) describes the Petrarchan sonnet.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Paraphrase to Analysis</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In a PEEL paragraph (Point–Evidence–Explain–Link), the "Explain" step requires you to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Re-summarise the plot of the text</label></li>
+<li><label><input type="radio" name="q8" value="b"> Analyse <em>how</em> the cited evidence supports your point</label></li>
+<li><label><input type="radio" name="q8" value="c"> Disagree with the topic sentence</label></li>
+<li><label><input type="radio" name="q8" value="d"> Provide a Works Cited entry</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> PEEL: Point (topic sentence), Evidence (quotation), Explain (interpretation of how the evidence proves the point — the analysis), Link (connection back to thesis). The Explain step is where literary analysis happens.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Which of the following best embeds a quotation into a sentence?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> "Romeo loves Juliet. 'Juliet is the sun.' Then he climbs into the garden."</label></li>
+<li><label><input type="radio" name="q9" value="b"> "Romeo's declaration that 'Juliet is the sun' (2.2.3) reorients his world around her in a single image."</label></li>
+<li><label><input type="radio" name="q9" value="c"> "Quote: 'Juliet is the sun.'"</label></li>
+<li><label><input type="radio" name="q9" value="d"> "Juliet is the sun" Romeo says.</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Choice (b) integrates the quotation grammatically into the sentence with a signal phrase ("Romeo's declaration that") and a citation, then immediately interprets the line. The others are floating quotations.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — Thesis Statements</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Which of the following is a <em>thesis</em> rather than a <em>topic</em>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> "This essay will examine fate in <em>Romeo and Juliet</em>."</label></li>
+<li><label><input type="radio" name="q10" value="b"> "Shakespeare uses the rhetoric of fate to disguise the play's real causes: adult feud, rushed decisions, and a bureaucratic failure to deliver a letter."</label></li>
+<li><label><input type="radio" name="q10" value="c"> "Romeo and Juliet was written around 1595."</label></li>
+<li><label><input type="radio" name="q10" value="d"> "The play has five acts."</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> A thesis is specific, debatable, and supportable. Choice (b) names the text, the technique, and a precise interpretation that someone could disagree with. Choice (a) announces intent; (c) and (d) state facts no one disputes.</div></div>
+
+</div>
+
+<footer>ENG2D — English (Academic), Grade 10 | Strand B: Reading and Literature Studies | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

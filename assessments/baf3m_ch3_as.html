@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Trial Balance &amp; Worksheet — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --correct: #15803d; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0;padding:0;box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color:#fff; padding:24px; border-radius:12px; margin-bottom:24px; }
+header h1 { font-size: 22px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/baf3m.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+    <h1>📝 Chapter 3: Trial Balance &amp; the Worksheet</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your skill at preparing trial balances, locating errors, working through the 8-column worksheet, and producing adjusting and closing entries.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">10</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.1 — Trial Balance</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A trial balance lists accounts in:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> Alphabetical order</label></li>
+        <li><label><input type="radio" name="q1" value="b"> Chart-of-accounts order (assets, liabilities, equity, revenue, expense)</label></li>
+        <li><label><input type="radio" name="q1" value="c"> Order of size</label></li>
+        <li><label><input type="radio" name="q1" value="d"> Order of date opened</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Order is the chart-of-accounts order, which mirrors the order they will appear on the financial statements.</div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">A balanced trial balance proves:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> Every transaction was journalised correctly.</label></li>
+        <li><label><input type="radio" name="q2" value="b"> Total debits equal total credits in the ledger.</label></li>
+        <li><label><input type="radio" name="q2" value="c"> No errors of any kind exist.</label></li>
+        <li><label><input type="radio" name="q2" value="d"> The financial statements will be correct.</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>It proves arithmetical balance only — many other errors (omission, wrong account on the correct side, etc.) can leave Dr=Cr.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.2 — Locating Errors</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">A trial balance is out by \$54. Is the difference divisible by 9?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q3" value="a"> Yes — likely a transposition or slide</label></li>
+        <li><label><input type="radio" name="q3" value="b"> No — must be an omission</label></li>
+        <li><label><input type="radio" name="q3" value="c"> Cannot tell without more information</label></li>
+        <li><label><input type="radio" name="q3" value="d"> No — must be an extra zero</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\(54 \div 9 = 6\) → integer. Difference is divisible by 9, classic sign of a transposition (e.g., 81 swapped for 27 or similar) or a slide.</div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">A trial balance is out by \$200. Apply the ÷ 2 test. Search for an account with a balance equal to:</div>
+    <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q4', 100)">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\(200 \div 2 = 100\). An account with a \$100 balance is likely placed in the wrong column.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.3 &amp; 3.4 — Worksheet &amp; Adjustments</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">Supplies asset balance \$240. Physical count at month-end \$60. Supplies used during the month equals:</div>
+    <div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q5', 180)">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Supplies used = beginning balance − ending balance = \(240 - 60 = 180\). Adjustment: Dr. Supplies Expense 180; Cr. Supplies 180.</div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">Equipment costs \$5 000, residual value \$500, useful life 5 years (straight-line). Annual depreciation =</div>
+    <div class="answer-area"><input type="text" id="q6-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q6', 900)">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( \dfrac{5\,000 - 500}{5} = \dfrac{4\,500}{5} = 900 \) per year.</div>
+</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">"Accumulated Depreciation" is best classified as a:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q7" value="a"> Liability</label></li>
+        <li><label><input type="radio" name="q7" value="b"> Contra-asset</label></li>
+        <li><label><input type="radio" name="q7" value="c"> Expense</label></li>
+        <li><label><input type="radio" name="q7" value="d"> Revenue</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q7','b')">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Contra-asset — credit balance, shown on the balance sheet as a deduction from the related asset to give net book value.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.5 — Accruals &amp; Unearned Revenue</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">On 1 April a parent prepays \$600 for 6 weeks of tutoring. At 30 April, 4 weeks have been delivered. Amount of revenue earned at 30 April =</div>
+    <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q8', 400)">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( \tfrac{4}{6} \cdot 600 = 400 \). Adjusting entry: Dr. Unearned Revenue 400; Cr. Tutoring Revenue 400.</div>
+</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Salaries earned by employees for the last week of a month, payable next month: at month-end, the adjusting entry is:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Dr. Cash; Cr. Salaries Expense</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Dr. Salaries Expense; Cr. Salaries Payable</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Dr. Salaries Payable; Cr. Cash</label></li>
+        <li><label><input type="radio" name="q9" value="d"> No entry needed until pay date</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','b')">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Accrued expense: recognise the expense in the period earned by employees; the offset is a payable (liability) since cash will be paid later.</div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 3.6 — Closing Entries</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Closing entries reduce which accounts to zero?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> All assets and liabilities</label></li>
+        <li><label><input type="radio" name="q10" value="b"> Only the Capital account</label></li>
+        <li><label><input type="radio" name="q10" value="c"> Temporary accounts: revenues, expenses, drawings</label></li>
+        <li><label><input type="radio" name="q10" value="d"> Permanent accounts: assets, liabilities, capital</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Temporary accounts (revenue, expense, drawings) are closed at period-end. Their balances net to Capital via Income Summary.</div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.1 Trial Balance</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.2 Error Detection</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.3 Worksheet</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.4 Deferral Adjustments</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.5 Accruals</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>3.6 Closing Entries</label></div>
+</div>
+<footer>BAF3M — Financial Accounting Fundamentals, Grade 11 | Strand B | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=10;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,correct){const sel=document.querySelector(`input[name="${qid}"]:checked`);if(!sel)return;const c=document.getElementById(qid),f=document.getElementById(qid+'-feedback'),s=document.getElementById(qid+'-solution');if(c.classList.contains('correct')||c.classList.contains('wrong'))return;answered++;if(sel.value===correct){score++;c.classList.add('correct');f.className='feedback show correct';f.textContent='✅ Correct!';}else{c.classList.add('wrong');f.className='feedback show wrong';f.textContent='❌ See solution.';}s.classList.add('show');updateProgress();}
+function checkNumeric(qid,correct){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const c=document.getElementById(qid),f=document.getElementById(qid+'-feedback'),s=document.getElementById(qid+'-solution');if(c.classList.contains('correct')||c.classList.contains('wrong'))return;answered++;if(Math.abs(v-correct)<0.5){score++;c.classList.add('correct');f.className='feedback show correct';f.textContent='✅ Correct!';}else{c.classList.add('wrong');f.className='feedback show wrong';f.textContent=`❌ Answer: ${correct}.`;}s.classList.add('show');updateProgress();}
+</script>
+</body>
+</html>

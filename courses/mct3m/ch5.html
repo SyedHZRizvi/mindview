@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCT3M Chapter 5: Geometric Modelling | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h1 { font-size: 26px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #db2777; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #db2777; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #db2777; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #db2777; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #db2777; color: #fff; }
+.chnav-next:hover { background: #be185d; }
+.chnav-finish { background: #16a34a; color: #fff; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+<div class="breadcrumb" style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:12px 0;">
+<div class="container"><a href="../mct3m.html" style="color:#ea580c;text-decoration:none;font-size:14px;font-weight:600;">&larr; Back to course (MCT3M Mathematics for College Technology)</a></div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+<div class="unit-section" id="unit5">
+<div class="unit-header" style="background:linear-gradient(135deg,#db2777dd,#db2777);">
+<h1>Chapter 5: Geometric Modelling</h1>
+<p>Optimisation of 2-D and 3-D figures, scale drawings, design and packaging applications</p>
+<div class="unit-meta">
+<span>📚 Strand D: Measurement &amp; Geometry</span>
+<span>⏱️ ~20h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.1 &mdash; 2-D Optimisation: Maximising Area with Fixed Perimeter</div>
+<div class="topic-desc">Find the rectangular shape that maximises area for a given perimeter using quadratic optimisation; analyse the special case (square gives largest area).</div>
+<div class="summary-card">For a rectangle with fixed perimeter \(P\): if the width is \(w\), the length is \(P/2 - w\), and area is \(A(w) = w(P/2 - w)\). Complete the square (or use vertex of the resulting downward parabola) to find that area is maximised at \(w = P/4\) — i.e., a <strong>square</strong>. Maximum area: \((P/4)^2 = P^2/16\).</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Optimisation problems ask: "given a constraint, what's the best you can do?" The classic two-dimensional case is: given a fixed amount of fencing, what shape gives the largest enclosed area? Or, given a fixed area to enclose, what shape uses the least fencing?</p>
+
+<p>For a <strong>rectangle with fixed perimeter \(P\)</strong>: let the width be \(w\) (in metres or any consistent unit). Then since perimeter \(= 2(\text{length}) + 2(\text{width})\), the length must be \((P - 2w)/2 = P/2 - w\). Area:</p>
+<p>\[ A(w) = w \cdot (P/2 - w) = \frac{P}{2} w - w^2 \]</p>
+<p>This is a downward-opening parabola in \(w\). The maximum is at the vertex: \(w = -b/(2a) = (P/2)/2 = P/4\). At this width, length = \(P/2 - P/4 = P/4\) — the same as the width. The rectangle is a <strong>square</strong>. Maximum area: \(A(P/4) = (P/4)^2 = P^2/16\).</p>
+
+<p><strong>Variant: rectangle against a wall.</strong> One side is the wall (no fencing needed there). Fence three sides with total length \(P\). If width perpendicular to wall is \(w\), length parallel to wall is \(P - 2w\). Area:</p>
+<p>\[ A(w) = w(P - 2w) = -2w^2 + Pw \]</p>
+<p>Vertex: \(w = -P/(-4) = P/4\). Length: \(P - P/2 = P/2\). Maximum area: \((P/4)(P/2) = P^2/8\), achieved with length twice the width.</p>
+
+<p>Why does the square maximise area? Geometrically: as you keep the perimeter fixed and stretch the rectangle out, the area gets smaller (it approaches zero for an extremely thin "rectangle"). The square is the symmetry-maximising point — equally "balanced" between the two extremes. The full mathematical version, generalising to any polygon and to curves, says: the <em>regular</em> shape (equilateral, equilateral and equiangular) maximises area for fixed perimeter, and the circle beats any polygon.</p>
+
+<p>Real applications: laying out the largest possible rectangular workshop given a fixed budget for walls; designing a window panel of maximum glazed area within a fixed frame perimeter; sizing a building lot for maximum floor space subject to a frontage constraint.</p>
+
+<ul>
+<li><strong>Optimisation</strong> — finding the input that maximises or minimises a quantity.</li>
+<li><strong>Constraint</strong> — a fixed relationship between variables (e.g. perimeter is fixed).</li>
+<li><strong>Objective function</strong> — the quantity being optimised (e.g. area).</li>
+<li><strong>Isoperimetric inequality</strong> — the principle that for fixed perimeter, the circle has the largest area.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — 32 m of fencing is used for a rectangular vegetable garden. Find the dimensions that maximise the area, and the maximum area.</p>
+<p>Perimeter: \(P = 32\), so \(w + \ell = 16\) and \(\ell = 16 - w\).</p>
+<p>Area: \(A(w) = w(16 - w) = 16w - w^2\). Vertex at \(w = 8\).</p>
+<p>Dimensions: 8 m × 8 m. Max area: \(64\) m².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Fence-along-wall variant. 60 m of fencing is used for a rectangular dog run, with one side against the garage wall. Find the dimensions that maximise the area.</p>
+<p>If \(w\) is the side perpendicular to the wall, length \(\ell = 60 - 2w\). Area: \(A(w) = w(60 - 2w) = -2w^2 + 60w\).</p>
+<p>Vertex: \(w = -60/(-4) = 15\) m. Length: \(\ell = 60 - 30 = 30\) m. Max area: 15 × 30 = 450 m².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A farmer wants to divide a 100-m perimeter rectangle into two equal halves with an interior fence parallel to one side. Total fencing 100 m. Find the dimensions that maximise total enclosed area.</p>
+<p>If the interior fence is parallel to the width, then 2 lengths + 3 widths = 100. So \(2\ell + 3w = 100\), \(\ell = (100 - 3w)/2\).</p>
+<p>Area: \(A(w) = w(100 - 3w)/2 = 50w - 1.5 w^2\). Vertex at \(w = -50/(-3) = 50/3 \approx 16.67\) m.</p>
+<p>Length: \(\ell = (100 - 50)/2 = 25\) m. Max area: \(50/3 \times 25 \approx 416.67\) m².</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Mixing up perimeter and area. Perimeter is the total length of boundary; area is the space inside.</li>
+<li>Translating word problems into a single-variable function. Use the constraint to eliminate one variable before optimising.</li>
+<li>Forgetting that the vertex of a downward parabola is a maximum (not a minimum); for an upward parabola the vertex is a minimum.</li>
+<li>Negative widths in the answer. The answer must be in the realistic domain (e.g. \(0 < w < P/2\) for a fence-around case).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.1 — "solve problems, using a variety of strategies (e.g., investigating with technology, modelling with a quadratic function), to determine the maximum area enclosed by a rectangular region with a given perimeter (or the minimum perimeter for a given area)." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct5-yt1')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Maximizing the Area of a Rectangle — The Organic Chemistry Tutor</span>
+<span class="vid-duration">11:35</span>
+<span class="vid-toggle" id="toggle-mct5-yt1">▶</span>
+</div>
+<div class="video-player" id="player-mct5-yt1">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ebowtpK4Os8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=ebowtpK4Os8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.2 &mdash; 3-D Optimisation: Minimising Surface Area for Fixed Volume</div>
+<div class="topic-desc">Find the cylindrical or rectangular shape that minimises surface area for a given volume; apply to packaging (cans, boxes).</div>
+<div class="summary-card">For a <strong>cylindrical can</strong> with fixed volume \(V\): the surface area is \(SA = 2\pi r^2 + 2\pi r h\). Eliminate \(h\) using \(V = \pi r^2 h\), giving \(SA(r) = 2\pi r^2 + 2V/r\). Minimum (by calculus or numerical search) occurs when \(h = 2r\) — the height equals the diameter. For a closed rectangular box, the optimal shape is a cube.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>The 3-D counterpart of 2-D area-perimeter optimisation is the surface-area-volume question: given a fixed volume (e.g. a soup can needs to hold 400 mL), what shape minimises material (surface area, hence cost)? In the 2-D world, the square minimised perimeter for fixed area, with the circle even better. In 3-D, the analog of the square is the cube; the analog of the circle is the sphere.</p>
+
+<p><strong>Closed rectangular box.</strong> A box with dimensions \(\ell \times w \times h\) has volume \(V = \ell w h\) and surface area \(SA = 2(\ell w + \ell h + w h)\). Among all rectangular boxes of fixed volume, the <em>cube</em> has the smallest surface area. (Proof requires multivariable calculus, but the result is exact.)</p>
+
+<p><strong>Closed cylindrical can.</strong> Volume \(V = \pi r^2 h\); surface area \(SA = 2\pi r^2 + 2\pi r h\) (two circular ends plus the curved side). To eliminate \(h\) and minimise: \(h = V/(\pi r^2)\), so</p>
+<p>\[ SA(r) = 2\pi r^2 + 2\pi r \cdot \frac{V}{\pi r^2} = 2\pi r^2 + \frac{2V}{r} \]</p>
+<p>Take the derivative (calculus) or use numerical methods (graphing calculator, technology): \(SA'(r) = 4\pi r - 2V/r^2 = 0 \Rightarrow r^3 = V/(2\pi) \Rightarrow r = \sqrt[3]{V/(2\pi)}\). At this \(r\): \(h = V/(\pi r^2) = 2r\). So the height equals the diameter.</p>
+
+<p>This result — height = diameter is optimal — is a beautiful classical fact. Yet most real cans don't follow it: a Campbell's soup can is taller than wide. Why? Because real design considers other factors: shelf appearance, labeling area, structural strength, manufacturing line constraints, lid attachment cost. The mathematical optimum is only one input among many.</p>
+
+<p>For an <strong>open-top cylinder</strong> (a flowerpot or paint bucket without a lid), \(SA = \pi r^2 + 2\pi r h\). Repeating the optimisation: \(r = \sqrt[3]{V/\pi}\) and \(h = r\). For an open box of square base, the optimum has height = half the base side.</p>
+
+<p>For MCT3M, you typically tabulate \(SA(r)\) at several values, find the minimum graphically or by inspection, and verify with the formula. Calculator-based optimisation is the expected level — formal derivatives are MCV4U content.</p>
+
+<ul>
+<li><strong>Surface area</strong> — total outer area; the "material cost" for packaging.</li>
+<li><strong>Fixed-volume problem</strong> — minimise SA subject to V = constant.</li>
+<li><strong>Optimal cylinder</strong> — \(h = 2r\) (height = diameter) for a closed can.</li>
+<li><strong>Optimal box</strong> — cube (\(\ell = w = h\)) for a closed box.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A soup can must hold exactly 500 mL (500 cm³). Find the dimensions that minimise the total surface area.</p>
+<p>Use \(h = 2r\) optimum. Then \(V = \pi r^2 (2r) = 2\pi r^3 = 500\). So \(r^3 = 250/\pi\), \(r = \sqrt[3]{250/\pi} \approx \sqrt[3]{79.58} \approx 4.30\) cm.</p>
+<p>\(h = 2r \approx 8.60\) cm.</p>
+<p>Min surface area: \(SA = 2\pi r^2 + 2\pi r h = 2\pi(4.3)^2 + 2\pi(4.3)(8.6) \approx 116.1 + 232.3 \approx 348.4\) cm².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — A closed rectangular box must contain 1000 cm³. Find the dimensions that minimise surface area.</p>
+<p>For a cube: \(s^3 = 1000 \Rightarrow s = 10\) cm.</p>
+<p>Min surface area: \(SA = 6s^2 = 600\) cm².</p>
+<p>(Any non-cubic box of volume 1000 has SA > 600.)</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — Compare two cylindrical cans that each hold 1000 mL: Can A is 6 cm radius × 8.84 cm height; Can B is the optimum cylinder (\(h = 2r\)). Which uses less metal?</p>
+<p>Can A: \(SA = 2\pi(6)^2 + 2\pi(6)(8.84) = 72\pi + 106.1\pi \approx 559\) cm². (Volume check: \(\pi(36)(8.84) \approx 1000\) ✓)</p>
+<p>Can B: \(r^3 = 500/\pi \approx 159.15\), \(r \approx 5.42\), \(h \approx 10.84\). \(SA = 2\pi(5.42)^2 + 2\pi(5.42)(10.84) \approx 184.6 + 369.0 \approx 553.6\) cm².</p>
+<p>Can B uses about 5.4 cm² less metal — a small saving but real over millions of cans.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing open and closed cylinders/boxes — the surface area formulas differ.</li>
+<li>Forgetting that volume is a cubic function of linear dimensions. Doubling the radius of a cylinder with fixed height quadruples (not doubles) the volume.</li>
+<li>Using the wrong formula. Cylinder \(V = \pi r^2 h\) vs. cone \(V = \tfrac{1}{3}\pi r^2 h\) — different by a factor of 3.</li>
+<li>Negative dimensions. All physical dimensions must be positive in the answer.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.2 — "solve problems, using a variety of strategies (e.g., investigating with technology, modelling using a quadratic function), to determine the minimum surface area of a square-based prism with a given volume, or the minimum surface area of a cylinder with a given volume; pose and solve such problems arising from real-world applications [e.g., packaging design]." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct5-yt2')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Minimizing the Surface Area of a Cylindrical Container — The Organic Chemistry Tutor</span>
+<span class="vid-duration">17:25</span>
+<span class="vid-toggle" id="toggle-mct5-yt2">▶</span>
+</div>
+<div class="video-player" id="player-mct5-yt2">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Ynde1ME_hrQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=Ynde1ME_hrQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.3 &mdash; Scale Drawings and Plans</div>
+<div class="topic-desc">Read and create scale drawings; interpret architectural/engineering blueprints; compute actual measurements from scaled values.</div>
+<div class="summary-card">A <strong>scale</strong> is a ratio that relates drawing size to actual size: e.g. 1:50 means 1 unit on drawing = 50 units in reality. To find actual length: multiply the drawing measurement by the scale denominator. Common scales: blueprints 1:50 or 1:100; site plans 1:200 or 1:500; world maps 1:50 000 000+.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>A <em>scale drawing</em> is a reduced (or sometimes enlarged) representation of a real object, where every length is reduced or enlarged by the same factor. The drawing preserves all angles and proportions but changes the size. Architects, engineers, surveyors, mechanical designers, and electrical designers all produce and consume scale drawings.</p>
+
+<p>A <strong>scale</strong> can be written in three equivalent ways:</p>
+<ul>
+<li>As a ratio: 1:50, meaning "1 unit on the drawing represents 50 units in real life."</li>
+<li>As a fraction: \(1/50\), the scale factor.</li>
+<li>In words: "1 cm represents 50 cm" or "1 mm to 5 m."</li>
+</ul>
+
+<p>To <strong>compute actual size</strong>: multiply the drawn length by the scale denominator. If a wall measures 8 cm on a 1:50 plan, then actual length \(= 8 \times 50 = 400\) cm = 4 m.</p>
+
+<p>To <strong>compute drawn size</strong>: divide the actual length by the scale denominator. A 12-m room on a 1:100 plan should be drawn 12 m / 100 = 0.12 m = 12 cm.</p>
+
+<p>Common <strong>scale conventions</strong> in different fields:</p>
+<ul>
+<li><strong>Mechanical drawing</strong>: 1:1 (full size), 1:2, 1:5 (small parts), 1:10, 1:20.</li>
+<li><strong>Architecture / building plans</strong>: 1:50, 1:100 (floor plans), 1:200 (site plans).</li>
+<li><strong>Civil engineering / urban planning</strong>: 1:500, 1:1000, 1:5000.</li>
+<li><strong>Cartography</strong>: 1:25 000 (topographic), 1:1 000 000+ (small-area maps).</li>
+</ul>
+
+<p>Scale drawings combine with the linear/area/volume scaling laws (Topic 4.4). For a 1:50 plan, areas in the drawing scale to actual areas by a factor of \(50^2 = 2500\). So a 0.20 m² rectangle on the plan represents \(0.20 \times 2500 = 500\) m² in real life. This matters for cost estimating: paint coverage, floor area, roofing material.</p>
+
+<ul>
+<li><strong>Scale</strong> — ratio of drawing measurement to actual measurement.</li>
+<li><strong>Scale factor</strong> — the multiplicative ratio between drawing and actual.</li>
+<li><strong>Blueprint</strong> — engineering or architectural drawing, traditionally white-on-blue paper.</li>
+<li><strong>Plan view</strong> — top-down (bird's-eye) view; usually drawn with floor plan scales.</li>
+<li><strong>Elevation</strong> — front- or side-view; usually drawn with the same scale as the plan.</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — On a 1:200 architectural plan, a living room measures 4 cm by 6 cm. Find the actual dimensions and floor area.</p>
+<p>Length: \(4 \text{ cm} \times 200 = 800\) cm = 8 m.</p>
+<p>Width: \(6 \text{ cm} \times 200 = 1200\) cm = 12 m.</p>
+<p>Floor area: \(8 \times 12 = 96\) m². (Alternative check using area scaling: drawing area = 24 cm² = \(24 \times 10^{-4}\) m². Area scaling: \(\times 200^2 = 40{,}000\). \(24 \times 10^{-4} \times 40{,}000 = 96\) m². ✓)</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — On a 1:50 mechanical drawing, a shaft is 30 mm long with a 4 mm diameter. Find the actual dimensions.</p>
+<p>Length: \(30 \times 50 = 1500\) mm = 1.5 m.</p>
+<p>Diameter: \(4 \times 50 = 200\) mm = 20 cm.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A topographic map has scale 1:25 000. Two campsites appear 6 cm apart on the map. Find the actual distance.</p>
+<p>Drawing distance: 6 cm.</p>
+<p>Actual: \(6 \times 25{,}000 = 150{,}000\) cm = 1500 m = 1.5 km.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Confusing the scale ratio direction. 1:50 means the drawing is smaller than reality. A scale like 5:1 means the drawing is 5× larger than reality (used for tiny mechanical parts).</li>
+<li>Forgetting to convert units. If the scale is 1:50 with drawing in cm, the actual is in cm — to convert to m, divide by 100.</li>
+<li>Misapplying area scaling. Drawing 1 cm² ≠ actual 50 cm² at 1:50. It's actual \(50^2 = 2500\) cm² = 0.25 m².</li>
+<li>Forgetting that scale drawings preserve angles. Angles in the drawing equal angles in reality (no scaling needed).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "solve problems, using a variety of strategies, that require connecting two- and three-dimensional figures to the design of objects (e.g., construction or packaging design, scale models, surveying, technical drawings)." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct5-yt3')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Scale Drawings and Models — Math with Mr. J</span>
+<span class="vid-duration">5:42</span>
+<span class="vid-toggle" id="toggle-mct5-yt3">▶</span>
+</div>
+<div class="video-player" id="player-mct5-yt3">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XUOPGqKGbjk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=XUOPGqKGbjk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.4 &mdash; Packaging Design and Materials Optimisation</div>
+<div class="topic-desc">Apply optimisation principles to packaging: minimise material costs subject to volume requirements; analyse trade-offs between shape and cost.</div>
+<div class="summary-card">Real packaging optimisation balances multiple constraints: minimum surface area (material), structural rigidity, stacking efficiency, branding/label space, and manufacturing cost per shape. Compute SA and cost per shape: rectangular box (cube optimum), cylindrical can (\(h = 2r\) optimum). Then compare with branding and shipping constraints.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Real packaging design is a multi-criteria optimisation problem. Mathematically optimum shapes (cube box, \(h=2r\) cylinder) minimise material cost per unit volume — but real packages must also: stack efficiently on pallets and shelves; provide adequate label area for branding; resist crushing under load; fit into existing manufacturing lines; conform to legal labelling requirements; and minimise shipping volume.</p>
+
+<p>The MCT3M approach is to compute the surface area (material) needed for several candidate shapes, then compare. For a fixed volume \(V\):</p>
+
+<p><strong>Cylindrical can:</strong> Choose radius \(r\); then \(h = V/(\pi r^2)\) and \(SA = 2\pi r^2 + 2\pi r h\). Tabulate SA for several values of \(r\) (say, 2, 3, 4, 5 cm for a 500 mL can). The minimum gives the lowest-material option.</p>
+
+<p><strong>Rectangular box:</strong> Choose a base footprint (\(\ell, w\)); height is \(h = V/(\ell w)\). Then \(SA = 2(\ell w + \ell h + w h)\). For square base, \(\ell = w = s\): \(SA(s) = 2s^2 + 4V/s\). Minimum at \(s = \sqrt[3]{V}\), giving a cube.</p>
+
+<p>For real-world cost: multiply SA by cost per unit area of the material. A retort can (food can) uses tin-plated steel at, say, \$0.0001/cm². A 500-mL can with SA = 350 cm² costs about \$0.035 in metal. Across millions of cans, the difference between 348 cm² and 380 cm² is significant.</p>
+
+<p><strong>Stacking and shipping efficiency:</strong> A rectangular box stacks perfectly with no gaps; a cylinder has wasted space between cans. For dense packing, hexagonal arrangements help cylinders; but rectangular boxes still fill 100% of a shelf or container, while cylinders can only fill \(\pi/4 \approx 78.5\%\) (in a square grid) or \(\pi/(2\sqrt{3}) \approx 90.7\%\) (in hexagonal).</p>
+
+<p>So a "cylinder optimum" of \(h = 2r\) saves material but loses on packing efficiency. Modern packaging often uses Tetra Pak (rectangular prisms with pouring spouts) for liquids precisely because they fill shipping volumes more efficiently than round bottles.</p>
+
+<ul>
+<li><strong>Material cost</strong> — proportional to surface area (per unit area of packaging material).</li>
+<li><strong>Packing efficiency</strong> — fraction of shelf/container volume actually filled.</li>
+<li><strong>Label area</strong> — visible surface available for branding and required info.</li>
+<li><strong>Multi-criteria optimisation</strong> — balancing competing objectives (cost vs. brand vs. shipping).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A 750 mL cylindrical sports water bottle must use as little material as possible. Find its optimal dimensions.</p>
+<p>Use \(h = 2r\) optimum. Then \(V = \pi r^2 (2r) = 2\pi r^3 = 750\). \(r^3 = 375/\pi\), \(r \approx 4.92\) cm.</p>
+<p>\(h \approx 9.84\) cm.</p>
+<p>Min surface area: \(SA = 2\pi(4.92)^2 + 2\pi(4.92)(9.84) \approx 152 + 304 \approx 456\) cm².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Compare materials for a 1 L (1000 cm³) container: a sphere, an optimal cylinder, an optimal cube.</p>
+<p>Sphere: \(\tfrac{4}{3}\pi r^3 = 1000 \Rightarrow r \approx 6.20\) cm. \(SA = 4\pi(6.20)^2 \approx 483\) cm².</p>
+<p>Optimal cylinder: \(r^3 = 500/\pi \approx 159.15\), \(r \approx 5.42\), \(h \approx 10.85\). \(SA \approx 554\) cm² (from Example 3 of Topic 5.2).</p>
+<p>Optimal cube (open or closed): \(s = 10\) cm; closed \(SA = 600\) cm²; open-top \(SA = 5s^2 = 500\) cm².</p>
+<p>Ranking by surface area (least to most): sphere (483) < open cube (500) < closed cylinder (554) < closed cube (600).</p>
+<p>The sphere is the mathematical winner but the worst for stacking and labelling — which is why we rarely see spherical packages.</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A grocery store sells two yogurt containers: 500 mL in a \(7 \text{ cm} \times 7 \text{ cm} \times 10.2 \text{ cm}\) rectangular tub, or 500 mL in a \(r = 4.30 \text{ cm}, h = 8.60 \text{ cm}\) optimal cylinder. Compare surface areas.</p>
+<p>Tub: \(SA = 2(49 + 71.4 + 71.4) = 2 \cdot 191.8 = 383.6\) cm². (Volume check: \(7 \cdot 7 \cdot 10.2 = 499.8 \approx 500\) cm³ ✓)</p>
+<p>Optimal cylinder: \(SA = 2\pi(4.30)^2 + 2\pi(4.30)(8.60) \approx 116.1 + 232.3 \approx 348.4\) cm² (from Topic 5.2 Example 1).</p>
+<p>The cylinder uses less material (348.4 vs. 383.6, a 9% saving). But the rectangular tub stacks 100% efficiently and has rectangular labels — typically why retailers choose it.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Comparing the same volume across containers — ensure all the candidates contain the same product amount.</li>
+<li>Choosing only by minimum SA. Real design balances several criteria; the "best" depends on weights given to each.</li>
+<li>Forgetting open-top vs closed: open containers have one less face, which changes both SA and the optimum.</li>
+<li>Treating manufacturing constraints as zero. In reality, only certain shapes can be made cheaply with existing equipment.</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "solve problems, using a variety of strategies, that require connecting two- and three-dimensional figures to the design of objects (e.g., construction or packaging design, scale models, surveying, technical drawings)." Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct5-yt4')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Optimization Calculus Problems Minimum &amp; Maximum — The Organic Chemistry Tutor</span>
+<span class="vid-duration">27:18</span>
+<span class="vid-toggle" id="toggle-mct5-yt4">▶</span>
+</div>
+<div class="video-player" id="player-mct5-yt4">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/lx8RcYcYVuU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=lx8RcYcYVuU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.5 &mdash; Geometric Modelling of Real Structures</div>
+<div class="topic-desc">Combine 2-D and 3-D geometry, trigonometry, and measurement to model real structures: trusses, roofs, tanks, and engineered components.</div>
+<div class="summary-card">Real structures often combine simple shapes: a silo is a cylinder topped with a hemisphere; a roof is a square pyramid (or several connected triangles); a truss is a network of triangles. Decompose the structure into known parts, compute each part's area/volume, and sum. Use 3-D Pythagoras and trig to find indirect measurements.</div>
+<details class="lesson-notes">
+<summary>📖 Lesson Notes — Ontario Curriculum</summary>
+<div class="lesson-notes-body">
+<p>Real engineered structures rarely match a single simple shape. They combine cylinders, prisms, pyramids, cones, and spheres into composite forms. Modelling such structures requires decomposing them into manageable simple shapes, computing each part, and assembling the results.</p>
+
+<p><strong>Composite volumes.</strong> A silo for grain storage might be a cylinder of radius 3 m and height 10 m topped with a hemisphere of radius 3 m. Total volume:</p>
+<p>\[ V_{\text{silo}} = \pi r^2 h + \tfrac{1}{2} \cdot \tfrac{4}{3} \pi r^3 = \pi(9)(10) + \tfrac{2}{3}\pi(27) = 90\pi + 18\pi = 108\pi \approx 339.3 \text{ m}^3 \]</p>
+
+<p><strong>Composite surface areas.</strong> An ice-cream cone is a cone shape plus a hemisphere (when there's a scoop on top). The cone's <em>lateral</em> surface area (not including the missing base, since it joins the hemisphere) is \(\pi r s\). The hemisphere's surface area (not including its flat circle, since it joins the cone) is half of \(4\pi r^2 = 2\pi r^2\). Total surface = \(\pi r s + 2\pi r^2\).</p>
+
+<p><strong>Trusses.</strong> A roof truss is a triangular framework distributing weight. For a simple gable roof, the cross-section is an isoceles triangle. To find the rafter length given the span and rise (or pitch angle), use right-triangle trigonometry. To find the angle of a rafter: \(\tan\theta = \dfrac{\text{rise}}{\text{run}}\). For a roof of 8 m span and 2 m rise: half-span 4 m, rise 2 m, so pitch \(\tan\theta = 2/4 = 0.5\), \(\theta \approx 26.6°\). Rafter length \(= \sqrt{4^2 + 2^2} = \sqrt{20} \approx 4.47\) m.</p>
+
+<p><strong>Tanks and vessels.</strong> Industrial liquid storage often uses a cylinder with hemispherical end caps (a "pill" shape): volume \(= \pi r^2 h_{\text{cyl}} + \tfrac{4}{3}\pi r^3\) (where \(h_{\text{cyl}}\) is the height of just the cylindrical part). Surface area \(= 2\pi r h_{\text{cyl}} + 4\pi r^2\) (no flat ends since the hemispheres cap them).</p>
+
+<p>The art of geometric modelling is choosing the simplest decomposition. Once you've split the structure into known parts, apply the formulas (from Topic 4.3) and combine.</p>
+
+<ul>
+<li><strong>Composite figure</strong> — a 3-D shape built from two or more simple shapes (cone + cylinder + hemisphere, etc.).</li>
+<li><strong>Lateral surface</strong> — the curved/sloped part of a cylinder, cone, or pyramid (excluding flat bases).</li>
+<li><strong>Truss</strong> — a structural element made of triangles, used in roofs, bridges, towers.</li>
+<li><strong>Pitch</strong> — the slope of a roof, expressed as rise over run (often as a fraction like 4:12).</li>
+</ul>
+
+<div class="worked-example">
+<p>Example 1 — A grain silo consists of a cylindrical body 4 m in diameter and 12 m tall, topped with a hemispherical cap. Find the total volume of the silo and the total exterior surface area.</p>
+<p>Radius \(r = 2\) m. Cylinder volume: \(\pi(2)^2(12) = 48\pi \approx 150.8\) m³.</p>
+<p>Hemisphere volume: \(\tfrac{1}{2} \cdot \tfrac{4}{3}\pi(2)^3 = \tfrac{16}{3}\pi \approx 16.76\) m³.</p>
+<p>Total volume: \(\approx 150.8 + 16.76 = 167.6\) m³.</p>
+<p>Cylinder lateral SA: \(2\pi(2)(12) = 48\pi\); bottom circle: \(\pi(2)^2 = 4\pi\); hemisphere SA: \(2\pi(2)^2 = 8\pi\).</p>
+<p>Total SA: \(48\pi + 4\pi + 8\pi = 60\pi \approx 188.5\) m².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 2 — Roof truss. A gable roof has a span of 10 m and a rise of 3 m. Find (a) the pitch angle; (b) the length of each rafter; (c) the cross-sectional area of the triangular gable end.</p>
+<p>(a) Half-span 5 m, rise 3 m. \(\tan\theta = 3/5 = 0.6\), so \(\theta = \tan^{-1}(0.6) \approx 30.96°\).</p>
+<p>(b) Rafter length (hypotenuse): \(\sqrt{5^2 + 3^2} = \sqrt{34} \approx 5.83\) m.</p>
+<p>(c) Gable end area: \(\tfrac{1}{2}(10)(3) = 15\) m².</p>
+</div>
+
+<div class="worked-example">
+<p>Example 3 — A propane tank consists of a 1.5-m-diameter cylinder, 3 m long (cylindrical section only), with two hemispherical end caps. Find the total interior volume in m³ and litres (1 m³ = 1000 L).</p>
+<p>Radius: 0.75 m. Cylinder volume: \(\pi(0.75)^2(3) = \pi(0.5625)(3) = 1.6875\pi \approx 5.30\) m³.</p>
+<p>Two hemispheres make one sphere: \(\tfrac{4}{3}\pi(0.75)^3 = \tfrac{4}{3}\pi(0.4219) \approx 1.767\) m³.</p>
+<p>Total: \(\approx 5.30 + 1.767 = 7.07\) m³ = 7070 L.</p>
+</div>
+
+<p><strong>Watch out for:</strong></p>
+<ul>
+<li>Double-counting boundary surfaces. When a hemisphere caps a cylinder, the flat circle of the hemisphere replaces — doesn't add to — the cylinder's top end. Subtract one or omit the other.</li>
+<li>Missing constraints. The cylindrical part of a "pill" tank is the height excluding the hemispheres; if total length given, subtract two radii.</li>
+<li>Using the wrong base shape in surface area calculations. Always sketch first; identify what surfaces are visible/closed and which are internal joins.</li>
+<li>Sign errors when subtracting unwanted areas (e.g. window cutouts from a painted wall area).</li>
+</ul>
+
+<p class="curriculum-link"><em>Curriculum expectation:</em> Strand D, Expectation D3.3 — "solve problems, using a variety of strategies, that require connecting two- and three-dimensional figures to the design of objects (e.g., construction or packaging design, scale models, surveying, technical drawings)." Also D2.2 — surface area and volume of composite 3-D figures. Ontario Curriculum, Grades 11 and 12: Mathematics, 2007 (revised), MCT3M.</p>
+</div>
+</details>
+<div class="video-card">
+<div class="video-header" onclick="toggleVideo('mct5-yt5')">
+<span class="vid-icon">📖</span>
+<span class="vid-title">Composite Figures - Volume of 3D Shapes — The Organic Chemistry Tutor</span>
+<span class="vid-duration">14:52</span>
+<span class="vid-toggle" id="toggle-mct5-yt5">▶</span>
+</div>
+<div class="video-player" id="player-mct5-yt5">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CI-G9_bTKuw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<a href="https://www.youtube.com/watch?v=CI-G9_bTKuw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+</div>
+</div>
+</div>
+
+<div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+<div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 5 Assessments</div>
+<div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+<a class="assessment-strip-card assessment-strip-as" href="../../assessments/mct3m_ch5_as.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+<div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+<div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-for" href="../../assessments/mct3m_ch5_for.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+<div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+<div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+</a>
+<a class="assessment-strip-card assessment-strip-of" href="../../assessments/mct3m_ch5_of.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+<div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+<div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+<div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch4.html" class="chnav-btn chnav-prev">← Chapter 4</a>
+  <a href="../mct3m.html" class="chnav-btn chnav-finish">↑ Back to course</a>
+</div></div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCT3M — Mathematics for College Technology, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+</body></html>
