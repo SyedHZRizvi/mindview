@@ -55,6 +55,22 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
 .alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
 .alert.ok{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0;}
 .loading{padding:40px;text-align:center;color:#94a3b8;}
+.enrol-block{display:none;margin-top:18px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;}
+.enrol-block.visible{display:block;}
+.enrol-block h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#0f172a;margin-bottom:8px;}
+.enrol-block p.hint{font-size:12px;color:#64748b;margin-bottom:12px;line-height:1.5;}
+.enrol-actions{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.enrol-actions button{font-size:12px;padding:5px 11px;border-radius:6px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;color:#475569;font-weight:600;}
+.enrol-actions button:hover{border-color:#94a3b8;}
+.enrol-groups{max-height:280px;overflow-y:auto;border:1px solid #e2e8f0;border-radius:6px;background:#fff;padding:6px 10px;}
+.enrol-group{margin:8px 0 12px;}
+.enrol-group-title{font-size:11px;font-weight:800;color:#475569;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #f1f5f9;}
+.enrol-row{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:13px;line-height:1.3;}
+.enrol-row input[type="checkbox"]{width:15px;height:15px;cursor:pointer;flex-shrink:0;accent-color:#2563eb;}
+.enrol-row label{cursor:pointer;color:#1e293b;flex:1;display:flex;align-items:center;gap:6px;}
+.enrol-code{font-weight:700;color:#0f172a;font-size:12px;background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'SF Mono',Menlo,monospace;}
+.enrol-grade-pill{font-size:10px;background:#e0e7ff;color:#4338ca;padding:1px 6px;border-radius:8px;font-weight:700;letter-spacing:0.3px;}
+.enrol-count{margin-top:6px;font-size:12px;color:#64748b;font-weight:600;}
 </style>
 </head>
 <body>
@@ -86,7 +102,7 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
 
         <div class="card" style="overflow:hidden;">
             <table>
-                <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Status</th><th>Last Sign-In</th><th style="text-align:right;">Actions</th></tr></thead>
+                <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Enrolments</th><th>Last Sign-In</th><th style="text-align:right;">Actions</th></tr></thead>
                 <tbody id="users-tbody"></tbody>
             </table>
         </div>
@@ -197,6 +213,22 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
                 </select>
             </div>
             <div class="field"><label>Password <span class="muted" id="pwHint">(min 8 chars)</span></label><input type="password" id="password" minlength="8"></div>
+
+            <!-- Per-student course enrolment. Visible only when role=student.
+                 Students can see all course landing pages, but actual chapter,
+                 lesson, video, and assessment content requires being enrolled
+                 in that specific course (enforced by middleware). -->
+            <div class="enrol-block" id="enrolBlock">
+                <h3>📚 Enrolled Courses</h3>
+                <p class="hint">Pick the courses this student is paying for and should be able to open. Lessons, videos, and assessments for non-enrolled courses are blocked; the student can still see the course overview pages to know what's offered.</p>
+                <div class="enrol-actions">
+                    <button type="button" onclick="enrolSelectAll(true)">Select all 34</button>
+                    <button type="button" onclick="enrolSelectAll(false)">Clear all</button>
+                </div>
+                <div class="enrol-groups" id="enrolGroups"></div>
+                <div class="enrol-count" id="enrolCount">0 of 34 courses selected</div>
+            </div>
+
             <div class="row">
                 <button type="button" class="btn ghost" onclick="closeModal()">Cancel</button>
                 <button type="submit" class="btn" id="submitBtn">Save</button>
@@ -209,6 +241,119 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
 let currentUser = null;
 let actorRole = null;
+
+// 34-course catalogue grouped by Ontario discipline/strand. Keep in sync
+// with the home-page LAYOUT in scripts/_rebuild_index_grid.py and
+// VALID_COURSE_CODES in functions/api/users.js.
+const COURSE_CATALOG = [
+  {group:'📐 Mathematics', courses:[
+    {code:'mcr3u', title:'Functions', grade:11},
+    {code:'mhf4u', title:'Advanced Functions', grade:12},
+    {code:'mcv4u', title:'Calculus and Vectors', grade:12},
+    {code:'mdm4u', title:'Data Management', grade:12},
+    {code:'mct3m', title:'Math for College Tech', grade:11},
+    {code:'mct4m', title:'Math for College Tech', grade:12},
+  ]},
+  {group:'🔬 Science', courses:[{code:'snc2d', title:'Science (Academic)', grade:10}]},
+  {group:'🧬 Biology', courses:[
+    {code:'sbi3u', title:'Biology', grade:11},
+    {code:'sbi4u', title:'Biology', grade:12},
+  ]},
+  {group:'🧪 Chemistry', courses:[
+    {code:'sch3u', title:'Chemistry', grade:11},
+    {code:'sch4u', title:'Chemistry', grade:12},
+  ]},
+  {group:'⚡ Physics', courses:[
+    {code:'sph3u', title:'Physics', grade:11},
+    {code:'sph4u', title:'Physics', grade:12},
+  ]},
+  {group:'📚 English', courses:[
+    {code:'eng2d', title:'English (Academic)', grade:10},
+    {code:'eng3u', title:'English', grade:11},
+    {code:'eng4u', title:'English', grade:12},
+  ]},
+  {group:'💻 Computer Studies', courses:[
+    {code:'ics3u', title:'Intro to Computer Science', grade:11},
+    {code:'ics4u', title:'Computer Science', grade:12},
+  ]},
+  {group:'🏛️ Civics and Citizenship', courses:[
+    {code:'chv2o', title:'Civics and Citizenship', grade:10},
+  ]},
+  {group:'📜 History', courses:[
+    {code:'chc2d', title:'Canadian History since WWI', grade:10},
+    {code:'chw3m', title:'World History to 16th Century', grade:11},
+    {code:'chy4u', title:'World History since 15th Century', grade:12},
+  ]},
+  {group:'⚖️ Law', courses:[
+    {code:'clu3m', title:'Understanding Canadian Law', grade:11},
+    {code:'cln4u', title:'Canadian and International Law', grade:12},
+  ]},
+  {group:'🌍 Geography', courses:[
+    {code:'cgf3m', title:'Physical Geography', grade:11},
+    {code:'cgw4u', title:'World Issues: Geographic Analysis', grade:12},
+  ]},
+  {group:'📒 Accounting', courses:[
+    {code:'baf3m', title:'Financial Accounting Fundamentals', grade:11},
+    {code:'bat4m', title:'Financial Accounting Principles', grade:12},
+  ]},
+  {group:'🌐 International Business', courses:[
+    {code:'bbb4m', title:'International Business Fundamentals', grade:12},
+  ]},
+  {group:'👔 Business Leadership', courses:[
+    {code:'boh4m', title:'Business Leadership: Management', grade:12},
+  ]},
+  {group:'🥗 Food and Nutrition', courses:[
+    {code:'hfn3m', title:'Nutrition and Health', grade:11},
+    {code:'hfa4m', title:'Nutrition and Health Issues', grade:12},
+  ]},
+  {group:'🎭 World Cultures', courses:[
+    {code:'hsc4m', title:'World Cultures', grade:12},
+  ]},
+  {group:'🧭 Guidance and Career Education', courses:[
+    {code:'glc2o', title:'Career Studies', grade:10},
+  ]},
+];
+
+const ALL_COURSE_CODES = COURSE_CATALOG.flatMap(g => g.courses.map(c => c.code));
+
+function renderEnrolCheckboxes(selected) {
+  const sel = new Set(selected || []);
+  const parts = [];
+  for (const grp of COURSE_CATALOG) {
+    parts.push(`<div class="enrol-group">
+      <div class="enrol-group-title">${grp.group}</div>
+      ${grp.courses.map(c => `
+        <div class="enrol-row">
+          <input type="checkbox" id="enrol-${c.code}" value="${c.code}" ${sel.has(c.code) ? 'checked' : ''} onchange="updateEnrolCount()">
+          <label for="enrol-${c.code}"><span class="enrol-code">${c.code.toUpperCase()}</span><span>${c.title}</span><span class="enrol-grade-pill">G${c.grade}</span></label>
+        </div>`).join('')}
+    </div>`);
+  }
+  document.getElementById('enrolGroups').innerHTML = parts.join('');
+  updateEnrolCount();
+}
+
+function updateEnrolCount() {
+  const checked = document.querySelectorAll('#enrolGroups input[type="checkbox"]:checked').length;
+  const el = document.getElementById('enrolCount');
+  if (el) el.textContent = `${checked} of ${ALL_COURSE_CODES.length} courses selected`;
+}
+
+function enrolSelectAll(state) {
+  document.querySelectorAll('#enrolGroups input[type="checkbox"]').forEach(cb => cb.checked = state);
+  updateEnrolCount();
+}
+
+function readEnrolledCourses() {
+  return Array.from(document.querySelectorAll('#enrolGroups input[type="checkbox"]:checked')).map(cb => cb.value);
+}
+
+function toggleEnrolBlock(role) {
+  const block = document.getElementById('enrolBlock');
+  if (!block) return;
+  if (role === 'student') block.classList.add('visible');
+  else block.classList.remove('visible');
+}
 
 function canManageRole(actor, target) {
     if (actor === 'superuser') return true;
@@ -274,12 +419,27 @@ function renderUsers(users) {
         const canDelete = !isMe && canManageRole(actorRole, u.role);
         const lastSignIn = u.last_sign_in_at ? new Date(u.last_sign_in_at).toLocaleString() : '—';
         const editAttr = JSON.stringify(u).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        // Enrolment summary: students show "N courses" (with tooltip listing the
+        // codes); other roles show "All" since they have full access regardless
+        // of the enrolled_courses field.
+        let enrolCell;
+        if (u.role === 'student') {
+            const courses = Array.isArray(u.enrolled_courses) ? u.enrolled_courses : [];
+            if (courses.length === 0) {
+                enrolCell = `<span class="muted">None — content blocked</span>`;
+            } else {
+                const codesTitle = courses.map(c => c.toUpperCase()).join(', ');
+                enrolCell = `<span title="${escapeHtml(codesTitle)}" style="font-weight:600;color:#15803d;">${courses.length} course${courses.length === 1 ? '' : 's'}</span>`;
+            }
+        } else {
+            enrolCell = `<span class="muted">All (role bypass)</span>`;
+        }
         return `
             <tr>
                 <td><strong>${escapeHtml(u.full_name || '—')}</strong>${isMe ? ' <span class="muted">(you)</span>' : ''}</td>
                 <td class="muted">${escapeHtml(u.email)}</td>
                 <td><span class="role-pill ${u.role}">${ROLE_LABELS[u.role]}</span></td>
-                <td>${u.confirmed ? '✓ Confirmed' : '<span class="muted">Pending</span>'}</td>
+                <td>${enrolCell}</td>
                 <td class="muted">${lastSignIn}</td>
                 <td style="text-align:right;">
                     ${canEdit
@@ -309,6 +469,11 @@ function openCreate() {
     document.getElementById('pwHint').textContent = '(min 8 chars, required)';
     document.getElementById('password').required = true;
     document.getElementById('modalAlert').innerHTML = '';
+    // Default new accounts to "student" with NO enrolments — admin picks
+    // which courses to grant. This matches the typical create-then-enrol flow.
+    document.getElementById('role').value = 'student';
+    renderEnrolCheckboxes([]);
+    toggleEnrolBlock('student');
     document.getElementById('modal').classList.add('show');
 }
 
@@ -328,8 +493,17 @@ function editUser(u) {
     document.getElementById('pwHint').textContent = '(leave blank to keep current)';
     document.getElementById('password').required = false;
     document.getElementById('modalAlert').innerHTML = '';
+    renderEnrolCheckboxes(u.enrolled_courses || []);
+    toggleEnrolBlock(u.role);
     document.getElementById('modal').classList.add('show');
 }
+
+// React to live role changes inside the modal — show/hide the enrol block
+// so admins editing a teacher don't accidentally see a courses picker.
+document.addEventListener('DOMContentLoaded', () => {
+    const roleSel = document.getElementById('role');
+    if (roleSel) roleSel.addEventListener('change', e => toggleEnrolBlock(e.target.value));
+});
 
 function closeModal() {
     document.getElementById('modal').classList.remove('show');
@@ -338,13 +512,25 @@ function closeModal() {
 document.getElementById('userForm').addEventListener('submit', async e => {
     e.preventDefault();
     const id = document.getElementById('userId').value;
+    const role = document.getElementById('role').value;
     const body = {
         full_name: document.getElementById('full_name').value.trim(),
-        role: document.getElementById('role').value,
+        role: role,
     };
     const pw = document.getElementById('password').value;
     if (pw) body.password = pw;
     if (!id) body.email = document.getElementById('email').value.trim();
+    // Send enrolled_courses only for student records. For other roles the API
+    // rejects a non-empty enrolled_courses, and on update we want to clear
+    // any stale list if the role is being changed away from student.
+    if (role === 'student') {
+        body.enrolled_courses = readEnrolledCourses();
+    } else if (id) {
+        // On update, explicitly clear enrolled_courses when changing role
+        // away from student. (The server also clears it, this is belt-and-
+        // suspenders so the UI never sends stale state.)
+        body.enrolled_courses = [];
+    }
 
     try {
         const url = id ? `/api/users?id=${encodeURIComponent(id)}` : '/api/users';

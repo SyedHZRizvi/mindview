@@ -6,7 +6,10 @@
 //
 //   {
 //     authenticated: true,
-//     user: { id, email, full_name, role, role_label, can_manage_users }
+//     user: {
+//       id, email, full_name, role, role_label, can_manage_users,
+//       enrolled_courses?: string[]  // students only; absent on other roles
+//     }
 //   }
 //
 // When no valid session cookie is present we return 200 with
@@ -46,15 +49,17 @@ export async function onRequest(context) {
     return json(200, { authenticated: false });
   }
 
-  // Try to enrich with full_name from KV if available. If KV isn't bound or
-  // the user record has since been deleted, fall back to cookie data only —
-  // a stale cookie shouldn't crash the endpoint.
+  // Try to enrich with full_name + enrolled_courses from KV if available.
+  // If KV isn't bound or the user record has since been deleted, fall back
+  // to cookie data only — a stale cookie shouldn't crash the endpoint.
   let fullName = '';
+  let enrolledCourses = null;  // null = "not loaded from KV", [] = "loaded, empty"
   if (env.USERS_KV && payload.sub) {
     try {
       const rec = await env.USERS_KV.get(payload.sub, 'json');
       if (rec) {
         if (typeof rec.full_name === 'string') fullName = rec.full_name;
+        if (Array.isArray(rec.enrolled_courses)) enrolledCourses = rec.enrolled_courses;
         // If the role in KV has changed since the cookie was issued, prefer the
         // cookie (which is what we signed). The cookie will be re-issued on
         // next login. This avoids privilege-escalation surprises mid-session.
@@ -70,15 +75,19 @@ export async function onRequest(context) {
   }
 
   const role = payload.role;
-  return json(200, {
-    authenticated: true,
-    user: {
-      id: payload.sub,
-      email: payload.email,
-      full_name: fullName || payload.email,
-      role,
-      role_label: ROLE_LABELS[role] || role,
-      can_manage_users: role === 'admin' || role === 'superuser',
-    },
-  });
+  const user = {
+    id: payload.sub,
+    email: payload.email,
+    full_name: fullName || payload.email,
+    role,
+    role_label: ROLE_LABELS[role] || role,
+    can_manage_users: role === 'admin' || role === 'superuser',
+  };
+  // Only attach enrolled_courses for students — for teachers/admins/superusers
+  // it's meaningless (they have full access regardless). Defaults to [] for
+  // students whose record predates the field.
+  if (role === 'student') {
+    user.enrolled_courses = enrolledCourses || [];
+  }
+  return json(200, { authenticated: true, user });
 }

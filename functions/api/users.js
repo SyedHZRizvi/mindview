@@ -5,9 +5,18 @@
 // session lib. Only admin and superuser may call this endpoint; admins may
 // only manage student/teacher accounts, superusers may manage anyone.
 //
-// User-record shape (DO NOT change — preserved for KV compatibility):
-//   { id, email, full_name, role, passwordHash, created_at }
+// User-record shape (DO NOT change order — preserved for KV compatibility):
+//   { id, email, full_name, role, passwordHash, created_at,
+//     enrolled_courses?: string[] }
 // passwordHash = hex SHA-256 of password (no salt).
+//
+// enrolled_courses (added 2026-06-01) is meaningful only for role=student;
+// it's an array of Ontario course codes (lowercased) the student is
+// authorized to access content for. Missing/empty = no enrolment. The
+// middleware enforces this on every /courses/{code}/* request; students
+// can browse the home page and course landing pages regardless, but
+// chapters / lessons / assessments require enrolment. Teachers / admins /
+// superusers ignore this field and have full access.
 //
 // TODO: Migrate passwordHash to PBKDF2-with-salt on next successful login.
 // TODO: Add an "email:<lower>" -> id secondary index on create/update so login
@@ -18,6 +27,44 @@ import { readSessionFromRequest } from '../lib/session.js';
 const ROLE_RANK = { student: 0, teacher: 1, admin: 2, superuser: 3 };
 const ALL_ROLES = ['student', 'teacher', 'admin', 'superuser'];
 const MIN_PW_LENGTH = 8;
+
+// The 34 Ontario course codes that can appear in a student's enrolled_courses
+// array. Single source of truth — keep in sync with the home-page LAYOUT in
+// scripts/_rebuild_index_grid.py and the COURSES_AND_CHAPTERS list in
+// scripts/verify-baseline.py.
+const VALID_COURSE_CODES = new Set([
+  'mcr3u', 'mhf4u', 'mcv4u', 'mdm4u', 'mct3m', 'mct4m',
+  'snc2d', 'sbi3u', 'sbi4u', 'sch3u', 'sch4u', 'sph3u', 'sph4u',
+  'eng2d', 'eng3u', 'eng4u',
+  'ics3u', 'ics4u',
+  'chv2o', 'chc2d', 'chw3m', 'chy4u',
+  'clu3m', 'cln4u',
+  'cgf3m', 'cgw4u',
+  'baf3m', 'bat4m', 'bbb4m', 'boh4m',
+  'hfn3m', 'hfa4m', 'hsc4m',
+  'glc2o',
+]);
+
+// Validate + normalize an incoming enrolled_courses payload.
+// Returns { ok: true, value: string[] } or { ok: false, error: string }.
+function validateEnrolledCourses(input) {
+  if (input === undefined || input === null) return { ok: true, value: [] };
+  if (!Array.isArray(input)) {
+    return { ok: false, error: 'enrolled_courses must be an array of course codes' };
+  }
+  const out = [];
+  for (const raw of input) {
+    if (typeof raw !== 'string') {
+      return { ok: false, error: 'enrolled_courses entries must be strings' };
+    }
+    const code = raw.toLowerCase().trim();
+    if (!VALID_COURSE_CODES.has(code)) {
+      return { ok: false, error: `Unknown course code: ${raw}` };
+    }
+    if (!out.includes(code)) out.push(code);  // dedup
+  }
+  return { ok: true, value: out };
+}
 
 function json(status, body) {
   return new Response(JSON.stringify(body), {
@@ -89,7 +136,7 @@ export async function onRequest(context) {
     } catch {
       return json(400, { error: 'Invalid JSON body' });
     }
-    const { email, password, full_name, role } = body || {};
+    const { email, password, full_name, role, enrolled_courses } = body || {};
     if (!email || !password || !role) {
       return json(400, { error: 'email, password, role are required' });
     }
@@ -99,6 +146,15 @@ export async function onRequest(context) {
     }
     if (!canManageRole(actorRole, role)) {
       return json(403, { error: `Your role cannot create ${role} users` });
+    }
+    // enrolled_courses is only meaningful for students; reject it on other
+    // roles so we don't silently persist data that will never be read.
+    const enrolCheck = validateEnrolledCourses(enrolled_courses);
+    if (!enrolCheck.ok) return json(400, { error: enrolCheck.error });
+    if (role !== 'student' && enrolCheck.value.length > 0) {
+      return json(400, {
+        error: 'enrolled_courses can only be set on student accounts',
+      });
     }
     const id = crypto.randomUUID();
     const passwordHash = await sha256Hex(password); // TODO: upgrade to PBKDF2+salt
@@ -110,6 +166,9 @@ export async function onRequest(context) {
       passwordHash,
       created_at: new Date().toISOString(),
     };
+    if (role === 'student') {
+      user.enrolled_courses = enrolCheck.value;
+    }
     await env.USERS_KV.put(id, JSON.stringify(user));
     return json(201, { ok: true, id });
   }
@@ -142,8 +201,28 @@ export async function onRequest(context) {
       updates.passwordHash = await sha256Hex(body.password); // TODO: PBKDF2+salt
     }
     delete updates.password;
+    // Validate enrolled_courses on update too. Determine the effective role
+    // after this update (existing role unless the request changes it).
+    if ('enrolled_courses' in updates) {
+      const enrolCheck = validateEnrolledCourses(updates.enrolled_courses);
+      if (!enrolCheck.ok) return json(400, { error: enrolCheck.error });
+      const effectiveRole = updates.role || target.role;
+      if (effectiveRole !== 'student' && enrolCheck.value.length > 0) {
+        return json(400, {
+          error: 'enrolled_courses can only be set on student accounts',
+        });
+      }
+      updates.enrolled_courses = enrolCheck.value;
+    }
+    // If the role is being changed to something non-student, drop the field
+    // so it doesn't sit stale on a teacher/admin record.
+    if (updates.role && updates.role !== 'student' && 'enrolled_courses' in target) {
+      updates.enrolled_courses = undefined;
+    }
+    const merged = { ...target, ...updates, id: targetId };
+    if (merged.enrolled_courses === undefined) delete merged.enrolled_courses;
     // Never let the caller overwrite the immutable id from the body.
-    await env.USERS_KV.put(targetId, JSON.stringify({ ...target, ...updates, id: targetId }));
+    await env.USERS_KV.put(targetId, JSON.stringify(merged));
     return json(200, { ok: true });
   }
 

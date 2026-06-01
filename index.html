@@ -19,6 +19,33 @@
 .strand-tag { font-size: 14px; padding: 4px 12px; background: #f1f5f9; border-radius: 10px; color: #64748b; }
 .subject-group { margin-bottom: 48px; }
 .subject-label { font-size: 18px; font-weight: 800; color: #64748b; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
+
+/* ── Enrolment & Tuition section ─────────────────────────────────── */
+.enrol-section { padding: 56px 0; background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+.enrol-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: #0f172a; }
+.enrol-section .section-sub { font-size: 16px; color: #64748b; margin-bottom: 28px; }
+.enrol-pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 32px; }
+.enrol-tier { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px 22px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); }
+.enrol-tier.featured { border: 2px solid #2563eb; background: linear-gradient(180deg, #fff 0%, #eff6ff 100%); }
+.enrol-tier-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #2563eb; margin-bottom: 6px; }
+.enrol-tier h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #0f172a; }
+.enrol-price { font-size: 36px; font-weight: 900; color: #0f172a; line-height: 1; margin-bottom: 4px; }
+.enrol-price small { font-size: 14px; font-weight: 600; color: #64748b; }
+.enrol-per { font-size: 13px; color: #64748b; margin-bottom: 14px; }
+.enrol-tier ul { list-style: none; padding: 0; margin: 0; }
+.enrol-tier ul li { font-size: 14px; color: #475569; padding: 5px 0; padding-left: 22px; position: relative; line-height: 1.5; }
+.enrol-tier ul li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 800; }
+.enrol-howto { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 28px 30px; }
+.enrol-howto h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; color: #0f172a; display: flex; align-items: center; gap: 10px; }
+.enrol-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 18px; }
+.enrol-step { display: flex; gap: 14px; }
+.enrol-step-num { flex-shrink: 0; width: 36px; height: 36px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; }
+.enrol-step-text { font-size: 14px; color: #475569; line-height: 1.5; }
+.enrol-step-text strong { color: #0f172a; display: block; margin-bottom: 4px; font-size: 15px; }
+.enrol-contact { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; margin-top: 18px; font-size: 14px; color: #14532d; }
+.enrol-contact a { color: #15803d; font-weight: 700; text-decoration: none; }
+.enrol-contact a:hover { text-decoration: underline; }
+.enrol-placeholder { background: #fef3c7; border: 1px solid #fde68a; color: #78350f; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 18px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -28,6 +55,7 @@
         <a href="/" class="nav-brand"><img src="logo.png" alt="MindView Academy" class="brand-logo"></a>
         <div class="nav-links" id="nav-links">
             <a href="/" class="active">Home</a>
+            <a href="#enrolment">Enrolment</a>
             <a href="#courses">Courses</a>
             <a href="#resources">Resources</a>
             <a href="/admin/users.html" id="nav-manage-users" style="display:none;color:#dc2626;font-weight:700;">👥 Manage Users</a>
@@ -77,6 +105,83 @@ fetch('/api/me')
         <a href="#courses" class="hero-cta">Explore Courses →</a>
     </div>
 </header>
+
+<!-- Enrolment & Tuition — added 2026-06-01 per owner instruction. Fees
+     below are PLACEHOLDERS; replace the $ amounts and contact details
+     with the real values when ready. Course content (lessons, videos,
+     assessments) is gated per-student by the enrolled_courses field on
+     each user record; see functions/_middleware.js. -->
+<section id="enrolment" class="enrol-section">
+    <div class="container">
+        <h2>Enrolment &amp; Tuition</h2>
+        <p class="section-sub">Per-course pricing — enrol in one course or several. Browse all 34 below, then contact us to register.</p>
+
+        <div class="enrol-placeholder">⚠️ Placeholder pricing — final amounts to be confirmed by the school administrator.</div>
+
+        <div class="enrol-pricing">
+            <div class="enrol-tier">
+                <div class="enrol-tier-label">Standard</div>
+                <h3>Full-Credit Course</h3>
+                <div class="enrol-price">$599<small> CAD</small></div>
+                <div class="enrol-per">per course · 1.0 credit · 110 hrs instruction</div>
+                <ul>
+                    <li>Grade 10 / 11 / 12 — Academic (D), University (U), University/College (M), College (C)</li>
+                    <li>Full lesson notes, videos, assessments &amp; teacher feedback</li>
+                    <li>OSSD-credit eligible</li>
+                </ul>
+            </div>
+
+            <div class="enrol-tier">
+                <div class="enrol-tier-label">Half-Credit</div>
+                <h3>Open Course</h3>
+                <div class="enrol-price">$329<small> CAD</small></div>
+                <div class="enrol-per">per course · 0.5 credit · 55 hrs instruction</div>
+                <ul>
+                    <li>CHV2O — Civics and Citizenship</li>
+                    <li>GLC2O — Career Studies</li>
+                    <li>Same lessons + assessments + feedback model</li>
+                </ul>
+            </div>
+
+            <div class="enrol-tier featured">
+                <div class="enrol-tier-label">Save ~15%</div>
+                <h3>Multi-Course Bundle</h3>
+                <div class="enrol-price">3+ courses</div>
+                <div class="enrol-per">discounted package — contact admin for a quote</div>
+                <ul>
+                    <li>Full grade 11 or 12 year package</li>
+                    <li>OUAC-friendly pre-university bundle</li>
+                    <li>College-pathway bundle (MCT3M/MCT4M + complement)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="enrol-howto">
+            <h3>📝 How to Enrol</h3>
+            <div class="enrol-steps">
+                <div class="enrol-step">
+                    <div class="enrol-step-num">1</div>
+                    <div class="enrol-step-text"><strong>Browse the catalogue</strong>Look through the 34 courses below and decide which one(s) you want to take.</div>
+                </div>
+                <div class="enrol-step">
+                    <div class="enrol-step-num">2</div>
+                    <div class="enrol-step-text"><strong>Email the admin</strong>Tell us your full name, current grade, and the courses you'd like to enrol in.</div>
+                </div>
+                <div class="enrol-step">
+                    <div class="enrol-step-num">3</div>
+                    <div class="enrol-step-text"><strong>Receive your account</strong>We'll send you a login and payment instructions. Tuition is per-course.</div>
+                </div>
+                <div class="enrol-step">
+                    <div class="enrol-step-num">4</div>
+                    <div class="enrol-step-text"><strong>Start learning</strong>Sign in — your enrolled courses unlock all lessons, videos &amp; assessments.</div>
+                </div>
+            </div>
+            <div class="enrol-contact">
+                📧 Contact for enrolment: <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+1-XXX-XXX-XXXX">(XXX) XXX-XXXX</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="courses" style="padding: 64px 0;">
     <div class="container">
