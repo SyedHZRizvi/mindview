@@ -69,11 +69,16 @@ LAYOUT = [
         # — Law (Grade 11 → Grade 12)
         ("clu3m", "CLU3M", 11, "#b91c1c", "Understanding Canadian Law", "Heritage of law, Charter rights, criminal law, civil law & dispute resolution, legal inquiry"),
         ("cln4u", "CLN4U", 12, "#7f1d1d", "Canadian and International Law", "Legal theory, Constitution, international law, human rights, disputes between nations"),
-        # — Geography (Grade 11 → Grade 12)
-        ("cgf3m", "CGF3M", 11, "#0e7490", "Physical Geography", "Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues"),
-        ("cgw4u", "CGW4U", 12, "#155e75", "World Issues: A Geographic Analysis", "Quality of life, sustainability & climate, conflict & cooperation, global connections"),
         # — World Cultures (Grade 12 only)
         ("hsc4m", "HSC4M", 12, "#9333ea", "World Cultures", "Foundations of culture, cultural expressions, identity & diversity, globalization, inquiry skills"),
+    ]),
+    ("🌍 Geography", [
+        # Per Ontario curriculum the Geography strand sits within Canadian and
+        # World Studies, but the owner asked for it as its own home-page
+        # section (2026-06-01) so siblings CGF3M → CGW4U are visually grouped
+        # without being absorbed into the larger CWS block.
+        ("cgf3m", "CGF3M", 11, "#0e7490", "Physical Geography", "Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues"),
+        ("cgw4u", "CGW4U", 12, "#155e75", "World Issues: A Geographic Analysis", "Quality of life, sustainability & climate, conflict & cooperation, global connections"),
     ]),
     ("💼 Business Studies", [
         # — Financial Accounting (Grade 11 → Grade 12)
@@ -84,8 +89,12 @@ LAYOUT = [
         # — Business Leadership (Grade 12 only)
         ("boh4m", "BOH4M", 12, "#7c3aed", "Business Leadership: Management", "Foundations of management, leadership theory, decision-making, planning, controlling & ethics"),
     ]),
-    ("🥗 Family Studies", [
-        # — Nutrition (Grade 11 → Grade 12)
+    ("🥗 Food and Nutrition", [
+        # Per Ontario "Social Sciences and Humanities" curriculum (2013, rev.):
+        # within the Family Studies discipline the Food and Nutrition strand
+        # is the umbrella for HFN3M and HFA4M. Owner asked for the section
+        # heading to match the strand name (2026-06-01).
+        # https://www.dcp.edu.gov.on.ca/en/curriculum/social-sciences-humanities/courses-list
         ("hfn3m", "HFN3M", 11, "#16a34a", "Nutrition and Health", "Nutrition basics, digestion & metabolism, Canadian Food Guide, food safety, trends & issues"),
         ("hfa4m", "HFA4M", 12, "#15803d", "Nutrition and Health Issues", "Determinants of nutritional health, lifespan nutrition, nutrition & disease, food systems"),
     ]),
