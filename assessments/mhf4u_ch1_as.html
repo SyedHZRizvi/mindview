@@ -94,7 +94,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q1','a')">Check Answer</button>
     <div class="feedback" id="q1-feedback"></div>
-    <div class="solution" id="q1-solution">
+    <div class="solution instructor-only" id="q1-solution">
         <div class="solution-label">Solution:</div>
         \( f(x) = 3x^4 \) is a power function because it has the form \( f(x) = ax^n \) where \( a = 3 \) and \( n = 4 \).
         <br>• \( g(x) = 2^x \) is exponential (base is constant, exponent is variable).
@@ -114,7 +114,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
     <div class="feedback" id="q2-feedback"></div>
-    <div class="solution" id="q2-solution">
+    <div class="solution instructor-only" id="q2-solution">
         <div class="solution-label">Solution:</div>
         Odd degree (5) with negative leading coefficient (-2):
         <br>• As \( x \to \infty \), the large positive \( x^5 \) multiplied by \( -2 \) gives \( f(x) \to -\infty \)
@@ -137,7 +137,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </div>
     <button class="btn btn-check" onclick="checkNumeric('q3', 2)">Check Answer</button>
     <div class="feedback" id="q3-feedback"></div>
-    <div class="solution" id="q3-solution">
+    <div class="solution instructor-only" id="q3-solution">
         <div class="solution-label">Solution:</div>
         A polynomial of degree \( n \) has at most \( n - 1 \) turning points.
         <br>Degree = 3, so maximum turning points = \( 3 - 1 = 2 \).
@@ -153,7 +153,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
     <div class="feedback" id="q4-feedback"></div>
-    <div class="solution" id="q4-solution">
+    <div class="solution instructor-only" id="q4-solution">
         <div class="solution-label">Solution:</div>
         <strong>False.</strong> A degree 4 polynomial has <em>at most</em> 3 turning points, but it can have 1 or 3.
         <br>For example, \( f(x) = x^4 \) has only 1 turning point (at the origin).
@@ -175,7 +175,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </div>
     <button class="btn btn-check" onclick="checkNumeric('q5', 3)">Check Answer</button>
     <div class="feedback" id="q5-feedback"></div>
-    <div class="solution" id="q5-solution">
+    <div class="solution instructor-only" id="q5-solution">
         <div class="solution-label">Solution:</div>
         If the \( n \)th differences are constant, the polynomial has degree \( n \).
         <br>Constant 3rd differences → degree 3.
@@ -190,7 +190,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </div>
     <button class="btn btn-check" onclick="checkNumeric('q6', 12)">Check Answer</button>
     <div class="feedback" id="q6-feedback"></div>
-    <div class="solution" id="q6-solution">
+    <div class="solution instructor-only" id="q6-solution">
         <div class="solution-label">Solution:</div>
         For a polynomial of degree \( n \) with leading coefficient \( a \):
         $$ \text{Constant } n\text{th differences} = a \cdot n! $$
@@ -212,7 +212,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </div>
     <button class="btn btn-check" onclick="checkNumeric('q7', 6)">Check Answer</button>
     <div class="feedback" id="q7-feedback"></div>
-    <div class="solution" id="q7-solution">
+    <div class="solution instructor-only" id="q7-solution">
         <div class="solution-label">Solution:</div>
         The y-intercept is \( f(0) \):
         $$ f(0) = -2(0+1)^2(0-3) = -2(1)(-3) = 6 $$
@@ -229,7 +229,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
     <div class="feedback" id="q8-feedback"></div>
-    <div class="solution" id="q8-solution">
+    <div class="solution instructor-only" id="q8-solution">
         <div class="solution-label">Solution:</div>
         At \( x = -1 \), the factor is \( (x+1)^2 \) — the exponent is 2 (even multiplicity).
         <br>At zeros with <strong>even</strong> multiplicity, the graph <strong>bounces off</strong> the x-axis (tangent).
@@ -253,7 +253,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q9','a')">Check Answer</button>
     <div class="feedback" id="q9-feedback"></div>
-    <div class="solution" id="q9-solution">
+    <div class="solution instructor-only" id="q9-solution">
         <div class="solution-label">Solution:</div>
         Test \( f(-x) \):
         $$ f(-x) = (-x)^4 - 3(-x)^2 = x^4 - 3x^2 = f(x) $$
@@ -272,7 +272,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
     <div class="feedback" id="q10-feedback"></div>
-    <div class="solution" id="q10-solution">
+    <div class="solution instructor-only" id="q10-solution">
         <div class="solution-label">Solution:</div>
         Test \( g(-x) \):
         $$ g(-x) = (-x)^3 - (-x) = -x^3 + x = -(x^3 - x) = -g(x) $$
@@ -295,7 +295,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </div>
     <button class="btn btn-check" onclick="checkNumeric('q11', 0)">Check Answer</button>
     <div class="feedback" id="q11-feedback"></div>
-    <div class="solution" id="q11-solution">
+    <div class="solution instructor-only" id="q11-solution">
         <div class="solution-label">Solution:</div>
         $$ \text{Average RoC} = \frac{f(3) - f(1)}{3 - 1} $$
         $$ f(3) = 9 - 12 + 1 = -2 $$
@@ -315,7 +315,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q12','b')">Check Answer</button>
     <div class="feedback" id="q12-feedback"></div>
-    <div class="solution" id="q12-solution">
+    <div class="solution instructor-only" id="q12-solution">
         <div class="solution-label">Solution:</div>
         Using the limit of secant slopes approaching \( x = 2 \):
         $$ \frac{f(2.01) - f(1.99)}{0.02} = \frac{-2.9999 - (-2.9999)}{0.02} \approx 0 $$

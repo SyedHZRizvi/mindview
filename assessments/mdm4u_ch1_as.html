@@ -83,7 +83,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q1', 4)">Check Answer</button>
     <div class="feedback" id="q1-feedback"></div>
-    <div class="solution" id="q1-solution">
+    <div class="solution instructor-only" id="q1-solution">
         <div class="solution-label">Solution:</div>
         Each toss has 2 outcomes. By the multiplicative principle: \( 2 \times 2 = 4 \).
         <br>Sample space: \( S = \{HH, HT, TH, TT\} \), so \( n(S) = 4 \).
@@ -101,7 +101,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
     <div class="feedback" id="q2-feedback"></div>
-    <div class="solution" id="q2-solution">
+    <div class="solution instructor-only" id="q2-solution">
         <div class="solution-label">Solution:</div>
         Favourable outcomes: \( \{1,2,3,4\} \), so 4 outcomes. Sample space: 6.
         <br>\( P(X<5) = \dfrac{4}{6} = \dfrac{2}{3} \).
@@ -118,7 +118,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q3', 10000)">Check Answer</button>
     <div class="feedback" id="q3-feedback"></div>
-    <div class="solution" id="q3-solution">
+    <div class="solution instructor-only" id="q3-solution">
         <div class="solution-label">Solution:</div>
         Each of 4 positions has 10 choices: \( 10 \times 10 \times 10 \times 10 = 10^4 = 10\,000 \).
     </div>
@@ -130,7 +130,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q4', 11232000)">Check Answer</button>
     <div class="feedback" id="q4-feedback"></div>
-    <div class="solution" id="q4-solution">
+    <div class="solution instructor-only" id="q4-solution">
         <div class="solution-label">Solution:</div>
         Letters (no repeat): \( 26 \times 25 \times 24 = 15\,600 \).
         <br>Digits (no repeat): \( 10 \times 9 \times 8 = 720 \).
@@ -153,7 +153,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q5','b')">Check Answer</button>
     <div class="feedback" id="q5-feedback"></div>
-    <div class="solution" id="q5-solution">
+    <div class="solution instructor-only" id="q5-solution">
         <div class="solution-label">Solution:</div>
         Kings and Queens are mutually exclusive (a card cannot be both).
         <br>\( P(K \cup Q) = P(K) + P(Q) = \dfrac{4}{52} + \dfrac{4}{52} = \dfrac{8}{52} = \dfrac{2}{13} \).
@@ -171,7 +171,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q6','c')">Check Answer</button>
     <div class="feedback" id="q6-feedback"></div>
-    <div class="solution" id="q6-solution">
+    <div class="solution instructor-only" id="q6-solution">
         <div class="solution-label">Solution:</div>
         Events are NOT mutually exclusive — there are 3 face cards that are also Hearts (J, Q, K of Hearts).
         <br>\( P(H \cup F) = P(H) + P(F) - P(H \cap F) = \dfrac{13}{52} + \dfrac{12}{52} - \dfrac{3}{52} = \dfrac{22}{52} = \dfrac{11}{26} \).
@@ -188,7 +188,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q7-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q7', 4)">Check Answer</button>
     <div class="feedback" id="q7-feedback"></div>
-    <div class="solution" id="q7-solution">
+    <div class="solution instructor-only" id="q7-solution">
         <div class="solution-label">Solution:</div>
         \( n(F \cup S) = n(F) + n(S) - n(F \cap S) = 18 + 14 - 6 = 26 \).
         <br>Neither: \( 30 - 26 = 4 \).
@@ -201,7 +201,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q8', 80)">Check Answer</button>
     <div class="feedback" id="q8-feedback"></div>
-    <div class="solution" id="q8-solution">
+    <div class="solution instructor-only" id="q8-solution">
         <div class="solution-label">Solution:</div>
         Inclusion–exclusion: \( |C \cup T| = |C| + |T| - |C \cap T| = 60 + 50 - 30 = 80 \).
     </div>
@@ -222,7 +222,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q9','b')">Check Answer</button>
     <div class="feedback" id="q9-feedback"></div>
-    <div class="solution" id="q9-solution">
+    <div class="solution instructor-only" id="q9-solution">
         <div class="solution-label">Solution:</div>
         Without replacement, events are dependent. \( P(A_1 \cap A_2) = P(A_1) \cdot P(A_2 \mid A_1) \).
         <br>\( = \dfrac{4}{52} \cdot \dfrac{3}{51} = \dfrac{12}{2652} = \dfrac{1}{221} \).
@@ -240,7 +240,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
     <div class="feedback" id="q10-feedback"></div>
-    <div class="solution" id="q10-solution">
+    <div class="solution instructor-only" id="q10-solution">
         <div class="solution-label">Solution:</div>
         With replacement, events are independent.
         <br>\( P(R) \cdot P(B) = \dfrac{5}{8} \cdot \dfrac{3}{8} = \dfrac{15}{64} \).
@@ -257,7 +257,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q11-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q11', 24)">Check Answer</button>
     <div class="feedback" id="q11-feedback"></div>
-    <div class="solution" id="q11-solution">
+    <div class="solution instructor-only" id="q11-solution">
         <div class="solution-label">Solution:</div>
         \( 3 \times 4 \times 2 = 24 \) breakfasts.
     </div>
@@ -274,7 +274,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q12','a')">Check Answer</button>
     <div class="feedback" id="q12-feedback"></div>
-    <div class="solution" id="q12-solution">
+    <div class="solution instructor-only" id="q12-solution">
         <div class="solution-label">Solution:</div>
         Total: 12. Not green: \( 4 + 2 = 6 \).
         <br>\( P(\text{not green}) = \dfrac{6}{12} = \dfrac{1}{2} \). (Or: \( 1 - \dfrac{6}{12} = \dfrac{1}{2} \).)

@@ -57,7 +57,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q1-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q1',4)">Check</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Direct substitution: \(2(9)-5(3)+1=18-15+1=4\).</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>Direct substitution: \(2(9)-5(3)+1=18-15+1=4\).</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">Evaluate \( \displaystyle \lim_{x\to 2}\frac{x^2-4}{x-2} \).</div>
@@ -69,14 +69,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q2','c')">Check</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Factor: \(\frac{(x-2)(x+2)}{x-2}=x+2\). As \(x\to 2\), limit \(=4\).</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>Factor: \(\frac{(x-2)(x+2)}{x-2}=x+2\). As \(x\to 2\), limit \(=4\).</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div>
 <div class="q-text">Evaluate \( \displaystyle \lim_{x\to 0}\frac{\sqrt{x+9}-3}{x} \) (decimal).</div>
 <div class="answer-area"><input type="text" id="q3-input" placeholder="Decimal..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q3',0.16667)">Check</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Rationalize numerator: \(\frac{(x+9)-9}{x(\sqrt{x+9}+3)}=\frac{1}{\sqrt{x+9}+3}\to \frac{1}{6}\approx 0.1667\).</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>Rationalize numerator: \(\frac{(x+9)-9}{x(\sqrt{x+9}+3)}=\frac{1}{\sqrt{x+9}+3}\to \frac{1}{6}\approx 0.1667\).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 1.2 — One-Sided Limits & Continuity</div>
@@ -90,14 +90,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q4','a')">Check</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Left: \(2+1=3\). Right: \(4-1=3\). \(f(2)=3\). All agree → continuous.</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>Left: \(2+1=3\). Right: \(4-1=3\). \(f(2)=3\). All agree → continuous.</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div>
 <div class="q-text">Find \(k\) so \( g(x)=\begin{cases} kx-1, & x\le 1\\ x^2+2, & x>1\end{cases}\) is continuous at \(x=1\).</div>
 <div class="answer-area"><input type="text" id="q5-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q5',4)">Check</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Set \(k(1)-1=1+2=3\) → \(k=4\).</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>Set \(k(1)-1=1+2=3\) → \(k=4\).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 1.3 — Derivative from First Principles</div>
@@ -107,7 +107,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q6-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q6',1)">Check</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\(f'(x)=\lim_{h\to 0}\frac{(x+h)^2-3(x+h)-(x^2-3x)}{h}=\lim_{h\to 0}(2x+h-3)=2x-3\). At 2: \(1\).</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>\(f'(x)=\lim_{h\to 0}\frac{(x+h)^2-3(x+h)-(x^2-3x)}{h}=\lim_{h\to 0}(2x+h-3)=2x-3\). At 2: \(1\).</div></div>
 
 <div class="question-card" id="q7"><div class="q-number">Question 7</div>
 <div class="q-text">Slope of tangent to \(y=\sqrt{x}\) at \(x=4\):</div>
@@ -119,14 +119,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q7','b')">Check</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\(f'(x)=\frac{1}{2\sqrt{x}}\); at 4: \(\frac{1}{4}\).</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>\(f'(x)=\frac{1}{2\sqrt{x}}\); at 4: \(\frac{1}{4}\).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div>
 <div class="q-text">Find \(\displaystyle \lim_{h\to 0}\frac{(3+h)^2-9}{h}\).</div>
 <div class="answer-area"><input type="text" id="q8-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q8',6)">Check</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\(\frac{6h+h^2}{h}=6+h\to 6\). (This is \(f'(3)\) for \(f=x^2\).)</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>\(\frac{6h+h^2}{h}=6+h\to 6\). (This is \(f'(3)\) for \(f=x^2\).)</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 1.4 — Average vs Instantaneous Rate of Change</div>
@@ -136,14 +136,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q9-input" placeholder="m/s..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q9',0)">Check</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\(h(3)=15,\ h(1)=15\). \((15-15)/2=0\) m/s.</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>\(h(3)=15,\ h(1)=15\). \((15-15)/2=0\) m/s.</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div>
 <div class="q-text">Same \(h(t)\): instantaneous velocity at \(t=1\)?</div>
 <div class="answer-area"><input type="text" id="q10-input" placeholder="m/s..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q10',10)">Check</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\(h'(t)=-10t+20\). At 1: \(10\) m/s.</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>\(h'(t)=-10t+20\). At 1: \(10\) m/s.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 1.5 — Limits at Infinity</div>
@@ -158,7 +158,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q11','b')">Check</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>Same degree → ratio of leading coefficients: \(3/2\).</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>Same degree → ratio of leading coefficients: \(3/2\).</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">True/False: If \(\lim_{x\to a}f(x)\) exists, then \(f\) must be continuous at \(a\).</div>
@@ -168,7 +168,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q12','b')">Check</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>False — also need \(f(a)\) defined and equal to the limit (e.g. removable hole).</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>False — also need \(f(a)\) defined and equal to the limit (e.g. removable hole).</div></div>
 </div>
 
 <div class="self-reflect"><h3>📊 Self-Reflection</h3>

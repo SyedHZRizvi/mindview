@@ -73,7 +73,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q1','b')">Check</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>FOIL: \( x^{2} -5x + 3x - 15 = x^{2}-2x-15 \).</div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>FOIL: \( x^{2} -5x + 3x - 15 = x^{2}-2x-15 \).</div>
 </div>
 
 <div class="question-card" id="q2">
@@ -81,7 +81,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <div class="q-text">Expand \( (2x-3)^{2} \).</div>
 <div class="answer-area"><input type="text" id="q2-input" placeholder="e.g. 4x^2 - 12x + 9"></div>
 <button class="btn btn-check" onclick="document.getElementById('q2-solution').classList.add('show')">Reveal</button>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( (a-b)^{2}=a^{2}-2ab+b^{2} \) with \( a=2x, b=3 \): \( 4x^{2}-12x+9 \).</div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\( (a-b)^{2}=a^{2}-2ab+b^{2} \) with \( a=2x, b=3 \): \( 4x^{2}-12x+9 \).</div>
 </div>
 </div>
 
@@ -98,7 +98,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q3','a')">Check</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Find two numbers multiplying to 12, summing to -7: -3 and -4. So \( (x-3)(x-4) \).</div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>Find two numbers multiplying to 12, summing to -7: -3 and -4. So \( (x-3)(x-4) \).</div>
 </div>
 
 <div class="question-card" id="q4">
@@ -106,7 +106,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <div class="q-text">Factor \( x^{3}-27 \) (difference of cubes).</div>
 <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter factored form..."></div>
 <button class="btn btn-check" onclick="document.getElementById('q4-solution').classList.add('show')">Reveal</button>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2}) \) with \( a=x, b=3 \): \( (x-3)(x^{2}+3x+9) \).</div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\( a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2}) \) with \( a=x, b=3 \): \( (x-3)(x^{2}+3x+9) \).</div>
 </div>
 </div>
 
@@ -118,7 +118,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q5', 7)">Check</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>By Remainder Theorem, \( R=f(3)=27-18+3-5=7 \).</div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>By Remainder Theorem, \( R=f(3)=27-18+3-5=7 \).</div>
 </div>
 
 <div class="question-card" id="q6">
@@ -132,7 +132,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q6','b')">Check</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Factor theorem: \( f(a)=0 \Leftrightarrow x-a \) is a factor. So \( x-2 \).</div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>Factor theorem: \( f(a)=0 \Leftrightarrow x-a \) is a factor. So \( x-2 \).</div>
 </div>
 </div>
 
@@ -143,7 +143,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <div class="q-text">List the rational candidates for roots of \( 2x^{3}+x^{2}-7x-6=0 \) (positive only).</div>
 <div class="answer-area"><input type="text" id="q7-input" placeholder="e.g. 1, 2, 3, 6, 1/2, 3/2"></div>
 <button class="btn btn-check" onclick="document.getElementById('q7-solution').classList.add('show')">Reveal</button>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Factors of 6 over factors of 2: \( 1, 2, 3, 6, 1/2, 3/2 \).</div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>Factors of 6 over factors of 2: \( 1, 2, 3, 6, 1/2, 3/2 \).</div>
 </div>
 
 <div class="question-card" id="q8">
@@ -152,7 +152,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter number of roots..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q8', 3)">Check</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( x(x-1)(x+1)=0 \Rightarrow x=-1, 0, 1 \) — three distinct real roots.</div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>\( x(x-1)(x+1)=0 \Rightarrow x=-1, 0, 1 \) — three distinct real roots.</div>
 </div>
 </div>
 
@@ -169,7 +169,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q9','c')">Check</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Product is positive when both factors share signs: both \( + \) means \( x>1 \); both \( - \) means \( x<-2 \).</div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>Product is positive when both factors share signs: both \( + \) means \( x>1 \); both \( - \) means \( x<-2 \).</div>
 </div>
 
 <div class="question-card" id="q10">
@@ -182,7 +182,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q10','b')">Check</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Even multiplicity ⇒ bounce; odd ⇒ cross.</div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>Even multiplicity ⇒ bounce; odd ⇒ cross.</div>
 </div>
 </div>
 

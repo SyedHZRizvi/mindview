@@ -60,21 +60,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q1-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q1',56)">Check Answer</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( \binom{8}{3} = \dfrac{8!}{3!\,5!} = \dfrac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56 \).</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>\( \binom{8}{3} = \dfrac{8!}{3!\,5!} = \dfrac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56 \).</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">A committee of 4 is to be selected from 10 people. How many possible committees?</div>
 <input type="text" id="q2-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q2',210)">Check Answer</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( \binom{10}{4} = \dfrac{10!}{4!\,6!} = \dfrac{10\cdot 9 \cdot 8 \cdot 7}{4!} = \dfrac{5040}{24} = 210 \).</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\( \binom{10}{4} = \dfrac{10!}{4!\,6!} = \dfrac{10\cdot 9 \cdot 8 \cdot 7}{4!} = \dfrac{5040}{24} = 210 \).</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div>
 <div class="q-text">From a deck of 52 cards, how many 5-card hands are possible?</div>
 <input type="text" id="q3-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q3',2598960)">Check Answer</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( \binom{52}{5} = \dfrac{52!}{5!\,47!} = 2\,598\,960 \).</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\( \binom{52}{5} = \dfrac{52!}{5!\,47!} = 2\,598\,960 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.2 — Combination Identities</div>
@@ -84,7 +84,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q4-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q4',190)">Check Answer</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( \binom{20}{18} = \binom{20}{2} = \dfrac{20\cdot 19}{2} = 190 \).</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\( \binom{20}{18} = \binom{20}{2} = \dfrac{20\cdot 19}{2} = 190 \).</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div>
 <div class="q-text">Verify Pascal's identity: \( \binom{6}{2} + \binom{6}{3} \) equals which of the following?</div>
@@ -96,7 +96,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q5','a')">Check Answer</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Pascal: \( \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1} \). So \( \binom{6}{2}+\binom{6}{3} = \binom{7}{3} = 35 \). Check: \( 15 + 20 = 35 \). ✓</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>Pascal: \( \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1} \). So \( \binom{6}{2}+\binom{6}{3} = \binom{7}{3} = 35 \). Check: \( 15 + 20 = 35 \). ✓</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.3 — Pascal's Triangle</div>
@@ -106,7 +106,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q6-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q6',32)">Check Answer</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>The sum of row \( n \) is \( 2^n \). Row 5 sum = \( 2^5 = 32 \). (Row 5 = 1, 5, 10, 10, 5, 1.)</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>The sum of row \( n \) is \( 2^n \). Row 5 sum = \( 2^5 = 32 \). (Row 5 = 1, 5, 10, 10, 5, 1.)</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.4 — Binomial Theorem</div>
@@ -116,7 +116,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q7-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q7',40)">Check Answer</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>General term: \( \binom{5}{k} x^{5-k} 2^k \). For \( x^3 \): \( 5-k=3 \Rightarrow k=2 \). Coefficient: \( \binom{5}{2} \cdot 2^2 = 10 \cdot 4 = 40 \).</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>General term: \( \binom{5}{k} x^{5-k} 2^k \). For \( x^3 \): \( 5-k=3 \Rightarrow k=2 \). Coefficient: \( \binom{5}{2} \cdot 2^2 = 10 \cdot 4 = 40 \).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div>
 <div class="q-text">Find the constant term in the expansion of \( (a+b)^4 \) when \( a = b = 1 \).</div>
@@ -128,7 +128,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( (1+1)^4 = 2^4 = 16 \). Equivalently, sum of row 4 of Pascal's triangle: 1+4+6+4+1 = 16.</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>\( (1+1)^4 = 2^4 = 16 \). Equivalently, sum of row 4 of Pascal's triangle: 1+4+6+4+1 = 16.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.5 — Combinations &amp; Probability</div>
@@ -138,14 +138,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q9-input" placeholder="Enter decimal e.g. 0.00050"><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q9',0.000495)">Check Answer</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{13}{5}}{\binom{52}{5}} = \dfrac{1287}{2\,598\,960} \approx 0.000495 \).</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{13}{5}}{\binom{52}{5}} = \dfrac{1287}{2\,598\,960} \approx 0.000495 \).</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div>
 <div class="q-text">A bag has 5 red, 4 blue, 3 green marbles. Three are drawn at random. Find \( P(\text{exactly 2 red}) \). (Decimal to 4 places)</div>
 <input type="text" id="q10-input" placeholder="Enter decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q10',0.3187)">Check Answer</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{5}{2}\binom{7}{1}}{\binom{12}{3}} = \dfrac{10 \cdot 7}{220} = \dfrac{70}{220} \approx 0.3182 \). (Accept 0.3182–0.3190 due to rounding.)</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{5}{2}\binom{7}{1}}{\binom{12}{3}} = \dfrac{10 \cdot 7}{220} = \dfrac{70}{220} \approx 0.3182 \). (Accept 0.3182–0.3190 due to rounding.)</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Mixed</div>
@@ -155,14 +155,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q11-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q11',840)">Check Answer</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( \binom{8}{3} \cdot \binom{6}{2} = 56 \cdot 15 = 840 \).</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\( \binom{8}{3} \cdot \binom{6}{2} = 56 \cdot 15 = 840 \).</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">Solve for \( n \): \( \binom{n}{2} = 21 \).</div>
 <input type="text" id="q12-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q12',7)">Check Answer</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\( \dfrac{n(n-1)}{2} = 21 \Rightarrow n(n-1) = 42 \Rightarrow n^2 - n - 42 = 0 \Rightarrow (n-7)(n+6)=0 \Rightarrow n = 7 \).</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>\( \dfrac{n(n-1)}{2} = 21 \Rightarrow n(n-1) = 42 \Rightarrow n^2 - n - 42 = 0 \Rightarrow (n-7)(n+6)=0 \Rightarrow n = 7 \).</div></div>
 </div>
 
 <footer>MDM4U — Mathematics of Data Management, Grade 12 | A. Counting and Probability | Assessment AS Learning</footer>

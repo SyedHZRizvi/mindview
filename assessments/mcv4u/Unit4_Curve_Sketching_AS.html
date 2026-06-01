@@ -53,7 +53,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q1-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q1',-1)">Check</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\(f'=3x^2-6x-9=3(x-3)(x+1)=0\) → \(x=-1, 3\). Smaller: \(-1\).</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>\(f'=3x^2-6x-9=3(x-3)(x+1)=0\) → \(x=-1, 3\). Smaller: \(-1\).</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">Same function: at \(x=-1\) the function has a:</div>
@@ -64,14 +64,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q2','a')">Check</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\(f'\) changes from + to − at \(x=-1\) → local max. (Or \(f''(-1)=-12<0\).)</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\(f'\) changes from + to − at \(x=-1\) → local max. (Or \(f''(-1)=-12<0\).)</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div>
 <div class="q-text">Local minimum value of \(f(x)=x^3-3x^2-9x+5\) is:</div>
 <div class="answer-area"><input type="text" id="q3-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q3',-22)">Check</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\(f(3)=27-27-27+5=-22\).</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\(f(3)=27-27-27+5=-22\).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 4.2 — Concavity & Inflection</div>
@@ -81,7 +81,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q4-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q4',1)">Check</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\(f''=6x-6=0\) → \(x=1\). \(f''\) changes sign there.</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\(f''=6x-6=0\) → \(x=1\). \(f''\) changes sign there.</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div>
 <div class="q-text">For \(g(x)=x^4-4x^3\), interval(s) of upward concavity:</div>
@@ -92,7 +92,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q5','b')">Check</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\(g''=12x^2-24x=12x(x-2)\). Concave up where \(g''>0\): \(x<0\) or \(x>2\).</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>\(g''=12x^2-24x=12x(x-2)\). Concave up where \(g''>0\): \(x<0\) or \(x>2\).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 4.3 — Asymptotes</div>
@@ -107,21 +107,21 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q6','b')">Check</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Denominator zero at \(x=\pm 2\); numerator nonzero there → both VAs.</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>Denominator zero at \(x=\pm 2\); numerator nonzero there → both VAs.</div></div>
 
 <div class="question-card" id="q7"><div class="q-number">Question 7</div>
 <div class="q-text">Horizontal asymptote of \(f(x)=\dfrac{3x^2-1}{x^2+5}\):</div>
 <div class="answer-area"><input type="text" id="q7-input" placeholder="y = ..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q7',3)">Check</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Same degree → ratio of leading coefficients = 3/1 = 3. \(y=3\).</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>Same degree → ratio of leading coefficients = 3/1 = 3. \(y=3\).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div>
 <div class="q-text">Slant asymptote of \(\dfrac{x^2+1}{x-1}\) is \(y=x+a\). Find \(a\).</div>
 <div class="answer-area"><input type="text" id="q8-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q8',1)">Check</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Long division: \(\frac{x^2+1}{x-1}=x+1+\frac{2}{x-1}\). Slant: \(y=x+1\), so \(a=1\).</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>Long division: \(\frac{x^2+1}{x-1}=x+1+\frac{2}{x-1}\). Slant: \(y=x+1\), so \(a=1\).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 4.4 — Sketching from Analysis</div>
@@ -135,7 +135,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q9','b')">Check</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\(f'\) changes − to + at 3 → local minimum.</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>\(f'\) changes − to + at 3 → local minimum.</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div>
 <div class="q-text">If \(f''(2)=0\) and \(f''\) changes from + to − at \(x=2\), then \(x=2\) is:</div>
@@ -146,21 +146,21 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q10','c')">Check</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Sign change of \(f''\) → concavity changes → inflection.</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>Sign change of \(f''\) → concavity changes → inflection.</div></div>
 
 <div class="question-card" id="q11"><div class="q-number">Question 11</div>
 <div class="q-text">Number of inflection points of \(f(x)=x^4-6x^2+3\):</div>
 <div class="answer-area"><input type="text" id="q11-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q11',2)">Check</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\(f''=12x^2-12=12(x-1)(x+1)=0\) → \(x=\pm 1\). Two sign changes → 2 inflection points.</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\(f''=12x^2-12=12(x-1)(x+1)=0\) → \(x=\pm 1\). Two sign changes → 2 inflection points.</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">Local minimum y-value of \(f(x)=\dfrac{x^2}{x^2-4}\) on its domain (\(x\ne\pm 2\)):</div>
 <div class="answer-area"><input type="text" id="q12-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q12',0)">Check</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\(f'=\frac{2x(x^2-4)-x^2(2x)}{(x^2-4)^2}=\frac{-8x}{(x^2-4)^2}=0\) at \(x=0\). \(f(0)=0\). Sign of \(f'\) changes − to + (as a max actually). Re-check: At \(x=0\), \(f'\) is +/− depending. Critical analysis: between asymptotes \(x=\pm2\), \(f'>0\) for \(x<0\), \(f'<0\) for \(x>0\) → \(x=0\) is a local maximum value \(=0\). On \(|x|>2\) the function approaches 1 from above, no local extrema. The local extremum at \(x=0\) is actually a maximum of \(0\); within the answer convention some texts report the y-value 0.</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>\(f'=\frac{2x(x^2-4)-x^2(2x)}{(x^2-4)^2}=\frac{-8x}{(x^2-4)^2}=0\) at \(x=0\). \(f(0)=0\). Sign of \(f'\) changes − to + (as a max actually). Re-check: At \(x=0\), \(f'\) is +/− depending. Critical analysis: between asymptotes \(x=\pm2\), \(f'>0\) for \(x<0\), \(f'<0\) for \(x>0\) → \(x=0\) is a local maximum value \(=0\). On \(|x|>2\) the function approaches 1 from above, no local extrema. The local extremum at \(x=0\) is actually a maximum of \(0\); within the answer convention some texts report the y-value 0.</div></div>
 </div>
 
 <div class="self-reflect"><h3>📊 Self-Reflection</h3>

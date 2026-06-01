@@ -53,7 +53,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q1-input" placeholder="m/s..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q1',0)">Check</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\(v(t)=3t^2-18t+24\); \(v(2)=12-36+24=0\) m/s.</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>\(v(t)=3t^2-18t+24\); \(v(2)=12-36+24=0\) m/s.</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">Same s(t): when is the particle at rest?</div>
@@ -65,14 +65,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q2','a')">Check</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\(3(t^2-6t+8)=3(t-2)(t-4)=0\) → \(t=2,4\).</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\(3(t^2-6t+8)=3(t-2)(t-4)=0\) → \(t=2,4\).</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div>
 <div class="q-text">Acceleration of \(s(t)=t^3-9t^2+24t\) at \(t=3\) is:</div>
 <div class="answer-area"><input type="text" id="q3-input" placeholder="m/s²..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q3',0)">Check</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\(a(t)=6t-18\); \(a(3)=0\). The particle changes from decelerating to accelerating.</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\(a(t)=6t-18\); \(a(3)=0\). The particle changes from decelerating to accelerating.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.2 — Related Rates</div>
@@ -82,21 +82,21 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q4-input" placeholder="Decimal cm³/s..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q4',628.319)">Check</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\(\frac{dV}{dt}=4\pi r^2\frac{dr}{dt}=4\pi(25)(2)=200\pi\approx 628.32\) cm³/s.</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\(\frac{dV}{dt}=4\pi r^2\frac{dr}{dt}=4\pi(25)(2)=200\pi\approx 628.32\) cm³/s.</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div>
 <div class="q-text">A 5 m ladder slides down a wall. The base moves out at 1 m/s. When the base is 3 m from the wall, how fast is the top sliding down?</div>
 <div class="answer-area"><input type="text" id="q5-input" placeholder="Decimal m/s..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q5',0.75)">Check</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\(x^2+y^2=25\); when \(x=3\), \(y=4\). \(2x x'+2y y'=0\) → \(y'=-x x'/y=-3(1)/4=-0.75\) m/s. Speed = 0.75 m/s down.</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>\(x^2+y^2=25\); when \(x=3\), \(y=4\). \(2x x'+2y y'=0\) → \(y'=-x x'/y=-3(1)/4=-0.75\) m/s. Speed = 0.75 m/s down.</div></div>
 
 <div class="question-card" id="q6"><div class="q-number">Question 6</div>
 <div class="q-text">A conical tank (apex down) has height = 2(radius). Water flows in at 10 m³/min. How fast is the water level rising when depth is 4 m? (\(V=\frac{1}{3}\pi r^2 h\))</div>
 <div class="answer-area"><input type="text" id="q6-input" placeholder="Decimal m/min..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q6',0.7958)">Check</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\(r=h/2\), so \(V=\frac{\pi h^3}{12}\). \(\frac{dV}{dt}=\frac{\pi h^2}{4}\frac{dh}{dt}\). \(10=\frac{\pi(16)}{4}\frac{dh}{dt}\) → \(\frac{dh}{dt}=\frac{10}{4\pi}\approx 0.796\) m/min.</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>\(r=h/2\), so \(V=\frac{\pi h^3}{12}\). \(\frac{dV}{dt}=\frac{\pi h^2}{4}\frac{dh}{dt}\). \(10=\frac{\pi(16)}{4}\frac{dh}{dt}\) → \(\frac{dh}{dt}=\frac{10}{4\pi}\approx 0.796\) m/min.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.3 — Optimization</div>
@@ -106,21 +106,21 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q7-input" placeholder="Number..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q7',100)">Check</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\(P=x(20-x)=20x-x^2\); \(P'=20-2x=0\) → \(x=10\). Max \(P=10\cdot10=100\).</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>\(P=x(20-x)=20x-x^2\); \(P'=20-2x=0\) → \(x=10\). Max \(P=10\cdot10=100\).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div>
 <div class="q-text">A box (open top, square base) has volume 32 m³. Find dimensions minimizing surface area. State the side of the base.</div>
 <div class="answer-area"><input type="text" id="q8-input" placeholder="m..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q8',4)">Check</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Let base \(=x\), height \(=h\). \(x^2 h=32\) → \(h=32/x^2\). \(S=x^2+4xh=x^2+128/x\). \(S'=2x-128/x^2=0\) → \(x^3=64\) → \(x=4\) m (height = 2 m).</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>Let base \(=x\), height \(=h\). \(x^2 h=32\) → \(h=32/x^2\). \(S=x^2+4xh=x^2+128/x\). \(S'=2x-128/x^2=0\) → \(x^3=64\) → \(x=4\) m (height = 2 m).</div></div>
 
 <div class="question-card" id="q9"><div class="q-number">Question 9</div>
 <div class="q-text">Find the point on \(y=x^2\) closest to \((6,3)\). Give the x-coordinate.</div>
 <div class="answer-area"><input type="text" id="q9-input" placeholder="Decimal..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q9',1)">Check</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Minimize \(D^2=(x-6)^2+(x^2-3)^2\). \((D^2)'=2(x-6)+2(x^2-3)(2x)=2x-12+4x^3-12x=4x^3-10x-12\). Solve \(4x^3-10x-12=0\) → \(x=1.5\)? Let's verify: \(4(3.375)-15-12=13.5-27=-13.5\). Solving numerically gives \(x\approx 1\). At \(x=1\): \(P'=4-10-12=-18\). The exact root is between 1.5 and 2; closest x ≈ 1.85.</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>Minimize \(D^2=(x-6)^2+(x^2-3)^2\). \((D^2)'=2(x-6)+2(x^2-3)(2x)=2x-12+4x^3-12x=4x^3-10x-12\). Solve \(4x^3-10x-12=0\) → \(x=1.5\)? Let's verify: \(4(3.375)-15-12=13.5-27=-13.5\). Solving numerically gives \(x\approx 1\). At \(x=1\): \(P'=4-10-12=-18\). The exact root is between 1.5 and 2; closest x ≈ 1.85.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.4 — Marginal Analysis</div>
@@ -130,14 +130,14 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 <div class="answer-area"><input type="text" id="q10-input" placeholder="$/unit..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q10',6)">Check</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\(C'(x)=0.02x+5\); \(C'(50)=1+5=$6\)/unit.</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>\(C'(x)=0.02x+5\); \(C'(50)=1+5=$6\)/unit.</div></div>
 
 <div class="question-card" id="q11"><div class="q-number">Question 11</div>
 <div class="q-text">Revenue \(R(x)=20x-0.05x^2\). Find production level maximizing revenue.</div>
 <div class="answer-area"><input type="text" id="q11-input" placeholder="Number of units..."></div>
 <button class="btn btn-check" onclick="checkNumeric('q11',200)">Check</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\(R'=20-0.1x=0\) → \(x=200\) units.</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\(R'=20-0.1x=0\) → \(x=200\) units.</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">A particle's velocity is \(v(t)=t^2-4t\). When is it speeding up? (Hint: \(v\) and \(a\) same sign.)</div>
@@ -149,7 +149,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-t
 </ul>
 <button class="btn btn-check" onclick="checkMC('q12','c')">Check</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\(a=2t-4\). On \(t>4\): \(v>0,\,a>0\) → speeding up. On \(0<t<2\): \(v<0,a<0\) → also speeding up. Best single-interval answer (c); strictly the union is correct.</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>\(a=2t-4\). On \(t>4\): \(v>0,\,a>0\) → speeding up. On \(0<t<2\): \(v<0,a<0\) → also speeding up. Best single-interval answer (c); strictly the union is correct.</div></div>
 </div>
 
 <div class="self-reflect"><h3>📊 Self-Reflection</h3>

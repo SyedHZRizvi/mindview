@@ -83,7 +83,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q1', 8)">Check Answer</button>
     <div class="feedback" id="q1-feedback"></div>
-    <div class="solution" id="q1-solution">
+    <div class="solution instructor-only" id="q1-solution">
         <div class="solution-label">Solution:</div>
         \( 16^{3/4} = (\sqrt[4]{16})^{3} = 2^{3} = 8 \).
     </div>
@@ -100,7 +100,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q2','a')">Check Answer</button>
     <div class="feedback" id="q2-feedback"></div>
-    <div class="solution" id="q2-solution">
+    <div class="solution instructor-only" id="q2-solution">
         <div class="solution-label">Solution:</div>
         \( 8^{-2/3} = 1/8^{2/3} = 1/(\sqrt[3]{8})^{2} = 1/2^{2} = 1/4 \).
     </div>
@@ -116,7 +116,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q3', 5)">Check Answer</button>
     <div class="feedback" id="q3-feedback"></div>
-    <div class="solution" id="q3-solution">
+    <div class="solution instructor-only" id="q3-solution">
         <div class="solution-label">Solution:</div>
         \( f(0) = 5 \cdot 2^{0} = 5 \cdot 1 = 5 \).
     </div>
@@ -128,7 +128,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter the population..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q4', 1280)">Check Answer</button>
     <div class="feedback" id="q4-feedback"></div>
-    <div class="solution" id="q4-solution">
+    <div class="solution instructor-only" id="q4-solution">
         <div class="solution-label">Solution:</div>
         \( P(t) = 80 \cdot 2^{t} \). At \( t=4 \): \( P(4) = 80 \cdot 16 = 1280 \).
     </div>
@@ -144,7 +144,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q5-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q5', 4)">Check Answer</button>
     <div class="feedback" id="q5-feedback"></div>
-    <div class="solution" id="q5-solution">
+    <div class="solution instructor-only" id="q5-solution">
         <div class="solution-label">Solution:</div>
         \( 3^{?} = 81 \). Since \( 3^{4} = 81 \), \( \log_{3} 81 = 4 \).
     </div>
@@ -161,7 +161,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q6','b')">Check Answer</button>
     <div class="feedback" id="q6-feedback"></div>
-    <div class="solution" id="q6-solution">
+    <div class="solution instructor-only" id="q6-solution">
         <div class="solution-label">Solution:</div>
         \( \log_{b} N = x \;\Leftrightarrow\; b^{x} = N \). So \( \log_{2} 32 = 5 \) is equivalent to \( 2^{5} = 32 \).
     </div>
@@ -177,7 +177,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q7-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q7', 2)">Check Answer</button>
     <div class="feedback" id="q7-feedback"></div>
-    <div class="solution" id="q7-solution">
+    <div class="solution instructor-only" id="q7-solution">
         <div class="solution-label">Solution:</div>
         Product law: \( \log 4 + \log 25 = \log(4 \cdot 25) = \log 100 = 2 \).
     </div>
@@ -194,7 +194,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     </ul>
     <button class="btn btn-check" onclick="checkMC('q8','c')">Check Answer</button>
     <div class="feedback" id="q8-feedback"></div>
-    <div class="solution" id="q8-solution">
+    <div class="solution instructor-only" id="q8-solution">
         <div class="solution-label">Solution:</div>
         The product law applies to products inside a log, not sums. \( \log(M+N) \) cannot be simplified using the laws.
     </div>
@@ -210,7 +210,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q9-input" placeholder="Enter a number..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q9', 4)">Check Answer</button>
     <div class="feedback" id="q9-feedback"></div>
-    <div class="solution" id="q9-solution">
+    <div class="solution instructor-only" id="q9-solution">
         <div class="solution-label">Solution:</div>
         \( 81 = 3^{4} \), so \( 3^{x} = 3^{4} \Rightarrow x = 4 \).
     </div>
@@ -222,7 +222,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
     <div class="answer-area"><input type="text" id="q10-input" placeholder="Enter a decimal..."></div>
     <button class="btn btn-check" onclick="checkNumeric('q10', 5.64)">Check Answer</button>
     <div class="feedback" id="q10-feedback"></div>
-    <div class="solution" id="q10-solution">
+    <div class="solution instructor-only" id="q10-solution">
         <div class="solution-label">Solution:</div>
         \( x = \log 50 / \log 2 \approx 1.6990 / 0.3010 \approx 5.64 \).
     </div>

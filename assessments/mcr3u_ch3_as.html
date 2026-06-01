@@ -30,57 +30,57 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <div class="topic-section"><div class="topic-header">Topic 3.1 — Exponent Laws</div>
 <div class="question-card" id="q1"><div class="q-number">Question 1</div><div class="q-text">Simplify: \( x^7 \cdot x^{-3} \).</div>
 <ul class="mc-options"><li><label><input type="radio" name="q1" value="a"> \( x^4 \)</label></li><li><label><input type="radio" name="q1" value="b"> \( x^{10} \)</label></li><li><label><input type="radio" name="q1" value="c"> \( x^{-21} \)</label></li><li><label><input type="radio" name="q1" value="d"> \( x^{-4} \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q1','a')">Check Answer</button><div class="feedback" id="q1-feedback"></div><div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Product law: \( x^7 \cdot x^{-3} = x^{7+(-3)} = x^4 \).</div></div>
+<button class="btn btn-check" onclick="checkMC('q1','a')">Check Answer</button><div class="feedback" id="q1-feedback"></div><div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>Product law: \( x^7 \cdot x^{-3} = x^{7+(-3)} = x^4 \).</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div><div class="q-text">Evaluate: \( (-3)^4 \).</div>
 <input type="text" id="q2-input" placeholder="Enter a number..."><button class="btn btn-check" onclick="checkNumeric('q2', 81)">Check Answer</button>
-<div class="feedback" id="q2-feedback"></div><div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( (-3)^4 = (-3)(-3)(-3)(-3) = 81 \). Even exponent → positive result.</div></div>
+<div class="feedback" id="q2-feedback"></div><div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\( (-3)^4 = (-3)(-3)(-3)(-3) = 81 \). Even exponent → positive result.</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div><div class="q-text">Simplify: \( \dfrac{(2x^3)^2}{4x^4} \).</div>
 <ul class="mc-options"><li><label><input type="radio" name="q3" value="a"> \( x^2 \)</label></li><li><label><input type="radio" name="q3" value="b"> \( 2x^2 \)</label></li><li><label><input type="radio" name="q3" value="c"> \( x^4 \)</label></li><li><label><input type="radio" name="q3" value="d"> \( 4x^2 \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button><div class="feedback" id="q3-feedback"></div><div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( (2x^3)^2 = 4x^6 \). Then \( \frac{4x^6}{4x^4} = x^{6-4} = x^2 \).</div></div>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button><div class="feedback" id="q3-feedback"></div><div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\( (2x^3)^2 = 4x^6 \). Then \( \frac{4x^6}{4x^4} = x^{6-4} = x^2 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.2 — Rational Exponents</div>
 <div class="question-card" id="q4"><div class="q-number">Question 4</div><div class="q-text">Evaluate: \( 64^{2/3} \).</div>
 <input type="text" id="q4-input" placeholder="Enter a number..."><button class="btn btn-check" onclick="checkNumeric('q4', 16)">Check Answer</button>
-<div class="feedback" id="q4-feedback"></div><div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( 64^{2/3} = (\sqrt[3]{64})^2 = 4^2 = 16 \).</div></div>
+<div class="feedback" id="q4-feedback"></div><div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\( 64^{2/3} = (\sqrt[3]{64})^2 = 4^2 = 16 \).</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div><div class="q-text">Evaluate: \( 25^{-1/2} \).</div>
 <input type="text" id="q5-input" placeholder="Enter as decimal..."><button class="btn btn-check" onclick="checkNumeric('q5', 0.2)">Check Answer</button>
-<div class="feedback" id="q5-feedback"></div><div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\( 25^{-1/2} = \frac{1}{25^{1/2}} = \frac{1}{5} = 0.2 \).</div></div>
+<div class="feedback" id="q5-feedback"></div><div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>\( 25^{-1/2} = \frac{1}{25^{1/2}} = \frac{1}{5} = 0.2 \).</div></div>
 
 <div class="question-card" id="q6"><div class="q-number">Question 6</div><div class="q-text">Express \( \sqrt[5]{x^3} \) using rational exponents.</div>
 <ul class="mc-options"><li><label><input type="radio" name="q6" value="a"> \( x^{5/3} \)</label></li><li><label><input type="radio" name="q6" value="b"> \( x^{3/5} \)</label></li><li><label><input type="radio" name="q6" value="c"> \( x^{15} \)</label></li><li><label><input type="radio" name="q6" value="d"> \( x^{1/15} \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q6','b')">Check Answer</button><div class="feedback" id="q6-feedback"></div><div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( \sqrt[n]{a^m} = a^{m/n} \). So \( \sqrt[5]{x^3} = x^{3/5} \).</div></div>
+<button class="btn btn-check" onclick="checkMC('q6','b')">Check Answer</button><div class="feedback" id="q6-feedback"></div><div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>\( \sqrt[n]{a^m} = a^{m/n} \). So \( \sqrt[5]{x^3} = x^{3/5} \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.3 — Graphs of Exponentials</div>
 <div class="question-card" id="q7"><div class="q-number">Question 7</div><div class="q-text">The y-intercept of \( y = 5(2)^x \) is:</div>
 <input type="text" id="q7-input" placeholder="Enter a number..."><button class="btn btn-check" onclick="checkNumeric('q7', 5)">Check Answer</button>
-<div class="feedback" id="q7-feedback"></div><div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>At \( x = 0 \): \( y = 5(2)^0 = 5(1) = 5 \).</div></div>
+<div class="feedback" id="q7-feedback"></div><div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>At \( x = 0 \): \( y = 5(2)^0 = 5(1) = 5 \).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div><div class="q-text">Which function describes exponential <strong>decay</strong>?</div>
 <ul class="mc-options"><li><label><input type="radio" name="q8" value="a"> \( y = 2(3)^x \)</label></li><li><label><input type="radio" name="q8" value="b"> \( y = 3(\tfrac{1}{2})^x \)</label></li><li><label><input type="radio" name="q8" value="c"> \( y = 5(1.05)^x \)</label></li><li><label><input type="radio" name="q8" value="d"> \( y = 4 \cdot 10^x \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button><div class="feedback" id="q8-feedback"></div><div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>Decay requires \( 0 < b < 1 \). Only \( b = \tfrac{1}{2} \) satisfies this.</div></div>
+<button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button><div class="feedback" id="q8-feedback"></div><div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>Decay requires \( 0 < b < 1 \). Only \( b = \tfrac{1}{2} \) satisfies this.</div></div>
 
 <div class="question-card" id="q9"><div class="q-number">Question 9</div><div class="q-text">The horizontal asymptote of \( y = 3 \cdot 2^x - 4 \) is:</div>
 <ul class="mc-options"><li><label><input type="radio" name="q9" value="a"> \( y = 0 \)</label></li><li><label><input type="radio" name="q9" value="b"> \( y = 3 \)</label></li><li><label><input type="radio" name="q9" value="c"> \( y = -4 \)</label></li><li><label><input type="radio" name="q9" value="d"> \( y = 4 \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q9','c')">Check Answer</button><div class="feedback" id="q9-feedback"></div><div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>The vertical shift \( c = -4 \) moves the asymptote from \( y = 0 \) to \( y = -4 \).</div></div>
+<button class="btn btn-check" onclick="checkMC('q9','c')">Check Answer</button><div class="feedback" id="q9-feedback"></div><div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>The vertical shift \( c = -4 \) moves the asymptote from \( y = 0 \) to \( y = -4 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 3.4–3.5 — Transformations &amp; Comparing Growth</div>
 <div class="question-card" id="q10"><div class="q-number">Question 10</div><div class="q-text">For \( y = (\tfrac{1}{3})^x \), find \( y \) when \( x = -2 \).</div>
 <input type="text" id="q10-input" placeholder="Enter a number..."><button class="btn btn-check" onclick="checkNumeric('q10', 9)">Check Answer</button>
-<div class="feedback" id="q10-feedback"></div><div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( y = (1/3)^{-2} = 3^2 = 9 \).</div></div>
+<div class="feedback" id="q10-feedback"></div><div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>\( y = (1/3)^{-2} = 3^2 = 9 \).</div></div>
 
 <div class="question-card" id="q11"><div class="q-number">Question 11</div><div class="q-text">A table has consecutive y-values of 6, 18, 54, 162. The common ratio is:</div>
 <input type="text" id="q11-input" placeholder="Enter ratio..."><button class="btn btn-check" onclick="checkNumeric('q11', 3)">Check Answer</button>
-<div class="feedback" id="q11-feedback"></div><div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( 18/6 = 3, 54/18 = 3, 162/54 = 3 \). Constant ratio → exponential.</div></div>
+<div class="feedback" id="q11-feedback"></div><div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\( 18/6 = 3, 54/18 = 3, 162/54 = 3 \). Constant ratio → exponential.</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div><div class="q-text">Which function eventually grows fastest as \( x \to \infty \)?</div>
 <ul class="mc-options"><li><label><input type="radio" name="q12" value="a"> \( y = 1000x \)</label></li><li><label><input type="radio" name="q12" value="b"> \( y = x^3 \)</label></li><li><label><input type="radio" name="q12" value="c"> \( y = 2^x \)</label></li><li><label><input type="radio" name="q12" value="d"> \( y = x^{10} \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q12','c')">Check Answer</button><div class="feedback" id="q12-feedback"></div><div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>Exponential growth eventually beats any polynomial growth, no matter how large the polynomial degree.</div></div>
+<button class="btn btn-check" onclick="checkMC('q12','c')">Check Answer</button><div class="feedback" id="q12-feedback"></div><div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>Exponential growth eventually beats any polynomial growth, no matter how large the polynomial degree.</div></div>
 </div>
 
 <footer>MCR3U — Functions, Grade 11 | Strand B: Exponential Functions | Assessment AS Learning</footer>

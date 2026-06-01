@@ -74,49 +74,49 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <input type="text" id="of1-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of1',495)">Check</button>
 <div class="fb" id="of1-fb"></div>
-<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>\( \binom{12}{4} = \dfrac{12!}{4!\,8!} = \dfrac{12\cdot 11\cdot 10\cdot 9}{24} = 495 \).</div></div>
+<div class="sol instructor-only" id="of1-sl"><div class="sol-lbl instructor-only">Solution:</div>\( \binom{12}{4} = \dfrac{12!}{4!\,8!} = \dfrac{12\cdot 11\cdot 10\cdot 9}{24} = 495 \).</div></div>
 
 <div class="qcard" id="of2"><div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">Use the symmetry property to evaluate \( \binom{15}{13} \).</div>
 <input type="text" id="of2-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of2',105)">Check</button>
 <div class="fb" id="of2-fb"></div>
-<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>\( \binom{15}{13} = \binom{15}{2} = \dfrac{15 \cdot 14}{2} = 105 \).</div></div>
+<div class="sol instructor-only" id="of2-sl"><div class="sol-lbl instructor-only">Solution:</div>\( \binom{15}{13} = \binom{15}{2} = \dfrac{15 \cdot 14}{2} = 105 \).</div></div>
 
 <div class="qcard" id="of3"><div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">Find the constant term of \( (x+1)^6 \) when \( x=1 \).</div>
 <input type="text" id="of3-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of3',64)">Check</button>
 <div class="fb" id="of3-fb"></div>
-<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>\( 2^6 = 64 \) (sum of row 6 of Pascal's triangle).</div></div>
+<div class="sol instructor-only" id="of3-sl"><div class="sol-lbl instructor-only">Solution:</div>\( 2^6 = 64 \) (sum of row 6 of Pascal's triangle).</div></div>
 
 <div class="qcard" id="of4"><div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">Solve \( \binom{n}{2} = 28 \).</div>
 <input type="text" id="of4-in" placeholder="Enter n...">
 <button class="btn btn-p" onclick="chkNum('of4',8)">Check</button>
 <div class="fb" id="of4-fb"></div>
-<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>\( \dfrac{n(n-1)}{2} = 28 \Rightarrow n(n-1) = 56 \Rightarrow n^2 - n - 56 = 0 \Rightarrow (n-8)(n+7) = 0 \Rightarrow n = 8 \).</div></div>
+<div class="sol instructor-only" id="of4-sl"><div class="sol-lbl instructor-only">Solution:</div>\( \dfrac{n(n-1)}{2} = 28 \Rightarrow n(n-1) = 56 \Rightarrow n^2 - n - 56 = 0 \Rightarrow (n-8)(n+7) = 0 \Rightarrow n = 8 \).</div></div>
 
 <div class="qcard" id="of5"><div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">In the expansion of \( (2x - 3)^4 \), what is the coefficient of \( x^2 \)?</div>
 <input type="text" id="of5-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of5',216)">Check</button>
 <div class="fb" id="of5-fb"></div>
-<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>General term: \( \binom{4}{k}(2x)^{4-k}(-3)^k \). For \( x^2 \): \( 4-k=2 \Rightarrow k=2 \). Coefficient: \( \binom{4}{2}\cdot 2^2 \cdot (-3)^2 = 6 \cdot 4 \cdot 9 = 216 \).</div></div>
+<div class="sol instructor-only" id="of5-sl"><div class="sol-lbl instructor-only">Solution:</div>General term: \( \binom{4}{k}(2x)^{4-k}(-3)^k \). For \( x^2 \): \( 4-k=2 \Rightarrow k=2 \). Coefficient: \( \binom{4}{2}\cdot 2^2 \cdot (-3)^2 = 6 \cdot 4 \cdot 9 = 216 \).</div></div>
 
 <div class="qcard" id="of6"><div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
 <div class="qtxt">From a class of 25 students (12 boys, 13 girls), how many committees of 5 with exactly 3 girls are possible?</div>
 <input type="text" id="of6-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of6',18876)">Check</button>
 <div class="fb" id="of6-fb"></div>
-<div class="sol" id="of6-sl"><div class="sol-lbl">Solution:</div>\( \binom{13}{3}\cdot\binom{12}{2} = 286 \cdot 66 = 18\,876 \).</div></div>
+<div class="sol instructor-only" id="of6-sl"><div class="sol-lbl instructor-only">Solution:</div>\( \binom{13}{3}\cdot\binom{12}{2} = 286 \cdot 66 = 18\,876 \).</div></div>
 
 <div class="qcard" id="of7"><div class="qnum">Question 7 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">A poker hand of 5 cards is dealt from a 52-card deck. How many possible hands are there?</div>
 <input type="text" id="of7-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of7',2598960)">Check</button>
 <div class="fb" id="of7-fb"></div>
-<div class="sol" id="of7-sl"><div class="sol-lbl">Solution:</div>\( \binom{52}{5} = 2\,598\,960 \).</div></div>
+<div class="sol instructor-only" id="of7-sl"><div class="sol-lbl instructor-only">Solution:</div>\( \binom{52}{5} = 2\,598\,960 \).</div></div>
 
 <div class="section-hdr t">Part B: Thinking [15 marks]</div>
 
@@ -172,7 +172,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <div class="qtxt">A school's science fair has 25 projects. The judges award 1st, 2nd, and 3rd prizes (gold, silver, bronze) and select 5 honourable mentions. In how many ways can the prizes be assigned (no project can win more than one)?</div>
 <textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
 
-<div class="rubric"><h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<div class="rubric instructor-only"><h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
 <table>
 <tr><th>Level</th><th>Description</th><th>%</th></tr>
 <tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>

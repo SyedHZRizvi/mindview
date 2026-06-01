@@ -1,0 +1,34 @@
+/* css/role-gated.css
+ *
+ * Role-gated visibility rules for instructor-only content (answer keys,
+ * solutions, rubrics). These rules are ALSO embedded in /js/role-gated.js
+ * so they're injected immediately at script parse time (avoiding a flash
+ * of unstyled gated content). This file is here for reference, override,
+ * or future split, but is not strictly required at runtime.
+ *
+ * Role classes are applied to <html> by /js/role-gated.js:
+ *   - .role-unknown    — default until /api/me resolves; hide gated content.
+ *   - .role-student    — student or unauthenticated; hide AND scrub from DOM.
+ *   - .role-instructor — teacher / admin / superuser; reveal with banner.
+ */
+
+/* While role is unknown, hide instructor-only content so it does not flash
+   on slow networks. */
+html.role-unknown .instructor-only { display: none !important; }
+
+/* Permanently hide from students. (DOM is also scrubbed by JS as defense
+   in depth.) */
+html.role-student .instructor-only { display: none !important; }
+
+/* Instructor sees a small banner indicating elevated visibility. */
+html.role-instructor .instructor-only::before {
+  content: "🔒 Instructor-only content below";
+  display: block;
+  font-size: 12px;
+  color: #b91c1c;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: #fee2e2;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}

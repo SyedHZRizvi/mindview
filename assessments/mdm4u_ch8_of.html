@@ -79,21 +79,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </ul>
 <button class="btn btn-p" onclick="chkMC('of1','a')">Check</button>
 <div class="fb" id="of1-fb"></div>
-<div class="sol" id="of1-sl"><div class="sol-lbl">Solution:</div>\( r = 0.85 \): positive direction, magnitude near 1 = strong linear.</div></div>
+<div class="sol instructor-only" id="of1-sl"><div class="sol-lbl instructor-only">Solution:</div>\( r = 0.85 \): positive direction, magnitude near 1 = strong linear.</div></div>
 
 <div class="qcard" id="of2"><div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">For \( r = -0.6 \), what proportion of variation in \( y \) is explained by \( x \)?</div>
 <input type="text" id="of2-in" placeholder="Enter as decimal...">
 <button class="btn btn-p" onclick="chkNum('of2',0.36)">Check</button>
 <div class="fb" id="of2-fb"></div>
-<div class="sol" id="of2-sl"><div class="sol-lbl">Solution:</div>\( r^2 = 0.36 = 36\% \).</div></div>
+<div class="sol instructor-only" id="of2-sl"><div class="sol-lbl instructor-only">Solution:</div>\( r^2 = 0.36 = 36\% \).</div></div>
 
 <div class="qcard" id="of3"><div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">A regression line is \( \hat{y} = 12 - 1.5x \). Predict \( \hat{y} \) when \( x = 4 \).</div>
 <input type="text" id="of3-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of3',6)">Check</button>
 <div class="fb" id="of3-fb"></div>
-<div class="sol" id="of3-sl"><div class="sol-lbl">Solution:</div>\( \hat{y} = 12 - 1.5(4) = 12 - 6 = 6 \).</div></div>
+<div class="sol instructor-only" id="of3-sl"><div class="sol-lbl instructor-only">Solution:</div>\( \hat{y} = 12 - 1.5(4) = 12 - 6 = 6 \).</div></div>
 
 <div class="qcard" id="of4"><div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">A residual is calculated by:</div>
@@ -105,21 +105,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </ul>
 <button class="btn btn-p" onclick="chkMC('of4','a')">Check</button>
 <div class="fb" id="of4-fb"></div>
-<div class="sol" id="of4-sl"><div class="sol-lbl">Solution:</div>Residual = observed - predicted = \( y - \hat{y} \).</div></div>
+<div class="sol instructor-only" id="of4-sl"><div class="sol-lbl instructor-only">Solution:</div>Residual = observed - predicted = \( y - \hat{y} \).</div></div>
 
 <div class="qcard" id="of5"><div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div>
 <div class="qtxt">Given \( \bar{x} = 10, \bar{y} = 50, s_x = 4, s_y = 12, r = 0.5 \). Find the regression slope.</div>
 <input type="text" id="of5-in" placeholder="Enter a decimal...">
 <button class="btn btn-p" onclick="chkNum('of5',1.5)">Check</button>
 <div class="fb" id="of5-fb"></div>
-<div class="sol" id="of5-sl"><div class="sol-lbl">Solution:</div>\( b_1 = r\dfrac{s_y}{s_x} = 0.5 \cdot \dfrac{12}{4} = 0.5 \cdot 3 = 1.5 \).</div></div>
+<div class="sol instructor-only" id="of5-sl"><div class="sol-lbl instructor-only">Solution:</div>\( b_1 = r\dfrac{s_y}{s_x} = 0.5 \cdot \dfrac{12}{4} = 0.5 \cdot 3 = 1.5 \).</div></div>
 
 <div class="qcard" id="of6"><div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">For Q5, the regression intercept is:</div>
 <input type="text" id="of6-in" placeholder="Enter a number...">
 <button class="btn btn-p" onclick="chkNum('of6',35)">Check</button>
 <div class="fb" id="of6-fb"></div>
-<div class="sol" id="of6-sl"><div class="sol-lbl">Solution:</div>\( b_0 = \bar{y} - b_1 \bar{x} = 50 - 1.5(10) = 50 - 15 = 35 \).</div></div>
+<div class="sol instructor-only" id="of6-sl"><div class="sol-lbl instructor-only">Solution:</div>\( b_0 = \bar{y} - b_1 \bar{x} = 50 - 1.5(10) = 50 - 15 = 35 \).</div></div>
 
 <div class="qcard" id="of7"><div class="qnum">Question 7 <span class="qmarks">[2 marks]</span></div>
 <div class="qtxt">"Children's reading scores increase with their shoe size." This is most likely:</div>
@@ -131,7 +131,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </ul>
 <button class="btn btn-p" onclick="chkMC('of7','b')">Check</button>
 <div class="fb" id="of7-fb"></div>
-<div class="sol" id="of7-sl"><div class="sol-lbl">Solution:</div>Both variables increase with age — the lurking variable is age. Common cause.</div></div>
+<div class="sol instructor-only" id="of7-sl"><div class="sol-lbl instructor-only">Solution:</div>Both variables increase with age — the lurking variable is age. Common cause.</div></div>
 
 <div class="section-hdr t">Part B: Thinking [15 marks]</div>
 
@@ -193,7 +193,7 @@ e) Comment on the validity of the prediction.</div>
 <div class="qtxt">A dataset on smoking (\( x \) = packs/day) vs life expectancy (\( y \) = years) gives \( r = -0.78 \) for 200 adults. a) Interpret \( r \). b) Compute \( r^2 \) and explain. c) Does this prove smoking causes shorter life? Discuss confounding factors and the difference between an observational study and a controlled experiment.</div>
 <textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
 
-<div class="rubric"><h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<div class="rubric instructor-only"><h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
 <table>
 <tr><th>Level</th><th>Description</th><th>%</th></tr>
 <tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>

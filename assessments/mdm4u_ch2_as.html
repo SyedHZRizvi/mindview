@@ -60,14 +60,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q1-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q1',720)">Check Answer</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( 6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720 \).</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>\( 6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720 \).</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">Simplify \( \dfrac{8!}{6!} \).</div>
 <input type="text" id="q2-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q2',56)">Check Answer</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( \dfrac{8!}{6!} = \dfrac{8\cdot 7\cdot 6!}{6!} = 8\cdot 7 = 56 \).</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\( \dfrac{8!}{6!} = \dfrac{8\cdot 7\cdot 6!}{6!} = 8\cdot 7 = 56 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 2.2 — Permutations \( P(n,r) \)</div>
@@ -77,7 +77,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q3-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q3',336)">Check Answer</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( P(8,3) = \dfrac{8!}{5!} = 8 \cdot 7 \cdot 6 = 336 \).</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\( P(8,3) = \dfrac{8!}{5!} = 8 \cdot 7 \cdot 6 = 336 \).</div></div>
 
 <div class="question-card" id="q4"><div class="q-number">Question 4</div>
 <div class="q-text">How many 5-letter "words" (any string of letters) can be formed from a 26-letter alphabet with NO repetition?</div>
@@ -89,7 +89,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Order matters, no repetition: \( P(26,5) = 26 \cdot 25 \cdot 24 \cdot 23 \cdot 22 = 7\,893\,600 \).</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>Order matters, no repetition: \( P(26,5) = 26 \cdot 25 \cdot 24 \cdot 23 \cdot 22 = 7\,893\,600 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 2.3 — Permutations with Identical Objects</div>
@@ -99,14 +99,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q5-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q5',12)">Check Answer</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>4 letters with O repeated twice: \( \dfrac{4!}{2!} = \dfrac{24}{2} = 12 \).</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>4 letters with O repeated twice: \( \dfrac{4!}{2!} = \dfrac{24}{2} = 12 \).</div></div>
 
 <div class="question-card" id="q6"><div class="q-number">Question 6</div>
 <div class="q-text">How many distinct arrangements of the letters of "MISSISSIPPI"?</div>
 <input type="text" id="q6-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q6',34650)">Check Answer</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>11 letters: 1 M, 4 I, 4 S, 2 P. \( \dfrac{11!}{1!\, 4!\, 4!\, 2!} = \dfrac{39\,916\,800}{1\cdot 24\cdot 24\cdot 2} = 34\,650 \).</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>11 letters: 1 M, 4 I, 4 S, 2 P. \( \dfrac{11!}{1!\, 4!\, 4!\, 2!} = \dfrac{39\,916\,800}{1\cdot 24\cdot 24\cdot 2} = 34\,650 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 2.4 — Permutations with Restrictions</div>
@@ -116,14 +116,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q7-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q7',48)">Check Answer</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>"Glue" Alice and Bob: 4 units arrange in \( 4! = 24 \) ways. Internal AB or BA: \( 2! = 2 \). Total: \( 24 \cdot 2 = 48 \).</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>"Glue" Alice and Bob: 4 units arrange in \( 4! = 24 \) ways. Internal AB or BA: \( 2! = 2 \). Total: \( 24 \cdot 2 = 48 \).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div>
 <div class="q-text">How many 4-letter "words" can be made from letters A, B, C, D, E if the word must START with a vowel (A or E) and have no repetition?</div>
 <input type="text" id="q8-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q8',48)">Check Answer</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>First letter: 2 vowels. Remaining 3 letters from 4: \( P(4,3) = 24 \). Total: \( 2 \cdot 24 = 48 \).</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>First letter: 2 vowels. Remaining 3 letters from 4: \( P(4,3) = 24 \). Total: \( 2 \cdot 24 = 48 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 2.5 — Circular Permutations</div>
@@ -133,7 +133,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q9-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q9',120)">Check Answer</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Circular permutation: \( (n-1)! = 5! = 120 \) (one seat is fixed by rotation symmetry).</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>Circular permutation: \( (n-1)! = 5! = 120 \) (one seat is fixed by rotation symmetry).</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div>
 <div class="q-text">In how many ways can 8 distinct beads be arranged on a bracelet (which can be flipped)?</div>
@@ -145,7 +145,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Bracelet = circle with reflection. \( \dfrac{(n-1)!}{2} = \dfrac{7!}{2} = 2520 \).</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>Bracelet = circle with reflection. \( \dfrac{(n-1)!}{2} = \dfrac{7!}{2} = 2520 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Mixed Application</div>
@@ -155,14 +155,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q11-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q11',6)">Check Answer</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( n(n-1) = 30 \Rightarrow n^2 - n - 30 = 0 \Rightarrow (n-6)(n+5)=0 \Rightarrow n = 6 \).</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\( n(n-1) = 30 \Rightarrow n^2 - n - 30 = 0 \Rightarrow (n-6)(n+5)=0 \Rightarrow n = 6 \).</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">How many 4-digit numbers can be formed from {1,2,3,4,5,6,7} without repetition such that the number is even?</div>
 <input type="text" id="q12-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q12',360)">Check Answer</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>Last digit even: 3 choices (2, 4, 6). Then 3 remaining positions from 6 remaining digits: \( P(6,3) = 120 \). Total: \( 3 \cdot 120 = 360 \).</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>Last digit even: 3 choices (2, 4, 6). Then 3 remaining positions from 6 remaining digits: \( P(6,3) = 120 \). Total: \( 3 \cdot 120 = 360 \).</div></div>
 </div>
 
 <footer>MDM4U — Mathematics of Data Management, Grade 12 | A. Counting and Probability | Assessment AS Learning</footer>

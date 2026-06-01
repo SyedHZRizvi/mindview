@@ -65,14 +65,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q1','b')">Check Answer</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( r = -0.92 \): negative direction, magnitude near 1 = strong linear relationship.</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>\( r = -0.92 \): negative direction, magnitude near 1 = strong linear relationship.</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">If \( r = 0.5 \) for the relationship between \( x \) and \( y \), what proportion of the variation in \( y \) is explained by \( x \)?</div>
 <input type="text" id="q2-input" placeholder="Enter as decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q2',0.25)">Check Answer</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>The coefficient of determination \( r^2 = (0.5)^2 = 0.25 = 25\% \).</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>The coefficient of determination \( r^2 = (0.5)^2 = 0.25 = 25\% \).</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div>
 <div class="q-text">A study finds that ice cream sales are positively correlated with drowning incidents. This is most likely an example of:</div>
@@ -84,7 +84,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q3','c')">Check Answer</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Hot weather is a "lurking variable" causing both increased ice-cream sales and more swimming → more drownings. Common cause.</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>Hot weather is a "lurking variable" causing both increased ice-cream sales and more swimming → more drownings. Common cause.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 8.3 — Linear Regression</div>
@@ -94,21 +94,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q4-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q4',25)">Check Answer</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( \hat{y} = 5 + 2(10) = 25 \).</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\( \hat{y} = 5 + 2(10) = 25 \).</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div>
 <div class="q-text">For data with \( \bar{x} = 5, \bar{y} = 20, s_x = 2, s_y = 8, r = 0.75 \), the slope of the line of best fit is:</div>
 <input type="text" id="q5-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q5',3)">Check Answer</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\( b_1 = r \dfrac{s_y}{s_x} = 0.75 \cdot \dfrac{8}{2} = 0.75 \cdot 4 = 3 \).</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>\( b_1 = r \dfrac{s_y}{s_x} = 0.75 \cdot \dfrac{8}{2} = 0.75 \cdot 4 = 3 \).</div></div>
 
 <div class="question-card" id="q6"><div class="q-number">Question 6</div>
 <div class="q-text">For Q5, the y-intercept of the regression line is:</div>
 <input type="text" id="q6-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q6',5)">Check Answer</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>The line passes through \( (\bar{x}, \bar{y}) \). \( b_0 = \bar{y} - b_1 \bar{x} = 20 - 3(5) = 5 \).</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>The line passes through \( (\bar{x}, \bar{y}) \). \( b_0 = \bar{y} - b_1 \bar{x} = 20 - 3(5) = 5 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 8.4 — Residuals</div>
@@ -118,7 +118,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q7-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q7',-3)">Check Answer</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Residual = \( y - \hat{y} = 47 - 50 = -3 \). The model overestimated.</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>Residual = \( y - \hat{y} = 47 - 50 = -3 \). The model overestimated.</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div>
 <div class="q-text">A residual plot shows a clear curved pattern. This suggests:</div>
@@ -130,7 +130,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>A pattern in residuals indicates the model fails to capture the underlying structure. Try a non-linear model.</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>A pattern in residuals indicates the model fails to capture the underlying structure. Try a non-linear model.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 8.5 — Causation</div>
@@ -145,7 +145,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q9','a')">Check Answer</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Probable cause-and-effect (more study → better grades), though confounders exist (motivation, etc.).</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>Probable cause-and-effect (more study → better grades), though confounders exist (motivation, etc.).</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div>
 <div class="q-text">"Children with bigger feet read better." This is most likely:</div>
@@ -157,7 +157,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 </ul>
 <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Age is a lurking variable causing both. This is a common-cause relationship.</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>Age is a lurking variable causing both. This is a common-cause relationship.</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Mixed</div>
@@ -167,14 +167,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q11-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q11',1)">Check Answer</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>The points are exactly on the line \( y = 2x \). Perfect positive linear relationship: \( r = 1 \).</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>The points are exactly on the line \( y = 2x \). Perfect positive linear relationship: \( r = 1 \).</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">For Q11, the regression line is \( \hat{y} = ? \). State the slope as a number.</div>
 <input type="text" id="q12-input" placeholder="Enter the slope..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q12',2)">Check Answer</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>The line is \( \hat{y} = 2x \). Slope = 2; intercept = 0.</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>The line is \( \hat{y} = 2x \). Slope = 2; intercept = 0.</div></div>
 </div>
 
 <footer>MDM4U — Mathematics of Data Management, Grade 12 | C. Organization of Data &amp; D. Culminating Investigation | Assessment AS Learning</footer>

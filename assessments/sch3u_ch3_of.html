@@ -71,7 +71,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <input type="text" id="q1-in" placeholder="g/mol...">
 <button class="btn btn-p" onclick="chkNum('q1',148.33)">Check</button>
 <div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>24.31 + 2(14.01 + 3·16.00) = 24.31 + 2(62.01) = <strong>148.33 g/mol</strong>.</div>
+<div class="sol instructor-only" id="q1-sl"><div class="sol-lbl instructor-only">Solution:</div>24.31 + 2(14.01 + 3·16.00) = 24.31 + 2(62.01) = <strong>148.33 g/mol</strong>.</div>
 </div>
 
 <div class="qcard" id="q2">
@@ -170,7 +170,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <textarea placeholder="Show reasoning..."></textarea>
 </div>
 
-<div class="rubric">
+<div class="rubric instructor-only">
 <h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
 <table>
 <tr><th>Level</th><th>Description</th><th>%</th></tr>
@@ -182,8 +182,8 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </table>
 </div>
 
-<details style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
-<div class="sol show">
+<details class="instructor-only" style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
+<div class="sol show instructor-only">
 <p><strong>Q1.</strong> 148.33 g/mol.</p>
 <p><strong>Q2.</strong> n = 36.0/18.02 = 1.998 mol; N = n × N_A = 1.998 × 6.022×10²³ = <strong>1.20 × 10²⁴ molecules</strong>.</p>
 <p><strong>Q3.</strong> M = 132.15 g/mol. %N = 28.02/132.15 × 100 = 21.20%; %H = 8.08/132.15 × 100 = 6.11%; %S = 32.07/132.15 × 100 = 24.27%; %O = 64.00/132.15 × 100 = 48.43%.</p>

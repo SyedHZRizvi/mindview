@@ -17,8 +17,12 @@
 //   - For HTML responses (content-type starts with text/html) on any path
 //     other than the login pages, inject
 //       <script src="/js/content-protection.js" defer></script>
+//       <script src="/js/role-gated.js" defer></script>
 //     at the end of <head> via HTMLRewriter. This applies to public paths
-//     too (e.g. the index page), so the protection script is always loaded.
+//     too (e.g. the index page), so both scripts are always loaded. The two
+//     scripts are independent and complementary: content-protection disables
+//     copy/paste/etc for non-superusers; role-gated hides .instructor-only
+//     content (answer keys, solutions, rubrics) from students.
 
 import { readSessionFromRequest } from './lib/session.js';
 
@@ -87,9 +91,16 @@ function shouldInject(pathname) {
 }
 
 // Wrap a downstream Response: if it's an HTML response, inject the
-// content-protection script tag at the end of <head> via HTMLRewriter.
-// Non-HTML responses (JSON, CSS, JS, images, redirects, 401s, etc.) are
-// returned unchanged.
+// content-protection AND role-gated script tags at the end of <head> via
+// HTMLRewriter. Non-HTML responses (JSON, CSS, JS, images, redirects, 401s,
+// etc.) are returned unchanged.
+//
+// The two scripts are independent and complementary:
+//   - content-protection.js disables copy/paste/right-click/etc for
+//     non-superusers (educational integrity for the lesson notes).
+//   - role-gated.js hides .instructor-only content (answer keys, solutions,
+//     rubrics) from students — only teachers / admins / superusers can see
+//     it. Loaded together so both apply on every page.
 function withProtectionInjected(response, pathname) {
   if (!response) return response;
   if (!shouldInject(pathname)) return response;
@@ -100,6 +111,10 @@ function withProtectionInjected(response, pathname) {
       element(el) {
         el.append(
           '<script src="/js/content-protection.js" defer></script>',
+          { html: true }
+        );
+        el.append(
+          '<script src="/js/role-gated.js" defer></script>',
           { html: true }
         );
       },

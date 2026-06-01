@@ -60,14 +60,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q1-input" placeholder="Enter percent (number only)..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q1',68)">Check Answer</button>
 <div class="feedback" id="q1-feedback"></div>
-<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>160 = \( \mu - \sigma \), 180 = \( \mu + \sigma \). Within 1 \( \sigma \): 68% by the empirical rule.</div></div>
+<div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>160 = \( \mu - \sigma \), 180 = \( \mu + \sigma \). Within 1 \( \sigma \): 68% by the empirical rule.</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div>
 <div class="q-text">For \( N(50, 5) \), about what percent of values fall between 35 and 65?</div>
 <input type="text" id="q2-input" placeholder="Enter percent (number only)..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q2',99.7)">Check Answer</button>
 <div class="feedback" id="q2-feedback"></div>
-<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>35 = \( \mu - 3\sigma \), 65 = \( \mu + 3\sigma \). Within 3 \( \sigma \): 99.7% (or just 99.7).</div></div>
+<div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>35 = \( \mu - 3\sigma \), 65 = \( \mu + 3\sigma \). Within 3 \( \sigma \): 99.7% (or just 99.7).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 6.3 — z-Scores</div>
@@ -77,35 +77,35 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q3-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q3',1.875)">Check Answer</button>
 <div class="feedback" id="q3-feedback"></div>
-<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( z = \dfrac{x - \mu}{\sigma} = \dfrac{90 - 75}{8} = \dfrac{15}{8} = 1.875 \).</div></div>
+<div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\( z = \dfrac{x - \mu}{\sigma} = \dfrac{90 - 75}{8} = \dfrac{15}{8} = 1.875 \).</div></div>
 
 <div class="question-card" id="q4"><div class="q-number">Question 4</div>
 <div class="q-text">A z-score of \( z = -1.5 \) on a test with \( \mu = 70 \), \( \sigma = 6 \) corresponds to what raw score?</div>
 <input type="text" id="q4-input" placeholder="Enter a number..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q4',61)">Check Answer</button>
 <div class="feedback" id="q4-feedback"></div>
-<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( x = \mu + z\sigma = 70 + (-1.5)(6) = 70 - 9 = 61 \).</div></div>
+<div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\( x = \mu + z\sigma = 70 + (-1.5)(6) = 70 - 9 = 61 \).</div></div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div>
 <div class="q-text">For the standard normal distribution, \( P(Z < 1.5) \) ≈ ? (decimal to 4 places, use standard table)</div>
 <input type="text" id="q5-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q5',0.9332)">Check Answer</button>
 <div class="feedback" id="q5-feedback"></div>
-<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>From standard normal table: \( P(Z < 1.5) = 0.9332 \).</div></div>
+<div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>From standard normal table: \( P(Z < 1.5) = 0.9332 \).</div></div>
 
 <div class="question-card" id="q6"><div class="q-number">Question 6</div>
 <div class="q-text">\( P(Z > 1.0) = ? \) (decimal to 4 places)</div>
 <input type="text" id="q6-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q6',0.1587)">Check Answer</button>
 <div class="feedback" id="q6-feedback"></div>
-<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( P(Z > 1) = 1 - P(Z < 1) = 1 - 0.8413 = 0.1587 \).</div></div>
+<div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>\( P(Z > 1) = 1 - P(Z < 1) = 1 - 0.8413 = 0.1587 \).</div></div>
 
 <div class="question-card" id="q7"><div class="q-number">Question 7</div>
 <div class="q-text">\( P(-1 < Z < 1) = ? \) (decimal to 4 places)</div>
 <input type="text" id="q7-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q7',0.6826)">Check Answer</button>
 <div class="feedback" id="q7-feedback"></div>
-<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\( P(-1 < Z < 1) = 0.8413 - 0.1587 = 0.6826 \) (matches the empirical rule's 68%).</div></div>
+<div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>\( P(-1 < Z < 1) = 0.8413 - 0.1587 = 0.6826 \) (matches the empirical rule's 68%).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Real-World Applications</div>
@@ -115,21 +115,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q8-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q8',0.0228)">Check Answer</button>
 <div class="feedback" id="q8-feedback"></div>
-<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( z = \dfrac{130 - 100}{15} = 2.0 \). \( P(Z > 2) = 1 - 0.9772 = 0.0228 \).</div></div>
+<div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>\( z = \dfrac{130 - 100}{15} = 2.0 \). \( P(Z > 2) = 1 - 0.9772 = 0.0228 \).</div></div>
 
 <div class="question-card" id="q9"><div class="q-number">Question 9</div>
 <div class="q-text">SAT scores: \( \mu = 1000 \), \( \sigma = 200 \). \( P(800 \le X \le 1200) = ? \) (decimal to 4 places)</div>
 <input type="text" id="q9-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q9',0.6826)">Check Answer</button>
 <div class="feedback" id="q9-feedback"></div>
-<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( z_1 = \dfrac{800 - 1000}{200} = -1 \), \( z_2 = 1 \). \( P(-1 \le Z \le 1) = 0.6826 \).</div></div>
+<div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>\( z_1 = \dfrac{800 - 1000}{200} = -1 \), \( z_2 = 1 \). \( P(-1 \le Z \le 1) = 0.6826 \).</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div>
 <div class="q-text">A factory produces bolts with diameter \( N(10\,\mathrm{mm}, 0.05\,\mathrm{mm}) \). A bolt is defective if its diameter is < 9.9 mm or > 10.1 mm. Find \( P(\text{defective}) \). (decimal to 4 places)</div>
 <input type="text" id="q10-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q10',0.0456)">Check Answer</button>
 <div class="feedback" id="q10-feedback"></div>
-<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( z = \pm\dfrac{0.1}{0.05} = \pm 2 \). \( P(\text{defective}) = 1 - P(-2 \le Z \le 2) = 1 - 0.9544 = 0.0456 \).</div></div>
+<div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>\( z = \pm\dfrac{0.1}{0.05} = \pm 2 \). \( P(\text{defective}) = 1 - P(-2 \le Z \le 2) = 1 - 0.9544 = 0.0456 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Topic 6.4 — Normal Approximation to Binomial</div>
@@ -139,14 +139,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 <input type="text" id="q11-input" placeholder="Enter mu (e.g., 50)..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q11',50)">Check Answer (mu)</button>
 <div class="feedback" id="q11-feedback"></div>
-<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( \mu = np = 100 \cdot 0.5 = 50 \). \( \sigma = \sqrt{np(1-p)} = \sqrt{25} = 5 \).</div></div>
+<div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\( \mu = np = 100 \cdot 0.5 = 50 \). \( \sigma = \sqrt{np(1-p)} = \sqrt{25} = 5 \).</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div>
 <div class="q-text">A coin is flipped 100 times. Use the normal approximation to estimate \( P(X \ge 60) \) (continuity correction \( X \ge 59.5 \)). (decimal to 4 places)</div>
 <input type="text" id="q12-input" placeholder="Enter a decimal..."><br><br>
 <button class="btn btn-check" onclick="checkNumeric('q12',0.0287)">Check Answer</button>
 <div class="feedback" id="q12-feedback"></div>
-<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\( z = \dfrac{59.5 - 50}{5} = 1.9 \). \( P(Z \ge 1.9) = 1 - 0.9713 = 0.0287 \).</div></div>
+<div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>\( z = \dfrac{59.5 - 50}{5} = 1.9 \). \( P(Z \ge 1.9) = 1 - 0.9713 = 0.0287 \).</div></div>
 </div>
 
 <footer>MDM4U — Mathematics of Data Management, Grade 12 | B. Probability Distributions | Assessment AS Learning</footer>

@@ -31,57 +31,57 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 
 <div class="question-card" id="q1"><div class="q-number">Question 1</div><div class="q-text">For 8% per annum compounded quarterly for 5 years: \( i = ? \)</div>
 <input type="text" id="q1-input" placeholder="Enter as decimal..."><button class="btn btn-check" onclick="checkNumeric('q1', 0.02)">Check Answer</button>
-<div class="feedback" id="q1-feedback"></div><div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( i = 0.08/4 = 0.02 \) per quarter.</div></div>
+<div class="feedback" id="q1-feedback"></div><div class="solution instructor-only" id="q1-solution"><div class="solution-label">Solution:</div>\( i = 0.08/4 = 0.02 \) per quarter.</div></div>
 
 <div class="question-card" id="q2"><div class="q-number">Question 2</div><div class="q-text">For Q1, the number of compounding periods \( n \) is:</div>
 <input type="text" id="q2-input" placeholder="Enter n..."><button class="btn btn-check" onclick="checkNumeric('q2', 20)">Check Answer</button>
-<div class="feedback" id="q2-feedback"></div><div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( n = 5 \times 4 = 20 \).</div></div>
+<div class="feedback" id="q2-feedback"></div><div class="solution instructor-only" id="q2-solution"><div class="solution-label">Solution:</div>\( n = 5 \times 4 = 20 \).</div></div>
 
 <div class="question-card" id="q3"><div class="q-number">Question 3</div><div class="q-text">\$1500 invested at 5% per year compounded annually for 10 years gives (round to nearest dollar):</div>
 <input type="text" id="q3-input" placeholder="Enter dollars..."><button class="btn btn-check" onclick="checkNumeric('q3', 2443)">Check Answer</button>
-<div class="feedback" id="q3-feedback"></div><div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( A = 1500(1.05)^{10} \approx 1500(1.6289) \approx \$2443 \).</div></div>
+<div class="feedback" id="q3-feedback"></div><div class="solution instructor-only" id="q3-solution"><div class="solution-label">Solution:</div>\( A = 1500(1.05)^{10} \approx 1500(1.6289) \approx \$2443 \).</div></div>
 
 <div class="question-card" id="q4"><div class="q-number">Question 4</div><div class="q-text">How much should be invested today at 6% compounded annually to have \$5000 in 8 years (round to nearest dollar)?</div>
 <input type="text" id="q4-input" placeholder="Enter dollars..."><button class="btn btn-check" onclick="checkNumeric('q4', 3137)">Check Answer</button>
-<div class="feedback" id="q4-feedback"></div><div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( P = 5000(1.06)^{-8} \approx \$3137 \).</div></div>
+<div class="feedback" id="q4-feedback"></div><div class="solution instructor-only" id="q4-solution"><div class="solution-label">Solution:</div>\( P = 5000(1.06)^{-8} \approx \$3137 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Annuities &mdash; Future Value</div>
 
 <div class="question-card" id="q5"><div class="q-number">Question 5</div><div class="q-text">Saving \$200 at the end of each year for 10 years at 5% compounded annually gives FV \(\approx\) (nearest dollar):</div>
 <input type="text" id="q5-input" placeholder="Enter dollars..."><button class="btn btn-check" onclick="checkNumeric('q5', 2516)">Check Answer</button>
-<div class="feedback" id="q5-feedback"></div><div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\( FV = 200 \cdot \frac{(1.05)^{10} - 1}{0.05} \approx 200 \cdot 12.578 \approx \$2516 \).</div></div>
+<div class="feedback" id="q5-feedback"></div><div class="solution instructor-only" id="q5-solution"><div class="solution-label">Solution:</div>\( FV = 200 \cdot \frac{(1.05)^{10} - 1}{0.05} \approx 200 \cdot 12.578 \approx \$2516 \).</div></div>
 
 <div class="question-card" id="q6"><div class="q-number">Question 6</div><div class="q-text">Saving \$100/month for 5 years at 6% per year compounded monthly gives FV (nearest dollar):</div>
 <input type="text" id="q6-input" placeholder="Enter dollars..."><button class="btn btn-check" onclick="checkNumeric('q6', 6977)">Check Answer</button>
-<div class="feedback" id="q6-feedback"></div><div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( i = 0.005, n = 60 \). \( FV = 100 \cdot \frac{1.005^{60} - 1}{0.005} \approx \$6977 \).</div></div>
+<div class="feedback" id="q6-feedback"></div><div class="solution instructor-only" id="q6-solution"><div class="solution-label">Solution:</div>\( i = 0.005, n = 60 \). \( FV = 100 \cdot \frac{1.005^{60} - 1}{0.005} \approx \$6977 \).</div></div>
 </div>
 
 <div class="topic-section"><div class="topic-header">Annuities &mdash; Present Value &amp; Mortgages</div>
 
 <div class="question-card" id="q7"><div class="q-number">Question 7</div><div class="q-text">PV of \$500/year for 10 years at 4% compounded annually (nearest dollar):</div>
 <input type="text" id="q7-input" placeholder="Enter dollars..."><button class="btn btn-check" onclick="checkNumeric('q7', 4055)">Check Answer</button>
-<div class="feedback" id="q7-feedback"></div><div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\( PV = 500 \cdot \frac{1 - 1.04^{-10}}{0.04} \approx 500 \cdot 8.111 \approx \$4055 \).</div></div>
+<div class="feedback" id="q7-feedback"></div><div class="solution instructor-only" id="q7-solution"><div class="solution-label">Solution:</div>\( PV = 500 \cdot \frac{1 - 1.04^{-10}}{0.04} \approx 500 \cdot 8.111 \approx \$4055 \).</div></div>
 
 <div class="question-card" id="q8"><div class="q-number">Question 8</div><div class="q-text">A loan of \$10{,}000 at 6% per year compounded monthly is repaid over 5 years. Monthly payment (nearest dollar):</div>
 <input type="text" id="q8-input" placeholder="Enter dollars..."><button class="btn btn-check" onclick="checkNumeric('q8', 193)">Check Answer</button>
-<div class="feedback" id="q8-feedback"></div><div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( i = 0.005, n = 60 \). \( R = \frac{10000}{(1 - 1.005^{-60})/0.005} \approx \$193.33 \).</div></div>
+<div class="feedback" id="q8-feedback"></div><div class="solution instructor-only" id="q8-solution"><div class="solution-label">Solution:</div>\( i = 0.005, n = 60 \). \( R = \frac{10000}{(1 - 1.005^{-60})/0.005} \approx \$193.33 \).</div></div>
 
 <div class="question-card" id="q9"><div class="q-number">Question 9</div><div class="q-text">Effective annual rate of 12% compounded monthly (round to two decimals as %):</div>
 <input type="text" id="q9-input" placeholder="Enter % e.g. 12.68..."><button class="btn btn-check" onclick="checkNumeric('q9', 12.68)">Check Answer</button>
-<div class="feedback" id="q9-feedback"></div><div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( (1.01)^{12} - 1 \approx 0.1268 \), so \( \approx 12.68\% \).</div></div>
+<div class="feedback" id="q9-feedback"></div><div class="solution instructor-only" id="q9-solution"><div class="solution-label">Solution:</div>\( (1.01)^{12} - 1 \approx 0.1268 \), so \( \approx 12.68\% \).</div></div>
 
 <div class="question-card" id="q10"><div class="q-number">Question 10</div><div class="q-text">Which compounding gives the highest amount at 6% per year over 1 year?</div>
 <ul class="mc-options"><li><label><input type="radio" name="q10" value="a"> Annual</label></li><li><label><input type="radio" name="q10" value="b"> Quarterly</label></li><li><label><input type="radio" name="q10" value="c"> Monthly</label></li><li><label><input type="radio" name="q10" value="d"> Daily</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q10','d')">Check Answer</button><div class="feedback" id="q10-feedback"></div><div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>More frequent compounding → larger effective rate. Daily is highest of these.</div></div>
+<button class="btn btn-check" onclick="checkMC('q10','d')">Check Answer</button><div class="feedback" id="q10-feedback"></div><div class="solution instructor-only" id="q10-solution"><div class="solution-label">Solution:</div>More frequent compounding → larger effective rate. Daily is highest of these.</div></div>
 
 <div class="question-card" id="q11"><div class="q-number">Question 11</div><div class="q-text">Doubling time at 6% compounded annually (use rule of 72):</div>
 <input type="text" id="q11-input" placeholder="Enter years..."><button class="btn btn-check" onclick="checkNumeric('q11', 12)">Check Answer</button>
-<div class="feedback" id="q11-feedback"></div><div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( 72/6 = 12 \) years.</div></div>
+<div class="feedback" id="q11-feedback"></div><div class="solution instructor-only" id="q11-solution"><div class="solution-label">Solution:</div>\( 72/6 = 12 \) years.</div></div>
 
 <div class="question-card" id="q12"><div class="q-number">Question 12</div><div class="q-text">Which formula gives the present value of an ordinary annuity?</div>
 <ul class="mc-options"><li><label><input type="radio" name="q12" value="a"> \( PV = R \cdot \frac{(1+i)^n - 1}{i} \)</label></li><li><label><input type="radio" name="q12" value="b"> \( PV = R \cdot \frac{1 - (1+i)^{-n}}{i} \)</label></li><li><label><input type="radio" name="q12" value="c"> \( PV = R \cdot (1+i)^n \)</label></li><li><label><input type="radio" name="q12" value="d"> \( PV = R/i \)</label></li></ul>
-<button class="btn btn-check" onclick="checkMC('q12','b')">Check Answer</button><div class="feedback" id="q12-feedback"></div><div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>The PV-annuity formula is \( PV = R \cdot \frac{1 - (1+i)^{-n}}{i} \). Option (a) is the FV formula.</div></div>
+<button class="btn btn-check" onclick="checkMC('q12','b')">Check Answer</button><div class="feedback" id="q12-feedback"></div><div class="solution instructor-only" id="q12-solution"><div class="solution-label">Solution:</div>The PV-annuity formula is \( PV = R \cdot \frac{1 - (1+i)^{-n}}{i} \). Option (a) is the FV formula.</div></div>
 </div>
 
 <footer>MCR3U — Functions, Grade 11 | Strand C: Discrete Functions | Assessment AS Learning</footer>
