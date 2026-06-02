@@ -37,6 +37,11 @@ const PUBLIC_EXACT = new Set([
   '/api/bootstrap',
   '/api/me',
   '/logo.png',
+  // Public policy pages — referenced from the home-page footer, intended
+  // to be readable without a login (legal compliance + prospective-
+  // student transparency).
+  '/video-policy',
+  '/video-policy.html',
 ]);
 
 // Lowercased file extensions that are always treated as public static assets.

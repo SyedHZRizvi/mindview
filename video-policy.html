@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Licensing &amp; Compliance Policy — MindView Academy</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; color: #1e293b; background: #f8fafc; }
+.policy { max-width: 920px; margin: 0 auto; padding: 24px; }
+.policy .badge-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; font-size: 13px; color: #475569; }
+.policy .badge { display: inline-block; background: #2563eb; color: #fff; padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 12px; }
+.policy .badge.muted { background: #e2e8f0; color: #475569; }
+.policy h1 { font-size: 30px; color: #0f172a; margin-bottom: 8px; }
+.policy h2 { font-size: 22px; margin: 32px 0 12px; color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 6px; }
+.policy h3 { font-size: 17px; margin: 18px 0 8px; color: #1e293b; }
+.policy p, .policy li { font-size: 14.5px; }
+.policy ul, .policy ol { margin: 8px 0 12px 24px; }
+.policy table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+.policy th, .policy td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; vertical-align: top; }
+.policy th { background: #dbeafe; color: #1e3a8a; }
+.policy code, .policy pre { font-family: 'SF Mono', Menlo, Monaco, monospace; }
+.policy code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #b91c1c; }
+.policy pre { background: #0f172a; color: #f8fafc; padding: 14px 18px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+.policy pre code { background: transparent; color: inherit; padding: 0; }
+.policy .callout { background: #eff6ff; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14.5px; }
+.policy .callout.warn { background: #fef3c7; border-left-color: #d97706; color: #78350f; }
+.policy .callout.danger { background: #fee2e2; border-left-color: #b91c1c; color: #7f1d1d; }
+.policy footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #cbd5e1; font-size: 12px; color: #64748b; text-align: center; }
+.tick { color: #16a34a; font-weight: 800; }
+.cross { color: #dc2626; font-weight: 800; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand"><img src="/logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#enrolment">Enrolment</a>
+            <a href="/#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="policy">
+    <div class="badge-row">
+        <span class="badge">Policy</span>
+        <span class="badge muted">Owner-approved</span>
+        <span class="badge muted">Effective: 2026-06-01</span>
+        <span>· Public document — applies to all third-party media on MindView</span>
+    </div>
+
+    <h1>Video Licensing &amp; Compliance Policy</h1>
+    <p>This policy governs how MindView Academy sources, hosts, and rotates video lessons. It applies to every video on every course page, and to every contributor adding or replacing media.</p>
+
+    <h2>1. What MindView owns</h2>
+    <p>MindView maintains a library of self-recorded lesson videos in the private Google Cloud Storage bucket <code>dondelete_vi</code> (approximately 16.1 GB across ~817 MP4 files). These recordings are referenced from course chapter pages via the standard HTML5 <code>&lt;video&gt;</code> tag:</p>
+<pre><code>&lt;video controls preload="none"&gt;
+  &lt;source src="https://storage.googleapis.com/dondelete_vi/{COURSE}/{file}.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+    <p>These recordings are the <strong>primary</strong> video source on every course where they exist. They are unambiguously MindView's to keep, re-encode, mirror, and continue hosting.</p>
+    <div class="callout warn"><strong>Operational rule:</strong> Never delete or rename a file in <code>dondelete_vi</code> without explicit owner approval. The bucket name encodes that rule.</div>
+
+    <h2>2. What is third-party (YouTube)</h2>
+    <p>The remainder of the site (the majority of embeds — roughly 540 unique videos across the catalogue) consists of <strong>YouTube embeds owned by other creators</strong>. These appear via YouTube's official privacy-enhanced IFrame embed:</p>
+<pre><code>&lt;iframe src="https://www.youtube-nocookie.com/embed/{ID}?rel=0&amp;modestbranding=1" …&gt;</code></pre>
+    <p>The IFrame embed is YouTube's officially supported way to surface another channel's content. It stays within YouTube's Terms of Service and the uploader's choice of licence.</p>
+
+    <h3>What that does NOT permit</h3>
+    <ul>
+        <li>We <strong>must not</strong> download these videos to our own infrastructure.</li>
+        <li>We <strong>must not</strong> rip the audio, transcode, mirror, cache, or re-upload these videos anywhere we control (GCS, R2, our own servers, etc.).</li>
+        <li>We <strong>must not</strong> mass-scrape the channels for backup copies — even if the intent is "just in case the upload disappears."</li>
+    </ul>
+    <p>The legally clean way to keep a third-party YouTube video on our pages is to keep it embedded via the IFrame and to <strong>rotate to a replacement</strong> the moment the original goes dark.</p>
+
+    <h2>3. The Creative Commons exception (narrow + audited)</h2>
+    <p>A small fraction of YouTube videos are published under <strong>Creative Commons Attribution (CC BY 3.0)</strong>. For those, the licence does permit download, redistribution, and re-hosting — subject to <strong>proper attribution and non-commercial use</strong> in our context.</p>
+
+    <h3>Required steps before re-hosting any CC video</h3>
+    <ol>
+        <li>Re-verify the licence by visiting the watch page yourself — automated checks are advisory, not gospel.</li>
+        <li>Record, in a checked-in attribution file alongside the MP4: the original channel name and uploader handle, the original video title, the original watch URL, the licence (<em>Creative Commons Attribution 3.0</em>), and a link to <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">creativecommons.org/licenses/by/3.0</a>.</li>
+        <li>Upload the MP4 to <code>dondelete_vi</code> under a clearly attributed path (e.g. <code>dondelete_vi/THIRD_PARTY_CC/{channel}/{title}.mp4</code>).</li>
+        <li>Swap the chapter HTML from the IFrame embed to the <code>&lt;video&gt;</code> tag, keeping the attribution visible to the student.</li>
+        <li>Commit the HTML change and the attribution file together.</li>
+    </ol>
+
+    <h3>What MindView will NOT do, even for CC videos</h3>
+    <ul>
+        <li><span class="cross">✗</span> <strong>No bulk download</strong> of an entire channel even if everything on the channel is CC. We download one CC video at a time, on demand, when an embed has broken or is at obvious risk.</li>
+        <li><span class="cross">✗</span> <strong>No removal of attribution</strong> from the embedded title or page metadata.</li>
+        <li><span class="cross">✗</span> <strong>No commercial re-use</strong> outside MindView's student-facing site.</li>
+    </ul>
+
+    <h2>4. Owned recordings come first</h2>
+    <p>When a <code>dondelete_vi</code> recording covers the same topic as a third-party YouTube embed on the same chapter page, <strong>the owned recording is primary</strong> and the YouTube embed is removed (not merely demoted).</p>
+    <p>For new courses:</p>
+    <ol>
+        <li>If we already have an owned recording in <code>dondelete_vi</code>, use it.</li>
+        <li>Otherwise, prefer <strong>CC-licensed channels</strong> for new embeds — they are resilient (re-hostable if they vanish) and legally clean.</li>
+        <li>Standard-licence YouTube embeds remain acceptable as a fallback but live on borrowed time and will appear in the audit's broken list the moment the uploader removes the video.</li>
+    </ol>
+
+    <h2>5. Audit cadence (twice weekly)</h2>
+    <p>An automated audit script probes every YouTube ID and every GCS URL in parallel (20 workers) and writes a JSON report. It exits with status <code>1</code> if <em>any</em> video is broken — suitable for cron + email-on-failure.</p>
+    <p>Recommended cron line (Monday + Thursday at 09:00 local time):</p>
+<pre><code>0 9 * * 1,4 cd /path/to/mindview &amp;&amp; python3 scripts/video-audit.py</code></pre>
+    <p>Why twice weekly: YouTube takedowns and channel deletions happen continuously, but waiting a week to discover a broken embed is too long for a student-facing course; auditing more often than every few days risks rate-limiting from YouTube oEmbed.</p>
+
+    <h2>6. Replacement workflow (when a video breaks)</h2>
+    <ol>
+        <li><strong>Detection.</strong> The Monday or Thursday audit fails. The cron email lists each broken video by source type, ID, and the chapter file + topic.</li>
+        <li><strong>Search for a like-for-like replacement.</strong> Prefer the same channel (uploaders sometimes re-upload under a new ID); failing that, prefer a CC-licensed channel covering the same Ontario curriculum expectation.</li>
+        <li><strong>Swap the iframe</strong> in the chapter HTML, preserving the surrounding <code>vid-title</code> and the relative position in the topic block. Update the title to credit the new source.</li>
+        <li><strong>Re-run the audit</strong> locally to confirm the swap is healthy.</li>
+        <li><strong>Commit</strong> the HTML change with a message that lists the dead ID and the new ID.</li>
+        <li><strong>Deploy via the usual staging-first flow.</strong></li>
+    </ol>
+    <p>If the broken video was a <code>dondelete_vi</code> MP4 (rare — the bucket is private and stable), the failure is almost certainly a transient GCS issue or an inadvertent ACL change; <strong>do not delete or re-upload</strong> without owner approval, since the file is irreplaceable.</p>
+
+    <h2>7. Quick reference — what counts as legal</h2>
+    <table>
+        <thead><tr><th>Action</th><th style="width:18%; text-align:center;">Status</th></tr></thead>
+        <tbody>
+            <tr><td>Embed a YouTube video via the official IFrame embed</td><td style="text-align:center;"><span class="tick">✓ OK</span> (any licence)</td></tr>
+            <tr><td>Keep an owned <code>dondelete_vi</code> MP4 on a <code>&lt;video&gt;</code> tag</td><td style="text-align:center;"><span class="tick">✓ OK</span> (we own it)</td></tr>
+            <tr><td>Re-host a CC BY YouTube video as our own MP4</td><td style="text-align:center;"><span class="tick">✓ OK</span> only with attribution + per-video justification</td></tr>
+            <tr><td>Download a non-CC YouTube video to GCS / our server</td><td style="text-align:center;"><span class="cross">✗ NOT OK</span></td></tr>
+            <tr><td>Bulk-download an entire channel (even if CC)</td><td style="text-align:center;"><span class="cross">✗ NOT OK</span></td></tr>
+            <tr><td>Re-encode and strip attribution off a CC video</td><td style="text-align:center;"><span class="cross">✗ NOT OK</span></td></tr>
+            <tr><td>Remove an owned recording when a third-party embed exists</td><td style="text-align:center;"><span class="cross">✗ NOT OK</span> without owner approval</td></tr>
+        </tbody>
+    </table>
+
+    <h2>8. Where to ask</h2>
+    <p>If a contributor is unsure whether a particular action is allowed, the default answer is <strong>stop and ask the school owner first</strong>. Re-hosting third-party content is exactly the kind of change that is cheap to avoid up front and expensive to clean up later.</p>
+
+    <div class="callout">
+        <strong>Operational scripts</strong> that enforce this policy:<br>
+        <code>scripts/video-inventory.py</code> — enumerates every video embed.<br>
+        <code>scripts/video-audit.py</code> — twice-weekly health check.<br>
+        <code>scripts/find-cc-licensed.py</code> — identifies CC-licensed embeds.
+    </div>
+
+    <footer>
+        MindView Virtual Classroom · Video Licensing &amp; Compliance Policy · Last reviewed 2026-06-01 · <a href="/">Back to home</a>
+    </footer>
+</div>
+</body>
+</html>

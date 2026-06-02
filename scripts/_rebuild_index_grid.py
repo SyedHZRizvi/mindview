@@ -20,6 +20,18 @@ INDEX = ROOT / "index.html"
 # are listed in grade order (10 → 11 → 12) and paired siblings sit
 # adjacent (e.g. SCH3U → SCH4U).
 #
+# Section ordering (owner instruction 2026-06-01): all STEM/Sciences
+# sections come first, A→Z alphabetical; then all Arts & Humanities
+# sections, A→Z alphabetical. Within each section, courses keep their
+# Grade-10 → Grade-11 → Grade-12 order (already pair-aware).
+#
+#   STEM band (alphabetical):
+#     Biology · Chemistry · Computer Studies · Mathematics · Physics · Science
+#   Arts & Humanities band (alphabetical):
+#     Accounting · Business Leadership · Civics and Politics · English
+#     · Food and Nutrition · Geography · Guidance and Career Education
+#     · History · International Business · Law · World Cultures
+#
 # Ontario discipline → strand mapping reference (audit, 2026-06-01):
 #
 #   Mathematics                            → Mathematics (single section)
@@ -55,8 +67,31 @@ INDEX = ROOT / "index.html"
 # Each tuple is (code, label, grade, accent, title, description).
 # The list of tuples within each group is presented in display order.
 LAYOUT = [
-    # ─── Mathematics discipline ────────────────────────────────────────
+    # ═══════════════════════════════════════════════════════════════════
+    # STEM band (A → Z): Biology · Chemistry · Computer Studies ·
+    #                    Mathematics · Physics · Science
+    # ═══════════════════════════════════════════════════════════════════
+
+    ("🧬 Biology", [
+        # Ontario Science 2008 (rev.) — Biology strand.
+        ("sbi3u", "SBI3U", 11, "#15803d", "Biology", "Diversity, evolution, genetics, animal systems, plant biology — prerequisite for SBI4U"),
+        ("sbi4u", "SBI4U", 12, "#16a34a", "Biology", "Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics"),
+    ]),
+
+    ("🧪 Chemistry", [
+        # Ontario Science 2008 (rev.) — Chemistry strand.
+        ("sch3u", "SCH3U", 11, "#0d9488", "Chemistry", "Matter & bonding, reactions, stoichiometry, solutions, gases — prerequisite for SCH4U"),
+        ("sch4u", "SCH4U", 12, "#059669", "Chemistry", "Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry"),
+    ]),
+
+    ("💻 Computer Studies", [
+        # Ontario Computer Studies 2008 (rev.) — single discipline.
+        ("ics3u", "ICS3U", 11, "#14b8a6", "Introduction to Computer Science", "Programming with Python — variables, control flow, functions, lists, software dev — prerequisite for ICS4U"),
+        ("ics4u", "ICS4U", 12, "#6366f1", "Computer Science", "Programming, data structures, recursion, algorithms, software engineering, AI/ethics"),
+    ]),
+
     ("📐 Mathematics", [
+        # Ontario Mathematics 2007 (rev.) — courses-are-strands.
         # — Functions sequence (MCR3U → MHF4U)
         ("mcr3u", "MCR3U", 11, "#0891b2", "Functions", "Function notation, quadratics, exponentials, sequences, financial math, trig & sinusoids"),
         ("mhf4u", "MHF4U", 12, "#2563eb", "Advanced Functions", "Polynomial, rational, logarithmic, and trigonometric functions; rates of change"),
@@ -69,40 +104,37 @@ LAYOUT = [
         ("mct4m", "MCT4M", 12, "#c2410c", "Math for College Tech", "Exp/log functions, polynomial equations, trig functions, geometry applications"),
     ]),
 
-    # ─── Science discipline ─ split by strand ──────────────────────────
+    ("⚡ Physics", [
+        # Ontario Science 2008 (rev.) — Physics strand.
+        ("sph3u", "SPH3U", 11, "#ea580c", "Physics", "Kinematics, forces, energy & society, waves & sound, electricity & magnetism — prerequisite for SPH4U"),
+        ("sph4u", "SPH4U", 12, "#dc2626", "Physics", "Dynamics, energy & momentum, fields, wave nature of light, modern physics"),
+    ]),
+
     ("🔬 Science", [
         # Grade 10 Academic integrated science (Biology + Chemistry + Earth/
         # Space + Physics strands per Ontario Science 2008, rev.). Functions
         # as the prerequisite gate for SBI3U / SCH3U / SPH3U.
         ("snc2d", "SNC2D", 10, "#0891b2", "Science (Academic)", "Biology — tissues & systems, Chemistry — reactions, Earth/Space — climate change, Physics — light & optics"),
     ]),
-    ("🧬 Biology", [
-        ("sbi3u", "SBI3U", 11, "#15803d", "Biology", "Diversity, evolution, genetics, animal systems, plant biology — prerequisite for SBI4U"),
-        ("sbi4u", "SBI4U", 12, "#16a34a", "Biology", "Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics"),
-    ]),
-    ("🧪 Chemistry", [
-        ("sch3u", "SCH3U", 11, "#0d9488", "Chemistry", "Matter & bonding, reactions, stoichiometry, solutions, gases — prerequisite for SCH4U"),
-        ("sch4u", "SCH4U", 12, "#059669", "Chemistry", "Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry"),
-    ]),
-    ("⚡ Physics", [
-        ("sph3u", "SPH3U", 11, "#ea580c", "Physics", "Kinematics, forces, energy & society, waves & sound, electricity & magnetism — prerequisite for SPH4U"),
-        ("sph4u", "SPH4U", 12, "#dc2626", "Physics", "Dynamics, energy & momentum, fields, wave nature of light, modern physics"),
+
+    # ═══════════════════════════════════════════════════════════════════
+    # Arts & Humanities band (A → Z):
+    #   Accounting · Business Leadership · Civics and Politics · English
+    #   · Food and Nutrition · Geography · Guidance and Career Education
+    #   · History · International Business · Law · World Cultures
+    # ═══════════════════════════════════════════════════════════════════
+
+    ("📒 Accounting", [
+        # Ontario Business Studies 2006 (rev.) — Accounting strand.
+        ("baf3m", "BAF3M", 11, "#15803d", "Financial Accounting Fundamentals", "Accounting equation, journal & ledger, trial balance, financial statements, internal control & ethics"),
+        ("bat4m", "BAT4M", 12, "#166534", "Financial Accounting Principles", "Specific accounts, subsidiary ledgers, statement analysis, internal control, computerized accounting"),
     ]),
 
-    # ─── English discipline ────────────────────────────────────────────
-    ("📚 English", [
-        ("eng2d", "ENG2D", 10, "#1e40af", "English (Academic)", "Critical reading, the essay, drama (Romeo and Juliet), short stories & poetry, media literacy"),
-        ("eng3u", "ENG3U", 11, "#3b82f6", "English", "Critical reading, the essay, Macbeth, short stories & poetry, ISU, media literacy — prerequisite for ENG4U"),
-        ("eng4u", "ENG4U", 12, "#1e40af", "English", "Critical reading, essay writing, Shakespearean tragedy, Canadian voices, ISU, media literacy"),
+    ("👔 Business Leadership", [
+        # Ontario Business Studies 2006 (rev.) — Management strand.
+        ("boh4m", "BOH4M", 12, "#7c3aed", "Business Leadership: Management", "Foundations of management, leadership theory, decision-making, planning, controlling & ethics"),
     ]),
 
-    # ─── Computer Studies discipline ───────────────────────────────────
-    ("💻 Computer Studies", [
-        ("ics3u", "ICS3U", 11, "#14b8a6", "Introduction to Computer Science", "Programming with Python — variables, control flow, functions, lists, software dev — prerequisite for ICS4U"),
-        ("ics4u", "ICS4U", 12, "#6366f1", "Computer Science", "Programming, data structures, recursion, algorithms, software engineering, AI/ethics"),
-    ]),
-
-    # ─── Canadian and World Studies discipline ─ split by strand ───────
     ("🏛️ Civics and Politics", [
         # Ontario CWS 2018 — Politics strand. Grade 10 Civics + Grade 11
         # Politics in Action + Grade 12 Canadian and World Politics now form
@@ -111,67 +143,62 @@ LAYOUT = [
         ("cpc3o", "CPC3O", 11, "#7c3aed", "Politics in Action: Making Change", "Half-credit (0.5). Identifying issues, tools of civic engagement, designing & evaluating civic action"),
         ("cpw4u", "CPW4U", 12, "#6d28d9", "Canadian and World Politics", "Power & governance, ideologies, human rights, conflict, global cooperation — university preparation"),
     ]),
-    ("📜 History", [
-        # Ontario CWS 2018 — History strand.
-        ("chc2d", "CHC2D", 10, "#dc2626", "Canadian History since WWI", "Canada 1914-1929, 1929-1945, 1945-1982, 1982-Present, historical inquiry skills"),
-        ("chw3m", "CHW3M", 11, "#a16207", "World History to 16th Century", "Early civilizations, Classical Greco-Roman, Medieval Europe, non-European civilizations, interactions"),
-        ("chy4u", "CHY4U", 12, "#a16207", "World History since 15th Century", "Renaissance/Reformation, Enlightenment, Revolutions, World Wars, Contemporary era"),
-    ]),
-    ("⚖️ Law", [
-        # Ontario CWS 2018 — Law strand.
-        ("clu3m", "CLU3M", 11, "#b91c1c", "Understanding Canadian Law", "Heritage of law, Charter rights, criminal law, civil law & dispute resolution, legal inquiry"),
-        ("cln4u", "CLN4U", 12, "#7f1d1d", "Canadian and International Law", "Legal theory, Constitution, international law, human rights, disputes between nations"),
-    ]),
-    ("🌍 Geography", [
-        # Ontario CWS 2018 — Geography strand.
-        ("cgf3m", "CGF3M", 11, "#0e7490", "Physical Geography", "Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues"),
-        ("cgw4u", "CGW4U", 12, "#155e75", "World Issues: A Geographic Analysis", "Quality of life, sustainability & climate, conflict & cooperation, global connections"),
+
+    ("📚 English", [
+        # Ontario English 2007 (rev.) — single discipline.
+        ("eng2d", "ENG2D", 10, "#1e40af", "English (Academic)", "Critical reading, the essay, drama (Romeo and Juliet), short stories & poetry, media literacy"),
+        ("eng3u", "ENG3U", 11, "#3b82f6", "English", "Critical reading, the essay, Macbeth, short stories & poetry, ISU, media literacy — prerequisite for ENG4U"),
+        ("eng4u", "ENG4U", 12, "#1e40af", "English", "Critical reading, essay writing, Shakespearean tragedy, Canadian voices, ISU, media literacy"),
     ]),
 
-    # ─── Business Studies discipline ─ split by strand ─────────────────
-    ("📒 Accounting", [
-        # Ontario Business Studies 2006 (rev.) — Accounting strand.
-        ("baf3m", "BAF3M", 11, "#15803d", "Financial Accounting Fundamentals", "Accounting equation, journal & ledger, trial balance, financial statements, internal control & ethics"),
-        ("bat4m", "BAT4M", 12, "#166534", "Financial Accounting Principles", "Specific accounts, subsidiary ledgers, statement analysis, internal control, computerized accounting"),
-    ]),
-    ("🌐 International Business", [
-        # Ontario Business Studies 2006 (rev.) — International Business strand.
-        ("bbb4m", "BBB4M", 12, "#0891b2", "International Business Fundamentals", "Global business environment, international marketing, sales & logistics, trade documentation"),
-    ]),
-    ("👔 Business Leadership", [
-        # Ontario Business Studies 2006 (rev.) — Management strand.
-        ("boh4m", "BOH4M", 12, "#7c3aed", "Business Leadership: Management", "Foundations of management, leadership theory, decision-making, planning, controlling & ethics"),
-    ]),
-
-    # ─── Social Sciences and Humanities discipline ─ split by strand ───
     ("🥗 Food and Nutrition", [
         # Ontario SSH 2013 (rev.) — Family Studies discipline,
         # Food and Nutrition strand.
         ("hfn3m", "HFN3M", 11, "#16a34a", "Nutrition and Health", "Nutrition basics, digestion & metabolism, Canadian Food Guide, food safety, trends & issues"),
         ("hfa4m", "HFA4M", 12, "#15803d", "Nutrition and Health Issues", "Determinants of nutritional health, lifespan nutrition, nutrition & disease, food systems"),
     ]),
+
+    ("🌍 Geography", [
+        # Ontario CWS 2018 — Geography strand.
+        ("cgf3m", "CGF3M", 11, "#0e7490", "Physical Geography", "Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues"),
+        ("cgw4u", "CGW4U", 12, "#155e75", "World Issues: A Geographic Analysis", "Quality of life, sustainability & climate, conflict & cooperation, global connections"),
+    ]),
+
+    ("🧭 Guidance and Career Education", [
+        # Ontario Guidance and Career Education 2006 (rev.). Full G10 → G11
+        # → G11 → G11 → G12 sequence (the GCE discipline has multiple
+        # Grade 11 courses serving complementary purposes).
+        ("glc2o", "GLC2O", 10, "#059669", "Career Studies", "Half-credit (0.5). Knowing yourself, exploring opportunities, decisions & goals, transitions"),
+        ("gwl3o", "GWL3O", 11, "#16a34a", "Designing Your Future", "Half-credit (0.5). Self-knowledge, workplace communication, designing your post-secondary pathway"),
+        ("gpp3o", "GPP3O", 11, "#15803d", "Leadership and Peer Support", "Self-awareness, interpersonal skills, theories of leadership, peer support & mentoring, leadership in action"),
+        ("gle3o", "GLE3O", 11, "#059669", "Advanced Learning Strategies", "Learning styles, reading/writing/numeracy strategies, memory & test-taking, communication, goal-setting"),
+        ("gle4o", "GLE4O", 12, "#047857", "Advanced Learning Strategies: After Secondary", "Adult identity, post-secondary success, workplace leadership, financial literacy, civic engagement"),
+    ]),
+
+    ("📜 History", [
+        # Ontario CWS 2018 — History strand.
+        ("chc2d", "CHC2D", 10, "#dc2626", "Canadian History since WWI", "Canada 1914-1929, 1929-1945, 1945-1982, 1982-Present, historical inquiry skills"),
+        ("chw3m", "CHW3M", 11, "#a16207", "World History to 16th Century", "Early civilizations, Classical Greco-Roman, Medieval Europe, non-European civilizations, interactions"),
+        ("chy4u", "CHY4U", 12, "#a16207", "World History since 15th Century", "Renaissance/Reformation, Enlightenment, Revolutions, World Wars, Contemporary era"),
+    ]),
+
+    ("🌐 International Business", [
+        # Ontario Business Studies 2006 (rev.) — International Business strand.
+        ("bbb4m", "BBB4M", 12, "#0891b2", "International Business Fundamentals", "Global business environment, international marketing, sales & logistics, trade documentation"),
+    ]),
+
+    ("⚖️ Law", [
+        # Ontario CWS 2018 — Law strand.
+        ("clu3m", "CLU3M", 11, "#b91c1c", "Understanding Canadian Law", "Heritage of law, Charter rights, criminal law, civil law & dispute resolution, legal inquiry"),
+        ("cln4u", "CLN4U", 12, "#7f1d1d", "Canadian and International Law", "Legal theory, Constitution, international law, human rights, disputes between nations"),
+    ]),
+
     ("🎭 World Cultures", [
         # Ontario SSH 2013 (rev.) — Equity Studies discipline, World Cultures
         # course. Section uses the course name (not the broader "Equity
         # Studies" parent) since HSC4M is the only Equity Studies course in
         # the catalogue and "World Cultures" is more descriptive for users.
         ("hsc4m", "HSC4M", 12, "#9333ea", "World Cultures", "Foundations of culture, cultural expressions, identity & diversity, globalization, inquiry skills"),
-    ]),
-
-    # ─── Guidance and Career Education discipline ──────────────────────
-    # Full G10 → G11 → G11 → G11 → G12 sequence (the Ontario GCE discipline
-    # has multiple Grade 11 courses serving complementary purposes).
-    ("🧭 Guidance and Career Education", [
-        # Grade 10: foundational career studies (compulsory half-credit).
-        ("glc2o", "GLC2O", 10, "#059669", "Career Studies", "Half-credit (0.5). Knowing yourself, exploring opportunities, decisions & goals, transitions"),
-        # Grade 11: pathway design (compulsory half-credit successor to GLC2O).
-        ("gwl3o", "GWL3O", 11, "#16a34a", "Designing Your Future", "Half-credit (0.5). Self-knowledge, workplace communication, designing your post-secondary pathway"),
-        # Grade 11: leadership & peer support (1.0 cr Open).
-        ("gpp3o", "GPP3O", 11, "#15803d", "Leadership and Peer Support", "Self-awareness, interpersonal skills, theories of leadership, peer support & mentoring, leadership in action"),
-        # Grade 11: advanced learning strategies for senior secondary success.
-        ("gle3o", "GLE3O", 11, "#059669", "Advanced Learning Strategies", "Learning styles, reading/writing/numeracy strategies, memory & test-taking, communication, goal-setting"),
-        # Grade 12: advanced learning strategies for life after secondary.
-        ("gle4o", "GLE4O", 12, "#047857", "Advanced Learning Strategies: After Secondary", "Adult identity, post-secondary success, workplace leadership, financial literacy, civic engagement"),
     ]),
 ]
 
