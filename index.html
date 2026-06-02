@@ -4,49 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MindView — Virtual Classroom</title>
-<link rel="stylesheet" href="css/style.css">
-<style>
-.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-top: 32px; }
-.course-card { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; transition: all 0.2s; color: #1e293b; text-decoration: none; }
-.course-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
-.course-icon { font-size: 52px; padding: 28px 28px 0; }
-.course-body { padding: 12px 28px 28px; }
-.course-code { font-size: 17px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 8px; }
-.course-body h3 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
-.course-desc { font-size: 17px; color: #64748b; margin-bottom: 12px; line-height: 1.5; }
-.course-stats { display: flex; gap: 16px; font-size: 15px; color: #94a3b8; margin-bottom: 12px; }
-.course-strands { display: flex; flex-wrap: wrap; gap: 4px; }
-.strand-tag { font-size: 14px; padding: 4px 12px; background: #f1f5f9; border-radius: 10px; color: #64748b; }
-.subject-group { margin-bottom: 48px; }
-.subject-label { font-size: 18px; font-weight: 800; color: #64748b; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
-
-/* ── Enrolment & Tuition section ─────────────────────────────────── */
-.enrol-section { padding: 56px 0; background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
-.enrol-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: #0f172a; }
-.enrol-section .section-sub { font-size: 16px; color: #64748b; margin-bottom: 28px; }
-.enrol-pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 32px; }
-.enrol-tier { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px 22px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); }
-.enrol-tier.featured { border: 2px solid #2563eb; background: linear-gradient(180deg, #fff 0%, #eff6ff 100%); }
-.enrol-tier-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #2563eb; margin-bottom: 6px; }
-.enrol-tier h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #0f172a; }
-.enrol-price { font-size: 36px; font-weight: 900; color: #0f172a; line-height: 1; margin-bottom: 4px; }
-.enrol-price small { font-size: 14px; font-weight: 600; color: #64748b; }
-.enrol-per { font-size: 13px; color: #64748b; margin-bottom: 14px; }
-.enrol-tier ul { list-style: none; padding: 0; margin: 0; }
-.enrol-tier ul li { font-size: 14px; color: #475569; padding: 5px 0; padding-left: 22px; position: relative; line-height: 1.5; }
-.enrol-tier ul li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 800; }
-.enrol-howto { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 28px 30px; }
-.enrol-howto h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; color: #0f172a; display: flex; align-items: center; gap: 10px; }
-.enrol-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 18px; }
-.enrol-step { display: flex; gap: 14px; }
-.enrol-step-num { flex-shrink: 0; width: 36px; height: 36px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; }
-.enrol-step-text { font-size: 14px; color: #475569; line-height: 1.5; }
-.enrol-step-text strong { color: #0f172a; display: block; margin-bottom: 4px; font-size: 15px; }
-.enrol-contact { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; margin-top: 18px; font-size: 14px; color: #14532d; }
-.enrol-contact a { color: #15803d; font-weight: 700; text-decoration: none; }
-.enrol-contact a:hover { text-decoration: underline; }
-.enrol-placeholder { background: #fef3c7; border: 1px solid #fde68a; color: #78350f; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 18px; font-weight: 600; }
-</style>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -55,9 +13,9 @@
         <a href="/" class="nav-brand"><img src="logo.png" alt="MindView Academy" class="brand-logo"></a>
         <div class="nav-links" id="nav-links">
             <a href="/" class="active">Home</a>
-            <a href="#enrolment">Enrolment</a>
-            <a href="#courses">Courses</a>
-            <a href="#resources">Resources</a>
+            <a href="/enrolment">Enrolment</a>
+            <a href="/catalog">Courses</a>
+            <a href="/resources">Resources</a>
             <a href="/admin/users.html" id="nav-manage-users" style="display:none;color:#dc2626;font-weight:700;">👥 Manage Users</a>
             <a href="/admin" id="nav-admin" style="display:none;">⚙️ Admin</a>
             <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
@@ -72,7 +30,6 @@
 // (Unauthenticated visitors have already been bounced to /login by
 // functions/_middleware.js before this script runs.)
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
-const ROLE_COLORS = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', student:'#2563eb'};
 
 function renderUser(fullName, role) {
     document.getElementById('user-name').textContent = fullName;
@@ -102,354 +59,48 @@ fetch('/api/me')
             <div class="stat"><span class="stat-num">1300+</span><span class="stat-label">Video Lessons</span></div>
             <div class="stat"><span class="stat-num">700+</span><span class="stat-label">Assessments &amp; Resources</span></div>
         </div>
-        <a href="#courses" class="hero-cta">Explore Courses →</a>
+        <a href="/catalog" class="hero-cta">Browse the Course Catalog →</a>
     </div>
 </header>
 
-<!-- Enrolment & Tuition — added 2026-06-01 per owner instruction. Fees
-     below are PLACEHOLDERS; replace the $ amounts and contact details
-     with the real values when ready. Course content (lessons, videos,
-     assessments) is gated per-student by the enrolled_courses field on
-     each user record; see functions/_middleware.js. -->
-<section id="enrolment" class="enrol-section">
+<!-- Hub cards: each tile is a top-level destination on the site. Clicking
+     a tile navigates to a new page (no in-page scrolling). -->
+<section class="hub-section">
     <div class="container">
-        <h2>Enrolment &amp; Tuition</h2>
-        <p class="section-sub">Per-course pricing — enrol in one course or several. Browse all 40 below, then contact us to register.</p>
+        <h2>Where would you like to go?</h2>
+        <p class="section-sub">Four destinations. Click any tile to open that page — your current page closes and the new one loads.</p>
 
-        <div class="enrol-placeholder">⚠️ Placeholder pricing — final amounts to be confirmed by the school administrator.</div>
+        <div class="hub-grid">
+            <a href="/enrolment" class="hub-card">
+                <div class="hub-icon">💳</div>
+                <h3>Enrolment &amp; Tuition</h3>
+                <p>See per-course pricing, half-credit options, multi-course bundles, and the 4-step enrolment flow.</p>
+                <span class="hub-cta">View pricing →</span>
+            </a>
 
-        <div class="enrol-pricing">
-            <div class="enrol-tier">
-                <div class="enrol-tier-label">Standard</div>
-                <h3>Full-Credit Course</h3>
-                <div class="enrol-price">$599<small> CAD</small></div>
-                <div class="enrol-per">per course · 1.0 credit · 110 hrs instruction</div>
-                <ul>
-                    <li>Grade 10 / 11 / 12 — Academic (D), University (U), University/College (M), College (C)</li>
-                    <li>Full lesson notes, videos, assessments &amp; teacher feedback</li>
-                    <li>OSSD-credit eligible</li>
-                </ul>
-            </div>
+            <a href="/catalog" class="hub-card">
+                <div class="hub-icon">📚</div>
+                <h3>Course Catalog</h3>
+                <p>All 40 Ontario-aligned courses across 17 subject groups. Grade 10 through Grade 12 — Sciences first, then Arts &amp; Humanities, both A–Z.</p>
+                <span class="hub-cta">Browse 40 courses →</span>
+            </a>
 
-            <div class="enrol-tier">
-                <div class="enrol-tier-label">Half-Credit</div>
-                <h3>Open Course</h3>
-                <div class="enrol-price">$329<small> CAD</small></div>
-                <div class="enrol-per">per course · 0.5 credit · 55 hrs instruction</div>
-                <ul>
-                    <li>CHV2O — Civics and Citizenship</li>
-                    <li>GLC2O — Career Studies</li>
-                    <li>Same lessons + assessments + feedback model</li>
-                </ul>
-            </div>
+            <a href="/resources" class="hub-card">
+                <div class="hub-icon">🧰</div>
+                <h3>Tools &amp; Resources</h3>
+                <p>26 free, vetted reference tools organised by subject — Desmos, PhET, Charter of Rights, Statistics Canada, Job Bank, and more.</p>
+                <span class="hub-cta">Open the toolbox →</span>
+            </a>
 
-            <div class="enrol-tier featured">
-                <div class="enrol-tier-label">Save ~15%</div>
-                <h3>Multi-Course Bundle</h3>
-                <div class="enrol-price">3+ courses</div>
-                <div class="enrol-per">discounted package — contact admin for a quote</div>
-                <ul>
-                    <li>Full grade 11 or 12 year package</li>
-                    <li>OUAC-friendly pre-university bundle</li>
-                    <li>College-pathway bundle (MCT3M/MCT4M + complement)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="enrol-howto">
-            <h3>📝 How to Enrol</h3>
-            <div class="enrol-steps">
-                <div class="enrol-step">
-                    <div class="enrol-step-num">1</div>
-                    <div class="enrol-step-text"><strong>Browse the catalogue</strong>Look through the 34 courses below and decide which one(s) you want to take.</div>
-                </div>
-                <div class="enrol-step">
-                    <div class="enrol-step-num">2</div>
-                    <div class="enrol-step-text"><strong>Email the admin</strong>Tell us your full name, current grade, and the courses you'd like to enrol in.</div>
-                </div>
-                <div class="enrol-step">
-                    <div class="enrol-step-num">3</div>
-                    <div class="enrol-step-text"><strong>Receive your account</strong>We'll send you a login and payment instructions. Tuition is per-course.</div>
-                </div>
-                <div class="enrol-step">
-                    <div class="enrol-step-num">4</div>
-                    <div class="enrol-step-text"><strong>Start learning</strong>Sign in — your enrolled courses unlock all lessons, videos &amp; assessments.</div>
-                </div>
-            </div>
-            <div class="enrol-contact">
-                📧 Contact for enrolment: <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+1-XXX-XXX-XXXX">(XXX) XXX-XXXX</a>
-            </div>
+            <a href="/video-policy.html" class="hub-card">
+                <div class="hub-icon">📺</div>
+                <h3>Video Licensing Policy</h3>
+                <p>How MindView sources, hosts, and rotates videos — owner-approved compliance policy covering YouTube embeds and Creative Commons content.</p>
+                <span class="hub-cta">Read the policy →</span>
+            </a>
         </div>
     </div>
 </section>
-
-<section id="courses" style="padding: 64px 0;">
-    <div class="container">
-        <h2>Courses</h2>
-        <p class="section-sub">Grade 10 — 12 courses aligned with Ontario Ministry curriculum, arranged by subject.</p>
-
-                                                                <div class="subject-group">
-            <div class="subject-label">🧬 Biology</div>
-            <div class="courses-grid">
-                <a href="courses/sbi3u.html" class="course-card" style="border-top:4px solid #15803d"><div class="course-icon" style="color:#15803d">🧬</div><div class="course-body"><div class="course-code" style="color:#15803d">SBI3U <span style="font-size:11px;background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Biology</h3><p class="course-desc">Diversity, evolution, genetics, animal systems, plant biology — prerequisite for SBI4U</p></div></a><a href="courses/sbi4u.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">🧬</div><div class="course-body"><div class="course-code" style="color:#16a34a">SBI4U <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Biology</h3><p class="course-desc">Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🧪 Chemistry</div>
-            <div class="courses-grid">
-                <a href="courses/sch3u.html" class="course-card" style="border-top:4px solid #0d9488"><div class="course-icon" style="color:#0d9488">🧪</div><div class="course-body"><div class="course-code" style="color:#0d9488">SCH3U <span style="font-size:11px;background:#ccfbf1;color:#115e59;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Chemistry</h3><p class="course-desc">Matter & bonding, reactions, stoichiometry, solutions, gases — prerequisite for SCH4U</p></div></a><a href="courses/sch4u.html" class="course-card" style="border-top:4px solid #059669"><div class="course-icon" style="color:#059669">🧪</div><div class="course-body"><div class="course-code" style="color:#059669">SCH4U <span style="font-size:11px;background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Chemistry</h3><p class="course-desc">Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">💻 Computer Studies</div>
-            <div class="courses-grid">
-                <a href="courses/ics3u.html" class="course-card" style="border-top:4px solid #14b8a6"><div class="course-icon" style="color:#14b8a6">💻</div><div class="course-body"><div class="course-code" style="color:#14b8a6">ICS3U <span style="font-size:11px;background:#ccfbf1;color:#0f766e;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Introduction to Computer Science</h3><p class="course-desc">Programming with Python — variables, control flow, functions, lists, software dev — prerequisite for ICS4U</p></div></a><a href="courses/ics4u.html" class="course-card" style="border-top:4px solid #6366f1"><div class="course-icon" style="color:#6366f1">💻</div><div class="course-body"><div class="course-code" style="color:#6366f1">ICS4U <span style="font-size:11px;background:#e0e7ff;color:#4338ca;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Computer Science</h3><p class="course-desc">Programming, data structures, recursion, algorithms, software engineering, AI/ethics</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">📐 Mathematics</div>
-            <div class="courses-grid">
-                <a href="courses/mcr3u.html" class="course-card" style="border-top:4px solid #0891b2"><div class="course-icon" style="color:#0891b2">📐</div><div class="course-body"><div class="course-code" style="color:#0891b2">MCR3U <span style="font-size:11px;background:#ecfeff;color:#0e7490;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Functions</h3><p class="course-desc">Function notation, quadratics, exponentials, sequences, financial math, trig & sinusoids</p></div></a><a href="courses/mhf4u.html" class="course-card" style="border-top:4px solid #2563eb"><div class="course-icon" style="color:#2563eb">📐</div><div class="course-body"><div class="course-code" style="color:#2563eb">MHF4U <span style="font-size:11px;background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Advanced Functions</h3><p class="course-desc">Polynomial, rational, logarithmic, and trigonometric functions; rates of change</p></div></a><a href="courses/mcv4u.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">📐</div><div class="course-body"><div class="course-code" style="color:#7c3aed">MCV4U <span style="font-size:11px;background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Calculus and Vectors</h3><p class="course-desc">Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes</p></div></a><a href="courses/mdm4u.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">📐</div><div class="course-body"><div class="course-code" style="color:#16a34a">MDM4U <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Mathematics of Data Management</h3><p class="course-desc">Counting, probability, distributions, statistics, correlation & regression</p></div></a><a href="courses/mct3m.html" class="course-card" style="border-top:4px solid #ea580c"><div class="course-icon" style="color:#ea580c">📐</div><div class="course-body"><div class="course-code" style="color:#ea580c">MCT3M <span style="font-size:11px;background:#fff7ed;color:#9a3412;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Math for College Tech</h3><p class="course-desc">Exponentials, polynomials, trig, measurement, geometric modelling — college pathway</p></div></a><a href="courses/mct4m.html" class="course-card" style="border-top:4px solid #c2410c"><div class="course-icon" style="color:#c2410c">📐</div><div class="course-body"><div class="course-code" style="color:#c2410c">MCT4M <span style="font-size:11px;background:#fff7ed;color:#7c2d12;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Math for College Tech</h3><p class="course-desc">Exp/log functions, polynomial equations, trig functions, geometry applications</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">⚡ Physics</div>
-            <div class="courses-grid">
-                <a href="courses/sph3u.html" class="course-card" style="border-top:4px solid #ea580c"><div class="course-icon" style="color:#ea580c">⚡</div><div class="course-body"><div class="course-code" style="color:#ea580c">SPH3U <span style="font-size:11px;background:#fff7ed;color:#9a3412;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Physics</h3><p class="course-desc">Kinematics, forces, energy & society, waves & sound, electricity & magnetism — prerequisite for SPH4U</p></div></a><a href="courses/sph4u.html" class="course-card" style="border-top:4px solid #dc2626"><div class="course-icon" style="color:#dc2626">⚡</div><div class="course-body"><div class="course-code" style="color:#dc2626">SPH4U <span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Physics</h3><p class="course-desc">Dynamics, energy & momentum, fields, wave nature of light, modern physics</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🔬 Science</div>
-            <div class="courses-grid">
-                <a href="courses/snc2d.html" class="course-card" style="border-top:4px solid #0891b2"><div class="course-icon" style="color:#0891b2">🔬</div><div class="course-body"><div class="course-code" style="color:#0891b2">SNC2D <span style="font-size:11px;background:#ecfeff;color:#0e7490;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 10</span></div><h3>Science (Academic)</h3><p class="course-desc">Biology — tissues & systems, Chemistry — reactions, Earth/Space — climate change, Physics — light & optics</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">📒 Accounting</div>
-            <div class="courses-grid">
-                <a href="courses/baf3m.html" class="course-card" style="border-top:4px solid #15803d"><div class="course-icon" style="color:#15803d">📒</div><div class="course-body"><div class="course-code" style="color:#15803d">BAF3M <span style="font-size:11px;background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Financial Accounting Fundamentals</h3><p class="course-desc">Accounting equation, journal & ledger, trial balance, financial statements, internal control & ethics</p></div></a><a href="courses/bat4m.html" class="course-card" style="border-top:4px solid #166534"><div class="course-icon" style="color:#166534">📊</div><div class="course-body"><div class="course-code" style="color:#166534">BAT4M <span style="font-size:11px;background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Financial Accounting Principles</h3><p class="course-desc">Specific accounts, subsidiary ledgers, statement analysis, internal control, computerized accounting</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">👔 Business Leadership</div>
-            <div class="courses-grid">
-                <a href="courses/boh4m.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">👔</div><div class="course-body"><div class="course-code" style="color:#7c3aed">BOH4M <span style="font-size:11px;background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Business Leadership: Management</h3><p class="course-desc">Foundations of management, leadership theory, decision-making, planning, controlling & ethics</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🏛️ Civics and Politics</div>
-            <div class="courses-grid">
-                <a href="courses/chv2o.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">🏛️</div><div class="course-body"><div class="course-code" style="color:#7c3aed">CHV2O <span style="font-size:11px;background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 10</span></div><h3>Civics and Citizenship</h3><p class="course-desc">Half-credit (0.5). Civic awareness, civic engagement & action, political inquiry skills</p></div></a><a href="courses/cpc3o.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">🗳️</div><div class="course-body"><div class="course-code" style="color:#7c3aed">CPC3O <span style="font-size:11px;background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Politics in Action: Making Change</h3><p class="course-desc">Half-credit (0.5). Identifying issues, tools of civic engagement, designing & evaluating civic action</p></div></a><a href="courses/cpw4u.html" class="course-card" style="border-top:4px solid #6d28d9"><div class="course-icon" style="color:#6d28d9">🌐</div><div class="course-body"><div class="course-code" style="color:#6d28d9">CPW4U <span style="font-size:11px;background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Canadian and World Politics</h3><p class="course-desc">Power & governance, ideologies, human rights, conflict, global cooperation — university preparation</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">📚 English</div>
-            <div class="courses-grid">
-                <a href="courses/eng2d.html" class="course-card" style="border-top:4px solid #1e40af"><div class="course-icon" style="color:#1e40af">📚</div><div class="course-body"><div class="course-code" style="color:#1e40af">ENG2D <span style="font-size:11px;background:#dbeafe;color:#1e3a8a;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 10</span></div><h3>English (Academic)</h3><p class="course-desc">Critical reading, the essay, drama (Romeo and Juliet), short stories & poetry, media literacy</p></div></a><a href="courses/eng3u.html" class="course-card" style="border-top:4px solid #3b82f6"><div class="course-icon" style="color:#3b82f6">📚</div><div class="course-body"><div class="course-code" style="color:#3b82f6">ENG3U <span style="font-size:11px;background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>English</h3><p class="course-desc">Critical reading, the essay, Macbeth, short stories & poetry, ISU, media literacy — prerequisite for ENG4U</p></div></a><a href="courses/eng4u.html" class="course-card" style="border-top:4px solid #1e40af"><div class="course-icon" style="color:#1e40af">📚</div><div class="course-body"><div class="course-code" style="color:#1e40af">ENG4U <span style="font-size:11px;background:#dbeafe;color:#1e3a8a;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>English</h3><p class="course-desc">Critical reading, essay writing, Shakespearean tragedy, Canadian voices, ISU, media literacy</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🥗 Food and Nutrition</div>
-            <div class="courses-grid">
-                <a href="courses/hfn3m.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">🥗</div><div class="course-body"><div class="course-code" style="color:#16a34a">HFN3M <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Nutrition and Health</h3><p class="course-desc">Nutrition basics, digestion & metabolism, Canadian Food Guide, food safety, trends & issues</p></div></a><a href="courses/hfa4m.html" class="course-card" style="border-top:4px solid #15803d"><div class="course-icon" style="color:#15803d">🥦</div><div class="course-body"><div class="course-code" style="color:#15803d">HFA4M <span style="font-size:11px;background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Nutrition and Health Issues</h3><p class="course-desc">Determinants of nutritional health, lifespan nutrition, nutrition & disease, food systems</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🌍 Geography</div>
-            <div class="courses-grid">
-                <a href="courses/cgf3m.html" class="course-card" style="border-top:4px solid #0e7490"><div class="course-icon" style="color:#0e7490">🌐</div><div class="course-body"><div class="course-code" style="color:#0e7490">CGF3M <span style="font-size:11px;background:#ecfeff;color:#0e7490;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Physical Geography</h3><p class="course-desc">Earth systems, biomes & ecosystems, human-physical interactions, sustainability, geographic issues</p></div></a><a href="courses/cgw4u.html" class="course-card" style="border-top:4px solid #155e75"><div class="course-icon" style="color:#155e75">🗺️</div><div class="course-body"><div class="course-code" style="color:#155e75">CGW4U <span style="font-size:11px;background:#cffafe;color:#155e75;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>World Issues: A Geographic Analysis</h3><p class="course-desc">Quality of life, sustainability & climate, conflict & cooperation, global connections</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🧭 Guidance and Career Education</div>
-            <div class="courses-grid">
-                <a href="courses/glc2o.html" class="course-card" style="border-top:4px solid #059669"><div class="course-icon" style="color:#059669">🧭</div><div class="course-body"><div class="course-code" style="color:#059669">GLC2O <span style="font-size:11px;background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 10</span></div><h3>Career Studies</h3><p class="course-desc">Half-credit (0.5). Knowing yourself, exploring opportunities, decisions & goals, transitions</p></div></a><a href="courses/gwl3o.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">🗺️</div><div class="course-body"><div class="course-code" style="color:#16a34a">GWL3O <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Designing Your Future</h3><p class="course-desc">Half-credit (0.5). Self-knowledge, workplace communication, designing your post-secondary pathway</p></div></a><a href="courses/gpp3o.html" class="course-card" style="border-top:4px solid #15803d"><div class="course-icon" style="color:#15803d">🤝</div><div class="course-body"><div class="course-code" style="color:#15803d">GPP3O <span style="font-size:11px;background:#dcfce7;color:#14532d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Leadership and Peer Support</h3><p class="course-desc">Self-awareness, interpersonal skills, theories of leadership, peer support & mentoring, leadership in action</p></div></a><a href="courses/gle3o.html" class="course-card" style="border-top:4px solid #059669"><div class="course-icon" style="color:#059669">🎯</div><div class="course-body"><div class="course-code" style="color:#059669">GLE3O <span style="font-size:11px;background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Advanced Learning Strategies</h3><p class="course-desc">Learning styles, reading/writing/numeracy strategies, memory & test-taking, communication, goal-setting</p></div></a><a href="courses/gle4o.html" class="course-card" style="border-top:4px solid #047857"><div class="course-icon" style="color:#047857">🎓</div><div class="course-body"><div class="course-code" style="color:#047857">GLE4O <span style="font-size:11px;background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Advanced Learning Strategies: After Secondary</h3><p class="course-desc">Adult identity, post-secondary success, workplace leadership, financial literacy, civic engagement</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">📜 History</div>
-            <div class="courses-grid">
-                <a href="courses/chc2d.html" class="course-card" style="border-top:4px solid #dc2626"><div class="course-icon" style="color:#dc2626">🍁</div><div class="course-body"><div class="course-code" style="color:#dc2626">CHC2D <span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 10</span></div><h3>Canadian History since WWI</h3><p class="course-desc">Canada 1914-1929, 1929-1945, 1945-1982, 1982-Present, historical inquiry skills</p></div></a><a href="courses/chw3m.html" class="course-card" style="border-top:4px solid #a16207"><div class="course-icon" style="color:#a16207">🏺</div><div class="course-body"><div class="course-code" style="color:#a16207">CHW3M <span style="font-size:11px;background:#fef3c7;color:#78350f;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>World History to 16th Century</h3><p class="course-desc">Early civilizations, Classical Greco-Roman, Medieval Europe, non-European civilizations, interactions</p></div></a><a href="courses/chy4u.html" class="course-card" style="border-top:4px solid #a16207"><div class="course-icon" style="color:#a16207">🌍</div><div class="course-body"><div class="course-code" style="color:#a16207">CHY4U <span style="font-size:11px;background:#fef3c7;color:#78350f;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>World History since 15th Century</h3><p class="course-desc">Renaissance/Reformation, Enlightenment, Revolutions, World Wars, Contemporary era</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🌐 International Business</div>
-            <div class="courses-grid">
-                <a href="courses/bbb4m.html" class="course-card" style="border-top:4px solid #0891b2"><div class="course-icon" style="color:#0891b2">💱</div><div class="course-body"><div class="course-code" style="color:#0891b2">BBB4M <span style="font-size:11px;background:#ecfeff;color:#0e7490;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>International Business Fundamentals</h3><p class="course-desc">Global business environment, international marketing, sales & logistics, trade documentation</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">⚖️ Law</div>
-            <div class="courses-grid">
-                <a href="courses/clu3m.html" class="course-card" style="border-top:4px solid #b91c1c"><div class="course-icon" style="color:#b91c1c">⚖️</div><div class="course-body"><div class="course-code" style="color:#b91c1c">CLU3M <span style="font-size:11px;background:#fee2e2;color:#7f1d1d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Understanding Canadian Law</h3><p class="course-desc">Heritage of law, Charter rights, criminal law, civil law & dispute resolution, legal inquiry</p></div></a><a href="courses/cln4u.html" class="course-card" style="border-top:4px solid #7f1d1d"><div class="course-icon" style="color:#7f1d1d">⚖️</div><div class="course-body"><div class="course-code" style="color:#7f1d1d">CLN4U <span style="font-size:11px;background:#fee2e2;color:#7f1d1d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Canadian and International Law</h3><p class="course-desc">Legal theory, Constitution, international law, human rights, disputes between nations</p></div></a>
-            </div>
-        </div>
-
-        <div class="subject-group">
-            <div class="subject-label">🎭 World Cultures</div>
-            <div class="courses-grid">
-                <a href="courses/hsc4m.html" class="course-card" style="border-top:4px solid #9333ea"><div class="course-icon" style="color:#9333ea">🎭</div><div class="course-body"><div class="course-code" style="color:#9333ea">HSC4M <span style="font-size:11px;background:#f3e8ff;color:#6b21a8;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>World Cultures</h3><p class="course-desc">Foundations of culture, cultural expressions, identity & diversity, globalization, inquiry skills</p></div></a>
-            </div>
-        </div>
-
-
-
-
-
-
-
-    </div>
-</section>
-
-<section class="tools-section" id="resources">
-    <div class="container">
-        <h2>Tools &amp; Resources</h2>
-        <p style="color:#64748b;font-size:15px;margin-top:-4px;margin-bottom:24px;">Free, instructor-vetted tools and references organised by subject area — coverage for all 40 courses on this site.</p>
-        <div class="tools-grid">
-
-            <!-- ─── Universal ─────────────────────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:8px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🎓 Cross-subject</div>
-            <a href="https://www.khanacademy.org/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🎓</div><h3>Khan Academy</h3><p>Free video lessons across every Grade 10 — 12 subject</p>
-            </a>
-
-            <!-- ─── Mathematics ───────────────────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">📐 Mathematics — MCR3U · MHF4U · MCV4U · MDM4U · MCT3M · MCT4M</div>
-            <a href="https://www.desmos.com/calculator" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">📊</div><h3>Desmos</h3><p>Graphing calculator — functions, conics, sliders, regression</p>
-            </a>
-            <a href="https://www.geogebra.org" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">📐</div><h3>GeoGebra</h3><p>Interactive geometry, calculus &amp; vectors — MCV4U</p>
-            </a>
-            <a href="https://www.wolframalpha.com" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🔢</div><h3>Wolfram Alpha</h3><p>Symbolic computation engine — algebra, calculus, statistics</p>
-            </a>
-            <a href="https://www.symbolab.com/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🧮</div><h3>Symbolab</h3><p>Step-by-step algebra &amp; calculus solver</p>
-            </a>
-
-            <!-- ─── Sciences ──────────────────────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🔬 Sciences — SNC2D · SBI3U/4U · SCH3U/4U · SPH3U/4U</div>
-            <a href="https://phet.colorado.edu" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">⚗️</div><h3>PhET Simulations</h3><p>Interactive physics, chemistry &amp; biology sims — University of Colorado</p>
-            </a>
-            <a href="https://ptable.com/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">⚛️</div><h3>Periodic Table</h3><p>Interactive periodic table with properties — SCH3U / SCH4U</p>
-            </a>
-            <a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🧬</div><h3>NCBI</h3><p>Genome, protein &amp; literature database — SBI4U molecular genetics</p>
-            </a>
-
-            <!-- ─── Computer Studies ──────────────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">💻 Computer Studies — ICS3U · ICS4U</div>
-            <a href="https://replit.com" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">💻</div><h3>Replit</h3><p>Browser code editor — run Python and Java in the cloud</p>
-            </a>
-            <a href="https://docs.python.org/3/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🐍</div><h3>Python Docs</h3><p>Official Python 3 reference, tutorial &amp; library docs</p>
-            </a>
-            <a href="https://pythontutor.com/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🔍</div><h3>Python Tutor</h3><p>Step-by-step program visualiser — watch your code run</p>
-            </a>
-
-            <!-- ─── English &amp; Literature ───────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">📚 English &amp; Literature — ENG2D · ENG3U · ENG4U</div>
-            <a href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">✍️</div><h3>Purdue OWL</h3><p>MLA / APA / Chicago citation &amp; academic writing guide</p>
-            </a>
-            <a href="https://www.folger.edu/explore/shakespeares-works/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🎭</div><h3>Folger Shakespeare</h3><p>Annotated Shakespeare e-texts (Macbeth · Hamlet · R&amp;J)</p>
-            </a>
-            <a href="https://www.gutenberg.org/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">📖</div><h3>Project Gutenberg</h3><p>Free e-texts — Canadian classics, English literary canon</p>
-            </a>
-
-            <!-- ─── Civics, Politics &amp; Law ────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🏛️ Civics, Politics &amp; Law — CHV2O · CPC3O · CPW4U · CLU3M · CLN4U</div>
-            <a href="https://laws-lois.justice.gc.ca/eng/const/page-12.html" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">📜</div><h3>Charter of Rights &amp; Freedoms</h3><p>Official Justice Canada text of the 1982 Charter</p>
-            </a>
-            <a href="https://www.ourcommons.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🏛️</div><h3>Parliament of Canada</h3><p>House of Commons + Hansard (debate transcripts)</p>
-            </a>
-            <a href="https://www.elections.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🗳️</div><h3>Elections Canada</h3><p>How federal elections work, voter info, results archive</p>
-            </a>
-            <a href="https://www.canlii.org/en/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">⚖️</div><h3>CanLII</h3><p>Free Canadian case law, statutes &amp; legal databases</p>
-            </a>
-
-            <!-- ─── History ───────────────────────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">📜 History — CHC2D · CHW3M · CHY4U</div>
-            <a href="https://library-archives.canada.ca/eng/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🗄️</div><h3>Library &amp; Archives Canada</h3><p>Primary-source archive — census, war records, photographs</p>
-            </a>
-            <a href="https://www.thecanadianencyclopedia.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🍁</div><h3>The Canadian Encyclopedia</h3><p>Authoritative reference for Canadian history &amp; civics</p>
-            </a>
-
-            <!-- ─── Geography &amp; World Cultures ────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🌍 Geography &amp; World Cultures — CGF3M · CGW4U · HSC4M</div>
-            <a href="https://earth.google.com/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🌐</div><h3>Google Earth</h3><p>3-D globe, satellite imagery, geographic exploration</p>
-            </a>
-            <a href="https://whc.unesco.org/en/list/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🏛️</div><h3>UNESCO World Heritage</h3><p>1,100+ sites of global cultural &amp; natural significance</p>
-            </a>
-
-            <!-- ─── Business, Accounting &amp; Economics ──────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">💼 Business, Accounting &amp; Economics — BAF3M · BAT4M · BBB4M · BOH4M</div>
-            <a href="https://www.statcan.gc.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">📊</div><h3>Statistics Canada</h3><p>Official economic, trade, population &amp; labour-market data</p>
-            </a>
-            <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🏦</div><h3>Bank of Canada</h3><p>Interest rates, FX rates, inflation — economics &amp; IB</p>
-            </a>
-
-            <!-- ─── Food &amp; Nutrition ─────────────────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🥗 Food &amp; Nutrition — HFN3M · HFA4M</div>
-            <a href="https://food-guide.canada.ca/en/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🥗</div><h3>Canada's Food Guide</h3><p>Official Health Canada healthy-eating guidance &amp; recipes</p>
-            </a>
-
-            <!-- ─── Guidance &amp; Career Education ───────────────────── -->
-            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🧭 Guidance &amp; Career Education — GLC2O · GWL3O · GPP3O · GLE3O · GLE4O</div>
-            <a href="https://www.jobbank.gc.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">💼</div><h3>Job Bank Canada</h3><p>Federal job listings, wage info, labour-market outlooks</p>
-            </a>
-            <a href="https://noc.esdc.gc.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">📋</div><h3>National Occupational Classification</h3><p>Canada's official career taxonomy — 500+ occupations</p>
-            </a>
-            <a href="https://www.ouac.on.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🎓</div><h3>OUAC</h3><p>Ontario Universities Application Centre — apply to all 21 universities</p>
-            </a>
-            <a href="https://www.ontariocolleges.ca/" target="_blank" rel="noopener" class="tool-card">
-                <div class="tool-icon">🏫</div><h3>OntarioColleges.ca</h3><p>Apply to Ontario's 24 public colleges from one portal</p>
-            </a>
-
-        </div>
-    </div>
-</section>
-<script>
-// Note: Admin tools section is now revealed by the main role-handler at the top of the page.
-// This redundant block is kept as a no-op fallback for the Flask local-dev case where
-// the main script has already reveal logic. No additional fetch needed here.
-</script>
 
 <footer class="site-footer">
     <div class="container">
@@ -462,4 +113,5 @@ fetch('/api/me')
     </div>
 </footer>
 
-</body></html>
+</body>
+</html>

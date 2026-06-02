@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrolment &amp; Tuition — MindView Virtual Classroom</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand"><img src="/logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links" id="nav-links">
+            <a href="/">Home</a>
+            <a href="/enrolment" class="active">Enrolment</a>
+            <a href="/catalog">Courses</a>
+            <a href="/resources">Resources</a>
+            <a href="/admin/users.html" id="nav-manage-users" style="display:none;color:#dc2626;font-weight:700;">👥 Manage Users</a>
+            <a href="/admin" id="nav-admin" style="display:none;">⚙️ Admin</a>
+            <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
+                <span id="user-name" style="font-weight:700;"></span>
+                <a href="/api/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
+            </span>
+        </div>
+    </div>
+</nav>
+<script>
+function renderUser(fullName, role) {
+    document.getElementById('user-name').textContent = fullName;
+    document.getElementById('user-chip').style.display = 'inline-flex';
+    if (role === 'admin' || role === 'superuser') {
+        document.getElementById('nav-manage-users').style.display = 'inline-block';
+        document.getElementById('nav-admin').style.display = 'inline-block';
+    }
+}
+fetch('/api/me')
+    .then(r => r.ok ? r.json() : null)
+    .then(data => { if (data && data.authenticated) renderUser(data.user.full_name, data.user.role); })
+    .catch(() => {});
+</script>
+
+<header class="page-head">
+    <h1>💳 Enrolment &amp; Tuition</h1>
+    <p>Per-course pricing — enrol in one course or several. Email or call us to register.</p>
+</header>
+
+<section class="enrol-section">
+    <div class="container">
+        <h2>Enrolment &amp; Tuition</h2>
+        <p class="section-sub">Per-course pricing — enrol in one course or several. Browse all 40 in the <a href="/catalog">Catalog</a>, then contact us to register.</p>
+
+        <div class="enrol-placeholder">⚠️ Placeholder pricing — final amounts to be confirmed by the school administrator.</div>
+
+        <div class="enrol-pricing">
+            <div class="enrol-tier">
+                <div class="enrol-tier-label">Standard</div>
+                <h3>Full-Credit Course</h3>
+                <div class="enrol-price">$599<small> CAD</small></div>
+                <div class="enrol-per">per course · 1.0 credit · 110 hrs instruction</div>
+                <ul>
+                    <li>Grade 10 / 11 / 12 — Academic (D), University (U), University/College (M), College (C)</li>
+                    <li>Full lesson notes, videos, assessments &amp; teacher feedback</li>
+                    <li>OSSD-credit eligible</li>
+                </ul>
+            </div>
+
+            <div class="enrol-tier">
+                <div class="enrol-tier-label">Half-Credit</div>
+                <h3>Open Course</h3>
+                <div class="enrol-price">$329<small> CAD</small></div>
+                <div class="enrol-per">per course · 0.5 credit · 55 hrs instruction</div>
+                <ul>
+                    <li>CHV2O — Civics and Citizenship</li>
+                    <li>CPC3O — Politics in Action</li>
+                    <li>GLC2O — Career Studies</li>
+                    <li>GWL3O — Designing Your Future</li>
+                </ul>
+            </div>
+
+            <div class="enrol-tier featured">
+                <div class="enrol-tier-label">Save ~15%</div>
+                <h3>Multi-Course Bundle</h3>
+                <div class="enrol-price">3+ courses</div>
+                <div class="enrol-per">discounted package — contact admin for a quote</div>
+                <ul>
+                    <li>Full grade 11 or 12 year package</li>
+                    <li>OUAC-friendly pre-university bundle</li>
+                    <li>College-pathway bundle (MCT3M/MCT4M + complement)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="enrol-howto">
+            <h3>📝 How to Enrol</h3>
+            <div class="enrol-steps">
+                <div class="enrol-step">
+                    <div class="enrol-step-num">1</div>
+                    <div class="enrol-step-text"><strong>Browse the catalogue</strong>Open the <a href="/catalog">Courses</a> page and decide which one(s) you want to take.</div>
+                </div>
+                <div class="enrol-step">
+                    <div class="enrol-step-num">2</div>
+                    <div class="enrol-step-text"><strong>Email the admin</strong>Tell us your full name, current grade, and the courses you'd like to enrol in.</div>
+                </div>
+                <div class="enrol-step">
+                    <div class="enrol-step-num">3</div>
+                    <div class="enrol-step-text"><strong>Receive your account</strong>We'll send you a login and payment instructions. Tuition is per-course.</div>
+                </div>
+                <div class="enrol-step">
+                    <div class="enrol-step-num">4</div>
+                    <div class="enrol-step-text"><strong>Start learning</strong>Sign in — your enrolled courses unlock all lessons, videos &amp; assessments.</div>
+                </div>
+            </div>
+            <div class="enrol-contact">
+                📧 Contact for enrolment: <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+1-XXX-XXX-XXXX">(XXX) XXX-XXXX</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong></p>
+        <p>Ontario Curriculum, Grades 10 — 12 (Revised)</p>
+        <p style="margin-top:14px;font-size:13px;">
+            <a href="/video-policy.html" style="color:#cbd5e1;text-decoration:underline;">📺 Video Licensing &amp; Compliance Policy</a>
+        </p>
+        <p style="margin-top:8px;font-size:12px;opacity:0.6;">Built with ⚡ by MindView</p>
+    </div>
+</footer>
+
+</body>
+</html>

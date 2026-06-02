@@ -123,6 +123,67 @@ h2 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
 .expectations-box ul { margin-left: 20px; }
 .expectations-box li { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
 
+/* ===== HOME-PAGE HUB CARDS (light landing) ===== */
+.hub-section { padding: 64px 0; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 28px; }
+.hub-card { display: block; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 28px 26px; text-decoration: none; color: var(--text); transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s; }
+.hub-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(15,23,42,0.08); border-color: var(--primary); }
+.hub-icon { font-size: 38px; line-height: 1; margin-bottom: 14px; }
+.hub-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 6px; color: #0f172a; }
+.hub-card p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.hub-card .hub-cta { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 0.3px; }
+
+/* ===== PAGE HEADER (sub-pages) ===== */
+.page-head { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #fff; padding: 52px 24px 44px; text-align: center; }
+.page-head h1 { font-size: 38px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page-head p { font-size: 17px; opacity: 0.92; max-width: 720px; margin: 0 auto; }
+
+/* ===== COURSE CATALOG GRID ===== */
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-top: 32px; }
+.course-card { display: block; background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: all 0.2s; color: var(--text); text-decoration: none; }
+.course-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.course-icon { font-size: 52px; padding: 28px 28px 0; }
+.course-body { padding: 12px 28px 28px; }
+.course-code { font-size: 17px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 8px; }
+.course-body h3 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+.course-desc { font-size: 17px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+.course-stats { display: flex; gap: 16px; font-size: 15px; color: #94a3b8; margin-bottom: 12px; }
+.course-strands { display: flex; flex-wrap: wrap; gap: 4px; }
+.strand-tag { font-size: 14px; padding: 4px 12px; background: #f1f5f9; border-radius: 10px; color: var(--muted); }
+.subject-group { margin-bottom: 48px; }
+.subject-label { font-size: 18px; font-weight: 800; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+
+/* ===== ENROLMENT & TUITION ===== */
+.enrol-section { padding: 56px 0; background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.enrol-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: #0f172a; }
+.enrol-section .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 28px; }
+.enrol-pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 32px; }
+.enrol-tier { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px 22px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); }
+.enrol-tier.featured { border: 2px solid var(--primary); background: linear-gradient(180deg, #fff 0%, #eff6ff 100%); }
+.enrol-tier-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 6px; }
+.enrol-tier h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #0f172a; }
+.enrol-price { font-size: 36px; font-weight: 900; color: #0f172a; line-height: 1; margin-bottom: 4px; }
+.enrol-price small { font-size: 14px; font-weight: 600; color: var(--muted); }
+.enrol-per { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.enrol-tier ul { list-style: none; padding: 0; margin: 0; }
+.enrol-tier ul li { font-size: 14px; color: #475569; padding: 5px 0; padding-left: 22px; position: relative; line-height: 1.5; }
+.enrol-tier ul li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 800; }
+.enrol-howto { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 28px 30px; }
+.enrol-howto h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; color: #0f172a; display: flex; align-items: center; gap: 10px; }
+.enrol-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 18px; }
+.enrol-step { display: flex; gap: 14px; }
+.enrol-step-num { flex-shrink: 0; width: 36px; height: 36px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; }
+.enrol-step-text { font-size: 14px; color: #475569; line-height: 1.5; }
+.enrol-step-text strong { color: #0f172a; display: block; margin-bottom: 4px; font-size: 15px; }
+.enrol-contact { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; margin-top: 18px; font-size: 14px; color: #14532d; }
+.enrol-contact a { color: #15803d; font-weight: 700; text-decoration: none; }
+.enrol-contact a:hover { text-decoration: underline; }
+.enrol-placeholder { background: #fef3c7; border: 1px solid #fde68a; color: #78350f; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 18px; font-weight: 600; }
+
+/* ===== TOOLS SUBJECT-AREA DIVIDERS ===== */
+.tool-section-label { grid-column: 1 / -1; font-size: 13px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin: 24px 0 -4px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+.tool-section-label:first-of-type { margin-top: 8px; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .hero-logo { height: 70px; }
@@ -135,4 +196,6 @@ h2 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
     .brand-logo { height: 38px; }
     .units-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .page-head h1 { font-size: 28px; }
+    .courses-grid { grid-template-columns: 1fr; }
 }

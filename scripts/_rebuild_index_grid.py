@@ -10,7 +10,10 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
-INDEX = ROOT / "index.html"
+# Multi-page restructure (2026-06-01): the course grid moved out of the
+# Home page (index.html) into its own dedicated page (catalog.html).
+# The Home page is now a lightweight hub with hero + four nav-cards.
+INDEX = ROOT / "catalog.html"
 
 
 # Subject-group layout. The user's request: Grade 10 first, then 11, then 12;
@@ -317,7 +320,7 @@ def main():
     # Sanity count
     n_cards = new_text.count('class="course-card"')
     n_groups = new_text.count('class="subject-group"')
-    print(f"Rebuilt index.html — {n_groups} subject groups, {n_cards} course cards")
+    print(f"Rebuilt {INDEX.name} — {n_groups} subject groups, {n_cards} course cards")
 
 
 if __name__ == "__main__":
