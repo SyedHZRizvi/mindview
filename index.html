@@ -318,40 +318,131 @@ fetch('/api/me')
 
 <section class="tools-section" id="resources">
     <div class="container">
-        <h2>Tools & Resources</h2>
+        <h2>Tools &amp; Resources</h2>
+        <p style="color:#64748b;font-size:15px;margin-top:-4px;margin-bottom:24px;">Free, instructor-vetted tools and references organised by subject area — coverage for all 40 courses on this site.</p>
         <div class="tools-grid">
-            <a href="https://www.desmos.com/calculator" target="_blank" class="tool-card">
-                <div class="tool-icon">📊</div><h3>Desmos</h3><p>Graphing calculator</p>
-            </a>
-            <a href="https://www.wolframalpha.com" target="_blank" class="tool-card">
-                <div class="tool-icon">🔢</div><h3>Wolfram Alpha</h3><p>Computation engine</p>
-            </a>
-            <a href="https://www.geogebra.org" target="_blank" class="tool-card">
-                <div class="tool-icon">📐</div><h3>GeoGebra</h3><p>Interactive geometry</p>
-            </a>
-            <a href="https://phet.colorado.edu" target="_blank" class="tool-card">
-                <div class="tool-icon">⚗️</div><h3>PhET Simulations</h3><p>Science simulations</p>
-            </a>
-            <a href="https://www.khanacademy.org/" target="_blank" class="tool-card">
-                <div class="tool-icon">🎓</div><h3>Khan Academy</h3><p>Free video lessons across all subjects</p>
-            </a>
-            <a href="https://replit.com" target="_blank" class="tool-card">
-                <div class="tool-icon">💻</div><h3>Replit</h3><p>Browser code editor (Python, Java) — ICS4U</p>
-            </a>
-            <a href="https://ptable.com/" target="_blank" class="tool-card">
-                <div class="tool-icon">⚛️</div><h3>Periodic Table</h3><p>Interactive periodic table — SCH4U</p>
-            </a>
-            <a href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html" target="_blank" class="tool-card">
-                <div class="tool-icon">✍️</div><h3>Purdue OWL</h3><p>Citation &amp; writing guide (MLA / APA) — ENG4U</p>
-            </a>
-            <a href="https://www.folger.edu/explore/shakespeares-works/hamlet/" target="_blank" class="tool-card">
-                <div class="tool-icon">🎭</div><h3>Folger Shakespeare</h3><p>Annotated <em>Hamlet</em> e-text — ENG4U</p>
-            </a>
-            <a href="https://www.gutenberg.org/" target="_blank" class="tool-card">
-                <div class="tool-icon">📚</div><h3>Project Gutenberg</h3><p>Free literary e-texts (Canadian authors, classics)</p>
-            </a>
-        </div>
 
+            <!-- ─── Universal ─────────────────────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:8px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🎓 Cross-subject</div>
+            <a href="https://www.khanacademy.org/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🎓</div><h3>Khan Academy</h3><p>Free video lessons across every Grade 10 — 12 subject</p>
+            </a>
+
+            <!-- ─── Mathematics ───────────────────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">📐 Mathematics — MCR3U · MHF4U · MCV4U · MDM4U · MCT3M · MCT4M</div>
+            <a href="https://www.desmos.com/calculator" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">📊</div><h3>Desmos</h3><p>Graphing calculator — functions, conics, sliders, regression</p>
+            </a>
+            <a href="https://www.geogebra.org" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">📐</div><h3>GeoGebra</h3><p>Interactive geometry, calculus &amp; vectors — MCV4U</p>
+            </a>
+            <a href="https://www.wolframalpha.com" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🔢</div><h3>Wolfram Alpha</h3><p>Symbolic computation engine — algebra, calculus, statistics</p>
+            </a>
+            <a href="https://www.symbolab.com/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🧮</div><h3>Symbolab</h3><p>Step-by-step algebra &amp; calculus solver</p>
+            </a>
+
+            <!-- ─── Sciences ──────────────────────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🔬 Sciences — SNC2D · SBI3U/4U · SCH3U/4U · SPH3U/4U</div>
+            <a href="https://phet.colorado.edu" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">⚗️</div><h3>PhET Simulations</h3><p>Interactive physics, chemistry &amp; biology sims — University of Colorado</p>
+            </a>
+            <a href="https://ptable.com/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">⚛️</div><h3>Periodic Table</h3><p>Interactive periodic table with properties — SCH3U / SCH4U</p>
+            </a>
+            <a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🧬</div><h3>NCBI</h3><p>Genome, protein &amp; literature database — SBI4U molecular genetics</p>
+            </a>
+
+            <!-- ─── Computer Studies ──────────────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">💻 Computer Studies — ICS3U · ICS4U</div>
+            <a href="https://replit.com" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">💻</div><h3>Replit</h3><p>Browser code editor — run Python and Java in the cloud</p>
+            </a>
+            <a href="https://docs.python.org/3/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🐍</div><h3>Python Docs</h3><p>Official Python 3 reference, tutorial &amp; library docs</p>
+            </a>
+            <a href="https://pythontutor.com/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🔍</div><h3>Python Tutor</h3><p>Step-by-step program visualiser — watch your code run</p>
+            </a>
+
+            <!-- ─── English &amp; Literature ───────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">📚 English &amp; Literature — ENG2D · ENG3U · ENG4U</div>
+            <a href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">✍️</div><h3>Purdue OWL</h3><p>MLA / APA / Chicago citation &amp; academic writing guide</p>
+            </a>
+            <a href="https://www.folger.edu/explore/shakespeares-works/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🎭</div><h3>Folger Shakespeare</h3><p>Annotated Shakespeare e-texts (Macbeth · Hamlet · R&amp;J)</p>
+            </a>
+            <a href="https://www.gutenberg.org/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">📖</div><h3>Project Gutenberg</h3><p>Free e-texts — Canadian classics, English literary canon</p>
+            </a>
+
+            <!-- ─── Civics, Politics &amp; Law ────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🏛️ Civics, Politics &amp; Law — CHV2O · CPC3O · CPW4U · CLU3M · CLN4U</div>
+            <a href="https://laws-lois.justice.gc.ca/eng/const/page-12.html" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">📜</div><h3>Charter of Rights &amp; Freedoms</h3><p>Official Justice Canada text of the 1982 Charter</p>
+            </a>
+            <a href="https://www.ourcommons.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🏛️</div><h3>Parliament of Canada</h3><p>House of Commons + Hansard (debate transcripts)</p>
+            </a>
+            <a href="https://www.elections.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🗳️</div><h3>Elections Canada</h3><p>How federal elections work, voter info, results archive</p>
+            </a>
+            <a href="https://www.canlii.org/en/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">⚖️</div><h3>CanLII</h3><p>Free Canadian case law, statutes &amp; legal databases</p>
+            </a>
+
+            <!-- ─── History ───────────────────────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">📜 History — CHC2D · CHW3M · CHY4U</div>
+            <a href="https://library-archives.canada.ca/eng/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🗄️</div><h3>Library &amp; Archives Canada</h3><p>Primary-source archive — census, war records, photographs</p>
+            </a>
+            <a href="https://www.thecanadianencyclopedia.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🍁</div><h3>The Canadian Encyclopedia</h3><p>Authoritative reference for Canadian history &amp; civics</p>
+            </a>
+
+            <!-- ─── Geography &amp; World Cultures ────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🌍 Geography &amp; World Cultures — CGF3M · CGW4U · HSC4M</div>
+            <a href="https://earth.google.com/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🌐</div><h3>Google Earth</h3><p>3-D globe, satellite imagery, geographic exploration</p>
+            </a>
+            <a href="https://whc.unesco.org/en/list/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🏛️</div><h3>UNESCO World Heritage</h3><p>1,100+ sites of global cultural &amp; natural significance</p>
+            </a>
+
+            <!-- ─── Business, Accounting &amp; Economics ──────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">💼 Business, Accounting &amp; Economics — BAF3M · BAT4M · BBB4M · BOH4M</div>
+            <a href="https://www.statcan.gc.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">📊</div><h3>Statistics Canada</h3><p>Official economic, trade, population &amp; labour-market data</p>
+            </a>
+            <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🏦</div><h3>Bank of Canada</h3><p>Interest rates, FX rates, inflation — economics &amp; IB</p>
+            </a>
+
+            <!-- ─── Food &amp; Nutrition ─────────────────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🥗 Food &amp; Nutrition — HFN3M · HFA4M</div>
+            <a href="https://food-guide.canada.ca/en/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🥗</div><h3>Canada's Food Guide</h3><p>Official Health Canada healthy-eating guidance &amp; recipes</p>
+            </a>
+
+            <!-- ─── Guidance &amp; Career Education ───────────────────── -->
+            <div class="tool-section-label" style="grid-column:1/-1;font-size:13px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:24px 0 -4px;padding-bottom:6px;border-bottom:2px solid #e2e8f0;">🧭 Guidance &amp; Career Education — GLC2O · GWL3O · GPP3O · GLE3O · GLE4O</div>
+            <a href="https://www.jobbank.gc.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">💼</div><h3>Job Bank Canada</h3><p>Federal job listings, wage info, labour-market outlooks</p>
+            </a>
+            <a href="https://noc.esdc.gc.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">📋</div><h3>National Occupational Classification</h3><p>Canada's official career taxonomy — 500+ occupations</p>
+            </a>
+            <a href="https://www.ouac.on.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🎓</div><h3>OUAC</h3><p>Ontario Universities Application Centre — apply to all 21 universities</p>
+            </a>
+            <a href="https://www.ontariocolleges.ca/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-icon">🏫</div><h3>OntarioColleges.ca</h3><p>Apply to Ontario's 24 public colleges from one portal</p>
+            </a>
+
+        </div>
     </div>
 </section>
 <script>
