@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Self-Knowledge &amp; Personal Management — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#16a34a;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gwl3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 1: Self-Knowledge &amp; Personal Management — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand A — A1.1, A1.2, A1.3, A2.1, A2.2, A2.4</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of self-awareness, learning styles, multiple intelligences, RIASEC, values, time management, stress, and growth mindset. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 1.1–1.2 — Self-Awareness &amp; Learning Styles</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">According to Tasha Eurich's research, the two kinds of self-awareness are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Conscious and unconscious</label></li>
+<li><label><input type="radio" name="q1" value="b"> Internal (clarity about your own values/reactions) and external (understanding how others see you)</label></li>
+<li><label><input type="radio" name="q1" value="c"> Cognitive and emotional</label></li>
+<li><label><input type="radio" name="q1" value="d"> Short-term and long-term</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Eurich distinguishes <strong>internal</strong> self-awareness (how clearly you see your own values, reactions, and impact) from <strong>external</strong> self-awareness (how clearly you understand how others see you). Most people overestimate both — which is why feedback-seeking matters.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Which study technique has the strongest research support across decades of educational research?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Re-reading the textbook several times</label></li>
+<li><label><input type="radio" name="q2" value="b"> Highlighting key passages</label></li>
+<li><label><input type="radio" name="q2" value="c"> Active studying — self-testing, spaced practice, and elaboration</label></li>
+<li><label><input type="radio" name="q2" value="d"> Matching the teaching method to your single learning style</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Self-testing (closing the book and recalling), spaced practice (sessions distributed over days), and elaboration (explaining concepts in your own words) consistently outperform passive re-reading and highlighting. Matching teaching to a single VARK style alone does <em>not</em> reliably boost grades.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">Aaliyah reflects in her journal: "I lose track of time when I'm debating, organising family meal plans, or coding short interactive stories." She is using which self-awareness practice?</div>
+<div class="qtxt">This is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> External self-awareness through formal psychological diagnosis</label></li>
+<li><label><input type="radio" name="q3" value="b"> Internal self-awareness through reflective journalling — noticing which activities energise her</label></li>
+<li><label><input type="radio" name="q3" value="c"> A definitive career test result</label></li>
+<li><label><input type="radio" name="q3" value="d"> Confirmation bias</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Naming the activities where time disappears is classic <strong>internal</strong> self-awareness through reflective journalling. The results are a starting hypothesis, not a verdict — Aaliyah's next step is to test the pattern with low-stakes experiments (debate club, junior coding contest) and external feedback.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Holland Codes (RIASEC) &amp; Values</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">In Holland's RIASEC framework, a person whose top code is <strong>SIE</strong> (Social–Investigative–Enterprising) would most likely thrive in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Solitary outdoor labour (e.g., forester working alone)</label></li>
+<li><label><input type="radio" name="q4" value="b"> Highly routine data-entry work</label></li>
+<li><label><input type="radio" name="q4" value="c"> Health professions or program leadership combining helping, analysis, and influence (e.g., nurse practitioner, school principal, clinic director)</label></li>
+<li><label><input type="radio" name="q4" value="d"> Pure abstract mathematics with no human contact</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> SIE combines Social (helping), Investigative (analysing), and Enterprising (leading). Health professions with leadership and analytic components (nurse practitioner, school principal, clinic director, public-health manager) fit naturally. Options (a) is RRC, (b) is C-dominant, (d) is I-only.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The three families of work values commonly used in career counselling are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Short, medium, and long term</label></li>
+<li><label><input type="radio" name="q5" value="b"> Intrinsic (the work itself), extrinsic (rewards), and lifestyle (fit with life outside work)</label></li>
+<li><label><input type="radio" name="q5" value="c"> Cash, prestige, and entertainment</label></li>
+<li><label><input type="radio" name="q5" value="d"> Family, friends, and self</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Intrinsic values are about the work itself (challenge, meaning, helping); extrinsic are about rewards (salary, status, security); lifestyle are about how the work fits into life (hours, location, flexibility). All three matter; no mix is "more idealistic" than another.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div>
+<div class="passage">Diego's top five values are helping others, learning, autonomy, balance, and integrity. He is offered a high-paying pharmaceutical-sales position that requires 70-hour weeks and pressuring physicians to prescribe drugs he believes are over-marketed.</div>
+<div class="qtxt">A career counsellor would describe this situation as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> A perfect fit — high pay covers everything</label></li>
+<li><label><input type="radio" name="q6" value="b"> Value conflict — the role's daily demands violate multiple deep values, predicting low job satisfaction over time</label></li>
+<li><label><input type="radio" name="q6" value="c"> Lifestyle alignment</label></li>
+<li><label><input type="radio" name="q6" value="d"> Intrinsic-value match</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> <strong>Value conflict</strong> is the technical term for a job whose daily demands violate a person's deeper values. Diego's top five are all violated — the 70-hour week kills balance and autonomy, the pressure tactics violate integrity, the marketing focus crowds out helping and learning. Research finds value conflict reliably predicts burnout regardless of pay.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Time Management</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">In Covey's Time Management Matrix, life quality is most determined by how much time you spend in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Q1 — Urgent + Important (crisis mode)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Q2 — Not Urgent + Important (planning, deep practice, exercise, relationships)</label></li>
+<li><label><input type="radio" name="q7" value="c"> Q3 — Urgent + Not Important (interruptions, others' loud requests)</label></li>
+<li><label><input type="radio" name="q7" value="d"> Q4 — Not Urgent + Not Important (scrolling, low-value entertainment)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Q2 is the highest-leverage quadrant — planning, deep practice, exercise, sleep, relationships, long-term project work. Students stuck in Q1 (crisis mode) usually got there by under-investing in Q2. The weekly habit: book Q2 anchors into your calendar before Q1 and Q3 swallow the week.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The Pomodoro technique is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Six-hour heroic study marathons</label></li>
+<li><label><input type="radio" name="q8" value="b"> 25-minute focused work blocks followed by 5-minute breaks, with a longer break after four blocks</label></li>
+<li><label><input type="radio" name="q8" value="c"> Studying only when you feel motivated</label></li>
+<li><label><input type="radio" name="q8" value="d"> Eating Italian food while studying</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Pomodoro = 25 minutes focused + 5-minute break, repeated 4× before a longer break. It respects how attention actually works (short bursts with recovery) and is gentler than "I'll study for six hours straight" plans that rarely survive contact with phone notifications.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — Stress &amp; Wellness</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The transactional model of stress (Lazarus &amp; Folkman) says that stress depends on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Personality alone — some people are just stress-prone</label></li>
+<li><label><input type="radio" name="q9" value="b"> Demand × appraisal × resources — including how threatening you judge the demand and what you have to meet it with</label></li>
+<li><label><input type="radio" name="q9" value="c"> Genetics only</label></li>
+<li><label><input type="radio" name="q9" value="d"> The weather and time of year</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> The transactional model explains why two students under the same workload experience different stress levels — appraisal (how threatening they judge it) and resources (study time, sleep, support, prior preparation) differ. Intervention paths: change the appraisal (cognitive reframing) or build resources (study earlier, ask for help, restore sleep).</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Which single physical-wellness lever has the strongest evidence for protecting teenagers' learning, mood, and reaction time?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Caffeine intake</label></li>
+<li><label><input type="radio" name="q10" value="b"> 8–10 hours of nightly sleep</label></li>
+<li><label><input type="radio" name="q10" value="c"> Skipping breakfast</label></li>
+<li><label><input type="radio" name="q10" value="d"> All-nighters before tests</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Sleep is the single biggest physical-wellness lever for teens. Chronic shortfall (anything under 8 hours regularly) degrades memory consolidation, mood regulation, and reaction time. Caffeine masks but doesn't replace sleep; all-nighters worsen test performance.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — Growth Mindset &amp; Character</div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div>
+<div class="passage">Sienna gets her first Grade 11 chemistry test back: 54%. She thinks: "I haven't mastered moles and stoichiometry <em>yet</em>. Let me figure out what I missed, book a help session with my teacher, and try spaced practice this week."</div>
+<div class="qtxt">Sienna's response illustrates:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A fixed mindset — focusing on the failure</label></li>
+<li><label><input type="radio" name="q11" value="b"> A growth-mindset response — treating the result as diagnostic information and adjusting strategy</label></li>
+<li><label><input type="radio" name="q11" value="c"> Toxic positivity</label></li>
+<li><label><input type="radio" name="q11" value="d"> Procrastination</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The word "yet," the diagnostic posture (what specifically did I miss?), and the new strategy (help session, spaced practice) are textbook growth-mindset moves. Growth mindset is a method — turn a setback into a plan — not a slogan about positive thinking.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Ontario's <em>Learning Skills and Work Habits</em> report names six habits associated with success. The list is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Speed, charisma, talent, IQ, looks, popularity</label></li>
+<li><label><input type="radio" name="q12" value="b"> Responsibility, organisation, independent work, collaboration, initiative, self-regulation</label></li>
+<li><label><input type="radio" name="q12" value="c"> Reading, writing, numeracy, science, art, music</label></li>
+<li><label><input type="radio" name="q12" value="d"> Sleep, exercise, nutrition, hydration, mindfulness, breathing</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> The six Ontario Learning Skills are <strong>responsibility, organisation, independent work, collaboration, initiative, and self-regulation</strong>. These are the same habits employers prize and universities cite for first-year success. They are reported separately on the report card because they predict outcomes as strongly as marks do.</div></div>
+
+</div>
+
+<details class="instructor-only" style="margin-top:24px;border:2px solid #d97706;border-radius:8px;padding:12px 18px;background:#fffbeb;">
+<summary style="cursor:pointer;font-weight:700;color:#92400e;">📖 Complete Answer Key</summary>
+<div style="margin-top:12px;font-size:14px;color:#78350f;line-height:1.7;">
+<p><strong>Q1 — b</strong> (internal + external self-awareness, Eurich).</p>
+<p><strong>Q2 — c</strong> (active studying outperforms passive re-reading; matching teaching to single learning style alone is not reliable).</p>
+<p><strong>Q3 — b</strong> (reflective journalling — internal self-awareness).</p>
+<p><strong>Q4 — c</strong> (SIE → health-helping with leadership and analytic components).</p>
+<p><strong>Q5 — b</strong> (intrinsic + extrinsic + lifestyle).</p>
+<p><strong>Q6 — b</strong> (value conflict — multiple deep values violated; predicts burnout regardless of pay).</p>
+<p><strong>Q7 — b</strong> (Q2 — Not Urgent + Important — is highest-leverage).</p>
+<p><strong>Q8 — b</strong> (Pomodoro = 25/5 cycle).</p>
+<p><strong>Q9 — b</strong> (demand × appraisal × resources; intervene on appraisal or resources).</p>
+<p><strong>Q10 — b</strong> (sleep; 8–10 hours for teens).</p>
+<p><strong>Q11 — b</strong> (growth-mindset method: "yet" + diagnostic + new strategy).</p>
+<p><strong>Q12 — b</strong> (the six Ontario Learning Skills: responsibility, organisation, independent work, collaboration, initiative, self-regulation).</p>
+</div>
+</details>
+
+<footer>GWL3O — Designing Your Future, Grade 11 Open | Strand A: Personal Management | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

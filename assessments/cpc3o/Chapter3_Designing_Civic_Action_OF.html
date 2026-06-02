@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3: Designing and Evaluating Civic Action — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #7c3aed; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details.instructor-only { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details.instructor-only p, details.instructor-only li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpc3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 3: Designing and Evaluating Civic Action — Unit Test</h1><div class="sub">Assessment OF Learning · Strands A &amp; C</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all reasoning. Answer keys are visible only to instructors.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name and briefly define each of the five elements of a SMART goal.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q1-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(1) <strong>Specific</strong> — names what, where, by whom, for whom. (2) <strong>Measurable</strong> — has an observable indicator. (3) <strong>Achievable</strong> — ambitious but reachable with available resources. (4) <strong>Relevant</strong> — tied to the issue and the theory of change. (5) <strong>Time-bound</strong> — has a deadline. <em>Rubric: 0.5 each, plus 0.5 for overall coherence.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">The "three Cs" of effective civic-action messaging are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Clever, Charismatic, Cute</label></li>
+<li><label><input type="radio" name="q2"> Clear, Credible, Concrete</label></li>
+<li><label><input type="radio" name="q2"> Calm, Coordinated, Confidential</label></li>
+<li><label><input type="radio" name="q2"> Constant, Cheerful, Civil</label></li>
+</ul>
+<div class="sol instructor-only" id="q2-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>B.</strong> Clear (one-sentence summarisable), credible (evidence-supported in audience-recognised forms), concrete (names what should happen).</p></details></div></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">Define and distinguish (a) <em>outputs</em>, (b) <em>outcomes</em>, (c) <em>impact</em>, in the three-tier measurement model.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q3-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(a) Outputs — activity counts produced (signatures, attendees, posts) — easy to count. (b) Outcomes — changes in the world that resulted from outputs (motion passed, vote shifted, attitudes changed) — harder to attribute. (c) Impact — the deeper underlying change ultimately desired (fewer evictions, lower emissions). Strong campaigns measure both outputs and outcomes; ambition for impact is appropriate but rarely measurable within one semester. <em>Rubric: 1 outputs/outcomes; 1 impact + honest attribution caveat.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">"Nothing About Us, Without Us" — the principle that affected communities must co-design rather than merely be consulted — originated as a slogan in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> The Canadian women's suffrage movement</label></li>
+<li><label><input type="radio" name="q4"> The disability-rights movement (adopted internationally including in the UN Convention on the Rights of Persons with Disabilities)</label></li>
+<li><label><input type="radio" name="q4"> The 1995 Quebec referendum</label></li>
+<li><label><input type="radio" name="q4"> Industrial-revolution labour organising</label></li>
+</ul>
+<div class="sol instructor-only" id="q4-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>B.</strong> The phrase emerged from disability-rights organising in the 1990s and is now adopted across equity-driven civic action, including Indigenous-led organising, mental-health advocacy, and refugee-rights work.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">A "theory of change" is best characterised as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> A philosophical doctrine about how societies transform</label></li>
+<li><label><input type="radio" name="q5"> An explicit "if-then" chain connecting activities to outputs to outcomes to impact</label></li>
+<li><label><input type="radio" name="q5"> A political party platform</label></li>
+<li><label><input type="radio" name="q5"> A document that describes the campaign's logo</label></li>
+</ul>
+<div class="sol instructor-only" id="q5-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>B.</strong> The theory of change is what links SMART goals to their broader impact and makes each step testable.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[2]</span>
+<div class="qtxt">Name two specific case studies discussed in Chapter 3.6 and for each, name one tactic or principle that contributed to its impact.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q6-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Acceptable: <strong>Idle No More</strong> — Indigenous-led design from the start; combining cultural practice (round dances, ceremony) with policy advocacy; using social media to coordinate flash mobs. <strong>Youth climate strikes (Fridays for Future)</strong> — intergenerational framing; mass mobilisation (500,000+ in Montreal 2019); transitioning to climate-justice framing that integrates equity and Indigenous rights. <strong>Right to Read Inquiry</strong> — use of the Ontario Human Rights Commission inquiry as a formal civic-action lever; evidence-based argumentation; sustained parental and disability-rights advocacy preceding 2020. <em>Rubric: 1 each case study + tactic.</em></p></details></div></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[6]</span>
+<div class="passage">A coalition of high-school students wants to advocate for stronger climate-adaptation requirements in Ontario schools' building codes and emergency-preparedness plans (heat-wave protocols, wildfire-smoke protocols, flooding response). They have one semester and approximately 12 active organisers.</div>
+<div class="qtxt">Design a complete SMART goal and a brief theory of change for this campaign. In 8–10 sentences, include: (i) the specific SMART goal in one sentence with all five elements identifiable; (ii) the theory of change as a sequence of "if-then" steps; (iii) two output measures and two outcome measures you would track; (iv) the strongest counter-argument you might face and how you would respond.</div>
+<textarea placeholder="Your design..."></textarea>
+<div class="sol instructor-only" id="q7-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>(i) SMART goal:</strong> "By 30 May 2027, submit a coalition brief to the Ontario Ministry of Education recommending climate-adaptation requirements in the Provincial Standards for the Maintenance and Repair of School Buildings, signed by at least 25 Ontario student organisations and 5 trustees, with a public-launch event reaching 1,000 social-media engagements." <strong>(ii) Theory of change:</strong> If we recruit 25 student-organisation signatories (12 organisers each recruiting 2 organisations in 8 weeks), then we have political weight; if we secure 5 trustee endorsements, then we have intra-system legitimacy; if we secure both, then the Ministry will be more likely to receive the brief and the next year's policy review will include it; if the policy review includes it, then long-term curriculum and facilities-management standards can shift. <strong>(iii) Outputs:</strong> number of signatory organisations; number of trustee endorsements; social-media engagements. <strong>Outcomes:</strong> the brief is publicly received by Ministry staff with a written response; a private meeting with the Minister or senior staff is secured; the policy review references the brief. <strong>(iv) Counter-argument:</strong> "Climate adaptation is not within the standard scope of school building codes — provincial building codes have other oversight." Response: building-code work happens in many jurisdictions (Quebec has integrated climate-resilience into school construction); the Ministry has existing authority over maintenance standards; this is supplementary, not duplicative. <em>Rubric: 1 SMART goal; 1 theory of change; 1 outputs; 1 outcomes; 2 counter-argument and response.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply the four concepts of political thinking to ONE of the three case studies in Chapter 3.6 (Idle No More as sustained movement, the youth climate movements, or the Right to Read Inquiry). One sentence per concept.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q8-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample for Idle No More: <strong>Significance</strong> — re-centred Indigenous voices in Canadian political discourse over a multi-decade arc; <strong>Objectives and results</strong> — original objective of blocking Bill C-45 unmet, but broader objective of changing the political conversation and contributing to UNDRIP implementation (2021) substantially met; <strong>Stability and change</strong> — stability in Crown-Indigenous status quo on some matters, change in public consciousness and movement infrastructure; <strong>Political perspective</strong> — Indigenous Nations lead voice, federal Crown target, settler Canadians audience for education, international Indigenous-rights movement allies. <em>Rubric: 1 each concept applied substantively to the chosen case.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify three "ethical hazards" a civic-action campaign should pre-emptively address before launching, and for each name one practical mitigation.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q9-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(1) <strong>Speaking for an affected community without speaking with them</strong> — mitigation: co-design with affected community from the start, with named representatives in decision-making. (2) <strong>Using identifying material of vulnerable people without informed consent</strong> — mitigation: written consent process explaining how material will be used, options for anonymisation, right to withdraw. (3) <strong>Inviting harassment by naming individuals on social media</strong> — mitigation: name institutions and policies, not individuals; avoid tagging accounts of opponents; brief participants on doxxing risks. Acceptable alternates: misrepresenting facts; ignoring power dynamics inside the coalition; failing to plan for follow-up after release. <em>Rubric: 1 each hazard with practical mitigation.</em></p></details></div></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Write a 5-minute deputation (approximately 600–800 words) to a municipal council, school board, or your Member of Provincial Parliament on a real or invented civic issue. Follow the deputation structure: (1) respectful opening; (2) speaker name, role, connection; (3) one-sentence specific ask; (4) three reasons with evidence; (5) short close repeating the ask.</div>
+<textarea placeholder="Your deputation..."></textarea>
+<div class="sol instructor-only" id="q10-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Marking guide: 1 respectful opening; 1 identification and connection; 1 clear specific ask in one sentence; 1 each three reasons with evidence (3); 1 close repeating ask; 1 conventions (word-count discipline, grammar, voice, would-read-aloud-in-5-min). Strong deputations are evidence-based, focused, and stay within 5 spoken minutes (roughly 600–700 words). Adjust to 5 if all elements present and integrated.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">In a paragraph (4–6 sentences), explain to a younger student what "Nothing About Us, Without Us" means and why it matters in civic action. Give one concrete Canadian example.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<div class="sol instructor-only" id="q11-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample: "Nothing About Us, Without Us" is the principle that policies and campaigns affecting a community must be designed <em>with</em> that community, not just <em>for</em> them. The phrase started in the disability-rights movement and has been adopted across equity-driven civic action — Indigenous-led organising, mental-health advocacy, refugee-rights work. It matters because affected people know the issue better than anyone else, because solutions designed without them tend to fail in implementation, and because civic action that bypasses affected people often reproduces the same exclusions that produced the issue. The Right to Read Inquiry in Ontario was an example — parents of children with dyslexia, and disability-rights organisations, led the years of advocacy that triggered the inquiry; their lived expertise shaped the recommendations. The principle is not soft; it is the discipline of taking the people you claim to help seriously enough to share power with them. <em>Rubric: 1 definition; 1 origin; 1 Canadian example; 1 conventions.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[3]</span>
+<div class="qtxt">Write a short reflection (3–4 sentences) on the difference between "optimism" and "hope grounded in evidence" in civic action, drawing on the case studies from this course.</div>
+<textarea placeholder="Your reflection..."></textarea>
+<div class="sol instructor-only" id="q12-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample: Optimism predicts good outcomes; hope grounded in evidence works for them, knowing they are not guaranteed. The Canadian historical record gives reasons for hope — medicare took two decades from Tommy Douglas's Saskatchewan beginnings to federal law; same-sex marriage took years of legal challenges before becoming federal law in 2005; the Right to Read Inquiry took years of disability-rights advocacy before the 2020 inquiry. None of these were inevitable; all were the product of campaigns that lost more often than they won. A student leaving CPC3O with the practice of working for change — knowing it is real, contested, and slow — has learned what the course is fundamentally trying to teach. <em>Rubric: 1 distinction; 1 evidence; 1 reflection on civic-action discipline.</em></p></details></div></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[7]</span>
+<div class="qtxt"><strong>Capstone Application:</strong> Design a complete civic-action plan for an issue of your choice (real or hypothetical). In 10–14 sentences, answer all of: (1) What is the issue (specific, bounded)? (2) Who is the named decision-maker? (3) What is your SMART goal for one school semester? (4) Two specific inside and outside tactics, with reasoning? (5) Two output measures and one outcome measure? (6) One ethical commitment, particularly around inclusion of affected people? (7) One reflection on the strongest counter-argument and how you would respond. (8) One hand-off plan if the work needs to continue beyond your involvement.</div>
+<textarea placeholder="Your capstone plan..."></textarea>
+<div class="sol instructor-only" id="q13-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Marking guide: 1 each — issue bounded, named decision-maker, SMART goal, two tactics, measurement plan, ethics, counter-argument response, hand-off. Strong plans show internal coherence: the goal matches the issue, the tactics match the decision-maker, the measurement matches the goal, the ethics match the affected community, the counter-argument is steel-manned, the hand-off is realistic. Adjust to 7 if substantively complete.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Final Reflection:</strong> Looking back across CPC3O (Chapters 1, 2, 3), write a 6–8 sentence reflection identifying: (a) one civic skill you developed in this course that you will use after the course ends; (b) one civic issue you commit to follow over the next year and how you will follow it; (c) one specific civic action you will personally take in the next six months; (d) one lesson from a case study (Famous Five, Tommy Douglas, Viola Desmond, Idle No More, Right to Read, youth climate) that you will carry into that action.</div>
+<textarea placeholder="Your reflection..."></textarea>
+<div class="sol instructor-only" id="q14-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Marking guide: 1 each — civic skill named with how you will use it; civic issue with concrete follow plan; concrete civic action in 6 months; case-study lesson and connection. 1 for integration / coherence. This is the capstone reflection — strong answers show that the course produced a habit, not just a grade, and connect the past (case studies), the present (course skills), and the future (committed action). Adjust to 5 if substantively complete.</p></details></div></div>
+
+<footer>CPC3O — Politics in Action: Making Change, Grade 11 | Strands A &amp; C | Assessment OF Learning — Graded</footer>
+</div></body></html>

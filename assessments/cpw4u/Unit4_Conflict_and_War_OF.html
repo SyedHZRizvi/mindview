@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Conflict and War — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #7c3aed; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+.sol.instructor-only { display: block; background: #f5f3ff; border: 1px solid #ddd6fe; border-left: 4px solid var(--primary); padding: 12px 16px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+.sol.instructor-only::before { content: "📖 Instructor Answer Key"; display: block; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+details.instructor-only { margin-top: 24px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 16px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Conflict and War — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D — D1.1, D1.2, D2.1, D2.2, D3.1</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Use disciplinary terminology and specific examples.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each: (a) Waltz's three levels of analysis; (b) the security dilemma; (c) democratic peace theory.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q1-sl">(a) <strong>Waltz's three levels</strong> — individual (psychology, leader choices), state (regime type, internal politics), system (anarchic international structure). (b) <strong>Security dilemma</strong> (Herz 1950, Jervis 1978) — in anarchic systems, defensive actions by one state appear offensive to others; produces arms races between states that may both prefer peace. (c) <strong>Democratic peace theory</strong> — Doyle 1983, Russett 1993; claim that mature democracies do not fight one another; contested empirically and conceptually but influential.</div></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">The Geneva Conventions of 1949 are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Two treaties signed at Geneva covering arms control and treaty law</label></li>
+<li><label><input type="radio" name="q2"> Four treaties covering wounded soldiers (I), sea (II), POWs (III), and civilians (IV) — universally ratified by 196 states</label></li>
+<li><label><input type="radio" name="q2"> The constitution of the International Committee of the Red Cross</label></li>
+<li><label><input type="radio" name="q2"> The founding document of NATO</label></li>
+</ul>
+<div class="sol instructor-only" id="q2-sl"><strong>B.</strong> The four 1949 Geneva Conventions (with 1977 Additional Protocols I and II) form the core of IHL. Their universal ratification makes them among the most accepted international treaties.</div></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) jus ad bellum; (b) jus in bello; (c) jus post bellum.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q3-sl">(a) <strong>Jus ad bellum</strong> — justice of going to war; criteria include just cause, legitimate authority, right intention, last resort, proportionality, reasonable chance of success. (b) <strong>Jus in bello</strong> — justice in war; principles of discrimination (non-combatants protected) and proportionality (means proportionate to military objective). (c) <strong>Jus post bellum</strong> — justice after war; peace terms, reconstruction obligations, accountability for war crimes, reparations.</div></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) R2P (Responsibility to Protect); (b) the ICISS; (c) the 2005 World Summit Outcome Document.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q4-sl">(a) <strong>R2P</strong> — sovereignty-as-responsibility framework for preventing mass atrocities (genocide, war crimes, ethnic cleansing, crimes against humanity); three pillars (state responsibility; international assistance; collective response). (b) <strong>ICISS</strong> — International Commission on Intervention and State Sovereignty, chaired by Gareth Evans and Mohamed Sahnoun on a Canadian government initiative; reported December 2001. (c) <strong>2005 World Summit Outcome Document</strong> — paragraphs 138-139 unanimously adopted R2P by the UN General Assembly.</div></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[4]</span>
+<div class="qtxt">Identify and briefly describe four key Canadian military or peacekeeping operations or institutions from 1949 to 2025.</div>
+<textarea placeholder="Your answer..." style="min-height:140px;"></textarea>
+<div class="sol instructor-only" id="q5-sl">Examples (any 4): <strong>NATO membership (1949–)</strong> — founding member; Article 2 ("Canadian article"); current Article 5 invocation post-9/11. <strong>NORAD (1958–)</strong> — binational US-Canada continental air defence; 2022 $38.6B modernisation. <strong>UNEF/Suez 1956</strong> — Pearson's invention of UN peacekeeping; 1957 Nobel. <strong>Cyprus peacekeeping (1964-93)</strong> — long-standing CAF deployment. <strong>Former Yugoslavia (1992-95)</strong> — UNPROFOR; ~2,000 CAF deployed. <strong>Rwanda UNAMIR (1993-94)</strong> — Dallaire's command; warnings ignored. <strong>Afghanistan 2001-14</strong> — ~40,000 rotated, 158 dead, largest deployment since WWII. <strong>Operation Reassurance 2017–</strong> — NATO Latvia battle group. <strong>Indo-Pacific Strategy 2022</strong> — $2.3B 5-year commitment. <strong>Defence Policy Update 2024</strong> — 2032 target to reach NATO 2% GDP target. Marks: 1 per operation/institution (name + brief description).</div></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[6]</span>
+<div class="passage">"NATO is not weakened; NATO is restored. And that is the legacy of the Russian invasion of Ukraine." — adapted from contemporary commentary, 2024</div>
+<div class="qtxt">Analyse this claim. Apply the concept of <em>stability and change</em>: in 6-8 sentences, evaluate NATO's evolution since 1949. What is the durable feature? What has changed in response to Russia's 2022 invasion of Ukraine?</div>
+<textarea placeholder="Your analysis..." style="min-height:170px;"></textarea>
+<div class="sol instructor-only" id="q6-sl">Durable features: NATO has been continuously the centerpiece of Western collective defence since 1949; Article 5 collective-defence commitment remains; bureaucratic and military infrastructure continues; the alliance has had only one Article 5 invocation (post-9/11). Changes since 2022: Finland joined 2023; Sweden joined 2024 (both abandoning long-standing neutrality); the Enhanced Forward Presence has expanded to brigade strength on the eastern flank (Canada-led Latvia battle group); NATO defence spending has risen — 23 of 32 members at 2% GDP target by 2024 (vs. ~6 in 2014); the alliance has resumed conventional-defence planning largely abandoned in the 1990s; the Indo-Pacific has been added to NATO's strategic frame. Stability: alliance has reasserted its core mission; change: it has been reorganised for great-power competition. Marks: 2 stability identification, 3 changes identified, 1 analytical synthesis.</div></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">Apply the concept of <em>political perspective</em>: in 5 sentences, evaluate Canada's defence spending (current ~1.4% GDP; 2032 target 2% NATO commitment). Identify two distinct legitimate political perspectives on Canadian defence spending.</div>
+<textarea placeholder="Your analysis..." style="min-height:140px;"></textarea>
+<div class="sol instructor-only" id="q7-sl">Two perspectives: (1) <strong>NATO commitment / Atlanticist perspective</strong> — Canada has consistently underspent the 2% GDP NATO target; the 2014 Wales Summit commitment was political; failure undermines alliance credibility and free-rides on US security; the 2024 Defence Policy Update's 2032 target is overdue and aggressive enough. (2) <strong>Fiscal / "smart spender" perspective</strong> — defence spending should be evaluated on outcomes, not GDP percentages; Canada contributes substantially through NORAD, intelligence-sharing (Five Eyes), training (Ukraine, Latvia), and operations; the 2% target is a political commitment, not a substantive military analysis; competing fiscal priorities (healthcare, housing, climate) matter. Both perspectives recognise that the Canadian fiscal commitment must rise; they differ on pace, mix, and rationale. Marks: 2 first perspective, 2 second perspective, 1 synthesis.</div></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply the concept of <em>political significance</em>: in 4 sentences, evaluate the November 2024 ICC arrest warrants for Netanyahu and Gallant. Why is this politically significant for the international legal order? What is one contested aspect?</div>
+<textarea placeholder="Your analysis..." style="min-height:130px;"></textarea>
+<div class="sol instructor-only" id="q8-sl">The November 2024 warrants represent the first ICC warrants against sitting Western-allied leaders, testing whether ICC obligations apply equally regardless of state alignment. Significance: tests the resilience of the 1998 Rome Statute project; affects state practice on cooperation; raises the cost of unconditional Western support. Contested aspect: US under both administrations rejected the warrants; some EU members affirmed cooperation (notably Belgium, Spain, Ireland); enforcement depends on Netanyahu's travel patterns and host-state choices. Israel rejects ICC jurisdiction (not a party). Canada has not stated a clear position. Marks: 1 description, 2 significance, 1 contested aspect.</div></div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[7]</span>
+<div class="qtxt">Write a coherent analytical paragraph (7-9 sentences) on the claim: <em>"The international response to civilian-protection crises has improved substantively since 1994."</em> Use specific cases (Rwanda 1994, Bosnia 1992-95, Kosovo 1999, Libya 2011, Syria 2011-24, Ukraine 2022-).</div>
+<textarea placeholder="Your paragraph..." style="min-height:180px;"></textarea>
+<div class="sol instructor-only" id="q9-sl">Look for: (1) clear thesis (agreement, disagreement, or qualification); (2) cases — Rwanda 1994 (no intervention, 800K-1M dead); Bosnia 1992-95 (belated 1995 NATO intervention after Srebrenica); Kosovo 1999 ("illegal but legitimate" NATO intervention); Libya 2011 (R2P-authorised but expanded to regime change); Syria 2011-24 (UNSC blocked, no R2P action, 500K+ deaths); Ukraine 2022- (massive bilateral support, no UN-mandated military action); (3) trajectory analysis — civilian-protection norms have strengthened (R2P doctrinal development, ICC, ICTY/ICTR); enforcement remains conditional on great-power consensus; (4) qualification — Syria and Gaza show the limits even of stronger norms; (5) analytical close — improvement is real but incomplete and conditional. Marks: 1 thesis, 2 cases, 2 analysis, 1 qualification, 1 communication.</div></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[8]</span>
+<div class="qtxt">Write a structured 9-11 sentence response analysing the just-war framework's application to the post-October 2023 Israel-Hamas-Gaza war. Apply jus ad bellum, jus in bello, and jus post bellum branches. Identify the strongest considerations on each side. Take a position.</div>
+<textarea placeholder="Your response..." style="min-height:220px;"></textarea>
+<div class="sol instructor-only" id="q10-sl">Look for: (1) framing — the war has multiple parties (Israel, Hamas, broader regional dimensions); the just-war framework applies to all. (2) <em>Jus ad bellum</em>: Hamas's 7 October 2023 attack was a clear initiation of hostilities; Israel's military response was framed as self-defence (UN Charter Article 51); contested on whether the response stays within the proportionality criterion. (3) <em>Jus in bello</em>: Hamas's targeting of Israeli civilians on 7 October was a clear violation of distinction; Israel's operations have been argued to target Hamas military infrastructure within civilian areas (a Hamas violation of distinction but not eliminating Israeli targeting obligations); civilian death toll (~46K+ Palestinian by Jan 2025) raises proportionality questions; ICJ 2024 provisional-measures order required Israel to prevent acts that could amount to genocide; ICC 2024 issued arrest warrants. (4) <em>Jus post bellum</em>: unclear; post-war Gaza governance, reconstruction, Israeli-Palestinian political relationship all unresolved. (5) Position: defensible either direction; the strongest analysis recognises violations by multiple parties and the inadequacy of binary "just/unjust" labels. Marks: 1 framing, 2 jus ad bellum, 2 jus in bello, 1 jus post bellum, 2 position with evidence.</div></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[7]</span>
+<div class="passage">In 2024, Canada and the United States announced major NORAD modernisation totalling $38.6 billion over 20 years, replacing the 1980s North Warning System with new over-the-horizon radar and air-domain awareness infrastructure.</div>
+<div class="qtxt">Apply your understanding of Canada's defence posture. In 7-8 sentences: (a) explain why NORAD modernisation matters; (b) connect to Arctic sovereignty; (c) apply one concept of political thinking; (d) identify one consequence for Canadian foreign-policy autonomy. Take a position on whether NORAD modernisation strengthens or compromises Canadian sovereignty.</div>
+<textarea placeholder="Your answer..." style="min-height:200px;"></textarea>
+<div class="sol instructor-only" id="q11-sl">(a) <em>Why matters</em>: NORAD's surveillance infrastructure has been aging; Russia's modernised long-range bombers and hypersonic missiles, plus emerging Chinese aerospace capability, require updated air-domain awareness; cyber and space-domain awareness now part of NORAD mandate. (b) <em>Arctic sovereignty connection</em>: climate-driven Arctic accessibility opens new threats (Russian Northern Fleet activity, Chinese polar interests); NORAD modernisation includes Canadian Arctic infrastructure (over-the-horizon radar, airfields, surveillance); supports Canadian sovereignty claims. (c) <em>Concept applied</em>: stability-and-change shows that NORAD has been continuously bilateral since 1958 but its capabilities are being substantially modernised; the basic alliance architecture is durable. (d) <em>Foreign-policy autonomy consequence</em>: deeper integration with US air-defence systems, including those that may serve missile-defence functions; Canada's traditional non-participation in US ballistic-missile defence remains formally in place but is under pressure. <em>Position</em>: defensible either direction. <em>Strengthens</em>: Canada gains technological capability and Arctic surveillance that domestic resources alone could not provide; alliance provides force multiplier. <em>Compromises</em>: deeper integration may make independent Canadian foreign policy harder; cost (~$38.6B over 20 years; ~$19.3B Canadian share) is substantial. Marks: 1 why-matters, 1 Arctic connection, 1 concept application, 2 autonomy consequence, 2 position with evidence.</div></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Application:</strong> Apply your understanding of R2P. In 5 sentences, analyse whether R2P could/should be invoked for one current crisis (e.g., Sudan 2023–; Myanmar Rohingya; DRC ongoing conflict; Ethiopia Tigray 2020-22; another contemporary case). Identify the case, apply R2P's three pillars, and take a position.</div>
+<textarea placeholder="Your answer..." style="min-height:150px;"></textarea>
+<div class="sol instructor-only" id="q12-sl">Examples: (1) Sudan 2023– (RSF-SAF civil war; documented mass atrocities; UN warnings of imminent famine and genocide in Darfur; UNSC Russia veto blocks coercive action). Apply R2P pillars: (i) Sudanese state has failed to protect; (ii) regional and international assistance has been limited; (iii) UNSC veto blocks pillar-3 collective coercive action. Position: R2P should be invoked through non-coercive mechanisms (sanctions, humanitarian assistance, refugee protection) where coercive measures are blocked. (2) Myanmar Rohingya (since 2017): same R2P logic; ICJ Gambia case 2019- shows alternative routes through international law. Marks: 1 case identification, 3 pillar application, 1 position.</div></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>Cross-strand application:</strong> Compare one feature of Canadian foreign policy in 2025 to a foreign-policy decision Canada made in 1956 (Suez/UNEF). In 3-4 sentences, identify one continuity and one change, with one analytical implication.</div>
+<textarea placeholder="Your answer..." style="min-height:130px;"></textarea>
+<div class="sol instructor-only" id="q13-sl">Continuity: middle-power multilateralism remains a Canadian self-conception; both 1956 UNEF and 2017 Operation Reassurance show Canada acting through international institutions. Change: 1956 Canada led normative innovation (Pearson's UNEF invention); 2025 Canada operates within an alliance-led framework (NATO, Indo-Pacific Strategy) with less originality. Implication: middle-power capacity in 2025 is real but more constrained; the era of distinctive Canadian foreign-policy initiative is harder to replicate in a more polarised international system. Marks: 1 continuity, 1 change, 1 implication.</div></div>
+
+<details class="instructor-only">
+<summary>📖 Complete Answer Key &amp; Marking Rubric</summary>
+<p>Per-question keys embedded in <code>.sol.instructor-only</code> divs. Strand D (D1.1 causes of war; D1.2 just war theory; D2.1 IHL/R2P; D2.2 case studies; D3.1 Canada NATO/NORAD/peacekeeping) coverage targeted throughout. Growing Success 2010 alignment as in Unit 1 OF.</p>
+</details>
+
+<footer>CPW4U — Canadian and World Politics, Grade 12 | Strand D: Conflict and War | Assessment OF Learning — Graded</footer>
+</div></body></html>

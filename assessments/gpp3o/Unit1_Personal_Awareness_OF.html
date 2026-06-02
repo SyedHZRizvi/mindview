@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Personal Awareness — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #15803d; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details.instructor-only { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details.instructor-only p, details.instructor-only li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Personal Awareness — Unit Test</h1><div class="sub">Assessment OF Learning · Strand A</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all reasoning. Sample solutions are gated for instructor view.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each: (a) the five domains of emotional intelligence (Goleman); (b) the difference between eustress and distress (Selye); (c) the "living tree" of Indigenous values — the Seven Grandfather Teachings.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>Goleman's five domains:</strong> self-awareness, self-regulation, motivation, empathy, social skills. First three intrapersonal; last two interpersonal. (b) <strong>Eustress vs distress:</strong> both produce similar physiological signals (cortisol, adrenaline); eustress is productive (moderate, time-limited, the person feels able to meet the demand); distress is depleting (excessive or chronic, the person feels unable). McGonigal's research shows appraisal itself shapes physiological response. (c) <strong>Seven Grandfather Teachings:</strong> wisdom, love, respect, bravery, honesty, humility, truth — an Anishinaabe values framework grounding leadership; relevant to TRC Call to Action 62.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">The acronym SMART in goal-setting stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Smart, Modern, Adaptive, Resilient, Tracked</label></li>
+<li><label><input type="radio" name="q2"> Specific, Measurable, Achievable, Relevant, Time-bound</label></li>
+<li><label><input type="radio" name="q2"> Strategic, Mindful, Active, Realistic, Targeted</label></li>
+<li><label><input type="radio" name="q2"> Solid, Mature, Adult, Right, Trustworthy</label></li>
+</ul>
+<details class="instructor-only"><summary>Answer Key</summary><p><strong>B.</strong> Doran's 1981 formulation. The framework gives every goal five attributes that make it testable rather than wishful.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">In 2–3 sentences, explain Tasha Eurich's distinction between internal and external self-awareness, and why a leader needs both.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Internal self-awareness — clarity about your own values, passions, motivations, and impact. External self-awareness — clarity about how others see you. Most people overestimate both; only about 10–15% of adults have meta-cognitive accuracy. A leader needs both because internal-only awareness produces a self-picture detached from how the team experiences them (you think you're encouraging; the team experiences you as interrupting), while external-only awareness produces a self-picture entirely shaped by others' opinions (no anchor of values).</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) affect labelling; (b) amygdala hijack; (c) Carol Dweck's growth mindset.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>Affect labelling</strong> — naming an emotion to reduce its automatic intensity (Lieberman, UCLA); foundational EI technique. (b) <strong>Amygdala hijack</strong> — Goleman's term for the moment when limbic-system reaction overrides reasoned choice; the source of most regrettable communication. (c) <strong>Growth mindset</strong> — Dweck's term for the belief that abilities are developable through effort and learning, as opposed to fixed mindset (the belief that abilities are innate and unchangeable). Growth mindset predicts better persistence and learning outcomes; mindset itself is learnable.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify and briefly describe three sources of stress-management strategies that span the four categories (physical, cognitive, relational, restorative).</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Physical: sleep (7–9 hours; consistency); exercise (aerobic, 3-5x/week); nutrition (regular meals; hydration). Cognitive: reframing ("this stress is my body getting ready"); cognitive-behavioural strategies; values-based prioritisation. Relational: talking with a trusted person; community; asking for help. Restorative: mindfulness; time in nature; art; music; journaling; prayer. Any three from different categories with brief description. Reference: McGonigal on stress mindset; APA's 4 Cs of resilience.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="passage">"I notice I'm getting frustrated — this conversation has gone in circles for ten minutes. I'm going to take a slow breath and ask one clarifying question." — Aisha, peer mediator, mid-session.</div>
+<div class="qtxt">Analyse Aisha's response through the EI framework. In 4–5 sentences, identify which of Goleman's five domains are operating, what the cognitive move accomplishes, and how this differs from suppression or amygdala hijack.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Aisha's response engages at least four Goleman domains: <em>self-awareness</em> (she notices the frustration), <em>self-regulation</em> (she chooses not to act on it immediately), <em>motivation</em> (her purpose — mediation success — guides the choice), and <em>social skills</em> (the clarifying question is the interpersonal output). The cognitive move is affect labelling (Lieberman): naming the emotion reduces amygdala activation and creates a gap between trigger and response. This differs from suppression (which denies the emotion and produces rebound) and amygdala hijack (which lets the emotion drive the action). Marks: 1 per domain identified, 1 for the labelling explanation, 1 for the contrast.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply Covey's time matrix to a typical Grade 11 student's week. In 4 sentences, identify one example of activity in each of the four quadrants (urgent + important; important not urgent; urgent not important; neither). Then identify which quadrant is most underused.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Examples vary. Strong answer: <em>Urgent and important</em> — test tomorrow morning. <em>Important not urgent</em> — weekly review, exercise routine, calling grandparents, working on the university application essay in October. <em>Urgent not important</em> — replying immediately to every Snap notification; getting pulled into other people's drama. <em>Neither</em> — TikTok algorithm rabbit holes; some video-game grinding. The "important not urgent" quadrant is most underused; without protected time there, the student lives in firefighting mode and the leadership-growth work never happens. Marks: 1 per quadrant example, 1 for the underuse diagnosis.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply the strength-spotting frame: in 4 sentences, describe a recent moment where you saw a strength in yourself, and a recent moment where a peer or teacher saw a strength in you that you hadn't noticed. What does the gap reveal about your self-awareness profile?</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Marks: 1 for self-spotted strength, 1 for external-spotted strength, 1 for honest reflection on the gap, 1 for connection to Eurich's internal/external self-awareness model. Strong response acknowledges the gap as data, not as failure ("I see myself as the careful planner, but my partner pointed out that I'm actually the person on the team who notices when someone is upset and pulls them aside — I'd never named that as a skill"). Use the answer to identify which student profiles need more practice with external-feedback solicitation in subsequent units.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write one analytical paragraph (6–8 sentences) on the claim: <em>"Emotional intelligence is more important than IQ for leadership success."</em> Use specific evidence and frameworks from Unit 1; engage at least one counter-argument.</div>
+<textarea placeholder="Your paragraph..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) a clear thesis (agreeing, disagreeing, or qualifying the claim); (2) specific evidence — Goleman's five domains, the Salovey-Mayer ability-based framing, Day &amp; Antonakis's 70/30 finding; (3) engagement with the empirical critique (Grant and Peterson note that some EI scales measure little beyond agreeableness and Big-Five conscientiousness; Salovey-Mayer abilities have better validation than mixed-model assessments); (4) a nuanced conclusion (parts of EI are strongly supported; "EQ is more important than IQ" is oversimplified marketing). Marks: 1 thesis, 2 evidence, 2 nuance/counter, 1 conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write a coherent 8–10 sentence answer comparing three different stress-management approaches: (a) a physical strategy (sleep, exercise, nutrition); (b) a cognitive strategy (reframing, CBT-style thought work); (c) a relational strategy (connection, asking for help). For each, give one specific example and identify when it is most effective. Then identify one common reason students under-use each.</div>
+<textarea placeholder="Your comparison..." style="min-height:200px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: 3 strategies with specific examples; 3 contexts of effectiveness; 3 reasons for under-use. Sample under-use reasons: physical strategies under-used because their effects are gradual and "I should be tougher" beliefs persist; cognitive strategies under-used because they require self-observation that anxious students find hard; relational strategies under-used because of stigma, fear of burden, or weak peer-trust networks. Strong answer reflects the combined-approach insight: any one strategy alone has limits; the combination is the goal. Marks: 1 per strategy + example, 1 per context, 1 per under-use reason, 1 for synthesis.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="passage">A friend tells you: "I'm taking five Grade-11 university-track courses, working 12 hours on weekends, training for cross-country five days a week, and I'm not sleeping well. But I'm getting 90s, so I don't want to change anything." </div>
+<div class="qtxt"><strong>Apply</strong> your understanding of stress, resilience, and the 4 Cs (connection, competence, character, contribution). In 5–6 sentences, name two specific concerns about your friend's pattern, and one specific suggestion you would offer — without being preachy. Use a peer-leader voice, not a parent voice.</div>
+<textarea placeholder="Your answer..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) named concern about sleep — adolescent sleep needs are 7-9 hours; chronic deficit depresses mood, cognition, immune function, and over time, grades. (2) Named concern about the absence of restorative time — high competence, possibly high contribution, but no restorative practice; the 4 Cs are out of balance. (3) Non-preachy peer-leader response — using an open question or reflection rather than prescription ("What's the cost of changing nothing? When you imagine going on like this until June, how do you feel?"). Strong responses also recognise that the friend's autonomy must be respected — you can name observations and offer a perspective, but the friend chooses. Marks: 2 for named concerns with rationale, 2 for the non-preachy suggestion, 1 for autonomy-respect.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Apply</strong> the SMART framework: convert this vague goal into a SMART goal, then explain in 3 sentences why the SMART version is more useful: <em>"I want to be a better leader."</em></div>
+<textarea placeholder="Your answer..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Sample SMART rewrite: "By March 14, 2026, I will: (a) complete the school's peer-mediator training (Specific, Measurable); (b) co-mediate at least two real conflicts under teacher supervision (Achievable, Relevant); (c) write a 500-word reflection using the Gibbs cycle on each mediation, journaling growth (Time-bound)." Explanation: the SMART version can be checked (have I done a, b, c by March 14?), can be revised (if mediations don't come up, plan alternative observation), and points the student toward action. The vague version can be praised but not tested. Marks: 1 for each SMART attribute, 1 for explanation; partial credit for partial conversion.</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>STSE / Real-World Application:</strong> Carol Dweck's research suggests that <em>how</em> we praise children shapes whether they develop a fixed or growth mindset. In 3–4 sentences, identify one concrete change you could make in your own self-talk (or in how you praise a peer/sibling/teammate) to support a growth mindset. Cite the research direction in your answer.</div>
+<textarea placeholder="Your answer..." style="min-height:120px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Examples: replace "you're so smart" with "you really worked through that problem"; replace "I'm just bad at math" with "I haven't found my way through this material yet"; replace "you always win at this" with "I've noticed how much you've been practising." The research direction (Dweck and Mueller, 1998) showed that praising effort/strategy rather than ability produced more persistence and willingness to take on challenges than praising innate intelligence. Strong responses make the connection between self-talk and behaviour in self or in the person being praised. Marks: 1 specific example, 1 research connection, 1 communication.</p></details></div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Strand A: Personal Knowledge and Management | Assessment OF Learning — Graded</footer>
+</div></body></html>

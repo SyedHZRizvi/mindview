@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3: Designing and Evaluating Civic Action — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpc3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 3: Designing and Evaluating Civic Action — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strands A &amp; C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of SMART goals, audience and message design, ethics and inclusion, measuring impact, sustaining engagement, and the three contemporary Canadian civic-action case studies. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.1 — SMART Goals</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">"SMART" in goal-setting stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Simple, Modern, Accurate, Reliable, Tested</label></li>
+<li><label><input type="radio" name="q1" value="b"> Specific, Measurable, Achievable, Relevant, Time-bound</label></li>
+<li><label><input type="radio" name="q1" value="c"> Strategic, Mobile, Adaptive, Rapid, Tactical</label></li>
+<li><label><input type="radio" name="q1" value="d"> Sympathetic, Moral, Active, Real, True</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The SMART framework (Doran, 1981) converts vague aspirations into workable goals by requiring specificity, measurability, achievability, relevance, and a deadline.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">A "theory of change" is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> A philosophical doctrine about social transformation</label></li>
+<li><label><input type="radio" name="q2" value="b"> An explicit "if-then" chain connecting activities to outputs to outcomes to impact</label></li>
+<li><label><input type="radio" name="q2" value="c"> A political party's platform</label></li>
+<li><label><input type="radio" name="q2" value="d"> A scientific theory about politics</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> A theory of change makes explicit the chain of reasoning by which the campaign's activities are expected to produce its impact. Without one, even SMART goals can produce activity without progress. The discipline is to test each "if-then" step.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.2 — Audience &amp; Message</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">The "three Cs" of effective civic-action messaging are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Clever, Cute, Cool</label></li>
+<li><label><input type="radio" name="q3" value="b"> Clear, Credible, Concrete</label></li>
+<li><label><input type="radio" name="q3" value="c"> Cheap, Convenient, Common</label></li>
+<li><label><input type="radio" name="q3" value="d"> Charismatic, Confident, Constant</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Clear messages can be summarised in one sentence; credible messages are supported by evidence the audience will recognise; concrete messages name what you want to happen. Vague messages produce vague responses.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">"Framing" in civic communication refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> A way of falsifying facts</label></li>
+<li><label><input type="radio" name="q4" value="b"> The choice of lens through which an issue is presented — choosing framings that match the values of the audience without misrepresenting the underlying claims</label></li>
+<li><label><input type="radio" name="q4" value="c"> Putting a message in a literal frame</label></li>
+<li><label><input type="radio" name="q4" value="d"> Avoiding all bias</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Framing is the choice of which lens (safety, health, rights, economics, fiscal, identity) to present an issue through. The same facts framed differently activate different audiences. Lakoff's <em>Don't Think of an Elephant</em> popularised the insight that framing is unavoidable political work.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.3 — Ethics &amp; Inclusion</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">"Nothing About Us, Without Us" originated as a slogan in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> The Canadian women's suffrage movement</label></li>
+<li><label><input type="radio" name="q5" value="b"> The disability-rights movement (adopted internationally including in the UN Convention on the Rights of Persons with Disabilities)</label></li>
+<li><label><input type="radio" name="q5" value="c"> The climate-strike movement</label></li>
+<li><label><input type="radio" name="q5" value="d"> The 1995 Quebec referendum</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The disability-rights movement popularised the phrase from the 1990s onward; it is now adopted across equity-driven civic action — Indigenous-led organising, mental-health advocacy, refugee-rights work — as the principle that affected people must co-design rather than merely be consulted.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">"Harm reduction" in civic-action planning means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Avoiding all civic action that could ever cause harm</label></li>
+<li><label><input type="radio" name="q6" value="b"> Designing campaigns to minimise unintended harm to opponents, bystanders, and participants — while still acting</label></li>
+<li><label><input type="radio" name="q6" value="c"> Reducing the harm done by police</label></li>
+<li><label><input type="radio" name="q6" value="d"> Lowering the volume at protests</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Harm reduction is the discipline of asking "who could be harmed by this tactic, and how can we reduce the harm while still acting?" Examples: informed consent for using lived testimony; legal observers at direct actions; post-action support for participants.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.4 — Measuring Impact</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">In the three-tier measurement model, "outputs" refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> What you produced (signatures, attendees, posts) — relatively easy to count</label></li>
+<li><label><input type="radio" name="q7" value="b"> Changes in the world (policy passed, votes shifted) — harder to attribute</label></li>
+<li><label><input type="radio" name="q7" value="c"> The deeper underlying changes the campaign ultimately wants</label></li>
+<li><label><input type="radio" name="q7" value="d"> Computer monitor screens</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Outputs are activity counts. Outcomes are world-changes that resulted from outputs. Impact is the deeper, longer-term change. Many campaigns over-claim by reporting only outputs and calling that impact.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The most honest civic-action evaluation:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Reports only successes to maintain morale</label></li>
+<li><label><input type="radio" name="q8" value="b"> Names what was achieved AND what was not, identifies contributing causes, and identifies what to do differently next time</label></li>
+<li><label><input type="radio" name="q8" value="c"> Reports only failures to be modest</label></li>
+<li><label><input type="radio" name="q8" value="d"> Avoids measurement entirely</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Few campaigns succeed entirely; most produce a mix of wins, partial wins, and unmet goals. Naming both is the discipline that produces credibility and learning. Over-claiming impact erodes future credibility with sophisticated audiences.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.5 — Sustaining Engagement</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">"Activist burnout" is best addressed by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Telling people to work harder</label></li>
+<li><label><input type="radio" name="q9" value="b"> Pacing, distributed roles, rest, social bonds outside the work, and explicit permission to step back</label></li>
+<li><label><input type="radio" name="q9" value="c"> Ignoring it</label></li>
+<li><label><input type="radio" name="q9" value="d"> Replacing the people who burn out</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Burnout is not a sign of insufficient commitment; it is a sign of bad design. Care — pacing, distribution, rest, bonds, permission to step back — is what makes sustained engagement possible. Treating it as soft work is mistaken; care is what allows the hard work to continue.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">"Infrastructure" for a civic-action group (in the sense Chapter 3.5 uses) refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Office buildings and computers</label></li>
+<li><label><input type="radio" name="q10" value="b"> Mailing lists, shared documents, working groups, regular meeting cadence, and recorded institutional memory that survive leadership transitions</label></li>
+<li><label><input type="radio" name="q10" value="c"> Roads, bridges, and water systems</label></li>
+<li><label><input type="radio" name="q10" value="d"> Government funding programs</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Movement infrastructure is what distinguishes a sustained movement from a moment. A campaign that lives only in one organiser's head ends when that organiser moves on; a campaign with shared infrastructure can survive leadership changes.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.6 — Contemporary Case Studies</div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">The 27 September 2019 Climate Strike in Montreal — part of the global youth climate movement — was estimated at:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A few thousand participants</label></li>
+<li><label><input type="radio" name="q11" value="b"> Over half a million participants, the largest climate march in Canadian history</label></li>
+<li><label><input type="radio" name="q11" value="c"> 30 participants</label></li>
+<li><label><input type="radio" name="q11" value="d"> The march did not happen</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Montreal's 27 September 2019 strike drew an estimated 500,000+ participants — at the time the largest climate march in Canadian history and one of the largest in the global day of action. Greta Thunberg attended and spoke.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">The Right to Read Inquiry's 2022 report was produced by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> The federal Department of Justice</label></li>
+<li><label><input type="radio" name="q12" value="b"> The Ontario Human Rights Commission (a quasi-independent provincial body)</label></li>
+<li><label><input type="radio" name="q12" value="c"> The Supreme Court of Canada</label></li>
+<li><label><input type="radio" name="q12" value="d"> A private consultancy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> The Ontario Human Rights Commission's public inquiry, led by Chief Commissioner Patricia DeGuire, examined whether Ontario reading instruction failed students with reading disabilities. Its 2022 report and 157 recommendations led to a 2023 curriculum revision mandating structured-literacy approaches.</div></div>
+
+</div>
+
+<footer>CPC3O — Politics in Action: Making Change, Grade 11 | Strands A &amp; C | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

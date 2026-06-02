@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Personal Awareness — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Personal Awareness — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand A</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of self-awareness, emotional intelligence, learning styles, values, resilience, and SMART goals. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 1.1–1.2 — Self-Awareness and Emotional Intelligence</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">According to Tasha Eurich's research, most adults:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Are excellent at self-awareness once they reach age 25</label></li>
+<li><label><input type="radio" name="q1" value="b"> Overestimate their own self-awareness; only about 10–15% have meta-cognitive accuracy</label></li>
+<li><label><input type="radio" name="q1" value="c"> Are too anxious to assess themselves at all</label></li>
+<li><label><input type="radio" name="q1" value="d"> Have identical internal and external self-pictures</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Eurich found roughly 10–15% of adults have what her team called meta-cognitive accuracy — the rest overestimate. The lesson: external feedback is essential to calibrate self-knowledge.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Goleman's five domains of emotional intelligence are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> IQ, EQ, SQ, AQ, PQ</label></li>
+<li><label><input type="radio" name="q2" value="b"> Self-awareness, self-regulation, motivation, empathy, social skills</label></li>
+<li><label><input type="radio" name="q2" value="c"> Confidence, charisma, vision, drive, listening</label></li>
+<li><label><input type="radio" name="q2" value="d"> Hearing, seeing, feeling, speaking, doing</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Goleman's framework: self-awareness, self-regulation, motivation, empathy, social skills — the first three are intrapersonal, the last two interpersonal.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">"I notice I'm getting frustrated. This conversation has gone in circles for ten minutes."</div>
+<div class="qtxt">This is an example of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Suppressing emotion</label></li>
+<li><label><input type="radio" name="q3" value="b"> Affect labelling — naming an emotion to reduce its automatic intensity</label></li>
+<li><label><input type="radio" name="q3" value="c"> Aggressive communication</label></li>
+<li><label><input type="radio" name="q3" value="d"> Cognitive distortion</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Affect labelling (Lieberman, UCLA) — naming an emotion deactivates some of its automatic response. This is foundational to building the gap between trigger and reaction.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 1.3–1.4 — Learning Styles, Strengths, and Values</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">VARK is Neil Fleming's model of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Personality types</label></li>
+<li><label><input type="radio" name="q4" value="b"> Visual, Auditory, Reading/Writing, Kinesthetic learning preferences</label></li>
+<li><label><input type="radio" name="q4" value="c"> Career interest categories</label></li>
+<li><label><input type="radio" name="q4" value="d"> Stress responses</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> VARK (1987) — Visual, Auditory, Reading/Writing, Kinesthetic. Note: the strong claim "teach to the style and outcomes improve" is not well-supported; the weak claim "preferences vary; mixed-mode delivery reaches more people" is supported.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The Seven Grandfather Teachings from Anishinaabe tradition are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A set of business-leadership principles</label></li>
+<li><label><input type="radio" name="q5" value="b"> Wisdom, love, respect, bravery, honesty, humility, truth</label></li>
+<li><label><input type="radio" name="q5" value="c"> The seven stages of group development</label></li>
+<li><label><input type="radio" name="q5" value="d"> Seven Big Five personality traits</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The Seven Grandfather Teachings — wisdom, love, respect, bravery, honesty, humility, truth — describe a values framework grounding leadership and life in Anishinaabe traditions. TRC Call to Action 62 calls on K-12 systems to integrate Indigenous teachings.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">A "values card-sort" exercise primarily helps you:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Identify a career immediately</label></li>
+<li><label><input type="radio" name="q6" value="b"> Narrow a long list of values to a top five so you can use them as a decision filter</label></li>
+<li><label><input type="radio" name="q6" value="c"> Discover that you have no values</label></li>
+<li><label><input type="radio" name="q6" value="d"> Replace your existing beliefs</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The card-sort narrows. The narrowing is the work — values that survive being chosen against an easier path are the real ones; the rest are aspirational.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — Resilience and Stress Management</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Ann Masten's research describes resilience as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> A rare gift held by exceptional individuals</label></li>
+<li><label><input type="radio" name="q7" value="b"> "Ordinary magic" — built through the use of available supports rather than extraordinary heroics</label></li>
+<li><label><input type="radio" name="q7" value="c"> A fixed personality trait</label></li>
+<li><label><input type="radio" name="q7" value="d"> Mental toughness alone</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Masten's term "ordinary magic" describes resilience as the regular use of available supports — relationships, routines, meaning — by most people. Resilience is built, not born.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Hans Selye's distinction between eustress and distress is based on:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Whether stress produces visible physiological signals</label></li>
+<li><label><input type="radio" name="q8" value="b"> Duration, intensity, and the person's appraisal of whether they can meet the demand</label></li>
+<li><label><input type="radio" name="q8" value="c"> The age of the person experiencing stress</label></li>
+<li><label><input type="radio" name="q8" value="d"> The presence or absence of cortisol</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Both eustress and distress produce similar physiological signals (cortisol, adrenaline, raised heart rate); the difference is in duration, intensity, and appraisal. Kelly McGonigal showed that the appraisal itself shapes the response.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">In Ontario, a peer-helper supporting a friend who discloses persistent suicidal thoughts should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Try to handle it alone, since the friend trusted them with the information</label></li>
+<li><label><input type="radio" name="q9" value="b"> Bring in a trusted adult (counsellor, social worker) and/or call Kids Help Phone 1-800-668-6868 or 9-8-8</label></li>
+<li><label><input type="radio" name="q9" value="c"> Promise total confidentiality regardless of severity</label></li>
+<li><label><input type="radio" name="q9" value="d"> Wait a week to see if the feelings pass</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Suicidal ideation is beyond peer-helper scope. The peer-helper's job is to bring in professional help — that's competent peer support, not betrayal. 9-8-8 (suicide crisis), Kids Help Phone 1-800-668-6868, and Hope for Wellness 1-855-242-3310 are all 24/7 resources.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — SMART Goals and Time Management</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Which of these is a SMART goal?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> "Get better at leadership"</label></li>
+<li><label><input type="radio" name="q10" value="b"> "Complete the school's two-day peer-mediator training and co-mediate one session under teacher supervision by December 6"</label></li>
+<li><label><input type="radio" name="q10" value="c"> "Be a more emotionally intelligent person"</label></li>
+<li><label><input type="radio" name="q10" value="d"> "Do my best this semester"</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> (b) is Specific (training + co-mediation), Measurable (training completed; one mediation), Achievable, Relevant (peer-mediator role), and Time-bound (December 6). The others are wishes.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Stephen Covey's time matrix identifies four quadrants by urgency and importance. The quadrant where leadership growth happens most is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Urgent and important (crises)</label></li>
+<li><label><input type="radio" name="q11" value="b"> Important but not urgent (planning, relationships, growth)</label></li>
+<li><label><input type="radio" name="q11" value="c"> Urgent but not important (interruptions)</label></li>
+<li><label><input type="radio" name="q11" value="d"> Neither urgent nor important (distractions)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The "important, not urgent" quadrant is where long-term work, relationships, health, and leadership growth live. Without protected time here, you live in crisis-management mode.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, describe one specific time-management or stress-management practice from Unit 1 that you intend to apply this semester. Why this one?</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> I'm going to do a Sunday-evening weekly review (15 minutes), scanning the week's commitments and pre-deciding which two are "important, not urgent" leadership-growth tasks I will protect time for. I chose this because last term I lived in firefighting mode — everything urgent, nothing developmental — and I ended the term tired and behind on the things that actually mattered. The weekly review converts "I should make time for X" into "X is on Wednesday from 4 to 5." A concrete, repeatable practice; one I can actually do.</div></div>
+
+</div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Strand A: Personal Knowledge and Management | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

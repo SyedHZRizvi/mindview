@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Reading, Writing &amp; Numeracy — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #059669; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+.sol.instructor-only { background: #fff7ed; border: 1px solid #fed7aa; border-left: 4px solid #ea580c; padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+.sol.instructor-only summary { cursor: pointer; font-weight: 700; color: #9a3412; }
+.sol.instructor-only p { margin-top: 8px; }
+details.instructor-only { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 14px 18px; margin: 24px 0; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: #9a3412; }
+details.instructor-only p { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gle3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Reading, Writing &amp; Numeracy — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B — B1, B2, B3</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all reasoning. Answer keys appear in instructor-only collapsible sections.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A — Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1"><div class="qnum">1</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which best describes the SQ3R reading method?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1"> Read straight through, highlight what looks important, finish</label></li>
+<li><label><input type="radio" name="q1"> Survey, Question, Read, Recite, Review — close-book retrieval during the Recite step</label></li>
+<li><label><input type="radio" name="q1"> Memorise every paragraph word-for-word</label></li>
+<li><label><input type="radio" name="q1"> Only read the summary box</label></li>
+</ul>
+<div class="sol instructor-only" id="q1-sl"><strong>Answer Key:</strong><p>B. SQ3R = Survey, Question, Read, Recite, Review. The Recite step is the close-book retrieval that drives the learning.</p></div></div>
+
+<div class="qcard" id="q2"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Cornell notes have three zones:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Notes only</label></li>
+<li><label><input type="radio" name="q2"> Cues column (left), notes column (right), summary strip (bottom)</label></li>
+<li><label><input type="radio" name="q2"> Highlights, doodles, page numbers</label></li>
+<li><label><input type="radio" name="q2"> Title, body, references</label></li>
+</ul>
+<div class="sol instructor-only" id="q2-sl"><strong>Answer Key:</strong><p>B. The Cornell system (Pauk) uses a narrow left "cues" column, a wide right "notes" column, and a bottom "summary" strip. Filling the cues column after class converts notes into retrieval-practice prompts.</p></div></div>
+
+<div class="qcard" id="q3"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) expository writing; (b) thesis statement; (c) three-part thesis structure.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q3-sl"><strong>Answer Key:</strong><p>(a) <strong>Expository writing</strong> — writing whose job is to explain or synthesise an account; controlled by a "controlling idea" rather than a debatable thesis. (b) <strong>Thesis statement</strong> — one debatable sentence that the rest of the essay defends; not a topic, not a fact, not a question. (c) <strong>Three-part thesis</strong> — claim + "because" + forecast of evidence; e.g., "Macbeth's downfall is driven by moral disengagement (claim) because his hallucinations, his accelerating violence, and his isolation reveal a man losing his conscience (forecast)."</p></div></div>
+
+<div class="qcard" id="q4"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">The recommended order of revision passes is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> Proofread, sentence-level, structural, content</label></li>
+<li><label><input type="radio" name="q4"> Content edit → structural edit → sentence-level edit → proofread</label></li>
+<li><label><input type="radio" name="q4"> All four passes simultaneously</label></li>
+<li><label><input type="radio" name="q4"> Proofread only</label></li>
+</ul>
+<div class="sol instructor-only" id="q4-sl"><strong>Answer Key:</strong><p>B. Content → structural → sentence-level → proofread. Doing proofreading first means polishing sentences that may later be cut at the content stage.</p></div></div>
+
+<div class="qcard" id="q5"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify and briefly describe: (a) estimation; (b) problem decomposition (Read-Plan-Solve-Check); (c) two evidence-based interventions for math anxiety.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q5-sl"><strong>Answer Key:</strong><p>(a) <strong>Estimation</strong> — finding the order-of-magnitude answer before computing exactly, to catch decimal/order errors. (b) <strong>Problem decomposition</strong> — Read (twice, circle given, underline asked); Plan (substeps written before calculation); Solve (carry units); Check (against estimate, units, reasonableness). (c) Two interventions: <em>reappraisal</em> (re-reading bodily arousal as "preparation"); <em>expressive writing</em> (5–10 min pre-test journaling); also retrieval-practice and breathing. Marks: 1 each.</p></div></div>
+
+<div class="qcard" id="q6"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">Describe the four-step graph-analysis protocol (Frame-Read-Analyse-Critique) and explain why the Critique step is where Level-4 marks live.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q6-sl"><strong>Answer Key:</strong><p><em>Frame</em>: title, axes (units, scale, log/linear), legend, source. <em>Read</em>: specific data points with numbers. <em>Analyse</em>: pattern, causal implications, third variables. <em>Critique</em>: what the graph isn't showing — axis truncation, selective time-windows, third variables, percent-of-base normalisation, deceptive visual design. Critique earns Level 4 because it shows the marker that you understood the evidence's limits — sound interpretation requires sound source criticism. Marks: 2 for the four steps, 1 for the Level-4 critique argument.</p></div></div>
+
+<div class="section-hdr t">Part B — Thinking [15 marks]</div>
+
+<div class="qcard" id="q7"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="passage">Maya has 90 minutes to read a 20-page history chapter on the Treaty of Versailles. She currently reads straight through, highlights, and finishes. She retains ~30% by the next class.</div>
+<div class="qtxt">Apply SQ3R. In 5 sentences, design a 90-minute study plan that uses SQ3R explicitly, and predict whether retention will improve. Justify your prediction with reference to retrieval vs recognition.</div>
+<textarea placeholder="Your plan..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q7-sl"><strong>Answer Key:</strong><p>Plan: Survey (5 min — flip through, note sub-headings, summary box). Question (3 min — turn each heading into a question on a sheet). Read + Recite (60 min — one section at a time, then close the book and write 2–3 sentences answering the question without peeking). Review (10 min — verify each answer against the chapter). Prediction: retention will improve substantially because the Recite step engages retrieval (Roediger &amp; Karpicke 2006), which strengthens long-term memory more than rereading. The student is moving from recognition-mode (the page does the work) to retrieval-mode (memory does the work). Marks: 1 each step (4) + 1 justification linking to retrieval research.</p></div></div>
+
+<div class="qcard" id="q8"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt">Prompt: "Was the Treaty of Versailles too harsh on Germany?"</div>
+<div class="qtxt">Write a three-part thesis statement (claim + because + evidence forecast). Then write the first sentence of three body paragraphs that would follow from the thesis. (5 sentences total — 1 thesis + 3 topic sentences + 1 conclusion-style sentence.)</div>
+<textarea placeholder="Your thesis and topic sentences..." style="min-height:200px;"></textarea>
+<div class="sol instructor-only" id="q8-sl"><strong>Answer Key:</strong><p>Sample: <em>Thesis</em>: "The Treaty of Versailles was too harsh on Germany because its war-guilt clause, its punitive reparations, and its territorial losses combined to destabilise the Weimar Republic — evident in the 1923 hyperinflation, the 1929 collapse, and the 1933 NSDAP rise." <em>Topic sentence 1</em>: "Article 231's war-guilt assignment immediately delegitimised the new German government." <em>Topic sentence 2</em>: "The reparations schedule, 132 billion gold marks, exceeded Germany's payment capacity and triggered the 1923 hyperinflation." <em>Topic sentence 3</em>: "Territorial losses (Alsace-Lorraine, the Polish Corridor, all overseas colonies) deprived Germany of resources and population, deepening economic vulnerability." <em>Conclusion-style</em>: "Together these provisions made the Treaty not a peace settlement but a slow-burning trigger for the catastrophe of 1933." Marks: 2 thesis specificity, 3 topic sentences each connect to thesis, plus internal coherence.</p></div></div>
+
+<div class="qcard" id="q9"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">A Grade 11 chemistry student computes a stoichiometry answer of 659.7 g and does not estimate. Apply the Read-Plan-Solve-Check protocol. In 5 sentences, identify where the protocol would have caught a likely decimal-point error and what the consequence is of skipping it.</div>
+<textarea placeholder="Your application..." style="min-height:140px;"></textarea>
+<div class="sol instructor-only" id="q9-sl"><strong>Answer Key:</strong><p>Check step would compare 659.7 g against an estimation done at the Read/Plan step. If a 45.0 g glucose burn produces ~66 g CO₂ in estimation (\(\frac{45}{180} \times 6 \times 44 \approx 66\)), then a computed answer of 659.7 g is 10× too large — a decimal/order-of-magnitude error. The Check step would flag this in 5 seconds; the consequence of skipping it is loss of 3–4 marks on a single test question for an entirely correctable error. The estimation habit is among the highest-leverage 5-second investments in senior-grade quantitative work. Marks: 1 each step (4) + 1 quantitative reasoning.</p></div></div>
+
+<div class="section-hdr c">Part C — Communication [15 marks]</div>
+
+<div class="qcard" id="q10"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write one analytical paragraph (6–8 sentences) defending or contesting the claim: <em>"Highlighting is a useful study technique."</em> Use specific research evidence about retention, the role of retrieval, and the failure mode of over-highlighting.</div>
+<textarea placeholder="Your paragraph..." style="min-height:180px;"></textarea>
+<div class="sol instructor-only" id="q10-sl"><strong>Answer Key:</strong><p>Strong contest of the claim: thesis ("highlighting is useful only as a minimal annotation tool — its high-volume use is a recognition activity that gives the illusion of learning"); evidence (Dunlosky et al. 2013 ranks highlighting as low-utility; over 10% highlighted yields no measurable gain); contrast with retrieval-practice (Roediger &amp; Karpicke); recommended alternative (annotation with a small mark vocabulary, plus closed-book retrieval). Some strong defenders might argue minimal use is okay — but the strongest answers acknowledge that even useful highlighting is dwarfed by retrieval-based strategies. Marks: 1 thesis, 2 evidence, 2 interpretation, 1 conventions.</p></div></div>
+
+<div class="qcard" id="q11"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Write a 4–6 sentence sample short-answer response that demonstrates the principle "one sentence per mark, precise vocabulary, one specific example per requested sub-point." The prompt: "In 4 sentences, identify two strategies for managing test anxiety [4 marks]." Your answer should model what a Level-4 student would write.</div>
+<textarea placeholder="Your sample answer..." style="min-height:140px;"></textarea>
+<div class="sol instructor-only" id="q11-sl"><strong>Answer Key:</strong><p>Sample: "Two evidence-based interventions for test anxiety are reappraisal and expressive writing. <em>Reappraisal</em> involves re-reading the bodily arousal of anxiety as 'preparation' rather than 'threat'; brain-imaging research shows this produces measurably better performance because the same arousal is interpreted as readiness instead of danger. <em>Expressive writing</em> involves 5–10 minutes of journaling about test-related worries shortly before the test; Park, Ramirez &amp; Beilock (2014) showed this offloads working-memory interference and can close the test-anxiety performance gap by ~50%. Both interventions treat anxiety as a learnable cognitive-load problem rather than as a personality trait." Marks: 1 per identified strategy (2), 1 per evidence/example (2), 1 conventions/coherence.</p></div></div>
+
+<div class="qcard" id="q12"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt">Write 3–4 sentences explaining to a Grade 9 student (audience-aware register) why the "Recite" step in SQ3R is the part where most of the learning happens.</div>
+<textarea placeholder="Your explanation..." style="min-height:120px;"></textarea>
+<div class="sol instructor-only" id="q12-sl"><strong>Answer Key:</strong><p>Strong answers use Grade-9-accessible language, the recognition-vs-retrieval distinction without jargon, and a concrete example ("close the book and try to explain that page to a friend; the bit where you have to dig the answer out of your memory is where your brain actually builds the lasting memory — re-reading just shows you the page again, but doesn't make your brain do the lifting"). Marks: 1 distinction, 1 example, 1 audience-appropriate register, 1 accuracy.</p></div></div>
+
+<div class="section-hdr a">Part D — Application [15 marks]</div>
+
+<div class="qcard" id="q13"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Apply</strong> the multi-stage revision protocol. Pick a real essay or written assignment you have produced (or one you are working on now). For each of the four stages (content, structural, sentence-level, proofread), name one specific thing you would (or did) change.</div>
+<textarea placeholder="Your application..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q13-sl"><strong>Answer Key:</strong><p>Strong answers (1) name a specific real piece of writing, (2) identify one content-level change (e.g., "delete paragraph 3, rewrite to defend the actual thesis"), (3) one structural change (e.g., "move paragraph 2 to the position after the introduction"), (4) one sentence-level change (e.g., "cut 8 forms of 'to be,' replace with active verbs"), (5) one proofread (e.g., "fix three apostrophe errors, correct citation format"). Marks: 1 per stage with specific example.</p></div></div>
+
+<div class="qcard" id="q14"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="passage">A 2024 graph titled "Mean Global Temperature Anomaly, 1880–2020" shows a y-axis from \(-0.3\)°C to \(+1.1\)°C, source NASA GISS, with the line crossing 0 around 1920 and reaching about \(+1.0\)°C by 2020.</div>
+<div class="qtxt"><strong>Apply</strong> the Frame-Read-Analyse-Critique protocol to this graph in 5 sentences. Include at least one specific data point in the Read step and at least one specific critique in the Critique step.</div>
+<textarea placeholder="Your application..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q14-sl"><strong>Answer Key:</strong><p>Sample: <em>Frame</em>: title clear; x-axis 1880–2020 (linear); y-axis temperature anomaly relative to a baseline (graphs of this type typically use the 1951–1980 reference), in °C; source NASA GISS. <em>Read</em>: anomaly ~\(-0.2\)°C in 1880, ~0 around 1920, ~\(+1.0\)°C by 2020, with steeper slope post-1970. <em>Analyse</em>: pattern shows accelerating warming, particularly post-1970, consistent with anthropogenic-cause hypotheses. <em>Critique</em>: graph shows global mean only — does not show regional variation (the Arctic warms ~4× faster); does not on its own demonstrate <em>cause</em> (additional graphs of CO₂, solar irradiance needed). Marks: 1 frame, 1 read with specific data, 2 analyse, 1 critique with specific limitation.</p></div></div>
+
+<div class="qcard" id="q15"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Cross-strand application:</strong> Apply Unit 1's metacognitive cycle (plan-monitor-evaluate) to a specific upcoming essay-writing task. In 6 sentences, write out: (i) your planning step (which Unit 2 strategies — SQ3R for research? thesis structure? revision protocol? — fit this task and why); (ii) what you will monitor mid-essay; (iii) what you will evaluate at the end.</div>
+<textarea placeholder="Your synthesis..." style="min-height:180px;"></textarea>
+<div class="sol instructor-only" id="q15-sl"><strong>Answer Key:</strong><p>Strong answers integrate Strand A's metacognitive cycle with Strand B's specific tools. <em>Plan</em>: explicit choice of SQ3R for research reading, three-part thesis for argument, multi-stage revision for editing — with reasoning. <em>Monitor</em>: a specific mid-task check (e.g., "after writing body paragraph 2, check whether each topic sentence flows from the thesis"). <em>Evaluate</em>: a specific reflection (e.g., "after submission, write 3 sentences identifying what worked, what didn't, and which strategy to keep next time"). Marks: 2 planning with strategy specificity, 2 monitoring, 1 evaluating; full marks require integration across the two strands.</p></div></div>
+
+<details class="instructor-only" style="margin-top:24px;">
+<summary>📖 Complete Answer Key</summary>
+<p>This unit test covers Strand B's reading, writing, and numeracy expectations (B1.1–B1.4, B2.1–B2.3, B3.1–B3.4) across all four Achievement Chart levels. Marks rewarded for specificity and evidence; Level 4 answers integrate across topics (e.g., metacognitive planning applied to a multi-stage revision task).</p>
+<p><strong>Common misconceptions to watch for:</strong> (1) Treating revision as proofreading only; (2) confusing topic with thesis; (3) skipping the estimation step in numeracy; (4) skipping framing/critique in graph analysis; (5) believing assistive tech is only for IEP students.</p>
+</details>
+
+<footer>GLE3O — Advanced Learning Strategies, Grade 11 Open | Strand B: Strategies for Academic Success | Assessment OF Learning — Graded</footer>
+</div></body></html>

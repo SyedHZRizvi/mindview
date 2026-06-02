@@ -27,12 +27,13 @@ COURSES_AND_CHAPTERS = [
     ("baf3m", 5), ("bat4m", 5), ("bbb4m", 5), ("boh4m", 5),
     ("cgf3m", 5), ("cgw4u", 5), ("chc2d", 5), ("chv2o", 3),
     ("chw3m", 5), ("chy4u", 6), ("cln4u", 5), ("clu3m", 5),
-    ("eng2d", 5), ("eng3u", 6), ("eng4u", 6), ("glc2o", 3),
-    ("hfa4m", 5), ("hfn3m", 5), ("hsc4m", 5), ("ics3u", 5),
-    ("ics4u", 5), ("mcr3u", 8), ("mct3m", 5), ("mct4m", 5),
-    ("mcv4u", 9), ("mdm4u", 8), ("mhf4u", 8), ("sbi3u", 5),
-    ("sbi4u", 5), ("sch3u", 5), ("sch4u", 5), ("snc2d", 5),
-    ("sph3u", 5), ("sph4u", 5),
+    ("cpc3o", 3), ("cpw4u", 5), ("eng2d", 5), ("eng3u", 6),
+    ("eng4u", 6), ("glc2o", 3), ("gle3o", 5), ("gle4o", 5),
+    ("gpp3o", 5), ("gwl3o", 3), ("hfa4m", 5), ("hfn3m", 5),
+    ("hsc4m", 5), ("ics3u", 5), ("ics4u", 5), ("mcr3u", 8),
+    ("mct3m", 5), ("mct4m", 5), ("mcv4u", 9), ("mdm4u", 8),
+    ("mhf4u", 8), ("sbi3u", 5), ("sbi4u", 5), ("sch3u", 5),
+    ("sch4u", 5), ("snc2d", 5), ("sph3u", 5), ("sph4u", 5),
 ]
 COURSES = [c for c, _ in COURSES_AND_CHAPTERS]
 

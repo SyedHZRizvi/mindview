@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GWL3O — Designing Your Future | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #7c3aed; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #6d28d9; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body blockquote { margin: 10px 0; padding: 8px 16px; border-left: 4px solid #94a3b8; background: #f8fafc; font-style: italic; color: #475569; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #7c3aed; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #6d28d9; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.video-card { background:#fff; border:1px solid #e2e8f0; border-radius:10px; margin: 12px 0 18px; overflow:hidden; }
+.video-header { cursor:pointer; padding: 12px 16px; display:flex; align-items:center; gap:10px; font-size:14px; color:#1e293b; user-select:none; }
+.video-header:hover { background:#f8fafc; }
+.video-icon { font-size:18px; }
+.video-title { flex:1; font-weight:600; }
+.video-toggle { font-size:18px; font-weight:700; color:#7c3aed; }
+.video-player { display:none; padding: 0 16px 16px; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #16a34a; color: #fff; }
+.chnav-next:hover { background: #15803d; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../gwl3o.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (GWL3O Designing Your Future)</a></div>
+    <div class="strand-tag">Guidance &amp; Career Education — Grade 11 Open</div>
+    <h1>🗺️ GWL3O: Chapter 3 — Designing Your Pathway</h1>
+    <p>Postsecondary pathways, SMART goals &amp; backwards planning, NOC career research, financial planning, résumés &amp; cover letters, Schlossberg's 4-S transitions</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit3">
+    <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+        <h2>Chapter 3: Designing Your Pathway — Goal-Setting &amp; Transitions</h2>
+        <p>Postsecondary pathways, SMART goals &amp; backwards planning, NOC career research, financial planning, résumés &amp; cover letters, Schlossberg's 4-S transitions</p>
+        <div class="unit-meta">
+            <span>📚 Strand C: Designing Your Future</span>
+            <span>📹 6 lessons</span>
+        </div>
+    </div>
+
+    <div class="resource-group">
+    <div class="resource-group-label">📹 Video Lessons</div>
+
+    <div class="subsection-label">🛤️ 3.1 Postsecondary Pathways — Apprenticeship, College, University, Workplace</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Grade 11 is the year postsecondary destinations stop feeling abstract. Course choices for Grade 12 lock in many of the prerequisites. The Ontario system formally recognises five postsecondary destinations after the OSSD: <strong>apprenticeship</strong>, <strong>college</strong>, <strong>university</strong>, <strong>workplace</strong>, and (for some students) <strong>community living</strong>. Each is legitimate. Each fits different combinations of interests, skills, values, and life circumstances. The Ministry frames pathway selection as matching person to opportunity, not as a status hierarchy.</p>
+        <p><strong>Apprenticeship</strong> is paid on-the-job training combined with classroom instruction, typically lasting two to five years. It culminates in a Certificate of Qualification and, for many trades, a <strong>Red Seal</strong> endorsement that lets a tradesperson work across Canada. Apprenticeable trades include construction (electrician, plumber, carpenter, HVAC technician), industrial (millwright, machinist, welder), motive power (automotive technician, heavy-duty mechanic), and service trades (hairstylist, baker, chef, early-childhood educator). Apprenticeship begins with a sponsor (an employer) who registers the apprentice with the Ministry of Labour, Immigration, Training and Skills Development. The <strong>Ontario Youth Apprenticeship Program (OYAP)</strong> lets Grade 11–12 students start logging apprenticeship hours while still in high school. Apprenticeships pay throughout — about 30–60% of journeyperson wages early, rising as the apprentice progresses — which means many trades exit training with little or no debt and median journeyperson wages above $80,000.</p>
+        <p><strong>College</strong> programs run one to four years and culminate in certificates, diplomas, advanced diplomas, applied degrees, and increasingly some honours degrees. Ontario's 24 publicly funded colleges (Seneca, Centennial, Sheridan, Mohawk, Conestoga, Algonquin, Fanshawe, and others) specialise in applied learning with industry placements built into most programs. Tuition runs roughly $3,500–$8,000 per year for domestic students. Strong fits include health (nursing, paramedic, dental hygiene), business (accounting, supply chain), media (film, broadcasting, animation), and skilled-technical fields (engineering technology, IT, biotechnology).</p>
+        <p><strong>University</strong> programs are typically three to four years for an undergraduate degree, with graduate study (master's, PhD, professional) on top. Ontario has 23 publicly assisted universities. Tuition for domestic students runs roughly $6,000–$15,000 per year for most programs; professional faculties (medicine, law, dentistry) are higher. Universities lean academic and research-intensive; the path suits students drawn to deep theoretical work, professions requiring a degree (medicine, law, engineering, teaching at most levels), or careers where graduate study is the standard path (clinical psychology, research science).</p>
+        <p><strong>Workplace</strong> destination means direct employment after Grade 12 — sometimes for a year or two before postsecondary, sometimes long-term. Common entry points: retail and service supervision, construction labour, agriculture, customer-service roles. The pathway often leads back into apprenticeship or college through employer-sponsored training. The Ontario curriculum is explicit that this is a legitimate destination, not a "failed" one. The fifth destination, <strong>community living</strong>, applies to students whose IEPs identify supported community participation as their pathway.</p>
+        <p>Two cross-cutting structures Grade 11 students should know: the <strong>Specialist High Skills Major (SHSM)</strong> bundles Grade 11–12 courses, certifications, and work placements into sector-focused packages (Construction, Health &amp; Wellness, ICT, Business, and 15 other sectors), ending with a red sector seal on the OSSD. The <strong>Dual Credit</strong> program lets eligible Grade 11–12 students take college or apprenticeship courses while still in high school, earning both an OSSD credit and a postsecondary credit. Both are free.</p>
+        <ul>
+          <li><strong>OSSD</strong> — Ontario Secondary School Diploma; 30 credits, OSSLT, 40 community-involvement hours.</li>
+          <li><strong>Five postsecondary destinations</strong> — apprenticeship, college, university, workplace, community living.</li>
+          <li><strong>Apprenticeship</strong> — paid on-the-job + in-school training, 2–5 years, culminating in Certificate of Qualification.</li>
+          <li><strong>Red Seal</strong> — interprovincial trade standard; lets a tradesperson work across Canada.</li>
+          <li><strong>OYAP</strong> — Ontario Youth Apprenticeship Program; start apprenticeship hours in high school.</li>
+          <li><strong>College</strong> — 1–4 year applied programs; certificates, diplomas, applied degrees.</li>
+          <li><strong>University</strong> — 3–4 year academic undergraduate degrees, with graduate study above.</li>
+          <li><strong>SHSM</strong> — Specialist High Skills Major; sector-focused Grade 11–12 bundle with a red seal on the OSSD.</li>
+          <li><strong>Dual Credit</strong> — Grade 11–12 students take college / apprenticeship courses for both credits.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Matching Three Profiles to Pathways</p>
+          <p><em>Profile 1 — Mateo:</em> Realistic-strong, hands-on, comfortable with math, values income stability and autonomy. <strong>Strong fit:</strong> apprenticeship through OYAP (electrician or millwright). Median journeyperson wage $80K+, lower debt, autonomy as a licensed tradesperson, possible to run his own business later.</p>
+          <p><em>Profile 2 — Anya:</em> Investigative-Artistic, drawn to research and writing, comfortable in academic settings, values learning and meaning. <strong>Strong fit:</strong> university, possibly humanities or social-science undergraduate followed by graduate work. Could combine with college program later (e.g., journalism diploma) if she wants industry-applied skills.</p>
+          <p><em>Profile 3 — Diego:</em> Social-Investigative, drawn to health and helping, wants to start working in two years, values balance. <strong>Strong fit:</strong> college nursing or paramedic program (2 years, paid placements, strong employment), with option to bridge to a BScN later if he chooses. Possibly SHSM Health &amp; Wellness in Grade 11–12 to stack certifications.</p>
+          <p>Notice that no pathway is "better." Each fits a different profile. The Ontario system is designed to support all of them.</p>
+        </div>
+        <ul>
+          <li>Treating university as the default and the other four destinations as fallbacks — they are not.</li>
+          <li>Underestimating apprenticeship earnings and security (median wages in many trades exceed many degree holders').</li>
+          <li>Not knowing SHSM and Dual Credit exist — both are free and reduce duplication.</li>
+          <li>Picking a destination without checking labour-market demand in the specific field within it.</li>
+          <li>Ignoring the cost-and-debt comparison across destinations — apprenticeships are paid; degrees are paid for.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C — C1.2: "describe the five Ontario postsecondary destinations (apprenticeship, college, university, workplace, community living), including pathways, costs, and employment outcomes, and identify destinations relevant to their own goals."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt1')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[Skilled Trades Ontario / OYAP: Career Paths in the Skilled Trades]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt1">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Ontario apprenticeship OYAP skilled trades career" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Ontario apprenticeship OYAP skilled trades career</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">🎯 3.2 SMART Goals &amp; Backwards Planning</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>A goal you cannot describe specifically is a wish. Most New Year's resolutions fail not because of weakness but because they are vague: "get fit," "do better in school," "save money." The Ontario curriculum's Strand C names goal-setting as a core skill of pathway design because vague goals produce no behaviour change. <strong>SMART</strong> is the most-taught and most-tested framework precisely because it converts wishes into checkable commitments. A SMART goal is <strong>S</strong>pecific, <strong>M</strong>easurable, <strong>A</strong>chievable, <strong>R</strong>elevant, and <strong>T</strong>ime-bound.</p>
+        <p>To see the difference, take the wish "I want to improve in math." Convert it to SMART. <em>Specific:</em> raise my Grade 11 functions mark from 68% to 78%. <em>Measurable:</em> the term mark on the report card. <em>Achievable:</em> 10-point improvement is realistic with consistent study (a 30-point jump probably is not in one term). <em>Relevant:</em> functions is a Grade 12 prerequisite for the engineering program I want. <em>Time-bound:</em> by the end of this term. The SMART version forces clarity, suggests interventions ("consistent study"), and tells you when you've succeeded or failed. It also makes the goal vulnerable — you can't tell yourself you "did okay" if the number says you didn't. That vulnerability is the feature, not the bug.</p>
+        <p><strong>Backwards planning</strong> is the technique of starting from the goal and working back to today. From a 78% term mark: what would weeks 9–10 look like (test prep, review, asking for help on the topics still weak)? What would weeks 5–8 look like (consistent weekly problem sets, biweekly self-test)? What would weeks 1–4 look like (foundation strong, no missing concepts, study group set up)? What would this week look like (problem set Tuesday and Thursday, 30 minutes each, 1-hour Sunday review)? <em>What would tomorrow look like?</em> If you cannot name an action for tomorrow, the goal is not yet operational. Backwards planning prevents the most common failure mode in goal-setting: a beautiful goal with no concrete first step.</p>
+        <p>SMART has limits worth knowing. It is excellent for performance goals (marks, hours saved, hours practised) and weaker for growth or exploration goals where the destination is genuinely unclear. For exploration, <strong>OKRs</strong> (Objectives + Key Results) or simple <strong>learning goals</strong> ("I want to learn whether I'm interested in software engineering by completing one online course and one job-shadow") fit better. The Ontario curriculum is open about this — pathway planning is iterative, and a goal that doesn't survive contact with new information should be revised, not white-knuckled. A SMART goal is also <em>your</em> goal: a goal handed to you by family or social media without internal buy-in won't survive a hard Wednesday in November.</p>
+        <ul>
+          <li><strong>SMART goal</strong> — Specific, Measurable, Achievable, Relevant, Time-bound.</li>
+          <li><strong>Backwards planning</strong> — starting from the goal and working back to today.</li>
+          <li><strong>Performance goal</strong> — measurable outcome (e.g., raise mark to 78%).</li>
+          <li><strong>Learning goal</strong> — develop a skill or gather information (e.g., learn whether engineering fits).</li>
+          <li><strong>OKR (Objectives + Key Results)</strong> — alternative framework for goals where direction matters more than exact number.</li>
+          <li><strong>Operational</strong> — a goal you can name a concrete first action for.</li>
+          <li><strong>Goal hierarchy</strong> — long-term goals broken into short-term sub-goals and weekly actions.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Backwards Planning From a Postsecondary Goal</p>
+          <p>Aaliyah's long-term goal: get into a four-year nursing degree (BScN) at McMaster, starting September after Grade 12. Backwards plan from there.</p>
+          <ul>
+            <li><strong>Year ahead (Grade 12, fall):</strong> Apply through OUAC by Jan 15; have transcripts, supplementary application, and references ready.</li>
+            <li><strong>Grade 12 fall term:</strong> Maintain 85%+ average across Grade 12 U Bio, Chem, Eng, Math (admission averages). Volunteer at a hospital for 30+ hours by application date.</li>
+            <li><strong>Summer between Gr 11 and Gr 12:</strong> Confirm volunteer placement, take any prerequisites missed, decide on supplementary-application essay topic.</li>
+            <li><strong>Grade 11 (this year) — Term 2:</strong> Reach 80%+ in Bio, Chem, Eng, Functions (Gr 11 marks predict Gr 12 marks). Start one structured volunteer placement (Reach Out program, hospital candy-striping, etc.). Update IPP.</li>
+            <li><strong>Grade 11 — Term 1 (this term):</strong> Lock down 80%+ average in Bio and Chem. Job-shadow one nurse to confirm fit. Build weekly study habit.</li>
+            <li><strong>This week:</strong> Email two hospitals about volunteer programs. Ask Bio teacher about study strategies. Block Tue/Thu 4–5 pm for Bio review.</li>
+            <li><strong>Tomorrow:</strong> Send the two emails. Open Bio textbook to Chapter 4 review.</li>
+          </ul>
+          <p>The long-term goal is six years out, but the action item is for tomorrow. Most of Aaliyah's classmates will say "I want to be a nurse" and never plan it. The few who plan it like this will have a very different Grade 12.</p>
+        </div>
+        <ul>
+          <li>Writing a goal so vague there's no way to tell if you achieved it.</li>
+          <li>Writing a goal so ambitious that the first month of evidence (mark not yet up, weight not yet down) feels like failure.</li>
+          <li>Setting a long-term goal with no first-step action — the goal stays a wish.</li>
+          <li>Refusing to revise a SMART goal when new information makes it obsolete (a sign of rigidity, not commitment).</li>
+          <li>Setting goals to please someone else (parent, friend, teacher) — they rarely survive hard weeks.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C — C2.1: "develop short-term, medium-term, and long-term goals using established frameworks (e.g., SMART) and apply backwards planning to identify concrete next steps."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt2')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Stephen Duneier — How to Achieve Your Most Ambitious Goals]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt2">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Stephen Duneier goals TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Stephen Duneier goals TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">🔍 3.3 Career Research — NOC, Job Bank &amp; Labour Market</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>You can want a career that doesn't exist any more, or one that exists but is over-supplied with applicants, or one that pays a fraction of what you assumed. The remedy is not pessimism; it is research. Strand C asks students to combine self-knowledge with labour-market evidence so the resulting plan rests on facts as well as feelings. Canada makes this research surprisingly accessible if you know where to look.</p>
+        <p>The <strong>National Occupational Classification (NOC)</strong> is the federal system that codes every Canadian occupation by a five-digit number and provides a standardised description: typical duties, employment requirements (education, training, certifications), and sample job titles. The 2021 NOC update introduced a TEER structure (Training, Education, Experience, Responsibilities) that replaced the old skill-level categories. Each NOC entry maps to current labour-market information on the federal <strong>Job Bank</strong> (jobbank.gc.ca), which provides wage data (low, median, high), employment outlook (rated from "very good" to "limited" by region), and trend data. For Ontario, regional Workforce Planning Boards publish more granular local-labour-market reports.</p>
+        <p>A small set of structural trends shapes the Ontario labour market over the next decade. The skilled-trades sector faces chronic shortage due to retiring tradespeople and infrastructure / construction demand — electricians, plumbers, welders, millwrights are rated "good" or "very good" outlook in most regions. The health sector is similarly under-supplied — nursing, paramedic, personal support worker, occupational therapy — driven by an aging population. Technology roles remain in demand but selectivity has risen; "software developer" is too broad, while specific niches (cybersecurity, data engineering, ML/AI applied roles) remain hot. Journalism, traditional retail management, and some clerical roles face structural decline. Education is mixed by region. Public-service and policy roles are stable but slower to enter without specific credentials. The point is not to chase trends but to make career hypotheses with eyes open.</p>
+        <p>The strongest single research move a Grade 11 student can make is the <strong>informational interview</strong> — a 20-minute conversation with someone working in the field you are curious about. The questions matter. Strong ones: "What does your typical day actually look like?" "What surprised you about this work that you wouldn't have known from school?" "What do you wish you had done differently in your training?" "What did you not see coming?" "What advice would you give a Grade 11 student today specifically?" The Ministry encourages students to log these conversations in the IPP. One conversation can reset a career hypothesis that years of secondhand impressions had built up incorrectly.</p>
+        <ul>
+          <li><strong>NOC (National Occupational Classification)</strong> — federal coding system for every Canadian occupation.</li>
+          <li><strong>TEER</strong> — Training, Education, Experience, Responsibilities (2021 NOC categorisation).</li>
+          <li><strong>Job Bank</strong> — federal labour-market website (jobbank.gc.ca) with wage and outlook data.</li>
+          <li><strong>Labour-market information (LMI)</strong> — data on wages, employment outlook, training requirements.</li>
+          <li><strong>Workforce Planning Boards</strong> — regional Ontario bodies publishing local LMI.</li>
+          <li><strong>Employment outlook</strong> — rating of expected job openings (limited / fair / good / very good).</li>
+          <li><strong>Informational interview</strong> — 20-minute conversation with someone in a field you are exploring.</li>
+          <li><strong>Job shadow</strong> — half-day to full-day observation of someone's work.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — One-Hour Career Research Sprint</p>
+          <p>Sophie has narrowed her career hypothesis to "occupational therapist." One hour of structured research: <em>0:00–0:15</em> — open Job Bank, search "occupational therapist (NOC 31203)," read the typical duties and the Ontario regional employment outlook ("good" in most regions), note median wage ($82,000) and entry requirements (master's degree in OT). <em>0:15–0:30</em> — open Ontario university OT program pages (e.g., U of T, Queen's, Western), confirm prerequisites — most require an undergraduate degree in any field plus competitive volunteer / clinical hours and a GRE-style admissions test. <em>0:30–0:45</em> — read Canadian Association of Occupational Therapists (CAOT) "what is OT" pages, scan one or two practitioner interviews. <em>0:45–1:00</em> — draft two informational-interview questions ("what part of OT surprised you?" "what's the hardest part of your day?"); email two OTs from local clinic websites (one private practice, one hospital). At the end of one hour, Sophie has shifted from a vague impression to a real plan: she knows the educational pathway (undergraduate degree first, then master's), the cost (7+ years), the wage range, and she's reached out for two interviews. She can now decide more confidently whether to commit Grade 12 courses to this direction or pivot to a related field (e.g., kinesiology or speech-language pathology).</p>
+        </div>
+        <ul>
+          <li>Relying on TV-show or social-media impressions of careers (forensics shows in particular wildly misrepresent the field).</li>
+          <li>Skipping the labour-market check and committing to a field where Ontario demand is weak.</li>
+          <li>Treating one informational interview as the answer — talk to two or three to triangulate.</li>
+          <li>Asking research questions you could have looked up first ("how much does it pay?") instead of using interview time for things you couldn't.</li>
+          <li>Confusing "I'd be a great X" with "I'd actually want to be X every day for 30 years" — interview questions should test the latter.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C — C1.3: "investigate careers using Canadian labour-market resources (NOC, Job Bank, Workforce Planning Boards) and primary sources (informational interviews, job shadows) and synthesise findings."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt3')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[Job Bank / Government of Canada: How to Use the NOC and Job Bank]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt3">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Canada NOC Job Bank career research" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Canada NOC Job Bank career research</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">💰 3.4 Financial Planning for Postsecondary</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>The cost of a postsecondary destination is part of designing the pathway. A program with a $30,000-per-year tuition that pays $45,000 at graduation is a very different financial proposition than a $4,000-per-year program that pays $65,000. Neither is automatically wrong — but you should be making the choice with the numbers in front of you, not after. Strand C asks Grade 11 students to read those numbers honestly.</p>
+        <p><strong>Tuition</strong> is the biggest single cost but rarely the only one. A realistic year-one budget for university residence student in Ontario looks roughly like: tuition $7,000 (arts/sci) to $15,000+ (engineering, business); residence + meals $14,000; books and supplies $1,000–$1,500; personal expenses, phone, transit, clothing $2,000–$3,000; total roughly $24,000–$32,000 per year. College resident costs are typically $18,000–$24,000 per year. Commuting students save residence + meals but should still budget for transit, food, and books. Apprenticeship is paid throughout: tools-and-equipment costs are real (often $1,500–$3,500 in year one) but the apprentice earns through training.</p>
+        <p>The Ontario funding system stacks several layers. <strong>OSAP (Ontario Student Assistance Program)</strong> combines federal and provincial loans and grants based on income; most students with household incomes below ~$120,000 receive some mix. Grants are non-repayable; loans are interest-free during studies but accrue interest after the six-month grace period at graduation. <strong>RESP (Registered Education Savings Plan)</strong> contributions made by parents/guardians grow tax-free and attract a federal Canada Education Savings Grant (CESG) of 20% on the first $2,500 per year — money many families leave on the table by not opening one. <strong>Scholarships and bursaries</strong> from universities, colleges, professional associations, employers, and community organisations are often under-applied-for; an hour-a-week scholarship search in Grade 11 and 12 has yielded thousands of dollars for many students. <strong>Part-time work</strong> while studying — typically 10–15 hours per week — covers personal expenses without significantly hurting grades, but more than 20 hours/week consistently lowers academic performance. <strong>Tax credits</strong> — tuition, GST/HST, the Canada Workers Benefit — recover meaningful dollars; learn to file your own return by 17.</p>
+        <p>The variable that matters most for long-term financial health is <strong>debt at graduation</strong>. A useful rule: total student-loan debt should not exceed your expected first-year-after-graduation salary. A nursing graduate expecting $65,000 can manage $65,000 in debt; a graduate of a program with $35,000 expected starting salary should target $35,000 in debt or less. Carrying debt above this rule of thumb is not impossible to repay, but it shapes years of life choices — what city you can live in, when you can move out, when you can start saving. The Ontario curriculum is explicit that financial literacy is part of designing a future, not a side topic. Most regrets about postsecondary financing are not about how much someone spent; they are about the absence of a plan.</p>
+        <ul>
+          <li><strong>Tuition</strong> — fees charged for instruction; varies widely by program.</li>
+          <li><strong>OSAP</strong> — Ontario Student Assistance Program; mixed loan + grant package.</li>
+          <li><strong>RESP</strong> — Registered Education Savings Plan; tax-sheltered + CESG (20% federal match).</li>
+          <li><strong>CESG</strong> — Canada Education Savings Grant; 20% match on first $2,500/year of RESP contributions.</li>
+          <li><strong>Scholarship</strong> — merit-based non-repayable award.</li>
+          <li><strong>Bursary</strong> — need-based non-repayable award.</li>
+          <li><strong>Grace period</strong> — six interest-free months after graduation before loan repayment begins.</li>
+          <li><strong>Tuition tax credit</strong> — non-refundable credit for postsecondary tuition paid.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Comparing Two Pathways on the Numbers</p>
+          <p>Anya is choosing between a 4-year university journalism degree and a 3-year college journalism diploma. Year-one cost comparison (illustrative):</p>
+          <ul>
+            <li><strong>University:</strong> tuition $7,200 + residence/meals $14,000 + books $1,200 + personal $2,500 = $24,900/year × 4 = $99,600 over 4 years. Funding: OSAP grant $5,000 + loan $5,000 + summer work $7,000 + family $4,000 + scholarship $1,000 = $22,000/year. Annual gap $2,900; cumulative debt at graduation roughly $20,000 + accrued interest.</li>
+            <li><strong>College:</strong> tuition $4,500 + residence/meals $12,000 + books $800 + personal $2,500 = $19,800/year × 3 = $59,400 over 3 years. Same funding mix; smaller gap; cumulative debt at graduation roughly $8,000.</li>
+          </ul>
+          <p>Expected starting salary: $42,000–$48,000 for entry journalism positions in both pathways. Apply the "debt &le; first-year salary" rule: both are within range, but college leaves Anya with roughly $12,000 less debt at graduation and one year sooner in the workforce. The decision is not only financial — university may open different doors and the prestige of the program matters — but the numbers should be visible in the choice. Anya runs the same exercise for two other pathways before committing.</p>
+        </div>
+        <ul>
+          <li>Not opening an RESP — leaves up to $7,200 of free CESG money on the table over 14 years.</li>
+          <li>Skipping scholarship applications because "I won't win" — most small scholarships have few applicants.</li>
+          <li>Working 25+ hours/week during full-time studies — consistently lowers grades and stretches the program.</li>
+          <li>Treating OSAP grant + loan as a single number — keep them distinct (grant is gift; loan is owed).</li>
+          <li>Ignoring debt-to-starting-salary ratio when choosing a program — produces years of constrained choices.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C — C2.3: "develop a financial plan for postsecondary education and early adulthood, including budgeting, OSAP / RESP / scholarships, and managing student debt."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt4')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[Ontario Ministry of Colleges and Universities: OSAP Explained]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt4">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "OSAP Ontario student aid explained" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>OSAP Ontario student aid explained</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">📝 3.5 Résumés, Cover Letters &amp; Interviews</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>The job-application package — résumé, cover letter, interview — is the first place where most of what you have built in this course gets tested by an outsider. The employer doesn't know you. She has 30 seconds for your résumé, 60 seconds for your cover letter, and 30 minutes for an interview that will either get you the job or not. Strand C treats these as learnable skills, not magic. Done well, they meaningfully change which doors open. Done poorly, they close doors that should have opened.</p>
+        <p>A <strong>résumé</strong> is a one-page (for Grade 11 / 12; two pages later) marketing document. Structure: <strong>header</strong> (name, phone, professional email, city); <strong>summary or objective</strong> (one short line for entry-level); <strong>education</strong> (school, expected graduation, average if 80%+, relevant courses); <strong>experience</strong> (paid and substantial volunteer, in reverse chronological order); <strong>skills and certifications</strong> (food handler, first aid, language fluency, software); <strong>activities and interests</strong> (only if they add signal — leadership, sports, community involvement). The killer detail is <strong>bullets</strong>. Weak: "Worked at coffee shop." Strong: "Crew Member, Tim Hortons, Mississauga ON (May–Aug 2025). Served 60+ customers per shift on cash and drive-thru; trained one new hire on POS after three weeks; cross-trained on espresso bar; food-handler certified June 2025; recognised by manager for perfect attendance." Numbers, scale, and verbs — every bullet should answer "what did you do, with what scale, with what result?"</p>
+        <p>A <strong>cover letter</strong> is three short paragraphs: <em>why this role</em> (one sentence — what about this specific position interests you); <em>why you</em> (two or three sentences — the strongest one or two pieces of evidence you are qualified, ideally with a specific example); <em>why this employer</em> (one or two sentences — what about <em>this</em> organisation versus its competitors). Generic cover letters get filtered out; targeted ones don't take much longer. The opening line matters most. "I am writing to apply..." is weaker than "Your library's literacy-program work first caught my attention at the West End library two summers ago, and I'd like to bring my experience tutoring eight Grade 4–6 students into your Reading Buddy program this summer."</p>
+        <p>The <strong>interview</strong> rewards preparation more than charisma. Research the organisation (one paragraph of facts beyond the homepage). Prepare answers to the predictable behavioural questions ("tell me about a time you handled conflict," "tell me about a time you missed a deadline," "tell me about a time you led without authority") using the <strong>STAR</strong> structure — Situation, Task, Action, Result. Have one specific question to ask the interviewer ("what do new hires here struggle with most in their first month?" is much better than "what's the culture like?"). Dress one notch above what employees at this workplace typically wear. Arrive ten minutes early. Bring two copies of your résumé. Send a brief thank-you email within 24 hours referencing one thing you discussed. None of this is unusual. All of it is uncommon among Grade 11 applicants — which is why doing it puts you in the top quartile of candidates regardless of experience.</p>
+        <ul>
+          <li><strong>Résumé</strong> — one-page (early career) summary of education, experience, skills.</li>
+          <li><strong>Cover letter</strong> — three-paragraph targeted argument for why you fit this specific role.</li>
+          <li><strong>Bullet point</strong> — concise, evidence-rich sentence with action verb + scale + result.</li>
+          <li><strong>STAR structure</strong> — Situation, Task, Action, Result; framework for behavioural interview answers.</li>
+          <li><strong>Behavioural question</strong> — "tell me about a time when..." (past behaviour predicts future).</li>
+          <li><strong>Informational interview</strong> — distinct from job interview; for research, not hiring.</li>
+          <li><strong>Thank-you note</strong> — brief email within 24 hours of an interview; underrated and effective.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — STAR Answer to a Common Behavioural Question</p>
+          <p><em>Question:</em> "Tell me about a time you had to deal with a conflict with a teammate."</p>
+          <p><em>Weak answer:</em> "Yeah, in a group project once we had some disagreements but it worked out."</p>
+          <p><em>STAR answer:</em><br><strong>Situation:</strong> "In a four-person Grade 11 history project in April, we had to produce a 15-minute presentation on the 1971 Constitution Act."<br><strong>Task:</strong> "Two weeks before the deadline, one team member had done nothing on his assigned section because he was struggling with a family situation he hadn't mentioned, and another team member was getting frustrated."<br><strong>Action:</strong> "I asked the struggling team-mate for a 15-minute conversation outside class. He explained what was going on, so I proposed redistributing his section — I took the heaviest piece, the others took the rest, and we asked him to record the introduction and check our final slides. I checked in with the frustrated team-mate separately so she didn't feel her concerns were dismissed."<br><strong>Result:</strong> "We delivered on time, scored 88%, and the teacher's feedback highlighted our slide design. The struggling team-mate later told me it had been the kindest thing anyone had done that week. I learned that conflict often signals a hidden constraint, not bad faith — checking in privately surfaces what an open meeting can't."</p>
+          <p>The STAR version takes 90 seconds to deliver, contains specific evidence the interviewer can mentally picture, and includes a one-line reflection that signals self-awareness. The weak version takes 10 seconds, contains no evidence, and signals nothing. Same student. Different preparation.</p>
+        </div>
+        <ul>
+          <li>Using one generic résumé for every job — tailor at least the summary line and one or two bullets per posting.</li>
+          <li>Cover letters that describe what you want, not what you can bring.</li>
+          <li>Bullets without numbers — "worked with customers" vs. "served 60+ customers per shift."</li>
+          <li>Interview answers that are evaluative ("I'm a hard worker") rather than evidence-based ("here's a time I...").</li>
+          <li>Skipping the thank-you email after an interview — it takes 60 seconds and is noticed.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C — C3.1: "produce job-application documents (résumé, cover letter) and demonstrate effective interview skills (including STAR responses to behavioural questions) appropriate to a target opportunity."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt5')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[Indeed Career Guide / TED: How to Write a Résumé and Ace Your Interview]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt5">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "résumé interview tips entry level career" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>résumé interview tips entry level career</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">🌉 3.6 Managing Transitions — Schlossberg's 4-S Model</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>A transition is any change that shifts roles, relationships, routines, or assumptions. Going from Grade 11 to Grade 12, leaving home for university or apprenticeship, starting a first full-time job, moving cities, ending a long relationship, losing or changing a job mid-career — all are transitions, and all share predictable patterns. Strand C ends with transitions because every pathway in this course will encounter several of them. Students who understand the patterns navigate them with less collateral damage; students who don't often confuse a hard transition with a wrong decision.</p>
+        <p>Nancy Schlossberg's <strong>4-S model</strong> is the most-cited framework in transition counselling. It identifies four resources that determine how well a person handles any transition: <strong>Situation</strong>, <strong>Self</strong>, <strong>Support</strong>, and <strong>Strategies</strong>. <em>Situation</em> covers the nature of the transition itself — anticipated or unexpected, voluntary or imposed, the timing in your life, the duration. <em>Self</em> covers the inner resources you bring — your values, beliefs, prior experience with transitions, current physical and mental health, optimism, age, stage. <em>Support</em> covers the external resources — relationships, mentors, financial cushion, formal supports (counsellors, advisors), community. <em>Strategies</em> covers the active coping moves you make — information-seeking, reframing, taking action, asking for help, building structure. The 4-S model is humbling because it makes clear that a transition that looks the same on the outside (two students moving away for university) can feel radically different from the inside, depending on each person's 4-S balance.</p>
+        <p>William Bridges adds a three-phase model that complements Schlossberg's: every transition runs through <strong>Ending</strong> (letting go of the old situation), the <strong>Neutral Zone</strong> (an in-between period that often feels disorienting), and a <strong>New Beginning</strong>. Most transition difficulties cluster in the Neutral Zone — the move-in week of university when nothing feels like home; the first three months of a new job when you don't yet know how things work; the months after a relationship ends when the future feels unclear. Bridges's central insight is that the Neutral Zone is not failure; it is part of the process and rushing through it tends to make adjustment slower, not faster. Concrete moves help: maintain at least three structural anchors (sleep schedule, weekly exercise, one regular social commitment); name what you're losing as well as what you're gaining; ask for help early; expect the messy middle.</p>
+        <p>For Grade 11 students, two big transitions are immediately ahead: Grade 11 to 12 (the application year, much heavier workload, decision-making pressure) and Grade 12 to postsecondary (moving out for many, full responsibility for self-management for all). The Ministry recommends concrete transition supports: regular check-ins with school counsellors, a current IPP, attendance at university / college open houses, conversations with current postsecondary students, and a financial plan. The pre-transition months are also when you should be building the support side of the 4-S model — identifying which mentors and friends you can call when things wobble, opening lines of communication with parents or guardians about the upcoming changes, and committing to one or two regular contacts during the transition itself. Transitions are not problems to avoid; they are seasons to navigate. The students who arrive at Grade 12 with this framework in mind cope dramatically better than the ones who arrive thinking the year will look like every previous year.</p>
+        <ul>
+          <li><strong>Transition</strong> — any change that shifts roles, relationships, routines, or assumptions.</li>
+          <li><strong>Schlossberg's 4-S model</strong> — Situation, Self, Support, Strategies.</li>
+          <li><strong>Situation</strong> — the nature, timing, and duration of the transition.</li>
+          <li><strong>Self</strong> — inner resources brought to the transition (values, prior experience, health).</li>
+          <li><strong>Support</strong> — external resources (relationships, mentors, financial cushion, formal supports).</li>
+          <li><strong>Strategies</strong> — active coping moves (information, reframing, action, help-seeking).</li>
+          <li><strong>Bridges's three-phase model</strong> — Ending, Neutral Zone, New Beginning.</li>
+          <li><strong>Neutral Zone</strong> — disorienting in-between period; normal, not failure.</li>
+          <li><strong>Anchor</strong> — structural habit (sleep, exercise, contact) maintained through a transition.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Planning a Grade 12 → University Transition With 4-S</p>
+          <p>Priya is moving from Mississauga to Kingston for first-year university in September. She uses the 4-S model in June to audit her readiness and plan supports.</p>
+          <p><em>Situation:</em> Anticipated transition (long planned), voluntary, 8-month duration to first reset point (winter break). Pre-known stressors: heavy workload, first time managing finances, far from family.</p>
+          <p><em>Self:</em> Strengths — academically strong, conscientious, supportive family relationship. Risk factors — has not lived independently before, tends toward perfectionism, sleep has been irregular in Grade 12.</p>
+          <p><em>Support:</em> Two close friends also going to Kingston (different programs). Cousin is third-year at the same university — agrees to weekly coffee for the first six weeks. Parents: weekly phone call set up. Family doctor in Mississauga; identifies campus health and counselling centre as backup. Financial cushion: family contribution plus part-time work plan.</p>
+          <p><em>Strategies:</em> Pre-arrival — attend orientation week fully; meet roommate before move-in; plan a routine for the first two weeks. Anchors — fixed sleep window 11 pm–7 am; gym 3×/week; family video call Sunday evenings; coffee with cousin Fridays. Help-seeking — book a counsellor visit by Week 4 even if nothing seems wrong, as preventive baseline. Reframing — name the Neutral Zone in advance ("the first two months will feel weird; that's normal"). Information — read the campus mental-health resources page; learn the bus routes; find one quiet study spot off-campus.</p>
+          <p>Priya hasn't eliminated risk. She has, however, dramatically improved her odds of a successful first term. The plan also tells her where to focus before September — the Self side is her thinnest, so she works on sleep and perfectionism strategies over the summer. Most students do not run this exercise. The ones who do tend to have measurably better first years.</p>
+        </div>
+        <ul>
+          <li>Treating a hard Neutral Zone as evidence the transition was a mistake.</li>
+          <li>Not building Support before the transition begins — by Week 4 of feeling lost it is harder to start.</li>
+          <li>Trying to maintain the same routines as before — transitions usually require new routines, not preserved old ones.</li>
+          <li>Confusing being homesick or unsettled with depression — sometimes the same, often not; talk to a professional if symptoms persist.</li>
+          <li>Treating the IPP as a Grade-7-only document — it is supposed to live through Grade 12 and accompany transitions.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand C — C3.3: "describe established frameworks for managing transitions (e.g., Schlossberg's 4-S, Bridges's three-phase model) and apply them to a planned personal transition (e.g., Grade 11 to 12, Grade 12 to postsecondary)."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt6')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: William Bridges / Adam Markel — Navigating Life Transitions]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt6">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "managing life transitions Schlossberg Bridges" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>managing life transitions Schlossberg Bridges</em>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 3 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/gwl3o/Chapter3_Designing_Your_Pathway_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/gwl3o/Chapter3_Designing_Your_Pathway_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/gwl3o/Chapter3_Designing_Your_Pathway_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch2.html" class="chnav-btn chnav-prev">← Chapter 2</a>
+  <a href="../gwl3o.html" class="chnav-btn chnav-finish">↑ Back to course</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · GWL3O — Designing Your Future, Grade 11 Open · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);if(!p)return;if(!p.style.display||p.style.display==='none'){p.style.display='block';}else{p.style.display='none';const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

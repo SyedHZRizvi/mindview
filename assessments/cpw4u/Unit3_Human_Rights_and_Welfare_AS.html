@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Human Rights and Welfare — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+details.instructor-only { margin-top: 24px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 16px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Human Rights and Welfare — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C — C1.1, C1.2, C2.1, C3.1, C3.2</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the UDHR, international refugee law, the Canadian human-rights framework, the TRC, UNDRIP, and the welfare state. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 3.1–3.2 — UDHR and Refugee Law</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The Universal Declaration of Human Rights was adopted by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> The League of Nations on 28 June 1919</label></li>
+<li><label><input type="radio" name="q1" value="b"> The UN General Assembly on 10 December 1948 by 48 in favour, 0 against, 8 abstentions</label></li>
+<li><label><input type="radio" name="q1" value="c"> The UN Security Council in 1950</label></li>
+<li><label><input type="radio" name="q1" value="d"> The International Court of Justice in 1945</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The UDHR was adopted by the UN General Assembly on 10 December 1948. The Soviet bloc, South Africa, and Saudi Arabia abstained. Canadian John Humphrey wrote the first draft as director of the UN Division of Human Rights.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The Canadian John Humphrey's role in the UDHR was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Chair of the drafting committee</label></li>
+<li><label><input type="radio" name="q2" value="b"> Director of the UN Division of Human Rights; wrote the UDHR's first draft</label></li>
+<li><label><input type="radio" name="q2" value="c"> The Canadian ambassador who voted against it</label></li>
+<li><label><input type="radio" name="q2" value="d"> A judge on the International Court of Justice</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Humphrey was the first director of the UN Division of Human Rights and produced the first 400-page draft. René Cassin (France) was the principal redrafter; Eleanor Roosevelt chaired the Commission. The Canadian contribution is foundational and often understated.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">"No Contracting State shall expel or return ('refouler') a refugee in any manner whatsoever to the frontiers of territories where his life or freedom would be threatened on account of his race, religion, nationality, membership of a particular social group or political opinion." — Article 33, 1951 Refugee Convention</div>
+<div class="qtxt">This is the principle of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Sovereign immunity</label></li>
+<li><label><input type="radio" name="q3" value="b"> Non-refoulement — the fundamental obligation of the international refugee regime</label></li>
+<li><label><input type="radio" name="q3" value="c"> Universal jurisdiction</label></li>
+<li><label><input type="radio" name="q3" value="d"> Diplomatic immunity</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Non-refoulement is the core of the modern refugee-protection regime. It binds all 1951 Convention parties (149 states) and is also a customary international-law obligation applicable to non-parties.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Canada's 2015–16 Syrian refugee resettlement program:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Admitted ~5,000 Syrians via UNHCR referral only</label></li>
+<li><label><input type="radio" name="q4" value="b"> Admitted ~40,000 Syrians in one year through a mix of government-assisted, privately sponsored, and blended sponsorship streams — the largest Canadian single-country resettlement since the 1979–80 Vietnamese effort</label></li>
+<li><label><input type="radio" name="q4" value="c"> Was administered solely by NGOs</label></li>
+<li><label><input type="radio" name="q4" value="d"> Was opposed by the Liberal government</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The Liberal government's commitment of 25,000 Syrians by 31 December 2015 was extended; by year-end 2016 ~40,000 had arrived. Canada's distinctive Privately Sponsored Refugees (PSR) model allowed unprecedented community mobilisation. The model was repeated for Ukrainians (CUAET 2022, ~210,000) and Afghans.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.3 — The Canadian Human Rights Framework</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">In <em>Andrews v. Law Society of British Columbia</em> (1989, the first Charter section 15 case), the SCC adopted:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A "formal-equality" approach (identical treatment regardless of context)</label></li>
+<li><label><input type="radio" name="q5" value="b"> A "substantive-equality" approach (focused on whether laws impose disadvantage on enumerated or analogous grounds)</label></li>
+<li><label><input type="radio" name="q5" value="c"> Strict scrutiny in the US sense</label></li>
+<li><label><input type="radio" name="q5" value="d"> A pure procedural-due-process standard</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> <em>Andrews</em> rejected the US-style formal-equality approach in favour of substantive equality: section 15 is violated when a law creates a distinction on enumerated or analogous grounds that imposes a burden or denies a benefit on a discriminatory basis. This has been the consistent SCC approach.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">In <em>Vriend v. Alberta</em> (1998), the SCC:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Held that sexual orientation was not a protected ground under section 15</label></li>
+<li><label><input type="radio" name="q6" value="b"> Held that sexual orientation was an analogous ground under section 15 and "read in" sexual orientation to Alberta's human-rights act</label></li>
+<li><label><input type="radio" name="q6" value="c"> Upheld Alberta's prohibition on same-sex marriage</label></li>
+<li><label><input type="radio" name="q6" value="d"> Required provincial constitutions to be amended</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Cory and Iacobucci JJ. unanimously held sexual orientation was an analogous ground; Alberta's silence amounted to discrimination; the remedy was to "read in" sexual orientation to the protected grounds. Premier Klein threatened section 33 but did not invoke it.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.4 — TRC and UNDRIP</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The Truth and Reconciliation Commission's 2015 <em>Final Report</em> concluded that the residential-school system constituted:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Unintentional harm</label></li>
+<li><label><input type="radio" name="q7" value="b"> "Cultural genocide" — a deliberate and sustained policy of destroying Indigenous languages, families, and political organisation</label></li>
+<li><label><input type="radio" name="q7" value="c"> A successful program</label></li>
+<li><label><input type="radio" name="q7" value="d"> A purely provincial responsibility</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> The TRC's <em>Final Report</em> (Volume 1) used "cultural genocide" to describe the federally-administered, church-operated residential schools (1883-1996), which enrolled ~150,000 Indigenous children with documented mortality of 4,000-6,000+ (revised upward by post-2021 ground-penetrating radar findings).</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">UNDRIP (UN Declaration on the Rights of Indigenous Peoples) was:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Adopted by the UN General Assembly in 2007 by 144 in favour, 4 against (Canada, the US, Australia, New Zealand — all later reversing) — given federal legislative status in Canada by the 2021 UNDRIP Act</label></li>
+<li><label><input type="radio" name="q8" value="b"> Adopted in 1948 alongside the UDHR</label></li>
+<li><label><input type="radio" name="q8" value="c"> Adopted by the World Bank in 1981</label></li>
+<li><label><input type="radio" name="q8" value="d"> A binding treaty since 2010</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','a')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> UNDRIP was adopted 13 September 2007. Canada initially voted no (with the US, Australia, NZ); all four later endorsed. The federal <em>UNDRIP Act</em> received Royal Assent 21 June 2021 (National Indigenous Peoples Day); the Action Plan was published 21 June 2023.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 3.5–3.6 — Welfare State and Measurement</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The 1984 <em>Canada Health Act</em>'s five principles are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Public administration, comprehensiveness, universality, portability, accessibility</label></li>
+<li><label><input type="radio" name="q9" value="b"> Quality, choice, efficiency, profit, innovation</label></li>
+<li><label><input type="radio" name="q9" value="c"> Privacy, autonomy, dignity, voluntariness, individual responsibility</label></li>
+<li><label><input type="radio" name="q9" value="d"> Speed, depth, breadth, accountability, federal jurisdiction</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Section 7 of the <em>Canada Health Act</em> sets out the five principles. Provinces must operate health systems that meet all five to receive federal cash contributions. The CHA's enforcement is fiscal (withholding of contributions) — rare but real.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Esping-Andersen's <em>Three Worlds of Welfare Capitalism</em> (1990) classifies welfare states as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Capitalist, communist, and mixed</label></li>
+<li><label><input type="radio" name="q10" value="b"> Liberal (means-tested; US, Australia, UK, Canada-tilting); conservative-corporatist (Bismarckian; Germany, France, Italy); social-democratic (universal, decommodifying; Sweden, Norway, Denmark)</label></li>
+<li><label><input type="radio" name="q10" value="c"> First-world, second-world, third-world</label></li>
+<li><label><input type="radio" name="q10" value="d"> North, South, East</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Esping-Andersen's typology remains the standard comparative framework. Canada is typically classified as liberal-tilting but with substantial social-democratic features (Medicare, CCB, CPP, EI) that resemble Nordic models.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">The Gini coefficient measures:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Gross domestic product</label></li>
+<li><label><input type="radio" name="q11" value="b"> Income inequality on a 0-to-1 scale: 0 perfect equality, 1 perfect inequality</label></li>
+<li><label><input type="radio" name="q11" value="c"> Life expectancy</label></li>
+<li><label><input type="radio" name="q11" value="d"> Number of political parties</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The Gini (1912) ranges 0 to 1. Canada's after-tax Gini was 0.305 in 2022 — more unequal than Scandinavia (0.25-0.27) but less than the US (0.39). OECD average ~0.314.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2-3 sentences, explain why measuring "welfare" matters politically, with a Canadian or comparative example.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> Choice of indicator shapes policy and political conclusion. GDP per capita suggests the US (~$82,000) is "richer" than Canada (~$55,000), but the US has lower life expectancy (76 vs. 83 years), worse inequality (Gini 0.39 vs. 0.305), and worse health outcomes despite spending twice as much per capita. Indicator choice is therefore political: emphasising GDP supports one story; emphasising HDI plus inequality plus life expectancy supports another. A Level-4 analysis recognises that indicator choice is itself a contested political move.</div></div>
+
+</div>
+
+<details class="instructor-only">
+<summary>📖 Complete Answer Key</summary>
+<p><strong>Q1:</strong> B (UDHR 1948). <strong>Q2:</strong> B (Humphrey's drafting role). <strong>Q3:</strong> B (non-refoulement). <strong>Q4:</strong> B (Syrian resettlement). <strong>Q5:</strong> B (substantive equality). <strong>Q6:</strong> B (Vriend reading-in). <strong>Q7:</strong> B (cultural genocide). <strong>Q8:</strong> A (UNDRIP 2007/2021). <strong>Q9:</strong> A (five CHA principles). <strong>Q10:</strong> B (Esping-Andersen three worlds). <strong>Q11:</strong> B (Gini coefficient). <strong>Q12:</strong> Open-ended; sample at top.</p>
+</details>
+
+<footer>CPW4U — Canadian and World Politics, Grade 12 | Strand C: Human Rights and Human Welfare | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

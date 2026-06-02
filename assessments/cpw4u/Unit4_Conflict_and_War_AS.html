@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Conflict and War — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+details.instructor-only { margin-top: 24px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 16px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Conflict and War — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand D — D1.1, D1.2, D2.1, D2.2, D3.1</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the causes of war, just war theory, IHL, R2P, conflict case studies, and Canada's military role. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 4.1–4.2 — Causes of War and Just War Theory</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Kenneth Waltz's three "levels of analysis" of war causation (1959) are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Individual, state, and system levels</label></li>
+<li><label><input type="radio" name="q1" value="b"> Past, present, and future</label></li>
+<li><label><input type="radio" name="q1" value="c"> Economic, political, and cultural</label></li>
+<li><label><input type="radio" name="q1" value="d"> Defensive, offensive, and neutral</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','a')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Waltz's <em>Man, the State, and War</em> (1959) distinguishes the three classical levels: individual (leaders, psychology); state (regime type, economy, internal politics); system (anarchic structure, polarity, alliance dynamics). Different international-relations schools emphasise different levels.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The "security dilemma" (Herz 1950; Jervis 1978) describes how:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> States only build weapons for defence</label></li>
+<li><label><input type="radio" name="q2" value="b"> Defensive actions by one state appear offensive to others, producing arms races between states that may both prefer peace</label></li>
+<li><label><input type="radio" name="q2" value="c"> Weapons technology determines outcomes</label></li>
+<li><label><input type="radio" name="q2" value="d"> Alliances guarantee security</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The security dilemma is a structural explanation: in anarchic international systems, every state must provide its own security; defensive build-ups look offensive to neighbours; the result is escalation. The 2014-24 NATO-Russia dynamic over Ukraine illustrates the dilemma.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">"All citizens are liable to military service for the defence of their country, and I conceive that the battle for autonomy is being fought today on the plains of France and of Belgium." — adapted</div>
+<div class="qtxt">The classical just-war framework distinguishes:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Defensive war and offensive war only</label></li>
+<li><label><input type="radio" name="q3" value="b"> Jus ad bellum (justice of going to war), jus in bello (justice in war), and jus post bellum (justice after war)</label></li>
+<li><label><input type="radio" name="q3" value="c"> Just war and unjust war as a binary</label></li>
+<li><label><input type="radio" name="q3" value="d"> Conventional and asymmetric warfare</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Classical just-war theory (Augustine, Aquinas, Grotius, Walzer) distinguishes three branches addressing different moments: jus ad bellum (going to war), jus in bello (conduct in war), and jus post bellum (just settlement).</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Michael Walzer's <em>Just and Unjust Wars</em> (1977) is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> A defence of pacifism</label></li>
+<li><label><input type="radio" name="q4" value="b"> The modern foundational text of just-war theory, drawing on the Augustinian-Aquinian-Grotian tradition</label></li>
+<li><label><input type="radio" name="q4" value="c"> A history of WWI</label></li>
+<li><label><input type="radio" name="q4" value="d"> A philosophy textbook about realism</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Walzer's <em>Just and Unjust Wars</em> (1977) is the modern foundational work, written in response to Vietnam. He extends the classical tradition (Cicero, Augustine, Aquinas, Vitoria, Grotius) into the post-1945 nuclear-era and humanitarian-intervention contexts.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 4.3–4.4 — IHL and R2P</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The four 1949 Geneva Conventions and their 1977 Additional Protocols form the core of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> The UN Charter</label></li>
+<li><label><input type="radio" name="q5" value="b"> International humanitarian law (IHL), the law of armed conflict</label></li>
+<li><label><input type="radio" name="q5" value="c"> The Rome Statute</label></li>
+<li><label><input type="radio" name="q5" value="d"> The NPT</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The 1949 Geneva Conventions (I — wounded soldiers; II — sea; III — POWs; IV — civilians) plus the 1977 Additional Protocols I (international armed conflict) and II (non-international) form IHL. All 196 states are party to the four Conventions — among the most universally ratified treaties.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The International Criminal Court (ICC), established by the 1998 Rome Statute, has jurisdiction over:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> States, not individuals</label></li>
+<li><label><input type="radio" name="q6" value="b"> Individuals (not states) for genocide, crimes against humanity, war crimes, and aggression</label></li>
+<li><label><input type="radio" name="q6" value="c"> Civil disputes between corporations</label></li>
+<li><label><input type="radio" name="q6" value="d"> Maritime boundary disputes</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The ICC tries individuals (not states); the ICJ tries states. The ICC's four core crimes are genocide, crimes against humanity, war crimes, and the crime of aggression. Canada ratified the Rome Statute in 2000 and implemented domestically through the <em>Crimes Against Humanity and War Crimes Act</em>.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The Responsibility to Protect (R2P) doctrine was developed by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The 2001 ICISS Report, on a Canadian government initiative led by Foreign Affairs Minister Lloyd Axworthy, and unanimously endorsed by the 2005 UN World Summit Outcome Document</label></li>
+<li><label><input type="radio" name="q7" value="b"> NATO in 1999</label></li>
+<li><label><input type="radio" name="q7" value="c"> The US after September 11, 2001</label></li>
+<li><label><input type="radio" name="q7" value="d"> The European Union in 2005</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> The International Commission on Intervention and State Sovereignty (ICISS), chaired by Gareth Evans and Mohamed Sahnoun, was a Canadian-led initiative. Its 2001 report developed the R2P framework, adopted at the 2005 World Summit (paragraphs 138-139 of the Outcome Document).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 4.5–4.6 — Cases and Canada</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The Rwandan genocide (April-July 1994) killed approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> 10,000 people</label></li>
+<li><label><input type="radio" name="q8" value="b"> 100,000 people</label></li>
+<li><label><input type="radio" name="q8" value="c"> 800,000 to 1,000,000 Tutsi and moderate Hutu in 100 days, despite UNAMIR warnings under Canadian commander Major-General Roméo Dallaire</label></li>
+<li><label><input type="radio" name="q8" value="d"> 5 million people</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','c')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> 800,000-1,000,000 deaths in 100 days. UNAMIR was prevented from acting; Dallaire's January 1994 "genocide fax" was effectively ignored. The 1999 Carlsson Report and Dallaire's <em>Shake Hands with the Devil</em> (2003) are essential sources. The genocide directly catalysed R2P.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Srebrenica massacre (July 1995):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Was a Yugoslav civil-war battle with proportionate civilian casualties</label></li>
+<li><label><input type="radio" name="q9" value="b"> Was the systematic execution of 8,372 Bosnian Muslim men and boys by Bosnian Serb forces under Ratko Mladić — Europe's worst mass atrocity since 1945, found to be genocide by the ICTY and ICJ</label></li>
+<li><label><input type="radio" name="q9" value="c"> Was conducted by Albanian forces</label></li>
+<li><label><input type="radio" name="q9" value="d"> Occurred before UNPROFOR was deployed</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Srebrenica was declared a UN "safe area" in 1993; Dutch UN troops (Dutchbat) were present but vastly outgunned. Bosnian Serb forces under Mladić executed 8,372 men and boys. The ICTY (1993-2017) tried 161 people including Karadžić (40 years) and Mladić (life sentence); ICJ 2007 confirmed genocide.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Canadian peacekeeping was effectively invented in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> The 1949 founding of NATO</label></li>
+<li><label><input type="radio" name="q10" value="b"> The 1956 Suez Crisis, when External Affairs Minister Lester Pearson proposed the United Nations Emergency Force (UNEF) — winning the 1957 Nobel Peace Prize</label></li>
+<li><label><input type="radio" name="q10" value="c"> The 1990s Yugoslav wars</label></li>
+<li><label><input type="radio" name="q10" value="d"> The 1990 invasion of Kuwait</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> When Britain, France, and Israel attacked Egypt over Suez nationalisation, Pearson (External Affairs) proposed UNEF — the first armed UN peacekeeping mission. He won the 1957 Nobel Peace Prize. Canadian peacekeeping has since declined dramatically — ~33 deployed in 2024, the lowest in Canadian history.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Canadian forces in Afghanistan (2001-14):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Were a token presence</label></li>
+<li><label><input type="radio" name="q11" value="b"> Comprised ~40,000 troops in rotation, 158 dead — the largest Canadian deployment outside North America since WWII; led the multinational Kandahar Brigade 2006-11</label></li>
+<li><label><input type="radio" name="q11" value="c"> Were limited to humanitarian relief</label></li>
+<li><label><input type="radio" name="q11" value="d"> Departed before the 2003 Iraq invasion</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Canada's Afghanistan mission (Operation Athena and successors) was the largest Canadian combat operation since Korea. ~40,000 rotated, 158 dead, over 2,000 wounded. The 2014 formal end coincided with the 2014-21 Taliban resurgence; Kabul fell August 2021. The mission reshaped CAF doctrine, equipment, and post-deployment policy.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2-3 sentences, compare the international response to Rwanda 1994 with the response to Ukraine 2022-. What changed about civilian-protection norms and great-power dynamics?</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> In Rwanda 1994 the UNAMIR force was reduced (from ~2,500 to 270 in May), no Western military intervention occurred, and aid during the genocide was ~$20M. In Ukraine 2022-, there has been no UN-mandated military intervention (Russian veto) but ~$300B+ in Western and other assistance, ~$280B in frozen Russian central-bank assets, ICC arrest warrants for Putin, and massive refugee resettlement (4M in Poland; 210K under CUAET to Canada). The continuity is that great-power dynamics constrain humanitarian action; the change is that civilian-protection has become more politically central when strategic interests align — Ukraine matters to European security in a way Rwanda did not.</div></div>
+
+</div>
+
+<details class="instructor-only">
+<summary>📖 Complete Answer Key</summary>
+<p><strong>Q1:</strong> A (Waltz's three levels). <strong>Q2:</strong> B (security dilemma). <strong>Q3:</strong> B (three branches of just war). <strong>Q4:</strong> B (Walzer 1977 foundational). <strong>Q5:</strong> B (IHL). <strong>Q6:</strong> B (ICC jurisdiction over individuals). <strong>Q7:</strong> A (R2P origin). <strong>Q8:</strong> C (Rwanda 800K-1M). <strong>Q9:</strong> B (Srebrenica 8,372). <strong>Q10:</strong> B (Pearson UNEF 1956). <strong>Q11:</strong> B (Afghanistan scale). <strong>Q12:</strong> Open-ended; sample at top.</p>
+</details>
+
+<footer>CPW4U — Canadian and World Politics, Grade 12 | Strand D: Conflict and War | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Power and Governance — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #7c3aed; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+.sol.instructor-only { display: block; background: #f5f3ff; border: 1px solid #ddd6fe; border-left: 4px solid var(--primary); padding: 12px 16px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+.sol.instructor-only::before { content: "📖 Instructor Answer Key"; display: block; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+details.instructor-only { margin-top: 24px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 16px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Power and Governance — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B — B1.1, B1.2, B1.3</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all reasoning. University-preparation course: marks rely on disciplinary terminology, specific examples, and clear reasoning.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each: (a) Max Weber's classical definition of the state; (b) the Peace of Westphalia (1648); (c) the Montevideo Convention (1933).</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q1-sl">(a) <strong>Weber</strong> — the state is "a human community that successfully claims the monopoly of the legitimate use of physical force within a given territory" (<em>Politics as a Vocation</em>, 1919). (b) <strong>Westphalia 1648</strong> — peace treaty ending the Thirty Years' War; founding moment of the modern territorial state system; principles of <em>cuius regio</em> and non-intervention. (c) <strong>Montevideo 1933</strong> — codified four legal criteria of statehood: defined territory, settled population, government, capacity to enter international relations.</div></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Hannah Arendt's three defining features of totalitarianism are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> A monarchy, a parliament, and a national flag</label></li>
+<li><label><input type="radio" name="q2"> A single ruling ideology, a single mass party fused with the state, and the use of terror to transform the population</label></li>
+<li><label><input type="radio" name="q2"> Free elections, an opposition, and a free press</label></li>
+<li><label><input type="radio" name="q2"> Central planning, secret police, and propaganda</label></li>
+</ul>
+<div class="sol instructor-only" id="q2-sl"><strong>B.</strong> Arendt's <em>Origins of Totalitarianism</em> (1951) — ideology, mass party, terror. Authoritarianism shares some features but tolerates depoliticised private life; totalitarianism does not.</div></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">In 2–3 sentences, distinguish between section 91 and section 92 of the <em>Constitution Act, 1867</em>. Give one example of a power in each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q3-sl">Section 91 enumerates federal legislative powers (trade and commerce, criminal law, banking, immigration, defence, POGG); section 92 enumerates provincial legislative powers (property and civil rights, municipalities, hospitals, administration of justice, education in s.93). Examples: federal — criminal law (s.91(27)) and POGG; provincial — property and civil rights (s.92(13)).</div></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) responsible government; (b) the Oakes test (1986); (c) section 33 of the <em>Charter</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q4-sl">(a) <strong>Responsible government</strong> — the doctrine that the executive (Cabinet) must hold the confidence of the elected lower house; if it loses a confidence vote it must resign or seek dissolution. (b) <strong>Oakes test</strong> — the two-stage section 1 framework: the law's objective must be pressing and substantial; the means must be proportional (rational connection, minimal impairment, proportionate effect). (c) <strong>Section 33</strong> — the "notwithstanding clause"; allows Parliament or a provincial legislature to declare a law operates notwithstanding sections 2 and 7–15 for renewable five-year terms.</div></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[4]</span>
+<div class="qtxt">Identify two SCC cases (with year) that have shaped Canadian Charter doctrine, and briefly state the constitutional principle each established.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q5-sl">Examples (any two): <em>R. v. Oakes</em> (1986) — section 1 limits framework; <em>R. v. Morgentaler</em> (1988) — section 7 reproductive autonomy; <em>Andrews v. LSBC</em> (1989) — substantive-equality test for section 15; <em>Vriend v. Alberta</em> (1998) — sexual orientation as analogous ground under section 15; <em>R. v. Sharpe</em> (2001) — section 2(b); <em>R. v. Latimer</em> (2001) — section 12; <em>Sauvé v. Canada</em> (2002) — prisoner voting; <em>Reference re Same-Sex Marriage</em> (2004); <em>Carter v. Canada</em> (2015) — section 7 physician-assisted dying; <em>R. v. Jordan</em> (2016) — section 11(b) trial-delay ceilings; <em>R. v. Sharma</em> (2022) — section 15 Indigenous offenders; <em>Reference re GGPPA</em> (2021) — POGG/carbon pricing. Marks: 2 per case (1 case, 1 principle).</div></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[6]</span>
+<div class="passage">"The Constitution of Canada is the supreme law of Canada, and any law that is inconsistent with the provisions of the Constitution is, to the extent of the inconsistency, of no force or effect." — Section 52(1), <em>Constitution Act, 1982</em></div>
+<div class="qtxt">Analyse the constitutional implications of section 52(1). Apply the concept of <em>stability and change</em>: how has the relationship between Parliament and the courts evolved since 1982, and what role does section 33 play in moderating that relationship? (6–7 sentences)</div>
+<textarea placeholder="Your analysis..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q6-sl">Section 52(1) makes the Constitution supreme law and authorises judicial review. Pre-1982, judicial review existed for federal-provincial division of powers (since <em>Hodge v. The Queen</em> 1883) but rights review was narrow. Post-1982, the SCC has become a major political actor — <em>Oakes</em> 1986, <em>Morgentaler</em> 1988, <em>Vriend</em> 1998, <em>Carter</em> 2015 each reshaped policy. Section 33 was the negotiated price of provincial agreement to 1982 — it preserves residual parliamentary sovereignty on sections 2 and 7–15 for renewable five-year periods. Stability: judicial review has remained the dominant mode of Charter enforcement; the "dialogue theory" (Hogg &amp; Bushell 1997) describes Court-Parliament iteration. Change: section 33 was rarely used 1982–2015 but has become more frequent (Quebec Bill 21 2019, Bill 96 2021, Ontario back-to-work 2021), suggesting a return to a more parliamentary-sovereignty model in some jurisdictions. Marks: 2 for section 52 analysis, 2 for stability-and-change application, 2 for section 33 explanation, 1 for examples.</div></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">Apply the concept of <em>political perspective</em>: in 5 sentences, evaluate Quebec's <em>Act respecting the laicity of the State</em> (Bill 21, 2019). Identify two distinct legitimate political perspectives on the law and the constitutional principles each prioritises.</div>
+<textarea placeholder="Your analysis..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q7-sl">Bill 21 prohibits certain public-sector employees in positions of authority from wearing religious symbols; it explicitly invokes section 33 to operate notwithstanding ss. 2 and 7–15. Two perspectives: (1) Quebec-nationalist / Westminster-traditional perspective — supports the law as a democratic expression of Quebec's distinct society and a legitimate use of legislative sovereignty under section 33; emphasises parliamentary supremacy. (2) Civil-liberties / equality perspective — argues the law violates section 15 (disproportionate impact on Muslim women) and section 2(a) (religious freedom); emphasises Charter rights and substantive equality. A third nuance: the prospective SCC reference (the <em>English Montreal School Board</em> appeal) will define the future scope of section 33. Marks: 1 description of law, 2 first perspective, 2 second perspective.</div></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply the concept of <em>objectives and results</em>: in 4 sentences, evaluate <em>Reference re Greenhouse Gas Pollution Pricing Act</em> (SCC 2021). What was the federal government's stated objective? What did the SCC conclude? What were the political/legal results?</div>
+<textarea placeholder="Your analysis..." style="min-height:130px;"></textarea>
+<div class="sol instructor-only" id="q8-sl">Objective: federal carbon-pricing backstop ($20/t in 2019 rising to $170/t in 2030) to ensure a minimum national carbon price. SCC conclusion (6–3, Wagner CJ majority): climate change is a "matter of national concern" under POGG because effects transcend provincial boundaries; federal jurisdiction therefore valid. Results: carbon pricing operated as backstop in non-pricing provinces 2019-25; consumer levy was dismantled in March 2025 by the new Liberal government; industrial pricing (OBPS) remains. The dissenting judges (Brown, Côté, Rowe) warned the decision threatens federalism's balance. Marks: 1 objective, 1 SCC conclusion, 1 result, 1 dissent/nuance.</div></div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[7]</span>
+<div class="qtxt">Write a coherent analytical paragraph (7–9 sentences) on the claim: <em>"The Westminster parliamentary system gives Canadian executives more concentrated power than presidential systems give to their executives."</em> Use specific Canadian and comparative examples; embed at least one historical or contemporary case.</div>
+<textarea placeholder="Your paragraph..." style="min-height:180px;"></textarea>
+<div class="sol instructor-only" id="q9-sl">Look for: (1) a clear thesis agreeing, disagreeing, or qualifying the claim; (2) Canadian example — the 2008 prorogation crisis, the use of omnibus budget bills, party discipline; (3) comparative example — US gridlock (Biden-Republican House 2023-24; Trump 2025 transition); (4) institutional analysis — Westminster fusion of executive/legislative vs. US separation of powers; (5) qualification — Westminster PM is dependent on caucus and confidence; US president has constitutional checks and term limits; the answer is not symmetrically "concentrated" but distributed differently; (6) analytical close — the comparison depends on which dimension of power (legislative-passing, war-making, judicial appointment, foreign policy). Marks: 1 thesis, 2 Canadian evidence, 2 comparative evidence, 1 qualification, 1 communication.</div></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[8]</span>
+<div class="qtxt">Write a structured 8–10 sentence response analysing the Canadian "dialogue theory" of judicial review (Hogg and Bushell, 1997). Use specific examples of dialogue from Canadian constitutional history; assess whether the theory accurately describes the Canadian model; identify one limitation.</div>
+<textarea placeholder="Your response..." style="min-height:200px;"></textarea>
+<div class="sol instructor-only" id="q10-sl">Strong responses: (1) define dialogue theory — the iterative Court-Parliament exchange; (2) give at least two examples — <em>Morgentaler</em> 1988 → Bill C-43 1989-91 → continued open framework; <em>Carter</em> 2015 → Bill C-14 2016 → <em>Truchon</em> 2019 → Bill C-7 2021 → 2027 MAID extension; <em>R. v. Jordan</em> 2016 → court-capacity investment; (3) assess accuracy — dialogue is real but uneven (Parliament cannot always respond; some areas have no legislative response); (4) limitation — the dialogue depends on parliamentary capacity and political will; section 33 represents a parliamentary override of dialogue, not a dialogue mechanism; (5) recognition that the US "judicial supremacy" model is the contrast. Marks: 2 definition, 3 examples, 1 assessment, 1 limitation, 1 communication.</div></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[6]</span>
+<div class="passage">In April 2024, Saskatchewan passed the <em>Parents' Bill of Rights</em> (Bill 137) requiring schools to obtain parental consent before changing pronouns or names used for students under 16, and pre-emptively invoking section 33 of the Charter. The Saskatchewan Court of King's Bench in February 2024 (UR Pride) had granted an injunction.</div>
+<div class="qtxt">Apply your understanding of section 33, the Charter, and judicial review. In 6–7 sentences, analyse: (a) the constitutional issue at stake; (b) the legitimacy of pre-emptive section 33 use; (c) one defensible argument for the law AND one defensible argument against. Take a position.</div>
+<textarea placeholder="Your answer..." style="min-height:180px;"></textarea>
+<div class="sol instructor-only" id="q11-sl"><em>Constitutional issue:</em> Bill 137 implicates section 15 (equality, with sexual orientation/gender identity as protected grounds) and section 7 (security of person); the pre-emptive section 33 invocation prevents the SCC from ruling on the Charter compliance directly. <em>Pre-emptive use:</em> the original 1982 negotiations contemplated section 33 as a response to a Court ruling, not as a pre-emptive policy tool; pre-emptive use is constitutionally permitted (section 33 doesn't require prior judicial ruling) but politically contested. <em>For:</em> elected legislatures should be able to set policy on contested social issues; parental consent reflects traditional family-authority values; section 33 is part of the constitutional bargain. <em>Against:</em> minor rights (especially of transgender youth) are typically protected against majoritarian preferences; pre-emptive section 33 use erodes Charter protection; the Saskatchewan court found a serious issue and granted injunction. Position: students should take a clear position and defend it with reference to constitutional principles. Marks: 2 constitutional issue, 1 pre-emptive analysis, 1 for argument, 1 against argument, 1 position/synthesis.</div></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Application:</strong> Apply the concept of <em>political significance</em>: in 5 sentences, evaluate the political significance of the 2014 SCC <em>Nadon Reference</em> (rejection of Justice Nadon's appointment to the Supreme Court). What constitutional principle did it establish? What does it imply about judicial independence?</div>
+<textarea placeholder="Your answer..." style="min-height:150px;"></textarea>
+<div class="sol instructor-only" id="q12-sl">In <em>Nadon Reference</em> (2014), the SCC rejected the Harper government's appointment of Federal Court Justice Marc Nadon to one of the three Quebec seats on the SCC, holding that section 6 of the <em>Supreme Court Act</em> required Quebec justices to be from the Quebec bar or current Quebec courts. Significance: (1) the SCC asserted its own institutional structure as an unwritten constitutional principle; (2) the decision limited prime-ministerial discretion in SCC appointments; (3) it required reformulation of the SCC appointment process (which Trudeau reformed in 2016); (4) it confirmed Quebec's distinctive role within the federation. The decision illustrates judicial independence as both individual (security of tenure) and institutional (the court's own structural integrity). Marks: 2 description, 2 significance analysis, 1 communication.</div></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Cross-strand application:</strong> Identify one issue you have read about in 2024 or 2025 (e.g., the post-Trudeau Liberal transition, the Poilievre Conservative platform, a Charter challenge, a federal-provincial dispute). In 4–5 sentences: (a) identify the issue; (b) name which Strand B expectation it engages (B1.1, B1.2, or B1.3); (c) apply one concept of political thinking; (d) state one informed personal judgment.</div>
+<textarea placeholder="Your application..." style="min-height:140px;"></textarea>
+<div class="sol instructor-only" id="q13-sl">Examples: (1) the 2024 Poilievre Conservative platform's section 33 statements engage B1.3 (Charter and judicial review); apply political-significance concept (would normalise routine section 33 use); judgment varies. (2) The March 2025 carbon-pricing reversal engages B1.2 (federalism, the GGPPA framework) and B1.3 (judicial review legacy); apply objectives-and-results concept; judgment depends on weight given to climate vs. affordability. (3) The Wet'suwet'en pipeline ongoing dispute engages B1.3 (Aboriginal title rights interaction with provincial regulatory authority); apply political-perspective concept; etc. Marks: 1 issue, 1 expectation, 1 concept application, 1 judgment.</div></div>
+
+<details class="instructor-only">
+<summary>📖 Complete Answer Key &amp; Marking Rubric</summary>
+<p>Per-question keys are embedded in the <code>.sol.instructor-only</code> divs above. Marking guidance: K/U questions reward accuracy and specificity of disciplinary terminology, court cases, and dates. Thinking questions reward analytical synthesis, application of concepts of political thinking, and consideration of multiple perspectives. Communication questions reward clear thesis, evidence integration, conventions, and disciplinary register. Application questions reward transfer to new contexts, informed judgment, and recognition of contested terrain.</p>
+<p><strong>Achievement chart guidance (Growing Success 2010):</strong></p>
+<ul>
+<li>Level 4 (80-100%): Communicates with a high degree of effectiveness; applies concepts with high effectiveness; identifies multiple perspectives.</li>
+<li>Level 3 (70-79%): Communicates effectively; applies concepts effectively; identifies primary perspectives.</li>
+<li>Level 2 (60-69%): Communicates with some effectiveness; applies concepts with some effectiveness; limited perspectives.</li>
+<li>Level 1 (50-59%): Communicates with limited effectiveness; limited application; minimal perspective recognition.</li>
+</ul>
+</details>
+
+<footer>CPW4U — Canadian and World Politics, Grade 12 | Strand B: Power, Governance, and Citizenship | Assessment OF Learning — Graded</footer>
+</div></body></html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GWL3O — Designing Your Future | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #16a34a; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #15803d; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body blockquote { margin: 10px 0; padding: 8px 16px; border-left: 4px solid #94a3b8; background: #f8fafc; font-style: italic; color: #475569; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #16a34a; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #15803d; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.video-card { background:#fff; border:1px solid #e2e8f0; border-radius:10px; margin: 12px 0 18px; overflow:hidden; }
+.video-header { cursor:pointer; padding: 12px 16px; display:flex; align-items:center; gap:10px; font-size:14px; color:#1e293b; user-select:none; }
+.video-header:hover { background:#f8fafc; }
+.video-icon { font-size:18px; }
+.video-title { flex:1; font-weight:600; }
+.video-toggle { font-size:18px; font-weight:700; color:#16a34a; }
+.video-player { display:none; padding: 0 16px 16px; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #16a34a; color: #fff; }
+.chnav-next:hover { background: #15803d; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../gwl3o.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (GWL3O Designing Your Future)</a></div>
+    <div class="strand-tag">Guidance &amp; Career Education — Grade 11 Open</div>
+    <h1>🧭 GWL3O: Chapter 1 — Self-Knowledge &amp; Personal Management</h1>
+    <p>Self-awareness, learning styles, multiple intelligences, values &amp; interests, time &amp; stress management, resilience, growth mindset, Holland codes</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit1">
+    <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+        <h2>Chapter 1: Self-Knowledge &amp; Personal Management</h2>
+        <p>Self-awareness, learning styles, multiple intelligences, values &amp; interests, time &amp; stress management, resilience, growth mindset, Holland codes</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Personal Management</span>
+            <span>📹 6 lessons</span>
+        </div>
+    </div>
+
+    <div class="resource-group">
+    <div class="resource-group-label">📹 Video Lessons</div>
+
+    <div class="subsection-label">🔍 1.1 Self-Awareness — The Foundation of Career Design</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Self-awareness is the practice of paying disciplined attention to who you are: what you genuinely care about, what energises you, what drains you, what you can already do, and what you would like to become. The Ontario curriculum opens Strand A (Personal Management) with this work because every later decision in the course — choosing courses, drafting a résumé, choosing a postsecondary destination, managing a transition — depends on it. Decisions that bypass self-awareness tend to feel borrowed: students choose what looks good to parents, friends, or social media, and only later realise the choice did not fit. Self-awareness is the first defence against borrowed lives.</p>
+        <p>The psychologist Tasha Eurich distinguishes two kinds of self-awareness. <strong>Internal self-awareness</strong> is how clearly you see your own values, passions, aspirations, reactions, and impact. <strong>External self-awareness</strong> is how clearly you understand how other people see you. Her research finds that most people overestimate both. The implication is humbling and useful: self-awareness is not what you currently have; it is a practice you sharpen through repeated cycles of reflection, action, and feedback. The Ministry frames this as career and life planning being a continuous process, with the four questions of <em>Creating Pathways to Success</em>: Who am I? What are my opportunities? Who do I want to become? What is my plan?</p>
+        <p>Practically, Grade 11 self-awareness is built from three habits. <strong>Journalling</strong> — even briefly, two or three times a week — captures what you noticed about yourself this week: what bored you, what surprised you, what moments you replayed. <strong>Feedback-seeking</strong> means asking two or three trusted people (a teacher, a coach, an older friend) one specific question — "what strength have you seen in me lately?" or "where am I underestimating myself?" External observers see patterns you cannot. <strong>Low-stakes testing</strong> is exposing yourself to small experiences (a club, a volunteer placement, a course you would not normally pick) and watching how you respond. The Ontario Skills Passport (OSP) is a vocabulary you can use to describe what you find — its nine essential skills and three work habits give a common language for school and the workplace.</p>
+        <p>A frequent Grade 11 worry: "Won't naming who I am limit me?" The answer is yes — only if you hold the result as fixed. A reflective practitioner treats self-knowledge as a working hypothesis to revise. A student who concluded at fourteen that "I'm not a science person" might discover at sixteen — through a different teacher, a documentary, a summer job — that she is in fact deeply curious about how the human body works. The data point is real; the verdict was not. The discipline is to update.</p>
+        <ul>
+          <li><strong>Self-awareness</strong> — disciplined attention to your interests, values, skills, reactions, and impact on others.</li>
+          <li><strong>Internal self-awareness</strong> — clarity about your own values, passions, aspirations, and reactions.</li>
+          <li><strong>External self-awareness</strong> — understanding of how others perceive you (Eurich).</li>
+          <li><strong>Creating Pathways to Success</strong> — Ontario's K-12 framework for career and life planning, organised around four questions.</li>
+          <li><strong>Individual Pathways Plan (IPP)</strong> — Ontario portfolio that records self-assessment results, goals, and reflections from Grade 7 to graduation.</li>
+          <li><strong>Reflective practice</strong> — habit of pausing after experience to extract lessons.</li>
+          <li><strong>Ontario Skills Passport (OSP)</strong> — Ministry vocabulary of 9 essential skills + 3 work habits.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — One Page of Self-Awareness Evidence</p>
+          <p>Aaliyah, in the first week of GWL3O, opens her IPP and writes a one-page synthesis. She lists: <em>Activities I lose track of time doing</em> — debating, organising her family's weekly meal plan, coding small interactive stories. <em>Activities I dread</em> — long unstructured group work, individual oral presentations without prep. <em>External feedback (three people)</em> — drama teacher: "you're a careful planner under pressure"; sister: "you over-prepare and then perform calmly"; soccer coach: "you read situations well." <em>Surprises this term</em> — she enjoyed a placement at a community legal-aid clinic far more than expected. <em>Working hypothesis</em> — careers that combine planning, communication, and helping people navigate systems (law, policy, healthcare administration, social work). The page is one page; it is also a real artefact that will steer choices for the next eighteen months.</p>
+        </div>
+        <ul>
+          <li>Confusing self-awareness with self-criticism — the goal is accurate description, not judgment.</li>
+          <li>Skipping external feedback because it's uncomfortable to ask.</li>
+          <li>Writing entries so vague ("I like people") that they can't guide later decisions.</li>
+          <li>Treating one journal entry's mood as a fixed verdict on identity.</li>
+          <li>Forgetting to revisit self-awareness work — it should be updated, not archived.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — A1.1: "use a variety of self-assessment tools and reflective processes to identify their interests, values, skills, learning preferences, and personal characteristics relevant to designing their future."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt1')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Tasha Eurich — Increase Your Self-Awareness With One Simple Fix]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt1">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Tasha Eurich self-awareness TEDx What instead of Why" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Tasha Eurich self-awareness TEDx What instead of Why</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">🧠 1.2 Learning Styles &amp; Multiple Intelligences</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>How you learn shapes what you can become. Two students with identical interests and equal raw ability can have very different careers because one studies in ways that play to her preferences and the other studies in ways that exhaust him. Grade 11 is the year to take learning preferences seriously, because the workload is heavier than Grade 10 and college / university courses are heavier still. Better study habits started in Grade 11 compound for years.</p>
+        <p>The <strong>VARK</strong> framework distinguishes four input preferences: <strong>Visual</strong> learners take in information best through diagrams, charts, maps, and colour; <strong>Auditory</strong> learners through listening and talking through material; <strong>Read/Write</strong> learners through written words; <strong>Kinesthetic</strong> learners through doing, moving, and physical example. Most people are mixed but lean toward one or two. VARK is helpful for choosing study strategies — a kinesthetic learner who tries to study by reading silently is wasting effort that could go into building things or pacing while reciting.</p>
+        <p>The honest scientific caveat: recent research finds that <em>matching teaching</em> to a single learning style does not reliably boost grades. What does reliably boost grades, across decades of research, is <strong>active studying</strong>: self-testing (closing the book and writing what you remember), spaced practice (studying in shorter sessions over several days rather than in one long cram), and elaboration (explaining a concept to yourself in your own words, or to a friend out loud). The honest takeaway: use VARK to choose <em>how</em> you study (a visual learner can build mind-maps; a read-write learner can summarise in their own words), but make sure the activity is active rather than passive.</p>
+        <p>Howard Gardner's <strong>Multiple Intelligences</strong> framework is a wider lens. Gardner argued that intelligence is not one thing measured by an IQ test but at least eight related capacities: linguistic, logical-mathematical, spatial, bodily-kinesthetic, musical, interpersonal, intrapersonal, and naturalistic. The framework matters for Career Studies because it gives students who have been told they "aren't smart" a way to see their actual strengths. A student strong in bodily-kinesthetic and interpersonal intelligence may thrive as a paramedic, athletic therapist, or trades apprentice; a student strong in naturalistic and intrapersonal intelligence may thrive as a wildlife biologist or veterinary technician. Reading your MI profile correctly opens doors that an IQ-only frame would close.</p>
+        <ul>
+          <li><strong>VARK</strong> — Visual, Auditory, Read/Write, Kinesthetic learning preferences.</li>
+          <li><strong>Multiple Intelligences (Gardner)</strong> — eight intelligences: linguistic, logical-mathematical, spatial, bodily-kinesthetic, musical, interpersonal, intrapersonal, naturalistic.</li>
+          <li><strong>Active studying</strong> — self-testing, spaced practice, elaboration (outperforms passive re-reading).</li>
+          <li><strong>Spaced practice</strong> — distributing study sessions over several days rather than massing them together.</li>
+          <li><strong>Self-testing / retrieval practice</strong> — closing your notes and trying to recall from memory.</li>
+          <li><strong>Elaboration</strong> — explaining a concept in your own words or connecting it to prior knowledge.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Designing a Week of Study from Learning Preferences</p>
+          <p>Kavi knows he is strongly kinesthetic and moderately visual, weakly read-write, and rarely auditory. He has a chemistry test in eight days. <em>Old strategy:</em> read the textbook chapter twice the night before. <em>New strategy:</em> Day 1 — make a colour-coded one-page summary diagram of the chapter (visual + kinesthetic act of building it). Day 3 — close notes and recite the reaction types out loud while pacing the hallway (kinesthetic). Day 5 — do five problems from the textbook with no help, then check answers (active testing). Day 7 — explain three trickiest concepts to his younger sister at the dinner table (elaboration). Day 8 — final 30-minute review of the diagram. Kavi has studied less hours, more often, more actively, in ways that fit his preferences. His expected outcome: higher score, less cramming stress.</p>
+        </div>
+        <ul>
+          <li>Treating VARK or MI results as fixed identity rather than tendency.</li>
+          <li>Believing that matching teaching to learning style alone will boost grades — active studying matters more.</li>
+          <li>Studying passively (re-reading, highlighting) because it feels productive — it isn't.</li>
+          <li>Confusing "I'm not a logical-mathematical person" with "I can't learn math" — MI is about strengths, not ceilings.</li>
+          <li>Forgetting that all eight intelligences are valuable; no one is "smarter" than another.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — A1.3: "identify their learning preferences and intelligences using established frameworks (e.g., VARK, Gardner's Multiple Intelligences) and explain how these preferences influence their approach to learning and to work."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt2')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED-Ed: Howard Gardner — Multiple Intelligences Theory]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt2">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Howard Gardner Multiple Intelligences TED-Ed" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Howard Gardner Multiple Intelligences TED-Ed</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">💎 1.3 Values, Interests &amp; Holland Codes</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Interests and values are the twin compasses of career design. <strong>Interests</strong> are the activities and topics that draw you in — the moments when time disappears. <strong>Values</strong> are the qualities you treat as important — what matters most about how you live and work. The two compasses point at different things and you need both. Interests change with mood and exposure; values are more durable. A job that matches interests but violates values produces what counsellors call <em>value conflict</em> — a slow, draining mismatch that no amount of competence can fix.</p>
+        <p>The American psychologist John Holland proposed that people and work environments fall into six broad types and that satisfaction follows when a person's type matches the workplace. The six types form the acronym <strong>RIASEC</strong>. <strong>Realistic</strong> (Doers) prefer hands-on, mechanical, outdoor, or practical work — electricians, paramedics, farmers, athletes. <strong>Investigative</strong> (Thinkers) prefer analysing, researching, problem-solving — biologists, software developers, statisticians, medical researchers. <strong>Artistic</strong> (Creators) prefer self-expression, design, and aesthetic work — graphic designers, musicians, writers, architects. <strong>Social</strong> (Helpers) prefer teaching, counselling, helping, training — nurses, teachers, social workers, coaches. <strong>Enterprising</strong> (Persuaders) prefer leading, selling, and influencing — sales managers, entrepreneurs, lawyers, marketers. <strong>Conventional</strong> (Organisers) prefer structured, detail-oriented, data work — accountants, administrators, logistics analysts. Most people are not one type but a combination of two or three; RIASEC produces a three-letter code (e.g., SIA — Social/Investigative/Artistic). The top two letters matter most.</p>
+        <p>Work values are usefully grouped into three families. <strong>Intrinsic values</strong> are about the work itself — challenge, learning, creativity, helping, autonomy, meaning. <strong>Extrinsic values</strong> are about the rewards — salary, status, security, benefits, recognition. <strong>Lifestyle values</strong> are about how the work fits the rest of your life — location, hours, travel, flexibility, family time. There is no right mix. A student who ranks security and benefits highly is not less idealistic than one who ranks meaning highest; they are differently calibrated.</p>
+        <p>A useful Grade 11 technique is the <strong>values card sort</strong>: write 20–30 values on cards, force yourself to keep your top five, and rank them. Doing this once tells you something; doing it twice (start and end of the course) often surprises students by what stays stable and what has shifted. Stable values become foundations to build a career around. Shifting values are clues either that you have grown, or that an earlier value was inherited rather than tested. Both are useful information. Interests and values together let you generate hypotheses; the rest of the course is about testing them.</p>
+        <ul>
+          <li><strong>Interests</strong> — activities and topics that genuinely draw you in.</li>
+          <li><strong>Values</strong> — qualities you treat as importantly worth pursuing.</li>
+          <li><strong>Holland's RIASEC</strong> — six interest types: Realistic, Investigative, Artistic, Social, Enterprising, Conventional.</li>
+          <li><strong>Holland code</strong> — three-letter summary of a person's top three interest types.</li>
+          <li><strong>Intrinsic / extrinsic / lifestyle values</strong> — the three families of work values.</li>
+          <li><strong>Value conflict</strong> — when a job's daily demands violate deep personal values.</li>
+          <li><strong>Values card sort</strong> — forced-choice technique for surfacing top values.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Reading a SIE Code Against a Values List</p>
+          <p>Diego completes RIASEC and gets the top three code <strong>SIE</strong> (Social–Investigative–Enterprising). His values card sort returns top five: helping others, learning, autonomy, balance, integrity. What kind of work fits? S+I points toward people-helping work that involves analysis: nurse practitioner, school psychologist, occupational therapist, physiotherapist. The E means he is comfortable leading — clinic owner, program director, head therapist. The values rule out high-pressure, ethically-questionable roles (e.g., a pharmaceutical-sales position that pays well but feels manipulative) and rule in roles with controlled hours (so balance is protected). One concrete hypothesis: physiotherapist in private practice — S (rehab), I (assessment / treatment planning), E (running her own clinic), helping/learning/autonomy/balance/integrity all served. Next step is to job-shadow a physio or volunteer at a rehab clinic to test the hypothesis.</p>
+        </div>
+        <ul>
+          <li>Treating one RIASEC code as the final answer — it is a starting hypothesis.</li>
+          <li>Adopting parents' values without testing them — they may or may not still fit you.</li>
+          <li>Treating "I want money" as a final answer; ask what the money is for (security? freedom? status?).</li>
+          <li>Ignoring lifestyle values — many career regrets are about how a job ate the rest of life.</li>
+          <li>Picking only the top RIASEC letter and ignoring the second and third (the combination matters).</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — A1.2: "analyse the results of self-assessment activities (e.g., interest inventories, values exercises, RIASEC inventories) to identify factors relevant to designing their future."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt3')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[Crash Course / Career-counselling: Holland Codes Explained (RIASEC)]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt3">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Holland Codes RIASEC explained career interests" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Holland Codes RIASEC explained career interests</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">⏰ 1.4 Time Management &amp; Organisation</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Time management is the discipline of choosing where your attention goes. Most students think of it as scheduling — when to study, when to rest — but the deeper move is choosing what <em>not</em> to do. Grade 11 typically brings more demanding courses, college / university research, possibly a part-time job, possibly volunteer hours toward the OSSD's 40-hour requirement, plus the same number of hours in the day. Without a system, the loudest demands win and the most important ones (deep practice, sleep, relationships) get squeezed.</p>
+        <p>Stephen Covey's <strong>Time Management Matrix</strong> sorts every task into four quadrants by Urgency and Importance. <strong>Q1 — Urgent + Important</strong>: deadlines today, crises (essay due tomorrow morning). <strong>Q2 — Not Urgent + Important</strong>: planning, deep practice, exercise, relationships, long-term project work. <strong>Q3 — Urgent + Not Important</strong>: most notifications, interruptions, others' loud requests. <strong>Q4 — Not Urgent + Not Important</strong>: scrolling, low-value entertainment. The single most useful insight is that <em>life quality is determined by how much time you spend in Q2</em>. Students stuck in Q1 (crisis mode, always behind) generally got there by under-investing in Q2 (planning, steady practice). The simple weekly habit: book your Q2 blocks into your calendar first, before Q1 and Q3 swallow the week.</p>
+        <p>The <strong>Eisenhower Matrix</strong> is a related four-quadrant tool but its decision rule is sharper: Do (Q1), Decide-when (Q2), Delegate (Q3), Delete (Q4). The Delete move is the hardest. Many "obligations" are actually optional once examined. A Grade 11 student who quits one low-fit club to free up an hour for steady chemistry practice has not lost commitment; she has redirected it.</p>
+        <p>For day-to-day work, two micro-techniques compound. The <strong>Pomodoro</strong> technique works in 25-minute focused blocks with 5-minute breaks; after four blocks, take a longer break. It trains attention and is gentler than the heroic "I'll study for six hours straight" plan that almost never survives contact with phone notifications. <strong>Two-minute rule</strong> (David Allen): if a task takes less than two minutes, do it immediately rather than logging it; otherwise capture it in a single trusted system (one notebook, one calendar). The cost of forgetting is much higher than the cost of writing it down. Together, these techniques are about respecting how attention actually works: in short bursts, with regular recovery, with externalised memory.</p>
+        <ul>
+          <li><strong>Time management</strong> — the discipline of choosing where attention goes.</li>
+          <li><strong>Covey Matrix</strong> — four quadrants by Urgency × Importance (Q2 is the highest-leverage quadrant).</li>
+          <li><strong>Eisenhower Matrix</strong> — Do / Decide / Delegate / Delete.</li>
+          <li><strong>Pomodoro technique</strong> — 25 minutes of focused work, 5-minute break, repeat.</li>
+          <li><strong>Two-minute rule</strong> — if a task takes &lt; 2 minutes, do it now; otherwise capture it.</li>
+          <li><strong>Capture system</strong> — a single trusted place to record commitments (calendar + notebook / app).</li>
+          <li><strong>Time-blocking</strong> — booking specific tasks into specific calendar slots.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — A Q2 Weekly Plan for a Grade-11 Student</p>
+          <p>Maya looks at her week and notices she has spent twelve hours scrolling and three hours of focused study (Q4 ate Q2). She rebuilds the week. Sunday evening, she blocks these Q2 commitments: chemistry deep-practice — Tue/Thu 4:00–5:00 pm; English essay drafting — Wed 7:00–8:30 pm; exercise — Mon/Wed/Fri 30 minutes; family dinner — Thu evening; sleep window — 10:30 pm to 6:30 am. Phone goes to "Focus" mode during study blocks. She schedules Q1 deadlines (math test on Friday) <em>after</em> her Q2 anchors are placed. Q3 (group chat noise) is checked at 12:00 pm and 5:00 pm, not continuously. Result: the same 168 hours produce dramatically more progress, less stress, and more sleep. She has not added time; she has redirected it.</p>
+        </div>
+        <ul>
+          <li>Confusing being busy with being productive — many busy weeks are full of Q3 noise.</li>
+          <li>Trying to study for 4+ hours straight without breaks — attention degrades.</li>
+          <li>Keeping commitments in your head instead of in a capture system — your brain is for thinking, not remembering.</li>
+          <li>Treating sleep as the variable that flexes when work expands — it should be one of the first Q2 anchors.</li>
+          <li>Failing to schedule Q2 work — without a calendar slot, deep work gets crowded out by Q1 + Q3.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — A2.1: "demonstrate the use of personal-management strategies (e.g., time-blocking, prioritisation, organisation) to balance the demands of school, work, family, and community responsibilities."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt4')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Tim Urban — Inside the Mind of a Master Procrastinator]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt4">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Tim Urban procrastinator TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Tim Urban procrastinator TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">🌊 1.5 Stress, Wellness &amp; Resilience</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Stress is the body's response to demand. It is not in itself a problem — short bursts of stress (a test, a job interview, a soccer game) sharpen focus and energise performance. The trouble starts when stress becomes chronic: constant low-grade pressure with no recovery. Chronic stress degrades sleep, learning, mood, and immune function. By Grade 11, many students discover that the stress strategies that worked in Grade 9 (caffeine, all-nighters, "powering through") no longer scale. The honest task is to build a wellness system before you need it.</p>
+        <p>Health Canada and the Ontario Ministry of Education describe wellness as multi-dimensional. <strong>Physical wellness</strong> covers sleep, movement, nutrition, hydration. <strong>Mental wellness</strong> covers thoughts, emotional regulation, professional support when needed. <strong>Social wellness</strong> covers relationships, connection, belonging. <strong>Spiritual wellness</strong> (for those who use the term) covers meaning and purpose. Strong evidence suggests sleep is the single largest lever: teenagers need 8–10 hours; chronic shortfall affects memory consolidation, mood, and reaction time. Movement (any aerobic activity 3+ times a week) improves mood and cognitive function comparable to many anti-anxiety medications. Connection — knowing at least one trusted adult and a handful of supportive peers — buffers against most other stresses.</p>
+        <p>The transactional model of stress (Lazarus &amp; Folkman) clarifies why two students under the same workload report wildly different stress levels. Stress depends not just on the <em>demand</em> but on the <em>appraisal</em> — how threatening you judge the demand to be — and the <em>resources</em> — what you have to meet it with. The same calculus test is moderate stress to a student who feels prepared and has supportive parents and devastating stress to a student who feels unprepared and is dealing with family upheaval. The model is humbling because it asks for compassion (peers' stress levels are not arbitrary), and useful because it suggests two intervention paths: change the appraisal (cognitive reframing — "this test is information, not a verdict") or build resources (study earlier, ask for help, get more sleep, find a tutor).</p>
+        <p><strong>Resilience</strong> is the capacity to recover from setbacks and adapt under stress. It is not innate; it is built through practice. Concrete habits: name the emotion ("I'm anxious" rather than "I'm fine"), distinguish facts from feelings, ask "what would I tell a friend in this spot?", break overwhelming problems into one-week chunks, and protect sleep and movement as non-negotiables. The Ministry's Mental Health Strategy points to school counsellors, Kids Help Phone (1-800-668-6868), and community mental-health services as resources every student should know exist. Asking for help when you need it is a Strand-A skill: it is not weakness; it is competence applied to your own life.</p>
+        <ul>
+          <li><strong>Stress</strong> — body's response to demand; useful in short bursts, harmful when chronic.</li>
+          <li><strong>Chronic stress</strong> — constant low-grade pressure with insufficient recovery.</li>
+          <li><strong>Transactional model (Lazarus &amp; Folkman)</strong> — stress = demand × appraisal × resources.</li>
+          <li><strong>Cognitive reframing</strong> — changing the interpretation of a situation to reduce threat.</li>
+          <li><strong>Wellness dimensions</strong> — physical, mental, social, (sometimes) spiritual.</li>
+          <li><strong>Resilience</strong> — capacity to recover from setbacks and adapt under stress.</li>
+          <li><strong>Kids Help Phone</strong> — 1-800-668-6868; free, confidential, 24/7 youth support.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Reading a Stress Reaction Through the Transactional Model</p>
+          <p>Two Grade 11 students, Riya and Adam, are both writing the same calculus test on Friday. Riya feels manageable nervousness. Adam feels paralysing dread. Same demand — why different stress? Apply the model. <em>Appraisal:</em> Riya sees the test as "data on what I've mastered"; Adam sees it as "evidence I'm not smart enough for university." <em>Resources:</em> Riya has studied each evening, knows her teacher will give partial credit, has a study partner; Adam has been avoiding the unit, hasn't asked the teacher about confusing material, is sleeping five hours. Intervention paths: Adam can change appraisal ("this is information, not identity") and build resources (book a help session, ask his teacher specifically what Section 4.3 expects, restore sleep). Neither moves the test, but both move the stress. The model also helps Adam ask for help without shame — his stress is high not because he is "weak" but because his resources are temporarily depleted.</p>
+        </div>
+        <ul>
+          <li>Treating stress as a character flaw rather than a system signal.</li>
+          <li>Confusing "powering through" with resilience — resilience includes restoring resources, not just enduring.</li>
+          <li>Sacrificing sleep first when demand goes up — sleep is the most expensive thing to skimp on.</li>
+          <li>Believing that asking for help is weakness — Strand-A explicitly names help-seeking as a competence.</li>
+          <li>Numbing rather than processing — TikTok-binge after a bad test soothes momentarily, doesn't change the situation.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — A2.4: "apply strategies for managing stress and maintaining personal wellness (e.g., sleep, movement, cognitive reframing, help-seeking, professional support), drawing on Ministry-endorsed mental-health resources."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt5')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Kelly McGonigal — How to Make Stress Your Friend]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt5">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Kelly McGonigal stress TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Kelly McGonigal stress TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">🌱 1.6 Growth Mindset &amp; Character</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Character is the bundle of habits — moral, social, intellectual — that you practise often enough that they become who you are. The Ontario curriculum treats character as malleable, not fixed: students are expected to identify habits associated with success and to demonstrate the ones they want to develop. Ontario's <em>Learning Skills and Work Habits</em> report card names six: <strong>responsibility, organisation, independent work, collaboration, initiative, self-regulation</strong>. The list is not arbitrary — it is the same list employers and university registrars cite when they explain why some first-year students thrive while others struggle.</p>
+        <p>The psychologist Carol Dweck distinguishes a <strong>fixed mindset</strong> (the belief that ability is innate and cannot be much changed) from a <strong>growth mindset</strong> (the belief that ability is developed through effort, strategy, and feedback). Decades of research find that students with growth mindsets persist longer through difficulty, recover better from setbacks, and end up higher-achieving over time. The shift is from "I'm not a math person" to "I haven't mastered this kind of problem <em>yet</em>." The small word "yet" reframes ability from verdict to in-progress and is, in itself, one of the highest-leverage habits a Grade 11 student can practise.</p>
+        <p>Angela Duckworth's research on <strong>grit</strong> — sustained passion and perseverance for long-term goals — extends Dweck's work. Grit is less about working harder in the moment and more about staying engaged with a chosen direction across years. Crucially, grit includes the willingness to revise tactics while keeping the larger goal. A student who quits a poor-fit science course and switches to a fitting biology pathway is not less gritty than one who white-knuckles through; she has used evidence to redirect. The growth-mindset move is to ask, "what evidence would change my mind about this direction?" — and then watch for it.</p>
+        <p>Day to day, character shows up in small habits: arriving on time, doing what you said you would do, asking for help when stuck, telling the truth in difficult situations, being kind to the new person. None of these are heroic; all of them compound. Employers who supervise Grade 11 co-op students consistently report that the difference between a strong and a weak placement is rarely talent — it is whether the student showed up reliably, took initiative on small problems, and asked thoughtful questions. The Learning Skills are essentially school-based scaffolds for professional habits, which is why Career Studies returns to them so often. Strong character is not built in a moment of inspiration; it is built across thousands of small choices, most of them unwitnessed.</p>
+        <ul>
+          <li><strong>Character</strong> — bundle of habits that defines how a person consistently acts.</li>
+          <li><strong>Fixed mindset</strong> — belief that ability is innate and largely unchangeable.</li>
+          <li><strong>Growth mindset</strong> — belief that ability is developed through effort, strategy, and feedback (Dweck).</li>
+          <li><strong>Grit</strong> — sustained passion and perseverance toward long-term goals (Duckworth).</li>
+          <li><strong>Learning Skills (Ontario)</strong> — responsibility, organisation, independent work, collaboration, initiative, self-regulation.</li>
+          <li><strong>Resilience</strong> — capacity to recover from setbacks and adapt under stress.</li>
+          <li><strong>Integrity</strong> — consistency between values, words, and actions, especially when no one is watching.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Fixed-Mindset vs. Growth-Mindset Self-Talk After a Setback</p>
+          <p>Sienna's first Grade 11 chemistry test comes back with 54%, down from her Grade 10 average. Two responses:</p>
+          <p><em>Fixed-mindset self-talk:</em> "I'm just not a science person. Grade 11 chem is too hard. I shouldn't take any science next semester." <strong>Consequence:</strong> the mark becomes a verdict; effort drops; next test confirms the verdict.</p>
+          <p><em>Growth-mindset self-talk:</em> "I haven't mastered moles and stoichiometry <em>yet</em>. What did I get wrong on this test specifically? Was it the concept (I confused mole ratios) or the conditions (rushed the last page, missed a unit conversion)? What study strategy will I try differently?" <strong>Consequence:</strong> the mark becomes diagnostic information. Sienna books a 15-minute help session with her teacher, redoes the wrong questions, joins a small study group, and starts spaced practice across the week. The next test gives a meaningful comparison. Notice that growth mindset is not "everything will work out if I think positively" — it is a specific, evidence-collecting response to a setback.</p>
+        </div>
+        <ul>
+          <li>Confusing growth mindset with toxic positivity ("everything will work out!") — it is a method, not a slogan.</li>
+          <li>Using "grit" to justify staying in a poor-fit path long after evidence says to revise.</li>
+          <li>Praising students (or yourself) for "being smart" rather than for effort and strategy — entrenches fixed mindset.</li>
+          <li>Treating Learning Skills as separate from career skills — they are the same skills under different names.</li>
+          <li>Forgetting that character is built by small, consistent choices, not single dramatic moments.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand A — A2.2: "describe character traits, learning skills, and work habits associated with success in school, work, and the community (e.g., responsibility, organisation, initiative, self-regulation, growth mindset, resilience)."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt6')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Carol Dweck — The Power of Believing You Can Improve]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt6">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Carol Dweck growth mindset TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Carol Dweck growth mindset TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt7')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Angela Duckworth — Grit: The Power of Passion and Perseverance]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt7">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Angela Duckworth grit TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Angela Duckworth grit TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 1 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/gwl3o/Chapter1_Self_Knowledge_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/gwl3o/Chapter1_Self_Knowledge_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/gwl3o/Chapter1_Self_Knowledge_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="../gwl3o.html" class="chnav-btn chnav-back">← Back to course</a>
+  <a href="ch2.html" class="chnav-btn chnav-next">Chapter 2 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · GWL3O — Designing Your Future, Grade 11 Open · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);if(!p)return;if(!p.style.display||p.style.display==='none'){p.style.display='block';}else{p.style.display='none';const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

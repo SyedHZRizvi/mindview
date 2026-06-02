@@ -147,6 +147,8 @@ const COURSE_DISPLAY_NAMES = {
   ics3u: 'ICS3U — Introduction to Computer Science (Grade 11)',
   ics4u: 'ICS4U — Computer Science (Grade 12)',
   chv2o: 'CHV2O — Civics and Citizenship (Grade 10)',
+  cpc3o: 'CPC3O — Politics in Action: Making Change (Grade 11)',
+  cpw4u: 'CPW4U — Canadian and World Politics (Grade 12)',
   chc2d: 'CHC2D — Canadian History since World War I (Grade 10)',
   chw3m: 'CHW3M — World History to the Sixteenth Century (Grade 11)',
   chy4u: 'CHY4U — World History since the Fifteenth Century (Grade 12)',
@@ -162,6 +164,10 @@ const COURSE_DISPLAY_NAMES = {
   hfa4m: 'HFA4M — Nutrition and Health Issues (Grade 12)',
   hsc4m: 'HSC4M — World Cultures (Grade 12)',
   glc2o: 'GLC2O — Career Studies (Grade 10)',
+  gwl3o: 'GWL3O — Designing Your Future (Grade 11)',
+  gpp3o: 'GPP3O — Leadership and Peer Support (Grade 11)',
+  gle3o: 'GLE3O — Advanced Learning Strategies (Grade 11)',
+  gle4o: 'GLE4O — Advanced Learning Strategies: After Secondary School (Grade 12)',
 };
 
 function escapeHtml(s) {

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Peer Support and Mentoring — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Peer Support and Mentoring — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand D</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of peer-support forms, the helping conversation, confidentiality, Ontario mandatory reporting, referral pathways, mentoring, and boundaries.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 4.1–4.2 — Peer Support Forms and the Helping Conversation</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">A peer-helper's primary role is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> A trained therapist for peers</label></li>
+<li><label><input type="radio" name="q1" value="b"> A bridge — listening, recognising, supporting, and connecting peers to professional help when needed</label></li>
+<li><label><input type="radio" name="q1" value="c"> A friend who promises total confidentiality</label></li>
+<li><label><input type="radio" name="q1" value="d"> A teacher's assistant who reports everything</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Peer-helpers are bridges, not destinations. The role is to listen, support, recognise when a situation is beyond peer-helper scope, and connect to professionals. Trying to be a peer-therapist exceeds scope and is unsafe.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The five-step helping conversation framework is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Greet – diagnose – prescribe – discharge – bill</label></li>
+<li><label><input type="radio" name="q2" value="b"> Engage – Listen – Clarify – Options – Next Steps</label></li>
+<li><label><input type="radio" name="q2" value="c"> Ask – Tell – Solve – Forget – Move on</label></li>
+<li><label><input type="radio" name="q2" value="d"> Smile – Nod – Agree – Hug – Leave</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Engage (set the time/place/frame), Listen (active listening), Clarify (summarise and check), Options (offer pathways, not advice), Next Steps (specific small commitment + follow-up). Real conversations loop through Listen-Clarify multiple times.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">Peer: "I don't know, everything's just falling apart." You: "Have you tried making a list and prioritising?"</div>
+<div class="qtxt">The peer-helper's response is problematic because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> The advice is wrong</label></li>
+<li><label><input type="radio" name="q3" value="b"> It skips Listen and jumps to advice; the peer hasn't been heard yet, and the conversation will close</label></li>
+<li><label><input type="radio" name="q3" value="c"> The peer-helper smiled too much</label></li>
+<li><label><input type="radio" name="q3" value="d"> Lists never help anyone</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Skipping Listen — jumping to advice in the first two minutes — closes the conversation. The peer has not yet said the actual hard thing; advice arrives at the wrong layer. Better: reflect the feeling, ask an open question, tolerate silence.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 4.3–4.4 — Confidentiality and Referral</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">A peer-helper's standard opening on confidentiality should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Promise total confidentiality regardless of severity</label></li>
+<li><label><input type="radio" name="q4" value="b"> State the three exceptions upfront: harm to self, harm to others, child abuse of someone under 16</label></li>
+<li><label><input type="radio" name="q4" value="c"> Avoid mentioning confidentiality at all</label></li>
+<li><label><input type="radio" name="q4" value="d"> Say "I might tell people, just so you know"</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Stating exceptions upfront protects both parties — the peer knows what will trigger help; the peer-helper isn't betraying anyone by responding to those triggers. Ontario's CYFSA section 125 imposes legal duty to report reasonable suspicion of child abuse.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Under Ontario's Child, Youth and Family Services Act (2017), the duty to report reasonable suspicion of child abuse:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Applies only to teachers, social workers, and police</label></li>
+<li><label><input type="radio" name="q5" value="b"> Applies to every person, including youth peer-helpers, and is direct and personal — you cannot fully delegate by telling a teacher</label></li>
+<li><label><input type="radio" name="q5" value="c"> Applies only to abuse you have witnessed personally</label></li>
+<li><label><input type="radio" name="q5" value="d"> Applies only when the child is in danger right now</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> CYFSA section 125 imposes a duty on every person with reasonable grounds to suspect abuse of a child under 16 to report directly to a Children's Aid Society. The duty is personal — telling a teacher is wise but doesn't fully discharge the duty.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Which of the following is a 24/7 Canada-wide suicide crisis line, launched in 2023?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> 4-1-1</label></li>
+<li><label><input type="radio" name="q6" value="b"> 9-8-8</label></li>
+<li><label><input type="radio" name="q6" value="c"> 5-1-1</label></li>
+<li><label><input type="radio" name="q6" value="d"> 1-1-1</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> 9-8-8 launched in Canada in late 2023; call or text for 24/7 suicide crisis support. Memorise alongside: Kids Help Phone 1-800-668-6868, Hope for Wellness 1-855-242-3310, Black Youth Helpline 1-833-294-8650.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 4.5–4.6 — Mentoring and Boundaries</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Mentoring is distinguished from peer support primarily by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Mentoring is paid; peer support is volunteer</label></li>
+<li><label><input type="radio" name="q7" value="b"> Mentoring is a sustained, intentional, developmental relationship; peer support is typically conversational and reactive</label></li>
+<li><label><input type="radio" name="q7" value="c"> Mentoring is illegal under 18</label></li>
+<li><label><input type="radio" name="q7" value="d"> Mentoring and peer support are identical</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Mentoring is sustained and developmental — walking alongside a less-experienced person over weeks or months toward growth. Peer support is typically a single conversation or short series. Both are valuable; the training and time commitments differ.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Christina Maslach's research names six drivers of burnout. They include:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Workload, control, reward, community, fairness, values mismatch</label></li>
+<li><label><input type="radio" name="q8" value="b"> Pay, hours, manager, weather, sleep, food</label></li>
+<li><label><input type="radio" name="q8" value="c"> Just stress</label></li>
+<li><label><input type="radio" name="q8" value="d"> Genetics alone</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','a')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Maslach's six drivers: workload, control, reward, community, fairness, values mismatch. The fix is structural, not just motivational — reduce workload, increase control, recognise contribution, build community, ensure fairness, align with values.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A "dual relationship" boundary issue arises when:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> You and a peer are both wearing two outfits at the same time</label></li>
+<li><label><input type="radio" name="q9" value="b"> You combine your peer-helper role with another role (e.g., romantic partner, close personal friend, mediator of a dispute involving a sibling)</label></li>
+<li><label><input type="radio" name="q9" value="c"> Two peers ask for help on the same day</label></li>
+<li><label><input type="radio" name="q9" value="d"> You help a peer who attends a different school</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Dual relationships combine the helper role with another role. The combination usually compromises one or both — peer-mediating between siblings, peer-counselling a romantic partner. Generally avoided or carefully managed with supervision.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Big Brothers Big Sisters Canada research shows mentoring benefits are largest when:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> The mentor pays the mentee</label></li>
+<li><label><input type="radio" name="q10" value="b"> The relationship is sustained for at least 12 months and is structured</label></li>
+<li><label><input type="radio" name="q10" value="c"> The mentor and mentee never meet in person</label></li>
+<li><label><input type="radio" name="q10" value="d"> The mentor solves the mentee's problems</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Sustained (12+ months) and structured (matched, trained, supervised) mentoring shows the strongest evidence of benefit. Short or unstructured "mentoring" can have positive effects but they are smaller and less consistent.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">When a peer-helper is becoming depleted (emotional exhaustion, dread, sleep disruption), the right response is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Push through — peers are counting on you</label></li>
+<li><label><input type="radio" name="q11" value="b"> Tell the program coordinator, reduce caseload, take a break, protect restorative time; burnout is structural, not a personal failing</label></li>
+<li><label><input type="radio" name="q11" value="c"> Quit permanently and never help anyone again</label></li>
+<li><label><input type="radio" name="q11" value="d"> Hide it so the coordinator doesn't think less of you</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Burnout is structural. Tell the coordinator early, reduce caseload, take a break. The coordinator's job includes monitoring helper wellbeing. Hidden burnout produces poor help and personal harm.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, describe the kind of peer-support boundary that is most difficult for you to maintain, and one specific practice you would adopt to protect it.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> My hardest boundary is time — when a friend texts at midnight in crisis, my instinct is to stay up. I'm going to adopt the practice of replying with "I'm here, but for tonight, can we please call Kids Help Phone together? I'll stay on text with you while you call." That keeps me present without making myself the only resource — and protects my sleep, which I need to actually be useful tomorrow. Strong responses name a specific boundary, acknowledge why it's hard, and give a concrete practice.</div></div>
+
+</div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Strand D: Preparation for Transitions and Change | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

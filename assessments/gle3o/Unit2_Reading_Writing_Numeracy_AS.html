@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Reading, Writing &amp; Numeracy — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #059669; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gle3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Reading, Writing &amp; Numeracy — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B — B1.1, B1.2, B1.3, B2.1, B2.2, B2.3, B3.1, B3.2, B3.3, B3.4</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of SQ3R, annotation, Cornell notes, academic vocabulary, expository vs persuasive writing, thesis development, revision protocols, numeracy strategies, graph literacy, and assistive technology.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.1–2.2 — Active Reading &amp; Vocabulary</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The five steps of SQ3R (Robinson, 1946) are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Skim, Question, Read, Recall, Restate</label></li>
+<li><label><input type="radio" name="q1" value="b"> Survey, Question, Read, Recite, Review</label></li>
+<li><label><input type="radio" name="q1" value="c"> Study, Quiz, Read, Repeat, Rest</label></li>
+<li><label><input type="radio" name="q1" value="d"> Scan, Question, Recall, Read, Reflect</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> SQ3R = Survey (flip through, read headings/summary), Question (turn headings into questions), Read (one section at a time), Recite (close the book and produce the answer), Review (verify at the end). The Recite step is where most learning happens.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Which is the most-validated finding about highlighting as a study technique?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> The more you highlight, the more you retain</label></li>
+<li><label><input type="radio" name="q2" value="b"> Highlighting more than ~10% of the text yields no measurable retention gain — it just decorates the page</label></li>
+<li><label><input type="radio" name="q2" value="c"> Highlighting in yellow is more effective than other colours</label></li>
+<li><label><input type="radio" name="q2" value="d"> Highlighting is the single highest-leverage study technique</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Over-highlighting is a common student trap. Effective annotation uses a small vocabulary of marks (margin lines, stars, question marks, brief notes) — annotation that forces a decision about what the text is <em>doing</em>, not just colours on a page.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">"The conscription crisis exposed deep cleavages in Canadian society — Anglophone vs Francophone, urban vs rural, English-born vs Canadian-born."</div>
+<div class="qtxt">A student doesn't know the word "cleavages." Which is the strongest vocabulary strategy in this case?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Skip the word and hope the meaning emerges later</label></li>
+<li><label><input type="radio" name="q3" value="b"> Use context inference (the sentence lists pairs of opposing groups, so "cleavages" likely means "splits" or "divisions"), then verify with a dictionary</label></li>
+<li><label><input type="radio" name="q3" value="c"> Memorise the dictionary entry without using it in context</label></li>
+<li><label><input type="radio" name="q3" value="d"> Highlight the word and move on</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Context inference is the right first move — the listed pairs implicitly define "cleavages" as splits/divisions. Verifying with a glossary or dictionary is the second step. Writing the word and a self-composed sentence in a vocabulary log makes it productive vocabulary, not just passive recognition.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.3–2.4 — Writing &amp; Revision</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Which is a debatable, three-part thesis statement?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> "This essay is about Macbeth."</label></li>
+<li><label><input type="radio" name="q4" value="b"> "Macbeth was a play written by Shakespeare in 1606."</label></li>
+<li><label><input type="radio" name="q4" value="c"> "Macbeth's downfall is driven not by ambition alone but by his moral disengagement from his own conscience, evidenced by his hallucinations, his accelerating violence after Duncan's death, and his final isolation in Act V."</label></li>
+<li><label><input type="radio" name="q4" value="d"> "Was Macbeth a tragic figure?"</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Option C is debatable (someone could argue otherwise), has a "because" structure (moral disengagement), and forecasts three pieces of evidence (hallucinations, violence, isolation) — the three parts of a strong thesis. A is a topic. B is a fact. D is a question.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">What distinguishes expository from persuasive writing?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Expository writing uses bigger words; persuasive uses smaller ones</label></li>
+<li><label><input type="radio" name="q5" value="b"> Expository writing explains; persuasive writing argues a debatable claim</label></li>
+<li><label><input type="radio" name="q5" value="c"> Expository writing is for science; persuasive for English</label></li>
+<li><label><input type="radio" name="q5" value="d"> They are identical</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Expository writing's job is to explain — to synthesise a clear account. Persuasive writing's job is to argue a debatable thesis. Misreading which form a prompt calls for is the most common Grade 11 essay-writing mistake.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The recommended order of revision passes is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Proofread, sentence-level, structural, content</label></li>
+<li><label><input type="radio" name="q6" value="b"> Content edit, structural edit, sentence-level edit, proofread</label></li>
+<li><label><input type="radio" name="q6" value="c"> All four in a single sitting on submission day</label></li>
+<li><label><input type="radio" name="q6" value="d"> Proofread only — other "edits" are unnecessary</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Content (does the argument work?) → structural (is the order strongest?) → sentence-level (tight, varied) → proofread (spelling, punctuation, format). Doing them in this order avoids polishing sentences that later get cut, and avoids dividing attention across levels simultaneously.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.5–2.6 — Numeracy &amp; Graph Literacy</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">A student calculates \(347 \times 28\) and gets 97,160 on their calculator. What estimation step should they have done?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Round to \(350 \times 30 = 10\,500\), notice the calculator answer is far too large, and re-check (decimal-point error)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Trust the calculator without verification</label></li>
+<li><label><input type="radio" name="q7" value="c"> Calculate it three times and average</label></li>
+<li><label><input type="radio" name="q7" value="d"> Use a different calculator</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Estimating first costs 5 seconds and catches decimal/order-of-magnitude errors that would otherwise lose marks. \(350 \times 30 = 10\,500\); the true answer is 9,716, so 97,160 is an order-of-magnitude error.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">The structured approach to multi-step problems has the phases:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Read, Plan, Solve, Check</label></li>
+<li><label><input type="radio" name="q8" value="b"> Guess, Calculate, Submit</label></li>
+<li><label><input type="radio" name="q8" value="c"> Compute, Verify, Repeat</label></li>
+<li><label><input type="radio" name="q8" value="d"> Skim, Solve, Forget</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','a')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Read (twice, circling given, underlining asked), Plan (substeps written out), Solve (carry units), Check (against estimate, units, reasonableness). The Plan step is where "show all reasoning" lives.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Which intervention is most strongly supported by research on managing math anxiety?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Avoid all math classes</label></li>
+<li><label><input type="radio" name="q9" value="b"> Combine reappraisal (re-reading bodily arousal as "preparation"), expressive writing (5-minute pre-test journaling), and retrieval practice — all evidence-based interventions</label></li>
+<li><label><input type="radio" name="q9" value="c"> Cram the night before so the material is fresh</label></li>
+<li><label><input type="radio" name="q9" value="d"> Tell yourself "calm down" — that always works</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Sian Beilock's research (Park, Ramirez &amp; Beilock 2014) supports reappraisal and expressive writing; retrieval practice reduces the unfamiliarity component of anxiety. Math anxiety is a learnable response, not a fixed trait.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">A Level-4 graph analysis includes which of the following steps?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Read the data, write down "it goes up"</label></li>
+<li><label><input type="radio" name="q10" value="b"> Frame (title, axes, units, source), Read (specific data with numbers), Analyse (pattern, causal implication), Critique (what the graph isn't showing — axis truncation, third variables)</label></li>
+<li><label><input type="radio" name="q10" value="c"> Memorise every data point</label></li>
+<li><label><input type="radio" name="q10" value="d"> Skip framing and go straight to interpretation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Frame-Read-Analyse-Critique is the four-step protocol. The critique step is where Level-4 marks live — naming what the graph isn't showing (selective time-windows, third variables, misleading scales) shows the marker that you understood the evidence's limits.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Which is true about assistive technology in Ontario senior-grade education?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Text-to-speech, speech-to-text, and graphical organisers are board-available and universally usable — not just for students with documented learning disabilities</label></li>
+<li><label><input type="radio" name="q11" value="b"> Only students with an IEP can use Read&amp;Write or Immersive Reader</label></li>
+<li><label><input type="radio" name="q11" value="c"> Assistive technology gives an unfair advantage</label></li>
+<li><label><input type="radio" name="q11" value="d"> It is illegal in Ontario classrooms</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','a')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Universal Design for Learning principles support universal availability. Most boards license Read&amp;Write or Kurzweil for all students; Immersive Reader is built into Microsoft Edge and Word. Strong students often use these tools strategically.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, explain why the "Recite" step in SQ3R is the part where most learning happens, even though many students skip it.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> The Recite step requires you to close the book and produce the answer from your own memory, which engages retrieval — the act that actually drives durable learning (Roediger &amp; Karpicke, 2006). Skipping straight from Read to Review keeps you in recognition mode, where the page is doing the work for you. The Recite step feels harder because retrieval is harder than recognition, but that "desirable difficulty" is exactly what produces the gain.</div></div>
+
+</div>
+
+<footer>GLE3O — Advanced Learning Strategies, Grade 11 Open | Strand B: Strategies for Academic Success | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

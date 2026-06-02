@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GWL3O — Designing Your Future | MindView</title>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
+
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+details.lesson-notes { margin: 14px 0 18px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 10px; }
+details.lesson-notes summary { cursor: pointer; padding: 12px 18px; font-weight: 700; color: #1d4ed8; user-select: none; }
+details.lesson-notes[open] summary { border-bottom: 1px solid #e2e8f0; }
+.lesson-notes-body { padding: 14px 22px 18px; font-size: 15px; line-height: 1.65; color: #1e293b; }
+.lesson-notes-body p { margin-bottom: 12px; }
+.lesson-notes-body ul { margin: 0 0 14px 22px; }
+.lesson-notes-body li { margin-bottom: 4px; }
+.lesson-notes-body blockquote { margin: 10px 0; padding: 8px 16px; border-left: 4px solid #94a3b8; background: #f8fafc; font-style: italic; color: #475569; }
+.lesson-notes-body .worked-example { background: #fff; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.lesson-notes-body .worked-example p:first-child { font-weight: 700; color: #1d4ed8; margin-bottom: 8px; }
+.lesson-notes-body .curriculum-link { font-size: 12px; color: #64748b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; }
+
+.video-card { background:#fff; border:1px solid #e2e8f0; border-radius:10px; margin: 12px 0 18px; overflow:hidden; }
+.video-header { cursor:pointer; padding: 12px 16px; display:flex; align-items:center; gap:10px; font-size:14px; color:#1e293b; user-select:none; }
+.video-header:hover { background:#f8fafc; }
+.video-icon { font-size:18px; }
+.video-title { flex:1; font-weight:600; }
+.video-toggle { font-size:18px; font-weight:700; color:#2563eb; }
+.video-player { display:none; padding: 0 16px 16px; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../../" class="nav-brand"><img src="../../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../../">Home</a><a href="../../#courses">Courses</a></div></div></nav>
+
+
+<style>
+.chnav-btn { padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform .15s, box-shadow .15s; }
+.chnav-back, .chnav-prev { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+.chnav-back:hover, .chnav-prev:hover { background: #e2e8f0; }
+.chnav-next { background: #16a34a; color: #fff; }
+.chnav-next:hover { background: #15803d; }
+.chnav-finish { background: #16a34a; }
+.chnav-finish:hover { background: #15803d; }
+</style>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+  <div class="container">
+    <div style="margin-bottom:10px;"><a href="../gwl3o.html" style="color:#fff;opacity:0.85;font-size:13px;text-decoration:none;">← Back to course (GWL3O Designing Your Future)</a></div>
+    <div class="strand-tag">Guidance &amp; Career Education — Grade 11 Open</div>
+    <h1>🤝 GWL3O: Chapter 2 — Workplace Communication &amp; Teamwork</h1>
+    <p>Communication models, active listening, written &amp; verbal workplace communication, Belbin/Tuckman teamwork, feedback, conflict resolution, professional ethics</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div class="unit-section" id="unit2">
+    <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+        <h2>Chapter 2: Workplace Communication &amp; Teamwork</h2>
+        <p>Communication models, active listening, written &amp; verbal workplace communication, Belbin/Tuckman teamwork, feedback, conflict resolution, professional ethics</p>
+        <div class="unit-meta">
+            <span>📚 Strand B: Interpersonal Communication</span>
+            <span>📹 6 lessons</span>
+        </div>
+    </div>
+
+    <div class="resource-group">
+    <div class="resource-group-label">📹 Video Lessons</div>
+
+    <div class="subsection-label">📡 2.1 Communication Models &amp; Channels</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Communication is the engine of every workplace, and most workplace problems trace back to a communication failure — a message that was never sent, was sent ambiguously, was sent through the wrong channel, or was received by someone whose attention was elsewhere. Strand B opens with the science of how communication actually works so that the rest of the strand (listening, writing, teamwork, conflict) has a shared foundation. The Ontario curriculum is explicit: students need to be able to choose the right channel, structure the message, and confirm it was received.</p>
+        <p>The classical <strong>Shannon-Weaver model</strong> describes communication as a sender encoding a message, sending it through a channel, and a receiver decoding it. <strong>Noise</strong> — anything that distorts the message — can interfere at every step. Channel choice matters: a long, nuanced explanation gets lost in a text message but lands well in a 15-minute meeting; an urgent confirmation belongs in a call, not an email buried at the bottom of an inbox. The model is reductive but useful because it identifies where breakdowns happen. The richer <strong>Berlo SMCR model</strong> (Source-Message-Channel-Receiver) adds attention to receiver context: their skills, attitudes, knowledge, social system, and culture.</p>
+        <p>Workplace communication uses a small handful of channels with different strengths. <strong>Synchronous channels</strong> (phone, video call, in-person meeting) suit nuance, emotion, complex back-and-forth, and decisions that require alignment. <strong>Asynchronous channels</strong> (email, chat, documented Slack, shared doc) suit records, instructions, status updates, and anything someone needs to refer back to. <strong>Formal channels</strong> (memo, official letter, signed contract) suit decisions with legal or HR consequences. Choosing the wrong channel is one of the most common workplace mistakes — a difficult performance conversation by email, a one-line "are you free Friday?" sent as a meeting invite, or a complex policy decision dropped into a group chat.</p>
+        <p>Beyond channel, the structure of the message matters. A well-structured workplace message is built so the receiver can find what they need quickly. The <strong>BLUF</strong> principle (Bottom Line Up Front) puts the conclusion or request in the first sentence, the reasoning underneath, and the details further down. A subject line should describe the action needed ("Action required: confirm Friday meeting by Wed 5pm"), not the topic vaguely ("Meeting"). A request should include the deadline, the format expected, and who else is involved. None of this is rocket science; all of it separates the competent first-year employee from the colleague whose emails everyone dreads.</p>
+        <ul>
+          <li><strong>Shannon-Weaver model</strong> — sender → encoding → channel → decoding → receiver, with noise possible at every step.</li>
+          <li><strong>Berlo SMCR model</strong> — Source, Message, Channel, Receiver — adds receiver context.</li>
+          <li><strong>Noise</strong> — anything that distorts a message (physical, semantic, psychological, cultural).</li>
+          <li><strong>Synchronous communication</strong> — real-time (call, video, in-person).</li>
+          <li><strong>Asynchronous communication</strong> — at-your-leisure (email, chat, documents).</li>
+          <li><strong>BLUF (Bottom Line Up Front)</strong> — conclusion or request in the first sentence.</li>
+          <li><strong>Channel choice</strong> — matching the medium to the message.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Choosing the Right Channel for Three Workplace Messages</p>
+          <p>Sergei has just started a co-op placement at a small marketing firm. Three messages to send today: <em>(1)</em> Confirm to his supervisor that he received the project brief and will start Monday. <strong>Channel:</strong> short email or chat — asynchronous, doesn't need discussion. <em>BLUF:</em> "Brief received — starting Monday morning. Two clarifying questions below." <em>(2)</em> Tell his manager he disagrees with the visual direction proposed for a client deck. <strong>Channel:</strong> 15-minute video call or in-person — synchronous, nuance and tone matter, written disagreement reads as colder than spoken. <em>(3)</em> Ask if the office's accessibility policy covers a particular accommodation his team-mate needs. <strong>Channel:</strong> formal email to HR — needs a written record. Wrong-channel versions of these messages cost time, goodwill, and sometimes the placement. Right-channel versions cost two minutes and produce smooth coordination.</p>
+        </div>
+        <ul>
+          <li>Using email for messages that need nuance and tone — the message reads as colder than intended.</li>
+          <li>Using a call or meeting for messages that are just status updates and could have been an email.</li>
+          <li>Writing subject lines that say what the message is <em>about</em> rather than what action is needed.</li>
+          <li>Burying the request or conclusion at the bottom — busy receivers stop reading paragraph two.</li>
+          <li>Forgetting "noise" — typos, ambiguous wording, distracting cc lists, sending at 11 p.m. all degrade signal.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B — B1.1: "describe communication models (e.g., Shannon-Weaver, Berlo SMCR) and analyse how channel, message structure, and noise affect workplace communication."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt1')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Celeste Headlee — 10 Ways to Have a Better Conversation]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt1">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Celeste Headlee better conversation TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Celeste Headlee better conversation TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">👂 2.2 Active Listening &amp; Nonverbal Communication</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Most people think they are good listeners. Most people are not. Listening — meaning fully attending to another person and accurately reconstructing what they meant — is one of the rarest workplace skills and one of the most consistently undervalued in school. The Ontario Skills Passport names oral communication explicitly, but the receiving half of the equation is what most colleagues notice. Co-op supervisors regularly write evaluations that say "great kid, but doesn't really listen — has to be told the same thing three times."</p>
+        <p>Carl Rogers introduced the term <strong>active listening</strong> for a specific practice: paying complete attention, suspending judgment, reflecting back what you heard, and asking clarifying questions before responding. The hierarchy of listening looks roughly like this. <strong>Ignoring</strong> — not actually listening. <strong>Pretending</strong> — nodding, "mm-hm," but mind elsewhere. <strong>Selective</strong> — hearing only the parts that interest you. <strong>Attentive</strong> — focused but already preparing your response. <strong>Empathic / active</strong> — fully attending, understanding the speaker's frame of reference, and reflecting it back. The shift from "preparing your response" to "understanding the speaker's frame" is where most workplace listening fails.</p>
+        <p>Concrete active-listening micro-skills: <strong>paraphrasing</strong> ("So what I'm hearing is that the deadline moved up to Tuesday, and you're worried we can't get the data in time — is that right?"); <strong>open-ended questions</strong> ("What part feels most uncertain?"); <strong>reflection of feeling</strong> ("That sounds frustrating"); <strong>summarising</strong> at the end ("So next steps are: I'll pull the data Friday, you'll review Monday morning, we'll meet Monday afternoon. Anything missing?"). Each one signals attention and forces accuracy.</p>
+        <p>Communication is also nonverbal. Albert Mehrabian's famous 7-38-55 figures (7% words, 38% tone, 55% body language) are misquoted — they apply only to communication of feelings — but the underlying point holds: when verbal and nonverbal cues conflict, receivers tend to believe the nonverbal. Crossed arms, looking at your phone, sighing, eye-rolls, or constant clock-checking communicate disengagement no matter what your words say. Conversely, open posture, eye contact, slight forward lean, and unhurried tone signal that the person in front of you matters. Cultural differences matter — direct eye contact reads as respectful in many Canadian workplaces but rude in some others — so the rule is to read your specific environment rather than apply one universal script. The Ministry's emphasis on respectful, inclusive communication grounds this work: in a diverse Ontario workplace, attention and respect are read partly through nonverbal cues that vary across cultures.</p>
+        <ul>
+          <li><strong>Active listening (Rogers)</strong> — full attention, suspended judgment, reflection, clarifying questions.</li>
+          <li><strong>Paraphrasing</strong> — restating in your own words to confirm understanding.</li>
+          <li><strong>Open-ended question</strong> — a question that cannot be answered with yes/no; invites elaboration.</li>
+          <li><strong>Reflection of feeling</strong> — naming the speaker's emotion to acknowledge it.</li>
+          <li><strong>Summarising</strong> — briefly restating the conversation's key points and next steps.</li>
+          <li><strong>Nonverbal communication</strong> — body language, facial expression, tone, eye contact, proximity.</li>
+          <li><strong>Cultural variation</strong> — nonverbal norms differ across cultures; read your environment.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Turning Passive Listening Into Active Listening</p>
+          <p>Maya works in a tutoring co-op. A Grade 7 student says, "I just don't get this kind of question. I always get them wrong." <em>Passive response:</em> "It's actually easy once you remember the formula." (jumps to solution, dismisses feeling, doesn't check what the student actually misunderstands). <em>Active response:</em> "It sounds frustrating to keep getting them wrong. What part feels most confusing — setting up the equation, doing the algebra, or interpreting the answer?" (reflects feeling, then an open-ended question that surfaces the real obstacle). The Grade 7 student says, "Setting it up. The words confuse me." Maya now has diagnostic information. She can show the student how she translates the words into an equation, ask the student to try one, and then test for understanding. The whole exchange is two minutes longer than the passive version and roughly ten times more useful. Notice that active listening did not require unusual talent — it required two specific moves (reflect feeling, ask an open question) before responding.</p>
+        </div>
+        <ul>
+          <li>Listening just enough to formulate your response — the receiver feels managed, not heard.</li>
+          <li>Jumping to solutions before the speaker has finished diagnosing the problem.</li>
+          <li>Treating silence as awkward and rushing to fill it — silence often produces the most important sentence.</li>
+          <li>Multitasking while "listening" — looking at your phone or screen tells the speaker you are not actually present.</li>
+          <li>Misquoting "7-38-55" as if nonverbal cues are always more important than words — they aren't, but they matter.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B — B1.2: "demonstrate active-listening and respectful nonverbal communication skills in a variety of school and workplace contexts."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt2')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Julian Treasure — 5 Ways to Listen Better]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt2">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Julian Treasure listen better TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Julian Treasure listen better TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">✉️ 2.3 Workplace Writing — Emails, Memos &amp; Documentation</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Most workplace writing is short, functional, and read fast. The reader is busy, half-distracted, and looking for the one thing the message needs from them. A well-written workplace email lets the reader find that one thing in fifteen seconds. A poorly-written one buries it. The Ontario Skills Passport names writing as one of its nine essential skills and the OSP exemplars are full of short, structured workplace pieces — emails, memos, incident reports, shift handovers, customer responses — that look nothing like a five-paragraph English essay.</p>
+        <p>The single highest-leverage writing technique is the <strong>BLUF</strong> structure introduced in 2.1: lead with the bottom line, then provide context, then optional details. A useful template for most emails: <em>Subject line names the action or decision needed.</em> <em>First sentence states the request or conclusion.</em> <em>Next 2–4 sentences give just enough context to act.</em> <em>Closing names what happens next and by when.</em> A subject like "Action requested: confirm Friday 3pm meeting" is read and answered; a subject like "Meeting" is opened, scanned, and put off.</p>
+        <p>The <strong>Seven Cs of business writing</strong> (Cutlip &amp; Center, refined many times since) provide a quick quality check: writing should be <em>clear</em> (one idea per sentence), <em>concise</em> (no padding), <em>concrete</em> (numbers and specifics over abstractions), <em>correct</em> (grammar, names, dates), <em>complete</em> (no missing information), <em>courteous</em> (respectful tone), and <em>coherent</em> (logical order). Most workplace writing problems come from violating one or two of these — a clear but tactless email, a courteous but incomplete one, a complete but rambling one. Run a 30-second check against the list before sending.</p>
+        <p>Format matters as much as words. Bullet lists communicate parallel items faster than prose. Bolding the action item makes it impossible to miss. Numbered steps work for procedures. Tables work for comparisons. Attachments should have descriptive filenames ("Q2-budget-draft-2026-04-15.xlsx" not "doc1.xlsx"). And — perhaps the most underrated rule — the receiver's name is spelled correctly, and the right person is in "To" while supporting cast is in "Cc." Documentation deserves its own paragraph. Every workplace runs on records — shift logs, incident reports, meeting minutes, project trackers. The discipline is to write while details are fresh, to use specific dates, to attribute decisions to people by name, and to keep records in a place future colleagues can actually find. Future you will thank present you.</p>
+        <ul>
+          <li><strong>BLUF</strong> — Bottom Line Up Front; lead with the conclusion or request.</li>
+          <li><strong>Seven Cs</strong> — Clear, Concise, Concrete, Correct, Complete, Courteous, Coherent.</li>
+          <li><strong>Subject line</strong> — names the action or decision needed, not just the topic.</li>
+          <li><strong>Tone</strong> — professional but warm; default to plain language, avoid sarcasm.</li>
+          <li><strong>Bcc</strong> — blind copy; use for distribution lists where recipients shouldn't see each other.</li>
+          <li><strong>Documentation</strong> — written record of decisions, incidents, instructions, or shift information.</li>
+          <li><strong>Reply-all</strong> — use sparingly; only when every recipient genuinely needs your reply.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Rewriting a Weak Workplace Email</p>
+          <p><em>Original:</em><br>Subject: "Question"<br>"Hey, I had a question about the thing we were talking about yesterday. I'm not sure what you wanted me to do exactly and also there might be a problem with one of the files. Let me know when you get a chance. Thanks!" <br><em>Diagnosis:</em> vague subject, no specifics, no deadline, no action item.</p>
+          <p><em>Rewrite (BLUF + Seven Cs):</em><br>Subject: "Clarification needed by Thu 5pm: Q2-budget-draft cells C12–C18"<br>"Hi Priya — could you confirm by Thu 5pm whether cells C12–C18 in the Q2 draft should use the revised supplier price ($14.20/unit) or the original quote ($12.80)? I noticed they currently show the original. Happy to update either way once I hear. Thanks, Sergei." <br><em>Diagnosis:</em> action subject line, specific question, deadline named, polite, complete. Priya can answer in ten seconds.</p>
+        </div>
+        <ul>
+          <li>Vague subject lines like "Question" or "Update" — receivers can't prioritise.</li>
+          <li>Burying the request at the bottom of a long email — busy readers don't reach paragraph three.</li>
+          <li>Reply-all when only one person needed your reply — clutters everyone's inbox.</li>
+          <li>Tone errors — sarcasm, all-caps, ambiguous emoji — that read worse than spoken equivalent.</li>
+          <li>Forgetting to attach the file mentioned in the email (very common, easily caught with a second-pass read).</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B — B1.3: "produce workplace-format written communication (emails, memos, incident reports, brief proposals) that demonstrates clarity, conciseness, and professional conventions."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt3')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[Crash Course Business / Indeed Career Guide: How to Write a Professional Email]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt3">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "how to write professional email workplace" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>how to write professional email workplace</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">👥 2.4 Teamwork — Tuckman Stages &amp; Belbin Roles</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Most Grade 11 students have already endured a bad group project — the one where two people did the work, two slacked, and the mark felt unjust. By 2030 the same students will be in workplaces where almost every meaningful output comes from teams. Strand B treats teamwork as a learnable skill: there are predictable patterns groups go through, predictable roles people play, and predictable failure modes you can spot and address. Understanding the patterns turns "I'm stuck with bad teammates" into "we're in the storming stage; here's what tends to work."</p>
+        <p>Bruce Tuckman's <strong>stages of group development</strong> describe how teams typically evolve: <strong>Forming</strong> (polite, getting to know each other, depending on a leader); <strong>Storming</strong> (conflict surfaces as people stake out roles and disagree about direction); <strong>Norming</strong> (the team agrees on how to work together, conflicts resolve into routines); <strong>Performing</strong> (the team does its best work, with clear roles and trust); and a later-added <strong>Adjourning</strong> (the team disbands, ideally with reflection on what was learned). Most school groups stall at Forming or Storming because they never explicitly negotiate norms. The single most powerful Norming intervention: spend the first fifteen minutes of any project meeting agreeing on who does what, by when, and how the team will communicate about delays. Without that, every later meeting is renegotiating it implicitly.</p>
+        <p>Meredith Belbin's <strong>team roles</strong> describe the kinds of contribution team members tend to make. He identified nine roles in three families. <em>Action-oriented:</em> Shaper (drives, challenges), Implementer (turns ideas into plans), Completer-Finisher (catches errors, polishes). <em>People-oriented:</em> Coordinator (clarifies goals, delegates), Teamworker (listens, smooths conflict), Resource Investigator (networks, finds resources). <em>Thought-oriented:</em> Plant (generates ideas), Monitor-Evaluator (analyses critically), Specialist (deep knowledge). Belbin's central insight is that strong teams are diverse in roles. A team of five Shapers will fight constantly; a team of five Teamworkers will be friendly and produce little. Understanding your tendency helps you contribute deliberately and notice gaps.</p>
+        <p>Practical teamwork moves: agree on <strong>norms</strong> in the first meeting (decision-making method, communication channels, response-time expectations, how to flag if you're stuck). Use a shared <strong>task tracker</strong> (a one-page Google Doc or kanban) so commitments are visible. Run brief <strong>check-ins</strong> at the start of each meeting (one thing going well, one stuck point). Distribute leadership rather than concentrating it. When conflict arises, name the issue and address it early — small disagreements in the Storming phase are normal and useful; suppressed disagreements become explosive in the Performing phase. The Ontario curriculum is explicit that students should be able to identify their own role tendencies, recognise the stages of group development, and apply teamwork strategies in school and work.</p>
+        <ul>
+          <li><strong>Tuckman stages</strong> — Forming, Storming, Norming, Performing, Adjourning.</li>
+          <li><strong>Norming</strong> — the stage where a team agrees on how it will work together.</li>
+          <li><strong>Belbin roles</strong> — nine team-role tendencies in three families (action, people, thought).</li>
+          <li><strong>Action roles</strong> — Shaper, Implementer, Completer-Finisher.</li>
+          <li><strong>People roles</strong> — Coordinator, Teamworker, Resource Investigator.</li>
+          <li><strong>Thought roles</strong> — Plant, Monitor-Evaluator, Specialist.</li>
+          <li><strong>Norms</strong> — explicit agreements about how a team operates.</li>
+          <li><strong>Distributed leadership</strong> — leadership shared across team members, not concentrated in one person.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Diagnosing and Unsticking a Stalled Group Project</p>
+          <p>Adam's history group is two weeks into a four-week project and producing nothing. Meetings start late, end early, and consist of complaining about the topic. <em>Diagnosis through Tuckman:</em> the group never finished Forming, never Stormed productively, never Normed. <em>Diagnosis through Belbin:</em> four of the five members tend toward Teamworker (avoid conflict, smooth things over); none of them is comfortable being a Coordinator or Shaper. Result: the group is friendly and inert. <em>Intervention:</em> Adam volunteers to coordinate the next meeting. Agenda: (1) Agree on the final deliverable in concrete terms. (2) Break it into five tasks. (3) Each person picks one. (4) Agree on a status-check chat every Sunday with what was done and what's stuck. (5) Agree how to flag a missed deadline (DM the group at least 24 hours in advance). Three weeks later the group submits a strong project on time. The shift was not about effort; it was about explicit Norming and someone stepping into a Coordinator role.</p>
+        </div>
+        <ul>
+          <li>Skipping the Norming conversation and hoping the group figures it out implicitly.</li>
+          <li>Assuming a quiet teammate isn't contributing — they may be a strong Specialist or Monitor-Evaluator who hasn't been asked the right question.</li>
+          <li>Concentrating leadership in one person who then resents doing everything.</li>
+          <li>Treating Storming as failure rather than as a normal, useful stage.</li>
+          <li>Confusing friendliness with team effectiveness — the warmest groups sometimes produce the least.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B — B2.1: "describe stages of group development (e.g., Tuckman) and team roles (e.g., Belbin), and apply teamwork strategies in school and workplace contexts."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt4')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Margaret Heffernan — Forget the Pecking Order at Work]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt4">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Margaret Heffernan teamwork pecking order TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Margaret Heffernan teamwork pecking order TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">⚡ 2.5 Constructive Feedback &amp; Conflict Resolution</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Two skills separate average workplaces from excellent ones: giving and receiving feedback, and resolving conflict. Both are uncomfortable; both are learnable; both compound over a career. Strand B treats them together because they share an underlying skill — staying engaged with a hard conversation long enough for it to be useful, instead of avoiding it or escalating it.</p>
+        <p>Constructive feedback is specific, behaviour-focused, and timely. A useful framework is <strong>SBI</strong> — Situation, Behaviour, Impact. Instead of "You don't communicate well" (vague, identity-attacking), use "In yesterday's meeting (Situation), when you presented our team's data without naming Maya's contribution (Behaviour), it felt like our shared work was being claimed (Impact)." The receiver can engage with the specifics and adjust. Another useful frame is <strong>Radical Candor</strong> (Kim Scott): care personally <em>and</em> challenge directly. Feedback without care reads as cruelty; care without challenge reads as flattery. The combination — kind directness — is what good supervisors and teachers do, and what good colleagues can learn to do.</p>
+        <p>Receiving feedback well is harder than giving it. The instinctive responses (defend, justify, blame, dismiss) all degrade the relationship and lose the information. A practised receiver does four things: <strong>thanks</strong> the giver, <strong>asks for specifics</strong> ("can you give me an example?"), <strong>names what's accurate</strong> first, and <strong>asks for one concrete change</strong> they could try next time. The first 24 hours after feedback are emotionally hot; the most useful action is to write the feedback down, sleep on it, and reread it the next day with cooler eyes. Most feedback that initially stings contains at least one useful signal once the emotion settles.</p>
+        <p>Conflict is normal. Conflict avoidance is the bigger workplace problem. Thomas-Kilmann's <strong>five conflict styles</strong> describe how people typically respond: <strong>Competing</strong> (high own concern, low other concern) — useful in emergencies, expensive in ongoing relationships. <strong>Accommodating</strong> (low own, high other) — keeps peace, builds resentment. <strong>Avoiding</strong> (low own, low other) — short-term comfort, long-term explosion. <strong>Compromising</strong> (medium-medium) — fair-seeming, often suboptimal. <strong>Collaborating</strong> (high-high) — both sides' real interests surface and are addressed; takes the most time but produces the best long-term outcomes. Strong workplace conflict-resolution moves: name the issue early and specifically; separate the person from the position ("we both want this project to succeed; we disagree about timing"); use "I" statements rather than "you" accusations; surface underlying interests behind stated positions; agree on next steps in writing. The Ontario curriculum frames conflict resolution as a core interpersonal skill that supports inclusive, respectful workplaces.</p>
+        <ul>
+          <li><strong>Constructive feedback</strong> — specific, behaviour-focused, timely, intended to help.</li>
+          <li><strong>SBI framework</strong> — Situation, Behaviour, Impact.</li>
+          <li><strong>Radical Candor (Kim Scott)</strong> — care personally + challenge directly.</li>
+          <li><strong>Receiving feedback</strong> — thank, ask for specifics, name what's accurate, name one change.</li>
+          <li><strong>Thomas-Kilmann conflict styles</strong> — Competing, Accommodating, Avoiding, Compromising, Collaborating.</li>
+          <li><strong>"I" statements</strong> — describing your experience rather than accusing ("I felt..." vs. "you always...").</li>
+          <li><strong>Position vs. interest</strong> — what someone says they want vs. what they actually need.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Using SBI to Give Hard Feedback</p>
+          <p>Priya is a peer leader at a summer camp. A co-leader, Mateo, has been arriving consistently 15 minutes late and the morning briefing keeps getting cut short. <em>Avoiding response:</em> Priya says nothing; resentment builds; tells other staff about it; relationship sours. <em>Competing response:</em> Priya snaps at Mateo in front of the team. <em>SBI Collaborating response:</em> "Mateo, can I grab you for two minutes? <strong>Situation:</strong> The last four mornings, you've come in around 8:45 instead of 8:30. <strong>Behaviour:</strong> That means we're squeezing the briefing into ten minutes and I'm rushing through the activity changes. <strong>Impact:</strong> I'm worried we'll miss something important, and the rest of the team gets stressed too. What's going on at your end, and how can we fix this for next week?" Mateo says his bus route has changed, and they agree he'll shift to a 7:50 bus or switch the briefing to 8:45. Five-minute conversation, problem solved. Note: no character attack, no public scolding, no avoidance. SBI works because it leaves the relationship intact.</p>
+        </div>
+        <ul>
+          <li>Giving feedback that targets identity rather than behaviour ("you're lazy" vs. "the last three reports were late").</li>
+          <li>Delivering feedback in front of others — public criticism almost always backfires.</li>
+          <li>Avoiding the conversation until resentment makes it explosive.</li>
+          <li>Confusing being direct with being rude — directness with care is the goal.</li>
+          <li>Receiving feedback defensively — argue once you've understood; understand before you argue.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B — B2.4: "apply strategies for giving and receiving constructive feedback (e.g., SBI) and for resolving interpersonal conflict (e.g., Thomas-Kilmann styles, 'I' statements) in school and workplace settings."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt5')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Adam Grant — How to Get Useful Feedback]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt5">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "Adam Grant feedback workplace TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>Adam Grant feedback workplace TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection-label">⚖️ 2.6 Professionalism &amp; Workplace Ethics</div>
+
+    <details class="lesson-notes">
+      <summary>📖 Lesson Notes — Ontario Curriculum</summary>
+      <div class="lesson-notes-body">
+        <p>Professionalism is the everyday face of integrity. It is not a personality trait or a uniform; it is the bundle of small behaviours that make a person reliable, respectful, and pleasant to work with. The Ontario Skills Passport's three work habits — <strong>working safely, working independently, using initiative</strong> — capture the core of professionalism. Supervisors evaluating Grade 11 co-op students consistently rate these habits higher than technical skill: most jobs can train technical skill in weeks; reliable habits are much harder to teach.</p>
+        <p>Day-to-day professionalism shows up in small moves. <strong>Punctuality</strong> — arriving five minutes early, leaving when the work is done; a five-minute late arrival three times a week tells your supervisor more than any speech could. <strong>Follow-through</strong> — doing what you said you would do; if circumstances change, telling the person who is depending on you before the deadline, not after. <strong>Appropriate communication</strong> — knowing when to speak, when to listen, when to ask a question and when to look it up first. <strong>Dress and grooming</strong> — appropriate to the workplace and the role; varies widely (a kitchen, a courtroom, and a tech startup all read different things as professional). <strong>Boundaries</strong> — keeping personal drama out of work; not posting workplace gossip publicly; declining to share confidential information.</p>
+        <p>Workplace ethics is the harder version of professionalism — the situations where the right thing to do is not obvious or has costs. A useful framework is the <strong>four-way ethical test</strong>: Is it legal? Is it consistent with workplace policy? Is it fair to everyone affected? Would you be comfortable explaining your action publicly? When all four answers are yes, you're probably fine. When one is no, pause and think harder. Many real workplace dilemmas involve gray zones — a supervisor asks you to skip a step you know matters; a co-worker is using a company resource in a borderline way; a customer asks you to misrepresent something on a form. The four-way test doesn't give an automatic answer, but it forces you to consider the dimensions you might be tempted to ignore.</p>
+        <p>Ontario workplaces also operate under specific legal frameworks every Grade 11 student should know. The <strong>Employment Standards Act (ESA)</strong> sets minimum wage, hours, breaks, vacation, and notice requirements. The <strong>Occupational Health and Safety Act (OHSA)</strong> gives workers three rights: the right to know about hazards, the right to participate in safety decisions, and the right to refuse unsafe work. The <strong>Ontario Human Rights Code</strong> prohibits discrimination on protected grounds (race, sex, gender identity, sexual orientation, age, disability, religion, family status, and others). Knowing these isn't an academic exercise — they are the protections you can invoke if something at work goes wrong, and they shape how a professional supervisor expects you to behave. A workplace that disregards these laws is a workplace to leave. A worker who disregards them risks much more.</p>
+        <ul>
+          <li><strong>Professionalism</strong> — the daily behaviours that make a person reliable, respectful, and pleasant to work with.</li>
+          <li><strong>OSP work habits</strong> — working safely, working independently, using initiative.</li>
+          <li><strong>Follow-through</strong> — doing what you said you would do, by when you said you would.</li>
+          <li><strong>Confidentiality</strong> — protecting information shared in the workplace, particularly about clients/customers.</li>
+          <li><strong>Four-way ethical test</strong> — legal? policy-consistent? fair? publicly defensible?</li>
+          <li><strong>Employment Standards Act (ESA)</strong> — Ontario law setting minimum wage, hours, breaks, vacation, notice.</li>
+          <li><strong>Occupational Health and Safety Act (OHSA)</strong> — Ontario law; three worker rights (know, participate, refuse).</li>
+          <li><strong>Ontario Human Rights Code</strong> — protects against workplace discrimination on protected grounds.</li>
+        </ul>
+        <div class="worked-example">
+          <p>Worked Example — Applying the Four-Way Ethical Test</p>
+          <p>Tomás works part-time as a server at a busy restaurant. His shift supervisor tells him, "When customers ask if our chicken is locally sourced, just say yes. They tip better when they think it is." What should Tomás do? Run the four-way test. <em>Is it legal?</em> Probably borderline — Ontario consumer-protection law forbids misleading representations about goods. <em>Is it consistent with workplace policy?</em> The official menu doesn't claim local sourcing, so this is a verbal misrepresentation. <em>Is it fair to everyone affected?</em> No — customers are being deceived; tip income is built on a lie. <em>Would Tomás be comfortable explaining his behaviour publicly?</em> No. Three of four answers are problematic. Tomás should not follow the instruction. Concrete moves: ask the supervisor to clarify in writing, decline politely ("I'm not comfortable saying that — I can just say I'll check with the kitchen"), and, if pressure continues, raise it with the owner or — if there is none responsive — consider whether this is a workplace he wants to keep. The bigger lesson: short-term tip pressure is small compared to building a reputation as someone who will mislead customers when asked. Reputations follow you.</p>
+        </div>
+        <ul>
+          <li>Treating professionalism as a uniform or personality — it's a set of small behaviours practised daily.</li>
+          <li>Assuming "everyone is doing it" makes an unethical practice fine — it doesn't.</li>
+          <li>Posting workplace complaints, gossip, or confidential info on social media — visible to current and future employers.</li>
+          <li>Not knowing your ESA / OHSA / Human Rights Code rights — workers who don't know their rights are easier to exploit.</li>
+          <li>Confusing being a "team player" with going along with an unethical request — real teams don't ask members to compromise integrity.</li>
+        </ul>
+        <p class="curriculum-link"><em>Curriculum expectation:</em> Strand B — B3.2: "demonstrate an understanding of workplace professionalism and ethics, including Ontario legal frameworks (ESA, OHSA, Human Rights Code), and apply ethical decision-making to workplace dilemmas."</p>
+      </div>
+    </details>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('gwl-yt6')">
+            <span class="video-icon">🎥</span>
+            <span class="video-title">[TED Talk: Patrick Lencioni — Why Workplace Ethics Matter]</span>
+            <span class="video-toggle">+</span>
+        </div>
+        <div class="video-player" id="player-gwl-yt6">
+            <!-- TODO: instructor to add verified YouTube embed.
+                 Suggested search: "workplace ethics professionalism TED Talk" -->
+            <div style="padding:18px;background:#fef3c7;border-radius:8px;color:#78350f;font-size:14px;">
+                ⏳ Video pending instructor selection. Search YouTube for: <em>workplace ethics professionalism TED Talk</em>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="assessment-strip" style="margin-top:28px;padding:20px 0 4px;border-top:1px solid #e2e8f0;">
+        <div class="assessment-strip-title" style="font-size:13px;font-weight:800;color:#1e293b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">📊 Chapter 2 Assessments</div>
+        <div class="assessment-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+            <a class="assessment-strip-card assessment-strip-as" href="../../assessments/gwl3o/Chapter2_Workplace_Communication_AS.html" style="display:block;background:linear-gradient(135deg,#cffafe,#a5f3fc);border:1px solid #67e8f9;border-left:5px solid #0891b2;border-radius:10px;padding:14px 16px;text-decoration:none;color:#155e75;">
+                <div style="font-size:11px;color:#0e7490;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">🔄 Practice Quiz — Assessment AS Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Mid-Chapter Practice</div>
+                <div style="font-size:12px;color:#0e7490;">Self-check during learning. Reflect on progress.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-for" href="../../assessments/gwl3o/Chapter2_Workplace_Communication_FOR.html" style="display:block;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fcd34d;border-left:5px solid #d97706;border-radius:10px;padding:14px 16px;text-decoration:none;color:#78350f;">
+                <div style="font-size:11px;color:#92400e;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">📋 Diagnostic — Assessment FOR Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Pre-Chapter Diagnostic</div>
+                <div style="font-size:12px;color:#92400e;">Pre-chapter check. Identify gaps before instruction.</div>
+            </a>
+            <a class="assessment-strip-card assessment-strip-of" href="../../assessments/gwl3o/Chapter2_Workplace_Communication_OF.html" style="display:block;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid #c4b5fd;border-left:5px solid #7c3aed;border-radius:10px;padding:14px 16px;text-decoration:none;color:#4c1d95;">
+                <div style="font-size:11px;color:#6d28d9;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;">✅ Unit Test — Assessment OF Learning</div>
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">End-of-Chapter Unit Test</div>
+                <div style="font-size:12px;color:#6d28d9;">End-of-chapter graded test. Ministry-aligned.</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="chapter-nav" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+  <a href="ch1.html" class="chnav-btn chnav-prev">← Chapter 1</a>
+  <a href="ch3.html" class="chnav-btn chnav-next">Chapter 3 →</a>
+</div>
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · GWL3O — Designing Your Future, Grade 11 Open · Ontario Curriculum</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);if(!p)return;if(!p.style.display||p.style.display==='none'){p.style.display='block';}else{p.style.display='none';const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

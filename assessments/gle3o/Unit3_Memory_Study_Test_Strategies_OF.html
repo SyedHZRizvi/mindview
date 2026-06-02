@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Memory, Study &amp; Test-Taking — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #059669; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+.sol.instructor-only { background: #fff7ed; border: 1px solid #fed7aa; border-left: 4px solid #ea580c; padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+.sol.instructor-only summary { cursor: pointer; font-weight: 700; color: #9a3412; }
+.sol.instructor-only p { margin-top: 8px; }
+details.instructor-only { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 14px 18px; margin: 24px 0; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: #9a3412; }
+details.instructor-only p { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gle3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Memory, Study &amp; Test-Taking — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B — B4.1, B4.2, B4.3, B5.1, B5.2, B5.3</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all reasoning. Answer keys appear in instructor-only collapsible sections.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A — Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1"><div class="qnum">1</div><span class="qmarks">[2]</span>
+<div class="qtxt">Working memory capacity is best estimated by Cowan (2001) as approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1"> 4 chunks</label></li>
+<li><label><input type="radio" name="q1"> 25 chunks</label></li>
+<li><label><input type="radio" name="q1"> 100 chunks</label></li>
+<li><label><input type="radio" name="q1"> Unlimited</label></li>
+</ul>
+<div class="sol instructor-only" id="q1-sl"><strong>Answer Key:</strong><p>A. Cowan (2001) revised Miller's earlier 7±2 estimate to roughly 4 chunks. The exact figure is contested; the point is that working memory is small and a bottleneck.</p></div></div>
+
+<div class="qcard" id="q2"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">The "testing effect" (Roediger &amp; Karpicke, 2006) found that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Reading a passage four times produces the best long-term retention</label></li>
+<li><label><input type="radio" name="q2"> Reading a passage once followed by three retrieval attempts produces dramatically better long-term retention than four reads</label></li>
+<li><label><input type="radio" name="q2"> Frequency of testing has no effect</label></li>
+<li><label><input type="radio" name="q2"> Tests are harmful to learning</label></li>
+</ul>
+<div class="sol instructor-only" id="q2-sl"><strong>Answer Key:</strong><p>B. Retrieval acts strengthen memory traces more than equivalent rereading. <em>Make It Stick</em> (Brown, Roediger, McDaniel 2014) calls retrieval practice "the single highest-leverage learning strategy in the cognitive-science literature."</p></div></div>
+
+<div class="qcard" id="q3"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) the forgetting curve (Ebbinghaus); (b) the spacing effect; (c) the fluency illusion.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q3-sl"><strong>Answer Key:</strong><p>(a) <strong>Forgetting curve (Ebbinghaus, 1885)</strong> — rapid memory loss after learning (~50% in an hour, ~70% in a day, ~90% in a week) unless reviews intervene. (b) <strong>Spacing effect</strong> — reviews spread across days at expanding intervals produce dramatically better long-term retention than the same total time in a single block. (c) <strong>Fluency illusion</strong> — the smooth feeling of recognition during rereading produces unwarranted confidence about retrieval; "easy now, hard on the test."</p></div></div>
+
+<div class="qcard" id="q4"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">The rule of thumb "mnemonics for items, concept maps for relationships" means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> Mnemonics work best for list-like factual content; concept maps work best for material that is fundamentally relational (causes, dependencies, processes)</label></li>
+<li><label><input type="radio" name="q4"> Mnemonics replace concept maps</label></li>
+<li><label><input type="radio" name="q4"> Both tools work identically</label></li>
+<li><label><input type="radio" name="q4"> Neither tool is research-supported</label></li>
+</ul>
+<div class="sol instructor-only" id="q4-sl"><strong>Answer Key:</strong><p>A. Mnemonics (SMART, MAIN, BEDMAS) are right for list recall; concept maps (Novak) are right for showing relationships. Each tool has its job; using one for the other's task is a common mistake.</p></div></div>
+
+<div class="qcard" id="q5"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify and briefly describe three format-specific test-taking strategies: (a) for multiple-choice; (b) for short answer; (c) for essay.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q5-sl"><strong>Answer Key:</strong><p>(a) <strong>MC</strong>: read the stem twice; eliminate clearly-wrong options; look for distractor patterns (opposites often signal one is right; "all of the above" needs each verified); don't change answers on doubt alone. (b) <strong>Short answer</strong>: precise vocabulary, one specific example per requested sub-point, one sentence per mark as a rough rule; answer the actual question asked. (c) <strong>Essay</strong>: spend first 5–10 minutes planning (identify ask, write thesis, outline three body paragraphs); apply frame-evidence-analyse pattern to every quotation; save last 5 minutes for read-through.</p></div></div>
+
+<div class="qcard" id="q6"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">In 3 sentences each, describe two evidence-based interventions for test anxiety and explain the mechanism for each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q6-sl"><strong>Answer Key:</strong><p><em>Reappraisal</em>: re-reading bodily arousal of anxiety as "preparation" rather than as "threat." Mechanism: same physiological arousal, different cognitive interpretation; brain-imaging research shows measurably better performance under the reappraisal interpretation. <em>Expressive writing (Park, Ramirez &amp; Beilock 2014)</em>: 5–10 minutes of pre-test journaling about test-related worries. Mechanism: offloads cognitive interference from working memory, freeing capacity for the test itself; closes test-anxiety performance gap by ~50%. Also accept breathing, retrieval practice, and familiarity-through-practice. Marks: 1.5 per intervention (name + mechanism).</p></div></div>
+
+<div class="section-hdr t">Part B — Thinking [15 marks]</div>
+
+<div class="qcard" id="q7"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="passage">Lucas's Grade 11 French course introduces ~40 new vocabulary items per week. He currently studies them all the night before each Friday quiz; he retains for one week, forgets most before the exam.</div>
+<div class="qtxt">Apply spaced repetition. In 5–6 sentences, design a study plan using Anki (or equivalent), specify the daily time commitment, and predict the impact on his cumulative-exam retention. Justify with reference to the spacing effect.</div>
+<textarea placeholder="Your plan..." style="min-height:170px;"></textarea>
+<div class="sol instructor-only" id="q7-sl"><strong>Answer Key:</strong><p>Plan: add ~20 new cards on each of Mon and Wed (40/week); open Anki for 10–15 min daily on whatever is "due"; well-known cards expand intervals (30+ days), poorly-known cards return sooner. Daily load stays ~15 min even as the deck grows to 600+. Prediction: cumulative-exam retention rises from ~40% (cramming pattern) to ~90% (spaced retrieval). Justification: spacing engages re-learning at moments of partial forgetting, which is when the long-term system strengthens most (Bjork's "desirable difficulties"). Marks: 1 daily cadence, 1 schedule, 1 retention prediction, 1 spacing justification, 1 internal coherence.</p></div></div>
+
+<div class="qcard" id="q8"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="passage">Marcus is studying the French Revolution. The causes interlock: financial crisis from American Revolution support, Enlightenment ideas, 1788 famine, rigidities of the Estates system, personal weakness of Louis XVI, British/American examples.</div>
+<div class="qtxt">Apply the mnemonics-vs-concept-maps rule. In 5 sentences, decide which tool fits and design a specific concept map (text-form: central node + 3–4 branches + at least one labelled relationship) that would help Marcus prepare for the essay question "Explain the causes of the French Revolution."</div>
+<textarea placeholder="Your design..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q8-sl"><strong>Answer Key:</strong><p>Concept map is the right tool — the causes interlock (relational content). Central node: "French Revolution 1789." Branches: (1) Economic — financial crisis → tax reform blocked by Estates → bankruptcy. (2) Intellectual — Enlightenment (Rousseau, Voltaire) → ideas of popular sovereignty → political clubs. (3) Immediate — 1788 famine → bread prices → urban unrest. (4) Institutional — Estates General May 1789 → Third Estate breaks away → Tennis Court Oath. Labelled relationships across branches (e.g., bankruptcy → caused → Estates General; Enlightenment → shaped → Tennis Court Oath). On the essay, Marcus can speak about <em>relationships</em>, not just list items. Marks: 1 correct tool choice, 2 branches with substance, 1 cross-branch relationship, 1 essay-impact reasoning.</p></div></div>
+
+<div class="qcard" id="q9"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="passage">Avery's returned Functions test: 64%. Of 12 lost marks — 3 careless arithmetic slips, 4 concept errors (rational vs radical domain restrictions), 3 gap errors (transformations not studied), 2 format errors (didn't show work).</div>
+<div class="qtxt">Apply error analysis. In 5 sentences, name a specific next-action for each error category and predict the impact on Avery's next test mark.</div>
+<textarea placeholder="Your analysis..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q9-sl"><strong>Answer Key:</strong><p>Next-actions: (1) <em>Careless</em> — add estimate-and-check-signs habit; expect to recover 2–3 marks. (2) <em>Concept</em> — re-watch domain-restrictions lesson, do 5 retrieval-practice problems; expect to recover 3 marks. (3) <em>Gap</em> — add transformations to Anki rotation, 5 practice problems this week; expect to recover 2–3 marks. (4) <em>Format</em> — read every "show all reasoning" instruction twice; expect to recover 2 marks. Combined: 64% → ~80%+ on next test if all four interventions are implemented. The diagnosis-and-action protocol is what makes the improvement possible — not "study more." Marks: 1 per action linked to category (4), 1 prediction with reasoning.</p></div></div>
+
+<div class="section-hdr c">Part C — Communication [15 marks]</div>
+
+<div class="qcard" id="q10"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write one analytical paragraph (6–8 sentences) defending or contesting the claim: <em>"Cramming the night before a test is an effective study strategy."</em> Use research evidence (spacing effect, forgetting curve, fluency illusion).</div>
+<textarea placeholder="Your paragraph..." style="min-height:180px;"></textarea>
+<div class="sol instructor-only" id="q10-sl"><strong>Answer Key:</strong><p>Strong contest: thesis ("cramming produces short-term recall sufficient for next-morning tests but fails for cumulative exams and durable retention"); evidence (Cepeda et al. 2006 meta-analysis: same total time spaced beats cramming for retention at any test &gt; 24 hours; Ebbinghaus forgetting curve drops most retention within a week without reviews); cramming's failure mode (fluency illusion produces overconfidence the morning of); nuance — cramming can be defensible as a one-off when you've already spaced; the test-result that matters in Grade 12 (exams, finals) defeats cramming. Marks: 1 thesis, 2 evidence with research citation, 2 interpretation, 1 conventions.</p></div></div>
+
+<div class="qcard" id="q11"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Write a 4–6 sentence reflection (audience: yourself) on a recent test in any course. Apply the error-analysis categories (careless / concept / gap / format) and identify one specific change you will make in your next study cycle.</div>
+<textarea placeholder="Your reflection..." style="min-height:150px;"></textarea>
+<div class="sol instructor-only" id="q11-sl"><strong>Answer Key:</strong><p>Strong answers (1) name a specific real test; (2) categorise errors using all four labels (with concrete examples); (3) propose at least one specific change linked to a dominant error category; (4) use the appropriate self-reflective register. Marks: 1 specificity, 2 category use, 1 specific change, 1 conventions.</p></div></div>
+
+<div class="qcard" id="q12"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt">In 3–4 sentences, explain to a Grade 9 student (audience-aware register) why "re-reading" is one of the least effective study techniques and what they should do instead.</div>
+<textarea placeholder="Your explanation..." style="min-height:130px;"></textarea>
+<div class="sol instructor-only" id="q12-sl"><strong>Answer Key:</strong><p>Strong answers (1) name the fluency illusion in Grade-9-accessible language ("rereading feels like you're learning because it feels familiar, but your brain isn't doing the lifting"); (2) propose closed-book retrieval as the alternative ("close the book, try to explain it out loud, then check"); (3) connect to the concrete benefit ("you'll actually remember it next week"). Marks: 1 illusion described, 1 alternative proposed, 1 audience-appropriate, 1 accuracy.</p></div></div>
+
+<div class="section-hdr a">Part D — Application [15 marks]</div>
+
+<div class="qcard" id="q13"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Apply</strong> spacing + retrieval to a real upcoming test in another course. In 5 sentences, design a study schedule with: (i) total hours allocated; (ii) the days of week each session will happen; (iii) what each session will actually do (retrieval, not rereading).</div>
+<textarea placeholder="Your application..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q13-sl"><strong>Answer Key:</strong><p>Strong answers (1) name a real test; (2) total hours roughly appropriate (e.g., 4–6 hours for a unit test); (3) days specified with expanding intervals; (4) sessions explicitly retrieval-based (closed-book problems, brain dumps, flashcards in produce-not-look mode), not rereading. Marks: 1 test specificity, 1 hours, 2 schedule with retrieval, 1 coherence.</p></div></div>
+
+<div class="qcard" id="q14"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Apply</strong> the format-specific test preparation protocol. Pick one upcoming test and describe in 5 sentences: (i) the format(s) it will use; (ii) how your preparation differs from how you would prepare for a different format; (iii) one specific in-test strategy you will use.</div>
+<textarea placeholder="Your application..." style="min-height:160px;"></textarea>
+<div class="sol instructor-only" id="q14-sl"><strong>Answer Key:</strong><p>Strong answers (1) identify the format(s) — typically a mix; (2) make explicit the preparation difference (e.g., "for the essay portion I'll practise writing introductions and topic sentences in advance; for the MC portion I'll run flashcards and review past MC questions"); (3) specify in-test strategy (e.g., "I'll spend the first 7 minutes planning the essay before writing"). Marks: 1 format, 2 preparation difference, 1 in-test strategy, 1 specificity.</p></div></div>
+
+<div class="qcard" id="q15"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Cross-strand application:</strong> Integrate Strand A (Self-Knowledge) with Strand B (Memory &amp; Test Prep). In 6–8 sentences, describe how the Unit 1 metacognitive cycle (plan-monitor-evaluate) supports the Unit 3 study strategies (spacing, retrieval, error analysis), and explain why students who use both together outperform students who use only one.</div>
+<textarea placeholder="Your synthesis..." style="min-height:200px;"></textarea>
+<div class="sol instructor-only" id="q15-sl"><strong>Answer Key:</strong><p>Strong answers integrate: <em>Planning</em> (Strand A) sets up the spaced schedule and chooses retrieval as the technique (Strand B); <em>Monitoring</em> mid-week catches drift (am I actually doing the retrieval sessions?) and lets you adjust before drift becomes failure; <em>Evaluating</em> after the test is essentially the error-analysis protocol (3.6). A student running both cycles simultaneously is using metacognition to deploy the right strategies and adjust based on evidence — the cycle compounds. Without monitoring, students who set up spaced schedules drift back to cramming; without evaluating, they don't learn from returned tests. Marks: 2 plan-monitor-evaluate mapping onto spacing/retrieval/error-analysis; 2 explanation of compounding; 1 synthesis statement.</p></div></div>
+
+<details class="instructor-only" style="margin-top:24px;">
+<summary>📖 Complete Answer Key</summary>
+<p>This unit test covers Strand B's memory and test-taking expectations (B4.1–B4.3, B5.1–B5.3) at all four Achievement Chart levels. Level 4 answers integrate concepts across topics and apply them to real upcoming tests in the student's actual coursework. Marks rewarded for specificity, evidence, and research citations.</p>
+<p><strong>Common misconceptions to watch for:</strong> (1) Equating recognition (rereading) with learning; (2) treating cramming as defensible for cumulative exams; (3) confusing mnemonic and concept-map use cases; (4) seeing test anxiety as a personality trait; (5) filing returned tests without analysis.</p>
+</details>
+
+<footer>GLE3O — Advanced Learning Strategies, Grade 11 Open | Strand B: Strategies for Academic Success (Memory &amp; Test-Taking) | Assessment OF Learning — Graded</footer>
+</div></body></html>

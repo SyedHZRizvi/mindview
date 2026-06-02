@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Leadership in Action — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #15803d; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details.instructor-only { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details.instructor-only p, details.instructor-only li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 5: Leadership in Action — Unit Test</h1><div class="sub">Assessment OF Learning · Synthesis</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Answer keys instructor-gated.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each: (a) the six sections of a project charter; (b) the four standard risk responses; (c) Tuckman's stages of group development.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>Charter sections:</strong> Purpose, Scope (in and out), Stakeholders, Success Criteria, Resources, Risks. (b) <strong>Risk responses:</strong> Avoid (change the plan), Mitigate (reduce probability or impact), Transfer (shift to someone better placed), Accept (acknowledge and plan a fallback). (c) <strong>Tuckman's stages:</strong> Forming, Storming, Norming, Performing, Adjourning (1965, +1977). Each requires a different leader style.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">The six stages of Gibbs's Reflective Cycle are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Description, Feelings, Evaluation, Analysis, Conclusion, Action Plan</label></li>
+<li><label><input type="radio" name="q2"> Plan, Do, Check, Act, Stop, Repeat</label></li>
+<li><label><input type="radio" name="q2"> Setup, Run, Debrief, Write, Submit, Forget</label></li>
+<li><label><input type="radio" name="q2"> Goal, Strategy, Tactic, Action, Review, Replan</label></li>
+</ul>
+<details class="instructor-only"><summary>Answer Key</summary><p><strong>A.</strong> Gibbs (1988). Description (facts), Feelings (emotional reality), Evaluation (good/bad), Analysis (connect to frameworks), Conclusion (what learned), Action Plan (next-time commitment).</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">In 2–3 sentences, explain what "scope creep" means and why it matters in a leadership project.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Scope creep is the gradual addition of new work to a project without removing other work or re-resourcing. It matters because (1) the original commitments slip when new work crowds in; (2) the team experiences increased pressure with no acknowledgment; (3) without a change protocol, the team eventually fails to deliver what was promised. The fix: a change protocol that requires conscious decision — add this and what comes out; or decline.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define each: (a) the Ontario Individual Pathways Plan (IPP); (b) "buffer time" in project management; (c) Donald Schön's distinction between reflection-in-action and reflection-on-action.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>IPP:</strong> Ontario's K-12 reflective career-and-life-planning portfolio; students record self-knowledge, opportunities explored, decisions, and reflection. GPP3O is a key contributor in Grade 11. (b) <strong>Buffer time:</strong> 20-30% extra time built into the schedule to absorb surprises; not slack but realism. (c) <strong>Reflection-in-action / on-action:</strong> Schön's distinction between reflecting during an event (real-time adjustments) and after (post-event review). Both are needed; experienced practitioners get better at both.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify three practices that prevent the common failure mode of "silent slippage" in a project's implementation phase.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Any three of: (1) <em>Weekly stand-ups</em> — short frequent meetings where each member reports tasks, blockers, progress; problems surface early. (2) <em>Dependency mapping</em> — identify which tasks can't start until others finish. (3) <em>Buffer time</em> — 20-30% built in. (4) <em>Change protocol</em> — agreed process for changes; prevents drift and rigidity. (5) <em>Visible project log</em> — shared document where decisions are recorded. (6) <em>Reflective journaling</em> — weekly two-question reflection by the leader. Marks: 1 per practice.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="passage">Three weeks before launch, your team discovers the external speaker has cancelled. The original plan depended on the speaker.</div>
+<div class="qtxt">In 5–6 sentences, describe the structured pivot you would lead, citing Unit 5 frameworks. What conversation do you have with the team, what three options would you raise, how do you decide, and what do you document?</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Strong response: (1) name the blocker at the next stand-up; do not hide it. (2) Three options: (a) find a new external speaker by next Wednesday; (b) replace the speaker slot with a panel of two peer-helpers plus a school counsellor; (c) cut the slot and lengthen activity stations. (3) Decision criteria: alignment with original charter purpose; resources; team capacity; risk register. (4) Use the change protocol — discuss for 10 minutes, lead + one other team member agree, document the change in the project log. (5) Communicate to the principal and any external partners. The pivot is named, structured, and forward-moving. Marks: 1 surfacing, 2 options, 1 decision criteria, 1 documentation.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="passage">Two weeks into a six-week project, your team meeting goes badly: members are arguing about direction, two members are silent, one is on their phone, the leader (you) is tempted to call a vote and move on.</div>
+<div class="qtxt">In 4–5 sentences, diagnose the Tuckman stage and lay out the better leader moves (citing Unit 2 active-listening and Unit 5 team-leadership frameworks).</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Diagnosis: storming. Better moves: (1) name the stage ("we're in storming, this is normal"); (2) hold space rather than smoothing over — ask each strong voice "what would have to be true for your idea to be the right one?"; (3) include the silent voices — open question to each; (4) put down phones; (5) look for an integrative third option; (6) confirm before moving on. Avoid: forced vote (produces winner/loser resentment); personalising ("this team is broken"); skipping the storming. Marks: 1 stage diagnosis, 3 specific moves, 1 what to avoid.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply the Gibbs Reflective Cycle to a recent leadership moment of your own (positive or negative). In 4–5 sentences, work through at least the Description, Feelings, Analysis, and Action Plan stages. Reference frameworks from Units 1–4 as appropriate.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) specific moment (not generic), (2) honest feelings naming (not performance), (3) Analysis connecting to a Unit 1-4 framework (situational leadership, active listening, conflict styles, helping conversation), (4) Action Plan with specific next-time commitment. Strong responses recognise where the difficulty actually lived ("I jumped to advice when the peer needed listening"; "I directed when the teammate was D3 and needed supporting"). Marks: 1 per stage covered well.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write a one-page portfolio artefact (250–350 words) for a leadership initiative you have led or co-led (real or carefully imagined). Include: title with dates, scope, your specific contribution, evidence of impact, and reflective insight using Gibbs structure (description → feelings → analysis → action plan).</div>
+<textarea placeholder="Your artefact..." style="min-height:300px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) Title with concrete name + dates; (2) Scope clearly defined; (3) Specific contribution (not vague); (4) Evidence of impact (numbers, named outcomes, observed change); (5) Reflective insight with framework connection; (6) Action plan for future. Strong artefacts could be used directly in a university supplementary essay or college interview. Weak artefacts read as résumé bullets without depth. Marks: 1 title/dates, 1 scope, 1 contribution specificity, 1 impact evidence, 1 reflection, 1 conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write an analytical paragraph (6–8 sentences) on the claim: <em>"Documentation and reflection are as much a part of leadership as the actions themselves."</em> Use specific evidence from Unit 5 and engage at least one counter-argument.</div>
+<textarea placeholder="Your paragraph..." style="min-height:200px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) thesis (likely agreeing, with nuance); (2) evidence — undocumented experience is invisible to admissions readers, employers, and the student's own future memory; reflection (Gibbs, Schön) is what turns experience into transferable learning; the IPP institutionalises the portfolio-thinking habit at provincial level. (3) Counter-argument — too much documentation can become bureaucratic theatre; the action is still primary; some students perform reflection rather than engaging it. (4) Nuanced conclusion: documentation and reflection are not replacements for action, but without them the action does less work. Marks: 1 thesis, 2 evidence, 2 counter-engagement, 1 conventions.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Apply</strong> the project-charter framework. Draft a two-paragraph mini-charter (about 200 words) for a hypothetical leadership initiative at your school. Include Purpose, Scope (in and out), Stakeholders, Success Criteria, and at least two Risks with responses.</div>
+<textarea placeholder="Your mini-charter..." style="min-height:250px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for all five components present; specific (not generic); realistic resource scope; two-page-feasible. Strong charters are local and modest in ambition. Weak charters are vague or grandiose. Marks: 1 Purpose, 1 Scope (in/out), 1 Stakeholders + Success Criteria, 2 Risks with responses.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Apply</strong> the back-planning framework to a 6-week project. Assume launch date is May 30. Identify five milestones with dates, owners, and a definition-of-done for each.</div>
+<textarea placeholder="Your back-plan..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Sample five-milestone back-plan: <em>Week 6 (May 30) — Launch event;</em> <em>Week 5 (May 23) — Final logistics confirmed, run-of-show finalised;</em> <em>Week 4 (May 16) — Comms blast, sign-up open;</em> <em>Week 3 (May 9) — Partners confirmed, materials printed;</em> <em>Week 2 (May 2) — Charter approved by principal, content drafted, sponsor reviewed;</em> <em>Week 1 (Apr 25) — Charter drafted, partners identified.</em> Each with owner and definition-of-done. Marks: 1 per well-defined milestone (5 total).</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>STSE / Pathways Application:</strong> Identify one postsecondary destination (program at a specific university or college, or apprenticeship/workplace pathway) where your GPP3O experience would be valued. In 3–4 sentences, explain what specifically a candidate could draw from this course in a supplementary essay or interview answer.</div>
+<textarea placeholder="Your answer..." style="min-height:120px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Examples: BSc Nursing, Toronto Metropolitan University — the peer-support, helping conversation, and safeTALK content speak directly to the relational core of nursing. BA Child and Youth Studies, Brock — the mentoring frameworks, ethical leadership, and Indigenous leadership content are directly cited. Police Foundations diploma, college — the conflict-resolution, restorative-practices, and ethical-leadership content. Strong responses name a specific program + specific competencies + how the candidate would tell the story (specific moment, framework named, impact described). Marks: 1 specific destination, 1 specific competencies, 1 narrative move.</p></details></div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Synthesis: Strands A, B, C, D | Assessment OF Learning — Graded</footer>
+</div></body></html>

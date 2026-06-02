@@ -14,6 +14,11 @@ NEW_COURSES = [
     ("cgf3m", 5), ("cgw4u", 5), ("hsc4m", 5),
     ("baf3m", 5), ("bat4m", 5), ("bbb4m", 5), ("boh4m", 5),
     ("hfn3m", 5), ("hfa4m", 5), ("mct3m", 5), ("mct4m", 5),
+    # 2026-06-01 Politics + GCE expansion — added six new Ontario courses
+    ("cpc3o", 3),                                     # Grade 11 Open · 0.5cr
+    ("cpw4u", 5),                                     # Grade 12 University · 1.0cr
+    ("gwl3o", 3),                                     # Grade 11 Open · 0.5cr
+    ("gpp3o", 5), ("gle3o", 5), ("gle4o", 5),         # Grade 11/11/12 Open · 1.0cr each
 ]
 
 

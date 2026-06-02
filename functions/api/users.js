@@ -37,12 +37,13 @@ const VALID_COURSE_CODES = new Set([
   'snc2d', 'sbi3u', 'sbi4u', 'sch3u', 'sch4u', 'sph3u', 'sph4u',
   'eng2d', 'eng3u', 'eng4u',
   'ics3u', 'ics4u',
-  'chv2o', 'chc2d', 'chw3m', 'chy4u',
+  'chv2o', 'cpc3o', 'cpw4u',                                     // Politics: G10 → G11 → G12
+  'chc2d', 'chw3m', 'chy4u',
   'clu3m', 'cln4u',
   'cgf3m', 'cgw4u',
   'baf3m', 'bat4m', 'bbb4m', 'boh4m',
   'hfn3m', 'hfa4m', 'hsc4m',
-  'glc2o',
+  'glc2o', 'gwl3o', 'gpp3o', 'gle3o', 'gle4o',                   // GCE: G10 → G11 (×3) → G12
 ]);
 
 // Validate + normalize an incoming enrolled_courses payload.

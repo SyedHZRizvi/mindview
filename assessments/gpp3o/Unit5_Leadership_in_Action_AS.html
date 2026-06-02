@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Leadership in Action — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 5: Leadership in Action — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Synthesis</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of project charters, back-planning, risk management, Tuckman's stages, implementation, the Gibbs Reflective Cycle, and leadership portfolios.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 5.1–5.2 — Charter, Back-Planning, Risk</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">A project charter typically has six sections. Which is NOT a standard section?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Purpose</label></li>
+<li><label><input type="radio" name="q1" value="b"> Scope (in and out)</label></li>
+<li><label><input type="radio" name="q1" value="c"> Stakeholders</label></li>
+<li><label><input type="radio" name="q1" value="d"> Promotional Hashtag</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','d')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Standard sections: Purpose, Scope, Stakeholders, Success Criteria, Resources, Risks. A hashtag is marketing, not planning.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">"Back-planning" means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Reviewing the project after it's over</label></li>
+<li><label><input type="radio" name="q2" value="b"> Starting from the deadline and working backward to identify milestones and tasks</label></li>
+<li><label><input type="radio" name="q2" value="c"> Planning to back out if things go wrong</label></li>
+<li><label><input type="radio" name="q2" value="d"> Planning only the last week of a project</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Back-planning starts from the deadline and works backward to today's tasks. It exposes dependencies and prevents the common student-project failure of running out of runway.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">The four standard risk responses are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Avoid, Mitigate, Transfer, Accept</label></li>
+<li><label><input type="radio" name="q3" value="b"> Fight, Flight, Freeze, Fawn</label></li>
+<li><label><input type="radio" name="q3" value="c"> Hope, Pray, Wait, Worry</label></li>
+<li><label><input type="radio" name="q3" value="d"> Plan A, Plan B, Plan C, Plan D</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','a')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Avoid (change the plan to remove the risk); Mitigate (reduce probability or impact); Transfer (shift the risk to someone better placed); Accept (acknowledge and plan a fallback). Used together depending on risk type.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 5.3–5.4 — Team Stages and Implementation</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Tuckman's stages of group development, in order, are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Performing, storming, forming, norming, adjourning</label></li>
+<li><label><input type="radio" name="q4" value="b"> Forming, storming, norming, performing, adjourning</label></li>
+<li><label><input type="radio" name="q4" value="c"> Norming, forming, performing, adjourning, storming</label></li>
+<li><label><input type="radio" name="q4" value="d"> Hugging, fighting, working, finishing, leaving</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Forming (initial uncertainty), Storming (disagreement surfaces), Norming (shared methods develop), Performing (work flows), Adjourning (1977 addition; team disbands and reflects).</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div>
+<div class="passage">Team member: "Why are we even doing this — we should pivot to a totally different approach." Another member: "Are you saying our work is wrong?" Tension is rising.</div>
+<div class="qtxt">In Tuckman's stages, this is most likely:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Forming (polite uncertainty)</label></li>
+<li><label><input type="radio" name="q5" value="b"> Storming (real disagreement surfaces) — the leader should hold space rather than smooth over</label></li>
+<li><label><input type="radio" name="q5" value="c"> Performing (high-trust work)</label></li>
+<li><label><input type="radio" name="q5" value="d"> Adjourning (team disbands)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Storming — most-uncomfortable stage; teams try to skip it. The leader's job is to name the stage and hold space for productive disagreement, not smooth it over (which sends the conflict underground).</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">A weekly "stand-up" is typically:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> A long meeting where each member gives a 30-minute update</label></li>
+<li><label><input type="radio" name="q6" value="b"> A short (15–20 minute) meeting where each member shares what they did, what they're doing, and what's blocking them</label></li>
+<li><label><input type="radio" name="q6" value="c"> A vertical-fitness exercise</label></li>
+<li><label><input type="radio" name="q6" value="d"> A monthly performance review</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Stand-ups are short and frequent — three questions per person. Problems surface early; the team stays aligned; work flows. Most professional teams use a version of this.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 5.5 — Reflection</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The six stages of Gibbs's Reflective Cycle are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Description, Feelings, Evaluation, Analysis, Conclusion, Action Plan</label></li>
+<li><label><input type="radio" name="q7" value="b"> Plan, Do, Check, Act, Repeat, Stop</label></li>
+<li><label><input type="radio" name="q7" value="c"> Setup, Run, Debrief, Forget, Move on, Sleep</label></li>
+<li><label><input type="radio" name="q7" value="d"> Goal, Strategy, Tactic, Action, Review, Replan</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Gibbs (1988): Description (facts, no judgment), Feelings (emotional reality), Evaluation (good/bad), Analysis (connect to frameworks), Conclusion (what learned), Action Plan (specific next-time commitment).</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">An "action plan" in Gibbs's cycle should be:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> A vague aspiration ("I'll be better next time")</label></li>
+<li><label><input type="radio" name="q8" value="b"> A specific, testable commitment ("Next time someone hasn't done a task, my first response will be one open question")</label></li>
+<li><label><input type="radio" name="q8" value="c"> A list of what others should do differently</label></li>
+<li><label><input type="radio" name="q8" value="d"> A motivational quote</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> The action plan is what makes reflection portable to future situations. "Next time X happens, I will do Y" is testable. Vague aspirations are not.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 5.6 — Portfolio and Pathways</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A strong leadership-portfolio artefact for a project typically includes:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Title, scope, your specific contribution, evidence of impact, reflective insight</label></li>
+<li><label><input type="radio" name="q9" value="b"> Just a photo of the event</label></li>
+<li><label><input type="radio" name="q9" value="c"> A list of everyone involved without naming what you did</label></li>
+<li><label><input type="radio" name="q9" value="d"> A motivational poster</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> The portfolio artefact names what you specifically did and what changed. Documentation is leadership too — the work matters and the documentation makes the work visible to admissions committees, employers, and your own future self.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">The Ontario Individual Pathways Plan (IPP) is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> A federal income-tax form</label></li>
+<li><label><input type="radio" name="q10" value="b"> Ontario's K-12 reflective career-and-life-planning portfolio</label></li>
+<li><label><input type="radio" name="q10" value="c"> A driving-school workbook</label></li>
+<li><label><input type="radio" name="q10" value="d"> A high-school dropout intervention only</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> The IPP is maintained from K through 12; students record self-knowledge, opportunities explored, decisions, and reflection. GPP3O is a key contributor in Grade 11; the IPP is the bridge to postsecondary applications and pathway planning.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Which of these is most likely to be valued by university supplementary-essay readers and college-program interviewers?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A list of clubs you joined</label></li>
+<li><label><input type="radio" name="q11" value="b"> A specific story of leadership with named impact, reflection on what you learned, and connection to your direction</label></li>
+<li><label><input type="radio" name="q11" value="c"> A claim that you are "a natural leader"</label></li>
+<li><label><input type="radio" name="q11" value="d"> A list of awards without context</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Specific stories with named impact, reflective insight, and forward-looking connection are what admissions readers find compelling. Lists without specifics or stories without reflection are less effective.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, identify one leadership initiative (current or possible) at your school or community, and one specific aspect of Unit 5's frameworks that would help make it more successful. Be concrete.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> Our school's eco-club has been running an annual waste audit for three years but rarely produces follow-up. The fix from Unit 5 is back-planning combined with a stand-up rhythm — set the audit-report date six weeks out, weekly 15-minute stand-ups for each of those six weeks where each member reports their tasks, blockers, and progress. The weekly visibility would catch slippage early; right now we're running on goodwill and getting tired in week four. Strong responses name a specific initiative + a specific framework.</div></div>
+
+</div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Synthesis: Strands A, B, C, D | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

@@ -103,10 +103,13 @@ LAYOUT = [
     ]),
 
     # ─── Canadian and World Studies discipline ─ split by strand ───────
-    ("🏛️ Civics and Citizenship", [
-        # Ontario CWS 2018 — Politics strand. CHV2O is the only currently-
-        # offered Grade 10 Politics course; named per the course title.
+    ("🏛️ Civics and Politics", [
+        # Ontario CWS 2018 — Politics strand. Grade 10 Civics + Grade 11
+        # Politics in Action + Grade 12 Canadian and World Politics now form
+        # the full G10 → G11 → G12 progression.
         ("chv2o", "CHV2O", 10, "#7c3aed", "Civics and Citizenship", "Half-credit (0.5). Civic awareness, civic engagement & action, political inquiry skills"),
+        ("cpc3o", "CPC3O", 11, "#7c3aed", "Politics in Action: Making Change", "Half-credit (0.5). Identifying issues, tools of civic engagement, designing & evaluating civic action"),
+        ("cpw4u", "CPW4U", 12, "#6d28d9", "Canadian and World Politics", "Power & governance, ideologies, human rights, conflict, global cooperation — university preparation"),
     ]),
     ("📜 History", [
         # Ontario CWS 2018 — History strand.
@@ -156,9 +159,19 @@ LAYOUT = [
     ]),
 
     # ─── Guidance and Career Education discipline ──────────────────────
+    # Full G10 → G11 → G11 → G11 → G12 sequence (the Ontario GCE discipline
+    # has multiple Grade 11 courses serving complementary purposes).
     ("🧭 Guidance and Career Education", [
-        # Ontario discipline name (the course GLC2O is "Career Studies").
+        # Grade 10: foundational career studies (compulsory half-credit).
         ("glc2o", "GLC2O", 10, "#059669", "Career Studies", "Half-credit (0.5). Knowing yourself, exploring opportunities, decisions & goals, transitions"),
+        # Grade 11: pathway design (compulsory half-credit successor to GLC2O).
+        ("gwl3o", "GWL3O", 11, "#16a34a", "Designing Your Future", "Half-credit (0.5). Self-knowledge, workplace communication, designing your post-secondary pathway"),
+        # Grade 11: leadership & peer support (1.0 cr Open).
+        ("gpp3o", "GPP3O", 11, "#15803d", "Leadership and Peer Support", "Self-awareness, interpersonal skills, theories of leadership, peer support & mentoring, leadership in action"),
+        # Grade 11: advanced learning strategies for senior secondary success.
+        ("gle3o", "GLE3O", 11, "#059669", "Advanced Learning Strategies", "Learning styles, reading/writing/numeracy strategies, memory & test-taking, communication, goal-setting"),
+        # Grade 12: advanced learning strategies for life after secondary.
+        ("gle4o", "GLE4O", 12, "#047857", "Advanced Learning Strategies: After Secondary", "Adult identity, post-secondary success, workplace leadership, financial literacy, civic engagement"),
     ]),
 ]
 
@@ -205,7 +218,9 @@ def card(code, label, grade, accent, title, desc):
         # Computer Studies
         "💻" if code.startswith("ics") else
         # Canadian and World Studies — by strand
-        "🏛️" if code == "chv2o" else                  # Politics → Civics
+        "🏛️" if code == "chv2o" else                  # Politics → Civics G10
+        "🗳️" if code == "cpc3o" else                  # Politics in Action G11
+        "🌐" if code == "cpw4u" else                    # Canadian and World Politics G12
         "🍁" if code == "chc2d" else                    # History (Canadian)
         "🏺" if code == "chw3m" else                    # History (Ancient)
         "🌍" if code == "chy4u" else                    # History (Modern)
@@ -222,7 +237,11 @@ def card(code, label, grade, accent, title, desc):
         "💱" if code == "bbb4m" else                    # International Business
         "👔" if code == "boh4m" else                    # Management
         # Guidance and Career Education
-        "🧭" if code == "glc2o" else
+        "🧭" if code == "glc2o" else                    # Career Studies G10
+        "🗺️" if code == "gwl3o" else                  # Designing Your Future G11
+        "🤝" if code == "gpp3o" else                    # Leadership & Peer Support G11
+        "🎯" if code == "gle3o" else                    # Advanced Learning Strategies G11
+        "🎓" if code == "gle4o" else                    # Advanced Learning Strategies: After Secondary G12
         "📘"
     )
     return (

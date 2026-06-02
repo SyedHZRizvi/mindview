@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Identifying Issues That Matter — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpc3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 1: Identifying Issues That Matter — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strands A &amp; B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the political inquiry process, identifying political issues, stakeholders, rights frameworks, source evaluation, and issue mapping. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.1 — Political Inquiry &amp; Concepts of Political Thinking</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which of the following is the strongest inquiry question for a Grade 11 politics project?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Is climate change real?</label></li>
+<li><label><input type="radio" name="q1" value="b"> Should the Ontario Ministry of Education make climate-adaptation a mandatory expectation in the Grade 9 Geography curriculum by 2027, and what content should be required?</label></li>
+<li><label><input type="radio" name="q1" value="c"> Climate change.</label></li>
+<li><label><input type="radio" name="q1" value="d"> Are politicians bad on climate?</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> A strong inquiry question is open-ended (no yes/no), bounded (Ontario, Grade 9 Geography, 2027), contestable (informed people will disagree), and significant (real-world policy stakes). Option B meets all four. A is fact-recall, C is a topic, D is a loaded yes/no.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The concept of political thinking most useful for asking "Whose voices and values shape this issue?" is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Political significance</label></li>
+<li><label><input type="radio" name="q2" value="b"> Objectives and results</label></li>
+<li><label><input type="radio" name="q2" value="c"> Stability and change</label></li>
+<li><label><input type="radio" name="q2" value="d"> Political perspective</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','d')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Political perspective is the lens that asks whose voices, beliefs, and values shape an issue. The other three concepts illuminate different aspects: significance (why it matters), objectives/results (intent vs. outcome), stability/change (what held vs. what shifted).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Identifying Political Issues</div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">According to the sociological "personal trouble vs. public issue" distinction, an individual difficulty becomes a political issue when it:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Affects more than one person</label></li>
+<li><label><input type="radio" name="q3" value="b"> Involves a contested public decision, affects a community beyond the individual, and is shaped by an identifiable power-holder</label></li>
+<li><label><input type="radio" name="q3" value="c"> Has been mentioned in news media</label></li>
+<li><label><input type="radio" name="q3" value="d"> Has gone viral on social media</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> A political issue meets three criteria: contested public decision, broad effect, and identifiable power-holder. Media coverage or scale alone are not sufficient — the structural test is whether a power-holder's decision shapes the outcome.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The concept of "issue framing" refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Putting an issue in a picture frame for display</label></li>
+<li><label><input type="radio" name="q4" value="b"> The lens through which an issue is presented — which shapes who is seen as responsible and which solutions seem reasonable</label></li>
+<li><label><input type="radio" name="q4" value="c"> A legal definition of an issue</label></li>
+<li><label><input type="radio" name="q4" value="d"> The way an issue is voted on</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Framing is the choice of lens (safety, health, rights, economics, identity) through which an issue is presented. The same facts framed differently lead to different perceptions of which power-holders are responsible and which solutions appear reasonable — framing is itself political work.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Stakeholders &amp; Perspectives</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The discipline of "steel-manning" requires you to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Argue with steel-like force against opposing views</label></li>
+<li><label><input type="radio" name="q5" value="b"> Present the strongest version of a position you do not personally hold, in language a person holding that position would recognise as fair</label></li>
+<li><label><input type="radio" name="q5" value="c"> Avoid engaging with opposing perspectives entirely</label></li>
+<li><label><input type="radio" name="q5" value="d"> Find the weakest counter-argument and refute it</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Steel-manning is the opposite of "straw-manning." It demonstrates that you have understood the strongest version of the opposing position, which is the prerequisite for any credible analytical engagement with it. Option D describes straw-manning.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">The constitutional duty to consult Indigenous peoples on Crown decisions affecting their rights was articulated by the Supreme Court of Canada in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> R v. Oakes (1986)</label></li>
+<li><label><input type="radio" name="q6" value="b"> Sauvé v. Canada (2002)</label></li>
+<li><label><input type="radio" name="q6" value="c"> Haida Nation v. British Columbia (2004)</label></li>
+<li><label><input type="radio" name="q6" value="d"> Reference re Same-Sex Marriage (2004)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','c')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Haida Nation (2004) established the Crown's duty to meaningfully consult — and where appropriate, accommodate — Indigenous peoples on decisions that may adversely affect their rights. The doctrine was further developed in Tsilhqot'in Nation (2014). The other cases addressed different constitutional questions.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.4 — Rights Frameworks</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div>
+<div class="passage">A landlord refuses to rent an apartment to a single mother who receives Ontario Works social assistance.</div>
+<div class="qtxt">Which legal framework primarily applies?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The Charter of Rights and Freedoms (the landlord is a government actor)</label></li>
+<li><label><input type="radio" name="q7" value="b"> The Ontario Human Rights Code (which prohibits discrimination in housing on grounds including "receipt of public assistance")</label></li>
+<li><label><input type="radio" name="q7" value="c"> The federal Criminal Code</label></li>
+<li><label><input type="radio" name="q7" value="d"> Section 35 of the Constitution Act, 1982</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> The Charter binds <em>government</em>; private parties are bound by provincial human-rights codes. Ontario's Code lists "receipt of public assistance" as a protected ground for housing accommodation specifically (s. 2(1)). The tenant should file a complaint with the Human Rights Tribunal of Ontario.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">UNDRIP (the UN Declaration on the Rights of Indigenous Peoples) became operative in Canadian federal law through:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> A direct ruling of the Supreme Court of Canada</label></li>
+<li><label><input type="radio" name="q8" value="b"> The United Nations Declaration on the Rights of Indigenous Peoples Act, 2021</label></li>
+<li><label><input type="radio" name="q8" value="c"> Section 35 of the Constitution Act, 1982</label></li>
+<li><label><input type="radio" name="q8" value="d"> A provincial referendum</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Canada endorsed UNDRIP in 2010 (as a non-binding declaration). The 2021 federal Act commits Canada to align federal law with UNDRIP, in consultation with Indigenous peoples. BC passed a parallel provincial Act in 2019. Section 35 protects different (constitutional) rights.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — Source Evaluation</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">"Lateral reading" — the source-evaluation discipline that professional fact-checkers use — requires you to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Read the article from left to right</label></li>
+<li><label><input type="radio" name="q9" value="b"> Stay on the source's website and carefully read its "About Us" page</label></li>
+<li><label><input type="radio" name="q9" value="c"> Leave the source within seconds and search for what other independent sources say about it</label></li>
+<li><label><input type="radio" name="q9" value="d"> Only trust sources written by professors</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','c')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Wineburg and McGrew's 2017 Stanford study found that professional fact-checkers leave the source quickly and check what independent sources say about it. Vertical reading (option B) is what students traditionally are taught, and it often deceives because professional-looking websites can be unreliable.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">A Statistics Canada release of Canadian Income Survey data is best classified as a:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Primary source — original measurement, methodology, and data</label></li>
+<li><label><input type="radio" name="q10" value="b"> Secondary source — analysis of someone else's measurements</label></li>
+<li><label><input type="radio" name="q10" value="c"> Opinion piece</label></li>
+<li><label><input type="radio" name="q10" value="d"> Disinformation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','a')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Statistics Canada is the producer of the underlying survey data; the release is primary. Commentary about the release (e.g., a news article interpreting the numbers) is secondary. Always check primary sources when a viral statistic is claimed.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — Issue Mapping</div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">The six elements of a complete issue map are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Headline, headline, headline, headline, headline, signature</label></li>
+<li><label><input type="radio" name="q11" value="b"> Issue as question, stakeholders, decision-maker(s), rights/frameworks, evidence base, candidate actions</label></li>
+<li><label><input type="radio" name="q11" value="c"> Slogan, hashtag, video, donation link, petition, vote</label></li>
+<li><label><input type="radio" name="q11" value="d"> Who, what, when, where, why, how (5W1H journalism)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The six-element issue map is the discipline that converts a concern into a project. It draws together the previous lessons of Chapter 1 (questioning, stakeholders, decision-makers, rights, evidence) and points forward to Chapters 2 and 3 (candidate actions).</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div>
+<div class="passage">"I want the government to do something about youth mental health."</div>
+<div class="qtxt">Which step of issue mapping is missing first from this concern?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> A specific decision-maker (which level of government, which body, which official)</label></li>
+<li><label><input type="radio" name="q12" value="b"> A YouTube video</label></li>
+<li><label><input type="radio" name="q12" value="c"> A celebrity endorsement</label></li>
+<li><label><input type="radio" name="q12" value="d"> A logo</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','a')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> "The government" is not a decision-maker. Youth mental health touches federal funding (Canada Health Transfer, Mental Health Commission of Canada), provincial delivery (Ministry of Health, Ministry of Education), municipal public-health units, school boards, and Indigenous Services Canada (for First Nations communities). Naming the specific decision-maker is the next step.</div></div>
+
+</div>
+
+<footer>CPC3O — Politics in Action: Making Change, Grade 11 | Strands A &amp; B | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

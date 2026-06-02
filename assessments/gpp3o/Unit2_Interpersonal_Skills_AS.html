@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Interpersonal Skills — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Interpersonal Skills — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of communication models, active listening, assertive communication, constructive feedback, conflict styles, and restorative practices. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.1–2.2 — Communication Models and Active Listening</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">In Shannon and Weaver's communication model, "noise" refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Only physical sound interference</label></li>
+<li><label><input type="radio" name="q1" value="b"> Anything that distorts a message in transit — physical, psychological, semantic, or cultural</label></li>
+<li><label><input type="radio" name="q1" value="c"> Whether the message is true</label></li>
+<li><label><input type="radio" name="q1" value="d"> The pace of the conversation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Noise is multi-source — physical (a loud cafeteria), psychological (the receiver is tired), semantic (a word means different things), cultural (gestures and norms vary). Effective communicators check for understanding instead of assuming.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Mehrabian's "7% words, 38% tone, 55% body language" rule is correctly understood as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> A universal law applying to all communication</label></li>
+<li><label><input type="radio" name="q2" value="b"> Specific to situations where word and tone conflict; the point is that consistency across channels matters</label></li>
+<li><label><input type="radio" name="q2" value="c"> A method for sales presentations</label></li>
+<li><label><input type="radio" name="q2" value="d"> A way to ignore content and focus only on body language</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Mehrabian (1967) studied messages where verbal and non-verbal channels conflicted. The accurate generalisation: when channels conflict, receivers trust non-verbal cues. The "7-38-55" numbers do NOT mean those are the relative weights of all communication.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">Peer: "I just feel like everything is falling apart." You (after 4 seconds of silence): "It sounds like things feel really overwhelming right now."</div>
+<div class="qtxt">Your response uses which active-listening technique?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Giving advice</label></li>
+<li><label><input type="radio" name="q3" value="b"> Reflecting feeling — tentatively naming the emotion you sense</label></li>
+<li><label><input type="radio" name="q3" value="c"> Asking a closed question</label></li>
+<li><label><input type="radio" name="q3" value="d"> Sharing a similar story of your own</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Reflecting feeling — naming the emotion tentatively ("it sounds like..."). The 4-second silence beforehand is also a technique: most peer-helpers under-use silence. Together they create space for the peer to go deeper.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.3–2.4 — Assertive Communication and Feedback</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The classic assertive I-statement structure is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> "You always do X, and it's really annoying"</label></li>
+<li><label><input type="radio" name="q4" value="b"> "I feel X when Y because Z; I would like W"</label></li>
+<li><label><input type="radio" name="q4" value="c"> "Whatever, it's fine, don't worry about it"</label></li>
+<li><label><input type="radio" name="q4" value="d"> "It's fine but actually it's really not fine"</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The assertive I-statement owns the feeling, specifies the behaviour, explains the impact, and offers a concrete request. The other options are aggressive, passive, and passive-aggressive respectively.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Which is the strongest example of constructive (BIS) feedback?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> "Good job, you have nice energy. Maybe slow down a little."</label></li>
+<li><label><input type="radio" name="q5" value="b"> "You read Slide 3 word-for-word, which made the audience lose track of the main idea. Try summarising the slide in one sentence in your own words first, then pointing at the slide."</label></li>
+<li><label><input type="radio" name="q5" value="c"> "That presentation was a disaster."</label></li>
+<li><label><input type="radio" name="q5" value="d"> "Don't worry about it."</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> (b) names the Behaviour ("read slide 3 word-for-word"), the Impact ("audience lost the main idea"), and offers a Suggestion. (a) is vague; (c) is personal attack; (d) is empty.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Heen and Stone's three "triggers" that produce defensiveness when receiving feedback are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Fight, flight, freeze</label></li>
+<li><label><input type="radio" name="q6" value="b"> Truth, relationship, identity</label></li>
+<li><label><input type="radio" name="q6" value="c"> Anger, fear, shame</label></li>
+<li><label><input type="radio" name="q6" value="d"> Past, present, future</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Truth triggers (the feedback feels wrong), relationship triggers (the source isn't trusted), identity triggers (the feedback contradicts self-image). Naming the trigger ("I'm having a relationship trigger right now") helps you separate the message from the noise.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.5–2.6 — Conflict Styles and Restorative Practices</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">In the Thomas–Kilmann model, the "Collaborating" style is characterised by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Low assertiveness, low cooperativeness</label></li>
+<li><label><input type="radio" name="q7" value="b"> High assertiveness, high cooperativeness — finding a third option that captures what both parties care about</label></li>
+<li><label><input type="radio" name="q7" value="c"> High assertiveness, low cooperativeness</label></li>
+<li><label><input type="radio" name="q7" value="d"> Splitting the difference</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Collaborating is high on both axes; (d) describes Compromising. Collaboration finds a "both win" third option; compromise splits the difference. Both are valuable but different.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">No single Thomas–Kilmann conflict style is "best." Each fits some situations and not others. Which situation calls for the COMPETING style (high assertiveness, low cooperativeness)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> A fire alarm during your group meeting</label></li>
+<li><label><input type="radio" name="q8" value="b"> Choosing a topic for a long-term group project</label></li>
+<li><label><input type="radio" name="q8" value="c"> Deciding which table to sit at for lunch</label></li>
+<li><label><input type="radio" name="q8" value="d"> Setting weekly meeting norms</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Competing is right in emergencies, on principle, or when speed is critical. A fire alarm calls for "everyone, out, now." The others call for collaborating, accommodating, and collaborating respectively.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Restorative practices are rooted in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Modern corporate consultancy</label></li>
+<li><label><input type="radio" name="q9" value="b"> Indigenous justice traditions, including from Aotearoa-New Zealand Māori communities and several Indigenous nations in Canada</label></li>
+<li><label><input type="radio" name="q9" value="c"> 19th-century European law</label></li>
+<li><label><input type="radio" name="q9" value="d"> A purely 21st-century invention</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Restorative practices have deep roots in Indigenous justice traditions and were adapted into Western criminal and educational settings in the late 20th century. Honouring those roots — not just borrowing the techniques — matters.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Synthesis</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">The IIRP's five restorative questions include all EXCEPT:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> What happened?</label></li>
+<li><label><input type="radio" name="q10" value="b"> Who has been affected by what you did, and how?</label></li>
+<li><label><input type="radio" name="q10" value="c"> Why are you such a bad person?</label></li>
+<li><label><input type="radio" name="q10" value="d"> What do you think you need to do to make things as right as possible?</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','c')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Restorative questions are curious, not accusatory. They ask "what happened" not "why are you bad." This framing invites accountability rather than triggers defensiveness.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Which channel is appropriate for delivering hard, sensitive feedback for the first time?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A group text in the team chat</label></li>
+<li><label><input type="radio" name="q11" value="b"> Face-to-face (or at least video), in a private setting</label></li>
+<li><label><input type="radio" name="q11" value="c"> A public Instagram post</label></li>
+<li><label><input type="radio" name="q11" value="d"> A long email</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Face-to-face (or video) allows for tone, real-time clarification, and dignity-preserving privacy. Text and email strip tone; group/public channels add humiliation, which destroys learning.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, describe one situation in which you would use the AVOIDING conflict style legitimately, and one situation in which avoiding would be a mistake.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> Legitimate avoiding: a teammate has just received bad news and is upset; raising your concern about their missed deadline today would be cruel. Take an hour. The conflict is real; the timing isn't. Mistake avoiding: you've felt overlooked at the last three meetings and keep telling yourself "it's fine." It isn't fine; the resentment is building; the longer you avoid, the bigger the eventual conversation will be. Avoiding is a tool — useful in the short term, destructive as a default.</div></div>
+
+</div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Strand B: Interpersonal Knowledge and Skills | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

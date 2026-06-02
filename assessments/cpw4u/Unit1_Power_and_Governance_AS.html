@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Power and Governance — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+details.instructor-only { margin-top: 24px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 16px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Power and Governance — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B — B1.1, B1.2, B1.3</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the modern state, political systems, Canadian federalism, the Westminster vs. presidential models, the <em>Charter</em>, and judicial review. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 1.1–1.2 — State, Sovereignty, and Political Systems</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">According to Max Weber's classical definition, a state is "a human community that successfully claims":</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> a shared language and cultural tradition</label></li>
+<li><label><input type="radio" name="q1" value="b"> the monopoly of the legitimate use of physical force within a given territory</label></li>
+<li><label><input type="radio" name="q1" value="c"> recognition from the United Nations</label></li>
+<li><label><input type="radio" name="q1" value="d"> control over the global economy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Weber's 1919 lecture "Politics as a Vocation" gives the canonical definition. The state is constituted by the monopoly of legitimate violence within a territory — not by cultural unity, UN recognition, or economic dominance.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">The 1933 Montevideo Convention codified four legal criteria of statehood. They are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> a flag, an anthem, a constitution, and a UN seat</label></li>
+<li><label><input type="radio" name="q2" value="b"> defined territory, settled population, internal government, and capacity to enter international relations</label></li>
+<li><label><input type="radio" name="q2" value="c"> democracy, rule of law, free trade, and a market economy</label></li>
+<li><label><input type="radio" name="q2" value="d"> a written constitution, a parliament, a head of state, and a head of government</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> The Montevideo Convention specified territory, population, government, and capacity for international relations. These remain the standard legal test of statehood, invoked in debates over Kosovo, Palestine, and Taiwan.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">"Society in every state is a blessing, but Government, even in its best state, is but a necessary evil." — Thomas Paine, <em>Common Sense</em>, 1776</div>
+<div class="qtxt">Paine's view of the state is closest to which contemporary classification?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Authoritarian — concentrated power and suppressed opposition</label></li>
+<li><label><input type="radio" name="q3" value="b"> Classical liberal — limited government, individual rights, suspicion of state power</label></li>
+<li><label><input type="radio" name="q3" value="c"> Totalitarian — single ideology, mass party, terror</label></li>
+<li><label><input type="radio" name="q3" value="d"> Social-democratic — extensive welfare state</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Paine's "necessary evil" view of government reflects classical-liberal scepticism of state power — government is needed but should be limited. This is the lineage from Locke through Jefferson to Mill and contemporary libertarians.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Hannah Arendt's three defining features of totalitarianism (1951) are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> a king, a parliament, and a written constitution</label></li>
+<li><label><input type="radio" name="q4" value="b"> free elections, an opposition, and a free press</label></li>
+<li><label><input type="radio" name="q4" value="c"> a single ruling ideology, a single mass party fused with the state, and the use of terror to transform the population</label></li>
+<li><label><input type="radio" name="q4" value="d"> a large bureaucracy, central planning, and a powerful military</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Arendt's <em>Origins of Totalitarianism</em> identifies ideology, mass party, and terror as the distinguishing features. Authoritarianism shares some features but tolerates a depoliticised private life; totalitarianism does not.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 1.3–1.4 — Canadian Federalism and Westminster</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">In the <em>Constitution Act, 1867</em>, section 91 lists:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Provincial powers including property and civil rights</label></li>
+<li><label><input type="radio" name="q5" value="b"> Federal legislative powers including trade and commerce, criminal law, banking, and POGG</label></li>
+<li><label><input type="radio" name="q5" value="c"> The powers of the monarchy</label></li>
+<li><label><input type="radio" name="q5" value="d"> Indigenous rights</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Section 91 enumerates federal powers; section 92 enumerates provincial. POGG ("peace, order, and good government") is the federal residual / national-concern power, expanded in the 2021 <em>Reference re GGPPA</em> carbon-pricing case.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">In a Westminster parliamentary system, the Prime Minister:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Is directly elected by the public</label></li>
+<li><label><input type="radio" name="q6" value="b"> Holds office as leader of the party able to command the confidence of the elected lower house</label></li>
+<li><label><input type="radio" name="q6" value="c"> Is appointed by the Supreme Court</label></li>
+<li><label><input type="radio" name="q6" value="d"> Serves a constitutionally fixed term</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> In Westminster systems (Canada, UK, Australia, India), the public elects MPs; the PM is the party leader who can command confidence in the House. Canadians don't directly elect the PM — a common misconception.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">In December 2008, Prime Minister Stephen Harper sought prorogation of Parliament. This was politically significant because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Prorogation had never been used before in Canada</label></li>
+<li><label><input type="radio" name="q7" value="b"> It was the first time prorogation was used to avoid an imminent confidence vote that the government expected to lose</label></li>
+<li><label><input type="radio" name="q7" value="c"> The Governor General refused the request</label></li>
+<li><label><input type="radio" name="q7" value="d"> It violated section 1 of the <em>Charter</em></label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Governor General Michaëlle Jean granted prorogation after a 2-hour delay. The unprecedented use to avoid a confidence vote sparked debate about the GG's reserve powers and the limits of executive prerogative in Westminster systems.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.5 — The Charter</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In <em>R. v. Oakes</em> (1986), the Supreme Court established the section 1 test. A Charter-infringing law is justified if:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> The law was passed unanimously</label></li>
+<li><label><input type="radio" name="q8" value="b"> The law's objective is pressing and substantial AND the means are rationally connected, minimally impairing, and proportionate in effect</label></li>
+<li><label><input type="radio" name="q8" value="c"> The Governor General has approved it</label></li>
+<li><label><input type="radio" name="q8" value="d"> The provinces have agreed</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> The Oakes test has two stages: a pressing/substantial objective, and proportional means (rational connection, minimal impairment, proportionality of effect). Almost every major Charter case turns on whether section 1 saves the impugned law.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Section 33 of the <em>Charter</em> (the "notwithstanding clause"):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Allows Parliament or a provincial legislature to override sections 2 and 7–15 for a renewable five-year period</label></li>
+<li><label><input type="radio" name="q9" value="b"> Allows the Supreme Court to strike down legislation</label></li>
+<li><label><input type="radio" name="q9" value="c"> Permits provinces to opt out of any constitutional amendment</label></li>
+<li><label><input type="radio" name="q9" value="d"> Has never been used</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Section 33 allows legislatures to override sections 2 and 7–15 (but not 3-6, 16-23, 28) for renewable five-year terms. It was rarely used before 2015 but has become more common (Quebec Bill 21 2019, Bill 96 2021, Ontario back-to-work 2021).</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 1.6 — Judicial Review</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">The "dialogue theory" of Canadian judicial review (Hogg and Bushell, 1997) holds that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Courts and Parliament engage in an iterative exchange: the Court strikes a law, Parliament reformulates, the Court considers the reformulation</label></li>
+<li><label><input type="radio" name="q10" value="b"> Supreme Court decisions cannot be challenged</label></li>
+<li><label><input type="radio" name="q10" value="c"> Parliament must defer to all SCC decisions</label></li>
+<li><label><input type="radio" name="q10" value="d"> Judicial review violates Canadian democracy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','a')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Dialogue theory describes how Court-Parliament exchange shapes Canadian rights jurisprudence. Examples: post-<em>Morgentaler</em> Bill C-43 (failed); post-<em>Carter</em> Bill C-14; post-<em>Jordan</em> court-capacity investment. Distinguishes the Canadian model from the more confrontational US model.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">In <em>Reference re Greenhouse Gas Pollution Pricing Act</em> (2021), the SCC held that the federal carbon-pricing law:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Was unconstitutional</label></li>
+<li><label><input type="radio" name="q11" value="b"> Was a valid POGG matter of "national concern" because climate change has effects beyond any single province (6–3)</label></li>
+<li><label><input type="radio" name="q11" value="c"> Required unanimous provincial consent</label></li>
+<li><label><input type="radio" name="q11" value="d"> Violated section 7 of the Charter</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The 2021 ruling upheld federal carbon pricing as a valid POGG "national concern" matter — climate change has effects across provincial boundaries that no single province can address. The decision was 6–3, with strong dissents on federalism grounds.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, explain why section 33 has become more politically prominent since 2018 and what political-thinking concept best captures the development.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> Since 2018, section 33 has been invoked far more frequently — most prominently in Quebec's Bill 21 (2019) and Bill 96 (2021), and in pre-emptive Saskatchewan and Ontario uses. The development reflects a shift in how provincial legislatures see the balance between parliamentary sovereignty (a Westminster value) and Charter-rights protection (a liberal-democratic value). The political-thinking concept of <em>stability and change</em> best captures it: the section 33 norm of restraint that prevailed 1982–2015 has changed substantially, and the change has consequences for the future of Canadian constitutional politics.</div></div>
+
+</div>
+
+<details class="instructor-only">
+<summary>📖 Complete Answer Key</summary>
+<p><strong>Q1:</strong> B (Weber). <strong>Q2:</strong> B (Montevideo). <strong>Q3:</strong> B (classical liberal). <strong>Q4:</strong> C (Arendt's three features). <strong>Q5:</strong> B (federal section 91). <strong>Q6:</strong> B (Westminster confidence). <strong>Q7:</strong> B (first prorogation to avoid confidence vote). <strong>Q8:</strong> B (Oakes test). <strong>Q9:</strong> A (notwithstanding clause). <strong>Q10:</strong> A (dialogue theory). <strong>Q11:</strong> B (POGG/national concern). <strong>Q12:</strong> Open-ended; sample at top.</p>
+</details>
+
+<footer>CPW4U — Canadian and World Politics, Grade 12 | Strand B: Power, Governance, and Citizenship | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

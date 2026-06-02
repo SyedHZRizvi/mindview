@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Identifying Issues That Matter — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #7c3aed; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details.instructor-only { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details.instructor-only p, details.instructor-only li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpc3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 1: Identifying Issues That Matter — Unit Test</h1><div class="sub">Assessment OF Learning · Strands A &amp; B</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all reasoning. Answer keys are visible only to instructors.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[2]</span>
+<div class="qtxt">Name the four concepts of political thinking and briefly define each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q1-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(1) <strong>Political significance</strong> — why an issue matters and for whom. (2) <strong>Objectives and results</strong> — what political actors set out to do vs. what actually happened. (3) <strong>Stability and change</strong> — what has held constant and what has been transformed. (4) <strong>Political perspective</strong> — whose voices, beliefs, and values shape the issue. <em>Rubric: 0.5 each.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">In one sentence, distinguish: (a) <em>misinformation</em>, (b) <em>disinformation</em>, (c) <em>propaganda</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q2-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(a) Misinformation — false content shared without intent to deceive. (b) Disinformation — deliberately false content designed to deceive. (c) Propaganda — content (true, false, or selectively framed) produced to advance a political agenda. <em>Rubric: 2/3 for two correct.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">The Charter of Rights and Freedoms binds:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> Private employers and businesses only</label></li>
+<li><label><input type="radio" name="q3"> Federal, provincial, territorial, and municipal governments and the executive branch — but not private parties</label></li>
+<li><label><input type="radio" name="q3"> All Canadian citizens equally including in their private dealings</label></li>
+<li><label><input type="radio" name="q3"> Only Parliament in Ottawa</label></li>
+</ul>
+<div class="sol instructor-only" id="q3-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>B.</strong> Under s. 32(1), the Charter applies to Parliament, the legislatures, and the executive at every level. Private parties are bound by provincial human-rights codes and the Canadian Human Rights Act, not the Charter directly.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">Define the following: (a) <em>UDHR</em>, (b) <em>UNDRIP</em>, (c) <em>section 35 of the Constitution Act, 1982</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q4-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>UDHR</strong> — Universal Declaration of Human Rights (1948), foundational UN declaration; not directly enforceable in Canadian courts but shapes interpretation. (b) <strong>UNDRIP</strong> — UN Declaration on the Rights of Indigenous Peoples (2007); endorsed by Canada in 2010, implemented via federal legislation in 2021. (c) <strong>Section 35</strong> — constitutional recognition of "existing aboriginal and treaty rights of the aboriginal peoples of Canada"; s. 35(2) explicitly includes First Nations, Métis, and Inuit.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Lateral reading is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> Reading horizontally across a page</label></li>
+<li><label><input type="radio" name="q5"> Leaving a source quickly and searching for what independent sources say about it</label></li>
+<li><label><input type="radio" name="q5"> Reading every footnote on a website</label></li>
+<li><label><input type="radio" name="q5"> Speed-reading three articles in a row</label></li>
+</ul>
+<div class="sol instructor-only" id="q5-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>B.</strong> The discipline of professional fact-checkers (Wineburg &amp; McGrew, 2017). Opens new tabs, checks the source against independent corroboration before accepting any claim.</p></details></div></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name the six elements of a complete issue map and briefly explain why each is necessary.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q6-sl"><details class="instructor-only"><summary>Answer Key</summary><p>(1) Issue as question — converts a concern into something an inquiry can answer. (2) Stakeholders — identifies who is affected, organising the political picture. (3) Decision-maker — names the specific power-holder whose decision matters; vague "the government" fails. (4) Rights/frameworks — anchors the issue in entitlements the audience may recognise. (5) Evidence base — supports the claims and shows triangulation. (6) Candidate actions — points to civic engagement (Chapters 2 and 3). <em>Rubric: 0.5 each.</em></p></details></div></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="passage">A school district is considering a policy banning the use of generative-AI tools (ChatGPT, Claude, Copilot) in any student work, with mandatory zero-credit penalties for detected use.</div>
+<div class="qtxt">Apply <strong>all four concepts of political thinking</strong> to this case in a structured response (8–12 sentences total). Identify which stakeholders should be at the table, and name one Charter or Code right that might be engaged.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<div class="sol instructor-only" id="q7-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>Significance:</strong> first wave of district-level decisions on a rapidly evolving technology; precedent for how schools handle AI more broadly; high stakes for students. <strong>Objectives and results:</strong> stated objective — academic integrity; possible results — disparate impact on students with disabilities for whom AI is an accommodation, students from low-resource homes where AI tutoring substitutes for paid tutoring, and risk of detection-tool false positives. <strong>Stability and change:</strong> stability — existing academic-integrity frameworks; change — the underlying technology changes monthly and policy may not keep up. <strong>Political perspective:</strong> students (especially those using AI for accommodation), teachers (workload of detection), administrators (consistency), parents (mixed), AI literacy advocates. Stakeholders at the table: student council, IEP coordinator, librarians, ed-tech leads, equity officer. Rights/frameworks: Ontario Human Rights Code (disability accommodation under s. 5); Charter s. 7 (procedural fairness in discipline) for the zero-credit penalty. <em>Rubric: 1 each concept; 1 for stakeholder identification with equity awareness.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Identify two ways a vague concern ("I care about the environment") fails the criteria for a strong inquiry question. Then rewrite it as one strong inquiry question, and identify which of the four criteria (open-ended, bounded, contestable, significant) your rewrite satisfies and how.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q8-sl"><details class="instructor-only"><summary>Answer Key</summary><p>"I care about the environment" is a feeling, not a question. It fails: (1) open-ended — has no claim to argue (it is a statement); (2) bounded — names no scope (which environment? whose action? what timeframe?); (3) contestable — there is nothing to disagree with; (4) significant — too diffuse to track. Rewrite example: "Should the Region of Waterloo require all new municipal infrastructure projects over $5 million to include a climate-resilience impact assessment by 2028, and what should that assessment include?" Open-ended (no yes/no), bounded (one region, one threshold, 2028), contestable (engineers and budget officials will disagree), significant (real procurement consequences). <em>Rubric: 2 for diagnosis; 1 for rewrite; 1 for criteria mapping.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[4]</span>
+<div class="passage">A graphic posted on social media claims: "Stats Canada: Cost of groceries up 47% in 2 years."</div>
+<div class="qtxt">Apply the CRAAP test (Currency, Relevance, Authority, Accuracy, Purpose) — one specific lateral-reading question for each criterion. Conclude whether you would share the graphic.</div>
+<textarea placeholder="Your evaluation..."></textarea>
+<div class="sol instructor-only" id="q9-sl"><details class="instructor-only"><summary>Answer Key</summary><p><strong>Currency:</strong> when was the underlying release? Is "2 years" 2023–2025, 2022–2024, or some other window? <strong>Relevance:</strong> is the 47% for all groceries or for a specific category (e.g., dairy or oils, which often have larger swings)? Headlines often hide composition. <strong>Authority:</strong> can the underlying Statistics Canada release be located on statcan.gc.ca? Which CPI-component is referenced? <strong>Accuracy:</strong> does StatCan's actual Food CPI show 47% over the cited window? (Realistically, Food CPI rose roughly 18–22% over 2021–2023, not 47%, which suggests the graphic is wrong.) <strong>Purpose:</strong> what is the goal of the post — to inform, to mobilise outrage, to drive engagement? Conclusion: do not share until verified against the primary StatCan release. The number appears implausibly high; cite the actual figure if used. <em>Rubric: 1 each criterion.</em></p></details></div></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[4]</span>
+<div class="qtxt">Write a paragraph (5–7 sentences) explaining the difference between the Canadian Charter of Rights and Freedoms and the Ontario Human Rights Code. Use one concrete Canadian example.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<div class="sol instructor-only" id="q10-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample: The Charter and the Human Rights Code both protect rights, but they apply to different actors and operate through different processes. The Charter (Part I of the Constitution Act, 1982) binds <em>governments</em> — federal, provincial, territorial, and municipal — and is enforced through court challenges that can strike down legislation. The Ontario Human Rights Code applies to <em>private parties</em> (employers, landlords, service providers) and is enforced through complaints to the Human Rights Tribunal of Ontario. For example, if a Toronto police service refuses to investigate a hate crime against an LGBTQ+ resident, that engages the Charter (police are government); if a private restaurant refuses to seat an LGBTQ+ couple, that engages the Ontario Human Rights Code (the protected ground of sexual orientation in services). Both frameworks may overlap on some issues, but the Charter–Code distinction is the first question to ask. <em>Rubric: 1 Charter definition; 1 Code definition; 1 example; 1 conventions.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">In a paragraph (4–6 sentences), explain to a Grade 9 student what an "inquiry question" is in CPC3O and why it matters. Give one example of a weak inquiry question and one example of a strong one.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<div class="sol instructor-only" id="q11-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample: An inquiry question is the question that focuses an investigation in politics. A weak inquiry question like "Is climate change bad?" cannot really be answered — it is a yes/no with an obvious answer to most readers — and it doesn't point to any decision-maker or action. A strong inquiry question is open-ended, bounded, contestable, and significant: "Should the Ontario Ministry of Education make climate-adaptation a mandatory expectation in the Grade 9 Geography curriculum by 2027, and what content should be required?" The strong version names a specific decision-maker, a specific timeframe, a defined scope, and gives the inquiry something to actually investigate. The reason it matters is simple: without a focused question, research produces noise; with one, it produces a useful answer. <em>Rubric: 1 for definition; 1 weak example with explanation; 1 strong example with explanation; 1 for conventions.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt">Write a 4–6 sentence explanation of why "Nothing About Us, Without Us" matters in civic action. Use at least one concrete example (disability-rights, Indigenous-led, youth-led, or another).</div>
+<textarea placeholder="Your response..."></textarea>
+<div class="sol instructor-only" id="q12-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample: "Nothing About Us, Without Us" — originally a disability-rights slogan, now widely adopted across equity-driven civic action — insists that policies and programs affecting a community must be designed <em>with</em> that community, not just <em>for</em> them. For example, when the Ontario Human Rights Commission ran the Right to Read Inquiry into reading instruction for students with disabilities (2020–2022), parents and disability-rights organisations led the campaign that triggered the inquiry; their lived expertise shaped the recommendations. The practical reasons are that affected people know the issue better than outsiders, that solutions designed without them tend to fail in implementation, and that legitimacy depends on consent. The deeper reason is that civic action that bypasses affected people often reproduces the same exclusions that produced the issue. <em>Rubric: 1 for principle definition; 2 for example; 1 for analysis of why it matters.</em></p></details></div></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[6]</span>
+<div class="passage">A coalition of Grade 11 students is concerned that homeless encampments in their downtown core are being routinely cleared by police, often without notice and sometimes during winter storms.</div>
+<div class="qtxt"><strong>Apply</strong> the six-element issue mapping framework. Produce a one-paragraph issue map covering: (1) the issue as a question, (2) the affected stakeholders, (3) the responsible decision-maker(s), (4) the rights and frameworks engaged, (5) the evidence base they would need, (6) two candidate civic actions.</div>
+<textarea placeholder="Your issue map..."></textarea>
+<div class="sol instructor-only" id="q13-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Sample: <strong>(1) Issue as question:</strong> Should our city require notice, alternative shelter, and adverse-weather suspension before any encampment clearing, and what should the policy say? <strong>(2) Stakeholders:</strong> people living in encampments; neighbouring residents; downtown businesses; outreach workers; police; municipal social services; Indigenous outreach organisations (Indigenous people are overrepresented). <strong>(3) Decision-maker:</strong> the City Council (bylaw on parks/public-spaces); the police-services board (operational practice); the local public-health unit (cold-weather alerts). <strong>(4) Rights:</strong> Charter s. 7 security of the person (Abbotsford v Shantz, 2015 — BC Supreme Court found a bylaw preventing overnight sheltering in public spaces violated s. 7); Ontario Human Rights Code s. 6 housing protections; UNDRIP for Indigenous homeless residents. <strong>(5) Evidence base:</strong> city encampment-clearing protocols; police data on number of clearings; Statistics Canada Point-in-Time homeless count; provincial coroner's reports on cold-weather deaths; comparison cases (Hamilton, Kitchener, Halifax). <strong>(6) Candidate actions:</strong> deputation to City Council demanding policy revision; partnership with an outreach organisation already engaged with affected residents; op-ed in the local paper. <em>Rubric: 1 each element substantively addressed.</em></p></details></div></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[6]</span>
+<div class="qtxt"><strong>Apply</strong> the Political Inquiry framework: choose <em>one</em> issue you are interested in (it may be the one from Question 13 or a different one). Write a 6–8 sentence response identifying (a) one strong inquiry question, (b) three credible sources you would consult (with brief reasoning for why each is credible), (c) the strongest counter-argument to your tentative position, and (d) one ethical concern you would attend to in your inquiry.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q14-sl"><details class="instructor-only"><summary>Answer Key</summary><p>Marking guide: 1 for a well-formed inquiry question (open-ended, bounded, contestable, significant); 2 for three credible sources, each with reasoning (e.g., a Statistics Canada release for empirical grounding; an academic journal article for peer-reviewed analysis; an advocacy organisation's brief for the perspective of affected people); 1 for a steel-manned counter-argument; 1 for an ethical concern with named mitigation (consent for using lived testimony; not reproducing the exclusion that produced the issue; harm reduction for vulnerable participants). Strong answers integrate the elements coherently rather than treating them as a checklist.</p></details></div></div>
+
+<footer>CPC3O — Politics in Action: Making Change, Grade 11 | Strands A &amp; B | Assessment OF Learning — Graded</footer>
+</div></body></html>

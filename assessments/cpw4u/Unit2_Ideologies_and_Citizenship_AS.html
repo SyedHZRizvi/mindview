@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Ideologies and Citizenship — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+textarea { width:100%; padding:10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; min-height:70px; font-family:inherit; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+details.instructor-only { margin-top: 24px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 16px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/cpw4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Ideologies and Citizenship — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B — B2.1, B2.3, B3.1, B3.2</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of political ideologies, citizenship, the Canadian party system, and civil society. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.1–2.2 — Ideology, Liberalism, Conservatism, Socialism</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">The Left-Right political spectrum originated in:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> the 1689 English Bill of Rights</label></li>
+<li><label><input type="radio" name="q1" value="b"> the 1789 French National Assembly, where supporters of the king sat on the right and revolutionary supporters on the left</label></li>
+<li><label><input type="radio" name="q1" value="c"> 19th-century American party conventions</label></li>
+<li><label><input type="radio" name="q1" value="d"> the 1917 Russian Revolution</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> The Left-Right spectrum dates to the French Revolution: in the 1789 Estates-General and subsequent Assemblies, supporters of the king sat on the right of the presiding officer, supporters of revolutionary change on the left. The terminology has been used ever since.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div>
+<div class="passage">"If it has been said that ours is a divisive force, I reply that the dignity of man is more important than the unity of the state." — Pierre Trudeau, federal Liberal leader, 1968</div>
+<div class="qtxt">Trudeau's statement is closest to which ideological tradition?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Authoritarian — concentrated power overrides individual claims</label></li>
+<li><label><input type="radio" name="q2" value="b"> Liberal — individual rights take precedence over collective goals</label></li>
+<li><label><input type="radio" name="q2" value="c"> Fascist — palingenetic ultra-nationalism</label></li>
+<li><label><input type="radio" name="q2" value="d"> Burkean conservative — gradual change and respect for tradition</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Trudeau's prioritisation of individual "dignity" over the "unity of the state" reflects classical and social-liberal commitments. The lineage runs from Locke through Mill to Rawls and contemporary Canadian liberalism.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Edmund Burke's <em>Reflections on the Revolution in France</em> (1790) is the foundational text of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Classical liberalism</label></li>
+<li><label><input type="radio" name="q3" value="b"> Traditional/Burkean conservatism — scepticism of abstract reason, attachment to tradition, gradual rather than revolutionary change</label></li>
+<li><label><input type="radio" name="q3" value="c"> Marxism</label></li>
+<li><label><input type="radio" name="q3" value="d"> Anarchism</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Burke argued societies are organic wholes built over centuries; institutions embody accumulated wisdom; abrupt theoretical change destroys the social fabric. The text is foundational for "traditional" conservatism; 20th-century conservatism diversified into libertarian, neo-conservative, and post-liberal currents.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">The Canadian Cooperative Commonwealth Federation (CCF) was founded in 1932 and became the:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Liberal Party of Canada (existing since 1867)</label></li>
+<li><label><input type="radio" name="q4" value="b"> Conservative Party of Canada (founded 2003)</label></li>
+<li><label><input type="radio" name="q4" value="c"> New Democratic Party (NDP, 1961) — Canada's social-democratic federal party</label></li>
+<li><label><input type="radio" name="q4" value="d"> Bloc Québécois (founded 1991)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','c')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> The CCF was founded in Calgary in 1932 by J.S. Woodsworth and others (a coalition of farmer, labour, and social-gospel reformers). In 1961 it merged with the Canadian Labour Congress to form the NDP. Tommy Douglas — Saskatchewan CCF premier 1944–61 — became the first federal NDP leader.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Fascism, Populism, Indigenous Political Thought</div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Cas Mudde and Cristóbal Rovira Kaltwasser (2017) define populism as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A right-wing extremist ideology</label></li>
+<li><label><input type="radio" name="q5" value="b"> A thin-centred ideology pitting "the pure people" against "the corrupt elite," combinable with thicker host ideologies (left or right)</label></li>
+<li><label><input type="radio" name="q5" value="c"> Direct democracy by referendum</label></li>
+<li><label><input type="radio" name="q5" value="d"> A foreign-policy doctrine</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The Mudde/Rovira Kaltwasser definition is the leading academic account. Populism is "thin-centred" because it attaches to thicker ideologies — left-populism (Chávez, Sanders, Mélenchon) and right-populism (Trump, Le Pen, Meloni, Orbán) share the people-vs-elite frame.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Robert Paxton's nine "mobilising passions" of fascism (2004) centrally include:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> A sense of overwhelming crisis, victimhood, dread of decline, and the beauty of cleansing violence</label></li>
+<li><label><input type="radio" name="q6" value="b"> A commitment to free markets and individual liberty</label></li>
+<li><label><input type="radio" name="q6" value="c"> Universal suffrage and proportional representation</label></li>
+<li><label><input type="radio" name="q6" value="d"> International humanitarian cooperation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','a')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Paxton's <em>Anatomy of Fascism</em> identifies fascism's mobilising passions as including crisis, group primacy, victimhood, decline anxiety, leader cult, beauty of violence, group superiority, and populist anti-elitism. Fascism is not synonymous with all right-wing authoritarianism — it is a specific, historically-situated combination.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Citizenship and the Charter</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">T.H. Marshall's classic three-layer account of citizenship (1950) distinguishes:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Local, provincial, and federal citizenship</label></li>
+<li><label><input type="radio" name="q7" value="b"> Civil, political, and social citizenship — developed across the 17th–20th centuries respectively</label></li>
+<li><label><input type="radio" name="q7" value="c"> Birthright, naturalised, and dual citizenship</label></li>
+<li><label><input type="radio" name="q7" value="d"> Active, passive, and digital citizenship</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Marshall's <em>Citizenship and Social Class</em> (1950) distinguished civil rights (legal equality, due process), political rights (vote, office-holding), and social rights (welfare minimum) as successive historical layers — each a political achievement, not a natural condition.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In <em>Sauvé v. Canada (No. 2)</em> (2002), the SCC:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Struck down the prohibition on prisoner voting under section 3 of the <em>Charter</em></label></li>
+<li><label><input type="radio" name="q8" value="b"> Upheld a federal prohibition on prisoner voting</label></li>
+<li><label><input type="radio" name="q8" value="c"> Required prisoners to pass a citizenship test before voting</label></li>
+<li><label><input type="radio" name="q8" value="d"> Required Status Indian voters to be registered separately</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','a')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> The SCC (5-4, McLachlin CJ) struck down the prohibition on voting by prisoners serving 2+ years. The right to vote is the fundamental democratic right and cannot be removed except by section 33. Later, <em>Frank v. Canada</em> (2019) extended voting rights to long-term non-residents.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topics 2.5–2.6 — Parties and Civil Society</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">The Canadian federal first-past-the-post (FPTP) electoral system:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Awards seats in proportion to national vote share</label></li>
+<li><label><input type="radio" name="q9" value="b"> Awards each riding to the candidate with the most votes, regardless of majority</label></li>
+<li><label><input type="radio" name="q9" value="c"> Requires a 50%+ majority for any seat</label></li>
+<li><label><input type="radio" name="q9" value="d"> Uses ranked ballots</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> FPTP (single-member plurality) awards each riding to the candidate with the most votes (plurality, not majority). It favours regionally concentrated parties (Bloc Québécois, regional Liberals/Conservatives) and disadvantages diffuse national parties (Greens at ~6% national but 1-2 seats).</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Robert Putnam's <em>Bowling Alone</em> (2000) used the concept of "social capital" to argue that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Late-20th-century Americans had become less involved in voluntary associations, with consequences for democratic health</label></li>
+<li><label><input type="radio" name="q10" value="b"> Cryptocurrency would replace traditional money</label></li>
+<li><label><input type="radio" name="q10" value="c"> Markets are more efficient than governments</label></li>
+<li><label><input type="radio" name="q10" value="d"> Religious institutions should be subsidised</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','a')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Putnam tracked the late-20th-century decline of voluntary associations (bowling leagues, PTAs, religious groups, community organisations) and argued this decline weakened the social capital needed for healthy democracy. The argument has been challenged and refined; Tufekci's <em>Twitter and Tear Gas</em> (2017) tracks the digital-era reconfiguration.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Idle No More (November 2012–) began with:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A First Nations chief's hunger strike on Parliament Hill</label></li>
+<li><label><input type="radio" name="q11" value="b"> Four Saskatchewan women — Wilson, McLean, McAdam, and Gordon — organising teach-ins against the Harper government's Bill C-45</label></li>
+<li><label><input type="radio" name="q11" value="c"> A pipeline blockade in British Columbia</label></li>
+<li><label><input type="radio" name="q11" value="d"> The discovery of unmarked graves at residential schools</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Idle No More began in November 2012 with four Saskatchewan women organising teach-ins against Bill C-45 (which weakened environmental protection). It became continent-wide, including round-dance flash mobs, Chief Theresa Spence's hunger strike (Dec 2012-Jan 2013), and the 12 January 2013 Day of Action.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Short answer: In 2–3 sentences, explain how political ideologies map (or fail to map) onto Canadian federal parties in 2025. Use one specific example.</div>
+<textarea placeholder="Your answer..."></textarea>
+<button class="btn" onclick="cTX('q12')">Reveal Sample</button><div class="sol" id="q12-sl"><span class="sol-lbl">Sample:</span> Canadian federal parties do not map cleanly onto single ideologies — each is a coalition. The Liberal Party combines centrist social liberalism (the post-1971 multiculturalism, the 2015-25 redistributive shifts) with brokerage moderation; the Conservative Party (post-2003) combines traditional Burkean conservatism, libertarian/neoliberal economics, and post-2022 populist tropes; the NDP combines democratic socialism (Singh's pharmacare/dental advocacy), labour-movement social democracy, and progressive cultural politics; the Bloc combines Quebec nationalism with economic centrism. Example: the post-2022 Poilievre Conservative use of populist rhetorical strategies (anti-"gatekeepers", "common people vs. elites") shows realignment within an institutional party.</div></div>
+
+</div>
+
+<details class="instructor-only">
+<summary>📖 Complete Answer Key</summary>
+<p><strong>Q1:</strong> B (1789 French Assembly). <strong>Q2:</strong> B (liberal individualism). <strong>Q3:</strong> B (Burkean conservatism). <strong>Q4:</strong> C (CCF→NDP 1961). <strong>Q5:</strong> B (Mudde definition of populism). <strong>Q6:</strong> A (Paxton's fascism). <strong>Q7:</strong> B (Marshall's three layers). <strong>Q8:</strong> A (Sauvé struck down prisoner-voting ban). <strong>Q9:</strong> B (FPTP plurality). <strong>Q10:</strong> A (Putnam social capital). <strong>Q11:</strong> B (Idle No More origin). <strong>Q12:</strong> Open-ended; sample at top.</p>
+</details>
+
+<footer>CPW4U — Canadian and World Politics, Grade 12 | Strand B: Power, Governance, and Citizenship | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
+</script></body></html>

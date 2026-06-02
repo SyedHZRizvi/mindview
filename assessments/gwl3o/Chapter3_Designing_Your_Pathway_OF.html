@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3: Designing Your Pathway — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #16a34a; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #d1fae5; color: #065f46; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #dbeafe; color: #1e40af; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+.sol { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+details.instructor-only { background:#fffbeb; border-left:4px solid #d97706; padding:10px 14px; margin-top:10px; border-radius:0 6px 6px 0; font-size:14px; }
+details.instructor-only summary { cursor:pointer; font-weight:700; color:#92400e; }
+details.instructor-only p, details.instructor-only li { margin-top: 8px; color: #78350f; }
+.strand-tag { display:inline-block; background:#ede9fe; color:#5b21b6; padding:2px 10px; font-size:12px; border-radius:12px; margin-left:8px; font-weight:600; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#16a34a;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gwl3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Chapter 3: Designing Your Pathway — Unit Test</h1><div class="sub">Assessment OF Learning · Strand C — C1.2, C1.3, C2.1, C2.3, C3.1, C3.3</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Show all reasoning. Per-question answer keys are visible only to instructors.</div>
+<div class="chart">
+<div class="chart-item" style="background:#d1fae5;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard" id="q1"><div class="qnum">1</div><span class="qmarks">[3]</span><span class="strand-tag">C · Pathways</span>
+<div class="qtxt">Name and briefly describe the five Ontario postsecondary destinations.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q1-sl"><span class="sol-lbl">Answer Key:</span> <strong>Apprenticeship</strong> — paid on-the-job + in-class training, 2–5 years, Certificate of Qualification. <strong>College</strong> — 1–4 year applied programs; certificates, diplomas, advanced diplomas. <strong>University</strong> — 3–4 year undergraduate degrees with graduate study above. <strong>Workplace</strong> — direct employment after Grade 12. <strong>Community living</strong> — supported community participation for some students. 0.5 each + 0.5 description × 5.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">2</div><span class="qmarks">[2]</span><span class="strand-tag">C · OYAP</span>
+<div class="qtxt">The Ontario Youth Apprenticeship Program (OYAP) lets eligible Grade 11–12 students:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Skip Grade 12 entirely</label></li>
+<li><label><input type="radio" name="q2"> Start logging apprenticeship hours while still in high school</label></li>
+<li><label><input type="radio" name="q2"> Apply directly to university medical schools</label></li>
+<li><label><input type="radio" name="q2"> Receive an automatic university scholarship</label></li>
+</ul>
+<div class="sol instructor-only" id="q2-sl"><span class="sol-lbl">Answer Key:</span> <strong>Option 2.</strong> OYAP allows Grade 11–12 students to begin counting apprenticeship hours toward a Certificate of Qualification while still in high school. It is one of the most powerful Strand-C tools for students whose pathway is apprenticeship.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">3</div><span class="qmarks">[2]</span><span class="strand-tag">C · NOC</span>
+<div class="qtxt">The federal Canadian system that codes every occupation by a five-digit number is the:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> Ontario Skills Passport (OSP)</label></li>
+<li><label><input type="radio" name="q3"> Ontario Universities' Application Centre (OUAC)</label></li>
+<li><label><input type="radio" name="q3"> National Occupational Classification (NOC)</label></li>
+<li><label><input type="radio" name="q3"> Specialist High Skills Major (SHSM)</label></li>
+</ul>
+<div class="sol instructor-only" id="q3-sl"><span class="sol-lbl">Answer Key:</span> <strong>Option 3 — NOC.</strong> Federal classification linked to Job Bank wage and outlook data. The 2021 update introduced the TEER structure (Training, Education, Experience, Responsibilities).</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">4</div><span class="qmarks">[3]</span><span class="strand-tag">C · Goals</span>
+<div class="qtxt">Define a SMART goal. Take the wish "I want to do better in chemistry" and convert it to a SMART goal.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q4-sl"><span class="sol-lbl">Answer Key:</span> <strong>SMART = Specific, Measurable, Achievable, Relevant, Time-bound.</strong> Sample conversion: "Raise my Grade 11 chemistry term mark from 68% to 78% by the end of this term, by completing two weekly problem sets, biweekly self-tests, and a 30-minute Sunday review block — chemistry is a prerequisite for the kinesiology program I'm exploring." 1 mark definition + 1 specific number/outcome + 1 deadline/time-bound.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">5</div><span class="qmarks">[3]</span><span class="strand-tag">C · Money</span>
+<div class="qtxt">Define each: (a) OSAP, (b) RESP, (c) CESG. For each, write one sentence about what it does for a student or family.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q5-sl"><span class="sol-lbl">Answer Key:</span> (a) <strong>OSAP</strong> (Ontario Student Assistance Program) — mixed loan + grant package based on income; grants don't repay, loans are interest-free during studies. (b) <strong>RESP</strong> (Registered Education Savings Plan) — tax-sheltered account for postsecondary savings; gains grow tax-free until withdrawn. (c) <strong>CESG</strong> (Canada Education Savings Grant) — 20% federal match on first $2,500/year of RESP contributions, up to $7,200 lifetime. 1 mark each definition + description.</div></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard" id="q6"><div class="qnum">6</div><span class="qmarks">[5]</span><span class="strand-tag">C · Pathway Matching</span>
+<div class="passage">Diego scores Social-Investigative on RIASEC, wants to be in the workforce within two or three years rather than four-plus, values balance and helping, has solid Grade-11 math and biology marks, and dislikes long lectures.</div>
+<div class="qtxt">Recommend Diego's strongest pathway and one specific Ontario destination within it. Justify with three references to his profile.</div>
+<textarea placeholder="Your recommendation..."></textarea>
+<div class="sol instructor-only" id="q6-sl"><span class="sol-lbl">Answer Key:</span> Strong fit: <strong>college nursing or paramedic program</strong> (e.g., Mohawk, Centennial, Conestoga, Algonquin, Fanshawe). Justifications: (1) Social-Investigative aligns with health-helping work with assessment/analysis; (2) 2–3 year college program fits his time-to-workforce preference; (3) paid clinical placements suit his dislike of long lectures and reinforce hands-on learning; (4) balance is more achievable on a typical hospital schedule than in many longer-credentialed pathways. Bridge to BScN is available if he wants more later. 1 mark for pathway + 1 for specific destination + 1 per justification × 3.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">7</div><span class="qmarks">[5]</span><span class="strand-tag">C · Financial Analysis</span>
+<div class="passage">Anya is comparing 4-year university journalism (residence) at $24,900/year and 3-year college journalism (residence) at $19,800/year. Both pathways exit to expected starting salaries of $42,000–$48,000. Available funding per year: OSAP $10,000 (half grant, half loan), summer work $7,000, family contribution $4,000, scholarships ≈ $1,000.</div>
+<div class="qtxt">For each pathway, calculate the annual gap, total debt at graduation (assume the loan half of OSAP is the only debt accumulated), and recommend which pathway better fits the "debt ≤ first-year salary" rule. Briefly note one non-financial factor that should also be considered.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<div class="sol instructor-only" id="q7-sl"><span class="sol-lbl">Answer Key:</span>
+<p>University: annual cost $24,900, funding total $22,000, annual gap $2,900. Loan portion of OSAP = $5,000/year × 4 = $20,000 over 4 years (plus accrued interest). Cumulative debt ≈ $20K+.<br>College: annual cost $19,800, funding total $22,000, annual gap $0 (surplus ≈ $2,200/year if family contribution holds). Loan portion = $5,000 × 3 = $15,000 over 3 years (plus interest).<br>Both fit the "debt ≤ starting salary $42K–$48K" rule, but college leaves roughly $5,000 less debt and one year sooner in the workforce — more financially advantageous on these numbers.<br>Non-financial factors: program quality/reputation in chosen niche; specific instructors; networks; preferred city; whether degree opens future graduate options Anya may want.</p>
+<p>1 mark each calculation (× 2) + 1 mark rule application + 1 mark recommendation + 1 mark non-financial factor.</p>
+</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">8</div><span class="qmarks">[3]</span><span class="strand-tag">C · Critique</span>
+<div class="passage">A peer says: "I watched a few medical shows on TV and now I'm sure I want to be a forensic pathologist."</div>
+<div class="qtxt">Critique your peer's career-research approach. Identify two flaws and recommend two specific research steps from Chapter 3.</div>
+<textarea placeholder="Your answer..."></textarea>
+<div class="sol instructor-only" id="q8-sl"><span class="sol-lbl">Answer Key:</span> Flaws: (1) TV/social-media portrayals of careers (forensics especially) are dramatised and miss daily realities; (2) single-source impression rather than multi-source research. Recommendations: (a) Look up the NOC entry for pathologist on jobbank.gc.ca for actual duties/training/wages/outlook; (b) do an informational interview with a working pathologist, asking "what does your typical day actually look like?" "what surprised you about this work?" (c) check the educational pathway (medical school → residency in pathology) and timeline. 1 mark per flaw + 0.5 per recommendation.</div></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard" id="q9"><div class="qnum">9</div><span class="qmarks">[6]</span><span class="strand-tag">C · Cover Letter</span>
+<div class="qtxt">Write a short cover-letter body (5–7 sentences) for a Grade 11 summer position at a community recreation centre as a Junior Camp Leader. Include why this role, why you (with one concrete example/evidence), and what you bring. Use a professional opening and closing line.</div>
+<textarea placeholder="Your cover letter body..."></textarea>
+<div class="sol instructor-only" id="q9-sl"><span class="sol-lbl">Answer Key:</span> Look for: (1) clear opening naming role and source ("I'm writing to apply for the Junior Camp Leader position at..."); (2) qualifications connected to job — specific evidence (volunteered with kids, sports leadership, certifications like first aid/CPR/HIGH-FIVE); (3) "why this employer" — specific reason for choosing this organisation; (4) professional closing. 1 mark opening + 2 marks qualifications with specific evidence + 1 mark "why this employer" + 1 mark closing + 1 mark conventions/tone.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">10</div><span class="qmarks">[5]</span><span class="strand-tag">C · STAR Answer</span>
+<div class="qtxt">Use STAR (Situation, Task, Action, Result) to answer the behavioural question: "Tell me about a time you missed a deadline or fell behind on a commitment, and how you handled it." 6–8 sentences. Include all four parts and one brief reflection at the end.</div>
+<textarea placeholder="Your STAR answer..."></textarea>
+<div class="sol instructor-only" id="q10-sl"><span class="sol-lbl">Answer Key:</span> Look for clear: <strong>Situation</strong> (specific setting + time); <strong>Task</strong> (what you owed and to whom); <strong>Action</strong> (specific behaviour — communicating early, redistributing, asking for help); <strong>Result</strong> (outcome — what was salvaged, what was learned); brief reflection. 1 mark each STAR element + 1 mark reflection. Penalise vague generalities ("I had some trouble but it worked out").</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">11</div><span class="qmarks">[1]</span><span class="strand-tag">C · Reference</span>
+<div class="qtxt">Name one specific question a Grade 11 student should ask in an informational interview about a career they are considering. (Not "how much does it pay?" — assume that can be looked up.)</div>
+<textarea placeholder="Your interview question..."></textarea>
+<div class="sol instructor-only" id="q11-sl"><span class="sol-lbl">Answer Key:</span> Strong examples: "What does your typical day actually look like?" "What surprised you about this work that you wouldn't have known from school?" "What do you wish you had done differently in your training?" "What did you not see coming?" "What advice would you give a Grade 11 student today specifically?" 1 mark for any thoughtful question that couldn't easily be looked up.</div></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard" id="q12"><div class="qnum">12</div><span class="qmarks">[6]</span><span class="strand-tag">C · IPP Synthesis</span>
+<div class="qtxt"><strong>Apply</strong> the four IPP questions to yourself. Write 2–3 sentences under each: (1) Who am I? (2) What are my opportunities? (3) Who do I want to become? (4) What is my plan?</div>
+<textarea placeholder="Your four-part IPP synthesis..."></textarea>
+<div class="sol instructor-only" id="q12-sl"><span class="sol-lbl">Answer Key:</span> Look for: synthesised personal profile (1); 2–3 specific career hypotheses with reasoning (2); an integrated goal connecting self and opportunity (3); concrete action items — courses, placements, certifications, financial moves (4); cohesion across the four sections. Honesty matters more than ambition — strong responses are realistic, specific, and tied to evidence about the student rather than slogans. 1.5 mark per IPP question.</div></div>
+
+<div class="qcard" id="q13"><div class="qnum">13</div><span class="qmarks">[6]</span><span class="strand-tag">C · Transition Plan</span>
+<div class="qtxt"><strong>Apply</strong> Schlossberg's 4-S model (Situation, Self, Support, Strategies) to your own upcoming Grade 11 → 12 transition. Write 2 sentences under each S, naming at least one specific resource or action under each.</div>
+<textarea placeholder="Your 4-S transition plan..."></textarea>
+<div class="sol instructor-only" id="q13-sl"><span class="sol-lbl">Answer Key:</span> <strong>Situation</strong> — describe the nature/timing/duration accurately (academic year, applications, more demanding courses). <strong>Self</strong> — name one strength and one risk factor honestly. <strong>Support</strong> — name specific people (named guidance counsellor, mentor, study partner) and one formal resource (school counsellor, Kids Help Phone, doctor). <strong>Strategies</strong> — concrete actions (sleep window, weekly review, exercise schedule, application timeline). 1.5 marks per S; reward specificity over abstraction.</div></div>
+
+<details class="instructor-only" style="margin-top:32px;border:2px solid #d97706;border-radius:8px;padding:14px 18px;background:#fffbeb;">
+<summary style="cursor:pointer;font-weight:700;color:#92400e;">📖 Complete Answer Key</summary>
+<div style="margin-top:12px;font-size:14px;color:#78350f;line-height:1.7;">
+<p><strong>Part A K/U (13):</strong> Q1 five destinations + descriptions (3); Q2 OYAP MC = option 2 (2); Q3 NOC MC = option 3 (2); Q4 SMART definition + chemistry conversion (3); Q5 OSAP/RESP/CESG with descriptions (3).</p>
+<p><strong>Part B Thinking (13):</strong> Q6 Diego pathway match with 3 justifications (5); Q7 Anya university vs. college financial analysis (5); Q8 forensic-pathologist critique with 2 flaws + 2 recommendations (3).</p>
+<p><strong>Part C Communication (12):</strong> Q9 cover-letter body for Junior Camp Leader (6); Q10 STAR answer for missed deadline (5); Q11 strong informational-interview question (1).</p>
+<p><strong>Part D Application (12):</strong> Q12 four-part IPP synthesis (6); Q13 4-S transition plan for Gr 11 → 12 (6).</p>
+<p><strong>Holistic note:</strong> reward specificity, evidence, and explicit framework use (SMART, NOC, 4-S, STAR). Penalise generic responses. Strand citations: C1.2, C1.3, C2.1, C2.3, C3.1, C3.3.</p>
+</div>
+</details>
+
+<footer>GWL3O — Designing Your Future, Grade 11 Open | Strand C: Designing Your Future | Assessment OF Learning — Graded</footer>
+</div></body></html>

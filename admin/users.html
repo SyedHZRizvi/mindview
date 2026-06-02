@@ -222,7 +222,7 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
                 <h3>📚 Enrolled Courses</h3>
                 <p class="hint">Pick the courses this student is paying for and should be able to open. Lessons, videos, and assessments for non-enrolled courses are blocked; the student can still see the course overview pages to know what's offered.</p>
                 <div class="enrol-actions">
-                    <button type="button" onclick="enrolSelectAll(true)">Select all 34</button>
+                    <button type="button" onclick="enrolSelectAll(true)">Select all 40</button>
                     <button type="button" onclick="enrolSelectAll(false)">Clear all</button>
                 </div>
                 <div class="enrol-groups" id="enrolGroups"></div>
@@ -276,8 +276,10 @@ const COURSE_CATALOG = [
     {code:'ics3u', title:'Intro to Computer Science', grade:11},
     {code:'ics4u', title:'Computer Science', grade:12},
   ]},
-  {group:'🏛️ Civics and Citizenship', courses:[
+  {group:'🏛️ Civics and Politics', courses:[
     {code:'chv2o', title:'Civics and Citizenship', grade:10},
+    {code:'cpc3o', title:'Politics in Action: Making Change', grade:11},
+    {code:'cpw4u', title:'Canadian and World Politics', grade:12},
   ]},
   {group:'📜 History', courses:[
     {code:'chc2d', title:'Canadian History since WWI', grade:10},
@@ -311,6 +313,10 @@ const COURSE_CATALOG = [
   ]},
   {group:'🧭 Guidance and Career Education', courses:[
     {code:'glc2o', title:'Career Studies', grade:10},
+    {code:'gwl3o', title:'Designing Your Future', grade:11},
+    {code:'gpp3o', title:'Leadership and Peer Support', grade:11},
+    {code:'gle3o', title:'Advanced Learning Strategies', grade:11},
+    {code:'gle4o', title:'Advanced Learning Strategies: After Secondary', grade:12},
   ]},
 ];
 

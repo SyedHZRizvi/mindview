@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Peer Support and Mentoring — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #15803d; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details.instructor-only { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details.instructor-only summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details.instructor-only p, details.instructor-only li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/gpp3o.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Peer Support and Mentoring — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /50 marks &nbsp;|&nbsp; Answer keys are instructor-gated.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/13</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/12</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/12</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [13 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Distinguish among: (a) peer tutoring, (b) peer mentoring, (c) peer mediation, (d) peer support. Give one example of when each is the right form.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>Peer tutoring:</strong> task-focused academic support. Right when: subject-specific skill gap, test-prep, homework help. (b) <strong>Peer mentoring:</strong> relationship-focused walking-alongside. Right when: transition (Grade 9 onboarding, new student), sustained development. (c) <strong>Peer mediation:</strong> trained third-party support in a peer-to-peer conflict. Right when: two peers in a defined dispute who both consent to mediation. (d) <strong>Peer support:</strong> listening-and-referral conversation around emotional content. Right when: peer is struggling and wants to talk; the peer-helper's job is bridge to professional help if needed. Marks: 1 per distinction with example (count any 3 of 4 for full marks).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">The five steps of a helping conversation are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Engage – Listen – Clarify – Options – Next Steps</label></li>
+<li><label><input type="radio" name="q2"> Ask – Tell – Solve – Hug – Leave</label></li>
+<li><label><input type="radio" name="q2"> Greet – Diagnose – Prescribe – Discharge – Forget</label></li>
+<li><label><input type="radio" name="q2"> Listen – Agree – Suggest – Cry – Distract</label></li>
+</ul>
+<details class="instructor-only"><summary>Answer Key</summary><p><strong>A.</strong> Engage (set time/place/frame), Listen (active listening; resist advice), Clarify (summarise and check), Options (offer pathways), Next Steps (specific small commitment + follow-up). Real conversations loop.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">In 2–3 sentences, explain Ontario's Child, Youth and Family Services Act (2017) section 125 duty to report, and identify why the duty applies to peer-helpers as much as to anyone.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>CYFSA section 125 imposes on every person who has reasonable grounds to suspect that a child under 16 is being or has been physically, sexually, emotionally abused, or neglected, a duty to report directly and immediately to a Children's Aid Society. The duty is personal — you cannot fully delegate by telling a teacher, although telling a trusted adult is wise. Peer-helpers are not exempt because the duty applies to every person, regardless of role; in fact, peers often hear things adults don't, making youth fulfilment of the duty particularly important.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each: (a) the safeTALK framework; (b) 9-8-8; (c) Hope for Wellness Helpline.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) <strong>safeTALK:</strong> LivingWorks Canada's 3-hour training in suicide-alertness — Tell, Ask, Listen, KeepSafe. Trains participants to ask directly about suicide and connect at-risk people to help. (b) <strong>9-8-8:</strong> Canada-wide 24/7 suicide crisis helpline launched in 2023; call or text. (c) <strong>Hope for Wellness Helpline:</strong> 1-855-242-3310; culturally-grounded 24/7 support for Indigenous peoples; chat at hopeforwellness.ca. Each is a tool a peer-helper should know by heart.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify and briefly describe three of Maslach's six drivers of burnout in helping work.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Any three of: <em>Workload</em> (too many cases, too many hours); <em>Control</em> (no influence over caseload, schedule, decisions); <em>Reward</em> (effort not recognised); <em>Community</em> (isolated from supportive fellow-helpers); <em>Fairness</em> (perceived inequity in how cases are distributed); <em>Values mismatch</em> (the work conflicts with personal values). Burnout is structural; the fixes are structural, not motivational. Marks: 1 per driver with description.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [13 marks]</div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="passage">A peer says to you: "I've been thinking it would be easier if I weren't here." You ask directly: "Are you thinking about killing yourself?" The peer hesitates, then says yes, and shares that they have looked up methods.</div>
+<div class="qtxt">In 5–6 sentences, describe your next moves — what you say, what you do, and what limit of confidentiality you invoke. Reference Lesson 4.3 and 4.4.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Sample correct response: "I'm really glad you told me. I want you to know I'm not going anywhere, and I have to bring in an adult so we can keep you safe — that's what I told you at the start. Who feels safest to you right now — your guidance counsellor, the social worker, your aunt I know is your safe adult?" Walk to the counsellor's office together. If after-hours, call 9-8-8 or Kids Help Phone 1-800-668-6868 with the peer; stay on the line. Document briefly afterward. Share with the peer-helper coordinator within 24 hours. Check in with the peer within 48 hours. Invoke confidentiality limit #1 — risk of harm to self. The peer-helper's job is bridge, not destination. Marks: 1 affirmation/non-abandonment, 1 invoking limit, 1 referral with specific resource, 1 follow-up, 1 self-care/supervision.</p></details></div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[4]</span>
+<div class="passage">A teammate confides in you that her 14-year-old brother is being physically hurt at home by their stepfather. She is afraid to tell anyone. She asks you to keep it secret.</div>
+<div class="qtxt">In 4 sentences, identify what you must do and what you must NOT promise. Cite the specific Ontario legal duty.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>You cannot promise total confidentiality. Ontario's Child, Youth and Family Services Act 2017 section 125 imposes a duty on every person with reasonable grounds to suspect that a child under 16 is being abused to report directly and immediately to a Children's Aid Society (Ontario provincial line 1-833-882-8868; or local CAS). The duty is personal. You should tell your friend honestly that you have to make a call — and that you'll help her think about how to support her brother through the process. The CAS investigation will involve risk assessment; the friend is not breaking up the family by reporting; she is meeting her duty as a human being who knows. Marks: 1 invoke duty, 1 specific legal citation, 1 cannot-promise-secrecy, 1 supportive framing.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[4]</span>
+<div class="qtxt">Apply the five-step helping conversation framework. In 4–5 sentences, describe a peer-support conversation about a moderate concern (not a crisis), and identify how each of the five steps was used.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) realistic moderate concern (a friend struggling with a course, a falling-out with a family member, a worry about a job interview); (2) all five steps identifiable — Engage (set time/place), Listen (specific listening moves), Clarify (specific summary), Options (offer pathways without prescribing), Next Steps (concrete commitment + follow-up); (3) recognition that the conversation loops. Marks: 1 per step identifiable in the narrative.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [12 marks]</div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write an analytical paragraph (6–8 sentences) on the claim: <em>"Peer support replaces the need for professional mental-health services."</em> Engage research, scope-of-role considerations, and at least one specific situation.</div>
+<textarea placeholder="Your paragraph..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Look for: (1) clear thesis (the claim is false; peer support is a bridge, not a substitute); (2) evidence — Mental Health Commission of Canada research that adolescents disclose to peers before adults, but that peer support specifically does not provide therapy; (3) scope — peer-helpers are not trained or supervised for therapy, diagnosis, prescription, or crisis intervention; (4) specific situation — a peer disclosing persistent depression needs both peer support (listening, recognition) and professional referral; (5) recognition that peer support and professional services are complementary. Marks: 1 thesis, 2 evidence, 2 scope, 1 conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write a coherent 8–10 sentence comparison of mentoring and peer support, identifying their similarities and differences, the training and time required for each, and one example of when each is the right form.</div>
+<textarea placeholder="Your comparison..." style="min-height:200px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Similarities: both involve a more-capacitated person walking alongside a less-capacitated one; both require listening, respect for autonomy, scope/boundary awareness, referral skills; both benefit from structure and supervision. Differences: mentoring is sustained (months/years) and developmental (growth-oriented); peer support is typically conversational and reactive (specific concern at a specific time). Training: peer-support typically 15-40 hours including safeTALK and helping-conversation practice; formal mentoring training includes matching, boundaries, and program-specific protocols. Examples: mentoring for a Grade 9 student transitioning to high school over a year; peer support for a friend processing a single difficult conversation. Both forms are valuable; both require honest scope-awareness. Marks: 2 similarities, 2 differences, 1 training/time, 1 examples.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [12 marks]</div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Apply</strong> the boundaries framework. Design a personal sustainability plan for yourself as a hypothetical peer-helper. In 5–6 sentences, specify your caseload limits, hours of availability, after-hours protocol, supervision schedule, restorative-time protection, and termination criteria. Be concrete.</div>
+<textarea placeholder="Your answer..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Strong response is concrete: <em>Caseload:</em> max two ongoing helping relationships. <em>Hours:</em> available specific lunch periods M-W-F; not at home, not at night. <em>After-hours:</em> peers referred to Kids Help Phone 1-800-668-6868 or 9-8-8; not personally on-call. <em>Supervision:</em> bi-weekly team check-in; private check-in available anytime. <em>Restorative:</em> two lunches protected per week for own friends/life. <em>Termination criteria:</em> sleep disruption, dread, or detachment for two consecutive weeks → take a break. Marks: 1 caseload, 1 hours, 1 after-hours, 1 supervision, 1 restorative, 1 termination — partial credit for partial plan.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt"><strong>Apply</strong> the referral pathways framework. Imagine three different peer scenarios: (a) a friend with persistent low mood; (b) a friend with academic anxiety and weak time-management; (c) a friend you suspect is in a controlling romantic relationship. For each, name one specific in-school adult AND one specific community resource you would suggest.</div>
+<textarea placeholder="Your answer..." style="min-height:150px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>(a) Persistent low mood: school social worker; Kids Help Phone 1-800-668-6868 or family doctor for screening / 9-8-8 if suicidal. (b) Academic anxiety + time management: guidance counsellor for academic + special-education consultation; Kids Help Phone or school CMHA partnership for anxiety. (c) Controlling relationship: school social worker / vice-principal as appropriate; ASSAULT-CARE Centre Hamilton Area (specific to region) or Talk4Healing 1-855-554-4325; in some regions Kids Help Phone has dedicated dating-violence pathways. Recognise scope: peer-helper does NOT confront the suspected controlling partner; that's a safety issue requiring adult support. Marks: 1 per scenario for both in-school AND community resource (3 scenarios x 1.33 = 4 marks total).</p></details></div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[3]</span>
+<div class="qtxt"><strong>STSE / Real-World Application:</strong> Mental Health Commission of Canada research suggests young people are more likely to disclose distress to peers than to adults. In 3–4 sentences, identify one specific implication for school-based mental-health programming, and one specific way your school could strengthen peer-led mental-health work.</div>
+<textarea placeholder="Your answer..." style="min-height:120px;"></textarea>
+<details class="instructor-only"><summary>Answer Key</summary><p>Implications: schools that invest only in adult-staffed counselling miss the first-disclosure layer; peer-led programs are not luxury, they're structural. Strengthening proposals: invest in trained peer-helper teams; provide regular safeTALK training across all senior students; create visible referral cards and accessible posters; build peer-helper supervision so the helpers don't burn out; align with the school social worker's caseload management. Strong responses are specific to the student's own school and avoid generic recommendations. Marks: 1 implication, 1 specific proposal, 1 communication.</p></details></div>
+
+<footer>GPP3O — Leadership and Peer Support, Grade 11 | Strand D: Preparation for Transitions and Change | Assessment OF Learning — Graded</footer>
+</div></body></html>
