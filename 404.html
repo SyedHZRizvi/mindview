@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — MindView Virtual Classroom</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.error-page { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+.error-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; max-width: 600px; width: 100%; padding: 48px 40px; text-align: center; box-shadow: 0 8px 30px rgba(15,23,42,0.08); }
+.error-code { font-size: 80px; font-weight: 900; color: #e2e8f0; line-height: 1; margin-bottom: 8px; }
+.error-title { font-size: 26px; font-weight: 800; color: #0f172a; margin-bottom: 12px; }
+.error-msg { font-size: 16px; color: #64748b; line-height: 1.6; margin-bottom: 32px; }
+.error-url { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 16px; font-family: monospace; font-size: 13px; color: #94a3b8; margin-bottom: 32px; word-break: break-all; }
+.error-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.error-link { display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; text-decoration: none; color: #1e293b; transition: all 0.18s; }
+.error-link:hover { border-color: #2563eb; background: #eff6ff; color: #2563eb; transform: translateY(-1px); }
+.error-link .icon { font-size: 24px; margin-bottom: 6px; }
+.error-link strong { display: block; font-size: 14px; font-weight: 700; }
+.error-link span { font-size: 12px; color: #64748b; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-brand"><img src="/logo.png" alt="MindView Academy" class="brand-logo"></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/catalog">Courses</a>
+      <a href="/enrolment">Enrolment</a>
+      <a href="/resources">Resources</a>
+    </div>
+  </div>
+</nav>
+
+<div class="error-page">
+  <div class="error-card">
+    <div class="error-code">404</div>
+    <div class="error-title">Page not found</div>
+    <p class="error-msg">The page you're looking for doesn't exist or may have been moved. Check the URL or use one of the links below to find what you need.</p>
+    <div class="error-url" id="bad-url"></div>
+    <div class="error-links">
+      <a href="/" class="error-link">
+        <div class="icon">🏠</div>
+        <strong>Home</strong>
+        <span>Return to the main page</span>
+      </a>
+      <a href="/catalog" class="error-link">
+        <div class="icon">📚</div>
+        <strong>Course Catalog</strong>
+        <span>Browse all 40 courses</span>
+      </a>
+      <a href="/enrolment" class="error-link">
+        <div class="icon">💳</div>
+        <strong>Enrolment</strong>
+        <span>Tuition &amp; how to register</span>
+      </a>
+      <a href="/resources" class="error-link">
+        <div class="icon">🧰</div>
+        <strong>Resources</strong>
+        <span>Free tools &amp; references</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>MindView Virtual Classroom</strong></p>
+    <p>Ontario Curriculum, Grades 10 — 12 (Revised)</p>
+    <p style="margin-top:14px;font-size:13px;">
+      <a href="/video-policy.html" style="color:#cbd5e1;text-decoration:underline;">📺 Video Licensing &amp; Compliance Policy</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+// Show the URL that caused the 404
+document.getElementById('bad-url').textContent = '❌  ' + location.pathname + location.search;
+// Attempt to auto-redirect common URL mistakes
+var path = location.pathname;
+// e.g. /course/eng4u → /courses/eng4u.html
+var m;
+if ((m = path.match(/^\/course\/([a-z0-9]+)$/i))) {
+  location.replace('/courses/' + m[1].toLowerCase() + '.html');
+}
+// /courses/eng4u → /courses/eng4u.html (missing .html)
+if ((m = path.match(/^\/courses\/([a-z0-9]+)$/i))) {
+  location.replace('/courses/' + m[1].toLowerCase() + '.html');
+}
+</script>
+</body>
+</html>
