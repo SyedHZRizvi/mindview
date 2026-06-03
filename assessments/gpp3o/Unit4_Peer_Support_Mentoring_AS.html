@@ -177,4 +177,21 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px
 let s=0;
 function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
 function cTX(q){document.getElementById(q+'-sl').classList.add('show');}
-</script></body></html>
+</script>
+<div class="q comm-practice" style="margin-top:32px;padding:20px 22px;background:#eff6ff;border:1px dashed #93c5fd;border-radius:10px;">
+  <div style="font-size:11px;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📝 Communication Practice · Extended Response</div>
+  <p style="font-weight:600;margin-bottom:6px;">Q13. In 100–150 words, explain <em>Peer Support Mentoring</em> in your own words.</p>
+  <p style="font-size:13px;color:#475569;margin-bottom:10px;">Pay attention to clarity, organisation of ideas, use of discipline-specific vocabulary, and grammatical conventions. This question evaluates the <strong>Communication</strong> category of Ontario's Achievement Chart (25%). There is no single correct answer — your teacher will assess your response against the rubric below.</p>
+  <textarea id="q13-comm" name="q13-comm" rows="6" style="width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:6px;font-family:inherit;font-size:14px;line-height:1.5;" placeholder="Write your response here (100–150 words)…"></textarea>
+
+  <details class="instructor-only" style="margin-top:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+    <summary style="cursor:pointer;padding:10px 14px;font-weight:700;font-size:13px;color:#1e40af;">🔒 Communication Rubric (instructor-graded)</summary>
+    <div style="padding:12px 16px;font-size:12.5px;line-height:1.5;">
+      <strong>Level 1 — Limited (50–59%):</strong> Ideas expressed with limited clarity; frequent errors in conventions; little discipline-specific vocabulary.<br>
+      <strong>Level 2 — Some (60–69%):</strong> Ideas expressed with some clarity; some errors that occasionally impede meaning; emerging discipline-specific vocabulary.<br>
+      <strong>Level 3 — Considerable (70–79%) [Provincial Standard]:</strong> Ideas expressed clearly and organised effectively; few errors; consistent use of discipline-specific vocabulary.<br>
+      <strong>Level 4 — Thorough (80–100%):</strong> Ideas expressed with clarity and precision; virtually error-free; precise and varied use of discipline-specific vocabulary; sense of voice / audience awareness.
+    </div>
+  </details>
+</div>
+</body></html>
