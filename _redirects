@@ -1,64 +1,30 @@
 # MindView _redirects — Cloudflare Pages URL routing
 # Rules evaluated top-to-bottom; first match wins.
 # Updated 2026-06-03.
+#
+# IMPORTANT: Cloudflare Pages already serves every .html file at its
+# clean URL automatically (courses/mcr3u.html is accessible as both
+# /courses/mcr3u.html AND /courses/mcr3u without any rules here).
+# Do NOT add /courses/:code → /courses/:code.html rules — they cause
+# a redirect loop because CF Pages internally strips .html before
+# checking _redirects, then the rule sends it back to .html → loop.
 
 # ── Auth routes ──────────────────────────────────────────────────────
 /login                  /admin/login.html               200
 /admin                  /admin/dashboard.html           200
 
-# ── Top-level page routes (strip .html for clean URLs) ───────────────
+# ── Top-level multi-page routes (CF Pages handles .html → clean URL
+#    automatically; these rules map the clean URL to the real file) ──
 /catalog                /catalog.html                   200
 /enrolment              /enrolment.html                 200
 /resources              /resources.html                 200
 /video-policy           /video-policy.html              200
 
-# ── Common URL typo auto-heals (301 permanent redirect) ──────────────
-# /course/CODE (missing the 's') → /courses/CODE.html
+# ── Typo heal: /course/:code (missing 's') → /courses/:code.html ─────
+# This only matches URLs WITHOUT .html (e.g. someone types /course/eng4u)
 /course/:code           /courses/:code.html             301
 
-# /courses/CODE without .html (each course listed explicitly)
-/courses/mcr3u          /courses/mcr3u.html             301
-/courses/mhf4u          /courses/mhf4u.html             301
-/courses/mcv4u          /courses/mcv4u.html             301
-/courses/mdm4u          /courses/mdm4u.html             301
-/courses/mct3m          /courses/mct3m.html             301
-/courses/mct4m          /courses/mct4m.html             301
-/courses/snc2d          /courses/snc2d.html             301
-/courses/sbi3u          /courses/sbi3u.html             301
-/courses/sbi4u          /courses/sbi4u.html             301
-/courses/sch3u          /courses/sch3u.html             301
-/courses/sch4u          /courses/sch4u.html             301
-/courses/sph3u          /courses/sph3u.html             301
-/courses/sph4u          /courses/sph4u.html             301
-/courses/eng2d          /courses/eng2d.html             301
-/courses/eng3u          /courses/eng3u.html             301
-/courses/eng4u          /courses/eng4u.html             301
-/courses/ics3u          /courses/ics3u.html             301
-/courses/ics4u          /courses/ics4u.html             301
-/courses/chv2o          /courses/chv2o.html             301
-/courses/cpc3o          /courses/cpc3o.html             301
-/courses/cpw4u          /courses/cpw4u.html             301
-/courses/chc2d          /courses/chc2d.html             301
-/courses/chw3m          /courses/chw3m.html             301
-/courses/chy4u          /courses/chy4u.html             301
-/courses/clu3m          /courses/clu3m.html             301
-/courses/cln4u          /courses/cln4u.html             301
-/courses/cgf3m          /courses/cgf3m.html             301
-/courses/cgw4u          /courses/cgw4u.html             301
-/courses/baf3m          /courses/baf3m.html             301
-/courses/bat4m          /courses/bat4m.html             301
-/courses/bbb4m          /courses/bbb4m.html             301
-/courses/boh4m          /courses/boh4m.html             301
-/courses/hfn3m          /courses/hfn3m.html             301
-/courses/hfa4m          /courses/hfa4m.html             301
-/courses/hsc4m          /courses/hsc4m.html             301
-/courses/glc2o          /courses/glc2o.html             301
-/courses/gwl3o          /courses/gwl3o.html             301
-/courses/gpp3o          /courses/gpp3o.html             301
-/courses/gle3o          /courses/gle3o.html             301
-/courses/gle4o          /courses/gle4o.html             301
-
-# ── Security: block dev/config files ─────────────────────────────────
+# ── Security: block dev/config files from being served ───────────────
 /app.py                 /404.html                       404
 /users.db               /404.html                       404
 /.secret_key            /404.html                       404
