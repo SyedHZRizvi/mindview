@@ -2,26 +2,26 @@
 # Rules evaluated top-to-bottom; first match wins.
 # Updated 2026-06-03.
 #
-# IMPORTANT: Cloudflare Pages already serves every .html file at its
-# clean URL automatically (courses/mcr3u.html is accessible as both
-# /courses/mcr3u.html AND /courses/mcr3u without any rules here).
-# Do NOT add /courses/:code → /courses/:code.html rules — they cause
-# a redirect loop because CF Pages internally strips .html before
-# checking _redirects, then the rule sends it back to .html → loop.
+# KEY PRINCIPLE: Cloudflare Pages AUTOMATICALLY serves every .html file
+# at its clean URL with no rules needed:
+#   catalog.html     → accessible at /catalog AND /catalog.html
+#   enrolment.html   → accessible at /enrolment AND /enrolment.html
+#   courses/mcr3u.html → accessible at /courses/mcr3u AND /courses/mcr3u.html
+#
+# Adding redirect/rewrite rules for these creates redirect loops because
+# CF Pages strips .html internally before matching _redirects rules,
+# then the rule sends it back to the .html URL → infinite loop.
+#
+# Only add rules here for paths that DON'T have a matching .html file
+# on disk (auth routes, function routes, typo heals, security blocks).
 
-# ── Auth routes ──────────────────────────────────────────────────────
+# ── Auth: /login and /admin have matching .html files in subdirectories
+#    so they need explicit rules (subdirectory files don't get auto-clean-URLs) ──
 /login                  /admin/login.html               200
 /admin                  /admin/dashboard.html           200
 
-# ── Top-level multi-page routes (CF Pages handles .html → clean URL
-#    automatically; these rules map the clean URL to the real file) ──
-/catalog                /catalog.html                   200
-/enrolment              /enrolment.html                 200
-/resources              /resources.html                 200
-/video-policy           /video-policy.html              200
-
-# ── Typo heal: /course/:code (missing 's') → /courses/:code.html ─────
-# This only matches URLs WITHOUT .html (e.g. someone types /course/eng4u)
+# ── Typo heal: /course/:code (singular, missing 's') → correct URL ───
+# Only fires for paths like /course/eng4u — NOT /courses/eng4u.html
 /course/:code           /courses/:code.html             301
 
 # ── Security: block dev/config files from being served ───────────────
