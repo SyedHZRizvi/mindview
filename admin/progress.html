@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Progress — MindView Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
+.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.topbar a{color:#fff;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px;}
+.brand img{height:32px;}
+.topbar nav{display:flex;gap:20px;}
+.topbar nav a{font-size:14px;font-weight:600;color:#cbd5e1;}
+.topbar nav a.active{color:#fff;}
+.user-chip{font-size:13px;display:flex;align-items:center;gap:10px;}
+.container{max-width:1100px;margin:0 auto;padding:28px 24px;}
+h1{font-size:26px;font-weight:800;margin-bottom:6px;}
+.sub{color:#64748b;font-size:15px;margin-bottom:24px;}
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.filters select,.filters input{padding:9px 14px;border:1.5px solid #94a3b8;border-radius:8px;
+  font-size:14px;font-family:inherit;background:#fff;color:#0f172a;min-width:200px;}
+.filters select:focus,.filters input:focus{outline:none;border-color:#2563eb;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;
+  font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:inherit;}
+.btn-primary{background:#2563eb;color:#fff;}.btn-primary:hover{background:#1d4ed8;}
+.btn-green{background:#059669;color:#fff;}.btn-green:hover{background:#047857;}
+.btn-red{background:#dc2626;color:#fff;}.btn-red:hover{background:#b91c1c;}
+.btn-orange{background:#d97706;color:#fff;}.btn-orange:hover{background:#b45309;}
+.btn-ghost{background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;}.btn-ghost:hover{border-color:#94a3b8;}
+.progress-grid{display:grid;gap:14px;}
+.unit-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;}
+.unit-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.unit-title{font-size:16px;font-weight:800;}
+.unit-status{display:flex;gap:6px;}
+.chip{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;}
+.chip.done{background:#dcfce7;color:#166534;}
+.chip.pending{background:#fef3c7;color:#78350f;}
+.chip.failed{background:#fee2e2;color:#7f1d1d;}
+.chip.locked{background:#f1f5f9;color:#475569;}
+.chip.unlocked{background:#ede9fe;color:#4c1d95;}
+.assessment-row{display:flex;align-items:center;gap:12px;padding:8px 0;
+  border-bottom:1px solid #f1f5f9;flex-wrap:wrap;}
+.assessment-row:last-child{border-bottom:none;}
+.assess-label{flex:1;font-size:14px;font-weight:600;min-width:180px;}
+.assess-meta{font-size:12px;color:#64748b;}
+.action-btns{display:flex;gap:6px;flex-wrap:wrap;}
+.final-card{background:#fff;border:2px solid #7c3aed;border-radius:12px;padding:20px;margin-top:16px;}
+.final-title{font-size:17px;font-weight:900;color:#4c1d95;margin-bottom:8px;}
+.empty{text-align:center;padding:48px 20px;color:#94a3b8;font-size:15px;}
+.loading{text-align:center;padding:40px;color:#94a3b8;}
+.alert{padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;}
+.alert.ok{background:#d1fae5;color:#065f46;}.alert.error{background:#fee2e2;color:#991b1b;}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:#64748b;margin-bottom:18px;}
+.legend span{display:flex;align-items:center;gap:4px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <a href="/admin"><img src="/logo.png" alt="MindView"></a>
+    <span>MindView Admin</span>
+  </div>
+  <nav>
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/progress.html" class="active">Student Progress</a>
+    <a href="/admin/assessments.html">Assessment Unlock</a>
+    <a href="/admin/users.html">Users</a>
+    <a href="/">Courses →</a>
+  </nav>
+  <div class="user-chip">
+    <span id="user-name"></span>
+    <a href="/api/logout" style="color:#94a3b8;">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+  <h1>📊 Student Progress</h1>
+  <p class="sub">Record assessment results and manage unit progression for each student. Marking an OF as Passed automatically unlocks the next chapter for that student.</p>
+
+  <div id="alert"></div>
+
+  <div class="filters">
+    <select id="sel-student" onchange="loadProgress()">
+      <option value="">— Select student —</option>
+    </select>
+    <select id="sel-course" onchange="loadProgress()">
+      <option value="">— Select course —</option>
+    </select>
+    <button class="btn btn-primary" onclick="loadProgress()">Load Progress</button>
+  </div>
+
+  <div class="legend">
+    <span><span class="chip done">✅ Done/Passed</span> — complete</span>
+    <span><span class="chip pending">⏳ Pending</span> — not yet recorded</span>
+    <span><span class="chip failed">✗ Failed</span> — not passed</span>
+    <span><span class="chip locked">🔒 Locked</span> — prerequisite not met</span>
+  </div>
+
+  <div id="progress-panel"><div class="empty">Select a student and course above to view their progress.</div></div>
+</div>
+
+<script>
+const COURSES = ['mcr3u','mhf4u','mcv4u','mdm4u','mct3m','mct4m',
+  'snc2d','sbi3u','sbi4u','sch3u','sch4u','sph3u','sph4u',
+  'eng2d','eng3u','eng4u','ics3u','ics4u',
+  'chv2o','cpc3o','cpw4u','chc2d','chw3m','chy4u','clu3m','cln4u','cgf3m','cgw4u',
+  'baf3m','bat4m','bbb4m','boh4m','hfn3m','hfa4m','hsc4m',
+  'glc2o','gwl3o','gpp3o','gle3o','gle4o'];
+
+const COURSE_CHAPTERS = {
+  baf3m:5,bat4m:5,bbb4m:5,boh4m:5,cgf3m:5,cgw4u:5,chc2d:5,chv2o:3,
+  chw3m:5,chy4u:6,cln4u:5,clu3m:5,cpc3o:3,cpw4u:5,eng2d:5,eng3u:6,
+  eng4u:6,glc2o:3,gle3o:5,gle4o:5,gpp3o:5,gwl3o:3,hfa4m:5,hfn3m:5,
+  hsc4m:5,ics3u:5,ics4u:5,mcr3u:8,mct3m:5,mct4m:5,mcv4u:9,mdm4u:8,
+  mhf4u:8,sbi3u:5,sbi4u:5,sch3u:5,sch4u:5,snc2d:5,sph3u:5,sph4u:5
+};
+
+let myRole = null;
+let students = [];
+
+(async function() {
+  const r = await fetch('/api/me', { credentials: 'same-origin' });
+  const data = r.ok ? await r.json() : null;
+  if (!data || !data.authenticated) { location.replace('/login?next=/admin/progress.html'); return; }
+  myRole = data.user.role;
+  if (!['teacher','admin','superuser'].includes(myRole)) {
+    document.body.innerHTML = '<div style="padding:60px;text-align:center;"><h1>🚫 Access denied</h1></div>'; return;
+  }
+  document.getElementById('user-name').textContent = data.user.full_name || data.user.email;
+
+  // Populate courses
+  const cs = document.getElementById('sel-course');
+  COURSES.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c.toUpperCase(); cs.appendChild(o); });
+
+  // Load students
+  const ur = await fetch('/api/users', { credentials: 'same-origin' });
+  if (ur.ok) {
+    const ud = await ur.json();
+    students = (ud.users || []).filter(u => u.role === 'student');
+    const ss = document.getElementById('sel-student');
+    students.forEach(u => {
+      const o = document.createElement('option');
+      o.value = u.id;
+      o.textContent = (u.full_name || u.email) + ' (' + u.email + ')';
+      ss.appendChild(o);
+    });
+  }
+})();
+
+function showAlert(msg, kind='ok') {
+  document.getElementById('alert').innerHTML = `<div class="alert ${kind}">${msg}</div>`;
+  setTimeout(() => document.getElementById('alert').innerHTML = '', 5000);
+}
+
+async function loadProgress() {
+  const studentId = document.getElementById('sel-student').value;
+  const course    = document.getElementById('sel-course').value;
+  if (!studentId || !course) return;
+
+  document.getElementById('progress-panel').innerHTML = '<div class="loading">Loading…</div>';
+  const r = await fetch(`/api/unit-progress?course=${course}&studentId=${studentId}`, { credentials: 'same-origin' });
+  if (!r.ok) { document.getElementById('progress-panel').innerHTML = '<div class="empty">Error loading progress.</div>'; return; }
+  const data = await r.json();
+  renderProgress(studentId, course, data.progress || {});
+}
+
+function renderProgress(studentId, course, progress) {
+  const totalChapters = COURSE_CHAPTERS[course] || 5;
+  let html = '<div class="progress-grid">';
+  let prevComplete = true;
+
+  for (let ch = 1; ch <= totalChapters; ch++) {
+    const p = progress['ch' + ch] || {};
+    const locked = !prevComplete;
+
+    const asStatus   = p.as_done   ? 'done'    : 'pending';
+    const forStatus  = p.for_done  ? 'done'    : 'pending';
+    const ofStatus   = p.of_passed === true ? 'done' : (p.of_passed === false ? 'failed' : 'pending');
+    const unitStatus = p.completed ? 'done' : (locked ? 'locked' : 'pending');
+
+    html += `<div class="unit-card">
+      <div class="unit-header">
+        <div class="unit-title">Chapter ${ch}</div>
+        <div class="unit-status">
+          <span class="chip ${unitStatus}">${p.completed ? '✅ Complete' : locked ? '🔒 Locked' : '⏳ In Progress'}</span>
+        </div>
+      </div>
+      <div class="assessment-row">
+        <div class="assess-label">AS Practice Quiz</div>
+        <span class="chip ${asStatus}">${p.as_done ? '✅ Completed' : '⏳ Not yet attempted'}</span>
+        <div class="assess-meta">${p.as_done_at ? new Date(p.as_done_at).toLocaleDateString() : ''}</div>
+      </div>
+      <div class="assessment-row">
+        <div class="assess-label">FOR Diagnostic</div>
+        <span class="chip ${forStatus}">${p.for_done ? '✅ Reviewed' : '⏳ Pending teacher review'}</span>
+        <div class="assess-meta">${p.for_done_at ? new Date(p.for_done_at).toLocaleDateString() : ''}</div>
+        <div class="action-btns">
+          ${!locked && !p.for_done ? `<button class="btn btn-orange" onclick="markFOR('${studentId}','${course}',${ch},true)">✓ Mark Reviewed</button>` : ''}
+          ${p.for_done ? `<button class="btn btn-ghost" onclick="markFOR('${studentId}','${course}',${ch},false)">↩ Undo</button>` : ''}
+        </div>
+      </div>
+      <div class="assessment-row">
+        <div class="assess-label">OF Unit Test</div>
+        <span class="chip ${ofStatus}">${p.of_passed === true ? '✅ Passed' : p.of_passed === false ? '✗ Failed' : '⏳ Not yet marked'}</span>
+        <div class="assess-meta">${p.of_passed_at ? new Date(p.of_passed_at).toLocaleDateString() : ''}</div>
+        <div class="action-btns">
+          ${!locked && p.of_passed !== true ? `<button class="btn btn-green" onclick="markOF('${studentId}','${course}',${ch},true)">✓ Mark Passed</button>` : ''}
+          ${!locked ? `<button class="btn btn-red" onclick="markOF('${studentId}','${course}',${ch},false)">✗ Mark Failed</button>` : ''}
+        </div>
+      </div>
+    </div>`;
+
+    prevComplete = !!p.completed;
+  }
+
+  // Final exam block
+  const finalUnlocked = progress.final_unlocked;
+  html += `<div class="final-card">
+    <div class="final-title">📋 Final Exam</div>
+    <div style="font-size:14px;color:#475569;margin-bottom:14px;">
+      ${finalUnlocked
+        ? '✅ Unlocked — student can access the final exam.'
+        : '🔒 Locked — unlock after all unit OF assessments are passed.'}
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      ${!finalUnlocked ? `<button class="btn btn-green" onclick="unlockFinal('${studentId}','${course}')">🔓 Unlock Final Exam</button>` : ''}
+      ${finalUnlocked ? `<button class="btn btn-red" onclick="lockFinal('${studentId}','${course}')">🔒 Re-lock Final Exam</button>` : ''}
+    </div>
+  </div></div>`;
+
+  document.getElementById('progress-panel').innerHTML = html;
+}
+
+async function markFOR(studentId, course, ch, done) {
+  const r = await fetch('/api/unit-progress', {
+    method:'POST', headers:{'Content-Type':'application/json'}, credentials:'same-origin',
+    body: JSON.stringify({ action:'mark_for', course, chapterNum:ch, studentId, done })
+  });
+  const d = await r.json();
+  if (!r.ok) { showAlert('Error: ' + d.error, 'error'); return; }
+  showAlert(done ? `✅ Chapter ${ch} FOR marked as reviewed.` : `↩ Chapter ${ch} FOR review undone.`);
+  loadProgress();
+}
+
+async function markOF(studentId, course, ch, passed) {
+  if (!confirm(passed
+    ? `Mark Chapter ${ch} OF Unit Test as PASSED for this student?\n\nThis will unlock Chapter ${ch+1}.`
+    : `Mark Chapter ${ch} OF Unit Test as FAILED? The student cannot progress to Chapter ${ch+1}.`
+  )) return;
+  const r = await fetch('/api/unit-progress', {
+    method:'POST', headers:{'Content-Type':'application/json'}, credentials:'same-origin',
+    body: JSON.stringify({ action:'mark_of', course, chapterNum:ch, studentId, passed })
+  });
+  const d = await r.json();
+  if (!r.ok) { showAlert('Error: ' + d.error, 'error'); return; }
+  showAlert(passed
+    ? `✅ Chapter ${ch} passed — Chapter ${ch+1} is now unlocked.`
+    : `✗ Chapter ${ch} marked as failed.`);
+  loadProgress();
+}
+
+async function unlockFinal(studentId, course) {
+  if (!confirm('Unlock the Final Exam for this student?\nConfirm all unit OF assessments have been passed.')) return;
+  const r = await fetch('/api/unit-progress', {
+    method:'POST', headers:{'Content-Type':'application/json'}, credentials:'same-origin',
+    body: JSON.stringify({ action:'unlock_final', course, studentId })
+  });
+  const d = await r.json();
+  if (!r.ok) { showAlert('Error: ' + d.error, 'error'); return; }
+  showAlert('✅ Final Exam unlocked for student.');
+  loadProgress();
+}
+
+async function lockFinal(studentId, course) {
+  if (!confirm('Re-lock the Final Exam?')) return;
+  const r = await fetch('/api/unit-progress', {
+    method:'POST', headers:{'Content-Type':'application/json'}, credentials:'same-origin',
+    body: JSON.stringify({ action:'reset_chapter', course, chapterNum:'final', studentId })
+  });
+  showAlert('🔒 Final Exam re-locked.');
+  loadProgress();
+}
+</script>
+</body>
+</html>

@@ -551,6 +551,54 @@
         if (headerEl) {
           headerEl.parentNode.insertBefore(asBanner, headerEl.nextSibling);
         }
+
+        // ── Auto-record AS completion for sequential progression ─────
+        // Extract chapter number and course code from URL:
+        //   /assessments/eng4u/Unit3_..._AS.html  → ch=3  code=eng4u
+        //   /assessments/mcr3u_ch3_as.html         → ch=3  code=mcr3u
+        var chNum = null, courseCode = null;
+        var mDir = location.pathname.match(/\/assessments\/([a-z0-9]+)\/Unit(\d+)_/i);
+        var mFlat = location.pathname.match(/\/assessments\/([a-z0-9]+)_ch(\d+)_as/i);
+        if (mDir)  { courseCode = mDir[1];  chNum = parseInt(mDir[2], 10); }
+        if (mFlat) { courseCode = mFlat[1]; chNum = parseInt(mFlat[2], 10); }
+
+        if (chNum && courseCode) {
+          var asRecorded = false;
+          var totalQuestions = document.querySelectorAll('input[type="radio"][name]').length;
+          var questionNames = new Set();
+          document.querySelectorAll('input[type="radio"]').forEach(function(r) {
+            if (r.name) questionNames.add(r.name);
+          });
+          var totalGroups = questionNames.size || 1;
+
+          function checkASComplete() {
+            if (asRecorded) return;
+            var answered = new Set();
+            document.querySelectorAll('input[type="radio"]:checked').forEach(function(r) {
+              if (r.name) answered.add(r.name);
+            });
+            // Also count textarea responses
+            var textAnswered = 0;
+            document.querySelectorAll('textarea').forEach(function(t) {
+              if ((t.value || '').trim().length > 10) textAnswered++;
+            });
+            // Consider complete if student answered ≥ 60% of questions
+            if (answered.size + textAnswered >= Math.ceil(totalGroups * 0.6)) {
+              asRecorded = true;
+              fetch('/api/unit-progress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({ action: 'as_done', course: courseCode, chapterNum: chNum }),
+              }).catch(function() {});
+            }
+          }
+
+          // Listen for any radio button selection or textarea input
+          document.addEventListener('change', checkASComplete);
+          document.addEventListener('input', checkASComplete);
+        }
+
         // Nothing else — leave all interactive elements fully functional.
         return;
       }

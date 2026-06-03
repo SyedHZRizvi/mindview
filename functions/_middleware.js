@@ -26,6 +26,155 @@
 
 import { readSessionFromRequest } from './lib/session.js';
 
+// ── Sequential unit-progression helpers ──────────────────────────────────
+
+// Per-course chapter counts.  Mirrors COURSES_AND_CHAPTERS in verify-baseline.py.
+const COURSE_CHAPTER_COUNTS = {
+  baf3m:5, bat4m:5, bbb4m:5, boh4m:5,
+  cgf3m:5, cgw4u:5, chc2d:5, chv2o:3,
+  chw3m:5, chy4u:6, cln4u:5, clu3m:5,
+  cpc3o:3, cpw4u:5, eng2d:5, eng3u:6,
+  eng4u:6, glc2o:3, gle3o:5, gle4o:5,
+  gpp3o:5, gwl3o:3, hfa4m:5, hfn3m:5,
+  hsc4m:5, ics3u:5, ics4u:5, mcr3u:8,
+  mct3m:5, mct4m:5, mcv4u:9, mdm4u:8,
+  mhf4u:8, sbi3u:5, sbi4u:5, sch3u:5,
+  sch4u:5, snc2d:5, sph3u:5, sph4u:5,
+};
+
+// Extract { courseCode, chapterNum } from a chapter-page URL, or null.
+// /courses/eng4u/ch3.html → { code:'eng4u', ch:3 }
+function parseChapterUrl(pathname) {
+  const m = pathname.match(/^\/courses\/([a-z0-9]+)\/ch(\d+)\.html$/i);
+  if (!m) return null;
+  return { code: m[1].toLowerCase(), ch: parseInt(m[2], 10) };
+}
+
+// Returns true when the URL is the final exam for any course.
+function isFinalExamUrl(pathname) {
+  return /\/final_exam\.html$/i.test(pathname) || /\/Final_Exam\.html$/.test(pathname);
+}
+
+// Extract course code from a final-exam URL.
+function courseFromFinalExamUrl(pathname) {
+  let m = pathname.match(/^\/assessments\/([a-z0-9]+)\/Final_Exam\.html$/i);
+  if (m) return m[1].toLowerCase();
+  m = pathname.match(/^\/assessments\/([a-z0-9]+)_final_exam\.html$/i);
+  if (m) return m[1].toLowerCase();
+  return null;
+}
+
+// Render the "chapter locked" page served by middleware when a student tries
+// to access a chapter they haven't unlocked yet.
+function renderChapterLockedHTML(opts) {
+  const { courseCode, chapterNum, prevCh, prevProgress } = opts;
+  const UPPER = courseCode.toUpperCase();
+
+  const prevCompleted = prevProgress && prevProgress.completed;
+  const asOk  = prevProgress && prevProgress.as_done;
+  const forOk = prevProgress && prevProgress.for_done;
+  const ofOk  = prevProgress && prevProgress.of_passed;
+
+  function row(label, done) {
+    return `<li style="padding:6px 0;display:flex;align-items:center;gap:10px;">
+      <span style="font-size:18px;">${done ? '✅' : '⏳'}</span>
+      <span style="${done ? 'color:#065f46;' : 'color:#475569;'}">${label}</span>
+    </li>`;
+  }
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit ${chapterNum} Locked — ${UPPER}</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;
+  max-width:560px;width:100%;padding:40px 36px;box-shadow:0 4px 16px rgba(15,23,42,0.07);}
+.icon{font-size:52px;margin-bottom:14px;}
+h1{font-size:22px;font-weight:900;color:#0f172a;margin-bottom:10px;}
+p{font-size:14px;color:#475569;line-height:1.6;margin-bottom:16px;}
+ul{list-style:none;padding:0;background:#f8fafc;border-radius:10px;
+  border:1px solid #e2e8f0;padding:14px 18px;margin-bottom:20px;}
+.actions{display:flex;gap:10px;flex-wrap:wrap;}
+a.btn{display:inline-block;padding:10px 18px;border-radius:8px;
+  font-size:14px;font-weight:700;text-decoration:none;}
+.btn-primary{background:#2563eb;color:#fff;}
+.btn-ghost{background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">🔒</div>
+  <h1>Chapter ${chapterNum} is locked</h1>
+  <p>
+    <strong>${UPPER} — Chapter ${chapterNum}</strong> is not yet available.
+    You must complete <strong>Chapter ${prevCh}</strong> before proceeding.
+    Your teacher will unlock the next chapter once all required assessments are passed.
+  </p>
+  <p style="font-weight:700;color:#1e293b;">Chapter ${prevCh} status:</p>
+  <ul>
+    ${row('AS Practice Quiz — completed', asOk)}
+    ${row('FOR Diagnostic — teacher reviewed', forOk)}
+    ${row('OF Unit Test — passed', ofOk)}
+  </ul>
+  <p style="font-size:13px;">
+    ${prevCompleted
+      ? '✅ Chapter ' + prevCh + ' is complete. Contact your teacher if this chapter is still locked.'
+      : 'Contact your teacher when you have submitted your Chapter ' + prevCh + ' papers. They will record your results and unlock the next chapter.'}
+  </p>
+  <div class="actions">
+    <a href="/courses/${courseCode}.html" class="btn btn-primary">← Back to course</a>
+    <a href="/courses/${courseCode}/ch${prevCh}.html" class="btn btn-ghost">Go to Chapter ${prevCh}</a>
+  </div>
+</div>
+</body>
+</html>`;
+}
+
+// Render "Final Exam locked" page.
+function renderFinalExamLockedHTML(courseCode) {
+  const UPPER = courseCode.toUpperCase();
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Exam Locked — ${UPPER}</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;max-width:520px;
+  width:100%;padding:40px 36px;box-shadow:0 4px 16px rgba(15,23,42,0.07);}
+.icon{font-size:52px;margin-bottom:14px;}
+h1{font-size:22px;font-weight:900;color:#0f172a;margin-bottom:10px;}
+p{font-size:14px;color:#475569;line-height:1.6;margin-bottom:16px;}
+a.btn{display:inline-block;padding:10px 18px;border-radius:8px;
+  font-size:14px;font-weight:700;text-decoration:none;background:#2563eb;color:#fff;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">📋</div>
+  <h1>Final Exam — not yet unlocked</h1>
+  <p>
+    The <strong>${UPPER} Final Exam</strong> is only available after you have passed all
+    unit tests (OF assessments) in every chapter of this course.
+    Your teacher will unlock the Final Exam when you are ready.
+  </p>
+  <p>
+    If you believe all units are complete, contact your teacher and ask them to
+    review your progress on the <strong>Admin → Student Progress</strong> panel.
+  </p>
+  <a href="/courses/${courseCode}.html" class="btn">← Back to course</a>
+</div>
+</body>
+</html>`;
+}
+
 // ── Supervised assessment helpers ─────────────────────────────────────────
 
 // Returns true when the path is a FOR/OF/Final assessment that must be
@@ -606,6 +755,61 @@ export async function onRequest(context) {
         }
       }
     }
+    // ── Sequential unit-progression gate ─────────────────────────────
+    // For students: chapters beyond ch1 are locked until the teacher marks
+    // the previous chapter's OF assessment as passed (stored in USERS_KV).
+    // The Final Exam is locked until the teacher explicitly unlocks it.
+    // Teachers / admins / superusers always bypass this gate.
+    if (payload.role === 'student') {
+      // Gate 1: chapter pages
+      const chapInfo = parseChapterUrl(url.pathname);
+      if (chapInfo && chapInfo.ch > 1) {
+        const prevCh = chapInfo.ch - 1;
+        let prevProgress = null;
+        if (env.USERS_KV) {
+          try {
+            const progKey = `progress:${payload.sub}:${chapInfo.code}`;
+            const prog = await env.USERS_KV.get(progKey, 'json');
+            if (prog) prevProgress = prog[`ch${prevCh}`] || null;
+          } catch { /* KV error → locked */ }
+        }
+        const prevCompleted = prevProgress && prevProgress.completed;
+        if (!prevCompleted) {
+          return new Response(
+            renderChapterLockedHTML({
+              courseCode: chapInfo.code,
+              chapterNum: chapInfo.ch,
+              prevCh,
+              prevProgress,
+            }),
+            { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } }
+          );
+        }
+      }
+
+      // Gate 2: final exam
+      if (isFinalExamUrl(url.pathname)) {
+        const code = courseFromFinalExamUrl(url.pathname);
+        if (code) {
+          let finalUnlocked = false;
+          if (env.USERS_KV) {
+            try {
+              const progKey = `progress:${payload.sub}:${code}`;
+              const prog = await env.USERS_KV.get(progKey, 'json');
+              finalUnlocked = !!(prog && prog.final_unlocked);
+            } catch { /* locked */ }
+          }
+          if (!finalUnlocked) {
+            return new Response(
+              renderFinalExamLockedHTML(code),
+              { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } }
+            );
+          }
+        }
+      }
+    }
+    // ──────────────────────────────────────────────────────────────────
+
     // ── Server-side supervised-assessment lock ────────────────────────
     // FOR diagnostics, OF unit tests, and Final Exams may only be viewed
     // by students after an explicit teacher unlock stored in USERS_KV.
