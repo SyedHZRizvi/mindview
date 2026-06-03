@@ -519,6 +519,43 @@
 
     if (isStudent) {
       // ── Student path ────────────────────────────────────────────────
+      //
+      // AS (Practice Quiz — Assessment AS Learning):
+      //   Fully interactive — no restrictions, no teacher required.
+      //   Students use AS quizzes independently at any time to check
+      //   their own readiness. Radio buttons, Check buttons, and solution
+      //   reveals all work normally. Just show a friendly info banner.
+      //
+      // FOR (Diagnostic) / OF (Unit Test) / Final Exam:
+      //   Server-side lock via middleware + USERS_KV (teacher must unlock).
+      //   Once unlocked (questions already in browser): disable interactivity,
+      //   add print button, start countdown timer.
+
+      if (isAS) {
+        // ── AS: fully open, no restrictions ─────────────────────────
+        var asBanner = document.createElement('div');
+        asBanner.style.cssText = [
+          'background:#ecfdf5','border:1px solid #6ee7b7','border-radius:10px',
+          'padding:14px 18px','margin:12px 0','display:flex','align-items:flex-start','gap:12px'
+        ].join(';');
+        asBanner.innerHTML =
+          '<span style="font-size:22px;flex-shrink:0;">✅</span>' +
+          '<div>' +
+            '<p style="font-weight:800;color:#065f46;margin:0 0 4px;">Practice Quiz — No teacher required</p>' +
+            '<p style="font-size:13px;color:#047857;margin:0;line-height:1.5;">' +
+              'This is an Assessment AS Learning self-check. Take it as many times as you like ' +
+              'at any time — no supervision needed. Select your answers and click Check to see ' +
+              'instant feedback. Your score here does not affect your course grade.' +
+            '</p>' +
+          '</div>';
+        if (headerEl) {
+          headerEl.parentNode.insertBefore(asBanner, headerEl.nextSibling);
+        }
+        // Nothing else — leave all interactive elements fully functional.
+        return;
+      }
+
+      // ── FOR / OF / Final: print-only + server-side locked (teacher) ──
       disableAllInteractivity();
 
       // Print header (shows in print mode only, hidden on screen)
@@ -537,9 +574,8 @@
       insertAfterHeader(printBtn);
 
       if (isSupervised) {
-        // Gate is now enforced server-side (middleware serves a locked page
-        // until teacher unlocks). By the time this code runs the student has
-        // a valid unlock grant. Start the countdown timer automatically.
+        // Gate enforced server-side (middleware); student has a valid grant
+        // by the time this code runs. Start countdown timer automatically.
         sessionStarted = true;
         var chip = buildTimerChip(timeLimit * 60);
         document.body.appendChild(chip);
