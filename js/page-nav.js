@@ -129,18 +129,35 @@
 
     var nav = createPageNav();
 
-    // Preferred placement: directly after the existing <nav class="navbar">
-    // so it sits between the brand bar and the page content.
+    // ── Always-visible strategy ────────────────────────────────────────
+    // Use position:fixed so the bar is pinned to the viewport and NEVER
+    // scrolls away, no matter how far down the page the user goes.
+    // We dynamically set `top` to the navbar's bottom edge so the bar
+    // sits flush underneath it. A ResizeObserver keeps it correct if the
+    // navbar ever changes height (e.g. on mobile breakpoints).
+    // A matching padding-top is applied to <body> so no page content is
+    // hidden behind the combined navbar + page-nav strip.
+
     var topNav = document.querySelector('nav.navbar');
-    if (topNav && topNav.parentNode) {
-      topNav.parentNode.insertBefore(nav, topNav.nextSibling);
-      return;
+
+    function pinBelowNavbar() {
+      var navH = topNav ? topNav.getBoundingClientRect().height : 0;
+      nav.style.top = navH + 'px';
+      // Keep body padding so content doesn't hide under the two fixed bars
+      var pageNavH = nav.getBoundingClientRect().height || 46;
+      document.body.style.paddingTop = (navH + pageNavH) + 'px';
     }
 
-    // Fallback for pages without a top navbar (curriculum sub-pages,
-    // video-policy, etc.) — insert as the first child of <body>.
-    if (document.body) {
-      document.body.insertBefore(nav, document.body.firstChild);
+    // Append to <body> so fixed positioning is relative to the viewport
+    document.body.appendChild(nav);
+    pinBelowNavbar();
+
+    // Stay correct if the window is resized
+    window.addEventListener('resize', pinBelowNavbar);
+
+    // Use ResizeObserver if available (modern browsers) for accuracy
+    if (window.ResizeObserver && topNav) {
+      new ResizeObserver(pinBelowNavbar).observe(topNav);
     }
   }
 
