@@ -106,11 +106,29 @@ function shouldInject(pathname) {
 //   - role-gated.js hides .instructor-only content (answer keys, solutions,
 //     rubrics) from students — only teachers / admins / superusers can see
 //     it. Loaded together so both apply on every page.
-function withProtectionInjected(response, pathname) {
+// Staging-mode banner injected into <body> when NOT on production.
+// Reminds testers that the enrolment gate is bypassed on this environment.
+function stagingBannerHTML() {
+  return `<div id="mv-staging-banner" style="
+    position:fixed;bottom:0;left:0;right:0;z-index:9999;
+    background:#7c3aed;color:#fff;
+    padding:8px 16px;font-size:13px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    font-family:'Segoe UI',system-ui,sans-serif;
+    box-shadow:0 -2px 10px rgba(124,58,237,0.4);">
+    🧪 STAGING MODE — Enrolment gate disabled · All 40 courses open for all roles · Production students remain restricted
+    <button onclick="document.getElementById('mv-staging-banner').remove()"
+      style="background:rgba(255,255,255,0.2);border:none;color:#fff;
+      padding:2px 10px;border-radius:6px;cursor:pointer;font-weight:700;">✕</button>
+  </div>`;
+}
+
+function withProtectionInjected(response, pathname, isProduction) {
   if (!response) return response;
   if (!shouldInject(pathname)) return response;
   const ct = response.headers.get('content-type') || '';
   if (!ct.toLowerCase().includes('text/html')) return response;
+  const showStagingBanner = !isProduction;
   return new HTMLRewriter()
     .on('head', {
       element(el) {
@@ -140,6 +158,15 @@ function withProtectionInjected(response, pathname) {
           '<script src="/js/assessment-workflow.js" defer></script>',
           { html: true }
         );
+      },
+    })
+    .on('body', {
+      element(el) {
+        // Staging-mode banner — only on non-production hosts. Reminds testers
+        // that the enrolment gate is bypassed and all 40 courses are open.
+        if (showStagingBanner) {
+          el.append(stagingBannerHTML(), { html: true });
+        }
       },
     })
     .transform(response);
@@ -263,11 +290,15 @@ export async function onRequest(context) {
   // Always allow CORS preflights through unscathed.
   if (request.method === 'OPTIONS') return next();
 
+  // Determine once whether we're on the production domain (used for
+  // enrolment-gate enforcement and staging-mode banner).
+  const isProductionHost = url.hostname === 'mindview.pages.dev';
+
   if (isPublic(url.pathname)) {
     // Public path (login page, /api/me, static assets, index, etc.) — still
     // inject the protection script if the response turns out to be HTML.
     const res = await next();
-    return withProtectionInjected(res, url.pathname);
+    return withProtectionInjected(res, url.pathname, isProductionHost);
   }
 
   if (!env.SESSION_SECRET) {
@@ -286,7 +317,17 @@ export async function onRequest(context) {
     // they're trying to access content INSIDE a course folder (chapters,
     // lessons, assessments — but NOT the landing page /courses/{code}.html),
     // verify they're enrolled in that course. Other roles bypass this check.
-    if (payload.role === 'student') {
+    //
+    // STAGING BYPASS (2026-06-03, owner-approved):
+    // When running on staging.mindview.pages.dev (or any *.mindview.pages.dev
+    // preview deployment that is NOT the production domain), the enrolment
+    // gate is disabled so the owner and all test accounts can browse every
+    // course across every role without manual enrolment setup.
+    // Production (mindview.pages.dev) always enforces enrolment normally.
+    const isProductionHost = url.hostname === 'mindview.pages.dev';
+    const enrollmentEnforced = isProductionHost;  // false on staging/preview
+
+    if (payload.role === 'student' && enrollmentEnforced) {
       const m = url.pathname.match(/^\/courses\/([a-z0-9]+)\/(.+)$/i);
       if (m) {
         const courseCode = m[1].toLowerCase();
@@ -319,7 +360,7 @@ export async function onRequest(context) {
     // OR not browsing course content). Let downstream handler / static asset
     // serve, then inject the protection script into any HTML response.
     const res = await next();
-    return withProtectionInjected(res, url.pathname);
+    return withProtectionInjected(res, url.pathname, isProductionHost);
   }
 
   // Not authenticated. For HTML / page navigations, redirect to /login with
