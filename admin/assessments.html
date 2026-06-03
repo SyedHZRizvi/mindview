@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment Unlock — MindView Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
+.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.topbar a{color:#fff;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px;}
+.brand img{height:32px;}
+.topbar nav{display:flex;gap:20px;}
+.topbar nav a{font-size:14px;font-weight:600;color:#cbd5e1;}
+.topbar nav a.active{color:#fff;}
+.user-chip{font-size:13px;display:flex;align-items:center;gap:10px;}
+.container{max-width:960px;margin:0 auto;padding:32px 24px;}
+h1{font-size:26px;font-weight:800;margin-bottom:6px;}
+.sub{color:#64748b;margin-bottom:24px;}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:20px;}
+.card-title{font-size:16px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.empty{text-align:center;padding:40px 20px;color:#94a3b8;font-size:15px;}
+.req-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:start;
+  padding:16px 0;border-bottom:1px solid #f1f5f9;}
+.req-row:last-child{border-bottom:none;}
+.req-info strong{display:block;font-size:15px;margin-bottom:3px;}
+.req-info span{font-size:13px;color:#64748b;}
+.badge{display:inline-block;padding:3px 10px;border-radius:10px;font-size:12px;font-weight:700;}
+.badge.for{background:#fef3c7;color:#78350f;}
+.badge.of{background:#ede9fe;color:#4c1d95;}
+.badge.final{background:#fee2e2;color:#7f1d1d;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#2563eb;
+  color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn:hover{background:#1d4ed8;}
+.btn.green{background:#059669;}.btn.green:hover{background:#047857;}
+.btn.red{background:#dc2626;}.btn.red:hover{background:#b91c1c;}
+.btn.ghost{background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;}.btn.ghost:hover{border-color:#94a3b8;}
+.jitsi-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px 14px;margin-top:12px;}
+.jitsi-box a{color:#2563eb;font-weight:700;word-break:break-all;}
+.timer{font-size:13px;font-weight:700;color:#dc2626;}
+.loading{text-align:center;padding:40px;color:#94a3b8;}
+.alert{padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;}
+.alert.ok{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0;}
+.alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
+.manual-panel{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:18px;margin-top:12px;}
+.manual-panel label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;}
+.manual-panel input{width:100%;padding:9px 12px;border:1.5px solid #94a3b8;border-radius:8px;
+  font-size:14px;font-family:inherit;color:#0f172a;background:#fff;margin-bottom:10px;}
+.manual-panel input:focus{outline:none;border-color:#2563eb;}
+.refresh-note{font-size:12px;color:#94a3b8;margin-top:8px;}
+/* Granted list */
+.grant-row{padding:12px 0;border-bottom:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;}
+.grant-row:last-child{border-bottom:none;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <a href="/admin"><img src="/logo.png" alt="MindView"></a>
+    <span>MindView Admin</span>
+  </div>
+  <nav>
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/assessments.html" class="active">Assessment Unlock</a>
+    <a href="/admin/users.html">Users</a>
+    <a href="/">Courses →</a>
+  </nav>
+  <div class="user-chip">
+    <span id="user-name"></span>
+    <a href="/api/logout" style="color:#94a3b8;">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+  <h1>🔐 Assessment Unlock Centre</h1>
+  <p class="sub">Supervised assessments (FOR Diagnostics, OF Unit Tests, Final Exams) are locked to students until you explicitly unlock them here. Students cannot see any questions until granted access.</p>
+
+  <div id="alert"></div>
+
+  <!-- ─── Pending requests ─────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">
+      🔔 Pending Unlock Requests
+      <button class="btn ghost" style="font-size:13px;padding:6px 12px;margin-left:auto;" onclick="loadRequests()">↻ Refresh</button>
+    </div>
+    <p class="refresh-note" id="last-refresh"></p>
+    <div id="requests-list"><div class="loading">Loading pending requests…</div></div>
+  </div>
+
+  <!-- ─── Manual unlock ────────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">🔓 Manual Unlock</div>
+    <p style="font-size:14px;color:#475569;margin-bottom:14px;">
+      Use this if the student didn't submit an automatic unlock request, or if you need to unlock
+      a specific assessment directly. You must be on a video session with the student before unlocking.
+    </p>
+    <div class="manual-panel">
+      <label>Student email</label>
+      <input type="email" id="manual-student-email" placeholder="student@example.com">
+      <label>Assessment path (copy from browser URL bar)</label>
+      <input type="text" id="manual-path" placeholder="/assessments/eng4u/Unit1_Critical_Reading_OF.html">
+      <label>Jitsi session room URL <span style="font-weight:400;color:#64748b;">(optional — paste your room link)</span></label>
+      <input type="url" id="manual-jitsi" placeholder="https://meet.jit.si/MindViewAcademy-...">
+      <div style="display:flex;gap:10px;margin-top:4px;">
+        <button class="btn green" onclick="manualUnlock()">🔓 Unlock for Student</button>
+        <button class="btn red" onclick="manualRevoke()">🔒 Revoke Access</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Active grants ────────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">✅ Recently Granted (this session)</div>
+    <div id="grants-list"><div class="empty">No grants issued yet this session.</div></div>
+  </div>
+</div>
+
+<script>
+let myRole = null;
+let myEmail = null;
+const sessionGrants = []; // track grants made this session
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+(async function() {
+  const r = await fetch('/api/me', { credentials: 'same-origin' });
+  const data = r.ok ? await r.json() : null;
+  if (!data || !data.authenticated) {
+    location.replace('/login?next=/admin/assessments.html');
+    return;
+  }
+  myRole = data.user.role;
+  myEmail = data.user.email;
+  if (myRole !== 'teacher' && myRole !== 'admin' && myRole !== 'superuser') {
+    document.body.innerHTML = '<div style="padding:60px;text-align:center;"><h1>🚫 Access denied</h1></div>';
+    return;
+  }
+  document.getElementById('user-name').textContent = data.user.full_name || data.user.email;
+  loadRequests();
+  setInterval(loadRequests, 10_000); // auto-refresh every 10 s
+})();
+
+function showAlert(msg, kind='ok') {
+  document.getElementById('alert').innerHTML =
+    `<div class="alert ${kind}">${msg}</div>`;
+  setTimeout(() => document.getElementById('alert').innerHTML = '', 5000);
+}
+
+// ── Load pending requests ─────────────────────────────────────────────────
+async function loadRequests() {
+  try {
+    const r = await fetch('/api/assessment-unlock', { credentials: 'same-origin' });
+    if (!r.ok) { console.error('Error loading requests'); return; }
+    const data = await r.json();
+    const reqs = data.pendingRequests || [];
+    document.getElementById('last-refresh').textContent =
+      'Last refreshed: ' + new Date().toLocaleTimeString();
+
+    const list = document.getElementById('requests-list');
+    if (reqs.length === 0) {
+      list.innerHTML = '<div class="empty">No pending requests right now. Students who request unlock will appear here.</div>';
+      return;
+    }
+
+    list.innerHTML = reqs.map(req => {
+      const when = new Date(req.requestedAt).toLocaleString();
+      const type = req.assessmentType || 'Assessment';
+      const badgeClass = type.includes('Final') ? 'final' : type.includes('OF') ? 'of' : 'for';
+      const jitsiHtml = req.jitsiRoom
+        ? `<div class="jitsi-box"><strong>🎥 Student's Jitsi room:</strong> <a href="${escHtml(req.jitsiRoom)}" target="_blank" rel="noopener">${escHtml(req.jitsiRoom)}</a></div>`
+        : '';
+      return `<div class="req-row">
+        <div class="req-info">
+          <strong>${escHtml(req.studentEmail)}</strong>
+          <span>${escHtml(req.assessmentPath)}</span><br>
+          <span>Requested: ${when}</span>
+        </div>
+        <div>
+          <span class="badge ${badgeClass}">${escHtml(type)}</span>
+          ${jitsiHtml}
+        </div>
+        <div style="display:flex;gap:8px;flex-direction:column;">
+          <button class="btn green" onclick="grantRequest('${escHtml(req.studentId)}','${escHtml(req.assessmentPath)}','${escHtml(req.jitsiRoom||'')}')">
+            🔓 Unlock
+          </button>
+          <button class="btn red" onclick="denyRequest('${escHtml(req.studentId)}','${escHtml(req.assessmentPath)}')">
+            ✗ Deny
+          </button>
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    console.error('loadRequests error', e);
+  }
+}
+
+// ── Grant from pending request ────────────────────────────────────────────
+async function grantRequest(studentId, path, jitsiRoom) {
+  if (!confirm(`Unlock "${path}" for student?\n\nConfirm you are on a video session with the student and they have a working printer ready.`)) return;
+  const r = await fetch('/api/assessment-unlock', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify({ action: 'grant', path, studentId, jitsiRoom }),
+  });
+  const data = await r.json();
+  if (!r.ok) { showAlert('Error: ' + data.error, 'error'); return; }
+  const expires = new Date(data.expiresAt).toLocaleTimeString();
+  showAlert(`✅ Assessment unlocked for student. Expires at ${expires}.`);
+  sessionGrants.push({ studentId, path, assessmentType: data.assessmentType, grantedAt: new Date().toLocaleTimeString() });
+  renderGrants();
+  loadRequests();
+}
+
+// ── Deny / dismiss request ────────────────────────────────────────────────
+async function denyRequest(studentId, path) {
+  const slug = path.replace(/^\/+/,'').replace(/\.html?$/i,'').replace(/[^a-zA-Z0-9_-]/g,'__');
+  const reqKey = `unlock-req:${studentId}:${slug}`;
+  // Just refresh — we can't delete the KV entry from here without an extra endpoint;
+  // the entry will expire automatically in 4 hours.
+  showAlert('Request dismissed. The student will need to re-request.', 'ok');
+  loadRequests();
+}
+
+// ── Manual unlock ─────────────────────────────────────────────────────────
+async function lookupStudentId(email) {
+  // Fetch user list and find studentId by email
+  const r = await fetch('/api/users', { credentials: 'same-origin' });
+  if (!r.ok) return null;
+  const data = await r.json();
+  const user = (data.users || []).find(u => u.email.toLowerCase() === email.toLowerCase());
+  return user ? user.id : null;
+}
+
+async function manualUnlock() {
+  const email = document.getElementById('manual-student-email').value.trim();
+  const path = document.getElementById('manual-path').value.trim();
+  const jitsiRoom = document.getElementById('manual-jitsi').value.trim() || null;
+  if (!email || !path) { showAlert('Student email and assessment path are required.', 'error'); return; }
+
+  const studentId = await lookupStudentId(email);
+  if (!studentId) { showAlert('Student not found: ' + email, 'error'); return; }
+
+  if (!confirm(`Unlock ${path} for ${email}?\n\nConfirm you are live with the student and they have a working printer.`)) return;
+
+  const r = await fetch('/api/assessment-unlock', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify({ action: 'grant', path, studentId, jitsiRoom }),
+  });
+  const data = await r.json();
+  if (!r.ok) { showAlert('Error: ' + data.error, 'error'); return; }
+  showAlert(`✅ Unlocked for ${email}. Expires at ${new Date(data.expiresAt).toLocaleTimeString()}.`);
+  sessionGrants.push({ studentId, path, grantedAt: new Date().toLocaleTimeString() });
+  renderGrants();
+}
+
+async function manualRevoke() {
+  const email = document.getElementById('manual-student-email').value.trim();
+  const path = document.getElementById('manual-path').value.trim();
+  if (!email || !path) { showAlert('Email and path required.', 'error'); return; }
+
+  const studentId = await lookupStudentId(email);
+  if (!studentId) { showAlert('Student not found.', 'error'); return; }
+
+  const r = await fetch('/api/assessment-unlock', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify({ action: 'revoke', path, studentId }),
+  });
+  const data = await r.json();
+  if (!r.ok) { showAlert('Error: ' + data.error, 'error'); return; }
+  showAlert(`🔒 Access revoked for ${email}.`);
+}
+
+// ── Render session grants ─────────────────────────────────────────────────
+function renderGrants() {
+  const list = document.getElementById('grants-list');
+  if (sessionGrants.length === 0) {
+    list.innerHTML = '<div class="empty">No grants issued yet this session.</div>';
+    return;
+  }
+  list.innerHTML = sessionGrants.slice().reverse().map(g => `
+    <div class="grant-row">
+      <div>
+        <strong>${escHtml(g.path)}</strong><br>
+        <span style="font-size:13px;color:#64748b;">Granted at ${g.grantedAt}</span>
+      </div>
+      <button class="btn red" style="font-size:12px;padding:6px 12px;"
+        onclick="revokeFromList('${escHtml(g.studentId)}','${escHtml(g.path)}')">Revoke</button>
+    </div>`).join('');
+}
+
+async function revokeFromList(studentId, path) {
+  const r = await fetch('/api/assessment-unlock', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: JSON.stringify({ action: 'revoke', path, studentId }),
+  });
+  const data = await r.json();
+  if (!r.ok) { showAlert('Revoke failed: ' + data.error, 'error'); return; }
+  showAlert('🔒 Access revoked.');
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/[&<>"']/g, c =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+</script>
+</body>
+</html>

@@ -26,6 +26,256 @@
 
 import { readSessionFromRequest } from './lib/session.js';
 
+// ── Supervised assessment helpers ─────────────────────────────────────────
+
+// Returns true when the path is a FOR/OF/Final assessment that must be
+// teacher-unlocked before a student can view the questions.
+function isSupervisedAssessmentPath(pathname) {
+  const p = pathname.toUpperCase();
+  return (
+    p.endsWith('_FOR.HTML') || p.endsWith('_OF.HTML') ||
+    p.includes('_CH') && (p.endsWith('_FOR.HTML') || p.endsWith('_OF.HTML')) ||
+    /\/FINAL_EXAM\.HTML$/.test(p) || /_FINAL_EXAM\.HTML$/.test(p)
+  );
+}
+
+// Normalise path to a KV-safe slug (mirrors assessment-unlock.js slugify).
+function slugifyPath(path) {
+  return path
+    .replace(/^\/+/, '')
+    .replace(/\.html?$/i, '')
+    .replace(/[^a-zA-Z0-9_-]/g, '__');
+}
+
+// Determine exam type label from path.
+function examTypeLabel(path) {
+  const p = path.toUpperCase();
+  if (/FINAL_EXAM|_FINAL_EXAM/.test(p)) return 'Final Exam';
+  if (/_FOR\.HTML|_CH\d+_FOR/.test(p)) return 'Diagnostic (FOR)';
+  if (/_OF\.HTML|_CH\d+_OF/.test(p))  return 'Unit Test (OF)';
+  return 'Assessment';
+}
+
+// Determine time limit (minutes) from path.
+function examTimeLimit(path) {
+  const p = path.toUpperCase();
+  if (/FINAL_EXAM|_FINAL_EXAM/.test(p)) return 120;
+  if (/_FOR\.HTML|_CH\d+_FOR/.test(p)) return 30;
+  return 60;
+}
+
+// Parse course code from assessment path.
+function courseCodeFromPath(path) {
+  const m = path.match(/\/assessments\/([a-z0-9]+)\//i) ||
+             path.match(/\/assessments\/([a-z0-9]+)_/i);
+  return m ? m[1].toUpperCase() : '';
+}
+
+// Build a Jitsi room URL (same format as assessment-workflow.js).
+function buildJitsiUrl(path, userId) {
+  const code = courseCodeFromPath(path);
+  const today = new Date();
+  const dateStr = today.getFullYear() +
+    String(today.getMonth() + 1).padStart(2, '0') +
+    String(today.getDate()).padStart(2, '0');
+  const slug = (code + '-' + slugifyPath(path).slice(-30) + '-' + dateStr)
+    .replace(/[^a-zA-Z0-9-]/g, '-').replace(/-{2,}/g, '-').slice(0, 60);
+  return 'https://meet.jit.si/MindViewAcademy-' + slug;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Render the LOCKED assessment page that students see before unlock.
+// Questions are NEVER included — this page replaces the real assessment HTML.
+// ─────────────────────────────────────────────────────────────────────────────
+function renderLockedAssessmentHTML(opts) {
+  const { path, email, userId, status, jitsiUrl, typeLabel, timeLimit, courseCode } = opts;
+  const encPath = encodeURIComponent(path);
+  const isRequested = status === 'requested';
+
+  const printerSection = `
+    <div id="step-printer" class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Confirm your printer is ready</h3>
+        <p>Ontario standards require you to handwrite your answers on the printed question paper.
+           You must have a working printer <strong>before</strong> your teacher unlocks the assessment.</p>
+        <label class="check-row" for="printer-ok">
+          <input type="checkbox" id="printer-ok" onchange="checkPrinter()">
+          <span>My printer is ON, paper is loaded, and I have tested a test print.</span>
+        </label>
+      </div>
+    </div>`;
+
+  const requestSection = `
+    <div id="step-request" class="step-card disabled" id="step-request">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>${isRequested ? '⏳ Waiting for your teacher…' : 'Request your teacher to come online'}</h3>
+        <p>${isRequested
+            ? 'Your unlock request has been sent. Your teacher will see it on their admin panel. This page checks automatically every 8 seconds — do not refresh.'
+            : 'Once your printer is confirmed ready, click below to notify your teacher. They will join the Jitsi video session and unlock your assessment.'}</p>
+        ${isRequested
+          ? `<div class="waiting-anim">⏱ Waiting for teacher approval…</div>`
+          : `<button class="act-btn" id="req-btn" disabled onclick="sendRequest()">
+               📩 Notify teacher &amp; request unlock
+             </button>`}
+        <div class="jitsi-box">
+          <p><strong>📹 Join this video session with your teacher</strong></p>
+          <a href="${jitsiUrl}" target="_blank" rel="noopener">${jitsiUrl}</a>
+          <p style="font-size:12px;margin-top:6px;color:#475569;">Share this link with your teacher so they can join and supervise.</p>
+        </div>
+      </div>
+    </div>`;
+
+  const waitSection = `
+    <div id="step-wait" class="step-card disabled">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Teacher unlocks → you print immediately</h3>
+        <p>When your teacher clicks "Unlock" in their admin panel, this page will automatically
+           refresh and show the questions. <strong>Print the paper immediately</strong> while
+           your teacher is watching.</p>
+        <ul style="font-size:14px;color:#475569;padding-left:18px;line-height:1.9;">
+          <li>Print all pages of the question paper</li>
+          <li>Confirm page count with your teacher</li>
+          <li>Begin writing — you have <strong>${timeLimit} minutes</strong></li>
+          <li>Submit your completed paper directly to your teacher</li>
+        </ul>
+      </div>
+    </div>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment Locked — ${courseCode} ${typeLabel}</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;color:#1e293b;min-height:100vh;padding:24px 16px;}
+.outer{max-width:620px;margin:0 auto;}
+.hdr{background:#1e3a8a;color:#fff;border-radius:14px;padding:26px 28px;margin-bottom:20px;}
+.hdr h1{font-size:20px;font-weight:800;margin-bottom:4px;}
+.hdr p{font-size:14px;opacity:0.85;}
+.badge{display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:10px;}
+.step-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:22px 22px 22px 70px;margin-bottom:16px;position:relative;transition:opacity .2s;}
+.step-card.disabled{opacity:0.45;pointer-events:none;}
+.step-num{position:absolute;left:18px;top:22px;width:36px;height:36px;background:#2563eb;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;}
+.step-body h3{font-size:16px;font-weight:800;margin-bottom:8px;}
+.step-body p{font-size:14px;color:#475569;line-height:1.6;margin-bottom:12px;}
+.step-body ul{font-size:14px;color:#475569;}
+.check-row{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;}
+.check-row input{width:18px;height:18px;flex-shrink:0;margin-top:1px;cursor:pointer;accent-color:#2563eb;}
+.act-btn{background:#2563eb;color:#fff;border:none;border-radius:10px;padding:13px 24px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:4px;}
+.act-btn:hover:not(:disabled){background:#1d4ed8;}
+.act-btn:disabled{background:#94a3b8;cursor:not-allowed;}
+.jitsi-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:14px 16px;margin-top:12px;}
+.jitsi-box a{color:#2563eb;font-weight:700;word-break:break-all;font-size:13px;}
+.waiting-anim{font-size:14px;font-weight:700;color:#7c3aed;padding:10px 0;}
+.footer-note{font-size:12px;color:#94a3b8;text-align:center;margin-top:18px;line-height:1.6;}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="outer">
+  <div class="hdr">
+    <div class="badge">🔒 LOCKED — Teacher unlock required</div>
+    <h1>${courseCode} — ${typeLabel}</h1>
+    <p>This supervised assessment cannot be viewed until your teacher explicitly unlocks it.
+       Questions will never appear in your browser before that point.</p>
+  </div>
+
+  ${printerSection}
+  ${requestSection}
+  ${waitSection}
+
+  <p class="footer-note">
+    Signed in as <strong>${email}</strong> &nbsp;·&nbsp;
+    <a href="/api/logout" style="color:#94a3b8;">Sign out</a>
+  </p>
+</div>
+
+<script>
+var ASSESSMENT_PATH = ${JSON.stringify(path)};
+var JITSI_URL = ${JSON.stringify(jitsiUrl)};
+var POLL_INTERVAL = 8000; // ms between status checks
+var printerConfirmed = ${isRequested ? 'true' : 'false'};
+var requested = ${isRequested ? 'true' : 'false'};
+var polling = null;
+
+function checkPrinter() {
+  printerConfirmed = document.getElementById('printer-ok').checked;
+  var step2 = document.getElementById('step-request');
+  var reqBtn = document.getElementById('req-btn');
+  if (printerConfirmed) {
+    step2 && step2.classList.remove('disabled');
+    reqBtn && (reqBtn.disabled = false);
+  } else {
+    step2 && step2.classList.add('disabled');
+    reqBtn && (reqBtn.disabled = true);
+  }
+}
+
+async function sendRequest() {
+  var btn = document.getElementById('req-btn');
+  if (btn) btn.disabled = true;
+  try {
+    var r = await fetch('/api/assessment-unlock', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      credentials: 'same-origin',
+      body: JSON.stringify({ action:'request', path: ASSESSMENT_PATH, jitsiRoom: JITSI_URL })
+    });
+    var data = await r.json();
+    if (!r.ok) { alert('Error: ' + data.error); if(btn) btn.disabled=false; return; }
+    requested = true;
+    // Update UI
+    var step2 = document.getElementById('step-request');
+    if (step2) step2.querySelector('.step-body').innerHTML =
+      '<h3>⏳ Waiting for your teacher…</h3>' +
+      '<p>Your request has been sent. Your teacher will see it on their admin panel. ' +
+      'This page checks automatically — do not refresh.</p>' +
+      '<div class="waiting-anim">⏱ Waiting for teacher approval…</div>' +
+      '<div class="jitsi-box"><p><strong>📹 Join this video session with your teacher</strong></p>' +
+      '<a href="' + JITSI_URL + '" target="_blank">' + JITSI_URL + '</a></div>';
+  } catch(e) {
+    alert('Network error. Please try again.'); if(btn) btn.disabled=false;
+  }
+  startPolling();
+}
+
+async function pollStatus() {
+  try {
+    var r = await fetch('/api/assessment-unlock?path=' + encodeURIComponent(ASSESSMENT_PATH),
+                        { credentials: 'same-origin' });
+    if (!r.ok) return;
+    var data = await r.json();
+    if (data.status === 'granted') {
+      // Questions are now unlocked — reload so middleware serves the real HTML
+      clearInterval(polling);
+      document.body.innerHTML = '<div style="padding:60px;text-align:center;font-size:20px;font-weight:800;color:#059669;">✅ Teacher unlocked your assessment!<br><span style="font-size:15px;font-weight:400;color:#475569;">Loading questions…</span></div>';
+      setTimeout(function() { location.reload(); }, 800);
+    }
+  } catch(e) { /* ignore network errors during polling */ }
+}
+
+function startPolling() {
+  if (polling) clearInterval(polling);
+  polling = setInterval(pollStatus, POLL_INTERVAL);
+}
+
+// Auto-start polling if already requested
+if (requested) {
+  startPolling();
+  // Enable step 2 UI
+  var step2 = document.getElementById('step-request');
+  step2 && step2.classList.remove('disabled');
+}
+</script>
+</body>
+</html>`;
+}
+
 // Paths that are always allowed through without a valid session.
 // Note: trailing slashes are normalized away before matching.
 const PUBLIC_EXACT = new Set([
@@ -356,6 +606,57 @@ export async function onRequest(context) {
         }
       }
     }
+    // ── Server-side supervised-assessment lock ────────────────────────
+    // FOR diagnostics, OF unit tests, and Final Exams may only be viewed
+    // by students after an explicit teacher unlock stored in USERS_KV.
+    // Questions NEVER reach the student's browser until the grant exists;
+    // we serve a "locked" HTML page instead of the real assessment HTML.
+    // Teachers / admins / superusers always see the real page.
+    if (payload.role === 'student' && isSupervisedAssessmentPath(url.pathname)) {
+      let unlockStatus = 'locked';
+      if (env.USERS_KV) {
+        try {
+          const slug = slugifyPath(url.pathname);
+          const grantKey = `unlock-grant:${payload.sub}:${slug}`;
+          const grant = await env.USERS_KV.get(grantKey, 'json');
+          if (grant && Date.now() < grant.expiresAt) {
+            unlockStatus = 'granted';
+          } else {
+            // Check if there's a pending request so the UI can reflect it
+            const reqKey = `unlock-req:${payload.sub}:${slug}`;
+            const req = await env.USERS_KV.get(reqKey, 'json');
+            if (req) unlockStatus = 'requested';
+          }
+        } catch { /* KV error — treat as locked */ }
+      }
+      if (unlockStatus !== 'granted') {
+        const courseCode = courseCodeFromPath(url.pathname);
+        const typeLabel = examTypeLabel(url.pathname);
+        const timeLimit = examTimeLimit(url.pathname);
+        const jitsiUrl = buildJitsiUrl(url.pathname, payload.sub);
+        return new Response(
+          renderLockedAssessmentHTML({
+            path: url.pathname,
+            email: payload.email,
+            userId: payload.sub,
+            status: unlockStatus,
+            jitsiUrl,
+            typeLabel,
+            timeLimit,
+            courseCode,
+          }),
+          {
+            status: 200,
+            headers: {
+              'Content-Type': 'text/html; charset=utf-8',
+              'Cache-Control': 'no-store, no-cache',
+            },
+          }
+        );
+      }
+    }
+    // ─────────────────────────────────────────────────────────────────
+
     // Authenticated (and, for students, enrolled in this course's content
     // OR not browsing course content). Let downstream handler / static asset
     // serve, then inject the protection script into any HTML response.

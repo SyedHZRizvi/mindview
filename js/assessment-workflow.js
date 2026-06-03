@@ -301,7 +301,12 @@
     return btn;
   }
 
-  // ── 6. Supervised session gate + timer ───────────────────────────────────
+  // ── 6. Supervised session timer (client-side countdown) ──────────────────
+  // The gate (showing/hiding questions) is now enforced SERVER-SIDE by the
+  // middleware, which serves a "locked" page until the teacher grants access
+  // via /api/assessment-unlock. Once the student sees this assessment-
+  // workflow.js running, questions are already unlocked and the timer starts
+  // automatically for supervised assessments.
 
   var timerInterval = null;
   var sessionStarted = false;
@@ -532,32 +537,17 @@
       insertAfterHeader(printBtn);
 
       if (isSupervised) {
-        // Gate overlay — blocks access until teacher says go
-        var gate = buildGateOverlay(jitsiUrl, typeLabel, role);
-        if (gate) {
-          document.body.appendChild(gate);
-
-          // Wire up Start button
-          var startBtn = document.getElementById('mv-start-btn');
-          if (startBtn) {
-            startBtn.addEventListener('click', function () {
-              if (sessionStarted) return;
-              sessionStarted = true;
-              gate.remove();
-
-              // Show timer
-              var chip = buildTimerChip(timeLimit * 60);
-              document.body.appendChild(chip);
-
-              // Start countdown
-              startTimer(timeLimit * 60, function () {
-                chip.textContent = '⏱ 00:00';
-                chip.style.animation = '';
-                document.body.appendChild(buildTimeUpOverlay());
-              });
-            });
-          }
-        }
+        // Gate is now enforced server-side (middleware serves a locked page
+        // until teacher unlocks). By the time this code runs the student has
+        // a valid unlock grant. Start the countdown timer automatically.
+        sessionStarted = true;
+        var chip = buildTimerChip(timeLimit * 60);
+        document.body.appendChild(chip);
+        startTimer(timeLimit * 60, function () {
+          chip.textContent = '⏱ 00:00';
+          chip.style.animation = '';
+          document.body.appendChild(buildTimeUpOverlay());
+        });
       }
 
     } else {
