@@ -129,6 +129,17 @@ function withProtectionInjected(response, pathname) {
           '<script src="/js/page-nav.js" defer></script>',
           { html: true }
         );
+        // Handwritten assessment workflow — added 2026-06-03 per owner request.
+        // Ontario standards compliance: physical answer sheets required for
+        // inspections. Self-skips on non-assessment pages. On /assessments/*:
+        //   - Disables all MC radio buttons, Check buttons, inline solutions
+        //   - Adds "Print Question Paper" button + mailing instructions
+        //   - FOR/OF/Final Exam: shows supervised-session gate (Jitsi video
+        //     link + countdown timer) before questions are accessible
+        el.append(
+          '<script src="/js/assessment-workflow.js" defer></script>',
+          { html: true }
+        );
       },
     })
     .transform(response);
