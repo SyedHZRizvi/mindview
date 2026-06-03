@@ -122,6 +122,13 @@ function withProtectionInjected(response, pathname) {
           '<script src="/js/role-gated.js" defer></script>',
           { html: true }
         );
+        // Universal three-button page-nav widget (Back / Back-to-course /
+        // Forward) — added 2026-06-01 per owner request. Self-injects via
+        // DOMContentLoaded; auto-detects course context from the URL.
+        el.append(
+          '<script src="/js/page-nav.js" defer></script>',
+          { html: true }
+        );
       },
     })
     .transform(response);

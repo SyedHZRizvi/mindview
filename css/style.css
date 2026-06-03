@@ -123,6 +123,54 @@ h2 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
 .expectations-box ul { margin-left: 20px; }
 .expectations-box li { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
 
+/* ===== PAGE-NAV BUTTON BAR (universal — injected by /js/page-nav.js) ===== */
+.page-nav { background: #fff; border-bottom: 1px solid var(--border); padding: 10px 18px; display: flex; gap: 10px; align-items: center; justify-content: center; position: sticky; top: 0; z-index: 90; box-shadow: 0 1px 4px rgba(15,23,42,0.05); }
+.page-nav-btn { display: inline-flex; align-items: center; gap: 4px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px 18px; font-family: inherit; font-size: 14px; font-weight: 700; color: #334155; cursor: pointer; text-decoration: none; transition: all 0.18s cubic-bezier(0.2, 0.8, 0.2, 1); white-space: nowrap; }
+.page-nav-btn:hover, .page-nav-btn:focus { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(37,99,235,0.22); outline: none; }
+.page-nav-btn.page-nav-course { background: #ecfdf5; color: #065f46; border-color: #6ee7b7; }
+.page-nav-btn.page-nav-course:hover, .page-nav-btn.page-nav-course:focus { background: #059669; color: #fff; border-color: #059669; box-shadow: 0 4px 10px rgba(5,150,105,0.22); }
+.page-nav-btn:active { transform: translateY(0); box-shadow: 0 1px 3px rgba(15,23,42,0.12); }
+@media (max-width: 640px) {
+  .page-nav { gap: 6px; padding: 8px 10px; }
+  .page-nav-btn { padding: 6px 12px; font-size: 13px; }
+}
+
+/* ===== AESTHETIC POLISH (refined shadows, smoother transitions) ===== */
+.course-card, .hub-card, .tool-card, .info-card, .unit-card, .assess-type { transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.2s ease; }
+.course-card:hover { box-shadow: 0 14px 30px rgba(15,23,42,0.10), 0 4px 10px rgba(15,23,42,0.06); transform: translateY(-4px); }
+.hub-card:hover { box-shadow: 0 14px 30px rgba(15,23,42,0.10), 0 4px 10px rgba(15,23,42,0.06); }
+.tool-card { background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%); }
+.tool-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15,23,42,0.08); }
+
+/* Smoother focus rings for accessibility */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+
+/* Polished footer — subtle gradient + better typography */
+.site-footer { background: linear-gradient(180deg, #0f172a 0%, #020617 100%); color: #cbd5e1; padding: 48px 0 36px; border-top: 4px solid var(--primary); }
+.site-footer p { line-height: 1.7; }
+.site-footer a { color: #93c5fd; text-decoration: none; transition: color 0.15s; }
+.site-footer a:hover { color: #fff; text-decoration: underline; }
+
+/* Hero — slightly softer gradient stop, subtle inner glow */
+.hero { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%); box-shadow: inset 0 -4px 32px rgba(0,0,0,0.08); }
+.hero-cta { box-shadow: 0 6px 18px rgba(15,23,42,0.16); }
+.hero-cta:hover { box-shadow: 0 10px 30px rgba(15,23,42,0.22); transform: translateY(-2px); }
+
+/* Page header (sub-pages) — depth */
+.page-head { box-shadow: inset 0 -4px 20px rgba(0,0,0,0.10); }
+
+/* Buttons in subject-group / section labels — subtle underline animation */
+.subject-label { transition: color 0.18s; }
+
+/* Smooth page-load fade-in (only on initial paint, doesn't affect subsequent) */
+@media (prefers-reduced-motion: no-preference) {
+  body { animation: mv-fade-in 0.22s ease-out; }
+  @keyframes mv-fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
 /* ===== HOME-PAGE HUB CARDS (light landing) ===== */
 .hub-section { padding: 64px 0; }
 .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 28px; }
