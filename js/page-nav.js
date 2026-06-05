@@ -79,6 +79,14 @@
       'box-shadow:0 1px 4px rgba(15,23,42,0.05)',
     ].join(';');
 
+    // Home button — always visible, always navigates to /
+    var home = document.createElement('a');
+    home.href = '/';
+    home.className = 'page-nav-btn page-nav-home';
+    home.title = 'Go to the MindView home page';
+    home.setAttribute('aria-label', 'Home');
+    home.innerHTML = '<span aria-hidden="true">🏠</span>&nbsp;Home';
+
     // Back button — history.back()
     var back = document.createElement('button');
     back.type = 'button';
@@ -118,6 +126,7 @@
       window.history.forward();
     };
 
+    nav.appendChild(home);
     nav.appendChild(back);
     if (ctx) nav.appendChild(course);
     nav.appendChild(fwd);
